@@ -36,9 +36,6 @@
 #include "zenity.h"
 #include <gconf/gconf-client.h>
 
-#define URL_HANDLER_DIR      "/desktop/gnome/url-handlers/"
-#define DEFAULT_HANDLER_PATH "/desktop/gnome/url-handlers/unknown/command"
-
 #define ZENITY_OK_DEFAULT	0
 #define ZENITY_CANCEL_DEFAULT	1
 #define ZENITY_ESC_DEFAULT	1
