@@ -143,56 +143,53 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename)
   return TRUE;
 }
 
-static GList *
-zenity_util_list_from_char_array (const char **s)
+GdkPixbuf *
+zenity_util_pixbuf_new_from_file (GtkWidget *widget, gchar *filename)
 {
-  GList *list = NULL;
-  gint i;
-
-  for (i = 0; s[i]; i++) {
-    GdkPixbuf *pixbuf;
-
-    pixbuf = gdk_pixbuf_new_from_file (s[i], NULL);
-    if (pixbuf)
-      list = g_list_prepend (list, pixbuf);
-  }
-
-  return list;
-}
-
-static void
-zenity_util_free_list (GList *list)
-{
-  g_list_foreach (list, (GFunc) g_object_unref, NULL);
-  g_list_free (list);
+    if (!strcmp (g_strdown (filename), "warning"))
+      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_BUTTON, NULL);
+    if (!strcmp (g_strdown (filename), "info"))
+      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_INFO, GTK_ICON_SIZE_BUTTON, NULL);
+    if (!strcmp (g_strdown (filename), "question"))
+      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_QUESTION, GTK_ICON_SIZE_BUTTON, NULL);
+    if (!strcmp (g_strdown (filename), "error"))
+      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_ERROR, GTK_ICON_SIZE_BUTTON, NULL);
+    else
+      return gdk_pixbuf_new_from_file (filename, NULL);
 }
 
 void
-zenity_util_set_window_icon (GtkWidget *widget, const gchar *filename)
+zenity_util_set_window_icon (GtkWidget *widget, const gchar *filename, const gchar *default_file)
 {
-  const gchar *filenames[2] = { NULL};
-  GList *list;
+  GdkPixbuf *pixbuf;
 
-  g_return_if_fail (widget != NULL);
-  g_return_if_fail (GTK_IS_WINDOW (widget));
+  if (filename != NULL)
+    pixbuf = zenity_util_pixbuf_new_from_file (widget, (gchar *) filename);
+  else
+    pixbuf = gdk_pixbuf_new_from_file (default_file, NULL);  
 
-  if (filename == NULL)
-    return;
-
-  filenames[0] = filename;
-  list = zenity_util_list_from_char_array (filenames);
-  gtk_window_set_icon_list (GTK_WINDOW (widget), list);
-  zenity_util_free_list (list);
+  if (pixbuf != NULL) {
+    gtk_window_set_icon (GTK_WINDOW (widget), pixbuf);
+    g_object_unref (pixbuf);
+  }
 }
 
 void 
-zenity_util_set_window_icon_from_stock (GtkWidget *widget, const gchar *stock_id)
+zenity_util_set_window_icon_from_stock (GtkWidget *widget, const gchar *filename, const gchar *default_stock_id)
 {
   GdkPixbuf *pixbuf;
-	
-  pixbuf = gtk_widget_render_icon (widget, stock_id, (GtkIconSize) -1, NULL);
-  gtk_window_set_icon (GTK_WINDOW (widget), pixbuf);
-  g_object_unref (pixbuf);
+
+  if (filename != NULL) {
+    pixbuf = zenity_util_pixbuf_new_from_file (widget, (gchar *) filename);
+  }
+  else {
+    pixbuf = gtk_widget_render_icon (widget, default_stock_id, GTK_ICON_SIZE_BUTTON, NULL);
+  }
+
+  if (pixbuf != NULL) {
+    gtk_window_set_icon (GTK_WINDOW (widget), pixbuf);
+    g_object_unref (pixbuf);
+  }
 }
 
 void

@@ -42,6 +42,7 @@ typedef enum {
   MODE_TEXTINFO,
   MODE_WARNING,
   MODE_INFO,
+  MODE_NOTIFICATION,
   MODE_ABOUT,
   MODE_LAST
 } ZenityDialogMode;
@@ -64,6 +65,7 @@ typedef struct {
   ZenityProgressData *progress_data;
   ZenityTextData *text_data;
   ZenityTreeData *tree_data;
+  ZenityNotificationData *notification_data;
 } ZenityParsingOptions;
 
 enum {
@@ -79,6 +81,7 @@ enum {
   OPTION_TEXTINFO,
   OPTION_TEXTEDIT,
   OPTION_WARNING,
+  OPTION_NOTIFICATION,
   OPTION_TITLE,
   OPTION_ICON,
   OPTION_WIDTH,
@@ -110,6 +113,8 @@ enum {
   OPTION_PRINTCOLUMN,
   OPTION_QUESTIONTEXT,
   OPTION_WARNINGTEXT,
+  OPTION_NOTIFICATIONICON,
+  OPTION_NOTIFICATIONTEXT,
   OPTION_ABOUT,
   OPTION_VERSION,
   OPTION_LAST,
@@ -183,6 +188,15 @@ struct poptOption options[] = {
     NULL,
     OPTION_LIST,
     N_("Display list dialog"),
+    NULL
+  },
+  {
+    "notification",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_NOTIFICATION,
+    N_("Display notification"),
     NULL
   },
   {
@@ -548,6 +562,28 @@ struct poptOption list_options[] = {
   POPT_TABLEEND
 };
 
+struct poptOption notification_options[] = {
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_NOTIFICATIONTEXT,
+    N_("Set the notification text"),
+    NULL
+  },
+  POPT_TABLEEND
+};
+
 struct poptOption progress_options[] = {
   {
     NULL,
@@ -900,6 +936,15 @@ struct poptOption application_options[] = {
     NULL,
     '\0',
     POPT_ARG_INCLUDE_TABLE,
+    notification_options,
+    0,
+    N_("Notication options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
     progress_options,
     0,
     N_("Progress options"),
@@ -979,6 +1024,7 @@ zenity_init_parsing_options (void) {
   results->progress_data = g_new0 (ZenityProgressData, 1); 
   results->text_data = g_new0 (ZenityTextData, 1);
   results->tree_data = g_new0 (ZenityTreeData, 1);
+  results->notification_data = g_new0 (ZenityNotificationData, 1);
 
   /* Give some sensible defaults */
   results->data->width = -1;
@@ -1056,6 +1102,10 @@ zenity_free_parsing_options (void) {
       if (results->tree_data->print_column)
         g_free (results->tree_data->print_column);
       break;
+    case MODE_NOTIFICATION:
+      if (results->notification_data->notification_text)
+        g_free (results->notification_data->notification_text);
+      break;
     default:
       break;
   }
@@ -1124,6 +1174,9 @@ main (gint argc, gchar **argv) {
     case MODE_LIST:
       results->tree_data->data = poptGetArgs (ctx);
       zenity_tree (results->data, results->tree_data);
+      break;
+    case MODE_NOTIFICATION:
+      zenity_notification (results->data, results->notification_data);
       break;
     case MODE_PROGRESS:
       zenity_progress (results->data, results->progress_data);
@@ -1229,6 +1282,12 @@ zenity_parse_options_callback (poptContext              ctx,
 
       results->mode = MODE_LIST;
       break;
+    case OPTION_NOTIFICATION:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
+
+      results->mode = MODE_NOTIFICATION;
+      break;
     case OPTION_PROGRESS:
       if (results->mode != MODE_LAST)
         zenity_error (NULL, ERROR_DIALOG);
@@ -1286,13 +1345,13 @@ zenity_parse_options_callback (poptContext              ctx,
     case OPTION_PROGRESSTEXT: 
     case OPTION_LISTTEXT: 
     case OPTION_WARNINGTEXT: 
-      
+    case OPTION_NOTIFICATIONTEXT:  
       /* FIXME: This is an ugly hack because of the way the poptOptions are 
        * ordered above. When you try and use an --option more than once 
        * parse_options_callback gets called for each option. Suckage 
        */
 
-      if (parse_option_text > 7) 
+      if (parse_option_text > 8) 
         zenity_error ("--text", ERROR_DUPLICATE); 
      
       switch (results->mode) { 
@@ -1319,6 +1378,10 @@ zenity_parse_options_callback (poptContext              ctx,
           results->tree_data->dialog_text = g_locale_to_utf8 (g_strcompress (arg),
 						              -1, NULL, NULL, NULL);
           break; 
+        case MODE_NOTIFICATION:
+          results->notification_data->notification_text = g_locale_to_utf8 (g_strcompress (arg),
+                                                                            -1, NULL, NULL, NULL);
+          break;
         default: 
           zenity_error ("--text", ERROR_SUPPORT); 
       } 

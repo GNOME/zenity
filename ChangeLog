@@ -1,5 +1,20 @@
 2004-09-13  Glynn Foster  <glynn.foster@sun.com>
 
+	* data/Makefile.am, data/zenity-notification.png: Add new 
+	notification icon.
+	* src/Makefile.am: Update for new files.
+	* src/about.c, src/calendar.c, src/entry.c, src/fileselection.c,
+	src/progress.c, src/text.c, src/tree.c, src/msg.c: Restructure code a 
+	little bit for new utility functions for setting window icons.
+	* src/eggtrayicon.c, src/eggtrayicon.h: New files for notification area
+	support.
+	* src/main.c, src/notification.c, src/util.c, src/util.h, src/zenity.h:
+	Add support for notification area.
+	* data/zenity.1, help/*: Update docs for notification and new file 
+	selection changes.
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
 	* THANKS: Update
 	* src/about.c: Update.
 	* src/fileselection.c, src/main.c, src/zenity.h:

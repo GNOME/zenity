@@ -12,6 +12,9 @@ zenity_SOURCES = \
 	text.c		\
 	progress.c	\
 	tree.c		\
+	notification.c	\
+	eggtrayicon.c	\
+	eggtrayicon.h	\
 	about.c		\
 	util.h		\
 	util.c

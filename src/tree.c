@@ -320,10 +320,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   if (tree_data->dialog_text)
   gtk_label_set_text (GTK_LABEL (text), tree_data->dialog_text);
 
-  if (data->window_icon)
-    zenity_util_set_window_icon (dialog, data->window_icon);
-  else
-    zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-list.png"));
+  zenity_util_set_window_icon (dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-list.png"));
 
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);

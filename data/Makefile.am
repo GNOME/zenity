@@ -14,7 +14,8 @@ images_DATA = \
 	zenity-file.png		\
 	zenity-progress.png	\
 	zenity-text.png		\
-	zenity-entry.png
+	zenity-entry.png	\
+	zenity-notification.png
 
 man_MANS = zenity.1
 

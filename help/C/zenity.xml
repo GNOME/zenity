@@ -115,6 +115,7 @@
         <listitem><para>Calendar</para></listitem>
 	<listitem><para>File selection</para></listitem>
 	<listitem><para>List</para></listitem>
+	<listitem><para>Notification</para></listitem>
         <listitem><para>Message</para>
             <itemizedlist>
 	        <listitem><para>Error</para></listitem>
@@ -248,7 +249,10 @@
       <varlistentry>
         <term><option>--window-icon</option>=<replaceable>icon_path</replaceable></term>
 	<listitem>
-	  <para>Specifies the icon that is displayed in the window frame of the dialog.</para>
+	  <para>Specifies the icon that is displayed in the window frame of the dialog. There are
+	        4 stock icons also available by providing the following keywords - 'info', 'warning', 'question' and
+	        'error'.
+          </para>
 	</listitem>
       </varlistentry>
 
@@ -435,7 +439,8 @@
     <title>File Selection Dialog</title>
 
     <para>
-	Use the <option>--file-selection</option> option to create a file selection dialog. &app; returns the selected files or directories to standard error. 
+	Use the <option>--file-selection</option> option to create a file selection dialog. &app; returns the selected files or directories to standard 
+        error. The default mode of the file selection dialog is open.
     </para>
     <para>
 	The file selection dialog supports the following options:
@@ -454,6 +459,20 @@
 	<term><option>--multiple</option></term>
 	<listitem>
 	  <para>Allows the selection of multiple filenames in the file selection dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><option>--directory</option></term>
+	<listitem>
+	  <para>Allows only selection of directories in the file selection dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><option>--save</option></term>
+	<listitem>
+	  <para>Set the file selection dialog into save mode.</para>
 	</listitem>
       </varlistentry>
 
@@ -499,6 +518,53 @@
       </screenshot>
     </figure>
 
+  </sect1>
+
+<!-- ==== Notification Options ====== -->
+  <sect1 id="zenity-notification-options">
+    <title>Notification Icon</title>
+
+    <para>
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><option>--text</option>=<replaceable>text</replaceable></term>
+	<listitem>
+	  <para>Specifies the text that is displayed in the notification area.</para>
+	  </para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>
+      The following example script shows how to create a notification icon:
+      <programlisting>
+        #!/bin/sh
+
+        zenity --notification\
+          --window-icon="info" \
+          --text="There are system updates necessary!"
+      </programlisting>
+
+    </para>
+
+    <figure id="zenity-notification-screenshot">
+      <title>Notification Icon Example</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+              <imagedata fileref="figures/zenity-notification-screenshot.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+              <phrase>&app; notification icon example</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+   </figure>
+													  
   </sect1>
 
 <!-- ==== List Options ====== -->

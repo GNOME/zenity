@@ -300,7 +300,7 @@ zenity_create_boutique (void)
 
   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 
-  zenity_util_set_window_icon (window, ZENITY_IMAGE_FULLPATH ("zenity.png"));
+  zenity_util_set_window_icon (window, NULL, ZENITY_IMAGE_FULLPATH ("zenity.png"));
   canvas = zenity_create_monk ();
   gtk_container_add (GTK_CONTAINER (window), canvas);
 
@@ -383,7 +383,7 @@ zenity_about (ZenityData *data)
   g_signal_connect (G_OBJECT (dialog), "key_press_event",
                     G_CALLBACK (zenity_zen_wisdom), glade_dialog);
 
-  zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity.png"));
+  zenity_util_set_window_icon (dialog, NULL, ZENITY_IMAGE_FULLPATH ("zenity.png"));
 
   image = glade_xml_get_widget (glade_dialog, "zenity_about_image");
 

@@ -98,6 +98,10 @@ typedef struct {
   const gchar **data;
 } ZenityTreeData;
 
+typedef struct {
+  gchar		*notification_text;
+} ZenityNotificationData;
+
 void    zenity_calendar         (ZenityData             *data,
                                 ZenityCalendarData      *calendar_data);
 void    zenity_msg              (ZenityData             *data,
@@ -112,6 +116,8 @@ void    zenity_text             (ZenityData             *data,
                                  ZenityTextData         *text_data);
 void    zenity_tree             (ZenityData             *data,
                                  ZenityTreeData         *tree_data);
+void	zenity_notification	(ZenityData		*data,
+				 ZenityNotificationData	*notification_data);
 void    zenity_about            (ZenityData             *data);
 
 G_END_DECLS

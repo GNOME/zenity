@@ -83,29 +83,25 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-  if (data->window_icon)
-    zenity_util_set_window_icon (dialog, data->window_icon);
-  else {
-    switch (msg_data->mode) {
-      case ZENITY_MSG_WARNING:
-        zenity_util_set_window_icon_from_stock (dialog, GTK_STOCK_DIALOG_WARNING);
-        break;
+  switch (msg_data->mode) {
+    case ZENITY_MSG_WARNING:
+      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_WARNING);
+      break;
 
-      case ZENITY_MSG_QUESTION:
-        zenity_util_set_window_icon_from_stock (dialog, GTK_STOCK_DIALOG_QUESTION);
-        break;
+    case ZENITY_MSG_QUESTION:
+      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_QUESTION);
+      break;
       
-      case ZENITY_MSG_ERROR:
-        zenity_util_set_window_icon_from_stock (dialog, GTK_STOCK_DIALOG_ERROR);
-        break;
+    case ZENITY_MSG_ERROR:
+      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_ERROR);
+      break;
       
-      case ZENITY_MSG_INFO:
-        zenity_util_set_window_icon_from_stock (dialog, GTK_STOCK_DIALOG_INFO);
-        break;
+    case ZENITY_MSG_INFO:
+      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_INFO);
+      break;
   
-      default:
-        break;
-    }
+    default:
+      break;
   }
   
   if (data->width > -1 || data->height > -1)
