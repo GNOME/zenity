@@ -112,7 +112,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
         
   if (msg_data->dialog_text)
-    gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
+    gtk_label_set_markup (GTK_LABEL (text), msg_data->dialog_text);
 
   zenity_util_show_dialog (dialog);
   gtk_main ();
