@@ -1,2 +1,3 @@
 SUBDIRS = \
-	  C
+	  C \
+	  sr
