@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"POT-Creation-Date: 2003-01-19 18:07+0100\n"
-"PO-Revision-Date: 2003-01-19 18:06+0100\n"
+"POT-Creation-Date: 2003-01-22 21:02+0100\n"
+"PO-Revision-Date: 2003-01-22 21:02+0100\n"
 "Last-Translator: Ole Laursen <olau@hardworking.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -232,20 +232,27 @@ msgstr "Hjælpetilvalg"
 #.
 #: src/main.c:836
 #, c-format
-msgid "%s in an invalid option for this dialog\n"
-msgstr "%s er et ugyldigt tilvalg for dette vindue\n"
+msgid ""
+"%s in an invalid option for this dialog. See zenity --help for more details\n"
+msgstr ""
+"%s er et ugyldigt tilvalg for dette vindue. Se zenity --help for flere "
+"detaljer\n"
 
-#: src/main.c:894
+#: src/main.c:845
+msgid "You must specify more arguments. See zenity --help for more details\n"
+msgstr "Du skal angive flere parametre. Se zenity --help for flere detaljer\n"
+
+#: src/main.c:896
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "%s angivet to gange for samme vindue\n"
 
-#: src/main.c:898
+#: src/main.c:900
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "%s er ikke understøttet for dette vindue\n"
 
-#: src/main.c:902
+#: src/main.c:904
 msgid "Two or more dialog options specified\n"
 msgstr "To eller flere vinduestilvalg angivet\n"
 
@@ -341,15 +348,3 @@ msgstr "_Medvirkende"
 #: src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "_Indtast ny tekst:"
-
-#: src/zenity.glade.h:22
-msgid "zenity_about_copyright"
-msgstr "zenity_about_copyright"
-
-#: src/zenity.glade.h:23
-msgid "zenity_about_description"
-msgstr "zenity_about_description"
-
-#: src/zenity.glade.h:24
-msgid "zenity_about_version"
-msgstr "zenity_about_version"
