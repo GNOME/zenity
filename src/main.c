@@ -1032,7 +1032,7 @@ main (gint argc, gchar **argv) {
     /*nothing*/;
 
   if (nextopt != -1) {
-    g_printerr (_("%s in an invalid option. See zenity --help for more details\n"),
+    g_printerr (_("%s is an invalid option. See 'zenity --help' for more details\n"),
                   poptBadOption (ctx, 0));
     zenity_free_parsing_options (); 
     exit (-1); 
