@@ -75,6 +75,7 @@ zenity_notification_icon_press_callback (GtkWidget *widget, GdkEventButton *even
 
   zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
   gtk_main_quit ();
+  return TRUE;
 }
 
 static gboolean
@@ -102,7 +103,7 @@ zenity_notification_icon_expose_callback (GtkWidget *widget, GdkEventExpose *eve
     return FALSE;
 }
 
-static gboolean
+static void
 zenity_notification_icon_destroy_callback (GtkWidget *widget, gpointer data)
 {
   ZenityData *zen_data;

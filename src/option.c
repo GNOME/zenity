@@ -676,7 +676,8 @@ zenity_option_get_name (GOptionEntry *entries, gpointer arg_data)
   for (i = 1; entries[i].long_name != NULL; i++) {
     if (entries[i].arg_data == arg_data)
       return (gchar *) entries[i].long_name;
-  }   
+  }
+  return NULL;   
 }
 
 /* Error callback */
