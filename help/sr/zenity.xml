@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY version "1.0">
+<!ENTITY app "<application>Zenity</application>">
+]>
+<!-- ================ Document Header ================= -->
+<article id="index" lang="sr">
+
+  <articleinfo>
+    <title>Упутство за Зенит</title>
+    <copyright>
+	    <year>2003</year>
+	    <holder>(Sun)це Microsystems</holder>
+    </copyright><copyright><year>2004</year><holder>Данило Шеган (српски превод)</holder></copyright>
+
+    <!-- Translators: uncomment this
+    <copyright>
+	    <year>2003</year>
+	    <holder>ME_THE_TRANSLATOR</holder>
+    </copyright>
+    -->
+
+    <publisher>
+	    <publishername>Подухват документовања Гнома</publishername>
+    </publisher>
+
+    <releaseinfo>Издање 1.0 упутства за Зенит</releaseinfo>
+
+    <legalnotice id="feedback">
+	    <title>Подаци за примедбе</title>
+	    <para>Да пријавите грешку или нешто предложите у вези овог програма или упутства, погледајте <ulink type="help" url="ghelp:gnome-feedback"> страну за примедбе о Гному </ulink></para>
+    </legalnotice>
+
+    <authorgroup>
+	    <author>
+		    <firstname>Глин</firstname>
+		    <surname>Фостер</surname>
+		    <affiliation>
+			    <orgname>Подухват документовања Гнома</orgname>
+		    </affiliation>
+            </author>
+	    <editor>
+	            <firstname>Николас</firstname>
+		    <surname>Кјуран</surname>
+		    <affiliation>
+		            <orgname>Подухват документовања Гнома</orgname>
+		    </affiliation>
+	    </editor>
+    </authorgroup>
+
+    <revhistory>
+	    <revision>
+		    <revnumber>1.0</revnumber>
+		    <date>18-01-2003</date>
+		    <revdescription>
+			    <para role="author">Глин Фостер</para>
+			    <para role="publisher">Подухват документовања Гнома</para>
+		    </revdescription>
+            </revision>
+    </revhistory>
+  </articleinfo>
+  
+<!-- ================ Document Body ================= -->
+
+<!-- ==== Introduction ====== -->
+
+  <sect1 id="zenity-introduction">
+    <title>Увод</title>
+
+    <para><application>Зенит</application> приказује једноставне прозорчиће у Гному.</para>
+
+    <para><application>Зенит</application> може да прикаже наредне прозорчиће:</para>
+
+    <itemizedlist><listitem><para><link linkend="zenity-calendar-options">Прозорче са календаром.</link></para></listitem><listitem><para><link linkend="zenity-text-entry-options">Прозорче за унос текста.</link></para></listitem><listitem><para>Разне прозорчиће са порукама укључујући:</para><itemizedlist><listitem><para><link linkend="zenity-error-dialog">Прозорче за грешке.</link></para></listitem><listitem><para><link linkend="zenity-info-dialog">Прозоче са обавештењима.</link></para></listitem><listitem><para><link linkend="zenity-question-dialog">Прозорче са питањем.</link></para></listitem><listitem><para><link linkend="zenity-warning-dialog">Прозорче са упозорењем.</link></para></listitem></itemizedlist></listitem><listitem><para><link linkend="zenity-file-selection-options">Прозорче за избор датотеке.</link></para></listitem><listitem><para><link linkend="zenity-list-options">Прозорче за списак могућности.</link></para></listitem><listitem><para><link linkend="zenity-progress-options">Прозорче напретка.</link></para></listitem><listitem><para><link linkend="zenity-text-options">Прозорче са текстом.</link></para></listitem></itemizedlist>
+
+  </sect1>
+
+<!-- ==== General Options ====== -->
+  <sect1 id="zenity-basic-use">
+    <title>Основна употреба</title>
+
+    <para><application>Зенит</application> прави једноставне прозорчиће. Можете користити <application>Зенит</application> да напишете скрипту која се графички споразумева са корисником.</para>
+    
+    <para>Када корисник затвори прозорче, <application>Зенит</application> исписује текст који сачини прозорче на стандардни излаз за грешке.</para>
+
+    <para>Проверите да ли су сви аргументи <application>Зениту</application> окружени наводницима. На пример, користите <command>zenity --calender --title="Планирање одмора"</command> уместо of <command>zenity --calender --title=Планирање одмора</command>. Уколико не користите наводнике, можете добити непредвиђене резултате.</para>
+
+    <note>
+        <title>ПАЖЊА</title>
+	<para>Неки прозорчићи подржавају употребу пречица са тастатуре. Да наведеде који се знак користи као пречица, поставите подвлаку испред знака у тексту прозорчета. На пример, да поставите „И“ као пречицу са тастатуре у наредној реченици, користите „_Изаберите име“.</para>
+    </note>
+
+    <para><application>Зенит</application> враћа наредне завршне кодове:</para>
+
+    <variablelist><varlistentry><term><varname>0</varname></term><listitem><para>Корисник је притиснуо или „У реду“ или „Затвори“.</para></listitem></varlistentry><varlistentry><term><varname>1</varname></term><listitem><para>Корисник је пристао или „Одустани“ или је затворио прозорче помоћу функција прозора.</para></listitem></varlistentry><varlistentry><term><varname>-1</varname></term><listitem><para>Дошло је до непредвиђене грешке.</para></listitem></varlistentry></variablelist>
+
+  </sect1>
+
+<!-- ==== General Options ====== -->
+
+  <sect1 id="zenity-general-options">
+    <title>Опште опције</title>
+
+    <para>Сви прозорчићи имају следеће опште опције:</para>
+
+    <variablelist><varlistentry><term><varname>--title</varname>=НАСЛОВ</term><listitem><para>Наводи наслов прозорчета.</para></listitem></varlistentry><varlistentry><term><varname>--window-icon</varname>=ПУТАЊА_ИКОНЕ</term><listitem><para>Наводи икону која ће се појавити у оквиру прозорчета.</para></listitem></varlistentry><varlistentry><term><varname>--width</varname>=ШИРИНА</term><listitem><para>Наводи ширину прозорчета.</para></listitem></varlistentry><varlistentry><term><varname>--height</varname>=ВИСИНА</term><listitem><para>Наводи висину прозорчета.</para></listitem></varlistentry></variablelist>
+
+  </sect1>
+
+<!-- ==== Calendar Options ====== -->
+
+  <sect1 id="zenity-calendar-options">
+    <title>Прозорче са календаром</title>
+
+    <para>Користите <command>--calender</command> да направите прозорче са календаром. <application>Зенит</application> враћа изабрани датум преко стандардног излаза за грешке. Прозорче користи текући датум ако се не зада датум путем наредбе.</para>
+    <para>Прозорче са календаром подржава наредне опције:</para>
+
+    <variablelist><varlistentry><term><varname>--text</varname>=ТЕКСТ</term><listitem><para>Наводи текст који се приказује у прозорчету са календаром.</para></listitem></varlistentry><varlistentry><term><varname>--day</varname>=ДАН</term><listitem><para>Наводи дан који се бира у прозорчету са календаром. Дан мора бити број између 1 и 31.</para></listitem></varlistentry><varlistentry><term><varname>--month</varname>=МЕСЕЦ</term><listitem><para>Наводи месец који се бира у прозорчету са календаром. Месец мора бити број између 1 и 12.</para></listitem></varlistentry><varlistentry><term><varname>--year</varname>=ГОДИНА</term><listitem><para>Наводи годину која се бира у прозорчету са календаром.</para></listitem></varlistentry><varlistentry><term><varname>--date-format</varname>=ОБЛИК</term><listitem><para>Наводи облик датума који враћа прозорче са календаром након што се изабере датум. Подразумевани облик зависи од вашег локалитета. Облик мора бити у стилу <command>strftime</command>, на пример „%A, %d. %m. %y.“.</para></listitem></varlistentry></variablelist>
+
+    <para>Следећа скрипта је пример употребе прозорчета са календаром: <programlisting>
+		#!/bin/sh
+
+		if zenity --calendar --title="Избор у календару" --text="Изаберите датум испод" --day=18 --month=4 --year=2003
+		  then echo $?
+		  else echo "Датум није изабран"
+		fi
+		</programlisting></para>
+
+    <figure id="zenity-calendar-screenshot">
+      <title>Пример прозорчета са календаром</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+              <imagedata fileref="figures/zenity-calendar-screenshot.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+              <phrase>Пример <application>Зенитовог</application> прозорчета са календаром</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+   </figure>
+													  
+  </sect1>
+
+<!-- ==== Text Entry Options ====== -->
+
+  <sect1 id="zenity-text-entry-options">
+    <title>Прозорче за унос текста</title>
+
+    <para>Користите <command>--text-entry</command> да направите прозорче за унос текста. <application>Зенит</application> враћа садржај уноса текста путем стандардног излаза за грешке.</para>	
+    <para>Прозорче за унос текста подржава наредне опције:</para>
+
+    <variablelist><varlistentry><term><varname>--text</varname>=ТЕКСТ</term><listitem><para>Наводи текст који се појављује у прозорчету за унос текста.</para></listitem></varlistentry><varlistentry><term><varname>--entry-text</varname>=ТЕКСТ</term><listitem><para>Наводи текст који се појављује у пољу за унос прозорчета за унос текста.</para></listitem></varlistentry><varlistentry><term><varname>--hide-text</varname></term><listitem><para>Наводи да текст у пољу за унос треба да буде сакривен у прозорчету за унос текста.</para></listitem></varlistentry></variablelist>
+
+    <para>Следећа скрипта је пример употребе прозорчета за унос текста: <programlisting>
+		#!/bin/sh
+
+		if zenity --entry --title="Додај нови унос" --text="Унесите вашу _лозинку" --hide-text
+		  then echo $?
+		  else echo "Лозинка није унета"
+		fi
+		</programlisting></para>
+
+    <figure id="zenity-entry-screenshot">
+      <title>Пример прозорчета за унос текста</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/zenity-entry-screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Пример <application>Зенитовог</application> прозорчета за унос текста</phrase>
+	  </textobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+  </sect1>
+
+<!-- ==== Message Options ====== -->
+
+  <sect1 id="zenity-message-options">
+    <title>Прозорче са поруком</title>
+
+    <para><application>Зенит</application> може да образује четири врсте прозорчића са порукама. Користите опцију <command>--text</command> да поставите текст приказан у прозорчету.</para>
+    <sect2 id="zenity-warning-dialog">
+      <title>Прозорче са упозорењем</title>
+
+      <para>Користите <command>--warning</command> да образујете прозорче са упозорењем.</para>
+
+      <para>Наредна скрипта је пример употребе прозорчета са упозорењем: <programlisting>
+		#!/bin/bash
+
+		FILE_TYPE=$(file -b $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS|awk '{ print $1}')
+
+		if [ "$FILE_TYPE" != "PNG" ]; then
+		  zenity --warning --text="Не могу да ротирам слику"
+		fi
+		</programlisting></para>
+
+      <figure id="zenity-warning-screenshot">
+        <title>Пример прозорчета са упозорењем</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-warning-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>Пример <application>Зенитовог</application> прозорчета са упозорењем</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+
+    <sect2 id="zenity-error-dialog">
+      <title>Прозорче за грешку</title>
+
+      <para>Користите <command>--error</command> да образујете прозорче за грешку.</para>
+
+      <figure id="zenity-error-screenshot">
+        <title>Пример прозорчета за грешку</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-error-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>Пример <application>Зенитовог</application> прозорчета за грешку</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+
+    <sect2 id="zenity-info-dialog">
+      <title>Обавештајно прозорче</title>
+
+      <para>Користите <command>--info</command> да образујете обавештајно прозорче.</para>
+
+      <figure id="zenity-information-screenshot">
+        <title>Пример обавештајног прозорчета</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-information-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>Пример <application>Зенитовог</application> обавештајног прозорчета</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+
+    <sect2 id="zenity-question-dialog">
+      <title>Прозорче са питањем</title>
+
+      <para>Користите <command>--question</command> да образујете прозорче са питањем.</para>
+
+      <figure id="zenity-question-screenshot">
+        <title>Пример прозорчета са питањем</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-question-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>Пример <application>Зенитовог</application> прозорчета са питањем</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+
+  </sect1>
+
+<!-- ==== File Selection Options ====== -->
+
+  <sect1 id="zenity-file-selection-options">
+    <title>Прозорче за избор датотеке</title>
+
+    <para>Користите <command>--file-selection</command> да образујете прозорче за избор датотеке. <application>Зенит</application> враћа изабране датотеке или директоријуме путем стандардног излаза за грешке.</para>
+    <para>Прозорче за избор датотека подржава наредне опције:</para>
+
+    <variablelist><varlistentry><term><varname>--filename</varname>=ДАТОТЕКА</term><listitem><para>Наводи датотеку или директоријум који се означавају када се прозорче за избор датотека први пут прикаже.</para></listitem></varlistentry><varlistentry><term><varname>--multiple</varname></term><listitem><para>Дозвољава избор више датотека у прозорчету за избор датотека.</para></listitem></varlistentry><varlistentry><term><varname>--separator</varname>=РАЗДВАЈАЧ</term><listitem><para>Одређује ниску којом се раздваја враћени списак имена датотека.</para></listitem></varlistentry></variablelist>
+
+    <para>Следећа скрипта је пример употребе прозорчета за избор датотека: <programlisting>
+		#!/bin/sh
+
+		FILE=`zenity --file-selection --title="Изаберите датотеку"'
+
+		case $? in
+		         0)
+			  	echo "Изабрана је „$FILE“.";;
+		         1)
+			        echo "Датотека није изабрана.";;
+			-1)
+			        echo "Датотека није изабрана.";;
+		esac
+		</programlisting></para>
+
+    <figure id="zenity-fileselection-screenshot">
+      <title>Пример прозорчета за избор датотека</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/zenity-fileselection-screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Пример <application>Зенитовог</application> прозорчета за избор датотека</phrase>
+	  </textobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+
+  </sect1>
+
+<!-- ==== List Options ====== -->
+
+  <sect1 id="zenity-list-options">
+    <title>Прозорче за списак</title>
+
+    <para>Користите <command>--list</command> за образовање прозорчета за списак. <application>Зенит</application> враћа уносе из прве колоне текста изабраних редова путем стандардног излаза за грешке.</para>
+
+    <para>Свака колона се мора навести помоћу опције <command>--column</command>. Подаци за прозорче се морају навести једна-по-једна колона, и један-по-један ред. Подаци се могу проследити прозорчету путем стандардног улаза. Сваки унос мора бити раздвојен новим редом.</para>
+
+    <para>Уколико користите опцију <command>--checklist</command> или <command>--radiolist</command>, сваки ред мора почети са или „TRUE“ или „FALSE“.</para>
+
+    <para>Прозорче за списак подржава наредне опције:</para>
+
+    <variablelist><varlistentry><term><varname>--column</varname>=КОЛОНА</term><listitem><para>Наводи заглавља колона која се појављују у прозорчету за списак. Морате проследити опцију <command>--column</command> за сваку колону коју желите да видите у прозорчету.</para></listitem></varlistentry><varlistentry><term><varname>--checklist</varname></term><listitem><para>Наводи да прва колона треба да садржи кућице за означавање у прозорчету за списак.</para></listitem></varlistentry><varlistentry><term><varname>--radiolist</varname></term><listitem><para>Наводи да прва колона треба да садржи радио кућице у прозорчету за списак.</para></listitem></varlistentry><varlistentry><term><varname>--editable</varname></term><listitem><para>Дозволи уређивање приказаних ставки.</para></listitem></varlistentry><varlistentry><term><varname>--seperator</varname>=РАЗДВАЈАЧ</term><listitem><para>Наводи ниску која се користи када прозорче за списак врати изабране вредности.</para></listitem></varlistentry></variablelist>
+
+    <para>Наредна наредба је пример употребе прозорчета за списак: <programlisting>
+		zenity --list --title="Изаберите грешке које желите да осмотрите" \
+		       --column="Број грешке" --column="Тежина" --column="Опис" \
+		       992383 Обична "GtkTreeView пуца на више избора" \
+		       293823 Велика "Речник Гнома не подржава посредника" \
+		       393823 Критична "Уређивање менија не ради у Гному 2.0"
+		</programlisting></para>
+
+    <figure id="zenity-list-screenshot">
+      <title>Пример избора у прозорчету за списак</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/zenity-list-screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Пример <application>Зенитовог</application> прозорчета за списак</phrase>
+	  </textobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+
+  </sect1>
+
+<!-- ==== Progress Options ====== -->
+
+  <sect1 id="zenity-progress-options">
+    <title>Прозорче са напретком</title>
+
+    <para>Користите <command>--progress</command> да образујете прозорче са напретком.</para>
+
+    <para><application>Зенит</application> чита податке са стандардног улаза ред по ред. Ако ред почиње тарабом (#), текст се допуњава текстом из тог реда. Уколико ред садржи само број, постотак се допуњава за тај број.</para>
+	
+    <para>Прозорче са напретком подржава следеће опције:</para>
+
+    <variablelist><varlistentry><term><varname>--text</varname>=ТЕКСТ</term><listitem><para>Наводи текст који се појављује у прозорчету са напретком.</para></listitem></varlistentry><varlistentry><term><varname>--percentage</varname>=ПОСТОТАК</term><listitem><para>Наводи почетни постотак који се поставља у прозорчету са напретком.</para></listitem></varlistentry><varlistentry><term><varname>--auto-close</varname></term><listitem><para>Затвара прозорче са напретком када се достигне 100%.</para></listitem></varlistentry><varlistentry><term><varname>--pulsate</varname></term><listitem><para>Наводи да прозорче са напретком треба да трепери док се не ишчита знак за крај датотеке са стандардног улаза.</para></listitem></varlistentry></variablelist>
+
+    <para>Следећа скрипта представља пример употребе прозорчета са напретком: <programlisting>
+		#!/bin/sh
+		(
+		echo "10" ; sleep 1
+		echo "# Освежавам дневнике поште" ; sleep 1
+		echo "20" ; sleep 1
+		echo "# Препостављам заказане послове" ; sleep 1
+		echo "50" ; sleep 1
+		echo "Овај ред ће бити занемарен" ; sleep 1
+		echo "75" ; sleep 1
+		echo "# Ресетујем систем" ; sleep 1
+		echo "100" ; sleep 1
+		) |
+		zenity --progress --title="Освежи системске дневнике" --text="Претражујем дневнике поште..." --percentage=0
+
+		if [ "$?" = -1 ] ; then
+			zenity --error --text="Освежавање обустављено."
+		fi
+		</programlisting></para>
+
+    <figure id="zenity-progress-screenshot">
+      <title>Пример прозорчета са напретком</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/zenity-progress-screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Пример <application>Зенитовог</application> прозорчета са напретком</phrase>
+	  </textobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+
+  </sect1>
+
+<!-- ==== Text Information Options ====== -->
+
+  <sect1 id="zenity-text-options">
+    <title>Прозорче са текстуалним обавештењем</title>
+
+    <para>Користите <command>--text-info</command> да направите прозорче са текстуалним обавештењем.</para>
+	
+    <para>Прозорче са текстуалним обавештењем подржава следеће опције:</para>
+
+    <variablelist><varlistentry><term><varname>--filename</varname>=ДАТОТЕКА</term><listitem><para>Наводи датотеку која се учитава у прозорче са текстуалним обавештењем.</para></listitem></varlistentry><varlistentry><term><varname>--editable</varname></term><listitem><para>Дозвољава да се приказани текст уреди. Уређени текст се враћа путем стандардног излаза за грешке када се затвори прозорче.</para></listitem></varlistentry></variablelist>
+
+    <para>Следећа скрипта је пример употребе прозорчета са текстуалним обавештењем: <programlisting>
+		#!/bin/sh
+
+		FILE=`zenity --file-selection --title="Изаберите датотеку"'
+
+		case $? in
+		         0)
+			  	zenity --text-info --filename=$FILE --editable 2&gt;/tmp/tmp.txt
+							
+		         1)
+			        echo "Датотека није изабрана.";;
+			-1)
+				echo "Датотека није изабрана.";;
+		esac
+		</programlisting></para>
+
+    <figure id="zenity-text-screenshot">
+      <title>Пример прозорчета са текстуалним обавештењем</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/zenity-text-screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Пример <application>Зенитовог</application> прозорчета са текстуалним обавештењем</phrase>
+	  </textobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+
+  </sect1>
+
+<!-- ==== Miscellaneous Options ====== -->
+
+  <sect1 id="zenity-miscellaneous-options">
+    <title>Разне опције</title>
+
+    <para><application>Зенит</application> подржава следеће разне опције:</para>
+
+    <variablelist><varlistentry><term><varname>--about</varname></term><listitem><para>Приказује нешто података о <application>Зениту</application>.</para></listitem></varlistentry><varlistentry><term><varname>--version</varname></term><listitem><para>Исписује издање <application>Зенита</application>.</para></listitem></varlistentry></variablelist>
+
+  </sect1>
+
+<!-- ================ Application License ================= -->
+  <sect1 id="license">
+	  <title>Лиценца</title>
+	  <para>Овај програм је слободан софтвер; можете га расподељивати и/или мењати под условима <ulink type="help" url="gnome-help:gpl"><citetitle>Гнуове Опште јавне лиценце</citetitle></ulink> коју је објавила Задужбина за слободни софтвер; или 2. издања те Лиценце, или (према вашем избору) било којег новијег издања.</para>
+	  <para>Овај програм се раздељује у нади да ће бити користан, али БЕЗ ИКАКВИХ ГАРАНЦИЈА; чак и без подразумеваних гаранција о СВРСИСХОДНОСТИ или ПОГОДНОСТИ ЗА ОДРЕЂЕНУ НАМЕНУ. Погледајте  <citetitle>Гнуову Општу јавну лиценцу</citetitle> за више детаља.</para>
+	  <para>Примерак <citetitle>Гнуове Опште јавне лиценце</citetitle> је укључен као додатак <citetitle>Гномовом водичу за кориснике</citetitle>. Примерак <citetitle>Гнуове Опште јавне лиценце</citetitle> можете такође набавити од Задужбине за слободни софтвер посетом <ulink type="http" url="http://www.fsf.org"> њиховој веб страници </ulink> или писањем на <address>Free Software Foundation, Inc. <street>59 Temple Place</street> — Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</country></address></para>
+  </sect1>
+
+</article>
