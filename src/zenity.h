@@ -55,35 +55,35 @@ typedef enum {
 } MsgMode;
 
 typedef struct {
-  gchar	*dialog_text;
+  gchar   *dialog_text;
   MsgMode  mode;
 } ZenityMsgData;
 
 typedef struct {
-  gchar	*uri;
+  gchar	  *uri;
   gboolean multi;
   gboolean directory;
   gboolean save;
-  gchar *separator;
+  gchar   *separator;
 } ZenityFileData;
 
 typedef struct {
-  gchar	       *dialog_text;
-  gchar	       *entry_text;
-  gboolean      visible;
+  gchar   *dialog_text;
+  gchar   *entry_text;
+  gboolean visible;
 } ZenityEntryData;
 
 typedef struct {
-  gchar        *dialog_text;
-  gchar        *entry_text;
-  gboolean      pulsate;
-  gboolean	autoclose;
-  gdouble       percentage;
+  gchar   *dialog_text;
+  gchar   *entry_text;
+  gboolean pulsate;
+  gboolean autoclose;
+  gdouble  percentage;
 } ZenityProgressData;
 
 typedef struct {
   gchar         *uri;
-  gboolean      editable;
+  gboolean       editable;
   GtkTextBuffer	*buffer;
 } ZenityTextData;
 
@@ -99,8 +99,8 @@ typedef struct {
 } ZenityTreeData;
 
 typedef struct {
-  gchar		*notification_text;
-  gboolean       listen;
+  gchar   *notification_text;
+  gboolean listen;
 } ZenityNotificationData;
 
 void    zenity_calendar         (ZenityData             *data,

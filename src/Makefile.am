@@ -4,6 +4,8 @@ bin_SCRIPTS = gdialog
 
 zenity_SOURCES = \
 	main.c		\
+	option.c	\
+	option.h	\
 	zenity.h	\
 	calendar.c	\
 	msg.c		\

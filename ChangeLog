@@ -1,3 +1,17 @@
+2004-12-07  Glynn Foster  <glynn.foster@sun.com>
+
+	Patch from Lucas Rocha <lucasr@im.ufba.br> to use the GOption
+	API for the zenity parsing options, with some spacing fixes
+	from Glynn.
+
+	* configure.in: zenity now requires glib-2.0 >= 2.5.3 to build 
+	because now it uses GOption. popt requirement removed.
+	* src/Makefile.am: update for new files
+	* src/main.c: use GOption API
+	* src/option.c, src/option.h: New files to implement the new
+	functionality.
+	* src/zenity.h: Fix spacing.
+
 2004-11-23  Ross Burton  <ross@burtonini.com>
 
 	* src/util.c: Check the xterm window ID is valid for the current

@@ -11,11 +11,9 @@ AC_PROG_CC
 
 GTK_REQUIRED=2.3.1
 
-PKG_CHECK_MODULES(ZENITY, gtk+-2.0 >= $GTK_REQUIRED libglade-2.0 libgnomecanvas-2.0)
+PKG_CHECK_MODULES(ZENITY, gtk+-2.0 >= $GTK_REQUIRED libglade-2.0 libgnomecanvas-2.0 glib-2.0 >= 2.5.3)
 AC_SUBST(ZENITY_CFLAGS)
 AC_SUBST(ZENITY_LIBS)
-
-AC_CHECK_LIB(popt, poptHelpOptions,, AC_MSG_ERROR([popt is required to build script.]))
 
 dnl ***********************************************
 dnl scrollkeeper checks
