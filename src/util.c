@@ -30,6 +30,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <errno.h>
+#include <string.h>
 #include "config.h"
 #include "util.h"
 #include "zenity.h"

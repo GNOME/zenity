@@ -60,6 +60,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       break;
 		
     default:
+      glade_dialog = NULL;
+      dialog = NULL;
+      text = NULL;
       g_assert_not_reached ();
       break;	
   }
@@ -83,8 +86,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (data->window_icon)
     zenity_util_set_window_icon (dialog, data->window_icon);
   else {
-    GdkPixbuf *pixbuf = NULL;
-    
     switch (msg_data->mode) {
       case ZENITY_MSG_WARNING:
         zenity_util_set_window_icon_from_stock (dialog, GTK_STOCK_DIALOG_WARNING);

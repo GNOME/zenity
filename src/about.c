@@ -27,8 +27,9 @@
 #include "config.h"
 #include "zenity.h"
 #include "util.h"
+#include <string.h>
 #include <gdk/gdkkeysyms.h>
-#include <libgnomecanvas/gnome-canvas.h>
+#include <libgnomecanvas/libgnomecanvas.h>
 #include <glade/glade.h>
 
 #define GTK_RESPONSE_CREDITS 0
@@ -142,7 +143,7 @@ zenity_create_clothes (GtkWidget *canvas_board)
     pixbuf = gdk_pixbuf_new_from_file (pixbuf_path, NULL);
 
     canvas_item = gnome_canvas_item_new (GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas_board)->root),
-                                         gnome_canvas_pixbuf_get_type (),
+                                         GNOME_TYPE_CANVAS_PIXBUF,
                                          "x", monk_clothes[i].x,
                                          "y", monk_clothes[i].y,
                                          "pixbuf", pixbuf,
@@ -158,7 +159,6 @@ zenity_create_monk (void)
 {
   GtkWidget *canvas_board;
   GnomeCanvasItem *canvas_item;
-  GnomeCanvasGroup *root;
   GdkPixbuf *pixbuf;
   GdkColor color = { 0, 0xffff, 0xffff, 0xffff };
 
@@ -177,7 +177,7 @@ zenity_create_monk (void)
   pixbuf = gdk_pixbuf_new_from_file (ZENITY_CLOTHES_PATH "monk.png", NULL);
 
   canvas_item = gnome_canvas_item_new (GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas_board)->root),
-                                       gnome_canvas_pixbuf_get_type (),
+                                       GNOME_TYPE_CANVAS_PIXBUF,
                                        "x", (ZENITY_CANVAS_X / 2.0)/2.0 + 10.0,
                                        "y", (ZENITY_CANVAS_Y / 2.0)/2.0 - 50.0,
                                        "pixbuf", pixbuf,
@@ -366,13 +366,6 @@ zenity_about_update_translator_label (GtkWidget *label)
 
   gtk_label_set_markup (GTK_LABEL (label), string->str);
   g_string_free (string, TRUE);
-}
-
-static void
-zenity_about_dialog_credits_response (GtkWidget *widget, int response, gpointer data)
-{
-  gtk_widget_destroy (widget);
-  widget = NULL;
 }
 
 static void

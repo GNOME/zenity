@@ -23,6 +23,7 @@
 
 #include "config.h"
 #include "zenity.h"
+#include <stdlib.h>
 #include <popt.h>
 #include <langinfo.h>
 
@@ -986,10 +987,7 @@ zenity_free_parsing_options (void) {
 
 gint 
 main (gint argc, gchar **argv) {
-  ZenityData *general;
-  ZenityCalendarData *cal_data;
   poptContext ctx;
-  gchar **args;
   gint nextopt, retval;
 
   bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
@@ -1020,11 +1018,12 @@ main (gint argc, gchar **argv) {
   gtk_init (&argc, &argv);
 
   /* 
-  if (argc < 2) {
-    g_printerr (_("You must specify more arguments. See zenity --help for more details\n"));
-    zenity_free_parsing_options ();
-    exit (-1);
-  } */
+   * if (argc < 2) {
+   *   g_printerr (_("You must specify more arguments. See zenity --help for more details\n"));
+   *   zenity_free_parsing_options (); 
+   *   exit (-1); 
+   * }
+   */
 
   switch (results->mode) {
     case MODE_CALENDAR:

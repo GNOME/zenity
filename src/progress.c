@@ -22,6 +22,10 @@
  */
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <signal.h>
 #include <glade/glade.h>
 #include "zenity.h"
 #include "util.h"
@@ -168,7 +172,6 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   GtkWidget *dialog;
   GtkWidget *text;
   GtkWidget *progress_bar;
-  guint input;
 
   zen_data = data;
   glade_dialog = zenity_util_load_glade_file ("zenity_progress_dialog");

@@ -45,6 +45,7 @@ zenity_tree_dialog_untoggle (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter
 
   if (g_value_get_boolean (&toggle_value))
     gtk_list_store_set (GTK_LIST_STORE (model), iter, 0, FALSE, -1);
+  return FALSE;
 }
 
 static void
@@ -479,14 +480,14 @@ zenity_tree_dialog_output (void)
     if (tmp->next != NULL) {
       /* FIXME: There must be a nicer way to do this. This is just arse */
       if (strstr ((const gchar *) separator, (const gchar *) "\\n") != NULL)
-        g_printerr ("%s\n", tmp->data);
+        g_printerr ("%s\n", (gchar *) tmp->data);
       else if (strstr ((const gchar *) separator, (const gchar *) "\\t") != NULL)
-        g_printerr ("%s\t", tmp->data);
+        g_printerr ("%s\t", (gchar *) tmp->data);
       else
-        g_printerr ("%s%s", tmp->data, separator);
+        g_printerr ("%s%s", (gchar *) tmp->data, separator);
     }
     else
-      g_printerr ("%s\n", tmp->data);
+      g_printerr ("%s\n", (gchar *) tmp->data);
   }
 
   g_free (separator);
