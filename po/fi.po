@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the Zenity package.
 # Johanna Makkonen <johanna.makkonen@iki.fi>, 2003.
 # Jarkko Ranta <jjranta@cc.joensuu.fi>, 2003-2004.
-# Sami Pesonen <sampeson@iki.fi>, 2004.Johanna Makkonen <jjranta@cc.joensuu.fi>, 2004.
-# 
-# 
+# Sami Pesonen <sampeson@iki.fi>, 2004.
+# Tommi Vainikainen <Tommi.Vainikainen@iki.fi>, 2005.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-25 12:59+1300\n"
-"PO-Revision-Date: 2004-08-23 22:17+0300\n"
-"Last-Translator: Sami Pesonen <sampeson@iki.fi>\n"
+"POT-Creation-Date: 2005-02-03 11:47+0200\n"
+"PO-Revision-Date: 2005-02-03 11:56+0200\n"
+"Last-Translator: Tommi Vainikainen <Tommi.Vainikainen@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:376
+#: src/about.c:377
 msgid "translator-credits"
 msgstr ""
 "Sami Pesonen, 2004\n"
@@ -34,47 +34,46 @@ msgstr ""
 "\n"
 "http://gnome-fi.org/"
 
-#: src/about.c:406
+#: src/about.c:407
 msgid "Display dialog boxes from shell scripts"
 msgstr "Näytä ikkunoita kuoren komentotiedostojen pohjalta"
 
-#: src/about.c:410
+#: src/about.c:411
 msgid "(C) 2003 Sun Microsystems"
 msgstr "© 2003 Sun Microsystems"
 
-#: src/about.c:494
+#: src/about.c:495
 msgid "Credits"
 msgstr "Tekijätiedot"
 
-#: src/about.c:521
+#: src/about.c:522
 msgid "Written by"
 msgstr "Kirjoittanut:"
 
-#: src/about.c:534
+#: src/about.c:535
 msgid "Translated by"
 msgstr "Kääntänyt:"
 
 #: src/eggtrayicon.c:118
 msgid "Orientation"
-msgstr ""
+msgstr "Suunta"
 
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr ""
+msgstr "Hyllyn suunta."
 
 #: src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Ikkunatyyppi täytyy määrittää. Aja \"zenity --help\" saadaksesi lisätietoja\n"
 
-#: src/notification.c:157
+#: src/notification.c:158
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "vakiosyöttestä tullutta komentoa ei voitu jäsentää\n"
 
-#: src/notification.c:229 src/notification.c:258
-#, fuzzy
+#: src/notification.c:230 src/notification.c:259
 msgid "Zenity notification"
-msgstr "Näytä tietoikkuna"
+msgstr "Zenity-ilmoitus"
 
 #: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
@@ -259,11 +258,11 @@ msgstr "Salli valittavan useita tiedostoja"
 
 #: src/option.c:319
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "Aktivoi pelkän hakemiston valinta"
 
 #: src/option.c:328
 msgid "Activate save mode"
-msgstr ""
+msgstr "Aktivoi tallennustila"
 
 #: src/option.c:337 src/option.c:397
 msgid "Set output separator character"
@@ -302,18 +301,16 @@ msgstr ""
 "sarakkeidentulostamiseen)"
 
 #: src/option.c:430
-#, fuzzy
 msgid "Display notification"
-msgstr "Näytä tietoikkuna"
+msgstr "Näytä ilmoitus"
 
 #: src/option.c:439
-#, fuzzy
 msgid "Set the notification text"
-msgstr "Aseta ikkunan teksti"
+msgstr "Aseta ilmoitusteksti"
 
 #: src/option.c:448
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "Kuuntele komentoja vakiosyötteestä"
 
 #: src/option.c:463
 msgid "Display progress indication dialog"
@@ -330,7 +327,7 @@ msgstr "Edistymispalkki sykkii"
 #: src/option.c:500
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr "Sulje ikkuna kun 100% on saavutettu"
+msgstr "Sulje ikkuna kun 100 % on saavutettu"
 
 #: src/option.c:515
 msgid "Display question dialog"
@@ -356,134 +353,120 @@ msgstr "Tietoja Zenitystä"
 msgid "Print version"
 msgstr "Näytä versiotiedot"
 
-#: src/option.c:1189
+#: src/option.c:1190
 msgid "General options"
 msgstr "Yleiset asetukset"
 
-#: src/option.c:1190
-#, fuzzy
+#: src/option.c:1191
 msgid "Show general options"
-msgstr "Yleiset asetukset"
+msgstr "Näytä yleiset asetukset"
 
-#: src/option.c:1199
+#: src/option.c:1200
 msgid "Calendar options"
 msgstr "Kalenteriasetukset"
 
-#: src/option.c:1200
-#, fuzzy
+#: src/option.c:1201
 msgid "Show calendar options"
-msgstr "Kalenteriasetukset"
+msgstr "Näytä kalenteriasetukset"
 
-#: src/option.c:1209
+#: src/option.c:1210
 msgid "Text entry options"
 msgstr "Tekstikenttäasetukset"
 
-#: src/option.c:1210
-#, fuzzy
+#: src/option.c:1211
 msgid "Show text entry options"
-msgstr "Tekstikenttäasetukset"
+msgstr "Näytä tekstikenttäasetukset"
 
-#: src/option.c:1219
+#: src/option.c:1220
 msgid "Error options"
 msgstr "Virheasetukset"
 
-#: src/option.c:1220
-#, fuzzy
+#: src/option.c:1221
 msgid "Show error options"
-msgstr "Virheasetukset"
+msgstr "Näytä Virheasetukset"
 
-#: src/option.c:1229
+#: src/option.c:1230
 msgid "Info options"
 msgstr "Tietoasetukset"
 
-#: src/option.c:1230
-#, fuzzy
+#: src/option.c:1231
 msgid "Show info options"
-msgstr "Tietoasetukset"
+msgstr "Näytä tietoasetukset"
 
-#: src/option.c:1239
+#: src/option.c:1240
 msgid "File selection options"
 msgstr "Tiedostonvalitsimen asetukset"
 
-#: src/option.c:1240
-#, fuzzy
+#: src/option.c:1241
 msgid "Show file selection options"
-msgstr "Tiedostonvalitsimen asetukset"
+msgstr "Näytä tiedostonvalitsimen asetukset"
 
-#: src/option.c:1249
+#: src/option.c:1250
 msgid "List options"
 msgstr "Luetteloasetukset"
 
-#: src/option.c:1250
-#, fuzzy
+#: src/option.c:1251
 msgid "Show list options"
-msgstr "Luetteloasetukset"
-
-#: src/option.c:1259
-#, fuzzy
-msgid "Notification options"
-msgstr "Kysymysasetukset"
+msgstr "Näytä luetteloasetukset"
 
 #: src/option.c:1260
-#, fuzzy
-msgid "Show notification options"
-msgstr "Kysymysasetukset"
+msgid "Notification options"
+msgstr "Ilmoitusasetukset"
 
-#: src/option.c:1269
+#: src/option.c:1261
+msgid "Show notification options"
+msgstr "Näytä ilmoitusasetukset"
+
+#: src/option.c:1270
 msgid "Progress options"
 msgstr "Edistymisasetukset"
 
-#: src/option.c:1270
-#, fuzzy
+#: src/option.c:1271
 msgid "Show progress options"
-msgstr "Edistymisasetukset"
+msgstr "Näytä edistymisasetukset"
 
-#: src/option.c:1279
+#: src/option.c:1280
 msgid "Question options"
 msgstr "Kysymysasetukset"
 
-#: src/option.c:1280
-#, fuzzy
+#: src/option.c:1281
 msgid "Show question options"
-msgstr "Kysymysasetukset"
+msgstr "Näytä kysymysasetukset"
 
-#: src/option.c:1289
+#: src/option.c:1290
 msgid "Warning options"
 msgstr "Varoitusasetukset"
 
-#: src/option.c:1290
-#, fuzzy
+#: src/option.c:1291
 msgid "Show warning options"
-msgstr "Varoitusasetukset"
+msgstr "Näytä varoitusasetukset"
 
-#: src/option.c:1299
+#: src/option.c:1300
 msgid "Text options"
 msgstr "Tekstiasetukset"
 
-#: src/option.c:1300
-#, fuzzy
+#: src/option.c:1301
 msgid "Show text options"
-msgstr "Tekstiasetukset"
+msgstr "Näytä tekstiasetukset"
 
-#: src/option.c:1309
+#: src/option.c:1310
 msgid "Miscellaneous options"
 msgstr "Sekalaiset asetukset"
 
-#: src/option.c:1310
-#, fuzzy
+#: src/option.c:1311
 msgid "Show miscellaneous options"
-msgstr "Sekalaiset asetukset"
+msgstr "Näytä sekalaiset asetukset"
 
-#: src/option.c:1333
+#: src/option.c:1334
 msgid "Syntax error\n"
-msgstr ""
+msgstr "Syntaksivirhe\n"
 
-#: src/option.c:1337
-#, fuzzy, c-format
+#: src/option.c:1338
+#, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "%s ei toimi tämän ikkunan kohdalla\n"
+msgstr "--%s ei tueta tässä ikkunassa\n"
 
-#: src/option.c:1341
+#: src/option.c:1342
 msgid "Two or more dialog options specified\n"
 msgstr "Kaksi tai useampia ikkunavalitsimia annettu\n"
 
