@@ -305,4 +305,10 @@ ARG: while ($argn < $args) {
 
 # execute the constructed zenity command line
 $command .= " 2>&1"; 
-system($command);
+
+# perl doc: The return value of system() is the exit status of the
+#program as returned by the wait() call. To get the actual exit value
+# divide by 256.
+
+exit(system($command)/256);
+
