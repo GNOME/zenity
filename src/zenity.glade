@@ -5,7 +5,7 @@
 
 <widget class="GtkDialog" id="zenity_calendar_dialog">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">zenity_calendar_dialog_title</property>
+  <property name="title" translatable="yes">Calendar selection</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -75,7 +75,7 @@
 	      <child>
 		<widget class="GtkLabel" id="zenity_calendar_text">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">zenity_calendar_text</property>
+		  <property name="label" translatable="yes">Select a date from below</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -113,6 +113,7 @@
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
+	      <property name="mnemonic_widget">zenity_calendar</property>
 	      <accessibility>
 		<atkrelation target="zenity_calendar" type="label-for"/>
 	      </accessibility>
@@ -149,7 +150,7 @@
 
 <widget class="GtkDialog" id="zenity_warning_dialog">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">zenity_warning_dialog_title</property>
+  <property name="title" translatable="yes">Warning</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -230,7 +231,7 @@
 	  <child>
 	    <widget class="GtkLabel" id="zenity_warning_text">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">zenity_warning_text</property>
+	      <property name="label" translatable="yes">Are you sure you want to proceed?</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -261,7 +262,7 @@
 <widget class="GtkFileSelection" id="zenity_fileselection_dialog">
   <property name="border_width">10</property>
   <property name="visible">True</property>
-  <property name="title" translatable="yes">zenity_fileselection_dialog_text</property>
+  <property name="title" translatable="yes">Select a file</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -293,7 +294,7 @@
 
 <widget class="GtkDialog" id="zenity_question_dialog">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">zenity_question_dialog_text</property>
+  <property name="title" translatable="yes">Question</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -374,7 +375,7 @@
 	  <child>
 	    <widget class="GtkLabel" id="zenity_question_text">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">zenity_question_text</property>
+	      <property name="label" translatable="yes">Are you sure you want to proceed?</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -404,7 +405,7 @@
 
 <widget class="GtkDialog" id="zenity_entry_dialog">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">zenity_entry_dialog_text</property>
+  <property name="title" translatable="yes">Add a new entry</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -473,8 +474,8 @@
 	      <child>
 		<widget class="GtkLabel" id="zenity_entry_text">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">zenity_entry_text:</property>
-		  <property name="use_underline">False</property>
+		  <property name="label" translatable="yes">_Enter new text:</property>
+		  <property name="use_underline">True</property>
 		  <property name="use_markup">True</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
 		  <property name="wrap">False</property>
@@ -483,6 +484,7 @@
 		  <property name="yalign">0.5</property>
 		  <property name="xpad">0</property>
 		  <property name="ypad">0</property>
+		  <property name="mnemonic_widget">zenity_entry_input</property>
 		  <accessibility>
 		    <atkrelation target="zenity_entry_input" type="label-for"/>
 		  </accessibility>
@@ -501,7 +503,7 @@
 		  <property name="editable">True</property>
 		  <property name="visibility">True</property>
 		  <property name="max_length">0</property>
-		  <property name="text" translatable="yes">zenity_entry_input</property>
+		  <property name="text" translatable="yes"></property>
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
@@ -628,7 +630,7 @@
 
 <widget class="GtkDialog" id="zenity_progress_dialog">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">zenity_progress_dialog</property>
+  <property name="title" translatable="yes">Progress</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -699,7 +701,7 @@
 	      <child>
 		<widget class="GtkLabel" id="zenity_progress_text">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">zenity_progress text</property>
+		  <property name="label" translatable="yes">Running...</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -751,7 +753,7 @@
 
 <widget class="GtkDialog" id="zenity_error_dialog">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">zenity_error_dialog</property>
+  <property name="title" translatable="yes">Error</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -825,7 +827,7 @@
 	      <child>
 		<widget class="GtkLabel" id="zenity_error_text">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">zenity_error_text</property>
+		  <property name="label" translatable="yes">You have not done the right thing, clearly.</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -862,7 +864,7 @@
 
 <widget class="GtkDialog" id="zenity_tree_dialog">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">dialog1</property>
+  <property name="title" translatable="yes">Select items from the list</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -934,7 +936,7 @@
 	      <child>
 		<widget class="GtkLabel" id="zenity_tree_text">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">zenity_tree_text</property>
+		  <property name="label" translatable="yes">Select items from the list below.</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
