@@ -1,5 +1,12 @@
 2003-01-14  Glynn Foster  <glynn.foster@sun.com>
 
+	* src/Makefile.am, src/about.c, src/main.c, 
+	src/zenity.glade: Add an about box. Still need to add 
+	an icon, and implement the callbacks for Help and Credits. Extra
+	hassle for not linking against libgnomeui. Sigh.
+
+2003-01-14  Glynn Foster  <glynn.foster@sun.com>
+
 	* src/tree.c, src/zenity.h, src/main.c: Add support to 
 	separate the selected rows output with a character 
 	with '/' used by default.

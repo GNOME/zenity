@@ -10,6 +10,7 @@ zenity_SOURCES = \
 	text.c		\
 	progress.c	\
 	tree.c		\
+	about.c		\
 	util.h		\
 	util.c
 

@@ -37,6 +37,7 @@ typedef enum {
 	MODE_TEXTINFO,
 	MODE_WARNING,
 	MODE_INFO,
+        MODE_ABOUT,
 	MODE_LAST
 } ZenityDialogMode;
 
@@ -849,6 +850,9 @@ main (gint argc, gchar **argv) {
 		case MODE_TEXTINFO:
 			zenity_text (results->data, results->text_data);
 			break;
+                case MODE_ABOUT:
+                        zenity_about (results->data);
+                        break;
 		default:
 			g_assert_not_reached ();
 			zenity_free_parsing_options ();
@@ -1204,8 +1208,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 				zenity_free_parsing_options ();
 				exit (-1);
 			}
-			g_print ("This does nothing at the moment\n");
-			exit (0);
+                        results->mode = MODE_ABOUT; 
 			break;
 		case OPTION_VERSION:
 			if (results->mode != MODE_LAST) {
