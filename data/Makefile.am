@@ -1,5 +1,6 @@
 imagesdir = $(datadir)/zenity/
 images_DATA = \
+	zenity.png		\
 	zenity-calendar.png	\
 	zenity-list.png		\
 	zenity-file.png		\

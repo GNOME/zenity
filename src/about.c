@@ -54,7 +54,9 @@ void
 zenity_about (ZenityData *data)
 {
 	GladeXML *glade_dialog = NULL;
+        GdkPixbuf *pixbuf;
 	GtkWidget *label;
+        GtkWidget *image;
         gchar *text;
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_about_dialog");
@@ -74,9 +76,16 @@ zenity_about (ZenityData *data)
 	g_signal_connect (G_OBJECT (dialog), "response",
 			  G_CALLBACK (zenity_about_dialog_response), data);
 
-        /* FIXME: Set an appropriate window icon for the dialog
-         * zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH (""));
-         */
+        zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity.png"));
+
+        image = glade_xml_get_widget (glade_dialog, "zenity_about_image");
+
+        pixbuf = gdk_pixbuf_new_from_file (ZENITY_IMAGE_FULLPATH ("zenity.png"), NULL);
+    
+        if (pixbuf != NULL) {
+                gtk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
+                g_object_unref (pixbuf);
+        }
 
 	label = glade_xml_get_widget (glade_dialog, "zenity_about_version");
         text = g_strdup_printf ("<span size=\"xx-large\" weight=\"bold\">Zenity %s</span>", VERSION);
