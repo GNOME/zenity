@@ -56,7 +56,7 @@ static const gchar *author_credits[] = {
   "John Fleck <jfleck@inkstain.net>",
   "James Henstridge <james@daa.com.au>",
   "Mihai T. Lazarescu <mihai@email.it>",
-  "Mike Newman <mike@gtnorthern.demon.co.uk>",
+  "Mike Newman <mikegtn@gnome.org>",
   "Havoc Pennington <hp@redhat.com>",
   "Kristian Rietveld <kris@gtk.org>",
   "Jakub Steiner <jimmac@ximian.com>",
