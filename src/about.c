@@ -36,6 +36,7 @@ static GtkWidget *cred_dialog;
 
 static void zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data);
 
+/* Sync with the people in the THANKS file */
 static const gchar *author_credits[] = {
         "Jonathan Blanford <jrb@redhat.com>",
         "Anders Carlsson <andersca@gnu.org>",
@@ -239,6 +240,7 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
         ZenityData *zen_data = data;
         GError *error = NULL;
+        gchar *help_string;
 
 	switch (response) {
 		case GTK_RESPONSE_OK:
@@ -247,7 +249,8 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
 			break;
 
 		case GTK_RESPONSE_HELP:
-                        zenity_util_show_help ("ghelp:///", NULL);
+                        help_string = g_strconcat ("ghelp://", ZENITY_DATADIR, "help/zenity", NULL);
+                        zenity_util_show_help (help_string, NULL);
 			break;
 
                 case GTK_RESPONSE_CREDITS:

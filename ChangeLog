@@ -1,3 +1,18 @@
+2003-01-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Attempt to make things work after 2 bottles of
+	wine last night. Harmless changes though, so I'll commit them
+	for posterity.
+
+	* src/main.c: Add a new helper function for the error reporting
+	that makes the translators life easier. Thanks to Ole for spotting
+	this.
+
+	* src/text.c, src/zenity.h: Lame white spacing hacking.
+
+	* xmldocs.make: Put the docs in $(datadir)/help - not quite sure
+	yet if yelp is going to like this or not.
+
 2003-01-19  Mike Newman  <mike@gtnorthern.demon.co.uk>
 
 	* help/C/zenity.xml: fixed a missing closing tag.

@@ -68,7 +68,7 @@ typedef struct {
 
 typedef struct {
 	gchar		*uri;
-	gboolean	editable;
+	gboolean	 editable;
 	GtkTextBuffer	*buffer;
 } ZenityTextData;
 
