@@ -175,7 +175,6 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
         g_print (gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0));
       }
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-      gtk_main_quit ();
       break;
 
     default:
@@ -183,4 +182,5 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
+  gtk_main_quit ();
 }

@@ -107,17 +107,16 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
         g_date_free (date);
     
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-      gtk_main_quit ();
       break;
 
     case GTK_RESPONSE_CANCEL:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
-      gtk_main_quit ();
       break;
 
     default:
       /* Esc dialog */
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
-    }
+  }
+  gtk_main_quit ();
 }

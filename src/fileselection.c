@@ -94,18 +94,16 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
       g_slist_free(selections);
       g_free(separator);
 
-      gtk_main_quit ();
       break;
 
     case GTK_RESPONSE_CANCEL:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
-      gtk_main_quit ();
       break;
 
     default:
       /* Esc dialog */
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
-      gtk_main_quit ();
       break;
   }
+  gtk_main_quit ();
 }
