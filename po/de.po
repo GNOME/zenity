@@ -1,13 +1,14 @@
-# German zenity translation
+# German Zenity translation.
 # Copyright (C) 2003 Sun Microsystems, Inc. 
 # This file is distributed under the same license as the zenity package.
 # Christian Neumair <chris@gnome-de.org>, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity 1.1\n"
-"POT-Creation-Date: 2003-05-29 10:16+0100\n"
-"PO-Revision-Date: 2003-05-17 10:21+0200\n"
+"Project-Id-Version: zenity 1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-06-12 12:42+0200\n"
+"PO-Revision-Date: 2003-06-12 12:42+0200\n"
 "Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,330 +27,347 @@ msgstr "Dialogfenster aus Shell-Skripten heraus aufrufen"
 msgid "(C) 2003 Sun Microsystems"
 msgstr "Copyright (C) 2003 Sun Microsystems"
 
-#: src/about.c:389
+#: src/about.c:382
 msgid "Credits"
 msgstr "Mitwirkende"
 
-#: src/about.c:416
+#: src/about.c:409
 msgid "Written by"
 msgstr "Programm von"
 
-#: src/about.c:429
+#: src/about.c:422
 msgid "Translated by"
 msgstr "Übersetzung von"
 
-#: src/main.c:129
+#: src/main.c:132
 msgid "Display calendar dialog"
 msgstr "Kalenderdialog anzeigen"
 
-#: src/main.c:138
+#: src/main.c:141
 msgid "Display text entry dialog"
 msgstr "Texteingabe-Dialog anzeigen"
 
-#: src/main.c:147
+#: src/main.c:150
 msgid "Display error dialog"
 msgstr "Fehlerdialog anzeigen"
 
-#: src/main.c:156
+#: src/main.c:159
 msgid "Display file selection dialog"
 msgstr "Dateiwähler-Dialog anzeigen"
 
-#: src/main.c:165
+#: src/main.c:168
 msgid "Display info dialog"
 msgstr "Info-Dialog anzeigen"
 
-#: src/main.c:174
+#: src/main.c:177
 msgid "Display list dialog"
 msgstr "Listendialog anzeigen"
 
-#: src/main.c:183
+#: src/main.c:186
 msgid "Display progress indication dialog"
 msgstr "Fortschrittsanzeige-Dialog anzeigen"
 
-#: src/main.c:192
+#: src/main.c:195
 msgid "Display question dialog"
 msgstr "Fragedialog anzeigen"
 
-#: src/main.c:201
+#: src/main.c:204
 msgid "Display text information dialog"
 msgstr "Text-Informationsdialog anzeigen"
 
-#: src/main.c:210
+#: src/main.c:213
 msgid "Display warning dialog"
 msgstr "Warndialog anzeigen"
 
-#: src/main.c:232
+#: src/main.c:235
 msgid "Set the dialog title"
 msgstr "Den Dialogtitel festlegen"
 
-#: src/main.c:233
+#: src/main.c:236
 msgid "TITLE"
 msgstr "TITEL"
 
-#: src/main.c:241
+#: src/main.c:244
 msgid "Set the window icon"
 msgstr "Das Fenstersymbol festlegen"
 
-#: src/main.c:242
+#: src/main.c:245
 msgid "ICONPATH"
 msgstr "SYMBOLPFAD"
 
-#: src/main.c:250
+#: src/main.c:253
 msgid "Set the width"
 msgstr "Die Breite festlegen"
 
-#: src/main.c:251
+#: src/main.c:254
 msgid "WIDTH"
 msgstr "BREITE"
 
-#: src/main.c:259
+#: src/main.c:262
 msgid "Set the height"
 msgstr "Die Höhe festlegen"
 
-#: src/main.c:260
+#: src/main.c:263
 msgid "HEIGHT"
 msgstr "HÖHE"
 
-#: src/main.c:281 src/main.c:338 src/main.c:378 src/main.c:400 src/main.c:502
-#: src/main.c:533 src/main.c:586
+#: src/main.c:284 src/main.c:341 src/main.c:381 src/main.c:403 src/main.c:523
+#: src/main.c:564 src/main.c:617
 msgid "Set the dialog text"
 msgstr "Den Dialogtext festlegen"
 
-#: src/main.c:290
+#: src/main.c:293
 msgid "Set the calendar day"
 msgstr "Den Kalendertag festlegen"
 
-#: src/main.c:299
+#: src/main.c:302
 msgid "Set the calendar month"
 msgstr "Den Kalendermonat festlegen"
 
-#: src/main.c:308
+#: src/main.c:311
 msgid "Set the calendar year"
 msgstr "Das Kalenderjahr festlegen"
 
-#: src/main.c:316
+#: src/main.c:319
 msgid "Set the format for the returned date"
 msgstr "Das Format für das zurückgegebene Datum festlegen"
 
-#: src/main.c:347
+#: src/main.c:350
 msgid "Set the entry text"
 msgstr "Den Eingabetext festlegen"
 
-#: src/main.c:356
+#: src/main.c:359
 msgid "Hide the entry text"
 msgstr "Den Eingabetext verbergen"
 
-#: src/main.c:422
+#: src/main.c:425
 msgid "Set the filename"
 msgstr "Den Dateinamen festlegen"
 
-#: src/main.c:423 src/main.c:556
+#: src/main.c:426 src/main.c:587
 msgid "FILENAME"
 msgstr "DATEINAME"
 
-#: src/main.c:444
+#: src/main.c:434
+msgid "Allow multiple files to be selected"
+msgstr "Auswahl mehrerer Dateien Zulassen"
+
+#: src/main.c:443
+msgid "Set output separator character."
+msgstr "Das Trennzeichen für die Ausgabe festlegen."
+
+#: src/main.c:444 src/main.c:493
+msgid "SEPARATOR"
+msgstr "TRENNZEICHEN"
+
+#: src/main.c:465
 msgid "Set the column header"
 msgstr "Den Spaltentitel festlegen"
 
-#: src/main.c:453
+#: src/main.c:474
 msgid "Use check boxes for first column"
 msgstr "Kontrollkästchen für die erste Spalte verwenden"
 
-#: src/main.c:462
+#: src/main.c:483
 msgid "Use radio buttons for first column"
 msgstr "Radioknöpfe für die erste Spalte verwenden"
 
-#: src/main.c:471
+#: src/main.c:492
 msgid "Set output separator character"
 msgstr "Das Trennzeichen für die Ausgabe festlegen"
 
-#: src/main.c:480 src/main.c:564
+#: src/main.c:501 src/main.c:595
 msgid "Allow changes to text"
 msgstr "Änderungen am Text zulassen"
 
-#: src/main.c:511
+#: src/main.c:532
 msgid "Set initial percentage"
 msgstr "Den anfänglichen Prozentsatz festlegen"
 
-#: src/main.c:520
+#: src/main.c:541
 msgid "Pulsate progress bar"
 msgstr "Pulsierende Fortschrittsleiste"
 
-#: src/main.c:555
+#: src/main.c:551
+#, no-c-format
+msgid "Dismiss the dialog when 100% has been reached"
+msgstr "Den Dialog beenden, wenn 100% erreicht sind"
+
+#: src/main.c:586
 msgid "Open file"
 msgstr "Datei öffnen"
 
-#: src/main.c:599
+#: src/main.c:630
 msgid "Gdk debugging flags to set"
 msgstr "Zu übergebende GDK-Fehlerdiagnoseoptionen"
 
-#: src/main.c:600 src/main.c:609 src/main.c:688 src/main.c:697
+#: src/main.c:631 src/main.c:640 src/main.c:719 src/main.c:728
 msgid "FLAGS"
 msgstr "OPTIONEN"
 
-#: src/main.c:608
+#: src/main.c:639
 msgid "Gdk debugging flags to unset"
 msgstr "Nicht zu übergebende GDK-Fehlerdiagnoseoptionen"
 
-#: src/main.c:618
+#: src/main.c:649
 msgid "X display to use"
 msgstr "Zu verwendende X-Anzeige"
 
-#: src/main.c:619
+#: src/main.c:650
 msgid "DISPLAY"
 msgstr "ANZEIGE"
 
-#: src/main.c:629
+#: src/main.c:660
 msgid "X screen to use"
 msgstr "Zu verwendender X-Bildschirm"
 
-#: src/main.c:630
+#: src/main.c:661
 msgid "SCREEN"
 msgstr "BILDSCHIRM"
 
-#: src/main.c:640
+#: src/main.c:671
 msgid "Make X calls synchronous"
 msgstr "X-Aufrufe synchron ausführen"
 
-#: src/main.c:649
+#: src/main.c:680
 msgid "Program name as used by the window manager"
 msgstr "Vom Fenstermanager verwendeter Programmname"
 
-#: src/main.c:650
+#: src/main.c:681
 msgid "NAME"
 msgstr "NAME"
 
-#: src/main.c:658
+#: src/main.c:689
 msgid "Program class as used by the window manager"
 msgstr "Vom Fenstermanager verwendete Programmklasse"
 
-#: src/main.c:659
+#: src/main.c:690
 msgid "CLASS"
 msgstr "KLASSE"
 
-#: src/main.c:669
+#: src/main.c:700
 msgid "HOST"
 msgstr "RECHNER"
 
-#: src/main.c:679
+#: src/main.c:710
 msgid "PORT"
 msgstr "PORT"
 
-#: src/main.c:687
+#: src/main.c:718
 msgid "Gtk+ debugging flags to set"
 msgstr "Zu übergebende GTK+-Fehlerdiagnoseoptionen"
 
-#: src/main.c:696
+#: src/main.c:727
 msgid "Gtk+ debugging flags to unset"
 msgstr "Nicht zu übergebende GTK+-Fehlerdiagnoseoptionen"
 
-#: src/main.c:705
+#: src/main.c:736
 msgid "Make all warnings fatal"
 msgstr "Alle Warnungen schwerwiegend machen"
 
-#: src/main.c:714
+#: src/main.c:745
 msgid "Load an additional Gtk module"
 msgstr "Ein zusätzliches GTK+-Modul laden"
 
-#: src/main.c:715
+#: src/main.c:746
 msgid "MODULE"
 msgstr "MODUL"
 
-#: src/main.c:736
+#: src/main.c:767
 msgid "About zenity"
 msgstr "Info zu zenity"
 
-#: src/main.c:745
+#: src/main.c:776
 msgid "Print version"
 msgstr "Druckversion"
 
-#: src/main.c:758
+#: src/main.c:789
 msgid "Dialog options"
 msgstr "Dialogeinstellungen"
 
-#: src/main.c:767
+#: src/main.c:798
 msgid "General options"
 msgstr "Allgemeine Einstellungen"
 
-#: src/main.c:776
+#: src/main.c:807
 msgid "Calendar options"
 msgstr "Kalendereinstellungen"
 
-#: src/main.c:785
+#: src/main.c:816
 msgid "Text entry options"
 msgstr "Einstellungen der Texteingabe"
 
-#: src/main.c:794
+#: src/main.c:825
 msgid "Error options"
 msgstr "Fehlereinstellungen"
 
-#: src/main.c:803
+#: src/main.c:834
 msgid "File selection options"
 msgstr "Einstellungen des Dateiwhlers"
 
-#: src/main.c:812
+#: src/main.c:843
 msgid "Info options"
 msgstr "Info-Einstellungen"
 
-#: src/main.c:821
+#: src/main.c:852
 msgid "List options"
 msgstr "Listeneinstellungen"
 
-#: src/main.c:830
+#: src/main.c:861
 msgid "Progress options"
 msgstr "Fortschrittseinstellungen"
 
-#: src/main.c:839
+#: src/main.c:870
 msgid "Question options"
 msgstr "Frageeinstellungen"
 
-#: src/main.c:848
+#: src/main.c:879
 msgid "Text options"
 msgstr "Texteinstellungen"
 
-#: src/main.c:857
+#: src/main.c:888
 msgid "Warning options"
 msgstr "Warneinstellungen"
 
-#: src/main.c:866
+#: src/main.c:897
 msgid "GTK+ options"
 msgstr "GTK+-Einstellungen"
 
-#: src/main.c:875
+#: src/main.c:906
 msgid "Miscellaneous options"
 msgstr "Verschiedene Einstellungen"
 
-#: src/main.c:884
+#: src/main.c:915
 msgid "Help options"
 msgstr "Hilfeeinstellungen"
 
-#: src/main.c:1003
+#: src/main.c:1035
 #, c-format
 msgid "%s in an invalid option. See zenity --help for more details\n"
 msgstr ""
 "%s ist keine gültige Option. Siehe »zenity --help« für weitere Details.\n"
 
-#: src/main.c:1047
+#: src/main.c:1080
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Sie müssen einen Dialogtypen angeben. Siehe »zenity --help« für weitere "
 "Details.\n"
 
-#: src/main.c:1067
+#: src/main.c:1100
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "%s mehrfach für den selben Dialog übergeben\n"
 
-#: src/main.c:1071
+#: src/main.c:1104
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "%s wird von diesem Dialog nicht unterstützt\n"
 
-#: src/main.c:1075
+#: src/main.c:1108
 msgid "Two or more dialog options specified\n"
 msgstr "Dialog-Option mehrfach übergeben\n"
 
-#: src/tree.c:290
+#: src/tree.c:291
 msgid "No column titles specified for List dialog.\n"
 msgstr "Keine Spaltentitel für Listendialog angegeben\n"
 
@@ -437,17 +455,14 @@ msgstr "_Mitwirkende"
 msgid "_Enter new text:"
 msgstr "_Geben Sie den neuen Text ein:"
 
-#: src/zenity.glade.h:22
-msgid "zenity_about_copyright"
-msgstr "Zenity_Info_Copyright"
+#~ msgid "zenity_about_copyright"
+#~ msgstr "Zenity_Info_Copyright"
 
-#: src/zenity.glade.h:23
-msgid "zenity_about_description"
-msgstr "Zenity_Info_Beschreibung"
+#~ msgid "zenity_about_description"
+#~ msgstr "Zenity_Info_Beschreibung"
 
-#: src/zenity.glade.h:24
-msgid "zenity_about_version"
-msgstr "Zenity_Info_Version"
+#~ msgid "zenity_about_version"
+#~ msgstr "Zenity_Info_Version"
 
 #~ msgid ""
 #~ "You must specify more arguments. See zenity --help for more details\n"
