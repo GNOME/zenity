@@ -478,10 +478,10 @@ zenity_tree_dialog_output (void)
 
   for (tmp = selected; tmp; tmp = tmp->next) {
     if (tmp->next != NULL) {
-        g_printerr ("%s%s", (gchar *) tmp->data, separator);
+        g_print ("%s%s", (gchar *) tmp->data, separator);
     }
     else
-      g_printerr ("%s\n", (gchar *) tmp->data);
+      g_print ("%s\n", (gchar *) tmp->data);
   }
 
   g_free (separator);

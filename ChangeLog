@@ -1,3 +1,12 @@
+2003-07-11  Kevin C. Krinke  <kckrinke@opendoorsoftware.com>
+
+       * src/calendar.c, src/entry.c, src/fileselection.c, src/text.c,
+       src/tree.c: user input data output to STDOUT via g_print instead
+       of outputting to STDERR via g_printerr. This makes it possible to
+       destinguish user input data from GTK+ warnings / errors.
+       * THANKS, src/about.c: I figure this is my second patch submission
+       so I belong in the credits...
+
 2003-07-10 John Fleck <jfleck@inkstain.net>
 
 	* autogen.sh

@@ -86,11 +86,11 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);		
       selections = gtk_file_selection_get_selections (GTK_FILE_SELECTION (widget));
       for (i=0;selections[i] != NULL; i++) {
-        g_printerr ("%s", g_filename_to_utf8 ((gchar*)selections[i], -1, NULL, NULL, NULL));
+        g_print ("%s", g_filename_to_utf8 ((gchar*)selections[i], -1, NULL, NULL, NULL));
 	if (selections[i+1] != NULL)
-	    g_printerr ("%s",separator);
+	    g_print ("%s",separator);
       }
-      g_printerr("\n");
+      g_print("\n");
       g_strfreev(selections);
       g_free(separator);
 

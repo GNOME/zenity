@@ -58,6 +58,7 @@ static const gchar *author_credits[] = {
   "Mihai T. Lazarescu <mihai@email.it>",
   "Mike Newman <mikegtn@gnome.org>",
   "Havoc Pennington <hp@redhat.com>",
+  "Kevin C. Krinke <kckrinke@opendoorsoftware.com>",
   "Kristian Rietveld <kris@gtk.org>",
   "Jakub Steiner <jimmac@ximian.com>",
   "Daniel d'Surreal <dagmar@speakeasy.net>",
