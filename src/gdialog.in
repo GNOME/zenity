@@ -32,6 +32,16 @@ ARG: while ($argn < $args) {
 
 	get_arg;
 	
+# Informational stuff
+
+	if ($element eq "--help" || $element eq "--about") {
+	print ( "gdialog is a compatibility wrapper around zenity, " .
+		"provided to hopefully\nallow older scripts to run. " .
+		"If you are reading this message, you should\n" .
+		"probably be using zenity directly\n\n" .
+		"type: 'zenity --help' or 'man zenity' for more information\n");
+	exit (1);
+	}
 
 # Section 1 : Args which gdialog expects BEFORE box options
 # --clear, --backtitle have no obvious effect - ignored
