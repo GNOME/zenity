@@ -92,6 +92,7 @@ typedef struct {
   gboolean      radiobox;
   gchar        *separator;
   gboolean      editable;
+  gchar	       *print_column;
   const gchar **data;
 } ZenityTreeData;
 

@@ -105,6 +105,7 @@ enum {
   OPTION_PERCENTAGE,
   OPTION_PULSATE,
   OPTION_AUTOCLOSE,
+  OPTION_PRINTCOLUMN,
   OPTION_QUESTIONTEXT,
   OPTION_WARNINGTEXT,
   OPTION_ABOUT,
@@ -113,10 +114,10 @@ enum {
 };
 
 static void zenity_parse_options_callback (poptContext              ctx,
-    enum poptCallbackReason  reason,
-    const struct poptOption *opt,
-    const char              *arg,
-    void                    *data);
+					   enum poptCallbackReason  reason,
+					   const struct poptOption *opt,
+					   const char              *arg,
+					   void                    *data);
 
 struct poptOption options[] = {
   {
@@ -513,6 +514,15 @@ struct poptOption list_options[] = {
     NULL,
     OPTION_LISTEDIT,
     N_("Allow changes to text"),
+    NULL
+  },
+  {
+    "print-column",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_PRINTCOLUMN,
+    N_("Print a specific column (Default is 1. 'ALL' can be used to print all columns)"),
     NULL
   },
   POPT_TABLEEND
@@ -972,6 +982,7 @@ zenity_init_parsing_options (void) {
   results->tree_data->checkbox = FALSE;
   results->tree_data->radiobox = FALSE;
   results->tree_data->editable = FALSE;
+  results->tree_data->print_column = NULL;
 }
 
 static void
@@ -1020,6 +1031,8 @@ zenity_free_parsing_options (void) {
         g_slist_foreach (results->tree_data->columns, (GFunc) g_free, NULL);
       if (results->tree_data->separator)
         g_free (results->tree_data->separator);
+      if (results->tree_data->print_column)
+        g_free (results->tree_data->print_column);
       break;
     default:
       break;
@@ -1455,6 +1468,12 @@ zenity_parse_options_callback (poptContext              ctx,
         zenity_error ("--auto-close", ERROR_SUPPORT);
 
       results->progress_data->autoclose = TRUE;
+      break;
+    case OPTION_PRINTCOLUMN:
+      if (results->mode != MODE_LIST)
+        zenity_error ("--print-column", ERROR_SUPPORT);
+
+      results->tree_data->print_column = g_strdup (arg);
       break;
     case OPTION_ABOUT: 
       if (results->mode != MODE_LAST) 
