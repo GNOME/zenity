@@ -57,6 +57,7 @@ static const gchar *author_credits[] = {
   "Peter Astrand  <astrand lysator liu se>",
   "Jonathan Blandford  <jrb redhat com>",
   "Paul Bolle  <pebolle tiscali nl>",
+  "Paolo Borelli  <pborelli katamail com>",
   "Leonardo Boshell  <p kapcoweb com>",
   "Ross Burton  <ross burtonini com>",
   "Damien Carbery  <damien carbery sun com>",

@@ -85,7 +85,6 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
 {
   ZenityFileData *file_data = data;
   GSList *selections, *iter;
-  gchar *separator = g_strdup(file_data->separator);
   int i;
 	  
   switch (response) {
@@ -96,12 +95,10 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
         g_print ("%s", g_filename_to_utf8 ((gchar*)iter->data, -1, NULL, NULL, NULL));
 	g_free (iter->data);
 	if (iter->next != NULL)
-	    g_print ("%s",separator);
+	    g_print ("%s",file_data->separator);
       }
       g_print("\n");
       g_slist_free(selections);
-      g_free(separator);
-
       break;
 
     case GTK_RESPONSE_CANCEL:
