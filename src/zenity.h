@@ -31,9 +31,9 @@ typedef struct {
 
 typedef struct {
 	gchar *dialog_text;
-	gint  day;
-	gint  month;
-	gint  year;
+	gint   day;
+	gint   month;
+	gint   year;
 	gchar *date_format;
 } ZenityCalendarData;
 
@@ -46,7 +46,7 @@ typedef enum {
 
 typedef struct {
 	gchar	*dialog_text;
-	MsgMode	mode;
+	MsgMode  mode;
 } ZenityMsgData;
 
 typedef struct {
@@ -83,15 +83,15 @@ void	zenity_calendar		(ZenityData		*data,
 void	zenity_msg		(ZenityData		*data,
 				 ZenityMsgData		*msg_data);
 void	zenity_fileselection	(ZenityData		*data,
-				 ZenityFileData	*file_data);
+				 ZenityFileData         *file_data);
 void	zenity_entry		(ZenityData		*data,
 				 ZenityEntryData	*entry_data);
 void	zenity_progress		(ZenityData		*data,
 				 ZenityProgressData	*progress_data);
 void	zenity_text		(ZenityData		*data,
-				 ZenityTextData	*text_data);
+				 ZenityTextData         *text_data);
 void	zenity_tree		(ZenityData		*data,
-				 ZenityTreeData	*tree_data);
+				 ZenityTreeData         *tree_data);
 
 G_END_DECLS
 
