@@ -269,6 +269,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 {
   GtkWidget *dialog;
   GtkWidget *tree_view;
+  GtkWidget *text;
   GtkTreeViewColumn *column;
   GtkListStore *model;
   GType *column_types;
@@ -302,6 +303,11 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
+
+  text = glade_xml_get_widget (glade_dialog, "zenity_tree_text");
+                                                                                
+  if (tree_data->dialog_text)
+  gtk_label_set_text (GTK_LABEL (text), tree_data->dialog_text);
 
   if (data->window_icon)
     zenity_util_set_window_icon (dialog, data->window_icon);

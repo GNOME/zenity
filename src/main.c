@@ -96,6 +96,7 @@ enum {
   OPTION_FILENAME,
   OPTION_MULTIFILE,
   OPTION_TEXTFILENAME,
+  OPTION_LISTTEXT,
   OPTION_COLUMN,
   OPTION_SEPERATOR,
   OPTION_LISTEDIT,
@@ -459,6 +460,15 @@ struct poptOption list_options[] = {
     zenity_parse_options_callback,
     0,
     NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_LISTTEXT,
+    N_("Set the dialog text"),
     NULL
   },
   {
@@ -959,6 +969,7 @@ zenity_init_parsing_options (void) {
   results->progress_data->pulsate = FALSE;
   results->progress_data->autoclose = FALSE;
   results->entry_data->visible = TRUE;
+  results->tree_data->dialog_text = NULL;
   results->tree_data->checkbox = FALSE;
   results->tree_data->radiobox = FALSE;
   results->tree_data->editable = FALSE;
@@ -1004,6 +1015,8 @@ zenity_free_parsing_options (void) {
         g_free (results->text_data->uri);
       break;
     case MODE_LIST:
+      if (results->tree_data->dialog_text)
+        g_free (results->tree_data->dialog_text);
       if (results->tree_data->columns)
         g_slist_foreach (results->tree_data->columns, (GFunc) g_free, NULL);
       if (results->tree_data->separator)
@@ -1237,6 +1250,7 @@ zenity_parse_options_callback (poptContext              ctx,
     case OPTION_ERRORTEXT: 
     case OPTION_QUESTIONTEXT: 
     case OPTION_PROGRESSTEXT: 
+    case OPTION_LISTTEXT: 
     case OPTION_WARNINGTEXT: 
       
       /* FIXME: This is an ugly hack because of the way the poptOptions are 
@@ -1244,7 +1258,7 @@ zenity_parse_options_callback (poptContext              ctx,
        * parse_options_callback gets called for each option. Suckage 
        */
 
-      if (parse_option_text > 6) 
+      if (parse_option_text > 7) 
         zenity_error ("--text", ERROR_DUPLICATE); 
      
       switch (results->mode) { 
@@ -1266,6 +1280,10 @@ zenity_parse_options_callback (poptContext              ctx,
         case MODE_PROGRESS: 
           results->progress_data->dialog_text = g_locale_to_utf8 (g_strcompress (arg),
 								  -1, NULL, NULL, NULL);
+          break; 
+        case MODE_LIST: 
+          results->tree_data->dialog_text = g_locale_to_utf8 (g_strcompress (arg),
+						              -1, NULL, NULL, NULL);
           break; 
         default: 
           zenity_error ("--text", ERROR_SUPPORT); 
