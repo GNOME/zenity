@@ -24,6 +24,7 @@
 #include "config.h"
 #include "zenity.h"
 #include <stdlib.h>
+#include <locale.h>
 #include <popt.h>
 #include <langinfo.h>
 
