@@ -1353,7 +1353,7 @@ zenity_parse_options_callback (poptContext              ctx,
        * parse_options_callback gets called for each option. Suckage 
        */ 
       
-      if (parse_option_file > 2) 
+      if (parse_option_editable > 2) 
         zenity_error ("--editable", ERROR_DUPLICATE); 
       
       switch (results->mode) { 
