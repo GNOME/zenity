@@ -9,14 +9,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"POT-Creation-Date: 2004-09-13 20:10+1200\n"
-"PO-Revision-Date: 2004-08-21 15:39+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-10-15 23:11+0200\n"
+"PO-Revision-Date: 2004-10-15 23:12+0200\n"
 "Last-Translator: Aleksandar Urošević <urke@users.sourceforge.net>\n"
 "Language-Team: Serbian (sr) <gnom@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 
 #. Translators: This is a special message that shouldn't be translated
 #. literally. It is used in the about box to give credits to
@@ -53,161 +53,168 @@ msgstr "Napisao"
 msgid "Translated by"
 msgstr "Preveo"
 
-#: src/main.c:145
+#: src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Usmerenje"
+
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "Usmerenje fioke."
+
+#: src/main.c:146
 msgid "Display calendar dialog"
 msgstr "Prikaži prozorče kalendara"
 
-#: src/main.c:154
+#: src/main.c:155
 msgid "Display text entry dialog"
 msgstr "Prikaži prozorče za unos teksta"
 
-#: src/main.c:163
+#: src/main.c:164
 msgid "Display error dialog"
 msgstr "Prikaži prozorče za greške"
 
-#: src/main.c:172
+#: src/main.c:173
 msgid "Display file selection dialog"
 msgstr "Prikaži prozorče za izbor datoteke"
 
-#: src/main.c:181
+#: src/main.c:182
 msgid "Display info dialog"
 msgstr "Prikaži prozorče sa podacima"
 
-#: src/main.c:190
+#: src/main.c:191
 msgid "Display list dialog"
 msgstr "Prikaži prozorče za listu"
 
-#: src/main.c:199
-#, fuzzy
+#: src/main.c:200
 msgid "Display notification"
-msgstr "Prikaži prozorče sa podacima"
+msgstr "Prikaži obaveštenje"
 
-#: src/main.c:208
+#: src/main.c:209
 msgid "Display progress indication dialog"
 msgstr "Prikaži prozorče za indikator napretka"
 
-#: src/main.c:217
+#: src/main.c:218
 msgid "Display question dialog"
 msgstr "Prikaži prozorče za upit"
 
-#: src/main.c:226
+#: src/main.c:227
 msgid "Display text information dialog"
 msgstr "Prikaži prozorče za tekstualne informacije"
 
-#: src/main.c:235
+#: src/main.c:236
 msgid "Display warning dialog"
 msgstr "Prikaži prozorče za upozorenje"
 
-#: src/main.c:257
+#: src/main.c:258
 msgid "Set the dialog title"
 msgstr "Postavi naslov prozorčeta"
 
-#: src/main.c:258
+#: src/main.c:259
 msgid "TITLE"
 msgstr "NASLOV"
 
-#: src/main.c:266
+#: src/main.c:267
 msgid "Set the window icon"
 msgstr "Odredi ikonu prozora"
 
-#: src/main.c:267
+#: src/main.c:268
 msgid "ICONPATH"
 msgstr "PUTANjA DO IKONE"
 
-#: src/main.c:275
+#: src/main.c:276
 msgid "Set the width"
 msgstr "Postavi širinu"
 
-#: src/main.c:276
+#: src/main.c:277
 msgid "WIDTH"
 msgstr "ŠIRINA"
 
-#: src/main.c:284
+#: src/main.c:285
 msgid "Set the height"
 msgstr "Postavi visinu"
 
-#: src/main.c:285
+#: src/main.c:286
 msgid "HEIGHT"
 msgstr "VISINA"
 
-#: src/main.c:306 src/main.c:363 src/main.c:403 src/main.c:425 src/main.c:505
-#: src/main.c:603 src/main.c:644 src/main.c:697
+#: src/main.c:307 src/main.c:364 src/main.c:404 src/main.c:426 src/main.c:506
+#: src/main.c:613 src/main.c:654 src/main.c:707
 msgid "Set the dialog text"
 msgstr "Odredi tekst prozorčeta"
 
-#: src/main.c:315
+#: src/main.c:316
 msgid "Set the calendar day"
 msgstr "Odredi dan u kalendaru"
 
-#: src/main.c:324
+#: src/main.c:325
 msgid "Set the calendar month"
 msgstr "Odredi mesec u kalendaru"
 
-#: src/main.c:333
+#: src/main.c:334
 msgid "Set the calendar year"
 msgstr "Odredi godinu u kalendaru"
 
-#: src/main.c:341
+#: src/main.c:342
 msgid "Set the format for the returned date"
 msgstr "Odredi format povratnog datuma"
 
-#: src/main.c:372
+#: src/main.c:373
 msgid "Set the entry text"
 msgstr "Odredi tekst za unos"
 
-#: src/main.c:381
+#: src/main.c:382
 msgid "Hide the entry text"
 msgstr "Sakrij tekst za unos"
 
-#: src/main.c:447
+#: src/main.c:448
 msgid "Set the filename"
 msgstr "Odredi naziv datoteke"
 
-#: src/main.c:448 src/main.c:667
+#: src/main.c:449 src/main.c:677
 msgid "FILENAME"
 msgstr "NAZIV DATOTEKE"
 
-#: src/main.c:456
+#: src/main.c:457
 msgid "Allow multiple files to be selected"
 msgstr "Dozvoli izbor više datoteka"
 
-#: src/main.c:465
+#: src/main.c:466
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "Pokreni izbor samo direktorijuma"
 
-#: src/main.c:474
+#: src/main.c:475
 msgid "Activate save mode"
-msgstr ""
+msgstr "Pokreni režim za snimanje"
 
-#: src/main.c:483
+#: src/main.c:484
 msgid "Set output separator character."
 msgstr "Postavi znak za razdvajanje na izlazu."
 
-#: src/main.c:484 src/main.c:542
+#: src/main.c:485 src/main.c:543
 msgid "SEPARATOR"
 msgstr "RAZDVOJNIK"
 
-#: src/main.c:514
+#: src/main.c:515
 msgid "Set the column header"
 msgstr "Odredi zaglavlje kolone"
 
-#: src/main.c:523
+#: src/main.c:524
 msgid "Use check boxes for first column"
 msgstr "Koristi kontrolne kućice za prvu kolonu"
 
-#: src/main.c:532
+#: src/main.c:533
 msgid "Use radio buttons for first column"
 msgstr "Koristi opcionu dugmad za prvu kolonu"
 
-#: src/main.c:541
+#: src/main.c:542
 msgid "Set output separator character"
 msgstr "Postavi znak za razdvajanje na izlazu"
 
-#: src/main.c:550 src/main.c:675
+#: src/main.c:551 src/main.c:685
 msgid "Allow changes to text"
 msgstr "Dozvoli promene teksta"
 
-#: src/main.c:559
+#: src/main.c:560
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -215,204 +222,212 @@ msgstr ""
 "Ispiši određenu kolonu (podrazumeva se 1. „ALL“ se može koristiti za ispis "
 "svih kolona)"
 
-#: src/main.c:581
-#, fuzzy
+#: src/main.c:582
 msgid "Set the notification text"
-msgstr "Odredi tekst prozorčeta"
+msgstr "Postavi tekst obaveštenja"
 
-#: src/main.c:612
+#: src/main.c:591
+msgid "Listen for commands on stdin"
+msgstr "Prati naredbe na standardnom ulazu"
+
+#: src/main.c:622
 msgid "Set initial percentage"
 msgstr "Odredi početni procenat"
 
-#: src/main.c:621
+#: src/main.c:631
 msgid "Pulsate progress bar"
 msgstr "Pulsirajući indikator napretka"
 
-#: src/main.c:631
+#: src/main.c:641
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Odbaci prozorče kada se stigne do 100%"
 
-#: src/main.c:666
+#: src/main.c:676
 msgid "Open file"
 msgstr "Otvori datoteku"
 
-#: src/main.c:710
+#: src/main.c:720
 msgid "Gdk debugging flags to set"
 msgstr "Koje oznake za nalaženje Gdk grešaka treba postaviti"
 
-#: src/main.c:711 src/main.c:720 src/main.c:799 src/main.c:808
+#: src/main.c:721 src/main.c:730 src/main.c:809 src/main.c:818
 msgid "FLAGS"
 msgstr "OZNAKE"
 
-#: src/main.c:719
+#: src/main.c:729
 msgid "Gdk debugging flags to unset"
 msgstr "Koje oznake za nalaženje Gdk grešaka ne treba postaviti"
 
-#: src/main.c:729
+#: src/main.c:739
 msgid "X display to use"
 msgstr "Koristi Iks ekran"
 
-#: src/main.c:730
+#: src/main.c:740
 msgid "DISPLAY"
 msgstr "EKRAN"
 
-#: src/main.c:740
+#: src/main.c:750
 msgid "X screen to use"
 msgstr "Korsiti Iks ekran"
 
-#: src/main.c:741
+#: src/main.c:751
 msgid "SCREEN"
 msgstr "EKRAN"
 
-#: src/main.c:751
+#: src/main.c:761
 msgid "Make X calls synchronous"
 msgstr "Napravi sinhronizovane Iks pozive"
 
-#: src/main.c:760
+#: src/main.c:770
 msgid "Program name as used by the window manager"
 msgstr "Naziv programa koji će se koristiti za menadžer prozora"
 
-#: src/main.c:761
+#: src/main.c:771
 msgid "NAME"
 msgstr "NAZIV"
 
-#: src/main.c:769
+#: src/main.c:779
 msgid "Program class as used by the window manager"
 msgstr "Klasa programa koja će se koristiti za menadžer prozora"
 
-#: src/main.c:770
+#: src/main.c:780
 msgid "CLASS"
 msgstr "KLASA"
 
-#: src/main.c:780
+#: src/main.c:790
 msgid "HOST"
 msgstr "DOMAĆIN"
 
-#: src/main.c:790
+#: src/main.c:800
 msgid "PORT"
 msgstr "ULAZ"
 
-#: src/main.c:798
+#: src/main.c:808
 msgid "Gtk+ debugging flags to set"
 msgstr "Koje oznake za nalaženje Gtk+ grešaka treba postaviti"
 
-#: src/main.c:807
+#: src/main.c:817
 msgid "Gtk+ debugging flags to unset"
 msgstr "Koje oznake za nalaženje Gtk+ grešaka ne treba postaviti"
 
-#: src/main.c:816
+#: src/main.c:826
 msgid "Make all warnings fatal"
 msgstr "Učini da sva upozorenja budu kobna po program"
 
-#: src/main.c:825
+#: src/main.c:835
 msgid "Load an additional Gtk module"
 msgstr "Učitaj dopunski Gtk modul"
 
-#: src/main.c:826
+#: src/main.c:836
 msgid "MODULE"
 msgstr "MODUL"
 
-#: src/main.c:847
+#: src/main.c:857
 msgid "About zenity"
 msgstr "O Zenitu"
 
-#: src/main.c:856
+#: src/main.c:866
 msgid "Print version"
 msgstr "Verzija za štampu"
 
-#: src/main.c:869
+#: src/main.c:879
 msgid "Dialog options"
 msgstr "Postavke prozorčeta"
 
-#: src/main.c:878
+#: src/main.c:888
 msgid "General options"
 msgstr "Opšte postavke"
 
-#: src/main.c:887
+#: src/main.c:897
 msgid "Calendar options"
 msgstr "Postavke kalendara"
 
-#: src/main.c:896
+#: src/main.c:906
 msgid "Text entry options"
 msgstr "Postavke tekstualnog unosa"
 
-#: src/main.c:905
+#: src/main.c:915
 msgid "Error options"
 msgstr "Postavke greške"
 
-#: src/main.c:914
+#: src/main.c:924
 msgid "File selection options"
 msgstr "Postavke izbornika datoteke"
 
-#: src/main.c:923
+#: src/main.c:933
 msgid "Info options"
 msgstr "Postavke informacija"
 
-#: src/main.c:932
+#: src/main.c:942
 msgid "List options"
 msgstr "Postavke liste"
 
-#: src/main.c:941
-#, fuzzy
+#: src/main.c:951
 msgid "Notication options"
-msgstr "Postavke upita"
+msgstr "Postavke obaveštenja"
 
-#: src/main.c:950
+#: src/main.c:960
 msgid "Progress options"
 msgstr "Postavke indikatora napretka"
 
-#: src/main.c:959
+#: src/main.c:969
 msgid "Question options"
 msgstr "Postavke upita"
 
-#: src/main.c:968
+#: src/main.c:978
 msgid "Text options"
 msgstr "Postavke teksta"
 
-#: src/main.c:977
+#: src/main.c:987
 msgid "Warning options"
 msgstr "Postavke upozorenja"
 
-#: src/main.c:986
+#: src/main.c:996
 msgid "GTK+ options"
 msgstr "GTK+ postavke"
 
-#: src/main.c:995
+#: src/main.c:1005
 msgid "Miscellaneous options"
 msgstr "Ostale postavke"
 
-#: src/main.c:1004
+#: src/main.c:1014
 msgid "Help options"
 msgstr "Postavke pomoći"
 
-#: src/main.c:1143
+#: src/main.c:1154
 #, c-format
 msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-msgstr ""
-"%s je neispravna postavka. Pogledajte „zenity --help“ za više detalja\n"
+msgstr "%s je neispravna postavka. Pogledajte „zenity --help“ za više detalja\n"
 
-#: src/main.c:1191
+#: src/main.c:1202
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
-"Morate odrediti vrstu prozorčeta. Pogledajte „zenity --help‟ za više "
-"detalja\n"
+"Morate odrediti vrstu prozorčeta. Pogledajte „zenity --help‟ za više detalja\n"
 
-#: src/main.c:1211
+#: src/main.c:1222
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "Opcija %s je dva puta prosleđena za isto prozorče\n"
 
-#: src/main.c:1215
+#: src/main.c:1226
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "Opcija %s nije podržana za ovo prozorče\n"
 
-#: src/main.c:1219
+#: src/main.c:1230
 msgid "Two or more dialog options specified\n"
 msgstr "Prosleđene su dve ili više opcija prozorčeta\n"
 
-#: src/tree.c:303
+#: src/notification.c:157
+msgid "could not parse command from stdin\n"
+msgstr "ne mogu da rašlanim naredbu sa standardnog ulaza\n"
+
+#: src/notification.c:226 src/notification.c:251
+msgid "Zenity notification"
+msgstr "Zeniti obaveštenje"
+
+#: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
 msgstr "Nije određen naslov kolone za prozorče sa listom.\n"
 
