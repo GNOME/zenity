@@ -244,6 +244,20 @@
 	</listitem>
       </varlistentry>
 
+      <varlistentry>
+        <term><varname>--width</varname>=WIDTH</term>
+	<listitem>
+	  <para>Specify the width of the dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--height</varname>=HEIGHT</term>
+	<listitem>
+	  <para>Specify the height of the dialog.</para>
+	</listitem>
+      </varlistentry>
+
     </variablelist>
 
   </sect1>
@@ -580,7 +594,9 @@
 	specifying the column headers. To fill data into this dialog, you may specify
 	entries column by column, row by row. If you are using a checklist or a radiolist
 	then your first pieces of data for each row must be either 'TRUE' or 'FALSE'. See
-	examples below for how to fill data into this dialog.
+	examples below for how to fill data into this dialog. The List dialog may also be
+	filled by providing data from standard input, column by column, row by row, each
+	seperated by a newline.
     </para>
 
     <para>
