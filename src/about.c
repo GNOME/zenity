@@ -69,7 +69,6 @@ zenity_move_clothes_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data
 {
 	static double x, y;
 	double new_x, new_y;
-	GdkCursor *fleur;
 	static int dragging;
 	double item_x, item_y;
 
@@ -80,44 +79,11 @@ zenity_move_clothes_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data
 
 	switch (event->type) {
 	case GDK_BUTTON_PRESS:
-		switch (event->button.button) {
-		case 1:
-			if (event->button.state & GDK_SHIFT_MASK)
-				gtk_object_destroy (GTK_OBJECT (item));
-			else {
-				x = item_x;
-				y = item_y;
-
-				fleur = gdk_cursor_new (GDK_FLEUR);
-#if 0
-				gnome_canvas_item_grab (item,
-							GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
-							fleur,
-							event->button.time);
-#endif
-				gdk_cursor_unref (fleur);
-				dragging = TRUE;
-			}
-			break;
-
-		case 2:
-			if (event->button.state & GDK_SHIFT_MASK)
-				gnome_canvas_item_lower_to_bottom (item);
-			else
-				gnome_canvas_item_lower (item, 1);
-			break;
-
-		case 3:
-			if (event->button.state & GDK_SHIFT_MASK)
-				gnome_canvas_item_raise_to_top (item);
-			else
-				gnome_canvas_item_raise (item, 1);
-			break;
-
-		default:
-			break;
-		}
-
+		x = item_x;
+		y = item_y;
+		gnome_canvas_item_ungrab (item, event->button.time);
+		gnome_canvas_item_raise_to_top (item);
+		dragging = TRUE;
 		break;
 
 	case GDK_MOTION_NOTIFY:
