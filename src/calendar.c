@@ -44,7 +44,7 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   glade_dialog = zenity_util_load_glade_file ("zenity_calendar_dialog");
 
   if (glade_dialog == NULL) {
-    data->exit_code = -1;
+    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
@@ -105,18 +105,18 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
       if (date != NULL)
         g_date_free (date);
     
-      zen_data->exit_code = 0;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
       gtk_main_quit ();
       break;
 
     case GTK_RESPONSE_CANCEL:
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       gtk_main_quit ();
       break;
 
     default:
       /* Esc dialog */
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
     }
 }

@@ -71,7 +71,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
                     G_CALLBACK (zenity_msg_dialog_response), data);
 	
   if (glade_dialog == NULL) {
-    data->exit_code = -1;
+    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
@@ -124,12 +124,12 @@ zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data)
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = 0;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
       gtk_main_quit ();
       break;
 
     case GTK_RESPONSE_CANCEL:
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       gtk_main_quit ();
       break;
 

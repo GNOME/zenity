@@ -116,7 +116,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
 	  gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
 	  gtk_widget_grab_focus(GTK_WIDGET (button));
 	  if (progress_data->autoclose) {
-		zen_data->exit_code = 0;
+		zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 		gtk_main_quit();
 		
 	  }
@@ -177,7 +177,7 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   glade_dialog = zenity_util_load_glade_file ("zenity_progress_dialog");
 
   if (glade_dialog == NULL) {
-    data->exit_code = -1;
+    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
@@ -218,7 +218,7 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = 0;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
       gtk_main_quit ();
       break;
 		
@@ -228,13 +228,13 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
        * stuff. Should be using SIGHUP instead of 1 though.
        */
       kill (getpid (), 1);
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       gtk_main_quit ();
       break;
   
     default:
       /* Esc dialog */
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
 }

@@ -257,7 +257,7 @@ zenity_about (ZenityData *data)
   glade_dialog = zenity_util_load_glade_file ("zenity_about_dialog");
 
   if (glade_dialog == NULL) {
-    data->exit_code = -1;
+    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 
@@ -434,7 +434,7 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = 0;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
       gtk_main_quit ();
       break;
 
@@ -448,7 +448,7 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
 
     default:
       /* Esc dialog */
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
 }

@@ -39,6 +39,12 @@
 #define URL_HANDLER_DIR      "/desktop/gnome/url-handlers/"
 #define DEFAULT_HANDLER_PATH "/desktop/gnome/url-handlers/unknown/command"
 
+#define ZENITY_OK_DEFAULT	0
+#define ZENITY_CANCEL_DEFAULT	1
+#define ZENITY_ESC_DEFAULT	1
+#define ZENITY_ERROR_DEFAULT	-1
+#define ZENITY_EXTRA_DEFAULT	127
+
 GladeXML*
 zenity_util_load_glade_file (const gchar *widget_root) 
 {
@@ -591,4 +597,62 @@ zenity_util_show_help (const gchar *path, const gchar *document, GError **error)
   g_strfreev (argv);
 
   return ret;
+}
+
+gint 
+zenity_util_return_exit_code ( ZenityExitCode value ) 
+{
+
+  const gchar *env_var = NULL;
+  gint retval;
+
+  switch (value) {
+  
+  case ZENITY_OK:
+    env_var = g_getenv("ZENITY_OK");
+    if (! env_var) 
+          env_var = g_getenv("DIALOG_OK");
+    if (! env_var) 
+          retval = ZENITY_OK_DEFAULT;
+    break;
+   
+  case ZENITY_CANCEL:
+    env_var = g_getenv("ZENITY_CANCEL");
+    if (! env_var) 
+          env_var = g_getenv("DIALOG_CANCEL");
+    if (! env_var) 
+          retval = ZENITY_CANCEL_DEFAULT;
+    break;
+    
+  case ZENITY_ESC:
+    env_var = g_getenv("ZENITY_ESC");
+    if (! env_var) 
+          env_var = g_getenv("DIALOG_ESC");
+    if (! env_var) 
+          retval = ZENITY_ESC_DEFAULT;
+    break;
+    
+  case ZENITY_EXTRA:
+    env_var = g_getenv("ZENITY_EXTRA");
+    if (! env_var) 
+          env_var = g_getenv("DIALOG_EXTRA");
+    if (! env_var) 
+          retval = ZENITY_EXTRA_DEFAULT;
+    break;
+    
+  case ZENITY_ERROR:
+    env_var = g_getenv("ZENITY_ERROR");
+    if (! env_var) 
+          env_var = g_getenv("DIALOG_ERROR");
+    if (! env_var) 
+          retval = ZENITY_ERROR_DEFAULT;
+    break;
+    
+  default:
+    retval = 1;
+  }
+  
+  if (env_var) 
+      retval = atoi (env_var);
+  return retval; 
 }

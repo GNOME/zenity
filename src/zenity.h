@@ -31,6 +31,14 @@ typedef struct {
   gint   exit_code;
 } ZenityData;
 
+typedef enum {
+  ZENITY_OK,
+  ZENITY_CANCEL,
+  ZENITY_ESC,
+  ZENITY_ERROR,
+  ZENITY_EXTRA
+} ZenityExitCode;
+
 typedef struct {
   gchar *dialog_text;
   gint   day;

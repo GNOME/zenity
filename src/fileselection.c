@@ -35,7 +35,7 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   glade_dialog = zenity_util_load_glade_file ("zenity_fileselection_dialog");
 
   if (glade_dialog == NULL) {
-    data->exit_code = -1;
+    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
@@ -73,19 +73,20 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
 	  
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = 0;			
+      zen_data->exit_code = zenity_util_return_exit_code		
+						(ZENITY_OK);			
       g_printerr ("%s\n", gtk_file_selection_get_filename (GTK_FILE_SELECTION (widget)));
       gtk_main_quit ();
       break;
 
     case GTK_RESPONSE_CANCEL:
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       gtk_main_quit ();
       break;
 
     default:
       /* Esc dialog */
-      zen_data->exit_code = 1;
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
 }

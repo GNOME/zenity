@@ -3,6 +3,7 @@
 
 #include <gtk/gtk.h>
 #include <glade/glade.h>
+#include "zenity.h"
 
 G_BEGIN_DECLS
 
@@ -21,6 +22,8 @@ void            zenity_util_set_window_icon_from_stock    (GtkWidget      *widge
 gboolean        zenity_util_show_help                     (const gchar    *path,
                                                            const gchar    *document,
                                                            GError        **error);
+gint		zenity_util_return_exit_code 		  (ZenityExitCode value);                      
+                               
 G_END_DECLS
 
 #endif /* UTIL_H */
