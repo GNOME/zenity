@@ -19,9 +19,7 @@ void            zenity_util_set_window_icon               (GtkWidget      *widge
                                                            const gchar    *filename);
 void            zenity_util_set_window_icon_from_stock    (GtkWidget      *widget,
                                                            const gchar    *stock_id);
-gboolean        zenity_util_show_help                     (const gchar    *path,
-                                                           const gchar    *document,
-                                                           GError        **error);
+void		zenity_util_show_help                     (GError        **error);
 gint		zenity_util_return_exit_code 		  (ZenityExitCode value);                      
                                
 G_END_DECLS

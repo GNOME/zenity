@@ -443,7 +443,7 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 
     case GTK_RESPONSE_HELP:
-      zenity_util_show_help (ZENITY_HELP_PATH, "zenity.xml", NULL);
+      zenity_util_show_help (NULL);
       break;
 
     case GTK_RESPONSE_CREDITS:

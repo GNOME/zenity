@@ -1,3 +1,10 @@
+2004-02-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c, src/util.c, src/util.h: Remove all the
+	stupid duplicated code to do the help stuff, and instead
+	do a simple call for 'yelp ghelp:zenity'. -418, +23. Eeek.
+	Fixes #135607.
+
 2004-02-21  Paisa Seeluangsawat  <paisa@users.sf.net>
 
 	* configure.in: Added Thai (th) to ALL_LINGUAS.
