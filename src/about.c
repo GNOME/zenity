@@ -42,6 +42,7 @@ static const gchar *author_credits[] = {
         "Jonathan Blanford <jrb@redhat.com>",
         "Anders Carlsson <andersca@gnu.org>",
         "Glynn Foster <glynn.foster@sun.com>",
+        "John Fleck <jfleck@inkstain.net>",
         "James Henstridge <james@daa.com.au>",
         "Mike Newman <mike@gtnorthern.demon.co.uk>",
         "Havoc Pennington <hp@redhat.com>",
