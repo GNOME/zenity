@@ -160,7 +160,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
       scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
       gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
       gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
-                                      GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+                                      GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
     }
 
     column_count ++;
@@ -235,7 +235,7 @@ zenity_tree_fill_entries (GtkTreeView  *tree_view,
       scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
       gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
       gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
-                                      GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+                                      GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
     }
 
   i += n_columns;
