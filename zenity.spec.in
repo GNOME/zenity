@@ -53,7 +53,7 @@ Zenity is especially useful in scripts.
 
 %prep
 %setup -q
-%{__rm} -rf $RPM_BUILD_ROOT
+[ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
 
 
 %build
@@ -62,12 +62,12 @@ Zenity is especially useful in scripts.
 
 
 %install
-%{__rm} -rf $RPM_BUILD_ROOT%{rpm_prefix}
+[ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
 %{__make} prefix=$RPM_BUILD_ROOT%{rpm_prefix} install
 
 
 %clean
-%{__rm} -rf $RPM_BUILD_ROOT
+%{__rm} -rf $RPM_BUILD_ROOT%{rpm_prefix}
 
 
 %files
