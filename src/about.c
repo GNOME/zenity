@@ -150,8 +150,10 @@ typedef struct
 } MonkClothes;
 
 static MonkClothes monk_clothes[] = {
-        {"gnome-tshirt.png", 30.0, ZENITY_CANVAS_Y - 150.0},
-        {"sunglasses.png", ZENITY_CANVAS_X - 100.0 , ZENITY_CANVAS_Y - 150.0 }
+        {"gnome-tshirt.png", 30.0, 20.0},
+        {"sunglasses.png", ZENITY_CANVAS_X - 100.0 , ZENITY_CANVAS_Y - 150.0 },
+        {"surfboard.png", 30.0, ZENITY_CANVAS_Y - 200.0},
+        {"hawaii-shirt.png", ZENITY_CANVAS_X - 50.0, 20.0}
 };
 
 static void
