@@ -6,24 +6,9 @@ AM_MAINTAINER_MODE
 
 AC_PROG_INTLTOOL([0.21])
 
-dnl ********************************
-dnl I bet I don't need half of these
-dnl ********************************
-
-AC_ISC_POSIX
-AC_PROG_CXX
 AC_PROG_CC
-AC_PROG_CPP
-AC_STDC_HEADERS
-AC_PROG_YACC
-AC_PROG_INSTALL
-AC_PROG_LN_S
-AC_PROG_MAKE_SET
-AC_PATH_XTRA
 
-GNOME_COMPILE_WARNINGS
-
-PKG_CHECK_MODULES(ZENITY, gtk+-2.0 libglade-2.0 gconf-2.0)
+PKG_CHECK_MODULES(ZENITY, gtk+-2.0 libglade-2.0 gconf-2.0 libgnomecanvas-2.0)
 AC_SUBST(ZENITY_CFLAGS)
 AC_SUBST(ZENITY_LIBS)
 

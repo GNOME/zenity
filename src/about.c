@@ -27,10 +27,16 @@
 #include "config.h"
 #include "zenity.h"
 #include "util.h"
+#include <gdk/gdkkeysyms.h>
+#include <libgnomecanvas/gnome-canvas.h>
 #include <glade/glade.h>
 
 #define GTK_RESPONSE_CREDITS 0
 #define ZENITY_HELP_PATH ZENITY_DATADIR "/help/"
+#define ZENITY_CLOTHES_PATH ZENITY_DATADIR "/clothes/"
+
+#define ZENITY_CANVAS_X 580.0
+#define ZENITY_CANVAS_Y 400.0
 
 static GtkWidget *dialog;
 static GtkWidget *cred_dialog;
@@ -53,6 +59,214 @@ static const gchar *author_credits[] = {
 };
 
 gchar *translator_credits;
+
+static gint
+zenity_move_clothes_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
+{
+	static double x, y;
+	double new_x, new_y;
+	GdkCursor *fleur;
+	static int dragging;
+	double item_x, item_y;
+
+	/* set item_[xy] to the event x,y position in the parent's item-relative coordinates */
+	item_x = event->button.x;
+	item_y = event->button.y;
+	gnome_canvas_item_w2i (item->parent, &item_x, &item_y);
+
+	switch (event->type) {
+	case GDK_BUTTON_PRESS:
+		switch (event->button.button) {
+		case 1:
+			if (event->button.state & GDK_SHIFT_MASK)
+				gtk_object_destroy (GTK_OBJECT (item));
+			else {
+				x = item_x;
+				y = item_y;
+
+				fleur = gdk_cursor_new (GDK_FLEUR);
+#if 0
+				gnome_canvas_item_grab (item,
+							GDK_POINTER_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
+							fleur,
+							event->button.time);
+#endif
+				gdk_cursor_unref (fleur);
+				dragging = TRUE;
+			}
+			break;
+
+		case 2:
+			if (event->button.state & GDK_SHIFT_MASK)
+				gnome_canvas_item_lower_to_bottom (item);
+			else
+				gnome_canvas_item_lower (item, 1);
+			break;
+
+		case 3:
+			if (event->button.state & GDK_SHIFT_MASK)
+				gnome_canvas_item_raise_to_top (item);
+			else
+				gnome_canvas_item_raise (item, 1);
+			break;
+
+		default:
+			break;
+		}
+
+		break;
+
+	case GDK_MOTION_NOTIFY:
+		if (dragging && (event->motion.state & GDK_BUTTON1_MASK)) {
+			new_x = item_x;
+			new_y = item_y;
+
+			gnome_canvas_item_move (item, new_x - x, new_y - y);
+			x = new_x;
+			y = new_y;
+		}
+		break;
+
+	case GDK_BUTTON_RELEASE:
+		gnome_canvas_item_ungrab (item, event->button.time);
+		dragging = FALSE;
+		break;
+
+	default:
+		break;
+	}
+
+	return FALSE;
+}
+
+typedef struct 
+{
+        const gchar *filename;
+        gdouble x, y;
+} MonkClothes;
+
+static MonkClothes monk_clothes[] = {
+        {"gnome-tshirt.png", 10.0, 10.0}
+};
+
+static void
+zenity_create_clothes (GtkWidget *canvas_board)
+{
+        GdkPixbuf *pixbuf;
+        GnomeCanvasItem *canvas_item;
+        gchar *pixbuf_path;
+        gint i;
+
+        for (i = 0; i < G_N_ELEMENTS (monk_clothes); i++) {
+                pixbuf_path = g_strconcat (ZENITY_CLOTHES_PATH, monk_clothes[i].filename, NULL); 
+                pixbuf = gdk_pixbuf_new_from_file (pixbuf_path, NULL);
+
+                canvas_item = gnome_canvas_item_new (GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas_board)->root),
+                                                     gnome_canvas_pixbuf_get_type (),
+                                                     "x", monk_clothes[i].x,
+                                                     "y", monk_clothes[i].y,
+                                                     "pixbuf", pixbuf,
+                                                     "anchor", GTK_ANCHOR_NW,
+                                                     NULL);
+                g_signal_connect (G_OBJECT (canvas_item), "event",
+                                  G_CALLBACK (zenity_move_clothes_event), NULL);
+        }
+}
+
+static GtkWidget *
+zenity_create_monk (void)
+{
+        GtkWidget *canvas_board;
+        GnomeCanvasItem *canvas_item;
+        GnomeCanvasGroup *root;
+        GdkPixbuf *pixbuf;
+        GdkColor color = { 0, 0xffff, 0xffff, 0xffff };
+
+        canvas_board = gnome_canvas_new ();
+
+        gnome_canvas_set_scroll_region (GNOME_CANVAS (canvas_board), 0, 0,
+                                        ZENITY_CANVAS_X, ZENITY_CANVAS_Y);
+
+        gtk_widget_set_size_request (canvas_board, ZENITY_CANVAS_X, ZENITY_CANVAS_Y);
+
+        gdk_colormap_alloc_color (gtk_widget_get_colormap (GTK_WIDGET (canvas_board)),
+                                  &color, FALSE, TRUE);
+
+        gtk_widget_modify_bg (GTK_WIDGET (canvas_board), GTK_STATE_NORMAL, &color);
+
+        pixbuf = gdk_pixbuf_new_from_file (ZENITY_CLOTHES_PATH "monk.png", NULL);
+
+        canvas_item = gnome_canvas_item_new (GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas_board)->root),
+                                             gnome_canvas_pixbuf_get_type (),
+                                             "x", (ZENITY_CANVAS_X / 2.0)/2.0 + 20.0,
+                                             "y", (ZENITY_CANVAS_Y / 2.0)/2.0 - 10.0,
+                                             "pixbuf", pixbuf,
+                                             "anchor", GTK_ANCHOR_NW,
+                                             NULL);
+
+        zenity_create_clothes (canvas_board);
+
+        return canvas_board;
+}
+
+static GtkWidget *
+zenity_create_boutique (void) 
+{
+        GtkWidget *window;
+        GtkWidget *canvas;
+
+        window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+
+        /* FIXME: We need to connect to the close event 
+         * for the window
+         */
+
+        canvas = zenity_create_monk ();
+        gtk_container_add (GTK_CONTAINER (window), canvas);
+
+        return window;
+}
+
+static gboolean
+zenity_zen_wisdom (GtkDialog *dialog, GdkEventKey *event, gpointer user_data)
+{
+        static gint string_count;
+
+        if (string_count >= 3)
+                return FALSE;
+
+        switch (event->keyval) {
+                case GDK_N:
+                case GDK_n:
+                        if (string_count == 2) {
+                                GtkWidget *window;
+                                window = zenity_create_boutique ();
+                                gtk_widget_show_all (window);
+                                string_count++;
+                        } else {
+                                string_count = 0;
+                        }
+                        break;
+               case GDK_Z:
+               case GDK_z:
+                        if (string_count == 0)
+                                string_count++;
+                        else
+                                string_count = 0;
+                        break;
+              case GDK_E:
+              case GDK_e:
+                        if (string_count == 1)
+                                string_count++;
+                        else
+                                string_count = 0;
+                        break;
+              default:
+                        string_count = 0;
+        }
+
+        return FALSE;
+}
 
 void 
 zenity_about (ZenityData *data)
@@ -78,6 +292,8 @@ zenity_about (ZenityData *data)
 
 	g_signal_connect (G_OBJECT (dialog), "response",
 			  G_CALLBACK (zenity_about_dialog_response), data);
+        g_signal_connect (G_OBJECT (dialog), "key_press_event",
+                          G_CALLBACK (zenity_zen_wisdom), glade_dialog);
 
         zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity.png"));
 
@@ -91,14 +307,17 @@ zenity_about (ZenityData *data)
         }
 
 	label = glade_xml_get_widget (glade_dialog, "zenity_about_version");
+        gtk_label_set_selectable (GTK_LABEL (label), FALSE);
         text = g_strdup_printf ("<span size=\"xx-large\" weight=\"bold\">Zenity %s</span>", VERSION);
 	gtk_label_set_markup (GTK_LABEL (label), text);
         g_free (text);
 
         label = glade_xml_get_widget (glade_dialog, "zenity_about_description");
+        gtk_label_set_selectable (GTK_LABEL (label), FALSE);
         gtk_label_set_text (GTK_LABEL (label), _("Display dialog boxes from shell scripts"));
 
         label = glade_xml_get_widget (glade_dialog, "zenity_about_copyright");
+        gtk_label_set_selectable (GTK_LABEL (label), FALSE);
         text = g_strdup_printf ("<span size=\"small\">%s</span>", _("(C) 2003 Sun Microsystems"));
         gtk_label_set_markup (GTK_LABEL (label), text);
         g_free (text);
