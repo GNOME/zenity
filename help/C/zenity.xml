@@ -67,6 +67,182 @@
   
 <!-- ================ Document Body ================= -->
 
+<!-- ==== Introduction ====== -->
+
+  <sect1 id="zenity-introduction">
+    <title>Introduction</title>
+
+    <para>
+    	&app; allows allows you to display simple dialogs from the 
+	command line or from shell scripts.
+    </para>
+
+    <para>
+    	The following list of dialogs are available with &app;:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--calendar</varname></term>
+	<listitem>
+	  <para>Display a Calendar dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--entry</varname></term>
+	<listitem>
+	  <para>Display a Text Entry dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--error</varname></term>
+	<listitem>
+	  <para>Display an Error dialog</para>
+	</listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term><varname>--info</varname></term>
+	<listitem>
+	  <para>Display an Informational dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--file-selection</varname></term>
+	<listitem>
+	  <para>Display a File Slection dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--list</varname></term>
+	<listitem>
+	  <para>Display a List dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--progress</varname></term>
+	<listitem>
+	  <para>Display a Progress dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--question</varname></term>
+	<listitem>
+	  <para>Display a Question dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--text-info</varname></term>
+	<listitem>
+	  <para>Display a Text Information dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--warning</varname></term>
+	<listitem>
+	  <para>Display a Warning dialog</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+  </sect1>
+
+<!-- ==== General Options ====== -->
+
+  <sect1 id="zenity-general-options">
+    <title>General Options</title>
+
+    <para>
+    	Each dialog shares some general command line options. If these
+	are not provided, there are some default values that depend on
+	the type of dialog being displayed.
+    </para>
+
+    <para>
+    	The following list of general options are available:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--title</varname>=TITLE</term>
+	<listitem>
+	  <para>Specify the title of a dialog</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--window-icon</varname>=ICON_PATH</term>
+	<listitem>
+	  <para>Specify the icon that should appear in the window frame of the dialog</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+  </sect1>
+
+<!-- ==== Calendar Options ====== 
+
+Calendar options
+  --text=STRING              Set the dialog text
+  --day=INT                  Set the calendar day
+  --month=INT                Set the calendar month
+  --year=INT                 Set the calendar year
+  --date-format=STRING       Set the format for the returned date
+
+Text entry options
+  --text=STRING              Set the dialog text
+  --entry-text=STRING        Set the entry text
+  --hide-text                Hide the entry text
+
+Info options
+  --text=STRING              Set the dialog text
+
+Error options
+  --text=STRING              Set the dialog text
+
+File selection options
+  --filename=FILENAME        Set the filename
+
+List options
+  --column=STRING            Set the column header
+  --checklist                Use check boxes for first column
+  --radiolist                Use radio buttons for first column
+  --separator=STRING         Set output separator character
+
+Progress options
+  --text=STRING              Set the dialog text
+  --percentage=INT           Set initial percentage
+  --pulsate                  Pulsate progress bar
+
+Question options
+  --text=STRING              Set the dialog text
+
+Text options
+  --filename=FILENAME        Open file
+
+Warning options
+  --text=STRING              Set the dialog text
+
+Miscellaneous options
+  --about                    About zenity
+  --version                  Print version
+
+Help options
+  -?, --help                 Show this help message
+  --usage                    Display brief usage message
+  
+-->
+
 <!-- ================ Application License ================= -->
   <sect1 id="license">
 	  <title>License</title>
