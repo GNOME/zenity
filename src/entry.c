@@ -95,7 +95,7 @@ zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
       text = gtk_entry_get_text (GTK_ENTRY (entry));
 
       if (text != NULL)
-        g_printerr ("%s\n", gtk_entry_get_text (GTK_ENTRY (entry)));
+        g_print ("%s\n", gtk_entry_get_text (GTK_ENTRY (entry)));
 
       gtk_main_quit ();
       break;
