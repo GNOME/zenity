@@ -35,6 +35,7 @@ typedef enum {
 	MODE_QUESTION,
 	MODE_TEXTINFO,
 	MODE_WARNING,
+	MODE_INFO,
 	MODE_LAST
 } ZenityDialogMode;
 
@@ -55,6 +56,7 @@ enum {
 	OPTION_CALENDAR = 1,
 	OPTION_ENTRY,
 	OPTION_ERROR,
+	OPTION_INFO,
 	OPTION_FILE,
 	OPTION_LIST,
 	OPTION_PROGRESS,
@@ -71,6 +73,7 @@ enum {
 	OPTION_INPUTTEXT,
 	OPTION_HIDETEXT,
 	OPTION_ERRORTEXT,
+	OPTION_INFOTEXT,
 	OPTION_FILENAME,
 	OPTION_COLUMN,
 	OPTION_CHECKLIST,
@@ -126,6 +129,15 @@ struct poptOption options[] = {
 		NULL,
 		OPTION_ERROR,
 		N_("Display error dialog"),
+		NULL
+	},
+	{
+		"info",
+		'\0',
+		POPT_ARG_NONE,
+		NULL,
+		OPTION_INFO,
+		N_("Display info dialog"),
 		NULL
 	},
 	{
@@ -321,6 +333,28 @@ struct poptOption error_options[] = {
 		POPT_ARG_STRING,
 		NULL,
 		OPTION_ERRORTEXT,
+		N_("Set the dialog text"),
+		NULL
+	},
+	POPT_TABLEEND
+};
+
+struct poptOption info_options[] = {
+	{
+		NULL,
+		'\0',
+		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+		zenity_parse_options_callback,
+		0,
+		NULL,
+		NULL
+	},
+	{
+		"text",
+		'\0',
+		POPT_ARG_STRING,
+		NULL,
+		OPTION_INFOTEXT,
 		N_("Set the dialog text"),
 		NULL
 	},
@@ -549,6 +583,15 @@ struct poptOption application_options[] = {
 		NULL,
 		'\0',
 		POPT_ARG_INCLUDE_TABLE,
+		info_options,
+		0,
+		N_("Info options"),
+		NULL
+	},
+	{
+		NULL,
+		'\0',
+		POPT_ARG_INCLUDE_TABLE,
 		error_options,
 		0,
 		N_("Error options"),
@@ -673,6 +716,7 @@ zenity_free_parsing_options (void) {
 		case MODE_ERROR:
 		case MODE_QUESTION:
 		case MODE_WARNING:
+		case MODE_INFO:
 			g_free (results->msg_data->dialog_text);
 			break;
 		case MODE_FILE:
@@ -730,6 +774,7 @@ main (gint argc, gchar **argv) {
 		case MODE_ERROR:
 		case MODE_QUESTION:
 		case MODE_WARNING:
+		case MODE_INFO:
 			zenity_msg (results->data, results->msg_data);
 			break;
 		case MODE_FILE:
@@ -779,6 +824,10 @@ void zenity_parse_options_callback (poptContext              ctx,
 			results->mode = MODE_ERROR;
 			results->msg_data->mode = ZENITY_MSG_ERROR;
 			break;
+		case OPTION_INFO:
+			results->mode = MODE_INFO;
+			results->msg_data->mode = ZENITY_MSG_INFO;
+			break;
 		case OPTION_FILE:
 			results->mode = MODE_FILE;
 			break;
@@ -821,6 +870,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 				case MODE_ERROR:
 				case MODE_QUESTION:
 				case MODE_WARNING:
+				case MODE_INFO:
 					results->msg_data->dialog_text = g_strdup (arg);
 					break;
 				case MODE_PROGRESS:

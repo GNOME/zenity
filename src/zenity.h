@@ -38,7 +38,8 @@ typedef struct {
 typedef enum {
 	ZENITY_MSG_WARNING,
 	ZENITY_MSG_QUESTION,
-	ZENITY_MSG_ERROR
+	ZENITY_MSG_ERROR,
+	ZENITY_MSG_INFO
 } MsgMode;
 
 typedef struct {

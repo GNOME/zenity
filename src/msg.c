@@ -52,6 +52,12 @@ int zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			dialog = glade_xml_get_widget (glade_dialog, "zenity_error_dialog");
 			text = glade_xml_get_widget (glade_dialog, "zenity_error_text");
 			break;
+
+		case ZENITY_MSG_INFO:
+			glade_dialog = zenity_util_load_glade_file ("zenity_info_dialog");
+			dialog = glade_xml_get_widget (glade_dialog, "zenity_info_dialog");
+			text = glade_xml_get_widget (glade_dialog, "zenity_info_text");
+			break;
 		
 		default:
 			g_assert_not_reached ();
@@ -80,6 +86,9 @@ int zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 				break;
 			case ZENITY_MSG_ERROR:
 				zenity_util_set_window_icon_from_stock (dialog, GTK_STOCK_DIALOG_ERROR);
+				break;
+			case ZENITY_MSG_INFO:
+				zenity_util_set_window_icon_from_stock (dialog, GTK_STOCK_DIALOG_INFO);
 				break;
 			default:
 				break;
