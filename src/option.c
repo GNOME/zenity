@@ -176,7 +176,8 @@ GOptionEntry calendar_options[] = {
     N_("Set the calendar year"),
     NULL
   },
-  {	"date-format",
+  {
+    "date-format",
     '\0',
     0,
     G_OPTION_ARG_STRING,
