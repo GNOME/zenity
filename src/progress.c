@@ -101,7 +101,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
         /* We have a comment, so let's try to change the label */
         match = g_strstr_len (string->str, strlen (string->str), "#");
         match++;
-        gtk_label_set_text (GTK_LABEL (progress_label), g_strchomp (g_strchug (match)));
+        gtk_label_set_text (GTK_LABEL (progress_label), g_strcompress(g_strchomp (g_strchug (match))));
       } else {
 
         if (!g_ascii_isdigit (*(string->str)))
