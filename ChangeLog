@@ -1,3 +1,9 @@
+2005-01-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/option.c: Pre-load the year, because gtk_calendar* is 
+	dumb and you need to select the year to change the month. Fixes
+	#162297.
+
 2004-12-21  Glynn Foster  <glynn.foster@sun.com>
 
 	* configure.in: Post bump release.

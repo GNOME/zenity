@@ -23,6 +23,7 @@
  */
 
 #include "option.h"
+#include <time.h>
 
 /* General Options */
 gchar   *zenity_general_dialog_title;
@@ -713,11 +714,17 @@ zenity_calendar_pre_callback (GOptionContext *context,
 		              gpointer        data,
 		              GError        **error)
 {
+  struct tm *t;
+  time_t current_time;
+
+  time (&current_time);
+  t = localtime (&current_time);
+
   zenity_calendar_active = FALSE;
   zenity_calendar_date_format = NULL; 
   zenity_calendar_day = 0;
   zenity_calendar_month = 0;
-  zenity_calendar_year = 0;
+  zenity_calendar_year = t->tm_year + 1900;
 
   return TRUE;
 }
