@@ -35,8 +35,8 @@
 #define ZENITY_HELP_PATH ZENITY_DATADIR "/help/"
 #define ZENITY_CLOTHES_PATH ZENITY_DATADIR "/clothes/"
 
-#define ZENITY_CANVAS_X 580.0
-#define ZENITY_CANVAS_Y 400.0
+#define ZENITY_CANVAS_X 400.0
+#define ZENITY_CANVAS_Y 280.0
 
 static GtkWidget *dialog;
 static GtkWidget *cred_dialog;
@@ -149,7 +149,8 @@ typedef struct
 } MonkClothes;
 
 static MonkClothes monk_clothes[] = {
-        {"gnome-tshirt.png", 10.0, 10.0}
+        {"gnome-tshirt.png", 30.0, ZENITY_CANVAS_Y - 150.0},
+        {"sunglasses.png", ZENITY_CANVAS_X - 100.0 , ZENITY_CANVAS_Y - 150.0 }
 };
 
 static void
@@ -201,8 +202,8 @@ zenity_create_monk (void)
 
         canvas_item = gnome_canvas_item_new (GNOME_CANVAS_GROUP (GNOME_CANVAS (canvas_board)->root),
                                              gnome_canvas_pixbuf_get_type (),
-                                             "x", (ZENITY_CANVAS_X / 2.0)/2.0 + 20.0,
-                                             "y", (ZENITY_CANVAS_Y / 2.0)/2.0 - 10.0,
+                                             "x", (ZENITY_CANVAS_X / 2.0)/2.0 + 10.0,
+                                             "y", (ZENITY_CANVAS_Y / 2.0)/2.0 - 50.0,
                                              "pixbuf", pixbuf,
                                              "anchor", GTK_ANCHOR_NW,
                                              NULL);

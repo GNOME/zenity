@@ -1,7 +1,8 @@
 clothesdir = $(datadir)/zenity/clothes
 clothes_DATA = \
 	monk.png		\
-	gnome-tshirt.png
+	gnome-tshirt.png	\
+	sunglasses.png
 
 imagesdir = $(datadir)/zenity/
 images_DATA = \
