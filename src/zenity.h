@@ -65,6 +65,7 @@ typedef struct {
   gchar        *dialog_text;
   gchar        *entry_text;
   gboolean      pulsate;
+  gboolean	autoclose;
   gdouble       percentage;
 } ZenityProgressData;
 

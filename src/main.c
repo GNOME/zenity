@@ -97,6 +97,7 @@ enum {
   OPTION_PROGRESSTEXT,
   OPTION_PERCENTAGE,
   OPTION_PULSATE,
+  OPTION_AUTOCLOSE,
   OPTION_QUESTIONTEXT,
   OPTION_WARNINGTEXT,
   OPTION_ABOUT,
@@ -520,6 +521,15 @@ struct poptOption progress_options[] = {
     N_("Pulsate progress bar"),
     NULL
   },
+  {
+    "auto-close",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_AUTOCLOSE,
+    N_("Dismiss the dialog when 100% has been reached"),
+    NULL
+  },
   POPT_TABLEEND
 };
 
@@ -917,6 +927,7 @@ zenity_init_parsing_options (void) {
   results->tree_data->separator = g_strdup ("/");
   results->progress_data->percentage = -1;
   results->progress_data->pulsate = FALSE;
+  results->progress_data->autoclose = FALSE;
   results->entry_data->visible = TRUE;
   results->tree_data->checkbox = FALSE;
   results->tree_data->radiobox = FALSE;
@@ -1373,6 +1384,12 @@ zenity_parse_options_callback (poptContext              ctx,
       
       results->progress_data->pulsate = TRUE; 
       break; 
+    case OPTION_AUTOCLOSE:
+      if (results->mode != MODE_PROGRESS)
+        zenity_error ("--auto-close", ERROR_SUPPORT);
+
+      results->progress_data->autoclose = TRUE;
+      break;
     case OPTION_ABOUT: 
       if (results->mode != MODE_LAST) 
         zenity_error (NULL, ERROR_DIALOG); 

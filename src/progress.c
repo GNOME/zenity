@@ -28,7 +28,7 @@
 
 static guint timer;
 static GladeXML *glade_dialog;
-
+static ZenityData *zen_data;
 static GIOChannel *channel;
 
 gint zenity_progress_timeout (gpointer data);
@@ -111,6 +111,11 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
 	  gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
 	  gtk_widget_grab_focus(GTK_WIDGET (button));
+	  if (progress_data->autoclose) {
+		zen_data->exit_code = 0;
+		gtk_main_quit();
+		
+	  }
 	} else
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), percentage / 100.0);
       }
@@ -165,6 +170,7 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   GtkWidget *progress_bar;
   guint input;
 
+  zen_data = data;
   glade_dialog = zenity_util_load_glade_file ("zenity_progress_dialog");
 
   if (glade_dialog == NULL) {
@@ -207,8 +213,6 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 static void
 zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-  ZenityData *zen_data = data;
-
   switch (response) {
     case GTK_RESPONSE_OK:
       zen_data->exit_code = 0;

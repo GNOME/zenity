@@ -1,11 +1,22 @@
 2003-06-03  Mike Newman  <mikegtn@gnome.org>
 
+	* data/zenity.1: Update docs for --auto-close progress dialog
+	* help/C/zenity.xml: option.
+
+2003-06-03  Mike Newman  <mikegtn@gnome.org>
+
 	* src/gdialog.in: add a --help option, pointing to 
 	zenity docs. Fixes #114338
 
 2003-06-03  Changwoo Ryu  <cwryu@debian.org>
 
 	* configure.in: Added "ko" to ALL_LINGUAS.
+
+2003-06-01  Mike Newman <mikegtn@gnome.org>
+
+	* src/main.c: Implement --auto-close for --progress, which
+	* src/progress.c: behaves as if OK was clicked when reaching 100%
+	* src/zenity.h: Fixes #114125
 
 2003-05-29  Glynn Foster  <glynn.foster@sun.com>
 
