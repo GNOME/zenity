@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
-     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
-     <!ENTITY legal SYSTEM "legal.xml">
-     <!ENTITY version "1.0">
-     <!ENTITY app "<application>Zenity</application>">
+  "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY author1 "Sun">
+  <!ENTITY author2 "Java Desktop System Documentation Team">
+  <!ENTITY publisher "Sun Microsystems, Inc.">
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "2.6.0">
+  <!ENTITY app "<application>Zenity</application>">
+  <!ENTITY appname "Zenity">
+  <!ENTITY date "August 2004">
+  <!ENTITY manrevision "2.0">
 ]>
 
 <!-- ================ Document Header ================= -->
@@ -11,67 +17,89 @@
 <article id="index" lang="en">
 
   <articleinfo>
-    <title>Zenity Manual</title>
+    <title>&appname;</title>
+    <subtitle>&appname; Desktop Application Manual V&manrevision;</subtitle>
     <copyright>
 	    <year>2003</year>
-	    <holder>Sun Microsystems</holder>
+	    <year>2004</year>
+	    <holder>&publisher;</holder>
     </copyright>
 
     <!-- Translators: uncomment this
     <copyright>
-	    <year>2003</year>
+	    <year>2004</year>
 	    <holder>ME_THE_TRANSLATOR</holder>
     </copyright>
     -->
 
     <publisher>
-	    <publishername>GNOME Documentation Project</publishername>
+	    <publishername>&publisher;</publishername>
     </publisher>
 
-    <releaseinfo>Version 1.0 of Zenity Manual</releaseinfo>
+    &legal;
 
-    <legalnotice id="feedback">
-	    <title>Feedback Information</title>
-	    <para>
-		    To report a bug or make a suggestion regarding this
-		    application or this documentation, please see the
-		    <ulink type="help" url="ghelp:gnome-feedback">
-			    GNOME Feedback Page
-		    </ulink>
-	    </para>
-    </legalnotice>
 
     <authorgroup>
-	    <author>
-		    <firstname>Glynn</firstname>
-		    <surname>Foster</surname>
-		    <affiliation>
-			    <orgname>GNOME Documentation Project</orgname>
-		    </affiliation>
-            </author>
-	    <editor>
-	            <firstname>Nicholas</firstname>
-		    <surname>Curran</surname>
-		    <affiliation>
-		            <orgname>GNOME Documentation Project</orgname>
-		    </affiliation>
-	    </editor>
+      <author>
+        <firstname>&author1;</firstname>
+        <surname>&author2;</surname>
+        <affiliation><orgname>&publisher;</orgname></affiliation>
+      </author>
+      <author>
+        <firstname>Glynn</firstname>
+        <surname>Foster</surname>
+        <affiliation>
+          <orgname>GNOME Documentation Project</orgname>
+        </affiliation>
+      </author>
+      <editor>
+        <firstname>Nicholas</firstname>
+        <surname>Curran</surname>
+        <affiliation>
+          <orgname>GNOME Documentation Project</orgname>
+        </affiliation>
+      </editor>
     </authorgroup>
 
     <revhistory>
-	    <revision>
-		    <revnumber>1.0</revnumber>
-		    <date>18-01-2003</date>
-		    <revdescription>
-			    <para role="author">Glynn Foster</para>
-			    <para role="publisher">
-				    GNOME Documentation Project
-			    </para>
-		    </revdescription>
-            </revision>
+      <revision>
+        <revnumber>&appname; Desktop Application Manual V&manrevision;</revnumber>
+        <date>&date;</date>
+        <revdescription>
+          <para role="author">&author1; &author2;</para>
+          <para role="publisher">&publisher;</para>
+        </revdescription>
+      </revision>
+
+      <revision>
+        <revnumber>Zenity Manual V1.0</revnumber>
+        <date>January 2003</date>
+        <revdescription>
+          <para role="author">Glynn Foster</para>
+          <para role="publisher"> GNOME Documentation Project </para>
+        </revdescription>
+      </revision>
     </revhistory>
+
+    <releaseinfo>This manual describes version &appversion; of &appname;.
+    </releaseinfo>
+
+    <legalnotice>
+	    <title>Feedback</title>
+	    <para>
+              To send feedback, follow the directions in the <ulink url="ghelp:gnome-feedback" type="help">Feedback Page</ulink>.
+	    </para>
+<!-- Translators may also add here feedback address for translations -->
+
+    </legalnotice>
   </articleinfo>
   
+  <indexterm>
+    <primary>zenity command</primary>
+  </indexterm>
+  <indexterm>
+    <primary>dialog creator</primary>
+  </indexterm>
 <!-- ================ Document Body ================= -->
 
 <!-- ==== Introduction ====== -->
@@ -80,148 +108,159 @@
     <title>Introduction</title>
 
     <para>
-        &app; displays simple GNOME dialogs.
-    </para>
-
-    <para>
-    	&app; can display the following dialogs:
+        &app; enables you to create the following types of simple dialog:
     </para>
 
     <itemizedlist>
-        <listitem><para>
-	    <link linkend="zenity-calendar-options">Calendar dialog.</link>
-	</para></listitem>
-        <listitem><para>
-	    <link linkend="zenity-text-entry-options">Text entry dialog.</link>
-	</para></listitem>
-        <listitem><para>Various message dialogs including:</para>
+        <listitem><para>Calendar</para></listitem>
+	<listitem><para>File selection</para></listitem>
+	<listitem><para>List</para></listitem>
+        <listitem><para>Message</para>
             <itemizedlist>
-	        <listitem><para>
-		    <link linkend="zenity-error-dialog">Error dialog.</link>
-		</para></listitem>
-		<listitem><para>
-		    <link linkend="zenity-info-dialog">Information dialog.</link>
-		</para></listitem>
-		<listitem><para>
-		    <link linkend="zenity-question-dialog">Question dialog.</link>
-		</para></listitem>
-		<listitem><para>
-		    <link linkend="zenity-warning-dialog">Warning dialog.</link>
-		</para></listitem>
+	        <listitem><para>Error</para></listitem>
+		<listitem><para>Information</para></listitem>
+		<listitem><para>Question</para></listitem>
+		<listitem><para>Warning</para></listitem>
 	    </itemizedlist>
 	</listitem>
-	<listitem><para>
-	     <link linkend="zenity-file-selection-options">File selection dialog.</link>
-	</para></listitem>
-	<listitem><para>
-	     <link linkend="zenity-list-options">List options dialog.</link>
-	</para></listitem>
-	<listitem><para>
-	     <link linkend="zenity-progress-options">Progress dialog.</link>
-	</para></listitem>
-	<listitem><para>
-	     <link linkend="zenity-text-options">Text dialog.</link>
-	</para></listitem>
+	<listitem><para>Progress</para></listitem>
+        <listitem><para>Text entry</para></listitem>
+	<listitem><para>Text information</para></listitem>
     </itemizedlist>
 
   </sect1>
 
-<!-- ==== General Options ====== -->
-  <sect1 id="zenity-basic-use">
-    <title>Basic Use</title>
+<!-- ==== Usage ====== -->
+
+  <sect1 id="zenity-usage">
+    <title>Usage</title>
 
     <para>
-	&app; creates simple dialogs.  You can use &app; to create a script that
-	interacts graphically with the user.
+	When you write scripts, you can use &app; to create simple dialogs that interact graphically with the user, as follows:
     </para>
-    
+    <itemizedlist>
+      <listitem>
+        <para>
+	    You can create a dialog to obtain information from the user. For example, you can prompt the user to select a date from a calendar dialog, or to select a file from a file selection dialog.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+	    You can create a dialog to provide the user with information. For example, you can use a progress dialog to indicate the current status of an operation, or use a warning message dialog to alert the user.
+        </para>
+      </listitem>
+    </itemizedlist>
     <para>
-        When the user closes the dialog,
-	&app; prints text produced by the dialog to standard error.
-    </para>
-
-    <para>
-        Ensure that all arguments to &app; are surrounded by quotes.  For example, use
-	<command>zenity --calendar --title="Holiday Planner"</command> instead of
-	<command>zenity --calendar --title=Holiday Planner</command>.
-	If you do not use quotes, you can get unexpected results.
+	When the user closes the dialog, &app; prints the text produced by the dialog to standard error.
     </para>
 
     <note>
-        <title>NOTE</title>
-	<para>
-	Some dialogs support the use of keyboard mnemonics.  To specify the character to use as
-	the mnemonic, place an underscore before that character in the text of the dialog.  For
-	example, to specify the 'P' as the keyboard mnemonic in the following sentence, use
-	"_Please choose a name".
-	</para>
+      <para>
+        When you write &app; commands, ensure that you place quotation marks around each argument. 
+      </para>
+      <para>
+        For example, use: <screen><userinput><command>zenity --calendar --title="Holiday Planner"</command></userinput></screen> Do not use: <screen><userinput><command>zenity --calendar --title=Holiday Planner</command></userinput></screen>
+      </para>
+      <para>
+	If you do not use quotation marks, you might get unexpected results.
+      </para>
     </note>
 
+    <sect2 id="zenity-usage-mnemonics">
+      <title>Access Keys</title>
+	<para>
+	  An access key is a key that enables you to perform an action from the keyboard rather than use the mouse to choose a command from a menu or dialog. Each access key is identified by an underlined letter on a menu or dialog option.
+	</para>
+	<para>
+          Some &app; dialogs support the use of access keys. To specify the character to use as the access key, place an underscore before that character in the text of the dialog. The following example shows how to specify the letter 'C' as the access key:
+	</para>
+	<screen><userinput>"_Choose a name".</userinput></screen>
+    </sect2>
+
+    <sect2 id="zenity-usage-exitcodes">
+      <title>Exit Codes</title>
     <para>
         &app; returns the following exit codes:
     </para>
 
-    <variablelist>
+    <informaltable frame="all">
+      <tgroup cols="2" colsep="1" rowsep="1">
+        <colspec colname="COLSPEC0" colwidth="50*"/>
+        <colspec colname="COLSPEC1" colwidth="50*"/>
+        <thead>
+          <row valign="top">
+            <entry colname="COLSPEC0">
+              <para>Exit Code</para></entry>
+            <entry colname="COLSPEC1">
+              <para>Description</para></entry>
+          </row>
+        </thead>
+        <tbody>
+          <row valign="top">
+            <entry>
+              <para><varname>0</varname></para>
+            </entry>
+            <entry>
+              <para>The user has pressed either <guibutton>OK</guibutton> or <guibutton>Close</guibutton>.</para>
+            </entry>
+          </row>
+          <row valign="top">
+            <entry>
+              <para><varname>1</varname></para>
+            </entry>
+            <entry>
+              <para>The user has either pressed <guibutton>Cancel</guibutton>, or used the window functions to close the dialog.</para>
+            </entry>
+          </row>
+          <row valign="top">
+            <entry>
+              <para><varname>-1</varname></para>
+            </entry>
+            <entry>
+              <para>An unexpected error has occurred.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
 
-      <varlistentry>
-        <term><varname>0</varname></term>
-	<listitem>
-	  <para>The user has pressed either 'OK' or 'Close'.</para>
-	</listitem>
-      </varlistentry>
-     	
-      <varlistentry>
-        <term><varname>1</varname></term>
-	<listitem>
-	  <para>The user has pressed either 'Cancel' or closed the dialog through the window functions.</para>
-	</listitem>
-      </varlistentry>
+    </sect2>
 
-      <varlistentry>
-        <term><varname>-1</varname></term>
-	<listitem>
-	  <para>An unexpected error has occurred.</para>
-	</listitem>
-      </varlistentry>
 
-    </variablelist>
+  <!-- ==== General Options ====== -->
 
-  </sect1>
-
-<!-- ==== General Options ====== -->
-
-  <sect1 id="zenity-general-options">
+  <sect2 id="zenity-usage-general-options">
     <title>General Options</title>
 
     <para>
-	All dialogs have the following general options:
+	All &app; dialogs support the following general options:
     </para>
 
     <variablelist>
 
       <varlistentry>
-        <term><varname>--title</varname>=TITLE</term>
+        <term><option>--title</option>=<replaceable>title</replaceable></term>
 	<listitem>
 	  <para>Specifies the title of a dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--window-icon</varname>=ICON_PATH</term>
+        <term><option>--window-icon</option>=<replaceable>icon_path</replaceable></term>
 	<listitem>
-	  <para>Specifies the icon that should appear in the window frame of the dialog.</para>
+	  <para>Specifies the icon that is displayed in the window frame of the dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--width</varname>=WIDTH</term>
+        <term><option>--width</option>=<replaceable>width</replaceable></term>
 	<listitem>
 	  <para>Specifies the width of the dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--height</varname>=HEIGHT</term>
+        <term><option>--height</option>=<replaceable>height</replaceable></term>
 	<listitem>
 	  <para>Specifies the height of the dialog.</para>
 	</listitem>
@@ -229,63 +268,126 @@
 
     </variablelist>
 
-  </sect1>
+  </sect2>
 
+<!-- ==== Miscellaneous Options ====== -->
+
+  <sect2 id="zenity-help-options">
+    <title>Help Options</title>
+
+    <para>
+	&app; provides the following help options:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><option>--help</option></term>
+	<listitem>
+	  <para>Displays help text. You can also use -? to specify this option.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--usage</option></term>
+	<listitem>
+	  <para>Displays brief usage text.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+<!-- ==== Miscellaneous Options ====== -->
+
+  <sect2 id="zenity-miscellaneous-options">
+    <title>Miscellaneous Options</title>
+
+    <para>
+	&app; also provides the following miscellaneous options:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><option>--about</option></term>
+	<listitem>
+	  <para>Displays the <guilabel>About &appname;</guilabel> dialog, which contains &app; version information, copyright information, and developer information.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--version</option></term>
+	<listitem>
+	  <para>Displays the version number of &app;.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+<!-- ==== GTK+ Options ====== -->
+
+  <sect2 id="zenity-gtk-options">
+    <title>GTK+ Options</title>
+
+    <para>
+	&app; supports the standard GTK+ options. For more information about the GTK+ options, execute the <command>zenity -?</command> command.
+    </para>
+
+  </sect2>
+
+  </sect1>
 <!-- ==== Calendar Options ====== -->
 
   <sect1 id="zenity-calendar-options">
     <title>Calendar Dialog</title>
 
     <para>
-        Use <command>--calendar</command> to create a Calendar dialog.  &app; returns the
-	date selected to standad error.  The current date will be used by the dialog if
-	no date is given on the command line.
+        Use the <option>--calendar</option> option to create a calendar dialog. &app; returns the selected date to standard error. If no date is specified on the command line, the dialog uses the current date.
     </para>
     <para>
-	The Calendar dialog has the following options:
+	The calendar dialog supports the following options:
     </para>
 
     <variablelist>
 
       <varlistentry>
-        <term><varname>--text</varname>=TEXT</term>
+        <term><option>--text</option>=<replaceable>text</replaceable></term>
 	<listitem>
-	  <para>Specifies the text to appear in the Calendar dialog.</para>
+	  <para>Specifies the text that is displayed in the calendar dialog.</para>
 	</listitem>
       </varlistentry>
      	
       <varlistentry>
-        <term><varname>--day</varname>=DAY</term>
+        <term><option>--day</option>=<replaceable>day</replaceable></term>
 	<listitem>
-	  <para>Specifies the day to be pre-selected in the Calendar dialog. The day 
-	        ust be a number between 1 and 31.
+	  <para>Specifies the day that is selected in the calendar dialog. <replaceable>day</replaceable> must be a number between 1 and 31 inclusive.
 	  </para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--month</varname>=MONTH</term>
+        <term><option>--month</option>=<replaceable>month</replaceable></term>
 	<listitem>
-	  <para>Specifies the day to be pre-selected in the Calendar dialog. The day must be
-	  	a number between 1 and 12.
+	  <para>Specifies the month that is selected in the calendar dialog. <replaceable>month</replaceable> must be a number between 1 and 12 inclusive.
 	  </para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--year</varname>=YEAR</term>
+        <term><option>--year</option>=<replaceable>year</replaceable></term>
 	<listitem>
-	  <para>Specifies the year to be pre-selected in the Calendar dialog.</para>
+	  <para>Specifies the year that is selected in the calendar dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--date-format</varname>=FORMAT</term>
+        <term><option>--date-format</option>=<replaceable>format</replaceable></term>
 	<listitem>
-	  <para>Specifies the format to be returned from the Calendar dialog after
-	  	the selection has been made. The default format depends
-		on your locale. The format must be of <command>strftime</command>
-		style, for example "%A %d/%m%y".
+	  <para>Specifies the format that is returned from the calendar dialog after date selection. The default format depends on your locale. <replaceable>format</replaceable> must be a format that is acceptable to the <command>strftime</command> function, for example <literal>%A %d/%m/%y</literal>.
 	  </para>
 	</listitem>
       </varlistentry>
@@ -293,27 +395,32 @@
     </variablelist>
 
     <para>
-    	The following script is an example of how to use the Calendar dialog:
+      The following example script shows how to create a calendar dialog:
 
-		<programlisting>
-		#!/bin/sh
+      <programlisting>
+        #!/bin/sh
 
-		if zenity --calendar --title="Calendar selection" --text="Select a date from below" --day=18 --month=1 --year=2003
-		  then echo $?
-		  else echo "No date selected"
-		fi
-		</programlisting>
+
+        if zenity --calendar \
+        --title="Select a Date" \
+        --text="Click on a date to select that date." \
+        --day=10 --month=8 --year=2004
+          then echo $?
+          else echo "No date selected"
+        fi
+      </programlisting>
+
     </para>
 
     <figure id="zenity-calendar-screenshot">
-      <title>Calendar dialog example</title>
+      <title>Calendar Dialog Example</title>
       <screenshot>
         <mediaobject>
           <imageobject>
               <imagedata fileref="figures/zenity-calendar-screenshot.png" format="PNG"/>
           </imageobject>
           <textobject>
-              <phrase>&app; Calendar dialog example</phrase>
+              <phrase>&app; calendar dialog example</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -321,186 +428,6 @@
 													  
   </sect1>
 
-<!-- ==== Text Entry Options ====== -->
-
-  <sect1 id="zenity-text-entry-options">
-    <title>Text Entry Dialog</title>
-
-    <para>
-        Use <command>--entry</command> to create a Text Entry dialog.
-	&app; returns the 
-	contents of the text entry to standard error. 
-    </para>	
-    <para>	
-	The Text Entry dialog has the following options:
-    </para>
-
-    <variablelist>
-
-      <varlistentry>
-        <term><varname>--text</varname>=TEXT</term>
-	<listitem>
-	  <para>Specifies the text to appear in the Text Entry dialog.</para>
-	</listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><varname>--entry-text</varname>=TEXT</term>
-	<listitem>
-	  <para>Specifies the text to appear in the entry field of the Text Entry dialog.</para>
-	</listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><varname>--hide-text</varname></term>
-	<listitem>
-	  <para>Specifies that the text in the entry field of the Text Entry dialog be hidden.</para>
-	</listitem>
-      </varlistentry>
-
-    </variablelist>
-
-    <para>
-    	The following script is an example of how to use the Text Entry dialog:
-
-		<programlisting>
-		#!/bin/sh
-
-		if zenity --entry --title="Add a new entry" --text="Enter your _Password" --hide-text
-		  then echo $?
-		  else echo "No password entered"
-		fi
-		</programlisting>
-    </para>
-
-    <figure id="zenity-entry-screenshot">
-      <title>Text Entry dialog example</title>
-      <screenshot>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="figures/zenity-entry-screenshot.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>&app; Text Entry dialog example</phrase>
-	  </textobject>
-        </mediaobject>
-      </screenshot>
-    </figure>
-  </sect1>
-
-<!-- ==== Message Options ====== -->
-
-  <sect1 id="zenity-message-options">
-    <title>Message Dialogs</title>
-
-    <para>
-        &app; can create four types of message dialog.  
-	Use the <command>--text</command> option to set the text shown in the
-	dialog.
-    </para>
-    <sect2 id="zenity-warning-dialog">
-      <title>Warning Dialog</title>
-
-      <para>
-          Use <command>--warning</command> to create a Warning dialog.
-      </para>
-
-      <para>
-    	  The following script is an example of how to use the Warning message dialog:
-
-		<programlisting>
-		#!/bin/bash
-
-		FILE_TYPE=$(file -b $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS|awk '{ print $1}')
-
-		if [ "$FILE_TYPE" != "PNG" ]; then
-		  zenity --warning --text="Could not rotate image :" --hide-text
-		fi
-		</programlisting>
-      </para>
-
-      <figure id="zenity-warning-screenshot">
-        <title>Warning dialog example</title>
-        <screenshot>
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/zenity-warning-screenshot.png" format="PNG"/>
-	    </imageobject>
-	    <textobject>
-	      <phrase>&app; Warning dialog example</phrase>
-	    </textobject>
-          </mediaobject>
-        </screenshot>
-      </figure>
-    </sect2>
-
-    <sect2 id="zenity-error-dialog">
-      <title>Error Dialog</title>
-
-      <para>
-          Use <command>--error</command> to create an Error dialog.  
-      </para>
-
-      <figure id="zenity-error-screenshot">
-        <title>Error dialog example</title>
-        <screenshot>
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/zenity-error-screenshot.png" format="PNG"/>
-	    </imageobject>
-	    <textobject>
-	      <phrase>&app; Error dialog example</phrase>
-	    </textobject>
-          </mediaobject>
-        </screenshot>
-      </figure>
-    </sect2>
-
-    <sect2 id="zenity-info-dialog">
-      <title>Information Dialog</title>
-
-      <para>
-          Use <command>--info</command> to create an Information dialog.
-      </para>
-
-      <figure id="zenity-information-screenshot">
-        <title>Informational dialog example</title>
-        <screenshot>
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/zenity-information-screenshot.png" format="PNG"/>
-	    </imageobject>
-	    <textobject>
-	      <phrase>&app; Informational dialog example</phrase>
-	    </textobject>
-          </mediaobject>
-        </screenshot>
-      </figure>
-    </sect2>
-
-    <sect2 id="zenity-question-dialog">
-      <title>Question Dialog</title>
-
-      <para>
-          Use <command>--question</command> to create a Question dialog.
-      </para>
-
-      <figure id="zenity-question-screenshot">
-        <title>Question dialog example</title>
-        <screenshot>
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/zenity-question-screenshot.png" format="PNG"/>
-	    </imageobject>
-	    <textobject>
-	      <phrase>&app; Question dialog example</phrase>
-	    </textobject>
-          </mediaobject>
-        </screenshot>
-      </figure>
-    </sect2>
-
-  </sect1>
 
 <!-- ==== File Selection Options ====== -->
 
@@ -508,68 +435,65 @@
     <title>File Selection Dialog</title>
 
     <para>
-	Use <command>--file-selection</command> to create a file selection
-	dialog. &app; returns 
-	the files or directories selected to standard error. 
+	Use the <option>--file-selection</option> option to create a file selection dialog. &app; returns the selected files or directories to standard error. 
     </para>
     <para>
-	The File Selection dialog has the following options:
+	The file selection dialog supports the following options:
     </para>
 
     <variablelist>
 
       <varlistentry>
-        <term><varname>--filename</varname>=FILENAME</term>
+        <term><option>--filename</option>=<replaceable>filename</replaceable></term>
 	<listitem>
-	  <para>Specifies the file or directory to be selected in the File Selection dialog
-	        when the dialog is first shown.</para>
+	  <para>Specifies the file or directory that is selected in the file selection dialog when the dialog is first shown.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-	<term><varname>--multiple</varname></term>
+	<term><option>--multiple</option></term>
 	<listitem>
-	  <para>Allows selection of multiple filenames in the File Selection dialog.</para>
+	  <para>Allows the selection of multiple filenames in the file selection dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-	<term><varname>--separator</varname>=SEPARATOR</term>
+	<term><option>--separator</option>=<replaceable>separator</replaceable></term>
 	<listitem>
-	  <para>Specifies the string used to divide the returned list of filenames.</para>
+	  <para>Specifies the string that is used to divide the returned list of filenames.</para>
 	</listitem>
       </varlistentry>
 
     </variablelist>
 
     <para>
-    	The following script is an example of how to use the File Selection dialog:
+      The following example script shows how to create a file selection dialog:
 
-		<programlisting>
-		#!/bin/sh
+      <programlisting>
+        #!/bin/sh
 
-		FILE=`zenity --file-selection --title="Select a file"'
+        FILE=`zenity --file-selection --title="Select a File"`
 
-		case $? in
-		         0)
-			  	echo "\"$FILE\" selected.";;
-		         1)
-			        echo "No file selected.";;
-			-1)
-			        echo "No file selected.";;
-		esac
-		</programlisting>
+        case $? in
+                 0)
+                        echo "\"$FILE\" selected.";;
+                 1)
+                        echo "No file selected.";;
+                -1)
+                        echo "No file selected.";;
+        esac
+      </programlisting>
     </para>
 
     <figure id="zenity-fileselection-screenshot">
-      <title>File Selection dialog example</title>
+      <title>File Selection Dialog Example</title>
       <screenshot>
         <mediaobject>
           <imageobject>
             <imagedata fileref="figures/zenity-fileselection-screenshot.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>&app; File Selection dialog example</phrase>
+	    <phrase>&app; file selection dialog example</phrase>
 	  </textobject>
         </mediaobject>
       </screenshot>
@@ -583,62 +507,49 @@
     <title>List Dialog</title>
 
     <para>
-	Use <command>--list</command> to create a list dialog.  &app; returns the entries in
-	the first column of text of selected rows to standard error.
+	Use the <option>--list</option> option to create a list dialog. &app; returns the entries in the first column of text of selected rows to standard error.
     </para>
 
     <para>
-	Every column must be specified by the <command>--column</command> option.  Data for
-	the dialog must specified column by column, row by row.  Data can be provided to
-	the dialog through standard input.  Each entry must be separated by a newline.
+	Data for the dialog must specified column by column, row by row. Data can be provided to the dialog through standard input. Each entry must be separated by a newline character.
     </para>
 
     <para>
-	If you use the <command>--checklist</command> or <command>--radiolist</command>
-        options, each row must start with either 'TRUE' or 'FALSE'.
+	If you use the <option>--checklist</option> or <option>--radiolist</option> options, each row must start with either 'TRUE' or 'FALSE'.
     </para>
 
     <para>
-	The List dialog has the following options:
+	The list dialog supports the following options:
     </para>
 
     <variablelist>
 
       <varlistentry>
-        <term><varname>--text</varname>=TEXT</term>
+        <term><option>--column</option>=<replaceable>column</replaceable></term>
 	<listitem>
-	  <para>Specifies the text to appear in the List dialog.</para>
-	</listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><varname>--column</varname>=COLUMN</term>
-	<listitem>
-	  <para>Specifies the column headers to appear in the List dialog.
-		You must call the <command>--column</command> option for
-		each column you want to appear in the dialog.
+	  <para>Specifies the column headers that are displayed in the list dialog. You must specify a <option>--column</option> option for each column that you want to display in the dialog.
 	  </para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--checklist</varname></term>
+        <term><option>--checklist</option></term>
 	<listitem>
-	  <para>Specifies that the first column should contain check boxes in the List dialog.
+	  <para>Specifies that the first column in the list dialog contains check boxes.
 	  </para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--radiolist</varname></term>
+        <term><option>--radiolist</option></term>
 	<listitem>
-	  <para>Specifies that the first column should contain radio boxes in the List dialog.
+	  <para>Specifies that the first column in the list dialog contains radio boxes.
 	  </para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--editable</varname></term>
+        <term><option>--editable</option></term>
 	<listitem>
 	  <para>Allows the displayed items to be edited.
 	  </para>
@@ -646,18 +557,9 @@
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--seperator</varname>=SEPERATOR</term>
+        <term><option>--separator</option>=<replaceable>separator</replaceable></term>
 	<listitem>
-	  <para>Specifies what string should be used when the List dialog returns the selected entries.
-	  </para>
-	</listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><varname>--print-column</varname>=COLUMN</term>
-	<listitem>
-	  <para>Specifies what column should be printed to standard output. The default is to return
-		the first column. 'ALL' may be specified to print out all columns.
+	  <para>Specifies what string is used when the list dialog returns the selected entries.
 	  </para>
 	</listitem>
       </varlistentry>
@@ -665,30 +567,198 @@
     </variablelist>
 
     <para>
-    	The following commandline is an example of how to use the List dialog:
-		<programlisting>
-		zenity --list --title="Choose bugs you wish to view" \
-		       --text="Select items from the list below." \
-		       --column="Bug Number" --column="Severity" --column="Description" \
-		       992383 Normal "GtkTreeView crashes on multiple selections" \
-		       293823 High "GNOME Dictionary does not handle proxy" \
-		       393823 Critical "Menu editing does not work in GNOME 2.0"
-		</programlisting>
+      The following example script shows how to create a list dialog:
+      <programlisting>
+        #!/bin/sh
+
+        zenity --list \
+          --title="Choose the Bugs You Wish to View" \
+          --column="Bug Number" --column="Severity" --column="Description" \
+            992383 Normal "GtkTreeView crashes on multiple selections" \
+            293823 High "GNOME Dictionary does not handle proxy" \
+            393823 Critical "Menu editing does not work in GNOME 2.0"
+      </programlisting>
+
     </para>
 
     <figure id="zenity-list-screenshot">
-      <title>List Selection dialog example</title>
+      <title>List Dialog Example</title>
       <screenshot>
         <mediaobject>
           <imageobject>
             <imagedata fileref="figures/zenity-list-screenshot.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>&app; List dialog example</phrase>
+	    <phrase>&app; list dialog example</phrase>
 	  </textobject>
         </mediaobject>
       </screenshot>
     </figure>
+
+  </sect1>
+
+<!-- ==== Message Options ====== -->
+
+  <sect1 id="zenity-message-options">
+    <title>Message Dialogs</title>
+
+    <para>
+        &app; can create four types of message dialog: 
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>Error</para>
+      </listitem>
+      <listitem>
+        <para>Information</para>
+      </listitem>
+      <listitem>
+        <para>Question</para>
+      </listitem>
+      <listitem>
+        <para>Warning</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>
+For each type, use the <option>--text</option> option to specify the text that is displayed in the dialog.
+    </para>
+
+    <sect2 id="zenity-error-dialog">
+      <title>Error Dialog</title>
+
+      <para>
+          Use the <option>--error</option> option to create an error dialog.  
+      </para>
+
+      <para>
+        The following example script shows how to create an error dialog:
+
+        <programlisting>
+          #!/bin/bash
+
+          zenity --error \
+          --text="Could not find /var/log/syslog."
+        </programlisting>
+
+      </para>
+
+      <figure id="zenity-error-screenshot">
+        <title>Error Dialog Example</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-error-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>&app; error dialog example</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+
+    <sect2 id="zenity-info-dialog">
+      <title>Information Dialog</title>
+
+      <para>
+          Use the <option>--info</option> option to create an information dialog.
+      </para>
+
+      <para>
+        The following example script shows how to create an information dialog:
+
+        <programlisting>
+          #!/bin/bash
+
+          zenity --info \
+          --text="Merge complete. Updated 3 of 10 files."
+        </programlisting>
+
+      </para>
+
+      <figure id="zenity-information-screenshot">
+        <title>Information Dialog Example</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-information-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>&app; information dialog example</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+
+    <sect2 id="zenity-question-dialog">
+      <title>Question Dialog</title>
+
+      <para>
+          Use the <option>--question</option> option to create a question dialog.
+      </para>
+
+      <para>
+        The following example script shows how to create a question dialog:
+
+        <programlisting>
+          #!/bin/bash
+
+          zenity --question \
+          --text="Are you sure you wish to proceed?"
+        </programlisting>
+
+      </para>
+
+      <figure id="zenity-question-screenshot">
+        <title>Question Dialog Example</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-question-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>&app; question dialog example</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+
+    <sect2 id="zenity-warning-dialog">
+      <title>Warning Dialog</title>
+
+      <para>
+          Use the <option>--warning</option> option to create a warning dialog.
+      </para>
+
+      <para>
+        The following example script shows how to create a warning dialog:
+
+        <programlisting>
+          #!/bin/bash
+        
+          zenity --warning \
+          --text="Disconnect the power cable to avoid electrical shock."
+        </programlisting>
+
+      </para>
+
+      <figure id="zenity-warning-screenshot">
+        <title>Warning Dialog Example</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/zenity-warning-screenshot.png" format="PNG"/>
+	    </imageobject>
+	    <textobject>
+	      <phrase>&app; warning dialog example</phrase>
+	    </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
 
   </sect1>
 
@@ -698,90 +768,162 @@
     <title>Progress Dialog</title>
 
     <para>
-	Use <command>--progress</command> to create a Progress dialog. 
+	Use the <option>--progress</option> option to create a progress dialog. 
     </para>
 
     <para>
- &app; reads data from
-	standard input line by line.  If a line is prefixed with a hash (#), the text is 
-	updated with the text on that line.  If a line contains only a number, the percentage
-	is updated with that number.
+      &app; reads data from standard input line by line. If a line is prefixed with #, the text is updated with the text on that line. If a line contains only a number, the percentage is updated with that number.
     </para>
 	
     <para>
-	The Progress dialog has the following options:
+	The progress dialog supports the following options:
     </para>
 
     <variablelist>
 
       <varlistentry>
-        <term><varname>--text</varname>=TEXT</term>
+        <term><option>--text</option>=<replaceable>text</replaceable></term>
 	<listitem>
-	  <para>Specifies the text to appear in the Progress dialog.</para>
+	  <para>Specifies the text that is displayed in the progress dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--percentage</varname>=PERCENTAGE</term>
+        <term><option>--percentage</option>=<replaceable>percentage</replaceable></term>
 	<listitem>
-	  <para>Specifies the initial percentage that should be set in the Progress dialog.</para>
+	  <para>Specifies the initial percentage that is set in the progress dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-	<term><varname>--auto-close</varname></term>
+	<term><option>--auto-close</option></term>
 	<listitem>
 	  <para>Closes the progress dialog when 100% has been reached.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--pulsate</varname></term>
+        <term><option>--pulsate</option></term>
 	<listitem>
-	  <para>Specifies that the Progress dialog should pulsate until an EOF character is read
-	        from standard input.</para>
+	  <para>Specifies that the progress bar pulsates until an EOF character is read from standard input.</para>
 	</listitem>
       </varlistentry>
 
     </variablelist>
 
     <para>
-    	The following script is an example of how to use the Progress dialog:
-		<programlisting>
-		#!/bin/sh
-		(
-		echo "10" ; sleep 1
-		echo "# Updating mail logs" ; sleep 1
-		echo "20" ; sleep 1
-		echo "# Resetting cron jobs" ; sleep 1
-		echo "50" ; sleep 1
-		echo "This line will just be ignored" ; sleep 1
-		echo "75" ; sleep 1
-		echo "# Rebooting system" ; sleep 1
-		echo "100" ; sleep 1
-		) |
-		zenity --progress --title="Update System Logs" --text="Scanning mail logs..." --percentage=0
+      The following example script shows how to create a progress dialog:
+      <programlisting>
+        #!/bin/sh
+        (
+        echo "10" ; sleep 1
+        echo "# Updating mail logs" ; sleep 1
+        echo "20" ; sleep 1
+        echo "# Resetting cron jobs" ; sleep 1
+        echo "50" ; sleep 1
+        echo "This line will just be ignored" ; sleep 1
+        echo "75" ; sleep 1
+        echo "# Rebooting system" ; sleep 1
+        echo "100" ; sleep 1
+        ) |
+        zenity --progress \
+          --title="Update System Logs" \
+          --text="Scanning mail logs..." \
+          --percentage=0
 
-		if [ "$?" = -1 ] ; then
-			zenity --error --text="Update cancelled."
-		fi
-		</programlisting>
+        if [ "$?" = -1 ] ; then
+                zenity --error \
+                  --text="Update canceled."
+        fi
+
+      </programlisting>
+
     </para>
 
     <figure id="zenity-progress-screenshot">
-      <title>Progress dialog example</title>
+      <title>Progress Dialog Example</title>
       <screenshot>
         <mediaobject>
           <imageobject>
             <imagedata fileref="figures/zenity-progress-screenshot.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>&app; Progress dialog example</phrase>
+	    <phrase>&app; progress dialog example</phrase>
 	  </textobject>
         </mediaobject>
       </screenshot>
     </figure>
 
+  </sect1>
+
+<!-- ==== Text Entry Options ====== -->
+
+  <sect1 id="zenity-text-entry-options">
+    <title>Text Entry Dialog</title>
+
+    <para>
+        Use the <option>-entry</option> option to create a text entry dialog. &app; returns the contents of the text entry to standard error. 
+    </para>	
+    <para>	
+	The text entry dialog supports the following options:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><option>--text</option>=<replaceable>text</replaceable></term>
+	<listitem>
+	  <para>Specifies the text that is displayed in the text entry dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--entry-text</option>=<replaceable>text</replaceable></term>
+	<listitem>
+	  <para>Specifies the text that is displayed in the entry field of the text entry dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--hide-text</option></term>
+	<listitem>
+	  <para>Hides the text in the entry field of the text entry dialog.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>
+      The following example script shows how to create a text entry dialog:
+
+      <programlisting>
+        #!/bin/sh
+
+        if zenity --entry \
+        --title="Add an Entry" \
+        --text="Enter your _password:" \
+        --entry-text "password" \
+        --hide-text
+          then echo $?
+          else echo "No password entered"
+        fi
+      </programlisting>
+
+    </para>
+
+    <figure id="zenity-entry-screenshot">
+      <title>Text Entry Dialog Example</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/zenity-entry-screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>&app; text entry dialog example</phrase>
+	  </textobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
   </sect1>
 
 <!-- ==== Text Information Options ====== -->
@@ -790,137 +932,68 @@
     <title>Text Information Dialog</title>
 
     <para>
-	Use <command>--text-info</command> to create a Text Information dialog. 
+	Use the <option>--text-info</option> option to create a text information dialog. 
     </para>
 	
     <para>
-	The Text Information dialog has the following options:
+	The text information dialog supports the following options:
     </para>
 
     <variablelist>
 
       <varlistentry>
-        <term><varname>--filename</varname>=FILENAME</term>
+        <term><option>--filename</option>=<replaceable>filename</replaceable></term>
 	<listitem>
-	  <para>Specifies a file to be loaded in the Text Information dialog.</para>
+	  <para>Specifies a file that is loaded in the text information dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><varname>--editable</varname></term>
+        <term><option>--editable</option></term>
         <listitem>
-          <para>Allows the displayed text to be edited.  The edited text is
-	  returned to standard error when the dialog is closed.</para>
+          <para>Allows the displayed text to be edited. The edited text is returned to standard error when the dialog is closed.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
     <para>
-    	The following script is an example of how to use the Text Infomation dialog:
-		<programlisting>
-		#!/bin/sh
+      The following example script shows how to create a text information dialog:
+      <programlisting>
+        #!/bin/sh
 
-		FILE=`zenity --file-selection --title="Select a file"'
+        FILE=`zenity --file-selection \
+          --title="Select a File"`
 
-		case $? in
-		         0)
-			  	zenity --text-info --title=$FILE --filename=$FILE --editable 2>/tmp/tmp.txt
-							
-		         1)
-			        echo "No file selected.";;
-			-1)
-				echo "No file selected.";;
-		esac
-		</programlisting>
+        case $? in
+                 0)
+                        zenity --text-info \
+                          --title=$FILE \
+                          --filename=$FILE \
+                          --editable 2>/tmp/tmp.txt;;
+                 1)
+                        echo "No file selected.";;
+                -1)
+                        echo "No file selected.";;
+        esac
+      </programlisting>
+
     </para>
 
     <figure id="zenity-text-screenshot">
-      <title>Text Information dialog example</title>
+      <title>Text Information Dialog Example</title>
       <screenshot>
         <mediaobject>
           <imageobject>
             <imagedata fileref="figures/zenity-text-screenshot.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>&app; Text Information dialog example</phrase>
+	    <phrase>&app; text information dialog example</phrase>
 	  </textobject>
         </mediaobject>
       </screenshot>
     </figure>
 
-  </sect1>
-
-<!-- ==== Miscellaneous Options ====== -->
-
-  <sect1 id="zenity-miscellaneous-options">
-    <title>Miscellaneous Options</title>
-
-    <para>
-	&app; has the following miscellaneous options:
-    </para>
-
-    <variablelist>
-
-      <varlistentry>
-        <term><varname>--about</varname></term>
-	<listitem>
-	  <para>Displays some information about &app;.</para>
-	</listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><varname>--version</varname></term>
-	<listitem>
-	  <para>Prints the version number of &app;.</para>
-	</listitem>
-      </varlistentry>
-
-    </variablelist>
-
-  </sect1>
-
-<!-- ================ Application License ================= -->
-  <sect1 id="license">
-	  <title>License</title>
-	  <para>
-		  This program is free software; you can redistribute
-		  it and/or modify it under the terms of the 
-		  <ulink type="help" url="gnome-help:gpl">
-			  <citetitle>GNU General Public License</citetitle>
-	          </ulink>
-		  as published by the Free Software Foundation; either 
-		  version 2 of the License, of (at your option) any later
-		  version.
-	  </para>
-	  <para>
-		  This program is distributed in the hope that it will be
-		  useful, but WITHOUT ANY WARRANTY; without even the
-		  implied warranty of MERCHANTABILITY or FITNESS FOR A 
-		  PARTICULAR PURPOSE. See the
-		  <citetitle>GNU General Public License</citetitle>
-		  for more details.
-          </para>
-	  <para>
-		  A copy of the 
-		  <citetitle>GNU General Public License</citetitle>
-		  is included as an appendix to the 
-		  <citetitle>GNOME Users Guide</citetitle>
-		  . You may also obtain a copy of the 
-		  <citetitle>GNU General Public License</citetitle>
-		  from the Free Software Foundation by visiting
-		  <ulink type="http" url="http://www.fsf.org">
-			  their Web site
-		  </ulink>
-		  or by writing to 
-		  <address>Free Software Foundation, Inc.
-			  <street>59 Temple Place</street> - Suite 330
-			  <city>Boston</city>,
-			  <state>MA</state>
-			  <postcode>02111-1307</postcode>
-			  <country>USA</country>
-		  </address>
-	  </para>
   </sect1>
 
 </article>
