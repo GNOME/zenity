@@ -59,6 +59,25 @@ zenity_util_load_glade_file (const gchar *widget_root)
   return xml;
 }
 
+gchar*
+zenity_util_strip_newline (gchar *string)
+{
+    gsize len;
+    
+    g_return_val_if_fail (string != NULL, NULL);
+                                                                                                                                                                             
+    len = strlen (string);
+    while (len--) 
+    {
+      if (string[len] == '\n')
+        string[len] = '\0';
+      else
+        break;
+    }
+            
+    return string;
+}
+
 gboolean
 zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) 
 {

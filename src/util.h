@@ -11,6 +11,7 @@ G_BEGIN_DECLS
 #define ZENITY_IMAGE_FULLPATH(filename)         (g_strconcat (ZENITY_DATADIR, "/", filename, NULL))
 
 GladeXML*       zenity_util_load_glade_file               (const gchar    *widget_root);
+gchar *         zenity_util_strip_newline                 (gchar          *string);
 gboolean        zenity_util_fill_file_buffer              (GtkTextBuffer  *buffer, 
                                                            const gchar    *filename);
 void            zenity_util_set_window_icon               (GtkWidget      *widget,

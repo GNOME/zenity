@@ -75,6 +75,119 @@ zenity_tree_toggled_callback (GtkCellRendererToggle *cell, gchar *path_string, g
   gtk_tree_path_free (path);
 }
 
+static gboolean
+zenity_tree_handle_stdin (GIOChannel  *channel,
+                          GIOCondition condition,
+                          gpointer     data)
+{
+  static GtkTreeView *tree_view;
+  GtkTreeModel *model;
+  GtkTreeIter iter;
+  static gint column_count = 0;
+  static gint row_count = 0;
+  static gint n_columns;
+  static gboolean editable;
+  static gboolean toggles;
+
+  tree_view = GTK_TREE_VIEW (data);
+  n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
+  editable = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "editable"));
+  toggles = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "toggles"));
+
+  model = gtk_tree_view_get_model (tree_view);
+
+  if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
+    GString *string;
+    GError *error = NULL;
+
+    string = g_string_new (NULL);
+
+    while (channel->is_readable != TRUE)
+      ;
+    do {
+      gint status;
+
+      do {
+        status = g_io_channel_read_line_string (channel, string, NULL, &error);
+
+        while (gtk_events_pending ())
+          gtk_main_iteration ();
+
+      } while (status == G_IO_STATUS_AGAIN);
+
+      if (status != G_IO_STATUS_NORMAL) {
+        if (error) {
+          g_warning ("zenity_tree_handle_stdin () : %s", error->message);
+          g_error_free (error);
+          error = NULL;
+        }
+        continue;
+      }
+    
+      if (column_count == n_columns) {
+        /* We're starting a new row */
+        column_count = 0;
+        row_count++;
+        gtk_list_store_append (GTK_LIST_STORE (model), &iter);
+      }
+
+      if (toggles && column_count == 0) {
+        if (strcmp (string->str, "TRUE") == 0)
+          gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, TRUE, -1);
+	else 
+          gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, FALSE, -1);
+      }
+      else {
+        gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, zenity_util_strip_newline (string->str), -1);	
+      }
+
+    if (editable) {
+      g_print ("Shouldn't be going here");
+      gtk_list_store_set (GTK_LIST_STORE (model), &iter, n_columns, TRUE, -1);
+    }
+
+    if (row_count == MAX_ELEMENTS_BEFORE_SCROLLING) {
+      GtkWidget *scrolled_window;
+      GtkRequisition rectangle;
+
+      gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
+      scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
+      gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
+      gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
+                                      GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+    }
+
+    column_count ++;
+
+    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN); 
+    g_string_free (string, TRUE);
+  }
+
+  if (condition != G_IO_IN) {
+    g_io_channel_shutdown (channel, TRUE, NULL);
+    return FALSE;
+  }
+  return TRUE;
+}
+
+static void
+zenity_tree_fill_entries_from_stdin (GtkTreeView  *tree_view,
+                                     gint          n_columns,
+                                     gboolean      toggles,
+                                     gboolean      editable)
+{
+  GIOChannel *channel;
+
+  g_object_set_data (G_OBJECT (tree_view), "n_columns", (gint *) n_columns);
+  g_object_set_data (G_OBJECT (tree_view), "toggles", (gint *) toggles);
+  g_object_set_data (G_OBJECT (tree_view), "editable", (gint *) editable); 
+
+  channel = g_io_channel_unix_new (0);
+  g_io_channel_set_encoding (channel, NULL, NULL);
+  g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
+  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_tree_handle_stdin, tree_view);
+}
+
 static void
 zenity_tree_fill_entries (GtkTreeView  *tree_view, 
                           const gchar **args, 
@@ -118,8 +231,8 @@ zenity_tree_fill_entries (GtkTreeView  *tree_view,
       gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
                                       GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
     }
-  i += n_columns;
 
+  i += n_columns;
   }
 }
 
@@ -174,11 +287,13 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     return;
   }
 
+  /*
   if (tree_data->data == NULL) {
     g_printerr (_("No contents specified for --list\n"));
     data->exit_code = -1;
     return;
   }
+  */
 
   glade_xml_signal_autoconnect (glade_dialog);
 
@@ -310,10 +425,18 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
   gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree_view), TRUE);
 
-  if (tree_data->radiobox || tree_data->checkbox)
-    zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, TRUE, tree_data->editable);
-  else
-    zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, FALSE, tree_data->editable);
+  if (tree_data->radiobox || tree_data->checkbox) {
+    if (tree_data->data)
+      zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, TRUE, tree_data->editable);
+    else
+      zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view), n_columns, TRUE, tree_data->editable);
+  }
+  else {
+    if (tree_data->data)
+      zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, FALSE, tree_data->editable);
+    else
+      zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view), n_columns, FALSE, tree_data->editable);
+  }
 
   gtk_widget_show (dialog);
   gtk_main ();
