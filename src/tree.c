@@ -28,7 +28,7 @@
 #include "zenity.h"
 #include "util.h"
 
-#define MAX_ELEMENTS_BEFORE_SCROLLING 8
+#define MAX_ELEMENTS_BEFORE_SCROLLING 5
 
 static GladeXML *glade_dialog;
 static GSList *selected;
@@ -88,6 +88,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
   static gint n_columns;
   static gboolean editable;
   static gboolean toggles;
+  static gboolean first_time = FALSE;
 
   tree_view = GTK_TREE_VIEW (data);
   n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
@@ -95,6 +96,11 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
   toggles = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "toggles"));
 
   model = gtk_tree_view_get_model (tree_view);
+
+  if (!first_time) {
+    first_time = TRUE;
+    gtk_list_store_append (GTK_LIST_STORE (model), &iter);
+  }
 
   if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
     GString *string;
@@ -132,9 +138,9 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
       }
 
       if (toggles && column_count == 0) {
-        if (strcmp (string->str, "TRUE") == 0)
+        if (strcmp (zenity_util_strip_newline (string->str), "TRUE") == 0)
           gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, TRUE, -1);
-	else 
+	else
           gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, FALSE, -1);
       }
       else {
@@ -142,7 +148,6 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
       }
 
     if (editable) {
-      g_print ("Shouldn't be going here");
       gtk_list_store_set (GTK_LIST_STORE (model), &iter, n_columns, TRUE, -1);
     }
 
