@@ -4,9 +4,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity 1.0\n"
-"POT-Creation-Date: 2003-05-05 21:23+0100\n"
-"PO-Revision-Date: 2003-03-16 16:50+0800\n"
+"Project-Id-Version: zenity 1.1\n"
+"POT-Creation-Date: 2003-05-08 10:29+0800\n"
+"PO-Revision-Date: 2003-05-08 10:36+0800\n"
 "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,11 @@ msgstr ""
 
 #: src/about.c:293
 msgid "Display dialog boxes from shell scripts"
-msgstr "透過命令稿顯示對話窗"
+msgstr "透過指令來顯示對話窗"
 
 #: src/about.c:297
 msgid "(C) 2003 Sun Microsystems"
-msgstr "版權所有 ©2003 Sun Microsystems"
+msgstr "版權所有 © 2003 Sun Microsystems"
 
 #: src/about.c:388
 msgid "Credits"
@@ -98,22 +98,20 @@ msgid "ICONPATH"
 msgstr "圖示路徑"
 
 #: src/main.c:250
-#, fuzzy
 msgid "Set the width"
-msgstr "指定視窗使用的圖示"
+msgstr "指定寬度"
 
 #: src/main.c:251
 msgid "WIDTH"
-msgstr ""
+msgstr "寬度"
 
 #: src/main.c:259
-#, fuzzy
 msgid "Set the height"
-msgstr "指定對話窗中的文字"
+msgstr "指定高度"
 
 #: src/main.c:260
 msgid "HEIGHT"
-msgstr ""
+msgstr "高度"
 
 #: src/main.c:281 src/main.c:338 src/main.c:378 src/main.c:400 src/main.c:502
 #: src/main.c:533 src/main.c:586
@@ -154,7 +152,7 @@ msgstr "檔案名稱"
 
 #: src/main.c:444
 msgid "Set the column header"
-msgstr "指定整欄項目的標題"
+msgstr "指定欄位標題"
 
 #: src/main.c:453
 msgid "Use check boxes for first column"
@@ -214,11 +212,11 @@ msgstr "螢幕"
 
 #: src/main.c:640
 msgid "Make X calls synchronous"
-msgstr "進行同步 X 呼叫"
+msgstr "進行 X 同步呼叫"
 
 #: src/main.c:649
 msgid "Program name as used by the window manager"
-msgstr "視窗管理員所需的程式名稱"
+msgstr "視窗總管所需的程式名稱"
 
 #: src/main.c:650
 msgid "NAME"
@@ -226,7 +224,7 @@ msgstr "名稱"
 
 #: src/main.c:658
 msgid "Program class as used by the window manager"
-msgstr "視窗管理員所需的程式類別名稱"
+msgstr "視窗總管所需的程式類別名稱"
 
 #: src/main.c:659
 msgid "CLASS"
@@ -330,35 +328,30 @@ msgstr "求助選項"
 
 #: src/main.c:1003
 #, c-format
-msgid ""
-"%s in an invalid option for this dialog. See zenity --help for more details\n"
-msgstr "在本類對話窗中 %s 是無效的選項。請輸入 zenity --help 參考完整選項\n"
+msgid "%s in an invalid option. See zenity --help for more details\n"
+msgstr "%s 是無效的選項。請輸入 zenity --help 獲取更多資料\n"
 
-#: src/main.c:1011
-msgid "You must specify more arguments. See zenity --help for more details\n"
-msgstr "參數不足。請輸入 zenity --help 參考完整選項\n"
-
-#: src/main.c:1046
+#: src/main.c:1047
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr "閣下必須指定對話窗的類型。請輸入 zenity --help 參考完整選項\n"
+msgstr "閣下必須指定對話窗的類型。請輸入‘zenity --help’獲取更多資料\n"
 
-#: src/main.c:1066
+#: src/main.c:1067
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "%s 在同一個對話窗中使用了兩次\n"
 
-#: src/main.c:1070
+#: src/main.c:1071
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "本類對話窗不支援 %s 選項\n"
 
-#: src/main.c:1074
+#: src/main.c:1075
 msgid "Two or more dialog options specified\n"
 msgstr "使用了兩個或以上的對話窗選項\n"
 
-#: src/tree.c:285
-msgid "No column titles specified for --list\n"
-msgstr "使用 --list 選項時沒有指定該列清單的標題\n"
+#: src/tree.c:290
+msgid "No column titles specified for List dialog.\n"
+msgstr "在清單對話窗中沒有指定該列清單的標題。\n"
 
 #: src/zenity.glade.h:1
 msgid "*"
