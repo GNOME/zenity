@@ -31,13 +31,6 @@
 
 static GladeXML *glade_dialog;
 
-enum
-{
-	NAME_COLUMN,
-	DESCRIPTION_COLUMN,
-	N_COLUMNS
-};
-
 void zenity_tree_dialog_response (GtkWindow *window, int button, gpointer data);
 
 static void
@@ -52,10 +45,10 @@ zenity_tree_toggled_callback (GtkCellRendererToggle *cell, gchar *path_string, g
 	path = gtk_tree_path_new_from_string (path_string);
 
 	gtk_tree_model_get_iter (model, &iter, path);
-	gtk_tree_model_get (model, &iter, NAME_COLUMN, &value, -1);
+	gtk_tree_model_get (model, &iter, 0, &value, -1);
 
 	value = !value;
-	gtk_list_store_set (GTK_LIST_STORE (model), &iter, NAME_COLUMN, value, -1);
+	gtk_list_store_set (GTK_LIST_STORE (model), &iter, 0, value, -1);
 
 	gtk_tree_path_free (path);
 }
@@ -80,23 +73,23 @@ zenity_tree_fill_entries (GtkTreeView *tree_view, const **argv)
 	gtk_tree_model_foreach (model, count_rows_foreach, &i);
 
 	while (i<10) {	
-	gtk_list_store_append (GTK_LIST_STORE (model), &iter);
-	gtk_list_store_set (GTK_LIST_STORE (model), &iter, 
-			    NAME_COLUMN, "TRUE", 
-			    DESCRIPTION_COLUMN, "This is the bar above foobar", 
-			    -1);
+		gtk_list_store_append (GTK_LIST_STORE (model), &iter);
+		gtk_list_store_set (GTK_LIST_STORE (model), &iter, 
+			    	    0, "TRUE", 
+			            1, "This is the bar above foobar", -1);
 
-	if (i == MAX_ELEMENTS_BEFORE_SCROLLING) {
-		GtkWidget *scrolled_window;
-		GtkRequisition rectangle;
+		if (i == MAX_ELEMENTS_BEFORE_SCROLLING) {
+			GtkWidget *scrolled_window;
+			GtkRequisition rectangle;
 
-		gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
-		scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
-		gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
-		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
-						GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
-	}
-	i++;   
+			gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
+			scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
+			gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
+			gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
+							GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+		}
+
+		i++;   
 	}
 }
 
@@ -107,6 +100,10 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	GtkWidget *tree_view;
 	GtkTreeViewColumn *column;
 	GtkListStore *model;
+	GType *column_types;
+	GSList *tmp;
+	gboolean first_column = FALSE;
+	gint i, column_index, column_n;
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_tree_dialog");
 
@@ -127,57 +124,71 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
 	tree_view = glade_xml_get_widget (glade_dialog, "zenity_tree_view");
 
-	if (tree_data->checkbox || tree_data->radiobox)
-		model = gtk_list_store_new (N_COLUMNS, G_TYPE_BOOLEAN, G_TYPE_STRING);
-	else 
-		model = gtk_list_store_new (N_COLUMNS, G_TYPE_STRING, G_TYPE_STRING);
+	column_n = g_slist_length (tree_data->columns);
+
+	/* Create an empty list store */
+	model = g_object_new (GTK_TYPE_LIST_STORE, NULL);
+
+	column_types = g_new (GType, column_n);
+
+	for (i = 0; i < column_n; i++) {
+		/* Have the limitation that the radioboxes and checkboxes are in the first column */
+		if (i == 0 && (tree_data->checkbox || tree_data->radiobox))
+			column_types[i] = G_TYPE_BOOLEAN;
+		else
+			column_types[i] = G_TYPE_STRING;
+	}
+
+	gtk_list_store_set_column_types (model, column_n, column_types);
 
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (model));
 
-	if (tree_data->checkbox) {
-		GtkCellRenderer *cell_renderer;
+	column_index = 0;
 
-		cell_renderer = gtk_cell_renderer_toggle_new ();
-		g_signal_connect (cell_renderer, "toggled", 
-				  G_CALLBACK (zenity_tree_toggled_callback), model);
+	for (tmp = tree_data->columns; tmp; tmp = tmp->next) {
+		if (first_column == FALSE) {
+			if (tree_data->checkbox || tree_data->radiobox) {
+				GtkCellRenderer *cell_renderer;
+		
+				cell_renderer = gtk_cell_renderer_toggle_new ();
+				
+				if (tree_data->radiobox)
+					g_object_set (G_OBJECT (cell_renderer), "radio", TRUE, NULL);
 
-		column = gtk_tree_view_column_new_with_attributes (NULL,
-							   	   cell_renderer,
-							           "active", NAME_COLUMN, NULL);
-	}
-	else if (tree_data->radiobox) {
-		GtkCellRenderer *cell_renderer;
+				g_signal_connect (cell_renderer, "toggled",
+						  G_CALLBACK (zenity_tree_toggled_callback), model);
 
-		cell_renderer = gtk_cell_renderer_toggle_new ();
-		g_object_set (G_OBJECT (cell_renderer), "radio", TRUE, NULL);
-		g_signal_connect (cell_renderer, "toggled", 
-				  G_CALLBACK (zenity_tree_toggled_callback), model);
+				column = gtk_tree_view_column_new_with_attributes (tmp->data,
+										   cell_renderer,
+										   "active", column_index, NULL);
+			}
 
-		column = gtk_tree_view_column_new_with_attributes (NULL,
-							   	   cell_renderer,
-							           "active", NAME_COLUMN, NULL);
-
-	}
-	else {
-		column = gtk_tree_view_column_new_with_attributes (tree_data->column_one_header, 
-							   	   gtk_cell_renderer_text_new (),
-							           "text", NAME_COLUMN, NULL);
-		gtk_tree_view_column_set_sort_column_id (column, NAME_COLUMN);
-	}
-
-	gtk_tree_view_column_set_resizable (column, TRUE);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+			else  {
+				column = gtk_tree_view_column_new_with_attributes (tmp->data,
+										   gtk_cell_renderer_text_new (),
+										   "text", column_index, NULL);
+				gtk_tree_view_column_set_sort_column_id (column, column_index);
+				gtk_tree_view_column_set_resizable (column, TRUE);
+			}
+			
+			first_column = TRUE;
+		}
+		else {
+			column = gtk_tree_view_column_new_with_attributes (tmp->data,
+									   gtk_cell_renderer_text_new (),
+									   "text", column_index, NULL);
+			gtk_tree_view_column_set_sort_column_id (column, column_index);
+			gtk_tree_view_column_set_resizable (column, TRUE);
+			
+		}
 	
-	column = gtk_tree_view_column_new_with_attributes (tree_data->column_two_header,
-							   gtk_cell_renderer_text_new (),
-							   "text", DESCRIPTION_COLUMN, NULL);
-	gtk_tree_view_column_set_sort_column_id (column, DESCRIPTION_COLUMN);
-	gtk_tree_view_column_set_resizable (column, TRUE);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+		gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+		column_index++;
+	}
 
 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree_view), TRUE);
 
-	zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), NULL);
+	/* zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), NULL); */
 
 	gtk_widget_show (dialog);
 	gtk_main ();

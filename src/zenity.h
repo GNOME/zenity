@@ -69,8 +69,7 @@ typedef struct {
 
 typedef struct {
 	gchar		*dialog_text;
-	gchar 		*column_one_header;
-	gchar		*column_two_header;
+	GSList		*columns;
 	gboolean 	 checkbox;
 	gboolean	 radiobox;
 } ZenityTreeData;

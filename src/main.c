@@ -631,6 +631,64 @@ struct poptOption application_options[] = {
 
 ZenityParsingOptions *results;
 
+static void
+zenity_init_parsing_options (void) {
+
+	results = g_new0 (ZenityParsingOptions, 1);
+
+	/* Initialize the various dialog structures */
+	results->data = g_new0 (ZenityData, 1);
+	results->calendar_data = g_new0 (ZenityCalendarData, 1);
+	results->msg_data = g_new0 (ZenityMsgData, 1);
+	results->file_data = g_new0 (ZenityFileData, 1);
+	results->entry_data = g_new0 (ZenityEntryData, 1); 
+	results->progress_data = g_new0 (ZenityProgressData, 1); 
+	results->text_data = g_new0 (ZenityTextData, 1);
+	results->tree_data = g_new0 (ZenityTreeData, 1);
+
+	/* Give some sensible defaults */
+	results->entry_data->visible = TRUE;
+	results->tree_data->checkbox = FALSE;
+	results->tree_data->radiobox = FALSE;
+}
+
+static void
+zenity_free_parsing_options (void) {
+
+	/* General options */
+	if (results->data->dialog_title)
+		g_free (results->data->dialog_title);
+	if (results->data->window_icon)
+		g_free (results->data->window_icon);
+
+	/* Dialog options */
+	switch (results->mode) {
+		case MODE_CALENDAR:
+			g_free (results->calendar_data->dialog_text);
+			break;
+		case MODE_ENTRY:
+			g_free (results->entry_data->dialog_text);
+			g_free (results->entry_data->entry_text);
+			break;
+		case MODE_ERROR:
+		case MODE_QUESTION:
+		case MODE_WARNING:
+			g_free (results->msg_data->dialog_text);
+			break;
+		case MODE_FILE:
+			g_free (results->file_data->uri);
+			break;
+		case MODE_TEXTINFO:
+			g_free (results->text_data->uri);
+			break;
+		case MODE_LIST:
+			g_slist_foreach (results->tree_data->columns, (GFunc) g_free, NULL);
+			break;
+		default:
+			break;
+	}
+}
+
 gint 
 main (gint argc, gchar **argv) {
 	poptContext ctx;
@@ -642,18 +700,7 @@ main (gint argc, gchar **argv) {
 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
 	textdomain(GETTEXT_PACKAGE);
 
-	results = g_new0 (ZenityParsingOptions, 1);
-	results->data = g_new0 (ZenityData, 1);
-	results->calendar_data = g_new0 (ZenityCalendarData, 1);
-	results->msg_data = g_new0 (ZenityMsgData, 1);
-	results->file_data = g_new0 (ZenityFileData, 1);
-	results->entry_data = g_new0 (ZenityEntryData, 1); 
-	results->entry_data->visible = TRUE;
-	results->progress_data = g_new0 (ZenityProgressData, 1); 
-	results->text_data = g_new0 (ZenityTextData, 1);
-	results->tree_data = g_new0 (ZenityTreeData, 1);
-	results->tree_data->checkbox = FALSE;
-	results->tree_data->radiobox = FALSE;
+	zenity_init_parsing_options ();
 
 	/* FIXME: popt doesn't like passing stuff through data 
          * but it doesn't seem to cope with the data that I try
@@ -702,6 +749,7 @@ main (gint argc, gchar **argv) {
 	}
 
 	poptFreeContext(ctx);
+	zenity_free_parsing_options ();
 	exit (0); 
 }
 
@@ -811,6 +859,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 			}
 			break;
 		case OPTION_COLUMN:
+			results->tree_data->columns = g_slist_append (results->tree_data->columns, g_strdup (arg));
 			break;
 		case OPTION_CHECKLIST:
 			results->tree_data->checkbox = TRUE;
