@@ -171,7 +171,7 @@
 
     <para>
 	When using &app;, make sure that any arguments to the command line options are surrounded by
-	a set of quotes ' ' or " " as in <command>&app; --calendar --dialog-title="Holiday Planner"
+	a set of quotes ' ' or " " as in <command>&app; --calendar --title="Holiday Planner"
 	</command>, for example. If you do not use quotes, then it is likely that you will get
 	unexpected results.
     </para>
@@ -343,7 +343,7 @@
 		<programlisting>
 		#!/bin/sh
 
-		if zenity --calendar --dialog-title="Calendar selection" --text="Select a date from below" --day=18 --month=1 --year=2003
+		if zenity --calendar --title="Calendar selection" --text="Select a date from below" --day=18 --month=1 --year=2003
 		  then echo $?
 		  else echo "No date selected"
 		fi
@@ -410,7 +410,7 @@
 		<programlisting>
 		#!/bin/sh
 
-		if zenity --entry --dialog-title="Add a new entry" --text="Enter your _Password" --hide-text
+		if zenity --entry --title="Add a new entry" --text="Enter your _Password" --hide-text
 		  then echo $?
 		  else echo "No password entered"
 		fi
@@ -561,7 +561,7 @@
 		<programlisting>
 		#!/bin/sh
 
-		FILE=`zenity --file-selection --dialog-title="Select a file"'
+		FILE=`zenity --file-selection --title="Select a file"'
 
 		case $? in
 		         0)
@@ -667,7 +667,7 @@
     <para>
     	The following commandline shows an example of how to use the List dialog:
 		<programlisting>
-		zenity --list --dialog-title="Choose bugs you wish to view" \
+		zenity --list --title="Choose bugs you wish to view" \
 		       --text="Select items from the list below." \
 		       --column="Bug Number" --column="Severity" --column="Description" \
 		       992383 Normal "GtkTreeView crashes on multiple selections" \
@@ -748,7 +748,7 @@
 		echo "# Rebooting system" ; sleep 1
 		echo "100" ; sleep 1
 		) |
-		zenity --progress --dialog-title="Update System Logs" --text="Scanning mail logs..." --percentage=0
+		zenity --progress --title="Update System Logs" --text="Scanning mail logs..." --percentage=0
 
 		if [ "$?" = -1 ] ; then
 			zenity --error --text="Update cancelled."
@@ -808,11 +808,11 @@
 		<programlisting>
 		#!/bin/sh
 
-		FILE=`zenity --file-selection --dialog-title="Select a file"'
+		FILE=`zenity --file-selection --title="Select a file"'
 
 		case $? in
 		         0)
-			  	zenity --text-info --dialog-title=$FILE --editable 2>/tmp/tmp.txt
+			  	zenity --text-info --title=$FILE --editable 2>/tmp/tmp.txt
 							
 		         1)
 			        echo "No file selected.";;

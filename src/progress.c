@@ -212,8 +212,11 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 		
     case GTK_RESPONSE_CANCEL:
-      /* FIXME: This should kill off the parent process - not entirely sure how to achieve this */
-      kill (0);
+      /* FIXME: This should kill off the parent process nicely and return an error code
+       * I'm pretty sure there is a nice way to do this, but I'm clueless about this
+       * stuff. Should be using SIGHUP instead of 1 though.
+       */
+      kill (getpid (), 1);
       zen_data->exit_code = 1;
       gtk_main_quit ();
       break;

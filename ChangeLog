@@ -1,3 +1,16 @@
+2003-05-24  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Patch from Dagmar d'Surreal
+	<dagmar@speakeasy.net> to correct help docs and 
+	script examples for the change from --dialog-title to 
+	--title.
+
+	* THANKS, src/about.c: Add Dagmar.
+
+	* src/progress.c: For now, just send a SIGHUP to the 
+	parent process - not entirely sure if this is the best thing
+	to do right now.
+
 2003-05-23  Mike Newman <mikegtn@gnome.org>
 
 	* src/gdialog: fixed --textbox to actually load filename
