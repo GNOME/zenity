@@ -24,6 +24,7 @@
 #include "config.h"
 #include "zenity.h"
 #include <popt.h>
+#include <langinfo.h>
 
 typedef enum {
 	MODE_CALENDAR,
@@ -54,6 +55,7 @@ typedef struct {
 
 enum {
 	OPTION_CALENDAR = 1,
+	OPTION_DATEFORMAT,
 	OPTION_ENTRY,
 	OPTION_ERROR,
 	OPTION_INFO,
@@ -273,6 +275,14 @@ struct poptOption calendar_options[] = {
 		NULL,
 		OPTION_YEAR,
 		N_("Set the calendar year"),
+		NULL
+	},
+	{	"date-format",
+		'\0',
+		POPT_ARG_STRING,
+		NULL,
+		OPTION_DATEFORMAT,
+		N_("Set the format for the returned date"),
 		NULL
 	},
 	POPT_TABLEEND
@@ -701,6 +711,7 @@ zenity_init_parsing_options (void) {
 	results->tree_data = g_new0 (ZenityTreeData, 1);
 
 	/* Give some sensible defaults */
+	results->calendar_data->date_format = g_strdup (nl_langinfo (D_FMT));
 	results->calendar_data->day = 0;
 	results->calendar_data->month = 0;
 	results->calendar_data->year = 0;
@@ -726,6 +737,8 @@ zenity_free_parsing_options (void) {
 		case MODE_CALENDAR:
 			if (results->calendar_data->dialog_text)
 				g_free (results->calendar_data->dialog_text);
+			if (results->calendar_data->date_format)
+				g_free (results->calendar_data->date_format);
 			break;
 		case MODE_ENTRY:
 			if (results->entry_data->dialog_text)
@@ -1026,6 +1039,14 @@ void zenity_parse_options_callback (poptContext              ctx,
 				exit (-1);
 			}
 			results->calendar_data->year = atoi (arg);
+			break;
+		case OPTION_DATEFORMAT:
+			if (results->mode != MODE_CALENDAR) {
+				g_printerr (_("--date-format is not supported for this dialog\n"));
+				zenity_free_parsing_options ();
+				exit (-1);
+			}
+			results->calendar_data->date_format = g_strdup (arg);
 			break;
 		case OPTION_INPUTTEXT:
 			if (results->mode != MODE_ENTRY) {

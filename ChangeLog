@@ -1,3 +1,10 @@
+2003-01-13  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* src/calendar.c, src/main.c, src/zenity.h: Make the calendar
+	return a localised date, and provide a means to override this with
+	a --date-format option which takes a strftime style string - 
+	"%A %d/%m/%Y" for example.
+
 2003-01-13  Glynn Foster  <glynn.foster@sun.com>
 
 	* src/main.c: Improve error handling.

@@ -22,6 +22,7 @@
  */
 
 #include <glade/glade.h>
+#include <time.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -49,7 +50,7 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_calendar_dialog");
 
 	g_signal_connect (G_OBJECT (dialog), "response",
-			  G_CALLBACK (zenity_calendar_dialog_response), data);
+			  G_CALLBACK (zenity_calendar_dialog_response), cal_data);
 
 	if (data->dialog_title)	
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
@@ -80,13 +81,20 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 static void
 zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-	ZenityData *zen_data = data;
-	guint day, month, year;
-
+	ZenityCalendarData *cal_data = data;
+	ZenityData *zen_data;
+	gint day, month, year;
+	gchar time_string[128];
+	GDate *date = NULL;
+	
 	switch (response) {
 		case GTK_RESPONSE_OK:
 			gtk_calendar_get_date (GTK_CALENDAR (calendar), &day, &month, &year);
-			g_printerr ("%02d/%02d/%02d\n", year, month + 1, day);
+			date = g_date_new_dmy (year, month+1, day);
+			g_date_strftime (time_string, 127, 
+					 cal_data->date_format, date);
+			g_printerr ("%s\n",time_string);
+			g_date_free ( date );
 			zen_data->exit_code = 0;
 			gtk_main_quit ();
 			break;

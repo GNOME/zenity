@@ -6,7 +6,7 @@
 G_BEGIN_DECLS
 
 #ifdef ENABLE_NLS
-#include<libintl.h>
+#include <libintl.h>
 #define _(String) dgettext(GETTEXT_PACKAGE,String)
 #ifdef gettext_noop
 #define N_(String) gettext_noop(String)
@@ -34,6 +34,7 @@ typedef struct {
 	gint  day;
 	gint  month;
 	gint  year;
+	gchar *date_format;
 } ZenityCalendarData;
 
 typedef enum {
