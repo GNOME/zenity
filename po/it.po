@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "POT-Creation-Date: 2003-05-29 10:16+0100\n"
-"PO-Revision-Date: 2003-03-27 22:33+0100\n"
+"PO-Revision-Date: 2003-06-23 13:21+0200\n"
 "Last-Translator: Stefano Canepa <sc@linux.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -40,23 +40,23 @@ msgstr "Tradotto da"
 
 #: src/main.c:129
 msgid "Display calendar dialog"
-msgstr "Mostra una finestra di finestra di dialogo con il calendario"
+msgstr "Mostra una finestra di dialogo con il calendario"
 
 #: src/main.c:138
 msgid "Display text entry dialog"
-msgstr "Mostra una finestra di finestra di dialogo di inserimento testo"
+msgstr "Mostra una finestra di dialogo di inserimento testo"
 
 #: src/main.c:147
 msgid "Display error dialog"
-msgstr "Mostra una finestra di finestra di dialogo di errore"
+msgstr "Mostra una finestra di dialogo di errore"
 
 #: src/main.c:156
 msgid "Display file selection dialog"
-msgstr "Mostra una finestra di finestra di dialogo di selezione file"
+msgstr "Mostra una finestra di dialogo di selezione file"
 
 #: src/main.c:165
 msgid "Display info dialog"
-msgstr "Mostra una finestra di finestra di dialogo di informazioni"
+msgstr "Mostra una finestra di dialogo di informazioni"
 
 #: src/main.c:174
 msgid "Display list dialog"
@@ -95,22 +95,20 @@ msgid "ICONPATH"
 msgstr "PERCORSO_ICONE"
 
 #: src/main.c:250
-#, fuzzy
 msgid "Set the width"
-msgstr "Imposta l'icona della finestra"
+msgstr "Imposta la larghezza"
 
 #: src/main.c:251
 msgid "WIDTH"
-msgstr ""
+msgstr "LARGHEZZA"
 
 #: src/main.c:259
-#, fuzzy
 msgid "Set the height"
-msgstr "Imposta il testo della finestra di dialogo"
+msgstr "Imposta l'altezza"
 
 #: src/main.c:260
 msgid "HEIGHT"
-msgstr ""
+msgstr "ALTEZZA"
 
 #: src/main.c:281 src/main.c:338 src/main.c:378 src/main.c:400 src/main.c:502
 #: src/main.c:533 src/main.c:586
@@ -119,7 +117,7 @@ msgstr "Imposta il testo della finestra di dialogo"
 
 #: src/main.c:290
 msgid "Set the calendar day"
-msgstr "Imposta il giorno nel calendario"
+msgstr "Imposta il giorno del calendario"
 
 #: src/main.c:299
 msgid "Set the calendar month"
@@ -155,11 +153,11 @@ msgstr "Imposta il titolo della colonna"
 
 #: src/main.c:453
 msgid "Use check boxes for first column"
-msgstr "Usa caselle di scelta per la prima colonna"
+msgstr "Usa caselle di selezione per la prima colonna"
 
 #: src/main.c:462
 msgid "Use radio buttons for first column"
-msgstr "Usa bottoni radio per la prima colonna"
+msgstr "Usa pulsanti radio per la prima colonna"
 
 #: src/main.c:471
 msgid "Set output separator character"
@@ -183,7 +181,7 @@ msgstr "Apri file"
 
 #: src/main.c:599
 msgid "Gdk debugging flags to set"
-msgstr "Flag per debugging Gdk da attivare"
+msgstr "Flag per attivare il debugging Gdk"
 
 #: src/main.c:600 src/main.c:609 src/main.c:688 src/main.c:697
 msgid "FLAGS"
@@ -191,7 +189,7 @@ msgstr "FLAG"
 
 #: src/main.c:608
 msgid "Gdk debugging flags to unset"
-msgstr "Flag per debugging Gdk da disattivare"
+msgstr "Flag per disattivare il debugging Gdk"
 
 #: src/main.c:618
 msgid "X display to use"
@@ -215,7 +213,7 @@ msgstr "Rende le chiamate a X sincrone"
 
 #: src/main.c:649
 msgid "Program name as used by the window manager"
-msgstr "Nome del programma usato dal window manager"
+msgstr "Nome del programma usato nel window manager"
 
 #: src/main.c:650
 msgid "NAME"
@@ -223,7 +221,7 @@ msgstr "NOME"
 
 #: src/main.c:658
 msgid "Program class as used by the window manager"
-msgstr "Classe del programma usata dal window manager"
+msgstr "Classe del programma usata nel window manager"
 
 #: src/main.c:659
 msgid "CLASS"
@@ -239,11 +237,11 @@ msgstr "PORTA"
 
 #: src/main.c:687
 msgid "Gtk+ debugging flags to set"
-msgstr "Flag per debugging Gtk+ da attivare"
+msgstr "Flag per attivare il debugging Gtk+"
 
 #: src/main.c:696
 msgid "Gtk+ debugging flags to unset"
-msgstr "Flag per debugging Gtk+ da disattivare"
+msgstr "Flag per disattivare il debugging Gtk+"
 
 #: src/main.c:705
 msgid "Make all warnings fatal"
@@ -259,7 +257,7 @@ msgstr "MODULO"
 
 #: src/main.c:736
 msgid "About zenity"
-msgstr "Informazioni"
+msgstr "Informazioni su Zenity"
 
 #: src/main.c:745
 msgid "Print version"
@@ -326,11 +324,9 @@ msgid "Help options"
 msgstr "Opzioni dell'aiuto"
 
 #: src/main.c:1003
-#, fuzzy, c-format
+#, c-format
 msgid "%s in an invalid option. See zenity --help for more details\n"
-msgstr ""
-"L'opzione: %s non è valida per questa finestra di dialogo. Consultare zenity "
-"--help per maggiori dettagli\n"
+msgstr "%s in una opzione non valida. Consultare zenity --help per maggiori dettagli\n"
 
 #: src/main.c:1047
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
@@ -355,9 +351,8 @@ msgid "Two or more dialog options specified\n"
 msgstr "Specificate due o più opzioni per la finestra di dialogo\n"
 
 #: src/tree.c:290
-#, fuzzy
 msgid "No column titles specified for List dialog.\n"
-msgstr "Nessun titolo per --list\n"
+msgstr "Nessun titolo per le colonne nel dialogo Lista.\n"
 
 #: src/zenity.glade.h:1
 msgid "*"
@@ -381,7 +376,7 @@ msgstr "Si è verificato un errore."
 
 #: src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
-msgstr "Sicuri di voler procedere?"
+msgstr "Continuare veramente?"
 
 #: src/zenity.glade.h:7
 msgid "C_alendar:"
@@ -397,7 +392,7 @@ msgstr "Errore"
 
 #: src/zenity.glade.h:10
 msgid "Information"
-msgstr "Informazione"
+msgstr "Informazioni"
 
 #: src/zenity.glade.h:11
 msgid "Progress"
