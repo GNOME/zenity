@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"POT-Creation-Date: 2004-04-29 11:05+1200\n"
+"POT-Creation-Date: 2004-07-19 13:35+1200\n"
 "PO-Revision-Date: 2004-03-19 19:55+0100\n"
 "Last-Translator: Laszlo Dvornik <dvornikl@mailbox.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -16,27 +16,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Report-Msgid-Bugs-To: \n"
 
-#: src/about.c:346
+#: src/about.c:348
 msgid "translator_credits"
 msgstr "Tímár András <timar@gnome.hu>"
 
-#: src/about.c:376
+#: src/about.c:378
 msgid "Display dialog boxes from shell scripts"
 msgstr "Párbeszédablakok megjelenítése héjprogramokból"
 
-#: src/about.c:380
+#: src/about.c:382
 msgid "(C) 2003 Sun Microsystems"
 msgstr "© 2003 Sun Microsystems"
 
-#: src/about.c:464
+#: src/about.c:466
 msgid "Credits"
 msgstr "Köszönet"
 
-#: src/about.c:491
+#: src/about.c:493
 msgid "Written by"
 msgstr "Írta"
 
-#: src/about.c:504
+#: src/about.c:506
 msgid "Translated by"
 msgstr "Fordította"
 
@@ -113,7 +113,7 @@ msgid "HEIGHT"
 msgstr "HEIGHT"
 
 #: src/main.c:290 src/main.c:347 src/main.c:387 src/main.c:409 src/main.c:471
-#: src/main.c:538 src/main.c:579 src/main.c:632
+#: src/main.c:547 src/main.c:588 src/main.c:641
 msgid "Set the dialog text"
 msgstr "Párbeszédablak szövegének beállítása"
 
@@ -145,7 +145,7 @@ msgstr "A szövegbeviteli mező tartalmának elrejtése"
 msgid "Set the filename"
 msgstr "Fájlnév beállítása"
 
-#: src/main.c:432 src/main.c:602
+#: src/main.c:432 src/main.c:611
 msgid "FILENAME"
 msgstr "FILENAME"
 
@@ -177,199 +177,205 @@ msgstr "Választógombok az első oszlopban"
 msgid "Set output separator character"
 msgstr "A kimenet elválasztókarakterének beállítása"
 
-#: src/main.c:516 src/main.c:610
+#: src/main.c:516 src/main.c:619
 msgid "Allow changes to text"
 msgstr "Szöveg változtatható"
 
-#: src/main.c:547
+#: src/main.c:525
+msgid ""
+"Print a specific column (Default is 1. 'ALL' can be used to print all "
+"columns)"
+msgstr ""
+
+#: src/main.c:556
 msgid "Set initial percentage"
 msgstr "Kezdeti százalék beállítása"
 
-#: src/main.c:556
+#: src/main.c:565
 msgid "Pulsate progress bar"
 msgstr "Folyamatjelző pulzálása"
 
-#: src/main.c:566
+#: src/main.c:575
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Párbeszédablak eltüntetése, ha a 100%-ot elérte"
 
-#: src/main.c:601
+#: src/main.c:610
 msgid "Open file"
 msgstr "Fájl megnyitása"
 
-#: src/main.c:645
+#: src/main.c:654
 msgid "Gdk debugging flags to set"
 msgstr "Beállítandó Gdk debug jelzőbitek"
 
-#: src/main.c:646 src/main.c:655 src/main.c:734 src/main.c:743
+#: src/main.c:655 src/main.c:664 src/main.c:743 src/main.c:752
 msgid "FLAGS"
 msgstr "FLAGS"
 
-#: src/main.c:654
+#: src/main.c:663
 msgid "Gdk debugging flags to unset"
 msgstr "Kikapcsolandó Gdk debug jelzőbitek"
 
-#: src/main.c:664
+#: src/main.c:673
 msgid "X display to use"
 msgstr "Használandó X-megjelenítő"
 
-#: src/main.c:665
+#: src/main.c:674
 msgid "DISPLAY"
 msgstr "DISPLAY"
 
-#: src/main.c:675
+#: src/main.c:684
 msgid "X screen to use"
 msgstr "Használandó X-képernyő"
 
-#: src/main.c:676
+#: src/main.c:685
 msgid "SCREEN"
 msgstr "SCREEN"
 
-#: src/main.c:686
+#: src/main.c:695
 msgid "Make X calls synchronous"
 msgstr "Legyenek szinkron X-hívások"
 
-#: src/main.c:695
+#: src/main.c:704
 msgid "Program name as used by the window manager"
 msgstr "A program név, ahogy az ablakkezelő használja"
 
-#: src/main.c:696
+#: src/main.c:705
 msgid "NAME"
 msgstr "NAME"
 
-#: src/main.c:704
+#: src/main.c:713
 msgid "Program class as used by the window manager"
 msgstr "A program osztálya, ahogy az ablakkezelő használja"
 
-#: src/main.c:705
+#: src/main.c:714
 msgid "CLASS"
 msgstr "CLASS"
 
-#: src/main.c:715
+#: src/main.c:724
 msgid "HOST"
 msgstr "HOST"
 
-#: src/main.c:725
+#: src/main.c:734
 msgid "PORT"
 msgstr "PORT"
 
-#: src/main.c:733
+#: src/main.c:742
 msgid "Gtk+ debugging flags to set"
 msgstr "Beállítandó Gtk+ debug jelzőbitek"
 
-#: src/main.c:742
+#: src/main.c:751
 msgid "Gtk+ debugging flags to unset"
 msgstr "Kikapcsolandó Gtk+ jelzőbitek"
 
-#: src/main.c:751
+#: src/main.c:760
 msgid "Make all warnings fatal"
 msgstr "Minden figyelmeztetés legyen végzetes"
 
-#: src/main.c:760
+#: src/main.c:769
 msgid "Load an additional Gtk module"
 msgstr "További Gtk modul betöltése"
 
-#: src/main.c:761
+#: src/main.c:770
 msgid "MODULE"
 msgstr "MODULE"
 
-#: src/main.c:782
+#: src/main.c:791
 msgid "About zenity"
 msgstr "A Zenity névjegye"
 
-#: src/main.c:791
+#: src/main.c:800
 msgid "Print version"
 msgstr "Verziószám nyomtatása"
 
-#: src/main.c:804
+#: src/main.c:813
 msgid "Dialog options"
 msgstr "Párbeszédablak beállításai"
 
-#: src/main.c:813
+#: src/main.c:822
 msgid "General options"
 msgstr "Általános beállítások"
 
-#: src/main.c:822
+#: src/main.c:831
 msgid "Calendar options"
 msgstr "Naptár beállításai"
 
-#: src/main.c:831
+#: src/main.c:840
 msgid "Text entry options"
 msgstr "Szövegbeviteli mező beállításai"
 
 # src/nautilus-complex-search-bar.c:233
-#: src/main.c:840
+#: src/main.c:849
 msgid "Error options"
 msgstr "Hibajelzés beállításai"
 
-#: src/main.c:849
+#: src/main.c:858
 msgid "File selection options"
 msgstr "Fájlkiválasztó beállításai"
 
-#: src/main.c:858
+#: src/main.c:867
 msgid "Info options"
 msgstr "Tájékoztató üzenetek beállításai"
 
-#: src/main.c:867
+#: src/main.c:876
 msgid "List options"
 msgstr "Lista beállításai"
 
 # src/nautilus-complex-search-bar.c:233
-#: src/main.c:876
+#: src/main.c:885
 msgid "Progress options"
 msgstr "Folyamatjelző beállításai"
 
-#: src/main.c:885
+#: src/main.c:894
 msgid "Question options"
 msgstr "Kérdések beállításai"
 
-#: src/main.c:894
+#: src/main.c:903
 msgid "Text options"
 msgstr "Szöveg beállításai"
 
-#: src/main.c:903
+#: src/main.c:912
 msgid "Warning options"
 msgstr "Figyelmeztetések beállításai"
 
-#: src/main.c:912
+#: src/main.c:921
 msgid "GTK+ options"
 msgstr "GTK+ beállításai"
 
-#: src/main.c:921
+#: src/main.c:930
 msgid "Miscellaneous options"
 msgstr "Egyéb beállítások"
 
-#: src/main.c:930
+#: src/main.c:939
 msgid "Help options"
 msgstr "Súgó beállításai"
 
-#: src/main.c:1059
+#: src/main.c:1071
 #, c-format
 msgid "%s is an invalid option. See 'zenity --help' for more details\n"
 msgstr "%s nem érvényes kapcsoló. A részletekért lásd: 'zenity --help'\n"
 
-#: src/main.c:1104
+#: src/main.c:1116
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Meg kell adni a párbeszédablak típusát. A részletekért lásd: 'zenity --"
 "help'\n"
 
-#: src/main.c:1124
+#: src/main.c:1136
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "A(z) %s kétszer lett megadva ugyanarra a párbeszédablakra\n"
 
-#: src/main.c:1128
+#: src/main.c:1140
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "%s nincs támogatva ezen a párbeszédablakon.\n"
 
-#: src/main.c:1132
+#: src/main.c:1144
 msgid "Two or more dialog options specified\n"
 msgstr "Kettő vagy több párbeszédablak-beállítás lett megadva.\n"
 
-#: src/tree.c:292
+#: src/tree.c:303
 msgid "No column titles specified for List dialog.\n"
 msgstr "A lista párbeszédablakhoz nincsenek megadva oszlopcímek.\n"
 
