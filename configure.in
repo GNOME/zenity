@@ -1,0 +1,71 @@
+AC_INIT(src)
+AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE(zenity, 0.1) 
+
+AM_MAINTAINER_MODE
+
+AC_PROG_INTLTOOL([0.21])
+
+dnl ********************************
+dnl I bet I don't need half of these
+dnl ********************************
+
+AC_ISC_POSIX
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_STDC_HEADERS
+AC_PROG_YACC
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PATH_XTRA
+
+GNOME_COMPILE_WARNINGS
+
+PKG_CHECK_MODULES(ZENITY, gtk+-2.0 libglade-2.0)
+AC_SUBST(ZENITY_CFLAGS)
+AC_SUBST(ZENITY_LIBS)
+
+AC_CHECK_LIB(popt, poptHelpOptions,, AC_MSG_ERROR([popt is required to build script.]))
+
+dnl ***********************************************
+dnl scrollkeeper checks - don't use these currently
+dnl ***********************************************
+dnl
+dnl AC_PATH_PROG(SCROLLKEEPER_CONFIG, scrollkeeper-config,no)
+dnl if test x$SCROLLKEEPER_CONFIG = xno; then
+dnl   AC_MSG_ERROR(Couldn't find scrollkeeper-config. Please install the scrollkeeper package)
+dnl fi
+
+dnl *******************************
+dnl Internationalization
+dnl ******************************* 
+
+ALL_LINGUAS=""
+GETTEXT_PACKAGE=zenity-0.1
+AC_SUBST(GETTEXT_PACKAGE)
+AM_GLIB_GNU_GETTEXT
+
+dnl **************************************************************
+dnl AM_GLIB_GNU_GETTEXT above substs $DATADIRNAME
+dnl this is the directory where the *.{mo,gmo} files are installed
+dnl **************************************************************
+
+zenitylocaledir='${prefix}/${DATADIRNAME}/locale'
+AC_SUBST(zenitylocaledir)
+
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Finding gettext package])
+
+AC_DEFINE_UNQUOTED(GNOME_ICONDIR, "${prefix}/share/pixmaps", [Determining icon location])
+
+AC_SUBST(CFLAGS)
+AC_SUBST(CPPFLAGS)
+AC_SUBST(LDFLAGS)
+
+AC_OUTPUT([
+Makefile 
+po/Makefile.in
+src/Makefile
+data/Makefile
+])
