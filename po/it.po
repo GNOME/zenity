@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"POT-Creation-Date: 2003-05-05 21:23+0100\n"
+"POT-Creation-Date: 2003-05-19 19:52+0100\n"
 "PO-Revision-Date: 2003-03-27 22:33+0100\n"
 "Last-Translator: Stefano Canepa <sc@linux.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -326,42 +326,37 @@ msgid "Help options"
 msgstr "Opzioni dell'aiuto"
 
 #: src/main.c:1003
-#, c-format
-msgid ""
-"%s in an invalid option for this dialog. See zenity --help for more details\n"
+#, fuzzy, c-format
+msgid "%s in an invalid option. See zenity --help for more details\n"
 msgstr ""
 "L'opzione: %s non è valida per questa finestra di dialogo. Consultare zenity "
 "--help per maggiori dettagli\n"
 
-#: src/main.c:1011
-msgid "You must specify more arguments. See zenity --help for more details\n"
-msgstr ""
-"Specificare più argomenti. Consultare zenity --help per maggiori dettagli\n"
-
-#: src/main.c:1046
+#: src/main.c:1047
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Specificare il tipo di finestra di dialogo. Consultare zenity --help per "
 "maggiori dettagli\n"
 
-#: src/main.c:1066
+#: src/main.c:1067
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr ""
 "L'opzione: %s è stata specificata due volte per la stessa finestra di "
 "dialogo\n"
 
-#: src/main.c:1070
+#: src/main.c:1071
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "L'opzione: %s non è supportata da questa finestra di dialogo\n"
 
-#: src/main.c:1074
+#: src/main.c:1075
 msgid "Two or more dialog options specified\n"
 msgstr "Specificate due o più opzioni per la finestra di dialogo\n"
 
-#: src/tree.c:285
-msgid "No column titles specified for --list\n"
+#: src/tree.c:290
+#, fuzzy
+msgid "No column titles specified for List dialog.\n"
 msgstr "Nessun titolo per --list\n"
 
 #: src/zenity.glade.h:1
@@ -459,6 +454,12 @@ msgstr "zenity_about_description"
 #: src/zenity.glade.h:24
 msgid "zenity_about_version"
 msgstr "zenity_about_version"
+
+#~ msgid ""
+#~ "You must specify more arguments. See zenity --help for more details\n"
+#~ msgstr ""
+#~ "Specificare più argomenti. Consultare zenity --help per maggiori "
+#~ "dettagli\n"
 
 #~ msgid "No contents specified for --list\n"
 #~ msgstr "Nessun contenuto per --list\n"

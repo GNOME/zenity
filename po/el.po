@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-05-05 21:23+0100\n"
+"POT-Creation-Date: 2003-05-19 19:52+0100\n"
 "PO-Revision-Date: 2003-03-05 23:02+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gmx.net>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -328,41 +328,35 @@ msgid "Help options"
 msgstr "Επιλογές βοήθειας"
 
 #: src/main.c:1003
-#, c-format
-msgid ""
-"%s in an invalid option for this dialog. See zenity --help for more details\n"
+#, fuzzy, c-format
+msgid "%s in an invalid option. See zenity --help for more details\n"
 msgstr ""
 "Το %s δεν είναι έγκυρη επιλογή για αυτό τον διάλογο. Βλέπε zenity --help για "
 "λεπτομέρειες\n"
 
-#: src/main.c:1011
-msgid "You must specify more arguments. See zenity --help for more details\n"
-msgstr ""
-"Θα πρέπει να ορίσετε περισσότερες παραμέτρους. Βλέπε zenity --help για "
-"λεπτομέρειες\n"
-
-#: src/main.c:1046
+#: src/main.c:1047
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Θα πρέπει να καθορίσετε ένα τύπο δαιλόγου. Βλέπε zenity --help για "
 "λεπτομέρειες\n"
 
-#: src/main.c:1066
+#: src/main.c:1067
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "το %s  έχει δοθεί δύο φορές για τον ίδιο διάλογο\n"
 
-#: src/main.c:1070
+#: src/main.c:1071
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "το %s δεν υποστηρίζεται για αυτό τον διάλογο\n"
 
-#: src/main.c:1074
+#: src/main.c:1075
 msgid "Two or more dialog options specified\n"
 msgstr "Καθορίστηκαν δύο ή περισσότεροι διάλογοι\n"
 
-#: src/tree.c:285
-msgid "No column titles specified for --list\n"
+#: src/tree.c:290
+#, fuzzy
+msgid "No column titles specified for List dialog.\n"
 msgstr "Δεν καθορίστηκαν τίτλοι στήλης για --list\n"
 
 #: src/zenity.glade.h:1
@@ -460,6 +454,12 @@ msgstr ""
 #: src/zenity.glade.h:24
 msgid "zenity_about_version"
 msgstr ""
+
+#~ msgid ""
+#~ "You must specify more arguments. See zenity --help for more details\n"
+#~ msgstr ""
+#~ "Θα πρέπει να ορίσετε περισσότερες παραμέτρους. Βλέπε zenity --help για "
+#~ "λεπτομέρειες\n"
 
 #~ msgid "No contents specified for --list\n"
 #~ msgstr "Δεν καθορίστηκαν περιεχόμενα  για --list\n"
