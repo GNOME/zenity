@@ -31,24 +31,17 @@ static void zenity_fileselection_dialog_response (GtkWidget *widget, int respons
 
 void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 {
-  GladeXML *glade_dialog;
   GtkWidget *dialog;
+  gchar *dir;
+  gchar *basename;
 
   zen_data = data;
 
-  glade_dialog = zenity_util_load_glade_file ("zenity_fileselection_dialog");
-
-  if (glade_dialog == NULL) {
-    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
-    return;
-  }
-	
-  glade_xml_signal_autoconnect (glade_dialog);
-	
-  dialog = glade_xml_get_widget (glade_dialog, "zenity_fileselection_dialog");
-	
-  if (glade_dialog)
-    g_object_unref (glade_dialog);
+  dialog = gtk_file_chooser_dialog_new (NULL, NULL,
+		  			GTK_FILE_CHOOSER_ACTION_OPEN,
+					GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+					GTK_STOCK_OK, GTK_RESPONSE_OK,
+					NULL);
 
   g_signal_connect (G_OBJECT (dialog), "response", 
                     G_CALLBACK (zenity_fileselection_dialog_response), file_data);
@@ -63,11 +56,19 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 
   gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
-  if (file_data->uri)
-    gtk_file_selection_set_filename (GTK_FILE_SELECTION (dialog), file_data->uri);
+  if (file_data->uri) {
+    dir = g_path_get_dirname (file_data->uri);
+    gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), dir);
+    if (file_data->uri[strlen (file_data->uri) - 1] != '/') {
+      basename = g_path_get_basename (file_data->uri);
+      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), basename);
+      g_free (basename);
+    }
+    g_free (dir);
+  }
 
   if (file_data->multi)
-    gtk_file_selection_set_select_multiple (GTK_FILE_SELECTION (dialog), TRUE);
+    gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (dialog), TRUE);
 
   gtk_widget_show (dialog);
   gtk_main ();
@@ -77,21 +78,22 @@ static void
 zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityFileData *file_data = data;
-  gchar **selections;
+  GSList *selections, *iter;
   gchar *separator = g_strdup(file_data->separator);
   int i;
 	  
   switch (response) {
     case GTK_RESPONSE_OK:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);		
-      selections = gtk_file_selection_get_selections (GTK_FILE_SELECTION (widget));
-      for (i=0;selections[i] != NULL; i++) {
-        g_print ("%s", g_filename_to_utf8 ((gchar*)selections[i], -1, NULL, NULL, NULL));
-	if (selections[i+1] != NULL)
+      selections = gtk_file_chooser_get_filenames (GTK_FILE_CHOOSER (widget));
+      for (iter = selections;iter != NULL; iter = iter->next) {
+        g_print ("%s", g_filename_to_utf8 ((gchar*)iter->data, -1, NULL, NULL, NULL));
+	g_free (iter->data);
+	if (iter->next != NULL)
 	    g_print ("%s",separator);
       }
       g_print("\n");
-      g_strfreev(selections);
+      g_slist_free(selections);
       g_free(separator);
 
       gtk_main_quit ();

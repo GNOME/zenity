@@ -1,7 +1,7 @@
 AC_PREREQ(2.53)
 AC_INIT(src)
 AM_CONFIG_HEADER(config.h)
-AM_INIT_AUTOMAKE(zenity, 1.8)
+AM_INIT_AUTOMAKE(zenity, 2.5.1)
 
 AM_MAINTAINER_MODE
 
@@ -9,7 +9,9 @@ AC_PROG_INTLTOOL([0.21])
 
 AC_PROG_CC
 
-PKG_CHECK_MODULES(ZENITY, gtk+-2.0 libglade-2.0 gconf-2.0 libgnomecanvas-2.0)
+GTK_REQUIRED=2.3.1
+
+PKG_CHECK_MODULES(ZENITY, gtk+-2.0 >= $GTK_REQUIRED libglade-2.0 gconf-2.0 libgnomecanvas-2.0)
 AC_SUBST(ZENITY_CFLAGS)
 AC_SUBST(ZENITY_LIBS)
 
