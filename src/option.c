@@ -1257,8 +1257,8 @@ zenity_create_context (void)
   
   /* Adds notification option entries */
   a_group = g_option_group_new("notification", 
-                               N_("Notification options"), 
-                               N_("Show notification options"), NULL, 0);
+                               N_("Notification icon options"), 
+                               N_("Show notification icon options"), NULL, 0);
   g_option_group_add_entries(a_group, notification_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_notification_pre_callback, zenity_notification_post_callback);
@@ -1296,9 +1296,9 @@ zenity_create_context (void)
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds text option entries */
-  a_group = g_option_group_new("text", 
-                               N_("Text options"), 
-                               N_("Show text options"), NULL, 0);
+  a_group = g_option_group_new("text-info", 
+                               N_("Text information options"), 
+                               N_("Show text information options"), NULL, 0);
   g_option_group_add_entries(a_group, text_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_text_pre_callback, zenity_text_post_callback);
