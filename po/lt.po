@@ -1,18 +1,20 @@
 # Lithuanian translation of zenity
-# Copyright (C) 2003 Free Software Foundation, Inc.
+# Copyright (C) 2003-2004 Free Software Foundation, Inc.
 # Tomas Kuliavas <tokul@users.sourceforge.net>, 2003.
+# Žygimantas Beručka <uid0@akl.lt>, 2003-2004
+#
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"POT-Creation-Date: 2004-09-13 20:10+1200\n"
-"PO-Revision-Date: 2003-11-21 15:45+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-12-04 08:41+0200\n"
+"PO-Revision-Date: 2004-12-04 08:46+0200\n"
 "Last-Translator: Tomas Kuliavas <tokul@users.sourceforge.net>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 
 #. Translators: This is a special message that shouldn't be translated
 #. literally. It is used in the about box to give credits to
@@ -22,9 +24,13 @@ msgstr ""
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
 #: src/about.c:375
-#, fuzzy
 msgid "translator-credits"
-msgstr "Tomas Kuliavas <tokul@users.sourceforge.net>"
+msgstr ""
+"Paskutinis vertėjas:\n"
+"Žygimantas Beručka <uid0@akl.lt>\n"
+"\n"
+"Ankstesnis vertėjas:\n"
+"Tomas Kuliavas <tokul@users.sourceforge.net>"
 
 #: src/about.c:405
 msgid "Display dialog boxes from shell scripts"
@@ -44,367 +50,386 @@ msgstr "Sukūrė"
 
 #: src/about.c:533
 msgid "Translated by"
-msgstr "Vertė"
+msgstr "Išvertė"
 
-#: src/main.c:145
+#: src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Orientacija"
+
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "Skydelio orientacija."
+
+#: src/main.c:146
 msgid "Display calendar dialog"
 msgstr "Parodyti kalendoriaus langą"
 
-#: src/main.c:154
+#: src/main.c:155
 msgid "Display text entry dialog"
 msgstr "Parodyti teksto įvedimo langą"
 
-#: src/main.c:163
+#: src/main.c:164
 msgid "Display error dialog"
 msgstr "Parodyti klaidos pranešimą"
 
-#: src/main.c:172
+#: src/main.c:173
 msgid "Display file selection dialog"
 msgstr "Parodyti bylos pasirinkimo langą"
 
-#: src/main.c:181
+#: src/main.c:182
 msgid "Display info dialog"
 msgstr "Parodyti informacinį langą"
 
-#: src/main.c:190
+#: src/main.c:191
 msgid "Display list dialog"
 msgstr "Parodyti sąrašo langą"
 
-#: src/main.c:199
-#, fuzzy
+#: src/main.c:200
 msgid "Display notification"
-msgstr "Parodyti informacinį langą"
+msgstr "Parodyti pranešimą"
 
-#: src/main.c:208
+#: src/main.c:209
 msgid "Display progress indication dialog"
 msgstr "Parodyti proceso eigos langą"
 
-#: src/main.c:217
+#: src/main.c:218
 msgid "Display question dialog"
 msgstr "Parodyti užklausimo langą"
 
-#: src/main.c:226
+#: src/main.c:227
 msgid "Display text information dialog"
 msgstr "Parodyti tekstinės informacijos langą"
 
-#: src/main.c:235
+#: src/main.c:236
 msgid "Display warning dialog"
 msgstr "Parodyti perspėjimo langą"
 
-#: src/main.c:257
+#: src/main.c:258
 msgid "Set the dialog title"
 msgstr "Nustatyti lango antraštę"
 
-#: src/main.c:258
+#: src/main.c:259
 msgid "TITLE"
 msgstr "ANTRAŠTĖ"
 
-#: src/main.c:266
+#: src/main.c:267
 msgid "Set the window icon"
 msgstr "Nustatyti lango piešinį"
 
-#: src/main.c:267
+#: src/main.c:268
 msgid "ICONPATH"
 msgstr "KELIAS-IKI-PIEŠINIO"
 
-#: src/main.c:275
+#: src/main.c:276
 msgid "Set the width"
 msgstr "Nustatyti plotį"
 
-#: src/main.c:276
+#: src/main.c:277
 msgid "WIDTH"
 msgstr "PLOTIS"
 
-#: src/main.c:284
+#: src/main.c:285
 msgid "Set the height"
 msgstr "Nustatyti aukštį"
 
-#: src/main.c:285
+#: src/main.c:286
 msgid "HEIGHT"
 msgstr "AUKŠTIS"
 
-#: src/main.c:306 src/main.c:363 src/main.c:403 src/main.c:425 src/main.c:505
-#: src/main.c:603 src/main.c:644 src/main.c:697
+#: src/main.c:307 src/main.c:364 src/main.c:404 src/main.c:426 src/main.c:506
+#: src/main.c:613 src/main.c:654 src/main.c:707
 msgid "Set the dialog text"
 msgstr "Nustatyti lango tekstą"
 
-#: src/main.c:315
+#: src/main.c:316
 msgid "Set the calendar day"
 msgstr "Nustatyti kalendoriaus dieną"
 
-#: src/main.c:324
+#: src/main.c:325
 msgid "Set the calendar month"
 msgstr "Nustatyti kalendoriaus mėnesį"
 
-#: src/main.c:333
+#: src/main.c:334
 msgid "Set the calendar year"
 msgstr "Nustatyti kalendoriaus metus"
 
-#: src/main.c:341
+#: src/main.c:342
 msgid "Set the format for the returned date"
 msgstr "Nustatyti išvedamos datos formatą"
 
-#: src/main.c:372
+#: src/main.c:373
 msgid "Set the entry text"
 msgstr "Nustatyti įvedamą tekstą"
 
-#: src/main.c:381
+#: src/main.c:382
 msgid "Hide the entry text"
 msgstr "Paslėpti įvedamą tekstą"
 
-#: src/main.c:447
+#: src/main.c:448
 msgid "Set the filename"
 msgstr "Nustatyti bylos vardą"
 
-#: src/main.c:448 src/main.c:667
+#: src/main.c:449 src/main.c:677
 msgid "FILENAME"
 msgstr "BYLOS-VARDAS"
 
-#: src/main.c:456
+#: src/main.c:457
 msgid "Allow multiple files to be selected"
 msgstr "Leisti parinkti kelias bylas vienu metu"
 
-#: src/main.c:465
+#: src/main.c:466
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "Įjungti tik-aplankų pasirinkimą"
 
-#: src/main.c:474
+#: src/main.c:475
 msgid "Activate save mode"
-msgstr ""
+msgstr "Įjungti saugų režimą"
 
-#: src/main.c:483
+#: src/main.c:484
 msgid "Set output separator character."
 msgstr "Nustatyti išvedimo skiriamąjį simbolį."
 
-#: src/main.c:484 src/main.c:542
+#: src/main.c:485 src/main.c:543
 msgid "SEPARATOR"
 msgstr "SKIRTUKAS"
 
-#: src/main.c:514
+#: src/main.c:515
 msgid "Set the column header"
 msgstr "Nustatyti stulpelio antraštę"
 
-#: src/main.c:523
+#: src/main.c:524
 msgid "Use check boxes for first column"
 msgstr "Naudoti parinkimo laukus pirmame stulpelyje"
 
-#: src/main.c:532
+#: src/main.c:533
 msgid "Use radio buttons for first column"
 msgstr "Naudoti persijungiančius laukus pirmame stulpelyje"
 
-#: src/main.c:541
+#: src/main.c:542
 msgid "Set output separator character"
 msgstr "Nustatyti išvedimo skiriamąjį simbolį"
 
-#: src/main.c:550 src/main.c:675
+#: src/main.c:551 src/main.c:685
 msgid "Allow changes to text"
 msgstr "Leisti keisti tekstą"
 
-#: src/main.c:559
+#: src/main.c:560
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
+"Spausdinti specifinį stulpelį (įprastas yra 1; spausdinti visiems stulpeliams"
+" gali būti naudojama „ALL“)"
 
-#: src/main.c:581
-#, fuzzy
+#: src/main.c:582
 msgid "Set the notification text"
-msgstr "Nustatyti lango tekstą"
+msgstr "Nurodyti pranešimo tekstą"
 
-#: src/main.c:612
+#: src/main.c:591
+msgid "Listen for commands on stdin"
+msgstr "Laukti komandų stdin"
+
+#: src/main.c:622
 msgid "Set initial percentage"
 msgstr "Nustatyti pradinę procentinę vertę"
 
-#: src/main.c:621
+#: src/main.c:631
 msgid "Pulsate progress bar"
 msgstr "Keisti progreso juostą"
 
-#: src/main.c:631
+#: src/main.c:641
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Pašalinti dialogo langą pasiekus 100%"
 
-#: src/main.c:666
+#: src/main.c:676
 msgid "Open file"
 msgstr "Atverti bylą"
 
-#: src/main.c:710
+#: src/main.c:720
 msgid "Gdk debugging flags to set"
 msgstr "Nustatomi Gdk testavimo parametrai"
 
-#: src/main.c:711 src/main.c:720 src/main.c:799 src/main.c:808
+#: src/main.c:721 src/main.c:730 src/main.c:809 src/main.c:818
 msgid "FLAGS"
 msgstr "PARAMETRAI"
 
-#: src/main.c:719
+#: src/main.c:729
 msgid "Gdk debugging flags to unset"
 msgstr "Atšaukiami Gdk testavimo parametrai"
 
-#: src/main.c:729
+#: src/main.c:739
 msgid "X display to use"
 msgstr "Naudojamas X vaizduoklis"
 
-#: src/main.c:730
+#: src/main.c:740
 msgid "DISPLAY"
 msgstr "VAIZDUOKLIS"
 
-#: src/main.c:740
+#: src/main.c:750
 msgid "X screen to use"
 msgstr "Naudojamas X ekranas"
 
-#: src/main.c:741
+#: src/main.c:751
 msgid "SCREEN"
 msgstr "EKRANAS"
 
-#: src/main.c:751
+#: src/main.c:761
 msgid "Make X calls synchronous"
 msgstr "Vykdyti X funkcijas sinchroniškai"
 
-#: src/main.c:760
+#: src/main.c:770
 msgid "Program name as used by the window manager"
 msgstr "Programos vardas, naudojamas langų tvarkyklės"
 
-#: src/main.c:761
+#: src/main.c:771
 msgid "NAME"
 msgstr "VARDAS"
 
-#: src/main.c:769
+#: src/main.c:779
 msgid "Program class as used by the window manager"
 msgstr "Programos klasė, naudojama langų tvarkyklės"
 
-#: src/main.c:770
+#: src/main.c:780
 msgid "CLASS"
 msgstr "KLASĖ"
 
-#: src/main.c:780
+#: src/main.c:790
 msgid "HOST"
 msgstr "KOMPIUTERIS"
 
-#: src/main.c:790
+#: src/main.c:800
 msgid "PORT"
 msgstr "PRIEVADAS"
 
-#: src/main.c:798
+#: src/main.c:808
 msgid "Gtk+ debugging flags to set"
 msgstr "Nustatomi Gtk+ testavimo parametrai"
 
-#: src/main.c:807
+#: src/main.c:817
 msgid "Gtk+ debugging flags to unset"
 msgstr "Atšaukiami Gtk+ testavimo parametrai"
 
-#: src/main.c:816
+#: src/main.c:826
 msgid "Make all warnings fatal"
 msgstr "Visi perspėjimai turi būti kritiniai"
 
-#: src/main.c:825
+#: src/main.c:835
 msgid "Load an additional Gtk module"
 msgstr "Paleisti papildomą Gtk modulį"
 
-#: src/main.c:826
+#: src/main.c:836
 msgid "MODULE"
 msgstr "MODULIS"
 
-#: src/main.c:847
+#: src/main.c:857
 msgid "About zenity"
 msgstr "Apie zenity"
 
-#: src/main.c:856
+#: src/main.c:866
 msgid "Print version"
 msgstr "Parodyti versiją"
 
-#: src/main.c:869
+#: src/main.c:879
 msgid "Dialog options"
 msgstr "Dialogo nustatymai"
 
-#: src/main.c:878
+#: src/main.c:888
 msgid "General options"
 msgstr "Bendriniai nustatymai"
 
-#: src/main.c:887
+#: src/main.c:897
 msgid "Calendar options"
 msgstr "Kalendoriaus nustatymai"
 
-#: src/main.c:896
+#: src/main.c:906
 msgid "Text entry options"
 msgstr "Teksto įvedimo nustatymai"
 
-#: src/main.c:905
+#: src/main.c:915
 msgid "Error options"
 msgstr "Klaidų nustatymai"
 
-#: src/main.c:914
+#: src/main.c:924
 msgid "File selection options"
 msgstr "Bylų parinkimo nustatymai"
 
-#: src/main.c:923
+#: src/main.c:933
 msgid "Info options"
 msgstr "Informaciniai nustatymai"
 
-#: src/main.c:932
+#: src/main.c:942
 msgid "List options"
 msgstr "Sąrašų nustatymai"
 
-#: src/main.c:941
-#, fuzzy
-msgid "Notication options"
-msgstr "Užklausų nustatymai"
+#: src/main.c:951
+msgid "Notification options"
+msgstr "Pranešimo nustatymai"
 
-#: src/main.c:950
+#: src/main.c:960
 msgid "Progress options"
 msgstr "Progreso būklės nustatymai"
 
-#: src/main.c:959
+#: src/main.c:969
 msgid "Question options"
 msgstr "Užklausų nustatymai"
 
-#: src/main.c:968
+#: src/main.c:978
 msgid "Text options"
 msgstr "Teksto nustatymai"
 
-#: src/main.c:977
+#: src/main.c:987
 msgid "Warning options"
 msgstr "Perspėjimų nustatymai"
 
-#: src/main.c:986
+#: src/main.c:996
 msgid "GTK+ options"
 msgstr "GTK+ nustatymai"
 
-#: src/main.c:995
+#: src/main.c:1005
 msgid "Miscellaneous options"
 msgstr "Kiti nustatymai"
 
-#: src/main.c:1004
+#: src/main.c:1014
 msgid "Help options"
 msgstr "Pagalbos sistemos nustatymai"
 
-#: src/main.c:1143
+#: src/main.c:1154
 #, c-format
 msgid "%s is an invalid option. See 'zenity --help' for more details\n"
 msgstr ""
 "%s raktas yra netinkamas. Paleiskite 'zenity --help' norėdami gauti "
 "informaciją apie tinkamus raktus\n"
 
-#: src/main.c:1191
+#: src/main.c:1202
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Jūs turite nurodyti dialogo tipą. Paleiskite 'zenity --help' norėdami gauti "
 "informaciją apie tinkamus raktus\n"
 
-#: src/main.c:1211
+#: src/main.c:1222
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "%s nurodytas du kartus tam pačiam dialogui\n"
 
-#: src/main.c:1215
+#: src/main.c:1226
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "%s nepalaikomas šio dialogo tipo\n"
 
-#: src/main.c:1219
+#: src/main.c:1230
 msgid "Two or more dialog options specified\n"
 msgstr "Nurodytas daugiau nei vienas dialogo raktas\n"
 
-#: src/tree.c:303
+#: src/notification.c:157
+msgid "could not parse command from stdin\n"
+msgstr "nepavyko apdoroti komandos iš stdin\n"
+
+#: src/notification.c:226 src/notification.c:251
+msgid "Zenity notification"
+msgstr "Zenity pranešimas"
+
+#: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
 msgstr "Sąrašo dialoge nenurodytos stulpelių antraštės.\n"
 
