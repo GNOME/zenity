@@ -1,0 +1,156 @@
+#!/usr/bin/perl
+
+# gdialog -> zenity conversion wrapper
+#
+# by Mike Newman <mikegtn@gnome.org>
+#
+# This is all, of course, horrible - but it should translate
+# most commond gdialog types to zenity equivalents. It will drop
+# the pointless and unused (even by gdialog!) size arguments
+# but hopefully will pass all the others.
+#
+# For testing purposes, I've used a couple of the nautilus scripts
+# available at http://g-scripts.sourceforge.net - what is sometimes
+# unclear is what is a gdialog/zenity translation problem, and what is
+# a problem with the script
+
+my $command = "zenity ";	# the command line we build up to execute
+my $element = "";		# current bit of command line
+my $argn = 0;			# counter for walking args
+my $args = $#ARGV + 1;		# total number of command line arguments
+
+# this just loads the current arg into $element
+
+sub get_arg () { 
+	$element = $ARGV[$argn];
+}
+
+# walk the command line
+
+ARG: while ($argn < $args) {
+
+	get_arg;
+	
+	if ($element eq "--title") {
+	
+		# --title argument is almost analogous in gdialog and
+		# zenity - so pass it almost entirely as is
+		
+		$argn++;
+		get_arg;
+		$command .= "--title=\"$element\" ";
+		$argn++;
+		
+		# keep processing args
+		
+		next ARG;
+	}
+	
+	if ($element eq "--msgbox" || $element eq "--infobox") {
+	
+		# This bit is common to almost all of the dialogs
+		# the arg following the dialog type in gdialog is usually
+		# equivalent to zenity's --text arg.
+		
+		$argn++;
+		get_arg;
+		$command .= "--info --text=\"$element\" ";
+		
+		# this also happens a lot - gdialog accepted size args
+		# for dialog compatability - which it pretty much ignored
+		# and we will do the same
+ 
+		$argn+=2;
+		last ARG;
+	}
+	
+	if ($element eq "--yesno") {
+
+		# this will silently ignore the gdialog option to set
+		# the default button in question dialogs - which is
+		# highly hig-norant anyway!
+		
+		$argn++;
+		get_arg;
+		$command .= "--question --text=\"$element\" ";
+		last ARG;
+	}
+	
+	if ($element eq "--inputbox") {
+		$argn++;
+		get_arg;
+		$command .= "--entry --text=\"$element\" ";
+		
+		# ignore size elements and maybe there is some
+		# default text to initialize the entry with?
+		
+		$argn+=3;
+		get_arg;
+		$command .= "--entry-text=\"$element\" ";
+		last ARG;
+	}
+	
+	if ($element eq "--textbox") {
+		$argn++;
+		get_arg;
+		$command .= "--text-info ";
+		
+		# the arg immediately following the dialog type in
+		# gdialog is the filename, so pass this to zenity
+		
+		$argn++;
+		get_arg;
+		$command .= "--filename=\"$element\" ";
+		last ARG;
+	}
+	
+	if ($element eq "--checklist" || $element eq "--radiolist") {
+		$list=$element;
+		$argn++;
+		get_arg;
+		
+		# Conveniently, zenity and gdialog use the same names
+		# for list types, so pass this to zenity intact along with
+		# an untitled column for the check or radio buttons
+		
+		$command .= "--list $list --column='' --column $element ";
+			
+		# Skip to the first 'name' arg of the list content
+
+		$argn += 6; 
+		
+		# Loop over the remainder of the commandline
+		# discarding the 'status' and 'tag' args of each item 
+		# and using the 'name' for display in our second column
+		
+		while ($argn < $args) {
+			get_arg;
+			$command .= "$element ";
+			$argn += 3;
+		}
+		last ARG;
+	} 
+	
+	if ($element eq "--gauge") {
+		$argn++;
+		get_arg;
+		$command .= "--progress --text=\"$element\" ";
+		
+		# discard the size args as usually, and see if
+		# a percentage value was supplied to initialize the
+		# dialog
+		
+		$argn += 3;
+		get_arg;
+		if ($element) {
+			$command .= "--percentage=$element ";
+		}
+		last ARG;
+	}
+	
+	$argn++;
+}
+
+# execute the constructed zenity command line
+ 
+system($command);

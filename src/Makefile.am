@@ -20,6 +20,8 @@ INCLUDES = \
 	-DGNOMELOCALEDIR=\""$(zenitylocaledir)"\"	\
 	-DZENITY_DATADIR=\""$(datadir)/zenity"\"
 
+EXTRA_DIST = gdialog
+
 zenity_LDADD = \
 	$(ZENITY_LIBS)
 
