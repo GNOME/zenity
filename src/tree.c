@@ -24,6 +24,7 @@
  */
 
 #include <glade/glade.h>
+#include <string.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -56,7 +57,7 @@ zenity_tree_toggled_callback (GtkCellRendererToggle *cell, gchar *path_string, g
 }
 
 static void
-zenity_tree_fill_entries (GtkTreeView *tree_view, const gchar **args, gint n_columns, gboolean toggles)
+zenity_tree_fill_entries (GtkTreeView *tree_view, const gchar **args, gint n_columns, gboolean toggles, gboolean editable)
 {
 	GtkTreeModel *model;
 	GtkTreeIter iter;
@@ -80,7 +81,10 @@ zenity_tree_fill_entries (GtkTreeView *tree_view, const gchar **args, gint n_col
 			else
 				gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, args[i+j], -1);	
 		}
-		
+
+                if (editable)
+                                gtk_list_store_set (GTK_LIST_STORE (model), &iter, n_columns, TRUE, -1);
+
 		if (i == MAX_ELEMENTS_BEFORE_SCROLLING) {
 			GtkWidget *scrolled_window;
 			GtkRequisition rectangle;
@@ -94,6 +98,26 @@ zenity_tree_fill_entries (GtkTreeView *tree_view, const gchar **args, gint n_col
 	i += n_columns;
 
 	}
+}
+
+static void
+zenity_cell_edited_callback (GtkCellRendererText *cell, const gchar *path_string, const gchar *new_text, gpointer data) 
+{
+        GtkTreeModel *model;
+        GtkTreePath *path;
+        GtkTreeIter iter;
+        gint column;
+
+        model = GTK_TREE_MODEL (data);
+        path = gtk_tree_path_new_from_string (path_string);
+
+        column = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (cell), "column"));
+        gtk_tree_model_get_iter (model, &iter, path);
+
+        gtk_list_store_set (GTK_LIST_STORE (model), &iter, 
+                            column, new_text, -1);
+
+        gtk_tree_path_free (path);
 }
 
 void
@@ -151,7 +175,10 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	/* Create an empty list store */
 	model = g_object_new (GTK_TYPE_LIST_STORE, NULL);
 
-	column_types = g_new (GType, n_columns);
+        if (tree_data->editable)
+                column_types = g_new (GType, n_columns + 1);
+        else
+                column_types = g_new (GType, n_columns);
 
 	for (i = 0; i < n_columns; i++) {
 		/* Have the limitation that the radioboxes and checkboxes are in the first column */
@@ -161,9 +188,18 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 			column_types[i] = G_TYPE_STRING;
 	}
 
-	gtk_list_store_set_column_types (model, n_columns, column_types);
+        if (tree_data->editable)
+                column_types[n_columns] = G_TYPE_BOOLEAN;
+
+        if (tree_data->editable)
+	        gtk_list_store_set_column_types (model, n_columns + 1, column_types);
+        else
+	        gtk_list_store_set_column_types (model, n_columns, column_types);
 
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (model));
+
+        gtk_tree_selection_set_mode (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+                                     GTK_SELECTION_MULTIPLE);
 
 	column_index = 0;
 
@@ -186,9 +222,28 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 			}
 
 			else  {
-				column = gtk_tree_view_column_new_with_attributes (tmp->data,
-										   gtk_cell_renderer_text_new (),
-										   "text", column_index, NULL);
+                                if (tree_data->editable == TRUE) {
+                                        GtkCellRenderer *cell_renderer;
+
+                                        cell_renderer = gtk_cell_renderer_text_new ();
+                                        g_signal_connect (G_OBJECT (cell_renderer), "edited",
+                                                          G_CALLBACK (zenity_cell_edited_callback),
+                                                          gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view)));
+                                        g_object_set_data (G_OBJECT (cell_renderer), "column",
+                                                           (gint *) column_index);
+
+                                        column = gtk_tree_view_column_new_with_attributes (tmp->data,
+                                                                                           cell_renderer,
+                                                                                           "text", column_index,
+                                                                                           "editable", n_columns, 
+                                                                                           NULL);
+                                } 
+                                else  {
+				        column = gtk_tree_view_column_new_with_attributes (tmp->data,
+										           gtk_cell_renderer_text_new (),
+										           "text", column_index, NULL);
+                                }
+
 				gtk_tree_view_column_set_sort_column_id (column, column_index);
 				gtk_tree_view_column_set_resizable (column, TRUE);
 			}
@@ -196,9 +251,28 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 			first_column = TRUE;
 		}
 		else {
-			column = gtk_tree_view_column_new_with_attributes (tmp->data,
-									   gtk_cell_renderer_text_new (),
-									   "text", column_index, NULL);
+                        if (tree_data->editable == TRUE) {
+                                GtkCellRenderer *cell_renderer;
+
+                                cell_renderer = gtk_cell_renderer_text_new ();
+                                g_signal_connect (G_OBJECT (cell_renderer), "edited",
+                                                  G_CALLBACK (zenity_cell_edited_callback),
+                                                  gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view)));
+                                g_object_set_data (G_OBJECT (cell_renderer), "column",
+                                                   (gint *) column_index);
+
+                                column = gtk_tree_view_column_new_with_attributes (tmp->data,
+                                                                                   cell_renderer,
+                                                                                   "text", column_index,
+                                                                                   "editable", n_columns,
+                                                                                   NULL);
+                        }
+                        else {
+			        column = gtk_tree_view_column_new_with_attributes (tmp->data,
+									           gtk_cell_renderer_text_new (),
+									           "text", column_index, NULL);
+                        }
+
 			gtk_tree_view_column_set_sort_column_id (column, column_index);
 			gtk_tree_view_column_set_resizable (column, TRUE);
 			
@@ -211,9 +285,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree_view), TRUE);
 
 	if (tree_data->radiobox || tree_data->checkbox)
-		zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, TRUE);
+		zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, TRUE, tree_data->editable);
 	else
-		zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, FALSE);
+		zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, FALSE, tree_data->editable);
 
 	gtk_widget_show (dialog);
 	gtk_main ();
@@ -258,9 +332,9 @@ zenity_tree_dialog_output (void)
         for (tmp = selected; tmp; tmp = tmp->next) {
                 if (tmp->next != NULL) {
                       /* FIXME: There must be a nicer way to do this. This is just arse */
-                      if (strstr (separator, "\\n") != NULL)
+                      if (strstr ((const gchar *) separator, (const gchar *) "\\n") != NULL)
                               g_printerr ("%s\n", tmp->data);
-                      else if (strstr (separator, "\\t") != NULL)
+                      else if (strstr ((const gchar *) separator, (const gchar *) "\\t") != NULL)
                               g_printerr ("%s\t", tmp->data);
                       else
                               g_printerr ("%s%s", tmp->data, separator);

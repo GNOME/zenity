@@ -88,6 +88,7 @@ enum {
 	OPTION_FILENAME,
 	OPTION_COLUMN,
         OPTION_SEPERATOR,
+        OPTION_LISTEDIT,
 	OPTION_CHECKLIST,
 	OPTION_RADIOLIST,
 	OPTION_PROGRESSTEXT,
@@ -450,6 +451,15 @@ struct poptOption list_options[] = {
 		N_("Set output separator character"),
 		NULL
 	},
+	{
+		"editable",
+		'\0',
+		POPT_ARG_NONE,
+		NULL,
+		OPTION_LISTEDIT,
+		N_("Allow changes to text"),
+		NULL
+	},
 	POPT_TABLEEND
 };
 
@@ -556,6 +566,134 @@ struct poptOption warning_options[] = {
 		N_("Set the dialog text"),
 		NULL
 	},
+	POPT_TABLEEND
+};
+
+struct poptOption gtk_options[] = {
+        {
+                "gdk-debug", 
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0,
+                N_("Gdk debugging flags to set"), 
+                N_("FLAGS")
+        }, 
+        {
+                "gdk-no-debug", 
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                N_("Gdk debugging flags to unset"), 
+                N_("FLAGS")
+        }, 
+        /* X11 only */ 
+        {
+                "display",
+                '\0',
+                POPT_ARG_STRING,
+                NULL,
+                0, 
+                N_("X display to use"),
+                N_("DISPLAY")
+        }, 
+#ifdef HAVE_GTK_MULTIHEAD 
+        /* X11 & multi-head only */ 
+        {
+                "screen",
+                '\0', 
+                POPT_ARG_INT, 
+                NULL, 
+                0, 
+                N_("X screen to use"), 
+                N_("SCREEN")
+        },
+#endif 
+        /* X11 only */ 
+        {
+                "sync", 
+                '\0', 
+                POPT_ARG_NONE, 
+                NULL, 
+                0, 
+                N_("Make X calls synchronous"),
+                NULL
+        },
+        {
+                "name", 
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                N_("Program name as used by the window manager"), 
+                N_("NAME")
+        }, 
+        {
+                "class", 
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                N_("Program class as used by the window manager"), 
+                N_("CLASS")
+        }, 
+        /* X11 only */ 
+        {
+                "gxid-host",
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                NULL, 
+                N_("HOST")
+        }, 
+        /* X11 only */ 
+        {
+                "gxid-port",
+                '\0',
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                NULL, 
+                N_("PORT")
+        }, 
+        {
+                "gtk-debug", 
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                N_("Gtk+ debugging flags to set"), 
+                N_("FLAGS")
+        }, 
+        { 
+                "gtk-no-debug",
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                N_("Gtk+ debugging flags to unset"), 
+                N_("FLAGS")
+        }, 
+        { 
+                "g-fatal-warnings", 
+                '\0', 
+                POPT_ARG_NONE, 
+                NULL, 
+                0, 
+                N_("Make all warnings fatal"), 
+                NULL
+        }, 
+        { 
+                "gtk-module", 
+                '\0', 
+                POPT_ARG_STRING, 
+                NULL, 
+                0, 
+                N_("Load an additional Gtk module"), 
+                N_("MODULE")
+        },
 	POPT_TABLEEND
 };
 
@@ -703,6 +841,15 @@ struct poptOption application_options[] = {
 		NULL,
 		'\0',
 		POPT_ARG_INCLUDE_TABLE,
+		gtk_options,
+		0,
+		N_("GTK+ options"),
+		NULL
+	},
+	{
+		NULL,
+		'\0',
+		POPT_ARG_INCLUDE_TABLE,
 		miscellaneous_options,
 		0,
 		N_("Miscellaneous options"),
@@ -751,6 +898,7 @@ zenity_init_parsing_options (void) {
 	results->entry_data->visible = TRUE;
 	results->tree_data->checkbox = FALSE;
 	results->tree_data->radiobox = FALSE;
+	results->tree_data->editable = FALSE;
 }
 
 static void
@@ -825,21 +973,17 @@ main (gint argc, gchar **argv) {
 
 	ctx = poptGetContext ("zenity", argc, (const char **)argv, application_options, 0);
 
-	poptReadDefaultConfig(ctx, TRUE);
+        poptReadDefaultConfig(ctx, TRUE);
 	while((nextopt = poptGetNextOpt(ctx)) > 0)
 		/*nothing*/;
 
-	if (nextopt != -1) {
-                /* FIXME : We should probably handle --display, or at least maybe load some of the gtk+
-                 * commandline options
-                 */
-		g_printerr (_("%s in an invalid option for this dialog. See zenity --help for more details\n"), 
+        if (nextopt != -1) {
+                g_printerr (_("%s in an invalid option for this dialog. See zenity --help for more details\n"),
                             poptBadOption (ctx, 0));
-		zenity_free_parsing_options ();
-		exit (-1);
-	}	
-
-	gtk_init (&argc, &argv);
+                zenity_free_parsing_options (); 
+                exit (-1); 
+        }
+        gtk_init (&argc, &argv);
 	
 	if (argc < 2) {
                 g_printerr (_("You must specify more arguments. See zenity --help for more details\n"));
@@ -920,6 +1064,7 @@ zenity_parse_options_callback (poptContext              ctx,
         static gboolean parse_option_separator = FALSE;
         static gint parse_option_text = 0;
         static gint parse_option_file = 0;
+        static gint parse_option_editable = 0;
 
 	if (reason == POPT_CALLBACK_REASON_POST) {
 		return;
@@ -1096,14 +1241,28 @@ zenity_parse_options_callback (poptContext              ctx,
 
 			results->entry_data->visible = FALSE;
 			break;
+                case OPTION_LISTEDIT:
 		case OPTION_TEXTEDIT:
-			if (results->mode != MODE_TEXTINFO)
-                                zenity_error ("--editable", ERROR_SUPPORT);
 
-			if (results->text_data->editable == TRUE)
+                        /* FIXME: This is an ugly hack because of the way the poptOptions are
+                         * ordered above. When you try and use an --option more than once
+                         * parse_options_callback gets called for each option. Suckage
+                         */
+
+                        if (parse_option_file > 2)
                                 zenity_error ("--editable", ERROR_DUPLICATE);
 
-			results->text_data->editable = TRUE;
+                        switch (results->mode) {
+                                case MODE_TEXTINFO:
+                                          results->text_data->editable = TRUE;
+                                          break;
+                                case MODE_LIST:
+                                          results->tree_data->editable = TRUE;
+                                          break;
+				default:
+                                        zenity_error ("--editable", ERROR_SUPPORT);
+                        }
+                        parse_option_editable++;
 			break;
 		case OPTION_FILENAME:
 		case OPTION_TEXTFILE:

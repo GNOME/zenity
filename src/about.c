@@ -72,7 +72,6 @@ zenity_about (ZenityData *data)
 
 	translator_credits = _("translator_credits");
 
-
 	glade_xml_signal_autoconnect (glade_dialog);
 
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_about_dialog");
@@ -222,7 +221,7 @@ zenity_about_display_credits_dialog (void)
                 zenity_about_update_author_label (label);
         }
 
-        if (translator_credits != NULL) {
+        if (translator_credits != NULL && strcmp (translator_credits, "translator_credits") != 0) {
                 label = zenity_about_create_label ();
                 sw = gtk_scrolled_window_new (NULL, NULL);
                 gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw), 

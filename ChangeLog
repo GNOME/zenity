@@ -1,3 +1,22 @@
+2003-01-28  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Don't display the translators tab
+	unless there is stuff to show.
+
+	* src/entry.c: Add sanity NULL checking.
+
+	* src/tree.c, src/zenity.h: Add support for a new
+	--editable option.
+	
+	* src/main.c: Add support for new --editable option for
+	the List dialog. Merge in the list of Gtk+ options into
+	the popt table - ripped this from libbonoboui, thanks to
+	James for pointing this out.
+
+	* src/zenity.glade: Make the translatable strings less arse.
+
+	* TODO: Update accordingly.
+
 2003-01-26  Glynn Foster  <glynn.foster@sun.com>
 
 	* THANKS, src/about.c: Update

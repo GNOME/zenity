@@ -84,11 +84,16 @@ static void
 zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
 	ZenityData *zen_data = data;
+        const gchar *text;
 
 	switch (response) {
 		case GTK_RESPONSE_OK:
 			zen_data->exit_code = 0;
-			g_printerr ("%s\n", gtk_entry_get_text (GTK_ENTRY (entry)));
+                        text = gtk_entry_get_text (GTK_ENTRY (entry));
+
+                        if (text != NULL)
+			        g_printerr ("%s\n", gtk_entry_get_text (GTK_ENTRY (entry)));
+
 			gtk_main_quit ();
 			break;
 
