@@ -1,5 +1,24 @@
 2004-12-07  Glynn Foster  <glynn.foster@sun.com>
 
+	* src/main.c: Fix for #137993. There is a chance that we'll have
+	to revert this fix, given the comments in /etc/X11/gdm/Xsession:
+
+        # Note that this should only go to zenity dialogs which always 
+	#  expect utf8
+        gettextfunc () {
+          if [ "x$gdmtranslate" != "x" ] ; then
+            "$gdmtranslate" --utf8 "$1"
+          else
+            echo "$1"
+          fi
+        }
+
+	So I guess we may be over a barrel with our original guarantee.
+	Let's just change this in 2.9.x and see if anyone notices or cares 
+        enough. Patch from Leonardo Boshell <p@kapcoweb.com>.
+
+2004-12-07  Glynn Foster  <glynn.foster@sun.com>
+
 	* src/option.c: Fix spacing issue.
 
 2004-12-07  Glynn Foster  <glynn.foster@sun.com>
