@@ -170,6 +170,19 @@
     </para>
 
     <para>
+	When using &app;, make sure that any arguments to the command line options are surrounded by
+	a set of quotes ' ' or " " as in <command>&app; --calendar --dialog-title="Holiday Planner"
+	</command>, for example. If you do not use quotes, then it is likely that you will get
+	unexpected results.
+    </para>
+
+    <para>
+    	For some of the dialogs, &app; supports the use of keyboard mnemonics. This allows you to
+	use an '_' before the letter you want the mnemonic for, as in "_Please choose a name:", for
+	example.
+    </para>
+
+    <para>
     	The following exit codes are observed by &app;:
     </para>
 
@@ -242,8 +255,11 @@
 
     <para>
 	To create a Calendar dialog, use <command>--calendar</command>. &app; will return the 
-	date selected to standard error. The following list of options are also available for 
-	the Calendar dialog:
+	date selected to standard error. If the day, month and year are not specified at the
+	command line, &app; will pre-select the current date in the Calendar dialog.
+    </para>
+    <para>
+	The following list of options are available for the Calendar dialog:
     </para>
 
     <variablelist>
@@ -306,7 +322,19 @@
       </screenshot>
     </figure>
 
-<!-- FIXME: Add an example of a script -->
+
+    <para>
+    	The following script shows an example of how to use the Calendar dialog:
+
+		<programlisting>
+		#!/bin/sh
+
+		if zenity --calendar --dialog-title="Calendar selection" --text="Select a date from below" --day=18 --month=1 --year=2003
+		  then echo $?
+		  else echo "No date selected"
+		fi
+		</programlisting>
+    </para>
 
   </sect1>
 
@@ -317,8 +345,10 @@
 
     <para>
 	To create a Text Entry dialog, use <command>--text-entry</command>. &app; returns the 
-	contents of the text entry to standard error. The following list of options are also 
-	available for the Text Entry dialog:
+	contents of the text entry to standard error. 
+    </para>	
+    <para>	
+    	The following list of options are available for the Text Entry dialog:
     </para>
 
     <variablelist>
@@ -360,7 +390,18 @@
       </screenshot>
     </figure>
 
-<!-- FIXME: Add an example of a script -->
+    <para>
+    	The following script shows an example of how to use the Calendar dialog:
+
+		<programlisting>
+		#!/bin/sh
+
+		if zenity --entry --dialog-title="Add a new entry" --text="Enter your _Password" --hide-text
+		  then echo $?
+		  else echo "No password entered"
+		fi
+		</programlisting>
+    </para>
 
   </sect1>
 
@@ -373,8 +414,10 @@
 	There are 4 types of message dialogs in &app; - Error, Informational, Question and Warning. To
 	create an Error dialog, use <command>--error</command>. To create an Informational dialog, use
 	<command>--info</command>. To create a Question dialog, use <command>--question</command>. To
-	create a Warning dialog, use <command>--question</command>. The following list of options is
-	available for the message dialogs.
+	create a Warning dialog, use <command>--question</command>. 
+    </para>	
+    <para>	
+	The following list of options are available for the message dialogs.
     </para>
 
     <variablelist>
@@ -444,7 +487,19 @@
       </screenshot>
     </figure>
 
-<!-- FIXME: Add an example of a script -->
+    <para>
+    	The following script shows an example of how to use the Warning message dialog:
+
+		<programlisting>
+		#!/bin/bash
+
+		FILE_TYPE=$(file -b $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS|awk '{ print $1}')
+
+		if [ "$FILE_TYPE" != "PNG" ]; then
+		  zenity --warning --text="Could not rotate image :" --hide-text
+		fi
+		</programlisting>
+    </para>
 
   </sect1>
 
@@ -455,8 +510,10 @@
 
     <para>
 	To create a File Selection dialog, use <command>--file-selection</command>. &app; returns 
-	the file or directory selected to standard error. The following list of options are also 
-	available for the File Selection dialog:
+	the file or directory selected to standard error. 
+    </para>
+    <para>
+	The following list of options are available for the File Selection dialog:
     </para>
 
     <variablelist>
@@ -484,7 +541,24 @@
       </screenshot>
     </figure>
 
-<!-- FIXME: Add an example of a script -->
+    <para>
+    	The following script shows an example of how to use the File Selection dialog:
+
+		<programlisting>
+		#!/bin/sh
+
+		FILE=`zenity --file-selection --dialog-title="Select a file"'
+
+		case $? in
+		         0)
+			  	echo "\"$FILE\" selected.";;
+		         1)
+			        echo "No file selected.";;
+			-1)
+			        echo "No file selected.";;
+		esac
+		</programlisting>
+    </para>
 
   </sect1>
 
@@ -497,8 +571,21 @@
 	To create a List dialog, use <command>--list</command>. &app; returns the entries of 
 	the first columns selected to standard error. If <command>--checklist</command> or 
 	<command>--radiolist</command> is used, then &app; will return the entries of the
-	second columns selected to standard error. The following list of options are also 
-	available for the File Selection dialog:
+	second columns selected to standard error. 
+    </para>
+
+    <para>
+	
+    </para>
+	With the List dialog, you must specify the number of columns to be displayed by 
+	specifying the column headers. To fill data into this dialog, you may specify
+	entries column by column, row by row. If you are using a checklist or a radiolist
+	then your first pieces of data for each row must be either 'TRUE' or 'FALSE'. See
+	examples below for how to fill data into this dialog.
+    </para>
+
+    <para>
+	The following list of options are available for the List dialog:
     </para>
 
     <variablelist>
@@ -553,7 +640,17 @@
       </screenshot>
     </figure>
 
-<!-- FIXME: Add an example of a script -->
+    <para>
+    	The following commandline shows an example of how to use the List dialog:
+		<programlisting>
+		zenity --list --dialog-title="Choose bugs you wish to view" \
+		       --text="Select items from the list below." \
+		       --column="Bug Number" --column="Severity" --column="Description" \
+		       992383 Normal "GtkTreeView crashes on multiple selections" \
+		       293823 High "GNOME Dictionary does not handle proxy" \
+		       393823 Critical "Menu editing does not work in GNOME 2.0"
+		</programlisting>
+    </para>
 
   </sect1>
 
@@ -563,8 +660,11 @@
     <title>Progress</title>
 
     <para>
-	To create a Progress dialog, use <command>--progress</command>. The following list
-	of options are also available for the Progress dialog:
+	To create a Progress dialog, use <command>--progress</command>. 
+    </para>
+	
+    <para>
+	The following list of options are available for the Progress dialog:
     </para>
 
     <variablelist>
@@ -607,7 +707,24 @@
       </screenshot>
     </figure>
 
-<!-- FIXME: Add an example of a script -->
+    <para>
+    	The following script shows an example of how to use the Progress dialog:
+		<programlisting>
+		#!/bin/sh
+		(
+		echo "10" ; sleep 1
+		echo "20" ; sleep 1
+		echo "50" ; sleep 1
+		echo "75" ; sleep 1
+		echo "100" ; sleep 1
+		) |
+		zenity --progress --dialog-title="Update System Logs" --text="Updating mail logs..." --percentage=0
+
+		if [ "$?" = -1 ] ; then
+			zenity --error --text="Update cancelled."
+		fi
+		</programlisting>
+    </para>
 
   </sect1>
 
@@ -617,8 +734,11 @@
     <title>Text Information</title>
 
     <para>
-	To create a Text Information dialog, use <command>--text-info</command>. The following list
-	of options are also available for the Text Information dialog:
+	To create a Text Information dialog, use <command>--text-info</command>. 
+    </para>
+	
+    <para>
+	The following list of options are available for the Text Information dialog:
     </para>
 
     <variablelist>
@@ -633,7 +753,7 @@
       <varlistentry>
         <term><varname>--editable</varname></term>
         <listitem>
-          <para>Allow the displayed text to be edited and returned when the dialog is closed.</para>
+          <para>Allow the displayed text to be edited and returned to standard error when the dialog is closed.</para>
         </listitem>
       </varlistentry>
 
@@ -653,7 +773,24 @@
       </screenshot>
     </figure>
 
-<!-- FIXME: Add an example of a script -->
+    <para>
+    	The following script shows an example of how to use the Text Infomation dialog:
+		<programlisting>
+		#!/bin/sh
+
+		FILE=`zenity --file-selection --dialog-title="Select a file"'
+
+		case $? in
+		         0)
+			  	zenity --text-info --dialog-title=$FILE --editable 2>/tmp/tmp.txt
+							
+		         1)
+			        echo "No file selected.";;
+			-1)
+				echo "No file selected.";;
+		esac
+		</programlisting>
+    </para>
 
   </sect1>
 
