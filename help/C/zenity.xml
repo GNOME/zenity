@@ -86,74 +86,118 @@
       <varlistentry>
         <term><varname>--calendar</varname></term>
 	<listitem>
-	  <para>Display a Calendar dialog</para>
+	  <para>Display a Calendar dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--entry</varname></term>
 	<listitem>
-	  <para>Display a Text Entry dialog</para>
-	</listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><varname>--error</varname></term>
-	<listitem>
-	  <para>Display an Error dialog</para>
+	  <para>Display a Text Entry dialog.</para>
 	</listitem>
       </varlistentry>
       
       <varlistentry>
+        <term><varname>--error</varname></term>
+	<listitem>
+	  <para>Display an Error dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><varname>--info</varname></term>
 	<listitem>
-	  <para>Display an Informational dialog</para>
+	  <para>Display an Informational dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--file-selection</varname></term>
 	<listitem>
-	  <para>Display a File Slection dialog</para>
+	  <para>Display a File Selection dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--list</varname></term>
 	<listitem>
-	  <para>Display a List dialog</para>
+	  <para>Display a List dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--progress</varname></term>
 	<listitem>
-	  <para>Display a Progress dialog</para>
+	  <para>Display a Progress dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--question</varname></term>
 	<listitem>
-	  <para>Display a Question dialog</para>
+	  <para>Display a Question dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--text-info</varname></term>
 	<listitem>
-	  <para>Display a Text Information dialog</para>
+	  <para>Display a Text Information dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--warning</varname></term>
 	<listitem>
-	  <para>Display a Warning dialog</para>
+	  <para>Display a Warning dialog.</para>
 	</listitem>
       </varlistentry>
 
     </variablelist>
+
+  </sect1>
+
+<!-- ==== General Options ====== -->
+  <sect1 id="zenity-basic-use">
+    <title>Basic Use</title>
+
+    <para>
+	&app; can only be used to create relatively simple dialogs, but is especially useful
+	when used in scripts. When a user has completed an action requested of them, and the 
+	dialog closes, &app; prints any text specific to the dialog to standard error and
+	an exit code is returned. Information about what text is printed to standard error will be 
+	detailed in the individual dialog sections.
+    </para>
+
+    <para>
+    	The following exit codes are observed by &app;:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>0</term>
+	<listitem>
+	  <para>The user has pressed either 'OK' or 'Close'.</para>
+	</listitem>
+      </varlistentry>
+     	
+      <varlistentry>
+        <term><varname>1</term>
+	<listitem>
+	  <para>The user has pressed either 'Cancel' or closed the dialog through the window functions.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>-1</term>
+	<listitem>
+	  <para>An unexpected error has occurred.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
   </sect1>
 
 <!-- ==== General Options ====== -->
@@ -176,72 +220,321 @@
       <varlistentry>
         <term><varname>--title</varname>=TITLE</term>
 	<listitem>
-	  <para>Specify the title of a dialog</para>
+	  <para>Specify the title of a dialog.</para>
 	</listitem>
       </varlistentry>
 
       <varlistentry>
         <term><varname>--window-icon</varname>=ICON_PATH</term>
 	<listitem>
-	  <para>Specify the icon that should appear in the window frame of the dialog</para>
+	  <para>Specify the icon that should appear in the window frame of the dialog.</para>
 	</listitem>
       </varlistentry>
 
     </variablelist>
+
   </sect1>
 
-<!-- ==== Calendar Options ====== 
+<!-- ==== Calendar Options ====== -->
 
-Calendar options
-  --text=STRING              Set the dialog text
-  --day=INT                  Set the calendar day
-  --month=INT                Set the calendar month
-  --year=INT                 Set the calendar year
-  --date-format=STRING       Set the format for the returned date
+  <sect1 id="zenity-calendar-options">
+    <title>Calendar</title>
 
-Text entry options
-  --text=STRING              Set the dialog text
-  --entry-text=STRING        Set the entry text
-  --hide-text                Hide the entry text
+    <para>
+	To create a Calendar dialog, use <command>--calendar</command>. &app; will return the 
+	date selected to standard error. The following list of options are also available for 
+	the Calendar dialog:
+    </para>
 
-Info options
-  --text=STRING              Set the dialog text
+    <variablelist>
 
-Error options
-  --text=STRING              Set the dialog text
+      <varlistentry>
+        <term><varname>--text</varname>=TEXT</term>
+	<listitem>
+	  <para>Specify the text to appear in the Calendar dialog.</para>
+	</listitem>
+      </varlistentry>
+     	
+      <varlistentry>
+        <term><varname>--day</varname>=DAY</term>
+	<listitem>
+	  <para>Specify the day to be pre-selected in the Calendar dialog. This must be a
+	        number between 1 and 31.
+	  </para>
+	</listitem>
+      </varlistentry>
 
-File selection options
-  --filename=FILENAME        Set the filename
+      <varlistentry>
+        <term><varname>--month</varname>=MONTH</term>
+	<listitem>
+	  <para>Specify the day to be pre-selected in the Calendar dialog. This must be
+	  	a number between 1 and 12.
+	  </para>
+	</listitem>
+      </varlistentry>
 
-List options
-  --column=STRING            Set the column header
-  --checklist                Use check boxes for first column
-  --radiolist                Use radio buttons for first column
-  --separator=STRING         Set output separator character
+      <varlistentry>
+        <term><varname>--year</varname>=YEAR</term>
+	<listitem>
+	  <para>Specify the year to be pre-selected in the Calendar dialog.</para>
+	</listitem>
+      </varlistentry>
 
-Progress options
-  --text=STRING              Set the dialog text
-  --percentage=INT           Set initial percentage
-  --pulsate                  Pulsate progress bar
+      <varlistentry>
+        <term><varname>--data-format</varname>=FORMAT</term>
+	<listitem>
+	  <para>Specify the format to be returned from the Calendar dialog after
+	  	the selection has been made. This defaults to a format depending
+		on your locale. The format must be of <command>strftime</command>
+		style eg. "%A %d/%m%y"</para>
+	</listitem>
+      </varlistentry>
 
-Question options
-  --text=STRING              Set the dialog text
+    </variablelist>
 
-Text options
-  --filename=FILENAME        Open file
+<!-- FIXME: Add an example of a script, including a screenshot -->
 
-Warning options
-  --text=STRING              Set the dialog text
+  </sect1>
 
-Miscellaneous options
-  --about                    About zenity
-  --version                  Print version
+<!-- ==== Text Entry Options ====== -->
 
-Help options
-  -?, --help                 Show this help message
-  --usage                    Display brief usage message
-  
--->
+  <sect1 id="zenity-text-entry-options">
+    <title>Text Entry</title>
+
+    <para>
+	To create a Text Entry dialog, use <command>--text-entry</command>. &app; returns the 
+	contents of the text entry to standard error. The following list of options are also 
+	available for the Text Entry dialog:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--text</varname>=TEXT</term>
+	<listitem>
+	  <para>Specify the text to appear in the Text Entry dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--entry-text</varname>=TEXT</term>
+	<listitem>
+	  <para>Specify the text to appear in the entry field of the Text Entry dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--hide-text</varname></term>
+	<listitem>
+	  <para>Specify that the text in the entry field of the Text Entry dialog be hidden.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect1>
+
+<!-- ==== Message Options ====== -->
+
+  <sect1 id="zenity-message-options">
+    <title>Messages</title>
+
+    <para>
+	There are 4 types of message dialogs in &app; - Error, Informational, Question and Warning. To
+	create an Error dialog, use <command>--error</command>. To create an Informational dialog, use
+	<command>--info</command>. To create a Question dialog, use <command>--question</command>. To
+	create a Warning dialog, use <command>--question</command>. The following list of options is
+	available for the message dialogs.
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--text</varname>=TEXT</term>
+	<listitem>
+	  <para>Specify the text to appear in the message dialog.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+<!-- FIXME: Add an example of a script, including a screenshot -->
+
+  </sect1>
+
+<!-- ==== File Selection Options ====== -->
+
+  <sect1 id="zenity-file-selection-options">
+    <title>File Selection</title>
+
+    <para>
+	To create a File Selection dialog, use <command>--file-selection</command>. &app; returns 
+	the file or directory selected to standard error. The following list of options are also 
+	available for the File Selection dialog:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--filename</varname>=FILENAME</term>
+	<listitem>
+	  <para>Specify the file or directory to be pre-selected in the File Selection dialog.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+<!-- FIXME: Add an example of a script, including a screenshot -->
+
+  </sect1>
+
+<!-- ==== List Options ====== -->
+
+  <sect1 id="zenity-list-options">
+    <title>Lists</title>
+
+    <para>
+	To create a List dialog, use <command>--list</command>. &app; returns the entries of 
+	the first columns selected to standard error. If <command>--checklist</command> or 
+	<command>--radiolist</command> is used, then &app; will return the entries of the
+	second columns selected to standard error. The following list of options are also 
+	available for the File Selection dialog:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--column</varname>=COLUMN</term>
+	<listitem>
+	  <para>Specify the column headers to appear in the List dialog. This option must be 
+	        called for each column that you want to appear in the dialog.
+	  </para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--checklist</varname></term>
+	<listitem>
+	  <para>Specify if the first column should contain check boxes in the List dialog.
+	  </para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--radiolist</varname></term>
+	<listitem>
+	  <para>Specify if the first column should contain radio boxes in the List dialog.
+	  </para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--seperator</varname>=SEPERATOR</term>
+	<listitem>
+	  <para>Specify what seperator character should be used when the List dialog returns the selected entries. The
+	        default character is '\'. If you want to specify a newline, use '\n'.
+	  </para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+<!-- FIXME: Add an example of a script, including a screenshot -->
+
+  </sect1>
+
+<!-- ==== Progress Options ====== -->
+
+  <sect1 id="zenity-progress-options">
+    <title>Progress</title>
+
+    <para>
+	To create a Progress dialog, use <command>--progress</command>. The following list
+	of options are also available for the Progress dialog:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--text</varname>=TEXT</term>
+	<listitem>
+	  <para>Specify the text to appear in the Progress dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--percentage</varname>=PERCENTAGE</term>
+	<listitem>
+	  <para>Specify the initial percentage that should be set in the Progress dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--pulsate</varname></term>
+	<listitem>
+	  <para>Specify if the Progress dialog should pulsate until an EOF character is read
+	        from standard input.</para>
+	</listitem>
+
+    </variablelist>
+
+<!-- FIXME: Add an example of a script, including a screenshot -->
+
+  </sect1>
+
+<!-- ==== Text Information Options ====== -->
+
+  <sect1 id="zenity-text-options">
+    <title>Text Information</title>
+
+    <para>
+	To create a Text Information dialog, use <command>--text-info</command>. The following list
+	of options are also available for the Text Information dialog:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--filename</varname>=FILENAME</term>
+	<listitem>
+	  <para>Specify the file to be loaded in the Text Information dialog.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+<!-- FIXME: Add an example of a script, including a screenshot -->
+
+  </sect1>
+
+<!-- ==== Miscellaneous Options ====== -->
+
+  <sect1 id="zenity-miscellaneous-options">
+    <title>Miscellaneous</title>
+
+    <para>
+	The following list of options are also available for &app;:
+    </para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><varname>--about</varname></term>
+	<listitem>
+	  <para>Display some information about &app;.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><varname>--version</varname></term>
+	<listitem>
+	  <para>Print the version number of &app;.</para>
+	</listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect1>
 
 <!-- ================ Application License ================= -->
   <sect1 id="license">

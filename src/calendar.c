@@ -64,7 +64,9 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 		zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-calendar.png"));
 
 	text = glade_xml_get_widget (glade_dialog, "zenity_calendar_text");
-	gtk_label_set_text (GTK_LABEL (text), cal_data->dialog_text);
+
+        if (cal_data->dialog_text)
+	        gtk_label_set_text (GTK_LABEL (text), cal_data->dialog_text);
 
 	calendar = glade_xml_get_widget (glade_dialog, "zenity_calendar");
 	

@@ -137,21 +137,21 @@ struct poptOption options[] = {
 		NULL
 	},
 	{
-		"info",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_INFO,
-		N_("Display info dialog"),
-		NULL
-	},
-	{
 		"file-selection",
 		'\0',
 		POPT_ARG_NONE,
 		NULL,
 		OPTION_FILE,
 		N_("Display file selection dialog"),
+		NULL
+	},
+	{
+		"info",
+		'\0',
+		POPT_ARG_NONE,
+		NULL,
+		OPTION_INFO,
+		N_("Display info dialog"),
 		NULL
 	},
 	{
@@ -614,15 +614,6 @@ struct poptOption application_options[] = {
 		NULL,
 		'\0',
 		POPT_ARG_INCLUDE_TABLE,
-		info_options,
-		0,
-		N_("Info options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
 		error_options,
 		0,
 		N_("Error options"),
@@ -635,6 +626,15 @@ struct poptOption application_options[] = {
 		file_selection_options,
 		0,
 		N_("File selection options"),
+		NULL
+	},
+	{
+		NULL,
+		'\0',
+		POPT_ARG_INCLUDE_TABLE,
+		info_options,
+		0,
+		N_("Info options"),
 		NULL
 	},
 	{
