@@ -269,7 +269,7 @@ zenity_util_return_exit_code ( ZenityExitCode value )
 #ifdef GDK_WINDOWING_X11
 
 static Window
-transient_get_xterm ()
+transient_get_xterm (void)
 {
   const char *wid_str = g_getenv ("WINDOWID");
   if (wid_str) {
@@ -306,7 +306,7 @@ transient_is_toplevel (Window wid)
  */
 
 static Window
-transient_get_xterm_toplevel ()
+transient_get_xterm_toplevel (void)
 {
   Window xterm = transient_get_xterm ();
   Display *dpy = GDK_DISPLAY ();
