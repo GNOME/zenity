@@ -25,12 +25,16 @@
 #include "zenity.h"
 #include "util.h"
 
+ZenityData	*zen_data;
+
 static void zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 {
   GladeXML *glade_dialog;
   GtkWidget *dialog;
+
+  zen_data = data;
 
   glade_dialog = zenity_util_load_glade_file ("zenity_fileselection_dialog");
 
@@ -47,7 +51,7 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
     g_object_unref (glade_dialog);
 
   g_signal_connect (G_OBJECT (dialog), "response", 
-                    G_CALLBACK (zenity_fileselection_dialog_response), data);
+                    G_CALLBACK (zenity_fileselection_dialog_response), file_data);
 
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
@@ -62,6 +66,9 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   if (file_data->uri)
     gtk_file_selection_set_filename (GTK_FILE_SELECTION (dialog), file_data->uri);
 
+  if (file_data->multi)
+    gtk_file_selection_set_select_multiple (GTK_FILE_SELECTION (dialog), TRUE);
+
   gtk_widget_show (dialog);
   gtk_main ();
 }
@@ -69,13 +76,32 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 static void
 zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-  ZenityData *zen_data = data;
+  ZenityFileData *file_data = data;
+  gchar **selections;
+  gchar *separator = g_strdup(file_data->separator);
+  int i;
 	  
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = zenity_util_return_exit_code		
-						(ZENITY_OK);			
-      g_printerr ("%s\n", gtk_file_selection_get_filename (GTK_FILE_SELECTION (widget)));
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);		
+      selections = gtk_file_selection_get_selections (GTK_FILE_SELECTION (widget));
+      for (i=0;selections[i] != NULL; i++) {
+        g_printerr ("%s", g_filename_to_utf8 ((gchar*)selections[i], -1, NULL, NULL, NULL));
+	if (selections[i+1] != NULL) {
+	  /* FIXME: This is a blatant copy of Gman's arse in tree.c */
+	  if (strstr ((const gchar *) separator, (const gchar *) "\\n") != NULL)
+            g_printerr ("\n");
+	  else if (strstr ((const gchar *) separator, (const gchar *) "\\t") != NULL)
+	    g_printerr ("\t");
+	  else 
+	    g_printerr ("%s",separator);
+	} else {
+	  g_printerr ("\n");
+	}
+      }
+      g_strfreev(selections);
+      g_free(separator);
+
       gtk_main_quit ();
       break;
 

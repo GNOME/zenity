@@ -539,6 +539,21 @@
 	</listitem>
       </varlistentry>
 
+      <varlistentry>
+	<term><varname>--multiple</varname></term>
+	<listitem>
+	  <para>Allow selection of mulitple filename in the File Selection dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term><varname>--separator</varname>=SEPARATOR</term>
+	<listitem>
+	  <para>Specify the character(s) which will divide between entries in the returned list of file names. The
+                default character is '|'. If you want to specify a newline, use '\n'.</para>
+	</listitem>
+      </varlistentry>
+
     </variablelist>
 
     <figure id="zenity-fileselection-screenshot">
@@ -642,8 +657,8 @@
       <varlistentry>
         <term><varname>--seperator</varname>=SEPERATOR</term>
 	<listitem>
-	  <para>Specify what seperator character should be used when the List dialog returns the selected entries. The
-	        default character is '\'. If you want to specify a newline, use '\n'.
+	  <para>Specify what seperator character(s) should be used when the List dialog returns the selected entries. The
+	        default character is '|'. If you want to specify a newline, use '\n'.
 	  </para>
 	</listitem>
       </varlistentry>

@@ -89,6 +89,7 @@ enum {
   OPTION_ERRORTEXT,
   OPTION_INFOTEXT,
   OPTION_FILENAME,
+  OPTION_MULTIFILE,
   OPTION_TEXTFILENAME,
   OPTION_COLUMN,
   OPTION_SEPERATOR,
@@ -424,6 +425,24 @@ struct poptOption file_selection_options[] = {
     N_("Set the filename"),
     N_("FILENAME")
   },
+  {
+    "multiple",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_MULTIFILE,
+    N_("Allow multiple files to be selected"),
+    NULL
+  },
+  {
+    "separator",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_SEPERATOR,
+    N_("Set output separator character."),
+    N_("SEPARATOR")
+  },
   POPT_TABLEEND
 };
 
@@ -471,7 +490,7 @@ struct poptOption list_options[] = {
     NULL,
     OPTION_SEPERATOR,
     N_("Set output separator character"),
-    NULL
+    N_("SEPARATOR")
   },
   {
     "editable",
@@ -925,8 +944,10 @@ zenity_init_parsing_options (void) {
   results->calendar_data->month = 0;
   results->calendar_data->year = 0;
   results->calendar_data->dialog_text = NULL;
+  results->file_data->multi = FALSE;
+  results->file_data->separator = g_strdup ("|");
   results->text_data->editable = FALSE;
-  results->tree_data->separator = g_strdup ("/");
+  results->tree_data->separator = g_strdup ("|");
   results->progress_data->percentage = -1;
   results->progress_data->pulsate = FALSE;
   results->progress_data->autoclose = FALSE;
@@ -969,6 +990,7 @@ zenity_free_parsing_options (void) {
     case MODE_FILE:
       if (results->file_data->uri)
         g_free (results->file_data->uri);
+	g_free (results->file_data->separator);
       break;
     case MODE_TEXTINFO:
       if (results->text_data->uri)
@@ -1336,6 +1358,12 @@ zenity_parse_options_callback (poptContext              ctx,
       } 
       parse_option_file++; 
       break; 
+    case OPTION_MULTIFILE:
+      if (results->mode != MODE_FILE)
+        zenity_error ("--multiple", ERROR_SUPPORT);
+
+      results->file_data->multi = TRUE;
+      break;
     case OPTION_COLUMN: 
       if (results->mode != MODE_LIST) 
         zenity_error ("--column", ERROR_SUPPORT); 
@@ -1360,15 +1388,21 @@ zenity_parse_options_callback (poptContext              ctx,
       results->tree_data->radiobox = TRUE; 
       break; 
     case OPTION_SEPERATOR: 
-      if (results->mode != MODE_LIST) 
-        zenity_error ("--separator", ERROR_SUPPORT); 
-      
-      if (parse_option_separator) 
-        zenity_error ("--separator", ERROR_DUPLICATE); 
-      
-      results->tree_data->separator = g_strdup (arg); 
-      parse_option_separator = TRUE; 
-      break; 
+      if (parse_option_separator)
+	zenity_error ("--separator", ERROR_DUPLICATE);
+      switch (results->mode) {
+	case MODE_LIST: 
+      	  results->tree_data->separator = g_strdup (arg); 
+      	  parse_option_separator = TRUE; 
+	  break;
+	case MODE_FILE:
+	  results->file_data->separator = g_strdup (arg);
+	  parse_option_separator = TRUE;
+	  break;
+	default:
+	  zenity_error ("--separator", ERROR_SUPPORT);
+	}
+      break;
     case OPTION_PERCENTAGE: 
       if (results->mode != MODE_PROGRESS) 
         zenity_error ("--percentage", ERROR_SUPPORT); 

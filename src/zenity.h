@@ -61,6 +61,8 @@ typedef struct {
 
 typedef struct {
   gchar	*uri;
+  gboolean multi;
+  gchar *separator;
 } ZenityFileData;
 
 typedef struct {
