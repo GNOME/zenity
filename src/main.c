@@ -27,844 +27,844 @@
 #include <langinfo.h>
 
 typedef enum {
-	MODE_CALENDAR,
-	MODE_ENTRY,
-	MODE_ERROR,
-	MODE_FILE,
-	MODE_LIST,
-	MODE_PROGRESS,
-	MODE_QUESTION,
-	MODE_TEXTINFO,
-	MODE_WARNING,
-	MODE_INFO,
-        MODE_ABOUT,
-	MODE_LAST
+  MODE_CALENDAR,
+  MODE_ENTRY,
+  MODE_ERROR,
+  MODE_FILE,
+  MODE_LIST,
+  MODE_PROGRESS,
+  MODE_QUESTION,
+  MODE_TEXTINFO,
+  MODE_WARNING,
+  MODE_INFO,
+  MODE_ABOUT,
+  MODE_LAST
 } ZenityDialogMode;
 
 typedef enum {
-        ERROR_DUPLICATE,
-        ERROR_SUPPORT,
-        ERROR_DIALOG,
-        ERROR_LAST
+  ERROR_DUPLICATE,
+  ERROR_SUPPORT,
+  ERROR_DIALOG,
+  ERROR_LAST
 } ZenityError;
 
 typedef struct {
-	ZenityDialogMode mode;
-	ZenityData *data;
+  ZenityDialogMode mode;
+  ZenityData *data;
 
-	ZenityCalendarData *calendar_data;
-	ZenityMsgData *msg_data;
-	ZenityFileData *file_data;
-	ZenityEntryData *entry_data;
-	ZenityProgressData *progress_data;
-	ZenityTextData *text_data;
-	ZenityTreeData *tree_data;
+  ZenityCalendarData *calendar_data;
+  ZenityMsgData *msg_data;
+  ZenityFileData *file_data;
+  ZenityEntryData *entry_data;
+  ZenityProgressData *progress_data;
+  ZenityTextData *text_data;
+  ZenityTreeData *tree_data;
 } ZenityParsingOptions;
 
 enum {
-	OPTION_CALENDAR = 1,
-	OPTION_DATEFORMAT,
-	OPTION_ENTRY,
-	OPTION_ERROR,
-	OPTION_INFO,
-	OPTION_FILE,
-	OPTION_LIST,
-	OPTION_PROGRESS,
-	OPTION_QUESTION,
-	OPTION_TEXTINFO,
-	OPTION_TEXTEDIT,
-	OPTION_WARNING,
-	OPTION_TITLE,
-	OPTION_ICON,
-	OPTION_CALENDARTEXT,
-	OPTION_DAY,
-	OPTION_MONTH,
-	OPTION_YEAR,
-	OPTION_ENTRYTEXT,
-	OPTION_INPUTTEXT,
-	OPTION_HIDETEXT,
-	OPTION_ERRORTEXT,
-	OPTION_INFOTEXT,
-	OPTION_FILENAME,
-	OPTION_COLUMN,
-        OPTION_SEPERATOR,
-        OPTION_LISTEDIT,
-	OPTION_CHECKLIST,
-	OPTION_RADIOLIST,
-	OPTION_PROGRESSTEXT,
-	OPTION_PERCENTAGE,
-	OPTION_PULSATE,
-	OPTION_QUESTIONTEXT,
-	OPTION_TEXTFILE,
-	OPTION_WARNINGTEXT,
-	OPTION_ABOUT,
-	OPTION_VERSION,
-	OPTION_LAST,
+  OPTION_CALENDAR = 1,
+  OPTION_DATEFORMAT,
+  OPTION_ENTRY,
+  OPTION_ERROR,
+  OPTION_INFO,
+  OPTION_FILE,
+  OPTION_LIST,
+  OPTION_PROGRESS,
+  OPTION_QUESTION,
+  OPTION_TEXTINFO,
+  OPTION_TEXTEDIT,
+  OPTION_WARNING,
+  OPTION_TITLE,
+  OPTION_ICON,
+  OPTION_CALENDARTEXT,
+  OPTION_DAY,
+  OPTION_MONTH,
+  OPTION_YEAR,
+  OPTION_ENTRYTEXT,
+  OPTION_INPUTTEXT,
+  OPTION_HIDETEXT,
+  OPTION_ERRORTEXT,
+  OPTION_INFOTEXT,
+  OPTION_FILENAME,
+  OPTION_COLUMN,
+  OPTION_SEPERATOR,
+  OPTION_LISTEDIT,
+  OPTION_CHECKLIST,
+  OPTION_RADIOLIST,
+  OPTION_PROGRESSTEXT,
+  OPTION_PERCENTAGE,
+  OPTION_PULSATE,
+  OPTION_QUESTIONTEXT,
+  OPTION_TEXTFILE,
+  OPTION_WARNINGTEXT,
+  OPTION_ABOUT,
+  OPTION_VERSION,
+  OPTION_LAST,
 };
 
 static void zenity_parse_options_callback (poptContext              ctx,
-                                    	    enum poptCallbackReason  reason,
-                                    	    const struct poptOption *opt,
-                                    	    const char              *arg,
-                                    	    void                    *data);
+    enum poptCallbackReason  reason,
+    const struct poptOption *opt,
+    const char              *arg,
+    void                    *data);
 
 struct poptOption options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"calendar",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_CALENDAR,
-		N_("Display calendar dialog"),
-		NULL
-	},
-	{
-		"entry",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_ENTRY,
-		N_("Display text entry dialog"),
-		NULL
-	},
-	{
-		"error",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_ERROR,
-		N_("Display error dialog"),
-		NULL
-	},
-	{
-		"file-selection",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_FILE,
-		N_("Display file selection dialog"),
-		NULL
-	},
-	{
-		"info",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_INFO,
-		N_("Display info dialog"),
-		NULL
-	},
-	{
-		"list",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_LIST,
-		N_("Display list dialog"),
-		NULL
-	},
-	{
-		"progress",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_PROGRESS,
-		N_("Display progress indication dialog"),
-		NULL
-	},
-	{
-		"question",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_QUESTION,
-		N_("Display question dialog"),
-		NULL
-	},
-	{
-		"text-info",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_TEXTINFO,
-		N_("Display text information dialog"),
-		NULL
-	},
-	{
-		"warning",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_WARNING,
-		N_("Display warning dialog"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "calendar",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_CALENDAR,
+    N_("Display calendar dialog"),
+    NULL
+  },
+  {
+    "entry",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_ENTRY,
+    N_("Display text entry dialog"),
+    NULL
+  },
+  {
+    "error",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_ERROR,
+    N_("Display error dialog"),
+    NULL
+  },
+  {
+    "file-selection",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_FILE,
+    N_("Display file selection dialog"),
+    NULL
+  },
+  {
+    "info",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_INFO,
+    N_("Display info dialog"),
+    NULL
+  },
+  {
+    "list",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_LIST,
+    N_("Display list dialog"),
+    NULL
+  },
+  {
+    "progress",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_PROGRESS,
+    N_("Display progress indication dialog"),
+    NULL
+  },
+  {
+    "question",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_QUESTION,
+    N_("Display question dialog"),
+    NULL
+  },
+  {
+    "text-info",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_TEXTINFO,
+    N_("Display text information dialog"),
+    NULL
+  },
+  {
+    "warning",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_WARNING,
+    N_("Display warning dialog"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption general_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"title",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_TITLE,
-		N_("Set the dialog title"),
-		N_("TITLE")
-	},
-	{
-		"window-icon",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_ICON,
-		N_("Set the window icon"),
-		N_("ICONPATH")
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "title",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_TITLE,
+    N_("Set the dialog title"),
+    N_("TITLE")
+  },
+  {
+    "window-icon",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_ICON,
+    N_("Set the window icon"),
+    N_("ICONPATH")
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption calendar_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_CALENDARTEXT,
-		N_("Set the dialog text"),
-		NULL
-	},
-	{
-		"day",
-		'\0',
-		POPT_ARG_INT,
-		NULL,
-		OPTION_DAY,
-		N_("Set the calendar day"),
-		NULL
-	},
-	{
-		"month",
-		'\0',
-		POPT_ARG_INT,
-		NULL,
-		OPTION_MONTH,
-		N_("Set the calendar month"),
-		NULL
-	},
-	{
-		"year",
-		'\0',
-		POPT_ARG_INT,
-		NULL,
-		OPTION_YEAR,
-		N_("Set the calendar year"),
-		NULL
-	},
-	{	"date-format",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_DATEFORMAT,
-		N_("Set the format for the returned date"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_CALENDARTEXT,
+    N_("Set the dialog text"),
+    NULL
+  },
+  {
+    "day",
+    '\0',
+    POPT_ARG_INT,
+    NULL,
+    OPTION_DAY,
+    N_("Set the calendar day"),
+    NULL
+  },
+  {
+    "month",
+    '\0',
+    POPT_ARG_INT,
+    NULL,
+    OPTION_MONTH,
+    N_("Set the calendar month"),
+    NULL
+  },
+  {
+    "year",
+    '\0',
+    POPT_ARG_INT,
+    NULL,
+    OPTION_YEAR,
+    N_("Set the calendar year"),
+    NULL
+  },
+  {	"date-format",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_DATEFORMAT,
+    N_("Set the format for the returned date"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption entry_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_ENTRYTEXT,
-		N_("Set the dialog text"),
-		NULL
-	},
-	{
-		"entry-text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_INPUTTEXT,
-		N_("Set the entry text"),
-		NULL
-	},
-	{
-		"hide-text",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_HIDETEXT,
-		N_("Hide the entry text"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_ENTRYTEXT,
+    N_("Set the dialog text"),
+    NULL
+  },
+  {
+    "entry-text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_INPUTTEXT,
+    N_("Set the entry text"),
+    NULL
+  },
+  {
+    "hide-text",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_HIDETEXT,
+    N_("Hide the entry text"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption error_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_ERRORTEXT,
-		N_("Set the dialog text"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_ERRORTEXT,
+    N_("Set the dialog text"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption info_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_INFOTEXT,
-		N_("Set the dialog text"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_INFOTEXT,
+    N_("Set the dialog text"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption file_selection_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"filename",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_FILENAME,
-		N_("Set the filename"),
-		N_("FILENAME")
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "filename",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_FILENAME,
+    N_("Set the filename"),
+    N_("FILENAME")
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption list_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"column",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_COLUMN,
-		N_("Set the column header"),
-		NULL
-	},
-	{
-		"checklist",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_CHECKLIST,
-		N_("Use check boxes for first column"),
-		NULL
-	},
-	{
-		"radiolist",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_RADIOLIST,
-		N_("Use radio buttons for first column"),
-		NULL
-	},
-	{
-		"separator",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_SEPERATOR,
-		N_("Set output separator character"),
-		NULL
-	},
-	{
-		"editable",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_LISTEDIT,
-		N_("Allow changes to text"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "column",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_COLUMN,
+    N_("Set the column header"),
+    NULL
+  },
+  {
+    "checklist",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_CHECKLIST,
+    N_("Use check boxes for first column"),
+    NULL
+  },
+  {
+    "radiolist",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_RADIOLIST,
+    N_("Use radio buttons for first column"),
+    NULL
+  },
+  {
+    "separator",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_SEPERATOR,
+    N_("Set output separator character"),
+    NULL
+  },
+  {
+    "editable",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_LISTEDIT,
+    N_("Allow changes to text"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption progress_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_PROGRESSTEXT,
-		N_("Set the dialog text"),
-		NULL
-	},
-	{
-		"percentage",
-		'\0',
-		POPT_ARG_INT,
-		NULL,
-		OPTION_PERCENTAGE,
-		N_("Set initial percentage"),
-		NULL
-	},
-	{
-		"pulsate",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_PULSATE,
-		N_("Pulsate progress bar"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_PROGRESSTEXT,
+    N_("Set the dialog text"),
+    NULL
+  },
+  {
+    "percentage",
+    '\0',
+    POPT_ARG_INT,
+    NULL,
+    OPTION_PERCENTAGE,
+    N_("Set initial percentage"),
+    NULL
+  },
+  {
+    "pulsate",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_PULSATE,
+    N_("Pulsate progress bar"),
+    NULL
+  },
+  POPT_TABLEEND
 };
- 
+
 struct poptOption question_options[] = {
-	{
-		"text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_QUESTIONTEXT,
-		N_("Set the dialog text"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_QUESTIONTEXT,
+    N_("Set the dialog text"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption text_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"filename",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_TEXTFILE,
-		N_("Open file"),
-		N_("FILENAME")
-	},
-	{
-		"editable",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_TEXTEDIT,
-		N_("Allow changes to text"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "filename",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_TEXTFILE,
+    N_("Open file"),
+    N_("FILENAME")
+  },
+  {
+    "editable",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_TEXTEDIT,
+    N_("Allow changes to text"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption warning_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"text",
-		'\0',
-		POPT_ARG_STRING,
-		NULL,
-		OPTION_WARNINGTEXT,
-		N_("Set the dialog text"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_WARNINGTEXT,
+    N_("Set the dialog text"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption gtk_options[] = {
-        {
-                "gdk-debug", 
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0,
-                N_("Gdk debugging flags to set"), 
-                N_("FLAGS")
-        }, 
-        {
-                "gdk-no-debug", 
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                N_("Gdk debugging flags to unset"), 
-                N_("FLAGS")
-        }, 
-        /* X11 only */ 
-        {
-                "display",
-                '\0',
-                POPT_ARG_STRING,
-                NULL,
-                0, 
-                N_("X display to use"),
-                N_("DISPLAY")
-        }, 
+  {
+    "gdk-debug", 
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0,
+    N_("Gdk debugging flags to set"), 
+    N_("FLAGS")
+  }, 
+  {
+    "gdk-no-debug", 
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    N_("Gdk debugging flags to unset"), 
+    N_("FLAGS")
+  }, 
+  /* X11 only */ 
+  {
+    "display",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    0, 
+    N_("X display to use"),
+    N_("DISPLAY")
+  }, 
 #ifdef HAVE_GTK_MULTIHEAD 
-        /* X11 & multi-head only */ 
-        {
-                "screen",
-                '\0', 
-                POPT_ARG_INT, 
-                NULL, 
-                0, 
-                N_("X screen to use"), 
-                N_("SCREEN")
-        },
+  /* X11 & multi-head only */ 
+  {
+    "screen",
+    '\0', 
+    POPT_ARG_INT, 
+    NULL, 
+    0, 
+    N_("X screen to use"), 
+    N_("SCREEN")
+  },
 #endif 
-        /* X11 only */ 
-        {
-                "sync", 
-                '\0', 
-                POPT_ARG_NONE, 
-                NULL, 
-                0, 
-                N_("Make X calls synchronous"),
-                NULL
-        },
-        {
-                "name", 
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                N_("Program name as used by the window manager"), 
-                N_("NAME")
-        }, 
-        {
-                "class", 
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                N_("Program class as used by the window manager"), 
-                N_("CLASS")
-        }, 
-        /* X11 only */ 
-        {
-                "gxid-host",
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                NULL, 
-                N_("HOST")
-        }, 
-        /* X11 only */ 
-        {
-                "gxid-port",
-                '\0',
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                NULL, 
-                N_("PORT")
-        }, 
-        {
-                "gtk-debug", 
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                N_("Gtk+ debugging flags to set"), 
-                N_("FLAGS")
-        }, 
-        { 
-                "gtk-no-debug",
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                N_("Gtk+ debugging flags to unset"), 
-                N_("FLAGS")
-        }, 
-        { 
-                "g-fatal-warnings", 
-                '\0', 
-                POPT_ARG_NONE, 
-                NULL, 
-                0, 
-                N_("Make all warnings fatal"), 
-                NULL
-        }, 
-        { 
-                "gtk-module", 
-                '\0', 
-                POPT_ARG_STRING, 
-                NULL, 
-                0, 
-                N_("Load an additional Gtk module"), 
-                N_("MODULE")
-        },
-	POPT_TABLEEND
+  /* X11 only */ 
+  {
+    "sync", 
+    '\0', 
+    POPT_ARG_NONE, 
+    NULL, 
+    0, 
+    N_("Make X calls synchronous"),
+    NULL
+  },
+  {
+    "name", 
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    N_("Program name as used by the window manager"), 
+    N_("NAME")
+  }, 
+  {
+    "class", 
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    N_("Program class as used by the window manager"), 
+    N_("CLASS")
+  }, 
+  /* X11 only */ 
+  {
+    "gxid-host",
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    NULL, 
+    N_("HOST")
+  }, 
+  /* X11 only */ 
+  {
+    "gxid-port",
+    '\0',
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    NULL, 
+    N_("PORT")
+  }, 
+  {
+    "gtk-debug", 
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    N_("Gtk+ debugging flags to set"), 
+    N_("FLAGS")
+  }, 
+  { 
+    "gtk-no-debug",
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    N_("Gtk+ debugging flags to unset"), 
+    N_("FLAGS")
+  }, 
+  { 
+    "g-fatal-warnings", 
+    '\0', 
+    POPT_ARG_NONE, 
+    NULL, 
+    0, 
+    N_("Make all warnings fatal"), 
+    NULL
+  }, 
+  { 
+    "gtk-module", 
+    '\0', 
+    POPT_ARG_STRING, 
+    NULL, 
+    0, 
+    N_("Load an additional Gtk module"), 
+    N_("MODULE")
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption miscellaneous_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
-		zenity_parse_options_callback,
-		0,
-		NULL,
-		NULL
-	},
-	{
-		"about",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_ABOUT,
-		N_("About zenity"),
-		NULL
-	},
-	{
-		"version",
-		'\0',
-		POPT_ARG_NONE,
-		NULL,
-		OPTION_VERSION,
-		N_("Print version"),
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_CALLBACK | POPT_CBFLAG_POST,
+    zenity_parse_options_callback,
+    0,
+    NULL,
+    NULL
+  },
+  {
+    "about",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_ABOUT,
+    N_("About zenity"),
+    NULL
+  },
+  {
+    "version",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_VERSION,
+    N_("Print version"),
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 struct poptOption application_options[] = {
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		options,
-		0,
-		N_("Dialog options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		general_options,
-		0,
-		N_("General options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		calendar_options,
-		0,
-		N_("Calendar options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		entry_options,
-		0,
-		N_("Text entry options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		error_options,
-		0,
-		N_("Error options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		file_selection_options,
-		0,
-		N_("File selection options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		info_options,
-		0,
-		N_("Info options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		list_options,
-		0,
-		N_("List options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		progress_options,
-		0,
-		N_("Progress options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		question_options,
-		0,
-		N_("Question options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		text_options,
-		0,
-		N_("Text options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		warning_options,
-		0,
-		N_("Warning options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		gtk_options,
-		0,
-		N_("GTK+ options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		miscellaneous_options,
-		0,
-		N_("Miscellaneous options"),
-		NULL
-	},
-	{
-		NULL,
-		'\0',
-		POPT_ARG_INCLUDE_TABLE,
-		poptHelpOptions,
-		0,
-		N_("Help options"), 
-		NULL
-	},
-	POPT_TABLEEND
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    options,
+    0,
+    N_("Dialog options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    general_options,
+    0,
+    N_("General options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    calendar_options,
+    0,
+    N_("Calendar options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    entry_options,
+    0,
+    N_("Text entry options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    error_options,
+    0,
+    N_("Error options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    file_selection_options,
+    0,
+    N_("File selection options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    info_options,
+    0,
+    N_("Info options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    list_options,
+    0,
+    N_("List options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    progress_options,
+    0,
+    N_("Progress options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    question_options,
+    0,
+    N_("Question options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    text_options,
+    0,
+    N_("Text options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    warning_options,
+    0,
+    N_("Warning options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    gtk_options,
+    0,
+    N_("GTK+ options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    miscellaneous_options,
+    0,
+    N_("Miscellaneous options"),
+    NULL
+  },
+  {
+    NULL,
+    '\0',
+    POPT_ARG_INCLUDE_TABLE,
+    poptHelpOptions,
+    0,
+    N_("Help options"), 
+    NULL
+  },
+  POPT_TABLEEND
 };
 
 ZenityParsingOptions *results;
@@ -872,189 +872,189 @@ ZenityParsingOptions *results;
 static void
 zenity_init_parsing_options (void) {
 
-	results = g_new0 (ZenityParsingOptions, 1);
+  results = g_new0 (ZenityParsingOptions, 1);
 
-	/* Initialize the various dialog structures */
-	results->mode = MODE_LAST;
-	results->data = g_new0 (ZenityData, 1);
-	results->calendar_data = g_new0 (ZenityCalendarData, 1);
-	results->msg_data = g_new0 (ZenityMsgData, 1);
-	results->file_data = g_new0 (ZenityFileData, 1);
-	results->entry_data = g_new0 (ZenityEntryData, 1); 
-	results->progress_data = g_new0 (ZenityProgressData, 1); 
-	results->text_data = g_new0 (ZenityTextData, 1);
-	results->tree_data = g_new0 (ZenityTreeData, 1);
+  /* Initialize the various dialog structures */
+  results->mode = MODE_LAST;
+  results->data = g_new0 (ZenityData, 1);
+  results->calendar_data = g_new0 (ZenityCalendarData, 1);
+  results->msg_data = g_new0 (ZenityMsgData, 1);
+  results->file_data = g_new0 (ZenityFileData, 1);
+  results->entry_data = g_new0 (ZenityEntryData, 1); 
+  results->progress_data = g_new0 (ZenityProgressData, 1); 
+  results->text_data = g_new0 (ZenityTextData, 1);
+  results->tree_data = g_new0 (ZenityTreeData, 1);
 
-	/* Give some sensible defaults */
-	results->calendar_data->date_format = g_strdup (nl_langinfo (D_FMT));
-	results->calendar_data->day = 0;
-	results->calendar_data->month = 0;
-	results->calendar_data->year = 0;
-	results->calendar_data->dialog_text = NULL;
-	results->text_data->editable = FALSE;
-        results->tree_data->separator = g_strdup ("/");
-	results->progress_data->percentage = -1;
-	results->progress_data->pulsate = FALSE;
-	results->entry_data->visible = TRUE;
-	results->tree_data->checkbox = FALSE;
-	results->tree_data->radiobox = FALSE;
-	results->tree_data->editable = FALSE;
+  /* Give some sensible defaults */
+  results->calendar_data->date_format = g_strdup (nl_langinfo (D_FMT));
+  results->calendar_data->day = 0;
+  results->calendar_data->month = 0;
+  results->calendar_data->year = 0;
+  results->calendar_data->dialog_text = NULL;
+  results->text_data->editable = FALSE;
+  results->tree_data->separator = g_strdup ("/");
+  results->progress_data->percentage = -1;
+  results->progress_data->pulsate = FALSE;
+  results->entry_data->visible = TRUE;
+  results->tree_data->checkbox = FALSE;
+  results->tree_data->radiobox = FALSE;
+  results->tree_data->editable = FALSE;
 }
 
 static void
 zenity_free_parsing_options (void) {
 
-	/* General options */
-	if (results->data->dialog_title)
-		g_free (results->data->dialog_title);
-	if (results->data->window_icon)
-		g_free (results->data->window_icon);
+  /* General options */
+  if (results->data->dialog_title)
+    g_free (results->data->dialog_title);
+  if (results->data->window_icon)
+    g_free (results->data->window_icon);
 
-	/* Dialog options */
-	switch (results->mode) {
-		case MODE_CALENDAR:
-			if (results->calendar_data->dialog_text)
-				g_free (results->calendar_data->dialog_text);
-			if (results->calendar_data->date_format)
-				g_free (results->calendar_data->date_format);
-			break;
-		case MODE_ENTRY:
-			if (results->entry_data->dialog_text)
-				g_free (results->entry_data->dialog_text);
-			if (results->entry_data->entry_text)
-				g_free (results->entry_data->entry_text);
-			break;
-		case MODE_ERROR:
-		case MODE_QUESTION:
-		case MODE_WARNING:
-		case MODE_INFO:
-			if (results->msg_data->dialog_text)
-				g_free (results->msg_data->dialog_text);
-			break;
-		case MODE_FILE:
-			if (results->file_data->uri)
-				g_free (results->file_data->uri);
-			break;
-		case MODE_TEXTINFO:
-			if (results->text_data->uri)
-				g_free (results->text_data->uri);
-			break;
-		case MODE_LIST:
-			if (results->tree_data->columns)
-				g_slist_foreach (results->tree_data->columns, (GFunc) g_free, NULL);
-                        if (results->tree_data->separator)
-                                g_free (results->tree_data->separator);
-			break;
-		default:
-			break;
-	}
+  /* Dialog options */
+  switch (results->mode) {
+    case MODE_CALENDAR:
+      if (results->calendar_data->dialog_text)
+        g_free (results->calendar_data->dialog_text);
+      if (results->calendar_data->date_format)
+        g_free (results->calendar_data->date_format);
+      break;
+    case MODE_ENTRY:
+      if (results->entry_data->dialog_text)
+        g_free (results->entry_data->dialog_text);
+      if (results->entry_data->entry_text)
+        g_free (results->entry_data->entry_text);
+      break;
+    case MODE_ERROR:
+    case MODE_QUESTION:
+    case MODE_WARNING:
+    case MODE_INFO:
+      if (results->msg_data->dialog_text)
+        g_free (results->msg_data->dialog_text);
+      break;
+    case MODE_FILE:
+      if (results->file_data->uri)
+        g_free (results->file_data->uri);
+      break;
+    case MODE_TEXTINFO:
+      if (results->text_data->uri)
+        g_free (results->text_data->uri);
+      break;
+    case MODE_LIST:
+      if (results->tree_data->columns)
+        g_slist_foreach (results->tree_data->columns, (GFunc) g_free, NULL);
+      if (results->tree_data->separator)
+        g_free (results->tree_data->separator);
+      break;
+    default:
+      break;
+  }
 }
 
 gint 
 main (gint argc, gchar **argv) {
-	ZenityData *general;
-	ZenityCalendarData *cal_data;
-	poptContext ctx;
-	gchar **args;
-	gint nextopt, retval;
+  ZenityData *general;
+  ZenityCalendarData *cal_data;
+  poptContext ctx;
+  gchar **args;
+  gint nextopt, retval;
 
-	bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
-	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
-	textdomain(GETTEXT_PACKAGE);
+  bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
+  bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+  textdomain(GETTEXT_PACKAGE);
 
-	zenity_init_parsing_options ();
+  zenity_init_parsing_options ();
 
-	/* FIXME: popt doesn't like passing stuff through data 
-         * but it doesn't seem to cope with the data that I try
-         * to pass in, not quite sure why though. If someone knows
-         * what I'm doing wrong, we could probably put this back:
-	 * options[0].descrip = (void*) results; 
-         */
+  /* FIXME: popt doesn't like passing stuff through data 
+   * but it doesn't seem to cope with the data that I try
+   * to pass in, not quite sure why though. If someone knows
+   * what I'm doing wrong, we could probably put this back:
+   * options[0].descrip = (void*) results; 
+   */
 
-	ctx = poptGetContext ("zenity", argc, (const char **)argv, application_options, 0);
+  ctx = poptGetContext ("zenity", argc, (const char **)argv, application_options, 0);
 
-        poptReadDefaultConfig(ctx, TRUE);
-	while((nextopt = poptGetNextOpt(ctx)) > 0)
-		/*nothing*/;
+  poptReadDefaultConfig(ctx, TRUE);
+  while((nextopt = poptGetNextOpt(ctx)) > 0)
+    /*nothing*/;
 
-        if (nextopt != -1) {
-                g_printerr (_("%s in an invalid option for this dialog. See zenity --help for more details\n"),
-                            poptBadOption (ctx, 0));
-                zenity_free_parsing_options (); 
-                exit (-1); 
-        }
-        gtk_init (&argc, &argv);
-	
-	if (argc < 2) {
-                g_printerr (_("You must specify more arguments. See zenity --help for more details\n"));
-		zenity_free_parsing_options ();
-		exit (-1);
-	}
+  if (nextopt != -1) {
+    g_printerr (_("%s in an invalid option for this dialog. See zenity --help for more details\n"),
+        poptBadOption (ctx, 0));
+    zenity_free_parsing_options (); 
+    exit (-1); 
+  }
+  gtk_init (&argc, &argv);
 
-	switch (results->mode) {
-		case MODE_CALENDAR:
-			zenity_calendar (results->data, results->calendar_data);
-			break;
-		case MODE_ENTRY:
-			zenity_entry (results->data, results->entry_data);
-			break;
-		case MODE_ERROR:
-		case MODE_QUESTION:
-		case MODE_WARNING:
-		case MODE_INFO:
-			zenity_msg (results->data, results->msg_data);
-			break;
-		case MODE_FILE:
-			zenity_fileselection (results->data, results->file_data);
-			break;
-		case MODE_LIST:
-			results->tree_data->data = poptGetArgs (ctx);
-			zenity_tree (results->data, results->tree_data);
-			break;
-		case MODE_PROGRESS:
-			zenity_progress (results->data, results->progress_data);
-			break;
-		case MODE_TEXTINFO:
-			zenity_text (results->data, results->text_data);
-			break;
-                case MODE_ABOUT:
-                        zenity_about (results->data);
-                        break;
-                case MODE_LAST:
-                        g_printerr (_("You must specify a dialog type. See 'zenity --help' for details\n"));
-                        zenity_free_parsing_options ();
-                        exit (-1);
-		default:
-			g_assert_not_reached ();
-			zenity_free_parsing_options ();
-			exit (-1);
-	}
+  if (argc < 2) {
+    g_printerr (_("You must specify more arguments. See zenity --help for more details\n"));
+    zenity_free_parsing_options ();
+    exit (-1);
+  }
 
-	retval = results->data->exit_code;
-	poptFreeContext(ctx);
-	zenity_free_parsing_options ();
-	exit (retval);
+  switch (results->mode) {
+    case MODE_CALENDAR:
+      zenity_calendar (results->data, results->calendar_data);
+      break;
+    case MODE_ENTRY:
+      zenity_entry (results->data, results->entry_data);
+      break;
+    case MODE_ERROR:
+    case MODE_QUESTION:
+    case MODE_WARNING:
+    case MODE_INFO:
+      zenity_msg (results->data, results->msg_data);
+      break;
+    case MODE_FILE:
+      zenity_fileselection (results->data, results->file_data);
+      break;
+    case MODE_LIST:
+      results->tree_data->data = poptGetArgs (ctx);
+      zenity_tree (results->data, results->tree_data);
+      break;
+    case MODE_PROGRESS:
+      zenity_progress (results->data, results->progress_data);
+      break;
+    case MODE_TEXTINFO:
+      zenity_text (results->data, results->text_data);
+      break;
+    case MODE_ABOUT:
+      zenity_about (results->data);
+      break;
+    case MODE_LAST:
+      g_printerr (_("You must specify a dialog type. See 'zenity --help' for details\n"));
+      zenity_free_parsing_options ();
+      exit (-1);
+    default:
+      g_assert_not_reached ();
+      zenity_free_parsing_options ();
+      exit (-1);
+  }
+
+  retval = results->data->exit_code;
+  poptFreeContext(ctx);
+  zenity_free_parsing_options ();
+  exit (retval);
 }
 
 static void
 zenity_error (gchar *string, ZenityError error)
 {
-        switch (error) {
-                case ERROR_DUPLICATE:
-			g_printerr (_("%s given twice for the same dialog\n"), string);
-			zenity_free_parsing_options ();
-			exit (-1);
-                case ERROR_SUPPORT:
-			g_printerr (_("%s is not supported for this dialog\n"), string);
-			zenity_free_parsing_options ();
-			exit (-1);
-                case ERROR_DIALOG:
-			g_printerr (_("Two or more dialog options specified\n"));
-			zenity_free_parsing_options ();
-			exit (-1);
-                default:
-                        return;
-        }
+  switch (error) {
+    case ERROR_DUPLICATE:
+      g_printerr (_("%s given twice for the same dialog\n"), string);
+      zenity_free_parsing_options ();
+      exit (-1);
+    case ERROR_SUPPORT:
+      g_printerr (_("%s is not supported for this dialog\n"), string);
+      zenity_free_parsing_options ();
+      exit (-1);
+    case ERROR_DIALOG:
+      g_printerr (_("Two or more dialog options specified\n"));
+      zenity_free_parsing_options ();
+      exit (-1);
+    default:
+      return;
+  }
 }
 
 static void 
@@ -1064,13 +1064,13 @@ zenity_parse_options_callback (poptContext              ctx,
                                const char              *arg,
                                void                    *data)
 {
-        static gboolean parse_option_dateformat = FALSE;
-        static gboolean parse_option_separator = FALSE;
-        static gint parse_option_text = 0;
-        static gint parse_option_file = 0;
-        static gint parse_option_editable = 0;
+  static gboolean parse_option_dateformat = FALSE;
+  static gboolean parse_option_separator = FALSE;
+  static gint parse_option_text = 0;
+  static gint parse_option_file = 0;
+  static gint parse_option_editable = 0;
 
-	if (reason == POPT_CALLBACK_REASON_POST) {
+  if (reason == POPT_CALLBACK_REASON_POST) {
 		return;
 	} 
 	else if (reason != POPT_CALLBACK_REASON_OPTION)
@@ -1221,7 +1221,7 @@ zenity_parse_options_callback (poptContext              ctx,
 			if (results->mode != MODE_CALENDAR)
                                 zenity_error ("--date-format", ERROR_SUPPORT);
                         
-                        if (parse_option_dateformat == TRUE)
+                        if (parse_option_dateformat)
                                 zenity_error ("--date-format", ERROR_DUPLICATE);
 
 			results->calendar_data->date_format = g_strdup (arg);
@@ -1240,7 +1240,7 @@ zenity_parse_options_callback (poptContext              ctx,
 			if (results->mode != MODE_ENTRY)
                                 zenity_error ("--hide-text", ERROR_SUPPORT);
 			
-                        if (results->entry_data->visible == FALSE)
+                        if (!results->entry_data->visible)
                                 zenity_error ("--hide-text", ERROR_DUPLICATE);
 
 			results->entry_data->visible = FALSE;
@@ -1301,7 +1301,7 @@ zenity_parse_options_callback (poptContext              ctx,
 			if (results->mode != MODE_LIST)
                                 zenity_error ("--checkbox", ERROR_SUPPORT);
 			
-                        if (results->tree_data->checkbox == TRUE)
+                        if (results->tree_data->checkbox)
                                 zenity_error ("--checkbox", ERROR_DUPLICATE);
 
 			results->tree_data->checkbox = TRUE;
@@ -1310,7 +1310,7 @@ zenity_parse_options_callback (poptContext              ctx,
 			if (results->mode != MODE_LIST)
                                 zenity_error ("--radiobox", ERROR_SUPPORT);
 			
-                        if (results->tree_data->radiobox == TRUE)
+                        if (results->tree_data->radiobox)
                                 zenity_error ("--radiobox", ERROR_DUPLICATE);
 
 			results->tree_data->radiobox = TRUE;
@@ -1319,7 +1319,7 @@ zenity_parse_options_callback (poptContext              ctx,
                         if (results->mode != MODE_LIST)
                                 zenity_error ("--separator", ERROR_SUPPORT);
                         
-                        if (parse_option_separator == TRUE)
+                        if (parse_option_separator)
                                 zenity_error ("--separator", ERROR_DUPLICATE);
 
 			results->tree_data->separator = g_strdup (arg);

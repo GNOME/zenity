@@ -32,74 +32,75 @@ static void zenity_text_dialog_response (GtkWidget *widget, int response, gpoint
 void
 zenity_text (ZenityData *data, ZenityTextData *text_data)
 {
-	GladeXML *glade_dialog = NULL;
-	GtkWidget *dialog;
-	GtkWidget *text_view;
-	GtkTextBuffer *text_buffer;
+  GladeXML *glade_dialog = NULL;
+  GtkWidget *dialog;
+  GtkWidget *text_view;
+  GtkTextBuffer *text_buffer;
 
-	zen_text_data = text_data;
-	glade_dialog = zenity_util_load_glade_file ("zenity_text_dialog");
-
-	if (glade_dialog == NULL) {
-		data->exit_code = -1;
-		return;
-	}
+  zen_text_data = text_data;
+  glade_dialog = zenity_util_load_glade_file ("zenity_text_dialog");
 	
-	glade_xml_signal_autoconnect (glade_dialog);
-
-	dialog = glade_xml_get_widget (glade_dialog, "zenity_text_dialog");
+  if (glade_dialog == NULL) {
+    data->exit_code = -1;
+    return;
+  }
 	
-	g_signal_connect (G_OBJECT (dialog), "response",
-			  G_CALLBACK (zenity_text_dialog_response), data);
+  glade_xml_signal_autoconnect (glade_dialog);
+	  
+  dialog = glade_xml_get_widget (glade_dialog, "zenity_text_dialog");
 	
-	if (data->dialog_title)
-		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
+  g_signal_connect (G_OBJECT (dialog), "response",
+                    G_CALLBACK (zenity_text_dialog_response), data);
+	
+  if (data->dialog_title)
+    gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-	if (data->window_icon)
-		zenity_util_set_window_icon (dialog, data->window_icon);
-	else
-		zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-text.png"));
+  if (data->window_icon)
+    zenity_util_set_window_icon (dialog, data->window_icon);
+  else
+    zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-text.png"));
 
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
+  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 
-	text_buffer = gtk_text_buffer_new (NULL);
-	text_view = glade_xml_get_widget (glade_dialog, "zenity_text_view");
-	gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
-	gtk_text_view_set_editable (GTK_TEXT_VIEW(text_view), text_data->editable);
-	if (text_data->uri) {
-		zenity_util_fill_file_buffer (text_buffer, text_data->uri);
-	}
+  text_buffer = gtk_text_buffer_new (NULL);
+  text_view = glade_xml_get_widget (glade_dialog, "zenity_text_view");
+  gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
+  gtk_text_view_set_editable (GTK_TEXT_VIEW(text_view), text_data->editable);
 
-	if (text_data->editable) {
-		zen_text_data->buffer = text_buffer;
-	}
-	gtk_widget_show (dialog);
+  if (text_data->uri)
+    zenity_util_fill_file_buffer (text_buffer, text_data->uri);
 
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
+  if (text_data->editable)
+    zen_text_data->buffer = text_buffer;
 
-	gtk_main ();
+  gtk_widget_show (dialog);
+
+  if (glade_dialog)
+    g_object_unref (glade_dialog);
+
+  gtk_main ();
 }
 
 static void
 zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-	ZenityData *zen_data = data;
+  ZenityData *zen_data = data;
 
-	switch (response) {
-		case GTK_RESPONSE_CLOSE:
-			if (zen_text_data->editable) {
-				GtkTextIter start, end;
+  switch (response) {
+    case GTK_RESPONSE_CLOSE:
+      if (zen_text_data->editable) {
+        GtkTextIter start, end;
+				    
+        gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
+        g_printerr (gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0));
+      }
+      zen_data->exit_code = 0;
+      gtk_main_quit ();
+      break;
 
-				gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
-				g_printerr (gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0));
-			}
-			zen_data->exit_code = 0;
-			gtk_main_quit ();
-			break;
-
-		default:
-			zen_data->exit_code = 1;
-			break;
-	}
+    default:
+      /* Esc dialog */
+      zen_data->exit_code = 1;
+      break;
+  }
 }

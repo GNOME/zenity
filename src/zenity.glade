@@ -4,7 +4,6 @@
 <glade-interface>
 
 <widget class="GtkDialog" id="zenity_calendar_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Calendar selection</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -148,7 +147,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_warning_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Warning</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -259,7 +257,6 @@
 
 <widget class="GtkFileSelection" id="zenity_fileselection_dialog">
   <property name="border_width">10</property>
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Select a file</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -290,7 +287,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_question_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Question</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -400,7 +396,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_entry_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Add a new entry</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -528,7 +523,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_text_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Text View</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -623,7 +617,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_progress_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Progress</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -745,7 +738,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_error_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Error</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -855,7 +847,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_tree_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Select items from the list</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -990,7 +981,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_info_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Information</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
@@ -1100,7 +1090,6 @@
 </widget>
 
 <widget class="GtkDialog" id="zenity_about_dialog">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">About Zenity</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -1192,7 +1181,7 @@
 	    <widget class="GtkLabel" id="zenity_about_version">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="no">zenity_about_version</property>
+	      <property name="label" translatable="yes">zenity_about_version</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_CENTER</property>
@@ -1214,7 +1203,7 @@
 	    <widget class="GtkLabel" id="zenity_about_description">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="no">zenity_about_description</property>
+	      <property name="label" translatable="yes">zenity_about_description</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_CENTER</property>
@@ -1236,7 +1225,7 @@
 	    <widget class="GtkLabel" id="zenity_about_copyright">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="no">zenity_about_copyright</property>
+	      <property name="label" translatable="yes">zenity_about_copyright</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_CENTER</property>

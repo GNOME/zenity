@@ -24,78 +24,78 @@ G_BEGIN_DECLS
 #endif
 
 typedef struct {
-	gchar *dialog_title;
-	gchar *window_icon;
-	gint   exit_code;
+  gchar *dialog_title;
+  gchar *window_icon;
+  gint   exit_code;
 } ZenityData;
 
 typedef struct {
-	gchar *dialog_text;
-	gint   day;
-	gint   month;
-	gint   year;
-	gchar *date_format;
+  gchar *dialog_text;
+  gint   day;
+  gint   month;
+  gint   year;
+  gchar *date_format;
 } ZenityCalendarData;
 
 typedef enum {
-	ZENITY_MSG_WARNING,
-	ZENITY_MSG_QUESTION,
-	ZENITY_MSG_ERROR,
-	ZENITY_MSG_INFO
+  ZENITY_MSG_WARNING,
+  ZENITY_MSG_QUESTION,
+  ZENITY_MSG_ERROR,
+  ZENITY_MSG_INFO
 } MsgMode;
 
 typedef struct {
-	gchar	*dialog_text;
-	MsgMode  mode;
+  gchar	*dialog_text;
+  MsgMode  mode;
 } ZenityMsgData;
 
 typedef struct {
-	gchar	*uri;
+  gchar	*uri;
 } ZenityFileData;
 
 typedef struct {
-	gchar		*dialog_text;
-	gchar		*entry_text;
-	gboolean	 visible;
+  gchar	       *dialog_text;
+  gchar	       *entry_text;
+  gboolean      visible;
 } ZenityEntryData;
 
 typedef struct {
-	gchar		*dialog_text;
-	gchar		*entry_text;
-	gboolean	 pulsate;
-	gdouble		 percentage;
+  gchar        *dialog_text;
+  gchar        *entry_text;
+  gboolean      pulsate;
+  gdouble       percentage;
 } ZenityProgressData;
 
 typedef struct {
-	gchar		*uri;
-	gboolean	 editable;
-	GtkTextBuffer	*buffer;
+  gchar         *uri;
+  gboolean      editable;
+  GtkTextBuffer	*buffer;
 } ZenityTextData;
 
 typedef struct {
-	gchar		*dialog_text;
-	GSList		*columns;
-	gboolean 	 checkbox;
-	gboolean	 radiobox;
-        gchar           *separator;
-        gboolean         editable;
-	const gchar    **data;
+  gchar        *dialog_text;
+  GSList       *columns;
+  gboolean      checkbox;
+  gboolean      radiobox;
+  gchar        *separator;
+  gboolean      editable;
+  const gchar **data;
 } ZenityTreeData;
 
-void	zenity_calendar		(ZenityData		*data,
-				 ZenityCalendarData 	*calendar_data);
-void	zenity_msg		(ZenityData		*data,
-				 ZenityMsgData		*msg_data);
-void	zenity_fileselection	(ZenityData		*data,
-				 ZenityFileData         *file_data);
-void	zenity_entry		(ZenityData		*data,
-				 ZenityEntryData	*entry_data);
-void	zenity_progress		(ZenityData		*data,
-				 ZenityProgressData	*progress_data);
-void	zenity_text		(ZenityData		*data,
-				 ZenityTextData         *text_data);
-void	zenity_tree		(ZenityData		*data,
-				 ZenityTreeData         *tree_data);
+void    zenity_calendar         (ZenityData             *data,
+                                ZenityCalendarData      *calendar_data);
+void    zenity_msg              (ZenityData             *data,
+                                 ZenityMsgData          *msg_data);
+void    zenity_fileselection    (ZenityData             *data,
+                                 ZenityFileData         *file_data);
+void    zenity_entry            (ZenityData             *data,
+                                 ZenityEntryData        *entry_data);
+void    zenity_progress	        (ZenityData             *data,
+                                 ZenityProgressData     *progress_data);
+void    zenity_text             (ZenityData             *data,
+                                 ZenityTextData         *text_data);
+void    zenity_tree             (ZenityData             *data,
+                                 ZenityTreeData         *tree_data);
 void    zenity_about            (ZenityData             *data);
 
 G_END_DECLS
