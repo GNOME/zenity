@@ -62,6 +62,8 @@ typedef struct {
 typedef struct {
   gchar	*uri;
   gboolean multi;
+  gboolean directory;
+  gboolean save;
   gchar *separator;
 } ZenityFileData;
 

@@ -34,11 +34,22 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   GtkWidget *dialog;
   gchar *dir;
   gchar *basename;
+  GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
 
   zen_data = data;
 
+  if (file_data->directory) {
+    if (file_data->save)
+      action = GTK_FILE_CHOOSER_ACTION_CREATE_FOLDER;
+    else
+      action = GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER;
+  } else {
+    if (file_data->save)
+      action = GTK_FILE_CHOOSER_ACTION_SAVE;
+  }
+
   dialog = gtk_file_chooser_dialog_new (NULL, NULL,
-		  			GTK_FILE_CHOOSER_ACTION_OPEN,
+		  			action,
 					GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 					GTK_STOCK_OK, GTK_RESPONSE_OK,
 					NULL);

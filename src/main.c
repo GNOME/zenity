@@ -94,6 +94,8 @@ enum {
   OPTION_INFOTEXT,
   OPTION_FILENAME,
   OPTION_MULTIFILE,
+  OPTION_DIR,
+  OPTION_SAVE,
   OPTION_TEXTFILENAME,
   OPTION_LISTTEXT,
   OPTION_COLUMN,
@@ -438,6 +440,24 @@ struct poptOption file_selection_options[] = {
     NULL,
     OPTION_MULTIFILE,
     N_("Allow multiple files to be selected"),
+    NULL
+  },
+  {
+    "directory",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_DIR,
+    N_("Activate directory-only selection"),
+    NULL
+  },
+  {
+    "save",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_SAVE,
+    N_("Activate save mode"),
     NULL
   },
   {
@@ -971,6 +991,8 @@ zenity_init_parsing_options (void) {
   results->calendar_data->year = 0;
   results->calendar_data->dialog_text = NULL;
   results->file_data->multi = FALSE;
+  results->file_data->directory = FALSE;
+  results->file_data->save = FALSE;
   results->file_data->separator = g_strdup ("|");
   results->text_data->editable = FALSE;
   results->tree_data->separator = g_strdup ("|");
@@ -1408,6 +1430,18 @@ zenity_parse_options_callback (poptContext              ctx,
         zenity_error ("--multiple", ERROR_SUPPORT);
 
       results->file_data->multi = TRUE;
+      break;
+    case OPTION_DIR:
+      if (results->mode != MODE_FILE)
+        zenity_error ("--directory", ERROR_SUPPORT);
+
+      results->file_data->directory = TRUE;
+      break;
+    case OPTION_SAVE:
+      if (results->mode != MODE_FILE)
+        zenity_error ("--save", ERROR_SUPPORT);
+
+      results->file_data->save = TRUE;
       break;
     case OPTION_COLUMN: 
       if (results->mode != MODE_LIST) 
