@@ -75,6 +75,7 @@ typedef struct {
 	GSList		*columns;
 	gboolean 	 checkbox;
 	gboolean	 radiobox;
+        gchar           *separator;
 	const gchar    **data;
 } ZenityTreeData;
 

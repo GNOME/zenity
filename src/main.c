@@ -78,6 +78,7 @@ enum {
 	OPTION_INFOTEXT,
 	OPTION_FILENAME,
 	OPTION_COLUMN,
+        OPTION_SEPERATOR,
 	OPTION_CHECKLIST,
 	OPTION_RADIOLIST,
 	OPTION_PROGRESSTEXT,
@@ -431,6 +432,15 @@ struct poptOption list_options[] = {
 		N_("Use radio buttons for first column"),
 		NULL
 	},
+	{
+		"separator",
+		'\0',
+		POPT_ARG_STRING,
+		NULL,
+		OPTION_SEPERATOR,
+		N_("Set output separator character"),
+		NULL
+	},
 	POPT_TABLEEND
 };
 
@@ -716,6 +726,7 @@ zenity_init_parsing_options (void) {
 	results->calendar_data->month = 0;
 	results->calendar_data->year = 0;
 	results->calendar_data->dialog_text = NULL;
+        results->tree_data->separator = g_strdup ("/");
 	results->progress_data->percentage = -1;
 	results->progress_data->pulsate = FALSE;
 	results->entry_data->visible = TRUE;
@@ -764,6 +775,8 @@ zenity_free_parsing_options (void) {
 		case MODE_LIST:
 			if (results->tree_data->columns)
 				g_slist_foreach (results->tree_data->columns, (GFunc) g_free, NULL);
+                        if (results->tree_data->separator)
+                                g_free (results->tree_data->separator);
 			break;
 		default:
 			break;
@@ -856,6 +869,7 @@ void zenity_parse_options_callback (poptContext              ctx,
                                     void                    *data)
 {
         static gboolean parse_option_dateformat = FALSE;
+        static gboolean parse_option_separator = FALSE;
         static gint parse_option_text = 0;
         static gint parse_option_file = 0;
 
@@ -1148,6 +1162,20 @@ void zenity_parse_options_callback (poptContext              ctx,
 				exit (-1);
 			}
 			results->tree_data->radiobox = TRUE;
+			break;
+                case OPTION_SEPERATOR:
+                        if (results->mode != MODE_LIST) {
+                                g_printerr (_("--separator is not supported for this dialog\n"));
+                                zenity_free_parsing_options ();
+                                exit (-1);
+                        }
+                        if (parse_option_separator == TRUE) {
+                                g_printerr (_("--separator given twice for the same dialog\n"));
+                                zenity_free_parsing_options ();
+                                exit (-1);
+                        }
+			results->tree_data->separator = g_strdup (arg);
+                        parse_option_separator = TRUE;
 			break;
 		case OPTION_PERCENTAGE:
 			if (results->mode != MODE_PROGRESS) {

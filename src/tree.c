@@ -30,6 +30,8 @@
 #define MAX_ELEMENTS_BEFORE_SCROLLING 8
 
 static GladeXML *glade_dialog;
+static GSList *selected;
+static gchar *separator;
 
 static void zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data);
 
@@ -70,7 +72,7 @@ zenity_tree_fill_entries (GtkTreeView *tree_view, const gchar **args, gint n_col
 		for (j = 0; j < n_columns; j++) {
 	
 			if (toggles && j == 0) {
-				if (strcmp (args[i+j], "TRUE") == 0 || strcmp (args[i+j], "true") == 0)
+				if (strcmp (args[i+j], "TRUE") == 0)
 					gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, TRUE, -1);
 				else 
 					gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, FALSE, -1);
@@ -112,7 +114,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 		data->exit_code = -1;
 		return;
 	}
-	
+        
+        separator = g_strdup (tree_data->separator);
+
         n_columns = g_slist_length (tree_data->columns);
 
         if (n_columns == 0) {
@@ -213,18 +217,18 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 }
 
 static void 
-zenity_tree_dialog_output (GtkTreeModel *model, GtkTreePath *path_buf, GtkTreeIter *iter, GtkTreeView *tree_view)
+zenity_tree_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf, GtkTreeIter *iter, GtkTreeView *tree_view)
 {
         GValue value = {0, };
 
         gtk_tree_model_get_value (model, iter, 0, &value);
 
-        g_printerr ("%s", g_value_get_string (&value));
+        selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
         g_value_unset (&value);
 }
 
 static gboolean
-zenity_tree_dialog_toggle_output (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gpointer data)
+zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gpointer data)
 {
         GValue toggle_value = {0, };
 
@@ -233,11 +237,35 @@ zenity_tree_dialog_toggle_output (GtkTreeModel *model, GtkTreePath *path, GtkTre
         if (g_value_get_boolean (&toggle_value) == TRUE) {
                 GValue value = {0, };
                 gtk_tree_model_get_value (model, iter, 1, &value);
-                g_printerr ("%s", g_value_get_string (&value));
+                selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
                 g_value_unset (&value);
         }
         g_value_unset (&toggle_value);
         return FALSE;
+}
+
+static void
+zenity_tree_dialog_output (void)
+{
+        GSList *tmp;
+
+        for (tmp = selected; tmp; tmp = tmp->next) {
+                if (tmp->next != NULL) {
+                      /* FIXME: There must be a nicer way to do this. This is just arse */
+                      if (strstr (separator, "\\n") != NULL)
+                              g_printerr ("%s\n", tmp->data);
+                      else if (strstr (separator, "\\t") != NULL)
+                              g_printerr ("%s\t", tmp->data);
+                      else
+                              g_printerr ("%s%s", tmp->data, separator);
+                }
+                else
+                      g_printerr ("%s\n", tmp->data);
+        }
+
+        g_free (separator);
+        g_slist_foreach (selected, (GFunc) g_free, NULL);
+        selected = NULL;
 }
 
 static void
@@ -255,15 +283,16 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
 
                         if (gtk_tree_model_get_column_type (model, 0) == G_TYPE_BOOLEAN) {
                                 gtk_tree_model_foreach (model, 
-                                                        (GtkTreeModelForeachFunc) zenity_tree_dialog_toggle_output, 
+                                                        (GtkTreeModelForeachFunc) zenity_tree_dialog_toggle_get_selected, 
                                                         NULL);
                         }
                         else {
                                 selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
                                 gtk_tree_selection_selected_foreach (selection, 
-                                                                     (GtkTreeSelectionForeachFunc) zenity_tree_dialog_output,
+                                                                     (GtkTreeSelectionForeachFunc) zenity_tree_dialog_get_selected,
                                                                      GTK_TREE_VIEW (tree_view));
                         }
+                        zenity_tree_dialog_output ();
 			zen_data->exit_code = 0;
 			gtk_main_quit ();
 			break;
