@@ -833,7 +833,8 @@ main (gint argc, gchar **argv) {
                 /* FIXME : We should probably handle --display, or at least maybe load some of the gtk+
                  * commandline options
                  */
-		g_printerr (_("%s in an invalid option for this dialog\n"), poptBadOption (ctx, 0));
+		g_printerr (_("%s in an invalid option for this dialog. See zenity --help for more details\n"), 
+                            poptBadOption (ctx, 0));
 		zenity_free_parsing_options ();
 		exit (-1);
 	}	
@@ -841,6 +842,7 @@ main (gint argc, gchar **argv) {
 	gtk_init (&argc, &argv);
 	
 	if (argc < 2) {
+                g_printerr (_("You must specify more arguments. See zenity --help for more details\n"));
 		zenity_free_parsing_options ();
 		exit (-1);
 	}
