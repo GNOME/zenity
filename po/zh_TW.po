@@ -4,16 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity 0.1\n"
-"POT-Creation-Date: 2003-02-01 12:38+0000\n"
-"PO-Revision-Date: 2003-01-21 13:09+0800\n"
+"Project-Id-Version: zenity 1.0\n"
+"POT-Creation-Date: 2003-02-07 19:06+0800\n"
+"PO-Revision-Date: 2003-02-07 19:27+0800\n"
 "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/about.c:288
+#: src/about.c:258
 msgid "translator_credits"
 msgstr ""
 "i18n 程式中文化計劃\n"
@@ -21,23 +21,23 @@ msgstr ""
 "\n"
 "Abel Cheung <maddog@linux.org.hk>, 2003"
 
-#: src/about.c:318
+#: src/about.c:288
 msgid "Display dialog boxes from shell scripts"
 msgstr "透過命令稿顯示對話窗"
 
-#: src/about.c:322
+#: src/about.c:292
 msgid "(C) 2003 Sun Microsystems"
-msgstr "版權所有 © 2003 Sun Microsystems"
+msgstr "版權所有 ©2003 Sun Microsystems"
 
-#: src/about.c:413
+#: src/about.c:383
 msgid "Credits"
 msgstr "鳴謝"
 
-#: src/about.c:440
+#: src/about.c:410
 msgid "Written by"
 msgstr "程式編寫"
 
-#: src/about.c:453
+#: src/about.c:423
 msgid "Translated by"
 msgstr "翻譯者"
 
@@ -67,7 +67,7 @@ msgstr "顯示清單對話窗"
 
 #: src/main.c:181
 msgid "Display progress indication dialog"
-msgstr "顯示進度指示對話窗"
+msgstr "顯示進度指示窗"
 
 #: src/main.c:190
 msgid "Display question dialog"
@@ -160,7 +160,7 @@ msgstr "指定開始時的百份比數值"
 
 #: src/main.c:500
 msgid "Pulsate progress bar"
-msgstr ""
+msgstr "填滿進度列"
 
 #: src/main.c:535
 msgid "Open file"
@@ -168,80 +168,79 @@ msgstr "開啟檔案"
 
 #: src/main.c:579
 msgid "Gdk debugging flags to set"
-msgstr ""
+msgstr "準備設定的 gdk 偵錯旗標"
 
 #: src/main.c:580 src/main.c:589 src/main.c:668 src/main.c:677
 msgid "FLAGS"
-msgstr ""
+msgstr "旗標"
 
 #: src/main.c:588
 msgid "Gdk debugging flags to unset"
-msgstr ""
+msgstr "準備去除的 gdk 偵錯旗標"
 
 #: src/main.c:598
 msgid "X display to use"
-msgstr ""
+msgstr "準備使用的 X 畫面"
 
 #: src/main.c:599
 msgid "DISPLAY"
-msgstr ""
+msgstr "畫面"
 
 #: src/main.c:609
 msgid "X screen to use"
-msgstr ""
+msgstr "準備使用的 X 螢幕"
 
 #: src/main.c:610
 msgid "SCREEN"
-msgstr ""
+msgstr "螢幕"
 
 #: src/main.c:620
 msgid "Make X calls synchronous"
-msgstr ""
+msgstr "進行同步 X 呼叫"
 
 #: src/main.c:629
 msgid "Program name as used by the window manager"
-msgstr ""
+msgstr "視窗管理員所需的程式名稱"
 
 #: src/main.c:630
-#, fuzzy
 msgid "NAME"
-msgstr "檔案名稱"
+msgstr "名稱"
 
 #: src/main.c:638
 msgid "Program class as used by the window manager"
-msgstr ""
+msgstr "視窗管理員所需的程式類別名稱"
 
 #: src/main.c:639
 msgid "CLASS"
-msgstr ""
+msgstr "類別"
 
 #: src/main.c:649
 msgid "HOST"
-msgstr ""
+msgstr "主機"
 
 #: src/main.c:659
 msgid "PORT"
-msgstr ""
+msgstr "埠號"
 
 #: src/main.c:667
 msgid "Gtk+ debugging flags to set"
-msgstr ""
+msgstr "準備設定的 gtk+ 偵錯旗標"
 
 #: src/main.c:676
 msgid "Gtk+ debugging flags to unset"
-msgstr ""
+msgstr "準備去除的 gtk+ 偵錯旗標"
 
 #: src/main.c:685
 msgid "Make all warnings fatal"
-msgstr ""
+msgstr "將所有警告訊息作為嚴重錯誤處理"
 
 #: src/main.c:694
 msgid "Load an additional Gtk module"
-msgstr ""
+msgstr "載入額外的 Gtk 模組"
 
 #: src/main.c:695
 msgid "MODULE"
-msgstr ""
+msgstr "模組"
 
 #: src/main.c:716
 msgid "About zenity"
@@ -273,7 +272,7 @@ msgstr "錯誤訊息選項"
 
 #: src/main.c:783
 msgid "File selection options"
-msgstr "檔案選擇的選項"
+msgstr "有關檔案選擇的選項"
 
 #: src/main.c:792
 msgid "Info options"
@@ -300,9 +299,8 @@ msgid "Warning options"
 msgstr "警告訊息選項"
 
 #: src/main.c:846
-#, fuzzy
 msgid "GTK+ options"
-msgstr "文字選項"
+msgstr "GTK+ 選項"
 
 #: src/main.c:855
 msgid "Miscellaneous options"
@@ -313,18 +311,18 @@ msgid "Help options"
 msgstr "求助選項"
 
 #: src/main.c:981
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s in an invalid option for this dialog. See zenity --help for more details\n"
-msgstr "%s 在本對話窗中不是有效的選項\n"
+msgstr "在本類對話窗中 %s 是無效的選項。請輸入 zenity --help 參考完整選項\n"
 
 #: src/main.c:989
 msgid "You must specify more arguments. See zenity --help for more details\n"
-msgstr ""
+msgstr "參數不足。請輸入 zenity --help 參考完整選項\n"
 
 #: src/main.c:1024
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
+msgstr "閣下必須指定對話窗的類型。請輸入 zenity --help 參考完整選項\n"
 
 #: src/main.c:1044
 #, c-format
@@ -334,7 +332,7 @@ msgstr "%s 在同一個對話窗中使用了兩次\n"
 #: src/main.c:1048
 #, c-format
 msgid "%s is not supported for this dialog\n"
-msgstr "本對話窗不支援 %s 選項\n"
+msgstr "本類對話窗不支援 %s 選項\n"
 
 #: src/main.c:1052
 msgid "Two or more dialog options specified\n"
@@ -362,11 +360,11 @@ msgstr "加入新的欄位"
 
 #: src/zenity.glade.h:4
 msgid "All updates are complete."
-msgstr ""
+msgstr "更新完成。"
 
 #: src/zenity.glade.h:5
 msgid "An error has occurred."
-msgstr ""
+msgstr "發生錯誤。"
 
 #: src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
@@ -431,18 +429,3 @@ msgstr "鳴謝(_C)"
 #: src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "輸入新的文字(_E)："
-
-#~ msgid "You have done the right thing, hurrah."
-#~ msgstr "做得對。"
-
-#~ msgid "You have not done the right thing, clearly."
-#~ msgstr "你做錯事了。"
-
-#~ msgid "zenity_about_copyright"
-#~ msgstr "zenity_about_copyright"
-
-#~ msgid "zenity_about_description"
-#~ msgstr "zenity_about_description"
-
-#~ msgid "zenity_about_version"
-#~ msgstr "zenity_about_version"
