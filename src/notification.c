@@ -27,7 +27,11 @@
 #include "eggtrayicon.h"
 #include "util.h"
 
-EggTrayIcon *tray_icon;
+static EggTrayIcon *tray_icon;
+static GtkWidget *icon_image;
+static GtkWidget *icon_event_box;
+static GtkTooltips *tooltips;
+
 
 static gboolean
 zenity_notification_icon_press_callback (GtkWidget *widget, GdkEventButton *event, gpointer data)
@@ -77,12 +81,112 @@ zenity_notification_icon_destroy_callback (GtkWidget *widget, gpointer data)
   gtk_main_quit ();
 }
 
+static gboolean
+zenity_notification_handle_stdin (GIOChannel  *channel,
+				  GIOCondition condition,
+				  gpointer     user_data)
+{
+  ZenityData *zen_data;
+
+  zen_data = (ZenityData *)user_data;
+
+  if ((condition & G_IO_IN) != 0) {
+    GString *string;
+    GError *error = NULL;
+
+    string = g_string_new (NULL);
+    while (channel->is_readable != TRUE)
+      ;
+    do {
+      gint status;
+      gchar *command, *value, *colon;
+
+      do {
+	status = g_io_channel_read_line_string (channel, string, NULL, &error);
+	while (gdk_events_pending ())
+	  gtk_main_iteration ();
+
+      } while (status == G_IO_STATUS_AGAIN);
+
+      if (status  != G_IO_STATUS_NORMAL) {
+	if (error) {
+	  g_warning ("zenity_notification_handle_stdin () : %s",
+		     error->message);
+	  g_error_free (error);
+	  error = NULL;
+	}
+	continue;
+      }
+
+      zenity_util_strip_newline (string->str);
+      colon = strchr(string->str, ':');
+      if (colon == NULL) {
+	g_printerr (_("could not parse command from stdin\n"));
+	continue;
+      }
+      /* split off the command and value */
+      command = g_strndup (string->str, colon - string->str);
+      command = g_strstrip (command);
+      g_strdown (command);
+
+      value = colon + 1;
+      while (*value && g_ascii_isspace (*value)) value++;
+
+      if (!strcmp (command, "icon")) {
+	GdkPixbuf *pixbuf;
+
+	pixbuf = zenity_util_pixbuf_new_from_file (GTK_WIDGET (tray_icon),
+						   value);
+	if (pixbuf != NULL) {
+	  gtk_image_set_from_pixbuf (GTK_IMAGE (icon_image), pixbuf);
+	  gdk_pixbuf_unref (pixbuf);
+	} else {
+	  g_warning ("Could not load notification icon : %s", value);
+	}
+      } else if (!strcmp (command, "message")) {
+	g_warning ("haven't implemented message support yet");
+      } else if (!strcmp (command, "tooltip")) {
+	gtk_tooltips_set_tip (tooltips, icon_event_box, value, value);
+      } else if (!strcmp (command, "visible")) {
+	if (!strcasecmp (value, "false")) {
+	  gtk_widget_hide (GTK_WIDGET (tray_icon));
+	} else {
+	  gtk_widget_show (GTK_WIDGET (tray_icon));
+	}
+      } else {
+	g_warning ("Unknown command '%s'", command);
+      }
+      g_free (command);
+
+    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN);
+    g_string_free (string, TRUE);
+  }
+
+  if ((condition & G_IO_HUP) != 0) {
+    g_io_channel_shutdown (channel, TRUE, NULL);
+    zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+    gtk_main_quit ();
+    return FALSE;
+  }
+
+  return TRUE;
+}
+
+static void
+zenity_notification_listen_on_stdin (ZenityData *data)
+{
+  GIOChannel *channel;
+
+  channel = g_io_channel_unix_new (0);
+  g_io_channel_set_encoding (channel, NULL, NULL);
+  g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
+  g_io_add_watch (channel, G_IO_IN | G_IO_HUP,
+		  zenity_notification_handle_stdin, data);
+}
+
 void 
 zenity_notification (ZenityData *data, ZenityNotificationData *notification_data)
 {
-  GtkWidget *icon_image;
-  GtkWidget *icon_event_box;
-  GtkTooltips *tooltips;
   GdkPixbuf *pixbuf = NULL;
 
   tray_icon = egg_tray_icon_new (_("Zenity notification"));
@@ -113,14 +217,19 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
   gtk_widget_add_events (GTK_WIDGET (tray_icon), GDK_BUTTON_PRESS_MASK | GDK_FOCUS_CHANGE_MASK);
   gtk_container_add (GTK_CONTAINER (tray_icon), icon_event_box);
 
-  g_signal_connect (tray_icon, "button_press_event",
-		    G_CALLBACK (zenity_notification_icon_press_callback), data);
-
   g_signal_connect (tray_icon, "destroy",
 		    G_CALLBACK (zenity_notification_icon_destroy_callback), data);
 
   g_signal_connect (tray_icon, "expose_event",
 		    G_CALLBACK (zenity_notification_icon_expose_callback), data);
+
+  if (notification_data->listen) {
+    zenity_notification_listen_on_stdin (data);
+  } else {
+    /* if we aren't listening for changes, then close on button_press */
+    g_signal_connect (tray_icon, "button_press_event",
+		      G_CALLBACK (zenity_notification_icon_press_callback), data);
+  }
 
   gtk_widget_show_all (GTK_WIDGET (tray_icon));
   

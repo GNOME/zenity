@@ -1,3 +1,13 @@
+2004-09-16  James Henstridge  <james@jamesh.id.au>
+
+	* src/notification.c: add code to listen for commands on stdin
+	when in listen mode.
+
+	* src/main.c: parse the --listen argument for --notification mode.
+
+	* src/zenity.h (ZenityNotificationData): add a field for the
+	"listen" argument.
+
 2004-09-13  Glynn Foster  <glynn.foster@sun.com>
 
 	* configure.in: Post release bump.

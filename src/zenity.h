@@ -100,6 +100,7 @@ typedef struct {
 
 typedef struct {
   gchar		*notification_text;
+  gboolean       listen;
 } ZenityNotificationData;
 
 void    zenity_calendar         (ZenityData             *data,

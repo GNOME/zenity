@@ -115,6 +115,7 @@ enum {
   OPTION_WARNINGTEXT,
   OPTION_NOTIFICATIONICON,
   OPTION_NOTIFICATIONTEXT,
+  OPTION_NOTIFICATIONLISTEN,
   OPTION_ABOUT,
   OPTION_VERSION,
   OPTION_LAST,
@@ -579,6 +580,15 @@ struct poptOption notification_options[] = {
     NULL,
     OPTION_NOTIFICATIONTEXT,
     N_("Set the notification text"),
+    NULL
+  },
+  {
+    "listen",
+    '\0',
+    POPT_ARG_NONE,
+    NULL,
+    OPTION_NOTIFICATIONLISTEN,
+    N_("Listen for commands on stdin"),
     NULL
   },
   POPT_TABLEEND
@@ -1051,6 +1061,7 @@ zenity_init_parsing_options (void) {
   results->tree_data->radiobox = FALSE;
   results->tree_data->editable = FALSE;
   results->tree_data->print_column = NULL;
+  results->notification_data->listen = FALSE;
 }
 
 static void
@@ -1571,6 +1582,12 @@ zenity_parse_options_callback (poptContext              ctx,
         zenity_error ("--print-column", ERROR_SUPPORT);
 
       results->tree_data->print_column = g_strdup (arg);
+      break;
+    case OPTION_NOTIFICATIONLISTEN:
+      if (results->mode != MODE_NOTIFICATION)
+	zenity_error ("--listen", ERROR_SUPPORT);
+
+      results->notification_data->listen = TRUE;
       break;
     case OPTION_ABOUT: 
       if (results->mode != MODE_LAST) 
