@@ -7,8 +7,7 @@ Release: 1
 Vendor: N/A
 URL: http://ftp.gnome.org/pub/GNOME/sources/zenity/%{version}/
 Source: http://ftp.gnome.org/pub/GNOME/sources/zenity/%{version}/%{name}-%{version}.tar.bz2
-Copyright: GPL
-License: GPL
+License: LGPL
 Group: Applications/System
 Packager: Mihai Lazarescu <mihai@email.it>
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -79,9 +78,9 @@ Zenity is especially useful in scripts.
 
 
 %changelog
-* Thu Feb  1 2003 Mihai Lazarescu <mihai@email.it>
-- first release for version 1.0
-
-* Thu Mar  6 2003 Glynn Foster <glynn.foster@sun.com>
+* Thu Mar 6 2003 Glynn Foster <glynn.foster@sun.com>
 - Fix up the %defines. Not sure if this makes a difference but it
   seems cleaner to me
+
+* Thu Feb 1 2003 Mihai Lazarescu <mihai@email.it>
+- first release for version 1.0
