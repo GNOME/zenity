@@ -1,3 +1,10 @@
+2004-10-05  James Henstridge  <james@jamesh.id.au>
+
+	* src/util.c (zenity_util_pixbuf_new_from_file): g_strdown()
+	modifies the filename, so use strcasecmp() for the comparison
+	instead.  Since we are comparing against fixed ASCII strings,
+	this should have no UTF-8 issues.
+
 2004-09-30  James Henstridge  <james@jamesh.id.au>
 
 	* src/notification.c (set_scaled_pixbuf): function to set a
