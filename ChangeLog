@@ -1,3 +1,9 @@
+2004-12-08  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/util.c: Seems that using a (GtkIconSize) -1 arg to 
+	gtk_widget_render_icon crashes. Let's try GTK_ICON_SIZE_BUTTON
+	instead and see how we get on.
+
 2004-10-12  Glynn Foster  <glynn.foster@sun.com>
 	
 	* configure.in: post release bump

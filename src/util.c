@@ -190,7 +190,7 @@ zenity_util_set_window_icon_from_stock (GtkWidget *widget, const gchar *stock_id
 {
   GdkPixbuf *pixbuf;
 	
-  pixbuf = gtk_widget_render_icon (widget, stock_id, (GtkIconSize) -1, NULL);
+  pixbuf = gtk_widget_render_icon (widget, stock_id, GTK_ICON_SIZE_BUTTON, NULL);
   gtk_window_set_icon (GTK_WINDOW (widget), pixbuf);
   g_object_unref (pixbuf);
 }
