@@ -53,6 +53,7 @@ static const gchar *author_credits[] = {
   "Jonathan Blandford <jrb@redhat.com>",
   "Ross Burton <ross@burtonini.com>",
   "Anders Carlsson <andersca@codefactory.se>",
+  "Nicholas Curran <quasar@austar.net.au>",
   "John Fleck <jfleck@inkstain.net>",
   "James Henstridge <james@daa.com.au>",
   "Mihai T. Lazarescu <mihai@email.it>",
