@@ -1,13 +1,23 @@
+2003-01-24  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Provide correct help URL.
+
+	* src/util.h, src/util.c: Add functions from 
+	libgnome/gnome-i18n so that we can correctly find the 
+	apropriate help file.
+
+	* xmldocs.make: Install help into $(datadir)/help/$(lang)/
+
+	* THANKS: Update from the code I stole from libgnome
+
 2003-01-24 John Fleck <jfleck@inkstain.net>
 
-	* help/C/zenity.xml
-	fix typo
+	* help/C/zenity.xml: fix typo.
 	
 2003-01-23 John Fleck <jfleck@inkstain.net>
 
-	* help/C/zenity.xml
-	fixing tag mixup that made the docbook not
-	valid
+	* help/C/zenity.xml: fixing tag mixup that made the 
+	docbook not valid.
 
 2003-01-24  Kjartan Maraas  <kmaraas@gnome.org>
 

@@ -30,6 +30,7 @@
 #include <glade/glade.h>
 
 #define GTK_RESPONSE_CREDITS 0
+#define ZENITY_HELP_PATH ZENITY_DATADIR "/help/"
 
 static GtkWidget *dialog;
 static GtkWidget *cred_dialog;
@@ -46,6 +47,7 @@ static const gchar *author_credits[] = {
         "Havoc Pennington <hp@redhat.com>",
         "Kristian Rietveld <kris@gtk.org>",
         "Jakub Steiner <jimmac@ximian.com>",
+        "Tom Tromey <tromey@redhat.com>"
         NULL
 };
 
@@ -240,7 +242,6 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
         ZenityData *zen_data = data;
         GError *error = NULL;
-        gchar *help_string;
 
 	switch (response) {
 		case GTK_RESPONSE_OK:
@@ -249,8 +250,7 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
 			break;
 
 		case GTK_RESPONSE_HELP:
-                        help_string = g_strconcat ("ghelp://", ZENITY_DATADIR, "help/zenity", NULL);
-                        zenity_util_show_help (help_string, NULL);
+                        zenity_util_show_help (ZENITY_HELP_PATH, "zenity.xml", NULL);
 			break;
 
                 case GTK_RESPONSE_CREDITS:

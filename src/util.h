@@ -21,7 +21,8 @@ void		zenity_util_set_window_icon 		(GtkWidget	*widget,
 void		zenity_util_set_window_icon_from_stock (GtkWidget	*widget,
 							const gchar	*stock_id);
 
-gboolean        zenity_util_show_help                   (const gchar *url, 
+gboolean        zenity_util_show_help                   (const gchar *path,
+                                                         const gchar *document,
                                                          GError **error);
 G_END_DECLS
 
