@@ -227,7 +227,7 @@ ARG: while ($argn < $args) {
 		# an untitled column for the check or radio buttons
 		# and the 'text' arg as a second column header
 		
-		$command .= "--list $list --column='' --column $element ";
+		$command .= "--list $list --column='' --column \"$element\" ";
 		
 		# should output be line by line?
 		if ($separator) {
@@ -248,7 +248,7 @@ ARG: while ($argn < $args) {
 		
 		while ($argn < $args) {
 			get_arg;
-			$command .= "NULL $element ";
+			$command .= "NULL \"$element\" ";
 			$argn += 3;
 		}
 		last ARG;
