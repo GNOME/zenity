@@ -1405,18 +1405,18 @@ zenity_parse_options_callback (poptContext              ctx,
       break; 
     case OPTION_CHECKLIST: 
       if (results->mode != MODE_LIST) 
-        zenity_error ("--checkbox", ERROR_SUPPORT); 
+        zenity_error ("--checklist", ERROR_SUPPORT); 
       
       if (results->tree_data->checkbox) 
-        zenity_error ("--checkbox", ERROR_DUPLICATE); 
+        zenity_error ("--checklist", ERROR_DUPLICATE); 
       
       results->tree_data->checkbox = TRUE; 
       break; 
     case OPTION_RADIOLIST: 
       if (results->mode != MODE_LIST) 
-        zenity_error ("--radiobox", ERROR_SUPPORT); 
+        zenity_error ("--radiolist", ERROR_SUPPORT); 
       if (results->tree_data->radiobox) 
-        zenity_error ("--radiobox", ERROR_DUPLICATE); 
+        zenity_error ("--radiolist", ERROR_DUPLICATE); 
       
       results->tree_data->radiobox = TRUE; 
       break; 

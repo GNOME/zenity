@@ -56,6 +56,7 @@ static const gchar *author_credits[] = {
   "Darren Adams  <darrenadams dsl pipex com>"
   "Peter Astrand  <astrand lysator liu se>",
   "Jonathan Blandford  <jrb redhat com>",
+  "Paul Bolle  <pebolle tiscali nl>",
   "Ross Burton  <ross burtonini com>",
   "Damien Carbery  <damien carbery sun com>",
   "Anders Carlsson  <andersca codefactory se>",
