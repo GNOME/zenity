@@ -527,6 +527,7 @@ struct poptOption progress_options[] = {
     POPT_ARG_NONE,
     NULL,
     OPTION_AUTOCLOSE,
+    /* xgettext: no-c-format */
     N_("Dismiss the dialog when 100% has been reached"),
     NULL
   },
