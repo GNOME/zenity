@@ -27,3 +27,6 @@ gladedir = $(datadir)/zenity
 
 glade_DATA = \
 	zenity.glade
+
+EXTRA_DIST = \
+	$(glade_DATA)
