@@ -63,21 +63,32 @@ count_rows_foreach (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, g
 }
 
 static void
-zenity_tree_fill_entries (GtkTreeView *tree_view, const **argv)
+zenity_tree_fill_entries (GtkTreeView *tree_view, gchar **args, gint n_columns, gboolean toggles)
 {
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	gint i = 0;
 
 	model = gtk_tree_view_get_model (tree_view);
-	gtk_tree_model_foreach (model, count_rows_foreach, &i);
+	/* gtk_tree_model_foreach (model, count_rows_foreach, &i); */
 
-	while (i<10) {	
+	while (args[i] != NULL) {
+		gint j;
+
 		gtk_list_store_append (GTK_LIST_STORE (model), &iter);
-		gtk_list_store_set (GTK_LIST_STORE (model), &iter, 
-			    	    0, "TRUE", 
-			            1, "This is the bar above foobar", -1);
 
+		for (j = 0; j < n_columns; j++) {
+	
+			if (toggles && j == 0) {
+				if (strcmp (args[i+j], "TRUE") == 0 || strcmp (args[i+j], "true") == 0)
+					gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, TRUE, -1);
+				else 
+					gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, FALSE, -1);
+			}
+			else
+				gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, args[i+j], -1);	
+		}
+		
 		if (i == MAX_ELEMENTS_BEFORE_SCROLLING) {
 			GtkWidget *scrolled_window;
 			GtkRequisition rectangle;
@@ -88,8 +99,8 @@ zenity_tree_fill_entries (GtkTreeView *tree_view, const **argv)
 			gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
 							GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 		}
+	i += n_columns;
 
-		i++;   
 	}
 }
 
@@ -103,7 +114,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	GType *column_types;
 	GSList *tmp;
 	gboolean first_column = FALSE;
-	gint i, column_index, column_n;
+	gint i, column_index, n_columns;
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_tree_dialog");
 
@@ -124,14 +135,14 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
 	tree_view = glade_xml_get_widget (glade_dialog, "zenity_tree_view");
 
-	column_n = g_slist_length (tree_data->columns);
+	n_columns = g_slist_length (tree_data->columns);
 
 	/* Create an empty list store */
 	model = g_object_new (GTK_TYPE_LIST_STORE, NULL);
 
-	column_types = g_new (GType, column_n);
+	column_types = g_new (GType, n_columns);
 
-	for (i = 0; i < column_n; i++) {
+	for (i = 0; i < n_columns; i++) {
 		/* Have the limitation that the radioboxes and checkboxes are in the first column */
 		if (i == 0 && (tree_data->checkbox || tree_data->radiobox))
 			column_types[i] = G_TYPE_BOOLEAN;
@@ -139,7 +150,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 			column_types[i] = G_TYPE_STRING;
 	}
 
-	gtk_list_store_set_column_types (model, column_n, column_types);
+	gtk_list_store_set_column_types (model, n_columns, column_types);
 
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (model));
 
@@ -188,7 +199,10 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree_view), TRUE);
 
-	/* zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), NULL); */
+	if (tree_data->radiobox || tree_data->checkbox)
+		zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, TRUE);
+	else
+		zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, FALSE);
 
 	gtk_widget_show (dialog);
 	gtk_main ();

@@ -735,6 +735,7 @@ zenity_free_parsing_options (void) {
 
 gint 
 main (gint argc, gchar **argv) {
+	char **args;
 	poptContext ctx;
 	int nextopt;
 	ZenityData *general;
@@ -781,6 +782,7 @@ main (gint argc, gchar **argv) {
 			zenity_fileselection (results->data, results->file_data);
 			break;
 		case MODE_LIST:
+			results->tree_data->data = poptGetArgs (ctx);
 			zenity_tree (results->data, results->tree_data);
 			break;
 		case MODE_PROGRESS:

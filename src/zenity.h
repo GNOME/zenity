@@ -73,6 +73,7 @@ typedef struct {
 	GSList		*columns;
 	gboolean 	 checkbox;
 	gboolean	 radiobox;
+	gchar 	       **data;
 } ZenityTreeData;
 
 int	zenity_calendar		(ZenityData		*data,
