@@ -355,7 +355,7 @@ zenity_about (ZenityData *data)
     return;
   }
 
-  translator_credits = _("translator_credits");
+  translator_credits = _("translator-credits");
 
   glade_xml_signal_autoconnect (glade_dialog);
 
