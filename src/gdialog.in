@@ -14,7 +14,7 @@
 # unclear is what is a gdialog/zenity translation problem, and what is
 # a problem with the original script
 
-my $command = "zenity ";	# the command line we build up to execute
+my @command = ("zenity");	# the command line we build up to execute
 my $element = "";		# current bit of command line
 my $argn = 0;			# counter for walking args
 my $args = $#ARGV + 1;		# total number of command line arguments
@@ -33,7 +33,7 @@ unless (defined $ENV{'DISPLAY'} && length($ENV{'DISPLAY'})) {
 
         # reset the command string
 
-        $command = "";
+        @command = ();
 
         # examine all the available/default paths
 
@@ -50,14 +50,14 @@ unless (defined $ENV{'DISPLAY'} && length($ENV{'DISPLAY'})) {
 			# as such is the preference over using the "regular"
 			# dialog interface.
 
-                        $command = $PATH."/gdialog.real ";
+                        @command = ($PATH."/gdialog.real");
                         last BIN;
 
                 } elsif (-x $PATH."/dialog") {
 
                         # change the command and skip ahead!
 
-                        $command = $PATH."/dialog ";
+                        @command = ($PATH."/dialog");
                         last BIN;
 
                 }
@@ -65,7 +65,7 @@ unless (defined $ENV{'DISPLAY'} && length($ENV{'DISPLAY'})) {
 
         }
 
-        unless ($command) {
+        unless (@command) {
 
 		# we didn't find the dialog binary, exit(254) with a message
 		# to STDERR.
@@ -86,11 +86,11 @@ unless (defined $ENV{'DISPLAY'} && length($ENV{'DISPLAY'})) {
 	# so join the arguments double-quoting things so that proper shell
 	# notation is saved.
 
-        $command .= '"'.join('" "',@ARGV).'"';
+        push @command, @ARGV;
 
 	# and fork the process
 
-        exec($command);
+        exec(@command);
 
 }
 
@@ -130,7 +130,7 @@ ARG: while ($argn < $args) {
 		
 		$argn++;
 		get_arg;
-		$command .= "--title=\"$element\" ";
+		push @command, "--title=$element";
 		
 		# keep processing args
 		$argn++;
@@ -157,7 +157,7 @@ ARG: while ($argn < $args) {
 		
 		$argn++;
 		get_arg;
-		$command .= "--info --text=\"$element\" ";
+		push @command, "--info", "--text=$element";
 		
 		# this also happens a lot - gdialog accepted size args
 		# for dialog compatability - which it pretty much ignored
@@ -175,33 +175,33 @@ ARG: while ($argn < $args) {
 		
 		$argn++;
 		get_arg;
-		$command .= "--question --text=\"$element\" ";
+		push @command, "--question", "--text=$element";
 		last ARG;
 	}
 	
 	if ($element eq "--inputbox") {
 		$argn++;
 		get_arg;
-		$command .= "--entry --text=\"$element\" ";
+		push @command, "--entry", "--text=$element";
 		
 		# ignore size elements and maybe there is some
 		# default text to initialize the entry with?
 		
 		$argn+=3;
 		get_arg;
-		$command .= "--entry-text=\"$element\" ";
+		push @command, "--entry-text=$element";
 		last ARG;
 	}
 	
 	if ($element eq "--textbox") {
-		$command .= "--text-info ";
+		push @command, "--text-info";
 		
 		# the arg immediately following the dialog type in
 		# gdialog is the filename, so pass this to zenity
 		
 		$argn++;
 		get_arg;
-		$command .= "--filename=\"$element\" ";
+		push @command, "--filename=$element";
 
 		# width and height matter for this one, so get them
 		# and apply the same multipliers as used in gdialog
@@ -209,11 +209,11 @@ ARG: while ($argn < $args) {
 		$argn++;
 		get_arg;
 		$element = $element * 7;
-		$command .= "--height=\"$element\" ";
+		push @command, "--height=$element";
 		$argn++;
 		get_arg;
 		$element = $element * 8;
-		$command .= "--width=\"$element\" ";
+		push @command, "--width=$element";
 		last ARG;
 	}
 	
@@ -227,11 +227,11 @@ ARG: while ($argn < $args) {
 		# an untitled column for the check or radio buttons
 		# and the 'text' arg as a second column header
 		
-		$command .= "--list $list --column='' --column='' --column \"$element\" ";
+		push @command, "--list", $list, "--column=''", "--column=''", "--column", $element;
 
 		# should output be line by line?
 		if ($separator) {
-			$command .= " --separator='\n' ";
+			push @command, "--separator=\n";
 		}
 
 		# Skip to the first 'item' arg of the list content
@@ -248,10 +248,10 @@ ARG: while ($argn < $args) {
 		
 		while ($argn < $args) {
 			get_arg;
-			$command .= "NULL \"$element\" ";
+			push @command, "NULL", $element;
 			$argn += 1;
 			get_arg;
-			$command .= "\"$element\" ";
+			push @command, $element;
 			$argn += 2;
 		}
 		last ARG;
@@ -267,7 +267,7 @@ ARG: while ($argn < $args) {
 		# Use the 'text' arg as a second column header
 		# FIXME: or should it be the dialog text, or both?
 		
-		$command .= "--list --column '' --column \"$element\" ";
+		push @command, "--list", "--column", "", "--column", $element;
 			
 		# Skip to the first 'item' arg of the list content
 		# after using height, width and bypassing list-height
@@ -281,7 +281,7 @@ ARG: while ($argn < $args) {
 		# per list entry (default font), and 103 pixels for non-list
 		# This appears to be almost exact
 		$element = $element*24 - 35;
-		$command .= " --height $element";
+		push @command, "--height", $element;
 		
 		$argn += 1;
 		get_arg;
@@ -289,7 +289,7 @@ ARG: while ($argn < $args) {
 		# per character (default font), and 22 pixels for non-list
 		# This is not exact, but close enough
 		$element = $element*7 - 20;
-		$command .= " --width $element " ;
+		push @command, "--width", $element;
 		
 		$argn += 2; 
 		
@@ -299,7 +299,7 @@ ARG: while ($argn < $args) {
 		
 		while ($argn < $args) {
 			get_arg;
-			$command .= "$element ";
+			push @command, $element;
 			$argn += 1;
 		}
 		last ARG;
@@ -308,7 +308,7 @@ ARG: while ($argn < $args) {
 	if ($element eq "--gauge") {
 		$argn++;
 		get_arg;
-		$command .= "--progress --text=\"$element\" ";
+		push @command, "--progress", "--text=$element";
 		
 		# discard the size args as usually, and see if
 		# a percentage value was supplied to initialize the
@@ -317,7 +317,7 @@ ARG: while ($argn < $args) {
 		$argn += 3;
 		get_arg;
 		if ($element) {
-			$command .= "--percentage=$element ";
+			push @command, "--percentage=$element";
 		}
 		last ARG;
 	}
@@ -325,12 +325,29 @@ ARG: while ($argn < $args) {
 	$argn++;
 }
 
+# save STDOUT and STDERR
+open(ORG_STDOUT, ">&STDOUT");
+open(ORG_STDERR, ">&STDERR");
+
+# redirect STDERR to /dev/null (GTK messages ie: 
+#  (zenity:637): Gtk-WARNING **: Unable to locate theme engine in module_path: "mist",)
+open(STDERR, ">/dev/null");
+
+# redirect STDOUT to STDERR (gdialog direct output to STDERR by default)
+open(STDOUT, ">&ORG_STDERR");
+
 # execute the constructed zenity command line
-$command .= " 2>&1"; 
 
 # perl doc: The return value of system() is the exit status of the
 #program as returned by the wait() call. To get the actual exit value
 # divide by 256.
 
-exit(system($command)/256);
+my $return = system(@command)/256;
 
+# restore STDOUT and STDERR
+open(STDOUT, ">&ORG_STDOUT");
+open(STDERR, ">&ORG_STDERR");
+close(ORG_STDOUT);
+close(ORG_STDERR);
+
+exit $return;
