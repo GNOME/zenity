@@ -5,14 +5,14 @@
 # by Mike Newman <mikegtn@gnome.org>
 #
 # This is all, of course, horrible - but it should translate
-# most commond gdialog types to zenity equivalents. It will drop
+# most commond gdialog types to zenity equivalents. It will mostly drop
 # the pointless and unused (even by gdialog!) size arguments
-# but hopefully will pass all the others.
+# but hopefully will translate all the others.
 #
 # For testing purposes, I've used a couple of the nautilus scripts
 # available at http://g-scripts.sourceforge.net - what is sometimes
 # unclear is what is a gdialog/zenity translation problem, and what is
-# a problem with the script
+# a problem with the original script
 
 my $command = "zenity ";	# the command line we build up to execute
 my $element = "";		# current bit of command line
@@ -27,8 +27,6 @@ sub get_arg () {
 }
 
 # walk the command line
-
-print $args;
 
 ARG: while ($argn < $args) {
 
