@@ -1,3 +1,4 @@
+AC_PREREQ(2.53)
 AC_INIT(src)
 AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE(zenity, 1.0) 
@@ -27,7 +28,7 @@ dnl *******************************
 dnl Internationalization
 dnl ******************************* 
 
-ALL_LINGUAS="am da es nl no sv vi zh_TW"
+ALL_LINGUAS="am da de es nl no sv vi zh_TW"
 GETTEXT_PACKAGE=zenity-0.1
 AC_SUBST(GETTEXT_PACKAGE)
 AM_GLIB_GNU_GETTEXT
