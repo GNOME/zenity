@@ -25,6 +25,8 @@
 #include "zenity.h"
 #include "util.h"
 
+static ZenityTextData	*zen_text_data;
+
 static void zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 void
@@ -35,6 +37,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	GtkWidget *text_view;
 	GtkTextBuffer *text_buffer;
 
+	zen_text_data = text_data;
 	glade_dialog = zenity_util_load_glade_file ("zenity_text_dialog");
 
 	if (glade_dialog == NULL) {
@@ -63,7 +66,10 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	text_view = glade_xml_get_widget (glade_dialog, "zenity_text_view");
 	if (zenity_util_fill_file_buffer (text_buffer, text_data->uri))
 		gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
-
+	gtk_text_view_set_editable (GTK_TEXT_VIEW(text_view), text_data->editable);
+	if (text_data->editable) {
+		zen_text_data->buffer = text_buffer;
+	}
 	gtk_widget_show (dialog);
 
 	if (glade_dialog)
@@ -79,6 +85,12 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
 
 	switch (response) {
 		case GTK_RESPONSE_CLOSE:
+			if (zen_text_data->editable) {
+				GtkTextIter start,end;
+
+				gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
+				g_printerr (gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0));
+			}
 			zen_data->exit_code = 0;
 			gtk_main_quit ();
 			break;

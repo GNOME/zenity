@@ -65,6 +65,7 @@ enum {
 	OPTION_PROGRESS,
 	OPTION_QUESTION,
 	OPTION_TEXTINFO,
+	OPTION_TEXTEDIT,
 	OPTION_WARNING,
 	OPTION_TITLE,
 	OPTION_ICON,
@@ -517,6 +518,15 @@ struct poptOption text_options[] = {
 		N_("Open file"),
 		N_("FILENAME")
 	},
+	{
+		"editable",
+		'\0',
+		POPT_ARG_NONE,
+		NULL,
+		OPTION_TEXTEDIT,
+		N_("Allow changes to text"),
+		NULL
+	},
 	POPT_TABLEEND
 };
 
@@ -727,6 +737,7 @@ zenity_init_parsing_options (void) {
 	results->calendar_data->month = 0;
 	results->calendar_data->year = 0;
 	results->calendar_data->dialog_text = NULL;
+	results->text_data->editable = FALSE;
         results->tree_data->separator = g_strdup ("/");
 	results->progress_data->percentage = -1;
 	results->progress_data->pulsate = FALSE;
@@ -1107,6 +1118,19 @@ void zenity_parse_options_callback (poptContext              ctx,
 				exit (-1);
 			}
 			results->entry_data->visible = FALSE;
+			break;
+		case OPTION_TEXTEDIT:
+			if (results->mode != MODE_TEXTINFO) {
+				g_printerr (_("--editable is not supported for this dialog\n"));
+				zenity_free_parsing_options ();
+				exit (-1);
+			}
+			if (results->text_data->editable == TRUE) {
+				g_printerr (_("--editable given twice for the same dialog\n"));
+				zenity_free_parsing_options ();
+				exit (-1);
+			}
+			results->text_data->editable = TRUE;
 			break;
 		case OPTION_FILENAME:
 		case OPTION_TEXTFILE:
