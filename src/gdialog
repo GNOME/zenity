@@ -18,6 +18,7 @@ my $command = "zenity ";	# the command line we build up to execute
 my $element = "";		# current bit of command line
 my $argn = 0;			# counter for walking args
 my $args = $#ARGV + 1;		# total number of command line arguments
+my $separator = 0;		# set if --separate-output is in use
 
 # this just loads the current arg into $element
 
@@ -31,6 +32,10 @@ ARG: while ($argn < $args) {
 
 	get_arg;
 	
+
+	# Section 1 : Args which gdialog expects BEFORE box options
+	# --clear, --backtitle have no obvious effect - ignored
+
 	if ($element eq "--title") {
 	
 		# --title argument is almost analogous in gdialog and
@@ -39,12 +44,23 @@ ARG: while ($argn < $args) {
 		$argn++;
 		get_arg;
 		$command .= "--title=\"$element\" ";
-		$argn++;
 		
 		# keep processing args
-		
+		$argn++;
 		next ARG;
 	}
+
+	if ($element eq "--separate-output") {
+
+		# set the flag to pring list output line by line
+		$separator = 1;
+
+		# keep processing args
+		$argn++;
+		next ARG;
+	}
+
+	# Section 2 : Box Options and subsequent args
 	
 	if ($element eq "--msgbox" || $element eq "--infobox") {
 	
@@ -113,7 +129,12 @@ ARG: while ($argn < $args) {
 		# and the 'text' arg as a second column header
 		
 		$command .= "--list $list --column='' --column $element ";
-			
+		
+		# should output be line by line?
+		if ($separator) {
+			$command .= " --separator='\n' ";
+		}
+
 		# Skip to the first 'item' arg of the list content
 		# bypassing height, width and list-height
 		# from here args run [tag] [item] [status] ...
@@ -184,5 +205,5 @@ ARG: while ($argn < $args) {
 }
 
 # execute the constructed zenity command line
- 
+$command .= " 2>&1"; 
 system($command);
