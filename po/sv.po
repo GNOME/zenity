@@ -8,37 +8,37 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"POT-Creation-Date: 2003-02-01 12:38+0000\n"
-"PO-Revision-Date: 2003-01-20 00:29+0100\n"
+"POT-Creation-Date: 2003-02-10 00:15+0100\n"
+"PO-Revision-Date: 2003-02-10 00:16+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/about.c:288
+#: src/about.c:258
 msgid "translator_credits"
 msgstr ""
 "Christian Rose\n"
 "Skicka synpunkter på översättningen till sv@li.org"
 
-#: src/about.c:318
+#: src/about.c:288
 msgid "Display dialog boxes from shell scripts"
 msgstr "Visa dialogrutor från skalskript"
 
-#: src/about.c:322
+#: src/about.c:292
 msgid "(C) 2003 Sun Microsystems"
 msgstr "© 2003 Sun Microsystems"
 
-#: src/about.c:413
+#: src/about.c:383
 msgid "Credits"
 msgstr "Tack"
 
-#: src/about.c:440
+#: src/about.c:410
 msgid "Written by"
 msgstr "Skrivet av"
 
-#: src/about.c:453
+#: src/about.c:423
 msgid "Translated by"
 msgstr "Översatt av"
 
@@ -56,7 +56,7 @@ msgstr "Visa feldialog"
 
 #: src/main.c:154
 msgid "Display file selection dialog"
-msgstr "VIsa filväljardialog"
+msgstr "Visa filväljardialog"
 
 #: src/main.c:163
 msgid "Display info dialog"
@@ -169,80 +169,79 @@ msgstr "Öppna fil"
 
 #: src/main.c:579
 msgid "Gdk debugging flags to set"
-msgstr ""
+msgstr "Gdk-felsökningsflaggor att ställa in"
 
 #: src/main.c:580 src/main.c:589 src/main.c:668 src/main.c:677
 msgid "FLAGS"
-msgstr ""
+msgstr "FLAGGOR"
 
 #: src/main.c:588
 msgid "Gdk debugging flags to unset"
-msgstr ""
+msgstr "Gdk-felsökningsflaggor att nollställa"
 
 #: src/main.c:598
 msgid "X display to use"
-msgstr ""
+msgstr "X-display att använda"
 
 #: src/main.c:599
 msgid "DISPLAY"
-msgstr ""
+msgstr "DISPLAY"
 
 #: src/main.c:609
 msgid "X screen to use"
-msgstr ""
+msgstr "X-skärm att använda"
 
 #: src/main.c:610
 msgid "SCREEN"
-msgstr ""
+msgstr "SKÄRM"
 
 #: src/main.c:620
 msgid "Make X calls synchronous"
-msgstr ""
+msgstr "Gör X-anrop synkrona"
 
 #: src/main.c:629
 msgid "Program name as used by the window manager"
-msgstr ""
+msgstr "Programnamn som används av fönsterhanteraren"
 
 #: src/main.c:630
-#, fuzzy
 msgid "NAME"
-msgstr "FILNAMN"
+msgstr "NAMN"
 
 #: src/main.c:638
 msgid "Program class as used by the window manager"
-msgstr ""
+msgstr "Programklass som används av fönsterhanteraren"
 
 #: src/main.c:639
 msgid "CLASS"
-msgstr ""
+msgstr "KLASS"
 
 #: src/main.c:649
 msgid "HOST"
-msgstr ""
+msgstr "VÄRD"
 
 #: src/main.c:659
 msgid "PORT"
-msgstr ""
+msgstr "PORT"
 
 #: src/main.c:667
 msgid "Gtk+ debugging flags to set"
-msgstr ""
+msgstr "Gtk+-felsökningsflaggor att ställa in"
 
 #: src/main.c:676
 msgid "Gtk+ debugging flags to unset"
-msgstr ""
+msgstr "Gtk+-felsökningsflaggor att nollställa"
 
 #: src/main.c:685
 msgid "Make all warnings fatal"
-msgstr ""
+msgstr "Gör alla varningar ödesdigra"
 
 #: src/main.c:694
 msgid "Load an additional Gtk module"
-msgstr ""
+msgstr "Läs in ytterligare en Gtk-modul"
 
 #: src/main.c:695
 msgid "MODULE"
-msgstr ""
+msgstr "MODUL"
 
 #: src/main.c:716
 msgid "About zenity"
@@ -301,9 +300,8 @@ msgid "Warning options"
 msgstr "Varningsflaggor"
 
 #: src/main.c:846
-#, fuzzy
 msgid "GTK+ options"
-msgstr "Textflaggor"
+msgstr "GTK+-flaggor"
 
 #: src/main.c:855
 msgid "Miscellaneous options"
@@ -314,18 +312,20 @@ msgid "Help options"
 msgstr "Hjälpflaggor"
 
 #: src/main.c:981
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s in an invalid option for this dialog. See zenity --help for more details\n"
-msgstr "%s är en ogiltig flagga för denna dialog\n"
+msgstr ""
+"%s är en ogiltig flagga för denna dialog. Se zenity --help för fler "
+"detaljer\n"
 
 #: src/main.c:989
 msgid "You must specify more arguments. See zenity --help for more details\n"
-msgstr ""
+msgstr "Du måste ange fler argument. Se zenity --help för fler detaljer\n"
 
 #: src/main.c:1024
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
+msgstr "Du måste ange en dialogtyp. Se \"zenity --help\" för detaljer\n"
 
 #: src/main.c:1044
 #, c-format
@@ -363,11 +363,11 @@ msgstr "Lägg till en ny post"
 
 #: src/zenity.glade.h:4
 msgid "All updates are complete."
-msgstr ""
+msgstr "Alla uppdateringar är färdiga."
 
 #: src/zenity.glade.h:5
 msgid "An error has occurred."
-msgstr ""
+msgstr "Ett fel har inträffat."
 
 #: src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
@@ -432,6 +432,21 @@ msgstr "_Tack"
 #: src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "_Ange ny text:"
+
+#~ msgid "FLAG"
+#~ msgstr "FLAGGA"
+
+#~ msgid ""
+#~ "%s in an invalid option for this dialog. See 'zenity --help' for more "
+#~ "details\n"
+#~ msgstr ""
+#~ "%s är en ogiltig flagga för denna dialog. Se \"zenity --help\" för fler "
+#~ "detaljer\n"
+
+#~ msgid ""
+#~ "You must specify more arguments. See 'zenity --help' for more details\n"
+#~ msgstr ""
+#~ "Du måste ange fler argument. Se \"zenity --help\" för fler detaljer\n"
 
 #~ msgid "You have done the right thing, hurrah."
 #~ msgstr "Du har gjort rätt, jippi."
