@@ -939,7 +939,9 @@ zenity_init_parsing_options (void) {
   /* Give some sensible defaults */
   results->data->width = -1;
   results->data->height = -1;
-  results->calendar_data->date_format = g_strdup (nl_langinfo (D_FMT));
+  results->calendar_data->date_format = g_locale_to_utf8 (nl_langinfo (D_FMT),
+							  -1,
+							  NULL, NULL, NULL);
   results->calendar_data->day = 0;
   results->calendar_data->month = 0;
   results->calendar_data->year = 0;
@@ -1239,19 +1241,23 @@ zenity_parse_options_callback (poptContext              ctx,
      
       switch (results->mode) { 
         case MODE_CALENDAR: 
-          results->calendar_data->dialog_text = g_strdup (g_strcompress (arg)); 
+          results->calendar_data->dialog_text = g_locale_to_utf8 (g_strcompress (arg),
+								  -1, NULL, NULL, NULL);
           break; 
         case MODE_ENTRY: 
-          results->entry_data->dialog_text = g_strdup (g_strcompress (arg)); 
+          results->entry_data->dialog_text = g_locale_to_utf8 (g_strcompress (arg),
+							       -1, NULL, NULL, NULL);
           break; 
         case MODE_ERROR: 
         case MODE_QUESTION: 
         case MODE_WARNING: 
         case MODE_INFO: 
-          results->msg_data->dialog_text = g_strdup (g_strcompress (arg)); 
+          results->msg_data->dialog_text = g_locale_to_utf8 (g_strcompress (arg),
+							     -1, NULL, NULL, NULL);
           break; 
         case MODE_PROGRESS: 
-          results->progress_data->dialog_text = g_strdup (g_strcompress (arg)); 
+          results->progress_data->dialog_text = g_locale_to_utf8 (g_strcompress (arg),
+								  -1, NULL, NULL, NULL);
           break; 
         default: 
           zenity_error ("--text", ERROR_SUPPORT); 
