@@ -1,3 +1,15 @@
+2003-01-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c: Re-structure the code to pass in the
+	ZenityData structure into the response_callback instead.
+
+	* src/main.c: Fix the screwups in the commandline parser
+	due to popt being teh suck.
+
+	* src/msg.c: Don't unref the GladeXML before you use it.
+
+	* THANKS: New file.
+
 2003-01-13  Mike Newman  <mike@gtnorthern.demon.co.uk>
 
 	* src/calendar.c, src/main.c, src/zenity.h: Make the calendar

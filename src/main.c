@@ -855,8 +855,9 @@ void zenity_parse_options_callback (poptContext              ctx,
                                     const char              *arg,
                                     void                    *data)
 {
-        static gboolean parse_option_text = FALSE;
-        static gboolean parse_option_file = FALSE;
+        static gboolean parse_option_dateformat = FALSE;
+        static gint parse_option_text = 0;
+        static gint parse_option_file = 0;
 
 	if (reason == POPT_CALLBACK_REASON_POST) {
 		return;
@@ -972,7 +973,13 @@ void zenity_parse_options_callback (poptContext              ctx,
 		case OPTION_QUESTIONTEXT:
 		case OPTION_PROGRESSTEXT:
 		case OPTION_WARNINGTEXT:
-                        if (parse_option_text == TRUE) {
+
+                        /* FIXME: This is an ugly hack because of the way the poptOptions are
+                         * ordered above. When you try and use an --option more than once
+                         * parse_options_callback gets called for each option. Suckage
+                         */
+
+                        if (parse_option_text > 6) {
                                 g_printerr (_("--text given twice for the same dialog\n"));
                                 zenity_free_parsing_options ();
                                 exit (-1);
@@ -999,7 +1006,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 					zenity_free_parsing_options ();
 					exit (-1);
 				}
-                        parse_option_text = TRUE;
+                        parse_option_text++;
 			break;
 		case OPTION_DAY:
 			if (results->mode != MODE_CALENDAR) {
@@ -1046,7 +1053,13 @@ void zenity_parse_options_callback (poptContext              ctx,
 				zenity_free_parsing_options ();
 				exit (-1);
 			}
+                        if (parse_option_dateformat == TRUE) {
+                                g_printerr (_("--date-format given twice for the same dialog\n"));
+                                zenity_free_parsing_options ();
+                                exit (-1);
+                        }
 			results->calendar_data->date_format = g_strdup (arg);
+                        parse_option_dateformat = TRUE;
 			break;
 		case OPTION_INPUTTEXT:
 			if (results->mode != MODE_ENTRY) {
@@ -1076,7 +1089,13 @@ void zenity_parse_options_callback (poptContext              ctx,
 			break;
 		case OPTION_FILENAME:
 		case OPTION_TEXTFILE:
-                        if (parse_option_file == TRUE) {
+
+                        /* FIXME: This is an ugly hack because of the way the poptOptions are
+                         * ordered above. When you try and use an --option more than once
+                         * parse_options_callback gets called for each option. Suckage
+                         */
+
+                        if (parse_option_file > 2) {
                                 g_printerr (_("--filename given twice for the same dialog\n"));
                                 zenity_free_parsing_options ();
                                 exit (-1);
@@ -1094,7 +1113,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 					zenity_free_parsing_options ();
 					exit (-1);
 			}
-                        parse_option_file = TRUE;
+                        parse_option_file++;
 			break;
 		case OPTION_COLUMN:
 			if (results->mode != MODE_LIST) {

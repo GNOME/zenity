@@ -65,9 +65,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			break;	
 	}
 
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
 	g_signal_connect (G_OBJECT (dialog), "response",
 			  G_CALLBACK (zenity_msg_dialog_response), data);
 
@@ -77,6 +74,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 	}
 	
 	glade_xml_signal_autoconnect (glade_dialog);
+	
+        if (glade_dialog)
+		g_object_unref (glade_dialog);
 
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
