@@ -355,6 +355,14 @@ zenity_about (ZenityData *data)
     return;
   }
 
+  /* Translators: This is a special message that shouldn't be translated
+                  literally. It is used in the about box to give credits to
+                  the translators.
+                  Thus, you should translate it to your name and email address.
+                  You can also include other translators who have contributed to
+                  this translation; in that case, please write them on separate
+                  lines seperated by newlines (\n). */
+
   translator_credits = _("translator-credits");
 
   glade_xml_signal_autoconnect (glade_dialog);
@@ -445,7 +453,7 @@ zenity_about_update_translator_label (GtkWidget *label)
   GString *string;
   gchar *tmp;
 
-  if (strcmp (translator_credits, "translator_credits") == 0) {
+  if (strcmp (translator_credits, "translator-credits") == 0) {
     gtk_widget_hide (label);
     return;
   } else {
@@ -504,7 +512,7 @@ zenity_about_display_credits_dialog (void)
     zenity_about_update_author_label (label);
   }
 
-  if (translator_credits != NULL && strcmp (translator_credits, "translator_credits") != 0) {
+  if (translator_credits != NULL && strcmp (translator_credits, "translator-credits") != 0) {
     label = zenity_about_create_label ();
     sw = gtk_scrolled_window_new (NULL, NULL);
     gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw), 
