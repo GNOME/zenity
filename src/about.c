@@ -45,9 +45,12 @@ static void zenity_about_dialog_response (GtkWidget *widget, int response, gpoin
 
 /* Sync with the people in the THANKS file */
 static const gchar *author_credits[] = {
-        "Jonathan Blanford <jrb@redhat.com>",
-        "Anders Carlsson <andersca@gnu.org>",
+        "Author -",
         "Glynn Foster <glynn.foster@sun.com>",
+        "",
+        "Thanks to -",
+        "Jonathan Blanford <jrb@redhat.com>",
+        "Anders Carlsson <andersca@codefactory.se>",
         "John Fleck <jfleck@inkstain.net>",
         "James Henstridge <james@daa.com.au>",
         "Mike Newman <mike@gtnorthern.demon.co.uk>",
@@ -217,10 +220,7 @@ zenity_create_boutique (void)
 
         window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 
-        /* FIXME: We need to connect to the close event 
-         * for the window
-         */
-
+        zenity_util_set_window_icon (window, ZENITY_IMAGE_FULLPATH ("zenity.png"));
         canvas = zenity_create_monk ();
         gtk_container_add (GTK_CONTAINER (window), canvas);
 
