@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity 1.3\n"
+"Project-Id-Version: zenity 2.9.91\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-25 12:59+1300\n"
-"PO-Revision-Date: 2004-08-13 19:56+0900\n"
+"POT-Creation-Date: 2005-02-05 22:16+0900\n"
+"PO-Revision-Date: 2005-02-05 22:21+0900\n"
 "Last-Translator: Young-Ho Cha <ganadist at mizi.com>\n"
 "Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
@@ -22,533 +22,441 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:376
+#: ../src/about.c:377
 msgid "translator-credits"
 msgstr "차영호 <ganadist@mizi.com>"
 
-#: src/about.c:406
+#: ../src/about.c:407
 msgid "Display dialog boxes from shell scripts"
 msgstr "쉘 스크립트에서 대화상자를 보여줍니다"
 
-#: src/about.c:410
+#: ../src/about.c:411
 msgid "(C) 2003 Sun Microsystems"
 msgstr "(C) 2003 Sun Microsystems"
 
-#: src/about.c:494
+#: ../src/about.c:495
 msgid "Credits"
 msgstr "만든 사람들"
 
-#: src/about.c:521
+#: ../src/about.c:522
 msgid "Written by"
 msgstr "개발"
 
-#: src/about.c:534
+#: ../src/about.c:535
 msgid "Translated by"
 msgstr "번역"
 
-#: src/eggtrayicon.c:118
+#: ../src/eggtrayicon.c:118
 msgid "Orientation"
-msgstr ""
+msgstr "방향"
 
-#: src/eggtrayicon.c:119
+#: ../src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr ""
+msgstr "트레이의 방향."
 
-#: src/main.c:90
+#: ../src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "대화상자 형식을 지정해야 합니다. 자세한 것은 `zenity --help'를 참고하십시오\n"
 
-#: src/notification.c:157
+#: ../src/notification.c:158
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "표준 입력에서 명령어를 파싱할 수 없습니다\n"
 
-#: src/notification.c:229 src/notification.c:258
-#, fuzzy
+#: ../src/notification.c:230 ../src/notification.c:259
 msgid "Zenity notification"
-msgstr "정보 대화상자를 보여줍니다"
+msgstr "Zenity 알림"
 
-#: src/tree.c:304
+#: ../src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
 msgstr "목록 대화상자에서 열제목이 설정되지 않았습니다.\n"
 
-#: src/zenity.glade.h:1
+#: ../src/zenity.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: src/zenity.glade.h:2
+#: ../src/zenity.glade.h:2
 msgid "About Zenity"
 msgstr "정보"
 
-#: src/zenity.glade.h:3
+#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "항목 더하기"
 
-#: src/zenity.glade.h:4
+#: ../src/zenity.glade.h:4
 msgid "All updates are complete."
 msgstr "모든 업데이트가 끝났습니다."
 
-#: src/zenity.glade.h:5
+#: ../src/zenity.glade.h:5
 msgid "An error has occurred."
 msgstr "오류가 발생했습니다."
 
-#: src/zenity.glade.h:6
+#: ../src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "계속 진행하겠습니까?"
 
-#: src/zenity.glade.h:7
+#: ../src/zenity.glade.h:7
 msgid "C_alendar:"
 msgstr "달력(_A):"
 
-#: src/zenity.glade.h:8
+#: ../src/zenity.glade.h:8
 msgid "Calendar selection"
 msgstr "달력 선택"
 
-#: src/zenity.glade.h:9
+#: ../src/zenity.glade.h:9
 msgid "Error"
 msgstr "오류"
 
-#: src/zenity.glade.h:10
+#: ../src/zenity.glade.h:10
 msgid "Information"
 msgstr "정보"
 
-#: src/zenity.glade.h:11
+#: ../src/zenity.glade.h:11
 msgid "Progress"
 msgstr "진행"
 
-#: src/zenity.glade.h:12
+#: ../src/zenity.glade.h:12
 msgid "Question"
 msgstr "물음"
 
-#: src/zenity.glade.h:13
+#: ../src/zenity.glade.h:13
 msgid "Running..."
 msgstr "실행중..."
 
-#: src/zenity.glade.h:14
+#: ../src/zenity.glade.h:14
 msgid "Select a date from below."
 msgstr "아래에서 날짜를 선택하십시오."
 
-#: src/zenity.glade.h:15
+#: ../src/zenity.glade.h:15
 msgid "Select a file"
 msgstr "파일을 선택하십시오"
 
-#: src/zenity.glade.h:16
+#: ../src/zenity.glade.h:16
 msgid "Select items from the list"
 msgstr "목록에서 항목을 선택하십시오"
 
-#: src/zenity.glade.h:17
+#: ../src/zenity.glade.h:17
 msgid "Select items from the list below."
 msgstr "아래 목록에서 항목을 선택하십시오."
 
-#: src/zenity.glade.h:18
+#: ../src/zenity.glade.h:18
 msgid "Text View"
 msgstr "글자 보기"
 
-#: src/zenity.glade.h:19
+#: ../src/zenity.glade.h:19
 msgid "Warning"
 msgstr "경고"
 
-#: src/zenity.glade.h:20
+#: ../src/zenity.glade.h:20
 msgid "_Credits"
 msgstr "만든 사람(_C)"
 
-#: src/zenity.glade.h:21
+#: ../src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "새 글자 입력(_E):"
 
-#: src/option.c:99
+#: ../src/option.c:99
 msgid "Set the dialog title"
 msgstr "대화상자 제목을 정합니다"
 
-#: src/option.c:100
+#: ../src/option.c:100
 msgid "TITLE"
 msgstr "<제목>"
 
-#: src/option.c:108
+#: ../src/option.c:108
 msgid "Set the window icon"
 msgstr "창 아이콘을 정합니다"
 
-#: src/option.c:109
+#: ../src/option.c:109
 msgid "ICONPATH"
 msgstr "<아이콘 경로>"
 
-#: src/option.c:117
+#: ../src/option.c:117
 msgid "Set the width"
 msgstr "너비를 정합니다"
 
-#: src/option.c:118
+#: ../src/option.c:118
 msgid "WIDTH"
 msgstr "<너비>"
 
-#: src/option.c:126
+#: ../src/option.c:126
 msgid "Set the height"
 msgstr "높이를 정합니다"
 
-#: src/option.c:127
+#: ../src/option.c:127
 msgid "HEIGHT"
 msgstr "<높이>"
 
-#: src/option.c:141
+#: ../src/option.c:141
 msgid "Display calendar dialog"
 msgstr "달력 대화상자를 보여줍니다"
 
-#: src/option.c:150 src/option.c:210 src/option.c:253 src/option.c:277
-#: src/option.c:361 src/option.c:472 src/option.c:524 src/option.c:581
+#: ../src/option.c:150 ../src/option.c:210 ../src/option.c:253
+#: ../src/option.c:277 ../src/option.c:361 ../src/option.c:472
+#: ../src/option.c:524 ../src/option.c:581
 msgid "Set the dialog text"
 msgstr "대화상자의 글월을 정합니다"
 
-#: src/option.c:159
+#: ../src/option.c:159
 msgid "Set the calendar day"
 msgstr "달력의 날짜를 정합니다"
 
-#: src/option.c:168
+#: ../src/option.c:168
 msgid "Set the calendar month"
 msgstr "달력의 달을 정합니다"
 
-#: src/option.c:177
+#: ../src/option.c:177
 msgid "Set the calendar year"
 msgstr "달력의 년을 정합니다"
 
-#: src/option.c:186
+#: ../src/option.c:186
 msgid "Set the format for the returned date"
 msgstr "돌려준 날짜의 형식을 정합니다"
 
-#: src/option.c:201
+#: ../src/option.c:201
 msgid "Display text entry dialog"
 msgstr "글자 입력상자를 보여줍니다"
 
-#: src/option.c:219
+#: ../src/option.c:219
 msgid "Set the entry text"
 msgstr "글자 입력상자에서 글월을 정합니다"
 
-#: src/option.c:228
+#: ../src/option.c:228
 msgid "Hide the entry text"
 msgstr "글자 입력상자를 숨깁니다"
 
-#: src/option.c:244
+#: ../src/option.c:244
 msgid "Display error dialog"
 msgstr "오류 대화상자를 보여줍니다"
 
-#: src/option.c:268
+#: ../src/option.c:268
 msgid "Display info dialog"
 msgstr "정보 대화상자를 보여줍니다"
 
-#: src/option.c:292
+#: ../src/option.c:292
 msgid "Display file selection dialog"
 msgstr "파일 선택상자를 보여줍니다"
 
-#: src/option.c:301
+#: ../src/option.c:301
 msgid "Set the filename"
 msgstr "파일이름을 정합니다"
 
-#: src/option.c:302 src/option.c:549
+#: ../src/option.c:302 ../src/option.c:549
 msgid "FILENAME"
 msgstr "<파일이름>"
 
-#: src/option.c:310
+#: ../src/option.c:310
 msgid "Allow multiple files to be selected"
 msgstr "여러 파일을 선택할 수 있게 합니다"
 
-#: src/option.c:319
+#: ../src/option.c:319
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "디렉토리만 선택합니다"
 
-#: src/option.c:328
+#: ../src/option.c:328
 msgid "Activate save mode"
-msgstr ""
+msgstr "저장 모드를 사용합니다"
 
-#: src/option.c:337 src/option.c:397
+#: ../src/option.c:337 ../src/option.c:397
 msgid "Set output separator character"
 msgstr "출력 구분문자를 정합니다"
 
-#: src/option.c:338 src/option.c:398
+#: ../src/option.c:338 ../src/option.c:398
 msgid "SEPARATOR"
 msgstr "<구분자>"
 
-#: src/option.c:352
+#: ../src/option.c:352
 msgid "Display list dialog"
 msgstr "목록 대화상자를 보여줍니다"
 
-#: src/option.c:370
+#: ../src/option.c:370
 msgid "Set the column header"
 msgstr "열 머리글을 정합니다"
 
-#: src/option.c:379
+#: ../src/option.c:379
 msgid "Use check boxes for first column"
 msgstr "첫번째 열의 체크박스를 씁니다"
 
-#: src/option.c:388
+#: ../src/option.c:388
 msgid "Use radio buttons for first column"
 msgstr "첫번째 열의 라디오 단추를 씁니다"
 
-#: src/option.c:406 src/option.c:557
+#: ../src/option.c:406 ../src/option.c:557
 msgid "Allow changes to text"
 msgstr "글자 바뀜을 허용합니다"
 
-#: src/option.c:415
+#: ../src/option.c:415
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "특정 열을 출력합니다 (기본값은 1, 'ALL'을 쓰면 모든 열을 출력합니다)"
 
-#: src/option.c:430
-#, fuzzy
+#: ../src/option.c:430
 msgid "Display notification"
-msgstr "정보 대화상자를 보여줍니다"
+msgstr "알림을 표시합니다"
 
-#: src/option.c:439
-#, fuzzy
+#: ../src/option.c:439
 msgid "Set the notification text"
-msgstr "대화상자의 글월을 정합니다"
+msgstr "알림 텍스트를 설정합니다"
 
-#: src/option.c:448
+#: ../src/option.c:448
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "표준 입력에서 명령어를 받습니다"
 
-#: src/option.c:463
+#: ../src/option.c:463
 msgid "Display progress indication dialog"
 msgstr "진행 표시상자를 보여줍니다"
 
-#: src/option.c:481
+#: ../src/option.c:481
 msgid "Set initial percentage"
 msgstr "처음 퍼센트값을 정합니다"
 
-#: src/option.c:490
+#: ../src/option.c:490
 msgid "Pulsate progress bar"
 msgstr "진행 막대를 움직입니다"
 
-#: src/option.c:500
+#: ../src/option.c:500
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "100%가 되었을 때 대화 상자를 닫습니다"
 
-#: src/option.c:515
+#: ../src/option.c:515
 msgid "Display question dialog"
 msgstr "질문 대화상자를 보여줍니다"
 
-#: src/option.c:539
+#: ../src/option.c:539
 msgid "Display text information dialog"
 msgstr "글자 정보상자를 보여줍니다"
 
-#: src/option.c:548
+#: ../src/option.c:548
 msgid "Open file"
 msgstr "파일 열기"
 
-#: src/option.c:572
+#: ../src/option.c:572
 msgid "Display warning dialog"
 msgstr "주의 대화상자를 보여줍니다"
 
-#: src/option.c:596
+#: ../src/option.c:596
 msgid "About zenity"
 msgstr "zenity 정보"
 
-#: src/option.c:605
+#: ../src/option.c:605
 msgid "Print version"
 msgstr "버전 출력"
 
-#: src/option.c:1189
+#: ../src/option.c:1190
 msgid "General options"
 msgstr "일반 옵션"
 
-#: src/option.c:1190
-#, fuzzy
+#: ../src/option.c:1191
 msgid "Show general options"
-msgstr "일반 옵션"
+msgstr "일반 옵션을 봅니다"
 
-#: src/option.c:1199
+#: ../src/option.c:1200
 msgid "Calendar options"
 msgstr "달력 옵션"
 
-#: src/option.c:1200
-#, fuzzy
+#: ../src/option.c:1201
 msgid "Show calendar options"
-msgstr "달력 옵션"
+msgstr "달력 옵션을 봅니다"
 
-#: src/option.c:1209
+#: ../src/option.c:1210
 msgid "Text entry options"
 msgstr "글자 입력상자 옵션"
 
-#: src/option.c:1210
-#, fuzzy
+#: ../src/option.c:1211
 msgid "Show text entry options"
-msgstr "글자 입력상자 옵션"
+msgstr "글자 입력상자 옵션을 봅니다"
 
-#: src/option.c:1219
+#: ../src/option.c:1220
 msgid "Error options"
 msgstr "오류 옵션"
 
-#: src/option.c:1220
-#, fuzzy
+#: ../src/option.c:1221
 msgid "Show error options"
-msgstr "오류 옵션"
+msgstr "오류 옵션을 봅니다"
 
-#: src/option.c:1229
+#: ../src/option.c:1230
 msgid "Info options"
 msgstr "정보 옵션"
 
-#: src/option.c:1230
-#, fuzzy
+#: ../src/option.c:1231
 msgid "Show info options"
-msgstr "정보 옵션"
+msgstr "정보 옵션을 봅니다"
 
-#: src/option.c:1239
+#: ../src/option.c:1240
 msgid "File selection options"
 msgstr "파일선택 옵션"
 
-#: src/option.c:1240
-#, fuzzy
+#: ../src/option.c:1241
 msgid "Show file selection options"
-msgstr "파일선택 옵션"
+msgstr "파일선택 옵션을 봅니다"
 
-#: src/option.c:1249
+#: ../src/option.c:1250
 msgid "List options"
 msgstr "목록 옵션"
 
-#: src/option.c:1250
-#, fuzzy
+#: ../src/option.c:1251
 msgid "Show list options"
-msgstr "목록 옵션"
+msgstr "목록 옵션을 봅니다"
 
-#: src/option.c:1259
-#, fuzzy
+#: ../src/option.c:1260
 msgid "Notification options"
-msgstr "물음 옵션"
+msgstr "알림 옵션"
 
-#: src/option.c:1260
-#, fuzzy
+#: ../src/option.c:1261
 msgid "Show notification options"
-msgstr "물음 옵션"
+msgstr "알림 옵션을 봅니다"
 
-#: src/option.c:1269
+#: ../src/option.c:1270
 msgid "Progress options"
 msgstr "진행 옵션"
 
-#: src/option.c:1270
-#, fuzzy
+#: ../src/option.c:1271
 msgid "Show progress options"
-msgstr "진행 옵션"
+msgstr "진행 옵션을 봅니다"
 
-#: src/option.c:1279
+#: ../src/option.c:1280
 msgid "Question options"
 msgstr "물음 옵션"
 
-#: src/option.c:1280
-#, fuzzy
+#: ../src/option.c:1281
 msgid "Show question options"
-msgstr "물음 옵션"
+msgstr "물음 옵션을 봅니다"
 
-#: src/option.c:1289
+#: ../src/option.c:1290
 msgid "Warning options"
 msgstr "주의 옵션"
 
-#: src/option.c:1290
-#, fuzzy
+#: ../src/option.c:1291
 msgid "Show warning options"
-msgstr "주의 옵션"
+msgstr "주의 옵션을 봅니다"
 
-#: src/option.c:1299
+#: ../src/option.c:1300
 msgid "Text options"
 msgstr "텍스트 옵션"
 
-#: src/option.c:1300
-#, fuzzy
+#: ../src/option.c:1301
 msgid "Show text options"
-msgstr "텍스트 옵션"
+msgstr "텍스트 옵션을 봅니다"
 
-#: src/option.c:1309
+#: ../src/option.c:1310
 msgid "Miscellaneous options"
 msgstr "기타 옵션"
 
-#: src/option.c:1310
-#, fuzzy
+#: ../src/option.c:1311
 msgid "Show miscellaneous options"
-msgstr "기타 옵션"
+msgstr "기타 옵션을 봅니다"
 
-#: src/option.c:1333
+#: ../src/option.c:1334
 msgid "Syntax error\n"
-msgstr ""
+msgstr "문법 오류\n"
 
-#: src/option.c:1337
-#, fuzzy, c-format
+#: ../src/option.c:1338
+#, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "이 대화상자에서 %s이(가) 지원되지 않습니다\n"
+msgstr "이 대화상자에서 --%s 옵션은 지원하지 않습니다\n"
 
-#: src/option.c:1341
+#: ../src/option.c:1342
 msgid "Two or more dialog options specified\n"
 msgstr "두개 이상의 대화상자 옵션이 설정되었습니다\n"
-
-#~ msgid "Set output separator character."
-#~ msgstr "출력 구분문자를 정합니다."
-
-#~ msgid "Gdk debugging flags to set"
-#~ msgstr "GDK 디버깅 사용 플래그"
-
-#~ msgid "FLAGS"
-#~ msgstr "<플래그>"
-
-#~ msgid "Gdk debugging flags to unset"
-#~ msgstr "GDK 디버깅 사용하지 않을 플래그"
-
-#~ msgid "X display to use"
-#~ msgstr "사용할 X 디스플레이"
-
-#~ msgid "DISPLAY"
-#~ msgstr "<디스플레이>"
-
-#~ msgid "X screen to use"
-#~ msgstr "사용할 X 스크린"
-
-#~ msgid "SCREEN"
-#~ msgstr "<스크린>"
-
-#~ msgid "Make X calls synchronous"
-#~ msgstr "X 호출을 동기식으로 합니다"
-
-#~ msgid "Program name as used by the window manager"
-#~ msgstr "창 관리자에서 쓸 프로그램 이름"
-
-#~ msgid "NAME"
-#~ msgstr "<이름>"
-
-#~ msgid "Program class as used by the window manager"
-#~ msgstr "창 관리자에서 쓸 프로그램 클래스"
-
-#~ msgid "CLASS"
-#~ msgstr "<클래스>"
-
-#~ msgid "HOST"
-#~ msgstr "<호스트>"
-
-#~ msgid "PORT"
-#~ msgstr "<포트>"
-
-#~ msgid "Gtk+ debugging flags to set"
-#~ msgstr "GTK+ 디버깅 사용 플래그"
-
-#~ msgid "Gtk+ debugging flags to unset"
-#~ msgstr "GTK+ 디버깅 사용하지 않을 플래그"
-
-#~ msgid "Make all warnings fatal"
-#~ msgstr "모든 경고를 치명적인 것으로 취급합니다"
-
-#~ msgid "Load an additional Gtk module"
-#~ msgstr "Gtk 모듈을 더 읽어들입니다"
-
-#~ msgid "MODULE"
-#~ msgstr "<모듈>"
-
-#~ msgid "Dialog options"
-#~ msgstr "대화상자 옵션"
-
-#~ msgid "GTK+ options"
-#~ msgstr "GTK+ 옵션"
-
-#~ msgid "Help options"
-#~ msgstr "도움말 옵션"
-
-#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-#~ msgstr ""
-#~ "%s은(는) 잘못된 옵션입니다. 자세한 것은 `zenity --help'를 참고하십시오\n"
-
-#~ msgid "%s given twice for the same dialog\n"
-#~ msgstr "같은 대화상자에서 %s이(가) 두번 주어졌습니다\n"
