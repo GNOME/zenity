@@ -25,6 +25,7 @@
 
 #include <glade/glade.h>
 #include <string.h>
+#include <stdlib.h>
 #include "zenity.h"
 #include "util.h"
 
