@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-11 04:22+0200\n"
+"POT-Creation-Date: 2004-12-21 12:12+1300\n"
 "PO-Revision-Date: 2004-08-16 11:59+0330\n"
 "Last-Translator: Meelad Zakaria <meelad@bamdad.org>\n"
 "Language-Team: Persian <farsi@lists.sharif.edu>\n"
@@ -16,365 +16,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/about.c:358
-msgid "translator_credits"
-msgstr "ترجمه‌ی:\n"
+#. Translators: This is a special message that shouldn't be translated
+#. literally. It is used in the about box to give credits to
+#. the translators.
+#. Thus, you should translate it to your name and email address.
+#. You can also include other translators who have contributed to
+#. this translation; in that case, please write them on separate
+#. lines seperated by newlines (\n).
+#: src/about.c:375
+#, fuzzy
+msgid "translator-credits"
+msgstr ""
+"ترجمه‌ی:\n"
 "روزبه پورنادر\n"
 "میلاد زکریا"
 
-#: src/about.c:388
+#: src/about.c:405
 msgid "Display dialog boxes from shell scripts"
 msgstr "نمایش جعبه‌های محاوره از اسکریپت‌های پوسته"
 
-#: src/about.c:392
+#: src/about.c:409
 msgid "(C) 2003 Sun Microsystems"
 msgstr "‎(C) 2003 Sun Microsystems"
 
-#: src/about.c:476
+#: src/about.c:493
 msgid "Credits"
 msgstr "اسامی"
 
-#: src/about.c:503
+#: src/about.c:520
 msgid "Written by"
 msgstr "نوشته‌ی"
 
-#: src/about.c:516
+#: src/about.c:533
 msgid "Translated by"
 msgstr "ترجمه‌ی"
 
-#: src/main.c:138
-msgid "Display calendar dialog"
-msgstr "نمایش محاوره‌ی تقویم"
-
-#: src/main.c:147
-msgid "Display text entry dialog"
-msgstr "نمایش محاوره‌ی ورودی متن"
-
-#: src/main.c:156
-msgid "Display error dialog"
-msgstr "نمایش محاوره‌ی خطا"
-
-#: src/main.c:165
-msgid "Display file selection dialog"
-msgstr "نمایش محاوره‌ی انتخاب پرونده"
-
-#: src/main.c:174
-msgid "Display info dialog"
-msgstr "نمایش محاوره‌ی اطلاعات"
-
-#: src/main.c:183
-msgid "Display list dialog"
-msgstr "نمایش محاوره‌ی فهرست"
-
-#: src/main.c:192
-msgid "Display progress indication dialog"
-msgstr "نمایش محاوره‌ی نشانه‌ی پیشرفت"
-
-#: src/main.c:201
-msgid "Display question dialog"
-msgstr "نمایش محاوره‌ی سؤال"
-
-#: src/main.c:210
-msgid "Display text information dialog"
-msgstr "نمایش محاوره‌ی اطلاعات متن"
-
-#: src/main.c:219
-msgid "Display warning dialog"
-msgstr "نمایش محاوره‌ی اخطار"
-
-#: src/main.c:241
-msgid "Set the dialog title"
-msgstr "تنظیم عنوان محاوره"
-
-#: src/main.c:242
-msgid "TITLE"
-msgstr "عنوان"
-
-#: src/main.c:250
-msgid "Set the window icon"
-msgstr "تنظیم شمایل پنجره"
-
-#: src/main.c:251
-msgid "ICONPATH"
-msgstr "مسیر شمایل"
-
-#: src/main.c:259
-msgid "Set the width"
-msgstr "تنظیم عرض"
-
-#: src/main.c:260
-msgid "WIDTH"
-msgstr "عرض"
-
-#: src/main.c:268
-msgid "Set the height"
-msgstr "تنظیم ارتفاع"
-
-#: src/main.c:269
-msgid "HEIGHT"
-msgstr "ارتفاع"
-
-#: src/main.c:290 src/main.c:347 src/main.c:387 src/main.c:409 src/main.c:471
-#: src/main.c:547 src/main.c:588 src/main.c:641
-msgid "Set the dialog text"
-msgstr "تنظیم متن محاوره"
-
-#: src/main.c:299
-msgid "Set the calendar day"
-msgstr "تنظیم روز تقویم"
-
-#: src/main.c:308
-msgid "Set the calendar month"
-msgstr "تنظیم ماه تقویم"
-
-#: src/main.c:317
-msgid "Set the calendar year"
-msgstr "تنظیم سال تقویم"
-
-#: src/main.c:325
-msgid "Set the format for the returned date"
-msgstr "تنظیم قالب زمان بازگشتی"
-
-#: src/main.c:356
-msgid "Set the entry text"
-msgstr "تنظیم متن ورودی"
-
-#: src/main.c:365
-msgid "Hide the entry text"
-msgstr "پنهان کردن متن ورودی"
-
-#: src/main.c:431
-msgid "Set the filename"
-msgstr "تنظیم نام پرونده"
-
-#: src/main.c:432 src/main.c:611
-msgid "FILENAME"
-msgstr "نام‌پرونده"
-
-#: src/main.c:440
-msgid "Allow multiple files to be selected"
-msgstr "اجازه برای انتخاب پرونده‌های متعدد"
-
-#: src/main.c:449
-msgid "Set output separator character."
-msgstr "تنظیم نویسه‌ی جداساز خروجی."
-
-#: src/main.c:450 src/main.c:508
-msgid "SEPARATOR"
-msgstr "جداساز"
-
-#: src/main.c:480
-msgid "Set the column header"
-msgstr "تنظیم سرستون"
-
-#: src/main.c:489
-msgid "Use check boxes for first column"
-msgstr "استفاده از جعبه‌ی نشان‌زنی برای ستون اول"
-
-#: src/main.c:498
-msgid "Use radio buttons for first column"
-msgstr "استفاده از دکمه‌ی رادیویی برای ستون اول"
-
-#: src/main.c:507
-msgid "Set output separator character"
-msgstr "تنظیم نویسه‌ی جداساز خروجی"
-
-#: src/main.c:516 src/main.c:619
-msgid "Allow changes to text"
-msgstr "اجازه برای تغییرات متن"
-
-#: src/main.c:525
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
-msgstr ""
-"یک ستون مشخص را چاپ می‌کند (پیش‌فرض ۱ است. 'ALL' می‌تواند برای چاپ همه‌ی ستون‌ها به کار گرفته شود.)"
-
-#: src/main.c:556
-msgid "Set initial percentage"
-msgstr "تنظیم درصد اولیه"
-
-#: src/main.c:565
-msgid "Pulsate progress bar"
-msgstr "تپش نوار پیش‌رفت"
-
-#: src/main.c:575
-#, no-c-format
-msgid "Dismiss the dialog when 100% has been reached"
-msgstr "کنار گذاشتن محاوره هنگامی که پیش‌رفت به ۱۰۰٪ رسید"
-
-#: src/main.c:610
-msgid "Open file"
-msgstr "باز کردن پرونده"
-
-#: src/main.c:654
-msgid "Gdk debugging flags to set"
-msgstr "پرچم‌های غلط‌گیری gdk که باید یک شوند"
-
-#: src/main.c:655 src/main.c:664 src/main.c:743 src/main.c:752
-msgid "FLAGS"
-msgstr "پرچم‌ها"
-
-#: src/main.c:663
-msgid "Gdk debugging flags to unset"
-msgstr "پرچم‌های غلط‌گیری gdk که باید صفر شوند"
-
-#: src/main.c:673
-msgid "X display to use"
+#: src/eggtrayicon.c:118
+msgid "Orientation"
 msgstr ""
 
-#: src/main.c:674
-msgid "DISPLAY"
-msgstr "نمایش"
-
-#: src/main.c:684
-msgid "X screen to use"
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
 msgstr ""
 
-#: src/main.c:685
-msgid "SCREEN"
-msgstr "صفحه"
-
-#: src/main.c:695
-msgid "Make X calls synchronous"
-msgstr ""
-
-#: src/main.c:704
-msgid "Program name as used by the window manager"
-msgstr "نام برنامه‌ که مورد استفاده‌ی مدیر پنجره است"
-
-#: src/main.c:705
-msgid "NAME"
-msgstr "نام"
-
-#: src/main.c:713
-msgid "Program class as used by the window manager"
-msgstr "رده‌ی برنامه که مورد استفاده‌ی مدیر پنجره قرار می‌گیرد"
-
-#: src/main.c:714
-msgid "CLASS"
-msgstr "رده"
-
-#: src/main.c:724
-msgid "HOST"
-msgstr "میزبان"
-
-#: src/main.c:734
-msgid "PORT"
-msgstr "درگاه"
-
-#: src/main.c:742
-msgid "Gtk+ debugging flags to set"
-msgstr "پرچم‌های غلط‌گیری Gtk+ که باید یک شوند"
-
-#: src/main.c:751
-msgid "Gtk+ debugging flags to unset"
-msgstr "پرچم‌های غلط‌گیری Gtk+ که باید صفر شوند"
-
-#: src/main.c:760
-msgid "Make all warnings fatal"
-msgstr "مرگ‌بار کردن تمام اخطارها"
-
-#: src/main.c:769
-msgid "Load an additional Gtk module"
-msgstr "بار کردن یک پیمانه‌ی اضافی Gtk"
-
-#: src/main.c:770
-msgid "MODULE"
-msgstr "پیمانه"
-
-#: src/main.c:791
-msgid "About zenity"
-msgstr "درباره‌ی زنیتی"
-
-#: src/main.c:800
-msgid "Print version"
-msgstr "نسخه‌ی چاپی"
-
-#: src/main.c:813
-msgid "Dialog options"
-msgstr "گزینه‌های محاوره"
-
-#: src/main.c:822
-msgid "General options"
-msgstr "گزینه‌های عمومی"
-
-#: src/main.c:831
-msgid "Calendar options"
-msgstr "گزینه‌های تقویم"
-
-#: src/main.c:840
-msgid "Text entry options"
-msgstr "گزینه‌های ورودی متن"
-
-#: src/main.c:849
-msgid "Error options"
-msgstr "گزینه‌های خطا"
-
-#: src/main.c:858
-msgid "File selection options"
-msgstr "گزینه‌های انتخاب پرونده"
-
-#: src/main.c:867
-msgid "Info options"
-msgstr "گزینه‌های اطلاعات"
-
-#: src/main.c:876
-msgid "List options"
-msgstr "گزینه‌های فهرست"
-
-#: src/main.c:885
-msgid "Progress options"
-msgstr "گزینه‌های پیشرفت"
-
-#: src/main.c:894
-msgid "Question options"
-msgstr "گزینه‌های سؤال"
-
-#: src/main.c:903
-msgid "Text options"
-msgstr "گزینه‌های متن"
-
-#: src/main.c:912
-msgid "Warning options"
-msgstr "گزینه‌های اخطار"
-
-#: src/main.c:921
-msgid "GTK+ options"
-msgstr "گزینه‌های GTK+"
-
-#: src/main.c:930
-msgid "Miscellaneous options"
-msgstr "گزینه‌های متفرقه"
-
-#: src/main.c:939
-msgid "Help options"
-msgstr "گزینه‌های راهنما"
-
-#: src/main.c:1071
-#, c-format
-msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-msgstr "%s گزینه‌ی نامعتبری است. برای جزئیات بیتر 'zenity --helpگ را ببینید\n"
-
-#: src/main.c:1116
+#: src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr "باید یک نوع محاوره را مشخص کنبد. برای جزئیات 'zenity --help' را ببینید\n"
+msgstr ""
+"باید یک نوع محاوره را مشخص کنبد. برای جزئیات 'zenity --help' را ببینید\n"
 
-#: src/main.c:1136
-#, c-format
-msgid "%s given twice for the same dialog\n"
-msgstr "%s برای یک محاوره دو بار داده شده است\n"
+#: src/notification.c:157
+msgid "could not parse command from stdin\n"
+msgstr ""
 
-#: src/main.c:1140
-#, c-format
-msgid "%s is not supported for this dialog\n"
-msgstr "%s برای این محاوره پشتیبانی نمی‌شود\n"
+#: src/notification.c:229 src/notification.c:254
+msgid "Zenity notification"
+msgstr ""
 
-#: src/main.c:1144
-msgid "Two or more dialog options specified\n"
-msgstr "دو گزینه‌ی محاوره یا بیشتر مشخص شده‌اند\n"
-
-#: src/tree.c:303
+#: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
 msgstr "عنوان ستونی برای محاوره‌ی فهرست مشخص نشده است.\n"
 
@@ -461,3 +159,392 @@ msgstr "_اسامی"
 #: src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "متن جدید را _وارد کنید:"
+
+#: src/option.c:98
+msgid "Set the dialog title"
+msgstr "تنظیم عنوان محاوره"
+
+#: src/option.c:99
+msgid "TITLE"
+msgstr "عنوان"
+
+#: src/option.c:107
+msgid "Set the window icon"
+msgstr "تنظیم شمایل پنجره"
+
+#: src/option.c:108
+msgid "ICONPATH"
+msgstr "مسیر شمایل"
+
+#: src/option.c:116
+msgid "Set the width"
+msgstr "تنظیم عرض"
+
+#: src/option.c:117
+msgid "WIDTH"
+msgstr "عرض"
+
+#: src/option.c:125
+msgid "Set the height"
+msgstr "تنظیم ارتفاع"
+
+#: src/option.c:126
+msgid "HEIGHT"
+msgstr "ارتفاع"
+
+#: src/option.c:140
+msgid "Display calendar dialog"
+msgstr "نمایش محاوره‌ی تقویم"
+
+#: src/option.c:149 src/option.c:209 src/option.c:252 src/option.c:276
+#: src/option.c:360 src/option.c:471 src/option.c:523 src/option.c:580
+msgid "Set the dialog text"
+msgstr "تنظیم متن محاوره"
+
+#: src/option.c:158
+msgid "Set the calendar day"
+msgstr "تنظیم روز تقویم"
+
+#: src/option.c:167
+msgid "Set the calendar month"
+msgstr "تنظیم ماه تقویم"
+
+#: src/option.c:176
+msgid "Set the calendar year"
+msgstr "تنظیم سال تقویم"
+
+#: src/option.c:185
+msgid "Set the format for the returned date"
+msgstr "تنظیم قالب زمان بازگشتی"
+
+#: src/option.c:200
+msgid "Display text entry dialog"
+msgstr "نمایش محاوره‌ی ورودی متن"
+
+#: src/option.c:218
+msgid "Set the entry text"
+msgstr "تنظیم متن ورودی"
+
+#: src/option.c:227
+msgid "Hide the entry text"
+msgstr "پنهان کردن متن ورودی"
+
+#: src/option.c:243
+msgid "Display error dialog"
+msgstr "نمایش محاوره‌ی خطا"
+
+#: src/option.c:267
+msgid "Display info dialog"
+msgstr "نمایش محاوره‌ی اطلاعات"
+
+#: src/option.c:291
+msgid "Display file selection dialog"
+msgstr "نمایش محاوره‌ی انتخاب پرونده"
+
+#: src/option.c:300
+msgid "Set the filename"
+msgstr "تنظیم نام پرونده"
+
+#: src/option.c:301 src/option.c:548
+msgid "FILENAME"
+msgstr "نام‌پرونده"
+
+#: src/option.c:309
+msgid "Allow multiple files to be selected"
+msgstr "اجازه برای انتخاب پرونده‌های متعدد"
+
+#: src/option.c:318
+msgid "Activate directory-only selection"
+msgstr ""
+
+#: src/option.c:327
+msgid "Activate save mode"
+msgstr ""
+
+#: src/option.c:336 src/option.c:396
+msgid "Set output separator character"
+msgstr "تنظیم نویسه‌ی جداساز خروجی"
+
+#: src/option.c:337 src/option.c:397
+msgid "SEPARATOR"
+msgstr "جداساز"
+
+#: src/option.c:351
+msgid "Display list dialog"
+msgstr "نمایش محاوره‌ی فهرست"
+
+#: src/option.c:369
+msgid "Set the column header"
+msgstr "تنظیم سرستون"
+
+#: src/option.c:378
+msgid "Use check boxes for first column"
+msgstr "استفاده از جعبه‌ی نشان‌زنی برای ستون اول"
+
+#: src/option.c:387
+msgid "Use radio buttons for first column"
+msgstr "استفاده از دکمه‌ی رادیویی برای ستون اول"
+
+#: src/option.c:405 src/option.c:556
+msgid "Allow changes to text"
+msgstr "اجازه برای تغییرات متن"
+
+#: src/option.c:414
+msgid ""
+"Print a specific column (Default is 1. 'ALL' can be used to print all "
+"columns)"
+msgstr ""
+"یک ستون مشخص را چاپ می‌کند (پیش‌فرض ۱ است. 'ALL' می‌تواند برای چاپ همه‌ی ستون‌ها "
+"به کار گرفته شود.)"
+
+#: src/option.c:429
+#, fuzzy
+msgid "Display notification"
+msgstr "نمایش محاوره‌ی اطلاعات"
+
+#: src/option.c:438
+#, fuzzy
+msgid "Set the notification text"
+msgstr "تنظیم متن محاوره"
+
+#: src/option.c:447
+msgid "Listen for commands on stdin"
+msgstr ""
+
+#: src/option.c:462
+msgid "Display progress indication dialog"
+msgstr "نمایش محاوره‌ی نشانه‌ی پیشرفت"
+
+#: src/option.c:480
+msgid "Set initial percentage"
+msgstr "تنظیم درصد اولیه"
+
+#: src/option.c:489
+msgid "Pulsate progress bar"
+msgstr "تپش نوار پیش‌رفت"
+
+#: src/option.c:499
+#, no-c-format
+msgid "Dismiss the dialog when 100% has been reached"
+msgstr "کنار گذاشتن محاوره هنگامی که پیش‌رفت به ۱۰۰٪ رسید"
+
+#: src/option.c:514
+msgid "Display question dialog"
+msgstr "نمایش محاوره‌ی سؤال"
+
+#: src/option.c:538
+msgid "Display text information dialog"
+msgstr "نمایش محاوره‌ی اطلاعات متن"
+
+#: src/option.c:547
+msgid "Open file"
+msgstr "باز کردن پرونده"
+
+#: src/option.c:571
+msgid "Display warning dialog"
+msgstr "نمایش محاوره‌ی اخطار"
+
+#: src/option.c:595
+msgid "About zenity"
+msgstr "درباره‌ی زنیتی"
+
+#: src/option.c:604
+msgid "Print version"
+msgstr "نسخه‌ی چاپی"
+
+#: src/option.c:1174
+msgid "General options"
+msgstr "گزینه‌های عمومی"
+
+#: src/option.c:1175
+#, fuzzy
+msgid "Show general options"
+msgstr "گزینه‌های عمومی"
+
+#: src/option.c:1184
+msgid "Calendar options"
+msgstr "گزینه‌های تقویم"
+
+#: src/option.c:1185
+#, fuzzy
+msgid "Show calendar options"
+msgstr "گزینه‌های تقویم"
+
+#: src/option.c:1194
+msgid "Text entry options"
+msgstr "گزینه‌های ورودی متن"
+
+#: src/option.c:1195
+#, fuzzy
+msgid "Show text entry options"
+msgstr "گزینه‌های ورودی متن"
+
+#: src/option.c:1204
+msgid "Error options"
+msgstr "گزینه‌های خطا"
+
+#: src/option.c:1205
+#, fuzzy
+msgid "Show error options"
+msgstr "گزینه‌های خطا"
+
+#: src/option.c:1214
+msgid "Info options"
+msgstr "گزینه‌های اطلاعات"
+
+#: src/option.c:1215
+#, fuzzy
+msgid "Show info options"
+msgstr "گزینه‌های اطلاعات"
+
+#: src/option.c:1224
+msgid "File selection options"
+msgstr "گزینه‌های انتخاب پرونده"
+
+#: src/option.c:1225
+#, fuzzy
+msgid "Show file selection options"
+msgstr "گزینه‌های انتخاب پرونده"
+
+#: src/option.c:1234
+msgid "List options"
+msgstr "گزینه‌های فهرست"
+
+#: src/option.c:1235
+#, fuzzy
+msgid "Show list options"
+msgstr "گزینه‌های فهرست"
+
+#: src/option.c:1244
+#, fuzzy
+msgid "Notification options"
+msgstr "گزینه‌های سؤال"
+
+#: src/option.c:1245
+msgid "Show notification options"
+msgstr ""
+
+#: src/option.c:1254
+msgid "Progress options"
+msgstr "گزینه‌های پیشرفت"
+
+#: src/option.c:1255
+#, fuzzy
+msgid "Show progress options"
+msgstr "گزینه‌های پیشرفت"
+
+#: src/option.c:1264
+msgid "Question options"
+msgstr "گزینه‌های سؤال"
+
+#: src/option.c:1265
+#, fuzzy
+msgid "Show question options"
+msgstr "گزینه‌های سؤال"
+
+#: src/option.c:1274
+msgid "Warning options"
+msgstr "گزینه‌های اخطار"
+
+#: src/option.c:1275
+#, fuzzy
+msgid "Show warning options"
+msgstr "گزینه‌های اخطار"
+
+#: src/option.c:1284
+msgid "Text options"
+msgstr "گزینه‌های متن"
+
+#: src/option.c:1285
+#, fuzzy
+msgid "Show text options"
+msgstr "گزینه‌های متن"
+
+#: src/option.c:1294
+msgid "Miscellaneous options"
+msgstr "گزینه‌های متفرقه"
+
+#: src/option.c:1295
+#, fuzzy
+msgid "Show miscellaneous options"
+msgstr "گزینه‌های متفرقه"
+
+#: src/option.c:1318
+msgid "Syntax error\n"
+msgstr ""
+
+#: src/option.c:1322
+#, fuzzy, c-format
+msgid "--%s is not supported for this dialog\n"
+msgstr "%s برای این محاوره پشتیبانی نمی‌شود\n"
+
+#: src/option.c:1326
+msgid "Two or more dialog options specified\n"
+msgstr "دو گزینه‌ی محاوره یا بیشتر مشخص شده‌اند\n"
+
+#~ msgid "Set output separator character."
+#~ msgstr "تنظیم نویسه‌ی جداساز خروجی."
+
+#~ msgid "Gdk debugging flags to set"
+#~ msgstr "پرچم‌های غلط‌گیری gdk که باید یک شوند"
+
+#~ msgid "FLAGS"
+#~ msgstr "پرچم‌ها"
+
+#~ msgid "Gdk debugging flags to unset"
+#~ msgstr "پرچم‌های غلط‌گیری gdk که باید صفر شوند"
+
+#~ msgid "DISPLAY"
+#~ msgstr "نمایش"
+
+#~ msgid "SCREEN"
+#~ msgstr "صفحه"
+
+#~ msgid "Program name as used by the window manager"
+#~ msgstr "نام برنامه‌ که مورد استفاده‌ی مدیر پنجره است"
+
+#~ msgid "NAME"
+#~ msgstr "نام"
+
+#~ msgid "Program class as used by the window manager"
+#~ msgstr "رده‌ی برنامه که مورد استفاده‌ی مدیر پنجره قرار می‌گیرد"
+
+#~ msgid "CLASS"
+#~ msgstr "رده"
+
+#~ msgid "HOST"
+#~ msgstr "میزبان"
+
+#~ msgid "PORT"
+#~ msgstr "درگاه"
+
+#~ msgid "Gtk+ debugging flags to set"
+#~ msgstr "پرچم‌های غلط‌گیری Gtk+ که باید یک شوند"
+
+#~ msgid "Gtk+ debugging flags to unset"
+#~ msgstr "پرچم‌های غلط‌گیری Gtk+ که باید صفر شوند"
+
+#~ msgid "Make all warnings fatal"
+#~ msgstr "مرگ‌بار کردن تمام اخطارها"
+
+#~ msgid "Load an additional Gtk module"
+#~ msgstr "بار کردن یک پیمانه‌ی اضافی Gtk"
+
+#~ msgid "MODULE"
+#~ msgstr "پیمانه"
+
+#~ msgid "Dialog options"
+#~ msgstr "گزینه‌های محاوره"
+
+#~ msgid "GTK+ options"
+#~ msgstr "گزینه‌های GTK+"
+
+#~ msgid "Help options"
+#~ msgstr "گزینه‌های راهنما"
+
+#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
+#~ msgstr ""
+#~ "%s گزینه‌ی نامعتبری است. برای جزئیات بیتر 'zenity --helpگ را ببینید\n"
+
+#~ msgid "%s given twice for the same dialog\n"
+#~ msgstr "%s برای یک محاوره دو بار داده شده است\n"

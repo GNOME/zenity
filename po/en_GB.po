@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-12-13 22:13+0000\n"
+"POT-Creation-Date: 2004-12-21 12:12+1300\n"
 "PO-Revision-Date: 2004-12-13 22:13+0100\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: British English <en@li.org>\n"
@@ -23,8 +23,11 @@ msgstr ""
 #  this translation; in that case, please write them on separate
 #  lines seperated by newlines (\n
 #. Translators: This is a special message that shouldn't be translated
+#. literally. It is used in the about box to give credits to
 #. the translators.
+#. Thus, you should translate it to your name and email address.
 #. You can also include other translators who have contributed to
+#. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
 #: src/about.c:375
 msgid "translator-credits"
@@ -68,8 +71,7 @@ msgstr "You must specify a dialog type. See 'zenity --help' for details\n"
 msgid "could not parse command from stdin\n"
 msgstr "could not parse command from stdin\n"
 
-#: src/notification.c:226
-#: src/notification.c:251
+#: src/notification.c:229 src/notification.c:254
 msgid "Zenity notification"
 msgstr "Zenity notification"
 
@@ -197,14 +199,8 @@ msgstr "HEIGHT"
 msgid "Display calendar dialog"
 msgstr "Display calendar dialogue"
 
-#: src/option.c:149
-#: src/option.c:209
-#: src/option.c:252
-#: src/option.c:276
-#: src/option.c:360
-#: src/option.c:471
-#: src/option.c:523
-#: src/option.c:580
+#: src/option.c:149 src/option.c:209 src/option.c:252 src/option.c:276
+#: src/option.c:360 src/option.c:471 src/option.c:523 src/option.c:580
 msgid "Set the dialog text"
 msgstr "Set the dialogue text"
 
@@ -252,8 +248,7 @@ msgstr "Display file selection dialogue"
 msgid "Set the filename"
 msgstr "Set the filename"
 
-#: src/option.c:301
-#: src/option.c:548
+#: src/option.c:301 src/option.c:548
 msgid "FILENAME"
 msgstr "FILENAME"
 
@@ -269,13 +264,11 @@ msgstr "Activate directory-only selection"
 msgid "Activate save mode"
 msgstr "Activate save mode"
 
-#: src/option.c:336
-#: src/option.c:396
+#: src/option.c:336 src/option.c:396
 msgid "Set output separator character"
 msgstr "Set output separator character"
 
-#: src/option.c:337
-#: src/option.c:397
+#: src/option.c:337 src/option.c:397
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
@@ -295,14 +288,17 @@ msgstr "Use check boxes for first column"
 msgid "Use radio buttons for first column"
 msgstr "Use radio buttons for first column"
 
-#: src/option.c:405
-#: src/option.c:556
+#: src/option.c:405 src/option.c:556
 msgid "Allow changes to text"
 msgstr "Allow changes to text"
 
 #: src/option.c:414
-msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
-msgstr "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
+msgid ""
+"Print a specific column (Default is 1. 'ALL' can be used to print all "
+"columns)"
+msgstr ""
+"Print a specific column (Default is 1. 'ALL' can be used to print all "
+"columns)"
 
 #: src/option.c:429
 msgid "Display notification"
@@ -414,7 +410,8 @@ msgid "Show list options"
 msgstr "Show list options"
 
 #: src/option.c:1244
-msgid "Notication options"
+#, fuzzy
+msgid "Notification options"
 msgstr "Notication options"
 
 #: src/option.c:1245
@@ -473,4 +470,3 @@ msgstr "--%s is not supported for this dialogue\n"
 #: src/option.c:1326
 msgid "Two or more dialog options specified\n"
 msgstr "Two or more dialogue options specified\n"
-

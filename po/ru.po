@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-22 08:33+0400\n"
+"POT-Creation-Date: 2004-12-21 12:12+1300\n"
 "PO-Revision-Date: 2004-11-02 17:04+0200\n"
 "Last-Translator: Leonid Kanter <leon@asplinux.ru>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -23,364 +23,51 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:366
+#: src/about.c:375
 msgid "translator-credits"
 msgstr "Ильдар Шайнуров <shir80@mail.ru>"
 
-#: src/about.c:396
+#: src/about.c:405
 msgid "Display dialog boxes from shell scripts"
 msgstr "Программа для отображения диалоговых окон из скриптов оболочки"
 
-#: src/about.c:400
+#: src/about.c:409
 msgid "(C) 2003 Sun Microsystems"
 msgstr "(C) 2003 Sun Microsystems"
 
-#: src/about.c:484
+#: src/about.c:493
 msgid "Credits"
 msgstr "Авторы"
 
-#: src/about.c:511
+#: src/about.c:520
 msgid "Written by"
 msgstr "Программирование"
 
-#: src/about.c:524
+#: src/about.c:533
 msgid "Translated by"
 msgstr "Перевод"
 
-#: src/main.c:138
-msgid "Display calendar dialog"
-msgstr "Отобразить диалог для выбора даты"
-
-#: src/main.c:147
-msgid "Display text entry dialog"
-msgstr "Отобразить диалог для ввода текста"
-
-#: src/main.c:156
-msgid "Display error dialog"
-msgstr "Отобразить диалог для вывода ошибки"
-
-#: src/main.c:165
-msgid "Display file selection dialog"
-msgstr "Отобразить диалог для выбора файла"
-
-#: src/main.c:174
-msgid "Display info dialog"
-msgstr "Отобразить диалог для вывода информации"
-
-#: src/main.c:183
-msgid "Display list dialog"
-msgstr "Отобразить диалог со списком"
-
-#: src/main.c:192
-msgid "Display progress indication dialog"
-msgstr "Отобразить диалог хода процесса"
-
-#: src/main.c:201
-msgid "Display question dialog"
-msgstr "Отобразить диалог с вопросом"
-
-#: src/main.c:210
-msgid "Display text information dialog"
-msgstr "Отобразить диалог с текстовой информацией"
-
-#: src/main.c:219
-msgid "Display warning dialog"
-msgstr "Отобразить диалог с предупреждением"
-
-#: src/main.c:241
-msgid "Set the dialog title"
-msgstr "Задать заголовок диалога"
-
-#: src/main.c:242
-msgid "TITLE"
-msgstr "ЗАГОЛОВОК"
-
-#: src/main.c:250
-msgid "Set the window icon"
-msgstr "Задать значок диалога"
-
-#: src/main.c:251
-msgid "ICONPATH"
-msgstr "ПУТЬ_К_ЗНАЧКУ"
-
-#: src/main.c:259
-msgid "Set the width"
-msgstr "Задать ширину"
-
-#: src/main.c:260
-msgid "WIDTH"
-msgstr "ШИРИНА"
-
-#: src/main.c:268
-msgid "Set the height"
-msgstr "Задать высоту"
-
-#: src/main.c:269
-msgid "HEIGHT"
-msgstr "ВЫСОТА"
-
-#: src/main.c:290 src/main.c:347 src/main.c:387 src/main.c:409 src/main.c:471
-#: src/main.c:547 src/main.c:588 src/main.c:641
-msgid "Set the dialog text"
-msgstr "Задать текст диалога"
-
-#: src/main.c:299
-msgid "Set the calendar day"
-msgstr "Задать день календаря"
-
-#: src/main.c:308
-msgid "Set the calendar month"
-msgstr "Задать месяц календаря"
-
-#: src/main.c:317
-msgid "Set the calendar year"
-msgstr "Задать год календаря"
-
-#: src/main.c:325
-msgid "Set the format for the returned date"
-msgstr "Задать формат возвращаемой даты"
-
-#: src/main.c:356
-msgid "Set the entry text"
-msgstr "Задать текст по умолчанию для ввода"
-
-#: src/main.c:365
-msgid "Hide the entry text"
-msgstr "Прятать введенный текст (Пароль)"
-
-#: src/main.c:431
-msgid "Set the filename"
-msgstr "Задать имя файла"
-
-#: src/main.c:432 src/main.c:611
-msgid "FILENAME"
-msgstr "ИМЯ_ФАЙЛА"
-
-#: src/main.c:440
-msgid "Allow multiple files to be selected"
-msgstr "Разрешить выбор нескольких файлов"
-
-#: src/main.c:449
-msgid "Set output separator character."
-msgstr "Установить выходной разделяющий символ."
-
-#: src/main.c:450 src/main.c:508
-msgid "SEPARATOR"
-msgstr "РАЗДЕЛИТЕЛЬ"
-
-#: src/main.c:480
-msgid "Set the column header"
-msgstr "Задать заголовок столбца"
-
-#: src/main.c:489
-msgid "Use check boxes for first column"
-msgstr "Использовать флажки для первой колонки"
-
-#: src/main.c:498
-msgid "Use radio buttons for first column"
-msgstr "Использовать переключатели для первой колонки"
-
-#: src/main.c:507
-msgid "Set output separator character"
-msgstr "Установить выходной разделяющий символ"
-
-#: src/main.c:516 src/main.c:619
-msgid "Allow changes to text"
-msgstr "Разрешить изменять текст"
-
-#: src/main.c:525
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
+#: src/eggtrayicon.c:118
+msgid "Orientation"
 msgstr ""
-"Отобразить определённый столбец (Исходно 1-й. Значение \"ALL\" может быть "
-"использовано для отображения всех столбцов)"
 
-#: src/main.c:556
-msgid "Set initial percentage"
-msgstr "Задать начальный процент"
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr ""
 
-#: src/main.c:565
-msgid "Pulsate progress bar"
-msgstr "Пульсирующий индикатор прогресса"
-
-#: src/main.c:575
-#, no-c-format
-msgid "Dismiss the dialog when 100% has been reached"
-msgstr "Закрыть диалог когда дойдет до 100%"
-
-#: src/main.c:610
-msgid "Open file"
-msgstr "Открыть файл"
-
-#: src/main.c:654
-msgid "Gdk debugging flags to set"
-msgstr "устанавливаемые отладочные Gdk флаги для"
-
-#: src/main.c:655 src/main.c:664 src/main.c:743 src/main.c:752
-msgid "FLAGS"
-msgstr "ФЛАГИ"
-
-#: src/main.c:663
-msgid "Gdk debugging flags to unset"
-msgstr "сбрасываемые отладочные флаги Gdk"
-
-#: src/main.c:673
-msgid "X display to use"
-msgstr "используемый дисплей X"
-
-#: src/main.c:674
-msgid "DISPLAY"
-msgstr "DISPLAY"
-
-#: src/main.c:684
-msgid "X screen to use"
-msgstr "используемый экран X"
-
-#: src/main.c:685
-msgid "SCREEN"
-msgstr "SCREEN"
-
-#: src/main.c:695
-msgid "Make X calls synchronous"
-msgstr "Делать вызовы X синхронно"
-
-#: src/main.c:704
-msgid "Program name as used by the window manager"
-msgstr "Имя программы, используемое менеджером окон"
-
-#: src/main.c:705
-msgid "NAME"
-msgstr "ИМЯ"
-
-#: src/main.c:713
-msgid "Program class as used by the window manager"
-msgstr "Класс программы, используемый менеджером окон"
-
-#: src/main.c:714
-msgid "CLASS"
-msgstr "КЛАСС"
-
-#: src/main.c:724
-msgid "HOST"
-msgstr "УЗЕЛ"
-
-#: src/main.c:734
-msgid "PORT"
-msgstr "ПОРТ"
-
-#: src/main.c:742
-msgid "Gtk+ debugging flags to set"
-msgstr "устанавливаемые отладочные флаги Gtk+"
-
-#: src/main.c:751
-msgid "Gtk+ debugging flags to unset"
-msgstr "сбрасываемые отладочные флаги Gtk+"
-
-#: src/main.c:760
-msgid "Make all warnings fatal"
-msgstr "Сделать все предупреждения фатальными"
-
-#: src/main.c:769
-msgid "Load an additional Gtk module"
-msgstr "Загрузить дополнительный модуль Gtk"
-
-#: src/main.c:770
-msgid "MODULE"
-msgstr "МОДУЛЬ"
-
-#: src/main.c:791
-msgid "About zenity"
-msgstr "О zenity"
-
-#: src/main.c:800
-msgid "Print version"
-msgstr "Версия для печати"
-
-#: src/main.c:813
-msgid "Dialog options"
-msgstr "Опции диалога"
-
-#: src/main.c:822
-msgid "General options"
-msgstr "Общие опции"
-
-#: src/main.c:831
-msgid "Calendar options"
-msgstr "Опции календаря"
-
-#: src/main.c:840
-msgid "Text entry options"
-msgstr "Опции ввода текста"
-
-#: src/main.c:849
-msgid "Error options"
-msgstr "Опции диалога вывода ошибки"
-
-#: src/main.c:858
-msgid "File selection options"
-msgstr "Опции диалога выбора файла"
-
-#: src/main.c:867
-msgid "Info options"
-msgstr "Опции диалога вывода информации"
-
-#: src/main.c:876
-msgid "List options"
-msgstr "Опции диалога со списком"
-
-#: src/main.c:885
-msgid "Progress options"
-msgstr "Опции диалога с прогрессом"
-
-#: src/main.c:894
-msgid "Question options"
-msgstr "Опции диалога с вопросом"
-
-#: src/main.c:903
-msgid "Text options"
-msgstr "Опции диалога для вывода текста"
-
-#: src/main.c:912
-msgid "Warning options"
-msgstr "Опции диалога для вывода предупреждения"
-
-#: src/main.c:921
-msgid "GTK+ options"
-msgstr "Опции GTK+"
-
-#: src/main.c:930
-msgid "Miscellaneous options"
-msgstr "Другие опции"
-
-#: src/main.c:939
-msgid "Help options"
-msgstr "Опции помощи"
-
-#: src/main.c:1071
-#, c-format
-msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-msgstr "%s неправильная опция. Смотрите 'zenity --help' для большей информации\n"
-
-#: src/main.c:1116
+#: src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Вы должны задать тип диалога. Смотрите 'zenity --help' для большей "
 "информации\n"
 
-#: src/main.c:1136
-#, c-format
-msgid "%s given twice for the same dialog\n"
-msgstr "%s задано дважды для одного и того-же диалога\n"
+#: src/notification.c:157
+msgid "could not parse command from stdin\n"
+msgstr ""
 
-#: src/main.c:1140
-#, c-format
-msgid "%s is not supported for this dialog\n"
-msgstr "%s не поддерживается данным диалогом\n"
-
-#: src/main.c:1144
-msgid "Two or more dialog options specified\n"
-msgstr "Задано два или больше диалога\n"
+#: src/notification.c:229 src/notification.c:254
+msgid "Zenity notification"
+msgstr ""
 
 #: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
@@ -470,3 +157,400 @@ msgstr "_Авторы"
 msgid "_Enter new text:"
 msgstr "_Введите новый текст:"
 
+#: src/option.c:98
+msgid "Set the dialog title"
+msgstr "Задать заголовок диалога"
+
+#: src/option.c:99
+msgid "TITLE"
+msgstr "ЗАГОЛОВОК"
+
+#: src/option.c:107
+msgid "Set the window icon"
+msgstr "Задать значок диалога"
+
+#: src/option.c:108
+msgid "ICONPATH"
+msgstr "ПУТЬ_К_ЗНАЧКУ"
+
+#: src/option.c:116
+msgid "Set the width"
+msgstr "Задать ширину"
+
+#: src/option.c:117
+msgid "WIDTH"
+msgstr "ШИРИНА"
+
+#: src/option.c:125
+msgid "Set the height"
+msgstr "Задать высоту"
+
+#: src/option.c:126
+msgid "HEIGHT"
+msgstr "ВЫСОТА"
+
+#: src/option.c:140
+msgid "Display calendar dialog"
+msgstr "Отобразить диалог для выбора даты"
+
+#: src/option.c:149 src/option.c:209 src/option.c:252 src/option.c:276
+#: src/option.c:360 src/option.c:471 src/option.c:523 src/option.c:580
+msgid "Set the dialog text"
+msgstr "Задать текст диалога"
+
+#: src/option.c:158
+msgid "Set the calendar day"
+msgstr "Задать день календаря"
+
+#: src/option.c:167
+msgid "Set the calendar month"
+msgstr "Задать месяц календаря"
+
+#: src/option.c:176
+msgid "Set the calendar year"
+msgstr "Задать год календаря"
+
+#: src/option.c:185
+msgid "Set the format for the returned date"
+msgstr "Задать формат возвращаемой даты"
+
+#: src/option.c:200
+msgid "Display text entry dialog"
+msgstr "Отобразить диалог для ввода текста"
+
+#: src/option.c:218
+msgid "Set the entry text"
+msgstr "Задать текст по умолчанию для ввода"
+
+#: src/option.c:227
+msgid "Hide the entry text"
+msgstr "Прятать введенный текст (Пароль)"
+
+#: src/option.c:243
+msgid "Display error dialog"
+msgstr "Отобразить диалог для вывода ошибки"
+
+#: src/option.c:267
+msgid "Display info dialog"
+msgstr "Отобразить диалог для вывода информации"
+
+#: src/option.c:291
+msgid "Display file selection dialog"
+msgstr "Отобразить диалог для выбора файла"
+
+#: src/option.c:300
+msgid "Set the filename"
+msgstr "Задать имя файла"
+
+#: src/option.c:301 src/option.c:548
+msgid "FILENAME"
+msgstr "ИМЯ_ФАЙЛА"
+
+#: src/option.c:309
+msgid "Allow multiple files to be selected"
+msgstr "Разрешить выбор нескольких файлов"
+
+#: src/option.c:318
+msgid "Activate directory-only selection"
+msgstr ""
+
+#: src/option.c:327
+msgid "Activate save mode"
+msgstr ""
+
+#: src/option.c:336 src/option.c:396
+msgid "Set output separator character"
+msgstr "Установить выходной разделяющий символ"
+
+#: src/option.c:337 src/option.c:397
+msgid "SEPARATOR"
+msgstr "РАЗДЕЛИТЕЛЬ"
+
+#: src/option.c:351
+msgid "Display list dialog"
+msgstr "Отобразить диалог со списком"
+
+#: src/option.c:369
+msgid "Set the column header"
+msgstr "Задать заголовок столбца"
+
+#: src/option.c:378
+msgid "Use check boxes for first column"
+msgstr "Использовать флажки для первой колонки"
+
+#: src/option.c:387
+msgid "Use radio buttons for first column"
+msgstr "Использовать переключатели для первой колонки"
+
+#: src/option.c:405 src/option.c:556
+msgid "Allow changes to text"
+msgstr "Разрешить изменять текст"
+
+#: src/option.c:414
+msgid ""
+"Print a specific column (Default is 1. 'ALL' can be used to print all "
+"columns)"
+msgstr ""
+"Отобразить определённый столбец (Исходно 1-й. Значение \"ALL\" может быть "
+"использовано для отображения всех столбцов)"
+
+#: src/option.c:429
+#, fuzzy
+msgid "Display notification"
+msgstr "Отобразить диалог для вывода информации"
+
+#: src/option.c:438
+#, fuzzy
+msgid "Set the notification text"
+msgstr "Задать текст диалога"
+
+#: src/option.c:447
+msgid "Listen for commands on stdin"
+msgstr ""
+
+#: src/option.c:462
+msgid "Display progress indication dialog"
+msgstr "Отобразить диалог хода процесса"
+
+#: src/option.c:480
+msgid "Set initial percentage"
+msgstr "Задать начальный процент"
+
+#: src/option.c:489
+msgid "Pulsate progress bar"
+msgstr "Пульсирующий индикатор прогресса"
+
+#: src/option.c:499
+#, no-c-format
+msgid "Dismiss the dialog when 100% has been reached"
+msgstr "Закрыть диалог когда дойдет до 100%"
+
+#: src/option.c:514
+msgid "Display question dialog"
+msgstr "Отобразить диалог с вопросом"
+
+#: src/option.c:538
+msgid "Display text information dialog"
+msgstr "Отобразить диалог с текстовой информацией"
+
+#: src/option.c:547
+msgid "Open file"
+msgstr "Открыть файл"
+
+#: src/option.c:571
+msgid "Display warning dialog"
+msgstr "Отобразить диалог с предупреждением"
+
+#: src/option.c:595
+msgid "About zenity"
+msgstr "О zenity"
+
+#: src/option.c:604
+msgid "Print version"
+msgstr "Версия для печати"
+
+#: src/option.c:1174
+msgid "General options"
+msgstr "Общие опции"
+
+#: src/option.c:1175
+#, fuzzy
+msgid "Show general options"
+msgstr "Общие опции"
+
+#: src/option.c:1184
+msgid "Calendar options"
+msgstr "Опции календаря"
+
+#: src/option.c:1185
+#, fuzzy
+msgid "Show calendar options"
+msgstr "Опции календаря"
+
+#: src/option.c:1194
+msgid "Text entry options"
+msgstr "Опции ввода текста"
+
+#: src/option.c:1195
+#, fuzzy
+msgid "Show text entry options"
+msgstr "Опции ввода текста"
+
+#: src/option.c:1204
+msgid "Error options"
+msgstr "Опции диалога вывода ошибки"
+
+#: src/option.c:1205
+#, fuzzy
+msgid "Show error options"
+msgstr "Опции диалога вывода ошибки"
+
+#: src/option.c:1214
+msgid "Info options"
+msgstr "Опции диалога вывода информации"
+
+#: src/option.c:1215
+#, fuzzy
+msgid "Show info options"
+msgstr "Опции диалога вывода информации"
+
+#: src/option.c:1224
+msgid "File selection options"
+msgstr "Опции диалога выбора файла"
+
+#: src/option.c:1225
+#, fuzzy
+msgid "Show file selection options"
+msgstr "Опции диалога выбора файла"
+
+#: src/option.c:1234
+msgid "List options"
+msgstr "Опции диалога со списком"
+
+#: src/option.c:1235
+#, fuzzy
+msgid "Show list options"
+msgstr "Опции диалога со списком"
+
+#: src/option.c:1244
+#, fuzzy
+msgid "Notification options"
+msgstr "Опции диалога с вопросом"
+
+#: src/option.c:1245
+msgid "Show notification options"
+msgstr ""
+
+#: src/option.c:1254
+msgid "Progress options"
+msgstr "Опции диалога с прогрессом"
+
+#: src/option.c:1255
+#, fuzzy
+msgid "Show progress options"
+msgstr "Опции диалога с прогрессом"
+
+#: src/option.c:1264
+msgid "Question options"
+msgstr "Опции диалога с вопросом"
+
+#: src/option.c:1265
+#, fuzzy
+msgid "Show question options"
+msgstr "Опции диалога с вопросом"
+
+#: src/option.c:1274
+msgid "Warning options"
+msgstr "Опции диалога для вывода предупреждения"
+
+#: src/option.c:1275
+#, fuzzy
+msgid "Show warning options"
+msgstr "Опции диалога для вывода предупреждения"
+
+#: src/option.c:1284
+msgid "Text options"
+msgstr "Опции диалога для вывода текста"
+
+#: src/option.c:1285
+#, fuzzy
+msgid "Show text options"
+msgstr "Опции диалога для вывода текста"
+
+#: src/option.c:1294
+msgid "Miscellaneous options"
+msgstr "Другие опции"
+
+#: src/option.c:1295
+#, fuzzy
+msgid "Show miscellaneous options"
+msgstr "Другие опции"
+
+#: src/option.c:1318
+msgid "Syntax error\n"
+msgstr ""
+
+#: src/option.c:1322
+#, fuzzy, c-format
+msgid "--%s is not supported for this dialog\n"
+msgstr "%s не поддерживается данным диалогом\n"
+
+#: src/option.c:1326
+msgid "Two or more dialog options specified\n"
+msgstr "Задано два или больше диалога\n"
+
+#~ msgid "Set output separator character."
+#~ msgstr "Установить выходной разделяющий символ."
+
+#~ msgid "Gdk debugging flags to set"
+#~ msgstr "устанавливаемые отладочные Gdk флаги для"
+
+#~ msgid "FLAGS"
+#~ msgstr "ФЛАГИ"
+
+#~ msgid "Gdk debugging flags to unset"
+#~ msgstr "сбрасываемые отладочные флаги Gdk"
+
+#~ msgid "X display to use"
+#~ msgstr "используемый дисплей X"
+
+#~ msgid "DISPLAY"
+#~ msgstr "DISPLAY"
+
+#~ msgid "X screen to use"
+#~ msgstr "используемый экран X"
+
+#~ msgid "SCREEN"
+#~ msgstr "SCREEN"
+
+#~ msgid "Make X calls synchronous"
+#~ msgstr "Делать вызовы X синхронно"
+
+#~ msgid "Program name as used by the window manager"
+#~ msgstr "Имя программы, используемое менеджером окон"
+
+#~ msgid "NAME"
+#~ msgstr "ИМЯ"
+
+#~ msgid "Program class as used by the window manager"
+#~ msgstr "Класс программы, используемый менеджером окон"
+
+#~ msgid "CLASS"
+#~ msgstr "КЛАСС"
+
+#~ msgid "HOST"
+#~ msgstr "УЗЕЛ"
+
+#~ msgid "PORT"
+#~ msgstr "ПОРТ"
+
+#~ msgid "Gtk+ debugging flags to set"
+#~ msgstr "устанавливаемые отладочные флаги Gtk+"
+
+#~ msgid "Gtk+ debugging flags to unset"
+#~ msgstr "сбрасываемые отладочные флаги Gtk+"
+
+#~ msgid "Make all warnings fatal"
+#~ msgstr "Сделать все предупреждения фатальными"
+
+#~ msgid "Load an additional Gtk module"
+#~ msgstr "Загрузить дополнительный модуль Gtk"
+
+#~ msgid "MODULE"
+#~ msgstr "МОДУЛЬ"
+
+#~ msgid "Dialog options"
+#~ msgstr "Опции диалога"
+
+#~ msgid "GTK+ options"
+#~ msgstr "Опции GTK+"
+
+#~ msgid "Help options"
+#~ msgstr "Опции помощи"
+
+#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
+#~ msgstr ""
+#~ "%s неправильная опция. Смотрите 'zenity --help' для большей информации\n"
+
+#~ msgid "%s given twice for the same dialog\n"
+#~ msgstr "%s задано дважды для одного и того-же диалога\n"
