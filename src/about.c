@@ -47,7 +47,7 @@ static const gchar *author_credits[] = {
         "Havoc Pennington <hp@redhat.com>",
         "Kristian Rietveld <kris@gtk.org>",
         "Jakub Steiner <jimmac@ximian.com>",
-        "Tom Tromey <tromey@redhat.com>"
+        "Tom Tromey <tromey@redhat.com>",
         NULL
 };
 
