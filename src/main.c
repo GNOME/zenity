@@ -812,6 +812,9 @@ main (gint argc, gchar **argv) {
 		/*nothing*/;
 
 	if (nextopt != -1) {
+                /* FIXME : We should probably handle --display, or at least maybe load some of the gtk+
+                 * commandline options
+                 */
 		g_printerr (_("%s in an invalid option for this dialog\n"), poptBadOption (ctx, 0));
 		zenity_free_parsing_options ();
 		exit (-1);
@@ -1220,8 +1223,6 @@ void zenity_parse_options_callback (poptContext              ctx,
 			exit (0);
 			break;
 		default:
-			g_warning ("Invalid option %s", arg);
-			zenity_free_parsing_options ();
-			exit (-1);
+                        break;
 	}
 }

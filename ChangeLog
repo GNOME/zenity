@@ -1,3 +1,22 @@
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* data/Makefile.am, data/zenity-calendar.png, 
+	data/zenity-entry.png, data/zenity-progress.png, 
+	data/zenity-text.png: Some new window icons.
+
+	* src/text.c: Fix crash where the GladeXML ref was getting 
+	unref'd before we wanted to use it.
+
+	* src/main.c: Fix up commandline parsing a little, although we
+	should really add the parsing options for gtk+.
+
+	* src/zenity.glade: Give some saner defaults.
+
+	* THANKS, src/about.c: Update for all the people I stole icons 
+	and code from.
+
+	* TODO: Update accordingly.
+
 2003-01-16  Mike Newman  <mike@gtnorthern.demon.co.uk>
 
 	* src/tree.c: fix a segfault if a --list is constructed and there

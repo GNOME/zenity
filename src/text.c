@@ -46,9 +46,6 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_text_dialog");
 	
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
 	g_signal_connect (G_OBJECT (dialog), "response",
 			  G_CALLBACK (zenity_text_dialog_response), data);
 	
@@ -58,7 +55,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	if (data->window_icon)
 		zenity_util_set_window_icon (dialog, data->window_icon);
 	else
-		;
+		zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-text.png"));
 
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 
@@ -68,6 +65,10 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 		gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
 
 	gtk_widget_show (dialog);
+
+	if (glade_dialog)
+		g_object_unref (glade_dialog);
+
 	gtk_main ();
 }
 

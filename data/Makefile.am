@@ -3,6 +3,8 @@ images_DATA = \
 	zenity-calendar.png	\
 	zenity-list.png		\
 	zenity-file.png		\
-	zenity-progress.png
+	zenity-progress.png	\
+	zenity-text.png		\
+	zenity-entry.png
 
 EXTRA_DIST = $(images_DATA)

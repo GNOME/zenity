@@ -37,8 +37,14 @@ static GtkWidget *cred_dialog;
 static void zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 static const gchar *author_credits[] = {
+        "Jonathan Blanford <jrb@redhat.com>",
+        "Anders Carlsson <andersca@gnu.org>",
         "Glynn Foster <glynn.foster@sun.com>",
+        "James Henstridge <james@daa.com.au>",
         "Mike Newman <mike@gtnorthern.demon.co.uk>",
+        "Havoc Pennington <hp@redhat.com>",
+        "Kristian Rietveld <kris@gtk.org>",
+        "Jakub Steiner <jimmac@ximian.com>",
         NULL
 };
 
