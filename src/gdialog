@@ -112,21 +112,55 @@ ARG: while ($argn < $args) {
 		# Conveniently, zenity and gdialog use the same names
 		# for list types, so pass this to zenity intact along with
 		# an untitled column for the check or radio buttons
+		# and the 'text' arg as a second column header
 		
 		$command .= "--list $list --column='' --column $element ";
 			
-		# Skip to the first 'name' arg of the list content
+		# Skip to the first 'item' arg of the list content
+		# bypassing height, width and list-height
+		# from here args run [tag] [item] [status] ...
 
-		$argn += 6; 
+		$argn += 5; 
 		
 		# Loop over the remainder of the commandline
 		# discarding the 'status' and 'tag' args of each item 
-		# and using the 'name' for display in our second column
+		# and using the 'item' for display in our second column
+		# also pass a NULL argument since zenity can't set the status
+		# of a row like gdialog can
+		
+		while ($argn < $args) {
+			get_arg;
+			$command .= "NULL $element ";
+			$argn += 3;
+		}
+		last ARG;
+	} 
+	
+	if ($element eq "--menu") {
+		$list=$element;
+		$argn++;
+		get_arg;
+		
+		# a gdialog --menu is just a one column zenity --list
+		# Use the 'text' arg as a second column header
+		# FIXME: or should it be the dialog text?
+		
+		$command .= "--list --column $element ";
+			
+		# Skip to the first 'item' arg of the list content
+		# bypassing height, width and list-height
+		# from here args run [tag] [item] ...
+
+		$argn += 5; 
+		
+		# Loop over the remainder of the commandline
+		# discarding the 'tag' args of each item 
+		# and using the 'item' for display in our second column
 		
 		while ($argn < $args) {
 			get_arg;
 			$command .= "$element ";
-			$argn += 3;
+			$argn += 2;
 		}
 		last ARG;
 	} 
