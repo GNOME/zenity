@@ -1,0 +1,212 @@
+.TH ZENITY 1 "February 1st, 2003"
+.SH NAME
+zenity \- display GTK+ dialogs
+.SH SYNOPSIS
+.B zenity
+.RI [ options ]
+.SH DESCRIPTION
+\fBzenity\fP is a program that will display GTK+ dialogs, and return
+(either in the return code, or on standard output) the users
+input. This allows you to present information, and ask for information
+from the user, from all manner of shell scripts.
+.PP
+For example, \fBzenity --question\fP will return either 0 or 1,
+depending on whether the user pressed \fIYes\fP or \fINo\fP. \fBzenity
+--entry\fP will output on standard output what the user typed into the
+text entry field.
+.PP
+Comprehensive documentation is available in the GNOME Help Browser,
+under \fIGNOME/Utilities\fP.
+.SH OPTIONS
+This program follows the usual GNU command line syntax, with long
+options starting with two dashes (`-').
+
+.PP
+Dialog options
+
+.TP
+.B \-\-calendar
+Display calendar dialog
+.TP
+.B \-\-entry
+Display text entry dialog
+.TP
+.B \-\-error
+Display error dialog
+.TP
+.B \-\-file-selection
+Display file selection dialog
+.TP
+.B \-\-info
+Display info dialog
+.TP
+.B \-\-list
+Display list dialog
+.TP
+.B \-\-progress
+Display progress indication dialog
+.TP
+.B \-\-question
+Display question dialog
+.TP
+.B \-\-text-info
+Display text information dialog
+.TP
+.B \-\-warning
+Display warning dialog
+
+.PP
+General options
+
+.TP
+.B \-\-title=TITLE
+Set the dialog title
+.TP
+.B \-\-window-icon=ICONPATH
+Set the window icon
+
+.PP 
+Calendar options
+
+.TP
+.B \-\-text=STRING
+Set the dialog text
+.TP
+.B \-\-day=INT
+Set the calendar day
+.TP
+.B \-\-month=INT
+Set the calendar month
+.TP
+.B \-\-year=INT
+Set the calendar year
+.TP
+.B \-\-date-format=STRING
+Set the format for the returned date
+
+.PP
+Text entry options
+
+.TP
+.B \-\-text=STRING
+Set the dialog text
+.TP
+.B \-\-entry-text=STRING
+Set the entry text
+.TP
+.B \-\-hide-text
+Hide the entry text
+
+.PP
+Error options
+.TP
+.B \-\-text=STRING
+Set the dialog text
+
+.PP
+File selection options
+.TP
+.B \-\-filename=FILENAME
+Set the filename
+
+.PP
+Info options
+.TP
+.B \-\-text=STRING
+Set the dialog text
+
+.PP
+List options
+
+.TP
+.B \-\-column=STRING
+Set the column header
+.TP
+.B \-\-checklist
+Use check boxes for first column
+.TP
+.B \-\-radiolist
+Use radio buttons for first column
+.TP
+.B \-\-separator=STRING
+Set output separator character
+.TP
+.B \-\-editable
+Allow changes to text
+
+.PP
+Progress options
+
+.TP
+.B \-\-text=STRING
+Set the dialog text
+.TP
+.B \-\-percentage=INT
+Set initial percentage
+.TP
+.B \-\-pulsate
+Pulsate progress bar
+ 
+Question options
+.TP
+.B \-\-text=STRING
+Set the dialog text
+
+.PP
+Text options
+
+.TP
+.B \-\-filename=FILENAME
+Open file
+.TP
+.B \-\-editable
+Allow changes to text
+
+.PP
+Warning options
+
+.TP
+.B \-\-text=STRING
+Set the dialog text
+
+.PP
+Miscellaneous options
+
+.TP
+.B \-?, \-\-help
+Show summary of options.
+.TP
+.B \-\-about
+Display an about dialog.
+.TP
+.B \-\-version
+Show version of program.
+
+.PP
+Also the standard GTK+ options are accepted.
+
+.SH EXAMPLES
+
+Display a file selector with the title \fISelect a file to
+remove\fP. The file selected is returned on standard output.
+.IP
+zenity  --title="Select a file to remove" --file-selection
+.PP
+Display a text entry dialog with the title \fISelect Host\fP and the
+text \fISelect the host you would like to flood-ping\fP. The entered
+text is returned on standard output.
+.IP
+zenity  --title "Select Host" --entry --text "Select the host you would like to flood-ping"
+.PP
+Display a dialog, asking \fIMicrosoft Windows has been found! Would
+you like to remove it?\fP. The return code will be 0 (true in shell)
+if \fIOK\fP is selected, and 1 (false) if \fICancel\fP is selected.
+.IP
+zenity  --question --title "Alert"  --text "Microsoft Windows has been found! Would you like to remove it?"
+
+.SH AUTHOR
+\fBZenity\fP was written by Glynn Foster <glynn.foster@sun.com>. This
+manual page was written by Ross Burton <ross@burtonini.com>.
+
+.SH SEE ALSO
+\fBgdialog\fP(1), \fBdialog\fP(1)

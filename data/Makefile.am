@@ -16,4 +16,6 @@ images_DATA = \
 	zenity-text.png		\
 	zenity-entry.png
 
-EXTRA_DIST = $(images_DATA) $(clothes_DATA)
+man_MANS = zenity.1
+
+EXTRA_DIST = $(images_DATA) $(clothes_DATA) $(man_MANS)
