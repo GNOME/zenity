@@ -11,7 +11,7 @@ input. This allows you to present information, and ask for information
 from the user, from all manner of shell scripts.
 .PP
 For example, \fBzenity --question\fP will return either 0 or 1,
-depending on whether the user pressed \fIYes\fP or \fINo\fP. \fBzenity
+depending on whether the user pressed \fIOK\fP or \fICancel\fP. \fBzenity
 --entry\fP will output on standard output what the user typed into the
 text entry field.
 .PP
@@ -64,7 +64,12 @@ Set the dialog title
 .TP
 .B \-\-window-icon=ICONPATH
 Set the window icon
-
+.TP
+.B \-\-width=WIDTH
+Set the dialog width
+.TP
+.B \-\-height=HEIGHT
+Set the dialog height
 .PP 
 Calendar options
 
@@ -203,10 +208,23 @@ you like to remove it?\fP. The return code will be 0 (true in shell)
 if \fIOK\fP is selected, and 1 (false) if \fICancel\fP is selected.
 .IP
 zenity  --question --title "Alert"  --text "Microsoft Windows has been found! Would you like to remove it?"
-
+.PP
+Show the search results in a list dialog with the title \fISearch Results\fP
+and the text \fIFinding all header files...\fP.
+.IP
+find . -name '*.h' | zenity --title "Search Results" --text "Finding all header files.." --column "Files"
+.PP
+Display a weekly shopping list in a check list dialog with \fIApples\fP and \fIOranges\fP pre selected
+.IP
+zenity --list --checklist --column "Buy" --column "Item" TRUE Apples TRUE Oranges FALSE Pears FALSE Toothpaste
+.PP
+Display a progress dialog while searching for all the postscript files in your home directory
+.P
+find `echo $HOME` '*.ps' | zenity --progress --pulsate
 .SH AUTHOR
-\fBZenity\fP was written by Glynn Foster <glynn.foster@sun.com>. This
-manual page was written by Ross Burton <ross@burtonini.com>.
+\fBZenity\fP was written by Glynn Foster <glynn.foster@sun.com>.
+.P
+This manual page was written by Ross Burton <ross@burtonini.com>.
 
 .SH SEE ALSO
 \fBgdialog\fP(1), \fBdialog\fP(1)
