@@ -33,6 +33,39 @@ static GtkWidget *icon_event_box;
 static GtkTooltips *tooltips;
 
 
+static void
+set_scaled_pixbuf (GtkImage *image, GdkPixbuf *pixbuf, GtkIconSize icon_size)
+{
+  GdkScreen *screen;
+  GtkSettings *settings;
+  int width, height, desired_width, desired_height;
+  GdkPixbuf *new_pixbuf;
+
+  screen = gtk_widget_get_screen (GTK_WIDGET (image));
+  settings = gtk_settings_get_for_screen (screen);
+  if (!gtk_icon_size_lookup_for_settings (settings, icon_size,
+					  &desired_width, &desired_height))
+    return;
+
+  width = gdk_pixbuf_get_width (pixbuf);
+  height = gdk_pixbuf_get_height (pixbuf);
+  if (height > desired_height || width > desired_width) {
+    if (width * desired_height / height > desired_width)
+      desired_height = height * desired_width / width;
+    else
+      desired_width = width * desired_height / height;
+
+    new_pixbuf = gdk_pixbuf_scale_simple (pixbuf,
+					  desired_width,
+					  desired_height,
+					  GDK_INTERP_BILINEAR);
+    gtk_image_set_from_pixbuf (image, new_pixbuf);
+    g_object_unref (new_pixbuf);
+  } else {
+    gtk_image_set_from_pixbuf (image, pixbuf);
+  }
+}
+
 static gboolean
 zenity_notification_icon_press_callback (GtkWidget *widget, GdkEventButton *event, gpointer data)
 {
@@ -138,7 +171,8 @@ zenity_notification_handle_stdin (GIOChannel  *channel,
 	pixbuf = zenity_util_pixbuf_new_from_file (GTK_WIDGET (tray_icon),
 						   value);
 	if (pixbuf != NULL) {
-	  gtk_image_set_from_pixbuf (GTK_IMAGE (icon_image), pixbuf);
+	  set_scaled_pixbuf (GTK_IMAGE (icon_image), pixbuf,
+			     GTK_ICON_SIZE_BUTTON);
 	  gdk_pixbuf_unref (pixbuf);
 	} else {
 	  g_warning ("Could not load notification icon : %s", value);
@@ -198,9 +232,11 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
     pixbuf = gdk_pixbuf_new_from_file (ZENITY_IMAGE_FULLPATH ("zenity-notification.png"), NULL);
 
   icon_event_box = gtk_event_box_new ();
+  icon_image = gtk_image_new ();
 
   if (pixbuf) {
-    icon_image = gtk_image_new_from_pixbuf (pixbuf);
+    set_scaled_pixbuf (GTK_IMAGE (icon_image), pixbuf,
+		       GTK_ICON_SIZE_BUTTON);
     gdk_pixbuf_unref (pixbuf);
   } else {
     g_warning ("Could not load notification icon : %s", ZENITY_IMAGE_FULLPATH ("zenity-notification.png"));

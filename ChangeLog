@@ -1,3 +1,11 @@
+2004-09-30  James Henstridge  <james@jamesh.id.au>
+
+	* src/notification.c (set_scaled_pixbuf): function to set a
+	GtkImage to a scaled pixbuf.
+	(zenity_notification_handle_stdin): set the image to a
+	GTK_ICON_SIZE_BUTTON sized image.
+	(zenity_notification): same here.
+
 2004-09-17  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* src/progress.c: Add missing header.
