@@ -25,6 +25,12 @@ if test x$SCROLLKEEPER_CONFIG = xno; then
 fi
 
 dnl *******************************
+dnl perl check
+dnl *******************************
+
+AC_PATH_PROG(PERL,perl,)
+
+dnl *******************************
 dnl Internationalization
 dnl ******************************* 
 
@@ -54,6 +60,7 @@ Makefile
 zenity.spec
 po/Makefile.in
 src/Makefile
+src/gdialog
 data/Makefile
 help/Makefile
 help/C/Makefile

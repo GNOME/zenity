@@ -1,4 +1,11 @@
-2003-05-27  Mike Newman  <mike@gtnorthern.demon.co.uk>
+2003-05-27  Mike Newman  <mikegtn@gnome.org>
+
+	* configure.in: Enable the gdialog compat wrapper script. Check for
+	* src/Makefile.am: path to perl, build the gdialog wrapper script
+	and install it in bindir. Also add it to distclean files. 
+	Warning - this will overwrite gdialog from gnome-utils!
+
+2003-05-27  Mike Newman  <mikegtn@gnome.org>
 
 	* src/calendar.c: clean up some inconsistent indentation.
 	* src/gdialog: take notice of height and width args in textbox

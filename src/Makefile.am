@@ -1,5 +1,7 @@
 bin_PROGRAMS = zenity
 
+bin_SCRIPTS = gdialog
+
 zenity_SOURCES = \
 	main.c		\
 	zenity.h	\
@@ -20,8 +22,6 @@ INCLUDES = \
 	-DGNOMELOCALEDIR=\""$(zenitylocaledir)"\"	\
 	-DZENITY_DATADIR=\""$(datadir)/zenity"\"
 
-EXTRA_DIST = gdialog
-
 zenity_LDADD = \
 	$(ZENITY_LIBS)
 
@@ -30,5 +30,10 @@ gladedir = $(datadir)/zenity
 glade_DATA = \
 	zenity.glade
 
+DISTCLEANFILES= \
+	gdialog
+
 EXTRA_DIST = \
-	$(glade_DATA)
+	$(glade_DATA) \
+	gdialog \
+	gdialog.in
