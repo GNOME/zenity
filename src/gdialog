@@ -121,12 +121,12 @@ ARG: while ($argn < $args) {
 
 		$argn++;
 		get_arg;
-		$element = $element * 8;
-		$command .= "--width=\"$element\" ";
-		$argn++;
-		get_arg;
 		$element = $element * 7;
 		$command .= "--height=\"$element\" ";
+		$argn++;
+		get_arg;
+		$element = $element * 8;
+		$command .= "--width=\"$element\" ";
 		last ARG;
 	}
 	
