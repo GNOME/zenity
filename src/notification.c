@@ -183,9 +183,12 @@ zenity_notification_handle_stdin (GIOChannel  *channel,
 	gtk_tooltips_set_tip (tooltips, icon_event_box, value, value);
       } else if (!strcmp (command, "visible")) {
 	if (!strcasecmp (value, "false")) {
-	  gtk_widget_hide (GTK_WIDGET (tray_icon));
+          /* We need to get the parent, because just hiding the tray_icon
+           * doesn't save on space. See #161539 for details
+           */
+	  gtk_widget_hide (gtk_widget_get_parent (GTK_WIDGET (tray_icon)));
 	} else {
-	  gtk_widget_show (GTK_WIDGET (tray_icon));
+	  gtk_widget_show (gtk_widget_get_parent (GTK_WIDGET (tray_icon)));
 	}
       } else {
 	g_warning ("Unknown command '%s'", command);
