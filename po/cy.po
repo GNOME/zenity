@@ -4,15 +4,16 @@
 # This file is distributed under the same license as the zenity package.
 # Dafydd Harries <daf@parnassus.ath.cx>, 2003 2004.
 # Dafydd Tomos <l10n@da.fydd.org>, 2004.
+# Rhys Jones <rhys@sucs.org>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity.HEAD.cy\n"
+"Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-25 12:59+1300\n"
-"PO-Revision-Date: 2004-03-19 16:32+0000\n"
-"Last-Translator: Dafydd Tomos <l10n@da.fydd.org>\n"
-"Language-Team: Cymraeg <gnome-cy@www.linux.org>\n"
+"PO-Revision-Date: 2005-02-23 07:48+0000\n"
+"Last-Translator: Rhys Jones <rhys@sucs.org>\n"
+"Language-Team: Cymraeg <gnome-cy@pengwyn.linux.org.uk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +28,10 @@ msgstr ""
 #. lines seperated by newlines (\n).
 #: src/about.c:376
 msgid "translator-credits"
-msgstr "Dafydd Harries <daf@muse.19inch.net>"
+msgstr ""
+"Dafydd Harries <daf@muse.19inch.net>\n"
+"Dafydd Tomos <l10n@da.fydd.org>\n"
+"Rhys Jones <rhys@sucs.org>"
 
 #: src/about.c:406
 msgid "Display dialog boxes from shell scripts"
@@ -39,7 +43,7 @@ msgstr "(C) 2003 Sun Microsystems"
 
 #: src/about.c:494
 msgid "Credits"
-msgstr "Cydnabyddiaethau"
+msgstr "Diolchiadau"
 
 #: src/about.c:521
 msgid "Written by"
@@ -51,11 +55,11 @@ msgstr "Cyfieithwyd gan"
 
 #: src/eggtrayicon.c:118
 msgid "Orientation"
-msgstr ""
+msgstr "Gogwydd"
 
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr ""
+msgstr "Gogwydd y cynhwysydd."
 
 #: src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
@@ -65,12 +69,11 @@ msgstr ""
 
 #: src/notification.c:157
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "methu â gramadegu'r gorchymyn o'r prif fewnbwn (stdin)\n"
 
 #: src/notification.c:229 src/notification.c:258
-#, fuzzy
 msgid "Zenity notification"
-msgstr "Dangos deialog gwybodaeth"
+msgstr "Hysbysiad Zenity"
 
 #: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
@@ -98,7 +101,7 @@ msgstr "Mae gwall wedi digwydd."
 
 #: src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
-msgstr "Ydych chi'n sicr eich bod chi eisiau cario ymlaen?"
+msgstr "Ydych chi'n sicr eich bod chi eisiau parhau?"
 
 #: src/zenity.glade.h:7
 msgid "C_alendar:"
@@ -255,11 +258,11 @@ msgstr "Caniatau dewis mwy nag un ffeil"
 
 #: src/option.c:319
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "Gweithredoli dewis ffolder-yn-unig"
 
 #: src/option.c:328
 msgid "Activate save mode"
-msgstr ""
+msgstr "Gweithredoli modd cadw"
 
 #: src/option.c:337 src/option.c:397
 msgid "Set output separator character"
@@ -294,22 +297,20 @@ msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
-"Argraffu colofn penodol (1 yw'r rhagosodiad. Gellir defnyddio 'ALL' er mwyn "
+"Argraffu colofn benodol (1 yw'r rhagosodiad. Gellir defnyddio 'ALL' er mwyn "
 "argraffu pob colofn)"
 
 #: src/option.c:430
-#, fuzzy
 msgid "Display notification"
-msgstr "Dangos deialog gwybodaeth"
+msgstr "Dangos hysbysiad"
 
 #: src/option.c:439
-#, fuzzy
 msgid "Set the notification text"
-msgstr "Gosod testun y deialog"
+msgstr "Gosod testun yr hysbysiad"
 
 #: src/option.c:448
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "Gwrando am orchmynion ar y prif fewnbwn (stdin)"
 
 #: src/option.c:463
 msgid "Display progress indication dialog"
@@ -357,127 +358,113 @@ msgid "General options"
 msgstr "Opsiynau cyffredinol"
 
 #: src/option.c:1190
-#, fuzzy
 msgid "Show general options"
-msgstr "Opsiynau cyffredinol"
+msgstr "Dangos opsiynau cyffredinol"
 
 #: src/option.c:1199
 msgid "Calendar options"
 msgstr "Opsiynau calendr"
 
 #: src/option.c:1200
-#, fuzzy
 msgid "Show calendar options"
-msgstr "Opsiynau calendr"
+msgstr "Dangos opsiynau calendr"
 
 #: src/option.c:1209
 msgid "Text entry options"
 msgstr "Opsiynau maes testun"
 
 #: src/option.c:1210
-#, fuzzy
 msgid "Show text entry options"
-msgstr "Opsiynau maes testun"
+msgstr "Dangos opsiynau maes testun"
 
 #: src/option.c:1219
 msgid "Error options"
 msgstr "Opsiynau gwall"
 
 #: src/option.c:1220
-#, fuzzy
 msgid "Show error options"
-msgstr "Opsiynau gwall"
+msgstr "Dangos opsiynau gwall"
 
 #: src/option.c:1229
 msgid "Info options"
 msgstr "Opsiynau gwybodaeth"
 
 #: src/option.c:1230
-#, fuzzy
 msgid "Show info options"
-msgstr "Opsiynau gwybodaeth"
+msgstr "Dangos opsiynau gwybodaeth"
 
 #: src/option.c:1239
 msgid "File selection options"
 msgstr "Opsiynau dewis ffeiliau"
 
 #: src/option.c:1240
-#, fuzzy
 msgid "Show file selection options"
-msgstr "Opsiynau dewis ffeiliau"
+msgstr "Dangos opsiynau dewis ffeiliau"
 
 #: src/option.c:1249
 msgid "List options"
 msgstr "Opsiynau rhestr"
 
 #: src/option.c:1250
-#, fuzzy
 msgid "Show list options"
-msgstr "Opsiynau rhestr"
+msgstr "Dangos opsiynau rhestr"
 
 #: src/option.c:1259
-#, fuzzy
 msgid "Notification options"
-msgstr "Opsiynau cwestiwn"
+msgstr "Opsiynau hysbysiad"
 
 #: src/option.c:1260
-#, fuzzy
 msgid "Show notification options"
-msgstr "Opsiynau cwestiwn"
+msgstr "Dangos opsiynau hysbysiad"
 
 #: src/option.c:1269
 msgid "Progress options"
 msgstr "Opsiynau cynnydd"
 
 #: src/option.c:1270
-#, fuzzy
 msgid "Show progress options"
-msgstr "Opsiynau cynnydd"
+msgstr "Dangos opsiynau cynnydd"
 
 #: src/option.c:1279
 msgid "Question options"
 msgstr "Opsiynau cwestiwn"
 
 #: src/option.c:1280
-#, fuzzy
 msgid "Show question options"
-msgstr "Opsiynau cwestiwn"
+msgstr "Dangos opsiynau cwestiwn"
 
 #: src/option.c:1289
 msgid "Warning options"
 msgstr "Opsiynau rhybudd"
 
 #: src/option.c:1290
-#, fuzzy
 msgid "Show warning options"
-msgstr "Opsiynau rhybudd"
+msgstr "Dangos opsiynau rhybudd"
 
 #: src/option.c:1299
 msgid "Text options"
 msgstr "Opsiynau testun"
 
 #: src/option.c:1300
-#, fuzzy
 msgid "Show text options"
-msgstr "Opsiynau testun"
+msgstr "Dangos opsiynau testun"
 
 #: src/option.c:1309
 msgid "Miscellaneous options"
 msgstr "Opsiynau eraill"
 
 #: src/option.c:1310
-#, fuzzy
 msgid "Show miscellaneous options"
-msgstr "Opsiynau eraill"
+msgstr "Dangos opsiynau eraill"
 
 #: src/option.c:1333
 msgid "Syntax error\n"
-msgstr ""
+msgstr "Gwall cystrawen\n"
 
 #: src/option.c:1337
-#, fuzzy, c-format
+#, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "Ni chefnogir %s ar gyfer y deialog hwn\n"
+msgstr "Ni chefnogir --%s ar gyfer y deialog hwn\n"
 
 #: src/option.c:1341
 msgid "Two or more dialog options specified\n"
@@ -493,7 +480,7 @@ msgstr "Dau neu fwy o opsiynau deialog wedi eu darparu\n"
 #~ msgstr "BANERI"
 
 #~ msgid "Gdk debugging flags to unset"
-#~ msgstr "Y baneri datnamu i'w datosod"
+#~ msgstr "Y baneri datnamu i'w dadosod"
 
 #~ msgid "X display to use"
 #~ msgstr "Y dangosydd X i'w ddefnyddio"
@@ -502,10 +489,10 @@ msgstr "Dau neu fwy o opsiynau deialog wedi eu darparu\n"
 #~ msgstr "DANGOSYDD"
 
 #~ msgid "X screen to use"
-#~ msgstr "Y sgrîn X i'w ddefnyddio"
+#~ msgstr "Y sgrin X i'w ddefnyddio"
 
 #~ msgid "SCREEN"
-#~ msgstr "SGRÎN"
+#~ msgstr "SGRIN"
 
 #~ msgid "Make X calls synchronous"
 #~ msgstr "Gwneud galwadau X cydamseredig"
@@ -517,7 +504,7 @@ msgstr "Dau neu fwy o opsiynau deialog wedi eu darparu\n"
 #~ msgstr "ENW"
 
 #~ msgid "Program class as used by the window manager"
-#~ msgstr "Dosbarth y rhaglen fel a defnyddir gan y rheolwr ffenestri"
+#~ msgstr "Dosbarth y rhaglen fel y defnyddir gan y rheolwr ffenestri"
 
 #~ msgid "CLASS"
 #~ msgstr "DOSBARTH"
@@ -532,7 +519,7 @@ msgstr "Dau neu fwy o opsiynau deialog wedi eu darparu\n"
 #~ msgstr "Baneri datnamu Gtk+ i'w gosod"
 
 #~ msgid "Gtk+ debugging flags to unset"
-#~ msgstr "Baneri datnamu Gtk+ i'w datosod"
+#~ msgstr "Baneri datnamu Gtk+ i'w dadosod"
 
 #~ msgid "Make all warnings fatal"
 #~ msgstr "Gwneud pob rhybudd yn farwol"
@@ -561,3 +548,4 @@ msgstr "Dau neu fwy o opsiynau deialog wedi eu darparu\n"
 
 #~ msgid "Too many alias levels for a locale may indicate a loop"
 #~ msgstr "Fe all ormod o lefelau arallenwi ar gyfer locale olygu fod lŵp"
+
