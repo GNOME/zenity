@@ -2,13 +2,14 @@
 <!DOCTYPE glade-interface SYSTEM "http://glade.gnome.org/glade-2.0.dtd">
 
 <glade-interface>
+<requires lib="gnome"/>
 
 <widget class="GtkDialog" id="zenity_calendar_dialog">
   <property name="title" translatable="yes">Calendar selection</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
-  <property name="resizable">False</property>
+  <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="has_separator">True</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Fri, 27 Dec 2002 19:08:11 GMT"/>
@@ -151,7 +152,7 @@
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
-  <property name="resizable">False</property>
+  <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="has_separator">True</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Fri, 27 Dec 2002 23:24:20 GMT"/>
@@ -261,7 +262,7 @@
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
-  <property name="resizable">False</property>
+  <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="show_fileops">True</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Sat, 28 Dec 2002 11:48:27 GMT"/>
@@ -291,7 +292,7 @@
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
-  <property name="resizable">False</property>
+  <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="has_separator">True</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Sat, 28 Dec 2002 12:03:54 GMT"/>
@@ -400,7 +401,7 @@
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
-  <property name="resizable">False</property>
+  <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="has_separator">True</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Sat, 28 Dec 2002 12:15:37 GMT"/>
@@ -743,7 +744,7 @@
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
-  <property name="resizable">False</property>
+  <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="has_separator">True</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Sat, 28 Dec 2002 15:05:42 GMT"/>
@@ -986,7 +987,7 @@
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
-  <property name="resizable">False</property>
+  <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="has_separator">True</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Sat, 28 Dec 2002 15:05:42 GMT"/>
@@ -1182,7 +1183,7 @@
 	    <widget class="GtkLabel" id="zenity_about_version">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="no">zenity_about_version</property>
+	      <property name="label" translatable="yes">zenity_about_version</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_CENTER</property>
@@ -1204,7 +1205,7 @@
 	    <widget class="GtkLabel" id="zenity_about_description">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="no">zenity_about_description</property>
+	      <property name="label" translatable="yes">zenity_about_description</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_CENTER</property>
@@ -1226,7 +1227,7 @@
 	    <widget class="GtkLabel" id="zenity_about_copyright">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="no">zenity_about_copyright</property>
+	      <property name="label" translatable="yes">zenity_about_copyright</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_CENTER</property>
