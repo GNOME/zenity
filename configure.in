@@ -30,13 +30,13 @@ AC_SUBST(ZENITY_LIBS)
 AC_CHECK_LIB(popt, poptHelpOptions,, AC_MSG_ERROR([popt is required to build script.]))
 
 dnl ***********************************************
-dnl scrollkeeper checks - don't use these currently
+dnl scrollkeeper checks
 dnl ***********************************************
-dnl
-dnl AC_PATH_PROG(SCROLLKEEPER_CONFIG, scrollkeeper-config,no)
-dnl if test x$SCROLLKEEPER_CONFIG = xno; then
-dnl   AC_MSG_ERROR(Couldn't find scrollkeeper-config. Please install the scrollkeeper package)
-dnl fi
+
+AC_PATH_PROG(SCROLLKEEPER_CONFIG, scrollkeeper-config,no)
+if test x$SCROLLKEEPER_CONFIG = xno; then
+	AC_MSG_ERROR(Couldn't find scrollkeeper-config. Please install the scrollkeeper package)
+fi
 
 dnl *******************************
 dnl Internationalization
@@ -68,4 +68,6 @@ Makefile
 po/Makefile.in
 src/Makefile
 data/Makefile
+help/Makefile
+help/C/Makefile
 ])
