@@ -26,7 +26,6 @@
 #include "util.h"
 
 static void zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data);
-static void zenity_entry_response (GtkWidget *widget, gpointer data);
 
 static GtkWidget *entry;
 
@@ -69,9 +68,6 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
   entry = glade_xml_get_widget (glade_dialog, "zenity_entry_input");
 	
-  g_signal_connect (G_OBJECT (entry), "activate",
-                    G_CALLBACK (zenity_entry_response), data);
-
   if (glade_dialog)
     g_object_unref (glade_dialog);
 
@@ -85,22 +81,6 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
   gtk_widget_show (dialog);
   gtk_main ();
-}
-
-static void
-zenity_entry_response (GtkWidget *widget, gpointer data)
-{
-  ZenityData *zen_data = data;
-  const gchar *text;
-
-  zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-
-  text = gtk_entry_get_text (GTK_ENTRY (entry));
-
-  if (text != NULL)
-    g_print ("%s\n", text);
-
-  gtk_main_quit ();
 }
 
 static void
