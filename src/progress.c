@@ -152,6 +152,11 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
     if (glade_dialog)
       g_object_unref (glade_dialog);
 
+    if (progress_data->autoclose) {
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      gtk_main_quit();
+    }
+		
     g_io_channel_shutdown (channel, TRUE, NULL);
     return FALSE;
   }
