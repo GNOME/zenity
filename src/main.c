@@ -21,12 +21,16 @@
  * Authors: Glynn Foster <glynn.foster@sun.com>
  */
 
-#include "config.h"
+#include <config.h>
+
 #include "zenity.h"
 #include <stdlib.h>
 #include <locale.h>
 #include <popt.h>
 #include <langinfo.h>
+#ifdef HAVE_LOCALE_H
+#include <locale.h>
+#endif
 
 typedef enum {
   MODE_CALENDAR,
@@ -1015,7 +1019,10 @@ main (gint argc, gchar **argv) {
   poptContext ctx;
   gint nextopt, retval;
 
+#ifdef HAVE_LOCALE_H
   setlocale(LC_ALL,"");
+#endif
+
   bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
   textdomain(GETTEXT_PACKAGE);
