@@ -1,16 +1,17 @@
 # Hungarian translation of zenity.
-# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 # Andras Timar <timar@gnome.hu>, 2003, 2004.
 # Laszlo Dvornik <dvornik@gnome.hu>, 2004.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-25 12:59+1300\n"
-"PO-Revision-Date: 2004-08-18 17:22+0200\n"
-"Last-Translator: Laszlo Dvornik <dvornik@gnome.hu>\n"
+"POT-Creation-Date: 2005-03-04 06:35+0100\n"
+"PO-Revision-Date: 2005-03-04 13:50+0100\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,39 +24,40 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:376
+#: src/about.c:378
 msgid "translator-credits"
 msgstr ""
 "Dvornik László <dvornik@gnome.hu>\n"
+"Kelemen Gábor <kelemeng@gnome.hu>\n"
 "Tímár András <timar@gnome.hu>"
 
-#: src/about.c:406
+#: src/about.c:408
 msgid "Display dialog boxes from shell scripts"
 msgstr "Párbeszédablakok megjelenítése héjprogramokból"
 
-#: src/about.c:410
+#: src/about.c:412
 msgid "(C) 2003 Sun Microsystems"
 msgstr "© 2003 Sun Microsystems"
 
-#: src/about.c:494
+#: src/about.c:496
 msgid "Credits"
 msgstr "Köszönet"
 
-#: src/about.c:521
+#: src/about.c:523
 msgid "Written by"
 msgstr "Írta"
 
-#: src/about.c:534
+#: src/about.c:536
 msgid "Translated by"
 msgstr "Fordította"
 
 #: src/eggtrayicon.c:118
 msgid "Orientation"
-msgstr ""
+msgstr "Elhelyezkedés"
 
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr ""
+msgstr "A tálca elhelyezkedése."
 
 #: src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
@@ -63,14 +65,13 @@ msgstr ""
 "Meg kell adni a párbeszédablak típusát. A részletekért lásd: 'zenity --"
 "help'\n"
 
-#: src/notification.c:157
+#: src/notification.c:158
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "nem sikerült feldolgozni a parancsot a szabványos bemenetről\n"
 
-#: src/notification.c:229 src/notification.c:258
-#, fuzzy
+#: src/notification.c:230 src/notification.c:259
 msgid "Zenity notification"
-msgstr "Információs párbeszédablak megjelenítése"
+msgstr "Zenity értesítés"
 
 #: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
@@ -96,9 +97,6 @@ msgstr "Minden frissítés kész."
 msgid "An error has occurred."
 msgstr "Hiba történt."
 
-# #-#-#-#-#  libbonoboui.HEAD.hu.po-new.po (libbonoboui VERSION)  #-#-#-#-#
-# Használandó X megjelenítő
-# #-#-#-#-#  libgnomeui.HEAD.hu.po-new.po (libgnomeui 2.0)  #-#-#-#-#
 #: src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "Biztos folytatja?"
@@ -111,15 +109,10 @@ msgstr "_Naptár:"
 msgid "Calendar selection"
 msgstr "Kiválasztás naptárból"
 
-# #-#-#-#-#  eel.HEAD.hu.po-new.po (eel CVS-HEAD)  #-#-#-#-#
-# libnautilus-extensions/nautilus-stock-dialogs.c:530
-# libnautilus-extensions/nautilus-stock-dialogs.c:570
 #: src/zenity.glade.h:9
 msgid "Error"
 msgstr "Hiba"
 
-# #-#-#-#-#  nautilus.HEAD.hu.po-new.po (nautilus CVS-HEAD)  #-#-#-#-#
-# components/help/Nautilus_View_help.oaf.in.h:8
 #: src/zenity.glade.h:10
 msgid "Information"
 msgstr "Információ"
@@ -128,9 +121,6 @@ msgstr "Információ"
 msgid "Progress"
 msgstr "Folyamatjelző"
 
-# #-#-#-#-#  eel.HEAD.hu.po-new.po (eel CVS-HEAD)  #-#-#-#-#
-# libnautilus-extensions/nautilus-stock-dialogs.c:603
-# libnautilus-extensions/nautilus-stock-dialogs.c:631
 #: src/zenity.glade.h:12
 msgid "Question"
 msgstr "Kérdés"
@@ -155,13 +145,10 @@ msgstr "Elemek kiválasztása a listából"
 msgid "Select items from the list below."
 msgstr "Elemek kiválasztása az alábbi listából."
 
-# src/file-manager/fm-properties-window.c:2017
 #: src/zenity.glade.h:18
 msgid "Text View"
 msgstr "Szövegnézet"
 
-# #-#-#-#-#  eel.HEAD.hu.po-new.po (eel CVS-HEAD)  #-#-#-#-#
-# libnautilus-extensions/nautilus-stock-dialogs.c:519
 #: src/zenity.glade.h:19
 msgid "Warning"
 msgstr "Figyelmeztetés"
@@ -269,11 +256,11 @@ msgstr "Többszörös fájlkijelölés engedélyezése"
 
 #: src/option.c:319
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "\"Csak könyvtár\" - kiválasztás aktiválása"
 
 #: src/option.c:328
 msgid "Activate save mode"
-msgstr ""
+msgstr "Mentés mód aktiválása"
 
 #: src/option.c:337 src/option.c:397
 msgid "Set output separator character"
@@ -312,18 +299,16 @@ msgstr ""
 "nyomtatásához az 'ALL' használható)"
 
 #: src/option.c:430
-#, fuzzy
 msgid "Display notification"
-msgstr "Információs párbeszédablak megjelenítése"
+msgstr "Értesítés megjelenítése"
 
 #: src/option.c:439
-#, fuzzy
 msgid "Set the notification text"
-msgstr "Párbeszédablak szövegének beállítása"
+msgstr "Az értesítési szöveg beállítása"
 
 #: src/option.c:448
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "Parancsok figyelése a szabványos bemeneten"
 
 #: src/option.c:463
 msgid "Display progress indication dialog"
@@ -366,212 +351,119 @@ msgstr "A Zenity névjegye"
 msgid "Print version"
 msgstr "Verziószám nyomtatása"
 
-#: src/option.c:1189
+#: src/option.c:1190
 msgid "General options"
 msgstr "Általános beállítások"
 
-#: src/option.c:1190
-#, fuzzy
+#: src/option.c:1191
 msgid "Show general options"
-msgstr "Általános beállítások"
+msgstr "Általános beállítások mutatása"
 
-#: src/option.c:1199
+#: src/option.c:1200
 msgid "Calendar options"
 msgstr "Naptár beállításai"
 
-#: src/option.c:1200
-#, fuzzy
+#: src/option.c:1201
 msgid "Show calendar options"
-msgstr "Naptár beállításai"
+msgstr "Naptár beállításainak mutatása"
 
-#: src/option.c:1209
+#: src/option.c:1210
 msgid "Text entry options"
 msgstr "Szövegbeviteli mező beállításai"
 
-#: src/option.c:1210
-#, fuzzy
+#: src/option.c:1211
 msgid "Show text entry options"
-msgstr "Szövegbeviteli mező beállításai"
+msgstr "Szövegbeviteli mező beállításainak mutatása"
 
-# src/nautilus-complex-search-bar.c:233
-#: src/option.c:1219
+#: src/option.c:1220
 msgid "Error options"
 msgstr "Hibajelzés beállításai"
 
-# src/nautilus-complex-search-bar.c:233
-#: src/option.c:1220
-#, fuzzy
+#: src/option.c:1221
 msgid "Show error options"
-msgstr "Hibajelzés beállításai"
+msgstr "Hibajelzés beállításainak mutatása"
 
-#: src/option.c:1229
+#: src/option.c:1230
 msgid "Info options"
 msgstr "Tájékoztató üzenetek beállításai"
 
-#: src/option.c:1230
-#, fuzzy
+#: src/option.c:1231
 msgid "Show info options"
-msgstr "Tájékoztató üzenetek beállításai"
+msgstr "Tájékoztató üzenetek beállításainak mutatása"
 
-#: src/option.c:1239
+#: src/option.c:1240
 msgid "File selection options"
 msgstr "Fájlkiválasztó beállításai"
 
-#: src/option.c:1240
-#, fuzzy
+#: src/option.c:1241
 msgid "Show file selection options"
-msgstr "Fájlkiválasztó beállításai"
+msgstr "Fájlkiválasztó beállításainak mutatása"
 
-#: src/option.c:1249
+#: src/option.c:1250
 msgid "List options"
 msgstr "Lista beállításai"
 
-#: src/option.c:1250
-#, fuzzy
+#: src/option.c:1251
 msgid "Show list options"
-msgstr "Lista beállításai"
-
-#: src/option.c:1259
-#, fuzzy
-msgid "Notification options"
-msgstr "Kérdések beállításai"
+msgstr "Lista beállításainak mutatása"
 
 #: src/option.c:1260
-#, fuzzy
-msgid "Show notification options"
-msgstr "Kérdések beállításai"
+msgid "Notification icon options"
+msgstr "Értesítési ikon beállításai"
 
-# src/nautilus-complex-search-bar.c:233
-#: src/option.c:1269
+#: src/option.c:1261
+msgid "Show notification icon options"
+msgstr "Értesítési ikon beállításainak mutatása"
+
+#: src/option.c:1270
 msgid "Progress options"
 msgstr "Folyamatjelző beállításai"
 
-# src/nautilus-complex-search-bar.c:233
-#: src/option.c:1270
-#, fuzzy
+#: src/option.c:1271
 msgid "Show progress options"
-msgstr "Folyamatjelző beállításai"
+msgstr "Folyamatjelző beállításainak mutatása"
 
-#: src/option.c:1279
+#: src/option.c:1280
 msgid "Question options"
 msgstr "Kérdések beállításai"
 
-#: src/option.c:1280
-#, fuzzy
+#: src/option.c:1281
 msgid "Show question options"
-msgstr "Kérdések beállításai"
+msgstr "Kérdések beállításainak mutatása"
 
-#: src/option.c:1289
+#: src/option.c:1290
 msgid "Warning options"
 msgstr "Figyelmeztetések beállításai"
 
-#: src/option.c:1290
-#, fuzzy
+#: src/option.c:1291
 msgid "Show warning options"
-msgstr "Figyelmeztetések beállításai"
-
-#: src/option.c:1299
-msgid "Text options"
-msgstr "Szöveg beállításai"
+msgstr "Figyelmeztetések beállításainak mutatása"
 
 #: src/option.c:1300
-#, fuzzy
-msgid "Show text options"
-msgstr "Szöveg beállításai"
+msgid "Text information options"
+msgstr "Szöveges információk beállításai"
 
-#: src/option.c:1309
+#: src/option.c:1301
+msgid "Show text information options"
+msgstr "Szöveges információk beállításainak mutatása"
+
+#: src/option.c:1310
 msgid "Miscellaneous options"
 msgstr "Egyéb beállítások"
 
-#: src/option.c:1310
-#, fuzzy
+#: src/option.c:1311
 msgid "Show miscellaneous options"
-msgstr "Egyéb beállítások"
+msgstr "Egyéb beállítások mutatása"
 
-#: src/option.c:1333
+#: src/option.c:1334
 msgid "Syntax error\n"
-msgstr ""
+msgstr "Szintaktikai hiba\n"
 
-#: src/option.c:1337
-#, fuzzy, c-format
+#: src/option.c:1338
+#, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "%s nincs támogatva ezen a párbeszédablakon.\n"
+msgstr "--%s nincs támogatva ezen a párbeszédablakon.\n"
 
-#: src/option.c:1341
+#: src/option.c:1342
 msgid "Two or more dialog options specified\n"
 msgstr "Kettő vagy több párbeszédablak-beállítás lett megadva.\n"
-
-#~ msgid "Set output separator character."
-#~ msgstr "A kimenet elválasztókarakterének beállítása."
-
-#~ msgid "Gdk debugging flags to set"
-#~ msgstr "Beállítandó Gdk debug jelzőbitek"
-
-#~ msgid "FLAGS"
-#~ msgstr "FLAGS"
-
-#~ msgid "Gdk debugging flags to unset"
-#~ msgstr "Kikapcsolandó Gdk debug jelzőbitek"
-
-#~ msgid "X display to use"
-#~ msgstr "Használandó X-megjelenítő"
-
-#~ msgid "DISPLAY"
-#~ msgstr "DISPLAY"
-
-#~ msgid "X screen to use"
-#~ msgstr "Használandó X-képernyő"
-
-#~ msgid "SCREEN"
-#~ msgstr "SCREEN"
-
-#~ msgid "Make X calls synchronous"
-#~ msgstr "Legyenek szinkron X-hívások"
-
-#~ msgid "Program name as used by the window manager"
-#~ msgstr "A program név, ahogy az ablakkezelő használja"
-
-#~ msgid "NAME"
-#~ msgstr "NAME"
-
-#~ msgid "Program class as used by the window manager"
-#~ msgstr "A program osztálya, ahogy az ablakkezelő használja"
-
-#~ msgid "CLASS"
-#~ msgstr "CLASS"
-
-#~ msgid "HOST"
-#~ msgstr "HOST"
-
-#~ msgid "PORT"
-#~ msgstr "PORT"
-
-#~ msgid "Gtk+ debugging flags to set"
-#~ msgstr "Beállítandó Gtk+ debug jelzőbitek"
-
-#~ msgid "Gtk+ debugging flags to unset"
-#~ msgstr "Kikapcsolandó Gtk+ jelzőbitek"
-
-#~ msgid "Make all warnings fatal"
-#~ msgstr "Minden figyelmeztetés legyen végzetes"
-
-#~ msgid "Load an additional Gtk module"
-#~ msgstr "További Gtk modul betöltése"
-
-#~ msgid "MODULE"
-#~ msgstr "MODULE"
-
-#~ msgid "Dialog options"
-#~ msgstr "Párbeszédablak beállításai"
-
-#~ msgid "GTK+ options"
-#~ msgstr "GTK+ beállításai"
-
-#~ msgid "Help options"
-#~ msgstr "Súgó beállításai"
-
-#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-#~ msgstr "%s nem érvényes kapcsoló. A részletekért lásd: 'zenity --help'\n"
-
-#~ msgid "%s given twice for the same dialog\n"
-#~ msgstr "A(z) %s kétszer lett megadva ugyanarra a párbeszédablakra\n"
