@@ -1319,9 +1319,6 @@ zenity_parse_options_callback (poptContext              ctx,
         case MODE_TEXTINFO: 
           results->text_data->uri = g_strdup (arg); 
           break; 
-        case MODE_LIST:
-          results->tree_data->uri = g_strdup (arg);
-          break;
         default: 
           zenity_error ("--filename", ERROR_SUPPORT); 
       } 
