@@ -25,23 +25,32 @@
 #include "zenity.h"
 #include "util.h"
 
-void zenity_calendar_dialog_response (GtkWindow *window, int button, gpointer data);
 
-int zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
+static GtkWidget *calendar;
+
+static void zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data);
+
+void 
+zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 {
 	GladeXML *glade_dialog = NULL;
 	GtkWidget *dialog;
-	GtkWidget *calendar;
 	GtkWidget *text;
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_calendar_dialog");
 
-	if (glade_dialog == NULL)
-		return FALSE;
+	if (glade_dialog == NULL) {
+		data->exit_code = -1;
+		return;
+	}
 	
 	glade_xml_signal_autoconnect (glade_dialog);
 
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_calendar_dialog");
+
+	g_signal_connect (G_OBJECT (dialog), "response",
+			  G_CALLBACK (zenity_calendar_dialog_response), data);
+
 	if (data->dialog_title)	
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
@@ -55,36 +64,41 @@ int zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 
 	calendar = glade_xml_get_widget (glade_dialog, "zenity_calendar");
 	
+	if (glade_dialog)
+		g_object_unref (glade_dialog);
+
 	if (cal_data->month > 0 && cal_data->year > 0)
-		gtk_calendar_select_month (GTK_CALENDAR (calendar), cal_data->month, cal_data->year);
+		gtk_calendar_select_month (GTK_CALENDAR (calendar), cal_data->month - 1, cal_data->year);
 	if (cal_data->day > 0)
 		gtk_calendar_select_day (GTK_CALENDAR (calendar), cal_data->day);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
 	gtk_widget_show (dialog);
 	gtk_main ();
-
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
-	return TRUE;
 }
 
-void
-zenity_calendar_dialog_response (GtkWindow *window, int button, gpointer data)
+static void
+zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-	GError *error = NULL;
+	ZenityData *zen_data = data;
+	guint day, month, year;
 
-	switch (button) {
+	switch (response) {
 		case GTK_RESPONSE_OK:
+			gtk_calendar_get_date (GTK_CALENDAR (calendar), &day, &month, &year);
+			g_printerr ("%02d/%02d/%02d\n", day, month + 1, year);
+			zen_data->exit_code = 0;
 			gtk_main_quit ();
 			break;
 
 		case GTK_RESPONSE_CANCEL:
+			zen_data->exit_code = 1;
 			gtk_main_quit ();
 			break;
 
 		default:
+			/* Esc dialog */
+			zen_data->exit_code = 1;
 			break;
 	}
 }

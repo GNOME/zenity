@@ -25,21 +25,30 @@
 #include "zenity.h"
 #include "util.h"
 
-void zenity_fileselection_dialog_response (GtkWindow *window, int button, gpointer data);
+static void zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 
-int zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
+void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 {
 	GladeXML *glade_dialog;
 	GtkWidget *dialog;
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_fileselection_dialog");
 
-	if (glade_dialog == NULL)
-		return FALSE;
+	if (glade_dialog == NULL) {
+		data->exit_code = -1;
+		return;
+	}
 	
 	glade_xml_signal_autoconnect (glade_dialog);
 
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_fileselection_dialog");
+	
+	if (glade_dialog)
+		g_object_unref (glade_dialog);
+
+	g_signal_connect (G_OBJECT (dialog), "response", 
+			  G_CALLBACK (zenity_fileselection_dialog_response), data);
+
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 	
@@ -53,28 +62,27 @@ int zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 
 	gtk_widget_show (dialog);
 	gtk_main ();
-
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
-	return TRUE;
 }
 
-void
-zenity_fileselection_dialog_response (GtkWindow *window, int button, gpointer data)
+static void
+zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-	GError *error = NULL;
+	ZenityData *zen_data = data;
 
-	switch (button) {
+	switch (response) {
 		case GTK_RESPONSE_OK:
+			zen_data->exit_code = 0;
+			g_printerr ("%s\n", gtk_file_selection_get_filename (GTK_FILE_SELECTION (widget)));
 			gtk_main_quit ();
 			break;
 
 		case GTK_RESPONSE_CANCEL:
+			zen_data->exit_code = 1;
 			gtk_main_quit ();
 			break;
 
 		default:
+			zen_data->exit_code = 1;
 			break;
 	}
 }

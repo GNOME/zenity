@@ -32,7 +32,7 @@ static GladeXML *glade_dialog;
 static gboolean zenity_progress_pulsate_bar (GIOChannel *giochannel, GIOCondition condition, gpointer data);
 static gboolean zenity_progress_increment_bar (GIOChannel *giochannel, GIOCondition condition, gpointer data);
 
-void zenity_progress_dialog_response (GtkWindow *window, int button, gpointer data);
+static void zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 gint 
 zenity_progress_timeout (gpointer data)
@@ -41,7 +41,8 @@ zenity_progress_timeout (gpointer data)
 	return TRUE;
 }
 
-int zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
+void
+zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 {
 	GtkWidget *dialog;
 	GtkWidget *text;
@@ -51,12 +52,17 @@ int zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_progress_dialog");
 
-	if (glade_dialog == NULL)
-		return FALSE;
+	if (glade_dialog == NULL) {
+		data->exit_code = -1;
+		return;
+	}
 	
 	glade_xml_signal_autoconnect (glade_dialog);
 
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_progress_dialog");
+
+	g_signal_connect (G_OBJECT (dialog), "response",
+			  G_CALLBACK (zenity_progress_dialog_response), data);
 	
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
@@ -72,6 +78,9 @@ int zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
 	progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
 
+	if (glade_dialog)
+		g_object_unref (glade_dialog);
+
 	giochannel = g_io_channel_unix_new (0);
 
 	if (progress_data->pulsate != TRUE && progress_data->percentage > -1) {
@@ -85,11 +94,6 @@ int zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	g_io_channel_unref (giochannel);
 	gtk_widget_show (dialog);
 	gtk_main ();
-
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
-	return TRUE;
 }
 
 static gboolean 
@@ -119,21 +123,24 @@ zenity_progress_increment_bar (GIOChannel *giochannel, GIOCondition condition, g
 	/* FIXME: Do nothing at the moment */
 }
 
-void
-zenity_progress_dialog_response (GtkWindow *window, int button, gpointer data)
+static void
+zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-	GError *error = NULL;
+	ZenityData *zen_data = data;
 
-	switch (button) {
+	switch (response) {
 		case GTK_RESPONSE_OK:
+			zen_data->exit_code = 0;
 			gtk_main_quit ();
 			break;
 
 		case GTK_RESPONSE_CANCEL:
+			zen_data->exit_code = 1;
 			gtk_main_quit ();
 			break;
 
 		default:
+			zen_data->exit_code = 1;
 			break;
 	}
 }

@@ -25,23 +25,31 @@
 #include "zenity.h"
 #include "util.h"
 
-void zenity_entry_dialog_response (GtkWindow *window, int button, gpointer data);
+static void zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data);
 
-int zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
+static GtkWidget *entry;
+
+void 
+zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 {
 	GladeXML *glade_dialog = NULL;
 	GtkWidget *dialog;
 	GtkWidget *text;
-	GtkWidget *entry;
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_entry_dialog");
 
-	if (glade_dialog == NULL)
-		return FALSE;
+	if (glade_dialog == NULL) {
+		data->exit_code = -1;
+		return;
+	}
 	
 	glade_xml_signal_autoconnect (glade_dialog);
 
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_entry_dialog");
+
+	g_signal_connect (G_OBJECT (dialog), "response",
+			  G_CALLBACK (zenity_entry_dialog_response), data);
+
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 	
@@ -57,6 +65,9 @@ int zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	entry = glade_xml_get_widget (glade_dialog, "zenity_entry_input");
 	
+	if (glade_dialog)
+		g_object_unref (glade_dialog);
+
 	if (entry_data->entry_text)
 		gtk_entry_set_text (GTK_ENTRY (entry), entry_data->entry_text);
 
@@ -67,28 +78,28 @@ int zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	gtk_widget_show (dialog);
 	gtk_main ();
-
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
-	return TRUE;
 }
 
-void
-zenity_entry_dialog_response (GtkWindow *window, int button, gpointer data)
+static void
+zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-	GError *error = NULL;
+	ZenityData *zen_data = data;
 
-	switch (button) {
+	switch (response) {
 		case GTK_RESPONSE_OK:
+			zen_data->exit_code = 0;
+			g_printerr ("%s\n", gtk_entry_get_text (GTK_ENTRY (entry)));
 			gtk_main_quit ();
 			break;
 
 		case GTK_RESPONSE_CANCEL:
+			zen_data->exit_code = 1;
 			gtk_main_quit ();
 			break;
 
 		default:
+			/* Esc dialog */
+			zen_data->exit_code = 1;
 			break;
 	}
 }

@@ -25,9 +25,10 @@
 #include "zenity.h"
 #include "util.h"
 
-void zenity_msg_dialog_response (GtkWindow *window, int button, gpointer data);
+static void zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data);
 
-int zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
+void 
+zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 {
 	GladeXML *glade_dialog;
 	GtkWidget *dialog;
@@ -64,8 +65,16 @@ int zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			break;	
 	}
 
-	if (glade_dialog == NULL)
-		return FALSE;
+	if (glade_dialog)
+		g_object_unref (glade_dialog);
+
+	g_signal_connect (G_OBJECT (dialog), "response",
+			  G_CALLBACK (zenity_msg_dialog_response), data);
+
+	if (glade_dialog == NULL) {
+		data->exit_code = -1;
+		return;
+	}
 	
 	glade_xml_signal_autoconnect (glade_dialog);
 
@@ -99,28 +108,26 @@ int zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 
 	gtk_widget_show (dialog);
 	gtk_main ();
-
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
-	return TRUE;
 }
 
-void
-zenity_msg_dialog_response (GtkWindow *window, int button, gpointer data)
+static void
+zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-	GError *error = NULL;
+	ZenityData *zen_data = data;
 
-	switch (button) {
+	switch (response) {
 		case GTK_RESPONSE_OK:
+			zen_data->exit_code = 0;
 			gtk_main_quit ();
 			break;
 
 		case GTK_RESPONSE_CANCEL:
+			zen_data->exit_code = 1;
 			gtk_main_quit ();
 			break;
 
 		default:
+			zen_data->exit_code = 1;
 			break;
 	}
 }

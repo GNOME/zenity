@@ -694,6 +694,7 @@ zenity_init_parsing_options (void) {
 	results->calendar_data->day = 0;
 	results->calendar_data->month = 0;
 	results->calendar_data->year = 0;
+	results->calendar_data->dialog_text = NULL;
 	results->progress_data->percentage = -1;
 	results->entry_data->visible = TRUE;
 	results->tree_data->checkbox = FALSE;
@@ -750,8 +751,8 @@ main (gint argc, gchar **argv) {
 	ZenityData *general;
 	ZenityCalendarData *cal_data;
 	poptContext ctx;
-	char **args;
-	int nextopt, retval;
+	gchar **args;
+	gint nextopt, retval;
 
 	bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
@@ -787,29 +788,29 @@ main (gint argc, gchar **argv) {
 
 	switch (results->mode) {
 		case MODE_CALENDAR:
-			retval = zenity_calendar (results->data, results->calendar_data);
+			zenity_calendar (results->data, results->calendar_data);
 			break;
 		case MODE_ENTRY:
-			retval = zenity_entry (results->data, results->entry_data);
+			zenity_entry (results->data, results->entry_data);
 			break;
 		case MODE_ERROR:
 		case MODE_QUESTION:
 		case MODE_WARNING:
 		case MODE_INFO:
-			retval = zenity_msg (results->data, results->msg_data);
+			zenity_msg (results->data, results->msg_data);
 			break;
 		case MODE_FILE:
-			retval = zenity_fileselection (results->data, results->file_data);
+			zenity_fileselection (results->data, results->file_data);
 			break;
 		case MODE_LIST:
 			results->tree_data->data = poptGetArgs (ctx);
-			retval = zenity_tree (results->data, results->tree_data);
+			zenity_tree (results->data, results->tree_data);
 			break;
 		case MODE_PROGRESS:
-			retval = zenity_progress (results->data, results->progress_data);
+			zenity_progress (results->data, results->progress_data);
 			break;
 		case MODE_TEXTINFO:
-			retval = zenity_text (results->data, results->text_data);
+			zenity_text (results->data, results->text_data);
 			break;
 		default:
 			g_assert_not_reached ();
@@ -817,9 +818,10 @@ main (gint argc, gchar **argv) {
 			exit (-1);
 	}
 
+	retval = results->data->exit_code;
 	poptFreeContext(ctx);
 	zenity_free_parsing_options ();
-	exit (0); 
+	exit (retval);
 }
 
 static 
@@ -945,38 +947,18 @@ void zenity_parse_options_callback (poptContext              ctx,
 		case OPTION_WARNINGTEXT:
 			switch (results->mode) {
 				case MODE_CALENDAR:
-					if (results->calendar_data->dialog_text != NULL) {
-						g_printerr (_("--text given twice for the same dialog\n"));
-						zenity_free_parsing_options ();
-						exit (-1);
-					}
 					results->calendar_data->dialog_text = g_strdup (arg);
 					break;
 				case MODE_ENTRY:
-					if (results->entry_data->dialog_text != NULL) {
-						g_printerr (_("--text given twice for the same dialog\n"));
-						zenity_free_parsing_options ();
-						exit (-1);
-					}
 					results->entry_data->dialog_text = g_strdup (arg);
 					break;
 				case MODE_ERROR:
 				case MODE_QUESTION:
 				case MODE_WARNING:
 				case MODE_INFO:
-					if (results->msg_data->dialog_text != NULL) {
-						g_printerr (_("--text given twice for the same dialog\n"));
-						zenity_free_parsing_options ();
-						exit (-1);
-					}
 					results->msg_data->dialog_text = g_strdup (arg);
 					break;
 				case MODE_PROGRESS:
-					if (results->progress_data->dialog_text != NULL) {
-						g_printerr (_("--text given twice for the same dialog\n"));
-						zenity_free_parsing_options ();
-						exit (-1);
-					}
 					results->progress_data->dialog_text = g_strdup (arg);
 					break;
 				default:
@@ -1054,19 +1036,9 @@ void zenity_parse_options_callback (poptContext              ctx,
 		case OPTION_TEXTFILE:
 			switch (results->mode) {
 				case MODE_FILE:
-					if (results->file_data->uri != NULL) {
-						g_printerr (_("--filename given twice for the same dialog\n"));
-						zenity_free_parsing_options ();
-						exit (-1);
-					}
 					results->file_data->uri = g_strdup (arg);
 					break;
 				case MODE_TEXTINFO:
-					if (results->text_data->uri != NULL) {
-						g_printerr (_("--filename given twice for the same dialog\n"));
-						zenity_free_parsing_options ();
-						exit (-1);
-					}
 					results->text_data->uri = g_strdup (arg);
 					break;
 				default:
@@ -1128,6 +1100,8 @@ void zenity_parse_options_callback (poptContext              ctx,
 				zenity_free_parsing_options ();
 				exit (-1);
 			}
+			g_print ("This does nothing at the moment\n");
+			exit (0);
 			break;
 		case OPTION_VERSION:
 			if (results->mode != MODE_LAST) {
@@ -1136,6 +1110,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 				exit (-1);
 			}
 			g_print ("%s\n", VERSION);
+			exit (0);
 			break;
 		default:
 			g_warning ("Invalid option %s", arg);

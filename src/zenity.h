@@ -26,6 +26,7 @@ G_BEGIN_DECLS
 typedef struct {
 	gchar *dialog_title;
 	gchar *window_icon;
+	gint   exit_code;
 } ZenityData;
 
 typedef struct {
@@ -76,19 +77,19 @@ typedef struct {
 	const gchar    **data;
 } ZenityTreeData;
 
-int	zenity_calendar		(ZenityData		*data,
+void	zenity_calendar		(ZenityData		*data,
 				 ZenityCalendarData 	*calendar_data);
-int	zenity_msg		(ZenityData		*data,
+void	zenity_msg		(ZenityData		*data,
 				 ZenityMsgData		*msg_data);
-int	zenity_fileselection	(ZenityData		*data,
+void	zenity_fileselection	(ZenityData		*data,
 				 ZenityFileData	*file_data);
-int	zenity_entry		(ZenityData		*data,
+void	zenity_entry		(ZenityData		*data,
 				 ZenityEntryData	*entry_data);
-int	zenity_progress		(ZenityData		*data,
+void	zenity_progress		(ZenityData		*data,
 				 ZenityProgressData	*progress_data);
-int 	zenity_text		(ZenityData		*data,
+void	zenity_text		(ZenityData		*data,
 				 ZenityTextData	*text_data);
-int	zenity_tree		(ZenityData		*data,
+void	zenity_tree		(ZenityData		*data,
 				 ZenityTreeData	*tree_data);
 
 G_END_DECLS
