@@ -9,7 +9,7 @@ G_BEGIN_DECLS
 
 #define ZENITY_GLADE_FILE_FULLPATH              ZENITY_DATADIR "/zenity.glade"
 #define ZENITY_GLADE_FILE_RELATIVEPATH          "./zenity.glade"
-#define ZENITY_IMAGE_FULLPATH(filename)         (g_strconcat (ZENITY_DATADIR, "/", filename, NULL))
+#define ZENITY_IMAGE_FULLPATH(filename)         (ZENITY_DATADIR "/" filename)
 
 GladeXML*       zenity_util_load_glade_file               (const gchar    *widget_root);
 gchar *         zenity_util_strip_newline                 (gchar          *string);
