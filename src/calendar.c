@@ -55,9 +55,9 @@ int zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 
 	calendar = glade_xml_get_widget (glade_dialog, "zenity_calendar");
 	
-	if (cal_data->month != 0 && cal_data->year !=0)
+	if (cal_data->month > 0 && cal_data->year > 0)
 		gtk_calendar_select_month (GTK_CALENDAR (calendar), cal_data->month, cal_data->year);
-	if (cal_data->day)
+	if (cal_data->day > 0)
 		gtk_calendar_select_day (GTK_CALENDAR (calendar), cal_data->day);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);

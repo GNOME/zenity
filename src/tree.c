@@ -63,7 +63,7 @@ count_rows_foreach (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, g
 }
 
 static void
-zenity_tree_fill_entries (GtkTreeView *tree_view, gchar **args, gint n_columns, gboolean toggles)
+zenity_tree_fill_entries (GtkTreeView *tree_view, const gchar **args, gint n_columns, gboolean toggles)
 {
 	GtkTreeModel *model;
 	GtkTreeIter iter;

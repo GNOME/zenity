@@ -74,7 +74,7 @@ int zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
 	giochannel = g_io_channel_unix_new (0);
 
-	if (progress_data->pulsate != TRUE) {
+	if (progress_data->pulsate != TRUE && progress_data->percentage > -1) {
 		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), progress_data->percentage/100.0);
 	}
 	else {

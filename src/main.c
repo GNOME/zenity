@@ -680,6 +680,7 @@ zenity_init_parsing_options (void) {
 	results = g_new0 (ZenityParsingOptions, 1);
 
 	/* Initialize the various dialog structures */
+	results->mode = MODE_LAST;
 	results->data = g_new0 (ZenityData, 1);
 	results->calendar_data = g_new0 (ZenityCalendarData, 1);
 	results->msg_data = g_new0 (ZenityMsgData, 1);
@@ -690,6 +691,10 @@ zenity_init_parsing_options (void) {
 	results->tree_data = g_new0 (ZenityTreeData, 1);
 
 	/* Give some sensible defaults */
+	results->calendar_data->day = 0;
+	results->calendar_data->month = 0;
+	results->calendar_data->year = 0;
+	results->progress_data->percentage = -1;
 	results->entry_data->visible = TRUE;
 	results->tree_data->checkbox = FALSE;
 	results->tree_data->radiobox = FALSE;
@@ -760,6 +765,11 @@ main (gint argc, gchar **argv) {
 	while((nextopt = poptGetNextOpt(ctx)) > 0)
 		/*nothing*/;
 
+	if (nextopt != -1) {
+		g_printerr (_("%s in an invalid option for this dialog\n"), poptBadOption (ctx, 0));
+		exit (1);
+	}	
+
 	gtk_init (&argc, &argv);
 	
 	if (argc < 2)
@@ -807,7 +817,6 @@ void zenity_parse_options_callback (poptContext              ctx,
                                     const char              *arg,
                                     void                    *data)
 {
-	gint i = 0;
 	if (reason == POPT_CALLBACK_REASON_POST) {
 		return;
 	} 
@@ -817,43 +826,91 @@ void zenity_parse_options_callback (poptContext              ctx,
 	switch (opt->val & POPT_ARG_MASK) {
 
  		case OPTION_CALENDAR:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_CALENDAR;
 			break;
 		case OPTION_ENTRY:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_ENTRY;
 			break;
 		case OPTION_ERROR:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_ERROR;
 			results->msg_data->mode = ZENITY_MSG_ERROR;
 			break;
 		case OPTION_INFO:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_INFO;
 			results->msg_data->mode = ZENITY_MSG_INFO;
 			break;
 		case OPTION_FILE:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_FILE;
 			break;
 		case OPTION_LIST:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_LIST;
 			break;
 		case OPTION_PROGRESS:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_PROGRESS;
 			break;
 		case OPTION_QUESTION:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_QUESTION;
 			results->msg_data->mode = ZENITY_MSG_QUESTION;
 			break;
 		case OPTION_TEXTINFO:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_TEXTINFO;
 			break;
 		case OPTION_WARNING:
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			results->mode = MODE_WARNING;
 			results->msg_data->mode = ZENITY_MSG_WARNING;
 			break;
 		case OPTION_TITLE:
+			if (results->data->dialog_title != NULL) {
+				g_printerr (_("--title given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->data->dialog_title = g_strdup (arg);
 			break;
 		case OPTION_ICON:
+			if (results->data->window_icon != NULL) {
+				g_printerr (_("--window-icon given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->data->window_icon = g_strdup (arg);
 			break;
 		case OPTION_CALENDARTEXT:
@@ -864,72 +921,173 @@ void zenity_parse_options_callback (poptContext              ctx,
 		case OPTION_WARNINGTEXT:
 			switch (results->mode) {
 				case MODE_CALENDAR:
+					if (results->calendar_data->dialog_text != NULL) {
+						g_printerr (_("--text given twice for the same dialog\n"));
+						exit (1);
+					}
 					results->calendar_data->dialog_text = g_strdup (arg);
 					break;
 				case MODE_ENTRY:
+					if (results->entry_data->dialog_text != NULL) {
+						g_printerr (_("--text given twice for the same dialog\n"));
+						exit (1);
+					}
 					results->entry_data->dialog_text = g_strdup (arg);
 					break;
 				case MODE_ERROR:
 				case MODE_QUESTION:
 				case MODE_WARNING:
 				case MODE_INFO:
+					if (results->msg_data->dialog_text != NULL) {
+						g_printerr (_("--text given twice for the same dialog\n"));
+						exit (1);
+					}
 					results->msg_data->dialog_text = g_strdup (arg);
 					break;
 				case MODE_PROGRESS:
+					if (results->progress_data->dialog_text != NULL) {
+						g_printerr (_("--text given twice for the same dialog\n"));
+						exit (1);
+					}
 					results->progress_data->dialog_text = g_strdup (arg);
 					break;
 				default:
-					break;
+					g_printerr (_("--text is not supported for this dialog\n"));
+					exit (1);
 				}
 			break;
 		case OPTION_DAY:
+			if (results->mode != MODE_CALENDAR) {
+				g_printerr (_("--day is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->calendar_data->day > 0) {
+				g_printerr (_("--day given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->calendar_data->day = atoi (arg);
 			break;
 		case OPTION_MONTH:
+			if (results->mode != MODE_CALENDAR) {
+				g_printerr (_("--month is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->calendar_data->month > 0) {
+				g_printerr (_("--month given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->calendar_data->month = atoi (arg);
 			break;
 		case OPTION_YEAR:
+			if (results->mode != MODE_CALENDAR) {
+				g_printerr (_("--year is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->calendar_data->year > 0) {
+				g_printerr (_("--year given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->calendar_data->year = atoi (arg);
 			break;
 		case OPTION_INPUTTEXT:
+			if (results->mode != MODE_ENTRY) {
+				g_printerr (_("--entry-text is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->entry_data->entry_text != NULL) {
+				g_printerr (_("--entry-text given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->entry_data->entry_text = g_strdup (arg);
 			break;
 		case OPTION_HIDETEXT:
+			if (results->mode != MODE_ENTRY) {
+				g_printerr (_("--hide-text is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->entry_data->visible == FALSE) {
+				g_printerr (_("--hide-text given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->entry_data->visible = FALSE;
 			break;
 		case OPTION_FILENAME:
 		case OPTION_TEXTFILE:
 			switch (results->mode) {
 				case MODE_FILE:
+					if (results->file_data->uri != NULL) {
+						g_printerr (_("--filename given twice for the same dialog\n"));
+						exit (1);
+					}
 					results->file_data->uri = g_strdup (arg);
 					break;
 				case MODE_TEXTINFO:
+					if (results->text_data->uri != NULL) {
+						g_printerr (_("--filename given twice for the same dialog\n"));
+						exit (1);
+					}
 					results->text_data->uri = g_strdup (arg);
 					break;
 				default:
-					break;
+					g_printerr (_("--filename is not supported for this dialog\n"));
+					exit (1);
 			}
 			break;
 		case OPTION_COLUMN:
+			if (results->mode != MODE_LIST) {
+				g_printerr (_("--column is not supported for this dialog\n"));
+				exit (1);
+			}
 			results->tree_data->columns = g_slist_append (results->tree_data->columns, g_strdup (arg));
 			break;
 		case OPTION_CHECKLIST:
+			if (results->mode != MODE_LIST) {
+				g_printerr (_("--checkbox is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->tree_data->checkbox == TRUE) {
+				g_printerr (_("--checkbox given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->tree_data->checkbox = TRUE;
 			break;
 		case OPTION_RADIOLIST:
+			if (results->mode != MODE_LIST) {
+				g_printerr (_("--radiobox is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->tree_data->radiobox == TRUE) {
+				g_printerr (_("--radiobox given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->tree_data->radiobox = TRUE;
 			break;
 		case OPTION_PERCENTAGE:
+			if (results->mode != MODE_PROGRESS) {
+				g_printerr (_("--percentage is not supported for this dialog\n"));
+				exit (1);
+			}
+			if (results->progress_data->percentage > -1) {
+				g_printerr (_("--percentage given twice for the same dialog\n"));
+				exit (1);
+			}
 			results->progress_data->percentage = atoi (arg);
 			break;
 		case OPTION_ABOUT:
-			results->mode = MODE_LAST;
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			break;
 		case OPTION_VERSION:
-			results->mode = MODE_LAST;
+			if (results->mode != MODE_LAST) {
+				g_printerr (_("Two or more dialog options specified\n"));
+				exit (1);
+			}
 			g_print ("%s\n", VERSION);
 			break;
 		default:
-			break;
+			g_warning ("Invalid option %s", arg);
+			exit (1);
 	}
 }
