@@ -64,8 +64,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
 	text_buffer = gtk_text_buffer_new (NULL);
 	text_view = glade_xml_get_widget (glade_dialog, "zenity_text_view");
-	if (zenity_util_fill_file_buffer (text_buffer, text_data->uri))
-		gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
+	gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
 	gtk_text_view_set_editable (GTK_TEXT_VIEW(text_view), text_data->editable);
 	if (text_data->editable) {
 		zen_text_data->buffer = text_buffer;
