@@ -134,12 +134,14 @@ static const gchar *author_credits[] = {
   "Paisa Seeluangsawat  <paisa@users.sf.net>",
   "Danilo Segan  <dsegan@gmx.net>",
   "Aasmund Skjaveland  <aasmunds@fys.uio.no>",
-  "Yuriy Syrota  <rasta renome.rovno.ua>",
+  "Yuriy Syrota  <rasta@renome.rovno.ua>",
   "Marcel Telka  <marcel@telka.sk>",
   "Andras Timar  <timar@gnome.hu>",
   "Miloslav Trmac  <mitr@volny.cz>",
+  "Mugurel Tudor <mugurelu@go.ro>",
   "Daniel Yacob  <locales@geez.org>",
-  "Funda Wang <fundawang@linux.net.cn>",
+  "Funda Wang  <fundawang@linux.net.cn>",
+  "Alexander Winston  <alexander.winston@comcast.net>",
   NULL
 };
 
