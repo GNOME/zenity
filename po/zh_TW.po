@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity 0.1\n"
-"POT-Creation-Date: 2003-01-21 11:28+0800\n"
+"POT-Creation-Date: 2003-02-01 12:38+0000\n"
 "PO-Revision-Date: 2003-01-21 13:09+0800\n"
 "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/about.c:70
+#: src/about.c:288
 msgid "translator_credits"
 msgstr ""
 "i18n 程式中文化計劃\n"
@@ -21,242 +21,330 @@ msgstr ""
 "\n"
 "Abel Cheung <maddog@linux.org.hk>, 2003"
 
-#: src/about.c:97
+#: src/about.c:318
 msgid "Display dialog boxes from shell scripts"
 msgstr "透過命令稿顯示對話窗"
 
-#: src/about.c:100
+#: src/about.c:322
 msgid "(C) 2003 Sun Microsystems"
 msgstr "版權所有 © 2003 Sun Microsystems"
 
-#: src/about.c:191
+#: src/about.c:413
 msgid "Credits"
 msgstr "鳴謝"
 
-#: src/about.c:218
+#: src/about.c:440
 msgid "Written by"
 msgstr "程式編寫"
 
-#: src/about.c:231
+#: src/about.c:453
 msgid "Translated by"
 msgstr "翻譯者"
 
-#: src/main.c:126
+#: src/main.c:127
 msgid "Display calendar dialog"
 msgstr "顯示日曆對話窗"
 
-#: src/main.c:135
+#: src/main.c:136
 msgid "Display text entry dialog"
 msgstr "顯示文字輸入對話窗"
 
-#: src/main.c:144
+#: src/main.c:145
 msgid "Display error dialog"
 msgstr "顯示錯誤訊息對話窗"
 
-#: src/main.c:153
+#: src/main.c:154
 msgid "Display file selection dialog"
 msgstr "顯示檔案選擇對話窗"
 
-#: src/main.c:162
+#: src/main.c:163
 msgid "Display info dialog"
 msgstr "顯示資訊對話窗"
 
-#: src/main.c:171
+#: src/main.c:172
 msgid "Display list dialog"
 msgstr "顯示清單對話窗"
 
-#: src/main.c:180
+#: src/main.c:181
 msgid "Display progress indication dialog"
 msgstr "顯示進度指示對話窗"
 
-#: src/main.c:189
+#: src/main.c:190
 msgid "Display question dialog"
 msgstr "顯示詢問對話窗"
 
-#: src/main.c:198
+#: src/main.c:199
 msgid "Display text information dialog"
 msgstr "顯示文字資訊對話窗"
 
-#: src/main.c:207
+#: src/main.c:208
 msgid "Display warning dialog"
 msgstr "顯示警告訊息對話窗"
 
-#: src/main.c:229
+#: src/main.c:230
 msgid "Set the dialog title"
 msgstr "指定對話窗的標題"
 
-#: src/main.c:230
+#: src/main.c:231
 msgid "TITLE"
 msgstr "標題"
 
-#: src/main.c:238
+#: src/main.c:239
 msgid "Set the window icon"
 msgstr "指定視窗使用的圖示"
 
-#: src/main.c:239
+#: src/main.c:240
 msgid "ICONPATH"
 msgstr "圖示路徑"
 
-#: src/main.c:260 src/main.c:317 src/main.c:357 src/main.c:379 src/main.c:472
-#: src/main.c:503 src/main.c:556
+#: src/main.c:261 src/main.c:318 src/main.c:358 src/main.c:380 src/main.c:482
+#: src/main.c:513 src/main.c:566
 msgid "Set the dialog text"
 msgstr "指定對話窗中的文字"
 
-#: src/main.c:269
+#: src/main.c:270
 msgid "Set the calendar day"
 msgstr "指定日曆中的日期"
 
-#: src/main.c:278
+#: src/main.c:279
 msgid "Set the calendar month"
 msgstr "指定日曆中的月份"
 
-#: src/main.c:287
+#: src/main.c:288
 msgid "Set the calendar year"
 msgstr "指定日曆中的年份"
 
-#: src/main.c:295
+#: src/main.c:296
 msgid "Set the format for the returned date"
 msgstr "指定回傳的日期格式"
 
-#: src/main.c:326
+#: src/main.c:327
 msgid "Set the entry text"
 msgstr "指定欄位中的文字"
 
-#: src/main.c:335
+#: src/main.c:336
 msgid "Hide the entry text"
 msgstr "隱藏欄位中的文字"
 
-#: src/main.c:401
+#: src/main.c:402
 msgid "Set the filename"
 msgstr "指定檔案名稱"
 
-#: src/main.c:402 src/main.c:526
+#: src/main.c:403 src/main.c:536
 msgid "FILENAME"
 msgstr "檔案名稱"
 
-#: src/main.c:423
+#: src/main.c:424
 msgid "Set the column header"
 msgstr "指定整欄項目的標題"
 
-#: src/main.c:432
+#: src/main.c:433
 msgid "Use check boxes for first column"
 msgstr "第一欄使用多重選擇按鈕"
 
-#: src/main.c:441
+#: src/main.c:442
 msgid "Use radio buttons for first column"
 msgstr "第一欄使用單項選擇按鈕"
 
-#: src/main.c:450
+#: src/main.c:451
 msgid "Set output separator character"
 msgstr "指定分隔輸出結果的字元"
 
-#: src/main.c:481
-msgid "Set initial percentage"
-msgstr "指定開始時的百份比數值"
-
-#: src/main.c:490
-msgid "Pulsate progress bar"
-msgstr ""
-
-#: src/main.c:525
-msgid "Open file"
-msgstr "開啟檔案"
-
-#: src/main.c:534
+#: src/main.c:460 src/main.c:544
 msgid "Allow changes to text"
 msgstr "可以更改文字"
 
-#: src/main.c:578
+#: src/main.c:491
+msgid "Set initial percentage"
+msgstr "指定開始時的百份比數值"
+
+#: src/main.c:500
+msgid "Pulsate progress bar"
+msgstr ""
+
+#: src/main.c:535
+msgid "Open file"
+msgstr "開啟檔案"
+
+#: src/main.c:579
+msgid "Gdk debugging flags to set"
+msgstr ""
+
+#: src/main.c:580 src/main.c:589 src/main.c:668 src/main.c:677
+msgid "FLAGS"
+msgstr ""
+
+#: src/main.c:588
+msgid "Gdk debugging flags to unset"
+msgstr ""
+
+#: src/main.c:598
+msgid "X display to use"
+msgstr ""
+
+#: src/main.c:599
+msgid "DISPLAY"
+msgstr ""
+
+#: src/main.c:609
+msgid "X screen to use"
+msgstr ""
+
+#: src/main.c:610
+msgid "SCREEN"
+msgstr ""
+
+#: src/main.c:620
+msgid "Make X calls synchronous"
+msgstr ""
+
+#: src/main.c:629
+msgid "Program name as used by the window manager"
+msgstr ""
+
+#: src/main.c:630
+#, fuzzy
+msgid "NAME"
+msgstr "檔案名稱"
+
+#: src/main.c:638
+msgid "Program class as used by the window manager"
+msgstr ""
+
+#: src/main.c:639
+msgid "CLASS"
+msgstr ""
+
+#: src/main.c:649
+msgid "HOST"
+msgstr ""
+
+#: src/main.c:659
+msgid "PORT"
+msgstr ""
+
+#: src/main.c:667
+msgid "Gtk+ debugging flags to set"
+msgstr ""
+
+#: src/main.c:676
+msgid "Gtk+ debugging flags to unset"
+msgstr ""
+
+#: src/main.c:685
+msgid "Make all warnings fatal"
+msgstr ""
+
+#: src/main.c:694
+msgid "Load an additional Gtk module"
+msgstr ""
+
+#: src/main.c:695
+msgid "MODULE"
+msgstr ""
+
+#: src/main.c:716
 msgid "About zenity"
 msgstr "關於 zenity"
 
-#: src/main.c:587
+#: src/main.c:725
 msgid "Print version"
 msgstr "顯示版本"
 
-#: src/main.c:600
+#: src/main.c:738
 msgid "Dialog options"
 msgstr "對話窗選項"
 
-#: src/main.c:609
+#: src/main.c:747
 msgid "General options"
 msgstr "一般選項"
 
-#: src/main.c:618
+#: src/main.c:756
 msgid "Calendar options"
 msgstr "日曆選項"
 
-#: src/main.c:627
+#: src/main.c:765
 msgid "Text entry options"
 msgstr "文字欄位選項"
 
-#: src/main.c:636
+#: src/main.c:774
 msgid "Error options"
 msgstr "錯誤訊息選項"
 
-#: src/main.c:645
+#: src/main.c:783
 msgid "File selection options"
 msgstr "檔案選擇的選項"
 
-#: src/main.c:654
+#: src/main.c:792
 msgid "Info options"
 msgstr "資訊選項"
 
-#: src/main.c:663
+#: src/main.c:801
 msgid "List options"
 msgstr "清單選項"
 
-#: src/main.c:672
+#: src/main.c:810
 msgid "Progress options"
 msgstr "進度選項"
 
-#: src/main.c:681
+#: src/main.c:819
 msgid "Question options"
 msgstr "詢問選項"
 
-#: src/main.c:690
+#: src/main.c:828
 msgid "Text options"
 msgstr "文字選項"
 
-#: src/main.c:699
+#: src/main.c:837
 msgid "Warning options"
 msgstr "警告訊息選項"
 
-#: src/main.c:708
+#: src/main.c:846
+#, fuzzy
+msgid "GTK+ options"
+msgstr "文字選項"
+
+#: src/main.c:855
 msgid "Miscellaneous options"
 msgstr "其它選項"
 
-#: src/main.c:717
+#: src/main.c:864
 msgid "Help options"
 msgstr "求助選項"
 
-#. FIXME : We should probably handle --display, or at least maybe load some of the gtk+
-#. * commandline options
-#.
-#: src/main.c:836
-#, c-format
-msgid "%s in an invalid option for this dialog\n"
+#: src/main.c:981
+#, fuzzy, c-format
+msgid ""
+"%s in an invalid option for this dialog. See zenity --help for more details\n"
 msgstr "%s 在本對話窗中不是有效的選項\n"
 
-#: src/main.c:894
+#: src/main.c:989
+msgid "You must specify more arguments. See zenity --help for more details\n"
+msgstr ""
+
+#: src/main.c:1024
+msgid "You must specify a dialog type. See 'zenity --help' for details\n"
+msgstr ""
+
+#: src/main.c:1044
 #, c-format
 msgid "%s given twice for the same dialog\n"
 msgstr "%s 在同一個對話窗中使用了兩次\n"
 
-#: src/main.c:898
+#: src/main.c:1048
 #, c-format
 msgid "%s is not supported for this dialog\n"
 msgstr "本對話窗不支援 %s 選項\n"
 
-#: src/main.c:902
+#: src/main.c:1052
 msgid "Two or more dialog options specified\n"
 msgstr "使用了兩個或以上的對話窗選項\n"
 
-#: src/tree.c:123
+#: src/tree.c:147
 msgid "No column titles specified for --list\n"
 msgstr "使用 --list 選項時沒有指定該列清單的標題\n"
 
-#: src/tree.c:129
+#: src/tree.c:153
 msgid "No contents specified for --list\n"
 msgstr "--list 選項後沒有指定任何內容\n"
 
@@ -273,68 +361,68 @@ msgid "Add a new entry"
 msgstr "加入新的欄位"
 
 #: src/zenity.glade.h:4
+msgid "All updates are complete."
+msgstr ""
+
+#: src/zenity.glade.h:5
+msgid "An error has occurred."
+msgstr ""
+
+#: src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "是否確定要繼續？"
 
-#: src/zenity.glade.h:5
+#: src/zenity.glade.h:7
 msgid "C_alendar:"
 msgstr "日曆(_A)："
 
-#: src/zenity.glade.h:6
+#: src/zenity.glade.h:8
 msgid "Calendar selection"
 msgstr "日曆選擇模式"
 
-#: src/zenity.glade.h:7
+#: src/zenity.glade.h:9
 msgid "Error"
 msgstr "錯誤"
 
-#: src/zenity.glade.h:8
+#: src/zenity.glade.h:10
 msgid "Information"
 msgstr "資訊"
 
-#: src/zenity.glade.h:9
+#: src/zenity.glade.h:11
 msgid "Progress"
 msgstr "進度"
 
-#: src/zenity.glade.h:10
+#: src/zenity.glade.h:12
 msgid "Question"
 msgstr "詢問"
 
-#: src/zenity.glade.h:11
+#: src/zenity.glade.h:13
 msgid "Running..."
 msgstr "執行中..."
 
-#: src/zenity.glade.h:12
+#: src/zenity.glade.h:14
 msgid "Select a date from below."
 msgstr "請從以下的日曆選取日期。"
 
-#: src/zenity.glade.h:13
+#: src/zenity.glade.h:15
 msgid "Select a file"
 msgstr "請選取檔案"
 
-#: src/zenity.glade.h:14
+#: src/zenity.glade.h:16
 msgid "Select items from the list"
 msgstr "請在清單中選取項目"
 
-#: src/zenity.glade.h:15
+#: src/zenity.glade.h:17
 msgid "Select items from the list below."
 msgstr "請在以下的清單中選取項目。"
 
-#: src/zenity.glade.h:16
+#: src/zenity.glade.h:18
 msgid "Text View"
 msgstr "文字顯示模式"
 
-#: src/zenity.glade.h:17
+#: src/zenity.glade.h:19
 msgid "Warning"
 msgstr "警告訊息"
-
-#: src/zenity.glade.h:18
-msgid "You have done the right thing, hurrah."
-msgstr "做得對。"
-
-#: src/zenity.glade.h:19
-msgid "You have not done the right thing, clearly."
-msgstr "你做錯事了。"
 
 #: src/zenity.glade.h:20
 msgid "_Credits"
@@ -344,14 +432,17 @@ msgstr "鳴謝(_C)"
 msgid "_Enter new text:"
 msgstr "輸入新的文字(_E)："
 
-#: src/zenity.glade.h:22
-msgid "zenity_about_copyright"
-msgstr "zenity_about_copyright"
+#~ msgid "You have done the right thing, hurrah."
+#~ msgstr "做得對。"
 
-#: src/zenity.glade.h:23
-msgid "zenity_about_description"
-msgstr "zenity_about_description"
+#~ msgid "You have not done the right thing, clearly."
+#~ msgstr "你做錯事了。"
 
-#: src/zenity.glade.h:24
-msgid "zenity_about_version"
-msgstr "zenity_about_version"
+#~ msgid "zenity_about_copyright"
+#~ msgstr "zenity_about_copyright"
+
+#~ msgid "zenity_about_description"
+#~ msgstr "zenity_about_description"
+
+#~ msgid "zenity_about_version"
+#~ msgstr "zenity_about_version"
