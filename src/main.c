@@ -1020,6 +1020,10 @@ main (gint argc, gchar **argv) {
                 case MODE_ABOUT:
                         zenity_about (results->data);
                         break;
+                case MODE_LAST:
+                        g_printerr (_("You must specify a dialog type. See 'zenity --help' for details\n"));
+                        zenity_free_parsing_options ();
+                        exit (-1);
 		default:
 			g_assert_not_reached ();
 			zenity_free_parsing_options ();
