@@ -1,25 +1,24 @@
+# translation of zenity.HEAD.ar.po to 
 # translation of zenity.po to Arabic
 # This file is distributed under the same license as the zenity package.
 # Copyright (C) 2003 THE PACKAGE'S COPYRIGHT HOLDER.
 # Hassan Abdin <habdin@link.net>, 2003.
 # Hafid BENHADRIA <ghosn@php4arab.info>, 2003.
-# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
-#
+# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004, 2005.
+# 
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity\n"
+"Project-Id-Version: zenity.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-25 12:59+1300\n"
-"PO-Revision-Date: 2004-09-04 18:03+0300\n"
-"Last-Translator: Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>\n"
-"Language-Team: Arabic <support@arabeyes.org>\n"
+"POT-Creation-Date: 2005-02-22 15:43+0100\n"
+"PO-Revision-Date: 2005-02-24 15:06+0100\n"
+"Last-Translator:  <kinryu@silverpen.de>\n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
-"\n"
 
 #. Translators: This is a special message that shouldn't be translated
 #. literally. It is used in the about box to give credits to
@@ -28,55 +27,49 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:376
-#, fuzzy
+#: src/about.c:378
 msgid "translator-credits"
-msgstr ""
-"عرفات المديني، تونس <lumina@silverpen.de> حسن عابدين، مصر <habdin@link.net> "
-"عبدالعزيز العرفج <alarfaj0@yahoo.com> تحت إشراف عرب آيز (http://www.arabeyes."
-"org)"
+msgstr "عرفات المديني، تونس <lumina@silverpen.de>"
 
-#: src/about.c:406
+#: src/about.c:408
 msgid "Display dialog boxes from shell scripts"
 msgstr "اعرض صناديق الحوار من مخطوطات االشيل"
 
-#: src/about.c:410
+#: src/about.c:412
 msgid "(C) 2003 Sun Microsystems"
 msgstr "جميع الحقوق محفوظة (C) 2003 صن مايكروسيستمز"
 
-#: src/about.c:494
+#: src/about.c:496
 msgid "Credits"
 msgstr "الشرف"
 
-#: src/about.c:521
+#: src/about.c:523
 msgid "Written by"
 msgstr "كُتِبَ من قبل"
 
-#: src/about.c:534
+#: src/about.c:536
 msgid "Translated by"
 msgstr "تُرْجِم من قبل"
 
 #: src/eggtrayicon.c:118
 msgid "Orientation"
-msgstr ""
+msgstr "الإتّجاه"
 
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr ""
+msgstr "اتجاه المقبض."
 
 #: src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
-"يجب عليك تحديد نوع الحوار. استعرض 'zenity --help' لأجل مزيد من التَّفاصيل\n"
+msgstr "يجب عليك تحديد نوع الحوار. استعرض 'zenity --help' لأجل مزيد من التَّفاصيل\n"
 
-#: src/notification.c:157
+#: src/notification.c:158
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "لم يمكن ترجمة الأمر من stdin\n"
 
-#: src/notification.c:229 src/notification.c:258
-#, fuzzy
+#: src/notification.c:230 src/notification.c:259
 msgid "Zenity notification"
-msgstr "اعرض صندوق حوار المعلومات"
+msgstr "تذكير زَنِتي"
 
 #: src/tree.c:304
 msgid "No column titles specified for List dialog.\n"
@@ -261,11 +254,11 @@ msgstr "اسمح بانتقاء عدة ملفات"
 
 #: src/option.c:319
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "تفعيل إنتقاء الدّلائل فقط"
 
 #: src/option.c:328
 msgid "Activate save mode"
-msgstr ""
+msgstr "تنشيط نسق الحفظ"
 
 #: src/option.c:337 src/option.c:397
 msgid "Set output separator character"
@@ -302,18 +295,16 @@ msgid ""
 msgstr "طباعة عمود معيّن (الافتراضي 1. يمكن استخدام 'الكل' لطباعة كل الأعمدة)"
 
 #: src/option.c:430
-#, fuzzy
 msgid "Display notification"
-msgstr "اعرض صندوق حوار المعلومات"
+msgstr "عرض حوار تذكير"
 
 #: src/option.c:439
-#, fuzzy
 msgid "Set the notification text"
-msgstr "حدد النص لصندوق الحوار"
+msgstr "تحديد نصّ لحوار التذكير"
 
 #: src/option.c:448
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "الإستماع إلى الأوامر على stdin"
 
 #: src/option.c:463
 msgid "Display progress indication dialog"
@@ -356,208 +347,120 @@ msgstr "عن zenity"
 msgid "Print version"
 msgstr "اطبع الإصدارة"
 
-#: src/option.c:1189
+#: src/option.c:1190
 msgid "General options"
 msgstr "خيارات عامة"
 
-#: src/option.c:1190
-#, fuzzy
+#: src/option.c:1191
 msgid "Show general options"
-msgstr "خيارات عامة"
+msgstr "عرض خيارات عامّة"
 
-#: src/option.c:1199
+#: src/option.c:1200
 msgid "Calendar options"
 msgstr "خيارات التقويم"
 
-#: src/option.c:1200
-#, fuzzy
+#: src/option.c:1201
 msgid "Show calendar options"
-msgstr "خيارات التقويم"
+msgstr "عرض خيارات التقويم"
 
-#: src/option.c:1209
+#: src/option.c:1210
 msgid "Text entry options"
 msgstr "خيارات مُدْخَل النَّص"
 
-#: src/option.c:1210
-#, fuzzy
+#: src/option.c:1211
 msgid "Show text entry options"
-msgstr "خيارات مُدْخَل النَّص"
+msgstr "عرض خيارات مُدخَل النَّص"
 
-#: src/option.c:1219
+#: src/option.c:1220
 msgid "Error options"
 msgstr "خيارات الأخطاء"
 
-#: src/option.c:1220
-#, fuzzy
+#: src/option.c:1221
 msgid "Show error options"
-msgstr "خيارات الأخطاء"
+msgstr "عرض خيارات الأخطاء"
 
-#: src/option.c:1229
+#: src/option.c:1230
 msgid "Info options"
 msgstr "خيارات المعلومات"
 
-#: src/option.c:1230
-#, fuzzy
+#: src/option.c:1231
 msgid "Show info options"
-msgstr "خيارات المعلومات"
+msgstr "عرض خيارات المعلومات"
 
-#: src/option.c:1239
+#: src/option.c:1240
 msgid "File selection options"
 msgstr "خيارات إنتقاء الملف"
 
-#: src/option.c:1240
-#, fuzzy
+#: src/option.c:1241
 msgid "Show file selection options"
-msgstr "خيارات إنتقاء الملف"
+msgstr "عرض خيارات إنتقاء الملفّات"
 
-#: src/option.c:1249
+#: src/option.c:1250
 msgid "List options"
 msgstr "خيارات اللائحات"
 
-#: src/option.c:1250
-#, fuzzy
+#: src/option.c:1251
 msgid "Show list options"
-msgstr "خيارات اللائحات"
-
-#: src/option.c:1259
-#, fuzzy
-msgid "Notification options"
-msgstr "خيارات الأسئلة"
+msgstr "عرض خيارات اللائحات"
 
 #: src/option.c:1260
-#, fuzzy
-msgid "Show notification options"
-msgstr "خيارات الأسئلة"
+msgid "Notification icon options"
+msgstr "خيارات أيقونة التذكير"
 
-#: src/option.c:1269
+#: src/option.c:1261
+msgid "Show notification icon options"
+msgstr "عرض خيارات الأسئلة"
+
+#: src/option.c:1270
 msgid "Progress options"
 msgstr "خيارات التَّقدم"
 
-#: src/option.c:1270
-#, fuzzy
+#: src/option.c:1271
 msgid "Show progress options"
-msgstr "خيارات التَّقدم"
+msgstr "عرض خيارات التَّقدم"
 
-#: src/option.c:1279
+#: src/option.c:1280
 msgid "Question options"
 msgstr "خيارات الأسئلة"
 
-#: src/option.c:1280
-#, fuzzy
+#: src/option.c:1281
 msgid "Show question options"
-msgstr "خيارات الأسئلة"
+msgstr "عرض خيارات الأسئلة"
 
-#: src/option.c:1289
+#: src/option.c:1290
 msgid "Warning options"
 msgstr "خيارات التَّحذير"
 
-#: src/option.c:1290
-#, fuzzy
+#: src/option.c:1291
 msgid "Show warning options"
-msgstr "خيارات التَّحذير"
-
-#: src/option.c:1299
-msgid "Text options"
-msgstr "خيارات النَّص"
+msgstr "عرض خيارات التَّحذير"
 
 #: src/option.c:1300
-#, fuzzy
-msgid "Show text options"
-msgstr "خيارات النَّص"
+msgid "Text information options"
+msgstr "خيارات معلومات النّصوص"
 
-#: src/option.c:1309
+#: src/option.c:1301
+msgid "Show text information options"
+msgstr "عرض خيارات معلومات النّصوص"
+
+#: src/option.c:1310
 msgid "Miscellaneous options"
 msgstr "خيارات متنوعة"
 
-#: src/option.c:1310
-#, fuzzy
+#: src/option.c:1311
 msgid "Show miscellaneous options"
-msgstr "خيارات متنوعة"
+msgstr "عرض خيارات متنوّعة"
 
-#: src/option.c:1333
+#: src/option.c:1334
 msgid "Syntax error\n"
-msgstr ""
+msgstr "خطأ سياقيّ\n"
 
-#: src/option.c:1337
-#, fuzzy, c-format
+#: src/option.c:1338
+#, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "%s ليس مدعوم من أجل هذا الحوار\n"
+msgstr "%s ليس مدعوما لهذا الحوار\n"
 
-#: src/option.c:1341
+#: src/option.c:1342
 msgid "Two or more dialog options specified\n"
 msgstr "تم تحديد خيارَي حوار أو أكثر\n"
 
-#~ msgid "Set output separator character."
-#~ msgstr "حدد الرمز الفاصل للمُخْرَجَ."
-
-#~ msgid "Gdk debugging flags to set"
-#~ msgstr "أعلام إزالة علل Gdk المتوجب تحديدها"
-
-#~ msgid "FLAGS"
-#~ msgstr "أعلام"
-
-#~ msgid "Gdk debugging flags to unset"
-#~ msgstr "أعلام إزالة علل Gdk المتوجب إزالة تحديدها"
-
-#~ msgid "X display to use"
-#~ msgstr "عارض X  المتوجب استخدامه"
-
-#~ msgid "DISPLAY"
-#~ msgstr "عارض"
-
-#~ msgid "X screen to use"
-#~ msgstr "شاشة X  المتوجب استخدامها"
-
-#~ msgid "SCREEN"
-#~ msgstr "شاشة"
-
-#~ msgid "Make X calls synchronous"
-#~ msgstr "اجعل نداءات X مُتزامنة"
-
-#~ msgid "Program name as used by the window manager"
-#~ msgstr "إسم البرنامج مثلما يتم استخدامه من قبل مدير النافذة"
-
-#~ msgid "NAME"
-#~ msgstr "إسم"
-
-#~ msgid "Program class as used by the window manager"
-#~ msgstr "صنف البرنامج مثلما يتم استخدامه من قبل مدير النافذة"
-
-#~ msgid "CLASS"
-#~ msgstr "صنف"
-
-#~ msgid "HOST"
-#~ msgstr "مُضيف"
-
-#~ msgid "PORT"
-#~ msgstr "منفذ"
-
-#~ msgid "Gtk+ debugging flags to set"
-#~ msgstr "أعلام إزالة علل Gtk+  المُتوجب تحديدها"
-
-#~ msgid "Gtk+ debugging flags to unset"
-#~ msgstr "أعلام إزالة علل Gtk+  المُتوجب إزالة تحديدها"
-
-#~ msgid "Make all warnings fatal"
-#~ msgstr "اجعل كافة التَّحذيرات فادحة"
-
-#~ msgid "Load an additional Gtk module"
-#~ msgstr "تعبئة وحدة Gtk إضافيَّة"
-
-#~ msgid "MODULE"
-#~ msgstr "وحدة"
-
-#~ msgid "Dialog options"
-#~ msgstr "خيارات الحوار"
-
-#~ msgid "GTK+ options"
-#~ msgstr "خيارات GTK+"
-
-#~ msgid "Help options"
-#~ msgstr "خيارات المساعدة"
-
-#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-#~ msgstr "%s هو خيار غير صالح. استعرض 'zenity --help' لأجل مزيد من التَّفاصيل\n"
-
-#~ msgid "%s given twice for the same dialog\n"
-#~ msgstr "أُعْطِيَ %s مرتين من أجل نفس الحوار\n"
