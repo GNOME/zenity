@@ -948,7 +948,7 @@ struct poptOption application_options[] = {
     POPT_ARG_INCLUDE_TABLE,
     notification_options,
     0,
-    N_("Notication options"),
+    N_("Notification options"),
     NULL
   },
   {
