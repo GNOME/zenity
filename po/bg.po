@@ -2,18 +2,20 @@
 # Copyright (C) 2004 THE zenity'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the zenity package.
 # Rostislav Raykov <zbrox@i-space.org>, 2004.
-# 
+# Vladimir Petkov <vpetkov@i-space.org>, 2005.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-25 12:59+1300\n"
-"PO-Revision-Date: 2004-12-12 14:50+0200\n"
+"POT-Creation-Date: 2005-02-09 17:53+0200\n"
+"PO-Revision-Date: 2005-02-09 17:52+0200\n"
 "Last-Translator: Rostislav Raykov <zbrox@i-space.org>\n"
-"Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Translators: This is a special message that shouldn't be translated
 #. literally. It is used in the about box to give credits to
@@ -22,27 +24,27 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:376
+#: src/about.c:377
 msgid "translator-credits"
 msgstr "Ростислав Райков <zbrox@i-space.org>"
 
-#: src/about.c:406
+#: src/about.c:407
 msgid "Display dialog boxes from shell scripts"
 msgstr "Показва диалогови прозорци от конзолни скриптове"
 
-#: src/about.c:410
+#: src/about.c:411
 msgid "(C) 2003 Sun Microsystems"
 msgstr "(C) 2003 Sun Microsystems"
 
-#: src/about.c:494
+#: src/about.c:495
 msgid "Credits"
 msgstr "Заслуги"
 
-#: src/about.c:521
+#: src/about.c:522
 msgid "Written by"
 msgstr "Написан от"
 
-#: src/about.c:534
+#: src/about.c:535
 msgid "Translated by"
 msgstr "Преведен от"
 
@@ -60,11 +62,11 @@ msgstr ""
 "Трябва да изберете вид на прозореца. Вижте 'zenity --help' за повече "
 "информация\n"
 
-#: src/notification.c:157
+#: src/notification.c:158
 msgid "could not parse command from stdin\n"
 msgstr "не може да се подаде командата от стандартния вход\n"
 
-#: src/notification.c:229 src/notification.c:258
+#: src/notification.c:230 src/notification.c:259
 msgid "Zenity notification"
 msgstr "Zenity уведомяване"
 
@@ -98,7 +100,7 @@ msgstr "Сигурни ли сте, че желаете да продължит�
 
 #: src/zenity.glade.h:7
 msgid "C_alendar:"
-msgstr "Календар:"
+msgstr "К_алендар:"
 
 #: src/zenity.glade.h:8
 msgid "Calendar selection"
@@ -150,11 +152,11 @@ msgstr "Внимание"
 
 #: src/zenity.glade.h:20
 msgid "_Credits"
-msgstr "Заслуги"
+msgstr "_Заслуги"
 
 #: src/zenity.glade.h:21
 msgid "_Enter new text:"
-msgstr "Въвеждане на нов текст:"
+msgstr "Въвеждан_е на нов текст:"
 
 #: src/option.c:99
 msgid "Set the dialog title"
@@ -346,177 +348,119 @@ msgstr "Относно Zenity"
 msgid "Print version"
 msgstr "Версия за печат"
 
-#: src/option.c:1189
+#: src/option.c:1190
 msgid "General options"
 msgstr "Общи настройки"
 
-#: src/option.c:1190
+#: src/option.c:1191
 msgid "Show general options"
 msgstr "Показване на общи настройки"
 
-#: src/option.c:1199
+#: src/option.c:1200
 msgid "Calendar options"
 msgstr "Настройки на календара"
 
-#: src/option.c:1200
+#: src/option.c:1201
 msgid "Show calendar options"
 msgstr "Показване на nастройките на календара"
 
-#: src/option.c:1209
+#: src/option.c:1210
 msgid "Text entry options"
 msgstr "Настройки на въвеждането на текст"
 
-#: src/option.c:1210
+#: src/option.c:1211
 msgid "Show text entry options"
 msgstr "Настройки на въвеждането на текст"
 
-#: src/option.c:1219
+#: src/option.c:1220
 msgid "Error options"
 msgstr "Настройки за грешките"
 
-#: src/option.c:1220
+#: src/option.c:1221
 msgid "Show error options"
 msgstr "Показване на настройките за грешки"
 
-#: src/option.c:1229
+#: src/option.c:1230
 msgid "Info options"
 msgstr "Настройки на информацията"
 
-#: src/option.c:1230
+#: src/option.c:1231
 msgid "Show info options"
 msgstr "Показване на настройките за информация"
 
-#: src/option.c:1239
+#: src/option.c:1240
 msgid "File selection options"
 msgstr "Настройки на избирането на файл"
 
-#: src/option.c:1240
+#: src/option.c:1241
 msgid "Show file selection options"
 msgstr "Показване на настройките за избор на файлове"
 
-#: src/option.c:1249
+#: src/option.c:1250
 msgid "List options"
 msgstr "Настройки на списъците"
 
-#: src/option.c:1250
+#: src/option.c:1251
 msgid "Show list options"
 msgstr "Показване на настройките за списъци"
 
-#: src/option.c:1259
-#, fuzzy
-msgid "Notification options"
-msgstr "Опции за уведомяването"
-
 #: src/option.c:1260
-msgid "Show notification options"
-msgstr "Показване на настройките за уведомяването"
+msgid "Notification icon options"
+msgstr "Опции на иконата за уведомяване"
 
-#: src/option.c:1269
+#: src/option.c:1261
+msgid "Show notification icon options"
+msgstr "Показване опциите на иконата за уведомяване"
+
+#: src/option.c:1270
 msgid "Progress options"
 msgstr "Настройки за отчитането на прогреса"
 
-#: src/option.c:1270
+#: src/option.c:1271
 msgid "Show progress options"
 msgstr "Показване на настройките за прогреса"
 
-#: src/option.c:1279
+#: src/option.c:1280
 msgid "Question options"
 msgstr "Настройки на въпросите"
 
-#: src/option.c:1280
+#: src/option.c:1281
 msgid "Show question options"
 msgstr "Показване на настройките за въпросите"
 
-#: src/option.c:1289
+#: src/option.c:1290
 msgid "Warning options"
 msgstr "Настройки на предупрежденията"
 
-#: src/option.c:1290
+#: src/option.c:1291
 msgid "Show warning options"
 msgstr "Показване на настройките за предупреждения"
 
-#: src/option.c:1299
-msgid "Text options"
-msgstr "Настройки на текста"
-
 #: src/option.c:1300
-msgid "Show text options"
-msgstr "Показване на настройките за текст"
+msgid "Text information options"
+msgstr "Опции на текста за уведомяване"
 
-#: src/option.c:1309
+#: src/option.c:1301
+msgid "Show text information options"
+msgstr "Показване опциите текста за уведомяване"
+
+#: src/option.c:1310
 msgid "Miscellaneous options"
 msgstr "Други настройки"
 
-#: src/option.c:1310
+#: src/option.c:1311
 msgid "Show miscellaneous options"
 msgstr "Показване на настройките за \"Разни\""
 
-#: src/option.c:1333
+#: src/option.c:1334
 msgid "Syntax error\n"
 msgstr "Грешка в синтаксиса\n"
 
-#: src/option.c:1337
+#: src/option.c:1338
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s не е поддържан от този прозорец\n"
 
-#: src/option.c:1341
+#: src/option.c:1342
 msgid "Two or more dialog options specified\n"
 msgstr "Избрани са две или повече диалогови опции\n"
-
-#~ msgid "Set output separator character."
-#~ msgstr "Настройване на изходния символ за разделение"
-
-#~ msgid "X display to use"
-#~ msgstr "Х дисплей за използване"
-
-#~ msgid "DISPLAY"
-#~ msgstr "Дисплей"
-
-#~ msgid "X screen to use"
-#~ msgstr "Х екран за използване"
-
-#~ msgid "SCREEN"
-#~ msgstr "Екран"
-
-#~ msgid "Program name as used by the window manager"
-#~ msgstr "Името на програмата както го използва работната среда"
-
-#~ msgid "NAME"
-#~ msgstr "Име"
-
-#~ msgid "Program class as used by the window manager"
-#~ msgstr "Програмния клас както е използван от работната среда"
-
-#~ msgid "CLASS"
-#~ msgstr "Клас"
-
-#~ msgid "HOST"
-#~ msgstr "Хост"
-
-#~ msgid "PORT"
-#~ msgstr "Порт"
-
-#~ msgid "Make all warnings fatal"
-#~ msgstr "Всички предпреждения фатални"
-
-#~ msgid "Load an additional Gtk module"
-#~ msgstr "Зареждане на допълнителен модул на GTK"
-
-#~ msgid "MODULE"
-#~ msgstr "Модул"
-
-#~ msgid "Dialog options"
-#~ msgstr "Диалогови настройки"
-
-#~ msgid "GTK+ options"
-#~ msgstr "Настройки на GTK+"
-
-#~ msgid "Help options"
-#~ msgstr "Опции за \"помощ\""
-
-#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-#~ msgstr "%s е невалидна опция. Вижте 'zenity --help' за повече информация\n"
-
-#~ msgid "%s given twice for the same dialog\n"
-#~ msgstr "%s е зададен два пъти за един прозорец\n"
