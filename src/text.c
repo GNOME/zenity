@@ -133,7 +133,6 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   else
     zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-text.png"));
 
-  gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 
   text_buffer = gtk_text_buffer_new (NULL);
@@ -148,6 +147,11 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
   if (text_data->editable)
     zen_text_data->buffer = text_buffer;
+
+  if (data->width > -1 || data->height > -1)
+    gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+  else
+    gtk_window_set_default_size (GTK_WINDOW (dialog), 300, 400); 
 
   gtk_widget_show (dialog);
 

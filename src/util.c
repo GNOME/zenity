@@ -34,7 +34,6 @@
 #include "config.h"
 #include "util.h"
 #include "zenity.h"
-#include <gconf/gconf-client.h>
 
 #define ZENITY_OK_DEFAULT	0
 #define ZENITY_CANCEL_DEFAULT	1

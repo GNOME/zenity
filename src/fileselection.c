@@ -54,8 +54,6 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   else
     zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-file.png"));
 
-  gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
-
   if (file_data->uri) {
     dir = g_path_get_dirname (file_data->uri);
     gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), dir);
@@ -107,6 +105,7 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
     default:
       /* Esc dialog */
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+      gtk_main_quit ();
       break;
   }
 }

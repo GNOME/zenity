@@ -53,6 +53,7 @@ static const gchar *author_credits[] = {
   "",
   "Patches from the following people",
   "=================================",
+  "Darren Adams  <darrenadams@dsl.pipex.com>",
   "Peter Astrand  <astrand@lysator.liu.se>",
   "Jonathan Blandford  <jrb@redhat.com>",
   "Ross Burton  <ross@burtonini.com>",
