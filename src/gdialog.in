@@ -227,8 +227,8 @@ ARG: while ($argn < $args) {
 		# an untitled column for the check or radio buttons
 		# and the 'text' arg as a second column header
 		
-		$command .= "--list $list --column='' --column \"$element\" ";
-		
+		$command .= "--list $list --column='' --column='' --column \"$element\" ";
+
 		# should output be line by line?
 		if ($separator) {
 			$command .= " --separator='\n' ";
@@ -238,10 +238,10 @@ ARG: while ($argn < $args) {
 		# bypassing height, width and list-height
 		# from here args run [tag] [item] [status] ...
 
-		$argn += 5; 
+		$argn += 4; 
 		
 		# Loop over the remainder of the commandline
-		# discarding the 'status' and 'tag' args of each item 
+		# discarding the 'status' args of each item
 		# and using the 'item' for display in our second column
 		# also pass a fake NULL argument since zenity can't set
 		# the status of a row like gdialog can
@@ -249,7 +249,10 @@ ARG: while ($argn < $args) {
 		while ($argn < $args) {
 			get_arg;
 			$command .= "NULL \"$element\" ";
-			$argn += 3;
+			$argn += 1;
+			get_arg;
+			$command .= "\"$element\" ";
+			$argn += 2;
 		}
 		last ARG;
 	} 
