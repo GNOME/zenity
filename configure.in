@@ -53,10 +53,6 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Finding gettext package]
 
 AC_DEFINE_UNQUOTED(GNOME_ICONDIR, "${prefix}/share/pixmaps", [Determining icon location])
 
-AC_SUBST(CFLAGS)
-AC_SUBST(CPPFLAGS)
-AC_SUBST(LDFLAGS)
-
 AC_OUTPUT([
 Makefile 
 zenity.spec
