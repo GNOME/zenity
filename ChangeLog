@@ -1,3 +1,9 @@
+2003-01-16  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* src/tree.c: fix a segfault if a --list is constructed and there
+	is no data to put in it. Since a list with no contents to select
+	seemed pointless, return without showing dialog.
+
 2003-01-15  Glynn Foster  <glynn.foster@sun.com>
 
 	* help/C/Makefile.am, help/C/legal.xml, help/C/zenity-C.omf, 

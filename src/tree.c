@@ -124,7 +124,13 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	        data->exit_code = -1;
                 return;
         }
-	
+
+	if (tree_data->data == NULL) {
+		g_printerr (_("No contents specified for --list\n"));
+		data->exit_code = -1;
+		return;
+	}
+
 	glade_xml_signal_autoconnect (glade_dialog);
 
 	dialog = glade_xml_get_widget (glade_dialog, "zenity_tree_dialog");
