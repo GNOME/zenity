@@ -440,13 +440,13 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree_view), TRUE);
 
   if (tree_data->radiobox || tree_data->checkbox) {
-    if (tree_data->data)
+    if (tree_data->data && *tree_data->data)
       zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, TRUE, tree_data->editable);
     else
       zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view), n_columns, TRUE, tree_data->editable);
   }
   else {
-    if (tree_data->data)
+    if (tree_data->data && *tree_data->data)
       zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view), tree_data->data, n_columns, FALSE, tree_data->editable);
     else
       zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view), n_columns, FALSE, tree_data->editable);

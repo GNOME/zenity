@@ -61,6 +61,7 @@ static const gchar *author_credits[] = {
   "Ross Burton  <ross burtonini com>",
   "Damien Carbery  <damien carbery sun com>",
   "Anders Carlsson  <andersca codefactory se>",
+  "Ed Catmur  <ed catmur co uk>",
   "Nicholas Curran  <quasar austar net au>",
   "John Fleck  <jfleck inkstain net>",
   "Sebastian Heinlein <glatzor pimpzkru de>",
