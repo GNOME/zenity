@@ -1,6 +1,8 @@
+%define version @VERSION@
+%define name zenity
 Summary: Zenity is a basic rewrite of gdialog, with simplicity of use in mind.
-Name: zenity
-Version: 1.0
+Name: %{name}
+Version: %{version}
 Release: 1
 Vendor: N/A
 URL: http://ftp.gnome.org/pub/GNOME/sources/zenity/%{version}/
@@ -79,3 +81,7 @@ Zenity is especially useful in scripts.
 %changelog
 * Thu Feb  1 2003 Mihai Lazarescu <mihai@email.it>
 - first release for version 1.0
+
+* Thu Mar  6 2003 Glynn Foster <glynn.foster@sun.com>
+- Fix up the %defines. Not sure if this makes a difference but it
+  seems cleaner to me
