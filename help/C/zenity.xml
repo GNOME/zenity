@@ -596,7 +596,8 @@
 	then your first pieces of data for each row must be either 'TRUE' or 'FALSE'. See
 	examples below for how to fill data into this dialog. The List dialog may also be
 	filled by providing data from standard input, column by column, row by row, each
-	seperated by a newline.
+	seperated by a newline, however the column headers must appear with the 
+	<command>--column</command> option.
     </para>
 
     <para>
@@ -683,7 +684,9 @@
     <title>Progress</title>
 
     <para>
-	To create a Progress dialog, use <command>--progress</command>. 
+	To create a Progress dialog, use <command>--progress</command>. Zenity reads data from
+	standard input line by line, determining whether it should update the text (if the
+	line is prefixed with a '#') or the percentage (if the line is a digit).
     </para>
 	
     <para>
@@ -736,12 +739,16 @@
 		#!/bin/sh
 		(
 		echo "10" ; sleep 1
+		echo "# Updating mail logs" ; sleep 1
 		echo "20" ; sleep 1
+		echo "# Resetting cron jobs" ; sleep 1
 		echo "50" ; sleep 1
+		echo "This line will just be ignored" ; sleep 1
 		echo "75" ; sleep 1
+		echo "# Rebooting system" ; sleep 1
 		echo "100" ; sleep 1
 		) |
-		zenity --progress --dialog-title="Update System Logs" --text="Updating mail logs..." --percentage=0
+		zenity --progress --dialog-title="Update System Logs" --text="Scanning mail logs..." --percentage=0
 
 		if [ "$?" = -1 ] ; then
 			zenity --error --text="Update cancelled."

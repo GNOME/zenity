@@ -29,10 +29,129 @@
 static guint timer;
 static GladeXML *glade_dialog;
 
+static GIOChannel *channel;
+
 gint zenity_progress_timeout (gpointer data);
 gint zenity_progress_pulsate_timeout (gpointer data);
 
 static void zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data);
+
+static gboolean
+zenity_progress_pulsate_progress_bar (gpointer user_data)
+{
+  gtk_progress_bar_pulse (GTK_PROGRESS_BAR (user_data));
+  return TRUE;
+}
+
+static gboolean
+zenity_progress_handle_stdin (GIOChannel   *channel,
+                              GIOCondition  condition,
+                              gpointer      data)
+{
+  static ZenityProgressData *progress_data;
+  static GtkWidget *progress_bar;
+  static GtkWidget *progress_label;
+  static gint pulsate_timeout = -1;
+  float percentage = 0.0;
+  
+  progress_data = (ZenityProgressData *) data;
+  progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
+  progress_label = glade_xml_get_widget (glade_dialog, "zenity_progress_text");
+
+  if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
+    GString *string;
+    GError *error = NULL;
+
+    string = g_string_new (NULL);
+
+    if (progress_data->pulsate) {
+      if (pulsate_timeout == -1)
+        pulsate_timeout = g_timeout_add (100, zenity_progress_pulsate_progress_bar, progress_bar);
+    }
+
+    while (channel->is_readable != TRUE)
+      ;
+    do {
+      gint status;
+
+      do {
+        status = g_io_channel_read_line_string (channel, string, NULL, &error);
+
+        while (gtk_events_pending ())
+          gtk_main_iteration ();
+
+      } while (status == G_IO_STATUS_AGAIN);
+
+      if (status != G_IO_STATUS_NORMAL) {
+        if (error) {
+          g_warning ("zenity_progress_handle_stdin () : %s", error->message);
+          g_error_free (error);
+          error = NULL;
+        }
+        continue;
+      }
+
+      if (!g_ascii_strncasecmp (string->str, "#", 1)) {
+        gchar *match;
+
+        /* We have a comment, so let's try to change the label */
+        match = g_strstr_len (string->str, strlen (string->str), "#");
+        match++;
+        gtk_label_set_text (GTK_LABEL (progress_label), g_strchomp (g_strchug (match)));
+      } else {
+
+        if (!g_ascii_isdigit (*(string->str)))
+          continue;
+
+        /* Now try to convert the thing to a number */
+        percentage = atoi (string->str);
+        if (percentage > 100)
+          gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
+        else
+          gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), percentage / 100.0);
+      }
+
+    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN);
+    g_string_free (string, TRUE);
+  }
+
+  if (condition != G_IO_IN) {
+    /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
+    GtkWidget *button;
+    GtkWidget *progress_bar;
+
+    button = glade_xml_get_widget (glade_dialog, "zenity_progress_ok_button");
+    gtk_widget_set_sensitive (button, TRUE);
+    gtk_widget_grab_focus (button);
+
+    button = glade_xml_get_widget (glade_dialog, "zenity_progress_cancel_button");
+    gtk_widget_set_sensitive (button, FALSE);
+		
+    progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
+    gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
+
+    if (progress_data->pulsate) {
+      g_source_remove (pulsate_timeout);
+      pulsate_timeout = -1;
+    }
+
+    if (glade_dialog)
+      g_object_unref (glade_dialog);
+
+    g_io_channel_shutdown (channel, TRUE, NULL);
+    return FALSE;
+  }
+  return TRUE;
+}
+
+static void
+zenity_progress_read_info (ZenityProgressData *progress_data)
+{
+  channel = g_io_channel_unix_new (0);
+  g_io_channel_set_encoding (channel, NULL, NULL);
+  g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
+  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_progress_handle_stdin, progress_data);
+}
 
 void
 zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
@@ -76,83 +195,9 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
                                    progress_data->percentage/100.0);
 	
   gtk_widget_show (dialog);
-  if (!progress_data->pulsate)
-    timer = gtk_timeout_add (100, zenity_progress_timeout, progress_bar);
-  else
-    timer = gtk_timeout_add (100, zenity_progress_pulsate_timeout, progress_bar);
+  zenity_progress_read_info (progress_data);
 
   gtk_main ();
-}
-
-gint 
-zenity_progress_timeout (gpointer data)
-{
-  gchar buffer[256];
-  float percentage;
-
-  while(gtk_events_pending()) {
-    gtk_main_iteration();
-
-    if (timer == 0)
-      return FALSE;
-  }
-
-  if (scanf ("%255s", buffer) == EOF) {
-    GtkWidget *button;
-
-    button = glade_xml_get_widget (glade_dialog, "zenity_progress_ok_button");
-    gtk_widget_set_sensitive (button, TRUE);
-    gtk_widget_grab_focus (button);
-
-    button = glade_xml_get_widget (glade_dialog, "zenity_progress_cancel_button");
-    gtk_widget_set_sensitive (button, FALSE);
-		
-    if (glade_dialog)
-      g_object_unref (glade_dialog);
-
-    return FALSE;
-  } else {
-    percentage = atoi (buffer);
-
-    if (percentage > 100)
-      gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (data), 1.0);
-    else
-      gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (data), percentage / 100.0);
-
-    return TRUE;
-  }
-}
-
-gint 
-zenity_progress_pulsate_timeout (gpointer data)
-{
-        
-  while(gtk_events_pending()) {
-    gtk_main_iteration();
-
-    if (timer == 0)
-      return FALSE;
-  }
-
-  if (feof (stdin)) {
-    gtk_progress_bar_pulse (GTK_PROGRESS_BAR (data));
-    return FALSE;
-  } else  {
-    GtkWidget *button;
-
-    /* We stop the pulsating and switch the focus on the dialog buttons */
-		  
-    gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (data), 1.0);
-
-    button = glade_xml_get_widget (glade_dialog, "zenity_progress_ok_button");
-    gtk_widget_set_sensitive (button, TRUE);
-    gtk_widget_grab_focus (button);
-
-    button = glade_xml_get_widget (glade_dialog, "zenity_progress_cancel_button");
-    gtk_widget_set_sensitive (button, FALSE);
-
-    return TRUE;
-  }
 }
 
 static void
@@ -167,6 +212,8 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 		
     case GTK_RESPONSE_CANCEL:
+      /* FIXME: This should kill off the parent process - not entirely sure how to achieve this */
+      kill (0);
       zen_data->exit_code = 1;
       gtk_main_quit ();
       break;
