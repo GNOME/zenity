@@ -28,6 +28,8 @@ sub get_arg () {
 
 # walk the command line
 
+print $args;
+
 ARG: while ($argn < $args) {
 
 	get_arg;
@@ -115,6 +117,18 @@ ARG: while ($argn < $args) {
 		$argn++;
 		get_arg;
 		$command .= "--filename=\"$element\" ";
+
+		# width and height matter for this one, so get them
+		# and apply the same multipliers as used in gdialog
+
+		$argn++;
+		get_arg;
+		$element = $element * 8;
+		$command .= "--width=\"$element\" ";
+		$argn++;
+		get_arg;
+		$element = $element * 7;
+		$command .= "--height=\"$element\" ";
 		last ARG;
 	}
 	

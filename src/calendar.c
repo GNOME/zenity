@@ -99,8 +99,7 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
     case GTK_RESPONSE_OK:
       gtk_calendar_get_date (GTK_CALENDAR (calendar), &day, &month, &year);
       date = g_date_new_dmy (year, month + 1, day);
-      g_date_strftime (time_string, 127, 
-      zen_cal_data->date_format, date);
+      g_date_strftime (time_string, 127, zen_cal_data->date_format, date);
       g_printerr ("%s\n", time_string);
     
       if (date != NULL)
