@@ -77,6 +77,7 @@ static const gchar *author_credits[] = {
   "Kristian Rietveld  <kris gtk org>",
   "Christian Rose  <menthos menthos com>",
   "Jakub Steiner  <jimmac ximian com>",
+  "Luke Suchocki  <gnome lukiepoo com>",
   "Daniel d'Surreal  <dagmar speakeasy net>",
   "Hidetoshi Tajima  <hidetoshi tajima sun com>",
   "Tom Tromey  <tromey redhat com>",

@@ -228,7 +228,7 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
        * I'm pretty sure there is a nice way to do this, but I'm clueless about this
        * stuff. Should be using SIGHUP instead of 1 though.
        */
-      kill (getpid (), 1);
+      kill (getppid (), 1);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       gtk_main_quit ();
       break;
