@@ -842,6 +842,9 @@ void zenity_parse_options_callback (poptContext              ctx,
                                     const char              *arg,
                                     void                    *data)
 {
+        static gboolean parse_option_text = FALSE;
+        static gboolean parse_option_file = FALSE;
+
 	if (reason == POPT_CALLBACK_REASON_POST) {
 		return;
 	} 
@@ -956,6 +959,12 @@ void zenity_parse_options_callback (poptContext              ctx,
 		case OPTION_QUESTIONTEXT:
 		case OPTION_PROGRESSTEXT:
 		case OPTION_WARNINGTEXT:
+                        if (parse_option_text == TRUE) {
+                                g_printerr (_("--text given twice for the same dialog\n"));
+                                zenity_free_parsing_options ();
+                                exit (-1);
+                        }
+
 			switch (results->mode) {
 				case MODE_CALENDAR:
 					results->calendar_data->dialog_text = g_strdup (arg);
@@ -977,6 +986,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 					zenity_free_parsing_options ();
 					exit (-1);
 				}
+                        parse_option_text = TRUE;
 			break;
 		case OPTION_DAY:
 			if (results->mode != MODE_CALENDAR) {
@@ -1045,6 +1055,12 @@ void zenity_parse_options_callback (poptContext              ctx,
 			break;
 		case OPTION_FILENAME:
 		case OPTION_TEXTFILE:
+                        if (parse_option_file == TRUE) {
+                                g_printerr (_("--filename given twice for the same dialog\n"));
+                                zenity_free_parsing_options ();
+                                exit (-1);
+                        }
+
 			switch (results->mode) {
 				case MODE_FILE:
 					results->file_data->uri = g_strdup (arg);
@@ -1057,6 +1073,7 @@ void zenity_parse_options_callback (poptContext              ctx,
 					zenity_free_parsing_options ();
 					exit (-1);
 			}
+                        parse_option_file = TRUE;
 			break;
 		case OPTION_COLUMN:
 			if (results->mode != MODE_LIST) {
