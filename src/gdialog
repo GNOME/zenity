@@ -33,8 +33,8 @@ ARG: while ($argn < $args) {
 	get_arg;
 	
 
-	# Section 1 : Args which gdialog expects BEFORE box options
-	# --clear, --backtitle have no obvious effect - ignored
+# Section 1 : Args which gdialog expects BEFORE box options
+# --clear, --backtitle have no obvious effect - ignored
 
 	if ($element eq "--title") {
 	
@@ -60,7 +60,7 @@ ARG: while ($argn < $args) {
 		next ARG;
 	}
 
-	# Section 2 : Box Options and subsequent args
+# Section 2 : Box Options and subsequent args
 	
 	if ($element eq "--msgbox" || $element eq "--infobox") {
 	
@@ -144,8 +144,8 @@ ARG: while ($argn < $args) {
 		# Loop over the remainder of the commandline
 		# discarding the 'status' and 'tag' args of each item 
 		# and using the 'item' for display in our second column
-		# also pass a NULL argument since zenity can't set the status
-		# of a row like gdialog can
+		# also pass a fake NULL argument since zenity can't set
+		# the status of a row like gdialog can
 		
 		while ($argn < $args) {
 			get_arg;
@@ -162,7 +162,7 @@ ARG: while ($argn < $args) {
 		
 		# a gdialog --menu is just a one column zenity --list
 		# Use the 'text' arg as a second column header
-		# FIXME: or should it be the dialog text?
+		# FIXME: or should it be the dialog text, or both?
 		
 		$command .= "--list --column $element ";
 			

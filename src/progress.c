@@ -105,9 +105,13 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
 
         /* Now try to convert the thing to a number */
         percentage = atoi (string->str);
-        if (percentage > 100)
+        if (percentage >= 100) {
+	  GtkWidget *button;
+	  button = glade_xml_get_widget( glade_dialog,"zenity_progress_ok_button");
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
-        else
+	  gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
+	  gtk_widget_grab_focus(GTK_WIDGET (button));
+	} else
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), percentage / 100.0);
       }
 
