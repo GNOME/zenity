@@ -103,8 +103,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 				break;
 		}
 	}
-
-	gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
+        
+        if (msg_data->dialog_text)
+	        gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
 
 	gtk_widget_show (dialog);
 	gtk_main ();

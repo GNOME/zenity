@@ -56,7 +56,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 	if (data->window_icon)
 		zenity_util_set_window_icon (dialog, data->window_icon);
 	else
-		/* FIXME: Come up with a nice default window icon */;
+		zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-entry.png"));
 	
 	text = glade_xml_get_widget (glade_dialog, "zenity_entry_text");
 
