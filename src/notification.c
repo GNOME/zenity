@@ -242,7 +242,11 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 		       GTK_ICON_SIZE_BUTTON);
     gdk_pixbuf_unref (pixbuf);
   } else {
-    g_warning ("Could not load notification icon : %s", ZENITY_IMAGE_FULLPATH ("zenity-notification.png"));
+    if (data->window_icon != NULL)  {
+      g_warning ("Could not load notification icon : %s", data->window_icon);
+    }
+    else
+      g_warning ("Could not load notification icon : %s", ZENITY_IMAGE_FULLPATH ("zenity-notification.png"));
     return; 
   }
 
