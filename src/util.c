@@ -146,13 +146,13 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename)
 GdkPixbuf *
 zenity_util_pixbuf_new_from_file (GtkWidget *widget, gchar *filename)
 {
-    if (!strcmp (g_strdown (filename), "warning"))
+    if (!strcasecmp (filename, "warning"))
       return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_BUTTON, NULL);
-    if (!strcmp (g_strdown (filename), "info"))
+    if (!strcasecmp (filename, "info"))
       return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_INFO, GTK_ICON_SIZE_BUTTON, NULL);
-    if (!strcmp (g_strdown (filename), "question"))
+    if (!strcasecmp (filename, "question"))
       return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_QUESTION, GTK_ICON_SIZE_BUTTON, NULL);
-    if (!strcmp (g_strdown (filename), "error"))
+    if (!strcasecmp (filename, "error"))
       return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_ERROR, GTK_ICON_SIZE_BUTTON, NULL);
     else
       return gdk_pixbuf_new_from_file (filename, NULL);
