@@ -287,18 +287,10 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   n_columns = g_slist_length (tree_data->columns);
 
   if (n_columns == 0) {
-    g_printerr (_("No column titles specified for --list\n")); 
+    g_printerr (_("No column titles specified for List dialog.\n")); 
     data->exit_code = -1;
     return;
   }
-
-  /*
-  if (tree_data->data == NULL) {
-    g_printerr (_("No contents specified for --list\n"));
-    data->exit_code = -1;
-    return;
-  }
-  */
 
   glade_xml_signal_autoconnect (glade_dialog);
 

@@ -1000,18 +1000,19 @@ main (gint argc, gchar **argv) {
     /*nothing*/;
 
   if (nextopt != -1) {
-    g_printerr (_("%s in an invalid option for this dialog. See zenity --help for more details\n"),
+    g_printerr (_("%s in an invalid option. See zenity --help for more details\n"),
                   poptBadOption (ctx, 0));
     zenity_free_parsing_options (); 
     exit (-1); 
   }
   gtk_init (&argc, &argv);
 
+  /* 
   if (argc < 2) {
     g_printerr (_("You must specify more arguments. See zenity --help for more details\n"));
     zenity_free_parsing_options ();
     exit (-1);
-  }
+  } */
 
   switch (results->mode) {
     case MODE_CALENDAR:
