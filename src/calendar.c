@@ -63,6 +63,8 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   else
     zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-calendar.png"));
 
+  gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
   text = glade_xml_get_widget (glade_dialog, "zenity_calendar_text");
 
   if (cal_data->dialog_text)

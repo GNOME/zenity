@@ -76,6 +76,8 @@ enum {
   OPTION_WARNING,
   OPTION_TITLE,
   OPTION_ICON,
+  OPTION_WIDTH,
+  OPTION_HEIGHT,
   OPTION_CALENDARTEXT,
   OPTION_DAY,
   OPTION_MONTH,
@@ -86,6 +88,7 @@ enum {
   OPTION_ERRORTEXT,
   OPTION_INFOTEXT,
   OPTION_FILENAME,
+  OPTION_TEXTFILENAME,
   OPTION_COLUMN,
   OPTION_SEPERATOR,
   OPTION_LISTEDIT,
@@ -95,7 +98,6 @@ enum {
   OPTION_PERCENTAGE,
   OPTION_PULSATE,
   OPTION_QUESTIONTEXT,
-  OPTION_TEXTFILE,
   OPTION_WARNINGTEXT,
   OPTION_ABOUT,
   OPTION_VERSION,
@@ -238,6 +240,24 @@ struct poptOption general_options[] = {
     OPTION_ICON,
     N_("Set the window icon"),
     N_("ICONPATH")
+  },
+  {
+    "width",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_WIDTH,
+    N_("Set the width"),
+    N_("WIDTH")
+  },
+  {
+    "height",
+    '\0',
+    POPT_ARG_STRING,
+    NULL,
+    OPTION_HEIGHT,
+    N_("Set the height"),
+    N_("HEIGHT")
   },
   POPT_TABLEEND
 };
@@ -531,7 +551,7 @@ struct poptOption text_options[] = {
     '\0',
     POPT_ARG_STRING,
     NULL,
-    OPTION_TEXTFILE,
+    OPTION_TEXTFILENAME,
     N_("Open file"),
     N_("FILENAME")
   },
@@ -886,6 +906,8 @@ zenity_init_parsing_options (void) {
   results->tree_data = g_new0 (ZenityTreeData, 1);
 
   /* Give some sensible defaults */
+  results->data->width = -1;
+  results->data->height = -1;
   results->calendar_data->date_format = g_strdup (nl_langinfo (D_FMT));
   results->calendar_data->day = 0;
   results->calendar_data->month = 0;
@@ -979,7 +1001,7 @@ main (gint argc, gchar **argv) {
 
   if (nextopt != -1) {
     g_printerr (_("%s in an invalid option for this dialog. See zenity --help for more details\n"),
-        poptBadOption (ctx, 0));
+                  poptBadOption (ctx, 0));
     zenity_free_parsing_options (); 
     exit (-1); 
   }
@@ -1070,290 +1092,303 @@ zenity_parse_options_callback (poptContext              ctx,
   static gint parse_option_file = 0;
   static gint parse_option_editable = 0;
 
-  if (reason == POPT_CALLBACK_REASON_POST) {
-		return;
-	} 
-	else if (reason != POPT_CALLBACK_REASON_OPTION)
-		return;
+  if (reason == POPT_CALLBACK_REASON_POST)
+    return;
+  else if (reason != POPT_CALLBACK_REASON_OPTION)
+    return;
 
-	switch (opt->val & POPT_ARG_MASK) {
+  switch (opt->val & POPT_ARG_MASK) {
 
- 		case OPTION_CALENDAR:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
+    case OPTION_CALENDAR:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 
-			results->mode = MODE_CALENDAR;
-			break;
-		case OPTION_ENTRY:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
+      results->mode = MODE_CALENDAR;
+      break;
+    case OPTION_ENTRY:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 
-			results->mode = MODE_ENTRY;
-			break;
-		case OPTION_ERROR:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
+      results->mode = MODE_ENTRY;
+      break;
+    case OPTION_ERROR:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 
-			results->mode = MODE_ERROR;
-			results->msg_data->mode = ZENITY_MSG_ERROR;
-			break;
-		case OPTION_INFO:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
+      results->mode = MODE_ERROR;
+      results->msg_data->mode = ZENITY_MSG_ERROR;
+      break;
+    case OPTION_INFO:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 
-			results->mode = MODE_INFO;
-			results->msg_data->mode = ZENITY_MSG_INFO;
-			break;
-		case OPTION_FILE:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-			results->mode = MODE_FILE;
-			break;
-		case OPTION_LIST:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-			results->mode = MODE_LIST;
-			break;
-		case OPTION_PROGRESS:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-			results->mode = MODE_PROGRESS;
-			break;
-		case OPTION_QUESTION:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-			results->mode = MODE_QUESTION;
-			results->msg_data->mode = ZENITY_MSG_QUESTION;
-			break;
-		case OPTION_TEXTINFO:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-			results->mode = MODE_TEXTINFO;
-			break;
-		case OPTION_WARNING:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-			results->mode = MODE_WARNING;
-			results->msg_data->mode = ZENITY_MSG_WARNING;
-			break;
-		case OPTION_TITLE:
-			if (results->data->dialog_title != NULL)
-                                zenity_error ("--title", ERROR_DUPLICATE);
-
-			results->data->dialog_title = g_strdup (arg);
-			break;
-		case OPTION_ICON:
-			if (results->data->window_icon != NULL)
-                                zenity_error ("--window-icon", ERROR_DUPLICATE);
-
-			results->data->window_icon = g_strdup (arg);
-			break;
-		case OPTION_CALENDARTEXT:
-		case OPTION_ENTRYTEXT:
-		case OPTION_ERRORTEXT:
-		case OPTION_QUESTIONTEXT:
-		case OPTION_PROGRESSTEXT:
-		case OPTION_WARNINGTEXT:
-
-                        /* FIXME: This is an ugly hack because of the way the poptOptions are
-                         * ordered above. When you try and use an --option more than once
-                         * parse_options_callback gets called for each option. Suckage
-                         */
-
-                        if (parse_option_text > 6)
-                                zenity_error ("--text", ERROR_DUPLICATE);
-
-			switch (results->mode) {
-				case MODE_CALENDAR:
-					results->calendar_data->dialog_text = g_strdup (arg);
-					break;
-				case MODE_ENTRY:
-					results->entry_data->dialog_text = g_strdup (arg);
-					break;
-				case MODE_ERROR:
-				case MODE_QUESTION:
-				case MODE_WARNING:
-				case MODE_INFO:
-					results->msg_data->dialog_text = g_strdup (arg);
-					break;
-				case MODE_PROGRESS:
-					results->progress_data->dialog_text = g_strdup (arg);
-					break;
-				default:
-                                        zenity_error ("--text", ERROR_SUPPORT);
-				}
-                        parse_option_text++;
-			break;
-		case OPTION_DAY:
-			if (results->mode != MODE_CALENDAR)
-                                zenity_error ("--day", ERROR_SUPPORT);
-
-			if (results->calendar_data->day > 0)
-                                zenity_error ("--day", ERROR_DUPLICATE);
-
-			results->calendar_data->day = atoi (arg);
-			break;
-		case OPTION_MONTH:
-			if (results->mode != MODE_CALENDAR)
-                                zenity_error ("--month", ERROR_SUPPORT);
-
-			if (results->calendar_data->month > 0)
-                                zenity_error ("--day", ERROR_DUPLICATE);
-
-			results->calendar_data->month = atoi (arg);
-			break;
-		case OPTION_YEAR:
-			if (results->mode != MODE_CALENDAR)
-                                zenity_error ("--year", ERROR_SUPPORT);
+      results->mode = MODE_INFO;
+      results->msg_data->mode = ZENITY_MSG_INFO;
+      break;
+    case OPTION_FILE:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 			
-                        if (results->calendar_data->year > 0)
-                                zenity_error ("--year", ERROR_DUPLICATE);
+      results->mode = MODE_FILE;
+      break;
+    case OPTION_LIST:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 
-			results->calendar_data->year = atoi (arg);
-			break;
-		case OPTION_DATEFORMAT:
-			if (results->mode != MODE_CALENDAR)
-                                zenity_error ("--date-format", ERROR_SUPPORT);
-                        
-                        if (parse_option_dateformat)
-                                zenity_error ("--date-format", ERROR_DUPLICATE);
-
-			results->calendar_data->date_format = g_strdup (arg);
-                        parse_option_dateformat = TRUE;
-			break;
-		case OPTION_INPUTTEXT:
-			if (results->mode != MODE_ENTRY)
-                                zenity_error ("--entry-text", ERROR_SUPPORT);
+      results->mode = MODE_LIST;
+      break;
+    case OPTION_PROGRESS:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 			
-                        if (results->entry_data->entry_text != NULL)
-                                zenity_error ("--entry-text", ERROR_DUPLICATE);
-
-			results->entry_data->entry_text = g_strdup (arg);
-			break;
-		case OPTION_HIDETEXT:
-			if (results->mode != MODE_ENTRY)
-                                zenity_error ("--hide-text", ERROR_SUPPORT);
+      results->mode = MODE_PROGRESS;
+      break;
+    case OPTION_QUESTION:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 			
-                        if (!results->entry_data->visible)
-                                zenity_error ("--hide-text", ERROR_DUPLICATE);
+      results->mode = MODE_QUESTION; 
+      results->msg_data->mode = ZENITY_MSG_QUESTION; 
+      break;
+    case OPTION_TEXTINFO:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 
-			results->entry_data->visible = FALSE;
-			break;
-                case OPTION_LISTEDIT:
-		case OPTION_TEXTEDIT:
+      results->mode = MODE_TEXTINFO; 
+      break;
+    case OPTION_WARNING:
+      if (results->mode != MODE_LAST)
+        zenity_error (NULL, ERROR_DIALOG);
 
-                        /* FIXME: This is an ugly hack because of the way the poptOptions are
-                         * ordered above. When you try and use an --option more than once
-                         * parse_options_callback gets called for each option. Suckage
-                         */
+      results->mode = MODE_WARNING; 
+      results->msg_data->mode = ZENITY_MSG_WARNING; 
+      break;
+    case OPTION_TITLE:
+      if (results->data->dialog_title != NULL)
+        zenity_error ("--title", ERROR_DUPLICATE);
 
-                        if (parse_option_file > 2)
-                                zenity_error ("--editable", ERROR_DUPLICATE);
+      results->data->dialog_title = g_strdup (arg); 
+      break; 
+    case OPTION_ICON: 
+      if (results->data->window_icon != NULL) 
+        zenity_error ("--window-icon", ERROR_DUPLICATE); 
+      
+      results->data->window_icon = g_strdup (arg); 
+      break; 
+    case OPTION_WIDTH: 
+      if (results->data->width != -1) 
+        zenity_error ("--width", ERROR_DUPLICATE); 
+      
+      results->data->width = atoi (arg); 
+      break; 
+    case OPTION_HEIGHT: 
+      if (results->data->height != -1) 
+        zenity_error ("--height", ERROR_DUPLICATE); 
+      
+      results->data->height = atoi (arg); 
+      break; 
+    case OPTION_CALENDARTEXT: 
+    case OPTION_ENTRYTEXT: 
+    case OPTION_ERRORTEXT: 
+    case OPTION_QUESTIONTEXT: 
+    case OPTION_PROGRESSTEXT: 
+    case OPTION_WARNINGTEXT: 
+      
+      /* FIXME: This is an ugly hack because of the way the poptOptions are 
+       * ordered above. When you try and use an --option more than once 
+       * parse_options_callback gets called for each option. Suckage 
+       */
 
-                        switch (results->mode) {
-                                case MODE_TEXTINFO:
-                                          results->text_data->editable = TRUE;
-                                          break;
-                                case MODE_LIST:
-                                          results->tree_data->editable = TRUE;
-                                          break;
-				default:
-                                        zenity_error ("--editable", ERROR_SUPPORT);
-                        }
-                        parse_option_editable++;
-			break;
-		case OPTION_FILENAME:
-		case OPTION_TEXTFILE:
+      if (parse_option_text > 6) 
+        zenity_error ("--text", ERROR_DUPLICATE); 
+      
+      switch (results->mode) { 
+        case MODE_CALENDAR: 
+          results->calendar_data->dialog_text = g_strdup (arg); 
+          break; 
+        case MODE_ENTRY: 
+          results->entry_data->dialog_text = g_strdup (arg); 
+          break; 
+        case MODE_ERROR: 
+        case MODE_QUESTION: 
+        case MODE_WARNING: 
+        case MODE_INFO: 
+          results->msg_data->dialog_text = g_strdup (arg); 
+          break; 
+        case MODE_PROGRESS: 
+          results->progress_data->dialog_text = g_strdup (arg); 
+          break; 
+        default: 
+          zenity_error ("--text", ERROR_SUPPORT); 
+      } 
+      parse_option_text++; 
+      break; 
+    case OPTION_DAY: 
+      if (results->mode != MODE_CALENDAR) 
+        zenity_error ("--day", ERROR_SUPPORT); 
+      
+      if (results->calendar_data->day > 0) 
+        zenity_error ("--day", ERROR_DUPLICATE); 
 
-                        /* FIXME: This is an ugly hack because of the way the poptOptions are
-                         * ordered above. When you try and use an --option more than once
-                         * parse_options_callback gets called for each option. Suckage
-                         */
-
-                        if (parse_option_file > 2)
-                                zenity_error ("--filename", ERROR_DUPLICATE);
-
-			switch (results->mode) {
-				case MODE_FILE:
-					results->file_data->uri = g_strdup (arg);
-					break;
-				case MODE_TEXTINFO:
-					results->text_data->uri = g_strdup (arg);
-					break;
-				default:
-                                        zenity_error ("--filename", ERROR_SUPPORT);
-			}
-                        parse_option_file++;
-			break;
-		case OPTION_COLUMN:
-			if (results->mode != MODE_LIST)
-                                zenity_error ("--column", ERROR_SUPPORT);
-
-			results->tree_data->columns = g_slist_append (results->tree_data->columns, g_strdup (arg));
-			break;
-		case OPTION_CHECKLIST:
-			if (results->mode != MODE_LIST)
-                                zenity_error ("--checkbox", ERROR_SUPPORT);
-			
-                        if (results->tree_data->checkbox)
-                                zenity_error ("--checkbox", ERROR_DUPLICATE);
-
-			results->tree_data->checkbox = TRUE;
-			break;
-		case OPTION_RADIOLIST:
-			if (results->mode != MODE_LIST)
-                                zenity_error ("--radiobox", ERROR_SUPPORT);
-			
-                        if (results->tree_data->radiobox)
-                                zenity_error ("--radiobox", ERROR_DUPLICATE);
-
-			results->tree_data->radiobox = TRUE;
-			break;
-                case OPTION_SEPERATOR:
-                        if (results->mode != MODE_LIST)
-                                zenity_error ("--separator", ERROR_SUPPORT);
-                        
-                        if (parse_option_separator)
-                                zenity_error ("--separator", ERROR_DUPLICATE);
-
-			results->tree_data->separator = g_strdup (arg);
-                        parse_option_separator = TRUE;
-			break;
-		case OPTION_PERCENTAGE:
-			if (results->mode != MODE_PROGRESS)
-                                zenity_error ("--percentage", ERROR_SUPPORT);
-			
-                        if (results->progress_data->percentage > -1)
-                                zenity_error ("--percentage", ERROR_DUPLICATE);
-
-			results->progress_data->percentage = atoi (arg);
-			break;
-		case OPTION_PULSATE:
-			if (results->mode != MODE_PROGRESS)
-                                zenity_error ("--pulsate", ERROR_SUPPORT);
-
-			results->progress_data->pulsate = TRUE;
-			break;
-		case OPTION_ABOUT:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-                        results->mode = MODE_ABOUT; 
-			break;
-		case OPTION_VERSION:
-			if (results->mode != MODE_LAST)
-                                zenity_error (NULL, ERROR_DIALOG);
-
-			g_print ("%s\n", VERSION);
-			exit (0);
-			break;
-		default:
-                        break;
-	}
+      results->calendar_data->day = atoi (arg); 
+      break; 
+    case OPTION_MONTH: 
+      if (results->mode != MODE_CALENDAR) 
+        zenity_error ("--month", ERROR_SUPPORT); 
+      
+      if (results->calendar_data->month > 0) 
+        zenity_error ("--day", ERROR_DUPLICATE); 
+      
+      results->calendar_data->month = atoi (arg); 
+      break; 
+    case OPTION_YEAR: 
+      if (results->mode != MODE_CALENDAR) 
+        zenity_error ("--year", ERROR_SUPPORT); 
+      
+      if (results->calendar_data->year > 0) 
+        zenity_error ("--year", ERROR_DUPLICATE); 
+      
+      results->calendar_data->year = atoi (arg); 
+      break; 
+    case OPTION_DATEFORMAT: 
+      if (results->mode != MODE_CALENDAR) 
+        zenity_error ("--date-format", ERROR_SUPPORT); 
+      
+      if (parse_option_dateformat) 
+        zenity_error ("--date-format", ERROR_DUPLICATE); 
+      
+      results->calendar_data->date_format = g_strdup (arg); 
+      parse_option_dateformat = TRUE; 
+      break; 
+    case OPTION_INPUTTEXT: 
+      if (results->mode != MODE_ENTRY) 
+        zenity_error ("--entry-text", ERROR_SUPPORT); 
+      
+      if (results->entry_data->entry_text != NULL) 
+        zenity_error ("--entry-text", ERROR_DUPLICATE); 
+      
+      results->entry_data->entry_text = g_strdup (arg); 
+      break; 
+    case OPTION_HIDETEXT: 
+      if (results->mode != MODE_ENTRY) 
+        zenity_error ("--hide-text", ERROR_SUPPORT); 
+      
+      if (!results->entry_data->visible) 
+        zenity_error ("--hide-text", ERROR_DUPLICATE); 
+      
+      results->entry_data->visible = FALSE; 
+      break; 
+    case OPTION_LISTEDIT: 
+    case OPTION_TEXTEDIT: 
+      
+      /* FIXME: This is an ugly hack because of the way the poptOptions are 
+       * ordered above. When you try and use an --option more than once 
+       * parse_options_callback gets called for each option. Suckage 
+       */ 
+      
+      if (parse_option_file > 2) 
+        zenity_error ("--editable", ERROR_DUPLICATE); 
+      
+      switch (results->mode) { 
+        case MODE_TEXTINFO: 
+          results->text_data->editable = TRUE; 
+          break; 
+        case MODE_LIST: 
+          results->tree_data->editable = TRUE; 
+          break; 
+        default: 
+          zenity_error ("--editable", ERROR_SUPPORT); 
+      } 
+      parse_option_editable++; 
+      break; 
+    case OPTION_FILENAME: 
+    case OPTION_TEXTFILENAME:
+      
+      /* FIXME: This is an ugly hack because of the way the poptOptions are 
+       * ordered above. When you try and use an --option more than once 
+       * parse_options_callback gets called for each option. Suckage 
+       */ 
+      
+      if (parse_option_file > 2) 
+        zenity_error ("--filename", ERROR_DUPLICATE); 
+      
+      switch (results->mode) { 
+        case MODE_FILE: 
+          results->file_data->uri = g_strdup (arg); 
+          break; 
+        case MODE_TEXTINFO: 
+          results->text_data->uri = g_strdup (arg); 
+          break; 
+        case MODE_LIST:
+          results->tree_data->uri = g_strdup (arg);
+          break;
+        default: 
+          zenity_error ("--filename", ERROR_SUPPORT); 
+      } 
+      parse_option_file++; 
+      break; 
+    case OPTION_COLUMN: 
+      if (results->mode != MODE_LIST) 
+        zenity_error ("--column", ERROR_SUPPORT); 
+      
+      results->tree_data->columns = g_slist_append (results->tree_data->columns, g_strdup (arg)); 
+      break; 
+    case OPTION_CHECKLIST: 
+      if (results->mode != MODE_LIST) 
+        zenity_error ("--checkbox", ERROR_SUPPORT); 
+      
+      if (results->tree_data->checkbox) 
+        zenity_error ("--checkbox", ERROR_DUPLICATE); 
+      
+      results->tree_data->checkbox = TRUE; 
+      break; 
+    case OPTION_RADIOLIST: 
+      if (results->mode != MODE_LIST) 
+        zenity_error ("--radiobox", ERROR_SUPPORT); 
+      if (results->tree_data->radiobox) 
+        zenity_error ("--radiobox", ERROR_DUPLICATE); 
+      
+      results->tree_data->radiobox = TRUE; 
+      break; 
+    case OPTION_SEPERATOR: 
+      if (results->mode != MODE_LIST) 
+        zenity_error ("--separator", ERROR_SUPPORT); 
+      
+      if (parse_option_separator) 
+        zenity_error ("--separator", ERROR_DUPLICATE); 
+      
+      results->tree_data->separator = g_strdup (arg); 
+      parse_option_separator = TRUE; 
+      break; 
+    case OPTION_PERCENTAGE: 
+      if (results->mode != MODE_PROGRESS) 
+        zenity_error ("--percentage", ERROR_SUPPORT); 
+      
+      if (results->progress_data->percentage > -1) 
+        zenity_error ("--percentage", ERROR_DUPLICATE); 
+      
+      results->progress_data->percentage = atoi (arg); 
+      break; 
+    case OPTION_PULSATE: 
+      if (results->mode != MODE_PROGRESS) 
+        zenity_error ("--pulsate", ERROR_SUPPORT); 
+      
+      results->progress_data->pulsate = TRUE; 
+      break; 
+    case OPTION_ABOUT: 
+      if (results->mode != MODE_LAST) 
+        zenity_error (NULL, ERROR_DIALOG); 
+      
+      results->mode = MODE_ABOUT; 
+      break; 
+    case OPTION_VERSION: 
+      if (results->mode != MODE_LAST) 
+        zenity_error (NULL, ERROR_DIALOG); 
+      zenity_free_parsing_options (); 
+      g_print ("%s\n", VERSION); 
+      exit (0); 
+      break; 
+    default: 
+      break; 
+  } 
 }

@@ -26,6 +26,8 @@ G_BEGIN_DECLS
 typedef struct {
   gchar *dialog_title;
   gchar *window_icon;
+  gint   width;
+  gint   height;
   gint   exit_code;
 } ZenityData;
 

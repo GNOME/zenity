@@ -58,7 +58,9 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
     zenity_util_set_window_icon (dialog, data->window_icon);
   else
     zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-entry.png"));
-	
+
+  gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
   text = glade_xml_get_widget (glade_dialog, "zenity_entry_text");
 
   if (entry_data->dialog_text)

@@ -36,6 +36,17 @@ static gchar *separator;
 
 static void zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data);
 
+static gboolean
+zenity_tree_dialog_untoggle (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gpointer data)
+{
+  GValue toggle_value = {0, };
+
+  gtk_tree_model_get_value (model, iter, 0, &toggle_value);
+
+  if (g_value_get_boolean (&toggle_value))
+    gtk_list_store_set (GTK_LIST_STORE (model), iter, 0, FALSE, -1);
+}
+
 static void
 zenity_tree_toggled_callback (GtkCellRendererToggle *cell, gchar *path_string, gpointer data)
 {
@@ -45,8 +56,16 @@ zenity_tree_toggled_callback (GtkCellRendererToggle *cell, gchar *path_string, g
   gboolean value;
 
   model = GTK_TREE_MODEL (data);
-  path = gtk_tree_path_new_from_string (path_string);
 
+  /* Because this is a radio list, we should untoggle the previous toggle so that 
+   * we only have one selection at any given time
+   */
+
+  if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (model), "radio")) == 1) {
+    gtk_tree_model_foreach (model, zenity_tree_dialog_untoggle, NULL);
+  }
+
+  path = gtk_tree_path_new_from_string (path_string);
   gtk_tree_model_get_iter (model, &iter, path);
   gtk_tree_model_get (model, &iter, 0, &value, -1);
 
@@ -176,6 +195,8 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   else
     zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-list.png"));
 
+  gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
   tree_view = glade_xml_get_widget (glade_dialog, "zenity_tree_view");
 
   /* Create an empty list store */
@@ -216,8 +237,10 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     
         cell_renderer = gtk_cell_renderer_toggle_new ();
 				
-        if (tree_data->radiobox)
+        if (tree_data->radiobox) {
           g_object_set (G_OBJECT (cell_renderer), "radio", TRUE, NULL);
+          g_object_set_data (G_OBJECT (model), "radio", (gint *) 1);
+        }
 
 	g_signal_connect (cell_renderer, "toggled",
                           G_CALLBACK (zenity_tree_toggled_callback), model);

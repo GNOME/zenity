@@ -57,6 +57,8 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   else
     zenity_util_set_window_icon (dialog, ZENITY_IMAGE_FULLPATH ("zenity-file.png"));
 
+  gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
   if (file_data->uri)
     gtk_file_selection_set_filename (GTK_FILE_SELECTION (dialog), file_data->uri);
 
