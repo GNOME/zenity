@@ -2,6 +2,8 @@
  * util.c
  *
  * Copyright (C) 2002 Sun Microsystems, Inc.
+ *           (C) 1999, 2000 Red Hat Inc.
+ *           (C) 1998 James Henstridge
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -19,13 +21,18 @@
  * Boston, MA 02111-1307, USA.
  *
  * Authors: Glynn Foster <glynn.foster@sun.com>
- *          Havoc Pennington  <hp@redhat.com>
+ *          Havoc Pennington <hp@redhat.com>
+ *          James Henstridge <james@daa.com.au>
  */
 
 #include <stdio.h>
 #include <errno.h>
 #include "config.h"
 #include "util.h"
+#include <gconf/gconf-client.h>
+
+#define URL_HANDLER_DIR      "/desktop/gnome/url-handlers/"
+#define DEFAULT_HANDLER_PATH "/desktop/gnome/url-handlers/unknown/command"
 
 GladeXML*
 zenity_util_load_glade_file (const gchar *widget_root) 
@@ -155,4 +162,102 @@ zenity_util_set_window_icon_from_stock (GtkWidget *widget, const gchar *stock_id
 	pixbuf = gtk_widget_render_icon (widget, stock_id, (GtkIconSize) -1, NULL);
 	gtk_window_set_icon (GTK_WINDOW (widget), pixbuf);
 	g_object_unref (pixbuf);
+}
+
+/* This is copied from libgnome/gnome-url.c since we try and avoid using
+ * the evils of gnome_program_init (), which messes up the commandline
+ */
+
+gboolean
+zenity_util_show_help (const gchar *url, GError **error)
+{
+	GConfClient *client;
+	gint i;
+	gchar *pos, *template;
+	int argc;
+	char **argv;
+	gboolean ret;
+	
+	g_return_val_if_fail (url != NULL, FALSE);
+
+	pos = strchr (url, ':');
+
+	client = gconf_client_get_default ();
+
+	if (pos != NULL) {
+		gchar *protocol, *path;
+		
+		g_return_val_if_fail (pos >= url, FALSE);
+
+		protocol = g_new (gchar, pos - url + 1);
+		strncpy (protocol, url, pos - url);
+		protocol[pos - url] = '\0';
+		g_ascii_strdown (protocol, -1);
+
+		path = g_strconcat (URL_HANDLER_DIR, protocol, "/command", NULL);
+		template = gconf_client_get_string (client, path, NULL);
+
+		if (template == NULL) {
+			gchar* template_temp;
+			
+			template_temp = gconf_client_get_string (client,
+								 DEFAULT_HANDLER_PATH,
+								 NULL);
+						
+			/* Retry to get the right url handler */
+			template = gconf_client_get_string (client, path, NULL);
+
+			if (template == NULL) 
+				template = template_temp;
+			else
+				g_free (template_temp);
+
+		}
+		
+		g_free (path);
+		g_free (protocol);
+
+	} else {
+		/* no ':' ? this shouldn't happen. Use default handler */
+		template = gconf_client_get_string (client, 
+						    DEFAULT_HANDLER_PATH, 
+						    NULL);
+	}
+
+	g_object_unref (G_OBJECT (client));
+
+	if (!g_shell_parse_argv (template,
+				 &argc,
+				 &argv,
+				 error)) {
+		g_free (template);
+		return FALSE;
+	}
+
+	g_free (template);
+
+	for (i = 0; i < argc; i++) {
+		char *arg;
+
+		if (strcmp (argv[i], "%s") != 0)
+			continue;
+
+		arg = argv[i];
+		argv[i] = g_strdup (url);
+		g_free (arg);
+	}
+	
+	/* This can return some errors */
+	ret = g_spawn_async (NULL /* working directory */,
+			     argv,
+			     NULL,
+			     G_SPAWN_SEARCH_PATH /* flags */,
+			     NULL /* child_setup */,
+			     NULL /* data */,
+			     NULL /* child_pid */,
+			     error);
+
+	g_strfreev (argv);
+
+	return ret;
 }

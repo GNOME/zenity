@@ -93,6 +93,7 @@ void	zenity_text		(ZenityData		*data,
 				 ZenityTextData         *text_data);
 void	zenity_tree		(ZenityData		*data,
 				 ZenityTreeData         *tree_data);
+void    zenity_about            (ZenityData             *data);
 
 G_END_DECLS
 

@@ -1,5 +1,24 @@
 2003-01-14  Glynn Foster  <glynn.foster@sun.com>
 
+	* configure.in: Update to add new gconf requirement.
+
+	* src/zenity.h, src/about.c: Hurray for a new about box, 
+	although it lacks an icon. I wonder if people would actually 
+	like to see this as part of the dialog options. Can't think 
+	of any reason to do so at the moment though. Large chunks
+	copied from libgnomeui/gnome-about.[ch]
+
+	* src/util.h, src/util.c: Add new helper functions because I 
+	don't want to touch gnome_program with a bargepole. Copied from
+	libgnome/gnome-url.[ch]
+
+	* po/POTFILES.in: Add missing files. I think we have 
+	everything now.
+
+	* TODO: Update accordingly.
+
+2003-01-14  Glynn Foster  <glynn.foster@sun.com>
+
 	* src/Makefile.am, src/about.c, src/main.c, 
 	src/zenity.glade: Add an about box. Still need to add 
 	an icon, and implement the callbacks for Help and Credits. Extra
