@@ -1,3 +1,14 @@
+2004-04-26  Glynn Foster  <glynn.foster@sun.com>
+
+	* THANKS, src/about.c: Add from the 2 Sebastian's, and make
+	email addresses more spam proof.
+	* src/calendar.c, src/entry.c, src/fileselection.c, src/msg.c,
+	* src/progress.c, src/text.c, src/tree.c, src/util.c,
+	* src/util.h: Patch from Sebastian Kapfer to make all zenity
+	dialogs transients of the parent xterm. Fixes #136226.
+	* src/zenity.glade: Patch from Sebastian Heinlein to
+	improve things HIG wise. Fixes #140745.
+
 2004-04-20  Glynn Foster  <glynn.foster@sun.com>
 
 	* configure.in: Post version bump.

@@ -207,8 +207,8 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   if (progress_data->percentage > -1)
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 
                                    progress_data->percentage/100.0);
-	
-  gtk_widget_show (dialog);
+
+  zenity_util_show_dialog (dialog);
   zenity_progress_read_info (progress_data);
 
   gtk_main ();

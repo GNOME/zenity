@@ -31,9 +31,14 @@
 #include <locale.h>
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 #include "config.h"
 #include "util.h"
 #include "zenity.h"
+
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif
 
 #define ZENITY_OK_DEFAULT	0
 #define ZENITY_CANCEL_DEFAULT	1
@@ -259,3 +264,91 @@ zenity_util_return_exit_code ( ZenityExitCode value )
       retval = atoi (env_var);
   return retval; 
 }
+
+
+#ifdef GDK_WINDOWING_X11
+
+static Window
+transient_get_xterm ()
+{
+  const char *wid_str = g_getenv ("WINDOWID");
+  if (wid_str) {
+    char *wid_str_end;
+    Window wid = strtoul (wid_str, &wid_str_end, 10);
+    if (*wid_str != '\0' && *wid_str_end == '\0' && wid != 0)
+      return wid;
+  }
+  return None;
+}
+
+static void
+transient_x_free (void *ptr)
+{
+  if (ptr)
+    XFree (ptr);
+}
+
+static gboolean
+transient_is_toplevel (Window wid)
+{
+  XTextProperty prop;
+  Display *dpy = GDK_DISPLAY ();
+  if (!XGetWMName (dpy, wid, &prop))
+    return FALSE;
+  transient_x_free (prop.value);
+  return !!prop.value;
+}
+
+/*
+ * GNOME Terminal doesn't give us its toplevel window, but the WM needs a
+ * toplevel XID for proper stacking.  Other terminals work fine without this
+ * magic.  We can't use GDK here since "xterm" is a foreign window.
+ */
+
+static Window
+transient_get_xterm_toplevel ()
+{
+  Window xterm = transient_get_xterm ();
+  Display *dpy = GDK_DISPLAY ();
+  while (xterm != None && !transient_is_toplevel (xterm))
+  {
+    Window root, parent, *children;
+    int nchildren;
+    XQueryTree (dpy, xterm,
+                &root, &parent,
+                &children, &nchildren);
+    transient_x_free (children);
+    if (parent == root)
+      xterm = None;
+    else
+      xterm = parent;
+  }
+  return xterm;
+}
+
+static void
+zenity_util_make_transient (GdkWindow *window)
+{
+  Window xterm = transient_get_xterm_toplevel ();
+  if (xterm != None) {
+    GdkWindow *gdkxterm = gdk_window_foreign_new (xterm);
+    if (gdkxterm) {
+      gdk_window_set_transient_for (window, gdkxterm);
+      g_object_unref (G_OBJECT (gdkxterm));
+    }
+  }
+}
+
+#endif /* GDK_WINDOWING_X11 */
+
+void
+zenity_util_show_dialog (GtkWidget *dialog)
+{
+  gtk_widget_realize (dialog);
+#ifdef GDK_WINDOWING_X11
+  g_assert (dialog->window);
+  zenity_util_make_transient (dialog->window);
+#endif
+  gtk_widget_show (dialog);
+}
+

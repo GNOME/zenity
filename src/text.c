@@ -153,7 +153,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   else
     gtk_window_set_default_size (GTK_WINDOW (dialog), 300, 400); 
 
-  gtk_widget_show (dialog);
+  zenity_util_show_dialog (dialog);
 
   if (glade_dialog)
     g_object_unref (glade_dialog);

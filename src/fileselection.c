@@ -68,7 +68,7 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   if (file_data->multi)
     gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (dialog), TRUE);
 
-  gtk_widget_show (dialog);
+  zenity_util_show_dialog (dialog);
   gtk_main ();
 }
 

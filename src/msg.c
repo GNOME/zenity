@@ -114,7 +114,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (msg_data->dialog_text)
     gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
 
-  gtk_widget_show (dialog);
+  zenity_util_show_dialog (dialog);
   gtk_main ();
 }
 

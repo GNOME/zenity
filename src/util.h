@@ -21,6 +21,7 @@ void            zenity_util_set_window_icon_from_stock    (GtkWidget      *widge
                                                            const gchar    *stock_id);
 void		zenity_util_show_help                     (GError        **error);
 gint		zenity_util_return_exit_code 		  (ZenityExitCode value);                      
+void            zenity_util_show_dialog                   (GtkWidget      *widget);
                                
 G_END_DECLS
 

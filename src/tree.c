@@ -437,7 +437,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
       zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view), n_columns, FALSE, tree_data->editable);
   }
 
-  gtk_widget_show (dialog);
+  zenity_util_show_dialog (dialog);
   gtk_main ();
 
   if (glade_dialog)

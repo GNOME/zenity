@@ -80,7 +80,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
   gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
 
-  gtk_widget_show (dialog);
+  zenity_util_show_dialog (dialog);
   gtk_main ();
 }
 

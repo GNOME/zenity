@@ -82,7 +82,7 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
     gtk_calendar_select_day (GTK_CALENDAR (calendar), cal_data->day);
 
   gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
-  gtk_widget_show (dialog);
+  zenity_util_show_dialog (dialog);
   gtk_main ();
 }
 
