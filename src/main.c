@@ -1125,7 +1125,7 @@ zenity_parse_options_callback (poptContext              ctx,
   static gint parse_option_text = 0;
   static gint parse_option_file = 0;
   static gint parse_option_editable = 0;
-
+  
   if (reason == POPT_CALLBACK_REASON_POST)
     return;
   else if (reason != POPT_CALLBACK_REASON_OPTION)
@@ -1235,22 +1235,22 @@ zenity_parse_options_callback (poptContext              ctx,
 
       if (parse_option_text > 6) 
         zenity_error ("--text", ERROR_DUPLICATE); 
-      
+     
       switch (results->mode) { 
         case MODE_CALENDAR: 
-          results->calendar_data->dialog_text = g_strdup (arg); 
+          results->calendar_data->dialog_text = g_strdup (g_strcompress (arg)); 
           break; 
         case MODE_ENTRY: 
-          results->entry_data->dialog_text = g_strdup (arg); 
+          results->entry_data->dialog_text = g_strdup (g_strcompress (arg)); 
           break; 
         case MODE_ERROR: 
         case MODE_QUESTION: 
         case MODE_WARNING: 
         case MODE_INFO: 
-          results->msg_data->dialog_text = g_strdup (arg); 
+          results->msg_data->dialog_text = g_strdup (g_strcompress (arg)); 
           break; 
         case MODE_PROGRESS: 
-          results->progress_data->dialog_text = g_strdup (arg); 
+          results->progress_data->dialog_text = g_strdup (g_strcompress (arg)); 
           break; 
         default: 
           zenity_error ("--text", ERROR_SUPPORT); 
@@ -1388,16 +1388,16 @@ zenity_parse_options_callback (poptContext              ctx,
       results->tree_data->radiobox = TRUE; 
       break; 
     case OPTION_SEPERATOR: 
-      if (parse_option_separator)
+      if (parse_option_separator > 2)
 	zenity_error ("--separator", ERROR_DUPLICATE);
       switch (results->mode) {
 	case MODE_LIST: 
-      	  results->tree_data->separator = g_strdup (arg); 
-      	  parse_option_separator = TRUE; 
+      	  results->tree_data->separator = g_strdup (g_strcompress (arg)); 
+      	  parse_option_separator++; 
 	  break;
 	case MODE_FILE:
-	  results->file_data->separator = g_strdup (arg);
-	  parse_option_separator = TRUE;
+	  results->file_data->separator = g_strdup (g_strcompress (arg));
+	  parse_option_separator++;
 	  break;
 	default:
 	  zenity_error ("--separator", ERROR_SUPPORT);

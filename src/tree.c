@@ -478,12 +478,6 @@ zenity_tree_dialog_output (void)
 
   for (tmp = selected; tmp; tmp = tmp->next) {
     if (tmp->next != NULL) {
-      /* FIXME: There must be a nicer way to do this. This is just arse */
-      if (strstr ((const gchar *) separator, (const gchar *) "\\n") != NULL)
-        g_printerr ("%s\n", (gchar *) tmp->data);
-      else if (strstr ((const gchar *) separator, (const gchar *) "\\t") != NULL)
-        g_printerr ("%s\t", (gchar *) tmp->data);
-      else
         g_printerr ("%s%s", (gchar *) tmp->data, separator);
     }
     else

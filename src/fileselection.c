@@ -87,18 +87,10 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
       selections = gtk_file_selection_get_selections (GTK_FILE_SELECTION (widget));
       for (i=0;selections[i] != NULL; i++) {
         g_printerr ("%s", g_filename_to_utf8 ((gchar*)selections[i], -1, NULL, NULL, NULL));
-	if (selections[i+1] != NULL) {
-	  /* FIXME: This is a blatant copy of Gman's arse in tree.c */
-	  if (strstr ((const gchar *) separator, (const gchar *) "\\n") != NULL)
-            g_printerr ("\n");
-	  else if (strstr ((const gchar *) separator, (const gchar *) "\\t") != NULL)
-	    g_printerr ("\t");
-	  else 
+	if (selections[i+1] != NULL)
 	    g_printerr ("%s",separator);
-	} else {
-	  g_printerr ("\n");
-	}
       }
+      g_printerr("\n");
       g_strfreev(selections);
       g_free(separator);
 
