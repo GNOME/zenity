@@ -29,17 +29,10 @@
 static guint timer;
 static GladeXML *glade_dialog;
 
-static gboolean zenity_progress_pulsate_bar (GIOChannel *giochannel, GIOCondition condition, gpointer data);
-static gboolean zenity_progress_increment_bar (GIOChannel *giochannel, GIOCondition condition, gpointer data);
+gint zenity_progress_timeout (gpointer data);
+gint zenity_progress_pulsate_timeout (gpointer data);
 
 static void zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data);
-
-gint 
-zenity_progress_timeout (gpointer data)
-{
-	gtk_progress_bar_pulse (GTK_PROGRESS_BAR (data));
-	return TRUE;
-}
 
 void
 zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
@@ -47,7 +40,6 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	GtkWidget *dialog;
 	GtkWidget *text;
 	GtkWidget *progress_bar;
-	GIOChannel *giochannel;
 	guint input;
 
 	glade_dialog = zenity_util_load_glade_file ("zenity_progress_dialog");
@@ -78,49 +70,89 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
 	progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
 
-	if (glade_dialog)
-		g_object_unref (glade_dialog);
-
-	giochannel = g_io_channel_unix_new (0);
-
-	if (progress_data->pulsate != TRUE && progress_data->percentage > -1) {
-		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), progress_data->percentage/100.0);
-	}
-	else {
-		input = g_io_add_watch (giochannel, G_IO_IN | G_IO_HUP, zenity_progress_pulsate_bar, NULL);
-		timer = gtk_timeout_add (100, zenity_progress_timeout, progress_bar);
-	}
+	if (progress_data->percentage > -1)
+		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 
+					       progress_data->percentage/100.0);
 	
-	g_io_channel_unref (giochannel);
 	gtk_widget_show (dialog);
+	if (progress_data->pulsate != TRUE)
+		timer = gtk_timeout_add (100, zenity_progress_timeout, progress_bar);
+	else
+		timer = gtk_timeout_add (100, zenity_progress_pulsate_timeout, progress_bar);
+
 	gtk_main ();
 }
 
-static gboolean 
-zenity_progress_pulsate_bar (GIOChannel *giochannel, GIOCondition condition, gpointer data)
+gint 
+zenity_progress_timeout (gpointer data)
 {
-        gchar buf[1024];
+	gchar buffer[256];
+	float percentage;
 
-	if (!feof (stdin)) {
+        while(gtk_events_pending()) {
+                gtk_main_iteration();
+
+                if (timer == 0)
+                        return FALSE;
+        }
+
+	if (scanf ("%255s", buffer) == EOF) {
 		GtkWidget *button;
-		gtk_timeout_remove (timer);
-		g_io_channel_shutdown (giochannel, 0, NULL);
+
 		button = glade_xml_get_widget (glade_dialog, "zenity_progress_ok_button");
 		gtk_widget_set_sensitive (button, TRUE);
 		gtk_widget_grab_focus (button);
+
 		button = glade_xml_get_widget (glade_dialog, "zenity_progress_cancel_button");
 		gtk_widget_set_sensitive (button, FALSE);
+
+		if (glade_dialog)
+			g_object_unref (glade_dialog);
+
 		return FALSE;
+	} else {
+		percentage = atoi (buffer);
+
+		if (percentage > 100)
+			gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (data), 1.0);
+		else
+			gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (data), percentage / 100.0);
+
+		return TRUE;
 	}
-	
-	fgets (buf, sizeof (buf)-1, stdin);
-	return TRUE;
 }
 
-static gboolean 
-zenity_progress_increment_bar (GIOChannel *giochannel, GIOCondition condition, gpointer data)
+gint 
+zenity_progress_pulsate_timeout (gpointer data)
 {
-	/* FIXME: Do nothing at the moment */
+        
+	while(gtk_events_pending()) {
+                gtk_main_iteration();
+
+                if (timer == 0)
+                        return FALSE;
+        }
+
+	if (feof (stdin)) {
+		gtk_progress_bar_pulse (GTK_PROGRESS_BAR (data));
+
+		return FALSE;
+	} else  {
+		GtkWidget *button;
+
+		/* We stop the pulsating and switch the focus on the dialog buttons */
+
+		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (data), 1.0);
+
+		button = glade_xml_get_widget (glade_dialog, "zenity_progress_ok_button");
+		gtk_widget_set_sensitive (button, TRUE);
+		gtk_widget_grab_focus (button);
+
+		button = glade_xml_get_widget (glade_dialog, "zenity_progress_cancel_button");
+		gtk_widget_set_sensitive (button, FALSE);
+
+		return TRUE;
+	}
 }
 
 static void

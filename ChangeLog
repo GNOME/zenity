@@ -1,3 +1,15 @@
+2003-01-09  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c: Fix up the date string, although I guess
+	this should be localized.
+
+	* src/main.c: Add a new --pulsate option, which reads from
+	stdin and pulsates the progress bar until we reach EOF.
+	* src/progress.c: Rewrite to actually work. Don't really need
+	GIOChannels here.
+	
+	* TODO: Updated accordingly.
+
 2003-01-07  Glynn Foster  <glynn.foster@sun.com>
 
 	* src/calendar.c, src/entry.c, src/fileselection.c,

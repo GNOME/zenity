@@ -86,7 +86,7 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
 	switch (response) {
 		case GTK_RESPONSE_OK:
 			gtk_calendar_get_date (GTK_CALENDAR (calendar), &day, &month, &year);
-			g_printerr ("%02d/%02d/%02d\n", day, month + 1, year);
+			g_printerr ("%02d/%02d/%02d\n", year, month + 1, day);
 			zen_data->exit_code = 0;
 			gtk_main_quit ();
 			break;

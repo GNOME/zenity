@@ -80,6 +80,7 @@ enum {
 	OPTION_RADIOLIST,
 	OPTION_PROGRESSTEXT,
 	OPTION_PERCENTAGE,
+	OPTION_PULSATE,
 	OPTION_QUESTIONTEXT,
 	OPTION_TEXTFILE,
 	OPTION_WARNINGTEXT,
@@ -451,6 +452,15 @@ struct poptOption progress_options[] = {
 		N_("Set initial percentage"),
 		NULL
 	},
+	{
+		"pulsate",
+		'\0',
+		POPT_ARG_NONE,
+		NULL,
+		OPTION_PULSATE,
+		N_("Pulsate progress bar"),
+		NULL
+	},
 	POPT_TABLEEND
 };
  
@@ -696,6 +706,7 @@ zenity_init_parsing_options (void) {
 	results->calendar_data->year = 0;
 	results->calendar_data->dialog_text = NULL;
 	results->progress_data->percentage = -1;
+	results->progress_data->pulsate = FALSE;
 	results->entry_data->visible = TRUE;
 	results->tree_data->checkbox = FALSE;
 	results->tree_data->radiobox = FALSE;
@@ -1093,6 +1104,14 @@ void zenity_parse_options_callback (poptContext              ctx,
 				exit (-1);
 			}
 			results->progress_data->percentage = atoi (arg);
+			break;
+		case OPTION_PULSATE:
+			if (results->mode != MODE_PROGRESS) {
+				g_printerr (_("--pulsate is not supported for this dialog\n"));
+				zenity_free_parsing_options ();
+				exit (-1);
+			}
+			results->progress_data->pulsate = TRUE;
 			break;
 		case OPTION_ABOUT:
 			if (results->mode != MODE_LAST) {
