@@ -714,17 +714,11 @@ zenity_calendar_pre_callback (GOptionContext *context,
 		              gpointer        data,
 		              GError        **error)
 {
-  struct tm *t;
-  time_t current_time;
-
-  time (&current_time);
-  t = localtime (&current_time);
-
   zenity_calendar_active = FALSE;
   zenity_calendar_date_format = NULL; 
-  zenity_calendar_day = 0;
-  zenity_calendar_month = 0;
-  zenity_calendar_year = t->tm_year + 1900;
+  zenity_calendar_day = -1;
+  zenity_calendar_month = -1;
+  zenity_calendar_year = -1;
 
   return TRUE;
 }
@@ -892,6 +886,19 @@ zenity_calendar_post_callback (GOptionContext *context,
   zenity_option_set_dialog_mode (zenity_calendar_active, MODE_CALENDAR);
 
   if (results->mode == MODE_CALENDAR) {
+    struct tm *t;
+    time_t current_time;
+
+    time (&current_time);
+    t = localtime (&current_time);
+
+    if (zenity_calendar_day < 0)
+       zenity_calendar_day = t->tm_mday;
+    if (zenity_calendar_month < 0)
+       zenity_calendar_month = t->tm_mon + 1;
+    if (zenity_calendar_year < 0)
+       zenity_calendar_year = t->tm_year + 1900;
+
     results->calendar_data->dialog_text = zenity_general_dialog_text;
     results->calendar_data->day = zenity_calendar_day;
     results->calendar_data->month = zenity_calendar_month;
@@ -900,16 +907,17 @@ zenity_calendar_post_callback (GOptionContext *context,
       results->calendar_data->date_format = zenity_calendar_date_format;
     else
       results->calendar_data->date_format = g_locale_to_utf8 (nl_langinfo (D_FMT), -1, NULL, NULL, NULL);
+
   } else {
-    if (zenity_calendar_day)
+    if (zenity_calendar_day > -1)
       zenity_option_error (zenity_option_get_name (calendar_options, &zenity_calendar_day),
                            ERROR_SUPPORT);
     
-    if (zenity_calendar_month)
+    if (zenity_calendar_month > -1)
       zenity_option_error (zenity_option_get_name (calendar_options, &zenity_calendar_month),
                            ERROR_SUPPORT);
 
-    if (zenity_calendar_year)
+    if (zenity_calendar_year > -1)
       zenity_option_error (zenity_option_get_name (calendar_options, &zenity_calendar_year),
                            ERROR_SUPPORT);
 

@@ -1,5 +1,10 @@
 2005-01-07  Glynn Foster  <glynn.foster@sun.com>
 
+	* src/option.c, src/calendar.c: Really fix #162297, and 
+	preload the current dates if they aren't already set.
+
+2005-01-07  Glynn Foster  <glynn.foster@sun.com>
+
 	* src/option.c: Pre-load the year, because gtk_calendar* is 
 	dumb and you need to select the year to change the month. Fixes
 	#162297.

@@ -73,7 +73,7 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   if (glade_dialog)
     g_object_unref (glade_dialog);
 
-  if (cal_data->month > 0 && cal_data->year > 0)
+  if (cal_data->month > 0 || cal_data->year > 0)
     gtk_calendar_select_month (GTK_CALENDAR (calendar), cal_data->month - 1, cal_data->year);
   if (cal_data->day > 0)
     gtk_calendar_select_day (GTK_CALENDAR (calendar), cal_data->day);
