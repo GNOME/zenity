@@ -50,6 +50,7 @@ static const gchar *author_credits[] = {
         "",
         "Thanks to -",
         "Jonathan Blandford <jrb@redhat.com>",
+        "Ross Burton <ross@burtonini.com>",
         "Anders Carlsson <andersca@codefactory.se>",
         "John Fleck <jfleck@inkstain.net>",
         "James Henstridge <james@daa.com.au>",
