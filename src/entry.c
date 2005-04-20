@@ -72,12 +72,13 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
   if (entry_data->entry_text)
     gtk_entry_set_text (GTK_ENTRY (entry), entry_data->entry_text);
 
-  if (!entry_data->visible)
-    g_object_set (G_OBJECT (entry), "visibility", entry_data->visible, NULL);
+  if (entry_data->hide_text)
+    g_object_set (G_OBJECT (entry), "visibility", FALSE, NULL);
 
   gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
 
   zenity_util_show_dialog (dialog);
+
   gtk_main ();
 }
 

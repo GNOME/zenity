@@ -46,7 +46,7 @@ gchar   *zenity_calendar_date_format;
 /* Entry Dialog Options */
 gboolean zenity_entry_active;
 gchar   *zenity_entry_entry_text;
-gboolean zenity_entry_visible;
+gboolean zenity_entry_hide_text;
 
 /* Error Dialog Options */
 gboolean zenity_error_active;
@@ -225,7 +225,7 @@ GOptionEntry entry_options[] = {
     '\0',
     0,
     G_OPTION_ARG_NONE,
-    &zenity_entry_visible,
+    &zenity_entry_hide_text,
     N_("Hide the entry text"),
     NULL
   },
@@ -770,7 +770,7 @@ zenity_entry_pre_callback (GOptionContext *context,
 {
   zenity_entry_active = FALSE;
   zenity_entry_entry_text = NULL;
-  zenity_entry_visible = FALSE;
+  zenity_entry_hide_text = FALSE;
 
   return TRUE;
 }
@@ -979,14 +979,14 @@ zenity_entry_post_callback (GOptionContext *context,
   if (results->mode == MODE_ENTRY) {
     results->entry_data->dialog_text = zenity_general_dialog_text;
     results->entry_data->entry_text = zenity_entry_entry_text;
-    results->entry_data->visible = !zenity_entry_visible;
+    results->entry_data->hide_text= zenity_entry_hide_text;
   } else {
     if (zenity_entry_entry_text)
       zenity_option_error (zenity_option_get_name (entry_options, &zenity_entry_entry_text),
                            ERROR_SUPPORT);
     
-    if (zenity_entry_visible)
-      zenity_option_error (zenity_option_get_name (entry_options, &zenity_entry_visible),
+    if (zenity_entry_hide_text)
+      zenity_option_error (zenity_option_get_name (entry_options, &zenity_entry_hide_text),
                            ERROR_SUPPORT);
   }
     
@@ -1373,7 +1373,7 @@ zenity_option_error (gchar *string, ZenityError error)
 {
   switch (error) {
     case ERROR_SYNTAX:
-      g_printerr (_("Syntax error\n"));
+      g_printerr (_("This option is not available. Please see --help for all possible usages.\n"));
       zenity_option_free ();
       exit (-1);
     case ERROR_SUPPORT:
