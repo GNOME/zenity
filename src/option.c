@@ -34,6 +34,7 @@ gchar   *zenity_general_dialog_text;
 gchar   *zenity_general_separator;
 gboolean zenity_general_editable;
 gchar   *zenity_general_uri;
+gboolean zenity_general_dialog_no_wrap;
 
 /* Calendar Dialog Options */
 gboolean zenity_calendar_active;
@@ -253,6 +254,15 @@ GOptionEntry error_options[] = {
     N_("Set the dialog text"),
     NULL
   },
+  {
+    "no-wrap",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_wrap,
+    N_("Do not enable text wrapping"),
+    NULL
+  },
   { 
     NULL 
   } 
@@ -275,6 +285,15 @@ GOptionEntry info_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
+    NULL
+  },
+  {
+    "no-wrap",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_wrap,
+    N_("Do not enable text wrapping"),
     NULL
   },
   { 
@@ -524,6 +543,15 @@ GOptionEntry question_options[] = {
     N_("Set the dialog text"),
     NULL
   },
+  {
+    "no-wrap",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_wrap,
+    N_("Do not enable text wrapping"),
+    NULL
+  },
   { 
     NULL 
   }
@@ -579,6 +607,15 @@ GOptionEntry warning_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
+    NULL
+  },
+  {
+    "no-wrap",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_wrap,
+    N_("Do not enable text wrapping"),
     NULL
   },
   { 
@@ -705,6 +742,7 @@ zenity_general_pre_callback (GOptionContext *context,
   zenity_general_separator = g_strdup ("|");
   zenity_general_editable = FALSE;
   zenity_general_uri = NULL;
+  zenity_general_dialog_no_wrap = FALSE;
 
   return TRUE;
 }
@@ -966,6 +1004,7 @@ zenity_error_post_callback (GOptionContext *context,
   if (results->mode == MODE_ERROR) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_ERROR; 
+    results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
   }
     
   return TRUE;
@@ -982,6 +1021,7 @@ zenity_info_post_callback (GOptionContext *context,
   if (results->mode == MODE_INFO) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_INFO; 
+    results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
   }
   
   return TRUE;
@@ -1128,6 +1168,7 @@ zenity_question_post_callback (GOptionContext *context,
   if (results->mode == MODE_QUESTION) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_QUESTION;
+    results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
   }
 
   return TRUE;
@@ -1160,6 +1201,7 @@ zenity_warning_post_callback (GOptionContext *context,
   if (results->mode == MODE_WARNING) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_WARNING;
+    results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
   }
 
   return TRUE;
@@ -1376,6 +1418,10 @@ zenity_option_parse (gint argc, gchar **argv)
   if (zenity_general_uri)
     if (results->mode != MODE_FILE && results->mode != MODE_TEXTINFO)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_general_uri), ERROR_SUPPORT);
+  
+  if (zenity_general_dialog_no_wrap)
+    if (results->mode != MODE_INFO && results->mode != MODE_ERROR && results->mode != MODE_QUESTION && results->mode != MODE_WARNING)
+      zenity_option_error (zenity_option_get_name (text_options, &zenity_general_dialog_no_wrap), ERROR_SUPPORT);
   
   return results; 
 }

@@ -110,6 +110,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (msg_data->dialog_text)
     gtk_label_set_markup (GTK_LABEL (text), msg_data->dialog_text);
 
+  if (msg_data->no_wrap)
+    gtk_label_set_line_wrap (GTK_LABEL (text), FALSE);
+
   zenity_util_show_dialog (dialog);
   gtk_main ();
 }

@@ -57,6 +57,7 @@ typedef enum {
 typedef struct {
   gchar   *dialog_text;
   MsgMode  mode;
+  gboolean no_wrap;
 } ZenityMsgData;
 
 typedef struct {
