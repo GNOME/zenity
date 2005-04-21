@@ -64,7 +64,10 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 
   if (file_data->uri) {
     dir = g_path_get_dirname (file_data->uri);
-    gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), dir);
+
+    if (g_path_is_absolute (file_data->uri) == TRUE)
+      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), dir);
+
     if (file_data->uri[strlen (file_data->uri) - 1] != '/') {
       basename = g_path_get_basename (file_data->uri);
       gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), basename);
