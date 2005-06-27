@@ -94,6 +94,7 @@ typedef struct {
   gboolean      checkbox;
   gboolean      radiobox;
   gchar        *separator;
+  gboolean      multi;
   gboolean      editable;
   gchar	       *print_column;
   const gchar **data;

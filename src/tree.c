@@ -354,8 +354,17 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
   gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (model));
 
-  gtk_tree_selection_set_mode (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
-                               GTK_SELECTION_MULTIPLE);
+  if (!(tree_data->radiobox || tree_data->checkbox)) {
+    if (tree_data->multi)
+      gtk_tree_selection_set_mode (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+                                   GTK_SELECTION_MULTIPLE);
+    else
+      gtk_tree_selection_set_mode (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+                                   GTK_SELECTION_SINGLE);
+  } 
+  else  
+    gtk_tree_selection_set_mode (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+                                   GTK_SELECTION_NONE);
 
   column_index = 0;
 

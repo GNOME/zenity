@@ -1,3 +1,12 @@
+2005-06-26  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/zenity.h, src/option.c: new multiple option on list 
+	dialog
+	* src/tree.c: now the default behavior is the single
+	selection. when --multiple is used, then multiple
+	rows can be selected. For radiolist and checklist,
+	normal selection is disabled (buttons = selection).
+
 2005-06-17  Lucas Rocha  <lucasr@cvs.gnome.org>
 
 	* src/notification.c: don't use parent widget for

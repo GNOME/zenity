@@ -32,6 +32,7 @@ int      zenity_general_width;
 int      zenity_general_height;
 gchar   *zenity_general_dialog_text;
 gchar   *zenity_general_separator;
+gboolean zenity_general_multiple;
 gboolean zenity_general_editable;
 gchar   *zenity_general_uri;
 gboolean zenity_general_dialog_no_wrap;
@@ -56,7 +57,6 @@ gboolean zenity_info_active;
 
 /* File Selection Dialog Options */
 gboolean zenity_file_active;
-gboolean zenity_file_multiple;
 gboolean zenity_file_directory;
 gboolean zenity_file_save;
 
@@ -325,7 +325,7 @@ GOptionEntry file_selection_options[] = {
     '\0',
     0,
     G_OPTION_ARG_NONE,
-    &zenity_file_multiple,
+    &zenity_general_multiple,
     N_("Allow multiple files to be selected"),
     NULL
   },
@@ -415,6 +415,15 @@ GOptionEntry list_options[] = {
     &zenity_general_separator,
     N_("Set output separator character"),
     N_("SEPARATOR")
+  },
+  {
+    "multiple",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_general_multiple,
+    N_("Allow multiple rows to be selected"),
+    NULL
   },
   {
     "editable",
@@ -740,6 +749,7 @@ zenity_general_pre_callback (GOptionContext *context,
   zenity_general_height = -1;
   zenity_general_dialog_text = NULL;
   zenity_general_separator = g_strdup ("|");
+  zenity_general_multiple = FALSE;
   zenity_general_editable = FALSE;
   zenity_general_uri = NULL;
   zenity_general_dialog_no_wrap = FALSE;
@@ -804,7 +814,6 @@ zenity_file_pre_callback (GOptionContext *context,
 		          GError        **error)
 {
   zenity_file_active = FALSE;
-  zenity_file_multiple = FALSE;
   zenity_file_directory = FALSE;
   zenity_file_save = FALSE;
 
@@ -1037,15 +1046,11 @@ zenity_file_post_callback (GOptionContext *context,
 
   if (results->mode == MODE_FILE) {
     results->file_data->uri = zenity_general_uri;
-    results->file_data->multi = zenity_file_multiple;
+    results->file_data->multi = zenity_general_multiple;
     results->file_data->directory = zenity_file_directory;
     results->file_data->save = zenity_file_save;
     results->file_data->separator = zenity_general_separator;
   } else {
-    if (zenity_file_multiple)
-      zenity_option_error (zenity_option_get_name (file_selection_options, &zenity_file_multiple),
-                           ERROR_SUPPORT);
-
     if (zenity_file_directory)
       zenity_option_error (zenity_option_get_name (file_selection_options, &zenity_file_directory),
                            ERROR_SUPPORT);
@@ -1082,6 +1087,7 @@ zenity_list_post_callback (GOptionContext *context,
     
     results->tree_data->checkbox = zenity_list_checklist;
     results->tree_data->radiobox = zenity_list_radiolist;
+    results->tree_data->multi = zenity_general_multiple;
     results->tree_data->editable = zenity_general_editable;
     results->tree_data->print_column = zenity_list_print_column;
     results->tree_data->separator = zenity_general_separator;
@@ -1411,6 +1417,10 @@ zenity_option_parse (gint argc, gchar **argv)
     if (results->mode != MODE_LIST && results->mode != MODE_FILE)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_general_separator), ERROR_SUPPORT);
   
+  if (zenity_general_multiple)
+    if (results->mode != MODE_FILE && results->mode != MODE_LIST)
+      zenity_option_error (zenity_option_get_name (list_options, &zenity_general_multiple), ERROR_SUPPORT);
+
   if (zenity_general_editable)
     if (results->mode != MODE_TEXTINFO && results->mode != MODE_LIST)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_general_editable), ERROR_SUPPORT);
