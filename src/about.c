@@ -90,6 +90,7 @@ static const gchar *author_credits[] = {
   "Hidetoshi Tajima  <hidetoshi tajima sun com>",
   "Tom Tromey  <tromey redhat com>",
   "Yann  <bloch iie cnam fr>",
+  "Norman Rasmussen <normanr gmail com>",
   "",
   "And all the translators that rock my world",
   "==========================================",
