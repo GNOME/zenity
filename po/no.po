@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-25 14:19+0200\n"
-"PO-Revision-Date: 2005-05-25 14:20+0200\n"
+"POT-Creation-Date: 2005-06-28 13:21+0200\n"
+"PO-Revision-Date: 2005-06-28 13:22+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -21,27 +21,27 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../src/about.c:378
+#: ../src/about.c:379
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/about.c:408
+#: ../src/about.c:409
 msgid "Display dialog boxes from shell scripts"
 msgstr "Vis dialogbokser fra skallskript"
 
-#: ../src/about.c:412
+#: ../src/about.c:413
 msgid "(C) 2003 Sun Microsystems"
 msgstr "© 2003 Sun Microsystems"
 
-#: ../src/about.c:496
+#: ../src/about.c:497
 msgid "Credits"
 msgstr "Kreditt"
 
-#: ../src/about.c:523
+#: ../src/about.c:524
 msgid "Written by"
 msgstr "Skrevet av"
 
-#: ../src/about.c:536
+#: ../src/about.c:537
 msgid "Translated by"
 msgstr "Oversatt av"
 
@@ -61,13 +61,17 @@ msgstr "Du må oppgi en type dialog. Se «zenity --help» for detaljer\n"
 msgid "could not parse command from stdin\n"
 msgstr "kunne ikke lese kommando fra stdin\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
+#: ../src/notification.c:227 ../src/notification.c:256
 msgid "Zenity notification"
 msgstr "Zenity-melding"
 
-#: ../src/tree.c:304
+#: ../src/tree.c:313
 msgid "No column titles specified for List dialog.\n"
 msgstr "Ingen kolonnetittel oppgitt for listedialogen.\n"
+
+#: ../src/tree.c:319
+msgid "You should use only one List dialog type.\n"
+msgstr "Du bør kun bruke en type listedialog.\n"
 
 #: ../src/zenity.glade.h:1
 msgid "*"
@@ -190,8 +194,8 @@ msgid "Display calendar dialog"
 msgstr "Vis kalenderdialog"
 
 #: ../src/option.c:151 ../src/option.c:211 ../src/option.c:254
-#: ../src/option.c:287 ../src/option.c:380 ../src/option.c:491
-#: ../src/option.c:543 ../src/option.c:609
+#: ../src/option.c:287 ../src/option.c:380 ../src/option.c:500
+#: ../src/option.c:552 ../src/option.c:618
 msgid "Set the dialog text"
 msgstr "Sett teksten i dialogen"
 
@@ -227,8 +231,8 @@ msgstr "Skjul tekst i oppføringen"
 msgid "Display error dialog"
 msgstr "Vis feildialog"
 
-#: ../src/option.c:263 ../src/option.c:296 ../src/option.c:552
-#: ../src/option.c:618
+#: ../src/option.c:263 ../src/option.c:296 ../src/option.c:561
+#: ../src/option.c:627
 msgid "Do not enable text wrapping"
 msgstr "Ikke aktiver tekstbryting"
 
@@ -244,7 +248,7 @@ msgstr "Vis dialog for filvalg"
 msgid "Set the filename"
 msgstr "Sett filnavnet"
 
-#: ../src/option.c:321 ../src/option.c:577
+#: ../src/option.c:321 ../src/option.c:586
 msgid "FILENAME"
 msgstr "FILNAVN"
 
@@ -284,11 +288,15 @@ msgstr "Bruk avkrysningsbokser for første kolonne"
 msgid "Use radio buttons for first column"
 msgstr "Bruk radioknapper for første kolonne"
 
-#: ../src/option.c:425 ../src/option.c:585
+#: ../src/option.c:425
+msgid "Allow multiple rows to be selected"
+msgstr "Tillat valg av flere rader"
+
+#: ../src/option.c:434 ../src/option.c:594
 msgid "Allow changes to text"
 msgstr "Tillat endringer i tekst"
 
-#: ../src/option.c:434
+#: ../src/option.c:443
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -296,173 +304,175 @@ msgstr ""
 "Skriv ut en bestemt kolonne (Forvalg er 1. «ALL» kan brukes for å skrive ut "
 "alle kolonner)"
 
-#: ../src/option.c:449
+#: ../src/option.c:458
 msgid "Display notification"
 msgstr "Vis melding"
 
-#: ../src/option.c:458
+#: ../src/option.c:467
 msgid "Set the notification text"
 msgstr "Sett meldingsteksten"
 
-#: ../src/option.c:467
+#: ../src/option.c:476
 msgid "Listen for commands on stdin"
 msgstr "Lytt etter kommandoer på stdin"
 
-#: ../src/option.c:482
+#: ../src/option.c:491
 msgid "Display progress indication dialog"
 msgstr "Vis dialog for indikering av fremgang"
 
-#: ../src/option.c:500
+#: ../src/option.c:509
 msgid "Set initial percentage"
 msgstr "Sett startprosent"
 
-#: ../src/option.c:509
+#: ../src/option.c:518
 msgid "Pulsate progress bar"
 msgstr "Pulserende fremgangslinje"
 
-#: ../src/option.c:519
+#: ../src/option.c:528
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Lukk dialogen når 100% er nådd"
 
-#: ../src/option.c:534
+#: ../src/option.c:543
 msgid "Display question dialog"
 msgstr "Vis spørsmålsdialog"
 
-#: ../src/option.c:567
+#: ../src/option.c:576
 msgid "Display text information dialog"
 msgstr "Vis dialog med tekstinformasjon"
 
-#: ../src/option.c:576
+#: ../src/option.c:585
 msgid "Open file"
 msgstr "Åpne fil"
 
-#: ../src/option.c:600
+#: ../src/option.c:609
 msgid "Display warning dialog"
 msgstr "Vis advarselsdialog"
 
-#: ../src/option.c:633
+#: ../src/option.c:642
 msgid "About zenity"
 msgstr "Om Zenity"
 
-#: ../src/option.c:642
+#: ../src/option.c:651
 msgid "Print version"
 msgstr "Skriv ut versjon"
 
-#: ../src/option.c:1232
+#: ../src/option.c:1238
 msgid "General options"
 msgstr "Generelle alternativer"
 
-#: ../src/option.c:1233
+#: ../src/option.c:1239
 msgid "Show general options"
 msgstr "Vis generelle alternativer"
 
-#: ../src/option.c:1242
+#: ../src/option.c:1248
 msgid "Calendar options"
 msgstr "Alternativer for kalender"
 
-#: ../src/option.c:1243
+#: ../src/option.c:1249
 msgid "Show calendar options"
 msgstr "Vis alternativer for kalender"
 
-#: ../src/option.c:1252
+#: ../src/option.c:1258
 msgid "Text entry options"
 msgstr "Alternativer for tekstoppføring"
 
-#: ../src/option.c:1253
+#: ../src/option.c:1259
 msgid "Show text entry options"
 msgstr "Vis alternativer for tekstoppføring"
 
-#: ../src/option.c:1262
+#: ../src/option.c:1268
 msgid "Error options"
 msgstr "Alternativer for feil"
 
-#: ../src/option.c:1263
+#: ../src/option.c:1269
 msgid "Show error options"
 msgstr "Vis alternativer for feil"
 
-#: ../src/option.c:1272
+#: ../src/option.c:1278
 msgid "Info options"
 msgstr "Alternativer for informasjon"
 
-#: ../src/option.c:1273
+#: ../src/option.c:1279
 msgid "Show info options"
 msgstr "Vis alternativer for infosider"
 
-#: ../src/option.c:1282
+#: ../src/option.c:1288
 msgid "File selection options"
 msgstr "Alternativer for filvalg"
 
-#: ../src/option.c:1283
+#: ../src/option.c:1289
 msgid "Show file selection options"
 msgstr "Vis alternativer for filvalg"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1298
 msgid "List options"
 msgstr "Alternativer for liste"
 
-#: ../src/option.c:1293
+#: ../src/option.c:1299
 msgid "Show list options"
 msgstr "Vis alternativer for liste"
 
-#: ../src/option.c:1302
+#: ../src/option.c:1308
 msgid "Notification icon options"
 msgstr "Alternativer for varselikon"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1309
 msgid "Show notification icon options"
 msgstr "Vis alternativer for varselikon"
 
-#: ../src/option.c:1312
+#: ../src/option.c:1318
 msgid "Progress options"
 msgstr "Alternativer for fremgang"
 
-#: ../src/option.c:1313
+#: ../src/option.c:1319
 msgid "Show progress options"
 msgstr "Vis alternativer for fremgang"
 
-#: ../src/option.c:1322
+#: ../src/option.c:1328
 msgid "Question options"
 msgstr "Alternativer for spørsmål"
 
-#: ../src/option.c:1323
+#: ../src/option.c:1329
 msgid "Show question options"
 msgstr "Vis alternativer for spørsmål"
 
-#: ../src/option.c:1332
+#: ../src/option.c:1338
 msgid "Warning options"
 msgstr "Alternativer for advarsel"
 
-#: ../src/option.c:1333
+#: ../src/option.c:1339
 msgid "Show warning options"
 msgstr "Vis alternativer for advarsel"
 
-#: ../src/option.c:1342
+#: ../src/option.c:1348
 msgid "Text information options"
 msgstr "Alternativer for tekstinformasjon"
 
-#: ../src/option.c:1343
+#: ../src/option.c:1349
 msgid "Show text information options"
 msgstr "Vis alternativer for tekstinformasjon"
 
-#: ../src/option.c:1352
+#: ../src/option.c:1358
 msgid "Miscellaneous options"
 msgstr "Forskjellige alternativer"
 
-#: ../src/option.c:1353
+#: ../src/option.c:1359
 msgid "Show miscellaneous options"
 msgstr "Vis forskjellige alternativer"
 
-#: ../src/option.c:1376
+#: ../src/option.c:1382
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
-msgstr "Dette flagget er ikke tilgjengelig. Vennligst bruk --help for å se mulige flagg.\n"
+msgstr ""
+"Dette flagget er ikke tilgjengelig. Vennligst bruk --help for å se mulige "
+"flagg.\n"
 
-#: ../src/option.c:1380
+#: ../src/option.c:1386
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s er ikke støttet for denne dialogen\n"
 
-#: ../src/option.c:1384
+#: ../src/option.c:1390
 msgid "Two or more dialog options specified\n"
 msgstr "To eller flere dialogflagg oppgitt\n"
