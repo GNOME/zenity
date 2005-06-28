@@ -308,6 +308,12 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     return;
   }
 
+  if (tree_data->checkbox && tree_data->radiobox) {
+    g_printerr (_("You should use only one List dialog type.\n")); 
+    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+    return;
+  }
+
   glade_xml_signal_autoconnect (glade_dialog);
 
   dialog = glade_xml_get_widget (glade_dialog, "zenity_tree_dialog");
