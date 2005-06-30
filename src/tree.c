@@ -36,8 +36,9 @@ static GladeXML *glade_dialog;
 static GSList *selected;
 static gchar *separator;
 static gboolean print_all_columns = FALSE;
-static char **print_columns = NULL;
+static gint *print_columns = NULL;
 
+static int *zenity_tree_extract_column_indexes (char *indexes, gint n_columns);
 static void zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data);
 static void zenity_tree_row_activated (GtkTreeView *tree_view, GtkTreePath *tree_path, 
                                        GtkTreeViewColumn *tree_col, gpointer data);
@@ -299,14 +300,13 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   if (tree_data->print_column) {
     if (strcmp (g_strdown (tree_data->print_column), "all") == 0)
       print_all_columns = TRUE;
-    else
-      print_columns = g_strsplit (tree_data->print_column, 
-                                  PRINT_HIDE_COLUMN_SEPARATOR, 0);
+    else 
+      print_columns = zenity_tree_extract_column_indexes (tree_data->print_column, n_columns);
   }
   else { 
-    print_columns = (char **) g_new (char**, 2);
-    print_columns[0] = g_strdup ("1");
-    print_columns[1] = NULL;
+    print_columns = g_new (gint, 2);
+    print_columns[0] = 1;
+    print_columns[1] = 0;
   }
 
   if (n_columns == 0) {
@@ -491,7 +491,7 @@ static void
 zenity_tree_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf, GtkTreeIter *iter, GtkTreeView *tree_view)
 {
   GValue value = {0, };
-  gint n_columns, print_column, i;
+  gint n_columns, i;
 
   n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
 
@@ -505,15 +505,11 @@ zenity_tree_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf, Gtk
     return;
   }
 
-  for (i = 0; print_columns[i] != NULL; i++) {
-    print_column = atoi (print_columns[i]); 
+  for (i = 0; print_columns[i] != 0; i++) {
+    gtk_tree_model_get_value  (model, iter, print_columns[i] - 1, &value);
 
-    if (print_column > 0 && print_column <= n_columns) {
-      gtk_tree_model_get_value  (model, iter, print_column - 1, &value);
-
-      selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
-      g_value_unset (&value);
-    }
+    selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
+    g_value_unset (&value);
   }
 }
 
@@ -541,18 +537,16 @@ zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path, 
       return FALSE;
     }
 
-    for (i = 0; print_columns[i] != NULL; i++) {
-      print_column = atoi (print_columns[i]); 
+    for (i = 0; print_columns[i] != 0; i++) {
+      gtk_tree_model_get_value (model, iter, print_columns[i], &value);
 
-      if (print_column > 0 && print_column <= n_columns) {
-        gtk_tree_model_get_value (model, iter, print_column, &value);
-
-        selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
-        g_value_unset (&value);
-      }
+      selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
+      g_value_unset (&value);
     }
   }
+  
   g_value_unset (&toggle_value);
+
   return FALSE;
 }
 
@@ -569,7 +563,7 @@ zenity_tree_dialog_output (void)
       g_print ("%s\n", (gchar *) tmp->data);
   }
 
-  g_strfreev (print_columns);
+  g_free (print_columns);
   g_free (separator);
   g_slist_foreach (selected, (GFunc) g_free, NULL);
   selected = NULL;
@@ -631,4 +625,32 @@ zenity_tree_row_activated (GtkTreeView *tree_view, GtkTreePath *tree_path,
   zenity_tree_dialog_output ();
   zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
   gtk_main_quit ();
+}
+
+static gint *
+zenity_tree_extract_column_indexes (char *indexes, int n_columns)
+{
+  char **tmp;  
+  gint *result;
+  gint i, j, index;
+
+  tmp = g_strsplit (indexes, 
+                    PRINT_HIDE_COLUMN_SEPARATOR, 0);
+
+  result = g_new (gint, 1);
+
+  for (j = i = 0; tmp[i] != NULL; i++) {
+    index = atoi (tmp[i]);
+
+    if (index > 0 && index <= n_columns) {
+      result[j] = index;
+      j++;
+      g_renew (gint, result, j + 1);
+    }
+  }
+  result[j] = 0;
+
+  g_strfreev (tmp);
+
+  return result;
 }
