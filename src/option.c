@@ -66,6 +66,7 @@ gchar  **zenity_list_columns;
 gboolean zenity_list_checklist;
 gboolean zenity_list_radiolist;
 gchar   *zenity_list_print_column;
+gchar   *zenity_list_hide_column;
 
 /* Notification Dialog Options */
 gboolean zenity_notification_active;
@@ -443,6 +444,15 @@ GOptionEntry list_options[] = {
     N_("Print a specific column (Default is 1. 'ALL' can be used to print all columns)"),
     NULL
   },
+  {
+    "hide-column",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING,
+    &zenity_list_hide_column,
+    N_("Hide a specific column"),
+    NULL
+  },
   { 
     NULL 
   } 
@@ -699,6 +709,8 @@ zenity_option_free (void) {
     g_strfreev (zenity_list_columns);
   if (zenity_list_print_column)
     g_free (zenity_list_print_column);
+  if (zenity_list_hide_column)
+    g_free (zenity_list_hide_column);
 
   g_option_context_free (ctx);
 }
@@ -831,6 +843,7 @@ zenity_list_pre_callback (GOptionContext *context,
   zenity_list_checklist = FALSE;
   zenity_list_radiolist = FALSE;
   zenity_list_print_column = NULL;
+  zenity_list_hide_column = NULL;
 
   return TRUE;
 }
@@ -1090,6 +1103,7 @@ zenity_list_post_callback (GOptionContext *context,
     results->tree_data->multi = zenity_general_multiple;
     results->tree_data->editable = zenity_general_editable;
     results->tree_data->print_column = zenity_list_print_column;
+    results->tree_data->hide_column = zenity_list_hide_column;
     results->tree_data->separator = zenity_general_separator;
   } else {
     if (zenity_list_columns)
@@ -1106,6 +1120,10 @@ zenity_list_post_callback (GOptionContext *context,
 
     if (zenity_list_print_column)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_list_print_column),
+                           ERROR_SUPPORT);
+
+    if (zenity_list_hide_column)
+      zenity_option_error (zenity_option_get_name (list_options, &zenity_list_hide_column),
                            ERROR_SUPPORT);
   }
     

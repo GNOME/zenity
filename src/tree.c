@@ -37,8 +37,10 @@ static GSList *selected;
 static gchar *separator;
 static gboolean print_all_columns = FALSE;
 static gint *print_columns = NULL;
+static gint *hide_columns = NULL;
 
 static int *zenity_tree_extract_column_indexes (char *indexes, gint n_columns);
+static gboolean zenity_tree_column_is_hidden (gint column_index);
 static void zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data);
 static void zenity_tree_row_activated (GtkTreeView *tree_view, GtkTreePath *tree_path, 
                                        GtkTreeViewColumn *tree_col, gpointer data);
@@ -309,6 +311,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     print_columns[1] = 0;
   }
 
+  if (tree_data->hide_column) 
+    hide_columns = zenity_tree_extract_column_indexes (tree_data->hide_column, n_columns);
+
   if (n_columns == 0) {
     g_printerr (_("No column titles specified for List dialog.\n")); 
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -421,18 +426,20 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
                                                              "text", column_index, 
                                                              "editable", n_columns, 
                                                              NULL);
-          } 
-          else  {
-            column = gtk_tree_view_column_new_with_attributes (tmp->data, 
-                                                               gtk_cell_renderer_text_new (), 
-                                                               "text", column_index, 
-                                                               NULL);
-          }
+        } 
+        else  {
+          column = gtk_tree_view_column_new_with_attributes (tmp->data, 
+                                                             gtk_cell_renderer_text_new (), 
+                                                             "text", column_index, 
+                                                             NULL);
+        }
 
         gtk_tree_view_column_set_sort_column_id (column, column_index);
         gtk_tree_view_column_set_resizable (column, TRUE);
       }
-                        
+      if (zenity_tree_column_is_hidden (1))
+        gtk_tree_view_column_set_visible (column, FALSE);
+ 
       first_column = TRUE;
     }
     else {
@@ -459,6 +466,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
       gtk_tree_view_column_set_sort_column_id (column, column_index);
       gtk_tree_view_column_set_resizable (column, TRUE);
+
+      if (zenity_tree_column_is_hidden (column_index + 1))
+        gtk_tree_view_column_set_visible (column, FALSE);
     }
         
     gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
@@ -564,6 +574,7 @@ zenity_tree_dialog_output (void)
   }
 
   g_free (print_columns);
+  g_free (hide_columns);
   g_free (separator);
   g_slist_foreach (selected, (GFunc) g_free, NULL);
   selected = NULL;
@@ -625,6 +636,19 @@ zenity_tree_row_activated (GtkTreeView *tree_view, GtkTreePath *tree_path,
   zenity_tree_dialog_output ();
   zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
   gtk_main_quit ();
+}
+
+static gboolean
+zenity_tree_column_is_hidden (gint column_index)
+{
+  gint i;
+
+  if (hide_columns != NULL)
+    for (i = 0; hide_columns[i] != 0; i++)
+      if (hide_columns[i] == column_index)
+        return TRUE;
+
+  return FALSE;
 }
 
 static gint *

@@ -97,6 +97,7 @@ typedef struct {
   gboolean      multi;
   gboolean      editable;
   gchar	       *print_column;
+  gchar	       *hide_column;
   const gchar **data;
 } ZenityTreeData;
 
