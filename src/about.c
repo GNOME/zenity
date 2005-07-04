@@ -169,6 +169,17 @@ static const gchar *author_credits[] = {
   "Daniel Yacob  <locales geez org>",
   "Funda Wang <fundawang linux net cn>",
   "Alexander Winston  <alexander winston comcast net>",
+  "Theppitak Karoonboonyanan <thep linux thai net>",
+  "Martin Willemoes Hansen <mwh sysrq dk>",
+  "Ignacio Casal Quinteiro <nacho.resa gmail com>",
+  "Pawan Chitrakar <pawan nplinux org>",
+  "Rajesh Ranjan <rajeshkajha yahoo org>",
+  "Vladimir Petkov <vpetkov i-space org>",
+  "Abduxukur Abdurixit <abduxukur.abdurixit t-systems ch>",
+  "Adi Attar <aattar cvs gnome org>",
+  "Steve Murphy <murf e-tools com>",
+  "Josep Puigdemont <josep imatge-sintetica com>",
+  "Adam Weinberger <adamw gnome org>",
   NULL
 };
 
