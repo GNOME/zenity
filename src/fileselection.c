@@ -21,7 +21,10 @@
  * Authors: Glynn Foster <glynn.foster@sun.com>
  */
 
+#include "config.h"
+
 #include <glade/glade.h>
+#include <string.h>
 #include "zenity.h"
 #include "util.h"
 

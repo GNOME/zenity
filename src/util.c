@@ -27,6 +27,8 @@
  *          Tom Tromey <tromey@redhat.com>
  */
 
+#include "config.h"
+
 #include <stdio.h>
 #include <locale.h>
 #include <errno.h>

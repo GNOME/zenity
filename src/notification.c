@@ -21,8 +21,11 @@
  * Authors: Glynn Foster <glynn.foster@sun.com>
  */
 
+#include <config.h>
+
 #include <glade/glade.h>
 #include <time.h>
+#include <string.h>
 #include "zenity.h"
 #include "eggtrayicon.h"
 #include "util.h"

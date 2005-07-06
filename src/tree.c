@@ -23,6 +23,8 @@
  *          Kristian Rietveld <kris@gtk.org>
  */
 
+#include "config.h"
+
 #include <glade/glade.h>
 #include <string.h>
 #include <stdlib.h>

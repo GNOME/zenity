@@ -22,8 +22,12 @@
  *          Lucas Rocha <lucasr@im.ufba.br>
  */
 
+#include "config.h"
+
 #include "option.h"
 #include <time.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* General Options */
 gchar   *zenity_general_dialog_title;
