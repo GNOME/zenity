@@ -91,6 +91,7 @@ static const gchar *author_credits[] = {
   "Tom Tromey  <tromey redhat com>",
   "Yann  <bloch iie cnam fr>",
   "Norman Rasmussen <normanr gmail com>",
+  "Benoît Dejean <tazforever dlfp org>",
   "",
   "And all the translators that rock my world",
   "==========================================",
