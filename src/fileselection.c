@@ -28,7 +28,7 @@
 #include "zenity.h"
 #include "util.h"
 
-ZenityData	*zen_data;
+static ZenityData	*zen_data;
 
 static void zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 

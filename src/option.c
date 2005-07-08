@@ -30,72 +30,72 @@
 #include <string.h>
 
 /* General Options */
-gchar   *zenity_general_dialog_title;
-gchar   *zenity_general_window_icon;
-int      zenity_general_width;
-int      zenity_general_height;
-gchar   *zenity_general_dialog_text;
-gchar   *zenity_general_separator;
-gboolean zenity_general_multiple;
-gboolean zenity_general_editable;
-gchar   *zenity_general_uri;
-gboolean zenity_general_dialog_no_wrap;
+static gchar   *zenity_general_dialog_title;
+static gchar   *zenity_general_window_icon;
+static int      zenity_general_width;
+static int      zenity_general_height;
+static gchar   *zenity_general_dialog_text;
+static gchar   *zenity_general_separator;
+static gboolean zenity_general_multiple;
+static gboolean zenity_general_editable;
+static gchar   *zenity_general_uri;
+static gboolean zenity_general_dialog_no_wrap;
 
 /* Calendar Dialog Options */
-gboolean zenity_calendar_active;
-int      zenity_calendar_day;
-int      zenity_calendar_month;
-int      zenity_calendar_year;
-gchar   *zenity_calendar_date_format;
+static gboolean zenity_calendar_active;
+static int      zenity_calendar_day;
+static int      zenity_calendar_month;
+static int      zenity_calendar_year;
+static gchar   *zenity_calendar_date_format;
 
 /* Entry Dialog Options */
-gboolean zenity_entry_active;
-gchar   *zenity_entry_entry_text;
-gboolean zenity_entry_hide_text;
+static gboolean zenity_entry_active;
+static gchar   *zenity_entry_entry_text;
+static gboolean zenity_entry_hide_text;
 
 /* Error Dialog Options */
-gboolean zenity_error_active;
+static gboolean zenity_error_active;
 
 /* Info Dialog Options */
-gboolean zenity_info_active;
+static gboolean zenity_info_active;
 
 /* File Selection Dialog Options */
-gboolean zenity_file_active;
-gboolean zenity_file_directory;
-gboolean zenity_file_save;
+static gboolean zenity_file_active;
+static gboolean zenity_file_directory;
+static gboolean zenity_file_save;
 
 /* List Dialog Options */
-gboolean zenity_list_active;
-gchar  **zenity_list_columns;
-gboolean zenity_list_checklist;
-gboolean zenity_list_radiolist;
-gchar   *zenity_list_print_column;
-gchar   *zenity_list_hide_column;
+static gboolean zenity_list_active;
+static gchar  **zenity_list_columns;
+static gboolean zenity_list_checklist;
+static gboolean zenity_list_radiolist;
+static gchar   *zenity_list_print_column;
+static gchar   *zenity_list_hide_column;
 
 /* Notification Dialog Options */
-gboolean zenity_notification_active;
-gboolean zenity_notification_listen;
+static gboolean zenity_notification_active;
+static gboolean zenity_notification_listen;
 
 /* Progress Dialog Options */
-gboolean zenity_progress_active;
-int      zenity_progress_percentage;
-gboolean zenity_progress_pulsate;
-gboolean zenity_progress_auto_close;
+static gboolean zenity_progress_active;
+static int      zenity_progress_percentage;
+static gboolean zenity_progress_pulsate;
+static gboolean zenity_progress_auto_close;
 
 /* Question Dialog Options */
-gboolean zenity_question_active;
+static gboolean zenity_question_active;
 
 /* Text Dialog Options */
-gboolean zenity_text_active;
+static gboolean zenity_text_active;
 
 /* Warning Dialog Options */
-gboolean zenity_warning_active;
+static gboolean zenity_warning_active;
 
 /* Miscelaneus Options */
-gboolean zenity_misc_about;
-gboolean zenity_misc_version;
+static gboolean zenity_misc_about;
+static gboolean zenity_misc_version;
 
-GOptionEntry general_options[] = {
+static GOptionEntry general_options[] = {
   {
     "title",
     '\0',
@@ -137,7 +137,7 @@ GOptionEntry general_options[] = {
   }
 };
 
-GOptionEntry calendar_options[] = {
+static GOptionEntry calendar_options[] = {
   {
     "calendar",
     '\0',
@@ -197,7 +197,7 @@ GOptionEntry calendar_options[] = {
   } 
 };
 
-GOptionEntry entry_options[] = {
+static GOptionEntry entry_options[] = {
   {
     "entry",
     '\0',
@@ -240,7 +240,7 @@ GOptionEntry entry_options[] = {
 };
 
 
-GOptionEntry error_options[] = {
+static GOptionEntry error_options[] = {
   {
     "error",
     '\0',
@@ -273,7 +273,7 @@ GOptionEntry error_options[] = {
   } 
 };
 
-GOptionEntry info_options[] = {
+static GOptionEntry info_options[] = {
   {
     "info",
     '\0',
@@ -306,7 +306,7 @@ GOptionEntry info_options[] = {
   }
 };
 
-GOptionEntry file_selection_options[] = {
+static GOptionEntry file_selection_options[] = {
   {
     "file-selection",
     '\0',
@@ -366,7 +366,7 @@ GOptionEntry file_selection_options[] = {
   } 
 };
 
-GOptionEntry list_options[] = {
+static GOptionEntry list_options[] = {
   {
     "list",
     '\0',
@@ -462,7 +462,7 @@ GOptionEntry list_options[] = {
   } 
 };
 
-GOptionEntry notification_options[] = {
+static GOptionEntry notification_options[] = {
   {
     "notification",
     '\0',
@@ -495,7 +495,7 @@ GOptionEntry notification_options[] = {
   }
 };
 
-GOptionEntry progress_options[] = {
+static GOptionEntry progress_options[] = {
   {
     "progress",
     '\0',
@@ -547,7 +547,7 @@ GOptionEntry progress_options[] = {
   }
 };
 
-GOptionEntry question_options[] = {
+static GOptionEntry question_options[] = {
   {
     "question",
     '\0',
@@ -580,7 +580,7 @@ GOptionEntry question_options[] = {
   }
 };
 
-GOptionEntry text_options[] = {
+static GOptionEntry text_options[] = {
   {
     "text-info",
     '\0',
@@ -613,7 +613,7 @@ GOptionEntry text_options[] = {
   }
 };
 
-GOptionEntry warning_options[] = {
+static GOptionEntry warning_options[] = {
   {
     "warning",
     '\0',
@@ -646,7 +646,7 @@ GOptionEntry warning_options[] = {
   }
 };
 
-GOptionEntry miscellaneous_options[] = {
+static GOptionEntry miscellaneous_options[] = {
   {
     "about",
     '\0',
@@ -670,10 +670,10 @@ GOptionEntry miscellaneous_options[] = {
   }
 };
 
-ZenityParsingOptions *results;
-GOptionContext *ctx;
+static ZenityParsingOptions *results;
+static GOptionContext *ctx;
 
-void
+static void
 zenity_option_init (void) {
 
   results = g_new0 (ZenityParsingOptions, 1);
@@ -719,7 +719,7 @@ zenity_option_free (void) {
   g_option_context_free (ctx);
 }
 
-void
+static void
 zenity_option_set_dialog_mode (gboolean is_active, ZenityDialogMode mode)  
 {
   if (is_active == TRUE) {
@@ -730,7 +730,7 @@ zenity_option_set_dialog_mode (gboolean is_active, ZenityDialogMode mode)
   }
 }
 
-gchar *
+static gchar *
 zenity_option_get_name (GOptionEntry *entries, gpointer arg_data)
 {
   int i;
@@ -743,17 +743,18 @@ zenity_option_get_name (GOptionEntry *entries, gpointer arg_data)
 }
 
 /* Error callback */
-void zenity_option_error_callback (GOptionContext *context,
-				   GOptionGroup   *group,
-				   gpointer        data,
-				   GError        **error)
+static void 
+zenity_option_error_callback (GOptionContext *context,
+                              GOptionGroup   *group,
+			      gpointer        data,
+			      GError        **error)
 {
   zenity_option_error (NULL, ERROR_SYNTAX);
 }
 
 /* Pre parse callbacks set the default option values */
 
-gboolean
+static gboolean
 zenity_general_pre_callback (GOptionContext *context,
 		             GOptionGroup   *group,
 		             gpointer	     data,
@@ -773,7 +774,7 @@ zenity_general_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_calendar_pre_callback (GOptionContext *context,
 		              GOptionGroup   *group,
 		              gpointer        data,
@@ -788,7 +789,7 @@ zenity_calendar_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_entry_pre_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -801,7 +802,7 @@ zenity_entry_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_error_pre_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -812,7 +813,7 @@ zenity_error_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_info_pre_callback (GOptionContext *context,
 		          GOptionGroup   *group,
 		          gpointer	  data,
@@ -823,7 +824,7 @@ zenity_info_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_file_pre_callback (GOptionContext *context,
 		          GOptionGroup   *group,
 		          gpointer	  data,
@@ -836,7 +837,7 @@ zenity_file_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_list_pre_callback (GOptionContext *context,
 		          GOptionGroup   *group,
 		          gpointer	  data,
@@ -852,7 +853,7 @@ zenity_list_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_notification_pre_callback (GOptionContext *context,
 		                  GOptionGroup   *group,
 		                  gpointer	  data,
@@ -864,7 +865,7 @@ zenity_notification_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_progress_pre_callback (GOptionContext *context,
 		              GOptionGroup   *group,
 		              gpointer	      data,
@@ -878,7 +879,7 @@ zenity_progress_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_question_pre_callback (GOptionContext *context,
 		              GOptionGroup   *group,
 		              gpointer	      data,
@@ -889,7 +890,7 @@ zenity_question_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_text_pre_callback (GOptionContext *context,
 		          GOptionGroup   *group,
 		          gpointer	  data,
@@ -900,7 +901,7 @@ zenity_text_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_warning_pre_callback (GOptionContext *context,
 		             GOptionGroup   *group,
 		             gpointer	     data,
@@ -911,7 +912,7 @@ zenity_warning_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_misc_pre_callback (GOptionContext *context,
 		          GOptionGroup   *group,
 		          gpointer	  data,
@@ -926,7 +927,7 @@ zenity_misc_pre_callback (GOptionContext *context,
 /* Post parse callbacks assign the option values to
    parsing result and makes some post condition tests */
 
-gboolean
+static gboolean
 zenity_general_post_callback (GOptionContext *context,
 		              GOptionGroup   *group,
 		              gpointer	      data,
@@ -940,7 +941,7 @@ zenity_general_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_calendar_post_callback (GOptionContext *context,
 		               GOptionGroup   *group,
 		               gpointer	       data,
@@ -994,7 +995,7 @@ zenity_calendar_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_entry_post_callback (GOptionContext *context,
 		            GOptionGroup   *group,
 		            gpointer	    data,
@@ -1019,7 +1020,7 @@ zenity_entry_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_error_post_callback (GOptionContext *context,
 		            GOptionGroup   *group,
 		            gpointer	    data,
@@ -1036,7 +1037,7 @@ zenity_error_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_info_post_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -1053,7 +1054,7 @@ zenity_info_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_file_post_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -1080,7 +1081,7 @@ zenity_file_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_list_post_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -1134,7 +1135,7 @@ zenity_list_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_notification_post_callback (GOptionContext *context,
 		                   GOptionGroup   *group,
 		                   gpointer	   data,
@@ -1154,7 +1155,7 @@ zenity_notification_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_progress_post_callback (GOptionContext *context,
 		               GOptionGroup   *group,
 		               gpointer	       data,
@@ -1184,7 +1185,7 @@ zenity_progress_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_question_post_callback (GOptionContext *context,
 		               GOptionGroup   *group,
 		               gpointer	       data,
@@ -1202,7 +1203,7 @@ zenity_question_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_text_post_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -1218,7 +1219,7 @@ zenity_text_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_warning_post_callback (GOptionContext *context,
 		              GOptionGroup   *group,
 		              gpointer	      data,
@@ -1235,7 +1236,7 @@ zenity_warning_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-gboolean
+static gboolean
 zenity_misc_post_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -1247,7 +1248,7 @@ zenity_misc_post_callback (GOptionContext *context,
   return TRUE;
 }
 
-GOptionContext *
+static GOptionContext *
 zenity_create_context (void) 
 {
   GOptionContext *tmp_ctx;

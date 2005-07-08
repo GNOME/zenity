@@ -45,7 +45,7 @@ static GtkWidget *cred_dialog;
 static void zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 /* Sync with the people in the THANKS file */
-static const gchar *author_credits[] = {
+static const gchar *const author_credits[] = {
   "Authors",
   "=======",
   "Glynn Foster <glynn foster sun com>",
@@ -184,7 +184,7 @@ static const gchar *author_credits[] = {
   NULL
 };
 
-gchar *translator_credits;
+static gchar *translator_credits;
 
 static gint
 zenity_move_clothes_event (GnomeCanvasItem *item, 
@@ -242,7 +242,7 @@ typedef struct
   gdouble x, y;
 } MonkClothes;
 
-static MonkClothes monk_clothes[] = {
+static const MonkClothes monk_clothes[] = {
   {"gnome-tshirt.png", 30.0, 20.0},
   {"sunglasses.png", ZENITY_CANVAS_X - 100.0 , ZENITY_CANVAS_Y - 150.0 },
   {"surfboard.png", 30.0, ZENITY_CANVAS_Y - 200.0},
