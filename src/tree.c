@@ -529,7 +529,7 @@ static gboolean
 zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, GtkTreeView *tree_view)
 {
   GValue toggle_value = {0, };
-  gint n_columns, print_column, i;
+  gint n_columns, i;
 
   n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
 

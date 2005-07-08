@@ -255,7 +255,7 @@ zenity_create_clothes (GtkWidget *canvas_board)
   GdkPixbuf *pixbuf;
   GnomeCanvasItem *canvas_item;
   gchar *pixbuf_path;
-  gint i;
+  size_t i;
 
   for (i = 0; i < G_N_ELEMENTS (monk_clothes); i++) {
     pixbuf_path = g_strconcat (ZENITY_CLOTHES_PATH, monk_clothes[i].filename, NULL); 
@@ -557,7 +557,6 @@ static void
 zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data = data;
-  GError *error = NULL;
 
   switch (response) {
     case GTK_RESPONSE_OK:

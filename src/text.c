@@ -39,9 +39,6 @@ zenity_text_handle_stdin (GIOChannel  *channel,
   static GtkTextBuffer *buffer;
   gchar buf[1024];
 
-  static GtkTextIter iter, end;
-  static gboolean first_time = FALSE;
-  gchar *str;
   gsize len;
 
   buffer = GTK_TEXT_BUFFER (data);

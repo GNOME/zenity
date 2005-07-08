@@ -89,7 +89,7 @@ static void
 zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data;
-  gint day, month, year;
+  guint day, month, year;
   gchar time_string[128];
   GDate *date = NULL;
 

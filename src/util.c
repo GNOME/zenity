@@ -320,7 +320,7 @@ transient_get_xterm_toplevel (void)
   while (xterm != None && !transient_is_toplevel (xterm))
   {
     Window root, parent, *children;
-    int nchildren;
+    unsigned nchildren;
     XQueryTree (dpy, xterm,
                 &root, &parent,
                 &children, &nchildren);

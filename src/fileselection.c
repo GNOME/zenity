@@ -91,7 +91,6 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
 {
   ZenityFileData *file_data = data;
   GSList *selections, *iter;
-  int i;
 	  
   switch (response) {
     case GTK_RESPONSE_OK:

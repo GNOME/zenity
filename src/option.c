@@ -947,8 +947,6 @@ zenity_calendar_post_callback (GOptionContext *context,
 		               gpointer	       data,
 		               GError        **error)
 {
-  int i;
-
   zenity_option_set_dialog_mode (zenity_calendar_active, MODE_CALENDAR);
 
   if (results->mode == MODE_CALENDAR) {

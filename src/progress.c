@@ -33,7 +33,6 @@
 #include "zenity.h"
 #include "util.h"
 
-static guint timer;
 static GladeXML *glade_dialog;
 static ZenityData *zen_data;
 static GIOChannel *channel;
