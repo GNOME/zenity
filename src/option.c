@@ -1262,6 +1262,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_general_pre_callback, zenity_general_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds calendar option entries */
@@ -1272,6 +1273,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_calendar_pre_callback, zenity_calendar_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds entry option entries */
@@ -1282,6 +1284,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_entry_pre_callback, zenity_entry_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds error option entries */
@@ -1292,6 +1295,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_error_pre_callback, zenity_error_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds info option entries */
@@ -1302,6 +1306,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_info_pre_callback, zenity_info_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds file selection option entries */
@@ -1312,6 +1317,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_file_pre_callback, zenity_file_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds list option entries */
@@ -1322,6 +1328,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_list_pre_callback, zenity_list_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds notification option entries */
@@ -1332,6 +1339,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_notification_pre_callback, zenity_notification_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds progress option entries */
@@ -1342,6 +1350,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_progress_pre_callback, zenity_progress_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds question option entries */
@@ -1352,6 +1361,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_question_pre_callback, zenity_question_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds warning option entries */
@@ -1362,6 +1372,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_warning_pre_callback, zenity_warning_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds text option entries */
@@ -1372,6 +1383,7 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_text_pre_callback, zenity_text_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds misc option entries */
@@ -1382,10 +1394,12 @@ zenity_create_context (void)
   g_option_group_set_parse_hooks (a_group,
                     zenity_misc_pre_callback, zenity_misc_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Adds gtk option entries */
   a_group = gtk_get_option_group(TRUE);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
   
   /* Enable help options */
