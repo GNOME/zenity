@@ -150,7 +150,7 @@ static GOptionEntry calendar_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -210,7 +210,7 @@ static GOptionEntry entry_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -220,7 +220,7 @@ static GOptionEntry entry_options[] = {
     "entry-text",
     '\0',
     0,
-    G_OPTION_ARG_STRING,
+    G_OPTION_ARG_STRING | G_OPTION_FLAG_NOALIAS,
     &zenity_entry_entry_text,
     N_("Set the entry text"),
     NULL
@@ -253,7 +253,7 @@ static GOptionEntry error_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -262,7 +262,7 @@ static GOptionEntry error_options[] = {
   {
     "no-wrap",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_wrap,
     N_("Do not enable text wrapping"),
@@ -286,7 +286,7 @@ static GOptionEntry info_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -295,7 +295,7 @@ static GOptionEntry info_options[] = {
   {
     "no-wrap",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_wrap,
     N_("Do not enable text wrapping"),
@@ -319,7 +319,7 @@ static GOptionEntry file_selection_options[] = {
   {
     "filename",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_FILENAME,
     &zenity_general_uri,
     N_("Set the filename"),
@@ -328,7 +328,7 @@ static GOptionEntry file_selection_options[] = {
   {
     "multiple",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_multiple,
     N_("Allow multiple files to be selected"),
@@ -355,7 +355,7 @@ static GOptionEntry file_selection_options[] = {
   {
     "separator",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_separator,
     N_("Set output separator character"),
@@ -379,7 +379,7 @@ static GOptionEntry list_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -424,7 +424,7 @@ static GOptionEntry list_options[] = {
   {
     "multiple",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_multiple,
     N_("Allow multiple rows to be selected"),
@@ -433,7 +433,7 @@ static GOptionEntry list_options[] = {
   {
     "editable",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_editable,
     N_("Allow changes to text"),
@@ -475,7 +475,7 @@ static GOptionEntry notification_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the notification text"),
@@ -508,7 +508,7 @@ static GOptionEntry progress_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -560,7 +560,7 @@ static GOptionEntry question_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -569,7 +569,7 @@ static GOptionEntry question_options[] = {
   {
     "no-wrap",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_wrap,
     N_("Do not enable text wrapping"),
@@ -593,7 +593,7 @@ static GOptionEntry text_options[] = {
   {
     "filename",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_FILENAME,
     &zenity_general_uri,
     N_("Open file"),
@@ -602,7 +602,7 @@ static GOptionEntry text_options[] = {
   {
     "editable",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_editable,
     N_("Allow changes to text"),
@@ -626,7 +626,7 @@ static GOptionEntry warning_options[] = {
   {
     "text",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
@@ -635,7 +635,7 @@ static GOptionEntry warning_options[] = {
   {
     "no-wrap",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_wrap,
     N_("Do not enable text wrapping"),

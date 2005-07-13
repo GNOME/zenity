@@ -1,5 +1,12 @@
 2005-07-12  Lucas Rocha  <lucasr@cvs.gnome.org>
 
+	* configure.in: dependency on glib >= 2.7.3
+	* src/option.c: Add G_OPTION_FLAG_NOALIAS flag
+	on options that are present in more than on
+	group.
+
+2005-07-12  Lucas Rocha  <lucasr@cvs.gnome.org>
+
 	* src/option.c: activate option help translations
 	in GOption.
 
