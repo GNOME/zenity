@@ -181,6 +181,9 @@ static const gchar *const author_credits[] = {
   "Steve Murphy <murf e-tools com>",
   "Josep Puigdemont <josep imatge-sintetica com>",
   "Adam Weinberger <adamw gnome org>",
+  "Ivar Smolin <okul linux ee>",
+  "Jens Seidel <jensseidel users sf net>",
+  "Benoît Dejean <tazforever dlfp org>",
   NULL
 };
 
