@@ -1,14 +1,19 @@
-# Zenity Estonian Translation.
-# Copyright (C) 2003 Free Software Foundation, Inc
-# Priit Laes <amd@tt.ee>, 2003, 2004.
+# Zenity eesti keele tõlge.
+# Estonian translation of Zenity.
+#
+# Copyright (C) 2003-2005 Free Software Foundation, Inc
+# This file is distributed under the same license as the Zenity package.
+#
+# Priit Laes <amd store20 com>, 2003-2005.
+# Ivar Smolin <okul@linux.ee>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-02-08 15:35+0100\n"
-"PO-Revision-Date: 2004-09-09 19:46+0300\n"
-"Last-Translator: Priit Laes <amd@tt.ee>\n"
+"PO-Revision-Date: 2005-07-18 15:34+0300\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Gnome eesti <et-gnome@linux.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,11 +29,13 @@ msgstr ""
 #. lines seperated by newlines (\n).
 #: src/about.c:377
 msgid "translator-credits"
-msgstr "Priit Laes <amd@store20.com>, 2003-2005."
+msgstr ""
+"Priit Laes <amd@store20.com>, 2003-2005\n"
+"Ivar Smolin <okul@linux.ee>, 2005"
 
 #: src/about.c:407
 msgid "Display dialog boxes from shell scripts"
-msgstr "Näita dialoogiaknaid terminali skriptidest"
+msgstr "Dialoogiakende kuvamine terminali skriptidest"
 
 #: src/about.c:411
 msgid "(C) 2003 Sun Microsystems"
@@ -56,11 +63,12 @@ msgstr "Salve suund"
 
 #: src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr "Sa pead määrama dialoogi tüübi. Lisainfot saad 'zenity --help' käsuga\n"
+msgstr ""
+"Sa pead määrama dialoogi tüübi. Lisateavet saad 'zenity --help' käsuga\n"
 
 #: src/notification.c:158
 msgid "could not parse command from stdin\n"
-msgstr "standardsisendist tulnud käsku ei saa töödelda\n"
+msgstr "standardsisendist tulnud käsku pole võimalik töödelda\n"
 
 #: src/notification.c:230 src/notification.c:259
 msgid "Zenity notification"
@@ -76,11 +84,11 @@ msgstr "*"
 
 #: src/zenity.glade.h:2
 msgid "About Zenity"
-msgstr "Info Zenity kohta"
+msgstr "Zenity-st lähemalt"
 
 #: src/zenity.glade.h:3
 msgid "Add a new entry"
-msgstr "Lisa uus kirjend"
+msgstr "Uue kirje lisamine"
 
 #: src/zenity.glade.h:4
 msgid "All updates are complete."
@@ -124,7 +132,7 @@ msgstr "Töötab..."
 
 #: src/zenity.glade.h:14
 msgid "Select a date from below."
-msgstr "Vali kuupäev."
+msgstr "Vali allolevast kalendrist kuupäev."
 
 #: src/zenity.glade.h:15
 msgid "Select a file"
@@ -132,11 +140,11 @@ msgstr "Vali fail"
 
 #: src/zenity.glade.h:16
 msgid "Select items from the list"
-msgstr "Vali nimekirjast elemendid"
+msgstr "Kirjete valimine loendist."
 
 #: src/zenity.glade.h:17
 msgid "Select items from the list below."
-msgstr "Vali elemendid nimekirjast."
+msgstr "Vali allolevast loendist kirjed"
 
 #: src/zenity.glade.h:18
 msgid "Text View"
@@ -156,7 +164,7 @@ msgstr "_Sisesta uus tekst:"
 
 #: src/option.c:99
 msgid "Set the dialog title"
-msgstr "Sea dialoogi pealkiri"
+msgstr "Määra dialoogi pealkiri"
 
 #: src/option.c:100
 msgid "TITLE"
@@ -164,7 +172,7 @@ msgstr "PEALKIRI"
 
 #: src/option.c:108
 msgid "Set the window icon"
-msgstr "Sea akna ikoon"
+msgstr "Määra akna ikoon"
 
 #: src/option.c:109
 msgid "ICONPATH"
@@ -193,19 +201,19 @@ msgstr "Kalendridialoogi kuvamine"
 #: src/option.c:150 src/option.c:210 src/option.c:253 src/option.c:277
 #: src/option.c:361 src/option.c:472 src/option.c:524 src/option.c:581
 msgid "Set the dialog text"
-msgstr "Teksti määramine kalendris"
+msgstr "Dialoogi teksti määramine"
 
 #: src/option.c:159
 msgid "Set the calendar day"
-msgstr "Päeva määramine kalendris"
+msgstr "Kalendri päeva määramine"
 
 #: src/option.c:168
 msgid "Set the calendar month"
-msgstr "Kuu määramine kalendris"
+msgstr "Kalendri kuu määramine"
 
 #: src/option.c:177
 msgid "Set the calendar year"
-msgstr "Aasta määramine kalendris"
+msgstr "Kalendri aasta määramine"
 
 #: src/option.c:186
 msgid "Set the format for the returned date"
@@ -229,7 +237,7 @@ msgstr "Veadialoogi kuvamine"
 
 #: src/option.c:268
 msgid "Display info dialog"
-msgstr "Infodialoogi kuvamine"
+msgstr "Teabedialoogi kuvamine"
 
 #: src/option.c:292
 msgid "Display file selection dialog"
@@ -287,7 +295,9 @@ msgstr "Luba teksti muuta"
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
-msgstr "Trüki kindel tulp (Vaikimisi on 1. Kasutades 'ALL' parameetrit, saad väljastada kõik tulbad korraga)"
+msgstr ""
+"Trüki kindel tulp (Vaikimisi on 1. Kasutades 'ALL' parameetrit, saad "
+"väljastada kõik tulbad korraga)"
 
 #: src/option.c:430
 msgid "Display notification"
@@ -336,7 +346,7 @@ msgstr "Hoiatusdialoogi kuvamine"
 
 #: src/option.c:596
 msgid "About zenity"
-msgstr "Zenity info"
+msgstr "Zenity-st lähemalt"
 
 #: src/option.c:605
 msgid "Print version"
@@ -376,27 +386,27 @@ msgstr "Kuva veaseaded"
 
 #: src/option.c:1230
 msgid "Info options"
-msgstr "Info seaded"
+msgstr "Teabe valikud"
 
 #: src/option.c:1231
 msgid "Show info options"
-msgstr "Kuva info seaded"
+msgstr "Teabe valikute kuvamine"
 
 #: src/option.c:1240
 msgid "File selection options"
-msgstr "Failivaliku seaded"
+msgstr "Failivalimise valikud"
 
 #: src/option.c:1241
 msgid "Show file selection options"
-msgstr "Kuva failivaliku seaded"
+msgstr "Failivalimise valikute kuvamine"
 
 #: src/option.c:1250
 msgid "List options"
-msgstr "Nimekirja seaded"
+msgstr "Nimekirja valikud"
 
 #: src/option.c:1251
 msgid "Show list options"
-msgstr "Kuva nimekirja seaded"
+msgstr "Nimekirja valikute kuvamine"
 
 #: src/option.c:1260
 msgid "Notification icon options"
@@ -412,7 +422,7 @@ msgstr "Edenemise seaded"
 
 #: src/option.c:1271
 msgid "Show progress options"
-msgstr "Kuva edenemisinfo seaded"
+msgstr "Edenemisteabe sätete kuvamine"
 
 #: src/option.c:1280
 msgid "Question options"
@@ -420,7 +430,7 @@ msgstr "Küsimuse seaded"
 
 #: src/option.c:1281
 msgid "Show question options"
-msgstr "Kuva küsimusinfo seaded"
+msgstr "Küsimuse valikute kuvamine"
 
 #: src/option.c:1290
 msgid "Warning options"
@@ -428,15 +438,15 @@ msgstr "Hoiatuse seaded"
 
 #: src/option.c:1291
 msgid "Show warning options"
-msgstr "Kuva Hoiatusinfo seaded"
+msgstr "Hoiatuse valikute kuvamine"
 
 #: src/option.c:1300
 msgid "Text information options"
-msgstr "Tekstiteabe seaded"
+msgstr "Tekstiteabe valikud"
 
 #: src/option.c:1301
 msgid "Show text information options"
-msgstr "Kuva tekstiteabe seaded"
+msgstr "Tekstiteabe valikute kuvamine"
 
 #: src/option.c:1310
 msgid "Miscellaneous options"
