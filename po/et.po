@@ -5,13 +5,14 @@
 # This file is distributed under the same license as the Zenity package.
 #
 # Priit Laes <amd store20 com>, 2003-2005.
+# Ivar Smolin <okul@linux.ee>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-07-02 06:24+0000\n"
-"PO-Revision-Date: 2005-07-02 10:25+0300\n"
+"PO-Revision-Date: 2005-07-18 15:34+0300\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Gnome eesti <et-gnome@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -28,11 +29,13 @@ msgstr ""
 #. lines seperated by newlines (\n).
 #: ../src/about.c:379
 msgid "translator-credits"
-msgstr "Priit Laes <amd@store20.com>, 2003-2005."
+msgstr ""
+"Priit Laes <amd@store20.com>, 2003-2005\n"
+"Ivar Smolin <okul@linux.ee>, 2005"
 
 #: ../src/about.c:409
 msgid "Display dialog boxes from shell scripts"
-msgstr "Näita dialoogiaknaid terminali skriptidest"
+msgstr "Dialoogiakende kuvamine terminali skriptidest"
 
 #: ../src/about.c:413
 msgid "(C) 2003 Sun Microsystems"
@@ -61,11 +64,11 @@ msgstr "Salve suund"
 #: ../src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
-"Sa pead määrama dialoogi tüübi. Lisainfot saad 'zenity --help' käsuga\n"
+"Sa pead määrama dialoogi tüübi. Lisateavet saad 'zenity --help' käsuga\n"
 
 #: ../src/notification.c:158
 msgid "could not parse command from stdin\n"
-msgstr "standardsisendist tulnud käsku ei saa töödelda\n"
+msgstr "standardsisendist tulnud käsku pole võimalik töödelda\n"
 
 #: ../src/notification.c:227 ../src/notification.c:256
 msgid "Zenity notification"
@@ -85,11 +88,11 @@ msgstr "*"
 
 #: ../src/zenity.glade.h:2
 msgid "About Zenity"
-msgstr "Info Zenity kohta"
+msgstr "Zenity-st lähemalt"
 
 #: ../src/zenity.glade.h:3
 msgid "Add a new entry"
-msgstr "Lisa uus kirjend"
+msgstr "Uue kirje lisamine"
 
 #: ../src/zenity.glade.h:4
 msgid "All updates are complete."
@@ -133,7 +136,7 @@ msgstr "Töötab..."
 
 #: ../src/zenity.glade.h:14
 msgid "Select a date from below."
-msgstr "Vali kuupäev."
+msgstr "Vali allolevast kalendrist kuupäev."
 
 #: ../src/zenity.glade.h:15
 msgid "Select a file"
@@ -141,11 +144,11 @@ msgstr "Vali fail"
 
 #: ../src/zenity.glade.h:16
 msgid "Select items from the list"
-msgstr "Vali nimekirjast elemendid"
+msgstr "Kirjete valimine loendist."
 
 #: ../src/zenity.glade.h:17
 msgid "Select items from the list below."
-msgstr "Vali elemendid nimekirjast."
+msgstr "Vali allolevast loendist kirjed"
 
 #: ../src/zenity.glade.h:18
 msgid "Text View"
@@ -165,7 +168,7 @@ msgstr "_Sisesta uus tekst:"
 
 #: ../src/option.c:101
 msgid "Set the dialog title"
-msgstr "Sea dialoogi pealkiri"
+msgstr "Määra dialoogi pealkiri"
 
 #: ../src/option.c:102
 msgid "TITLE"
@@ -173,7 +176,7 @@ msgstr "PEALKIRI"
 
 #: ../src/option.c:110
 msgid "Set the window icon"
-msgstr "Sea akna ikoon"
+msgstr "Määra akna ikoon"
 
 #: ../src/option.c:111
 msgid "ICONPATH"
@@ -203,19 +206,19 @@ msgstr "Kalendridialoogi kuvamine"
 #: ../src/option.c:288 ../src/option.c:381 ../src/option.c:510
 #: ../src/option.c:562 ../src/option.c:628
 msgid "Set the dialog text"
-msgstr "Teksti määramine kalendris"
+msgstr "Dialoogi teksti määramine"
 
 #: ../src/option.c:161
 msgid "Set the calendar day"
-msgstr "Päeva määramine kalendris"
+msgstr "Kalendri päeva määramine"
 
 #: ../src/option.c:170
 msgid "Set the calendar month"
-msgstr "Kuu määramine kalendris"
+msgstr "Kalendri kuu määramine"
 
 #: ../src/option.c:179
 msgid "Set the calendar year"
-msgstr "Aasta määramine kalendris"
+msgstr "Kalendri aasta määramine"
 
 #: ../src/option.c:188
 msgid "Set the format for the returned date"
@@ -244,7 +247,7 @@ msgstr "Ära aktiveeri tekstimurdmist"
 
 #: ../src/option.c:279
 msgid "Display info dialog"
-msgstr "Infodialoogi kuvamine"
+msgstr "Teabedialoogi kuvamine"
 
 #: ../src/option.c:312
 msgid "Display file selection dialog"
@@ -361,7 +364,7 @@ msgstr "Hoiatusdialoogi kuvamine"
 
 #: ../src/option.c:652
 msgid "About zenity"
-msgstr "Zenity info"
+msgstr "Zenity-st lähemalt"
 
 #: ../src/option.c:661
 msgid "Print version"
@@ -401,27 +404,27 @@ msgstr "Kuva veaseaded"
 
 #: ../src/option.c:1296
 msgid "Info options"
-msgstr "Info seaded"
+msgstr "Teabe valikud"
 
 #: ../src/option.c:1297
 msgid "Show info options"
-msgstr "Kuva info seaded"
+msgstr "Teabe valikute kuvamine"
 
 #: ../src/option.c:1306
 msgid "File selection options"
-msgstr "Failivaliku seaded"
+msgstr "Failivalimise valikud"
 
 #: ../src/option.c:1307
 msgid "Show file selection options"
-msgstr "Kuva failivaliku seaded"
+msgstr "Failivalimise valikute kuvamine"
 
 #: ../src/option.c:1316
 msgid "List options"
-msgstr "Nimekirja seaded"
+msgstr "Nimekirja valikud"
 
 #: ../src/option.c:1317
 msgid "Show list options"
-msgstr "Kuva nimekirja seaded"
+msgstr "Nimekirja valikute kuvamine"
 
 #: ../src/option.c:1326
 msgid "Notification icon options"
@@ -437,7 +440,7 @@ msgstr "Edenemise seaded"
 
 #: ../src/option.c:1337
 msgid "Show progress options"
-msgstr "Kuva edenemisinfo seaded"
+msgstr "Edenemisteabe sätete kuvamine"
 
 #: ../src/option.c:1346
 msgid "Question options"
@@ -445,7 +448,7 @@ msgstr "Küsimuse seaded"
 
 #: ../src/option.c:1347
 msgid "Show question options"
-msgstr "Kuva küsimusinfo seaded"
+msgstr "Küsimuse valikute kuvamine"
 
 #: ../src/option.c:1356
 msgid "Warning options"
@@ -453,15 +456,15 @@ msgstr "Hoiatuse seaded"
 
 #: ../src/option.c:1357
 msgid "Show warning options"
-msgstr "Kuva Hoiatusinfo seaded"
+msgstr "Hoiatuse valikute kuvamine"
 
 #: ../src/option.c:1366
 msgid "Text information options"
-msgstr "Tekstiteabe seaded"
+msgstr "Tekstiteabe valikud"
 
 #: ../src/option.c:1367
 msgid "Show text information options"
-msgstr "Kuva tekstiteabe seaded"
+msgstr "Tekstiteabe valikute kuvamine"
 
 #: ../src/option.c:1376
 msgid "Miscellaneous options"
@@ -487,83 +490,3 @@ msgstr "--%s ei ole selle dialoogitüübi poolt toetatud\n"
 msgid "Two or more dialog options specified\n"
 msgstr "Kaks või enam dialoogitüüpi määratud\n"
 
-#~ msgid "Text options"
-#~ msgstr "Tekstiseaded"
-
-#~ msgid "Show text options"
-#~ msgstr "Tekstiseaded"
-
-#~ msgid "Set output separator character."
-#~ msgstr "Määra väljundi eraldustäht."
-
-#~ msgid "Gdk debugging flags to set"
-#~ msgstr "Määratud Gdk silumislipud"
-
-#~ msgid "FLAGS"
-#~ msgstr "LIPUD"
-
-#~ msgid "Gdk debugging flags to unset"
-#~ msgstr "Keelatud Gdk silumislipud"
-
-#~ msgid "X display to use"
-#~ msgstr "X displei, mida kasutada"
-
-#~ msgid "DISPLAY"
-#~ msgstr "DISPLEI"
-
-#~ msgid "X screen to use"
-#~ msgstr "X ekraan mida kasutatakse"
-
-#~ msgid "SCREEN"
-#~ msgstr "EKRAAN"
-
-#~ msgid "Make X calls synchronous"
-#~ msgstr "Tee X'i väljakutseid sünkroonselt"
-
-#~ msgid "Program name as used by the window manager"
-#~ msgstr "Programmi nimi, mida kasutab aknahaldur"
-
-#~ msgid "NAME"
-#~ msgstr "NIMI"
-
-#~ msgid "Program class as used by the window manager"
-#~ msgstr "Programmi tüüp, mida kasutab aknahaldur"
-
-#~ msgid "CLASS"
-#~ msgstr "KLASS"
-
-#~ msgid "HOST"
-#~ msgstr "HOST"
-
-#~ msgid "PORT"
-#~ msgstr "PORT"
-
-#~ msgid "Gtk+ debugging flags to set"
-#~ msgstr "Määratud Gtk+ silumislipud"
-
-#~ msgid "Gtk+ debugging flags to unset"
-#~ msgstr "Keelatud Gtk+ silumislipud"
-
-#~ msgid "Make all warnings fatal"
-#~ msgstr "Tee kõik hoiatused saatuslikuks"
-
-#~ msgid "Load an additional Gtk module"
-#~ msgstr "Gtk lisamooduli laadimine"
-
-#~ msgid "MODULE"
-#~ msgstr "MOODUL"
-
-#~ msgid "Dialog options"
-#~ msgstr "Dialoogiseaded"
-
-#~ msgid "GTK+ options"
-#~ msgstr "GTK+ valikud"
-
-#~ msgid "Help options"
-#~ msgstr "Abi valikud"
-
-#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-#~ msgstr "%s on vigane seade. Lisainfot saad 'zenity --help' käsuga\n"
-
-#~ msgid "%s given twice for the same dialog\n"
-#~ msgstr "%s on antud sama dialoogi jaoks kaks korda\n"
