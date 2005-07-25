@@ -3,6 +3,8 @@ AC_INIT(src)
 AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE(zenity, 2.11.2)
 
+GNOME_DOC_INIT
+
 AM_MAINTAINER_MODE
 
 AC_PROG_INTLTOOL([0.29])
@@ -93,6 +95,4 @@ src/Makefile
 src/gdialog
 data/Makefile
 help/Makefile
-help/C/Makefile
-help/sr/Makefile
 ])

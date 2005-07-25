@@ -1,3 +1,22 @@
+2005-07-24  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* .cvsignore: added gnome-doc-utils.make. 
+	* configure.in: added GNOME_DOC_INIT and
+	removed help/C/Makefile and help/sr/Makefile
+	from AC_OUTPUT.
+	* Makefile.am: added gnome-doc-utils.make to
+	EXTRA_DIST and DISTCLEANFILES. Added
+	DISTCHECK_CONFIGURE_FLAGS.
+	* help/Makefile.am: migration to gnome-doc-utils.
+	* help/zenity.omf.in: new OMF file to be used by
+	gnome-doc-utils.
+	* help/C/Makefile.am, help/C/zenity-C.omf: No
+	longer needed. Removed.
+	* help/C/zenity.xml: updates to be gnome-doc-utils
+	compliant.
+	* help/ChangeLog: new ChangeLog to keep track
+	of doc updates.
+
 2005-07-14  Yair Hershkovitz  <yairhr@gmail.com>
 
 	* configure.in: Added Hebrew translation.
