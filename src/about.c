@@ -184,6 +184,9 @@ static const gchar *const author_credits[] = {
   "Ivar Smolin <okul linux ee>",
   "Jens Seidel <jensseidel users sf net>",
   "Benoît Dejean <tazforever dlfp org>",
+  "Yair Hershkovitz <yairhr gmail com>",
+  "Clytie Siddall <clytie riverland net au>",
+  "Ilkka Tuohela <hile iki fi>",
   NULL
 };
 
