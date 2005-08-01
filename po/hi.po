@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity.HEAD.hi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-10 06:46+0000\n"
-"PO-Revision-Date: 2005-06-10 12:37+0530\n"
+"POT-Creation-Date: 2005-08-01 06:51+0000\n"
+"PO-Revision-Date: 2005-08-01 13:51+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 
 #. Translators: This is a special message that shouldn't be translated
 #. literally. It is used in the about box to give credits to
@@ -27,30 +28,30 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../src/about.c:378
+#: ../src/about.c:397
 msgid "translator-credits"
 msgstr ""
+"राजेश रंजन (rranjan@redhat.com, rajeshkajha@yahoo.com)\n"
 "जी करुणाकर (karunakar@freedomink.org)\n"
-"रविशंकर श्रीवास्तव (raviratlami@yahoo.com)\n"
-"राजेश रंजन (rajeshkajha@yahoo.com)"
+"रविशंकर श्रीवास्तव (raviratlami@yahoo.com)"
 
-#: ../src/about.c:408
+#: ../src/about.c:427
 msgid "Display dialog boxes from shell scripts"
 msgstr "संवाद बक्से शैल स्क्रिप्ट्स से दिखाएँ"
 
-#: ../src/about.c:412
+#: ../src/about.c:431
 msgid "(C) 2003 Sun Microsystems"
 msgstr "(C) 2003 सन माइक्रोसिस्टम्स"
 
-#: ../src/about.c:496
+#: ../src/about.c:515
 msgid "Credits"
 msgstr "श्रेय"
 
-#: ../src/about.c:523
+#: ../src/about.c:542
 msgid "Written by"
 msgstr "लेखक"
 
-#: ../src/about.c:536
+#: ../src/about.c:555
 msgid "Translated by"
 msgstr "अनुवादक"
 
@@ -66,7 +67,7 @@ msgstr "ट्रै का अभिमुखन"
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "आपको एक संवाद प्रकार निर्दिष्ट करना होगा. विवरण हेतु देखें 'zenity --help' \n"
 
-#: ../src/notification.c:158
+#: ../src/notification.c:161
 msgid "could not parse command from stdin\n"
 msgstr "stdin से समादेश का विश्लेषण नहीं कर सका\n"
 
@@ -74,9 +75,13 @@ msgstr "stdin से समादेश का विश्लेषण नह�
 msgid "Zenity notification"
 msgstr "जेनिटी सूचनाँ"
 
-#: ../src/tree.c:304
+#: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "सूची संवाद हेतु कोई कॉलम शीर्षक निर्दिष्ट नहीं हैं.\n"
+
+#: ../src/tree.c:326
+msgid "You should use only one List dialog type.\n"
+msgstr "आपको सिर्फ एक सूची संवाद प्रकार का प्रयोग करना चाहिये.\n"
 
 #: ../src/zenity.glade.h:1
 msgid "*"
@@ -163,142 +168,146 @@ msgstr "श्रेय (_C)"
 msgid "_Enter new text:"
 msgstr "नया पाठ भरें:"
 
-#: ../src/option.c:100
+#: ../src/option.c:105
 msgid "Set the dialog title"
 msgstr "संवाद शीर्षक नियत करें"
 
-#: ../src/option.c:101
+#: ../src/option.c:106
 msgid "TITLE"
 msgstr "शीर्षक"
 
-#: ../src/option.c:109
+#: ../src/option.c:114
 msgid "Set the window icon"
 msgstr "विंडो चिह्न नियत करें"
 
-#: ../src/option.c:110
+#: ../src/option.c:115
 msgid "ICONPATH"
 msgstr "चिह्न-पथ"
 
-#: ../src/option.c:118
+#: ../src/option.c:123
 msgid "Set the width"
 msgstr "चौड़ाई नियत करें"
 
-#: ../src/option.c:119
+#: ../src/option.c:124
 msgid "WIDTH"
 msgstr "चौड़ाई"
 
-#: ../src/option.c:127
+#: ../src/option.c:132
 msgid "Set the height"
 msgstr "ऊँचाई नियत करें"
 
-#: ../src/option.c:128
+#: ../src/option.c:133
 msgid "HEIGHT"
 msgstr "ऊँचाई"
 
-#: ../src/option.c:142
+#: ../src/option.c:147
 msgid "Display calendar dialog"
 msgstr "तिथिपत्री संवाद दिखाएँ"
 
-#: ../src/option.c:151 ../src/option.c:211 ../src/option.c:254
-#: ../src/option.c:287 ../src/option.c:380 ../src/option.c:491
-#: ../src/option.c:543 ../src/option.c:609
+#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
+#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
+#: ../src/option.c:566 ../src/option.c:632
 msgid "Set the dialog text"
 msgstr "संवाद पाठ नियत करें"
 
-#: ../src/option.c:160
+#: ../src/option.c:165
 msgid "Set the calendar day"
 msgstr "तिथिपत्री दिन नियत करें"
 
-#: ../src/option.c:169
+#: ../src/option.c:174
 msgid "Set the calendar month"
 msgstr "तिथिपत्री माह नियत करें"
 
-#: ../src/option.c:178
+#: ../src/option.c:183
 msgid "Set the calendar year"
 msgstr "तिथिपत्री वर्ष नियत करें"
 
-#: ../src/option.c:187
+#: ../src/option.c:192
 msgid "Set the format for the returned date"
 msgstr "वापस आई तिथि हेतु फ़ॉर्मेट नियत करें"
 
-#: ../src/option.c:202
+#: ../src/option.c:207
 msgid "Display text entry dialog"
 msgstr "पाठ प्रविष्टि संवाद दिखाएँ"
 
-#: ../src/option.c:220
+#: ../src/option.c:225
 msgid "Set the entry text"
 msgstr "प्रविष्टि पाठ नियत करें"
 
-#: ../src/option.c:229
+#: ../src/option.c:234
 msgid "Hide the entry text"
 msgstr "प्रविष्टि पाठ छुपाएँ"
 
-#: ../src/option.c:245
+#: ../src/option.c:250
 msgid "Display error dialog"
 msgstr "त्रुटि संवाद दिखाएँ"
 
-#: ../src/option.c:263 ../src/option.c:296 ../src/option.c:552
-#: ../src/option.c:618
+#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
+#: ../src/option.c:641
 msgid "Do not enable text wrapping"
 msgstr "पाठ रैपिंग सक्रिय न करें"
 
-#: ../src/option.c:278
+#: ../src/option.c:283
 msgid "Display info dialog"
 msgstr "जानकारी संवाद दिखाएँ"
 
-#: ../src/option.c:311
+#: ../src/option.c:316
 msgid "Display file selection dialog"
 msgstr "फ़ाइल चयन संवाद दिखाएँ"
 
-#: ../src/option.c:320
+#: ../src/option.c:325
 msgid "Set the filename"
 msgstr "फ़ाइलनाम नियत करें"
 
-#: ../src/option.c:321 ../src/option.c:577
+#: ../src/option.c:326 ../src/option.c:600
 msgid "FILENAME"
 msgstr "फ़ाइलनाम"
 
-#: ../src/option.c:329
+#: ../src/option.c:334
 msgid "Allow multiple files to be selected"
 msgstr "बहु फ़ाइलों का चयन स्वीकारें"
 
-#: ../src/option.c:338
+#: ../src/option.c:343
 msgid "Activate directory-only selection"
 msgstr "सिर्फ निर्देशिका चयन सक्रिय करें"
 
-#: ../src/option.c:347
+#: ../src/option.c:352
 msgid "Activate save mode"
 msgstr "सहेजें मोड सक्रिय करें"
 
-#: ../src/option.c:356 ../src/option.c:416
+#: ../src/option.c:361 ../src/option.c:421
 msgid "Set output separator character"
 msgstr "आउटपुट विभाजक अक्षर नियत करें"
 
-#: ../src/option.c:357 ../src/option.c:417
+#: ../src/option.c:362 ../src/option.c:422
 msgid "SEPARATOR"
 msgstr "विभाजक"
 
-#: ../src/option.c:371
+#: ../src/option.c:376
 msgid "Display list dialog"
 msgstr "सूची संवाद दिखाएँ"
 
-#: ../src/option.c:389
+#: ../src/option.c:394
 msgid "Set the column header"
 msgstr "कॉलम हैडर नियत करें"
 
-#: ../src/option.c:398
+#: ../src/option.c:403
 msgid "Use check boxes for first column"
 msgstr "प्रथम स्तम्भ हेतु चेक बक्से उपयोग करें"
 
-#: ../src/option.c:407
+#: ../src/option.c:412
 msgid "Use radio buttons for first column"
 msgstr "प्रथम स्तम्भ हेतु रेडियो बटन उपयोग करें"
 
-#: ../src/option.c:425 ../src/option.c:585
+#: ../src/option.c:430
+msgid "Allow multiple rows to be selected"
+msgstr "बहु पंक्ति के चयन की स्वीकृति दें"
+
+#: ../src/option.c:439 ../src/option.c:608
 msgid "Allow changes to text"
 msgstr "पाठ में परिवर्तन स्वीकारें"
 
-#: ../src/option.c:434
+#: ../src/option.c:448
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -306,173 +315,177 @@ msgstr ""
 "एक निर्दिष्ट कॉलम चुनें (1 मूलभूत है. 'ALL' को सभी कॉलम को मुद्रित करने के लिये प्रयोग "
 "किया जा सकता है)"
 
-#: ../src/option.c:449
+#: ../src/option.c:457
+msgid "Hide a specific column"
+msgstr "एक निर्दिष्ट कॉलम छुपायें"
+
+#: ../src/option.c:472
 msgid "Display notification"
 msgstr "सूचना प्रदर्शित करें"
 
-#: ../src/option.c:458
+#: ../src/option.c:481
 msgid "Set the notification text"
 msgstr "संवाद पाठ नियत करें"
 
-#: ../src/option.c:467
+#: ../src/option.c:490
 msgid "Listen for commands on stdin"
 msgstr "stdin पर समादेश को सुन रहा है"
 
-#: ../src/option.c:482
+#: ../src/option.c:505
 msgid "Display progress indication dialog"
 msgstr "प्रगति संकेत संवाद दिखाएँ"
 
-#: ../src/option.c:500
+#: ../src/option.c:523
 msgid "Set initial percentage"
 msgstr "प्रारंभिक प्रतिशत नियत करें"
 
-#: ../src/option.c:509
+#: ../src/option.c:532
 msgid "Pulsate progress bar"
 msgstr "प्रगति पट्टी स्पन्दित करें"
 
-#: ../src/option.c:519
+#: ../src/option.c:542
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "संवाद खारिज करें जब 100% पर पहुँच जाएँ"
 
-#: ../src/option.c:534
+#: ../src/option.c:557
 msgid "Display question dialog"
 msgstr "प्रश्न संवाद दिखाएँ"
 
-#: ../src/option.c:567
+#: ../src/option.c:590
 msgid "Display text information dialog"
 msgstr "पाठ जानकारी संवाद दिखाएँ"
 
-#: ../src/option.c:576
+#: ../src/option.c:599
 msgid "Open file"
 msgstr "फ़ाइल खोलें"
 
-#: ../src/option.c:600
+#: ../src/option.c:623
 msgid "Display warning dialog"
 msgstr "चेतावनी संवाद दिखाएँ"
 
-#: ../src/option.c:633
+#: ../src/option.c:656
 msgid "About zenity"
 msgstr "ज़ेनिटी के बारे में"
 
-#: ../src/option.c:642
+#: ../src/option.c:665
 msgid "Print version"
 msgstr "मुद्रण संस्करण"
 
-#: ../src/option.c:1232
+#: ../src/option.c:1259
 msgid "General options"
 msgstr "सामान्य विकल्प"
 
-#: ../src/option.c:1233
+#: ../src/option.c:1260
 msgid "Show general options"
 msgstr "सामान्य विकल्प दिखायें"
 
-#: ../src/option.c:1242
+#: ../src/option.c:1270
 msgid "Calendar options"
 msgstr "तिथिपत्री विकल्प"
 
-#: ../src/option.c:1243
+#: ../src/option.c:1271
 msgid "Show calendar options"
 msgstr "तिथिपत्री विकल्प दिखायें"
 
-#: ../src/option.c:1252
+#: ../src/option.c:1281
 msgid "Text entry options"
 msgstr "पाठ प्रविष्टि विकल्प"
 
-#: ../src/option.c:1253
+#: ../src/option.c:1282
 msgid "Show text entry options"
 msgstr "पाठ प्रविष्टि विकल्प दिखायें"
 
-#: ../src/option.c:1262
+#: ../src/option.c:1292
 msgid "Error options"
 msgstr "त्रुटि विकल्प"
 
-#: ../src/option.c:1263
+#: ../src/option.c:1293
 msgid "Show error options"
 msgstr "त्रुटि विकल्प दिखायें"
 
-#: ../src/option.c:1272
+#: ../src/option.c:1303
 msgid "Info options"
 msgstr "जानकारी विकल्प"
 
-#: ../src/option.c:1273
+#: ../src/option.c:1304
 msgid "Show info options"
 msgstr "जानकारी विकल्प दिखायें"
 
-#: ../src/option.c:1282
+#: ../src/option.c:1314
 msgid "File selection options"
 msgstr "फ़ाइल चयन विकल्प"
 
-#: ../src/option.c:1283
+#: ../src/option.c:1315
 msgid "Show file selection options"
 msgstr "फ़ाइल चयन विकल्प दिखायें"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1325
 msgid "List options"
 msgstr "सूची विकल्प"
 
-#: ../src/option.c:1293
+#: ../src/option.c:1326
 msgid "Show list options"
 msgstr "सूची विकल्प दिखायें"
 
-#: ../src/option.c:1302
+#: ../src/option.c:1336
 msgid "Notification icon options"
 msgstr "सूचना आइकन विकल्प"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1337
 msgid "Show notification icon options"
 msgstr "सूचना आइकन विकल्प दिखायें"
 
-#: ../src/option.c:1312
+#: ../src/option.c:1347
 msgid "Progress options"
 msgstr "प्रगति विकल्प"
 
-#: ../src/option.c:1313
+#: ../src/option.c:1348
 msgid "Show progress options"
 msgstr "प्रगति विकल्प दिखायें"
 
-#: ../src/option.c:1322
+#: ../src/option.c:1358
 msgid "Question options"
 msgstr "प्रश्न विकल्प"
 
-#: ../src/option.c:1323
+#: ../src/option.c:1359
 msgid "Show question options"
 msgstr "प्रश्न विकल्प दिखायें"
 
-#: ../src/option.c:1332
+#: ../src/option.c:1369
 msgid "Warning options"
 msgstr "चेतावनी विकल्प"
 
-#: ../src/option.c:1333
+#: ../src/option.c:1370
 msgid "Show warning options"
 msgstr "चेतावनी विकल्प दिखायें"
 
-#: ../src/option.c:1342
+#: ../src/option.c:1380
 msgid "Text information options"
 msgstr "पाठ सूचना विकल्प"
 
-#: ../src/option.c:1343
+#: ../src/option.c:1381
 msgid "Show text information options"
 msgstr "पाठ सूचना विकल्प दिखायें"
 
-#: ../src/option.c:1352
+#: ../src/option.c:1391
 msgid "Miscellaneous options"
 msgstr "विविध विकल्प"
 
-#: ../src/option.c:1353
+#: ../src/option.c:1392
 msgid "Show miscellaneous options"
 msgstr "विविध विकल्प दिखायें"
 
-#: ../src/option.c:1376
+#: ../src/option.c:1417
 msgid "This option is not available. Please see --help for all possible usages.\n"
 msgstr "विकल्प उपलब्ध नहीं है. कृपया सभी संभावित प्रयोगों के लिये सहायता देखें.\n"
 
-#: ../src/option.c:1380
+#: ../src/option.c:1421
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "इस संवाद हेतु %s समर्थित नहीं है \n"
 
-#: ../src/option.c:1384
+#: ../src/option.c:1425
 msgid "Two or more dialog options specified\n"
 msgstr "दो या अधिक संवाद विकल्प निर्दिष्ट\n"
 
