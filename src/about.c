@@ -187,6 +187,7 @@ static const gchar *const author_credits[] = {
   "Yair Hershkovitz <yairhr gmail com>",
   "Clytie Siddall <clytie riverland net au>",
   "Ilkka Tuohela <hile iki fi>",
+  "Chao-Hsiung Liao <j_h_liau yahoo com tw>",
   NULL
 };
 
