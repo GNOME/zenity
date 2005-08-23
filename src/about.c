@@ -188,6 +188,8 @@ static const gchar *const author_credits[] = {
   "Clytie Siddall <clytie riverland net au>",
   "Ilkka Tuohela <hile iki fi>",
   "Chao-Hsiung Liao <j_h_liau yahoo com tw>",
+  "Žygimantas Beručka <zygis gnome org>",
+  "Gabor Kelemen <kelemeng gnome hu>",
   NULL
 };
 
