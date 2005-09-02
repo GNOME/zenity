@@ -1,4 +1,4 @@
-# translation of zenity.HEAD.po to
+# translation of ru.po to
 # Copyright (C) 2003 zenity COPYRIGHT HOLDER
 # This file is distributed under the same license as the zenity package.
 # Shaynurov Ildar <shir80@mail.ru>, 2003.
@@ -6,16 +6,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity.HEAD\n"
+"Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-08 07:51+0100\n"
-"PO-Revision-Date: 2005-02-08 11:54+0200\n"
+"POT-Creation-Date: 2005-09-02 06:49+0000\n"
+"PO-Revision-Date: 2005-09-02 14:05+0300\n"
 "Last-Translator: Leonid Kanter <leon@asplinux.ru>\n"
-"Language-Team:  <ru@li.org>\n"
+"Language-Team:  <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Translators: This is a special message that shouldn't be translated
 #. literally. It is used in the about box to give credits to
@@ -24,272 +25,286 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:377
+#: ../src/about.c:400
 msgid "translator-credits"
 msgstr ""
 "Ильдар Шайнуров <shir80@mail.ru>\n"
 "Леонид Кантер <leon@asplinux.ru>"
 
-#: src/about.c:407
+#: ../src/about.c:430
 msgid "Display dialog boxes from shell scripts"
 msgstr "Программа для отображения диалоговых окон из скриптов оболочки"
 
-#: src/about.c:411
+#: ../src/about.c:434
 msgid "(C) 2003 Sun Microsystems"
 msgstr "(C) 2003 Sun Microsystems"
 
-#: src/about.c:495
+#: ../src/about.c:518
 msgid "Credits"
 msgstr "Авторы"
 
-#: src/about.c:522
+#: ../src/about.c:545
 msgid "Written by"
 msgstr "Программирование"
 
-#: src/about.c:535
+#: ../src/about.c:558
 msgid "Translated by"
 msgstr "Перевод"
 
-#: src/eggtrayicon.c:118
+#: ../src/eggtrayicon.c:118
 msgid "Orientation"
 msgstr "Ориентация"
 
-#: src/eggtrayicon.c:119
+#: ../src/eggtrayicon.c:119
 msgid "The orientation of the tray."
 msgstr "Ориентация лотка"
 
-#: src/main.c:90
+#: ../src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Вы должны задать тип диалога. Смотрите 'zenity --help' для большей "
 "информации\n"
 
-#: src/notification.c:158
+#: ../src/notification.c:161
 msgid "could not parse command from stdin\n"
 msgstr "не удается разобрать команду со стандартного ввода\n"
 
-#: src/notification.c:230 src/notification.c:259
+#: ../src/notification.c:230 ../src/notification.c:259
 msgid "Zenity notification"
 msgstr "Уведомление Zenity"
 
-#: src/tree.c:304
+#: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "Не задан заголовок для диалога со списком\n"
 
-#: src/zenity.glade.h:1
+#: ../src/tree.c:326
+msgid "You should use only one List dialog type.\n"
+msgstr "Вы должны использовать только тип диалога \"Список\".\n"
+
+#: ../src/zenity.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: src/zenity.glade.h:2
+#: ../src/zenity.glade.h:2
 msgid "About Zenity"
 msgstr "О программе Zenity"
 
-#: src/zenity.glade.h:3
+#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "Добавьте новое значение"
 
-#: src/zenity.glade.h:4
+#: ../src/zenity.glade.h:4
 msgid "All updates are complete."
 msgstr "Все обновления сделаны"
 
-#: src/zenity.glade.h:5
+#: ../src/zenity.glade.h:5
 msgid "An error has occurred."
 msgstr "Произошла ошибка"
 
-#: src/zenity.glade.h:6
+#: ../src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "Вы действительно хотите продолжить?"
 
-#: src/zenity.glade.h:7
+#: ../src/zenity.glade.h:7
 msgid "C_alendar:"
 msgstr "К_алендарь:"
 
-#: src/zenity.glade.h:8
+#: ../src/zenity.glade.h:8
 msgid "Calendar selection"
 msgstr "Выбор даты"
 
-#: src/zenity.glade.h:9
+#: ../src/zenity.glade.h:9
 msgid "Error"
 msgstr "Ошибка"
 
-#: src/zenity.glade.h:10
+#: ../src/zenity.glade.h:10
 msgid "Information"
 msgstr "Информация"
 
-#: src/zenity.glade.h:11
+#: ../src/zenity.glade.h:11
 msgid "Progress"
 msgstr "Ход процесса"
 
-#: src/zenity.glade.h:12
+#: ../src/zenity.glade.h:12
 msgid "Question"
 msgstr "Вопрос"
 
-#: src/zenity.glade.h:13
+#: ../src/zenity.glade.h:13
 msgid "Running..."
 msgstr "Запускается..."
 
-#: src/zenity.glade.h:14
+#: ../src/zenity.glade.h:14
 msgid "Select a date from below."
 msgstr "Ввберите ниже дату"
 
-#: src/zenity.glade.h:15
+#: ../src/zenity.glade.h:15
 msgid "Select a file"
 msgstr "Выберите файл"
 
-#: src/zenity.glade.h:16
+#: ../src/zenity.glade.h:16
 msgid "Select items from the list"
 msgstr "Выберите значение из списка"
 
-#: src/zenity.glade.h:17
+#: ../src/zenity.glade.h:17
 msgid "Select items from the list below."
 msgstr "Выберите элементы из списка ниже"
 
-#: src/zenity.glade.h:18
+#: ../src/zenity.glade.h:18
 msgid "Text View"
 msgstr "Просмотр текста"
 
-#: src/zenity.glade.h:19
+#: ../src/zenity.glade.h:19
 msgid "Warning"
 msgstr "Предупреждение"
 
-#: src/zenity.glade.h:20
+#: ../src/zenity.glade.h:20
 msgid "_Credits"
 msgstr "_Авторы"
 
-#: src/zenity.glade.h:21
+#: ../src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "_Введите новый текст:"
 
-#: src/option.c:99
+#: ../src/option.c:105
 msgid "Set the dialog title"
 msgstr "Задать заголовок диалога"
 
-#: src/option.c:100
+#: ../src/option.c:106
 msgid "TITLE"
 msgstr "ЗАГОЛОВОК"
 
-#: src/option.c:108
+#: ../src/option.c:114
 msgid "Set the window icon"
 msgstr "Задать значок диалога"
 
-#: src/option.c:109
+#: ../src/option.c:115
 msgid "ICONPATH"
 msgstr "ПУТЬ_К_ЗНАЧКУ"
 
-#: src/option.c:117
+#: ../src/option.c:123
 msgid "Set the width"
 msgstr "Задать ширину"
 
-#: src/option.c:118
+#: ../src/option.c:124
 msgid "WIDTH"
 msgstr "ШИРИНА"
 
-#: src/option.c:126
+#: ../src/option.c:132
 msgid "Set the height"
 msgstr "Задать высоту"
 
-#: src/option.c:127
+#: ../src/option.c:133
 msgid "HEIGHT"
 msgstr "ВЫСОТА"
 
-#: src/option.c:141
+#: ../src/option.c:147
 msgid "Display calendar dialog"
 msgstr "Отобразить диалог для выбора даты"
 
-#: src/option.c:150 src/option.c:210 src/option.c:253 src/option.c:277
-#: src/option.c:361 src/option.c:472 src/option.c:524 src/option.c:581
+#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
+#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
+#: ../src/option.c:566 ../src/option.c:632
 msgid "Set the dialog text"
 msgstr "Задать текст диалога"
 
-#: src/option.c:159
+#: ../src/option.c:165
 msgid "Set the calendar day"
 msgstr "Задать день календаря"
 
-#: src/option.c:168
+#: ../src/option.c:174
 msgid "Set the calendar month"
 msgstr "Задать месяц календаря"
 
-#: src/option.c:177
+#: ../src/option.c:183
 msgid "Set the calendar year"
 msgstr "Задать год календаря"
 
-#: src/option.c:186
+#: ../src/option.c:192
 msgid "Set the format for the returned date"
 msgstr "Задать формат возвращаемой даты"
 
-#: src/option.c:201
+#: ../src/option.c:207
 msgid "Display text entry dialog"
 msgstr "Отобразить диалог для ввода текста"
 
-#: src/option.c:219
+#: ../src/option.c:225
 msgid "Set the entry text"
 msgstr "Задать текст по умолчанию для ввода"
 
-#: src/option.c:228
+#: ../src/option.c:234
 msgid "Hide the entry text"
 msgstr "Прятать введенный текст (Пароль)"
 
-#: src/option.c:244
+#: ../src/option.c:250
 msgid "Display error dialog"
 msgstr "Отобразить диалог для вывода ошибки"
 
-#: src/option.c:268
+#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
+#: ../src/option.c:641
+msgid "Do not enable text wrapping"
+msgstr "Не разрешать перенос текста"
+
+#: ../src/option.c:283
 msgid "Display info dialog"
 msgstr "Отобразить диалог для вывода информации"
 
-#: src/option.c:292
+#: ../src/option.c:316
 msgid "Display file selection dialog"
 msgstr "Отобразить диалог для выбора файла"
 
-#: src/option.c:301
+#: ../src/option.c:325
 msgid "Set the filename"
 msgstr "Задать имя файла"
 
-#: src/option.c:302 src/option.c:549
+#: ../src/option.c:326 ../src/option.c:600
 msgid "FILENAME"
 msgstr "ИМЯ_ФАЙЛА"
 
-#: src/option.c:310
+#: ../src/option.c:334
 msgid "Allow multiple files to be selected"
 msgstr "Разрешить выбор нескольких файлов"
 
-#: src/option.c:319
+#: ../src/option.c:343
 msgid "Activate directory-only selection"
 msgstr "Активировать выделение только по каталогам"
 
-#: src/option.c:328
+#: ../src/option.c:352
 msgid "Activate save mode"
 msgstr "Активировать защищенный режим"
 
-#: src/option.c:337 src/option.c:397
+#: ../src/option.c:361 ../src/option.c:421
 msgid "Set output separator character"
 msgstr "Установить выходной разделяющий символ"
 
-#: src/option.c:338 src/option.c:398
+#: ../src/option.c:362 ../src/option.c:422
 msgid "SEPARATOR"
 msgstr "РАЗДЕЛИТЕЛЬ"
 
-#: src/option.c:352
+#: ../src/option.c:376
 msgid "Display list dialog"
 msgstr "Отобразить диалог со списком"
 
-#: src/option.c:370
+#: ../src/option.c:394
 msgid "Set the column header"
 msgstr "Задать заголовок столбца"
 
-#: src/option.c:379
+#: ../src/option.c:403
 msgid "Use check boxes for first column"
 msgstr "Использовать флажки для первой колонки"
 
-#: src/option.c:388
+#: ../src/option.c:412
 msgid "Use radio buttons for first column"
 msgstr "Использовать переключатели для первой колонки"
 
-#: src/option.c:406 src/option.c:557
+#: ../src/option.c:430
+msgid "Allow multiple rows to be selected"
+msgstr "Разрешить выбор нескольких строк"
+
+#: ../src/option.c:439 ../src/option.c:608
 msgid "Allow changes to text"
 msgstr "Разрешить изменять текст"
 
-#: src/option.c:415
+#: ../src/option.c:448
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -297,173 +312,177 @@ msgstr ""
 "Отобразить определённый столбец (Исходно 1-й. Значение \"ALL\" может быть "
 "использовано для отображения всех столбцов)"
 
-#: src/option.c:430
+#: ../src/option.c:457
+msgid "Hide a specific column"
+msgstr "Скрыть указанный столбец"
+
+#: ../src/option.c:472
 msgid "Display notification"
 msgstr "Отобразить диалог уведомления"
 
-#: src/option.c:439
+#: ../src/option.c:481
 msgid "Set the notification text"
 msgstr "Установить уровень уведомления"
 
-#: src/option.c:448
+#: ../src/option.c:490
 msgid "Listen for commands on stdin"
 msgstr "Воспринимать команды со стандартного ввода"
 
-#: src/option.c:463
+#: ../src/option.c:505
 msgid "Display progress indication dialog"
 msgstr "Отобразить диалог хода процесса"
 
-#: src/option.c:481
+#: ../src/option.c:523
 msgid "Set initial percentage"
 msgstr "Задать начальный процент"
 
-#: src/option.c:490
+#: ../src/option.c:532
 msgid "Pulsate progress bar"
 msgstr "Пульсирующий индикатор прогресса"
 
-#: src/option.c:500
+#: ../src/option.c:542
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Закрыть диалог когда дойдет до 100%"
 
-#: src/option.c:515
+#: ../src/option.c:557
 msgid "Display question dialog"
 msgstr "Отобразить диалог с вопросом"
 
-#: src/option.c:539
+#: ../src/option.c:590
 msgid "Display text information dialog"
 msgstr "Отобразить диалог с текстовой информацией"
 
-#: src/option.c:548
+#: ../src/option.c:599
 msgid "Open file"
 msgstr "Открыть файл"
 
-#: src/option.c:572
+#: ../src/option.c:623
 msgid "Display warning dialog"
 msgstr "Отобразить диалог с предупреждением"
 
-#: src/option.c:596
+#: ../src/option.c:656
 msgid "About zenity"
 msgstr "О zenity"
 
-#: src/option.c:605
+#: ../src/option.c:665
 msgid "Print version"
 msgstr "Версия для печати"
 
-#: src/option.c:1190
+#: ../src/option.c:1259
 msgid "General options"
 msgstr "Общие опции"
 
-#: src/option.c:1191
+#: ../src/option.c:1260
 msgid "Show general options"
 msgstr "Показывать общие параметры"
 
-#: src/option.c:1200
+#: ../src/option.c:1270
 msgid "Calendar options"
 msgstr "Параметры календаря"
 
-#: src/option.c:1201
+#: ../src/option.c:1271
 msgid "Show calendar options"
 msgstr "Показывать параметры календаря"
 
-#: src/option.c:1210
+#: ../src/option.c:1281
 msgid "Text entry options"
 msgstr "Параметры ввода текста"
 
-#: src/option.c:1211
+#: ../src/option.c:1282
 msgid "Show text entry options"
 msgstr "Показывать параметры ввода текста"
 
-#: src/option.c:1220
+#: ../src/option.c:1292
 msgid "Error options"
 msgstr "Параметры диалога вывода ошибки"
 
-#: src/option.c:1221
+#: ../src/option.c:1293
 msgid "Show error options"
 msgstr "Показывать параметры диалога вывода ошибки"
 
-#: src/option.c:1230
+#: ../src/option.c:1303
 msgid "Info options"
 msgstr "Параметры диалога вывода информации"
 
-#: src/option.c:1231
+#: ../src/option.c:1304
 msgid "Show info options"
 msgstr "Показывать параметры диалога вывода информации"
 
-#: src/option.c:1240
+#: ../src/option.c:1314
 msgid "File selection options"
 msgstr "Параметры диалога выбора файла"
 
-#: src/option.c:1241
+#: ../src/option.c:1315
 msgid "Show file selection options"
 msgstr "Показывать параметры диалога выбора файлов"
 
-#: src/option.c:1250
+#: ../src/option.c:1325
 msgid "List options"
 msgstr "Параметры списка"
 
-#: src/option.c:1251
+#: ../src/option.c:1326
 msgid "Show list options"
 msgstr "Показывать параметры списка"
 
-#: src/option.c:1260
+#: ../src/option.c:1336
 msgid "Notification icon options"
 msgstr "Параметры значка уведомления"
 
-#: src/option.c:1261
+#: ../src/option.c:1337
 msgid "Show notification icon options"
 msgstr "Показывать параметры значка уведомления"
 
-#: src/option.c:1270
+#: ../src/option.c:1347
 msgid "Progress options"
 msgstr "Параметры хода процесса"
 
-#: src/option.c:1271
+#: ../src/option.c:1348
 msgid "Show progress options"
 msgstr "Показывать параметры хода процесса"
 
-#: src/option.c:1280
+#: ../src/option.c:1358
 msgid "Question options"
 msgstr "Параметры запроса"
 
-#: src/option.c:1281
+#: ../src/option.c:1359
 msgid "Show question options"
 msgstr "Показывать параметры запроса"
 
-#: src/option.c:1290
+#: ../src/option.c:1369
 msgid "Warning options"
 msgstr "Параметры диалога для вывода предупреждения"
 
-#: src/option.c:1291
+#: ../src/option.c:1370
 msgid "Show warning options"
 msgstr "Показывать параметры диалога для вывода предупреждения"
 
-#: src/option.c:1300
+#: ../src/option.c:1380
 msgid "Text information options"
 msgstr "Параметры текстовой информации"
 
-#: src/option.c:1301
+#: ../src/option.c:1381
 msgid "Show text information options"
 msgstr "Показывать параметры текстовой информации"
 
-#: src/option.c:1310
+#: ../src/option.c:1391
 msgid "Miscellaneous options"
 msgstr "Прочие параметры"
 
-#: src/option.c:1311
+#: ../src/option.c:1392
 msgid "Show miscellaneous options"
 msgstr "Показывать прочие параметры"
 
-#: src/option.c:1334
-msgid "Syntax error\n"
-msgstr "Синтаксическая ошибка\n"
+#: ../src/option.c:1417
+msgid "This option is not available. Please see --help for all possible usages.\n"
+msgstr "Этот параметр недоступен. Используйте --help для просмотра всех возможных параметров.\n"
 
-#: src/option.c:1338
+#: ../src/option.c:1421
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s не поддерживается данным диалогом\n"
 
-#: src/option.c:1342
+#: ../src/option.c:1425
 msgid "Two or more dialog options specified\n"
 msgstr "Задано два или больше диалога\n"
 
