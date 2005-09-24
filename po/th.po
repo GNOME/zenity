@@ -9,13 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-02 10:01+0700\n"
+"POT-Creation-Date: 2005-09-24 17:41+0200\n"
 "PO-Revision-Date: 2005-07-02 10:07+0700\n"
 "Last-Translator: Supranee Thirawatthanasuk <supranee@opentle.org>\n"
 "Language-Team: Thai <L10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #. Translators: This is a special message that shouldn't be translated
 #. literally. It is used in the about box to give credits to
@@ -24,7 +24,7 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: src/about.c:379
+#: ../src/about.c:403
 msgid "translator-credits"
 msgstr ""
 "Supranee Thirawatthanasuk\n"
@@ -32,531 +32,455 @@ msgstr ""
 "ถ้ามีเวลาโปรดมาช่วยกับแปล\n"
 "http://gnome-th.sf.net"
 
-#: src/about.c:409
+#: ../src/about.c:433
 msgid "Display dialog boxes from shell scripts"
 msgstr "แสดงไดอะล็อกจากเชลล์สริปต์"
 
-#: src/about.c:413
+#: ../src/about.c:437
 msgid "(C) 2003 Sun Microsystems"
 msgstr "(C) 2003 Sun Microsystems"
 
-#: src/about.c:497
+#: ../src/about.c:521
 msgid "Credits"
 msgstr "เครดิต"
 
-#: src/about.c:524
+#: ../src/about.c:548
 msgid "Written by"
 msgstr "เขียนโดย"
 
-#: src/about.c:537
+#: ../src/about.c:561
 msgid "Translated by"
 msgstr "แปลโดย"
 
-#: src/eggtrayicon.c:118
+#: ../src/eggtrayicon.c:118
 msgid "Orientation"
 msgstr "แนววาง"
 
-#: src/eggtrayicon.c:119
+#: ../src/eggtrayicon.c:119
 msgid "The orientation of the tray."
 msgstr "แนววางของถาด"
 
-#: src/main.c:90
+#: ../src/main.c:90
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "คุณต้องกำหนดชนิดของไดอะล็อกด้วย โปรดดู 'zenity --help' สำหรับรายละเอียดเพิ่มเติม\n"
 
-#: src/notification.c:158
+#: ../src/notification.c:161
 msgid "could not parse command from stdin\n"
 msgstr "ไม่สามารถแจงคำสั่งจาก stdin\n"
 
-#: src/notification.c:227 src/notification.c:256
+#: ../src/notification.c:230 ../src/notification.c:259
 msgid "Zenity notification"
 msgstr "การแจ้งเตือนของ Zenity"
 
-#: src/tree.c:318
+#: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "ไม่ได้กำหนดชื่อของคอลัมน์ไว้สำหรับไดอะล็อกเรียงรายการ\n"
 
-#: src/tree.c:324
+#: ../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
 msgstr "คุณควรเลือกชนิดไดอะล็อกเรียงรายการเพียงชนิดเดียว\n"
 
-#: src/zenity.glade.h:1
+#: ../src/zenity.glade.h:1
 msgid "*"
 msgstr "*"
 
-#: src/zenity.glade.h:2
+#: ../src/zenity.glade.h:2
 msgid "About Zenity"
 msgstr "เกี่ยวกับ Zenity"
 
-#: src/zenity.glade.h:3
+#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "เพิ่มข้อความใหม่"
 
-#: src/zenity.glade.h:4
+#: ../src/zenity.glade.h:4
 msgid "All updates are complete."
 msgstr "การอัพเดตทั้งหมดเสร็จสมบูรณ์"
 
-#: src/zenity.glade.h:5
+#: ../src/zenity.glade.h:5
 msgid "An error has occurred."
 msgstr "เกิดข้อผิดพลาด"
 
-#: src/zenity.glade.h:6
+#: ../src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "คุณมั่นใจว่าจะทำต่อไปหรือไม่?"
 
-#: src/zenity.glade.h:7
+#: ../src/zenity.glade.h:7
 msgid "C_alendar:"
 msgstr "_ปฏิทิน:"
 
-#: src/zenity.glade.h:8
+#: ../src/zenity.glade.h:8
 msgid "Calendar selection"
 msgstr "เลือกวันจากปฏิทิน"
 
-#: src/zenity.glade.h:9
+#: ../src/zenity.glade.h:9
 msgid "Error"
 msgstr "ผิดพลาด"
 
-#: src/zenity.glade.h:10
+#: ../src/zenity.glade.h:10
 msgid "Information"
 msgstr "แจ้งเพื่อทราบ"
 
-#: src/zenity.glade.h:11
+#: ../src/zenity.glade.h:11
 msgid "Progress"
 msgstr "ความคืบหน้า"
 
-#: src/zenity.glade.h:12
+#: ../src/zenity.glade.h:12
 msgid "Question"
 msgstr "คำถาม"
 
-#: src/zenity.glade.h:13
+#: ../src/zenity.glade.h:13
 msgid "Running..."
 msgstr "กำลังดำเนินการ..."
 
-#: src/zenity.glade.h:14
+#: ../src/zenity.glade.h:14
 msgid "Select a date from below."
 msgstr "เลือกวันที่จากข้างล่างนี้"
 
-#: src/zenity.glade.h:15
+#: ../src/zenity.glade.h:15
 msgid "Select a file"
 msgstr "เลือกแฟ้ม"
 
-#: src/zenity.glade.h:16
+#: ../src/zenity.glade.h:16
 msgid "Select items from the list"
 msgstr "เลือกรายการจากบัญชีรายการ"
 
-#: src/zenity.glade.h:17
+#: ../src/zenity.glade.h:17
 msgid "Select items from the list below."
 msgstr "เลือกรายการจากบัญชีรายการข้างล่าง"
 
-#: src/zenity.glade.h:18
+#: ../src/zenity.glade.h:18
 msgid "Text View"
 msgstr "ข้อความ"
 
-#: src/zenity.glade.h:19
+#: ../src/zenity.glade.h:19
 msgid "Warning"
 msgstr "คำเตือน"
 
-#: src/zenity.glade.h:20
+#: ../src/zenity.glade.h:20
 msgid "_Credits"
 msgstr "เ_ครดิต"
 
-#: src/zenity.glade.h:21
+#: ../src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "_ป้อนข้อความใหม่:"
 
-#: src/option.c:101
+#: ../src/option.c:105
 msgid "Set the dialog title"
 msgstr "ตั้งชื่อไดอะล็อก"
 
-#: src/option.c:102
+#: ../src/option.c:106
 msgid "TITLE"
 msgstr "ชื่อ"
 
-#: src/option.c:110
+#: ../src/option.c:114
 msgid "Set the window icon"
 msgstr "กำหนดไอคอนของหน้าต่าง"
 
-#: src/option.c:111
+#: ../src/option.c:115
 msgid "ICONPATH"
 msgstr "พาธของไอคอน"
 
-#: src/option.c:119
+#: ../src/option.c:123
 msgid "Set the width"
 msgstr "กำหนดความกว้าง"
 
-#: src/option.c:120
+#: ../src/option.c:124
 msgid "WIDTH"
 msgstr "ความกว้าง"
 
-#: src/option.c:128
+#: ../src/option.c:132
 msgid "Set the height"
 msgstr "กำหนดความสูง"
 
-#: src/option.c:129
+#: ../src/option.c:133
 msgid "HEIGHT"
 msgstr "ความสูง"
 
-#: src/option.c:143
+#: ../src/option.c:147
 msgid "Display calendar dialog"
 msgstr "แสดงไดอะล็อกปฏิทิน"
 
-#: src/option.c:152 src/option.c:212 src/option.c:255
-#: src/option.c:288 src/option.c:381 src/option.c:510
-#: src/option.c:562 src/option.c:628
+#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
+#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
+#: ../src/option.c:566 ../src/option.c:632
 msgid "Set the dialog text"
 msgstr "กำหนดข้อความของไดอะล็อก"
 
-#: src/option.c:161
+#: ../src/option.c:165
 msgid "Set the calendar day"
 msgstr "กำหนดวันของปฏิทิน"
 
-#: src/option.c:170
+#: ../src/option.c:174
 msgid "Set the calendar month"
 msgstr "กำหนดเดือนของปฏิทิน"
 
-#: src/option.c:179
+#: ../src/option.c:183
 msgid "Set the calendar year"
 msgstr "กำหนดปีของปฏิทิน"
 
-#: src/option.c:188
+#: ../src/option.c:192
 msgid "Set the format for the returned date"
 msgstr "กำหนดรูปแบบของวันเวลาที่รายงานกลับ"
 
-#: src/option.c:203
+#: ../src/option.c:207
 msgid "Display text entry dialog"
 msgstr "แสดงไดอะล็อกรับข้อความ"
 
-#: src/option.c:221
+#: ../src/option.c:225
 msgid "Set the entry text"
 msgstr "กำหนดข้อความของกล่องรับข้อความ"
 
-#: src/option.c:230
+#: ../src/option.c:234
 msgid "Hide the entry text"
 msgstr "ซ่อนข้อความของกล่องรับข้อความ"
 
-#: src/option.c:246
+#: ../src/option.c:250
 msgid "Display error dialog"
 msgstr "แสดงไดอะล็อกข้อผิดพลาด"
 
-#: src/option.c:264 src/option.c:297 src/option.c:571
-#: src/option.c:637
+#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
+#: ../src/option.c:641
 msgid "Do not enable text wrapping"
 msgstr "ไม่ต้องแบ่งบรรทัด"
 
-#: src/option.c:279
+#: ../src/option.c:283
 msgid "Display info dialog"
 msgstr "แสดงไดอะล็อกแสดงข้อความ"
 
-#: src/option.c:312
+#: ../src/option.c:316
 msgid "Display file selection dialog"
 msgstr "แสดงไดอะล็อกเลือกแฟ้ม"
 
-#: src/option.c:321
+#: ../src/option.c:325
 msgid "Set the filename"
 msgstr "กำหนดชื่อแฟ้ม"
 
-#: src/option.c:322 src/option.c:596
+#: ../src/option.c:326 ../src/option.c:600
 msgid "FILENAME"
 msgstr "ชื่อแฟ้ม"
 
-#: src/option.c:330
+#: ../src/option.c:334
 msgid "Allow multiple files to be selected"
 msgstr "อนุญาตให้เลือกได้หลายแฟ้ม"
 
-#: src/option.c:339
+#: ../src/option.c:343
 msgid "Activate directory-only selection"
 msgstr "ใช้โหมดเลือกไดเรกทอรีเท่านั้น"
 
-#: src/option.c:348
+#: ../src/option.c:352
 msgid "Activate save mode"
 msgstr "ใช้โหมดเก็บบันทึก"
 
-#: src/option.c:357 src/option.c:417
+#: ../src/option.c:361 ../src/option.c:421
 msgid "Set output separator character"
 msgstr "ตั้งตัวอักษรที่ใช้แยกข้อมูลเอาท์พุต"
 
-#: src/option.c:358 src/option.c:418
+#: ../src/option.c:362 ../src/option.c:422
 msgid "SEPARATOR"
 msgstr "ตัวแยก"
 
-#: src/option.c:372
+#: ../src/option.c:376
 msgid "Display list dialog"
 msgstr "แสดงไดอะล็อกเรียงรายการ"
 
-#: src/option.c:390
+#: ../src/option.c:394
 msgid "Set the column header"
 msgstr "กำหนดหัวคอลัมน์"
 
-#: src/option.c:399
+#: ../src/option.c:403
 msgid "Use check boxes for first column"
 msgstr "ใช้กล่องกากบาทสำหรับคอลัมน์แรก"
 
-#: src/option.c:408
+#: ../src/option.c:412
 msgid "Use radio buttons for first column"
 msgstr "ใช้ปุ่มวิทยุสำหรับคอลัมน์แรก"
 
-#: src/option.c:426
+#: ../src/option.c:430
 msgid "Allow multiple rows to be selected"
 msgstr "อนุญาตให้เลือกได้หลายแถว"
 
-#: src/option.c:435 src/option.c:604
+#: ../src/option.c:439 ../src/option.c:608
 msgid "Allow changes to text"
 msgstr "อนุญาตให้แก้ไขข้อความ"
 
-#: src/option.c:444
+#: ../src/option.c:448
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "พิมพ์เฉพาะคอลัมน์ที่ระบุ (ค่าปกติคือ 1 คุณสามารถใช้ 'ALL' เพื่อสั่งพิมพ์ทุกคอลัมน์ได้)"
 
-#: src/option.c:453
+#: ../src/option.c:457
 msgid "Hide a specific column"
 msgstr "ซ่อนคอลัมน์ที่ต้องการ"
 
-#: src/option.c:468
+#: ../src/option.c:472
 msgid "Display notification"
 msgstr "แสดงการแจ้งเตือน"
 
-#: src/option.c:477
+#: ../src/option.c:481
 msgid "Set the notification text"
 msgstr "กำหนดข้อความของการแจ้งเตือน"
 
-#: src/option.c:486
+#: ../src/option.c:490
 msgid "Listen for commands on stdin"
 msgstr "รอคำสั่งจาก stdin"
 
-#: src/option.c:501
+#: ../src/option.c:505
 msgid "Display progress indication dialog"
 msgstr "แสดงไดอะล็อกบอกความคืบหน้า"
 
-#: src/option.c:519
+#: ../src/option.c:523
 msgid "Set initial percentage"
 msgstr "กำหนดค่าร้อยละเริ่มต้น"
 
-#: src/option.c:528
+#: ../src/option.c:532
 msgid "Pulsate progress bar"
 msgstr "แถบความคืบหน้าแบบวิ่งไปมา"
 
-#: src/option.c:538
+#: ../src/option.c:542
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "ปลดไดอะล็อกทิ้งเมื่อไปถึงที่ 100%"
 
-#: src/option.c:553
+#: ../src/option.c:557
 msgid "Display question dialog"
 msgstr "แสดงไดอะล็อกถามคำถาม"
 
-#: src/option.c:586
+#: ../src/option.c:590
 msgid "Display text information dialog"
 msgstr "แสดงไดอะล็อกแจ้งเพื่อทราบ"
 
-#: src/option.c:595
+#: ../src/option.c:599
 msgid "Open file"
 msgstr "เปิดแฟ้ม"
 
-#: src/option.c:619
+#: ../src/option.c:623
 msgid "Display warning dialog"
 msgstr "แสดงไดอะล็อกสำหรับเตือน"
 
-#: src/option.c:652
+#: ../src/option.c:656
 msgid "About zenity"
 msgstr "เกี่ยวกับ zenity"
 
-#: src/option.c:661
+#: ../src/option.c:665
 msgid "Print version"
 msgstr "แสดงรุ่น"
 
-#: src/option.c:1256
+#: ../src/option.c:1259
 msgid "General options"
 msgstr "ตัวเลือกทั่วไป"
 
-#: src/option.c:1257
+#: ../src/option.c:1260
 msgid "Show general options"
 msgstr "แสดงตัวเลือกทั่วไป"
 
-#: src/option.c:1266
+#: ../src/option.c:1270
 msgid "Calendar options"
 msgstr "ตัวเลือกสำหรับปฏิทิน"
 
-#: src/option.c:1267
+#: ../src/option.c:1271
 msgid "Show calendar options"
 msgstr "แสดงตัวเลือกสำหรับปฏิทิน"
 
-#: src/option.c:1276
+#: ../src/option.c:1281
 msgid "Text entry options"
 msgstr "ตัวเลือกสำหรับการรับข้อความ"
 
-#: src/option.c:1277
+#: ../src/option.c:1282
 msgid "Show text entry options"
 msgstr "แสดงตัวเลือกสำหรับกล่องรับข้อความ"
 
-#: src/option.c:1286
+#: ../src/option.c:1292
 msgid "Error options"
 msgstr "ตัวเลือกสำหรับการแสดงข้อผิดพลาด"
 
-#: src/option.c:1287
+#: ../src/option.c:1293
 msgid "Show error options"
 msgstr "แสดงตัวเลือกสำหรับการแสดงข้อผิดพลาด"
 
-#: src/option.c:1296
+#: ../src/option.c:1303
 msgid "Info options"
 msgstr "ตัวเลือกสำหรับการแจ้งเพื่อทราบ"
 
-#: src/option.c:1297
+#: ../src/option.c:1304
 msgid "Show info options"
 msgstr "แสดงตัวเลือกสำหรับการแจ้งเพื่อทราบ"
 
-#: src/option.c:1306
+#: ../src/option.c:1314
 msgid "File selection options"
 msgstr "ตัวเลือกสำหรับการเลือกแฟ้ม"
 
-#: src/option.c:1307
+#: ../src/option.c:1315
 msgid "Show file selection options"
 msgstr "แสดงตัวเลือกสำหรับการเลือกแฟ้ม"
 
-#: src/option.c:1316
+#: ../src/option.c:1325
 msgid "List options"
 msgstr "ตัวเลือกสำหรับการแสดงรายการ"
 
-#: src/option.c:1317
+#: ../src/option.c:1326
 msgid "Show list options"
 msgstr "แสดงตัวเลือกสำหรับการแสดงรายการ"
 
-#: src/option.c:1326
+#: ../src/option.c:1336
 msgid "Notification icon options"
 msgstr "ตัวเลือกสำหรับไอคอน"
 
-#: src/option.c:1327
+#: ../src/option.c:1337
 msgid "Show notification icon options"
 msgstr "แสดงตัวเลือกสำหรับไอคอนในพื้นที่แจ้งเตือน"
 
-#: src/option.c:1336
+#: ../src/option.c:1347
 msgid "Progress options"
 msgstr "ตัวเลือกสำหรับแถบแสดงความคืบหน้า"
 
-#: src/option.c:1337
+#: ../src/option.c:1348
 msgid "Show progress options"
 msgstr "แสดงตัวเลือกสำหรับแถบแสดงความคืบหน้า"
 
-#: src/option.c:1346
+#: ../src/option.c:1358
 msgid "Question options"
 msgstr "ตัวเลือกสำหรับคำถาม"
 
-#: src/option.c:1347
+#: ../src/option.c:1359
 msgid "Show question options"
 msgstr "แสดงตัวเลือกสำหรับกล่องคำถาม"
 
-#: src/option.c:1356
+#: ../src/option.c:1369
 msgid "Warning options"
 msgstr "ตัวเลือกสำหรับคำเตือน"
 
-#: src/option.c:1357
+#: ../src/option.c:1370
 msgid "Show warning options"
 msgstr "แสดงตัวเลือกสำหรับกล่องคำเตือน"
 
-#: src/option.c:1366
+#: ../src/option.c:1380
 msgid "Text information options"
 msgstr "ตัวเลือกสำหรับข้อความแจ้งเพื่อทราบ"
 
-#: src/option.c:1367
+#: ../src/option.c:1381
 msgid "Show text information options"
 msgstr "แสดงตัวเลือกสำหรับข้อความแจ้งเพื่อทราบ"
 
-#: src/option.c:1376
+#: ../src/option.c:1391
 msgid "Miscellaneous options"
 msgstr "ตัวเลือกเบ็ดเตล็ด"
 
-#: src/option.c:1377
+#: ../src/option.c:1392
 msgid "Show miscellaneous options"
 msgstr "แสดงตัวเลือกเบ็ดเตล็ด"
 
-#: src/option.c:1400
+#: ../src/option.c:1417
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr "ไม่มีตัวเลือกนี้ กรุณาดู --help สำหรับวิธีใช้ทั้งหมดที่เป็นไปได้\n"
 
-#: src/option.c:1404
+#: ../src/option.c:1421
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "ไม่สนับสนุน --%s สำหรับไดอะล็อกนี้\n"
 
-#: src/option.c:1408
+#: ../src/option.c:1425
 msgid "Two or more dialog options specified\n"
 msgstr "กรุณาระบุชนิดของไดอะล็อกที่จะใช้เพียงชนิดเดียว\n"
-
-#~ msgid "Text options"
-#~ msgstr "ตัวเลือกสำหรับการแสดงข้อความจากแฟ้ม"
-
-#, fuzzy
-#~ msgid "Show text options"
-#~ msgstr "ตัวเลือกสำหรับการแสดงข้อความจากแฟ้ม"
-
-#~ msgid "Set output separator character."
-#~ msgstr "ตั้งตัวอักษรที่ใช้แยกระหว่างเอาท์พุต"
-
-#~ msgid "Gdk debugging flags to set"
-#~ msgstr "ค่าสถานะการดีบั๊กของ Gdk ที่จะกำหนด"
-
-#~ msgid "FLAGS"
-#~ msgstr "ค่าสถานะ"
-
-#~ msgid "Gdk debugging flags to unset"
-#~ msgstr "ค่าสถานะการดีบั๊กของ Gdk ที่จะไม่กำหนด"
-
-#~ msgid "X display to use"
-#~ msgstr "X display ที่จะใช้"
-
-#~ msgid "DISPLAY"
-#~ msgstr "DISPLAY"
-
-#~ msgid "X screen to use"
-#~ msgstr "X screen ที่จะใช้"
-
-#~ msgid "SCREEN"
-#~ msgstr "SCREEN"
-
-#~ msgid "Program name as used by the window manager"
-#~ msgstr "ชื่อโปรแกรม สำหรับรายงานไปตัวจัดการหน้าต่าง"
-
-#~ msgid "NAME"
-#~ msgstr "ชื่อ"
-
-#~ msgid "Program class as used by the window manager"
-#~ msgstr "หมวดโปรแกรม สำหรับรายงานไปตัวจัดการหน้าต่าง"
-
-#~ msgid "CLASS"
-#~ msgstr "หมวด"
-
-#~ msgid "HOST"
-#~ msgstr "โฮสต์"
-
-#~ msgid "PORT"
-#~ msgstr "พอร์ต"
-
-#~ msgid "Gtk+ debugging flags to set"
-#~ msgstr "ค่าสถานะของการดีบั๊ก Gtk+ ที่จะกำหนด"
-
-#~ msgid "Gtk+ debugging flags to unset"
-#~ msgstr "ค่าสถานะของการดีบั๊ก Gtk+ ที่จะไม่กำหนด"
-
-#~ msgid "Load an additional Gtk module"
-#~ msgstr "โหลดโมดูลของ Gtk ที่เพิ่มเข้ามา"
-
-#~ msgid "MODULE"
-#~ msgstr "โมดูล"
-
-#~ msgid "Dialog options"
-#~ msgstr "ตัวเลือกสำหรับกล่องโต้ตอบ"
-
-#~ msgid "GTK+ options"
-#~ msgstr "ตัวเลือก GTK+"
-
-#~ msgid "Help options"
-#~ msgstr "ตัวเลือกแสดงวิธีใช้"
-
-#~ msgid "%s is an invalid option. See 'zenity --help' for more details\n"
-#~ msgstr "%s เป็นตัวเลือกที่ไม่ถูกต้อง โปรดดู 'zenity --help' สำหรับรายละเอียดเพิ่มเติม\n"
-
-#~ msgid "%s given twice for the same dialog\n"
-#~ msgstr "%s ถูกกำหนดสองครั้งในกล่องโต้ตอบเดียวกัน\n"

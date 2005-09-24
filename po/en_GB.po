@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-22 19:18-0400\n"
+"POT-Creation-Date: 2005-09-24 17:41+0200\n"
 "PO-Revision-Date: 2005-04-22 19:18-0400\n"
 "Last-Translator: Gareth Owen <gowen@gnome.org>\n"
 "Language-Team: British English <en@li.org>\n"
@@ -29,29 +29,29 @@ msgstr ""
 #. You can also include other translators who have contributed to
 #. this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../src/about.c:378
+#: ../src/about.c:403
 msgid "translator-credits"
 msgstr ""
 "Mike Newman <mikegtn@gnome.org>\n"
 "David Lodge <dave@cirt.net>"
 
-#: ../src/about.c:408
+#: ../src/about.c:433
 msgid "Display dialog boxes from shell scripts"
 msgstr "Display dialogue boxes from shell scripts"
 
-#: ../src/about.c:412
+#: ../src/about.c:437
 msgid "(C) 2003 Sun Microsystems"
 msgstr "(C) 2003 Sun Microsystems"
 
-#: ../src/about.c:496
+#: ../src/about.c:521
 msgid "Credits"
 msgstr "Credits"
 
-#: ../src/about.c:523
+#: ../src/about.c:548
 msgid "Written by"
 msgstr "Written by"
 
-#: ../src/about.c:536
+#: ../src/about.c:561
 msgid "Translated by"
 msgstr "Translated by"
 
@@ -67,7 +67,7 @@ msgstr "The orientation of the tray."
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "You must specify a dialog type. See 'zenity --help' for details\n"
 
-#: ../src/notification.c:158
+#: ../src/notification.c:161
 msgid "could not parse command from stdin\n"
 msgstr "could not parse command from stdin\n"
 
@@ -75,9 +75,13 @@ msgstr "could not parse command from stdin\n"
 msgid "Zenity notification"
 msgstr "Zenity notification"
 
-#: ../src/tree.c:304
+#: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "No column titles specified for List dialogue\n"
+
+#: ../src/tree.c:326
+msgid "You should use only one List dialog type.\n"
+msgstr ""
 
 #: ../src/zenity.glade.h:1
 msgid "*"
@@ -163,142 +167,147 @@ msgstr "_Credits"
 msgid "_Enter new text:"
 msgstr "_Enter new text"
 
-#: ../src/option.c:100
+#: ../src/option.c:105
 msgid "Set the dialog title"
 msgstr "Set the dialogue title"
 
-#: ../src/option.c:101
+#: ../src/option.c:106
 msgid "TITLE"
 msgstr "TITLE"
 
-#: ../src/option.c:109
+#: ../src/option.c:114
 msgid "Set the window icon"
 msgstr "Set the window icon"
 
-#: ../src/option.c:110
+#: ../src/option.c:115
 msgid "ICONPATH"
 msgstr "ICONPATH"
 
-#: ../src/option.c:118
+#: ../src/option.c:123
 msgid "Set the width"
 msgstr "Set the width"
 
-#: ../src/option.c:119
+#: ../src/option.c:124
 msgid "WIDTH"
 msgstr "WIDTH"
 
-#: ../src/option.c:127
+#: ../src/option.c:132
 msgid "Set the height"
 msgstr "Set the height"
 
-#: ../src/option.c:128
+#: ../src/option.c:133
 msgid "HEIGHT"
 msgstr "HEIGHT"
 
-#: ../src/option.c:142
+#: ../src/option.c:147
 msgid "Display calendar dialog"
 msgstr "Display calendar dialogue"
 
-#: ../src/option.c:151 ../src/option.c:211 ../src/option.c:254
-#: ../src/option.c:287 ../src/option.c:380 ../src/option.c:491
-#: ../src/option.c:543 ../src/option.c:609
+#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
+#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
+#: ../src/option.c:566 ../src/option.c:632
 msgid "Set the dialog text"
 msgstr "Set the dialogue text"
 
-#: ../src/option.c:160
+#: ../src/option.c:165
 msgid "Set the calendar day"
 msgstr "Set the calendar day"
 
-#: ../src/option.c:169
+#: ../src/option.c:174
 msgid "Set the calendar month"
 msgstr "Set the calendar month"
 
-#: ../src/option.c:178
+#: ../src/option.c:183
 msgid "Set the calendar year"
 msgstr "Set the calendar year"
 
-#: ../src/option.c:187
+#: ../src/option.c:192
 msgid "Set the format for the returned date"
 msgstr "Set the format for the returned date"
 
-#: ../src/option.c:202
+#: ../src/option.c:207
 msgid "Display text entry dialog"
 msgstr "Display text entry dialogue"
 
-#: ../src/option.c:220
+#: ../src/option.c:225
 msgid "Set the entry text"
 msgstr "Set the entry text"
 
-#: ../src/option.c:229
+#: ../src/option.c:234
 msgid "Hide the entry text"
 msgstr "Hide the entry text"
 
-#: ../src/option.c:245
+#: ../src/option.c:250
 msgid "Display error dialog"
 msgstr "Display error dialogue"
 
-#: ../src/option.c:263 ../src/option.c:296 ../src/option.c:552
-#: ../src/option.c:618
+#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
+#: ../src/option.c:641
 msgid "Do not enable text wrapping"
 msgstr "Do not enable text wrapping"
 
-#: ../src/option.c:278
+#: ../src/option.c:283
 msgid "Display info dialog"
 msgstr "Display info dialogue"
 
-#: ../src/option.c:311
+#: ../src/option.c:316
 msgid "Display file selection dialog"
 msgstr "Display file selection dialogue"
 
-#: ../src/option.c:320
+#: ../src/option.c:325
 msgid "Set the filename"
 msgstr "Set the filename"
 
-#: ../src/option.c:321 ../src/option.c:577
+#: ../src/option.c:326 ../src/option.c:600
 msgid "FILENAME"
 msgstr "FILENAME"
 
-#: ../src/option.c:329
+#: ../src/option.c:334
 msgid "Allow multiple files to be selected"
 msgstr "Allow multiple files to be selected"
 
-#: ../src/option.c:338
+#: ../src/option.c:343
 msgid "Activate directory-only selection"
 msgstr "Activate directory-only selection"
 
-#: ../src/option.c:347
+#: ../src/option.c:352
 msgid "Activate save mode"
 msgstr "Activate save mode"
 
-#: ../src/option.c:356 ../src/option.c:416
+#: ../src/option.c:361 ../src/option.c:421
 msgid "Set output separator character"
 msgstr "Set output separator character"
 
-#: ../src/option.c:357 ../src/option.c:417
+#: ../src/option.c:362 ../src/option.c:422
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
-#: ../src/option.c:371
+#: ../src/option.c:376
 msgid "Display list dialog"
 msgstr "Display list dialogue"
 
-#: ../src/option.c:389
+#: ../src/option.c:394
 msgid "Set the column header"
 msgstr "Set the column header"
 
-#: ../src/option.c:398
+#: ../src/option.c:403
 msgid "Use check boxes for first column"
 msgstr "Use check boxes for first column"
 
-#: ../src/option.c:407
+#: ../src/option.c:412
 msgid "Use radio buttons for first column"
 msgstr "Use radio buttons for first column"
 
-#: ../src/option.c:425 ../src/option.c:585
+#: ../src/option.c:430
+#, fuzzy
+msgid "Allow multiple rows to be selected"
+msgstr "Allow multiple files to be selected"
+
+#: ../src/option.c:439 ../src/option.c:608
 msgid "Allow changes to text"
 msgstr "Allow changes to text"
 
-#: ../src/option.c:434
+#: ../src/option.c:448
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -306,176 +315,178 @@ msgstr ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 
-#: ../src/option.c:449
+#: ../src/option.c:457
+msgid "Hide a specific column"
+msgstr ""
+
+#: ../src/option.c:472
 msgid "Display notification"
 msgstr "Display notification"
 
-#: ../src/option.c:458
+#: ../src/option.c:481
 msgid "Set the notification text"
 msgstr "Set the notification text"
 
-#: ../src/option.c:467
+#: ../src/option.c:490
 msgid "Listen for commands on stdin"
 msgstr "Listen for commands on stdin"
 
-#: ../src/option.c:482
+#: ../src/option.c:505
 msgid "Display progress indication dialog"
 msgstr "Display progress indication dialogue"
 
-#: ../src/option.c:500
+#: ../src/option.c:523
 msgid "Set initial percentage"
 msgstr "Set initial percentage"
 
-#: ../src/option.c:509
+#: ../src/option.c:532
 msgid "Pulsate progress bar"
 msgstr "Pulsate progress bar"
 
-#: ../src/option.c:519
+#: ../src/option.c:542
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Dismiss the dialog when 100% has been reached"
 
-#: ../src/option.c:534
+#: ../src/option.c:557
 msgid "Display question dialog"
 msgstr "Display question dialogue"
 
-#: ../src/option.c:567
+#: ../src/option.c:590
 msgid "Display text information dialog"
 msgstr "Display text information dialogue"
 
-#: ../src/option.c:576
+#: ../src/option.c:599
 msgid "Open file"
 msgstr "Open file"
 
-#: ../src/option.c:600
+#: ../src/option.c:623
 msgid "Display warning dialog"
 msgstr "Display warning dialogue"
 
-#: ../src/option.c:633
+#: ../src/option.c:656
 msgid "About zenity"
 msgstr "About zenity"
 
-#: ../src/option.c:642
+#: ../src/option.c:665
 msgid "Print version"
 msgstr "Print version"
 
-#: ../src/option.c:1232
+#: ../src/option.c:1259
 msgid "General options"
 msgstr "General options"
 
-#: ../src/option.c:1233
+#: ../src/option.c:1260
 msgid "Show general options"
 msgstr "Show general options"
 
-#: ../src/option.c:1242
+#: ../src/option.c:1270
 msgid "Calendar options"
 msgstr "Calendar options"
 
-#: ../src/option.c:1243
+#: ../src/option.c:1271
 msgid "Show calendar options"
 msgstr "Show calendar options"
 
-#: ../src/option.c:1252
+#: ../src/option.c:1281
 msgid "Text entry options"
 msgstr "Text entry options"
 
-#: ../src/option.c:1253
+#: ../src/option.c:1282
 msgid "Show text entry options"
 msgstr "Show text entry options"
 
-#: ../src/option.c:1262
+#: ../src/option.c:1292
 msgid "Error options"
 msgstr "Error options"
 
-#: ../src/option.c:1263
+#: ../src/option.c:1293
 msgid "Show error options"
 msgstr "Show error options"
 
-#: ../src/option.c:1272
+#: ../src/option.c:1303
 msgid "Info options"
 msgstr "Info options"
 
-#: ../src/option.c:1273
+#: ../src/option.c:1304
 msgid "Show info options"
 msgstr "Show info options"
 
-#: ../src/option.c:1282
+#: ../src/option.c:1314
 msgid "File selection options"
 msgstr "File selection options"
 
-#: ../src/option.c:1283
+#: ../src/option.c:1315
 msgid "Show file selection options"
 msgstr "Show file selection options"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1325
 msgid "List options"
 msgstr "List options"
 
-#: ../src/option.c:1293
+#: ../src/option.c:1326
 msgid "Show list options"
 msgstr "Show list options"
 
-#: ../src/option.c:1302
+#: ../src/option.c:1336
 msgid "Notification icon options"
 msgstr "Notification icon options"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1337
 msgid "Show notification icon options"
 msgstr "Show notification icon options"
 
-#: ../src/option.c:1312
+#: ../src/option.c:1347
 msgid "Progress options"
 msgstr "Progress options"
 
-#: ../src/option.c:1313
+#: ../src/option.c:1348
 msgid "Show progress options"
 msgstr "Show progress options"
 
-#: ../src/option.c:1322
+#: ../src/option.c:1358
 msgid "Question options"
 msgstr "Question options"
 
-#: ../src/option.c:1323
+#: ../src/option.c:1359
 msgid "Show question options"
 msgstr "Show question options"
 
-#: ../src/option.c:1332
+#: ../src/option.c:1369
 msgid "Warning options"
 msgstr "Warning options"
 
-#: ../src/option.c:1333
+#: ../src/option.c:1370
 msgid "Show warning options"
 msgstr "Show warning options"
 
-#: ../src/option.c:1342
+#: ../src/option.c:1380
 msgid "Text information options"
 msgstr "Text information options"
 
-#: ../src/option.c:1343
+#: ../src/option.c:1381
 msgid "Show text information options"
 msgstr "Show text information options"
 
-#: ../src/option.c:1352
+#: ../src/option.c:1391
 msgid "Miscellaneous options"
 msgstr "Miscellaneous options"
 
-#: ../src/option.c:1353
+#: ../src/option.c:1392
 msgid "Show miscellaneous options"
 msgstr "Show miscellaneous options"
 
-#: ../src/option.c:1376
+#: ../src/option.c:1417
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
-msgstr "This option is not available. Please see --help for all possible usages.\n"
+msgstr ""
+"This option is not available. Please see --help for all possible usages.\n"
 
-#: ../src/option.c:1380
+#: ../src/option.c:1421
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s is not supported for this dialogue\n"
 
-#: ../src/option.c:1384
+#: ../src/option.c:1425
 msgid "Two or more dialog options specified\n"
 msgstr "Two or more dialogue options specified\n"
-
-#~ msgid "Syntax error\n"
-#~ msgstr "Syntax error\n"
