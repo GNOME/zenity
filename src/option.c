@@ -211,7 +211,7 @@ static GOptionEntry entry_options[] = {
     "text",
     '\0',
     G_OPTION_FLAG_NOALIAS,
-    G_OPTION_ARG_STRING,
+    G_OPTION_ARG_STRING | G_OPTION_FLAG_NOALIAS,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
     NULL
@@ -220,7 +220,7 @@ static GOptionEntry entry_options[] = {
     "entry-text",
     '\0',
     0,
-    G_OPTION_ARG_STRING | G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
     &zenity_entry_entry_text,
     N_("Set the entry text"),
     NULL
