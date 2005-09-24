@@ -238,7 +238,7 @@ zenity  --question --title "Alert"  --text "Microsoft Windows has been found! Wo
 Show the search results in a list dialog with the title \fISearch Results\fP
 and the text \fIFinding all header files...\fP.
 .IP
-find . -name '*.h' | zenity --title "Search Results" --text "Finding all header files.." --column "Files"
+find . -name '*.h' | zenity --list --title "Search Results" --text "Finding all header files.." --column "Files"
 .PP
 Show an icon in the notification area
 .IP
