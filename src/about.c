@@ -193,6 +193,8 @@ static const gchar *const author_credits[] = {
   "Telsa Gwynne <hobbit aloss ukuu org uk>",
   "Slobodan D. Sredojevic <ssl uns ns ac yu>",
   "Baris Cicek <baris teamforce name tr>",
+  "Inaki Larranaga <dooteo euskalgnu org>",
+  "Runa Bhattacharjee <runa bengalinux org>",
   NULL
 };
 
