@@ -194,6 +194,7 @@ static const gchar *const author_credits[] = {
   "Slobodan D. Sredojevic <ssl uns ns ac yu>",
   "Baris Cicek <baris teamforce name tr>",
   "Runa Bhattacharjee <runa bengalinux org>",
+  "Erdal Ronahi <erdal.ronahi gmail com>",
   NULL
 };
 
