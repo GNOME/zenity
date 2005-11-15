@@ -341,7 +341,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   text = glade_xml_get_widget (glade_dialog, "zenity_tree_text");
                                                                                 
   if (tree_data->dialog_text)
-    gtk_label_set_text (GTK_LABEL (text), tree_data->dialog_text);
+    gtk_label_set_markup (GTK_LABEL (text), g_strcompress (tree_data->dialog_text));
 
   zenity_util_set_window_icon (dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-list.png"));
 

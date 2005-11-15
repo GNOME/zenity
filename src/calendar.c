@@ -68,7 +68,7 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   text = glade_xml_get_widget (glade_dialog, "zenity_calendar_text");
 
   if (cal_data->dialog_text)
-  gtk_label_set_text (GTK_LABEL (text), cal_data->dialog_text);
+    gtk_label_set_markup (GTK_LABEL (text), g_strcompress (cal_data->dialog_text));
 
   calendar = glade_xml_get_widget (glade_dialog, "zenity_calendar");
 	

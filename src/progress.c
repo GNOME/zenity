@@ -204,7 +204,9 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
   text = glade_xml_get_widget (glade_dialog, "zenity_progress_text");
-  gtk_label_set_text (GTK_LABEL (text), progress_data->dialog_text);
+
+  if (progress_data->dialog_text)
+    gtk_label_set_markup (GTK_LABEL (text), g_strcompress (progress_data->dialog_text));
 
   progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
 
