@@ -42,6 +42,7 @@ typedef enum {
   MODE_QUESTION,
   MODE_TEXTINFO,
   MODE_WARNING,
+  MODE_SCALE,
   MODE_INFO,
   MODE_NOTIFICATION,
   MODE_ABOUT,
@@ -62,6 +63,7 @@ typedef struct {
 
   ZenityCalendarData     *calendar_data;
   ZenityMsgData          *msg_data;
+  ZenityScaleData        *scale_data;
   ZenityFileData         *file_data;
   ZenityEntryData        *entry_data;
   ZenityProgressData     *progress_data;

@@ -91,6 +91,14 @@ static gboolean zenity_text_active;
 /* Warning Dialog Options */
 static gboolean zenity_warning_active;
 
+/* Scale Dialog Options */
+static gboolean zenity_scale_active;
+static gint zenity_scale_value;
+static gint zenity_scale_min_value;
+static gint zenity_scale_max_value;
+static gint zenity_scale_step;
+static gboolean zenity_scale_print_partial;
+
 /* Miscelaneus Options */
 static gboolean zenity_misc_about;
 static gboolean zenity_misc_version;
@@ -646,6 +654,75 @@ static GOptionEntry warning_options[] = {
   }
 };
 
+static GOptionEntry scale_options[] = {
+  {
+    "scale",
+    '\0',
+    G_OPTION_FLAG_IN_MAIN,
+    G_OPTION_ARG_NONE,
+    &zenity_scale_active,
+    N_("Display scale dialog"),
+    NULL
+  },
+  {
+    "text",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_dialog_text,
+    N_("Set the dialog text"),
+    NULL
+  },
+  {
+    "value",
+    '\0',
+    0,
+    G_OPTION_ARG_INT,
+    &zenity_scale_value,
+    N_("Set initial value"),
+    NULL
+  },
+  {
+    "min-value",
+    '\0',
+    0,
+    G_OPTION_ARG_INT,
+    &zenity_scale_min_value,
+    N_("Set minimum value"),
+    NULL
+  },
+  {
+    "max-value",
+    '\0',
+    0,
+    G_OPTION_ARG_INT,
+    &zenity_scale_max_value,
+    N_("Set maximum value"),
+    NULL
+  },
+  {
+    "step",
+    '\0',
+    0,
+    G_OPTION_ARG_INT,
+    &zenity_scale_step,
+    N_("Set step size"),
+    NULL
+  },
+  {
+    "print-partial",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_scale_print_partial,
+    N_("Print partial values"),
+    NULL
+  },
+  { 
+    NULL 
+  }
+};
+
 static GOptionEntry miscellaneous_options[] = {
   {
     "about",
@@ -683,6 +760,7 @@ zenity_option_init (void) {
   results->data = g_new0 (ZenityData, 1);
   results->calendar_data = g_new0 (ZenityCalendarData, 1);
   results->msg_data = g_new0 (ZenityMsgData, 1);
+  results->scale_data = g_new0 (ZenityScaleData, 1);
   results->file_data = g_new0 (ZenityFileData, 1);
   results->entry_data = g_new0 (ZenityEntryData, 1); 
   results->progress_data = g_new0 (ZenityProgressData, 1); 
@@ -908,6 +986,22 @@ zenity_warning_pre_callback (GOptionContext *context,
 		             GError        **error)
 {
   zenity_warning_active = FALSE;
+
+  return TRUE;
+}
+
+static gboolean
+zenity_scale_pre_callback (GOptionContext *context,
+		           GOptionGroup   *group,
+		           gpointer        data,
+		           GError        **error)
+{
+  zenity_scale_active = FALSE;
+  zenity_scale_value = 0;
+  zenity_scale_min_value = 0;
+  zenity_scale_max_value = 100;
+  zenity_scale_step = 1;
+  zenity_scale_print_partial = FALSE;
 
   return TRUE;
 }
@@ -1235,6 +1329,26 @@ zenity_warning_post_callback (GOptionContext *context,
 }
 
 static gboolean
+zenity_scale_post_callback (GOptionContext *context,
+	                    GOptionGroup   *group,
+		            gpointer        data,
+		            GError        **error)
+{
+  zenity_option_set_dialog_mode (zenity_scale_active, MODE_SCALE);
+
+  if (results->mode == MODE_SCALE) {
+    results->scale_data->dialog_text = zenity_general_dialog_text;
+    results->scale_data->value = zenity_scale_value;
+    results->scale_data->min_value = zenity_scale_min_value;
+    results->scale_data->max_value = zenity_scale_max_value;
+    results->scale_data->step = zenity_scale_step;
+    results->scale_data->print_partial = zenity_scale_print_partial;
+  }
+
+  return TRUE;
+}
+
+static gboolean
 zenity_misc_post_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -1371,6 +1485,17 @@ zenity_create_context (void)
   g_option_group_add_entries(a_group, warning_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_warning_pre_callback, zenity_warning_post_callback);
+  g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
+  g_option_context_add_group(tmp_ctx, a_group);
+  
+  /* Adds scale option entries */
+  a_group = g_option_group_new("scale", 
+                               N_("Scale options"), 
+                               N_("Show scale options"), NULL, 0);
+  g_option_group_add_entries(a_group, scale_options);
+  g_option_group_set_parse_hooks (a_group,
+                    zenity_scale_pre_callback, zenity_scale_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
   g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);

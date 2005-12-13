@@ -64,6 +64,9 @@ main (gint argc, gchar **argv) {
     case MODE_INFO:
       zenity_msg (results->data, results->msg_data);
       break;
+    case MODE_SCALE:
+      zenity_scale (results->data, results->scale_data);
+      break;
     case MODE_FILE:
       zenity_fileselection (results->data, results->file_data);
       break;

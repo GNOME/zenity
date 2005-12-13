@@ -14,6 +14,7 @@ images_DATA = \
 	zenity-file.png		\
 	zenity-progress.png	\
 	zenity-text.png		\
+	zenity-scale.png	\
 	zenity-entry.png	\
 	zenity-notification.png
 

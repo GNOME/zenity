@@ -61,6 +61,15 @@ typedef struct {
 } ZenityMsgData;
 
 typedef struct {
+  gchar   *dialog_text;
+  gint     value;
+  gint     min_value;
+  gint     max_value;
+  gint     step;
+  gboolean print_partial;
+} ZenityScaleData;
+
+typedef struct {
   gchar	  *uri;
   gboolean multi;
   gboolean directory;

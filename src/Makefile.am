@@ -9,6 +9,7 @@ zenity_SOURCES = \
 	zenity.h	\
 	calendar.c	\
 	msg.c		\
+	scale.c		\
 	fileselection.c	\
 	entry.c		\
 	text.c		\
