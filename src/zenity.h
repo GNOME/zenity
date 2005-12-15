@@ -67,6 +67,7 @@ typedef struct {
   gint     max_value;
   gint     step;
   gboolean print_partial;
+  gboolean hide_value;
 } ZenityScaleData;
 
 typedef struct {

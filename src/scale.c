@@ -89,6 +89,9 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
     g_signal_connect (G_OBJECT (scale), "value-changed",
                       G_CALLBACK (zenity_scale_value_changed), data);
   
+  if (scale_data->hide_value)
+    gtk_scale_set_draw_value (GTK_SCALE (scale), FALSE);
+  
   zenity_util_show_dialog (dialog);
   gtk_main ();
 }

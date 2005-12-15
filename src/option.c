@@ -98,6 +98,7 @@ static gint zenity_scale_min_value;
 static gint zenity_scale_max_value;
 static gint zenity_scale_step;
 static gboolean zenity_scale_print_partial;
+static gboolean zenity_scale_hide_value;
 
 /* Miscelaneus Options */
 static gboolean zenity_misc_about;
@@ -718,6 +719,15 @@ static GOptionEntry scale_options[] = {
     N_("Print partial values"),
     NULL
   },
+  {
+    "hide-value",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_scale_hide_value,
+    N_("Hide value"),
+    NULL
+  },
   { 
     NULL 
   }
@@ -1002,6 +1012,7 @@ zenity_scale_pre_callback (GOptionContext *context,
   zenity_scale_max_value = 100;
   zenity_scale_step = 1;
   zenity_scale_print_partial = FALSE;
+  zenity_scale_hide_value = FALSE;
 
   return TRUE;
 }
@@ -1343,6 +1354,7 @@ zenity_scale_post_callback (GOptionContext *context,
     results->scale_data->max_value = zenity_scale_max_value;
     results->scale_data->step = zenity_scale_step;
     results->scale_data->print_partial = zenity_scale_print_partial;
+    results->scale_data->hide_value = zenity_scale_hide_value;
   }
 
   return TRUE;
