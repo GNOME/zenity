@@ -5,54 +5,34 @@
 # Jarkko Ranta <jjranta@cc.joensuu.fi>, 2003-2004.
 # Sami Pesonen <sampeson@iki.fi>, 2004.
 # Tommi Vainikainen <Tommi.Vainikainen@iki.fi>, 2005.
+# Ilkka Tuohela <hile@iki.fi>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2005-02-08 10:51+0200\n"
-"Last-Translator: Tommi Vainikainen <Tommi.Vainikainen@iki.fi>\n"
+"POT-Creation-Date: 2005-12-26 19:04+0200\n"
+"PO-Revision-Date: 2005-12-26 19:10+0200\n"
+"Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
+#: ../src/about.c:248
 msgid "translator-credits"
 msgstr ""
+"Tommi Vainikainen, 2005\n"
+"Ilkka Tuohela, 2005\n"
 "Sami Pesonen, 2004\n"
 "Jarkko Ranta, 2003-2004\n"
 "Johanna Makkonen, 2003\n"
 "\n"
 "http://gnome.fi/"
 
-#: ../src/about.c:433
+#: ../src/about.c:257
 msgid "Display dialog boxes from shell scripts"
 msgstr "Näytä ikkunoita kuoren komentotiedostojen pohjalta"
-
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "© 2003 Sun Microsystems"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "Tekijätiedot"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "Kirjoittanut:"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "Kääntänyt:"
 
 #: ../src/eggtrayicon.c:118
 msgid "Orientation"
@@ -62,7 +42,7 @@ msgstr "Suunta"
 msgid "The orientation of the tray."
 msgstr "Hyllyn suunta."
 
-#: ../src/main.c:90
+#: ../src/main.c:93
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Ikkunatyyppi täytyy määrittää. Aja \"zenity --help\" saadaksesi lisätietoja\n"
@@ -75,6 +55,14 @@ msgstr "vakiosyöttestä tullutta komentoa ei voitu jäsentää\n"
 msgid "Zenity notification"
 msgstr "Zenity-ilmoitus"
 
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Maksimiarvon tulee olla suurempi kuin minimiarvon.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Arvo sallitun alueen ulkopuolella.\n"
+
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "Luetteloikkunalle ei annettu sarakenimiä.\n"
@@ -84,16 +72,16 @@ msgid "You should use only one List dialog type.\n"
 msgstr "Sinun tulisi käyttää vain yhtä listaikkunan tyyppiä.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "Tietoja Zenitystä"
-
-#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "Lisää kohta"
+
+#: ../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "Säädä asteikon arvoa"
+
+#: ../src/zenity.glade.h:3
+msgid "Adjust the scale value."
+msgstr "Säädä asteikon arvoa."
 
 #: ../src/zenity.glade.h:4
 msgid "All updates are complete."
@@ -160,153 +148,149 @@ msgid "Warning"
 msgstr "Varoitus"
 
 #: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "_Tekijätiedot"
-
-#: ../src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "_Anna uusi teksti:"
 
-#: ../src/option.c:105
+#: ../src/option.c:114
 msgid "Set the dialog title"
 msgstr "Aseta ikkunan otsikko"
 
-#: ../src/option.c:106
+#: ../src/option.c:115
 msgid "TITLE"
 msgstr "OTSIKKO"
 
-#: ../src/option.c:114
+#: ../src/option.c:123
 msgid "Set the window icon"
 msgstr "Aseta ikkunan kuvake"
 
-#: ../src/option.c:115
+#: ../src/option.c:124
 msgid "ICONPATH"
 msgstr "KUVAKE"
 
-#: ../src/option.c:123
+#: ../src/option.c:132
 msgid "Set the width"
 msgstr "Aseta leveys"
 
-#: ../src/option.c:124
+#: ../src/option.c:133
 msgid "WIDTH"
 msgstr "LEVEYS"
 
-#: ../src/option.c:132
+#: ../src/option.c:141
 msgid "Set the height"
 msgstr "Aseta korkeus"
 
-#: ../src/option.c:133
+#: ../src/option.c:142
 msgid "HEIGHT"
 msgstr "KORKEUS"
 
-#: ../src/option.c:147
+#: ../src/option.c:156
 msgid "Display calendar dialog"
 msgstr "Näytä kalenteri-ikkuna"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: ../src/option.c:165 ../src/option.c:225 ../src/option.c:268
+#: ../src/option.c:301 ../src/option.c:394 ../src/option.c:523
+#: ../src/option.c:575 ../src/option.c:641 ../src/option.c:674
 msgid "Set the dialog text"
 msgstr "Aseta ikkunan teksti"
 
-#: ../src/option.c:165
+#: ../src/option.c:174
 msgid "Set the calendar day"
 msgstr "Aseta kalenterin päivä"
 
-#: ../src/option.c:174
+#: ../src/option.c:183
 msgid "Set the calendar month"
 msgstr "Aseta kalenterin kuukausi"
 
-#: ../src/option.c:183
+#: ../src/option.c:192
 msgid "Set the calendar year"
 msgstr "Aseta kalenterin vuosi"
 
-#: ../src/option.c:192
+#: ../src/option.c:201
 msgid "Set the format for the returned date"
 msgstr "Aseta palautettavan päiväyksen muoto"
 
-#: ../src/option.c:207
+#: ../src/option.c:216
 msgid "Display text entry dialog"
 msgstr "Näytä teksti-ikkuna"
 
-#: ../src/option.c:225
+#: ../src/option.c:234
 msgid "Set the entry text"
 msgstr "Aseta tekstikentän teksti"
 
-#: ../src/option.c:234
+#: ../src/option.c:243
 msgid "Hide the entry text"
 msgstr "Piilota tekstikentän teksti"
 
-#: ../src/option.c:250
+#: ../src/option.c:259
 msgid "Display error dialog"
 msgstr "Näytä virheikkuna"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: ../src/option.c:277 ../src/option.c:310 ../src/option.c:584
+#: ../src/option.c:650
 msgid "Do not enable text wrapping"
 msgstr "Älä rivitä tekstiä"
 
-#: ../src/option.c:283
+#: ../src/option.c:292
 msgid "Display info dialog"
 msgstr "Näytä tietoikkuna"
 
-#: ../src/option.c:316
+#: ../src/option.c:325
 msgid "Display file selection dialog"
 msgstr "Näytä tiedoston valintaikkuna"
 
-#: ../src/option.c:325
+#: ../src/option.c:334
 msgid "Set the filename"
 msgstr "Aseta tiedostonimi"
 
-#: ../src/option.c:326 ../src/option.c:600
+#: ../src/option.c:335 ../src/option.c:609
 msgid "FILENAME"
 msgstr "TIEDOSTONIMI"
 
-#: ../src/option.c:334
+#: ../src/option.c:343
 msgid "Allow multiple files to be selected"
 msgstr "Salli valittavan useita tiedostoja"
 
-#: ../src/option.c:343
+#: ../src/option.c:352
 msgid "Activate directory-only selection"
 msgstr "Aktivoi pelkän hakemiston valinta"
 
-#: ../src/option.c:352
+#: ../src/option.c:361
 msgid "Activate save mode"
 msgstr "Aktivoi tallennustila"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: ../src/option.c:370 ../src/option.c:430
 msgid "Set output separator character"
 msgstr "Aseta tulosteen erotinmerkki"
 
-#: ../src/option.c:362 ../src/option.c:422
+#: ../src/option.c:371 ../src/option.c:431
 msgid "SEPARATOR"
 msgstr "EROTIN"
 
-#: ../src/option.c:376
+#: ../src/option.c:385
 msgid "Display list dialog"
 msgstr "Näytä luetteloikkuna"
 
-#: ../src/option.c:394
+#: ../src/option.c:403
 msgid "Set the column header"
 msgstr "Aseta sarakkeen otsikko"
 
-#: ../src/option.c:403
+#: ../src/option.c:412
 msgid "Use check boxes for first column"
 msgstr "Käytä ensimmäisessä sarakkeessa valintaruutuja"
 
-#: ../src/option.c:412
+#: ../src/option.c:421
 msgid "Use radio buttons for first column"
 msgstr "Käytä ensimmäisessä sarakkeessa radiopainikkeita"
 
-#: ../src/option.c:430
+#: ../src/option.c:439
 msgid "Allow multiple rows to be selected"
 msgstr "Salli valittavan useita rivejä"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: ../src/option.c:448 ../src/option.c:617
 msgid "Allow changes to text"
 msgstr "Salli muutokset tekstiin"
 
-#: ../src/option.c:448
+#: ../src/option.c:457
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -314,179 +298,236 @@ msgstr ""
 "Tulosta tietty sarake (oletus on 1. \"ALL\" voidaan käyttää kaikkien "
 "sarakkeidentulostamiseen)"
 
-#: ../src/option.c:457
+#: ../src/option.c:466
 msgid "Hide a specific column"
 msgstr "Piilota tietty sarake"
 
-#: ../src/option.c:472
+#: ../src/option.c:481
 msgid "Display notification"
 msgstr "Näytä ilmoitus"
 
-#: ../src/option.c:481
+#: ../src/option.c:490
 msgid "Set the notification text"
 msgstr "Aseta ilmoitusteksti"
 
-#: ../src/option.c:490
+#: ../src/option.c:499
 msgid "Listen for commands on stdin"
 msgstr "Kuuntele komentoja vakiosyötteestä"
 
-#: ../src/option.c:505
+#: ../src/option.c:514
 msgid "Display progress indication dialog"
 msgstr "Näytä edistymisikkuna"
 
-#: ../src/option.c:523
+#: ../src/option.c:532
 msgid "Set initial percentage"
 msgstr "Aseta aloitusprosentti"
 
-#: ../src/option.c:532
+#: ../src/option.c:541
 msgid "Pulsate progress bar"
 msgstr "Edistymispalkki sykkii"
 
-#: ../src/option.c:542
+#: ../src/option.c:551
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Sulje ikkuna kun 100 % on saavutettu"
 
-#: ../src/option.c:557
+#: ../src/option.c:566
 msgid "Display question dialog"
 msgstr "Näytä kysymysikkuna"
 
-#: ../src/option.c:590
+#: ../src/option.c:599
 msgid "Display text information dialog"
 msgstr "Näytä tekstin tietoikkuna"
 
-#: ../src/option.c:599
+#: ../src/option.c:608
 msgid "Open file"
 msgstr "Avaa tiedosto"
 
-#: ../src/option.c:623
+#: ../src/option.c:632
 msgid "Display warning dialog"
 msgstr "Näytä varoitusikkuna"
 
-#: ../src/option.c:656
+#: ../src/option.c:665
+msgid "Display scale dialog"
+msgstr "Näytä asteikkoikkuna"
+
+#: ../src/option.c:683
+msgid "Set initial value"
+msgstr "Aseta aloitusarvo"
+
+#: ../src/option.c:692
+msgid "Set minimum value"
+msgstr "Aseta minimiarvo"
+
+#: ../src/option.c:701
+msgid "Set maximum value"
+msgstr "Aseta maksimiarvo"
+
+#: ../src/option.c:710
+msgid "Set step size"
+msgstr "Aseta askelkoko"
+
+#: ../src/option.c:719
+msgid "Print partial values"
+msgstr "Näytä osittaisia arvoja"
+
+#: ../src/option.c:728
+msgid "Hide value"
+msgstr "Piilota arvo"
+
+#: ../src/option.c:743
 msgid "About zenity"
 msgstr "Tietoja Zenitystä"
 
-#: ../src/option.c:665
+#: ../src/option.c:752
 msgid "Print version"
 msgstr "Näytä versiotiedot"
 
-#: ../src/option.c:1259
+#: ../src/option.c:1385
 msgid "General options"
 msgstr "Yleiset asetukset"
 
-#: ../src/option.c:1260
+#: ../src/option.c:1386
 msgid "Show general options"
 msgstr "Näytä yleiset asetukset"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1396
 msgid "Calendar options"
 msgstr "Kalenteriasetukset"
 
-#: ../src/option.c:1271
+#: ../src/option.c:1397
 msgid "Show calendar options"
 msgstr "Näytä kalenteriasetukset"
 
-#: ../src/option.c:1281
+#: ../src/option.c:1407
 msgid "Text entry options"
 msgstr "Tekstikenttäasetukset"
 
-#: ../src/option.c:1282
+#: ../src/option.c:1408
 msgid "Show text entry options"
 msgstr "Näytä tekstikenttäasetukset"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1418
 msgid "Error options"
 msgstr "Virheasetukset"
 
-#: ../src/option.c:1293
+#: ../src/option.c:1419
 msgid "Show error options"
 msgstr "Näytä Virheasetukset"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1429
 msgid "Info options"
 msgstr "Tietoasetukset"
 
-#: ../src/option.c:1304
+#: ../src/option.c:1430
 msgid "Show info options"
 msgstr "Näytä tietoasetukset"
 
-#: ../src/option.c:1314
+#: ../src/option.c:1440
 msgid "File selection options"
 msgstr "Tiedostonvalitsimen asetukset"
 
-#: ../src/option.c:1315
+#: ../src/option.c:1441
 msgid "Show file selection options"
 msgstr "Näytä tiedostonvalitsimen asetukset"
 
-#: ../src/option.c:1325
+#: ../src/option.c:1451
 msgid "List options"
 msgstr "Luetteloasetukset"
 
-#: ../src/option.c:1326
+#: ../src/option.c:1452
 msgid "Show list options"
 msgstr "Näytä luetteloasetukset"
 
-#: ../src/option.c:1336
+#: ../src/option.c:1462
 msgid "Notification icon options"
 msgstr "Ilmoituskuvakeasetukset"
 
-#: ../src/option.c:1337
+#: ../src/option.c:1463
 msgid "Show notification icon options"
 msgstr "Näytä ilmoituskuvakeasetukset"
 
-#: ../src/option.c:1347
+#: ../src/option.c:1473
 msgid "Progress options"
 msgstr "Edistymisasetukset"
 
-#: ../src/option.c:1348
+#: ../src/option.c:1474
 msgid "Show progress options"
 msgstr "Näytä edistymisasetukset"
 
-#: ../src/option.c:1358
+#: ../src/option.c:1484
 msgid "Question options"
 msgstr "Kysymysasetukset"
 
-#: ../src/option.c:1359
+#: ../src/option.c:1485
 msgid "Show question options"
 msgstr "Näytä kysymysasetukset"
 
-#: ../src/option.c:1369
+#: ../src/option.c:1495
 msgid "Warning options"
 msgstr "Varoitusasetukset"
 
-#: ../src/option.c:1370
+#: ../src/option.c:1496
 msgid "Show warning options"
 msgstr "Näytä varoitusasetukset"
 
-#: ../src/option.c:1380
+#: ../src/option.c:1506
+msgid "Scale options"
+msgstr "Asteikkoasetukset"
+
+#: ../src/option.c:1507
+msgid "Show scale options"
+msgstr "Näytä asteikkoasetukset"
+
+#: ../src/option.c:1517
 msgid "Text information options"
 msgstr "Teksti-ilmoitusasetukset"
 
-#: ../src/option.c:1381
+#: ../src/option.c:1518
 msgid "Show text information options"
 msgstr "Näytä teksti-ilmoitusasetukset"
 
-#: ../src/option.c:1391
+#: ../src/option.c:1528
 msgid "Miscellaneous options"
 msgstr "Sekalaiset asetukset"
 
-#: ../src/option.c:1392
+#: ../src/option.c:1529
 msgid "Show miscellaneous options"
 msgstr "Näytä sekalaiset asetukset"
 
-#: ../src/option.c:1417
+#: ../src/option.c:1554
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Tämä valitsin ei ole käytettävissä. Katso lista sallituista valitsimista "
 "valitsimella --help.\n"
 
-#: ../src/option.c:1421
+#: ../src/option.c:1558
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s ei tueta tässä ikkunassa\n"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1562
 msgid "Two or more dialog options specified\n"
 msgstr "Kaksi tai useampia ikkunavalitsimia annettu\n"
+
+#~ msgid "(C) 2003 Sun Microsystems"
+#~ msgstr "© 2003 Sun Microsystems"
+
+#~ msgid "Credits"
+#~ msgstr "Tekijätiedot"
+
+#~ msgid "Written by"
+#~ msgstr "Kirjoittanut:"
+
+#~ msgid "Translated by"
+#~ msgstr "Kääntänyt:"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "About Zenity"
+#~ msgstr "Tietoja Zenitystä"
+
+#~ msgid "_Credits"
+#~ msgstr "_Tekijätiedot"
