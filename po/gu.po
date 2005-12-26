@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity.HEAD.gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-15 07:21+0100\n"
-"PO-Revision-Date: 2005-12-15 13:38+0530\n"
+"POT-Creation-Date: 2005-12-26 06:48+0100\n"
+"PO-Revision-Date: 2005-12-26 17:29+0530\n"
 "Last-Translator: Ankit Patel <ankit644@yahoo.com>\n"
 "Language-Team: Gujarati <indianoss-gujarati@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,37 +16,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
+"\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:405
+#: ../src/about.c:248
 msgid "translator-credits"
 msgstr "અંકિત પટેલ <ankit644@yahoo.com>"
 
-#: ../src/about.c:435
+#: ../src/about.c:257
 msgid "Display dialog boxes from shell scripts"
 msgstr "શેલ લીપીઓમાંથી સંવાદપેટીઓ દર્શાવો"
-
-#: ../src/about.c:439
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(C) 2003 Sun Microsystems"
-
-#: ../src/about.c:523
-msgid "Credits"
-msgstr "યશ"
-
-#: ../src/about.c:550
-msgid "Written by"
-msgstr "લેખક"
-
-#: ../src/about.c:563
-msgid "Translated by"
-msgstr "અનુવાદક"
 
 #: ../src/eggtrayicon.c:118
 msgid "Orientation"
@@ -68,6 +46,14 @@ msgstr "stdin માંથી આદેશનું પદચ્છેદ કર
 msgid "Zenity notification"
 msgstr "ઝેનીટિ સૂચન"
 
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "મહત્તમ કિંમત ન્યૂનતમ કિંમત કરતાં મોટી હોવી જ જોઈએ.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "કિંમત વિસ્તારની બહાર છે.\n"
+
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "યાદી સંવાદ માટે સ્તંભના કોઈ શીર્ષકો સ્પષ્ટ કરાયા નથી\n"
@@ -77,91 +63,83 @@ msgid "You should use only one List dialog type.\n"
 msgstr "તમે માત્ર એક યાદી સંવાદ પ્રકાર વાપરવા જોઈએ.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "About Zenity"
-msgstr "ઝેનિટી વિશે"
-
-#: ../src/zenity.glade.h:2
 msgid "Add a new entry"
 msgstr "નવો દાખલો ઉમેરો"
 
-#: ../src/zenity.glade.h:3
+#: ../src/zenity.glade.h:2
 msgid "Adjust the scale value"
 msgstr "માપદંડ કિંમત સંતુલિત કરો"
 
-#: ../src/zenity.glade.h:4
+#: ../src/zenity.glade.h:3
 msgid "Adjust the scale value."
 msgstr "માપદંડ કિંમત સંતુલિત કરો."
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.glade.h:4
 msgid "All updates are complete."
 msgstr "બધા સુધારાઓ પૂરા થઈ ગયા."
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.glade.h:5
 msgid "An error has occurred."
 msgstr "કોઈ ભૂલ થઈ છે."
 
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "શું તમે ખરેખર આગળ વધવા માંગો છો?"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.glade.h:7
 msgid "C_alendar:"
 msgstr "કેલેન્ડર (_a):"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.glade.h:8
 msgid "Calendar selection"
 msgstr "કેલેન્ડર પસંદગી"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.glade.h:9
 msgid "Error"
 msgstr "ભૂલ"
 
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.glade.h:10
 msgid "Information"
 msgstr "જાણકારી"
 
 # libgnomeui/gnome-app-util.c:685
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.glade.h:11
 msgid "Progress"
 msgstr "પ્રગતિ"
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.glade.h:12
 msgid "Question"
 msgstr "પ્રશ્ન"
 
-#: ../src/zenity.glade.h:14
+#: ../src/zenity.glade.h:13
 msgid "Running..."
 msgstr "ચાલી રહ્યુ છે..."
 
-#: ../src/zenity.glade.h:15
+#: ../src/zenity.glade.h:14
 msgid "Select a date from below."
 msgstr "નીચેથી તારીખ પસંદ કરો."
 
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.glade.h:15
 msgid "Select a file"
 msgstr "ફાઈલ પસંદ કરો"
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.glade.h:16
 msgid "Select items from the list"
 msgstr "યાદીમાંથી વસ્તુઓ પસંદ કરો"
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.glade.h:17
 msgid "Select items from the list below."
 msgstr "નીચેની યાદીમાંથી વસ્તુઓ પસંદ કરો."
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.glade.h:18
 msgid "Text View"
 msgstr "લખાણનો દેખાવ"
 
-#: ../src/zenity.glade.h:20
+#: ../src/zenity.glade.h:19
 msgid "Warning"
 msgstr "ચેતવણી"
 
-#: ../src/zenity.glade.h:21
-msgid "_Credits"
-msgstr "યશ (_C)"
-
-#: ../src/zenity.glade.h:22
+#: ../src/zenity.glade.h:20
 msgid "_Enter new text:"
 msgstr "નવું લખાણ દાખલ કરો (_E):"
 
