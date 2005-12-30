@@ -1,485 +1,499 @@
-# Vietnamese translation for zenity.
+# Vietnamese translation for Zenity.
 # Copyright © 2005 Gnome i18n Project for Vietnamese.
 # Trinh Minh Thanh <tmthanh@yahoo.com>, 2003.
 # Nguyen Thai Ngoc Duy <pclouds@gmx.net>, 2003.
 # Clytie Siddall <clytie@riverland.net.au>, 2005.
 # 
 msgid ""
-msgstr ""
-"Project-Id-Version: Zenity GNOME 2.12\n"
+""
+msgstr "Project-Id-Version: Zenity GNOME HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2005-07-24 15:05+0930\n"
+"POT-Creation-Date: 2005-12-30 07:04+0100\n"
+"PO-Revision-Date: 2005-12-30 20:38+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: LocFactoryEditor 1.2.2\n"
+"X-Generator: LocFactoryEditor 1.5.1b\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
+#:../src/about.c:248
 msgid "translator-credits"
 msgstr "Nhóm Việt hóa GNOME (http://gnomevi.sourceforge.net)"
 
-#: ../src/about.c:433
+#:../src/about.c:257
 msgid "Display dialog boxes from shell scripts"
 msgstr "Hiển thị các hộp thoại từ tập lệnh vỏ"
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "Bản quyền © năm 2003 Sun Microsystems"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "Đóng góp"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "Tác giả"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "Người dịch"
-
-#: ../src/eggtrayicon.c:118
+#:../src/eggtrayicon.c:118
 msgid "Orientation"
 msgstr "Hướng"
 
-#: ../src/eggtrayicon.c:119
+#:../src/eggtrayicon.c:119
 msgid "The orientation of the tray."
 msgstr "Hướng khay."
 
-#: ../src/main.c:90
+#:../src/main.c:93
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
-"Bạn phải chỉ ra kiểu hộp thoại. Xem «zenity --help» để biết thêm thông tin\n"
+msgstr "Bạn phải chỉ ra kiểu hộp thoại. Xem «zenity --help» để biết thêm thông tin\n"
 
-#: ../src/notification.c:161
+#:../src/notification.c:161
 msgid "could not parse command from stdin\n"
 msgstr "không thể phân tách lệnh từ thiết bị gõ chuẩn\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
+#:../src/notification.c:230 ../src/notification.c:259
 msgid "Zenity notification"
 msgstr "Thông báo Zenity"
 
-#: ../src/tree.c:320
+#:../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Phải có giá trị tối đa lớn hơn giá trị tối thiểu.\n"
+
+#:../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Giá trị ở ngoại phạm vị.\n"
+
+#:../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "Không có tiêu đề cột được định ra cho hộp thoại Danh sách.\n"
 
-#: ../src/tree.c:326
+#:../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
 msgstr "Bạn nên dùng chỉ một kiểu hộp thoại Danh sách.\n"
 
-#: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "Giới thiệu Zenity"
-
-#: ../src/zenity.glade.h:3
+#:../src/zenity.glade.h:1
 msgid "Add a new entry"
 msgstr "Thêm mục nhập mới"
 
-#: ../src/zenity.glade.h:4
+#:../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "Điều chỉnh giá trị co dãn"
+
+#:../src/zenity.glade.h:3
+msgid "Adjust the scale value."
+msgstr "Điều chỉnh giá trị co dãn."
+
+#:../src/zenity.glade.h:4
 msgid "All updates are complete."
 msgstr "Mọi cập nhật đã hoàn tất."
 
-#: ../src/zenity.glade.h:5
+#:../src/zenity.glade.h:5
 msgid "An error has occurred."
 msgstr "Gặp lỗi."
 
-#: ../src/zenity.glade.h:6
+#:../src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "Bạn có chắc là muốn tiếp tục không?"
 
-#: ../src/zenity.glade.h:7
+#:../src/zenity.glade.h:7
 msgid "C_alendar:"
 msgstr "_Lịch:"
 
-#: ../src/zenity.glade.h:8
+#:../src/zenity.glade.h:8
 msgid "Calendar selection"
 msgstr "Phần chọn lịch"
 
-#: ../src/zenity.glade.h:9
+#:../src/zenity.glade.h:9
 msgid "Error"
 msgstr "Lỗi"
 
-#: ../src/zenity.glade.h:10
+#:../src/zenity.glade.h:10
 msgid "Information"
 msgstr "Thông tin"
 
-#: ../src/zenity.glade.h:11
+#:../src/zenity.glade.h:11
 msgid "Progress"
 msgstr "Tiến trình"
 
-#: ../src/zenity.glade.h:12
+#:../src/zenity.glade.h:12
 msgid "Question"
 msgstr "Câu hỏi"
 
-#: ../src/zenity.glade.h:13
+#:../src/zenity.glade.h:13
 msgid "Running..."
 msgstr "Đang chạy..."
 
-#: ../src/zenity.glade.h:14
+#:../src/zenity.glade.h:14
 msgid "Select a date from below."
 msgstr "Chọn một ngày bên dưới đây."
 
-#: ../src/zenity.glade.h:15
+#:../src/zenity.glade.h:15
 msgid "Select a file"
 msgstr "Chọn tập tin"
 
-#: ../src/zenity.glade.h:16
+#:../src/zenity.glade.h:16
 msgid "Select items from the list"
 msgstr "Chọn các mục từ danh sách"
 
-#: ../src/zenity.glade.h:17
+#:../src/zenity.glade.h:17
 msgid "Select items from the list below."
 msgstr "Chọn các mục từ danh sách bên dưới."
 
-#: ../src/zenity.glade.h:18
+#:../src/zenity.glade.h:18
 msgid "Text View"
 msgstr "Khung xem thử ra"
 
-#: ../src/zenity.glade.h:19
+#:../src/zenity.glade.h:19
 msgid "Warning"
 msgstr "Cảnh báo"
 
-#: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "Đó_ng góp"
-
-#: ../src/zenity.glade.h:21
+#:../src/zenity.glade.h:20
 msgid "_Enter new text:"
 msgstr "_Nhập đoạn mới:"
 
-#: ../src/option.c:105
+#:../src/option.c:114
 msgid "Set the dialog title"
 msgstr "Đặt tiêu đề thoại"
 
-#: ../src/option.c:106
+#:../src/option.c:115
 msgid "TITLE"
 msgstr "TIÊU ĐỀ"
 
-#: ../src/option.c:114
+#:../src/option.c:123
 msgid "Set the window icon"
 msgstr "Lập biểu tượng cửa sổ"
 
-#: ../src/option.c:115
+#:../src/option.c:124
 msgid "ICONPATH"
 msgstr "ĐƯỜNG DẪN BIỂU TƯỢNG"
 
-#: ../src/option.c:123
+#:../src/option.c:132
 msgid "Set the width"
 msgstr "Đặt chiều rộng"
 
-#: ../src/option.c:124
+#:../src/option.c:133
 msgid "WIDTH"
 msgstr "RỘNG"
 
-#: ../src/option.c:132
+#:../src/option.c:141
 msgid "Set the height"
 msgstr "Đặt chiều cao"
 
-#: ../src/option.c:133
+#:../src/option.c:142
 msgid "HEIGHT"
 msgstr "CAO"
 
-#: ../src/option.c:147
+#:../src/option.c:156
 msgid "Display calendar dialog"
 msgstr "Hiển thị thoại về lịch"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#:../src/option.c:165 ../src/option.c:225 ../src/option.c:268
+#:../src/option.c:301 ../src/option.c:394 ../src/option.c:523
+#:../src/option.c:575 ../src/option.c:641 ../src/option.c:674
 msgid "Set the dialog text"
 msgstr "Lập đoạn thoại"
 
-#: ../src/option.c:165
+#:../src/option.c:174
 msgid "Set the calendar day"
 msgstr "Đặt ngày trong lịch"
 
-#: ../src/option.c:174
+#:../src/option.c:183
 msgid "Set the calendar month"
 msgstr "Đặt tháng trong lịch"
 
-#: ../src/option.c:183
+#:../src/option.c:192
 msgid "Set the calendar year"
 msgstr "Đặt năm trong lịch"
 
-#: ../src/option.c:192
+#:../src/option.c:201
 msgid "Set the format for the returned date"
 msgstr "Lập định dạng cho ngày được trả lại"
 
-#: ../src/option.c:207
+#:../src/option.c:216
 msgid "Display text entry dialog"
 msgstr "Hiển thị thoại mục nhập đoạn"
 
-#: ../src/option.c:225
+#:../src/option.c:234
 msgid "Set the entry text"
 msgstr "Đặt đoạn mục nhập"
 
-#: ../src/option.c:234
+#:../src/option.c:243
 msgid "Hide the entry text"
 msgstr "Ẩn đoạn mục nhập"
 
-#: ../src/option.c:250
+#:../src/option.c:259
 msgid "Display error dialog"
 msgstr "Hiển thị thoại báo lỗi"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#:../src/option.c:277 ../src/option.c:310 ../src/option.c:584
+#:../src/option.c:650
 msgid "Do not enable text wrapping"
 msgstr "Không bật ngắt dòng trong văn bản."
 
-#: ../src/option.c:283
+#:../src/option.c:292
 msgid "Display info dialog"
 msgstr "Hiển thị thoại thông tin"
 
-#: ../src/option.c:316
+#:../src/option.c:325
 msgid "Display file selection dialog"
 msgstr "Hiển thị thoại chọn tập tin"
 
-#: ../src/option.c:325
+#:../src/option.c:334
 msgid "Set the filename"
 msgstr "Đặt tên tập tin"
 
-#: ../src/option.c:326 ../src/option.c:600
+#:../src/option.c:335 ../src/option.c:609
 msgid "FILENAME"
 msgstr "TÊN TẬP TIN"
 
-#: ../src/option.c:334
+#:../src/option.c:343
 msgid "Allow multiple files to be selected"
 msgstr "Cho phép chọn nhiều tập tin"
 
-#: ../src/option.c:343
+#:../src/option.c:352
 msgid "Activate directory-only selection"
 msgstr "Kích hoạt chỉ khả năng chọn thư mục"
 
-#: ../src/option.c:352
+#:../src/option.c:361
 msgid "Activate save mode"
 msgstr "Kích hoạt chế độ lưu"
 
-#: ../src/option.c:361 ../src/option.c:421
+#:../src/option.c:370 ../src/option.c:430
 msgid "Set output separator character"
 msgstr "Đặt ký tự định giới dữ liệu xuất"
 
-#: ../src/option.c:362 ../src/option.c:422
+#:../src/option.c:371 ../src/option.c:431
 msgid "SEPARATOR"
 msgstr "NGĂN CÁCH"
 
-#: ../src/option.c:376
+#:../src/option.c:385
 msgid "Display list dialog"
 msgstr "Hiển thị thoại danh sách"
 
-#: ../src/option.c:394
+#:../src/option.c:403
 msgid "Set the column header"
 msgstr "Đặt phần đầu cột"
 
-#: ../src/option.c:403
+#:../src/option.c:412
 msgid "Use check boxes for first column"
 msgstr "Dùng các hộp kiểm cho cột đầu tiên"
 
-#: ../src/option.c:412
+#:../src/option.c:421
 msgid "Use radio buttons for first column"
 msgstr "Dùng các nút chọn một cho cột đầu tiên"
 
-#: ../src/option.c:430
+#:../src/option.c:439
 msgid "Allow multiple rows to be selected"
 msgstr "Cho phép chọn nhiều hàng"
 
-#: ../src/option.c:439 ../src/option.c:608
+#:../src/option.c:448 ../src/option.c:617
 msgid "Allow changes to text"
 msgstr "Cho phép thay đổi vào đoạn"
 
-#: ../src/option.c:448
+#:../src/option.c:457
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "In cột xác định (Mặc định là 1. «ALL» có thể được dùng để in mọi cột)"
 
-#: ../src/option.c:457
+#:../src/option.c:466
 msgid "Hide a specific column"
 msgstr "Ẩn một cột nào đó"
 
-#: ../src/option.c:472
+#:../src/option.c:481
 msgid "Display notification"
 msgstr "Thông báo hiển thị"
 
-#: ../src/option.c:481
+#:../src/option.c:490
 msgid "Set the notification text"
 msgstr "Đặt chuỗi thông báo"
 
-#: ../src/option.c:490
+#:../src/option.c:499
 msgid "Listen for commands on stdin"
 msgstr "Lắng nghe lệnh từ thiết bị gõ chuẩn"
 
-#: ../src/option.c:505
+#:../src/option.c:514
 msgid "Display progress indication dialog"
 msgstr "Hiển thị thoại chỉ thị tiến trình"
 
-#: ../src/option.c:523
+#:../src/option.c:532
 msgid "Set initial percentage"
 msgstr "Đặt phần trăm khởi tạo"
 
-#: ../src/option.c:532
+#:../src/option.c:541
 msgid "Pulsate progress bar"
 msgstr "Đập theo nhịp thanh tiến trình"
 
-#: ../src/option.c:542
-#, no-c-format
+#:../src/option.c:551
+#,no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Bỏ hộp thoại khi tiến đến 100%"
 
-#: ../src/option.c:557
+#:../src/option.c:566
 msgid "Display question dialog"
 msgstr "Hiển thị thoại câu hỏi"
 
-#: ../src/option.c:590
+#:../src/option.c:599
 msgid "Display text information dialog"
 msgstr "Hiển thị thoại thông tin đoạn"
 
-#: ../src/option.c:599
+#:../src/option.c:608
 msgid "Open file"
 msgstr "Mở tập tin"
 
-#: ../src/option.c:623
+#:../src/option.c:632
 msgid "Display warning dialog"
 msgstr "Hiển thị thoại cảnh báo"
 
-#: ../src/option.c:656
+#:../src/option.c:665
+msgid "Display scale dialog"
+msgstr "Hiện hộp thoại co dãn"
+
+#:../src/option.c:683
+msgid "Set initial value"
+msgstr "Lập giá trị ban đầu"
+
+#:../src/option.c:692
+msgid "Set minimum value"
+msgstr "Lập giá trị tối thiểu"
+
+#:../src/option.c:701
+msgid "Set maximum value"
+msgstr "Lập giá trị tối đa"
+
+#:../src/option.c:710
+msgid "Set step size"
+msgstr "Lập kích cỡ bước"
+
+#:../src/option.c:719
+msgid "Print partial values"
+msgstr "In giá trị phần bộ"
+
+#:../src/option.c:728
+msgid "Hide value"
+msgstr "Ẩn giá trị"
+
+#:../src/option.c:743
 msgid "About zenity"
 msgstr "Giới thiệu Zenity"
 
-#: ../src/option.c:665
+#:../src/option.c:752
 msgid "Print version"
 msgstr "In ra phiên bản"
 
-#: ../src/option.c:1259
+#:../src/option.c:1385
 msgid "General options"
 msgstr "Tùy chọn chung"
 
-#: ../src/option.c:1260
+#:../src/option.c:1386
 msgid "Show general options"
 msgstr "Hiện tùy chọn chung"
 
-#: ../src/option.c:1270
+#:../src/option.c:1396
 msgid "Calendar options"
 msgstr "Tùy chọn lịch"
 
-#: ../src/option.c:1271
+#:../src/option.c:1397
 msgid "Show calendar options"
 msgstr "Hiện tùy chọn lịch"
 
-#: ../src/option.c:1281
+#:../src/option.c:1407
 msgid "Text entry options"
 msgstr "Tùy chọn mục nhập đoạn"
 
-#: ../src/option.c:1282
+#:../src/option.c:1408
 msgid "Show text entry options"
 msgstr "Hiện tùy chọn mục nhập đoạn"
 
-#: ../src/option.c:1292
+#:../src/option.c:1418
 msgid "Error options"
 msgstr "Tùy chọn báo lỗi"
 
-#: ../src/option.c:1293
+#:../src/option.c:1419
 msgid "Show error options"
 msgstr "Hiện tùy chọn báo lỗi"
 
-#: ../src/option.c:1303
+#:../src/option.c:1429
 msgid "Info options"
 msgstr "Tùy chọn thông tin"
 
-#: ../src/option.c:1304
+#:../src/option.c:1430
 msgid "Show info options"
 msgstr "Hiện tùy chọn thông tin"
 
-#: ../src/option.c:1314
+#:../src/option.c:1440
 msgid "File selection options"
 msgstr "Tùy chọn việc chọn tập tin"
 
-#: ../src/option.c:1315
+#:../src/option.c:1441
 msgid "Show file selection options"
 msgstr "Hiện tùy chọn việc chọn tập tin"
 
-#: ../src/option.c:1325
+#:../src/option.c:1451
 msgid "List options"
 msgstr "Tùy chọn danh sách"
 
-#: ../src/option.c:1326
+#:../src/option.c:1452
 msgid "Show list options"
 msgstr "Hiện tùy chọn danh sách"
 
-#: ../src/option.c:1336
+#:../src/option.c:1462
 msgid "Notification icon options"
 msgstr "Tùy chọn biểu tượng thông báo"
 
-#: ../src/option.c:1337
+#:../src/option.c:1463
 msgid "Show notification icon options"
 msgstr "Hiện tùy chọn biểu tượng thông báo"
 
-#: ../src/option.c:1347
+#:../src/option.c:1473
 msgid "Progress options"
 msgstr "Tùy chọn tiến trình"
 
-#: ../src/option.c:1348
+#:../src/option.c:1474
 msgid "Show progress options"
 msgstr "Hiện tùy chọn tiến trình"
 
-#: ../src/option.c:1358
+#:../src/option.c:1484
 msgid "Question options"
 msgstr "Tùy chọn câu hỏi"
 
-#: ../src/option.c:1359
+#:../src/option.c:1485
 msgid "Show question options"
 msgstr "Hiện tùy chọn câu hỏi"
 
-#: ../src/option.c:1369
+#:../src/option.c:1495
 msgid "Warning options"
 msgstr "Tùy chọn cảnh báo"
 
-#: ../src/option.c:1370
+#:../src/option.c:1496
 msgid "Show warning options"
 msgstr "Hiện tùy chọn cảnh báo"
 
-#: ../src/option.c:1380
+#:../src/option.c:1506
+msgid "Scale options"
+msgstr "Tùy chọn co dãn"
+
+#:../src/option.c:1507
+msgid "Show scale options"
+msgstr "Hiện tùy chọn co dãn"
+
+#:../src/option.c:1517
 msgid "Text information options"
 msgstr "Tùy chọn thông tin đoạn"
 
-#: ../src/option.c:1381
+#:../src/option.c:1518
 msgid "Show text information options"
 msgstr "Hiện tùy chọn thông tin đoạn"
 
-#: ../src/option.c:1391
+#:../src/option.c:1528
 msgid "Miscellaneous options"
 msgstr "Các tùy chọn khác"
 
-#: ../src/option.c:1392
+#:../src/option.c:1529
 msgid "Show miscellaneous options"
 msgstr "Hiện tùy chọn khác"
 
-#: ../src/option.c:1417
+#:../src/option.c:1554
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
-"Tùy chọn này không sẵn sàng. Vui lòng xem  « --help » để tìm mọi cách sử "
-"dụng có thể.\n"
+msgstr "Tùy chọn này không sẵn sàng. Hãy chạy lệnh  « --help » để xem mọi cách sử dụng có thể.\n"
 
-#: ../src/option.c:1421
-#, c-format
+#:../src/option.c:1558
+#,c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "Không hỗ trợ tùy chọn « --%s » cho thoại này\n"
 
-#: ../src/option.c:1425
+#:../src/option.c:1562
 msgid "Two or more dialog options specified\n"
 msgstr "Hai hay nhiều hơn các tùy chọn về thoại được định ra\n"
