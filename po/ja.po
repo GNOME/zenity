@@ -1,15 +1,15 @@
 # zenity ja.po.
-# Copyright (C) 2003-2005 Free Software Foundation, Inc.
+# Copyright (C) 2003-2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
-# Takeshi AIHANA <aihana@gnome.gr.jp>, 2003-2005.
+# Takeshi AIHANA <aihana@gnome.gr.jp>, 2003-2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zentiy HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-23 00:33+0900\n"
-"PO-Revision-Date: 2005-12-23 00:32+0900\n"
+"POT-Creation-Date: 2006-01-08 23:08+0900\n"
+"PO-Revision-Date: 2006-01-08 23:07+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -33,13 +33,12 @@ msgstr "向き"
 
 #: ../src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr "トレイの向きです。"
+msgstr "トレイの向きです"
 
 #: ../src/main.c:93
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
-"ダイアログの種類を指定して下さい。\n"
-"詳細は `zenity --help` を参照して下さい。\n"
+"ダイアログの種類を指定して下さい (詳細は `zenity --help` を参照して下さい)\n"
 
 #: ../src/notification.c:161
 msgid "could not parse command from stdin\n"
@@ -49,13 +48,21 @@ msgstr "標準入力からのコマンドラインを解析できませんでし
 msgid "Zenity notification"
 msgstr "Zenity 通知"
 
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "最大値は最小値よりも大きくして下さい\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "値は有効範囲外です\n"
+
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
-msgstr "一覧ダイアログに桁のタイトルが指定されていません。\n"
+msgstr "一覧ダイアログに桁のタイトルが指定されていません\n"
 
 #: ../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
-msgstr "1個だけのリスト・ダイアログを使用して下さい。\n"
+msgstr "1個だけのリスト・ダイアログを使用して下さい\n"
 
 #: ../src/zenity.glade.h:1
 msgid "Add a new entry"
@@ -67,15 +74,15 @@ msgstr "スケール値の調整"
 
 #: ../src/zenity.glade.h:3
 msgid "Adjust the scale value."
-msgstr "スケールの値を調整して下さい。"
+msgstr "スケールの値を調整して下さい"
 
 #: ../src/zenity.glade.h:4
 msgid "All updates are complete."
-msgstr "全ての更新が完了しました。"
+msgstr "全ての更新が完了しました"
 
 #: ../src/zenity.glade.h:5
 msgid "An error has occurred."
-msgstr "エラーが発生しました。"
+msgstr "エラーが発生しました"
 
 #: ../src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
@@ -111,7 +118,7 @@ msgstr "実行中..."
 
 #: ../src/zenity.glade.h:14
 msgid "Select a date from below."
-msgstr "日付を選択して下さい。"
+msgstr "日付を選択して下さい"
 
 #: ../src/zenity.glade.h:15
 msgid "Select a file"
@@ -123,7 +130,7 @@ msgstr "一覧からアイテムの選択"
 
 #: ../src/zenity.glade.h:17
 msgid "Select items from the list below."
-msgstr "一覧からアイテムを選択して下さい。"
+msgstr "一覧からアイテムを選択して下さい"
 
 #: ../src/zenity.glade.h:18
 msgid "Text View"
@@ -483,14 +490,14 @@ msgstr "その他のオプションを表示する"
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
-"このオプションは利用できません。利用可能な全ての用法を --help で確認して下さ"
-"い。\n"
+"このオプションは利用できません (利用可能な全てのオプションは --help で確認し"
+"て下さい)\n"
 
 #: ../src/option.c:1558
 #, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "このダイアログではオプション --%s をサポートしていません。\n"
+msgstr "このダイアログではオプション --%s をサポートしていません\n"
 
 #: ../src/option.c:1562
 msgid "Two or more dialog options specified\n"
-msgstr "二つかそれ以上のオプションを指定して下さい。\n"
+msgstr "二つかそれ以上のオプションを指定して下さい\n"
