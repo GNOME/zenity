@@ -2,15 +2,15 @@
 # translation of zenity.HEAD.mk.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER, 2003
-# Arangel Angov <ufo@linux.net.mk>, 2005.
+# Arangel Angov <ufo@linux.net.mk>, 2005, 2006.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-17 07:03+0100\n"
-"PO-Revision-Date: 2005-12-17 14:25+0100\n"
+"POT-Creation-Date: 2006-02-05 23:54+0100\n"
+"PO-Revision-Date: 2006-02-06 00:31+0100\n"
 "Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
@@ -18,38 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:405
+#: ../src/about.c:248
 msgid "translator-credits"
 msgstr ""
 "Арангел Ангов <ufo@linux.net.m>\n"
 "http://gnome.softver.org.mk"
 
-#: ../src/about.c:435
+#: ../src/about.c:257
 msgid "Display dialog boxes from shell scripts"
 msgstr "Прикажи дијалози од шел скрипти"
-
-#: ../src/about.c:439
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(C) 2003 Sun Microsystems"
-
-#: ../src/about.c:523
-msgid "Credits"
-msgstr "Заслуги"
-
-#: ../src/about.c:550
-msgid "Written by"
-msgstr "Напишано од"
-
-#: ../src/about.c:563
-msgid "Translated by"
-msgstr "Преведено од"
 
 #: ../src/eggtrayicon.c:118
 msgid "Orientation"
@@ -71,6 +48,14 @@ msgstr "неможам да ја парсирам командата од stdin\
 msgid "Zenity notification"
 msgstr "Зенити известување"
 
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Максималната вредност мора да биде поголема од минималната вредност.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Вредноста е надвор од опсегот.\n"
+
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "Нема наслов за колона во Листа дијалогот.\n"
@@ -80,90 +65,82 @@ msgid "You should use only one List dialog type.\n"
 msgstr "Треба да користите само еден тип на дијалог за листање.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "About Zenity"
-msgstr "За Зенити"
-
-#: ../src/zenity.glade.h:2
 msgid "Add a new entry"
 msgstr "Додај нов запис"
 
-#: ../src/zenity.glade.h:3
+#: ../src/zenity.glade.h:2
 msgid "Adjust the scale value"
 msgstr "Промени ја вредноста на скалата"
 
-#: ../src/zenity.glade.h:4
+#: ../src/zenity.glade.h:3
 msgid "Adjust the scale value."
 msgstr "Промени ја вредноста на скалата."
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.glade.h:4
 msgid "All updates are complete."
 msgstr "Сите освежувања се завршени."
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.glade.h:5
 msgid "An error has occurred."
 msgstr "Се појави грешка."
 
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.glade.h:6
 msgid "Are you sure you want to proceed?"
 msgstr "Сигурни сте дека сакате да извршам?"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.glade.h:7
 msgid "C_alendar:"
 msgstr "К_алендар:"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.glade.h:8
 msgid "Calendar selection"
 msgstr "Избор на календарот"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.glade.h:9
 msgid "Error"
 msgstr "Грешка"
 
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.glade.h:10
 msgid "Information"
 msgstr "Информација"
 
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.glade.h:11
 msgid "Progress"
 msgstr "Прогрес"
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.glade.h:12
 msgid "Question"
 msgstr "Прашање"
 
-#: ../src/zenity.glade.h:14
+#: ../src/zenity.glade.h:13
 msgid "Running..."
 msgstr "Извршувам..."
 
-#: ../src/zenity.glade.h:15
+#: ../src/zenity.glade.h:14
 msgid "Select a date from below."
 msgstr "Одберете датум подолу."
 
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.glade.h:15
 msgid "Select a file"
 msgstr "Одберете датотека"
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.glade.h:16
 msgid "Select items from the list"
 msgstr "Одберете ставка од листата"
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.glade.h:17
 msgid "Select items from the list below."
 msgstr "Одберете ставка од листата подолу."
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.glade.h:18
 msgid "Text View"
 msgstr "Текстуален поглед"
 
-#: ../src/zenity.glade.h:20
+#: ../src/zenity.glade.h:19
 msgid "Warning"
 msgstr "Предупредување"
 
-#: ../src/zenity.glade.h:21
-msgid "_Credits"
-msgstr "_Заслуги"
-
-#: ../src/zenity.glade.h:22
+#: ../src/zenity.glade.h:20
 msgid "_Enter new text:"
 msgstr "_Внесете нов текст:"
 
