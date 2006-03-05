@@ -1,14 +1,14 @@
 # zenity italian translation
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
-# Stefano Canepa <sc@linux.it>, 2003,2004, 2005
-# Luca Ferretti <elle.uca@infinito.it>, 2005
+# Stefano Canepa <sc@linux.it>, 2003, 2004, 2005, 2006.
+# Luca Ferretti <elle.uca@infinito.it>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-20 22:58+0100\n"
-"PO-Revision-Date: 2005-12-20 23:00+0100\n"
+"POT-Creation-Date: 2006-03-05 18:43+0100\n"
+"PO-Revision-Date: 2006-03-05 18:42+0100\n"
 "Last-Translator: Luca Ferretti <elle.uca@infinito.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,9 @@ msgstr ""
 
 #: ../src/about.c:248
 msgid "translator-credits"
-msgstr "Stefano Canepa <sc@linux.it>"
+msgstr ""
+"Stefano Canepa <sc@linux.it>\n"
+" Luca Ferretti <elle.uca@infinito.it>"
 
 #: ../src/about.c:257
 msgid "Display dialog boxes from shell scripts"
@@ -45,6 +47,14 @@ msgstr "impossibile analizzare il comando da stdin\n"
 msgid "Zenity notification"
 msgstr "Notifica di zenity"
 
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Il valore massimo deve essere maggiore del valore minimo.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Valore fuori dai limiti.\n"
+
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
 msgstr "Nessun titolo per le colonne nel dialogo Lista.\n"
@@ -59,11 +69,12 @@ msgstr "Aggiungere una voce"
 
 #: ../src/zenity.glade.h:2
 msgid "Adjust the scale value"
-msgstr ""
+msgstr "Correggere il valore della scala."
 
+# Ho come idea che una delle due traduzioni sia sbagliato
 #: ../src/zenity.glade.h:3
 msgid "Adjust the scale value."
-msgstr ""
+msgstr "Correggere il valore della scala."
 
 #: ../src/zenity.glade.h:4
 msgid "All updates are complete."
@@ -287,7 +298,7 @@ msgstr "Nasconde una colonna specifica"
 
 #: ../src/option.c:481
 msgid "Display notification"
-msgstr "Mostra la notifica"
+msgstr "Mostra un'icona nell'area di notifica"
 
 #: ../src/option.c:490
 msgid "Set the notification text"
@@ -331,9 +342,8 @@ msgid "Display warning dialog"
 msgstr "Mostra una finestra di dialogo di avviso"
 
 #: ../src/option.c:665
-#, fuzzy
 msgid "Display scale dialog"
-msgstr "Mostra una finestra di dialogo con il calendario"
+msgstr "Mostra una finestra di dialogo con la scala"
 
 #: ../src/option.c:683
 msgid "Set initial value"
@@ -348,17 +358,16 @@ msgid "Set maximum value"
 msgstr "Imposta il valore massimo"
 
 #: ../src/option.c:710
-#, fuzzy
 msgid "Set step size"
-msgstr "Imposta il nome del file"
+msgstr "Imposta la dimensione del passo"
 
 #: ../src/option.c:719
 msgid "Print partial values"
-msgstr ""
+msgstr "Stampa i valori parziali"
 
 #: ../src/option.c:728
 msgid "Hide value"
-msgstr ""
+msgstr "Nascondi il valore"
 
 #: ../src/option.c:743
 msgid "About zenity"
@@ -457,14 +466,12 @@ msgid "Show warning options"
 msgstr "Mostra le opzioni della finestra di dialogo di avviso"
 
 #: ../src/option.c:1506
-#, fuzzy
 msgid "Scale options"
-msgstr "Mostra le opzioni del calendario"
+msgstr "Opzioni della scala"
 
 #: ../src/option.c:1507
-#, fuzzy
 msgid "Show scale options"
-msgstr "Mostra le opzioni del calendario"
+msgstr "Mostra le opzioni della scala"
 
 #: ../src/option.c:1517
 msgid "Text information options"
@@ -496,27 +503,3 @@ msgstr "L'opzione: %s non è supportata da questa finestra di dialogo\n"
 #: ../src/option.c:1562
 msgid "Two or more dialog options specified\n"
 msgstr "Specificate due o più opzioni per la finestra di dialogo\n"
-
-#~ msgid "(C) 2003 Sun Microsystems"
-#~ msgstr "© 2003 Sun Microsystems"
-
-#~ msgid "Credits"
-#~ msgstr "Ringraziamenti"
-
-#~ msgid "Written by"
-#~ msgstr "Scritto da"
-
-#~ msgid "Translated by"
-#~ msgstr "Tradotto da"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "About Zenity"
-#~ msgstr "Informazioni"
-
-#~ msgid "_Credits"
-#~ msgstr "_Ringraziamenti"
-
-#~ msgid "Syntax error\n"
-#~ msgstr "Errore di sintassi\n"
