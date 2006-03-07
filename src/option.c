@@ -424,7 +424,7 @@ static GOptionEntry list_options[] = {
   {
     "separator",
     '\0',
-    0,
+    G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_separator,
     N_("Set output separator character"),
