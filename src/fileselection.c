@@ -57,6 +57,9 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 					GTK_STOCK_OK, GTK_RESPONSE_OK,
 					NULL);
 
+  gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), 
+                                                  file_data->confirm_overwrite);
+
   g_signal_connect (G_OBJECT (dialog), "response", 
                     G_CALLBACK (zenity_fileselection_dialog_response), file_data);
 

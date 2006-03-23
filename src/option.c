@@ -63,6 +63,7 @@ static gboolean zenity_info_active;
 static gboolean zenity_file_active;
 static gboolean zenity_file_directory;
 static gboolean zenity_file_save;
+static gboolean zenity_file_confirm_overwrite;
 
 /* List Dialog Options */
 static gboolean zenity_list_active;
@@ -369,6 +370,15 @@ static GOptionEntry file_selection_options[] = {
     &zenity_general_separator,
     N_("Set output separator character"),
     N_("SEPARATOR")
+  },
+  {
+    "confirm-overwrite",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_file_confirm_overwrite,
+    N_("Confirm file selection if filename already exists"),
+    NULL
   },
   { 
     NULL 
@@ -921,6 +931,7 @@ zenity_file_pre_callback (GOptionContext *context,
   zenity_file_active = FALSE;
   zenity_file_directory = FALSE;
   zenity_file_save = FALSE;
+  zenity_file_confirm_overwrite = FALSE;
 
   return TRUE;
 }
@@ -1170,6 +1181,7 @@ zenity_file_post_callback (GOptionContext *context,
     results->file_data->multi = zenity_general_multiple;
     results->file_data->directory = zenity_file_directory;
     results->file_data->save = zenity_file_save;
+    results->file_data->confirm_overwrite = zenity_file_confirm_overwrite;
     results->file_data->separator = zenity_general_separator;
   } else {
     if (zenity_file_directory)
