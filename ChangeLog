@@ -1,8 +1,19 @@
+2006-03-22  Lucas Rocha  <lucasr@gnome.org>
+
+	Implement the "message" command on notification icon
+	with libnotify bubbles. Patch from Davyd Madeley 
+	<davyd@madeley.id.au>.
+
+	* configure.in: add libnotify checking.
+	* src/notification.c (zenity_notification_handle_stdin,
+	zenity_notification): initialize libnotify and implement
+	"message" command.
+
 2006-03-21  Gora Mohanty  <gmohanty@cvs.gnome.org>
 
         * configure.in: Added or (Oriya) to ALL_LINGUAS.
 
-2005-03-13  Lucas Rocha  <lucasr@gnome.org>
+2006-03-13  Lucas Rocha  <lucasr@gnome.org>
 
 	* configure.in: Post release bump, for unstable 
 	2.15.x development.

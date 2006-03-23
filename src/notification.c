@@ -26,6 +26,11 @@
 #include <glade/glade.h>
 #include <time.h>
 #include <string.h>
+
+#ifdef HAVE_LIBNOTIFY
+#include <libnotify/notify.h>
+#endif
+
 #include "zenity.h"
 #include "eggtrayicon.h"
 #include "util.h"
@@ -182,7 +187,33 @@ zenity_notification_handle_stdin (GIOChannel  *channel,
 	  g_warning ("Could not load notification icon : %s", value);
 	}
       } else if (!strcmp (command, "message")) {
-	g_warning ("haven't implemented message support yet");
+#ifdef HAVE_LIBNOTIFY
+	/* display a notification bubble */
+	if (notify_is_initted ()) {
+	  GError *error = NULL;
+	  NotifyNotification *n;
+	  GdkPixbuf *icon;
+
+	  n = notify_notification_new (g_strcompress (value), NULL, NULL,
+				       GTK_WIDGET (tray_icon));
+
+	  icon = gtk_image_get_pixbuf (GTK_IMAGE (icon_image));
+
+	  notify_notification_set_icon_from_pixbuf (n, icon);
+
+	  notify_notification_show (n, &error);
+	  if (error) {
+	    g_warning (error->message);
+	    g_error_free (error);
+	  }
+
+	  g_object_unref (G_OBJECT (n));
+	} else {
+#else
+	{ /* this brace is for balance */
+#endif
+ 	  g_warning ("Notification framework not available");
+	}
       } else if (!strcmp (command, "tooltip")) {
 	gtk_tooltips_set_tip (tooltips, icon_event_box, value, value);
       } else if (!strcmp (command, "visible")) {
@@ -275,6 +306,12 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 		      G_CALLBACK (zenity_notification_icon_press_callback), data);
   }
 
+#ifdef HAVE_LIBNOTIFY
+  /* create the notification widget */
+  if (!notify_is_initted ())
+	  notify_init (_("Zenity notification"));
+#endif
+  
   gtk_widget_show_all (GTK_WIDGET (tray_icon));
   
   /* Does nothing at the moment */

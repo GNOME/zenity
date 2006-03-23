@@ -67,6 +67,20 @@ dnl *******************************
 AC_PATH_PROG(PERL,perl,)
 
 dnl *******************************
+dnl libnotify check
+dnl *******************************
+PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= 0.3.2,
+                  HAVE_LIBNOTIFY="yes", HAVE_LIBNOTIFY="no")
+if test "x$HAVE_LIBNOTIFY" = "xyes"; then
+	ZENITY_CFLAGS="$ZENITY_CFLAGS $LIBNOTIFY_CFLAGS"
+	ZENITY_LIBS="$ZENITY_LIBS $LIBNOTIFY_LIBS"
+
+	AC_SUBST(ZENITY_CFLAGS)
+	AC_SUBST(ZENITY_LIBS)
+	AC_DEFINE(HAVE_LIBNOTIFY, 1, [libnotify is available on this machine])
+fi
+
+dnl *******************************
 dnl Internationalization
 dnl ******************************* 
 
