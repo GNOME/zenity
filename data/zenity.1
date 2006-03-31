@@ -250,7 +250,7 @@ zenity \-\-list \-\-checklist \-\-column "Buy" \-\-column "Item" TRUE Apples TRU
 .PP
 Display a progress dialog while searching for all the postscript files in your home directory
 .P
-find `echo $HOME` '*.ps' | zenity \-\-progress \-\-pulsate
+find $HOME \-name '*.ps' | zenity \-\-progress \-\-pulsate
 .SH AUTHOR
 \fBZenity\fP was written by Glynn Foster <glynn.foster@sun.com>.
 .P
