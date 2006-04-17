@@ -671,7 +671,7 @@ zenity_tree_extract_column_indexes (char *indexes, int n_columns)
     if (index > 0 && index <= n_columns) {
       result[j] = index;
       j++;
-      g_renew (gint, result, j + 1);
+      result = g_renew (gint, result, j + 1);
     }
   }
   result[j] = 0;

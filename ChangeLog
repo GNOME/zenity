@@ -1,5 +1,12 @@
 2006-04-16  Lucas Rocha  <lucasr@gnome.org>
 
+	* src/tree.c (zenity_tree_extract_column_indexes): 
+	don't ignore return value from g_renew() (Fixes 
+	bug #338038). Patch from Behdad Esfahbod 
+	<gnome@behdad.org>.
+
+2006-04-16  Lucas Rocha  <lucasr@gnome.org>
+
 	* configure.in:
 	* po/LINGUAS:
 
