@@ -15,21 +15,31 @@ zenity_SOURCES = \
 	text.c		\
 	progress.c	\
 	tree.c		\
-	notification.c	\
-	eggtrayicon.c	\
 	eggtrayicon.h	\
+	eggtrayicon.c	\
+	notification.c	\
 	about.c		\
 	util.h		\
 	util.c
 
-INCLUDES = \
-	$(ZENITY_CFLAGS)				\
+zenity_CPPFLAGS = \
 	-I$(includedir)					\
-	-DGNOMELOCALEDIR=\""$(zenitylocaledir)"\"	\
-	-DZENITY_DATADIR=\""$(datadir)/zenity"\"
+	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
+	-DZENITY_DATADIR=\""$(pkgdatadir)"\"		\
+	$(AM_CPPFLAGS)
+
+zenity_CFLAGS = \
+	$(ZENITY_CFLAGS)	\
+	$(LIBNOTIFY_CFLAGS)	\
+	$(WARN_CFLAGS)		\
+	$(AM_CFLAGS)
+
+zenity_LDFLAGS = \
+	$(AM_LDFLAGS)
 
 zenity_LDADD = \
 	$(ZENITY_LIBS)		\
+	$(LIBNOTIFY_LIBS)	\
 	$(X_LIBS)
 
 gladedir = $(datadir)/zenity

@@ -6,7 +6,7 @@ clothes_DATA = \
 	surfboard.png		\
 	hawaii-shirt.png
 
-imagesdir = $(datadir)/zenity/
+imagesdir = $(datadir)/zenity
 images_DATA = \
 	zenity.png		\
 	zenity-calendar.png	\
