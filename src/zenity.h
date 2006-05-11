@@ -83,6 +83,7 @@ typedef struct {
   gchar   *dialog_text;
   gchar   *entry_text;
   gboolean hide_text;
+  const gchar **data;
 } ZenityEntryData;
 
 typedef struct {

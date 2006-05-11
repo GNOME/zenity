@@ -1116,7 +1116,7 @@ zenity_entry_post_callback (GOptionContext *context,
 		            GError        **error)
 {
   zenity_option_set_dialog_mode (zenity_entry_active, MODE_ENTRY);
-
+  
   if (results->mode == MODE_ENTRY) {
     results->entry_data->dialog_text = zenity_general_dialog_text;
     results->entry_data->entry_text = zenity_entry_entry_text;

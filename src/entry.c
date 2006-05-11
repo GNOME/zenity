@@ -30,6 +30,18 @@
 static void zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 static GtkWidget *entry;
+static gint n_entries = 0;
+
+static void
+zenity_entry_fill_entries (GSList **entries, const gchar **args)
+{
+  gint i = 0;
+
+  while (args[i] != NULL) {
+    *entries = g_slist_append (*entries, (gchar *) args[i]);
+    i++;
+  }
+}
 
 void 
 zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
@@ -37,7 +49,10 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
   GladeXML *glade_dialog = NULL;
   GtkWidget *dialog;
   GtkWidget *text;
-
+  GSList *entries = NULL; 
+  GSList *tmp;
+  GtkWidget *vbox;
+  
   glade_dialog = zenity_util_load_glade_file ("zenity_entry_dialog");
 
   if (glade_dialog == NULL) {
@@ -48,7 +63,6 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
   glade_xml_signal_autoconnect (glade_dialog);
 	
   dialog = glade_xml_get_widget (glade_dialog, "zenity_entry_dialog");
-
 	
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_entry_dialog_response), data);
@@ -65,17 +79,41 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
   if (entry_data->dialog_text)
     gtk_label_set_text_with_mnemonic (GTK_LABEL (text), entry_data->dialog_text);
+  
+  vbox = glade_xml_get_widget (glade_dialog, "vbox4");
+  
+  zenity_entry_fill_entries(&entries, entry_data->data);
+  
+  n_entries = g_slist_length (entries);
 
-  entry = glade_xml_get_widget (glade_dialog, "zenity_entry_input");
-	
+  if (n_entries > 1) {
+    entry = gtk_combo_box_entry_new_text ();
+
+    for (tmp = entries; tmp; tmp = tmp->next) {
+      gtk_combo_box_append_text (GTK_COMBO_BOX (entry), tmp->data);
+    }
+
+    if (entry_data->entry_text) {
+      gtk_combo_box_prepend_text (GTK_COMBO_BOX (entry), entry_data->entry_text);
+      gtk_combo_box_set_active (GTK_COMBO_BOX (entry), 0);
+    }
+  } else {
+    entry = gtk_entry_new();
+    
+    if (entry_data->entry_text)
+      gtk_entry_set_text (GTK_ENTRY (entry), entry_data->entry_text);
+
+    if (entry_data->hide_text)
+      g_object_set (G_OBJECT (entry), "visibility", FALSE, NULL);
+
+  }
+
+  gtk_widget_show (entry);
+
+  gtk_box_pack_end (GTK_BOX (vbox), entry, FALSE, FALSE, 0);
+
   if (glade_dialog)
     g_object_unref (glade_dialog);
-
-  if (entry_data->entry_text)
-    gtk_entry_set_text (GTK_ENTRY (entry), entry_data->entry_text);
-
-  if (entry_data->hide_text)
-    g_object_set (G_OBJECT (entry), "visibility", FALSE, NULL);
 
   gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
 
@@ -93,7 +131,12 @@ zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
   switch (response) {
     case GTK_RESPONSE_OK:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-      text = gtk_entry_get_text (GTK_ENTRY (entry));
+      if (n_entries > 1) {
+        text = gtk_combo_box_get_active_text (GTK_COMBO_BOX (entry));
+      }
+      else {
+        text = gtk_entry_get_text (GTK_ENTRY (entry));      
+      }
 
       if (text != NULL)
         g_print ("%s\n", text);

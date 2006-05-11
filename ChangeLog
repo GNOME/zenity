@@ -1,5 +1,12 @@
 2006-05-10  Lucas Rocha  <lucasr@gnome.org>
 
+	* src/entry.c (zenity_entry_fill_entries, zenity_entry),
+	src/main.c, src/option.c, src/zenity.glade, src/zenity.h:
+	add optional dropdown menu to entry dialog (Fixed bug #311038).
+	Patch from Diego Escalante Urrelo <dieguito@gmail.com>.
+
+2006-05-10  Lucas Rocha  <lucasr@gnome.org>
+
 	* .cvsignore, Makefile.am, autogen.sh, configure.in,
 	data/Makefile.am, po/.cvsignore, src/Makefile.am: move to
 	automake 1.9 and several cleanups (Fixes bug #341056).

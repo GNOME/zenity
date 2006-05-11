@@ -56,6 +56,7 @@ main (gint argc, gchar **argv) {
       zenity_calendar (results->data, results->calendar_data);
       break;
     case MODE_ENTRY:
+      results->entry_data->data = (const gchar **) argv + 1;
       zenity_entry (results->data, results->entry_data);
       break;
     case MODE_ERROR:
