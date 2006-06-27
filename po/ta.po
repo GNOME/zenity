@@ -1,78 +1,88 @@
+# translation of zenity.HEAD.ta.po to Tamil
 # translation of ta.po to Tamil
 # Tamil translation of Tamil Zenity 2.4.
-# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2006 Free Software Foundation, Inc.
 # Dinesh Nadarajah <n_dinesh@yahoo.com>, 2003.
 # Jayaradha N <jaya@pune.redhat.com>, 2004.
+# Felix <ifelix@redhat.com>, 2006.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ta\n"
+"Project-Id-Version: zenity.HEAD.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2004-09-06 17:55+0530\n"
-"Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
-"Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
+"POT-Creation-Date: 2006-06-26 07:29+0200\n"
+"PO-Revision-Date: 2006-06-27 14:06+0530\n"
+"Last-Translator: Felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "0500\n"
-"X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 "\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
+#: ../src/about.c:65
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+msgstr ""
+
+#: ../src/about.c:69
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+msgstr ""
+
+#: ../src/about.c:73
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+
+#: ../src/about.c:264
 msgid "translator-credits"
 msgstr "மொழிபெயர்பாளர்-நன்றிகள்"
 
-#: ../src/about.c:433
+#: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
 msgstr "ஷெல் சிறுநிரலிலிருந்து உரையாடல் பெட்டியை காட்டுகிறது"
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(C) 2003 சர் மைரோஸிஸ்மஸ்"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "புகழ்கள்"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "எழுதியவர்"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "மொழிபெயர்ப்பாலர்"
-
 #: ../src/eggtrayicon.c:118
 msgid "Orientation"
-msgstr ""
+msgstr "திசையமைப்பு"
 
 #: ../src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr ""
+msgstr "தட்டின் திசையமைப்பு"
 
-#: ../src/main.c:90
+#: ../src/main.c:94
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "உரையாடம் வகையை குறிப்பிட வேண்டும்.zenity --help' ஐ பார்க்கவும்\n"
 
-#: ../src/notification.c:161
+#: ../src/notification.c:166
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "stdinலிருந்து கட்டளையை பகுக்க முடியாது\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
-#, fuzzy
+#: ../src/notification.c:261 ../src/notification.c:290
+#: ../src/notification.c:312
 msgid "Zenity notification"
-msgstr "தகவல்உரையாடலை காட்டு"
+msgstr "Zenity அறிவிப்பு"
+
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "அதிகபட்ச மதிப்பு குறைந்தபட்ச மதிப்பை விட அதிகமாக இருக்க வேண்டும்.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "மதிப்பு வரையறை தாண்டியுள்ளது.\n"
 
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
@@ -80,19 +90,19 @@ msgstr "பட்டியல் உரையாடல் பெட்டிய�
 
 #: ../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "ஒரே ஒரு பட்டியல் உரையாடல் வகையை நீங்கள் பயன்படுத்த வேண்டும்.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "Zenity பற்றி"
-
-#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "புதிய உள்ளீட்டை சேர்"
+
+#: ../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "அளவு மதிப்பினை சரிப்படுத்து"
+
+#: ../src/zenity.glade.h:3
+msgid "Adjust the scale value."
+msgstr "அளவு மதிப்பினை சரிப்படுத்து."
 
 #: ../src/zenity.glade.h:4
 msgid "All updates are complete."
@@ -159,154 +169,153 @@ msgid "Warning"
 msgstr "எச்சரிக்கை"
 
 #: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "_புகழ்கள்"
-
-#: ../src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "(_E)புதிய உரையை உள்ளிடவும்:"
 
-#: ../src/option.c:105
+#: ../src/option.c:115
 msgid "Set the dialog title"
 msgstr "உரையாடல் தலைப்பை அமை"
 
-#: ../src/option.c:106
+#: ../src/option.c:116
 msgid "TITLE"
 msgstr "தலைப்பு"
 
-#: ../src/option.c:114
+#: ../src/option.c:124
 msgid "Set the window icon"
 msgstr "சாளர சின்னத்தை அமை"
 
-#: ../src/option.c:115
+#: ../src/option.c:125
 msgid "ICONPATH"
 msgstr "ICONPATH"
 
-#: ../src/option.c:123
+#: ../src/option.c:133
 msgid "Set the width"
 msgstr "அகலத்தை அமை"
 
-#: ../src/option.c:124
+#: ../src/option.c:134
 msgid "WIDTH"
 msgstr "WIDTH"
 
-#: ../src/option.c:132
+#: ../src/option.c:142
 msgid "Set the height"
 msgstr "உயரத்தை அமை"
 
-#: ../src/option.c:133
+#: ../src/option.c:143
 msgid "HEIGHT"
 msgstr "HEIGHT"
 
-#: ../src/option.c:147
+#: ../src/option.c:157
 msgid "Display calendar dialog"
 msgstr "நாள்காட்டி உரையாடலை காட்டு"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: ../src/option.c:166 ../src/option.c:226 ../src/option.c:269
+#: ../src/option.c:302 ../src/option.c:404 ../src/option.c:533
+#: ../src/option.c:585 ../src/option.c:651 ../src/option.c:684
 msgid "Set the dialog text"
 msgstr "உரை உரையாடலை அமை"
 
-#: ../src/option.c:165
+#: ../src/option.c:175
 msgid "Set the calendar day"
 msgstr "நாள்காட்டி தினத்தை அமை"
 
-#: ../src/option.c:174
+#: ../src/option.c:184
 msgid "Set the calendar month"
 msgstr "நாள்காட்டி மாதத்தை அமைநாள்காட்டி மாத்தை அம"
 
-#: ../src/option.c:183
+#: ../src/option.c:193
 msgid "Set the calendar year"
 msgstr "நாள்காட்டி வருடத்தை அமை"
 
-#: ../src/option.c:192
+#: ../src/option.c:202
 msgid "Set the format for the returned date"
 msgstr "தருவிளைவு தேதியின் வடிவமைப்பை அமை"
 
-#: ../src/option.c:207
+#: ../src/option.c:217
 msgid "Display text entry dialog"
 msgstr "உரை உள்ளீடு உரையாடலை காட்டு"
 
-#: ../src/option.c:225
+#: ../src/option.c:235
 msgid "Set the entry text"
 msgstr "உரை உள்ளீட்டை அமை"
 
-#: ../src/option.c:234
+#: ../src/option.c:244
 msgid "Hide the entry text"
 msgstr "உரை உள்ளீட்டை மறை"
 
-#: ../src/option.c:250
+#: ../src/option.c:260
 msgid "Display error dialog"
 msgstr "பிழை உரையை காட்டு"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: ../src/option.c:278 ../src/option.c:311 ../src/option.c:594
+#: ../src/option.c:660
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "உரை மடித்தலை செயல்படுத்த வேண்டாம்"
 
-#: ../src/option.c:283
+#: ../src/option.c:293
 msgid "Display info dialog"
 msgstr "தகவல்உரையாடலை காட்டு"
 
-#: ../src/option.c:316
+#: ../src/option.c:326
 msgid "Display file selection dialog"
 msgstr "கோப்பு தேர்வு உரையாடலை காட்டு"
 
-#: ../src/option.c:325
+#: ../src/option.c:335
 msgid "Set the filename"
 msgstr "கோப்பு பெயரை அமை"
 
-#: ../src/option.c:326 ../src/option.c:600
+#: ../src/option.c:336 ../src/option.c:619
 msgid "FILENAME"
 msgstr "FILENAME"
 
-#: ../src/option.c:334
+#: ../src/option.c:344
 msgid "Allow multiple files to be selected"
 msgstr "பல கோப்புகள் தேர்வு செய்யப்படுவதை அமை"
 
-#: ../src/option.c:343
+#: ../src/option.c:353
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "அடைவு-மட்டும் தேர்வினை செயல்படுத்து"
 
-#: ../src/option.c:352
+#: ../src/option.c:362
 msgid "Activate save mode"
-msgstr ""
+msgstr "சேமிப்பு முறையை செயல்படுத்து"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: ../src/option.c:371 ../src/option.c:440
 msgid "Set output separator character"
 msgstr "விளியீடு பிரிப்பான் எழுத்து"
 
-#: ../src/option.c:362 ../src/option.c:422
+#: ../src/option.c:372 ../src/option.c:441
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
-#: ../src/option.c:376
+#: ../src/option.c:380
+msgid "Confirm file selection if filename already exists"
+msgstr "கோப்பு பெயர் ஏற்கனவே இருந்தால் கோப்பு தேர்வினை உறுதிபடுத்தவும்"
+
+#: ../src/option.c:395
 msgid "Display list dialog"
 msgstr "பட்டியல் உரையாடலை காட்டு"
 
-#: ../src/option.c:394
+#: ../src/option.c:413
 msgid "Set the column header"
 msgstr "நெடுவரிசை தலைப்பை அமை"
 
-#: ../src/option.c:403
+#: ../src/option.c:422
 msgid "Use check boxes for first column"
 msgstr "முதல் நெடுவரிசைக்கு சோதனைப்பெட்டியை பயன்படுத்து"
 
-#: ../src/option.c:412
+#: ../src/option.c:431
 msgid "Use radio buttons for first column"
 msgstr "முதல் நெடுவரிசைக்கு ரேடியோ பட்டனை பயன்படுத்து"
 
-#: ../src/option.c:430
-#, fuzzy
+#: ../src/option.c:449
 msgid "Allow multiple rows to be selected"
-msgstr "பல கோப்புகள் தேர்வு செய்யப்படுவதை அமை"
+msgstr "பல நிரைகளை தேர்ந்தெடுக்க அனுமதி"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: ../src/option.c:458 ../src/option.c:627
 msgid "Allow changes to text"
 msgstr "உரையில் மாற்றங்களை அனுமதி"
 
-#: ../src/option.c:448
+#: ../src/option.c:467
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -314,194 +323,213 @@ msgstr ""
 "நெடுவரிசை அச்சடித்தலை குறிப்பிடு (Default is 1. 'ALL' can be used to print all "
 "columns)"
 
-#: ../src/option.c:457
+#: ../src/option.c:476
 msgid "Hide a specific column"
-msgstr ""
+msgstr "ஒரு குறிப்பிட்ட நிரலை மறை"
 
-#: ../src/option.c:472
-#, fuzzy
+#: ../src/option.c:491
 msgid "Display notification"
-msgstr "தகவல்உரையாடலை காட்டு"
+msgstr "அறிவிப்பினை காட்டு"
 
-#: ../src/option.c:481
-#, fuzzy
+#: ../src/option.c:500
 msgid "Set the notification text"
-msgstr "உரை உரையாடலை அமை"
+msgstr "அறிவிப்பு உரையை அமை"
 
-#: ../src/option.c:490
+#: ../src/option.c:509
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "stdinல் கட்டளைகளை கேட்டல்"
 
-#: ../src/option.c:505
+#: ../src/option.c:524
 msgid "Display progress indication dialog"
 msgstr "முன்னேற்றப்பட்டி உரையாடலை காட்டு"
 
-#: ../src/option.c:523
+#: ../src/option.c:542
 msgid "Set initial percentage"
 msgstr "துவக்க சதவிகிதத்தை அமை"
 
-#: ../src/option.c:532
+#: ../src/option.c:551
 msgid "Pulsate progress bar"
 msgstr "முன்னேற்ற பட்டியை பல்ஸேட்"
 
-#: ../src/option.c:542
+#: ../src/option.c:561
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "100% முடிப்பதற்கு முன் ரத்து செய்"
 
-#: ../src/option.c:557
+#: ../src/option.c:576
 msgid "Display question dialog"
 msgstr "கேள்வி உரையாடலை காட்டு"
 
-#: ../src/option.c:590
+#: ../src/option.c:609
 msgid "Display text information dialog"
 msgstr "உரை தகவல் உரையாடலை காட்டு"
 
-#: ../src/option.c:599
+#: ../src/option.c:618
 msgid "Open file"
 msgstr "கோப்பை திற"
 
-#: ../src/option.c:623
+#: ../src/option.c:642
 msgid "Display warning dialog"
 msgstr "எச்சரிக்கை உரையாடலை காட்டு"
 
-#: ../src/option.c:656
+#: ../src/option.c:675
+msgid "Display scale dialog"
+msgstr "அளவு உரையாடலை காட்டு"
+
+#: ../src/option.c:693
+msgid "Set initial value"
+msgstr "ஆரம்ப மதிப்பினை அமை"
+
+#: ../src/option.c:702
+msgid "Set minimum value"
+msgstr "குறைந்தபட்ச மதிப்பினை அமை"
+
+#: ../src/option.c:711
+msgid "Set maximum value"
+msgstr "அதிகபட்ச மதிப்பினை அமை"
+
+#: ../src/option.c:720
+msgid "Set step size"
+msgstr "நிலை அளவினை அமை"
+
+#: ../src/option.c:729
+msgid "Print partial values"
+msgstr "பகுதி மதிப்புகளை அச்சிடு"
+
+#: ../src/option.c:738
+msgid "Hide value"
+msgstr "மதிப்பினை மறை"
+
+#: ../src/option.c:753
 msgid "About zenity"
 msgstr "zenity பற்றி"
 
-#: ../src/option.c:665
+#: ../src/option.c:762
 msgid "Print version"
 msgstr "அச்சடிக்கும் பதிப்பு"
 
-#: ../src/option.c:1259
+#: ../src/option.c:1397
 msgid "General options"
 msgstr "பொது தேர்வு"
 
-#: ../src/option.c:1260
-#, fuzzy
+#: ../src/option.c:1398
 msgid "Show general options"
-msgstr "பொது தேர்வு"
+msgstr "பொதுவான விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1408
 msgid "Calendar options"
 msgstr "நாள்காட்டி தேர்வு"
 
-#: ../src/option.c:1271
-#, fuzzy
+#: ../src/option.c:1409
 msgid "Show calendar options"
-msgstr "நாள்காட்டி தேர்வு"
+msgstr "நாள்காட்டி விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1281
+#: ../src/option.c:1419
 msgid "Text entry options"
 msgstr "உரை உள்ளிடும் தேர்வு"
 
-#: ../src/option.c:1282
-#, fuzzy
+#: ../src/option.c:1420
 msgid "Show text entry options"
-msgstr "உரை உள்ளிடும் தேர்வு"
+msgstr "உரை உள்ளிடும் விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1430
 msgid "Error options"
 msgstr "பிழை தேர்வு"
 
-#: ../src/option.c:1293
-#, fuzzy
+#: ../src/option.c:1431
 msgid "Show error options"
-msgstr "பிழை தேர்வு"
+msgstr "பிழை விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1441
 msgid "Info options"
 msgstr "தகவல் தேர்வு"
 
-#: ../src/option.c:1304
-#, fuzzy
+#: ../src/option.c:1442
 msgid "Show info options"
-msgstr "தகவல் தேர்வு"
+msgstr "தகவல் விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1314
+#: ../src/option.c:1452
 msgid "File selection options"
 msgstr "கோப்பு தேர்ந்தெடுக்கும் தேர்வு"
 
-#: ../src/option.c:1315
-#, fuzzy
+#: ../src/option.c:1453
 msgid "Show file selection options"
-msgstr "கோப்பு தேர்ந்தெடுக்கும் தேர்வு"
+msgstr "கோப்பு தேர்ந்தெடுக்கும் விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1325
+#: ../src/option.c:1463
 msgid "List options"
 msgstr "பட்டியல் தேர்வு"
 
-#: ../src/option.c:1326
-#, fuzzy
+#: ../src/option.c:1464
 msgid "Show list options"
-msgstr "பட்டியல் தேர்வு"
+msgstr "பட்டியல் விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1336
-#, fuzzy
+#: ../src/option.c:1474
 msgid "Notification icon options"
-msgstr "கேள்வி தேர்வு"
+msgstr "அறிவிப்பு சின்ன விருப்பங்கள்"
 
-#: ../src/option.c:1337
-#, fuzzy
+#: ../src/option.c:1475
 msgid "Show notification icon options"
-msgstr "கேள்வி தேர்வு"
+msgstr "அறிவிப்பு சின்ன விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1347
+#: ../src/option.c:1485
 msgid "Progress options"
 msgstr "முன்னேற்றப்பட்டி தேர்வு"
 
-#: ../src/option.c:1348
-#, fuzzy
+#: ../src/option.c:1486
 msgid "Show progress options"
-msgstr "முன்னேற்றப்பட்டி தேர்வு"
+msgstr "முன்னேற்ற விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1358
+#: ../src/option.c:1496
 msgid "Question options"
 msgstr "கேள்வி தேர்வு"
 
-#: ../src/option.c:1359
-#, fuzzy
+#: ../src/option.c:1497
 msgid "Show question options"
-msgstr "கேள்வி தேர்வு"
+msgstr "வினா விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1369
+#: ../src/option.c:1507
 msgid "Warning options"
 msgstr "எச்சரிக்கை தேர்வு"
 
-#: ../src/option.c:1370
-#, fuzzy
+#: ../src/option.c:1508
 msgid "Show warning options"
-msgstr "எச்சரிக்கை தேர்வு"
+msgstr "எச்சரிக்கை விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1380
-#, fuzzy
+#: ../src/option.c:1518
+msgid "Scale options"
+msgstr "அளவு விருப்பங்கள்"
+
+#: ../src/option.c:1519
+msgid "Show scale options"
+msgstr "அளவு விருப்பங்களை காட்டு"
+
+#: ../src/option.c:1529
 msgid "Text information options"
-msgstr "கேள்வி தேர்வு"
+msgstr "உரை தகவல் விருப்பங்கள்"
 
-#: ../src/option.c:1381
-#, fuzzy
+#: ../src/option.c:1530
 msgid "Show text information options"
-msgstr "கேள்வி தேர்வு"
+msgstr "உரை தகவல் விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1391
+#: ../src/option.c:1540
 msgid "Miscellaneous options"
 msgstr "மற்ற தேர்வுகள்"
 
-#: ../src/option.c:1392
-#, fuzzy
+#: ../src/option.c:1541
 msgid "Show miscellaneous options"
-msgstr "மற்ற தேர்வுகள்"
+msgstr "இதர விருப்பங்களை காட்டு"
 
-#: ../src/option.c:1417
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
+#: ../src/option.c:1566
+msgid "This option is not available. Please see --help for all possible usages.\n"
+msgstr "இந்த விருப்பம் இல்லை. அனைத்து பயன்பாடுகளுக்கும் உதவியை பார்க்கவும்.\n"
 
-#: ../src/option.c:1421
-#, fuzzy, c-format
+#: ../src/option.c:1570
+#, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "%s இந்த உரையாடலில் ஆதரவு இல்லை\n"
+msgstr "--%s இந்த உரையாடலுக்கு துணையில்லை\n"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1574
 msgid "Two or more dialog options specified\n"
 msgstr "இரண்டுக்கும் மேற்பட்ட உரையாடல் தேர்வுசெய்யப்பட்டது\n"
+
