@@ -195,9 +195,9 @@ zenity_tree_fill_entries_from_stdin (GtkTreeView  *tree_view,
 {
   GIOChannel *channel;
 
-  g_object_set_data (G_OBJECT (tree_view), "n_columns", (gint *) n_columns);
-  g_object_set_data (G_OBJECT (tree_view), "toggles", (gint *) toggles);
-  g_object_set_data (G_OBJECT (tree_view), "editable", (gint *) editable); 
+  g_object_set_data (G_OBJECT (tree_view), "n_columns", GINT_TO_POINTER (n_columns));
+  g_object_set_data (G_OBJECT (tree_view), "toggles", GINT_TO_POINTER (toggles));
+  g_object_set_data (G_OBJECT (tree_view), "editable", GINT_TO_POINTER (editable)); 
 
   channel = g_io_channel_unix_new (0);
   g_io_channel_set_encoding (channel, NULL, NULL);
@@ -218,7 +218,7 @@ zenity_tree_fill_entries (GtkTreeView  *tree_view,
 
   model = gtk_tree_view_get_model (tree_view);
 
-  g_object_set_data (G_OBJECT (tree_view), "n_columns", (gint *) n_columns);
+  g_object_set_data (G_OBJECT (tree_view), "n_columns", GINT_TO_POINTER (n_columns));
 
   while (args[i] != NULL) {
     gint j;
@@ -403,7 +403,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
                                 
         if (tree_data->radiobox) {
           g_object_set (G_OBJECT (cell_renderer), "radio", TRUE, NULL);
-          g_object_set_data (G_OBJECT (model), "radio", (gint *) 1);
+          g_object_set_data (G_OBJECT (model), "radio", GINT_TO_POINTER (1));
         }
 
         g_signal_connect (cell_renderer, "toggled",
@@ -421,7 +421,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
           g_signal_connect (G_OBJECT (cell_renderer), "edited",
                             G_CALLBACK (zenity_cell_edited_callback),
           gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view)));
-          g_object_set_data (G_OBJECT (cell_renderer), "column", (gint *) column_index);
+          g_object_set_data (G_OBJECT (cell_renderer), "column", GINT_TO_POINTER (column_index));
 
           column = gtk_tree_view_column_new_with_attributes (tmp->data, 
                                                              cell_renderer, 
@@ -452,7 +452,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
         g_signal_connect (G_OBJECT (cell_renderer), "edited",
                           G_CALLBACK (zenity_cell_edited_callback),
         gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view)));
-        g_object_set_data (G_OBJECT (cell_renderer), "column", (gint *) column_index);
+        g_object_set_data (G_OBJECT (cell_renderer), "column", GINT_TO_POINTER (column_index));
 
         column = gtk_tree_view_column_new_with_attributes (tmp->data, 
                                                            cell_renderer, 
