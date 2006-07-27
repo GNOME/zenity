@@ -99,13 +99,14 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
     }
   } else {
     entry = gtk_entry_new();
+
+    gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
     
     if (entry_data->entry_text)
       gtk_entry_set_text (GTK_ENTRY (entry), entry_data->entry_text);
 
     if (entry_data->hide_text)
       g_object_set (G_OBJECT (entry), "visibility", FALSE, NULL);
-
   }
 
   gtk_widget_show (entry);
