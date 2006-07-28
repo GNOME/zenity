@@ -43,50 +43,43 @@ zenity_text_handle_stdin (GIOChannel  *channel,
 
   buffer = GTK_TEXT_BUFFER (data);
 
-  if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
+  if ((condition & G_IO_IN) || (condition & (G_IO_IN | G_IO_HUP))) {
     GError *error = NULL;
+    gint status;
 
     while (channel->is_readable != TRUE)
       ;
+
     do {
-      gint status;
+      status = g_io_channel_read_chars (channel, buf, 1024, &len, &error);
 
-      do {
-        status = g_io_channel_read_chars (channel, buf, 1024, &len, &error);
+      while (gtk_events_pending ())
+        gtk_main_iteration ();
 
-        while (gtk_events_pending ())
-          gtk_main_iteration ();
+    } while (status == G_IO_STATUS_AGAIN);
 
-      } while (status == G_IO_STATUS_AGAIN);
-
-      if (status != G_IO_STATUS_NORMAL) {
-        if (error) {
-          g_warning ("zenity_text_handle_stdin () : %s", error->message);
-          g_error_free (error);
-          error = NULL;
-        }
-        continue;
+    if (status != G_IO_STATUS_NORMAL) {
+      if (error) {
+        g_warning ("zenity_text_handle_stdin () : %s", error->message);
+        g_error_free (error);
+        error = NULL;
       }
+      return FALSE;
+    }
 
-      if (len > 0) {
-	GtkTextIter end;
-        gchar *utftext; 
-        gsize localelen; 
-        gsize utflen;
+    if (len > 0) {
+      GtkTextIter end;
+      gchar *utftext; 
+      gsize localelen; 
+      gsize utflen;
 
-	gtk_text_buffer_get_end_iter (buffer, &end);
-        utftext = g_convert_with_fallback (buf, len, "UTF-8", "ISO-8859-1", NULL, &localelen, &utflen, NULL);
-        gtk_text_buffer_insert (buffer, &end, utftext, utflen);
-        g_free (utftext);
-      }
- 
-    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN); 
+      gtk_text_buffer_get_end_iter (buffer, &end);
+      utftext = g_convert_with_fallback (buf, len, "UTF-8", "ISO-8859-1", NULL, &localelen, &utflen, NULL);
+      gtk_text_buffer_insert (buffer, &end, utftext, utflen);
+      g_free (utftext);
+    }
   }
 
-  if (condition != G_IO_IN) {
-    g_io_channel_shutdown (channel, TRUE, NULL); 
-    return FALSE;
-  }
   return TRUE;
 }
 
