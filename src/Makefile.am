@@ -3,24 +3,22 @@ bin_PROGRAMS = zenity
 bin_SCRIPTS = gdialog
 
 zenity_SOURCES = \
+	about.c		\
+	calendar.c	\
+	entry.c		\
+	fileselection.c	\
 	main.c		\
+	msg.c		\
+	notification.c	\
 	option.c	\
 	option.h	\
-	zenity.h	\
-	calendar.c	\
-	msg.c		\
-	scale.c		\
-	fileselection.c	\
-	entry.c		\
-	text.c		\
 	progress.c	\
+	scale.c		\
+	text.c		\
 	tree.c		\
-	eggtrayicon.h	\
-	eggtrayicon.c	\
-	notification.c	\
-	about.c		\
+	util.c		\
 	util.h		\
-	util.c
+	zenity.h
 
 zenity_CPPFLAGS = \
 	-I$(includedir)					\

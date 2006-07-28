@@ -145,19 +145,33 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename)
   return TRUE;
 }
 
-GdkPixbuf *
-zenity_util_pixbuf_new_from_file (GtkWidget *widget, gchar *filename)
+const gchar *
+zenity_util_stock_from_filename (const gchar *filename)
 {
-    if (!strcasecmp (filename, "warning"))
-      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_BUTTON, NULL);
-    if (!strcasecmp (filename, "info"))
-      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_INFO, GTK_ICON_SIZE_BUTTON, NULL);
-    if (!strcasecmp (filename, "question"))
-      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_QUESTION, GTK_ICON_SIZE_BUTTON, NULL);
-    if (!strcasecmp (filename, "error"))
-      return gtk_widget_render_icon (widget, GTK_STOCK_DIALOG_ERROR, GTK_ICON_SIZE_BUTTON, NULL);
-    else
-      return gdk_pixbuf_new_from_file (filename, NULL);
+  if (!filename || !filename[0])
+    return GTK_STOCK_DIALOG_WARNING; /* default */
+
+  if (!g_ascii_strcasecmp (filename, "warning"))
+    return GTK_STOCK_DIALOG_WARNING;
+  if (!g_ascii_strcasecmp (filename, "info"))
+    return GTK_STOCK_DIALOG_INFO;
+  if (!g_ascii_strcasecmp (filename, "question"))
+    return GTK_STOCK_DIALOG_QUESTION;
+  if (!g_ascii_strcasecmp (filename, "error"))
+    return GTK_STOCK_DIALOG_ERROR;
+  return NULL;
+}
+
+GdkPixbuf *
+zenity_util_pixbuf_new_from_file (GtkWidget *widget, const gchar *filename)
+{
+  const gchar *stock;
+
+  stock = zenity_util_stock_from_filename (filename);
+  if (stock)
+    return gtk_widget_render_icon (widget, stock, GTK_ICON_SIZE_BUTTON, NULL);
+
+ return gdk_pixbuf_new_from_file (filename, NULL);
 }
 
 void

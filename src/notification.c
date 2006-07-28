@@ -2,6 +2,7 @@
  * notification.c
  *
  * Copyright (C) 2002 Sun Microsystems, Inc.
+ * Copyright (C) 2006 Christian Persch
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -23,6 +24,7 @@
 
 #include <config.h>
 
+#include <gtk/gtk.h>
 #include <glade/glade.h>
 #include <time.h>
 #include <string.h>
@@ -32,101 +34,71 @@
 #endif
 
 #include "zenity.h"
-#include "eggtrayicon.h"
 #include "util.h"
 
-static EggTrayIcon *tray_icon;
-static GtkWidget *icon_image;
-static GtkWidget *icon_event_box;
-static GtkTooltips *tooltips;
-
+static GtkStatusIcon *status_icon;
+static gchar *icon_file;
+static const gchar *icon_stock;
+static gint icon_size;
 
 static void
-set_scaled_pixbuf (GtkImage *image, GdkPixbuf *pixbuf, GtkIconSize icon_size)
+zenity_notification_icon_update (void)
 {
-  GdkScreen *screen;
-  GtkSettings *settings;
-  int width, height, desired_width, desired_height;
-  GdkPixbuf *new_pixbuf;
+  GdkPixbuf *pixbuf;
+  GError *error = NULL;
 
-  screen = gtk_widget_get_screen (GTK_WIDGET (image));
-  settings = gtk_settings_get_for_screen (screen);
-  if (!gtk_icon_size_lookup_for_settings (settings, icon_size,
-					  &desired_width, &desired_height))
-    return;
+  pixbuf = gdk_pixbuf_new_from_file_at_scale (icon_file, icon_size, icon_size, TRUE, &error);
+  if (error) {
+    g_warning ("Could not load notification icon '%s': %s",
+               icon_file, error->message);
+    g_clear_error (&error);
+  }
+  if (!pixbuf) {
+    pixbuf = gdk_pixbuf_new_from_file_at_scale (ZENITY_IMAGE_FULLPATH ("zenity-notification.png"),
+                                                icon_size, icon_size, TRUE, NULL);
+  }
 
-  width = gdk_pixbuf_get_width (pixbuf);
-  height = gdk_pixbuf_get_height (pixbuf);
-  if (height > desired_height || width > desired_width) {
-    if (width * desired_height / height > desired_width)
-      desired_height = height * desired_width / width;
-    else
-      desired_width = width * desired_height / height;
+  gtk_status_icon_set_from_pixbuf (status_icon, pixbuf);
 
-    new_pixbuf = gdk_pixbuf_scale_simple (pixbuf,
-					  desired_width,
-					  desired_height,
-					  GDK_INTERP_BILINEAR);
-    gtk_image_set_from_pixbuf (image, new_pixbuf);
-    g_object_unref (new_pixbuf);
-  } else {
-    gtk_image_set_from_pixbuf (image, pixbuf);
+  if (pixbuf) {
+    g_object_unref (pixbuf);
   }
 }
 
 static gboolean
-zenity_notification_icon_press_callback (GtkWidget *widget, GdkEventButton *event, gpointer data)
+zenity_notification_icon_size_changed_cb (GtkStatusIcon *icon,
+					  gint size,
+					  gpointer user_data)
 {
-  ZenityData *zen_data;
+  icon_size = size;
 
-  zen_data = data;
+  /* If we're displaying not a stock icon but a custom pixbuf,
+   * we need to update the icon for the new size.
+   */
+  if (!icon_stock) {
+    zenity_notification_icon_update ();
 
-  zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+static gboolean
+zenity_notification_icon_activate_cb (GtkWidget *widget,
+				      ZenityData *data)
+{
+  data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+
   gtk_main_quit ();
+
   return TRUE;
 }
 
 static gboolean
-zenity_notification_icon_expose_callback (GtkWidget *widget, GdkEventExpose *event, gpointer data)
-{
-  if (GTK_WIDGET_HAS_FOCUS (widget)) {
-    gint focus_width, focus_pad;
-    gint x, y, width, height;
-                                                                                                                                                             
-    gtk_widget_style_get (widget,
-                          "focus-line-width", &focus_width,
-                          "focus-padding", &focus_pad,
-                          NULL);
-    x = widget->allocation.x + focus_pad;
-    y = widget->allocation.y + focus_pad;
-    width = widget->allocation.width - 2 * focus_pad;
-    height = widget->allocation.height - 2 * focus_pad;
-                                                                                                                                                             
-    gtk_paint_focus (widget->style, widget->window,
-                     GTK_WIDGET_STATE (widget),
-                     &event->area, widget, "button",
-                     x, y, width, height);
-    }
-                                                                                                                                                             
-    return FALSE;
-}
-
-static void
-zenity_notification_icon_destroy_callback (GtkWidget *widget, gpointer data)
-{
-  ZenityData *zen_data;
-
-  zen_data = data;
-  gtk_widget_destroy (GTK_WIDGET (tray_icon));
-
-  zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
-  gtk_main_quit ();
-}
-
-static gboolean
-zenity_notification_handle_stdin (GIOChannel  *channel,
+zenity_notification_handle_stdin (GIOChannel *channel,
 				  GIOCondition condition,
-				  gpointer     user_data)
+				  gpointer user_data)
 {
   ZenityData *zen_data;
 
@@ -137,7 +109,7 @@ zenity_notification_handle_stdin (GIOChannel  *channel,
     GError *error = NULL;
 
     string = g_string_new (NULL);
-    while (channel->is_readable != TRUE)
+    while (channel->is_readable == FALSE)
       ;
     do {
       gint status;
@@ -167,60 +139,72 @@ zenity_notification_handle_stdin (GIOChannel  *channel,
 	continue;
       }
       /* split off the command and value */
-      command = g_strndup (string->str, colon - string->str);
-      command = g_strstrip (command);
-      g_strdown (command);
+      command = g_strstrip (g_strndup (string->str, colon - string->str));
 
       value = colon + 1;
       while (*value && g_ascii_isspace (*value)) value++;
 
-      if (!strcmp (command, "icon")) {
-	GdkPixbuf *pixbuf;
+      if (!g_ascii_strcasecmp (command, "icon")) {
+        icon_stock = zenity_util_stock_from_filename (value);
 
-	pixbuf = zenity_util_pixbuf_new_from_file (GTK_WIDGET (tray_icon),
-						   value);
-	if (pixbuf != NULL) {
-	  set_scaled_pixbuf (GTK_IMAGE (icon_image), pixbuf,
-			     GTK_ICON_SIZE_BUTTON);
-	  gdk_pixbuf_unref (pixbuf);
-	} else {
-	  g_warning ("Could not load notification icon : %s", value);
-	}
-      } else if (!strcmp (command, "message")) {
+        g_free (icon_file);
+        icon_file = g_strdup (value);
+
+        if (icon_stock) {
+          gtk_status_icon_set_from_stock (status_icon, icon_stock);
+        } else if (gtk_status_icon_get_visible (status_icon) &&
+                   gtk_status_icon_is_embedded (status_icon)) {
+          zenity_notification_icon_update ();
+        }
+      } else if (!g_ascii_strcasecmp (command, "message")) {
 #ifdef HAVE_LIBNOTIFY
-	/* display a notification bubble */
-	if (notify_is_initted ()) {
-	  GError *error = NULL;
-	  NotifyNotification *n;
-	  GdkPixbuf *icon;
+        /* display a notification bubble */
+        if (!g_utf8_validate (value, -1, NULL)) {
+          g_warning ("Invalid UTF-8 in input!");
+        } else if (notify_is_initted ()) {
+          GError *error = NULL;
+          NotifyNotification *notif;
+          const gchar *icon = NULL;
+          gchar *freeme = NULL;
+          gchar *message;
 
-	  n = notify_notification_new (g_strcompress (value), NULL, NULL,
-				       GTK_WIDGET (tray_icon));
+          message = g_strcompress (value);
 
-	  icon = gtk_image_get_pixbuf (GTK_IMAGE (icon_image));
+          if (icon_stock) {
+            icon = icon_stock;
+          } else if (icon_file) {
+            icon = freeme = g_filename_to_uri (icon_file, NULL, NULL);
+          }
 
-	  notify_notification_set_icon_from_pixbuf (n, icon);
+          notif = notify_notification_new_with_status_icon (message, NULL /* summary */,
+                					    icon, status_icon);
+          g_free (message);
+          g_free (freeme);
 
-	  notify_notification_show (n, &error);
+	  notify_notification_show (notif, &error);
 	  if (error) {
-	    g_warning (error->message);
+	    g_warning ("Error showing notification: %s", error->message);
 	    g_error_free (error);
 	  }
 
-	  g_object_unref (G_OBJECT (n));
+	  g_object_unref (notif);
 	} else {
 #else
 	{ /* this brace is for balance */
 #endif
  	  g_warning ("Notification framework not available");
 	}
-      } else if (!strcmp (command, "tooltip")) {
-	gtk_tooltips_set_tip (tooltips, icon_event_box, value, value);
-      } else if (!strcmp (command, "visible")) {
-	if (!strcasecmp (value, "false")) {
-	  gtk_widget_hide (GTK_WIDGET (tray_icon));
-	} else {
-	  gtk_widget_show (GTK_WIDGET (tray_icon));
+      } else if (!g_ascii_strcasecmp (command, "tooltip")) {
+        if (g_utf8_validate (value, -1, NULL)) {
+          gtk_status_icon_set_tooltip (status_icon, value);
+        } else {
+          g_warning ("Invalid UTF-8 in input!");
+        }
+      } else if (!g_ascii_strcasecmp (command, "visible")) {
+        if (!g_ascii_strcasecmp (value, "false")) {
+          gtk_status_icon_set_visible (status_icon, FALSE);
+        } else {
+          gtk_status_icon_set_visible (status_icon, TRUE);
 	}
       } else {
 	g_warning ("Unknown command '%s'", command);
@@ -256,64 +240,47 @@ zenity_notification_listen_on_stdin (ZenityData *data)
 void 
 zenity_notification (ZenityData *data, ZenityNotificationData *notification_data)
 {
-  GdkPixbuf *pixbuf = NULL;
+  status_icon = gtk_status_icon_new ();
+  g_signal_connect (status_icon, "size-changed",
+		    G_CALLBACK (zenity_notification_icon_size_changed_cb), data);
 
-  tray_icon = egg_tray_icon_new (_("Zenity notification"));
-  tooltips = gtk_tooltips_new ();
-
-  if (data->window_icon != NULL)
-    pixbuf = zenity_util_pixbuf_new_from_file (GTK_WIDGET (tray_icon), data->window_icon);
-  else
-    pixbuf = gdk_pixbuf_new_from_file (ZENITY_IMAGE_FULLPATH ("zenity-notification.png"), NULL);
-
-  icon_event_box = gtk_event_box_new ();
-  icon_image = gtk_image_new ();
-
-  if (pixbuf) {
-    set_scaled_pixbuf (GTK_IMAGE (icon_image), pixbuf,
-		       GTK_ICON_SIZE_BUTTON);
-    gdk_pixbuf_unref (pixbuf);
+  if (notification_data->notification_text) {
+    gtk_status_icon_set_tooltip (status_icon, notification_data->notification_text);
   } else {
-    if (data->window_icon != NULL)  {
-      g_warning ("Could not load notification icon : %s", data->window_icon);
-    }
-    else
-      g_warning ("Could not load notification icon : %s", ZENITY_IMAGE_FULLPATH ("zenity-notification.png"));
-    return; 
+    gtk_status_icon_set_tooltip (status_icon, _("Zenity notification"));
   }
 
-  gtk_container_add (GTK_CONTAINER (icon_event_box), icon_image);
+  icon_file = g_strdup (data->window_icon);
+  icon_stock = zenity_util_stock_from_filename (data->window_icon);
 
-  if (notification_data->notification_text) 
-    gtk_tooltips_set_tip (tooltips, icon_event_box, notification_data->notification_text, notification_data->notification_text);
-  else
-    gtk_tooltips_set_tip (tooltips, icon_event_box, _("Zenity notification"), _("Zenity notification"));
- 
-  gtk_widget_add_events (GTK_WIDGET (tray_icon), GDK_BUTTON_PRESS_MASK | GDK_FOCUS_CHANGE_MASK);
-  gtk_container_add (GTK_CONTAINER (tray_icon), icon_event_box);
-
-  g_signal_connect (tray_icon, "destroy",
-		    G_CALLBACK (zenity_notification_icon_destroy_callback), data);
-
-  g_signal_connect (tray_icon, "expose_event",
-		    G_CALLBACK (zenity_notification_icon_expose_callback), data);
-
-  if (notification_data->listen) {
-    zenity_notification_listen_on_stdin (data);
-  } else {
-    /* if we aren't listening for changes, then close on button_press */
-    g_signal_connect (tray_icon, "button_press_event",
-		      G_CALLBACK (zenity_notification_icon_press_callback), data);
+  /* Only set the stock icon here; if we're going to display a
+   * custom pixbuf we wait for the size-changed signal to load
+   * it at the right size.
+   */
+  if (icon_stock) {
+    gtk_status_icon_set_from_stock (status_icon, icon_stock);
   }
 
 #ifdef HAVE_LIBNOTIFY
   /* create the notification widget */
-  if (!notify_is_initted ())
-	  notify_init (_("Zenity notification"));
+  if (!notify_is_initted ()) {
+    notify_init (_("Zenity notification"));
+  }
 #endif
-  
-  gtk_widget_show_all (GTK_WIDGET (tray_icon));
-  
-  /* Does nothing at the moment */
+ 
+  if (notification_data->listen) {
+    zenity_notification_listen_on_stdin (data);
+  } else {
+    /* if we aren't listening for changes, then close on activate (left-click) */
+    g_signal_connect (status_icon, "activate",
+		      G_CALLBACK (zenity_notification_icon_activate_cb), data);
+  }
+
+  /* Show icon and wait */
+  gtk_status_icon_set_visible (status_icon, TRUE);
   gtk_main ();
+
+  /* Cleanup */
+  g_object_unref (status_icon);
+  g_free (icon_file);
 }

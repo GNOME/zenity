@@ -1,5 +1,23 @@
 2006-07-27  Lucas Rocha  <lucasr@gnome.org>
 
+	* src/notification.c (-set_scaled_pixbuf,
+	+zenity_notification_icon_update,
+	-zenity_notification_icon_press_callback,
+	+zenity_notification_icon_size_changed_cb,
+	-zenity_notification_icon_expose_callback,
+	-zenity_notification_icon_destroy_callback,
+	+zenity_notification_icon_activate_cb,
+	zenity_notification_handle_stdin, zenity_notification),
+	src/util.[ch] (+zenity_util_stock_from_filename,
+	zenity_util_pixbuf_new_from_file), Makefile.am, configure.in:
+
+	Migration to gtk_status_icon (Fixes bug #341451). Patch from
+	Christian Persch <chpe@gnome.org>.
+
+	* src/eggtrayicon.[ch]: removed.
+
+2006-07-27  Lucas Rocha  <lucasr@gnome.org>
+
 	* src/text.c (zenity_text_handle_stdin): correctly stdin input for
 	text info dialog (Fixes bug #336736).
 
