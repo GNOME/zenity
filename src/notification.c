@@ -182,6 +182,7 @@ zenity_notification_handle_stdin (GIOChannel *channel,
           g_free (freeme);
 
 	  notify_notification_show (notif, &error);
+
 	  if (error) {
 	    g_warning ("Error showing notification: %s", error->message);
 	    g_error_free (error);
