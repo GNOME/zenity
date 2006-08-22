@@ -10,67 +10,77 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2005-03-01 11:03+0700\n"
+"POT-Creation-Date: 2006-08-22 10:49+0700\n"
+"PO-Revision-Date: 2006-08-22 10:56+0700\n"
 "Last-Translator: Ahmad Riza H Nst <ari@160c.afraid.org>\n"
-"Language-Team: Indonesia <sukarelawan@gnome.linux.or.id>\n"
+"Language-Team: Indonesia <kontak@id.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
+#: ../src/about.c:65
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+msgstr ""
+"Program ini adalah perangkat lunak bebas; anda dapat menyebarkan dan/atau merubahnya "
+"di bawah syarat-syarat Lisensi Publik Umum GNU sebagaimana diterbitkan oleh  Free Software "
+"Foundation; apakah yang versi 2 atau versi terbaru lainnya (terserah).\n"
+
+#: ../src/about.c:69
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+msgstr ""
+"Sound Juicer disebarluaskan dengan harapan dapat berguna, tapi TANPA ADANYA "
+"JAMINAN, tanpa ada nya jaminan DAYA JUAL atau KELAYAKAN UNTUK TUJUAN TERTENTU. "
+"Lihat Lisensi Publik Umum GNU untuk lebih jelasnya.\n"
+
+#: ../src/about.c:73
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+"Anda harus menerima salinan Lisensi Publik Umum GNU bersamaan dengan Sound Juicer; "
+"jika tidak, tulislah ke Free Software Foundation, Inc , 59 Temple Place, Suite 330, Boston, MA  "
+"02111-1307  USA"
+
+#: ../src/about.c:264
 msgid "translator-credits"
 msgstr ""
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
-"Ahmad Riza H Nst <ari@160c.afraid.org>"
+"Ahmad Riza H Nst <ari@160c.afraid.org>\n"
+"http://id.gnome.org/"
 
-#: ../src/about.c:433
+#: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
 msgstr "Tampilkan kotak dialog dari skrip shell"
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(C) 2003 Sun Microsystems"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "Para Pendukung"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "Ditulis oleh"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "Alih bahasa oleh"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "Orientasi"
-
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "orientasi tray"
-
-#: ../src/main.c:90
+#: ../src/main.c:94
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Anda harus menjelaskan tipe dialog. Lihat 'senity --help' untuk rinci\n"
 
-#: ../src/notification.c:161
+#: ../src/notification.c:138
 msgid "could not parse command from stdin\n"
 msgstr "tidak dapat membaca perintah dari stdin\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
+#: ../src/notification.c:251 ../src/notification.c:268
 msgid "Zenity notification"
 msgstr "Notifikasi Zenity"
+
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Nilai tertinggi harus lebih besar dari nilai terendah.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Nilai keluar cakupan.\n"
 
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
@@ -78,19 +88,19 @@ msgstr "Tidak ada judul kolom di jelaskan untuk daftar dialog\n"
 
 #: ../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "Anda harus menggunakan hanya satu daftar jenis dialog.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "Tentang Zenity"
-
-#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "Tambahkan masukan baru"
+
+#: ../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "Paskan nilai skala"
+
+#: ../src/zenity.glade.h:3
+msgid "Adjust the scale value."
+msgstr "Paskan nilai skala."
 
 #: ../src/zenity.glade.h:4
 msgid "All updates are complete."
@@ -157,154 +167,153 @@ msgid "Warning"
 msgstr "Peringatan"
 
 #: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "_Pendukung"
-
-#: ../src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "_Masukkan teks baru:"
 
-#: ../src/option.c:105
+#: ../src/option.c:115
 msgid "Set the dialog title"
 msgstr "Tetapkan judul dialog"
 
-#: ../src/option.c:106
+#: ../src/option.c:116
 msgid "TITLE"
 msgstr "JUDUL"
 
-#: ../src/option.c:114
+#: ../src/option.c:124
 msgid "Set the window icon"
 msgstr "Tetapkan icon jendela"
 
-#: ../src/option.c:115
+#: ../src/option.c:125
 msgid "ICONPATH"
 msgstr "LOKASIICON"
 
-#: ../src/option.c:123
+#: ../src/option.c:133
 msgid "Set the width"
 msgstr "Tetapkan lebar"
 
-#: ../src/option.c:124
+#: ../src/option.c:134
 msgid "WIDTH"
 msgstr "LEBAR"
 
-#: ../src/option.c:132
+#: ../src/option.c:142
 msgid "Set the height"
 msgstr "Tetapkan tinggi"
 
-#: ../src/option.c:133
+#: ../src/option.c:143
 msgid "HEIGHT"
 msgstr "TINGGI"
 
-#: ../src/option.c:147
+#: ../src/option.c:157
 msgid "Display calendar dialog"
 msgstr "Tampilkan dialog kalender"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: ../src/option.c:166 ../src/option.c:226 ../src/option.c:269
+#: ../src/option.c:302 ../src/option.c:404 ../src/option.c:533
+#: ../src/option.c:585 ../src/option.c:651 ../src/option.c:684
 msgid "Set the dialog text"
 msgstr "Tetapkan teks dialog"
 
-#: ../src/option.c:165
+#: ../src/option.c:175
 msgid "Set the calendar day"
 msgstr "Tetapkan hari kalender"
 
-#: ../src/option.c:174
+#: ../src/option.c:184
 msgid "Set the calendar month"
 msgstr "Tetapkan bulan kalender"
 
-#: ../src/option.c:183
+#: ../src/option.c:193
 msgid "Set the calendar year"
 msgstr "Tetapkan tahun kalender"
 
-#: ../src/option.c:192
+#: ../src/option.c:202
 msgid "Set the format for the returned date"
 msgstr "Tetapkan format untuk data kembali"
 
-#: ../src/option.c:207
+#: ../src/option.c:217
 msgid "Display text entry dialog"
 msgstr "Tampilkan dialog kotak teks"
 
-#: ../src/option.c:225
+#: ../src/option.c:235
 msgid "Set the entry text"
 msgstr "Tetapkan teks masukan"
 
-#: ../src/option.c:234
+#: ../src/option.c:244
 msgid "Hide the entry text"
 msgstr "Sembunyikan teks masukan"
 
-#: ../src/option.c:250
+#: ../src/option.c:260
 msgid "Display error dialog"
 msgstr "Tampilkan dialog error"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: ../src/option.c:278 ../src/option.c:311 ../src/option.c:594
+#: ../src/option.c:660
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "Jangan aktifkan pemotongan teks"
 
-#: ../src/option.c:283
+#: ../src/option.c:293
 msgid "Display info dialog"
 msgstr "Tampilkan dialog info"
 
-#: ../src/option.c:316
+#: ../src/option.c:326
 msgid "Display file selection dialog"
 msgstr "Tampilkan dialog pemilih file"
 
-#: ../src/option.c:325
+#: ../src/option.c:335
 msgid "Set the filename"
 msgstr "Tetapkan nama file"
 
-#: ../src/option.c:326 ../src/option.c:600
+#: ../src/option.c:336 ../src/option.c:619
 msgid "FILENAME"
 msgstr "NAMAFILE"
 
-#: ../src/option.c:334
+#: ../src/option.c:344
 msgid "Allow multiple files to be selected"
 msgstr "Bolehkan berbagai file untuk dipilih"
 
-#: ../src/option.c:343
+#: ../src/option.c:353
 msgid "Activate directory-only selection"
 msgstr "Aktifkan pilihan direktori saja"
 
-#: ../src/option.c:352
+#: ../src/option.c:362
 msgid "Activate save mode"
 msgstr "Aktifkan modus penyimpanan"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: ../src/option.c:371 ../src/option.c:440
 msgid "Set output separator character"
 msgstr "Tetapkan keluaran pemisah karakter"
 
-#: ../src/option.c:362 ../src/option.c:422
+#: ../src/option.c:372 ../src/option.c:441
 msgid "SEPARATOR"
 msgstr "PEMISAH"
 
-#: ../src/option.c:376
+#: ../src/option.c:380
+msgid "Confirm file selection if filename already exists"
+msgstr "Konfirmasikan pemilihan berkas jika nama berkas sudah ada"
+
+#: ../src/option.c:395
 msgid "Display list dialog"
 msgstr "Tampilkan daftar dialog"
 
-#: ../src/option.c:394
+#: ../src/option.c:413
 msgid "Set the column header"
 msgstr "Tetapkan kepala kolom"
 
-#: ../src/option.c:403
+#: ../src/option.c:422
 msgid "Use check boxes for first column"
 msgstr "Gunakan tanda centang untuk kolom pertama"
 
-#: ../src/option.c:412
+#: ../src/option.c:431
 msgid "Use radio buttons for first column"
 msgstr "Gunakan tombol radio untuk kolom pertama"
 
-#: ../src/option.c:430
-#, fuzzy
+#: ../src/option.c:449
 msgid "Allow multiple rows to be selected"
-msgstr "Bolehkan berbagai file untuk dipilih"
+msgstr "Bolehkan berbagai baris untuk dipilih"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: ../src/option.c:458 ../src/option.c:627
 msgid "Allow changes to text"
 msgstr "Tetapkan perubahan ke teks"
 
-#: ../src/option.c:448
+#: ../src/option.c:467
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -312,181 +321,242 @@ msgstr ""
 "Cetak kolom tertentu (Bila tidak disebut nilainya 1. Pilih 'SEMUA' untuk "
 "mencetak semua kolom)"
 
-#: ../src/option.c:457
+#: ../src/option.c:476
 msgid "Hide a specific column"
-msgstr ""
+msgstr "Sembunyikan kolom tertentu"
 
-#: ../src/option.c:472
+#: ../src/option.c:491
 msgid "Display notification"
 msgstr "Tampilkan notifikasi"
 
-#: ../src/option.c:481
+#: ../src/option.c:500
 msgid "Set the notification text"
 msgstr "Tetapkan teks notifikasi"
 
-#: ../src/option.c:490
+#: ../src/option.c:509
 msgid "Listen for commands on stdin"
 msgstr "Baca perintah dari stdin"
 
-#: ../src/option.c:505
+#: ../src/option.c:524
 msgid "Display progress indication dialog"
 msgstr "Tampilkan dialog indikator proses"
 
-#: ../src/option.c:523
+#: ../src/option.c:542
 msgid "Set initial percentage"
 msgstr "Tetapkan persentase awal"
 
-#: ../src/option.c:532
+#: ../src/option.c:551
 msgid "Pulsate progress bar"
 msgstr "Indikator proses berdebar"
 
-#: ../src/option.c:542
+#: ../src/option.c:561
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Tutup dialog ketika telah mencapai 100%"
 
-#: ../src/option.c:557
+#: ../src/option.c:576
 msgid "Display question dialog"
 msgstr "Tampilkan dialog pertanyaan"
 
-#: ../src/option.c:590
+#: ../src/option.c:609
 msgid "Display text information dialog"
 msgstr "Tampilkan dialog informasi teks"
 
-#: ../src/option.c:599
+#: ../src/option.c:618
 msgid "Open file"
 msgstr "Buka file"
 
-#: ../src/option.c:623
+#: ../src/option.c:642
 msgid "Display warning dialog"
 msgstr "Tampilkan dialog peringatan"
 
-#: ../src/option.c:656
+#: ../src/option.c:675
+msgid "Display scale dialog"
+msgstr "Tampilkan dialog skala"
+
+#: ../src/option.c:693
+msgid "Set initial value"
+msgstr "Tetapkan nilai awal"
+
+#: ../src/option.c:702
+msgid "Set minimum value"
+msgstr "Tentukan nilai terendah"
+
+#: ../src/option.c:711
+msgid "Set maximum value"
+msgstr "Tentukan nilai tertinggi"
+
+#: ../src/option.c:720
+msgid "Set step size"
+msgstr "Tetapkan ukuran tahapan"
+
+#: ../src/option.c:729
+msgid "Print partial values"
+msgstr "Cetak nilai bagian"
+
+#: ../src/option.c:738
+msgid "Hide value"
+msgstr "Sembunyikan nilai"
+
+#: ../src/option.c:753
 msgid "About zenity"
 msgstr "Tentang zenity"
 
-#: ../src/option.c:665
+#: ../src/option.c:762
 msgid "Print version"
 msgstr "Versi Cetak"
 
-#: ../src/option.c:1259
+#: ../src/option.c:1397
 msgid "General options"
 msgstr "Pilihan umum"
 
-#: ../src/option.c:1260
+#: ../src/option.c:1398
 msgid "Show general options"
 msgstr "Tampilkan pilihan umum"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1408
 msgid "Calendar options"
 msgstr "Pilihan kalender"
 
-#: ../src/option.c:1271
+#: ../src/option.c:1409
 msgid "Show calendar options"
 msgstr "Tampilkan pilihan kalender"
 
-#: ../src/option.c:1281
+#: ../src/option.c:1419
 msgid "Text entry options"
 msgstr "Pilihan masukan teks"
 
-#: ../src/option.c:1282
+#: ../src/option.c:1420
 msgid "Show text entry options"
 msgstr "Tampilkan pilihan masukan teks"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1430
 msgid "Error options"
 msgstr "Pilihan kesalahan"
 
-#: ../src/option.c:1293
+#: ../src/option.c:1431
 msgid "Show error options"
 msgstr "Tampilkan pilihan kesalahan"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1441
 msgid "Info options"
 msgstr "Pilihan info"
 
-#: ../src/option.c:1304
+#: ../src/option.c:1442
 msgid "Show info options"
 msgstr "Tampilkan pilihan info"
 
-#: ../src/option.c:1314
+#: ../src/option.c:1452
 msgid "File selection options"
 msgstr "Pilihan pemilihan file"
 
-#: ../src/option.c:1315
+#: ../src/option.c:1453
 msgid "Show file selection options"
 msgstr "Tampilkan pilihan pemilihan file"
 
-#: ../src/option.c:1325
+#: ../src/option.c:1463
 msgid "List options"
 msgstr "Pilihan daftar"
 
-#: ../src/option.c:1326
+#: ../src/option.c:1464
 msgid "Show list options"
 msgstr "Tampilkan pilihan daftar"
 
-#: ../src/option.c:1336
-#, fuzzy
+#: ../src/option.c:1474
 msgid "Notification icon options"
-msgstr "Pilihan pemberitahuan"
+msgstr "Pilihan ikon pemberitahuan"
 
-#: ../src/option.c:1337
-#, fuzzy
+#: ../src/option.c:1475
 msgid "Show notification icon options"
-msgstr "Tampilkan Pilihan pemberitahuan"
+msgstr "Tampilkan Pilihan ikon pemberitahuan"
 
-#: ../src/option.c:1347
+#: ../src/option.c:1485
 msgid "Progress options"
 msgstr "Pilihan proses"
 
-#: ../src/option.c:1348
+#: ../src/option.c:1486
 msgid "Show progress options"
 msgstr "Tampilkan pilihan proses"
 
-#: ../src/option.c:1358
+#: ../src/option.c:1496
 msgid "Question options"
 msgstr "Pilihan pertanyaan"
 
-#: ../src/option.c:1359
+#: ../src/option.c:1497
 msgid "Show question options"
 msgstr "Tampilkan pilihan pertanyaan"
 
-#: ../src/option.c:1369
+#: ../src/option.c:1507
 msgid "Warning options"
 msgstr "Pilihan peringatan"
 
-#: ../src/option.c:1370
+#: ../src/option.c:1508
 msgid "Show warning options"
 msgstr "Tampilkan pilihan peringatan"
 
-#: ../src/option.c:1380
-#, fuzzy
+#: ../src/option.c:1518
+msgid "Scale options"
+msgstr "Pilihan skala"
+
+#: ../src/option.c:1519
+msgid "Show scale options"
+msgstr "Tampilkan pilihan skala"
+
+#: ../src/option.c:1529
 msgid "Text information options"
-msgstr "Pilihan pemberitahuan"
+msgstr "Pilihan informasi teks"
 
-#: ../src/option.c:1381
-#, fuzzy
+#: ../src/option.c:1530
 msgid "Show text information options"
-msgstr "Tampilkan Pilihan pemberitahuan"
+msgstr "Tampilkan pilihan informasi teks"
 
-#: ../src/option.c:1391
+#: ../src/option.c:1540
 msgid "Miscellaneous options"
 msgstr "Pilihan Lain-lain"
 
-#: ../src/option.c:1392
+#: ../src/option.c:1541
 msgid "Show miscellaneous options"
 msgstr "Tampilkan pilihan Lain-lain"
 
-#: ../src/option.c:1417
+#: ../src/option.c:1566
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
+"Pilihan ini tidak tersedia. Silahkan lihat - bantuan untuk semua penggunaan "
+"yg mungkin.\n"
 
-#: ../src/option.c:1421
+#: ../src/option.c:1570
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s tidak didukung untuk dialog ini\n"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1574
 msgid "Two or more dialog options specified\n"
 msgstr "Dua atau lebih pilihan dialog di jelaskan\n"
+
+#~ msgid "Orientation"
+#~ msgstr "Orientasi"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "orientasi tray"
+
+#~ msgid "(C) 2003 Sun Microsystems"
+#~ msgstr "(C) 2003 Sun Microsystems"
+
+#~ msgid "Credits"
+#~ msgstr "Para Pendukung"
+
+#~ msgid "Written by"
+#~ msgstr "Ditulis oleh"
+
+#~ msgid "Translated by"
+#~ msgstr "Alih bahasa oleh"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "About Zenity"
+#~ msgstr "Tentang Zenity"
+
+#~ msgid "_Credits"
+#~ msgstr "_Pendukung"
