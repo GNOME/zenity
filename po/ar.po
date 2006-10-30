@@ -5,73 +5,62 @@
 # Hassan Abdin <habdin@link.net>, 2003.
 # Hafid BENHADRIA <ghosn@php4arab.info>, 2003.
 # Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004, 2005.
-# 
-# 
+# Djihed Afifi <djihed@gmail.com>, 2006.
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2005-03-05 16:26+0800\n"
-"Last-Translator:  <kinryu@silverpen.de>\n"
+"POT-Creation-Date: 2006-10-04 08:47+0200\n"
+"PO-Revision-Date: 2006-10-05 21:07-0000\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
+#: ../src/about.c:65
+msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+msgstr "The Fast User Switch Applet is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+
+#: ../src/about.c:69
+msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+msgstr "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+
+#: ../src/about.c:73
+msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA "
+
+#: ../src/about.c:264
 msgid "translator-credits"
-msgstr "عرفات المديني، تونس <lumina@silverpen.de>"
+msgstr "جهاد عفيفي (Djihed Afifi) <djihed@gmail.com> عرفات المديني، تونس <lumina@silverpen.de>"
 
-#: ../src/about.c:433
+#: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
 msgstr "اعرض صناديق الحوار من مخطوطات االشيل"
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "جميع الحقوق محفوظة (C) 2003 صن مايكروسيستمز"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "الشرف"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "كُتِبَ من قبل"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "تُرْجِم من قبل"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "الإتّجاه"
-
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "اتجاه المقبض."
-
-#: ../src/main.c:90
+#: ../src/main.c:94
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
-"يجب عليك تحديد نوع الحوار. استعرض 'zenity --help' لأجل مزيد من التَّفاصيل\n"
+msgstr "يجب عليك تحديد نوع الحوار. استعرض 'zenity --help' لأجل مزيد من التَّفاصيل\n"
 
-#: ../src/notification.c:161
+#: ../src/notification.c:138
 msgid "could not parse command from stdin\n"
 msgstr "لم يمكن ترجمة الأمر من stdin\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
+#: ../src/notification.c:251
+#: ../src/notification.c:268
 msgid "Zenity notification"
 msgstr "تذكير زَنِتي"
+
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "يجب أن تكون القيمة العظمى أعلى من القيمة الصغرى\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "قيمة خارج المجال.\n"
 
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
@@ -79,19 +68,19 @@ msgstr "لم يتم تحديد عناوين الأعمدة من أجل حوار 
 
 #: ../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "يجب أن تستعمل نوع واحد لحوار القائمة.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "عن Zenity"
-
-#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "أضف مُدْخَل جديد"
+
+#: ../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "تعديل قيمة السُلَّم"
+
+#: ../src/zenity.glade.h:3
+msgid "Adjust the scale value."
+msgstr "تعديل قيمة السُلَّم."
 
 #: ../src/zenity.glade.h:4
 msgid "All updates are complete."
@@ -158,330 +147,394 @@ msgid "Warning"
 msgstr "تحذير"
 
 #: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "_الشرف"
-
-#: ../src/zenity.glade.h:21
 msgid "_Enter new text:"
 msgstr "_إدخل نص جديد"
 
-#: ../src/option.c:105
+#: ../src/option.c:115
 msgid "Set the dialog title"
 msgstr "حدد عنوان صندوق الحوار"
 
-#: ../src/option.c:106
+#: ../src/option.c:116
 msgid "TITLE"
 msgstr "العنوان"
 
-#: ../src/option.c:114
+#: ../src/option.c:124
 msgid "Set the window icon"
 msgstr "حدد أيقونة النافذة"
 
-#: ../src/option.c:115
+#: ../src/option.c:125
 msgid "ICONPATH"
 msgstr "مسار الأيقونة:"
 
-#: ../src/option.c:123
+#: ../src/option.c:133
 msgid "Set the width"
 msgstr "حدد العرض"
 
-#: ../src/option.c:124
+#: ../src/option.c:134
 msgid "WIDTH"
 msgstr "العرض"
 
-#: ../src/option.c:132
+#: ../src/option.c:142
 msgid "Set the height"
 msgstr "حدد الارتفاع (الطول)"
 
-#: ../src/option.c:133
+#: ../src/option.c:143
 msgid "HEIGHT"
 msgstr "الارتفاع (الطول)"
 
-#: ../src/option.c:147
+#: ../src/option.c:157
 msgid "Display calendar dialog"
 msgstr "اعرض صندوق حوار التقويم"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: ../src/option.c:166
+#: ../src/option.c:226
+#: ../src/option.c:269
+#: ../src/option.c:302
+#: ../src/option.c:404
+#: ../src/option.c:533
+#: ../src/option.c:585
+#: ../src/option.c:651
+#: ../src/option.c:684
 msgid "Set the dialog text"
 msgstr "حدد النص لصندوق الحوار"
 
-#: ../src/option.c:165
+#: ../src/option.c:175
 msgid "Set the calendar day"
 msgstr "تحديد اليوم في التقويم"
 
-#: ../src/option.c:174
+#: ../src/option.c:184
 msgid "Set the calendar month"
 msgstr "حدد الشهر في التقويم"
 
-#: ../src/option.c:183
+#: ../src/option.c:193
 msgid "Set the calendar year"
 msgstr "حدد السنة في التقويم"
 
-#: ../src/option.c:192
+#: ../src/option.c:202
 msgid "Set the format for the returned date"
 msgstr "حدد الصيغة للتاريخ العائد"
 
-#: ../src/option.c:207
+#: ../src/option.c:217
 msgid "Display text entry dialog"
 msgstr "اعرض صندوق ادخال نص"
 
-#: ../src/option.c:225
+#: ../src/option.c:235
 msgid "Set the entry text"
 msgstr "تحديد نص المُدْخَل"
 
-#: ../src/option.c:234
+#: ../src/option.c:244
 msgid "Hide the entry text"
 msgstr "إخفاء نص المُدْخَل"
 
-#: ../src/option.c:250
+#: ../src/option.c:260
 msgid "Display error dialog"
 msgstr "اعرض صندوق حوار الخطأ"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: ../src/option.c:278
+#: ../src/option.c:311
+#: ../src/option.c:594
+#: ../src/option.c:660
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "عدم تفعيل لف السّطور\""
 
-#: ../src/option.c:283
+#: ../src/option.c:293
 msgid "Display info dialog"
 msgstr "اعرض صندوق حوار المعلومات"
 
-#: ../src/option.c:316
+#: ../src/option.c:326
 msgid "Display file selection dialog"
 msgstr "اعرض صندوق حوار اختيار ملف"
 
-#: ../src/option.c:325
+#: ../src/option.c:335
 msgid "Set the filename"
 msgstr "حدد إسم الملف"
 
-#: ../src/option.c:326 ../src/option.c:600
+#: ../src/option.c:336
+#: ../src/option.c:619
 msgid "FILENAME"
 msgstr "إسم الملف"
 
-#: ../src/option.c:334
+#: ../src/option.c:344
 msgid "Allow multiple files to be selected"
 msgstr "اسمح بانتقاء عدة ملفات"
 
-#: ../src/option.c:343
+#: ../src/option.c:353
 msgid "Activate directory-only selection"
 msgstr "تفعيل إنتقاء الدّلائل فقط"
 
-#: ../src/option.c:352
+#: ../src/option.c:362
 msgid "Activate save mode"
 msgstr "تنشيط نسق الحفظ"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: ../src/option.c:371
+#: ../src/option.c:440
 msgid "Set output separator character"
 msgstr "حدد الرمز الفاصل للمُخْرَج"
 
-#: ../src/option.c:362 ../src/option.c:422
+#: ../src/option.c:372
+#: ../src/option.c:441
 msgid "SEPARATOR"
 msgstr "الفاصل"
 
-#: ../src/option.c:376
+#: ../src/option.c:380
+msgid "Confirm file selection if filename already exists"
+msgstr "تأكيد إختيار الملف إذا كان موجودا"
+
+#: ../src/option.c:395
 msgid "Display list dialog"
 msgstr "اعرض صندوق حوار قائمة"
 
-#: ../src/option.c:394
+#: ../src/option.c:413
 msgid "Set the column header"
 msgstr "حدد ترويسة العمود"
 
-#: ../src/option.c:403
+#: ../src/option.c:422
 msgid "Use check boxes for first column"
 msgstr "إستخدام خانات الشَّطب لأجل العمود الأول"
 
-#: ../src/option.c:412
+#: ../src/option.c:431
 msgid "Use radio buttons for first column"
 msgstr "إستخدام أزرار الرَّاديو لأجل العمود الأول"
 
-#: ../src/option.c:430
-#, fuzzy
+#: ../src/option.c:449
 msgid "Allow multiple rows to be selected"
-msgstr "اسمح بانتقاء عدة ملفات"
+msgstr "اسمح بانتقاء عدة صفوف"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: ../src/option.c:458
+#: ../src/option.c:627
 msgid "Allow changes to text"
 msgstr "اسمح بالتَّغييرات في النَّص"
 
-#: ../src/option.c:448
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
+#: ../src/option.c:467
+msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
 msgstr "طباعة عمود معيّن (الافتراضي 1. يمكن استخدام 'الكل' لطباعة كل الأعمدة)"
 
-#: ../src/option.c:457
+#: ../src/option.c:476
 msgid "Hide a specific column"
-msgstr ""
+msgstr "إخفاء عمود"
 
-#: ../src/option.c:472
+#: ../src/option.c:491
 msgid "Display notification"
 msgstr "عرض حوار تذكير"
 
-#: ../src/option.c:481
+#: ../src/option.c:500
 msgid "Set the notification text"
 msgstr "تحديد نصّ لحوار التذكير"
 
-#: ../src/option.c:490
+#: ../src/option.c:509
 msgid "Listen for commands on stdin"
 msgstr "الإستماع إلى الأوامر على stdin"
 
-#: ../src/option.c:505
+#: ../src/option.c:524
 msgid "Display progress indication dialog"
 msgstr "عرض حوار مقدار التقدم"
 
-#: ../src/option.c:523
+#: ../src/option.c:542
 msgid "Set initial percentage"
 msgstr "حدد النِّسبة المئويَّة الأوليَّة"
 
-#: ../src/option.c:532
+#: ../src/option.c:551
 msgid "Pulsate progress bar"
 msgstr "اجعل شريط التَّقدم نَّابضا"
 
-#: ../src/option.c:542
+#: ../src/option.c:561
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "اصرف صندوق الحوار عند بلوغ 100%"
 
-#: ../src/option.c:557
+#: ../src/option.c:576
 msgid "Display question dialog"
 msgstr "اعرض صندوق حوار السؤال"
 
-#: ../src/option.c:590
+#: ../src/option.c:609
 msgid "Display text information dialog"
 msgstr "اعرض صندوق حوار معلومات النص"
 
-#: ../src/option.c:599
+#: ../src/option.c:618
 msgid "Open file"
 msgstr "افتح ملف"
 
-#: ../src/option.c:623
+#: ../src/option.c:642
 msgid "Display warning dialog"
 msgstr "اعرض صندوق حوار الإنذار"
 
-#: ../src/option.c:656
+#: ../src/option.c:675
+msgid "Display scale dialog"
+msgstr "اعرض حوار السلم"
+
+#: ../src/option.c:693
+msgid "Set initial value"
+msgstr "حدد القيمة الأولية"
+
+#: ../src/option.c:702
+msgid "Set minimum value"
+msgstr "حدد القيمة الصغرى"
+
+#: ../src/option.c:711
+msgid "Set maximum value"
+msgstr "حدد القيمة العظمى"
+
+#: ../src/option.c:720
+msgid "Set step size"
+msgstr "حدد حجم الدرجة"
+
+#: ../src/option.c:729
+msgid "Print partial values"
+msgstr "اطبع بعض القيم"
+
+#: ../src/option.c:738
+msgid "Hide value"
+msgstr "اخفاء قيمة"
+
+#: ../src/option.c:753
 msgid "About zenity"
 msgstr "عن zenity"
 
-#: ../src/option.c:665
+#: ../src/option.c:762
 msgid "Print version"
 msgstr "اطبع الإصدارة"
 
-#: ../src/option.c:1259
+#: ../src/option.c:1397
 msgid "General options"
 msgstr "خيارات عامة"
 
-#: ../src/option.c:1260
+#: ../src/option.c:1398
 msgid "Show general options"
 msgstr "عرض خيارات عامّة"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1408
 msgid "Calendar options"
 msgstr "خيارات التقويم"
 
-#: ../src/option.c:1271
+#: ../src/option.c:1409
 msgid "Show calendar options"
 msgstr "عرض خيارات التقويم"
 
-#: ../src/option.c:1281
+#: ../src/option.c:1419
 msgid "Text entry options"
 msgstr "خيارات مُدْخَل النَّص"
 
-#: ../src/option.c:1282
+#: ../src/option.c:1420
 msgid "Show text entry options"
 msgstr "عرض خيارات مُدخَل النَّص"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1430
 msgid "Error options"
 msgstr "خيارات الأخطاء"
 
-#: ../src/option.c:1293
+#: ../src/option.c:1431
 msgid "Show error options"
 msgstr "عرض خيارات الأخطاء"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1441
 msgid "Info options"
 msgstr "خيارات المعلومات"
 
-#: ../src/option.c:1304
+#: ../src/option.c:1442
 msgid "Show info options"
 msgstr "عرض خيارات المعلومات"
 
-#: ../src/option.c:1314
+#: ../src/option.c:1452
 msgid "File selection options"
 msgstr "خيارات إنتقاء الملف"
 
-#: ../src/option.c:1315
+#: ../src/option.c:1453
 msgid "Show file selection options"
 msgstr "عرض خيارات إنتقاء الملفّات"
 
-#: ../src/option.c:1325
+#: ../src/option.c:1463
 msgid "List options"
 msgstr "خيارات اللائحات"
 
-#: ../src/option.c:1326
+#: ../src/option.c:1464
 msgid "Show list options"
 msgstr "عرض خيارات اللائحات"
 
-#: ../src/option.c:1336
+#: ../src/option.c:1474
 msgid "Notification icon options"
 msgstr "خيارات أيقونة التذكير"
 
-#: ../src/option.c:1337
+#: ../src/option.c:1475
 msgid "Show notification icon options"
 msgstr "عرض خيارات الأسئلة"
 
-#: ../src/option.c:1347
+#: ../src/option.c:1485
 msgid "Progress options"
 msgstr "خيارات التَّقدم"
 
-#: ../src/option.c:1348
+#: ../src/option.c:1486
 msgid "Show progress options"
 msgstr "عرض خيارات التَّقدم"
 
-#: ../src/option.c:1358
+#: ../src/option.c:1496
 msgid "Question options"
 msgstr "خيارات الأسئلة"
 
-#: ../src/option.c:1359
+#: ../src/option.c:1497
 msgid "Show question options"
 msgstr "عرض خيارات الأسئلة"
 
-#: ../src/option.c:1369
+#: ../src/option.c:1507
 msgid "Warning options"
 msgstr "خيارات التَّحذير"
 
-#: ../src/option.c:1370
+#: ../src/option.c:1508
 msgid "Show warning options"
 msgstr "عرض خيارات التَّحذير"
 
-#: ../src/option.c:1380
+#: ../src/option.c:1518
+msgid "Scale options"
+msgstr "خيارات السلم"
+
+#: ../src/option.c:1519
+msgid "Show scale options"
+msgstr "عرض خيارات السلم"
+
+#: ../src/option.c:1529
 msgid "Text information options"
 msgstr "خيارات معلومات النّصوص"
 
-#: ../src/option.c:1381
+#: ../src/option.c:1530
 msgid "Show text information options"
 msgstr "عرض خيارات معلومات النّصوص"
 
-#: ../src/option.c:1391
+#: ../src/option.c:1540
 msgid "Miscellaneous options"
 msgstr "خيارات متنوعة"
 
-#: ../src/option.c:1392
+#: ../src/option.c:1541
 msgid "Show miscellaneous options"
 msgstr "عرض خيارات متنوّعة"
 
-#: ../src/option.c:1417
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
+#: ../src/option.c:1566
+msgid "This option is not available. Please see --help for all possible usages.\n"
+msgstr "هذا الخيار غير مدعوم. الرجاء الرجوع إلى  --help لإستعراض كل الخيارات.\n"
 
-#: ../src/option.c:1421
+#: ../src/option.c:1570
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "%s ليس مدعوما لهذا الحوار\n"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1574
 msgid "Two or more dialog options specified\n"
 msgstr "تم تحديد خيارَي حوار أو أكثر\n"
+
+#~ msgid "Orientation"
+#~ msgstr "الإتّجاه"
+#~ msgid "The orientation of the tray."
+#~ msgstr "اتجاه المقبض."
+#~ msgid "(C) 2003 Sun Microsystems"
+#~ msgstr "جميع الحقوق محفوظة (C) 2003 صن مايكروسيستمز"
+#~ msgid "Credits"
+#~ msgstr "الشرف"
+#~ msgid "Written by"
+#~ msgstr "كُتِبَ من قبل"
+#~ msgid "Translated by"
+#~ msgstr "تُرْجِم من قبل"
+#~ msgid "*"
+#~ msgstr "*"
+#~ msgid "About Zenity"
+#~ msgstr "عن Zenity"
+#~ msgid "_Credits"
+#~ msgstr "_الشرف"
+
