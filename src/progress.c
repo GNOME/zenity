@@ -37,6 +37,8 @@ static GladeXML *glade_dialog;
 static ZenityData *zen_data;
 static GIOChannel *channel;
 
+static gboolean autokill;
+
 gint zenity_progress_timeout (gpointer data);
 gint zenity_progress_pulsate_timeout (gpointer data);
 
@@ -214,6 +216,8 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 
                                    progress_data->percentage/100.0);
 
+  autokill = progress_data->autokill;
+
   zenity_util_show_dialog (dialog);
   zenity_progress_read_info (progress_data);
 
@@ -229,14 +233,19 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 		
     case GTK_RESPONSE_CANCEL:
-      /* FIXME: This should kill off the parent process nicely and return an error code
-       * I'm pretty sure there is a nice way to do this, but I'm clueless about this
-       * stuff. Should be using SIGHUP instead of 1 though.
-       */
-      kill (getppid (), 1);
+      /* We do not want to kill the parent process, in order to give the user
+         the ability to choose the action to be taken. See bug #310824.
+		 -- Monday 27, March 2006
+		 But we want to give people the option to choose this behavior.
+      */
+      if (autokill) {
+        kill (getppid (), 1);
+        zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+        break;
+      }
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       break;
-  
+
     default:
       /* Esc dialog */
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);

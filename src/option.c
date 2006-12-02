@@ -82,6 +82,7 @@ static gboolean zenity_progress_active;
 static int      zenity_progress_percentage;
 static gboolean zenity_progress_pulsate;
 static gboolean zenity_progress_auto_close;
+static gboolean zenity_progress_auto_kill;
 
 /* Question Dialog Options */
 static gboolean zenity_question_active;
@@ -561,6 +562,16 @@ static GOptionEntry progress_options[] = {
     N_("Dismiss the dialog when 100% has been reached"),
     NULL
   },
+  {
+    "auto-kill",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_progress_auto_kill,
+    /* xgettext: no-c-format */
+    N_("Kill parent process if cancel button is pressed"),
+    NULL
+  },
   { 
     NULL 
   }
@@ -974,6 +985,7 @@ zenity_progress_pre_callback (GOptionContext *context,
   zenity_progress_percentage = 0;
   zenity_progress_pulsate = FALSE;
   zenity_progress_auto_close = FALSE;
+  zenity_progress_auto_kill = FALSE;
 
   return TRUE;
 }
@@ -1282,6 +1294,7 @@ zenity_progress_post_callback (GOptionContext *context,
     results->progress_data->dialog_text = zenity_general_dialog_text;
     results->progress_data->pulsate = zenity_progress_pulsate;
     results->progress_data->autoclose = zenity_progress_auto_close;
+    results->progress_data->autokill = zenity_progress_auto_kill;
     results->progress_data->percentage = zenity_progress_percentage;
   } else {
     if (zenity_progress_pulsate)
@@ -1294,6 +1307,10 @@ zenity_progress_post_callback (GOptionContext *context,
 
     if (zenity_progress_auto_close)
       zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_auto_close),
+                           ERROR_SUPPORT);
+                           
+    if (zenity_progress_auto_kill)
+      zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_auto_kill),
                            ERROR_SUPPORT);
   }
     

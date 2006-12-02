@@ -91,6 +91,7 @@ typedef struct {
   gchar   *entry_text;
   gboolean pulsate;
   gboolean autoclose;
+  gboolean autokill;
   gdouble  percentage;
 } ZenityProgressData;
 

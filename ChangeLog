@@ -1,8 +1,15 @@
 2006-12-02  Lucas Rocha  <lucasr@gnome.org>
 
+	* src/zenity.h, src/progress.c, src/option.c: add "auto-kill" option
+	to progress dialog. Now the user can choose whether to kill parent 
+	process or not (Fixes bug #310824). Patch from Diego Escalante Urrelo
+	<diego@aureal.com.pe>.
+
+2006-12-02  Lucas Rocha  <lucasr@gnome.org>
+
 	* src/zenity.glade: don't show cancel button on warning dialog (Fixes
 	bug #324100). Patch from Claudio Saavedra
-	<csaavedra@alumnos.utalca.cl>
+	<csaavedra@alumnos.utalca.cl>.
 
 2006-10-02  Guilherme de S. Pastore  <gpastore@gnome.org>
 
