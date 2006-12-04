@@ -165,7 +165,7 @@ static GOptionEntry calendar_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "day",
@@ -174,7 +174,7 @@ static GOptionEntry calendar_options[] = {
     G_OPTION_ARG_INT,
     &zenity_calendar_day,
     N_("Set the calendar day"),
-    NULL
+    N_("DAY")
   },
   {
     "month",
@@ -183,7 +183,7 @@ static GOptionEntry calendar_options[] = {
     G_OPTION_ARG_INT,
     &zenity_calendar_month,
     N_("Set the calendar month"),
-    NULL
+    N_("MONTH")
   },
   {
     "year",
@@ -192,7 +192,7 @@ static GOptionEntry calendar_options[] = {
     G_OPTION_ARG_INT,
     &zenity_calendar_year,
     N_("Set the calendar year"),
-    NULL
+    N_("YEAR")
   },
   {
     "date-format",
@@ -201,7 +201,7 @@ static GOptionEntry calendar_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_calendar_date_format,
     N_("Set the format for the returned date"),
-    NULL
+    N_("PATTERN")
   },
   {
     NULL
@@ -225,7 +225,7 @@ static GOptionEntry entry_options[] = {
     G_OPTION_ARG_STRING | G_OPTION_FLAG_NOALIAS,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "entry-text",
@@ -234,7 +234,7 @@ static GOptionEntry entry_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_entry_entry_text,
     N_("Set the entry text"),
-    NULL
+    N_("TEXT")
   },
   {
     "hide-text",
@@ -243,7 +243,7 @@ static GOptionEntry entry_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_entry_hide_text,
     N_("Hide the entry text"),
-    NULL
+    N_("TEXT")
   },
   { 
     NULL 
@@ -268,7 +268,7 @@ static GOptionEntry error_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "no-wrap",
@@ -301,7 +301,7 @@ static GOptionEntry info_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "no-wrap",
@@ -403,7 +403,7 @@ static GOptionEntry list_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "column",
@@ -412,7 +412,7 @@ static GOptionEntry list_options[] = {
     G_OPTION_ARG_STRING_ARRAY,
     &zenity_list_columns,
     N_("Set the column header"),
-    NULL
+    N_("COLUMN")
   },
   {
     "checklist",
@@ -466,7 +466,7 @@ static GOptionEntry list_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_list_print_column,
     N_("Print a specific column (Default is 1. 'ALL' can be used to print all columns)"),
-    NULL
+    N_("NUMBER")
   },
   {
     "hide-column",
@@ -475,7 +475,7 @@ static GOptionEntry list_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_list_hide_column,
     N_("Hide a specific column"),
-    NULL
+    N_("NUMBER")
   },
   { 
     NULL 
@@ -499,7 +499,7 @@ static GOptionEntry notification_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the notification text"),
-    NULL
+    N_("TEXT")
   },
   {
     "listen",
@@ -532,7 +532,7 @@ static GOptionEntry progress_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "percentage",
@@ -541,7 +541,7 @@ static GOptionEntry progress_options[] = {
     G_OPTION_ARG_INT,
     &zenity_progress_percentage,
     N_("Set initial percentage"),
-    NULL
+    N_("PERCENTAGE")
   },
   {
     "pulsate",
@@ -594,7 +594,7 @@ static GOptionEntry question_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "no-wrap",
@@ -660,7 +660,7 @@ static GOptionEntry warning_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "no-wrap",
@@ -693,7 +693,7 @@ static GOptionEntry scale_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
-    NULL
+    N_("TEXT")
   },
   {
     "value",
@@ -702,7 +702,7 @@ static GOptionEntry scale_options[] = {
     G_OPTION_ARG_INT,
     &zenity_scale_value,
     N_("Set initial value"),
-    NULL
+    N_("VALUE")
   },
   {
     "min-value",
@@ -711,7 +711,7 @@ static GOptionEntry scale_options[] = {
     G_OPTION_ARG_INT,
     &zenity_scale_min_value,
     N_("Set minimum value"),
-    NULL
+    N_("VALUE")
   },
   {
     "max-value",
@@ -720,7 +720,7 @@ static GOptionEntry scale_options[] = {
     G_OPTION_ARG_INT,
     &zenity_scale_max_value,
     N_("Set maximum value"),
-    NULL
+    N_("VALUE")
   },
   {
     "step",
@@ -729,7 +729,7 @@ static GOptionEntry scale_options[] = {
     G_OPTION_ARG_INT,
     &zenity_scale_step,
     N_("Set step size"),
-    NULL
+    N_("VALUE")
   },
   {
     "print-partial",
