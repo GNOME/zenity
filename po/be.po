@@ -7,69 +7,57 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2003-07-28 16:38+0300\n"
-"Last-Translator: Ales Nyakhaychyk <nab@mail.by>\n"
+"POT-Creation-Date: 2006-12-11 19:23+0100\n"
+"PO-Revision-Date: 2006-12-18 02:01+0300\n"
+"Last-Translator: Alexander Nyakhaychyk <nyakhaychyk@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.9.6\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
-#, fuzzy
-msgid "translator-credits"
-msgstr "Алесь Няхайчык <nab@mail.by>"
+#: ../src/about.c:65
+msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+msgstr "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 
-#: ../src/about.c:433
+#: ../src/about.c:69
+msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+msgstr "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+
+#: ../src/about.c:73
+msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+
+#: ../src/about.c:264
+msgid "translator-credits"
+msgstr "Аляксандар Няхайчык"
+
+#: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
 msgstr "Адлюстроўвае дыялёгавыя вокны са сцэнараў абалонкі"
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "© 2003 Sun Microsystems"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "Падзяці"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "Стваральнікі"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "Перакладчыкі"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr ""
-
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr ""
-
-#: ../src/main.c:90
+#: ../src/main.c:94
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Вы павінны задаць від дыялёгу.  Глядзіце вывад \"zenity --help\" для больш\n"
 "падрабязных зьвестак\n"
 
-#: ../src/notification.c:161
+#: ../src/notification.c:138
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "немагчыма разабраць загады з stdin\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
-#, fuzzy
+#: ../src/notification.c:251
+#: ../src/notification.c:268
 msgid "Zenity notification"
-msgstr "Адлюстраваць паведамляльны дыялёг"
+msgstr "Нагадваньне Zenity"
+
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Найбольшае значэньне мусіць быць большым за найменшае.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Значэньне выйшла за дазволеныя межы.\n"
 
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
@@ -77,426 +65,521 @@ msgstr "Не заданы назвы слупкоў для сьпісу.\n"
 
 #: ../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "Вы мусіце выкарыстоўваць толькі адзін дыялёг тыпу Сьпісу.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "Пра Zenity"
-
-#: ../src/zenity.glade.h:3
 msgid "Add a new entry"
 msgstr "Дадаць новы запіс"
 
-#: ../src/zenity.glade.h:4
+#: ../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "Узгадняе значэньне маштабаваньня"
+
+#: ../src/zenity.glade.h:3
 msgid "All updates are complete."
 msgstr "Усе абнаўленьні зроблены."
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.glade.h:4
 msgid "An error has occurred."
 msgstr "Здарылась памылка."
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.glade.h:5
 msgid "Are you sure you want to proceed?"
 msgstr "Вы на самой справе жадаеце працягваць?"
 
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.glade.h:6
 msgid "C_alendar:"
 msgstr "Ка_ляндар:"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.glade.h:7
 msgid "Calendar selection"
 msgstr "Вылучэньне каляндара"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.glade.h:8
 msgid "Error"
 msgstr "Памылка"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.glade.h:9
 msgid "Information"
 msgstr "Зьвесткі"
 
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.glade.h:10
 msgid "Progress"
 msgstr "Посьпех"
 
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.glade.h:11
 msgid "Question"
 msgstr "Пытаньне"
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.glade.h:12
 msgid "Running..."
 msgstr "Выконваецца..."
 
-#: ../src/zenity.glade.h:14
+#: ../src/zenity.glade.h:13
 msgid "Select a date from below."
 msgstr "Вылучыце дзень з прапанаваных ніжэй."
 
-#: ../src/zenity.glade.h:15
+#: ../src/zenity.glade.h:14
 msgid "Select a file"
 msgstr "Вылучэньне файла"
 
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.glade.h:15
 msgid "Select items from the list"
 msgstr "Вылучыце пункт са сьпіса"
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.glade.h:16
 msgid "Select items from the list below."
 msgstr "Вылучыце пункт са сьпіса, прапанаванага ніжэй."
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.glade.h:17
 msgid "Text View"
 msgstr "Паказ тэкста"
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.glade.h:18
 msgid "Warning"
 msgstr "Папярэджаньне"
 
-#: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "_Падзякі"
-
-#: ../src/zenity.glade.h:21
+#: ../src/zenity.glade.h:19
 msgid "_Enter new text:"
 msgstr "У_вядзіце новы тэкст:"
 
-#: ../src/option.c:105
+#: ../src/option.c:116
 msgid "Set the dialog title"
 msgstr "Усталяваць загаловак акна"
 
-#: ../src/option.c:106
+#: ../src/option.c:117
 msgid "TITLE"
 msgstr "ЗАГАЛОВАК"
 
-#: ../src/option.c:114
+#: ../src/option.c:125
 msgid "Set the window icon"
 msgstr "Усталяваць значку вакна"
 
-#: ../src/option.c:115
+#: ../src/option.c:126
 msgid "ICONPATH"
 msgstr "ШЛЯХ_ДА_ЗНАЧКІ"
 
-#: ../src/option.c:123
+#: ../src/option.c:134
 msgid "Set the width"
 msgstr "Усталяваць шырыню"
 
-#: ../src/option.c:124
+#: ../src/option.c:135
 msgid "WIDTH"
 msgstr "ШЫРЫНЯ"
 
-#: ../src/option.c:132
+#: ../src/option.c:143
 msgid "Set the height"
 msgstr "Усталяваць вышыню"
 
-#: ../src/option.c:133
+#: ../src/option.c:144
 msgid "HEIGHT"
 msgstr "ВЫШЫНЯ"
 
-#: ../src/option.c:147
+#: ../src/option.c:158
 msgid "Display calendar dialog"
 msgstr "Адлюстраваць каляндар"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: ../src/option.c:167
+#: ../src/option.c:227
+#: ../src/option.c:270
+#: ../src/option.c:303
+#: ../src/option.c:405
+#: ../src/option.c:534
+#: ../src/option.c:596
+#: ../src/option.c:662
+#: ../src/option.c:695
 msgid "Set the dialog text"
 msgstr "Усталяваць тэкст дыялёгу"
 
-#: ../src/option.c:165
+#: ../src/option.c:168
+#: ../src/option.c:228
+#: ../src/option.c:237
+#: ../src/option.c:246
+#: ../src/option.c:271
+#: ../src/option.c:304
+#: ../src/option.c:406
+#: ../src/option.c:502
+#: ../src/option.c:535
+#: ../src/option.c:597
+#: ../src/option.c:663
+#: ../src/option.c:696
+msgid "TEXT"
+msgstr "ТЭКСТ"
+
+#: ../src/option.c:176
 msgid "Set the calendar day"
 msgstr "Усталяваць дзень каляндара"
 
-#: ../src/option.c:174
+#: ../src/option.c:177
+msgid "DAY"
+msgstr "ДЗЕНЬ"
+
+#: ../src/option.c:185
 msgid "Set the calendar month"
 msgstr "Усталяваць месяц каляндара"
 
-#: ../src/option.c:183
+#: ../src/option.c:186
+msgid "MONTH"
+msgstr "МЕСЯЦ"
+
+#: ../src/option.c:194
 msgid "Set the calendar year"
 msgstr "Усталяваць год каляндара"
 
-#: ../src/option.c:192
+#: ../src/option.c:195
+msgid "YEAR"
+msgstr "ГОД"
+
+#: ../src/option.c:203
 msgid "Set the format for the returned date"
 msgstr "Усталяваць фармат даты для вяртаньня"
 
-#: ../src/option.c:207
+#: ../src/option.c:204
+msgid "PATTERN"
+msgstr "УЗОР"
+
+#: ../src/option.c:218
 msgid "Display text entry dialog"
 msgstr "Адлюстраваць дыялёг для ўводу тэксту"
 
-#: ../src/option.c:225
+#: ../src/option.c:236
 msgid "Set the entry text"
 msgstr "Усталяваць тэкст для поля ўводу"
 
-#: ../src/option.c:234
+#: ../src/option.c:245
 msgid "Hide the entry text"
 msgstr "Схаваць тэкст поля ўводу"
 
-#: ../src/option.c:250
+#: ../src/option.c:261
 msgid "Display error dialog"
 msgstr "Адлюстраваць дыялёг для паведамленьня пра памылку"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: ../src/option.c:279
+#: ../src/option.c:312
+#: ../src/option.c:605
+#: ../src/option.c:671
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "Не ўключаць загортваньне радкоў"
 
-#: ../src/option.c:283
+#: ../src/option.c:294
 msgid "Display info dialog"
 msgstr "Адлюстраваць паведамляльны дыялёг"
 
-#: ../src/option.c:316
+#: ../src/option.c:327
 msgid "Display file selection dialog"
 msgstr "Адлюстраваць дыялёг вылучэньня файла"
 
-#: ../src/option.c:325
+#: ../src/option.c:336
 msgid "Set the filename"
 msgstr "Усталяваць назву файла"
 
-#: ../src/option.c:326 ../src/option.c:600
+#: ../src/option.c:337
+#: ../src/option.c:630
 msgid "FILENAME"
 msgstr "НАЗВА_ФАЙЛА"
 
-#: ../src/option.c:334
+#: ../src/option.c:345
 msgid "Allow multiple files to be selected"
 msgstr "Дазволіць вылучэньне некалькіх файлаў"
 
-#: ../src/option.c:343
+#: ../src/option.c:354
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "Задзейнічаць вылучэньне толькі дырэкторыяў"
 
-#: ../src/option.c:352
+#: ../src/option.c:363
 msgid "Activate save mode"
-msgstr ""
+msgstr "Задзейнічаць бясьпечны рэжым"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: ../src/option.c:372
+#: ../src/option.c:441
 msgid "Set output separator character"
 msgstr "Усталяваць знак-падзяляльнік вываду"
 
-#: ../src/option.c:362 ../src/option.c:422
+#: ../src/option.c:373
+#: ../src/option.c:442
 msgid "SEPARATOR"
 msgstr "ПАДЗЯЛЯЛЬНІК"
 
-#: ../src/option.c:376
+#: ../src/option.c:381
+msgid "Confirm file selection if filename already exists"
+msgstr "Пацьверджваць вылучэньне файла, калі ён ужо існуе"
+
+#: ../src/option.c:396
 msgid "Display list dialog"
 msgstr "Адлюстраваць сьпіс"
 
-#: ../src/option.c:394
+#: ../src/option.c:414
 msgid "Set the column header"
 msgstr "Усталяваць загаловак слупка"
 
-#: ../src/option.c:403
+#: ../src/option.c:415
+msgid "COLUMN"
+msgstr "СЛУПОК"
+
+#: ../src/option.c:423
 msgid "Use check boxes for first column"
 msgstr "Выкарыстоўваць пазначальнікі для першага слупка"
 
-#: ../src/option.c:412
+#: ../src/option.c:432
 msgid "Use radio buttons for first column"
 msgstr "Выкарыстоўваць пераключальнікі для першага слупка"
 
-#: ../src/option.c:430
-#, fuzzy
+#: ../src/option.c:450
 msgid "Allow multiple rows to be selected"
-msgstr "Дазволіць вылучэньне некалькіх файлаў"
+msgstr "Дазволіць вылучэньне некалькіх радкоў"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: ../src/option.c:459
+#: ../src/option.c:638
 msgid "Allow changes to text"
 msgstr "Дазволіць зьмяненьне тэксту"
 
-#: ../src/option.c:448
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
-msgstr ""
+#: ../src/option.c:468
+msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
+msgstr "Друкуе адмысловы слупок (прадвызначаны - 1-ы, \"ALL\" - можна задаць для друку ўсіх слупкоў\""
 
-#: ../src/option.c:457
+#: ../src/option.c:469
+#: ../src/option.c:478
+msgid "NUMBER"
+msgstr "НУМАР"
+
+#: ../src/option.c:477
 msgid "Hide a specific column"
-msgstr ""
+msgstr "Хавае адмысловы слупок"
 
-#: ../src/option.c:472
-#, fuzzy
+#: ../src/option.c:492
 msgid "Display notification"
-msgstr "Адлюстраваць паведамляльны дыялёг"
+msgstr "Адлюстраваць дыялёг інфармаваньня"
 
-#: ../src/option.c:481
-#, fuzzy
+#: ../src/option.c:501
 msgid "Set the notification text"
-msgstr "Усталяваць тэкст дыялёгу"
+msgstr "Задае тэкст нагадваньня"
 
-#: ../src/option.c:490
+#: ../src/option.c:510
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "Слухаць загады на stdin"
 
-#: ../src/option.c:505
+#: ../src/option.c:525
 msgid "Display progress indication dialog"
 msgstr "Адлюстраваць дыялёг посьпеху"
 
-#: ../src/option.c:523
+#: ../src/option.c:543
 msgid "Set initial percentage"
 msgstr "Усталяваць пачатковае значэньне адсотак"
 
-#: ../src/option.c:532
+#: ../src/option.c:544
+msgid "PERCENTAGE"
+msgstr "АДСОТАК"
+
+#: ../src/option.c:552
 msgid "Pulsate progress bar"
 msgstr "Палоска посьпеху мільгае"
 
-#: ../src/option.c:542
+#: ../src/option.c:562
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Зачыніць дыялёг, калі будзе дасягнута значэньне ў 100%"
 
-#: ../src/option.c:557
+#: ../src/option.c:572
+#, no-c-format
+msgid "Kill parent process if cancel button is pressed"
+msgstr "Забіць бацькоўскі працэс, калі націснуць Скасаваць"
+
+#: ../src/option.c:587
 msgid "Display question dialog"
 msgstr "Адлюстраваць дыялёг з пытаньнем"
 
-#: ../src/option.c:590
+#: ../src/option.c:620
 msgid "Display text information dialog"
 msgstr "Адлюстраваць дыялёг са зьвесткамі"
 
-#: ../src/option.c:599
+#: ../src/option.c:629
 msgid "Open file"
 msgstr "Адчыніць файл"
 
-#: ../src/option.c:623
+#: ../src/option.c:653
 msgid "Display warning dialog"
 msgstr "Адлюстраваць дыялёг з папярэджаньнем"
 
-#: ../src/option.c:656
+#: ../src/option.c:686
+msgid "Display scale dialog"
+msgstr "Адлюстроўвае дыялёг маштабаваньня"
+
+#: ../src/option.c:704
+msgid "Set initial value"
+msgstr "Задае пачатковае значэньне"
+
+#: ../src/option.c:705
+#: ../src/option.c:714
+#: ../src/option.c:723
+#: ../src/option.c:732
+msgid "VALUE"
+msgstr "ЗНАЧЭНЬНЕ"
+
+#: ../src/option.c:713
+msgid "Set minimum value"
+msgstr "Задае найменшае значэньне"
+
+#: ../src/option.c:722
+msgid "Set maximum value"
+msgstr "Задае найбольшае значэньне"
+
+#: ../src/option.c:731
+msgid "Set step size"
+msgstr "Задае памер кроку"
+
+#: ../src/option.c:740
+msgid "Print partial values"
+msgstr "Друкуе частковае значэньне"
+
+#: ../src/option.c:749
+msgid "Hide value"
+msgstr "Хавае значэньне"
+
+#: ../src/option.c:764
 msgid "About zenity"
 msgstr "Пра Zenity"
 
-#: ../src/option.c:665
+#: ../src/option.c:773
 msgid "Print version"
 msgstr "Надрукаваць вэрсыю"
 
-#: ../src/option.c:1259
+#: ../src/option.c:1414
 msgid "General options"
 msgstr "Галоўныя выбары"
 
-#: ../src/option.c:1260
-#, fuzzy
+#: ../src/option.c:1415
 msgid "Show general options"
-msgstr "Галоўныя выбары"
+msgstr "Паказвае агульныя опцыі"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1425
 msgid "Calendar options"
 msgstr "Выбары каляндара"
 
-#: ../src/option.c:1271
-#, fuzzy
+#: ../src/option.c:1426
 msgid "Show calendar options"
-msgstr "Выбары каляндара"
+msgstr "Паказвае опцыі календару"
 
-#: ../src/option.c:1281
+#: ../src/option.c:1436
 msgid "Text entry options"
 msgstr "Выбары ўводу тэксту"
 
-#: ../src/option.c:1282
-#, fuzzy
+#: ../src/option.c:1437
 msgid "Show text entry options"
-msgstr "Выбары ўводу тэксту"
+msgstr "Паказвае опцыі ўводу"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1447
 msgid "Error options"
 msgstr "Выбары памылкі"
 
-#: ../src/option.c:1293
-#, fuzzy
+#: ../src/option.c:1448
 msgid "Show error options"
-msgstr "Выбары памылкі"
+msgstr "Паказвае опцыі дыялёгка памылкі"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1458
 msgid "Info options"
 msgstr "Выбары зьвестак"
 
-#: ../src/option.c:1304
-#, fuzzy
+#: ../src/option.c:1459
 msgid "Show info options"
-msgstr "Выбары зьвестак"
+msgstr "Паказвае опцыі дыялёга зьвестак"
 
-#: ../src/option.c:1314
+#: ../src/option.c:1469
 msgid "File selection options"
 msgstr "Выбары вылучэньня файла"
 
-#: ../src/option.c:1315
-#, fuzzy
+#: ../src/option.c:1470
 msgid "Show file selection options"
-msgstr "Выбары вылучэньня файла"
+msgstr "Паказвае опцыі дыялёга вылучэньня файла"
 
-#: ../src/option.c:1325
+#: ../src/option.c:1480
 msgid "List options"
 msgstr "Выбары сьпісу"
 
-#: ../src/option.c:1326
-#, fuzzy
+#: ../src/option.c:1481
 msgid "Show list options"
-msgstr "Выбары сьпісу"
+msgstr "Паказвае опцыі сьпісу элемэнтаў"
 
-#: ../src/option.c:1336
-#, fuzzy
+#: ../src/option.c:1491
 msgid "Notification icon options"
-msgstr "Выбары пытаньня"
+msgstr "Опцыі значкі нагадваньня"
 
-#: ../src/option.c:1337
-#, fuzzy
+#: ../src/option.c:1492
 msgid "Show notification icon options"
-msgstr "Выбары пытаньня"
+msgstr "Паказвае опцыі значкі нагадваньня"
 
-#: ../src/option.c:1347
+#: ../src/option.c:1502
 msgid "Progress options"
 msgstr "Выбары посьпеху"
 
-#: ../src/option.c:1348
-#, fuzzy
+#: ../src/option.c:1503
 msgid "Show progress options"
-msgstr "Выбары посьпеху"
+msgstr "Паказвае опцыі палоскі посьпеху"
 
-#: ../src/option.c:1358
+#: ../src/option.c:1513
 msgid "Question options"
 msgstr "Выбары пытаньня"
 
-#: ../src/option.c:1359
-#, fuzzy
+#: ../src/option.c:1514
 msgid "Show question options"
-msgstr "Выбары пытаньня"
+msgstr "Паказвае опцыі дыялёга пытаньня"
 
-#: ../src/option.c:1369
+#: ../src/option.c:1524
 msgid "Warning options"
 msgstr "Выбары папярэджаньня"
 
-#: ../src/option.c:1370
-#, fuzzy
+#: ../src/option.c:1525
 msgid "Show warning options"
-msgstr "Выбары папярэджаньня"
+msgstr "Паказвае опцыі дыялёга папярэджаньня"
 
-#: ../src/option.c:1380
-#, fuzzy
+#: ../src/option.c:1535
+msgid "Scale options"
+msgstr "Опцыі маштабаваньня"
+
+#: ../src/option.c:1536
+msgid "Show scale options"
+msgstr "Паказвае опцыі маштабаваньня"
+
+#: ../src/option.c:1546
 msgid "Text information options"
-msgstr "Выбары пытаньня"
+msgstr "Опцыі тэкставых зьвестак"
 
-#: ../src/option.c:1381
-#, fuzzy
+#: ../src/option.c:1547
 msgid "Show text information options"
-msgstr "Выбары пытаньня"
+msgstr "Паказвае опцыі тэкставых зьвестак"
 
-#: ../src/option.c:1391
+#: ../src/option.c:1557
 msgid "Miscellaneous options"
 msgstr "Разнастайныя выбары"
 
-#: ../src/option.c:1392
-#, fuzzy
+#: ../src/option.c:1558
 msgid "Show miscellaneous options"
-msgstr "Разнастайныя выбары"
+msgstr "Паказвае разнастайныя опцыі"
 
-#: ../src/option.c:1417
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
+#: ../src/option.c:1583
+msgid "This option is not available. Please see --help for all possible usages.\n"
+msgstr "Гэтая опцыя недаступная. Калі ласка, глядзіце --help для магчымых варыянтаў.\n"
 
-#: ../src/option.c:1421
-#, fuzzy, c-format
+#: ../src/option.c:1587
+#, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "%s непадтрымліваецца гэтым дыялёгам\n"
+msgstr "--%s не падтрымліваецца для гэтага дыялёга\n"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1591
 msgid "Two or more dialog options specified\n"
 msgstr "Заданы два ці больш выбараў дыялёга\n"
+
+#~ msgid "(C) 2003 Sun Microsystems"
+#~ msgstr "© 2003 Sun Microsystems"
+#~ msgid "Credits"
+#~ msgstr "Падзяці"
+#~ msgid "Written by"
+#~ msgstr "Стваральнікі"
+#~ msgid "Translated by"
+#~ msgstr "Перакладчыкі"
+#~ msgid "*"
+#~ msgstr "*"
+#~ msgid "About Zenity"
+#~ msgstr "Пра Zenity"
+#~ msgid "_Credits"
+#~ msgstr "_Падзякі"
+
