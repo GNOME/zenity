@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-27 16:34+0200\n"
-"PO-Revision-Date: 2006-07-27 16:38+0200\n"
+"POT-Creation-Date: 2006-12-21 09:45+0100\n"
+"PO-Revision-Date: 2006-12-21 09:44+0100\n"
 "Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,26 +60,17 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Dialogfenster aus Shell-Skripten heraus aufrufen"
 
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "Ausrichtung"
-
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "Die Ausrichtung der Anzeige."
-
 #: ../src/main.c:94
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Sie müssen einen Dialogtypen angeben. Siehe »zenity --help« für weitere "
 "Details.\n"
 
-#: ../src/notification.c:166
+#: ../src/notification.c:138
 msgid "could not parse command from stdin\n"
 msgstr "Befehl von Standardeingabe konnte nicht interpretiert werden\n"
 
-#: ../src/notification.c:261 ../src/notification.c:290
-#: ../src/notification.c:312
+#: ../src/notification.c:251 ../src/notification.c:268
 msgid "Zenity notification"
 msgstr "Zenity-Benachrichtigung"
 
@@ -108,222 +99,245 @@ msgid "Adjust the scale value"
 msgstr "Wert des Schiebereglers anpassen"
 
 #: ../src/zenity.glade.h:3
-msgid "Adjust the scale value."
-msgstr "Den Wert des Schiebereglers anpassen."
-
-#: ../src/zenity.glade.h:4
 msgid "All updates are complete."
 msgstr "Alle Aktualisierungen wurden fertiggestellt."
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.glade.h:4
 msgid "An error has occurred."
 msgstr "Ein Fehler ist aufgetreten."
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.glade.h:5
 msgid "Are you sure you want to proceed?"
 msgstr "Wollen Sie fortfahren?"
 
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.glade.h:6
 msgid "C_alendar:"
 msgstr "_Kalender:"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.glade.h:7
 msgid "Calendar selection"
 msgstr "Wählen Sie ein Datum"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.glade.h:8
 msgid "Error"
 msgstr "Fehler"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.glade.h:9
 msgid "Information"
 msgstr "Informationen"
 
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.glade.h:10
 msgid "Progress"
 msgstr "Fortschritt"
 
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.glade.h:11
 msgid "Question"
 msgstr "Frage"
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.glade.h:12
 msgid "Running..."
 msgstr "Läuft …"
 
-#: ../src/zenity.glade.h:14
+#: ../src/zenity.glade.h:13
 msgid "Select a date from below."
 msgstr "Wählen Sie ein Datum."
 
-#: ../src/zenity.glade.h:15
+#: ../src/zenity.glade.h:14
 msgid "Select a file"
 msgstr "Wählen Sie eine Datei"
 
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.glade.h:15
 msgid "Select items from the list"
 msgstr "Wählen Sie Objekte aus der Liste"
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.glade.h:16
 msgid "Select items from the list below."
 msgstr "Wählen Sie Objekte aus der Liste."
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.glade.h:17
 msgid "Text View"
 msgstr "Textansicht"
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.glade.h:18
 msgid "Warning"
 msgstr "Warnung"
 
-#: ../src/zenity.glade.h:20
+#: ../src/zenity.glade.h:19
 msgid "_Enter new text:"
 msgstr "_Geben Sie den neuen Text ein:"
 
-#: ../src/option.c:115
+#: ../src/option.c:116
 msgid "Set the dialog title"
 msgstr "Den Dialogtitel festlegen"
 
-#: ../src/option.c:116
+#: ../src/option.c:117
 msgid "TITLE"
 msgstr "TITEL"
 
-#: ../src/option.c:124
+#: ../src/option.c:125
 msgid "Set the window icon"
 msgstr "Das Fenstersymbol festlegen"
 
-#: ../src/option.c:125
+#: ../src/option.c:126
 msgid "ICONPATH"
 msgstr "SYMBOLPFAD"
 
-#: ../src/option.c:133
+#: ../src/option.c:134
 msgid "Set the width"
 msgstr "Die Breite festlegen"
 
-#: ../src/option.c:134
+#: ../src/option.c:135
 msgid "WIDTH"
 msgstr "BREITE"
 
-#: ../src/option.c:142
+#: ../src/option.c:143
 msgid "Set the height"
 msgstr "Die Höhe festlegen"
 
-#: ../src/option.c:143
+#: ../src/option.c:144
 msgid "HEIGHT"
 msgstr "HÖHE"
 
-#: ../src/option.c:157
+#: ../src/option.c:158
 msgid "Display calendar dialog"
 msgstr "Kalenderdialog anzeigen"
 
-#: ../src/option.c:166 ../src/option.c:226 ../src/option.c:269
-#: ../src/option.c:302 ../src/option.c:404 ../src/option.c:533
-#: ../src/option.c:585 ../src/option.c:651 ../src/option.c:684
+#: ../src/option.c:167 ../src/option.c:227 ../src/option.c:270
+#: ../src/option.c:303 ../src/option.c:405 ../src/option.c:534
+#: ../src/option.c:596 ../src/option.c:662 ../src/option.c:695
 msgid "Set the dialog text"
 msgstr "Den Dialogtext festlegen"
 
-#: ../src/option.c:175
+#: ../src/option.c:168 ../src/option.c:228 ../src/option.c:237
+#: ../src/option.c:246 ../src/option.c:271 ../src/option.c:304
+#: ../src/option.c:406 ../src/option.c:502 ../src/option.c:535
+#: ../src/option.c:597 ../src/option.c:663 ../src/option.c:696
+msgid "TEXT"
+msgstr "TEXT"
+
+#: ../src/option.c:176
 msgid "Set the calendar day"
 msgstr "Den Kalendertag festlegen"
 
-#: ../src/option.c:184
+#: ../src/option.c:177
+msgid "DAY"
+msgstr "TAG"
+
+#: ../src/option.c:185
 msgid "Set the calendar month"
 msgstr "Den Kalendermonat festlegen"
 
-#: ../src/option.c:193
+#: ../src/option.c:186
+msgid "MONTH"
+msgstr "MONAT"
+
+#: ../src/option.c:194
 msgid "Set the calendar year"
 msgstr "Das Kalenderjahr festlegen"
 
-#: ../src/option.c:202
+#: ../src/option.c:195
+msgid "YEAR"
+msgstr "JAHR"
+
+#: ../src/option.c:203
 msgid "Set the format for the returned date"
 msgstr "Das Format für das zurückgegebene Datum festlegen"
 
-#: ../src/option.c:217
+#: ../src/option.c:204
+msgid "PATTERN"
+msgstr "MUSTER"
+
+#: ../src/option.c:218
 msgid "Display text entry dialog"
 msgstr "Texteingabe-Dialog anzeigen"
 
-#: ../src/option.c:235
+#: ../src/option.c:236
 msgid "Set the entry text"
 msgstr "Den Eingabetext festlegen"
 
-#: ../src/option.c:244
+#: ../src/option.c:245
 msgid "Hide the entry text"
 msgstr "Den Eingabetext verbergen"
 
-#: ../src/option.c:260
+#: ../src/option.c:261
 msgid "Display error dialog"
 msgstr "Fehlerdialog anzeigen"
 
-#: ../src/option.c:278 ../src/option.c:311 ../src/option.c:594
-#: ../src/option.c:660
+#: ../src/option.c:279 ../src/option.c:312 ../src/option.c:605
+#: ../src/option.c:671
 msgid "Do not enable text wrapping"
 msgstr "Zeilenumbrüche nicht aktivieren"
 
-#: ../src/option.c:293
+#: ../src/option.c:294
 msgid "Display info dialog"
 msgstr "Info-Dialog anzeigen"
 
-#: ../src/option.c:326
+#: ../src/option.c:327
 msgid "Display file selection dialog"
 msgstr "Dateiwähler-Dialog anzeigen"
 
-#: ../src/option.c:335
+#: ../src/option.c:336
 msgid "Set the filename"
 msgstr "Den Dateinamen festlegen"
 
-#: ../src/option.c:336 ../src/option.c:619
+#: ../src/option.c:337 ../src/option.c:630
 msgid "FILENAME"
 msgstr "DATEINAME"
 
-#: ../src/option.c:344
+#: ../src/option.c:345
 msgid "Allow multiple files to be selected"
 msgstr "Auswahl mehrerer Dateien zulassen"
 
 # CHECK
-#: ../src/option.c:353
+#: ../src/option.c:354
 msgid "Activate directory-only selection"
 msgstr "Nur Verzeichnisse auswählen"
 
-#: ../src/option.c:362
+#: ../src/option.c:363
 msgid "Activate save mode"
 msgstr "Speichermodus aktivieren"
 
-#: ../src/option.c:371 ../src/option.c:440
+#: ../src/option.c:372 ../src/option.c:441
 msgid "Set output separator character"
 msgstr "Das Trennzeichen für die Ausgabe festlegen"
 
-#: ../src/option.c:372 ../src/option.c:441
+#: ../src/option.c:373 ../src/option.c:442
 msgid "SEPARATOR"
 msgstr "TRENNZEICHEN"
 
-#: ../src/option.c:380
+#: ../src/option.c:381
 msgid "Confirm file selection if filename already exists"
 msgstr "Dateiauswahl bestätigen, falls ein Dateiname bereits existiert"
 
-#: ../src/option.c:395
+#: ../src/option.c:396
 msgid "Display list dialog"
 msgstr "Listendialog anzeigen"
 
-#: ../src/option.c:413
+#: ../src/option.c:414
 msgid "Set the column header"
 msgstr "Den Spaltentitel festlegen"
 
-#: ../src/option.c:422
+#: ../src/option.c:415
+msgid "COLUMN"
+msgstr "SPALTE"
+
+#: ../src/option.c:423
 msgid "Use check boxes for first column"
 msgstr "Kontrollkästchen für die erste Spalte verwenden"
 
-#: ../src/option.c:431
+#: ../src/option.c:432
 msgid "Use radio buttons for first column"
 msgstr "Radioknöpfe für die erste Spalte verwenden"
 
-#: ../src/option.c:449
+#: ../src/option.c:450
 msgid "Allow multiple rows to be selected"
 msgstr "Auswahl mehrerer Reihen zulassen"
 
-#: ../src/option.c:458 ../src/option.c:627
+#: ../src/option.c:459 ../src/option.c:638
 msgid "Allow changes to text"
 msgstr "Änderungen am Text zulassen"
 
-#: ../src/option.c:467
+#: ../src/option.c:468
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -331,218 +345,245 @@ msgstr ""
 "Drucke eine bestimmte Spalte (Standard ist 1. »ALL« kann benutzt werden, um "
 "alle Spalten zu drucken)"
 
-#: ../src/option.c:476
+#: ../src/option.c:469 ../src/option.c:478
+msgid "NUMBER"
+msgstr "NUMMER"
+
+#: ../src/option.c:477
 msgid "Hide a specific column"
 msgstr "Eine bestimmte Spalte verbergen."
 
-#: ../src/option.c:491
+#: ../src/option.c:492
 msgid "Display notification"
 msgstr "Benachrichtigung anzeigen"
 
-#: ../src/option.c:500
+#: ../src/option.c:501
 msgid "Set the notification text"
 msgstr "Den Benachrichtigungstext festlegen"
 
-#: ../src/option.c:509
+#: ../src/option.c:510
 msgid "Listen for commands on stdin"
 msgstr "Auf der Standardeingabe nach Befehlen horchen"
 
-#: ../src/option.c:524
+#: ../src/option.c:525
 msgid "Display progress indication dialog"
 msgstr "Fortschrittsanzeige-Dialog anzeigen"
 
-#: ../src/option.c:542
+#: ../src/option.c:543
 msgid "Set initial percentage"
 msgstr "Den anfänglichen Prozentsatz festlegen"
 
-#: ../src/option.c:551
+#: ../src/option.c:544
+msgid "PERCENTAGE"
+msgstr "PROZENT"
+
+#: ../src/option.c:552
 msgid "Pulsate progress bar"
 msgstr "Pulsierende Fortschrittsleiste"
 
-#: ../src/option.c:561
+#: ../src/option.c:562
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Den Dialog beenden, wenn 100% erreicht sind"
 
-#: ../src/option.c:576
+#: ../src/option.c:572
+#, no-c-format
+msgid "Kill parent process if cancel button is pressed"
+msgstr "Elternprozess beenden, wenn der Abbrechen-Knopf gedrückt wird"
+
+#: ../src/option.c:587
 msgid "Display question dialog"
 msgstr "Fragedialog anzeigen"
 
-#: ../src/option.c:609
+#: ../src/option.c:620
 msgid "Display text information dialog"
 msgstr "Text-Informationsdialog anzeigen"
 
-#: ../src/option.c:618
+#: ../src/option.c:629
 msgid "Open file"
 msgstr "Datei öffnen"
 
-#: ../src/option.c:642
+#: ../src/option.c:653
 msgid "Display warning dialog"
 msgstr "Warndialog anzeigen"
 
-#: ../src/option.c:675
+#: ../src/option.c:686
 msgid "Display scale dialog"
 msgstr "Schieberegler-Dialog anzeigen"
 
-#: ../src/option.c:693
+#: ../src/option.c:704
 msgid "Set initial value"
 msgstr "Den anfänglichen Wert festlegen"
 
-#: ../src/option.c:702
+#: ../src/option.c:705 ../src/option.c:714 ../src/option.c:723
+#: ../src/option.c:732
+msgid "VALUE"
+msgstr "WERT"
+
+#: ../src/option.c:713
 msgid "Set minimum value"
 msgstr "Den minimalen Wert festlegen"
 
-#: ../src/option.c:711
+#: ../src/option.c:722
 msgid "Set maximum value"
 msgstr "Den maximalen Wert festlegen"
 
-#: ../src/option.c:720
+#: ../src/option.c:731
 msgid "Set step size"
 msgstr "Die Schrittgröße festlegen"
 
-#: ../src/option.c:729
+#: ../src/option.c:740
 msgid "Print partial values"
 msgstr "Zwischenwerte anzeigen"
 
-#: ../src/option.c:738
+#: ../src/option.c:749
 msgid "Hide value"
 msgstr "Den Wert ausblenden"
 
-#: ../src/option.c:753
+#: ../src/option.c:764
 msgid "About zenity"
 msgstr "Info zu zenity"
 
-#: ../src/option.c:762
+#: ../src/option.c:773
 msgid "Print version"
 msgstr "Druckversion"
 
-#: ../src/option.c:1397
+#: ../src/option.c:1414
 msgid "General options"
 msgstr "Allgemeine Einstellungen"
 
-#: ../src/option.c:1398
+#: ../src/option.c:1415
 msgid "Show general options"
 msgstr "Allgemeine Einstellungen anzeigen"
 
-#: ../src/option.c:1408
+#: ../src/option.c:1425
 msgid "Calendar options"
 msgstr "Kalendereinstellungen"
 
-#: ../src/option.c:1409
+#: ../src/option.c:1426
 msgid "Show calendar options"
 msgstr "Kalendereinstellungen anzeigen"
 
-#: ../src/option.c:1419
+#: ../src/option.c:1436
 msgid "Text entry options"
 msgstr "Einstellungen der Texteingabe"
 
-#: ../src/option.c:1420
+#: ../src/option.c:1437
 msgid "Show text entry options"
 msgstr "Einstellungen der Texteingabe anzeigen"
 
-#: ../src/option.c:1430
+#: ../src/option.c:1447
 msgid "Error options"
 msgstr "Fehlereinstellungen"
 
-#: ../src/option.c:1431
+#: ../src/option.c:1448
 msgid "Show error options"
 msgstr "Fehlereinstellungen"
 
-#: ../src/option.c:1441
+#: ../src/option.c:1458
 msgid "Info options"
 msgstr "Info-Einstellungen"
 
-#: ../src/option.c:1442
+#: ../src/option.c:1459
 msgid "Show info options"
 msgstr "Info-Einstellungen anzeigen"
 
-#: ../src/option.c:1452
+#: ../src/option.c:1469
 msgid "File selection options"
 msgstr "Einstellungen des Dateiwählers"
 
-#: ../src/option.c:1453
+#: ../src/option.c:1470
 msgid "Show file selection options"
 msgstr "Einstellungen des Dateiwählers anzeigen"
 
-#: ../src/option.c:1463
+#: ../src/option.c:1480
 msgid "List options"
 msgstr "Listeneinstellungen"
 
-#: ../src/option.c:1464
+#: ../src/option.c:1481
 msgid "Show list options"
 msgstr "Listeneinstellungen anzeigen"
 
-#: ../src/option.c:1474
+#: ../src/option.c:1491
 msgid "Notification icon options"
 msgstr "Benachrichtigungssymbol-Einstellungen"
 
-#: ../src/option.c:1475
+#: ../src/option.c:1492
 msgid "Show notification icon options"
 msgstr "Benachrichtigungssymbol-Einstellungen anzeigen"
 
-#: ../src/option.c:1485
+#: ../src/option.c:1502
 msgid "Progress options"
 msgstr "Fortschrittseinstellungen"
 
-#: ../src/option.c:1486
+#: ../src/option.c:1503
 msgid "Show progress options"
 msgstr "Fortschrittseinstellungen anzeigen"
 
-#: ../src/option.c:1496
+#: ../src/option.c:1513
 msgid "Question options"
 msgstr "Frageeinstellungen"
 
-#: ../src/option.c:1497
+#: ../src/option.c:1514
 msgid "Show question options"
 msgstr "Frageeinstellungen anzeigen"
 
-#: ../src/option.c:1507
+#: ../src/option.c:1524
 msgid "Warning options"
 msgstr "Warneinstellungen"
 
-#: ../src/option.c:1508
+#: ../src/option.c:1525
 msgid "Show warning options"
 msgstr "Warneinstellungen anzeigen"
 
-#: ../src/option.c:1518
+#: ../src/option.c:1535
 msgid "Scale options"
 msgstr "Schiebereglereinstellungen"
 
-#: ../src/option.c:1519
+#: ../src/option.c:1536
 msgid "Show scale options"
 msgstr "Schiebereglereinstellungen anzeigen"
 
-#: ../src/option.c:1529
+#: ../src/option.c:1546
 msgid "Text information options"
 msgstr "Textinformationseinstellungen"
 
-#: ../src/option.c:1530
+#: ../src/option.c:1547
 msgid "Show text information options"
 msgstr "Textinformationseinstellungen anzeigen"
 
-#: ../src/option.c:1540
+#: ../src/option.c:1557
 msgid "Miscellaneous options"
 msgstr "Verschiedene Einstellungen"
 
-#: ../src/option.c:1541
+#: ../src/option.c:1558
 msgid "Show miscellaneous options"
 msgstr "Verschiedene Einstellungen anzeigen"
 
-#: ../src/option.c:1566
+#: ../src/option.c:1583
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Diese Option steht nicht zur Verfügung. Bitte verwenden Sie »--help« für "
 "alle Anwendungsmöglichkeiten.\n"
 
-#: ../src/option.c:1570
+#: ../src/option.c:1587
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s wird von diesem Dialog nicht unterstützt\n"
 
-#: ../src/option.c:1574
+#: ../src/option.c:1591
 msgid "Two or more dialog options specified\n"
 msgstr "Dialog-Option mehrfach übergeben\n"
+
+#~ msgid "Orientation"
+#~ msgstr "Ausrichtung"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Die Ausrichtung der Anzeige."
+
+#~ msgid "Adjust the scale value."
+#~ msgstr "Den Wert des Schiebereglers anpassen."
 
 #~ msgid "(C) 2003 Sun Microsystems"
 #~ msgstr "Copyright (C) 2003 Sun Microsystems"
