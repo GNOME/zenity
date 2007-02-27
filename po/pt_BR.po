@@ -1,17 +1,17 @@
 # Brazilian Portuguese translation of zenity.
-# Copyright (C) 2003-2005 Free Software Foundation, Inc.
+# Copyright (C) 2003-2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 # Alexandre Folle de Menezes <afmenez@terra.com.br>, 2003.
 # Evandro Fernandes Giovanini <evandrofg@ig.com.br>, 2004, 2006.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-03 18:46+0200\n"
-"PO-Revision-Date: 2006-08-14 17:36-0300\n"
-"Last-Translator: Licio Fernando Nascimento da Fonseca <liciofernando@gmail."
-"com>\n"
+"POT-Creation-Date: 2007-02-27 09:16-0300\n"
+"PO-Revision-Date: 2007-02-27 09:17-0300\n"
+"Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,8 +24,8 @@ msgid ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version.\n"
 msgstr ""
-"Este progrma é software livre; você pode redistribui-lo e/ou modifica-lo sob "
-"os termos da GNU General Public License uma publicação da Free Software "
+"Este programa é software livre; você pode redistribuí-lo e/ou modificá-lo "
+"sob os termos da GNU General Public License uma publicação da Free Software "
 "Foundation; em sua versão 2 da Licença, ou (em sua opção) sua versão "
 "posterior.\n"
 
@@ -36,10 +36,10 @@ msgid ""
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 msgstr ""
-"Este programa é distribuido na esperança que será útil, mas SEM GARANTIA "
+"Este programa é distribuido na esperança de que será útil, mas SEM GARANTIA "
 "ALGUMA; nem mesmo a garantia implícita de COMERCIABILIDADE ou ADEQUAÇÃO A "
-"UMA FINALIDADE ESPECIFICA. Consulte a GNU General Public License para mais "
-"detalhes.\n"
+"UMA FINALIDADE ESPECÍFICA.  Consulte a GNU General Public License para "
+"maiores detalhes.\n"
 
 #: ../src/about.c:73
 msgid ""
@@ -47,16 +47,16 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Você deve ter recebido uma copia da GNU General Public License junto com "
-"este programa; se não, escreva para a Free Software Foundation, Inc., 59 "
-"Temple Place, Suite 330, Boston, MA  02111-1307 USA."
+"Você deve ter recebido uma cópia da GNU General Public License junto com "
+"este programa; se não, escreva para a Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #: ../src/about.c:264
 msgid "translator-credits"
 msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "Evandro Fernandes Giovanini <evandrofg@ig.com.br>\n"
-"Licio Fernando <liciofernando@gmail.com>"
+"Fábio Nogueira <deb-user-ba@ubuntu.com>"
 
 #: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
@@ -110,7 +110,7 @@ msgstr "Ocorreu um erro."
 
 #: ../src/zenity.glade.h:5
 msgid "Are you sure you want to proceed?"
-msgstr "Você tem a certeza de que deseja prosseguir?"
+msgstr "Você tem certeza que deseja prosseguir?"
 
 #: ../src/zenity.glade.h:6
 msgid "C_alendar:"
@@ -138,7 +138,7 @@ msgstr "Pergunta"
 
 #: ../src/zenity.glade.h:12
 msgid "Running..."
-msgstr "Em execução..."
+msgstr "Executando..."
 
 #: ../src/zenity.glade.h:13
 msgid "Select a date from below."
@@ -210,21 +210,44 @@ msgstr "Mostrar diálogo de calendário"
 msgid "Set the dialog text"
 msgstr "Definir o texto do diálogo"
 
+#: ../src/option.c:168 ../src/option.c:228 ../src/option.c:237
+#: ../src/option.c:246 ../src/option.c:271 ../src/option.c:304
+#: ../src/option.c:406 ../src/option.c:502 ../src/option.c:535
+#: ../src/option.c:597 ../src/option.c:663 ../src/option.c:696
+msgid "TEXT"
+msgstr "TEXTO"
+
 #: ../src/option.c:176
 msgid "Set the calendar day"
 msgstr "Definir o dia do calendário"
+
+#: ../src/option.c:177
+msgid "DAY"
+msgstr "DIA"
 
 #: ../src/option.c:185
 msgid "Set the calendar month"
 msgstr "Definir o mês do calendário"
 
+#: ../src/option.c:186
+msgid "MONTH"
+msgstr "MÊS"
+
 #: ../src/option.c:194
 msgid "Set the calendar year"
 msgstr "Definir o ano do calendário"
 
+#: ../src/option.c:195
+msgid "YEAR"
+msgstr "ANO"
+
 #: ../src/option.c:203
 msgid "Set the format for the returned date"
 msgstr "Definir o formato para a data devolvida"
+
+#: ../src/option.c:204
+msgid "PATTERN"
+msgstr "MODELO"
 
 #: ../src/option.c:218
 msgid "Display text entry dialog"
@@ -285,7 +308,7 @@ msgstr "SEPARADOR"
 
 #: ../src/option.c:381
 msgid "Confirm file selection if filename already exists"
-msgstr "Confirma seleção do arquivo se o nome de já existe."
+msgstr "Confirmar seleção do arquivo se o nome do arquivo já existe"
 
 #: ../src/option.c:396
 msgid "Display list dialog"
@@ -294,6 +317,10 @@ msgstr "Mostrar diálogo de lista"
 #: ../src/option.c:414
 msgid "Set the column header"
 msgstr "Definir o cabeçalho da coluna"
+
+#: ../src/option.c:415
+msgid "COLUMN"
+msgstr "COLUNA"
 
 #: ../src/option.c:423
 msgid "Use check boxes for first column"
@@ -319,6 +346,10 @@ msgstr ""
 "Imprime uma coluna específica (O padrão é 1. 'ALL' pode ser usado para "
 "imprimir todas as colunas)"
 
+#: ../src/option.c:469 ../src/option.c:478
+msgid "NUMBER"
+msgstr "NÚMERO"
+
 #: ../src/option.c:477
 msgid "Hide a specific column"
 msgstr "Esconder uma coluna específica"
@@ -343,6 +374,10 @@ msgstr "Mostrar diálogo indicador de progresso"
 msgid "Set initial percentage"
 msgstr "Definir percentagem inicial"
 
+#: ../src/option.c:544
+msgid "PERCENTAGE"
+msgstr "PORCENTAGEM"
+
 #: ../src/option.c:552
 msgid "Pulsate progress bar"
 msgstr "Pulsar a barra de progresso"
@@ -355,7 +390,7 @@ msgstr "Fechar o diálogo quando atingir 100%"
 #: ../src/option.c:572
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
-msgstr ""
+msgstr "Matar o processo principal se a tecla cancelar for pressionada"
 
 #: ../src/option.c:587
 msgid "Display question dialog"
@@ -380,6 +415,11 @@ msgstr "Mostrar diálogo de escala"
 #: ../src/option.c:704
 msgid "Set initial value"
 msgstr "Definir o valor inicial"
+
+#: ../src/option.c:705 ../src/option.c:714 ../src/option.c:723
+#: ../src/option.c:732
+msgid "VALUE"
+msgstr "VALOR"
 
 #: ../src/option.c:713
 msgid "Set minimum value"
