@@ -34,7 +34,7 @@ Display text entry dialog
 .B \-\-error
 Display error dialog
 .TP
-.B \-\-file-selection
+.B \-\-file\-selection
 Display file selection dialog
 .TP
 .B \-\-info
@@ -57,6 +57,9 @@ Display text information dialog
 .TP
 .B \-\-warning
 Display warning dialog
+.TP
+.B \-\-scale
+Display scale dialog
 
 .PP
 General options
@@ -89,7 +92,7 @@ Set the calendar month
 .B \-\-year=INT
 Set the calendar year
 .TP
-.B \-\-date-format=STRING
+.B \-\-date-format=PATTERN
 Set the format for the returned date
 
 .PP
@@ -110,6 +113,9 @@ Error options
 .TP
 .B \-\-text=STRING
 Set the dialog text
+.TP
+.B \-\-no\-wrap
+Do not enable text wrapping
 
 .PP
 File selection options
@@ -120,14 +126,26 @@ Set the filename
 .B \-\-multiple
 Allow selection of multiple filenames in file selection dialog
 .TP
+.B \-\-directory
+Activate directory-only selection
+.TP
+.B \-\-save
+Activate save mode
+.TP
 .B \-\-separator=SEPARATOR
 Specify separator character when returning multiple filenames
+.TP
+.B \-\-confirm\-overwrite
+Confirm file selection if filename already exists
 
 .PP
 Info options
 .TP
 .B \-\-text=STRING
 Set the dialog text
+.TP
+.B \-\-no\-wrap
+Do not enable text wrapping
 
 .PP
 List options
@@ -148,12 +166,18 @@ Use radio buttons for first column
 .B \-\-separator=STRING
 Set output separator character
 .TP
+.B \-\-multiple
+Allow multiple rows to be selected
+.TP
 .B \-\-editable
 Allow changes to text
 .TP
 .B \-\-print-column=STRING
 Specify what column to print to standard output. The default is to return
 the first column. 'ALL' may be used to print all columns.
+.TP
+.B \-\-hide\-column=NUMBER
+Hide a specific column
 
 .PP
 Notification options
@@ -161,6 +185,9 @@ Notification options
 .TP
 .B \-\-text=STRING
 Set the notification text
+.TP
+.B \-\-listen
+Listen for commands on stdin
 
 .PP
 Progress options
@@ -175,13 +202,21 @@ Set initial percentage
 .B \-\-auto\-close
 Close dialog when 100% has been reached
 .TP
+.B \-\-auto\-kill
+Kill parent process if cancel button is pressed
+.TP
 .B \-\-pulsate
 Pulsate progress bar
- 
+
+.PP
 Question options
+
 .TP
 .B \-\-text=STRING
 Set the dialog text
+.TP
+.B \-\-no\-wrap
+Do not enable text wrapping
 
 .PP
 Text options
@@ -199,6 +234,34 @@ Warning options
 .TP
 .B \-\-text=STRING
 Set the dialog text
+.TP
+.B \-\-no\-wrap
+Do not enable text wrapping
+
+.PP
+Scale options
+
+.TP
+.B \-\-text=STRING
+Set the dialog text
+.TP
+.B \-\-value=VALUE
+Set initial value
+.TP
+.B \-\-min\-value=VALUE
+Set minimum value
+.TP
+.B \-\-max\-value=VALUE
+Set maximum value
+.TP
+.B \-\-step=VALUE
+Set step size
+.TP
+.B \-\-print\-partial
+Print partial values
+.TP
+.B \-\-hide\-value
+Hide value
 
 .PP
 Miscellaneous options
