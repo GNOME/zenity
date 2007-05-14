@@ -33,6 +33,7 @@ static GtkWidget *calendar;
 static ZenityCalendarData *zen_cal_data;
 
 static void zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data);
+static void zenity_calendar_double_click (GtkCalendar *calendar, gpointer data);
 
 void 
 zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
@@ -80,6 +81,9 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   if (cal_data->day > 0)
     gtk_calendar_select_day (GTK_CALENDAR (calendar), cal_data->day);
 
+  g_signal_connect (calendar, "day-selected-double-click",
+		    G_CALLBACK (zenity_calendar_double_click), data);
+
   gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
   zenity_util_show_dialog (dialog);
   gtk_main ();
@@ -118,4 +122,10 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
   }
   gtk_main_quit ();
+}
+
+static void
+zenity_calendar_double_click (GtkCalendar *cal, gpointer data)
+{
+  zenity_calendar_dialog_response (NULL, GTK_RESPONSE_OK, data);
 }
