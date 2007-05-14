@@ -33,13 +33,21 @@ AC_PATH_PROG([PERL],[perl],)
 # *******************************
 
 LIBNOTIFY_REQUIRED=0.4.1
-PKG_CHECK_MODULES([LIBNOTIFY],[libnotify >= $LIBNOTIFY_REQUIRED],
-                  [HAVE_LIBNOTIFY="yes"],[HAVE_LIBNOTIFY="no"])
-AC_SUBST([LIBNOTIFY_CFLAGS])
-AC_SUBST([LIBNOTIFY_LIBS])
 
-if test "x$HAVE_LIBNOTIFY" = "xyes"; then
-	AC_DEFINE([HAVE_LIBNOTIFY],[1],[libnotify is available on this machine])
+AC_ARG_ENABLE([libnotify],
+              AC_HELP_STRING([--enable-libnotify],[enable libnotify support]),,
+              [enable_libnotify=yes])
+
+if test x$enable_libnotify = xyes ; then
+   PKG_CHECK_MODULES([LIBNOTIFY],[libnotify >= $LIBNOTIFY_REQUIRED],
+                     [HAVE_LIBNOTIFY="yes"],[HAVE_LIBNOTIFY="no"])
+
+   AC_SUBST([LIBNOTIFY_CFLAGS])
+   AC_SUBST([LIBNOTIFY_LIBS])
+
+   if test "x$HAVE_LIBNOTIFY" = "xyes"; then
+      AC_DEFINE([HAVE_LIBNOTIFY],[1],[libnotify is available on this machine])
+   fi
 fi
 
 # *******************************
