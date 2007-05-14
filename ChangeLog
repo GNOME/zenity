@@ -1,5 +1,11 @@
 2007-05-15  Lucas Rocha  <lucasr@gnome.org>
 
+	* src/text.c (zenity_text_dialog_response): fix seg fault when
+	outputing files with special printf format strings (Fixes
+	bug #405006). Patch from Mariano Suárez-Alvarez.
+
+2007-05-15  Lucas Rocha  <lucasr@gnome.org>
+
 	* src/tree.c (zenity_tree_dialog_toggle_get_selected): fix index
 	handling for --print-column (Fixes bug #420396).
 

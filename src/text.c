@@ -159,9 +159,12 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
     case GTK_RESPONSE_CLOSE:
       if (zen_text_data->editable) {
         GtkTextIter start, end;
+        gchar *text;
 				    
         gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
-        g_print (gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0));
+        text = gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0);
+        g_print ("%s", text);
+        g_free (text);
       }
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
       break;
