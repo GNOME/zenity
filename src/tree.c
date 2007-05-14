@@ -550,7 +550,7 @@ zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path, 
     }
 
     for (i = 0; print_columns[i] != 0; i++) {
-      gtk_tree_model_get_value (model, iter, print_columns[i], &value);
+      gtk_tree_model_get_value (model, iter, print_columns[i] - 1, &value);
 
       selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
       g_value_unset (&value);
