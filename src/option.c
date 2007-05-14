@@ -222,7 +222,7 @@ static GOptionEntry entry_options[] = {
     "text",
     '\0',
     G_OPTION_FLAG_NOALIAS,
-    G_OPTION_ARG_STRING | G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
     N_("TEXT")
@@ -1412,7 +1412,7 @@ zenity_create_context (void)
   /* Adds general option entries */
   a_group = g_option_group_new("general", 
                                N_("General options"), 
-                               N_("Show general options"), NULL, 0);
+                               N_("Show general options"), NULL, NULL);
   g_option_group_add_entries(a_group, general_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_general_pre_callback, zenity_general_post_callback);
@@ -1423,7 +1423,7 @@ zenity_create_context (void)
   /* Adds calendar option entries */
   a_group = g_option_group_new("calendar", 
                                N_("Calendar options"), 
-                               N_("Show calendar options"), NULL, 0);
+                               N_("Show calendar options"), NULL, NULL);
   g_option_group_add_entries(a_group, calendar_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_calendar_pre_callback, zenity_calendar_post_callback);
@@ -1434,7 +1434,7 @@ zenity_create_context (void)
   /* Adds entry option entries */
   a_group = g_option_group_new("entry", 
                                N_("Text entry options"), 
-                               N_("Show text entry options"), NULL, 0);
+                               N_("Show text entry options"), NULL, NULL);
   g_option_group_add_entries(a_group, entry_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_entry_pre_callback, zenity_entry_post_callback);
@@ -1445,7 +1445,7 @@ zenity_create_context (void)
   /* Adds error option entries */
   a_group = g_option_group_new("error", 
                                N_("Error options"), 
-                               N_("Show error options"), NULL, 0);
+                               N_("Show error options"), NULL, NULL);
   g_option_group_add_entries(a_group, error_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_error_pre_callback, zenity_error_post_callback);
@@ -1456,7 +1456,7 @@ zenity_create_context (void)
   /* Adds info option entries */
   a_group = g_option_group_new("info", 
                                N_("Info options"), 
-                               N_("Show info options"), NULL, 0);
+                               N_("Show info options"), NULL, NULL);
   g_option_group_add_entries(a_group, info_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_info_pre_callback, zenity_info_post_callback);
@@ -1467,7 +1467,7 @@ zenity_create_context (void)
   /* Adds file selection option entries */
   a_group = g_option_group_new("file-selection", 
                                N_("File selection options"), 
-                               N_("Show file selection options"), NULL, 0);
+                               N_("Show file selection options"), NULL, NULL);
   g_option_group_add_entries(a_group, file_selection_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_file_pre_callback, zenity_file_post_callback);
@@ -1478,7 +1478,7 @@ zenity_create_context (void)
   /* Adds list option entries */
   a_group = g_option_group_new("list", 
                                N_("List options"), 
-                               N_("Show list options"), NULL, 0);
+                               N_("Show list options"), NULL, NULL);
   g_option_group_add_entries(a_group, list_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_list_pre_callback, zenity_list_post_callback);
@@ -1489,7 +1489,7 @@ zenity_create_context (void)
   /* Adds notification option entries */
   a_group = g_option_group_new("notification", 
                                N_("Notification icon options"), 
-                               N_("Show notification icon options"), NULL, 0);
+                               N_("Show notification icon options"), NULL, NULL);
   g_option_group_add_entries(a_group, notification_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_notification_pre_callback, zenity_notification_post_callback);
@@ -1500,7 +1500,7 @@ zenity_create_context (void)
   /* Adds progress option entries */
   a_group = g_option_group_new("progress", 
                                N_("Progress options"), 
-                               N_("Show progress options"), NULL, 0);
+                               N_("Show progress options"), NULL, NULL);
   g_option_group_add_entries(a_group, progress_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_progress_pre_callback, zenity_progress_post_callback);
@@ -1511,7 +1511,7 @@ zenity_create_context (void)
   /* Adds question option entries */
   a_group = g_option_group_new("question", 
                                N_("Question options"), 
-                               N_("Show question options"), NULL, 0);
+                               N_("Show question options"), NULL, NULL);
   g_option_group_add_entries(a_group, question_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_question_pre_callback, zenity_question_post_callback);
@@ -1522,7 +1522,7 @@ zenity_create_context (void)
   /* Adds warning option entries */
   a_group = g_option_group_new("warning", 
                                N_("Warning options"), 
-                               N_("Show warning options"), NULL, 0);
+                               N_("Show warning options"), NULL, NULL);
   g_option_group_add_entries(a_group, warning_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_warning_pre_callback, zenity_warning_post_callback);
@@ -1533,7 +1533,7 @@ zenity_create_context (void)
   /* Adds scale option entries */
   a_group = g_option_group_new("scale", 
                                N_("Scale options"), 
-                               N_("Show scale options"), NULL, 0);
+                               N_("Show scale options"), NULL, NULL);
   g_option_group_add_entries(a_group, scale_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_scale_pre_callback, zenity_scale_post_callback);
@@ -1544,7 +1544,7 @@ zenity_create_context (void)
   /* Adds text option entries */
   a_group = g_option_group_new("text-info", 
                                N_("Text information options"), 
-                               N_("Show text information options"), NULL, 0);
+                               N_("Show text information options"), NULL, NULL);
   g_option_group_add_entries(a_group, text_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_text_pre_callback, zenity_text_post_callback);
@@ -1555,7 +1555,7 @@ zenity_create_context (void)
   /* Adds misc option entries */
   a_group = g_option_group_new("misc", 
                                N_("Miscellaneous options"), 
-                               N_("Show miscellaneous options"), NULL, 0);
+                               N_("Show miscellaneous options"), NULL, NULL);
   g_option_group_add_entries(a_group, miscellaneous_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_misc_pre_callback, zenity_misc_post_callback);

@@ -1,5 +1,13 @@
 2007-05-14  Lucas Rocha  <lucasr@gnome.org>
 
+	* src/progress.c (zenity_progress_handle_stdin), src/option.c
+	(zenity_create_context), src/about.c, src/notification.c
+	(zenity_notification_handle_stdin): general cleanups for 
+	build warnings (Fixes bug #416196). Patch from Kjartan 
+	Maraas <kmaraas@gnome.org>.
+
+2007-05-14  Lucas Rocha  <lucasr@gnome.org>
+
 	* data/zenity.1: man page update (Fixes bug #436187). Patch from
 	Sven Arvidsson <sa@whiz.se>.
 

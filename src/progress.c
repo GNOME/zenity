@@ -135,7 +135,6 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
   if (condition != G_IO_IN) {
     /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
     GtkWidget *button;
-    GtkWidget *progress_bar;
 
     button = glade_xml_get_widget (glade_dialog, "zenity_progress_ok_button");
     gtk_widget_set_sensitive (button, TRUE);
@@ -144,7 +143,6 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
     button = glade_xml_get_widget (glade_dialog, "zenity_progress_cancel_button");
     gtk_widget_set_sensitive (button, FALSE);
 		
-    progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
 
     if (progress_data->pulsate) {

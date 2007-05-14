@@ -162,11 +162,11 @@ zenity_notification_handle_stdin (GIOChannel *channel,
         if (!g_utf8_validate (value, -1, NULL)) {
           g_warning ("Invalid UTF-8 in input!");
         } else if (notify_is_initted ()) {
-          GError *error = NULL;
           NotifyNotification *notif;
           const gchar *icon = NULL;
           gchar *freeme = NULL;
           gchar *message;
+          error = NULL;
 
           message = g_strcompress (value);
 
