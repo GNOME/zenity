@@ -48,6 +48,7 @@ zenity_notification_icon_update (void)
   GError *error = NULL;
 
   pixbuf = gdk_pixbuf_new_from_file_at_scale (icon_file, icon_size, icon_size, TRUE, &error);
+
   if (error) {
     g_warning ("Could not load notification icon '%s': %s",
                icon_file, error->message);
