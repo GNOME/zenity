@@ -74,9 +74,14 @@ zenity_text_handle_stdin (GIOChannel  *channel,
       gsize utflen;
 
       gtk_text_buffer_get_end_iter (buffer, &end);
-      utftext = g_convert_with_fallback (buf, len, "UTF-8", "ISO-8859-1", NULL, &localelen, &utflen, NULL);
-      gtk_text_buffer_insert (buffer, &end, utftext, utflen);
-      g_free (utftext);
+
+      if (!g_utf8_validate (buf, len, NULL)) {
+        utftext = g_convert_with_fallback (buf, len, "UTF-8", "ISO-8859-1", NULL, &localelen, &utflen, NULL);
+        gtk_text_buffer_insert (buffer, &end, utftext, utflen);
+        g_free (utftext);
+      } else {
+        gtk_text_buffer_insert (buffer, &end, buf, len);
+      }
     }
   }
 
