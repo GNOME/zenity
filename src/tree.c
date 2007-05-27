@@ -94,13 +94,13 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
 {
   static GtkTreeView *tree_view;
   GtkTreeModel *model;
-  GtkTreeIter iter;
+  static GtkTreeIter iter;
   static gint column_count = 0;
   static gint row_count = 0;
   static gint n_columns;
   static gboolean editable;
   static gboolean toggles;
-  static gboolean first_time = FALSE;
+  static gboolean first_time = TRUE;
 
   tree_view = GTK_TREE_VIEW (data);
   n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
@@ -109,8 +109,8 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
 
   model = gtk_tree_view_get_model (tree_view);
 
-  if (!first_time) {
-    first_time = TRUE;
+  if (first_time) {
+    first_time = FALSE;
     gtk_list_store_append (GTK_LIST_STORE (model), &iter);
   }
 
@@ -159,22 +159,22 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
         gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, zenity_util_strip_newline (string->str), -1);        
       }
 
-    if (editable) {
-      gtk_list_store_set (GTK_LIST_STORE (model), &iter, n_columns, TRUE, -1);
-    }
+      if (editable) {
+        gtk_list_store_set (GTK_LIST_STORE (model), &iter, n_columns, TRUE, -1);
+      }
 
-    if (row_count == MAX_ELEMENTS_BEFORE_SCROLLING) {
-      GtkWidget *scrolled_window;
-      GtkRequisition rectangle;
+      if (row_count == MAX_ELEMENTS_BEFORE_SCROLLING) {
+        GtkWidget *scrolled_window;
+        GtkRequisition rectangle;
 
-      gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
-      scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
-      gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
-      gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
-                                      GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-    }
+        gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
+        scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
+        gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
+        gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
+                                        GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+      }
 
-    column_count ++;
+      column_count++;
 
     } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN); 
     g_string_free (string, TRUE);
