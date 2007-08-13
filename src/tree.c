@@ -309,7 +309,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   }
   else { 
     print_columns = g_new (gint, 2);
-    print_columns[0] = 1;
+    print_columns[0] = (tree_data->radiobox || tree_data->checkbox ? 2 : 1);
     print_columns[1] = 0;
   }
 
