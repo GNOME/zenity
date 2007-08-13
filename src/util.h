@@ -27,7 +27,9 @@ GdkPixbuf *	zenity_util_pixbuf_new_from_file	  (GtkWidget	  *widget,
 void		zenity_util_show_help                     (GError        **error);
 gint		zenity_util_return_exit_code 		  (ZenityExitCode value);                      
 void            zenity_util_show_dialog                   (GtkWidget      *widget);
-                               
+
+gboolean        zenity_util_timeout_handle                (void);
+
 G_END_DECLS
 
 #endif /* UTIL_H */

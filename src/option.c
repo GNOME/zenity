@@ -40,6 +40,7 @@ static gboolean zenity_general_multiple;
 static gboolean zenity_general_editable;
 static gchar   *zenity_general_uri;
 static gboolean zenity_general_dialog_no_wrap;
+static guint    zenity_general_timeout_delay;
 
 /* Calendar Dialog Options */
 static gboolean zenity_calendar_active;
@@ -142,6 +143,15 @@ static GOptionEntry general_options[] = {
     &zenity_general_height,
     N_("Set the height"),
     N_("HEIGHT")
+  },
+  {
+    "timeout",
+    '\0',
+    0,
+    G_OPTION_ARG_INT,
+    &zenity_general_timeout_delay,
+    N_("Set dialog timeout in seconds"),
+    NULL
   },
   {
     NULL
@@ -879,6 +889,7 @@ zenity_general_pre_callback (GOptionContext *context,
   zenity_general_editable = FALSE;
   zenity_general_uri = NULL;
   zenity_general_dialog_no_wrap = FALSE;
+  zenity_general_timeout_delay = -1;
 
   return TRUE;
 }
@@ -1065,7 +1076,7 @@ zenity_general_post_callback (GOptionContext *context,
   results->data->window_icon = zenity_general_window_icon;
   results->data->width = zenity_general_width;
   results->data->height = zenity_general_height;
-
+  results->data->timeout_delay=zenity_general_timeout_delay;
   return TRUE;
 }
 

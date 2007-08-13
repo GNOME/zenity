@@ -152,6 +152,10 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   if (glade_dialog)
     g_object_unref (glade_dialog);
 
+  if(data->timeout_delay > 0) {
+    g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);
+  }
+
   gtk_main ();
 }
 

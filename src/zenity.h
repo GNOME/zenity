@@ -29,6 +29,7 @@ typedef struct {
   gint   width;
   gint   height;
   gint   exit_code;
+  guint timeout_delay;
 } ZenityData;
 
 typedef enum {
@@ -36,7 +37,8 @@ typedef enum {
   ZENITY_CANCEL,
   ZENITY_ESC,
   ZENITY_ERROR,
-  ZENITY_EXTRA
+  ZENITY_EXTRA,
+  ZENITY_TIMEOUT
 } ZenityExitCode;
 
 typedef struct {

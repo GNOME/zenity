@@ -116,6 +116,11 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
     gtk_label_set_line_wrap (GTK_LABEL (text), FALSE);
 
   zenity_util_show_dialog (dialog);
+
+  if(data->timeout_delay > 0) {
+    g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);
+  }
+
   gtk_main ();
 }
 

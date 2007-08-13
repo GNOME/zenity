@@ -493,6 +493,11 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   }
 
   zenity_util_show_dialog (dialog);
+
+  if(data->timeout_delay > 0) {
+    g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);
+  }
+
   gtk_main ();
 
   if (glade_dialog)
