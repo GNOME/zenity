@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-04 23:24+0200\n"
+"POT-Creation-Date: 2007-09-16 13:56+0300\n"
 "PO-Revision-Date: 2007-03-04 23:24+0200\n"
 "Last-Translator: Gintautas Miliauskas <gintas@akl.lt>\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
@@ -77,11 +77,11 @@ msgstr ""
 "Jūs turite nurodyti dialogo tipą. Paleiskite 'zenity --help' norėdami gauti "
 "informaciją apie tinkamus raktus\n"
 
-#: ../src/notification.c:138
+#: ../src/notification.c:139
 msgid "could not parse command from stdin\n"
 msgstr "nepavyko apdoroti komandos iš stdin\n"
 
-#: ../src/notification.c:251 ../src/notification.c:268
+#: ../src/notification.c:252 ../src/notification.c:269
 msgid "Zenity notification"
 msgstr "Zenity pranešimas"
 
@@ -177,177 +177,181 @@ msgstr "Perspėjimas"
 msgid "_Enter new text:"
 msgstr "Įveskite _naują tekstą:"
 
-#: ../src/option.c:116
+#: ../src/option.c:117
 msgid "Set the dialog title"
 msgstr "Nustatyti lango antraštę"
 
-#: ../src/option.c:117
+#: ../src/option.c:118
 msgid "TITLE"
 msgstr "ANTRAŠTĖ"
 
-#: ../src/option.c:125
+#: ../src/option.c:126
 msgid "Set the window icon"
 msgstr "Nustatyti lango piešinį"
 
-#: ../src/option.c:126
+#: ../src/option.c:127
 msgid "ICONPATH"
 msgstr "KELIAS-IKI-PIEŠINIO"
 
-#: ../src/option.c:134
+#: ../src/option.c:135
 msgid "Set the width"
 msgstr "Nustatyti plotį"
 
-#: ../src/option.c:135
+#: ../src/option.c:136
 msgid "WIDTH"
 msgstr "PLOTIS"
 
-#: ../src/option.c:143
+#: ../src/option.c:144
 msgid "Set the height"
 msgstr "Nustatyti aukštį"
 
-#: ../src/option.c:144
+#: ../src/option.c:145
 msgid "HEIGHT"
 msgstr "AUKŠTIS"
 
-#: ../src/option.c:158
+#: ../src/option.c:153
+msgid "Set dialog timeout in seconds"
+msgstr "Nustatyti dialogo laiko limitą sekundėmis"
+
+#: ../src/option.c:168
 msgid "Display calendar dialog"
 msgstr "Parodyti kalendoriaus langą"
 
-#: ../src/option.c:167 ../src/option.c:227 ../src/option.c:270
-#: ../src/option.c:303 ../src/option.c:405 ../src/option.c:534
-#: ../src/option.c:596 ../src/option.c:662 ../src/option.c:695
+#: ../src/option.c:177 ../src/option.c:237 ../src/option.c:280
+#: ../src/option.c:313 ../src/option.c:415 ../src/option.c:544
+#: ../src/option.c:606 ../src/option.c:672 ../src/option.c:705
 msgid "Set the dialog text"
 msgstr "Nustatyti lango tekstą"
 
-#: ../src/option.c:168 ../src/option.c:228 ../src/option.c:237
-#: ../src/option.c:246 ../src/option.c:271 ../src/option.c:304
-#: ../src/option.c:406 ../src/option.c:502 ../src/option.c:535
-#: ../src/option.c:597 ../src/option.c:663 ../src/option.c:696
+#: ../src/option.c:178 ../src/option.c:238 ../src/option.c:247
+#: ../src/option.c:256 ../src/option.c:281 ../src/option.c:314
+#: ../src/option.c:416 ../src/option.c:512 ../src/option.c:545
+#: ../src/option.c:607 ../src/option.c:673 ../src/option.c:706
 msgid "TEXT"
 msgstr "TEKSTAS"
 
-#: ../src/option.c:176
+#: ../src/option.c:186
 msgid "Set the calendar day"
 msgstr "Nustatyti kalendoriaus dieną"
 
-#: ../src/option.c:177
+#: ../src/option.c:187
 msgid "DAY"
 msgstr "DIENA"
 
-#: ../src/option.c:185
+#: ../src/option.c:195
 msgid "Set the calendar month"
 msgstr "Nustatyti kalendoriaus mėnesį"
 
-#: ../src/option.c:186
+#: ../src/option.c:196
 msgid "MONTH"
 msgstr "MĖNUO"
 
-#: ../src/option.c:194
+#: ../src/option.c:204
 msgid "Set the calendar year"
 msgstr "Nustatyti kalendoriaus metus"
 
-#: ../src/option.c:195
+#: ../src/option.c:205
 msgid "YEAR"
 msgstr "METAI"
 
-#: ../src/option.c:203
+#: ../src/option.c:213
 msgid "Set the format for the returned date"
 msgstr "Nustatyti išvedamos datos formatą"
 
-#: ../src/option.c:204
+#: ../src/option.c:214
 msgid "PATTERN"
 msgstr "ŠABLONAS"
 
-#: ../src/option.c:218
+#: ../src/option.c:228
 msgid "Display text entry dialog"
 msgstr "Parodyti teksto įvedimo langą"
 
-#: ../src/option.c:236
+#: ../src/option.c:246
 msgid "Set the entry text"
 msgstr "Nustatyti įvedamą tekstą"
 
-#: ../src/option.c:245
+#: ../src/option.c:255
 msgid "Hide the entry text"
 msgstr "Paslėpti įvedamą tekstą"
 
-#: ../src/option.c:261
+#: ../src/option.c:271
 msgid "Display error dialog"
 msgstr "Parodyti klaidos pranešimą"
 
-#: ../src/option.c:279 ../src/option.c:312 ../src/option.c:605
-#: ../src/option.c:671
+#: ../src/option.c:289 ../src/option.c:322 ../src/option.c:615
+#: ../src/option.c:681
 msgid "Do not enable text wrapping"
 msgstr "Neįjungti teksto laužymo"
 
-#: ../src/option.c:294
+#: ../src/option.c:304
 msgid "Display info dialog"
 msgstr "Parodyti informacinį langą"
 
-#: ../src/option.c:327
+#: ../src/option.c:337
 msgid "Display file selection dialog"
 msgstr "Parodyti failo pasirinkimo langą"
 
-#: ../src/option.c:336
+#: ../src/option.c:346
 msgid "Set the filename"
 msgstr "Nustatyti failo vardą"
 
-#: ../src/option.c:337 ../src/option.c:630
+#: ../src/option.c:347 ../src/option.c:640
 msgid "FILENAME"
 msgstr "BYLOS-VARDAS"
 
-#: ../src/option.c:345
+#: ../src/option.c:355
 msgid "Allow multiple files to be selected"
 msgstr "Leisti parinkti kelis failus vienu metu"
 
-#: ../src/option.c:354
+#: ../src/option.c:364
 msgid "Activate directory-only selection"
 msgstr "Įjungti tik-aplankų pasirinkimą"
 
-#: ../src/option.c:363
+#: ../src/option.c:373
 msgid "Activate save mode"
 msgstr "Įjungti saugų režimą"
 
-#: ../src/option.c:372 ../src/option.c:441
+#: ../src/option.c:382 ../src/option.c:451
 msgid "Set output separator character"
 msgstr "Nustatyti išvedimo skiriamąjį simbolį"
 
-#: ../src/option.c:373 ../src/option.c:442
+#: ../src/option.c:383 ../src/option.c:452
 msgid "SEPARATOR"
 msgstr "SKIRTUKAS"
 
-#: ../src/option.c:381
+#: ../src/option.c:391
 msgid "Confirm file selection if filename already exists"
 msgstr "Patvirtinti failo vardo pasirinkimą, jei toks jau egzistuoja"
 
-#: ../src/option.c:396
+#: ../src/option.c:406
 msgid "Display list dialog"
 msgstr "Parodyti sąrašo langą"
 
-#: ../src/option.c:414
+#: ../src/option.c:424
 msgid "Set the column header"
 msgstr "Nustatyti stulpelio antraštę"
 
-#: ../src/option.c:415
+#: ../src/option.c:425
 msgid "COLUMN"
 msgstr "STULPELIS"
 
-#: ../src/option.c:423
+#: ../src/option.c:433
 msgid "Use check boxes for first column"
 msgstr "Naudoti parinkimo laukus pirmame stulpelyje"
 
-#: ../src/option.c:432
+#: ../src/option.c:442
 msgid "Use radio buttons for first column"
 msgstr "Naudoti persijungiančius laukus pirmame stulpelyje"
 
-#: ../src/option.c:450
+#: ../src/option.c:460
 msgid "Allow multiple rows to be selected"
 msgstr "Leisti parinkti kelias eilutes"
 
-#: ../src/option.c:459 ../src/option.c:638
+#: ../src/option.c:469 ../src/option.c:648
 msgid "Allow changes to text"
 msgstr "Leisti keisti tekstą"
 
-#: ../src/option.c:468
+#: ../src/option.c:478
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -355,231 +359,231 @@ msgstr ""
 "Spausdinti specifinį stulpelį (numatytasis yra 1; spausdinti visiems "
 "stulpeliams gali būti naudojama „ALL“)"
 
-#: ../src/option.c:469 ../src/option.c:478
+#: ../src/option.c:479 ../src/option.c:488
 msgid "NUMBER"
 msgstr "SKAIČIUS"
 
-#: ../src/option.c:477
+#: ../src/option.c:487
 msgid "Hide a specific column"
 msgstr "Paslėpti specifinį stulpelį"
 
-#: ../src/option.c:492
+#: ../src/option.c:502
 msgid "Display notification"
 msgstr "Parodyti pranešimą"
 
-#: ../src/option.c:501
+#: ../src/option.c:511
 msgid "Set the notification text"
 msgstr "Nurodyti pranešimo tekstą"
 
-#: ../src/option.c:510
+#: ../src/option.c:520
 msgid "Listen for commands on stdin"
 msgstr "Laukti komandų stdin"
 
-#: ../src/option.c:525
+#: ../src/option.c:535
 msgid "Display progress indication dialog"
 msgstr "Parodyti proceso eigos langą"
 
-#: ../src/option.c:543
+#: ../src/option.c:553
 msgid "Set initial percentage"
 msgstr "Nustatyti pradinę procentinę vertę"
 
-#: ../src/option.c:544
+#: ../src/option.c:554
 msgid "PERCENTAGE"
 msgstr "PROCENTAS"
 
-#: ../src/option.c:552
+#: ../src/option.c:562
 msgid "Pulsate progress bar"
 msgstr "Keisti progreso juostą"
 
-#: ../src/option.c:562
+#: ../src/option.c:572
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Pašalinti dialogo langą pasiekus 100%"
 
-#: ../src/option.c:572
+#: ../src/option.c:582
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
 msgstr "Užbaigti tėvinį procesą, jei paspaudžiamas atmetimo mygtukas"
 
-#: ../src/option.c:587
+#: ../src/option.c:597
 msgid "Display question dialog"
 msgstr "Parodyti užklausimo langą"
 
-#: ../src/option.c:620
+#: ../src/option.c:630
 msgid "Display text information dialog"
 msgstr "Parodyti tekstinės informacijos langą"
 
-#: ../src/option.c:629
+#: ../src/option.c:639
 msgid "Open file"
 msgstr "Atverti failą"
 
-#: ../src/option.c:653
+#: ../src/option.c:663
 msgid "Display warning dialog"
 msgstr "Parodyti perspėjimo langą"
 
-#: ../src/option.c:686
+#: ../src/option.c:696
 msgid "Display scale dialog"
 msgstr "Parodyti skalės dialogą"
 
-#: ../src/option.c:704
+#: ../src/option.c:714
 msgid "Set initial value"
 msgstr "Nustatyti pradinę reikšmę"
 
-#: ../src/option.c:705 ../src/option.c:714 ../src/option.c:723
-#: ../src/option.c:732
+#: ../src/option.c:715 ../src/option.c:724 ../src/option.c:733
+#: ../src/option.c:742
 msgid "VALUE"
 msgstr "REIKŠMĖ"
 
-#: ../src/option.c:713
+#: ../src/option.c:723
 msgid "Set minimum value"
 msgstr "Nustatyti minimalią reikšmę"
 
-#: ../src/option.c:722
+#: ../src/option.c:732
 msgid "Set maximum value"
 msgstr "Nustatyti maksimalią reikšmę"
 
-#: ../src/option.c:731
+#: ../src/option.c:741
 msgid "Set step size"
 msgstr "Nustatyti žingsnelio dydį"
 
-#: ../src/option.c:740
+#: ../src/option.c:750
 msgid "Print partial values"
 msgstr "Spaudinti dalines reikšmes"
 
-#: ../src/option.c:749
+#: ../src/option.c:759
 msgid "Hide value"
 msgstr "Paslėpti reikšmę"
 
-#: ../src/option.c:764
+#: ../src/option.c:774
 msgid "About zenity"
 msgstr "Apie zenity"
 
-#: ../src/option.c:773
+#: ../src/option.c:783
 msgid "Print version"
 msgstr "Parodyti versiją"
 
-#: ../src/option.c:1414
+#: ../src/option.c:1425
 msgid "General options"
 msgstr "Bendriniai nustatymai"
 
-#: ../src/option.c:1415
+#: ../src/option.c:1426
 msgid "Show general options"
 msgstr "Rodyti bendrus nustatymus"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1436
 msgid "Calendar options"
 msgstr "Kalendoriaus nustatymai"
 
-#: ../src/option.c:1426
+#: ../src/option.c:1437
 msgid "Show calendar options"
 msgstr "Rodyti kalendoriaus nustatymus"
 
-#: ../src/option.c:1436
+#: ../src/option.c:1447
 msgid "Text entry options"
 msgstr "Teksto įvedimo nustatymai"
 
-#: ../src/option.c:1437
+#: ../src/option.c:1448
 msgid "Show text entry options"
 msgstr "Rodyti teksto įvedimo nustatymus"
 
-#: ../src/option.c:1447
+#: ../src/option.c:1458
 msgid "Error options"
 msgstr "Klaidų nustatymai"
 
-#: ../src/option.c:1448
+#: ../src/option.c:1459
 msgid "Show error options"
 msgstr "Rodyti klaidų nustatymus"
 
-#: ../src/option.c:1458
+#: ../src/option.c:1469
 msgid "Info options"
 msgstr "Informacijos nustatymai"
 
-#: ../src/option.c:1459
+#: ../src/option.c:1470
 msgid "Show info options"
 msgstr "Rodyti informacijos nustatymus"
 
-#: ../src/option.c:1469
+#: ../src/option.c:1480
 msgid "File selection options"
 msgstr "Failų parinkimo nustatymai"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1481
 msgid "Show file selection options"
 msgstr "Rodyti failų parinkimo nustatymus"
 
-#: ../src/option.c:1480
+#: ../src/option.c:1491
 msgid "List options"
 msgstr "Sąrašų nustatymai"
 
-#: ../src/option.c:1481
+#: ../src/option.c:1492
 msgid "Show list options"
 msgstr "Rodyti sąrašų nustatymus"
 
-#: ../src/option.c:1491
+#: ../src/option.c:1502
 msgid "Notification icon options"
 msgstr "Pranešimų piktogramos nustatymai"
 
-#: ../src/option.c:1492
+#: ../src/option.c:1503
 msgid "Show notification icon options"
 msgstr "Rodyti pranešimų piktogramos nustatymus"
 
-#: ../src/option.c:1502
+#: ../src/option.c:1513
 msgid "Progress options"
 msgstr "Progreso būklės nustatymai"
 
-#: ../src/option.c:1503
+#: ../src/option.c:1514
 msgid "Show progress options"
 msgstr "Rodyti progreso būklės nustatymus"
 
-#: ../src/option.c:1513
+#: ../src/option.c:1524
 msgid "Question options"
 msgstr "Užklausų nustatymai"
 
-#: ../src/option.c:1514
+#: ../src/option.c:1525
 msgid "Show question options"
 msgstr "Rodyti užklausų nustatymus"
 
-#: ../src/option.c:1524
+#: ../src/option.c:1535
 msgid "Warning options"
 msgstr "Perspėjimų nustatymai"
 
-#: ../src/option.c:1525
+#: ../src/option.c:1536
 msgid "Show warning options"
 msgstr "Rodyti perspėjimų nustatymus"
 
-#: ../src/option.c:1535
+#: ../src/option.c:1546
 msgid "Scale options"
 msgstr "Skalės nustatymai"
 
-#: ../src/option.c:1536
+#: ../src/option.c:1547
 msgid "Show scale options"
 msgstr "Rodyti skalės nustatymus"
 
-#: ../src/option.c:1546
+#: ../src/option.c:1557
 msgid "Text information options"
 msgstr "Teksto informacijos nustatymai"
 
-#: ../src/option.c:1547
+#: ../src/option.c:1558
 msgid "Show text information options"
 msgstr "Rodyti teksto informacijos nustatymus"
 
-#: ../src/option.c:1557
+#: ../src/option.c:1568
 msgid "Miscellaneous options"
 msgstr "Kiti nustatymai"
 
-#: ../src/option.c:1558
+#: ../src/option.c:1569
 msgid "Show miscellaneous options"
 msgstr "Rodyti kitus nustatymus"
 
-#: ../src/option.c:1583
+#: ../src/option.c:1594
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr "Šis nustatymas negalimas. Pažiūrėkite --help panaudojimo variantus.\n"
 
-#: ../src/option.c:1587
+#: ../src/option.c:1598
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s nepalaikomas šiam dialogui\n"
 
-#: ../src/option.c:1591
+#: ../src/option.c:1602
 msgid "Two or more dialog options specified\n"
 msgstr "Nurodyta daugiau nei vienas dialogo parametras\n"
