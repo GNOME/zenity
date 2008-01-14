@@ -1,18 +1,18 @@
-# translation of eu.po to Basque
+# translation of zenity.HEAD.po to Basque
 # Basque translation of Zenity.
-# Copyright (C) 2003, 2004, 2006, 2007 the Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2006, 2007, 2008 the Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 #
 # Alberto Fernández Benito <afernn@euskalnet.net>, 2003.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2003, 2004, 2005, 2006, 2007.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2003, 2004, 2005, 2006, 2007, 2008.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: zenity.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-16 16:40+0200\n"
-"PO-Revision-Date: 2007-09-16 16:41+0200\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"POT-Creation-Date: 2008-01-14 17:20+0100\n"
+"PO-Revision-Date: 2008-01-13 00:14+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,11 +57,11 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Alberto Fernández <afernn@euskalnet.net> \n"
-"Iñaki Larrañaga <dooteo@euskalgnu.org>"
+"Iñaki Larrañaga Murgotio <dooteo@euskalgnu.org>"
 
 #: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
-msgstr "Bistaratu elkarrizketa-koadroak shell script-etatik"
+msgstr "Bistaratu elkarrizketa-koadroak shell-eko script-etatik"
 
 #: ../src/main.c:94
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
@@ -83,15 +83,16 @@ msgstr "Gehienezko balioak gutxieneko balioa baino handiagoa izan behar du.\n"
 
 #: ../src/scale.c:63
 msgid "Value out of range.\n"
-msgstr "Balioa mugatik kanpo.\n"
+msgstr "Balioa barrutitik kanpo.\n"
 
 #: ../src/tree.c:320
 msgid "No column titles specified for List dialog.\n"
-msgstr "Zerrendaren elkarrizketa-koadroan ez dira zutabe izenbururik zehaztu\n"
+msgstr "Ez da zutabe izenbururik zehaztu zerrendaren elkarrizketa-koadroan\n"
 
 #: ../src/tree.c:326
 msgid "You should use only one List dialog type.\n"
-msgstr "'Zerrenda' elkarrizketa-koadro motan bakarrik erabili beharko zenuke\n"
+msgstr ""
+"'Zerrenda' motako elkarrizketa-koadroan bakarrik erabili beharko zenuke.\n"
 
 #: ../src/zenity.glade.h:1
 msgid "Add a new entry"
@@ -99,15 +100,15 @@ msgstr "Gehitu sarrera berria"
 
 #: ../src/zenity.glade.h:2
 msgid "Adjust the scale value"
-msgstr "Egokitu eskalaren balioa"
+msgstr "Doitu eskalaren balioa"
 
 #: ../src/zenity.glade.h:3
 msgid "All updates are complete."
-msgstr "Eguneratze guztiak burutu dira."
+msgstr "Eguneraketa guztiak burutu dira."
 
 #: ../src/zenity.glade.h:4
 msgid "An error has occurred."
-msgstr "Errore bat gertatu da."
+msgstr "Errorea gertatu da."
 
 #: ../src/zenity.glade.h:5
 msgid "Are you sure you want to proceed?"
@@ -115,7 +116,7 @@ msgstr "Ziur zaude jarraitu nahi duzula?"
 
 #: ../src/zenity.glade.h:6
 msgid "C_alendar:"
-msgstr "Egutegi_a:"
+msgstr "_Egutegia:"
 
 #: ../src/zenity.glade.h:7
 msgid "Calendar selection"
@@ -167,7 +168,7 @@ msgstr "Abisua"
 
 #: ../src/zenity.glade.h:19
 msgid "_Enter new text:"
-msgstr "Sartu t_estu berria:"
+msgstr "Sartu _testu berria:"
 
 #: ../src/option.c:117
 msgid "Set the dialog title"
@@ -203,11 +204,11 @@ msgstr "ALTUERA"
 
 #: ../src/option.c:153
 msgid "Set dialog timeout in seconds"
-msgstr "Ezarri elkarrizketa-koadroaren denbora-muga segundotan"
+msgstr "Ezarri elkarrizketa-koadroaren denbora-muga (segundotan)"
 
 #: ../src/option.c:168
 msgid "Display calendar dialog"
-msgstr "Erakutsi egutegiaren elkarrizketa-koadroa"
+msgstr "Bistaratu egutegiaren elkarrizketa-koadroa"
 
 #: ../src/option.c:177 ../src/option.c:237 ../src/option.c:280
 #: ../src/option.c:313 ../src/option.c:415 ../src/option.c:544
@@ -256,7 +257,7 @@ msgstr "EREDUA"
 
 #: ../src/option.c:228
 msgid "Display text entry dialog"
-msgstr "Erakutsi testua sartzeko elkarrizketa-koadroa"
+msgstr "Bistaratu testua sartzeko elkarrizketa-koadroa"
 
 #: ../src/option.c:246
 msgid "Set the entry text"
@@ -268,7 +269,7 @@ msgstr "Ezkutatu sarreraren testua"
 
 #: ../src/option.c:271
 msgid "Display error dialog"
-msgstr "Erakutsi errorearen elkarrizketa-koadroa"
+msgstr "Bistaratu errorearen elkarrizketa-koadroa"
 
 #: ../src/option.c:289 ../src/option.c:322 ../src/option.c:615
 #: ../src/option.c:681
@@ -277,11 +278,11 @@ msgstr "Ez gaitu testua itzulbiratzea"
 
 #: ../src/option.c:304
 msgid "Display info dialog"
-msgstr "Erakutsi informazioaren elkarrizketa-koadroa"
+msgstr "Bistaratu informazioaren elkarrizketa-koadroa"
 
 #: ../src/option.c:337
 msgid "Display file selection dialog"
-msgstr "Erakutsi fitxategi hautapenerako elkarrizketa-koadroa"
+msgstr "Bistaratu fitxategiak hautatzeko elkarrizketa-koadroa"
 
 #: ../src/option.c:346
 msgid "Set the filename"
@@ -317,7 +318,7 @@ msgstr "Baieztatu fitxategiaren hautapena fitxategia jadanik existitzen bada"
 
 #: ../src/option.c:406
 msgid "Display list dialog"
-msgstr "Erakutsi zerrendaren elkarrizketa-koadroa"
+msgstr "Bistaratu zerrendaren elkarrizketa-koadroa"
 
 #: ../src/option.c:424
 msgid "Set the column header"
@@ -329,11 +330,11 @@ msgstr "ZUTABEA"
 
 #: ../src/option.c:433
 msgid "Use check boxes for first column"
-msgstr "Erabili kontrol-laukiak lehengo zutaberako"
+msgstr "Erabili kontrol-laukiak lehenengo zutabean"
 
 #: ../src/option.c:442
 msgid "Use radio buttons for first column"
-msgstr "Erabili aukera-botoiak lehengo zutaberako"
+msgstr "Erabili irrati-botoiak lehenengo zutabean"
 
 #: ../src/option.c:460
 msgid "Allow multiple rows to be selected"
@@ -373,7 +374,7 @@ msgstr "Entzun 'stdin'eko komandoei"
 
 #: ../src/option.c:535
 msgid "Display progress indication dialog"
-msgstr "Erakutsi aurrerapen adierazpenerako elkarrizketa-koadroa"
+msgstr "Bistaratu progresioaren elkarrizketa-koadroa"
 
 #: ../src/option.c:553
 msgid "Set initial percentage"
@@ -385,12 +386,12 @@ msgstr "EHUNEKOA"
 
 #: ../src/option.c:562
 msgid "Pulsate progress bar"
-msgstr "Aurrerapen barra keinukaria"
+msgstr "Progresio-barra keinukaria"
 
 #: ../src/option.c:572
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr "Itxi elkarrizketa-koadroa %100 lortutakoan"
+msgstr "Itxi elkarrizketa-koadroa %100 lortutzean"
 
 #: ../src/option.c:582
 #, no-c-format
@@ -399,11 +400,11 @@ msgstr "Hil prozesu-gurasoa bertan behera uzteko botoia sakatzean"
 
 #: ../src/option.c:597
 msgid "Display question dialog"
-msgstr "Erakutsi galderen elkarrizketa-koadroa"
+msgstr "Bistaratu galderen elkarrizketa-koadroa"
 
 #: ../src/option.c:630
 msgid "Display text information dialog"
-msgstr "Erakutsi testu-informazioaren elkarrizketa-koadroa"
+msgstr "Bistaratu testu-informazioaren elkarrizketa-koadroa"
 
 #: ../src/option.c:639
 msgid "Open file"
@@ -411,11 +412,11 @@ msgstr "Ireki fitxategia"
 
 #: ../src/option.c:663
 msgid "Display warning dialog"
-msgstr "Erakutsi abisuaren elkarrizketa-koadroa"
+msgstr "Bistaratu abisuaren elkarrizketa-koadroa"
 
 #: ../src/option.c:696
 msgid "Display scale dialog"
-msgstr "Erakutsi eskalaren elkarrizketa-koadroa"
+msgstr "Bistaratu eskalaren elkarrizketa-koadroa"
 
 #: ../src/option.c:714
 msgid "Set initial value"
@@ -492,15 +493,15 @@ msgstr "Informazioaren aukerak"
 
 #: ../src/option.c:1470
 msgid "Show info options"
-msgstr "Erakutsi datuen aukerak"
+msgstr "Erakutsi informazioaren aukerak"
 
 #: ../src/option.c:1480
 msgid "File selection options"
-msgstr "Fitxategi hautapenaren aukerak"
+msgstr "Fitxategiak hautatzeko aukerak"
 
 #: ../src/option.c:1481
 msgid "Show file selection options"
-msgstr "Erakutsi fitxategi-hautapenaren aukerak"
+msgstr "Erakutsi fitxategiak hautatzeko aukerak"
 
 #: ../src/option.c:1491
 msgid "List options"
@@ -520,7 +521,7 @@ msgstr "Erakutsi jakinarazpen-ikonoaren aukerak"
 
 #: ../src/option.c:1513
 msgid "Progress options"
-msgstr "Aurrerapenaren aukerak"
+msgstr "Progresioaren aukerak"
 
 #: ../src/option.c:1514
 msgid "Show progress options"
@@ -552,11 +553,11 @@ msgstr "Erakutsi eskalaren aukerak"
 
 #: ../src/option.c:1557
 msgid "Text information options"
-msgstr "Informazio-testuaren aukerak"
+msgstr "Testu-informazioaren aukerak"
 
 #: ../src/option.c:1558
 msgid "Show text information options"
-msgstr "Erakutsi informazio-testuaren aukerak"
+msgstr "Erakutsi testu-informazioaren aukerak"
 
 #: ../src/option.c:1568
 msgid "Miscellaneous options"
@@ -567,8 +568,10 @@ msgid "Show miscellaneous options"
 msgstr "Erakutsi hainbat aukera"
 
 #: ../src/option.c:1594
-msgid "This option is not available. Please see --help for all possible usages.\n"
-msgstr "Aukera hau ez dago erabilgarri. Ikusi --help erabilera guztiak ezagutzeko.\n"
+msgid ""
+"This option is not available. Please see --help for all possible usages.\n"
+msgstr ""
+"Aukera hau ez dago erabilgarri. Ikusi --help erabilera guztiak ezagutzeko.\n"
 
 #: ../src/option.c:1598
 #, c-format
@@ -577,5 +580,4 @@ msgstr "--%s ez da onartzen elkarrizketa-koadro honetan\n"
 
 #: ../src/option.c:1602
 msgid "Two or more dialog options specified\n"
-msgstr "Bi elkarrikezta-koadro aukera edo gehiago zehaztu dira\n"
-
+msgstr "Elkarrikezta-koadroaren bi aukera edo gehiago zehaztu dira\n"
