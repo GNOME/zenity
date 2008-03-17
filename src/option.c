@@ -476,6 +476,7 @@ static GOptionEntry list_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_list_print_column,
     N_("Print a specific column (Default is 1. 'ALL' can be used to print all columns)"),
+    /* Column index number to print out on a list dialog */
     N_("NUMBER")
   },
   {
