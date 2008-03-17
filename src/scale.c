@@ -81,8 +81,8 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
   if (scale_data->dialog_text) 
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (scale_data->dialog_text));
 
-  gtk_range_set_value (GTK_RANGE (scale), scale_data->value);
   gtk_range_set_range (GTK_RANGE (scale), scale_data->min_value, scale_data->max_value);
+  gtk_range_set_value (GTK_RANGE (scale), scale_data->value);
   gtk_range_set_increments (GTK_RANGE (scale), scale_data->step, 0);
 
   if (scale_data->print_partial) 
