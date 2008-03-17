@@ -151,7 +151,8 @@ static GOptionEntry general_options[] = {
     G_OPTION_ARG_INT,
     &zenity_general_timeout_delay,
     N_("Set dialog timeout in seconds"),
-    NULL
+    /* Timeout for closing the dialog */
+    N_("TIMEOUT")
   },
   {
     NULL
