@@ -87,6 +87,8 @@ static gboolean zenity_progress_auto_kill;
 
 /* Question Dialog Options */
 static gboolean zenity_question_active;
+static gchar   *zenity_question_ok_button;
+static gchar   *zenity_question_cancel_button;
 
 /* Text Dialog Options */
 static gboolean zenity_text_active;
@@ -609,6 +611,24 @@ static GOptionEntry question_options[] = {
     N_("TEXT")
   },
   {
+    "ok-label",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_question_ok_button,
+    N_("Sets the label of the Ok button"),
+    N_("TEXT")
+  },
+  {
+    "cancel-label",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_question_cancel_button,
+    N_("Sets the label of the Cancel button"),
+    N_("TEXT")
+  },
+  {
     "no-wrap",
     '\0',
     G_OPTION_FLAG_NOALIAS,
@@ -836,6 +856,11 @@ zenity_option_free (void) {
     g_free (zenity_list_print_column);
   if (zenity_list_hide_column)
     g_free (zenity_list_hide_column);
+
+  if (zenity_question_ok_button)
+    g_free (zenity_question_ok_button);
+  if (zenity_question_cancel_button)
+    g_free (zenity_question_cancel_button);
 
   g_option_context_free (ctx);
 }
@@ -1342,7 +1367,9 @@ zenity_question_post_callback (GOptionContext *context,
   if (results->mode == MODE_QUESTION) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_QUESTION;
-    results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
+    results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
+    results->msg_data->ok_label = zenity_question_ok_button;
+    results->msg_data->cancel_label = zenity_question_cancel_button;
   }
 
   return TRUE;

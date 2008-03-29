@@ -60,6 +60,8 @@ typedef struct {
   gchar   *dialog_text;
   MsgMode  mode;
   gboolean no_wrap;
+  gchar   *ok_label;
+  gchar   *cancel_label;
 } ZenityMsgData;
 
 typedef struct {

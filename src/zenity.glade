@@ -242,6 +242,7 @@
 	  <child>
 	    <widget class="GtkLabel" id="zenity_warning_text">
 	      <property name="visible">True</property>
+	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Are you sure you want to proceed?</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
@@ -339,36 +340,9 @@
       <property name="spacing">14</property>
 
       <child internal-child="action_area">
-	<widget class="GtkHButtonBox" id="dialog-action_area3">
+	<widget class="GtkHButtonBox" id="zenity_question_button_box">
 	  <property name="visible">True</property>
 	  <property name="layout_style">GTK_BUTTONBOX_END</property>
-
-	  <child>
-	    <widget class="GtkButton" id="zenity_question_cancel_button">
-	      <property name="visible">True</property>
-	      <property name="can_default">True</property>
-	      <property name="can_focus">True</property>
-	      <property name="label">gtk-cancel</property>
-	      <property name="use_stock">True</property>
-	      <property name="relief">GTK_RELIEF_NORMAL</property>
-	      <property name="focus_on_click">True</property>
-	      <property name="response_id">-6</property>
-	    </widget>
-	  </child>
-
-	  <child>
-	    <widget class="GtkButton" id="zenity_question_ok_button">
-	      <property name="visible">True</property>
-	      <property name="can_default">True</property>
-	      <property name="can_focus">True</property>
-	      <property name="has_focus">True</property>
-	      <property name="label">gtk-ok</property>
-	      <property name="use_stock">True</property>
-	      <property name="relief">GTK_RELIEF_NORMAL</property>
-	      <property name="focus_on_click">True</property>
-	      <property name="response_id">-5</property>
-	    </widget>
-	  </child>
 	</widget>
 	<packing>
 	  <property name="padding">0</property>
@@ -405,6 +379,7 @@
 	  <child>
 	    <widget class="GtkLabel" id="zenity_question_text">
 	      <property name="visible">True</property>
+	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Are you sure you want to proceed?</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
@@ -872,6 +847,7 @@
 	      <child>
 		<widget class="GtkLabel" id="zenity_error_text">
 		  <property name="visible">True</property>
+		  <property name="can_focus">True</property>
 		  <property name="label" translatable="yes">An error has occurred.</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
@@ -1126,6 +1102,7 @@
 	  <child>
 	    <widget class="GtkLabel" id="zenity_info_text">
 	      <property name="visible">True</property>
+	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">All updates are complete.</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>

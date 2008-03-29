@@ -29,6 +29,29 @@
 
 static void zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data);
 
+static void
+zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data)
+{
+  GtkWidget *cancel_button, *ok_button;
+  
+  cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+  ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_OK, GTK_RESPONSE_OK);
+
+  gtk_widget_grab_focus (ok_button);
+
+  if (msg_data->cancel_label) {
+    gtk_button_set_label (GTK_BUTTON (cancel_button), g_strdup (msg_data->cancel_label));
+    gtk_button_set_image (GTK_BUTTON (cancel_button), 
+                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
+  }
+
+  if (msg_data->ok_label) {
+    gtk_button_set_label (GTK_BUTTON (ok_button), g_strdup (msg_data->ok_label));
+    gtk_button_set_image (GTK_BUTTON (ok_button), 
+                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
+  }
+}
+
 void 
 zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 {
@@ -92,6 +115,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 
     case ZENITY_MSG_QUESTION:
       zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_QUESTION);
+      zenity_msg_construct_question_dialog (dialog, msg_data);
       break;
       
     case ZENITY_MSG_ERROR:

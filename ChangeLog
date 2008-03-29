@@ -1,3 +1,18 @@
+2008-03-30  Lucas Rocha  <lucasr@gnome.org>
+
+	Allow question dialogs to use custom button label text (Fixes 
+	bug #335763). Patch from Cosimo Cecchi <anarki@lilik.it> and 
+	Thomas Thurman <tthurman@gnome.org>.
+
+	* src/msg.c (zenity_msg_construct_question_dialog), (zenity_msg):
+	dynamically add dialog buttons with provided labels.
+	* src/option.c (zenity_option_free): free input labels.
+	(zenity_question_post_callback): set button labels provided by the
+	respective command line options.
+	* src/zenity.glade: remove pre-defined dialog button from question
+	dialog.
+	* src/zenity.h: added ok_label and cancel_label to ZenityMsgData.
+
 2008-03-17  Lucas Rocha  <lucasr@gnome.org>
 
 	* src/option.c: added arg_description for --timeout option (Fixes 
