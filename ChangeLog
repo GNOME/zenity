@@ -1,5 +1,10 @@
 2008-03-30  Lucas Rocha  <lucasr@gnome.org>
 
+	* src/msg.c (zenity_msg_construct_question_dialog): fix memory leak on
+	custom labels (Fixes bug #526627). Patch by kraai@ftbfs.org.
+
+2008-03-30  Lucas Rocha  <lucasr@gnome.org>
+
 	Allow question dialogs to use custom button label text (Fixes 
 	bug #335763). Patch from Cosimo Cecchi <anarki@lilik.it> and 
 	Thomas Thurman <tthurman@gnome.org>.
