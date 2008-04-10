@@ -1,3 +1,9 @@
+2008-04-10  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c (zenity_tree_dialog_get_selected,
+	zenity_tree_dialog_toggle_get_selected): use g_value_dup_string when
+	applicable (Fixes bug #527258). Patch from kraai@ftbfs.org.
+
 2008-03-30  Lucas Rocha  <lucasr@gnome.org>
 
 	* src/msg.c (zenity_msg_construct_question_dialog): fix memory leak on

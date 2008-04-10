@@ -516,7 +516,7 @@ zenity_tree_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf, Gtk
     for (i = 0; i < n_columns; i++) {
       gtk_tree_model_get_value (model, iter, i, &value);
 
-      selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
+      selected = g_slist_append (selected, g_value_dup_string (&value));
       g_value_unset (&value);
     }
     return;
@@ -525,7 +525,7 @@ zenity_tree_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf, Gtk
   for (i = 0; print_columns[i] != 0; i++) {
     gtk_tree_model_get_value  (model, iter, print_columns[i] - 1, &value);
 
-    selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
+    selected = g_slist_append (selected, g_value_dup_string (&value));
     g_value_unset (&value);
   }
 }
@@ -547,7 +547,7 @@ zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path, 
       for (i = 1; i < n_columns; i++) {
         gtk_tree_model_get_value (model, iter, i, &value);
         
-        selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
+        selected = g_slist_append (selected, g_value_dup_string (&value));
         g_value_unset (&value);
       }
       g_value_unset (&toggle_value);
@@ -557,7 +557,7 @@ zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path, 
     for (i = 0; print_columns[i] != 0; i++) {
       gtk_tree_model_get_value (model, iter, print_columns[i] - 1, &value);
 
-      selected = g_slist_append (selected, g_strdup (g_value_get_string (&value)));
+      selected = g_slist_append (selected, g_value_dup_string (&value));
       g_value_unset (&value);
     }
   }
