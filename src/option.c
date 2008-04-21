@@ -61,10 +61,11 @@ static gboolean zenity_error_active;
 static gboolean zenity_info_active;
 
 /* File Selection Dialog Options */
-static gboolean zenity_file_active;
-static gboolean zenity_file_directory;
-static gboolean zenity_file_save;
-static gboolean zenity_file_confirm_overwrite;
+static gboolean       zenity_file_active;
+static gboolean       zenity_file_directory;
+static gboolean       zenity_file_save;
+static gboolean       zenity_file_confirm_overwrite;
+static GtkFileFilter *zenity_file_filter;
 
 /* List Dialog Options */
 static gboolean zenity_list_active;
@@ -393,6 +394,15 @@ static GOptionEntry file_selection_options[] = {
     &zenity_file_confirm_overwrite,
     N_("Confirm file selection if filename already exists"),
     NULL
+  },
+  {
+    "file-filter",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING_ARRAY,
+    &zenity_file_filter,
+    N_("Sets a filename filter"),
+    N_("NAME | PATTERN1 PATTERN2 ..."),
   },
   { 
     NULL 
@@ -981,6 +991,7 @@ zenity_file_pre_callback (GOptionContext *context,
   zenity_file_directory = FALSE;
   zenity_file_save = FALSE;
   zenity_file_confirm_overwrite = FALSE;
+  zenity_file_filter = NULL;
 
   return TRUE;
 }
@@ -1233,6 +1244,7 @@ zenity_file_post_callback (GOptionContext *context,
     results->file_data->save = zenity_file_save;
     results->file_data->confirm_overwrite = zenity_file_confirm_overwrite;
     results->file_data->separator = zenity_general_separator;
+    results->file_data->filter = zenity_file_filter;
   } else {
     if (zenity_file_directory)
       zenity_option_error (zenity_option_get_name (file_selection_options, &zenity_file_directory),
@@ -1240,6 +1252,10 @@ zenity_file_post_callback (GOptionContext *context,
 
     if (zenity_file_save)
       zenity_option_error (zenity_option_get_name (file_selection_options, &zenity_file_save),
+                           ERROR_SUPPORT);
+
+    if (zenity_file_filter)
+      zenity_option_error (zenity_option_get_name (file_selection_options, &zenity_file_filter),
                            ERROR_SUPPORT);
   }
     

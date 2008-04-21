@@ -85,6 +85,52 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   if (file_data->multi)
     gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (dialog), TRUE);
 
+  if (file_data->filter) {
+    /* Filter format: Executables | *.exe *.bat *.com */
+    gint filter_i;
+
+    for (filter_i = 0; file_data->filter [filter_i]; filter_i++) {
+      GtkFileFilter *filter = gtk_file_filter_new();
+      gchar *filter_str = file_data->filter [filter_i];
+      gchar **pattern, **patterns;
+      gchar *name = NULL;
+      gint i;
+
+      /* Set name */
+      for (i = 0; filter_str[i] != '\0'; i++)
+        if (filter_str[i] == '|')
+          break;
+
+      if (filter_str[i] == '|') {
+        name = g_strndup (filter_str, i);
+        g_strstrip (name);
+      }
+
+      if (name) {
+        gtk_file_filter_set_name (filter, name);
+
+        /* Point i to the right position for split */
+        for (++i; filter_str[i] == ' '; i++);
+      } else {
+        gtk_file_filter_set_name (filter, filter_str);
+        i = 0;
+      }
+
+      /* Get patterns */
+      patterns = g_strsplit_set (filter_str + i, " ", -1);
+
+      for (pattern = patterns; *pattern; pattern++)
+        gtk_file_filter_add_pattern (filter, *pattern);
+
+      if (name)
+        g_free (name);
+
+      g_strfreev (patterns);
+
+      gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filter);
+    }
+  }
+
   zenity_util_show_dialog (dialog);
 
   if(data->timeout_delay > 0) {

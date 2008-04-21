@@ -1,3 +1,13 @@
+2008-04-21  Lucas Rocha  <lucasr@gnome.org>
+
+	Add support for file filter in file selection dialog through the new
+	--file-filter command line option (Fixes bug #409843).
+
+	* src/option.c, src/zenity.h: added supporting variable and new 
+	GOptionEntry entry for the new command line option.
+	* src/fileselection.c (zenity_fileselection): add file filters based
+	on command line input.
+
 2008-04-12  Karsten Braeckelmann  <guenther@rudersport.de>
 
 	* HACKING: Fix typo and remove obsolete freeze note.
