@@ -350,7 +350,6 @@ transient_get_xterm_toplevel (void)
 static void
 zenity_util_make_transient (GdkWindow *window)
 {
-#if 0
   Window xterm = transient_get_xterm_toplevel ();
   if (xterm != None) {
     GdkWindow *gdkxterm = gdk_window_foreign_new (xterm);
@@ -359,7 +358,6 @@ zenity_util_make_transient (GdkWindow *window)
       g_object_unref (G_OBJECT (gdkxterm));
     }
   }
-#endif
 }
 
 #endif /* GDK_WINDOWING_X11 */
