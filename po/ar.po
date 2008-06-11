@@ -1,5 +1,4 @@
-# translation of zenity.HEAD.ar.po to Arabic
-# translation of zenity.HEAD.ar.po to
+# translation of zenity.HEAD.po to Arabic
 # This file is distributed under the same license as the zenity package.
 # Copyright (C) 2003 THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -8,20 +7,19 @@
 # Hafid BENHADRIA <ghosn@php4arab.info>, 2003.
 # Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004, 2005.
 # Djihed Afifi <djihed@gmail.com>, 2006.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity.HEAD.ar\n"
+"Project-Id-Version: zenity.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-04-21 20:47+0000\n"
-"PO-Revision-Date: 2007-10-21 20:34+0100\n"
-"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"PO-Revision-Date: 2008-05-24 19:09+0300\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && "
-"n<=10 ? 2 : 3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../src/about.c:65
@@ -31,7 +29,7 @@ msgid ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version.\n"
 msgstr ""
-"هذا البرنامج حر؛ بامكانك إعادة توزيعه و/أو تعديله تحت شروط الرخصة العمومية "
+"هذه برمجية البرنامج حر؛ بإمكانك إعادة توزيعها و/أو تعديلها تحت شروط الرخصة العمومية "
 "العامة لجنو والتي نشرتها منظمة البرمجيات الحرة؛ سواء الإصدارة 2 من الرخصة أو "
 "أي إصدارة بعدها حسب رغبتك.\n"
 
@@ -72,13 +70,12 @@ msgstr "اعرض صناديق حوار من مخطوطات الصدفة"
 #: ../src/main.c:94
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
-"يجب عليك تحديد نوع الحوار. انظر 'zenity --help' لأجل مزيد من التَّفاصيل\n"
+msgstr "يجب عليك تحديد نوع الحوار. انظر 'zenity --help' لأجل مزيد من التَّفاصيل\n"
 
 #: ../src/notification.c:139
 #, c-format
 msgid "could not parse command from stdin\n"
-msgstr "لم يمكن تحليل الأمر من الدخل القياسي (stdin)\n"
+msgstr "لم يمكن تحليل الأمر من الدخل القياسي ‪(stdin)‬‬\n"
 
 #: ../src/notification.c:252 ../src/notification.c:269
 msgid "Zenity notification"
@@ -106,7 +103,7 @@ msgstr "يجب أن تستعمل نوع واحد لحوار القائمة.\n"
 
 #: ../src/zenity.glade.h:1
 msgid "Add a new entry"
-msgstr "أضف مُدْخَل جديد"
+msgstr "أضف مُدْخَلا جديد"
 
 #: ../src/zenity.glade.h:2
 msgid "Adjust the scale value"
@@ -114,7 +111,7 @@ msgstr "اضبط قيمة المقياس"
 
 #: ../src/zenity.glade.h:3
 msgid "All updates are complete."
-msgstr "أُكْمِلَت كافة التَّحديثات."
+msgstr "تمت كافة التَّحديثات."
 
 #: ../src/zenity.glade.h:4
 msgid "An error has occurred."
@@ -122,7 +119,7 @@ msgstr "طرأ خطأ."
 
 #: ../src/zenity.glade.h:5
 msgid "Are you sure you want to proceed?"
-msgstr "أمتأكد أنَّك تريد المُضي قدماً؟"
+msgstr "أمتأكد أنَّك تريد المُضي قدمًا؟"
 
 #: ../src/zenity.glade.h:6
 msgid "C_alendar:"
@@ -130,7 +127,7 @@ msgstr "ت_قويم:"
 
 #: ../src/zenity.glade.h:7
 msgid "Calendar selection"
-msgstr "انتقاء التقويم"
+msgstr "اختيار التقويم"
 
 #: ../src/zenity.glade.h:8
 msgid "Error"
@@ -150,23 +147,23 @@ msgstr "سؤال"
 
 #: ../src/zenity.glade.h:12
 msgid "Running..."
-msgstr "يجري تشغيل..."
+msgstr "يعمل..."
 
 #: ../src/zenity.glade.h:13
 msgid "Select a date from below."
-msgstr "انتق تاريخاَ من الأسفل."
+msgstr "اختر تاريخًا من الأسفل."
 
 #: ../src/zenity.glade.h:14
 msgid "Select a file"
-msgstr "انتق ملفاَ"
+msgstr "اختر ملفًا"
 
 #: ../src/zenity.glade.h:15
 msgid "Select items from the list"
-msgstr "انتق عناصر من القائمة"
+msgstr "اختر عناصر من القائمة"
 
 #: ../src/zenity.glade.h:16
 msgid "Select items from the list below."
-msgstr "انتق عناصر من القائمة السُّفليَّة."
+msgstr "اختر عناصر من القائمة السُّفليَّة."
 
 #: ../src/zenity.glade.h:17
 msgid "Text View"
@@ -178,7 +175,7 @@ msgstr "تحذير"
 
 #: ../src/zenity.glade.h:19
 msgid "_Enter new text:"
-msgstr "أ_دخل نص جديد:"
+msgstr "أ_دخل نصا جديدا:"
 
 #: ../src/option.c:120
 msgid "Set the dialog title"
@@ -219,7 +216,7 @@ msgstr "حدد فترة ظهور الحوار بالثواني"
 #. Timeout for closing the dialog
 #: ../src/option.c:158
 msgid "TIMEOUT"
-msgstr ""
+msgstr "TIMEOUT"
 
 #: ../src/option.c:172
 msgid "Display calendar dialog"
@@ -229,7 +226,7 @@ msgstr "اعرض صندوق حوار التقويم"
 #: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
 #: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
 msgid "Set the dialog text"
-msgstr "حدد النص لصندوق الحوار"
+msgstr "حدد نص صندوق الحوار"
 
 #: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
 #: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
@@ -273,7 +270,7 @@ msgstr "PATTERN"
 
 #: ../src/option.c:232
 msgid "Display text entry dialog"
-msgstr "اعرض صندوق ادخال نص"
+msgstr "اعرض صندوق إدخال نص"
 
 #: ../src/option.c:250
 msgid "Set the entry text"
@@ -281,7 +278,7 @@ msgstr "حدّد نص المُدْخَل"
 
 #: ../src/option.c:259
 msgid "Hide the entry text"
-msgstr "إخفي نص المُدْخَل"
+msgstr "اخفِ مُدْخَلة النص"
 
 #: ../src/option.c:275
 msgid "Display error dialog"
@@ -294,7 +291,7 @@ msgstr "لا تفعّل لف السّطور"
 
 #: ../src/option.c:308
 msgid "Display info dialog"
-msgstr "اعرض صندوق حوار المعلومات"
+msgstr "اعرض صندوق حوار معلومات"
 
 #: ../src/option.c:341
 msgid "Display file selection dialog"
@@ -310,11 +307,11 @@ msgstr "FILENAME"
 
 #: ../src/option.c:359
 msgid "Allow multiple files to be selected"
-msgstr "اسمح بانتقاء عدة ملفات"
+msgstr "اسمح باختيار عدة ملفات"
 
 #: ../src/option.c:368
 msgid "Activate directory-only selection"
-msgstr "نشّط إنتقاء الدّلائل فقط"
+msgstr "نشّط اختيار الأدلة فقط"
 
 #: ../src/option.c:377
 msgid "Activate save mode"
@@ -330,16 +327,15 @@ msgstr "SEPARATOR"
 
 #: ../src/option.c:395
 msgid "Confirm file selection if filename already exists"
-msgstr "أكّد إختيار الملف إذا كان موجودا"
+msgstr "أكّد اختيار الملف إذا كان موجودا"
 
 #: ../src/option.c:404
-#, fuzzy
 msgid "Sets a filename filter"
-msgstr "حدد اسم الملف"
+msgstr "يضبط مرشح اسم الملف"
 
 #: ../src/option.c:405
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr ""
+msgstr "NAME | PATTERN1 PATTERN2 ..."
 
 #: ../src/option.c:419
 msgid "Display list dialog"
@@ -355,19 +351,19 @@ msgstr "COLUMN"
 
 #: ../src/option.c:446
 msgid "Use check boxes for first column"
-msgstr "إستخدم خانات إختيار لأجل العمود الأول"
+msgstr "استخدم خانات اختيار لأجل العمود الأول"
 
 #: ../src/option.c:455
 msgid "Use radio buttons for first column"
-msgstr "إستخدم أزرار راديو لأجل العمود الأول"
+msgstr "استخدم أزرار راديو لأجل العمود الأول"
 
 #: ../src/option.c:473
 msgid "Allow multiple rows to be selected"
-msgstr "اسمح بانتقاء عدة صفوف"
+msgstr "اسمح باختيار عدة صفوف"
 
 #: ../src/option.c:482 ../src/option.c:680
 msgid "Allow changes to text"
-msgstr "اسمح بالتَّغييرات في النَّص"
+msgstr "اسمح بالتَّغيير في النَّص"
 
 #: ../src/option.c:491
 msgid ""
@@ -382,7 +378,7 @@ msgstr "NUMBER"
 
 #: ../src/option.c:501
 msgid "Hide a specific column"
-msgstr "اخفي عمود معيّن"
+msgstr "اخف عمود معيّن"
 
 #: ../src/option.c:516
 msgid "Display notification"
@@ -394,7 +390,7 @@ msgstr "حدد نصّ حوار التذكير"
 
 #: ../src/option.c:534
 msgid "Listen for commands on stdin"
-msgstr "إستمع إلى الأوامر على stdin"
+msgstr "استمع إلى الأوامر على stdin"
 
 #: ../src/option.c:549
 msgid "Display progress indication dialog"
@@ -424,32 +420,31 @@ msgstr "اقتل العملية الأم إذا ضُغِط زر الإلغاء"
 
 #: ../src/option.c:611
 msgid "Display question dialog"
-msgstr "اعرض صندوق حوار السؤال"
+msgstr "اعرض صندوق حوار سؤال"
 
 #: ../src/option.c:629
-#, fuzzy
 msgid "Sets the label of the Ok button"
-msgstr "حدد النص لصندوق الحوار"
+msgstr "يحدد عنوان زر \"موافق\""
 
 #: ../src/option.c:638
 msgid "Sets the label of the Cancel button"
-msgstr ""
+msgstr "يحدد عنوان زر \"ألغِ\""
 
 #: ../src/option.c:662
 msgid "Display text information dialog"
-msgstr "اعرض صندوق حوار معلومات النص"
+msgstr "اعرض صندوق حوار معلومات"
 
 #: ../src/option.c:671
 msgid "Open file"
-msgstr "افتح ملف"
+msgstr "افتح ملفا"
 
 #: ../src/option.c:695
 msgid "Display warning dialog"
-msgstr "اعرض صندوق حوار الإنذار"
+msgstr "اعرض صندوق حوار تحذير"
 
 #: ../src/option.c:728
 msgid "Display scale dialog"
-msgstr "اعرض حوار مقياس الرّسم"
+msgstr "اعرض حوار مقياس"
 
 #: ../src/option.c:746
 msgid "Set initial value"
@@ -474,19 +469,19 @@ msgstr "حدد حجم الخطوة"
 
 #: ../src/option.c:782
 msgid "Print partial values"
-msgstr "اطبع قيم جزئيّة"
+msgstr "اطبع القيم الجزئيّة"
 
 #: ../src/option.c:791
 msgid "Hide value"
-msgstr "اخفي القيمة"
+msgstr "اخف القيمة"
 
 #: ../src/option.c:806
 msgid "About zenity"
-msgstr "عن زِنْتي"
+msgstr "عنْ زِنْتي"
 
 #: ../src/option.c:815
 msgid "Print version"
-msgstr "اطبع النسخة"
+msgstr "اطبع الإصدارة"
 
 #: ../src/option.c:1470
 msgid "General options"
@@ -530,11 +525,11 @@ msgstr "اعرض خيارات المعلومات"
 
 #: ../src/option.c:1525
 msgid "File selection options"
-msgstr "خيارات إنتقاء الملف"
+msgstr "خيارات اختيار الملفات"
 
 #: ../src/option.c:1526
 msgid "Show file selection options"
-msgstr "اعرض خيارات إنتقاء الملفّات"
+msgstr "اعرض خيارات اختيار الملفّات"
 
 #: ../src/option.c:1536
 msgid "List options"
@@ -578,19 +573,19 @@ msgstr "اعرض خيارات التَّحذير"
 
 #: ../src/option.c:1591
 msgid "Scale options"
-msgstr "خيارات مقياس الرّسم"
+msgstr "خيارات المقياس"
 
 #: ../src/option.c:1592
 msgid "Show scale options"
-msgstr "اعرض خيارات مقياس الرّسم"
+msgstr "اعرض خيارات المقياس"
 
 #: ../src/option.c:1602
 msgid "Text information options"
-msgstr "خيارات معلومات النّصوص"
+msgstr "خيارات المعلومات"
 
 #: ../src/option.c:1603
 msgid "Show text information options"
-msgstr "اعرض خيارات معلومات النّصوص"
+msgstr "اعرض خيارات المعلومات"
 
 #: ../src/option.c:1613
 msgid "Miscellaneous options"
@@ -602,10 +597,8 @@ msgstr "اعرض الخيارات المتنوّعة"
 
 #: ../src/option.c:1639
 #, c-format
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
-"هذا الخيار غير مدعوم. الرجاء الرجوع إلى  --help لإستعراض كل الخيارات.\n"
+msgid "This option is not available. Please see --help for all possible usages.\n"
+msgstr "هذا الخيار غير مدعوم. الرجاء الرجوع إلى ‪--help‬ لاستعراض كل الخيارات.\n"
 
 #: ../src/option.c:1643
 #, c-format
@@ -616,3 +609,4 @@ msgstr "--%s ليس مدعوما لهذا الحوار\n"
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "تم تحديد خيارَيْ حوار أو أكثر\n"
+
