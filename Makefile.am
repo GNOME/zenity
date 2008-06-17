@@ -6,9 +6,6 @@ SUBDIRS = \
 
 EXTRA_DIST = \
 	autogen.sh		\
-	intltool-extract.in	\
-	intltool-merge.in	\
-	intltool-update.in	\
 	zenity.spec		\
 	zenity.spec.in		\
 	COPYING			\
