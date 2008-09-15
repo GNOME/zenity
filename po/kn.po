@@ -1,500 +1,595 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of kn.po to Kannada
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+#
 # Gnome Kannada Team <kannada@eagle.sharma-home.net>, 2003.
-# 
+# Shankar Prasad <svenkate@redhat.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity HEAD\n"
+"Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2003-08-13 18:05+0530\n"
-"Last-Translator: Latha L <lata_msb@yahoo.com>\n"
-"Language-Team: Gnome Kannada Team <indlinux-hindi-gnome@lists.sourceforge."
-"net>\n"
+"POT-Creation-Date: 2008-04-21 20:47+0000\n"
+"PO-Revision-Date: 2008-09-15 18:33+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
-#, fuzzy
+#: ../src/about.c:65
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+msgstr "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+
+#: ../src/about.c:69
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+msgstr "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
+
+#: ../src/about.c:73
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+
+#: ../src/about.c:264
 msgid "translator-credits"
-msgstr "ಅನುವಾದಕರ ಕೀರ್ತಿ (_c)"
+msgstr "ಲತಾ ಎಲ್ <lata_msb@yahoo.com>, ಶಂಕರ್ ಪ್ರಸಾದ್ ಎಂ. ವಿ. <svenkate@redhat.com>"
 
-#: ../src/about.c:433
+#: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
-msgstr ""
+msgstr "ಶೆಲ್ ಸ್ಕ್ರಿಪ್ಟಿನಲ್ಲಿನಿಂದ ಸಂವಾದ ಬಾಕ್ಸುಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(C) 2003 ಸನ್ ಮೈಕ್ರೋಸಿಸ್ಟಮ್"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "ಕೀರ್ತಿ"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "ಲೇಖಕರು"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "ಅನುವಾದಕರು"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr ""
-
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr ""
-
-#: ../src/main.c:90
+#: ../src/main.c:94
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
+msgstr "ನೀವು ಸಂವಾದ ರೀತಿಯನ್ನು ನೀವು ಸೂಚಿಸಬೇಕಾಗುತ್ತದೆ. ಮಾಹಿತಿಗಾಗಿ 'zenity --help' ನೋಡಿ \n"
 
-#: ../src/notification.c:161
+#: ../src/notification.c:139
+#, c-format
 msgid "could not parse command from stdin\n"
-msgstr ""
+msgstr "stdin ಇಂದ ಆಜ್ಞೆಯನ್ನು ಪಾರ್ಸ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
-#, fuzzy
+#: ../src/notification.c:252 ../src/notification.c:269
 msgid "Zenity notification"
-msgstr "ಮಾಹಿತಿ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
+msgstr "Zenity ಸೂಚನೆ"
+
+#: ../src/scale.c:56
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "ಹೆಚ್ಚಿನ ಮೌಲ್ಯವು ಅತ್ಯಂತ ಕಡಿಮೆ ಮೌಲ್ಯಕ್ಕಿಂತ ದೊಡ್ಡದಿರಲೇಬೇಕು. \n"
+
+#: ../src/scale.c:63
+#, c-format
+msgid "Value out of range.\n"
+msgstr "ವ್ಯಾಪ್ತಿಯ ಹೊರಗಿನ ಮೌಲ್ಯ. \n"
 
 #: ../src/tree.c:320
+#, c-format
 msgid "No column titles specified for List dialog.\n"
-msgstr ""
+msgstr "ಪಟ್ಟಿಯ ಸಂವಾದಕ್ಕೆ ಯಾವುದೆ ಕಾಲಂ ಶೀರ್ಷಿಕೆಯನ್ನು ಸೂಚಿಸಿಲ್ಲ. \n"
 
 #: ../src/tree.c:326
+#, c-format
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "ನೀವು ಒಂದು ಪಟ್ಟಿಯ ಸಂವಾದ ರೀತಿಯನ್ನು ಮಾತ್ರ ಉಪಯೋಗಿಸಬೇಕು.\n"
 
 #: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
+msgid "Add a new entry"
+msgstr "ಹೊಸ ನಮೂದನ್ನು ಸೇರಿಸು"
 
 #: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "ಝೆನಿಟಿ ಯ ಬಗ್ಗೆ"
+msgid "Adjust the scale value"
+msgstr "ಸ್ಕೇಲ್ ಮೌಲ್ಯವನ್ನು ಸರಿಹೊಂದಿಸು"
 
 #: ../src/zenity.glade.h:3
-msgid "Add a new entry"
-msgstr ""
+msgid "All updates are complete."
+msgstr "ಎಲ್ಲಾ ಅಪ್‌ಡೇಟ್‌ಗಳನ್ನು ಪೂರ್ತಿಗೊಳಿಸಲಾಗಿದೆ."
 
 #: ../src/zenity.glade.h:4
-msgid "All updates are complete."
-msgstr ""
+msgid "An error has occurred."
+msgstr "ಒಂದು ದೋಷವು ಎದುರಾಗಿದೆ."
 
 #: ../src/zenity.glade.h:5
-msgid "An error has occurred."
-msgstr ""
+msgid "Are you sure you want to proceed?"
+msgstr "ಮುಂದುವರೆಸಲು ಖಚಿತವಾಗಿಯೂ ಬಯಸುತ್ತೀರಾ?"
 
 #: ../src/zenity.glade.h:6
-msgid "Are you sure you want to proceed?"
-msgstr ""
+msgid "C_alendar:"
+msgstr "ಕ್ಯಾಲೆಂಡರ್(_a):"
 
 #: ../src/zenity.glade.h:7
-msgid "C_alendar:"
-msgstr "ದಿನಸೂಚಿ"
+msgid "Calendar selection"
+msgstr "ಕ್ಯಾಲೆಂಡರ್ ಆಯ್ಕೆ"
 
 #: ../src/zenity.glade.h:8
-msgid "Calendar selection"
-msgstr "ದಿನಸೂಚಿ ಆಯ್ಕೆ "
+msgid "Error"
+msgstr "ದೋಷ"
 
 #: ../src/zenity.glade.h:9
-msgid "Error"
-msgstr "ತಪ್ಪು"
-
-#: ../src/zenity.glade.h:10
 msgid "Information"
 msgstr "ಮಾಹಿತಿ"
 
 # libgnomeui/gnome-app-util.c:685
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.glade.h:10
 msgid "Progress"
 msgstr "ಪ್ರಗತಿ"
 
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.glade.h:11
 msgid "Question"
 msgstr "ಪ್ರಶ್ನೆ"
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.glade.h:12
 msgid "Running..."
-msgstr "ಓಡುತ್ತಿದೆ ..."
+msgstr "ಚಲಾಯಿಸಲಾಗುತ್ತಿದೆ..."
+
+#: ../src/zenity.glade.h:13
+msgid "Select a date from below."
+msgstr "ಕೆಳಗಿನವುಗಳಿಂದ ದಿನಾಂಕವನ್ನು ಆಯ್ಕೆಮಾಡಿ"
 
 #: ../src/zenity.glade.h:14
-msgid "Select a date from below."
-msgstr "ಕೆಳಗಿನವುಗಳಿಂದ ದಿನಾಂಕವನ್ನು ಆಯ್ಕೆಮಾಡು"
+msgid "Select a file"
+msgstr "ಕಡತವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"
 
 #: ../src/zenity.glade.h:15
-msgid "Select a file"
-msgstr "ಕಡತವನ್ನು ಆಯ್ಕೆಮಾಡು"
+msgid "Select items from the list"
+msgstr "ಪಟ್ಟಿಯಿಂದ ವಸ್ತುಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"
 
 #: ../src/zenity.glade.h:16
-msgid "Select items from the list"
-msgstr ""
+msgid "Select items from the list below."
+msgstr "ಕೆಳಗಿನ ಪಟ್ಟಿಯಿಂದ ವಸ್ತುಗಳನ್ನು ಆರಿಸಿ."
 
 #: ../src/zenity.glade.h:17
-msgid "Select items from the list below."
-msgstr ""
-
-#: ../src/zenity.glade.h:18
 msgid "Text View"
 msgstr "ಪಠ್ಯದ ನೋಟ"
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.glade.h:18
 msgid "Warning"
 msgstr "ಸೂಚನೆ"
 
-#: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "ಕೀರ್ತಿ (_C)"
-
-#: ../src/zenity.glade.h:21
+#: ../src/zenity.glade.h:19
 msgid "_Enter new text:"
-msgstr ""
+msgstr "ಹೊಸ ಪಠ್ಯವನ್ನು ನಮೂದಿಸು(_E):"
 
-#: ../src/option.c:105
+#: ../src/option.c:120
 msgid "Set the dialog title"
-msgstr ""
+msgstr "ಸಂವಾದಕ್ಕೆ ಶೀರ್ಷಿಕೆಯನ್ನು ನೀಡು"
 
-#: ../src/option.c:106
+#: ../src/option.c:121
 msgid "TITLE"
-msgstr "ಶೀರ್ಷಿಕೆ"
+msgstr "TITLE"
 
-#: ../src/option.c:114
+#: ../src/option.c:129
 msgid "Set the window icon"
-msgstr ""
+msgstr "ವಿಂಡೋಗೆ ಚಿಹ್ನೆಯನ್ನು ನೀಡು"
 
-#: ../src/option.c:115
+#: ../src/option.c:130
 msgid "ICONPATH"
-msgstr ""
+msgstr "ICONPATH"
 
-#: ../src/option.c:123
+#: ../src/option.c:138
 msgid "Set the width"
-msgstr ""
+msgstr "ಅಗಲವನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:124
+#: ../src/option.c:139
 msgid "WIDTH"
-msgstr "ಅಗಲ"
-
-#: ../src/option.c:132
-msgid "Set the height"
-msgstr ""
-
-#: ../src/option.c:133
-msgid "HEIGHT"
-msgstr "ಎತ್ತರ"
+msgstr "WIDTH"
 
 #: ../src/option.c:147
+msgid "Set the height"
+msgstr "ಎತ್ತರವನ್ನು ಹೊಂದಿಸು"
+
+#: ../src/option.c:148
+msgid "HEIGHT"
+msgstr "HEIGHT"
+
+#: ../src/option.c:156
+msgid "Set dialog timeout in seconds"
+msgstr "ಸಂವಾದದ ಸಮಯ ತೀರುವಿಕೆಯನ್ನಯ ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಹೊಂದಿಸಿ"
+
+#. Timeout for closing the dialog
+#: ../src/option.c:158
+msgid "TIMEOUT"
+msgstr "TIMEOUT"
+
+#: ../src/option.c:172
 msgid "Display calendar dialog"
-msgstr "ದಿನಸೂಚಿಯ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
+msgstr "ಕ್ಯಾಲೆಂಡರ್ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: ../src/option.c:181 ../src/option.c:241 ../src/option.c:284
+#: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
+#: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
 msgid "Set the dialog text"
-msgstr ""
+msgstr "ಸಂವಾದದ ಪಠ್ಯವನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:165
+#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
+#: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
+#: ../src/option.c:429 ../src/option.c:526 ../src/option.c:559
+#: ../src/option.c:621 ../src/option.c:630 ../src/option.c:639
+#: ../src/option.c:705 ../src/option.c:738
+msgid "TEXT"
+msgstr "TEXT"
+
+#: ../src/option.c:190
 msgid "Set the calendar day"
-msgstr "ದಿನಸೂಚಿಯ ದಿನ ತಿಳಿಸು"
+msgstr "ಕ್ಯಾಲೆಂಡರಿನ ದಿನವನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:174
+#: ../src/option.c:191
+msgid "DAY"
+msgstr "DAY"
+
+#: ../src/option.c:199
 msgid "Set the calendar month"
-msgstr "ದಿನಸೂಚಿಯ ತಿಂಗಳು ತಿಳಿಸು"
+msgstr "ಕ್ಯಾಲೆಂಡರಿನ ತಿಂಗಳನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:183
+#: ../src/option.c:200
+msgid "MONTH"
+msgstr "MONTH"
+
+#: ../src/option.c:208
 msgid "Set the calendar year"
-msgstr "ದಿನಸೂಚಿಯ ವರ್ಷ ತಿಳಿಸು"
+msgstr "ಕ್ಯಾಲೆಂಡರಿನ ವರ್ಷವನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:192
+#: ../src/option.c:209
+msgid "YEAR"
+msgstr "YEAR"
+
+#: ../src/option.c:217
 msgid "Set the format for the returned date"
-msgstr ""
+msgstr "ಹಿಂದಿರುಗಿಸಲಾದ ದಿನಾಂಕದ ವಿನ್ಯಾಸವನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:207
+#: ../src/option.c:218
+msgid "PATTERN"
+msgstr "PATTERN"
+
+#: ../src/option.c:232
 msgid "Display text entry dialog"
-msgstr "ಪಠ್ಯ ದಾಖಲಿಸುವ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
-
-#: ../src/option.c:225
-msgid "Set the entry text"
-msgstr ""
-
-#: ../src/option.c:234
-msgid "Hide the entry text"
-msgstr ""
+msgstr "ಪಠ್ಯ ನಮೂದು ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
 #: ../src/option.c:250
+msgid "Set the entry text"
+msgstr "ನಮೂದಿಸುವ ಪಠ್ಯವನ್ನು ಹೊಂದಿಸು"
+
+#: ../src/option.c:259
+msgid "Hide the entry text"
+msgstr "ನಮೂದಿಸುವ ಪಠ್ಯವನ್ನು ಅಡಗಿಸು"
+
+#: ../src/option.c:275
 msgid "Display error dialog"
 msgstr "ದೋಷ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:647
+#: ../src/option.c:713
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "ಪಠ್ಯ ಆವರಿಕೆಯನ್ನು ಶಕ್ತಗೊಳಿಸಬೇಡ"
 
-#: ../src/option.c:283
+#: ../src/option.c:308
 msgid "Display info dialog"
 msgstr "ಮಾಹಿತಿ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
-#: ../src/option.c:316
+#: ../src/option.c:341
 msgid "Display file selection dialog"
 msgstr "ಕಡತ ಆಯ್ಕೆಯ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
-#: ../src/option.c:325
+#: ../src/option.c:350
 msgid "Set the filename"
 msgstr "ಕಡತದ ಹೆಸರು ತಿಳಿಸು"
 
-#: ../src/option.c:326 ../src/option.c:600
+#: ../src/option.c:351 ../src/option.c:672
 msgid "FILENAME"
 msgstr "ಕಡತದ ಹೆಸರು"
 
-#: ../src/option.c:334
+#: ../src/option.c:359
 msgid "Allow multiple files to be selected"
 msgstr "ಬಹು ಕಡತಗಳನ್ನು ಆಯ್ಕೆಮಾಡಲು ಬಿಡು"
 
-#: ../src/option.c:343
+#: ../src/option.c:368
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "ಕೋಶ-ಮಾತ್ರ ಆಯ್ಕೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"
 
-#: ../src/option.c:352
+#: ../src/option.c:377
 msgid "Activate save mode"
-msgstr ""
+msgstr "ಉಳಿಸುವ ಕ್ರಮವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: ../src/option.c:386 ../src/option.c:464
 msgid "Set output separator character"
-msgstr ""
+msgstr "ಔಟ್‌ಪುಟ್‌ನ ವಿಭಜಕ ಅಕ್ಷರವನ್ನು ಹೊಂದಿಸಿ"
 
-#: ../src/option.c:362 ../src/option.c:422
+#: ../src/option.c:387 ../src/option.c:465
 msgid "SEPARATOR"
-msgstr ""
+msgstr "SEPARATOR"
 
-#: ../src/option.c:376
+#: ../src/option.c:395
+msgid "Confirm file selection if filename already exists"
+msgstr "ಕಡತದ ಹೆಸರು ಮೊದಲೇ ಅಸ್ಠಿತ್ವದಲ್ಲಿದ್ದರೆ ಕಡತದ ಆಯ್ಕೆಯನ್ನು ದೃಢಪಡಿಸಿ"
+
+#: ../src/option.c:404
+msgid "Sets a filename filter"
+msgstr "ಕಡತದ ಹೆಸರಿನ ಫಿಲ್ಟರ್ ಅನ್ನು ಹೊಂದಿಸಿ"
+
+#: ../src/option.c:405
+msgid "NAME | PATTERN1 PATTERN2 ..."
+msgstr "ಮಾದರಿ೧ ಮಾದರಿ೨..."
+
+#: ../src/option.c:419
 msgid "Display list dialog"
 msgstr "ಪಟ್ಟಿ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
-#: ../src/option.c:394
+#: ../src/option.c:437
 msgid "Set the column header"
-msgstr ""
+msgstr "ಕಾಲಂ ಹೆಡರ್ ಅನ್ನು ನೀಡಿ"
 
-#: ../src/option.c:403
+#: ../src/option.c:438
+msgid "COLUMN"
+msgstr "COLUMN"
+
+#: ../src/option.c:446
 msgid "Use check boxes for first column"
-msgstr ""
+msgstr "ಮೊದಲಿನ ಕಾಲಂಗೆ ಚೆಕ್ ಬಾಕ್ಸುಗಳನ್ನು ಬಳಸಿ"
 
-#: ../src/option.c:412
+#: ../src/option.c:455
 msgid "Use radio buttons for first column"
-msgstr ""
+msgstr "ಮೊದಲಿನ ಕಾಲಂಗೆ ರೇಡಿಯೋ ಗುಂಡಿಳನ್ನು ಬಳಸಿ"
 
-#: ../src/option.c:430
-#, fuzzy
+#: ../src/option.c:473
 msgid "Allow multiple rows to be selected"
-msgstr "ಬಹು ಕಡತಗಳನ್ನು ಆಯ್ಕೆಮಾಡಲು ಬಿಡು"
+msgstr "ಅನೇಕ ಸಾಲುಗಳನ್ನು ಆಯ್ಕೆಮಾಡಲು ಅನುಮತಿಸಿ"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: ../src/option.c:482 ../src/option.c:680
 msgid "Allow changes to text"
-msgstr ""
+msgstr "ಪಠ್ಯಕ್ಕೆ ಬದಲಾವಣೆ ಮಾಡಲು ಅನುಮತಿಸಿ"
 
-#: ../src/option.c:448
+#: ../src/option.c:491
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
-msgstr ""
+msgstr "ನಿಗದಿತ ಕಾಲಂ ಅನ್ನು ಮುದ್ರಿಸು (ಡಿಫಾಲ್ಟ್‍ ೧ ಆಗಿರುತ್ತದೆ, ಎಲ್ಲ ಕಾಲಂಗಳನ್ನು ಮುದ್ರಿಸಲು 'ಎಲ್ಲವೂ' ಅನ್ನು ಬಳಸಬಹುದು)"
 
-#: ../src/option.c:457
+#. Column index number to print out on a list dialog
+#: ../src/option.c:493 ../src/option.c:502
+msgid "NUMBER"
+msgstr "NUMBER"
+
+#: ../src/option.c:501
 msgid "Hide a specific column"
-msgstr ""
+msgstr "ನಿರ್ದಿಷ್ಟ ಕಾಲಂ ಅನ್ನು ಅಡಗಿಸು"
 
-#: ../src/option.c:472
-#, fuzzy
+#: ../src/option.c:516
 msgid "Display notification"
-msgstr "ಮಾಹಿತಿ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
+msgstr "ಸೂಚನೆಯನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:481
+#: ../src/option.c:525
 msgid "Set the notification text"
-msgstr ""
+msgstr "ಸೂಚನಾ ಪಠ್ಯವನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:490
+#: ../src/option.c:534
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "stdin ನಲ್ಲಿ ಆಜ್ಞೆಗಳನ್ನು ಆಲಿಸು"
 
-#: ../src/option.c:505
+#: ../src/option.c:549
 msgid "Display progress indication dialog"
-msgstr ""
+msgstr "ಪ್ರಗತಿಯನ್ನು ಸೂಚಿಸುವ ಸಂವಾದವನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:523
+#: ../src/option.c:567
 msgid "Set initial percentage"
-msgstr ""
+msgstr "ಆರಂಭಿಕ ಪ್ರತಿಶತವನ್ನು ಹೊಂದಿಸು"
 
-#: ../src/option.c:532
+#: ../src/option.c:568
+msgid "PERCENTAGE"
+msgstr "PERCENTAGE"
+
+#: ../src/option.c:576
 msgid "Pulsate progress bar"
-msgstr ""
+msgstr "ಪ್ರಗತಿ ಪಟ್ಟಿಯನ್ನು ಪಲ್ಸೇಟ್ ಮಾಡು"
 
-#: ../src/option.c:542
+#: ../src/option.c:586
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr ""
+msgstr "೧೦೦% ಪ್ರತಿಶತ ತಲುಪಿದ ಬಳಿಕ ಸಂವಾದವನ್ನು ತೆಗೆದುಹಾಕು."
 
-#: ../src/option.c:557
+#: ../src/option.c:596
+#, no-c-format
+msgid "Kill parent process if cancel button is pressed"
+msgstr "ರದ್ದುಗೊಳಿಸು ಗುಂಡಿಯನ್ನು ಒತ್ತಿದಾಗ ಮೂಲ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಸ್ಥಗಿತಗೊಳಿಸು"
+
+#: ../src/option.c:611
 msgid "Display question dialog"
 msgstr "ಪ್ರಶ್ನೆ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
-#: ../src/option.c:590
+#: ../src/option.c:629
+msgid "Sets the label of the Ok button"
+msgstr "ಸರಿ ಗುಂಡಿಯ ಲೇಬಲ್‌ ಅನ್ನು ಹೊಂದಿಸುತ್ತದೆ"
+
+#: ../src/option.c:638
+msgid "Sets the label of the Cancel button"
+msgstr "ರದ್ದುಗೊಳಿಸು ಗುಂಡಿಯ ಲೇಬಲ್‌ ಅನ್ನು ಹೊಂದಿಸುತ್ತದೆ"
+
+#: ../src/option.c:662
 msgid "Display text information dialog"
-msgstr "ಪಠ್ಯ ಮಾಹಿತಿ ಪ್ರದರ್ಶಿಸು"
+msgstr "ಪಠ್ಯ ಮಾಹಿತಿ ಸಂವಾದವನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:599
+#: ../src/option.c:671
 msgid "Open file"
-msgstr "ಕಡತ ತೆಗೆ"
+msgstr "ಕಡತವನ್ನು ತೆರೆ"
 
-#: ../src/option.c:623
+#: ../src/option.c:695
 msgid "Display warning dialog"
 msgstr "ಸೂಚನೆ ಸಂವಾದ ಪ್ರದರ್ಶಿಸು"
 
-#: ../src/option.c:656
+#: ../src/option.c:728
+msgid "Display scale dialog"
+msgstr "ಸ್ಕೇಲ್ ಸಂವಾದವನ್ನು ತೋರಿಸು"
+
+#: ../src/option.c:746
+msgid "Set initial value"
+msgstr "ಆರಂಭಿಕ ಮೌಲ್ಯವನ್ನು ಹೊಂದಿಸು"
+
+#: ../src/option.c:747 ../src/option.c:756 ../src/option.c:765
+#: ../src/option.c:774
+msgid "VALUE"
+msgstr "VALUE"
+
+#: ../src/option.c:755
+msgid "Set minimum value"
+msgstr "ಕನಿಷ್ಟ ಮೌಲ್ಯವನ್ನು ಹೊಂದಿಸು"
+
+#: ../src/option.c:764
+msgid "Set maximum value"
+msgstr "ಗರಿಷ್ಟ ಮೌಲ್ಯವನ್ನು ಹೊಂದಿಸು"
+
+#: ../src/option.c:773
+msgid "Set step size"
+msgstr "ಹಂತದ ಗಾತ್ರವನ್ನು ಹೊಂದಿಸು"
+
+#: ../src/option.c:782
+msgid "Print partial values"
+msgstr "ಆಂಶಿಕ ಮೌಲ್ಯವನ್ನು ಮುದ್ರಿಸು"
+
+#: ../src/option.c:791
+msgid "Hide value"
+msgstr "ಮೌಲ್ಯವನ್ನು ಅಡಗಿಸು"
+
+#: ../src/option.c:806
 msgid "About zenity"
 msgstr "ಝೆನಿಟಿ ಯ ಬಗ್ಗೆ"
 
-#: ../src/option.c:665
+#: ../src/option.c:815
 msgid "Print version"
 msgstr "ಮುದ್ರಣ ಆವೃತ್ತಿ"
 
-#: ../src/option.c:1259
+#: ../src/option.c:1470
 msgid "General options"
-msgstr "ಸಾಮಾನ್ಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಸಾಮಾನ್ಯ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1260
-#, fuzzy
+#: ../src/option.c:1471
 msgid "Show general options"
-msgstr "ಸಾಮಾನ್ಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಸಾಮಾನ್ಯ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1481
 msgid "Calendar options"
-msgstr "ದಿನಸೂಚಿ ಇಚ್ಛೆಗಳು"
+msgstr "ಕ್ಯಾಲೆಂಡರಿನ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1271
-#, fuzzy
+#: ../src/option.c:1482
 msgid "Show calendar options"
-msgstr "ದಿನಸೂಚಿ ಇಚ್ಛೆಗಳು"
+msgstr "ಕ್ಯಾಲೆಂಡರಿನ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1281
+#: ../src/option.c:1492
 msgid "Text entry options"
-msgstr "ಪಠ್ಯ ಪ್ರವೇಶಿಕೆ ಇಚ್ಛೆಗಳು"
+msgstr "ಪಠ್ಯ ನಮೂದು ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1282
-#, fuzzy
+#: ../src/option.c:1493
 msgid "Show text entry options"
-msgstr "ಪಠ್ಯ ಪ್ರವೇಶಿಕೆ ಇಚ್ಛೆಗಳು"
+msgstr "ಪಠ್ಯ ನಮೂದು ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1503
 msgid "Error options"
-msgstr "ತಪ್ಪು ಇಚ್ಛೆಗಳು"
+msgstr "ತಪ್ಪು ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1293
-#, fuzzy
+#: ../src/option.c:1504
 msgid "Show error options"
-msgstr "ತಪ್ಪು ಇಚ್ಛೆಗಳು"
+msgstr "ತಪ್ಪು ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1514
 msgid "Info options"
-msgstr "ಮಾಹಿತಿ ಇಚ್ಛೆಗಳು"
+msgstr "ಮಾಹಿತಿ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1304
-#, fuzzy
+#: ../src/option.c:1515
 msgid "Show info options"
-msgstr "ಮಾಹಿತಿ ಇಚ್ಛೆಗಳು"
+msgstr "ಮಾಹಿತಿ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1314
+#: ../src/option.c:1525
 msgid "File selection options"
-msgstr "ಕಡತ ಆಯ್ಕೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಕಡತವನ್ನು ಆರಿಸುವ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1315
-#, fuzzy
+#: ../src/option.c:1526
 msgid "Show file selection options"
-msgstr "ಕಡತ ಆಯ್ಕೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಕಡತವನ್ನು ಆರಿಸುವ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1325
+#: ../src/option.c:1536
 msgid "List options"
-msgstr "ಪಟ್ಟಿ ಇಚ್ಛೆಗಳು"
+msgstr "ಪಟ್ಟಿ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1326
-#, fuzzy
+#: ../src/option.c:1537
 msgid "Show list options"
-msgstr "ಪಟ್ಟಿ ಇಚ್ಛೆಗಳು"
+msgstr "ಪಟ್ಟಿ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1336
-#, fuzzy
+#: ../src/option.c:1547
 msgid "Notification icon options"
-msgstr "ಪ್ರಶ್ನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಸೂಚನಾ ಚಿಹ್ನೆಯ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1337
-#, fuzzy
+#: ../src/option.c:1548
 msgid "Show notification icon options"
-msgstr "ಪ್ರಶ್ನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಸೂಚನಾ ಚಿಹ್ನೆಯ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1347
+#: ../src/option.c:1558
 msgid "Progress options"
-msgstr ""
+msgstr "ಪ್ರಗತಿಯ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1348
-#, fuzzy
+#: ../src/option.c:1559
 msgid "Show progress options"
-msgstr "ತಪ್ಪು ಇಚ್ಛೆಗಳು"
+msgstr "ಪ್ರಗತಿಯ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1358
+#: ../src/option.c:1569
 msgid "Question options"
-msgstr "ಪ್ರಶ್ನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಪ್ರಶ್ನೆಯ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1359
-#, fuzzy
+#: ../src/option.c:1570
 msgid "Show question options"
-msgstr "ಪ್ರಶ್ನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಪ್ರಶ್ನೆಯ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1369
+#: ../src/option.c:1580
 msgid "Warning options"
-msgstr "ಸೂಚನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಸೂಚನೆಯ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1370
-#, fuzzy
+#: ../src/option.c:1581
 msgid "Show warning options"
-msgstr "ಸೂಚನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಎಚ್ಚರಿಕಾ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1380
-#, fuzzy
+#: ../src/option.c:1591
+msgid "Scale options"
+msgstr "ಸ್ಕೇಲ್ ಆಯ್ಕೆಗಳು"
+
+#: ../src/option.c:1592
+msgid "Show scale options"
+msgstr "ಸ್ಕೇಲ್ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
+
+#: ../src/option.c:1602
 msgid "Text information options"
-msgstr "ಪ್ರಶ್ನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಪಠ್ಯ ಮಾಹಿತಿ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1381
-#, fuzzy
+#: ../src/option.c:1603
 msgid "Show text information options"
-msgstr "ಪ್ರಶ್ನೆಯ ಇಚ್ಛೆಗಳು"
+msgstr "ಪಠ್ಯ ಮಾಹಿತಿ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1391
+#: ../src/option.c:1613
 msgid "Miscellaneous options"
-msgstr "ಇತರೆ ಇಚ್ಛೆಗಳು"
+msgstr "ಇತರೆ ಆಯ್ಕೆಗಳು"
 
-#: ../src/option.c:1392
-#, fuzzy
+#: ../src/option.c:1614
 msgid "Show miscellaneous options"
-msgstr "ಇತರೆ ಇಚ್ಛೆಗಳು"
+msgstr "ಇತರೆ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../src/option.c:1417
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
+#: ../src/option.c:1639
+#, c-format
+msgid "This option is not available. Please see --help for all possible usages.\n"
+msgstr "ಈ ಆಯ್ಕೆಯು ಲಭ್ಲ್ಲಯವಿಲ್ಲ. ಇದರ ಎಲ್ಲ ಸಾಧ್ಯವಿರುವ ಬಳಕೆಗಾಗಿ --help ಅನ್ನು ನೋಡಿ. \n"
 
-#: ../src/option.c:1421
+#: ../src/option.c:1643
 #, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr ""
+msgstr "--%s ವು ಈ ಸಂವಾದಕ್ಕೆ ಬೆಂಬಲ ನೀಡುವುದಿಲ್ಲ\n"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1647
+#, c-format
 msgid "Two or more dialog options specified\n"
-msgstr ""
+msgstr "ಎರಡು ಅಥವಾ ಹೆಚ್ಚಿನ ಸಂವಾದ ಆಯ್ಕೆಗಳನ್ನು ಸೂಚಿಸಲಾಗಿದೆ \n"
+
