@@ -1,5 +1,5 @@
 # Czech translation of zenity.
-# Copyright (C) 2008 Free Software Foundation, Inc.
+# Copyright (C) 2008 the author(s) of zenity.
 # Copyright (C) 2005, 2006 Miloslav Trmac <mitr@volny.cz>.
 # Copyright (C) 2008 Pavel Šefránek <ps@pjoul.cz>.
 # This file is distributed under the same license as the zenity.
@@ -12,14 +12,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-09 21:45+0100\n"
-"PO-Revision-Date: 2008-02-09 02:50+0100\n"
-"Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
+"POT-Creation-Date: 2008-09-15 16:17+0200\n"
+"PO-Revision-Date: 2008-09-07 12:07+0100\n"
+"Last-Translator: Pavel Šefránek <ps@pjoul.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
 
 #: ../src/about.c:65
 msgid ""
@@ -66,10 +68,12 @@ msgid "Display dialog boxes from shell scripts"
 msgstr "Zobrazuje dialogová okna ze skriptů shellu"
 
 #: ../src/main.c:94
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "Musíte zadat typ dialogu. Více informací viz zenity --help\n"
 
 #: ../src/notification.c:139
+#, c-format
 msgid "could not parse command from stdin\n"
 msgstr "nemohu zpracovat příkaz ze stdin\n"
 
@@ -78,18 +82,22 @@ msgid "Zenity notification"
 msgstr "Upozornění Zenity"
 
 #: ../src/scale.c:56
+#, c-format
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Maximální hodnota musí být větší než minimální hodnota.\n"
 
 #: ../src/scale.c:63
+#, c-format
 msgid "Value out of range.\n"
 msgstr "Hodnota mimo rozsah.\n"
 
 #: ../src/tree.c:320
+#, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Pro dialog seznamu nebyly zadány nadpisy sloupců.\n"
 
 #: ../src/tree.c:326
+#, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "Měli byste používat jen jeden typ dialogu seznamu.\n"
 
@@ -169,181 +177,195 @@ msgstr "Varování"
 msgid "_Enter new text:"
 msgstr "_Zadejte nový text:"
 
-#: ../src/option.c:117
+#: ../src/option.c:120
 msgid "Set the dialog title"
 msgstr "Nastavit nadpis dialogu"
 
-#: ../src/option.c:118
+#: ../src/option.c:121
 msgid "TITLE"
 msgstr "NADPIS"
 
-#: ../src/option.c:126
+#: ../src/option.c:129
 msgid "Set the window icon"
 msgstr "Nastavit ikonu okna"
 
-#: ../src/option.c:127
+#: ../src/option.c:130
 msgid "ICONPATH"
 msgstr "CESTAKIKONĚ"
 
-#: ../src/option.c:135
+#: ../src/option.c:138
 msgid "Set the width"
 msgstr "Nastavit šířku"
 
-#: ../src/option.c:136
+#: ../src/option.c:139
 msgid "WIDTH"
 msgstr "ŠÍŘKA"
 
-#: ../src/option.c:144
+#: ../src/option.c:147
 msgid "Set the height"
 msgstr "Nastavit výšku"
 
-#: ../src/option.c:145
+#: ../src/option.c:148
 msgid "HEIGHT"
 msgstr "VÝŠKA"
 
-#: ../src/option.c:153
+#: ../src/option.c:156
 msgid "Set dialog timeout in seconds"
 msgstr "Nastavit časový limit dialogu v sekundách"
 
-#: ../src/option.c:168
+#. Timeout for closing the dialog
+#: ../src/option.c:158
+msgid "TIMEOUT"
+msgstr "ČASOVÝLIMIT"
+
+#: ../src/option.c:172
 msgid "Display calendar dialog"
 msgstr "Zobrazit dialog kalendáře"
 
-#: ../src/option.c:177 ../src/option.c:237 ../src/option.c:280
-#: ../src/option.c:313 ../src/option.c:415 ../src/option.c:544
-#: ../src/option.c:606 ../src/option.c:672 ../src/option.c:705
+#: ../src/option.c:181 ../src/option.c:241 ../src/option.c:284
+#: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
+#: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
 msgid "Set the dialog text"
 msgstr "Nastavit text dialogu"
 
-#: ../src/option.c:178 ../src/option.c:238 ../src/option.c:247
-#: ../src/option.c:256 ../src/option.c:281 ../src/option.c:314
-#: ../src/option.c:416 ../src/option.c:512 ../src/option.c:545
-#: ../src/option.c:607 ../src/option.c:673 ../src/option.c:706
+#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
+#: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
+#: ../src/option.c:429 ../src/option.c:526 ../src/option.c:559
+#: ../src/option.c:621 ../src/option.c:630 ../src/option.c:639
+#: ../src/option.c:705 ../src/option.c:738
 msgid "TEXT"
 msgstr "TEXT"
 
-#: ../src/option.c:186
+#: ../src/option.c:190
 msgid "Set the calendar day"
 msgstr "Nastavit den kalendáře"
 
-#: ../src/option.c:187
+#: ../src/option.c:191
 msgid "DAY"
 msgstr "DEN"
 
-#: ../src/option.c:195
+#: ../src/option.c:199
 msgid "Set the calendar month"
 msgstr "Nastavit měsíc kalendáře"
 
-#: ../src/option.c:196
+#: ../src/option.c:200
 msgid "MONTH"
 msgstr "MĚSÍC"
 
-#: ../src/option.c:204
+#: ../src/option.c:208
 msgid "Set the calendar year"
 msgstr "Nastavit rok kalendáře"
 
-#: ../src/option.c:205
+#: ../src/option.c:209
 msgid "YEAR"
 msgstr "ROK"
 
-#: ../src/option.c:213
+#: ../src/option.c:217
 msgid "Set the format for the returned date"
 msgstr "Nastavit formát vráceného data"
 
-#: ../src/option.c:214
+#: ../src/option.c:218
 msgid "PATTERN"
 msgstr "VZOREK"
 
-#: ../src/option.c:228
+#: ../src/option.c:232
 msgid "Display text entry dialog"
 msgstr "Zobrazit dialog vstupu textu"
 
-#: ../src/option.c:246
+#: ../src/option.c:250
 msgid "Set the entry text"
 msgstr "Nastavit text vstupu"
 
-#: ../src/option.c:255
+#: ../src/option.c:259
 msgid "Hide the entry text"
 msgstr "Skrýt text vstupu"
 
-#: ../src/option.c:271
+#: ../src/option.c:275
 msgid "Display error dialog"
 msgstr "Zobrazit dialog chyby"
 
-#: ../src/option.c:289 ../src/option.c:322 ../src/option.c:615
-#: ../src/option.c:681
+#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:647
+#: ../src/option.c:713
 msgid "Do not enable text wrapping"
 msgstr "Nepovolit lámání textu"
 
-#: ../src/option.c:304
+#: ../src/option.c:308
 msgid "Display info dialog"
 msgstr "Zobrazit dialog informací"
 
-#: ../src/option.c:337
+#: ../src/option.c:341
 msgid "Display file selection dialog"
 msgstr "Zobrazit dialog výběru souborů"
 
-#: ../src/option.c:346
+#: ../src/option.c:350
 msgid "Set the filename"
 msgstr "Nastavit název souboru"
 
-#: ../src/option.c:347 ../src/option.c:640
+#: ../src/option.c:351 ../src/option.c:672
 msgid "FILENAME"
 msgstr "NÁZEVSOUBORU"
 
-#: ../src/option.c:355
+#: ../src/option.c:359
 msgid "Allow multiple files to be selected"
 msgstr "Dovolit výběr více souborů"
 
-#: ../src/option.c:364
+#: ../src/option.c:368
 msgid "Activate directory-only selection"
 msgstr "Aktivovat výběr jen adresářů"
 
-#: ../src/option.c:373
+#: ../src/option.c:377
 msgid "Activate save mode"
 msgstr "Aktivovat režim ukládání"
 
-#: ../src/option.c:382 ../src/option.c:451
+#: ../src/option.c:386 ../src/option.c:464
 msgid "Set output separator character"
 msgstr "Nastavit znak oddělovače výstupu"
 
-#: ../src/option.c:383 ../src/option.c:452
+#: ../src/option.c:387 ../src/option.c:465
 msgid "SEPARATOR"
 msgstr "ODDĚLOVAČ"
 
-#: ../src/option.c:391
+#: ../src/option.c:395
 msgid "Confirm file selection if filename already exists"
 msgstr "Potvrdit výběr souboru, pokud již název existuje"
 
-#: ../src/option.c:406
+#: ../src/option.c:404
+msgid "Sets a filename filter"
+msgstr "Filtrovat soubory podle zadaného výrazu"
+
+#: ../src/option.c:405
+msgid "NAME | PATTERN1 PATTERN2 ..."
+msgstr "NÁZEVSOUBORU | VÝRAZ1 VÝRAZ2 ..."
+
+#: ../src/option.c:419
 msgid "Display list dialog"
 msgstr "Zobrazit dialog seznamu"
 
-#: ../src/option.c:424
+#: ../src/option.c:437
 msgid "Set the column header"
 msgstr "Nastavit nadpis sloupců"
 
-#: ../src/option.c:425
+#: ../src/option.c:438
 msgid "COLUMN"
 msgstr "SLOUPEC"
 
-#: ../src/option.c:433
+#: ../src/option.c:446
 msgid "Use check boxes for first column"
 msgstr "Používat zaškrtávací pole v prvním sloupci"
 
-#: ../src/option.c:442
+#: ../src/option.c:455
 msgid "Use radio buttons for first column"
 msgstr "Používat v prvním sloupci přepínací pole"
 
-#: ../src/option.c:460
+#: ../src/option.c:473
 msgid "Allow multiple rows to be selected"
 msgstr "Dovolit výběr více řádků"
 
-#: ../src/option.c:469 ../src/option.c:648
+#: ../src/option.c:482 ../src/option.c:680
 msgid "Allow changes to text"
 msgstr "Povolit změny textu"
 
-#: ../src/option.c:478
+#: ../src/option.c:491
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -351,233 +373,244 @@ msgstr ""
 "Vypsat konkrétní sloupec (implicitní je 1; \"ALL\" lze použít pro výpis "
 "všech sloupců)"
 
-#: ../src/option.c:479 ../src/option.c:488
+#. Column index number to print out on a list dialog
+#: ../src/option.c:493 ../src/option.c:502
 msgid "NUMBER"
 msgstr "ČÍSLO"
 
-#: ../src/option.c:487
+#: ../src/option.c:501
 msgid "Hide a specific column"
 msgstr "Skrýt konkrétní sloupec"
 
-#: ../src/option.c:502
+#: ../src/option.c:516
 msgid "Display notification"
 msgstr "Zobrazit upozornění"
 
-#: ../src/option.c:511
+#: ../src/option.c:525
 msgid "Set the notification text"
 msgstr "Nastavit text upozornění"
 
-#: ../src/option.c:520
+#: ../src/option.c:534
 msgid "Listen for commands on stdin"
 msgstr "Číst příkazy ze stdin"
 
-#: ../src/option.c:535
+#: ../src/option.c:549
 msgid "Display progress indication dialog"
 msgstr "Zobrazit dialog indikace průběhu"
 
-#: ../src/option.c:553
+#: ../src/option.c:567
 msgid "Set initial percentage"
 msgstr "Nastavit počáteční procenta"
 
-#: ../src/option.c:554
+#: ../src/option.c:568
 msgid "PERCENTAGE"
 msgstr "PROCENTO"
 
-#: ../src/option.c:562
+#: ../src/option.c:576
 msgid "Pulsate progress bar"
 msgstr "Pulzovat indikátorem průběhu"
 
-#: ../src/option.c:572
+#: ../src/option.c:586
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Zavřít dialog, když je dosaženo 100%"
 
-#: ../src/option.c:582
+#: ../src/option.c:596
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
 msgstr "Zabít rodičovský proces při stisku tlačítka Zrušit"
 
-#: ../src/option.c:597
+#: ../src/option.c:611
 msgid "Display question dialog"
 msgstr "Zobrazit dialog otázky"
 
-#: ../src/option.c:630
+#: ../src/option.c:629
+msgid "Sets the label of the Ok button"
+msgstr "Nastavit text tlačítka Budiž"
+
+#: ../src/option.c:638
+msgid "Sets the label of the Cancel button"
+msgstr "Nastavit text tlačítka Zrušit"
+
+#: ../src/option.c:662
 msgid "Display text information dialog"
 msgstr "Zobrazit dialog textových informací"
 
-#: ../src/option.c:639
+#: ../src/option.c:671
 msgid "Open file"
 msgstr "Otevřít soubor"
 
-#: ../src/option.c:663
+#: ../src/option.c:695
 msgid "Display warning dialog"
 msgstr "Zobrazit dialog varování"
 
-#: ../src/option.c:696
+#: ../src/option.c:728
 msgid "Display scale dialog"
 msgstr "Zobrazit dialog měřítka"
 
-#: ../src/option.c:714
+#: ../src/option.c:746
 msgid "Set initial value"
 msgstr "Nastavit počáteční hodnotu"
 
-#: ../src/option.c:715 ../src/option.c:724 ../src/option.c:733
-#: ../src/option.c:742
+#: ../src/option.c:747 ../src/option.c:756 ../src/option.c:765
+#: ../src/option.c:774
 msgid "VALUE"
 msgstr "HODNOTA"
 
-#: ../src/option.c:723
+#: ../src/option.c:755
 msgid "Set minimum value"
 msgstr "Nastavit minimální hodnotu"
 
-#: ../src/option.c:732
+#: ../src/option.c:764
 msgid "Set maximum value"
 msgstr "Nastavit maximální hodnotu"
 
-#: ../src/option.c:741
+#: ../src/option.c:773
 msgid "Set step size"
 msgstr "Nastavit velikost kroku"
 
-#: ../src/option.c:750
+#: ../src/option.c:782
 msgid "Print partial values"
 msgstr "Vypsat částečné hodnoty"
 
-#: ../src/option.c:759
+#: ../src/option.c:791
 msgid "Hide value"
 msgstr "Skrýt hodnotu"
 
-#: ../src/option.c:774
+#: ../src/option.c:806
 msgid "About zenity"
 msgstr "O zenity"
 
-#: ../src/option.c:783
+#: ../src/option.c:815
 msgid "Print version"
 msgstr "Vypsat verzi"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1470
 msgid "General options"
 msgstr "Obecné přepínače"
 
-#: ../src/option.c:1426
+#: ../src/option.c:1471
 msgid "Show general options"
 msgstr "Zobrazit obecné přepínače"
 
-#: ../src/option.c:1436
+#: ../src/option.c:1481
 msgid "Calendar options"
 msgstr "Přepínače kalendáře"
 
-#: ../src/option.c:1437
+#: ../src/option.c:1482
 msgid "Show calendar options"
 msgstr "Zobrazit přepínače kalendáře"
 
-#: ../src/option.c:1447
+#: ../src/option.c:1492
 msgid "Text entry options"
 msgstr "Přepínače vstupu textu"
 
-#: ../src/option.c:1448
+#: ../src/option.c:1493
 msgid "Show text entry options"
 msgstr "Zobrazit přepínače vstupu textu"
 
-#: ../src/option.c:1458
+#: ../src/option.c:1503
 msgid "Error options"
 msgstr "Přepínače chyby"
 
-#: ../src/option.c:1459
+#: ../src/option.c:1504
 msgid "Show error options"
 msgstr "Zobrazit přepínače chyby"
 
-#: ../src/option.c:1469
+#: ../src/option.c:1514
 msgid "Info options"
 msgstr "Přepínače informací"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1515
 msgid "Show info options"
 msgstr "Zobrazit přepínače informací"
 
-#: ../src/option.c:1480
+#: ../src/option.c:1525
 msgid "File selection options"
 msgstr "Přepínače výběru souborů"
 
-#: ../src/option.c:1481
+#: ../src/option.c:1526
 msgid "Show file selection options"
 msgstr "Zobrazit přepínače výběru souborů"
 
-#: ../src/option.c:1491
+#: ../src/option.c:1536
 msgid "List options"
 msgstr "Přepínače seznamu"
 
-#: ../src/option.c:1492
+#: ../src/option.c:1537
 msgid "Show list options"
 msgstr "Zobrazit přepínače seznamu"
 
-#: ../src/option.c:1502
+#: ../src/option.c:1547
 msgid "Notification icon options"
 msgstr "Možnosti ikony upozornění"
 
-#: ../src/option.c:1503
+#: ../src/option.c:1548
 msgid "Show notification icon options"
 msgstr "Zobrazit možnosti ikony upozornění"
 
-#: ../src/option.c:1513
+#: ../src/option.c:1558
 msgid "Progress options"
 msgstr "Přepínače průběhu"
 
-#: ../src/option.c:1514
+#: ../src/option.c:1559
 msgid "Show progress options"
 msgstr "Zobrazit přepínače průběhu"
 
-#: ../src/option.c:1524
+#: ../src/option.c:1569
 msgid "Question options"
 msgstr "Přepínače otázky"
 
-#: ../src/option.c:1525
+#: ../src/option.c:1570
 msgid "Show question options"
 msgstr "Zobrazit přepínače otázky"
 
-#: ../src/option.c:1535
+#: ../src/option.c:1580
 msgid "Warning options"
 msgstr "Přepínače varování"
 
-#: ../src/option.c:1536
+#: ../src/option.c:1581
 msgid "Show warning options"
 msgstr "Zobrazit přepínače varování"
 
-#: ../src/option.c:1546
+#: ../src/option.c:1591
 msgid "Scale options"
 msgstr "Přepínače měřítka"
 
-#: ../src/option.c:1547
+#: ../src/option.c:1592
 msgid "Show scale options"
 msgstr "Zobrazit přepínače měřítka"
 
-#: ../src/option.c:1557
+#: ../src/option.c:1602
 msgid "Text information options"
 msgstr "Možnosti textové informace"
 
-#: ../src/option.c:1558
+#: ../src/option.c:1603
 msgid "Show text information options"
 msgstr "Zobrazit možnosti textové informace"
 
-#: ../src/option.c:1568
+#: ../src/option.c:1613
 msgid "Miscellaneous options"
 msgstr "Různé přepínače"
 
-#: ../src/option.c:1569
+#: ../src/option.c:1614
 msgid "Show miscellaneous options"
 msgstr "Zobrazit různé přepínače"
 
-#: ../src/option.c:1594
+#: ../src/option.c:1639
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Tento přepínač není k dispozici. Pro všechna možná použití se prosím "
 "podívejte na --help.\n"
 
-#: ../src/option.c:1598
+#: ../src/option.c:1643
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s není tímto dialogem podporováno\n"
 
-#: ../src/option.c:1602
+#: ../src/option.c:1647
+#, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Zadány dva nebo více dialogů\n"
