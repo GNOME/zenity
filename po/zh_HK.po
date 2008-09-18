@@ -6,37 +6,26 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity 2.17.91\n"
+"Project-Id-Version: zenity 2.23.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-09 21:34+0800\n"
-"PO-Revision-Date: 2008-03-09 21:34+0800\n"
+"POT-Creation-Date: 2008-09-17 09:24+0800\n"
+"PO-Revision-Date: 2008-09-18 12:40+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: ../src/about.c:65
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 msgstr "本程式為自由軟件，你可根據據自由軟件基金會所發表的 GNU 通用公共授權條款 (可選用第二版或以後的任何版本) 規定，將本程式再散佈或修改，或兩者同時進行。\n"
 
 #: ../src/about.c:69
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 msgstr "本程式係基於使用目的而加以散布，然而不負任何擔保責任；亦無對適售性或特定目的適用性所為的默示性擔保。詳情請參照 GNU 通用公共授權。\n"
 
 #: ../src/about.c:73
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 "你應該已收到附於本程式的 GNU 通用公共授權的副本；如果沒有，請寫信至：\n"
 "Free Software Foundation, Inc.,\n"
@@ -68,7 +57,8 @@ msgstr "你必須指定對話方塊的類型。請輸入‘zenity --help’來�
 msgid "could not parse command from stdin\n"
 msgstr "無法分析來自標準輸入的指令\n"
 
-#: ../src/notification.c:252 ../src/notification.c:269
+#: ../src/notification.c:252
+#: ../src/notification.c:269
 msgid "Zenity notification"
 msgstr "Zenity 通知"
 
@@ -168,414 +158,458 @@ msgstr "警告訊息"
 msgid "_Enter new text:"
 msgstr "輸入新的文字(_E)："
 
-#: ../src/option.c:117
+#: ../src/option.c:120
 msgid "Set the dialog title"
 msgstr "設定對話方塊的標題"
 
-#: ../src/option.c:118
+#: ../src/option.c:121
 msgid "TITLE"
 msgstr "標題"
 
-#: ../src/option.c:126
+#: ../src/option.c:129
 msgid "Set the window icon"
 msgstr "設定視窗圖示"
 
-#: ../src/option.c:127
+#: ../src/option.c:130
 msgid "ICONPATH"
 msgstr "圖示路徑"
 
-#: ../src/option.c:135
+#: ../src/option.c:138
 msgid "Set the width"
 msgstr "設定闊度"
 
-#: ../src/option.c:136
+#: ../src/option.c:139
 msgid "WIDTH"
 msgstr "闊度"
 
-#: ../src/option.c:144
+#: ../src/option.c:147
 msgid "Set the height"
 msgstr "設定高度"
 
-#: ../src/option.c:145
+#: ../src/option.c:148
 msgid "HEIGHT"
 msgstr "高度"
 
-#: ../src/option.c:153
+#: ../src/option.c:156
 msgid "Set dialog timeout in seconds"
 msgstr "設定對話方塊的逾時時間(秒)"
 
-#: ../src/option.c:168
+#. Timeout for closing the dialog
+#: ../src/option.c:158
+msgid "TIMEOUT"
+msgstr "逾時"
+
+#: ../src/option.c:172
 msgid "Display calendar dialog"
 msgstr "顯示日曆對話方塊"
 
-#: ../src/option.c:177 ../src/option.c:237 ../src/option.c:280
-#: ../src/option.c:313 ../src/option.c:415 ../src/option.c:544
-#: ../src/option.c:606 ../src/option.c:672 ../src/option.c:705
+#: ../src/option.c:181
+#: ../src/option.c:241
+#: ../src/option.c:284
+#: ../src/option.c:317
+#: ../src/option.c:428
+#: ../src/option.c:558
+#: ../src/option.c:620
+#: ../src/option.c:704
+#: ../src/option.c:737
 msgid "Set the dialog text"
 msgstr "設定對話方塊中的文字"
 
-#: ../src/option.c:178 ../src/option.c:238 ../src/option.c:247
-#: ../src/option.c:256 ../src/option.c:281 ../src/option.c:314
-#: ../src/option.c:416 ../src/option.c:512 ../src/option.c:545
-#: ../src/option.c:607 ../src/option.c:673 ../src/option.c:706
+#: ../src/option.c:182
+#: ../src/option.c:242
+#: ../src/option.c:251
+#: ../src/option.c:260
+#: ../src/option.c:285
+#: ../src/option.c:318
+#: ../src/option.c:429
+#: ../src/option.c:526
+#: ../src/option.c:559
+#: ../src/option.c:621
+#: ../src/option.c:630
+#: ../src/option.c:639
+#: ../src/option.c:705
+#: ../src/option.c:738
 msgid "TEXT"
 msgstr "文字"
 
-#: ../src/option.c:186
+#: ../src/option.c:190
 msgid "Set the calendar day"
 msgstr "設定日曆中的日期"
 
-#: ../src/option.c:187
+#: ../src/option.c:191
 msgid "DAY"
 msgstr "天"
 
-#: ../src/option.c:195
+#: ../src/option.c:199
 msgid "Set the calendar month"
 msgstr "設定日曆中的月份"
 
-#: ../src/option.c:196
+#: ../src/option.c:200
 msgid "MONTH"
 msgstr "月"
 
-#: ../src/option.c:204
+#: ../src/option.c:208
 msgid "Set the calendar year"
 msgstr "設定日曆中的年份"
 
-#: ../src/option.c:205
+#: ../src/option.c:209
 msgid "YEAR"
 msgstr "年"
 
-#: ../src/option.c:213
+#: ../src/option.c:217
 msgid "Set the format for the returned date"
 msgstr "設定回傳的日期格式"
 
-#: ../src/option.c:214
+#: ../src/option.c:218
 msgid "PATTERN"
 msgstr "樣式"
 
-#: ../src/option.c:228
+#: ../src/option.c:232
 msgid "Display text entry dialog"
 msgstr "顯示文字輸入欄對話方塊"
 
-#: ../src/option.c:246
+#: ../src/option.c:250
 msgid "Set the entry text"
 msgstr "設定輸入欄中的文字"
 
-#: ../src/option.c:255
+#: ../src/option.c:259
 msgid "Hide the entry text"
 msgstr "隱藏輸入欄中的文字"
 
-#: ../src/option.c:271
+#: ../src/option.c:275
 msgid "Display error dialog"
 msgstr "顯示錯誤訊息對話方塊"
 
-#: ../src/option.c:289 ../src/option.c:322 ../src/option.c:615
-#: ../src/option.c:681
+#: ../src/option.c:293
+#: ../src/option.c:326
+#: ../src/option.c:647
+#: ../src/option.c:713
 msgid "Do not enable text wrapping"
 msgstr "文字不要斷行"
 
-#: ../src/option.c:304
+#: ../src/option.c:308
 msgid "Display info dialog"
 msgstr "顯示資訊對話方塊"
 
-#: ../src/option.c:337
+#: ../src/option.c:341
 msgid "Display file selection dialog"
 msgstr "顯示檔案選擇對話方塊"
 
-#: ../src/option.c:346
+#: ../src/option.c:350
 msgid "Set the filename"
 msgstr "設定檔案名稱"
 
-#: ../src/option.c:347 ../src/option.c:640
+#: ../src/option.c:351
+#: ../src/option.c:672
 msgid "FILENAME"
 msgstr "檔案名稱"
 
-#: ../src/option.c:355
+#: ../src/option.c:359
 msgid "Allow multiple files to be selected"
 msgstr "允許同時選擇多個檔案"
 
-#: ../src/option.c:364
+#: ../src/option.c:368
 msgid "Activate directory-only selection"
 msgstr "只選取目錄"
 
-#: ../src/option.c:373
+#: ../src/option.c:377
 msgid "Activate save mode"
 msgstr "啟用安全模式"
 
-#: ../src/option.c:382 ../src/option.c:451
+#: ../src/option.c:386
+#: ../src/option.c:464
 msgid "Set output separator character"
 msgstr "設定分隔輸出結果的字符"
 
-#: ../src/option.c:383 ../src/option.c:452
+#: ../src/option.c:387
+#: ../src/option.c:465
 msgid "SEPARATOR"
 msgstr "分隔字符"
 
 # (Abel) --confirm-overwrite
-#: ../src/option.c:391
+#: ../src/option.c:395
 msgid "Confirm file selection if filename already exists"
 msgstr "如果檔案已經存在，確認是否覆寫檔案"
 
-#: ../src/option.c:406
+#: ../src/option.c:404
+msgid "Sets a filename filter"
+msgstr "設定檔案過濾條件"
+
+#: ../src/option.c:405
+msgid "NAME | PATTERN1 PATTERN2 ..."
+msgstr "名稱 | 模式1 模式2 ..."
+
+#: ../src/option.c:419
 msgid "Display list dialog"
 msgstr "顯示清單對話方塊"
 
-#: ../src/option.c:424
+#: ../src/option.c:437
 msgid "Set the column header"
 msgstr "設定欄位標題"
 
-#: ../src/option.c:425
+#: ../src/option.c:438
 msgid "COLUMN"
 msgstr "欄"
 
-#: ../src/option.c:433
+#: ../src/option.c:446
 msgid "Use check boxes for first column"
 msgstr "第一欄使用獨立選擇按鈕"
 
-#: ../src/option.c:442
+#: ../src/option.c:455
 msgid "Use radio buttons for first column"
 msgstr "第一欄使用多項選擇按鈕"
 
-#: ../src/option.c:460
+#: ../src/option.c:473
 msgid "Allow multiple rows to be selected"
 msgstr "允許同時選擇多列"
 
-#: ../src/option.c:469 ../src/option.c:648
+#: ../src/option.c:482
+#: ../src/option.c:680
 msgid "Allow changes to text"
 msgstr "允許更改文字"
 
-#: ../src/option.c:478
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
+#: ../src/option.c:491
+msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
 msgstr "指定印出其中一欄（預設為第 1 欄，可以用‘ALL’來表示所有欄位）"
 
-#: ../src/option.c:479 ../src/option.c:488
+#. Column index number to print out on a list dialog
+#: ../src/option.c:493
+#: ../src/option.c:502
 msgid "NUMBER"
 msgstr "序號"
 
-#: ../src/option.c:487
+#: ../src/option.c:501
 msgid "Hide a specific column"
 msgstr "隱藏指定的欄位"
 
-#: ../src/option.c:502
+#: ../src/option.c:516
 msgid "Display notification"
 msgstr "顯示通知"
 
-#: ../src/option.c:511
+#: ../src/option.c:525
 msgid "Set the notification text"
 msgstr "設定通知文字"
 
-#: ../src/option.c:520
+#: ../src/option.c:534
 msgid "Listen for commands on stdin"
 msgstr "監聽在標準輸入中的指令"
 
-#: ../src/option.c:535
+#: ../src/option.c:549
 msgid "Display progress indication dialog"
 msgstr "顯示進度指示窗"
 
-#: ../src/option.c:553
+#: ../src/option.c:567
 msgid "Set initial percentage"
 msgstr "設定開始時的百份比數值"
 
-#: ../src/option.c:554
+#: ../src/option.c:568
 msgid "PERCENTAGE"
 msgstr "百分比"
 
-#: ../src/option.c:562
+#: ../src/option.c:576
 msgid "Pulsate progress bar"
 msgstr "令進度列內的方塊來回移動"
 
-#: ../src/option.c:572
+#: ../src/option.c:586
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "當進度達到 100% 時關閉對話方塊"
 
-#: ../src/option.c:582
+#: ../src/option.c:596
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
 msgstr "若按下取消按鈕則中止父程序"
 
-#: ../src/option.c:597
+#: ../src/option.c:611
 msgid "Display question dialog"
 msgstr "顯示提問訊息對話方塊"
 
-#: ../src/option.c:630
+#: ../src/option.c:629
+msgid "Sets the label of the Ok button"
+msgstr "設定確定按鈕的標籤"
+
+#: ../src/option.c:638
+msgid "Sets the label of the Cancel button"
+msgstr "設定取消按鈕的標籤"
+
+#: ../src/option.c:662
 msgid "Display text information dialog"
 msgstr "顯示文字資訊對話方塊"
 
-#: ../src/option.c:639
+#: ../src/option.c:671
 msgid "Open file"
 msgstr "開啟檔案"
 
-#: ../src/option.c:663
+#: ../src/option.c:695
 msgid "Display warning dialog"
 msgstr "顯示警告訊息對話方塊"
 
-#: ../src/option.c:696
+#: ../src/option.c:728
 msgid "Display scale dialog"
 msgstr "顯示比例對話視窗"
 
-#: ../src/option.c:714
+#: ../src/option.c:746
 msgid "Set initial value"
 msgstr "設定初始值"
 
-#: ../src/option.c:715 ../src/option.c:724 ../src/option.c:733
-#: ../src/option.c:742
+#: ../src/option.c:747
+#: ../src/option.c:756
+#: ../src/option.c:765
+#: ../src/option.c:774
 msgid "VALUE"
 msgstr "數值"
 
-#: ../src/option.c:723
+#: ../src/option.c:755
 msgid "Set minimum value"
 msgstr "設定最小值"
 
-#: ../src/option.c:732
+#: ../src/option.c:764
 msgid "Set maximum value"
 msgstr "設定最大值"
 
-#: ../src/option.c:741
+#: ../src/option.c:773
 msgid "Set step size"
 msgstr "設定刻度大小"
 
-#: ../src/option.c:750
+#: ../src/option.c:782
 msgid "Print partial values"
 msgstr "列出每段數值"
 
-#: ../src/option.c:759
+#: ../src/option.c:791
 msgid "Hide value"
 msgstr "隱藏數值"
 
-#: ../src/option.c:774
+#: ../src/option.c:806
 msgid "About zenity"
 msgstr "關於 zenity"
 
-#: ../src/option.c:783
+#: ../src/option.c:815
 msgid "Print version"
 msgstr "顯示版本"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1470
 msgid "General options"
 msgstr "一般選項"
 
-#: ../src/option.c:1426
+#: ../src/option.c:1471
 msgid "Show general options"
 msgstr "顯示一般選項"
 
-#: ../src/option.c:1436
+#: ../src/option.c:1481
 msgid "Calendar options"
 msgstr "日曆選項"
 
-#: ../src/option.c:1437
+#: ../src/option.c:1482
 msgid "Show calendar options"
 msgstr "顯示有關日曆的選項"
 
-#: ../src/option.c:1447
+#: ../src/option.c:1492
 msgid "Text entry options"
 msgstr "文字輸入欄選項"
 
-#: ../src/option.c:1448
+#: ../src/option.c:1493
 msgid "Show text entry options"
 msgstr "顯示有關文字輸入欄的選項"
 
-#: ../src/option.c:1458
+#: ../src/option.c:1503
 msgid "Error options"
 msgstr "錯誤訊息選項"
 
-#: ../src/option.c:1459
+#: ../src/option.c:1504
 msgid "Show error options"
 msgstr "顯示有關錯誤訊息的選項"
 
-#: ../src/option.c:1469
+#: ../src/option.c:1514
 msgid "Info options"
 msgstr "資訊選項"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1515
 msgid "Show info options"
 msgstr "顯示資訊選項"
 
-#: ../src/option.c:1480
+#: ../src/option.c:1525
 msgid "File selection options"
 msgstr "有關檔案選擇的選項"
 
-#: ../src/option.c:1481
+#: ../src/option.c:1526
 msgid "Show file selection options"
 msgstr "顯示有關檔案選擇的選項"
 
-#: ../src/option.c:1491
+#: ../src/option.c:1536
 msgid "List options"
 msgstr "清單選項"
 
-#: ../src/option.c:1492
+#: ../src/option.c:1537
 msgid "Show list options"
 msgstr "顯示有關清單的選項"
 
-#: ../src/option.c:1502
+#: ../src/option.c:1547
 msgid "Notification icon options"
 msgstr "有關通知區圖示的選項"
 
-#: ../src/option.c:1503
+#: ../src/option.c:1548
 msgid "Show notification icon options"
 msgstr "顯示有關通知區圖示的選項"
 
-#: ../src/option.c:1513
+#: ../src/option.c:1558
 msgid "Progress options"
 msgstr "進度列選項"
 
-#: ../src/option.c:1514
+#: ../src/option.c:1559
 msgid "Show progress options"
 msgstr "顯示有關進度列的選項"
 
-#: ../src/option.c:1524
+#: ../src/option.c:1569
 msgid "Question options"
 msgstr "提問選項"
 
-#: ../src/option.c:1525
+#: ../src/option.c:1570
 msgid "Show question options"
 msgstr "顯示有關提問的選項"
 
-#: ../src/option.c:1535
+#: ../src/option.c:1580
 msgid "Warning options"
 msgstr "警告訊息選項"
 
-#: ../src/option.c:1536
+#: ../src/option.c:1581
 msgid "Show warning options"
 msgstr "顯示有關警告訊息的選項"
 
-#: ../src/option.c:1546
+#: ../src/option.c:1591
 msgid "Scale options"
 msgstr "比例選項"
 
-#: ../src/option.c:1547
+#: ../src/option.c:1592
 msgid "Show scale options"
 msgstr "顯示比例選項"
 
-#: ../src/option.c:1557
+#: ../src/option.c:1602
 msgid "Text information options"
 msgstr "有關文字輸入欄的選項"
 
-#: ../src/option.c:1558
+#: ../src/option.c:1603
 msgid "Show text information options"
 msgstr "顯示有關文字輸入欄的選項"
 
-#: ../src/option.c:1568
+#: ../src/option.c:1613
 msgid "Miscellaneous options"
 msgstr "其它選項"
 
-#: ../src/option.c:1569
+#: ../src/option.c:1614
 msgid "Show miscellaneous options"
 msgstr "顯示其它選項"
 
-#: ../src/option.c:1594
+#: ../src/option.c:1639
 #, c-format
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
+msgid "This option is not available. Please see --help for all possible usages.\n"
 msgstr "本選項不存在，請參考 --help 以取得有關用法的資料。\n"
 
-#: ../src/option.c:1598
+#: ../src/option.c:1643
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "本類型的對話方塊不支援 %s 選項\n"
 
-#: ../src/option.c:1602
+#: ../src/option.c:1647
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "使用了兩個或以上的對話方塊選項\n"
