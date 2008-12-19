@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity.HEAD.dz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 04:42+0000\n"
-"PO-Revision-Date: 2007-01-17 00:18+0530\n"
-"Last-Translator: dorji tashi <dorjee_doss@hotmail.com>\n"
+"POT-Creation-Date: 2008-03-11 04:33+0000\n"
+"PO-Revision-Date: 2008-11-03 15:13+0530\n"
+"Last-Translator: Dawa pemo <daws_403@hotmail.com>\n"
 "Language-Team: DZONGKHA <pgeyleg@dit.gov.bt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -40,31 +40,37 @@ msgid "Display dialog boxes from shell scripts"
 msgstr "ཤལ་ཡིག་ཚུགས་ཚུ་ནང་ལས་ ཌའི་ལོག་སྒྲོམ་ཚུ་ བཀྲམ་སྟོན་འབད།"
 
 #: ../src/main.c:94
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "ཁྱོད་ཀྱིས་ཌའི་ལོག་དབྱེ་བ་ཅིག་ གསལ་བཀོད་འབད་དགོ རྒྱས་བཤད་ཀྱི་དོན་ལུ་ 'ཛེ་ནི་ཊི་--གྲོགས་རམ་'ལུ་བལྟ། \n"
 
-#: ../src/notification.c:138
+#: ../src/notification.c:139
+#, c-format
 msgid "could not parse command from stdin\n"
 msgstr "ཨེསི་ཊི་ཌི་ཨའི་ཨེན་ནང་ལས་ བརྡ་བཀོད་མིང་དཔྱད་འབད་མ་ཚུགས། \n"
 
-#: ../src/notification.c:251
-#: ../src/notification.c:268
+#: ../src/notification.c:252
+#: ../src/notification.c:269
 msgid "Zenity notification"
 msgstr "ཛེ་ནི་ཊི་ བརྡ་དོན།"
 
 #: ../src/scale.c:56
+#, c-format
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "མང་མཐའི་བེ་ལུ་འདི་ ཉུང་མཐའི་བེ་ལུ་ལས་སྦོམ་ཨིན་དགོ།\n"
 
 #: ../src/scale.c:63
+#, c-format
 msgid "Value out of range.\n"
 msgstr "བེ་ལུ་དེ་ཁྱབ་ཀྱི་ཕྱི་ཁར་ཨིན་པས།\n"
 
 #: ../src/tree.c:320
+#, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "ཐོ་ཡིག་ཌའི་ལོག་གི་དོན་ལུ་ ཀེར་ཐིག་མགོ་མིང་ཚུ་ གསལ་བཀོད་མ་འབད་བས།\n"
 
 #: ../src/tree.c:326
+#, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "ཁྱོད་ཀྱིས་ཌའི་ལོག་དབྱེ་བའི་ཐོ་ཡིག་ གཅིག་རྐྱངམ་ལག་ལེན་འཐབ་དགོ\n"
 
@@ -144,428 +150,434 @@ msgstr "ཉེན་བརྡ།"
 msgid "_Enter new text:"
 msgstr "ཚིག་ཡིག་གསརཔ་བཙུགས།(_E)"
 
-#: ../src/option.c:116
+#: ../src/option.c:117
 msgid "Set the dialog title"
 msgstr "ཌའི་ལོག་གི་མགོ་མིང་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:117
+#: ../src/option.c:118
 msgid "TITLE"
 msgstr "མགོ་མིང་།"
 
-#: ../src/option.c:125
+#: ../src/option.c:126
 msgid "Set the window icon"
 msgstr "སྒོ་སྒྲིག་གི་ངོས་དཔར་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:126
+#: ../src/option.c:127
 msgid "ICONPATH"
 msgstr "ངོས་དཔར་འབྲེལ་ལམ"
 
-#: ../src/option.c:134
+#: ../src/option.c:135
 msgid "Set the width"
 msgstr "རྒྱ་ཚད་གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:135
+#: ../src/option.c:136
 msgid "WIDTH"
 msgstr "རྒྱ་ཚད།"
 
-#: ../src/option.c:143
+#: ../src/option.c:144
 msgid "Set the height"
 msgstr "མཐོ་ཚད་གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:144
+#: ../src/option.c:145
 msgid "HEIGHT"
 msgstr "མཐོ་ཚད།"
 
-#: ../src/option.c:158
+#: ../src/option.c:153
+msgid "Set dialog timeout in seconds"
+msgstr "ཌའི་ལོག་གི་ ངལ་མཚམས་ སྐར་མ་ནང་ གཞི་སྒྲིག་འབད་ "
+
+#: ../src/option.c:168
 msgid "Display calendar dialog"
 msgstr "ཟླ་ཐོའི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:167
-#: ../src/option.c:227
-#: ../src/option.c:270
-#: ../src/option.c:303
-#: ../src/option.c:405
-#: ../src/option.c:534
-#: ../src/option.c:596
-#: ../src/option.c:662
-#: ../src/option.c:695
+#: ../src/option.c:177
+#: ../src/option.c:237
+#: ../src/option.c:280
+#: ../src/option.c:313
+#: ../src/option.c:415
+#: ../src/option.c:544
+#: ../src/option.c:606
+#: ../src/option.c:672
+#: ../src/option.c:705
 msgid "Set the dialog text"
 msgstr "ཌའི་ལོག་གི་ཚིག་ཡིག་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:168
-#: ../src/option.c:228
-#: ../src/option.c:237
-#: ../src/option.c:246
-#: ../src/option.c:271
-#: ../src/option.c:304
-#: ../src/option.c:406
-#: ../src/option.c:502
-#: ../src/option.c:535
-#: ../src/option.c:597
-#: ../src/option.c:663
-#: ../src/option.c:696
+#: ../src/option.c:178
+#: ../src/option.c:238
+#: ../src/option.c:247
+#: ../src/option.c:256
+#: ../src/option.c:281
+#: ../src/option.c:314
+#: ../src/option.c:416
+#: ../src/option.c:512
+#: ../src/option.c:545
+#: ../src/option.c:607
+#: ../src/option.c:673
+#: ../src/option.c:706
 msgid "TEXT"
 msgstr "ཚིག་ཡིག་"
 
-#: ../src/option.c:176
+#: ../src/option.c:186
 msgid "Set the calendar day"
 msgstr "ཟླ་ཐོའི་ཉིནམ་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:177
+#: ../src/option.c:187
 msgid "DAY"
 msgstr "ཉིནམ་"
 
-#: ../src/option.c:185
+#: ../src/option.c:195
 msgid "Set the calendar month"
 msgstr "ཟླ་ཐོའི་ཟླཝ་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:186
+#: ../src/option.c:196
 msgid "MONTH"
 msgstr "ཟླཝ་"
 
-#: ../src/option.c:194
+#: ../src/option.c:204
 msgid "Set the calendar year"
 msgstr "ཟླ་ཐོའི་ལོ་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:195
+#: ../src/option.c:205
 msgid "YEAR"
 msgstr "ལོ་"
 
-#: ../src/option.c:203
+#: ../src/option.c:213
 msgid "Set the format for the returned date"
 msgstr "སླར་ལོག་ཚེས་གྲངས་ཀྱི་དོན་ལུ་ རྩ་སྒྲིག་གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:204
+#: ../src/option.c:214
 msgid "PATTERN"
 msgstr "དཔེ་གཞི་"
 
-#: ../src/option.c:218
+#: ../src/option.c:228
 msgid "Display text entry dialog"
 msgstr "ཚིག་ཡིག་ཐོ་བཀོད་ཀྱི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:236
+#: ../src/option.c:246
 msgid "Set the entry text"
 msgstr "ཐོ་བཀོད་ཚིག་ཡིག་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:245
+#: ../src/option.c:255
 msgid "Hide the entry text"
 msgstr "ཐོ་བཀོད་ཚིག་ཡིག་ སྦ་སྟེ་བཞ"
 
-#: ../src/option.c:261
+#: ../src/option.c:271
 msgid "Display error dialog"
 msgstr "འཛོལ་བའི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:279
-#: ../src/option.c:312
-#: ../src/option.c:605
-#: ../src/option.c:671
+#: ../src/option.c:289
+#: ../src/option.c:322
+#: ../src/option.c:615
+#: ../src/option.c:681
 msgid "Do not enable text wrapping"
 msgstr "ཚིག་ཡིག་ལོག་མཚམས་ ལྕོགས་ཅན་མ་བཟོ།"
 
-#: ../src/option.c:294
+#: ../src/option.c:304
 msgid "Display info dialog"
 msgstr "བརྡ་དོན་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:327
+#: ../src/option.c:337
 msgid "Display file selection dialog"
 msgstr "ཡིག་སྣོད་སེལ་འཐུ་འི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:336
+#: ../src/option.c:346
 msgid "Set the filename"
 msgstr "ཡིག་སྣོད་མིང་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:337
-#: ../src/option.c:630
+#: ../src/option.c:347
+#: ../src/option.c:640
 msgid "FILENAME"
 msgstr "ཡིག་སྣོད་མིང་།"
 
-#: ../src/option.c:345
+#: ../src/option.c:355
 msgid "Allow multiple files to be selected"
 msgstr "སྣ་མང་ཡིག་སྣོད་ སེལ་འཐུ་འབད་བཅུ"
 
-#: ../src/option.c:354
+#: ../src/option.c:364
 msgid "Activate directory-only selection"
 msgstr "སྣོད་ཐོ་རྐྱངམ་གཅིག་ སེལ་འཐུ་འབད་ནི་ ཤུགས་ལྡན་བཟོ།"
 
-#: ../src/option.c:363
+#: ../src/option.c:373
 msgid "Activate save mode"
 msgstr "བསྲུང་ནིའི་ཐབས་ལམ་ ཤུགས་ལྡན་བཟོ།"
 
-#: ../src/option.c:372
-#: ../src/option.c:441
+#: ../src/option.c:382
+#: ../src/option.c:451
 msgid "Set output separator character"
 msgstr "ཨའུཊི་པུཊི་ དབྱེ་བྱེད་ཀྱི་ཡིག་འབྲུ་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:373
-#: ../src/option.c:442
+#: ../src/option.c:383
+#: ../src/option.c:452
 msgid "SEPARATOR"
 msgstr "དབྱེ་བྱེད།"
 
-#: ../src/option.c:381
+#: ../src/option.c:391
 msgid "Confirm file selection if filename already exists"
 msgstr "ཡིག་སྣོད་མིང་ ཧེ་མ་ལས་ཡོད་པ་ཅིན་ ཡིག་སྣོད་སེལ་འཐུ་འབད་ནི་ ངེས་དཔྱད་འབད།"
 
-#: ../src/option.c:396
+#: ../src/option.c:406
 msgid "Display list dialog"
 msgstr "ཐོ་ཡིག་གི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:414
+#: ../src/option.c:424
 msgid "Set the column header"
 msgstr "ཀེར་ཐིག་གི་མགོ་ཡིག་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:415
+#: ../src/option.c:425
 msgid "COLUMN"
 msgstr "ཀེར་ཐིག་"
 
-#: ../src/option.c:423
+#: ../src/option.c:433
 msgid "Use check boxes for first column"
 msgstr "ཀེར་ཐིག་དང་པའི་དོན་ལུ་ ཐིག་ཁྲ་ཅན་གྱི་སྒྲོམ་ཚུ་ ལག་ལེན་འཐབ།"
 
-#: ../src/option.c:432
+#: ../src/option.c:442
 msgid "Use radio buttons for first column"
 msgstr "ཀེར་ཐིག་དང་པའི་དོན་ལུ་ རེ་ཌིའོ་ཨེབ་རྟ་ཚུ་ ལག་ལེན་འཐབ།"
 
-#: ../src/option.c:450
+#: ../src/option.c:460
 msgid "Allow multiple rows to be selected"
 msgstr "སྣ་མང་གྲལ་ཐིག་སེལ་འཐུ་འབད་བཅུག"
 
-#: ../src/option.c:459
-#: ../src/option.c:638
+#: ../src/option.c:469
+#: ../src/option.c:648
 msgid "Allow changes to text"
 msgstr "ཚིག་ཡིག་ལུ་ བསྒྱུར་བཅོས་འབད་བཅུ"
 
-#: ../src/option.c:468
+#: ../src/option.c:478
 msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
 msgstr "གསལ་བཀོད་ཅན་གྱི་ ཀེར་ཐིག་ཅིག་ དཔར་བསྐྲུན་འབད། (སྔོན་སྒྲིག་དེ་༡ཨིན། ཀེར་ཐིག་ཆ་མཉམ དཔར་བསྐྲུན་འབད་ནི་ལུ་ 'ཆ་མཉམ' ལག་ལེན་འཐབ་བཏུབ།"
 
-#: ../src/option.c:469
-#: ../src/option.c:478
+#: ../src/option.c:479
+#: ../src/option.c:488
 msgid "NUMBER"
 msgstr "ཨང་"
 
-#: ../src/option.c:477
+#: ../src/option.c:487
 msgid "Hide a specific column"
 msgstr "དམིགས་བསལ་ཀེར་ཐིག་ཅིག་སྦ་བཞག"
 
-#: ../src/option.c:492
+#: ../src/option.c:502
 msgid "Display notification"
 msgstr "བརྡ་བསྐུལ་བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:501
+#: ../src/option.c:511
 msgid "Set the notification text"
 msgstr "བརྡ་བསྐུལ་གྱི་ཚིག་ཡིག་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:510
+#: ../src/option.c:520
 msgid "Listen for commands on stdin"
 msgstr "བརྡ་བཀོད་ཀྱི་དོན་ལུ་ ཨེསི་ཊི་ཌི་ཨའི་ཨེན་གུ་ཉན།"
 
-#: ../src/option.c:525
+#: ../src/option.c:535
 msgid "Display progress indication dialog"
 msgstr "ཡར་འཕེལ་བརྡ་སྟོན་གྱི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:543
+#: ../src/option.c:553
 msgid "Set initial percentage"
 msgstr "འགོ་ཐོག་གི་བརྒྱ་ཆ་ གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:544
+#: ../src/option.c:554
 msgid "PERCENTAGE"
 msgstr "བརྒྱ་ཆ་"
 
-#: ../src/option.c:552
+#: ../src/option.c:562
 msgid "Pulsate progress bar"
 msgstr "པཱལ་སེཊི་ ཡར་འཕེལ་ཕྲ་རིང་།"
 
-#: ../src/option.c:562
+#: ../src/option.c:572
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "བརྒྱ་ཆ་ ༡༠༠ ལུ་ལྷོདཔ་དང་ ཌའི་ལོག་ཐར་གྲོལ་གཏང་།"
 
-#: ../src/option.c:572
+#: ../src/option.c:582
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
 msgstr "ཆ་མེད་ཨེབ་རྟ་དེ་ཨེབ་བཞག་སྟེ་ཡོད་པ་ཅིན་  རྩ་ལག་ལས་སྦྱོར་གསད་"
 
-#: ../src/option.c:587
+#: ../src/option.c:597
 msgid "Display question dialog"
 msgstr "དྲི་བའི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:620
+#: ../src/option.c:630
 msgid "Display text information dialog"
 msgstr "ཚིག་ཡིག་བརྡ་དོན་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:629
+#: ../src/option.c:639
 msgid "Open file"
 msgstr "ཡིག་སྣོད་ཁ་ཕྱེ།"
 
-#: ../src/option.c:653
+#: ../src/option.c:663
 msgid "Display warning dialog"
 msgstr "ཉེན་བརྡའི་ཌའི་ལོག་ བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:686
+#: ../src/option.c:696
 msgid "Display scale dialog"
 msgstr "ཆ་ཚད་ཌའི་ལོག་བཀྲམ་སྟོན་འབད།"
 
-#: ../src/option.c:704
+#: ../src/option.c:714
 msgid "Set initial value"
 msgstr "འགོ་ཐོག་གི་བེ་ལུ་གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:705
-#: ../src/option.c:714
-#: ../src/option.c:723
-#: ../src/option.c:732
+#: ../src/option.c:715
+#: ../src/option.c:724
+#: ../src/option.c:733
+#: ../src/option.c:742
 msgid "VALUE"
 msgstr "གནས་གོང་"
 
-#: ../src/option.c:713
+#: ../src/option.c:723
 msgid "Set minimum value"
 msgstr "ཉུང་མཐའི་བེ་ལུ་གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:722
+#: ../src/option.c:732
 msgid "Set maximum value"
 msgstr "མང་མཐའི་བེ་ལུ་གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:731
+#: ../src/option.c:741
 msgid "Set step size"
 msgstr "གོམ་པའི་ཚད་གཞི་སྒྲིག་འབད།"
 
-#: ../src/option.c:740
+#: ../src/option.c:750
 msgid "Print partial values"
 msgstr "ཆ་ཤས་བེ་ལུ་དཔར་བསྐྲུན་འབད།"
 
-#: ../src/option.c:749
+#: ../src/option.c:759
 msgid "Hide value"
 msgstr "བེ་ལུ་སྦ།"
 
-#: ../src/option.c:764
+#: ../src/option.c:774
 msgid "About zenity"
 msgstr "ཛེ་ནི་ཊི་གི་སྐོར་ལས།"
 
-#: ../src/option.c:773
+#: ../src/option.c:783
 msgid "Print version"
 msgstr "དཔར་བསྐྲུན་ཐོན་རིམ།"
 
-#: ../src/option.c:1414
+#: ../src/option.c:1425
 msgid "General options"
 msgstr "ཡོངས་ཁྱབ་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1415
+#: ../src/option.c:1426
 msgid "Show general options"
 msgstr "ཡོངས་ཁྱབ་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1436
 msgid "Calendar options"
 msgstr "ཟླ་ཐོའི་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1426
+#: ../src/option.c:1437
 msgid "Show calendar options"
 msgstr "ཟླ་ཐོའི་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1436
+#: ../src/option.c:1447
 msgid "Text entry options"
 msgstr "ཚིག་ཡིག་ཐོ་བཀོད་ཀྱི་ གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1437
+#: ../src/option.c:1448
 msgid "Show text entry options"
 msgstr "ཚིག་ཡིག་ཐོ་བཀོད་ཀྱི་ གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1447
+#: ../src/option.c:1458
 msgid "Error options"
 msgstr "འཛོལ་བའི་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1448
+#: ../src/option.c:1459
 msgid "Show error options"
 msgstr "འཛོལ་བའི་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1458
+#: ../src/option.c:1469
 msgid "Info options"
 msgstr "བརྡ་དོན་གྱི་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1459
+#: ../src/option.c:1470
 msgid "Show info options"
 msgstr "བརྡ་དོན་གྱི་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1469
+#: ../src/option.c:1480
 msgid "File selection options"
 msgstr "ཡིག་སྣོད་སེལ་འཐུའི་ གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1481
 msgid "Show file selection options"
 msgstr "ཡིག་སྣོད་སེལ་འཐུའི་ གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1480
+#: ../src/option.c:1491
 msgid "List options"
 msgstr "ཐོ་ཡིག་གི་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1481
+#: ../src/option.c:1492
 msgid "Show list options"
 msgstr "ཐོ་ཡིག་གི་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1491
+#: ../src/option.c:1502
 msgid "Notification icon options"
 msgstr "བརྡ་བསྐུལ་ངོས་དཔར་གྱི་ གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1492
+#: ../src/option.c:1503
 msgid "Show notification icon options"
 msgstr "བརྡ་བསྐུལ་ངོས་དཔར་གྱི་ གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1502
+#: ../src/option.c:1513
 msgid "Progress options"
 msgstr "ཡར་འཕེལ་གྱི་ གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1503
+#: ../src/option.c:1514
 msgid "Show progress options"
 msgstr "ཡར་འཕེལ་གྱི་ གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1513
+#: ../src/option.c:1524
 msgid "Question options"
 msgstr "དྲི་བའི་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1514
+#: ../src/option.c:1525
 msgid "Show question options"
 msgstr "དྲི་བའི་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1524
+#: ../src/option.c:1535
 msgid "Warning options"
 msgstr "ཉེན་བརྡའི་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1525
+#: ../src/option.c:1536
 msgid "Show warning options"
 msgstr "ཉེན་བརྡའི་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1535
+#: ../src/option.c:1546
 msgid "Scale options"
 msgstr "ཆ་ཚད་ཀྱི་གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1536
+#: ../src/option.c:1547
 msgid "Show scale options"
 msgstr "ཆ་ཚད་ཀྱི་གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1546
+#: ../src/option.c:1557
 msgid "Text information options"
 msgstr "ཚིག་ཡིག་བརྡ་དོན་གྱི་ གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1547
+#: ../src/option.c:1558
 msgid "Show text information options"
 msgstr "ཚིག་ཡིག་བརྡ་དོན་གྱི་ གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1557
+#: ../src/option.c:1568
 msgid "Miscellaneous options"
 msgstr "སྣ་ཚོགས་ཀྱི་ གདམ་ཁ་ཚུ།"
 
-#: ../src/option.c:1558
+#: ../src/option.c:1569
 msgid "Show miscellaneous options"
 msgstr "སྣ་ཚོགས་ཀྱི་ གདམ་ཁ་ཚུ་སྟོན།"
 
-#: ../src/option.c:1583
+#: ../src/option.c:1594
+#, c-format
 msgid "This option is not available. Please see --help for all possible usages.\n"
 msgstr "གདམ་ཁ་འདི་མི་འཐོབ་པས། སྲིད་པའི་ལག་ལེན་ཆ་མཉམ་གྱི་དོན་ལུ་ --གྲོགས་རམ་ལུ་གཟིགས།\n"
 
-#: ../src/option.c:1587
+#: ../src/option.c:1598
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "ཌའི་ལོག་འདི་གི་དོན་ལུ་ --%s ལུ་ རྒྱབ་སྐྱོར་མིན་འདུ \n"
 
-#: ../src/option.c:1591
+#: ../src/option.c:1602
+#, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "ཌའི་ལོག་གི་ གདམ་ཁ་གཉིས་སམ་ དེ་ལས་ལྷག་སྟེ་ གསལ་བཀོད་འབད་ནུ \n"
 
