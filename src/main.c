@@ -27,7 +27,7 @@
 #include "option.h"
 
 #include <stdlib.h>
-#include <glib/goption.h>
+#include <glib.h>
 #include <gtk/gtk.h>
 #include <langinfo.h>
 #ifdef HAVE_LOCALE_H

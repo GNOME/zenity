@@ -26,7 +26,7 @@
 #define OPTION_H
 
 #include "zenity.h"
-#include <glib/goption.h>
+#include <glib.h>
 #include <langinfo.h>
 #ifdef HAVE_LOCALE_H
 #include <locale.h>
