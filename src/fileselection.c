@@ -76,7 +76,10 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 
     if (file_data->uri[strlen (file_data->uri) - 1] != '/') {
       basename = g_path_get_basename (file_data->uri);
-      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), basename);
+      if (file_data->save)
+        gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), basename);
+      else
+        (void) gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (dialog), file_data->uri);
       g_free (basename);
     }
     g_free (dir);
