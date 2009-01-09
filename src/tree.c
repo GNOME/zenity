@@ -150,7 +150,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
       }
 
       if (toggles && column_count == 0) {
-        if (strcmp (g_strdown (zenity_util_strip_newline (string->str)), "true") == 0)
+        if (strcmp (g_ascii_strdown (zenity_util_strip_newline (string->str), -1), "true") == 0)
           gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, TRUE, -1);
         else
           gtk_list_store_set (GTK_LIST_STORE (model), &iter, column_count, FALSE, -1);
@@ -228,7 +228,7 @@ zenity_tree_fill_entries (GtkTreeView  *tree_view,
     for (j = 0; j < n_columns; j++) {
         
       if (toggles && j == 0) {
-        if (strcmp (g_strdown ((gchar *) args[i+j]), "true") == 0)
+        if (strcmp (g_ascii_strdown ((gchar *) args[i+j], -1), "true") == 0)
           gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, TRUE, -1);
         else 
           gtk_list_store_set (GTK_LIST_STORE (model), &iter, j, FALSE, -1);
@@ -302,7 +302,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   n_columns = g_slist_length (tree_data->columns);
 
   if (tree_data->print_column) {
-    if (strcmp (g_strdown (tree_data->print_column), "all") == 0)
+    if (strcmp (g_ascii_strdown (tree_data->print_column, -1), "all") == 0)
       print_all_columns = TRUE;
     else 
       print_columns = zenity_tree_extract_column_indexes (tree_data->print_column, n_columns);
