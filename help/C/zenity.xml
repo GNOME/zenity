@@ -225,6 +225,14 @@
               <para>An unexpected error has occurred.</para>
             </entry>
           </row>
+          <row valign="top">
+            <entry>
+              <para><varname>5</varname></para>
+            </entry>
+            <entry>
+              <para>The dialog has been closed because the timeout has been reached.</para>
+            </entry>
+          </row>
         </tbody>
       </tgroup>
     </informaltable>
@@ -271,6 +279,13 @@
         <term><option>--height</option>=<replaceable>height</replaceable></term>
 	<listitem>
 	  <para>Specifies the height of the dialog.</para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--timeout</option>=<replaceable>timeout</replaceable></term>
+	<listitem>
+	  <para>Specifies the timeout in seconds after which the dialog is closed.</para>
 	</listitem>
       </varlistentry>
 
