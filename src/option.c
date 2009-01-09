@@ -402,6 +402,7 @@ static GOptionEntry file_selection_options[] = {
     G_OPTION_ARG_STRING_ARRAY,
     &zenity_file_filter,
     N_("Sets a filename filter"),
+    /* Help for file-filter argument (name and patterns for file selection) */
     N_("NAME | PATTERN1 PATTERN2 ..."),
   },
   { 
