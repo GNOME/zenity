@@ -198,7 +198,7 @@ zenity_notification_handle_stdin (GIOChannel *channel,
 	}
       } else if (!g_ascii_strcasecmp (command, "tooltip")) {
         if (g_utf8_validate (value, -1, NULL)) {
-          gtk_status_icon_set_tooltip (status_icon, value);
+          gtk_status_icon_set_tooltip_text (status_icon, value);
         } else {
           g_warning ("Invalid UTF-8 in input!");
         }
@@ -247,9 +247,9 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 		    G_CALLBACK (zenity_notification_icon_size_changed_cb), data);
 
   if (notification_data->notification_text) {
-    gtk_status_icon_set_tooltip (status_icon, notification_data->notification_text);
+    gtk_status_icon_set_tooltip_text (status_icon, notification_data->notification_text);
   } else {
-    gtk_status_icon_set_tooltip (status_icon, _("Zenity notification"));
+    gtk_status_icon_set_tooltip_text (status_icon, _("Zenity notification"));
   }
 
   icon_file = g_strdup (data->window_icon);
