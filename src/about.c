@@ -29,7 +29,6 @@
 #include "util.h"
 #include <string.h>
 #include <gdk/gdkkeysyms.h>
-#include <libgnomecanvas/libgnomecanvas.h>
 
 #define GTK_RESPONSE_CREDITS 0
 #define ZENITY_HELP_PATH ZENITY_DATADIR "/help/"
@@ -75,6 +74,7 @@ static const char *license[] = {
 	   "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.")
 };
 
+#if 0
 static gint
 zenity_move_clothes_event (GnomeCanvasItem *item, 
                            GdkEvent *event,
@@ -252,6 +252,7 @@ zenity_zen_wisdom (GtkDialog *dialog, GdkEventKey *event, gpointer user_data)
 
   return FALSE;
 }
+#endif
 
 void 
 zenity_about (ZenityData *data)
@@ -301,8 +302,11 @@ zenity_about (ZenityData *data)
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_about_dialog_response), data);
+
+#if 0
   g_signal_connect (G_OBJECT (dialog), "key_press_event",
                     G_CALLBACK (zenity_zen_wisdom), NULL);
+#endif
 
   zenity_util_show_dialog (dialog);
   gtk_main ();
