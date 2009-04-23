@@ -40,7 +40,7 @@ static gboolean zenity_general_multiple;
 static gboolean zenity_general_editable;
 static gchar   *zenity_general_uri;
 static gboolean zenity_general_dialog_no_wrap;
-static guint    zenity_general_timeout_delay;
+static gint     zenity_general_timeout_delay;
 
 /* Calendar Dialog Options */
 static gboolean zenity_calendar_active;
