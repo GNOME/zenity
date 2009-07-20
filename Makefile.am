@@ -6,8 +6,6 @@ SUBDIRS = \
 
 EXTRA_DIST = \
 	autogen.sh		\
-	zenity.spec		\
-	zenity.spec.in		\
 	COPYING			\
 	HACKING			\
 	ChangeLog		\
