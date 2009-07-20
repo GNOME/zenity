@@ -25,7 +25,6 @@
 
 #include "config.h"
 
-#include <glade/glade.h>
 #include <string.h>
 #include <stdlib.h>
 #include "zenity.h"
@@ -34,7 +33,7 @@
 #define MAX_ELEMENTS_BEFORE_SCROLLING 5
 #define PRINT_HIDE_COLUMN_SEPARATOR ","
 
-static GladeXML *glade_dialog;
+static GtkBuilder *builder;
 static GSList *selected;
 static gchar *separator;
 static gboolean print_all_columns = FALSE;
@@ -168,7 +167,8 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
         GtkRequisition rectangle;
 
         gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
-        scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
+        scrolled_window = GTK_WIDGET (gtk_builder_get_object (builder,
+							 "zenity_tree_window"));
         gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
         gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
                                         GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
@@ -245,7 +245,8 @@ zenity_tree_fill_entries (GtkTreeView  *tree_view,
       GtkRequisition rectangle;
 
       gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
-      scrolled_window = glade_xml_get_widget (glade_dialog, "zenity_tree_window");
+      scrolled_window = GTK_WIDGET (gtk_builder_get_object (builder,
+      							 "zenity_tree_window"));
       gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
       gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
                                       GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
@@ -281,8 +282,8 @@ void
 zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 {
   GtkWidget *dialog;
-  GtkWidget *tree_view;
-  GtkWidget *text;
+  GObject *tree_view;
+  GObject *text;
   GtkTreeViewColumn *column;
   GtkListStore *model;
   GType *column_types;
@@ -290,9 +291,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   gboolean first_column = FALSE;
   gint i, column_index, n_columns;
 
-  glade_dialog = zenity_util_load_glade_file ("zenity_tree_dialog");
+  builder = zenity_util_load_ui_file ("zenity_tree_dialog", NULL);
 
-  if (glade_dialog == NULL) {
+  if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
@@ -328,9 +329,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     return;
   }
 
-  glade_xml_signal_autoconnect (glade_dialog);
+  gtk_builder_connect_signals (builder, NULL);
 
-  dialog = glade_xml_get_widget (glade_dialog, "zenity_tree_dialog");
+  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_tree_dialog"));
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_tree_dialog_response), data);
@@ -338,7 +339,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-  text = glade_xml_get_widget (glade_dialog, "zenity_tree_text");
+  text = gtk_builder_get_object (builder, "zenity_tree_text");
                                                                                 
   if (tree_data->dialog_text)
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (tree_data->dialog_text));
@@ -348,10 +349,10 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
-  tree_view = glade_xml_get_widget (glade_dialog, "zenity_tree_view");
+  tree_view = gtk_builder_get_object (builder, "zenity_tree_view");
 
   if (!(tree_data->radiobox || tree_data->checkbox)) 
-    g_signal_connect (G_OBJECT (tree_view), "row-activated", 
+    g_signal_connect (tree_view, "row-activated", 
                       G_CALLBACK (zenity_tree_row_activated), data);
  
   /* Create an empty list store */
@@ -500,8 +501,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
   gtk_main ();
 
-  if (glade_dialog)
-    g_object_unref (glade_dialog);
+  g_object_unref (builder);
 }
 
 static void 
@@ -591,13 +591,13 @@ static void
 zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data = data;
-  GtkWidget *tree_view;
+  GObject *tree_view;
   GtkTreeSelection *selection; 
   GtkTreeModel *model;
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      tree_view = glade_xml_get_widget (glade_dialog, "zenity_tree_view");
+      tree_view = gtk_builder_get_object (builder, "zenity_tree_view");
       model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
 
       if (gtk_tree_model_get_column_type (model, 0) == G_TYPE_BOOLEAN)

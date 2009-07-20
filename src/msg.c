@@ -23,7 +23,6 @@
 
 #include "config.h"
 
-#include <glade/glade.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -55,56 +54,53 @@ zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data
 void 
 zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 {
-  GladeXML *glade_dialog;
+  GtkBuilder *builder;
   GtkWidget *dialog;
-  GtkWidget *text;
+  GObject *text;
 
   switch (msg_data->mode) {
     case ZENITY_MSG_WARNING:
-      glade_dialog = zenity_util_load_glade_file ("zenity_warning_dialog");
-      dialog = glade_xml_get_widget (glade_dialog, "zenity_warning_dialog");
-      text = glade_xml_get_widget (glade_dialog, "zenity_warning_text");
+      builder = zenity_util_load_ui_file ("zenity_warning_dialog", NULL);
+      dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_warning_dialog"));
+      text = gtk_builder_get_object (builder, "zenity_warning_text");
       break;
 
     case ZENITY_MSG_QUESTION:
-      glade_dialog = zenity_util_load_glade_file ("zenity_question_dialog");
-      dialog = glade_xml_get_widget (glade_dialog, "zenity_question_dialog");
-      text = glade_xml_get_widget (glade_dialog, "zenity_question_text");
+      builder = zenity_util_load_ui_file ("zenity_question_dialog", NULL);
+      dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_question_dialog"));
+      text = gtk_builder_get_object (builder, "zenity_question_text");
       break;
 
     case ZENITY_MSG_ERROR:
-      glade_dialog = zenity_util_load_glade_file ("zenity_error_dialog");
-      dialog = glade_xml_get_widget (glade_dialog, "zenity_error_dialog");
-      text = glade_xml_get_widget (glade_dialog, "zenity_error_text");
+      builder = zenity_util_load_ui_file ("zenity_error_dialog", NULL);
+      dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_error_dialog"));
+      text = gtk_builder_get_object (builder, "zenity_error_text");
       break;
 
     case ZENITY_MSG_INFO:
-      glade_dialog = zenity_util_load_glade_file ("zenity_info_dialog");
-      dialog= glade_xml_get_widget (glade_dialog, "zenity_info_dialog");
-      text = glade_xml_get_widget (glade_dialog, "zenity_info_text");
+      builder = zenity_util_load_ui_file ("zenity_info_dialog", NULL);
+      dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_info_dialog"));
+      text = gtk_builder_get_object (builder, "zenity_info_text");
       break;
 		
     default:
-      glade_dialog = NULL;
+      builder = NULL;
       dialog = NULL;
       text = NULL;
       g_assert_not_reached ();
       break;	
   }
 
-  g_signal_connect (G_OBJECT (dialog), "response",
-                    G_CALLBACK (zenity_msg_dialog_response), data);
-	
-  if (glade_dialog == NULL) {
+  if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
-	
-  glade_xml_signal_autoconnect (glade_dialog);
-        
-  if (glade_dialog)
-    g_object_unref (glade_dialog);
 
+  g_signal_connect (G_OBJECT (dialog), "response",
+                    G_CALLBACK (zenity_msg_dialog_response), data);
+
+  gtk_builder_connect_signals (builder, NULL);
+        
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
@@ -144,6 +140,8 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if(data->timeout_delay > 0) {
     g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);
   }
+
+  g_object_unref (builder);
 
   gtk_main ();
 }

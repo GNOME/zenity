@@ -29,11 +29,10 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <signal.h>
-#include <glade/glade.h>
 #include "zenity.h"
 #include "util.h"
 
-static GladeXML *glade_dialog;
+static GtkBuilder *builder;
 static ZenityData *zen_data;
 static GIOChannel *channel;
 
@@ -57,14 +56,14 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
                               gpointer      data)
 {
   static ZenityProgressData *progress_data;
-  static GtkWidget *progress_bar;
-  static GtkWidget *progress_label;
+  static GObject *progress_bar;
+  static GObject *progress_label;
   static gint pulsate_timeout = -1;
   float percentage = 0.0;
   
   progress_data = (ZenityProgressData *) data;
-  progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
-  progress_label = glade_xml_get_widget (glade_dialog, "zenity_progress_text");
+  progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
+  progress_label = gtk_builder_get_object (builder, "zenity_progress_text");
 
   if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
     GString *string;
@@ -114,8 +113,8 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
         /* Now try to convert the thing to a number */
         percentage = atoi (string->str);
         if (percentage >= 100) {
-	  GtkWidget *button;
-	  button = glade_xml_get_widget( glade_dialog,"zenity_progress_ok_button");
+	  GObject *button;
+	  button = gtk_builder_get_object(builder, "zenity_progress_ok_button");
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
 	  gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
 	  gtk_widget_grab_focus(GTK_WIDGET (button));
@@ -136,11 +135,13 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
     /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
     GtkWidget *button;
 
-    button = glade_xml_get_widget (glade_dialog, "zenity_progress_ok_button");
+    button = GTK_WIDGET (gtk_builder_get_object (builder,
+    						 "zenity_progress_ok_button"));
     gtk_widget_set_sensitive (button, TRUE);
     gtk_widget_grab_focus (button);
 
-    button = glade_xml_get_widget (glade_dialog, "zenity_progress_cancel_button");
+    button = GTK_WIDGET (gtk_builder_get_object (builder,
+    					      "zenity_progress_cancel_button"));
     gtk_widget_set_sensitive (button, FALSE);
 		
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
@@ -150,8 +151,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
       pulsate_timeout = -1;
     }
 
-    if (glade_dialog)
-      g_object_unref (glade_dialog);
+    g_object_unref (builder);
 
     if (progress_data->autoclose) {
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
@@ -177,20 +177,21 @@ void
 zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 {
   GtkWidget *dialog;
-  GtkWidget *text;
-  GtkWidget *progress_bar;
+  GObject *text;
+  GObject *progress_bar;
 
   zen_data = data;
-  glade_dialog = zenity_util_load_glade_file ("zenity_progress_dialog");
+  builder = zenity_util_load_ui_file ("zenity_progress_dialog", NULL);
 
-  if (glade_dialog == NULL) {
+  if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
-  glade_xml_signal_autoconnect (glade_dialog);
+  gtk_builder_connect_signals (builder, NULL);
 	
-  dialog = glade_xml_get_widget (glade_dialog, "zenity_progress_dialog");
+  dialog = GTK_WIDGET (gtk_builder_get_object (builder,
+  					       "zenity_progress_dialog"));
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_progress_dialog_response), data);
@@ -203,12 +204,12 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
-  text = glade_xml_get_widget (glade_dialog, "zenity_progress_text");
+  text = gtk_builder_get_object (builder, "zenity_progress_text");
 
   if (progress_data->dialog_text)
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (progress_data->dialog_text));
 
-  progress_bar = glade_xml_get_widget (glade_dialog, "zenity_progress_bar");
+  progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
 
   if (progress_data->percentage > -1)
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 

@@ -25,7 +25,6 @@
 #include <config.h>
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <time.h>
 #include <string.h>
 

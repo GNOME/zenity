@@ -40,15 +40,15 @@ zenity_LDADD = \
 	$(LIBNOTIFY_LIBS)	\
 	$(X_LIBS)
 
-gladedir = $(datadir)/zenity
+uidir = $(datadir)/zenity
 
-glade_DATA = \
-	zenity.glade
+ui_DATA = \
+	zenity.ui
 
 DISTCLEANFILES= \
 	gdialog
 
 EXTRA_DIST = \
-	$(glade_DATA) \
+	$(ui_DATA) \
 	gdialog \
 	gdialog.in

@@ -23,7 +23,6 @@
 
 #include "config.h"
 
-#include <glade/glade.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -46,23 +45,23 @@ zenity_entry_fill_entries (GSList **entries, const gchar **args)
 void 
 zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 {
-  GladeXML *glade_dialog = NULL;
+  GtkBuilder *builder = NULL;
   GtkWidget *dialog;
-  GtkWidget *text;
+  GObject *text;
   GSList *entries = NULL; 
   GSList *tmp;
-  GtkWidget *vbox;
+  GObject *vbox;
   
-  glade_dialog = zenity_util_load_glade_file ("zenity_entry_dialog");
+  builder = zenity_util_load_ui_file ("zenity_entry_dialog", NULL);
 
-  if (glade_dialog == NULL) {
+  if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
-  glade_xml_signal_autoconnect (glade_dialog);
+  gtk_builder_connect_signals (builder, NULL);
 	
-  dialog = glade_xml_get_widget (glade_dialog, "zenity_entry_dialog");
+  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_entry_dialog"));
 	
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_entry_dialog_response), data);
@@ -75,12 +74,12 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
-  text = glade_xml_get_widget (glade_dialog, "zenity_entry_text");
+  text = gtk_builder_get_object (builder, "zenity_entry_text");
 
   if (entry_data->dialog_text)
     gtk_label_set_text_with_mnemonic (GTK_LABEL (text), entry_data->dialog_text);
   
-  vbox = glade_xml_get_widget (glade_dialog, "vbox4");
+  vbox = gtk_builder_get_object (builder, "vbox4");
   
   zenity_entry_fill_entries(&entries, entry_data->data);
   
@@ -113,10 +112,9 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
   gtk_box_pack_end (GTK_BOX (vbox), entry, FALSE, FALSE, 0);
 
-  if (glade_dialog)
-    g_object_unref (glade_dialog);
-
   gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
+
+  g_object_unref (builder);
 
   zenity_util_show_dialog (dialog);
 

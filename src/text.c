@@ -23,7 +23,6 @@
 
 #include "config.h"
 
-#include <glade/glade.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -102,22 +101,23 @@ zenity_text_fill_entries_from_stdin (GtkTextBuffer *text_buffer)
 void
 zenity_text (ZenityData *data, ZenityTextData *text_data)
 {
-  GladeXML *glade_dialog = NULL;
+  GtkBuilder *builder;
   GtkWidget *dialog;
-  GtkWidget *text_view;
+  GObject *text_view;
   GtkTextBuffer *text_buffer;
 
   zen_text_data = text_data;
-  glade_dialog = zenity_util_load_glade_file ("zenity_text_dialog");
+  builder = zenity_util_load_ui_file ("zenity_text_dialog",
+  				      "textbuffer1", NULL);
 	
-  if (glade_dialog == NULL) {
+  if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
-  glade_xml_signal_autoconnect (glade_dialog);
+  gtk_builder_connect_signals (builder, NULL);
 	  
-  dialog = glade_xml_get_widget (glade_dialog, "zenity_text_dialog");
+  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_dialog"));
 	
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_text_dialog_response), data);
@@ -130,7 +130,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 
   text_buffer = gtk_text_buffer_new (NULL);
-  text_view = glade_xml_get_widget (glade_dialog, "zenity_text_view");
+  text_view = gtk_builder_get_object (builder, "zenity_text_view");
   gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
   gtk_text_view_set_editable (GTK_TEXT_VIEW(text_view), text_data->editable);
 
@@ -149,8 +149,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
   zenity_util_show_dialog (dialog);
 
-  if (glade_dialog)
-    g_object_unref (glade_dialog);
+  g_object_unref (builder);
 
   if(data->timeout_delay > 0) {
     g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);

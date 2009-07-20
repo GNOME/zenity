@@ -2,16 +2,16 @@
 #define UTIL_H
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include "zenity.h"
 
 G_BEGIN_DECLS
 
-#define ZENITY_GLADE_FILE_FULLPATH              ZENITY_DATADIR "/zenity.glade"
-#define ZENITY_GLADE_FILE_RELATIVEPATH          "./zenity.glade"
+#define ZENITY_UI_FILE_FULLPATH              ZENITY_DATADIR "/zenity.ui"
+#define ZENITY_UI_FILE_RELATIVEPATH          "./zenity.ui"
+
 #define ZENITY_IMAGE_FULLPATH(filename)         (ZENITY_DATADIR "/" filename)
 
-GladeXML*       zenity_util_load_glade_file               (const gchar    *widget_root);
+GtkBuilder*     zenity_util_load_ui_file                  (const gchar    *widget_root, ...) G_GNUC_NULL_TERMINATED;
 gchar *         zenity_util_strip_newline                 (gchar          *string);
 gboolean        zenity_util_fill_file_buffer              (GtkTextBuffer  *buffer, 
                                                            const gchar    *filename);

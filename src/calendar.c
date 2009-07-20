@@ -23,7 +23,6 @@
 
 #include "config.h"
 
-#include <glade/glade.h>
 #include <time.h>
 #include "zenity.h"
 #include "util.h"
@@ -38,22 +37,23 @@ static void zenity_calendar_double_click (GtkCalendar *calendar, gpointer data);
 void 
 zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 {
-  GladeXML *glade_dialog = NULL;
+  GtkBuilder *builder;
   GtkWidget *dialog;
-  GtkWidget *text;
+  GObject *text;
 
   zen_cal_data = cal_data;
 
-  glade_dialog = zenity_util_load_glade_file ("zenity_calendar_dialog");
+  builder = zenity_util_load_ui_file ("zenity_calendar_dialog", NULL);
 
-  if (glade_dialog == NULL) {
+  if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 	
-  glade_xml_signal_autoconnect (glade_dialog);
+  gtk_builder_connect_signals (builder, NULL);
 
-  dialog = glade_xml_get_widget (glade_dialog, "zenity_calendar_dialog");
+  dialog = GTK_WIDGET (gtk_builder_get_object (builder,
+  					       "zenity_calendar_dialog"));
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_calendar_dialog_response), data);
@@ -66,16 +66,13 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
-  text = glade_xml_get_widget (glade_dialog, "zenity_calendar_text");
+  text = gtk_builder_get_object (builder, "zenity_calendar_text");
 
   if (cal_data->dialog_text)
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (cal_data->dialog_text));
 
-  calendar = glade_xml_get_widget (glade_dialog, "zenity_calendar");
+  calendar = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_calendar"));
 	
-  if (glade_dialog)
-    g_object_unref (glade_dialog);
-
   if (cal_data->month > 0 || cal_data->year > 0)
     gtk_calendar_select_month (GTK_CALENDAR (calendar), cal_data->month - 1, cal_data->year);
   if (cal_data->day > 0)
@@ -90,6 +87,8 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   if(data->timeout_delay > 0) {
     g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);
   }
+
+  g_object_unref (builder);
 
   gtk_main ();
 }

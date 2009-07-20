@@ -23,7 +23,6 @@
 
 #include "config.h"
 
-#include <glade/glade.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -35,23 +34,24 @@ static void zenity_scale_dialog_response (GtkWidget *widget, int response, gpoin
 void 
 zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 {
-  GladeXML *glade_dialog;
+  GtkBuilder *builder;
   GtkWidget *dialog;
-  GtkWidget *text;
+  GObject *text;
 
-  glade_dialog = zenity_util_load_glade_file ("zenity_scale_dialog");
-  dialog = glade_xml_get_widget (glade_dialog, "zenity_scale_dialog");
-  scale = glade_xml_get_widget (glade_dialog, "zenity_scale_hscale");
-  text = glade_xml_get_widget (glade_dialog, "zenity_scale_text");
+  builder = zenity_util_load_ui_file ("zenity_scale_dialog", "adjustment1", NULL);
 
-  g_signal_connect (G_OBJECT (dialog), "response",
-                    G_CALLBACK (zenity_scale_dialog_response), data);
-	
-  if (glade_dialog == NULL) {
+  if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
 
+  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_dialog"));
+  scale = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_hscale"));
+  text = gtk_builder_get_object (builder, "zenity_scale_text");
+
+  g_signal_connect (G_OBJECT (dialog), "response",
+                    G_CALLBACK (zenity_scale_dialog_response), data);
+	
   if (scale_data->min_value >= scale_data->max_value) {
     g_printerr (_("Maximum value must be greater than minimum value.\n")); 
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -65,11 +65,8 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
     return;
   }
 
-  glade_xml_signal_autoconnect (glade_dialog);
+  gtk_builder_connect_signals (builder, NULL);
         
-  if (glade_dialog)
-    g_object_unref (glade_dialog);
-
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
@@ -97,6 +94,8 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
   if(data->timeout_delay > 0) {
     g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);
   }
+
+  g_object_unref (builder);
 
   gtk_main ();
 }

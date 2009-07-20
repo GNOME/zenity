@@ -34,6 +34,7 @@
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include "config.h"
 #include "util.h"
 #include "zenity.h"
@@ -48,27 +49,62 @@
 #define ZENITY_ERROR_DEFAULT	-1
 #define ZENITY_EXTRA_DEFAULT	127
 
-GladeXML*
-zenity_util_load_glade_file (const gchar *widget_root) 
+GtkBuilder*
+zenity_util_load_ui_file (const gchar *root_widget, ...)
 {
-  GladeXML *xml = NULL;
+  va_list args;
+  gchar *arg = NULL;
+  GPtrArray *ptrarray;
+  GtkBuilder *builder = gtk_builder_new ();
+  GError *error = NULL;
+  gchar  **objects;
+  guint result = 0;
 
-  if (g_file_test (ZENITY_GLADE_FILE_RELATIVEPATH, G_FILE_TEST_EXISTS)) {
-    /* Try current dir, for debugging */
-    xml = glade_xml_new (ZENITY_GLADE_FILE_RELATIVEPATH, widget_root, GETTEXT_PACKAGE);
+  gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+
+  /* We have at least the root_widget and a NULL */
+  ptrarray = g_ptr_array_sized_new (2);
+
+  g_ptr_array_add (ptrarray, g_strdup (root_widget));
+
+  va_start (args, root_widget);
+
+  arg = va_arg (args, gchar*);
+
+  while (arg) {
+  	g_ptr_array_add (ptrarray, g_strdup (arg));
+	arg = va_arg (args, gchar*);
   }
- 
-  if (xml == NULL)
-    xml = glade_xml_new (ZENITY_GLADE_FILE_FULLPATH, widget_root, GETTEXT_PACKAGE);
+  va_end (args);
 
-  if (xml == NULL) {
-    g_warning ("Could not load glade file : %s", ZENITY_GLADE_FILE_FULLPATH);
+  /* Enforce terminating NULL */
+  g_ptr_array_add (ptrarray, NULL);
+  objects = (gchar**) g_ptr_array_free (ptrarray, FALSE);
+
+  if (g_file_test (ZENITY_UI_FILE_RELATIVEPATH, G_FILE_TEST_EXISTS)) {
+    /* Try current dir, for debugging */
+    result = gtk_builder_add_objects_from_file (builder,
+    						ZENITY_UI_FILE_RELATIVEPATH,
+						objects, NULL);
+  }
+
+  if (result == 0)
+    result = gtk_builder_add_objects_from_file (builder,
+    						ZENITY_UI_FILE_FULLPATH,
+						objects, &error);
+
+  g_strfreev (objects);
+
+  if (result == 0) {
+    g_warning ("Could not load ui file %s: %s", ZENITY_UI_FILE_FULLPATH,
+    						error->message);
+    g_error_free (error);
+    g_object_unref (builder);
     return NULL;
   }
 
-  return xml;
+  return builder;
 }
-
 gchar*
 zenity_util_strip_newline (gchar *string)
 {
