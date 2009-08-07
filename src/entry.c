@@ -77,7 +77,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
   text = gtk_builder_get_object (builder, "zenity_entry_text");
 
   if (entry_data->dialog_text)
-    gtk_label_set_text_with_mnemonic (GTK_LABEL (text), entry_data->dialog_text);
+    gtk_label_set_text_with_mnemonic (GTK_LABEL (text), g_strcompress (entry_data->dialog_text));
   
   vbox = gtk_builder_get_object (builder, "vbox4");
   
