@@ -36,6 +36,7 @@ static GtkBuilder *builder;
 static ZenityData *zen_data;
 static GIOChannel *channel;
 
+static gint pulsate_timeout = -1;
 static gboolean autokill;
 
 gint zenity_progress_timeout (gpointer data);
@@ -50,6 +51,25 @@ zenity_progress_pulsate_progress_bar (gpointer user_data)
   return TRUE;
 }
 
+static void
+zenity_progress_pulsate_stop ()
+{
+  if (pulsate_timeout > 0) {
+    g_source_remove (pulsate_timeout);
+    pulsate_timeout = -1;
+  }
+}
+
+static void
+zenity_progress_pulsate_start (GObject *progress_bar)
+{
+  if (pulsate_timeout == -1) {
+    pulsate_timeout = g_timeout_add (100,
+                                     zenity_progress_pulsate_progress_bar,
+                                     progress_bar);
+  }
+}
+
 static gboolean
 zenity_progress_handle_stdin (GIOChannel   *channel,
                               GIOCondition  condition,
@@ -58,7 +78,6 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
   static ZenityProgressData *progress_data;
   static GObject *progress_bar;
   static GObject *progress_label;
-  static gint pulsate_timeout = -1;
   float percentage = 0.0;
   
   progress_data = (ZenityProgressData *) data;
@@ -72,8 +91,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
     string = g_string_new (NULL);
 
     if (progress_data->pulsate) {
-      if (pulsate_timeout == -1)
-        pulsate_timeout = g_timeout_add (100, zenity_progress_pulsate_progress_bar, progress_bar);
+      zenity_progress_pulsate_start (progress_bar);
     }
 
     while (channel->is_readable != TRUE)
@@ -146,10 +164,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
 
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
 
-    if (progress_data->pulsate) {
-      g_source_remove (pulsate_timeout);
-      pulsate_timeout = -1;
-    }
+    zenity_progress_pulsate_stop ();
 
     g_object_unref (builder);
 
