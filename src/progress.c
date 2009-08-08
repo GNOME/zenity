@@ -123,6 +123,33 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
         match = g_strstr_len (string->str, strlen (string->str), "#");
         match++;
         gtk_label_set_text (GTK_LABEL (progress_label), g_strcompress(g_strchomp (g_strchug (match))));
+
+      } else if (g_str_has_prefix (string->str, "pulsate")) {
+        gchar *colon, *command, *value;
+
+        zenity_util_strip_newline (string->str);
+
+        colon = strchr(string->str, ':');
+        if (colon == NULL) {
+            continue;
+        }
+
+        /* split off the command and value */
+        command = g_strstrip (g_strndup (string->str, colon - string->str));
+
+        value = colon + 1;
+        while (*value && g_ascii_isspace (*value)) value++;
+
+        if (!g_ascii_strcasecmp (value, "false")) {
+          zenity_progress_pulsate_stop ();
+
+          gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar),
+                                         progress_data->percentage / 100.0);
+        } else {
+          zenity_progress_pulsate_start (progress_bar);
+        }
+
+        g_free (command);
       } else {
 
         if (!g_ascii_isdigit (*(string->str)))
@@ -134,14 +161,17 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
           GObject *button;
           button = gtk_builder_get_object(builder, "zenity_progress_ok_button");
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
+          progress_data->percentage = 100;
           gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
           gtk_widget_grab_focus(GTK_WIDGET (button));
           if (progress_data->autoclose) {
             zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
             gtk_main_quit();
           }
-        } else
+        } else {
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), percentage / 100.0);
+          progress_data->percentage = percentage;
+        }
       }
 
     } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN);
