@@ -243,8 +243,6 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
       */
       if (autokill) {
         kill (getppid (), 1);
-        zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
-        break;
       }
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       break;
