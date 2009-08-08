@@ -113,17 +113,16 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
         /* Now try to convert the thing to a number */
         percentage = atoi (string->str);
         if (percentage >= 100) {
-	  GObject *button;
-	  button = gtk_builder_get_object(builder, "zenity_progress_ok_button");
+          GObject *button;
+          button = gtk_builder_get_object(builder, "zenity_progress_ok_button");
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
-	  gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
-	  gtk_widget_grab_focus(GTK_WIDGET (button));
-	  if (progress_data->autoclose) {
-		zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-		gtk_main_quit();
-		
-	  }
-	} else
+          gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
+          gtk_widget_grab_focus(GTK_WIDGET (button));
+          if (progress_data->autoclose) {
+            zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+            gtk_main_quit();
+          }
+        } else
           gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), percentage / 100.0);
       }
 
@@ -136,14 +135,15 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
     GtkWidget *button;
 
     button = GTK_WIDGET (gtk_builder_get_object (builder,
-    						 "zenity_progress_ok_button"));
+                                                 "zenity_progress_ok_button"));
     gtk_widget_set_sensitive (button, TRUE);
     gtk_widget_grab_focus (button);
 
     button = GTK_WIDGET (gtk_builder_get_object (builder,
-    					      "zenity_progress_cancel_button"));
+                         "zenity_progress_cancel_button"));
+
     gtk_widget_set_sensitive (button, FALSE);
-		
+
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
 
     if (progress_data->pulsate) {
@@ -157,7 +157,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
       gtk_main_quit();
     }
-		
+
     g_io_channel_shutdown (channel, TRUE, NULL);
     return FALSE;
   }
@@ -187,15 +187,15 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
   }
-	
+
   gtk_builder_connect_signals (builder, NULL);
-	
+
   dialog = GTK_WIDGET (gtk_builder_get_object (builder,
-  					       "zenity_progress_dialog"));
+                                               "zenity_progress_dialog"));
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_progress_dialog_response), data);
-	
+
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
@@ -234,12 +234,12 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
     case GTK_RESPONSE_OK:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
       break;
-		
+
     case GTK_RESPONSE_CANCEL:
       /* We do not want to kill the parent process, in order to give the user
          the ability to choose the action to be taken. See bug #310824.
-	 But we want to give people the option to choose this behavior.
-		 -- Monday 27, March 2006
+         But we want to give people the option to choose this behavior.
+         -- Monday 27, March 2006
       */
       if (autokill) {
         kill (getppid (), 1);
