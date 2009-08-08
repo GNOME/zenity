@@ -22,6 +22,34 @@ PKG_CHECK_MODULES([ZENITY],[gtk+-2.0 >= $GTK_REQUIRED glib-2.0])
 AC_SUBST([ZENITY_CFLAGS])
 AC_SUBST([ZENITY_LIBS])
 
+dnl *************************
+dnl Check for the GTK+ backend, if it's X11, we -lX11
+dnl *************************
+
+zenity_save_cflags="$CFLAGS"
+# pull in the CFLAGS to locate gdkconfig.h
+CFLAGS=`$PKG_CONFIG --cflags gtk+-2.0`
+AC_COMPILE_IFELSE([
+#include <gdkconfig.h>
+
+int main(void) {
+#ifndef GDK_WINDOWING_X11
+#error GDK_WINDOWING_X11 not defined
+#endif
+    return 0;
+}
+],
+        GDK_BACKEND_X11=yes,
+        GDK_BACKEND_X11=no)
+
+CFLAGS="$zenity_save_cflags"
+
+if test "x$GDK_BACKEND_X11" = "xyes"; then
+	PKG_CHECK_MODULES(X, x11)
+	ZENITY_CFLAGS="$ZENITY_CFLAGS $X_CFLAGS"
+	ZENITY_LIBS="$ZENITY_LIBS $X_LIBS"
+fi
+
 # *******************************
 # perl check
 # *******************************
