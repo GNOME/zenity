@@ -156,7 +156,7 @@
       </listitem>
     </itemizedlist>
     <para>
-	When the user closes the dialog, &app; prints the text produced by the dialog to standard error.
+	When the user closes the dialog, &app; prints the text produced by the dialog to standard output.
     </para>
 
     <note>
@@ -467,7 +467,7 @@
     <title>Calendar Dialog</title>
 
     <para>
-        Use the <option>--calendar</option> option to create a calendar dialog. &app; returns the selected date to standard error. If no date is specified on the command line, the dialog uses the current date.
+        Use the <option>--calendar</option> option to create a calendar dialog. &app; returns the selected date to standard output. If no date is specified on the command line, the dialog uses the current date.
     </para>
     <para>
 	The calendar dialog supports the following options:
@@ -557,7 +557,7 @@
 
     <para>
 	Use the <option>--file-selection</option> option to create a file selection dialog. &app; returns the selected files or directories to standard 
-        error. The default mode of the file selection dialog is open.
+        output. The default mode of the file selection dialog is open.
     </para>
     <para>
 	The file selection dialog supports the following options:
@@ -689,7 +689,7 @@
     <title>List Dialog</title>
 
     <para>
-	Use the <option>--list</option> option to create a list dialog. &app; returns the entries in the first column of text of selected rows to standard error.
+	Use the <option>--list</option> option to create a list dialog. &app; returns the entries in the first column of text of selected rows to standard output.
     </para>
 
     <para>
@@ -1053,7 +1053,7 @@ For each type, use the <option>--text</option> option to specify the text that i
     <title>Text Entry Dialog</title>
 
     <para>
-        Use the <option>-entry</option> option to create a text entry dialog. &app; returns the contents of the text entry to standard error. 
+        Use the <option>-entry</option> option to create a text entry dialog. &app; returns the contents of the text entry to standard output. 
     </para>	
     <para>	
 	The text entry dialog supports the following options:
@@ -1142,7 +1142,7 @@ For each type, use the <option>--text</option> option to specify the text that i
       <varlistentry>
         <term><option>--editable</option></term>
         <listitem>
-          <para>Allows the displayed text to be edited. The edited text is returned to standard error when the dialog is closed.</para>
+          <para>Allows the displayed text to be edited. The edited text is returned to standard output when the dialog is closed.</para>
         </listitem>
       </varlistentry>
 
