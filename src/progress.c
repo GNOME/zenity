@@ -238,8 +238,8 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
     case GTK_RESPONSE_CANCEL:
       /* We do not want to kill the parent process, in order to give the user
          the ability to choose the action to be taken. See bug #310824.
+	 But we want to give people the option to choose this behavior.
 		 -- Monday 27, March 2006
-		 But we want to give people the option to choose this behavior.
       */
       if (autokill) {
         kill (getppid (), 1);
