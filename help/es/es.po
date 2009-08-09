@@ -2,12 +2,12 @@
 # Alejandro Aravena <raidenblast@gmail.com>, 2005.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2005.
 # traduccion al español del manual de zenity
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity.help.HEAD\n"
-"POT-Creation-Date: 2009-01-09 00:03+0000\n"
-"PO-Revision-Date: 2009-01-10 02:18+0100\n"
+"POT-Creation-Date: 2009-08-08 10:13+0000\n"
+"PO-Revision-Date: 2009-08-09 17:24+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -430,12 +430,15 @@ msgstr ""
 "una operación, o usar un diálogo de advertencia para alertar al usuario."
 
 #: C/zenity.xml:158(para)
+#| msgid ""
+#| "When the user closes the dialog, <application>Zenity</application> prints "
+#| "the text produced by the dialog to standard error."
 msgid ""
 "When the user closes the dialog, <application>Zenity</application> prints "
-"the text produced by the dialog to standard error."
+"the text produced by the dialog to standard output."
 msgstr ""
-"Cuando el usuario cierra el diálogo, Zenity imprime el texto producido por "
-"diálogo a la salida estándar de error."
+"Cuando el usuario cierra el diálogo, <application>Zenity</application> "
+"imprime el texto producido por diálogo a la salida estándar de error."
 
 #: C/zenity.xml:163(para)
 msgid ""
@@ -810,16 +813,21 @@ msgid "Calendar Dialog"
 msgstr "Diálogo de calendario"
 
 #: C/zenity.xml:469(para)
+#| msgid ""
+#| "Use the <option>--calendar</option> option to create a calendar dialog. "
+#| "<application>Zenity</application> returns the selected date to standard "
+#| "error. If no date is specified on the command line, the dialog uses the "
+#| "current date."
 msgid ""
 "Use the <option>--calendar</option> option to create a calendar dialog. "
 "<application>Zenity</application> returns the selected date to standard "
-"error. If no date is specified on the command line, the dialog uses the "
+"output. If no date is specified on the command line, the dialog uses the "
 "current date."
 msgstr ""
 "Use la opción <option>--calendar</option> para crear un diálogo de "
 "calendario. <application>Zenity</application> devuelve la fecha seleccionada "
-"a la salida estándar de error. Si no se especifica una fecha en la línea de "
-"comando, el diálogo utilizará la fecha actual."
+"a la salida estándar. Si no se especifica una fecha en la línea de comando, "
+"el diálogo utilizará la fecha actual."
 
 #: C/zenity.xml:472(para)
 msgid "The calendar dialog supports the following options:"
@@ -939,15 +947,20 @@ msgid "File Selection Dialog"
 msgstr "Diálogo de selección de archivos"
 
 #: C/zenity.xml:558(para)
+#| msgid ""
+#| "Use the <option>--file-selection</option> option to create a file "
+#| "selection dialog. <application>Zenity</application> returns the selected "
+#| "files or directories to standard error. The default mode of the file "
+#| "selection dialog is open."
 msgid ""
 "Use the <option>--file-selection</option> option to create a file selection "
 "dialog. <application>Zenity</application> returns the selected files or "
-"directories to standard error. The default mode of the file selection dialog "
-"is open."
+"directories to standard output. The default mode of the file selection "
+"dialog is open."
 msgstr ""
 "Use la opción <option>--file-selection</option> para crear un diálogo de "
 "selección de archivos. <application>Zenity</application> devuelve los "
-"archivos o directorios seleccionados a la salida estándar de error. El modo "
+"archivos o directorios seleccionados a la salida estándar. El modo "
 "predefinido de un diálogo de selección de archivo es «abrir»."
 
 #: C/zenity.xml:562(para)
@@ -1102,14 +1115,18 @@ msgid "List Dialog"
 msgstr "Diálogo de lista"
 
 #: C/zenity.xml:691(para)
+#| msgid ""
+#| "Use the <option>--list</option> option to create a list dialog. "
+#| "<application>Zenity</application> returns the entries in the first column "
+#| "of text of selected rows to standard error."
 msgid ""
 "Use the <option>--list</option> option to create a list dialog. "
 "<application>Zenity</application> returns the entries in the first column of "
-"text of selected rows to standard error."
+"text of selected rows to standard output."
 msgstr ""
 "Use la opción <option>--list</option> para crear un diálogo de lista. "
 "<application>Zenity</application> devuelve las entradas en la primera "
-"columna de texto de las filas seleccionadas a la salida estándar de error."
+"columna de texto de las filas seleccionadas a la salida estándar."
 
 #: C/zenity.xml:695(para)
 msgid ""
@@ -1557,14 +1574,18 @@ msgid "Text Entry Dialog"
 msgstr "Diálogo para la entrada de texto"
 
 #: C/zenity.xml:1055(para)
+#| msgid ""
+#| "Use the <option>-entry</option> option to create a text entry dialog. "
+#| "<application>Zenity</application> returns the contents of the text entry "
+#| "to standard error."
 msgid ""
 "Use the <option>-entry</option> option to create a text entry dialog. "
 "<application>Zenity</application> returns the contents of the text entry to "
-"standard error."
+"standard output."
 msgstr ""
 "Use la opción <option>-entry</option> para crear un diálogo de entrada de "
 "texto. <application>Zenity</application> devuelve el contenido del texto "
-"introducido a la salida estándar de error."
+"introducido a la salida estándar."
 
 #: C/zenity.xml:1058(para)
 msgid "The text entry dialog supports the following options:"
@@ -1662,12 +1683,15 @@ msgstr ""
 "Especifica un archivo que se carga en el diálogo de texto de información."
 
 #: C/zenity.xml:1145(para)
+#| msgid ""
+#| "Allows the displayed text to be edited. The edited text is returned to "
+#| "standard error when the dialog is closed."
 msgid ""
 "Allows the displayed text to be edited. The edited text is returned to "
-"standard error when the dialog is closed."
+"standard output when the dialog is closed."
 msgstr ""
 "Permite que el texto mostrado sea editado. El texto editado se devuelve por "
-"la salida estándar de error cuando el diálogo se cierra."
+"la salida estándar cuando el diálogo se cierra."
 
 #: C/zenity.xml:1153(programlisting)
 #, no-wrap
