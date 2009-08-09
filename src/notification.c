@@ -165,10 +165,18 @@ zenity_notification_handle_stdin (GIOChannel *channel,
           NotifyNotification *notif;
           const gchar *icon = NULL;
           gchar *freeme = NULL;
-          gchar *message;
+          gchar **message;
           error = NULL;
 
-          message = g_strcompress (value);
+          /* message[1] (the summary) will be NULL in case there's
+           * no \n in the string. In which case only the title is
+           * defined */
+          message = g_strsplit (g_strcompress (value), "\n", 2);
+
+          if (*message == NULL) {
+            g_printerr (_("Could not parse message from stdin\n"));
+            continue;
+          }
 
           if (icon_stock) {
             icon = icon_stock;
@@ -176,9 +184,12 @@ zenity_notification_handle_stdin (GIOChannel *channel,
             icon = freeme = g_filename_to_uri (icon_file, NULL, NULL);
           }
 
-          notif = notify_notification_new_with_status_icon (message, NULL /* summary */,
-                					    icon, status_icon);
-          g_free (message);
+          notif = notify_notification_new_with_status_icon (
+                              message[0] /* title */,
+                              message[1] /* summary */,
+                              icon, status_icon);
+
+          g_strfreev (message);
           g_free (freeme);
 
 	  notify_notification_show (notif, &error);
