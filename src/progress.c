@@ -156,21 +156,24 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
           continue;
 
         /* Now try to convert the thing to a number */
-        percentage = atoi (string->str);
-        if (percentage >= 100) {
+        percentage = CLAMP(atoi (string->str), 0, 100);
+
+        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar),
+                                       percentage / 100.0);
+
+        progress_data->percentage = percentage;
+
+        if (percentage == 100) {
           GObject *button;
+
           button = gtk_builder_get_object(builder, "zenity_progress_ok_button");
-          gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
-          progress_data->percentage = 100;
           gtk_widget_set_sensitive(GTK_WIDGET (button), TRUE);
           gtk_widget_grab_focus(GTK_WIDGET (button));
+
           if (progress_data->autoclose) {
             zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
             gtk_main_quit();
           }
-        } else {
-          gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), percentage / 100.0);
-          progress_data->percentage = percentage;
         }
       }
 
