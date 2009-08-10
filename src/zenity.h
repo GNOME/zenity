@@ -111,6 +111,7 @@ typedef struct {
   GSList       *columns;
   gboolean      checkbox;
   gboolean      radiobox;
+  gboolean      hide_header;
   gchar        *separator;
   gboolean      multi;
   gboolean      editable;

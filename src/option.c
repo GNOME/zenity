@@ -74,6 +74,7 @@ static gboolean zenity_list_checklist;
 static gboolean zenity_list_radiolist;
 static gchar   *zenity_list_print_column;
 static gchar   *zenity_list_hide_column;
+static gchar   *zenity_list_hide_header;
 
 /* Notification Dialog Options */
 static gboolean zenity_notification_active;
@@ -501,6 +502,15 @@ static GOptionEntry list_options[] = {
     &zenity_list_hide_column,
     N_("Hide a specific column"),
     N_("NUMBER")
+  },
+  {
+    "hide-header",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_list_hide_header,
+    N_("Hides the column headers"),
+    NULL
   },
   { 
     NULL 
@@ -1010,6 +1020,7 @@ zenity_list_pre_callback (GOptionContext *context,
   zenity_list_columns = NULL;
   zenity_list_checklist = FALSE;
   zenity_list_radiolist = FALSE;
+  zenity_list_hide_header = FALSE;
   zenity_list_print_column = NULL;
   zenity_list_hide_column = NULL;
 
@@ -1294,6 +1305,7 @@ zenity_list_post_callback (GOptionContext *context,
     results->tree_data->editable = zenity_general_editable;
     results->tree_data->print_column = zenity_list_print_column;
     results->tree_data->hide_column = zenity_list_hide_column;
+    results->tree_data->hide_header = zenity_list_hide_header;
     results->tree_data->separator = zenity_general_separator;
   } else {
     if (zenity_list_columns)
@@ -1314,6 +1326,10 @@ zenity_list_post_callback (GOptionContext *context,
 
     if (zenity_list_hide_column)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_list_hide_column),
+                           ERROR_SUPPORT);
+
+    if (zenity_list_hide_header)
+      zenity_option_error (zenity_option_get_name (list_options, &zenity_list_hide_header),
                            ERROR_SUPPORT);
   }
     
