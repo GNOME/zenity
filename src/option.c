@@ -65,7 +65,7 @@ static gboolean       zenity_file_active;
 static gboolean       zenity_file_directory;
 static gboolean       zenity_file_save;
 static gboolean       zenity_file_confirm_overwrite;
-static GtkFileFilter *zenity_file_filter;
+static gchar        **zenity_file_filter;
 
 /* List Dialog Options */
 static gboolean zenity_list_active;
