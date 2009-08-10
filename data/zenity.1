@@ -282,6 +282,12 @@ Show version of program.
 .PP
 Also the standard GTK+ options are accepted.
 
+.SH ENVIRONMENT
+
+Normally, zenity detects the terminal window from which it was launched and
+keeps itself above that window.  This behavior can be disabled by unsetting the
+WINDOWID environment variable.
+
 .SH EXAMPLES
 
 Display a file selector with the title \fISelect a file to
