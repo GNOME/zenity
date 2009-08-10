@@ -42,6 +42,12 @@ zenity_entry_fill_entries (GSList **entries, const gchar **args)
   }
 }
 
+static void
+zenity_entry_combo_activate_default (GtkEntry *entry, gpointer window)
+{
+  gtk_window_activate_default (GTK_WINDOW (window));
+}
+
 void 
 zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 {
@@ -96,6 +102,10 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
       gtk_combo_box_prepend_text (GTK_COMBO_BOX (entry), entry_data->entry_text);
       gtk_combo_box_set_active (GTK_COMBO_BOX (entry), 0);
     }
+
+    g_signal_connect (gtk_bin_get_child (GTK_BIN (entry)), "activate",
+                      G_CALLBACK (zenity_entry_combo_activate_default),
+                      GTK_WINDOW (dialog));
   } else {
     entry = gtk_entry_new();
 
