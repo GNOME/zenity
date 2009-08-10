@@ -257,7 +257,7 @@ static GOptionEntry entry_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_entry_hide_text,
     N_("Hide the entry text"),
-    N_("TEXT")
+    NULL
   },
   { 
     NULL 
