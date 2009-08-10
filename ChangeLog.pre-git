@@ -1,0 +1,2419 @@
+2009-03-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2009-03-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.26.0
+
+2009-03-08  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in, src/about.c: disable monk easter egg in order to
+	remove gnome-canvas dependency (Fixes #571741). 
+
+2009-03-08  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in, src/notification.c: replace deprecated
+	GTK+ calls (fixes bug #571869).
+	Patch from Felix Riemann <friemann@svn.gnome.org>.
+
+2009-03-08  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.glade: remove deprecated/obsoleted dialog
+	definition (fixes bug #571869).
+	Patch from Felix Riemann <friemann@svn.gnome.org>.
+
+2008-01-12  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2008-01-12  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.24.1
+
+2009-01-09  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: depend on intltool 0.40.0.
+
+2009-01-09  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/option.c: translator comment for file-filter option string
+	(Fixes bug #547202). Patch from Frederic Peters <fpeters@0d.be>.
+
+2009-01-09  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c:
+	GNOME Goal: Remove deprecated GLib symbols (Fixes bug #560452).
+	Patch from Frederic Peters <fpeters@0d.be>.
+
+2009-01-09  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/main.c:
+	* src/option.h:
+	GNOME Goal: Clean up GLib and GTK+ includes (Fixes bug #563855).
+	Patch from Pedro Fragoso  <ember@ubuntu.com>.
+
+2009-01-09  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/fileselection.c (zenity_fileselection): correctly handle
+	--filename option on file selection mode (Fixes bug #564552).
+	Patch from Gilles Detillieux.
+
+2009-01-08  Lucas Rocha  <lucasr@gnome.org>
+
+	* data/zenity.1: document --timeout (Fixes bug #565133).
+	Patch from  Luca Bruno <lethalman88@gmail.com>.
+
+2008-09-23  Vincent Untz  <vuntz@gnome.org>
+
+	* configure.in: post-release bump to 2.24.1.
+
+==================== 2.24.0 ====================
+
+2008-09-22  Vincent Untz  <vuntz@gnome.org>
+
+	* NEWS:
+	* configure.in: version 2.24.0
+
+2008-06-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2008-06-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.23.3.1
+	* configure.in: depend on intltool 0.40.0.
+
+2008-06-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.23.3
+
+2008-06-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.23.3
+
+2008-06-03  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2008-06-03  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.23.2
+
+2008-05-31  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.glade: set all dialogs in glade file as resizable in
+	order to have them respecting the --width and --height command-line
+	options (Fixes bug #529452).
+
+2008-04-21  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2008-04-21  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.23.1
+
+2008-04-21  Lucas Rocha  <lucasr@gnome.org>
+
+	Add support for file filter in file selection dialog through the new
+	--file-filter command line option (Fixes bug #409843). Patch from
+	Ricardo Cruz <rpmcruz@alunos.dcc.fc.up.pt>.
+
+	* src/option.c, src/zenity.h: added supporting variable and new 
+	GOptionEntry entry for the new command line option.
+	* src/fileselection.c (zenity_fileselection): add file filters based
+	on command line input.
+
+2008-04-12  Karsten Braeckelmann  <guenther@rudersport.de>
+
+	* HACKING: Fix typo and remove obsolete freeze note.
+	Fixes bug #527345. Patch by kraai@ftbfs.org.
+
+2008-04-10  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c (zenity_tree_dialog_get_selected,
+	zenity_tree_dialog_toggle_get_selected): use g_value_dup_string when
+	applicable (Fixes bug #527258). Patch from kraai@ftbfs.org.
+
+2008-03-30  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/msg.c (zenity_msg_construct_question_dialog): fix memory leak on
+	custom labels (Fixes bug #526627). Patch by kraai@ftbfs.org.
+
+2008-03-30  Lucas Rocha  <lucasr@gnome.org>
+
+	Allow question dialogs to use custom button label text (Fixes 
+	bug #335763). Patch from Cosimo Cecchi <anarki@lilik.it> and 
+	Thomas Thurman <tthurman@gnome.org>.
+
+	* src/msg.c (zenity_msg_construct_question_dialog), (zenity_msg):
+	dynamically add dialog buttons with provided labels.
+	* src/option.c (zenity_option_free): free input labels.
+	(zenity_question_post_callback): set button labels provided by the
+	respective command line options.
+	* src/zenity.glade: remove pre-defined dialog button from question
+	dialog.
+	* src/zenity.h: added ok_label and cancel_label to ZenityMsgData.
+
+2008-03-17  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/option.c: added arg_description for --timeout option (Fixes 
+	bug #516876). Patch from Luca Ferretti <elle.uca@libero.it>. 
+
+2008-03-17  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/scale.c (zenity_scale): set value range before setting value 
+	in order to correctly set initial state (Fixes bug #521574).
+
+2008-03-17  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/option.c: added comment on a string in order clarify its
+	meaning for translators (Fixes bug #520847). 
+
+2008-03-10  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2008-03-10  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.22.0
+
+2007-02-25  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2008-02-25  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.21.1
+
+2007-12-05  Claude Paroz  <claude@2xlibre.net>
+
+	* NEWS: Converted to UTF-8.
+
+2007-09-17  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-09-17  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.20.0
+
+2007-09-04  Lucas Rocha  <lucasr@gnome.org>
+
+	* MAINTAINERS: use new standard/required format.
+
+2007-08-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-08-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.19.2
+
+2007-08-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/*.c: added timeout option to all dialogs (Fixes bug #160654).
+	Based on patch from Muthiah Annamalai <gnumuthu@users.sf.net>.
+
+2007-08-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c: fix critical warning when using checkbox and radiobox in
+	list dialog (Fixes bug #453713).
+
+2007-05-27  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c: fix broken handling of input from pipes in list 
+	dialog (Fixes bug #343684). 
+
+2007-05-27  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/text.c: correctly handle UTF-8 input text in the text info
+	dialog (Fixes bug #407275).
+
+2007-05-27  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/main.c: initialize GTK+ before parsing command line options to
+	better handle errors on display setting (Fixes bug #410055).
+
+2007-05-15  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-05-15  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.19.1
+
+2007-05-15  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/text.c (zenity_text_dialog_response): fix seg fault when
+	outputing files with special printf format strings (Fixes
+	bug #405006). Patch from Mariano Su·rez-Alvarez.
+
+2007-05-15  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c (zenity_tree_dialog_toggle_get_selected): fix index
+	handling for --print-column (Fixes bug #420396).
+
+2007-05-15  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.ac: make libnotify support an option (Fixes bug #346843).
+	Patch from Saleem Abdulrasool <compnerd@gentoo.org>.
+
+2007-05-15  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/calendar.c (zenity_calendar, zenity_calendar_double_click):
+	double-click on day results in dialog response (Fixes bug #395152).
+	Patch from Tom Tromey <tromey@redhat.com>.
+
+2007-05-14  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/progress.c (zenity_progress_handle_stdin), src/option.c
+	(zenity_create_context), src/about.c, src/notification.c
+	(zenity_notification_handle_stdin): general cleanups for 
+	build warnings (Fixes bug #416196). Patch from Kjartan 
+	Maraas <kmaraas@gnome.org>.
+
+2007-05-14  Lucas Rocha  <lucasr@gnome.org>
+
+	* data/zenity.1: man page update (Fixes bug #436187). Patch from
+	Sven Arvidsson <sa@whiz.se>.
+
+2007-04-09  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-04-09  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.18.1
+
+2007-03-11  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-03-11  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.18.0
+
+2007-02-26  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-02-26  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.17.92
+
+2007-02-12  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-02-12  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.17.91
+
+2007-01-22  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-01-22  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.17.90
+
+2007-01-08  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2007-01-08  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.17.3
+
+2006-12-18  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2006-12-18  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.17.2
+
+2006-12-04  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2006-12-04  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: release 2.17.1
+
+2006-12-04  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/option.c: complete list dialog options with respective arguments
+	(Fixes bug #353320). Patch from Glynn Foster <glynn.foster@sun.com>.
+
+2006-12-04  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.glade: make dialog text selectable on message dialogs
+	(error, warning, info, and question) (Fixes bug #352910). Patch
+	from Greg Hudson <ghudson@mit.edu>.
+
+2006-12-03  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.glade: merged identic i18n strings (Fixes bug #334361).
+
+2006-12-02  Lucas Rocha  <lucasr@gnome.org>
+
+	* COPYING: revert back to GNU LGPL.
+
+2006-12-02  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.h, src/progress.c, src/option.c: add "auto-kill" option
+	to progress dialog. Now the user can choose whether to kill parent 
+	process or not (Fixes bug #310824). Patch from Diego Escalante Urrelo
+	<diego@aureal.com.pe>.
+
+2006-12-02  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.glade: don't show cancel button on warning dialog (Fixes
+	bug #324100). Patch from Claudio Saavedra
+	<csaavedra@alumnos.utalca.cl>.
+
+2006-10-02  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* configure.in: post-release version bump.
+
+2006-10-02  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* NEWS: release 2.16.1.
+
+2006-09-04  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-09-04  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: Release 2.16.0
+
+2006-08-21  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-08-21  Lucas Rocha  <lucasr@gnome.org>
+
+	* NEWS: Release 2.15.92
+
+2006-08-15  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Fix intltool req.
+	* po/nb.po: Update this.
+
+2006-08-08  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-07-28  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.15.91
+	* NEWS: Update.
+
+2006-07-28  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-07-28  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.15.90
+	* NEWS: Update.
+	* po/POTFILES.in: remove eggtrayicon.c reference.
+
+2006-07-27  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/notification.c (-set_scaled_pixbuf,
+	+zenity_notification_icon_update,
+	-zenity_notification_icon_press_callback,
+	+zenity_notification_icon_size_changed_cb,
+	-zenity_notification_icon_expose_callback,
+	-zenity_notification_icon_destroy_callback,
+	+zenity_notification_icon_activate_cb,
+	zenity_notification_handle_stdin, zenity_notification),
+	src/util.[ch] (+zenity_util_stock_from_filename,
+	zenity_util_pixbuf_new_from_file), Makefile.am, configure.in:
+
+	Migration to gtk_status_icon (Fixes bug #341451). Patch from
+	Christian Persch <chpe@gnome.org>.
+
+	* src/eggtrayicon.[ch]: removed.
+
+2006-07-27  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/text.c (zenity_text_handle_stdin): correctly stdin input for
+	text info dialog (Fixes bug #336736).
+
+2006-07-27  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/entry.c (zenity_entry): entry activation makes dialog 
+	return OK (Fixes bug #347340).
+
+2006-07-26  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c (zenity_tree_fill_entries_from_stdin, zenity_tree): fix
+	small build warnings on 64-bit architectures (Fixes bug #344125).
+	* src/zenity.h: fix small build warning.
+
+2006-06-10  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	* src/about.c: Replaced FSF postal address with the current. 
+
+2006-05-19  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/about.c (zenity_about): about dialog update.  
+
+2006-05-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-05-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.15.2
+	* NEWS: Update.
+
+2006-05-10  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/entry.c (zenity_entry_fill_entries, zenity_entry),
+	src/main.c, src/option.c, src/zenity.glade, src/zenity.h:
+	add optional dropdown menu to entry dialog (Fixed bug #311038).
+	Patch from Diego Escalante Urrelo <dieguito@gmail.com>.
+
+2006-05-10  Lucas Rocha  <lucasr@gnome.org>
+
+	* .cvsignore, Makefile.am, autogen.sh, configure.in,
+	data/Makefile.am, po/.cvsignore, src/Makefile.am: move to
+	automake 1.9 and several cleanups (Fixes bug #341056).
+	Patch from Christian Persch <chpe@gnome.org>.
+
+2006-04-29  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-04-24  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.15.1
+	* NEWS: Update.
+
+2006-04-17  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: remove X libs checks because zenity
+	doesn't use X includes directly (Fixes bug #338102).
+
+2006-04-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/tree.c (zenity_tree_extract_column_indexes): 
+	don't ignore return value from g_renew() (Fixes 
+	bug #338038). Patch from Behdad Esfahbod 
+	<gnome@behdad.org>.
+
+2006-04-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in:
+	* po/LINGUAS:
+
+	Convert to use po/LINGUAS.
+
+2006-03-31  Lucas Rocha  <lucasr@gnome.org>
+
+	* data/zenity.1: fix example on progress dialog (Fixed 
+	bug #336751).
+
+2006-03-31  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/about.c (zenity_about_dialog_response): quit zenity 
+	on dialog response (Fixes bug #336505).
+
+2006-03-23  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/fileselection.c, zenity.h, option.c: add 
+	--confirm-overwrite to file selection dialog to pop a
+	confirmation dialog when selecting an existing filename.
+
+2006-03-22  Lucas Rocha  <lucasr@gnome.org>
+
+	Implement the "message" command on notification icon
+	with libnotify bubbles. Patch from Davyd Madeley 
+	<davyd@madeley.id.au>.
+
+	* configure.in: add libnotify checking.
+	* src/notification.c (zenity_notification_handle_stdin,
+	zenity_notification): initialize libnotify and implement
+	"message" command.
+
+2006-03-21  Gora Mohanty  <gmohanty@cvs.gnome.org>
+
+	* configure.in: Added or (Oriya) to ALL_LINGUAS.
+
+2006-03-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Post release bump, for unstable 
+	2.15.x development.
+
+2006-03-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.14.0
+	* THANKS, NEWS: Update.
+
+2006-03-07  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/option.c: add G_OPTION_FLAG_NOALIAS to separator
+	option for list dialog. Patch from Glynn 
+	Foster <glynn.foster@sun.com>.
+
+2006-01-29  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-01-29  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.13.90
+	* THANKS, NEWS: Update.
+
+2006-01-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-01-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.13.5
+	* NEWS: Update.
+
+2006-01-05  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2006-01-05  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.13.4
+	* THANKS, NEWS: Update.
+
+2005-12-18  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/about.c: use GtkAboutDialog instead of custom
+	dialog (Fixes bug #309405).
+	* src/zenity.glade: remove zenity_about_dialog.
+	* configure.in: zenity now depends on GTK+ >= 2.6.x
+	because now it uses GtkAboutDialog.
+
+2005-12-16  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.glade: make all dialogs HIG compliant
+	by fixing spaces and removing separator (Fixes bug 
+	#324211). Patch by Christian Persch <chpe@gnome.org>.
+
+2005-12-15  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/option.c, src/scale.c, src/zenity.h: add
+	--hide-value to scale dialog.
+
+2005-12-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* src/zenity.glade: make the hscale discontinuous.
+
+2005-12-13  Lucas Rocha  <lucasr@gnome.org>
+
+	* data/Makefile.am, data/zenity-scale.png,
+	src/Makefile.am, src/main.c, src/option.c,
+	src/option.h, src/scale.c, src/zenity.glade,
+	src/zenity.h: new scale dialog for selecting a 
+	value from a range (Fixes #322399).
+
+2005-12-12  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-12-12  Lucas Rocha  <lucasr@gnome.org>
+
+	* configure.in: Release 2.13.3
+	* NEWS: Update.
+	* MAINTAINERS: Update my e-mail address.
+
+2005-11-15  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/calendar.c, src/progress.c, src/tree.c: make 
+	it possible to add new lines and markup in the dialog
+	text.
+
+2005-11-13  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-11-13  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.13.2
+	* NEWS, THANKS, src/about.c: Update.
+
+2005-11-13  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/msg.c: make it possible to add new lines in the
+	in the msg dialog (Fixes bug #320787).
+
+2005-10-27  Erdal Ronahi  <erdal.ronahi@gmail.com>
+
+	* configure.in: Added ku (Kurdish) to ALL_LINGUAS
+
+2005-10-24  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-10-24  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.13.1
+	* NEWS, THANKS, src/about.c: Update.
+
+2005-10-18  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/zenity.glade: by default, focus is on tree
+	view in list dialogs. Fixes #317263. Patch from
+	Aleksey Kliger <akliger@gmail.com>
+
+2005-10-18  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* help/zenity.omf.in: refile zenity to GNOME|Utilities. 
+	Fixes #318831. Patch from Brent Smith <gnome@nextreality.net>.
+	* help/C/zenity.xml: more meaningful abstract and
+	standardized title. Fixes #318915. Patch from
+	Brent Smith <gnome@nextreality.net>.
+
+2005-09-24  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* data/zenity.1: bug fix for #315020.
+
+2005-09-24  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/option.c: bug fix for #317033.
+
+2005-09-21  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* data/zenity.1: escaped "-"s; they're supposed to be
+	minus signs, not hyphens.
+
+2005-09-17  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* TODO: add a Zenity wiki page reference. 
+
+2005-09-06  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Post release bump, for unstable 
+	2.13.x development.
+
+2005-09-06  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.12.0
+	* NEWS, THANKS, src/about.c: Update.
+
+2005-08-23  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-08-23  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.11.92
+	* NEWS, THANKS, src/about.c: Update.
+
+2005-08-07  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-08-07  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.11.91
+	* NEWS, THANKS, src/about.c: Update.
+
+2005-07-25  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-07-25  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.11.90
+	* NEWS, THANKS, src/about.c: Update.
+
+2005-07-24  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* .cvsignore: added gnome-doc-utils.make. 
+	* configure.in: added GNOME_DOC_INIT and
+	removed help/C/Makefile and help/sr/Makefile
+	from AC_OUTPUT.
+	* Makefile.am: added gnome-doc-utils.make to
+	EXTRA_DIST and DISTCLEANFILES. Added
+	DISTCHECK_CONFIGURE_FLAGS.
+	* help/Makefile.am: migration to gnome-doc-utils.
+	* help/zenity.omf.in: new OMF file to be used by
+	gnome-doc-utils.
+	* help/C/Makefile.am, help/C/zenity-C.omf: No
+	longer needed. Removed.
+	* help/C/zenity.xml: updates to be gnome-doc-utils
+	compliant.
+	* help/ChangeLog: new ChangeLog to keep track
+	of doc updates.
+
+2005-07-14  Yair Hershkovitz  <yairhr@gmail.com>
+
+	* configure.in: Added Hebrew translation.
+
+2005-07-13  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-07-13  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.11.1
+	* HACKING: Add note about feature frozen-ness.
+	* NEWS, THANKS, src/about.c: Update.
+
+2005-07-12  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: dependency on glib >= 2.7.3
+	* src/option.c: Add G_OPTION_FLAG_NOALIAS flag
+	on options that are present in more than on
+	group.
+
+2005-07-12  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/option.c: activate option help translations
+	in GOption.
+
+2005-07-08  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/about.c, src/calendar.c, src/fileselection.c,
+	src/option.c, src/progress.c, src/text.c, src/tree.c,
+	src/util.c: general code cleanups. Contribution from 
+	BenoÓt Dejean.
+
+2005-07-08  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/about.c, src/option.c, src/fileselection.c:
+	marks static many functions and global variables.
+	Contribution from BenoÓt Dejean.
+
+2005-07-06  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* THANKS, src/about.c: Update.
+
+2005-07-06  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/calendar.c, src/entry.c, src/fileselection.c,
+	src/msg.c, src/notification.c, src/option.c,
+	src/progress.c, src/text.c, src/tree.c, src/util.c:
+	include cleanups (config.h). Contribution from
+	BenoÓt Dejean.
+
+2005-07-04  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* THANKS, src/about.c: Update.
+	* NEWS: Fix Martin Hansen name on 2.11.0 
+	release announce.
+
+2005-07-01  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: post release version bump.
+
+2005-07-01  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* configure.in: Release 2.11.0
+
+2005-07-01  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/tree.c, src/option.c, src/zenity.h: new
+	--hide-column option. Uses the same syntax of
+	--print-column option. 
+
+2005-06-30  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/tree.c: some data structure improvements.
+	Created zenity_tree_extract_indexes function for 
+	--print-column option and others.
+
+2005-06-28  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/tree.c: new --print-column option syntax.
+	Now it's possible to pass a comma-separated list
+	of column indexes (i.e. --print-column=1,3,4)
+
+2005-06-28  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/tree.c: error handling when trying to
+	use checklist and radiolist at the same List 
+	dialog.
+
+2005-06-27  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/tree.c, src/about.c: add double-clicking on 
+	list dialog only for normal list (not on radio and 
+	check lists) based on contribution from Norman Rasmussen 
+	* THANKS: Update.
+
+2005-06-26  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/zenity.h, src/option.c: new multiple option on list 
+	dialog
+	* src/tree.c: now the default behavior is the single
+	selection. when --multiple is used, then multiple
+	rows can be selected. For radiolist and checklist,
+	normal selection is disabled (buttons = selection).
+
+2005-06-17  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* src/notification.c: don't use parent widget for
+	hiding the tray icon because it breaks the 'visible'
+	command.
+
+2005-06-13  Lucas Rocha  <lucasr@cvs.gnome.org>
+
+	* MAINTAINERS: adding myself as a new maintainer
+	* README: no more popt dependency.
+
+2005-04-25  Glynn Foster  <glynn.foster@sun.com>
+
+	* COPYING, src/about.c, src/calendar.c, src/eggtrayicon.c,
+	* src/entry.c, src/fileselection.c, src/main.c, src/msg.c,
+	* src/notification.c, src/option.c, src/progress.c,
+	* src/text.c, src/tree.c, src/util.c: Update the FSF address
+	to point to 51 Franklin Street, Fifth Floor as per forwarded
+	mail from Alvaro Lopez Ortega.
+
+2005-04-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/fileselection.c: Fix for #171838, from Carlos
+	Parra.
+
+2005-04-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/entry.c, src/option.c, src/zenity.h: Clean
+	up the code a little bit.
+
+2005-04-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/msg.c, src/option.c, src/zenity.h: Bug fix for
+	#149290, based on contributions from Timo Aaltonen,
+	Lucas Rocha, and Carlos Parra.
+	* THANKS: Update.
+
+2005-04-06  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "ug" to ALL_LINGUAS.
+
+2005-04-01  Adi Attar  <aattar@cvs.gnome.org>
+
+	* configure.in: Added "xh" to ALL_LINGUAS.
+
+2005-03-31  Steve Murphy  <murf@e-tools.com>
+
+	* configure.in: Added "rw" to ALL_LINGUAS.
+
+2005-03-08  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: post release version bump.
+	* HACKING: We're open for business again.
+
+2005-03-08  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.10.0
+
+2005-02-28  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post version bump.
+	* COPYING: Revert back to LGPL.
+
+2005-02-28  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.9.92.
+
+2005-02-16  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/util.h: Fix leak in ZENITY_IMAGE_FULLPATH. Fixes
+	#167518, hopefully.
+
+2005-02-16  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/fileselection.c, THANKS, src/about.c: Fix bug
+	#167577, that leaks a seperator. Patch from 
+	Paolo Borelli <pborelli@katamail.com>
+
+2005-02-08  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2005-02-08  Glynn Foster  <glynn.foster@sun.com>
+	
+	* configure.in: Release 2.9.91.
+
+2005-02-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/progress.c: If auto-close, close the dialog when
+	the input stream finds an EOF.
+
+2005-02-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Update docs to add the new goption
+	help stuff.
+	* src/option.c: Update to be in line with the documentation 
+	descriptions.
+
+2005-02-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/notification.c, src/option.c: Patch from Chris
+	Lahey for #165456.
+	* src/about.c, THANKS: Updated.
+
+2005-01-17  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2005-01-17  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.9.90
+
+2005-01-17  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/tree.c: Patch from Ed Catmur to fix the list dialog
+	on stdin. Fixes #164152.
+	* src/about.c, THANKS: Update.
+
+2005-01-11  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: post release bump.
+
+2005-01-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.9.2
+	* HACKING: Add note about feature frozen-ness.
+	* README: zenity doesn't require gconf anymore.
+
+2005-01-07  Glynn Foster  <glynn.foster@sun.com>
+
+        * src/notification.c: Correct error message for notification
+	icon. Fixes #163462.
+
+2005-01-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/option.c, src/calendar.c: Really fix #162297, and 
+	preload the current dates if they aren't already set.
+
+2005-01-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/option.c: Pre-load the year, because gtk_calendar* is 
+	dumb and you need to select the year to change the month. Fixes
+	#162297.
+
+2004-12-21  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post bump release.
+	* README: Despite the evils of autotools changing the COPYING
+	file in any releases I make, this software is LGPL.
+
+2004-12-21  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.9.1
+
+2004-12-21  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/option.c: Fix tyop for #161774, as reported by Christian.
+
+2004-12-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/notification.c: Fix #161539, and try and hide the parent
+	widget, rather than the tray icon, since it saves space.
+
+2004-12-08  Glynn Foster  <glynn.foster@sun.com>
+
+	* TODO: Update with the removed goption item.
+
+2004-12-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Fix for #137993. There is a chance that we'll have
+	to revert this fix, given the comments in /etc/X11/gdm/Xsession:
+
+        # Note that this should only go to zenity dialogs which always 
+	#  expect utf8
+        gettextfunc () {
+          if [ "x$gdmtranslate" != "x" ] ; then
+            "$gdmtranslate" --utf8 "$1"
+          else
+            echo "$1"
+          fi
+        }
+
+	So I guess we may be over a barrel with our original guarantee.
+	Let's just change this in 2.9.x and see if anyone notices or cares 
+        enough. Patch from Leonardo Boshell <p@kapcoweb.com>.
+
+2004-12-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/option.c: Fix spacing issue.
+
+2004-12-07  Glynn Foster  <glynn.foster@sun.com>
+
+	Patch from Lucas Rocha <lucasr@im.ufba.br> to use the GOption
+	API for the zenity parsing options, with some spacing fixes
+	from Glynn.
+
+	* configure.in: zenity now requires glib-2.0 >= 2.5.3 to build 
+	because now it uses GOption. popt requirement removed.
+	* src/Makefile.am: update for new files
+	* src/main.c: use GOption API
+	* src/option.c, src/option.h: New files to implement the new
+	functionality.
+	* src/zenity.h: Fix spacing.
+
+2004-11-23  Ross Burton  <ross@burtonini.com>
+
+	* src/util.c: Check the xterm window ID is valid for the current
+	display before trying to use it.
+
+2004-10-30  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	* src/main.c: Typo fixing: Notication options --> Notification options
+
+2004-10-26  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Patch from Lucas Rocha to fix
+	#153277, and remove an extra </para> link.
+
+2004-10-05  James Henstridge  <james@jamesh.id.au>
+
+	* src/util.c (zenity_util_pixbuf_new_from_file): g_strdown()
+	modifies the filename, so use strcasecmp() for the comparison
+	instead.  Since we are comparing against fixed ASCII strings,
+	this should have no UTF-8 issues.
+
+2004-09-30  James Henstridge  <james@jamesh.id.au>
+
+	* src/notification.c (set_scaled_pixbuf): function to set a
+	GtkImage to a scaled pixbuf.
+	(zenity_notification_handle_stdin): set the image to a
+	GTK_ICON_SIZE_BUTTON sized image.
+	(zenity_notification): same here.
+
+2004-09-17  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* src/progress.c: Add missing header.
+	* src/tree.c: Same
+	* src/util.c: (transient_get_xterm),
+	(transient_get_xterm_toplevel): ANSIfication.
+	Closes bug #152851.
+
+2004-09-16  James Henstridge  <james@jamesh.id.au>
+
+	* src/notification.c: add code to listen for commands on stdin
+	when in listen mode.
+
+	* src/main.c: parse the --listen argument for --notification mode.
+
+	* src/zenity.h (ZenityNotificationData): add a field for the
+	"listen" argument.
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.9.0
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* TODO: Update.
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* data/Makefile.am, data/zenity-notification.png: Add new 
+	notification icon.
+	* src/Makefile.am: Update for new files.
+	* src/about.c, src/calendar.c, src/entry.c, src/fileselection.c,
+	src/progress.c, src/text.c, src/tree.c, src/msg.c: Restructure code a 
+	little bit for new utility functions for setting window icons.
+	* src/eggtrayicon.c, src/eggtrayicon.h: New files for notification area
+	support.
+	* src/main.c, src/notification.c, src/util.c, src/util.h, src/zenity.h:
+	Add support for notification area.
+	* data/zenity.1, help/*: Update docs for notification and new file 
+	selection changes.
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* THANKS: Update
+	* src/about.c: Update.
+	* src/fileselection.c, src/main.c, src/zenity.h:
+	Patch from Lucas Rocha to implement save and 
+	directory selection in the file selection dialog.
+	Fixes #138342.
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump, for unstable 
+	2.9.x development.
+
+2004-09-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.8.0
+
+2004-09-11  Abel Cheung  <maddog@linuxhall.org>
+
+	* configure.in: Added "kn" "mk" "tr" to ALL_LINGUAS.
+
+2004-08-30  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2004-08-30  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.7.91
+
+2004-08-22  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Update the documentation after
+	Breda's commit, to add the new --print-column option for the
+	list dialog.
+
+2004-08-18  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Add ´nbª to ALL_LINGUAS.
+
+2004-08-18  Breda McColgan <breda.mccolgan@sun.com>
+
+	* Updated the following files:
+		* help/C/zenity.xml
+		* help/C/zenity-C.omf
+		* help/C/figures/zenity-calendar-screenshot.png
+		* help/C/figures/zenity-entry-screenshot.png
+		* help/C/figures/zenity-error-screenshot.png
+		* help/C/figures/zenity-fileselection-screenshot.png
+		* help/C/figures/zenity-information-screenshot.png
+		* help/C/figures/zenity-list-screenshot.png
+		* help/C/figures/zenity-progress-screenshot.png
+		* help/C/figures/zenity-question-screenshot.png
+		* help/C/figures/zenity-text-screenshot.png
+		* help/C/figures/zenity-warning-screenshot.png
+
+	* Added the following files:
+		* help/C/l10n.txt
+		* help/C/l10n_scripts/
+		* help/C/l10n_scripts/calendar.sh 
+		* help/C/l10n_scripts/cvs.txt
+		* help/C/l10n_scripts/error.sh
+		* help/C/l10n_scripts/filesel.sh
+		* help/C/l10n_scripts/info.sh
+		* help/C/l10n_scripts/list.sh
+		* help/C/l10n_scripts/progress.sh
+		* help/C/l10n_scripts/question.sh
+		* help/C/l10n_scripts/text_entry.sh
+		* help/C/l10n_scripts/text_info.sh
+		* help/C/l10n_scripts/warning.sh
+	  See the help/C/l10n.txt file for information about l10n_scripts.
+
+2004-08-17  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Add translator comment from Christian Rose, 
+	and fix up strcmp's for untranslated translator-credits.
+
+2004-08-16  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "bs" to ALL_LINGUAS.
+
+2004-08-11  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Use 'translator-credits' rather than the
+	underscore version which makes things easier for the translation
+	dudes.
+
+2004-08-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* data/zenity.1: Update the man page for the --print-column
+	option added.
+
+2004-08-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* TODO: Updates.
+
+2004-08-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2004-08-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.7.90
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.7.0
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c, src/entry.c, src/fileselection.c,
+	* src/msg.c, src/progress.c, src/text.c, src/tree.c: Cleanup
+	fixes from Paul Bolle.
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c, src/tree.c, src/zenity.h, 
+	help/C/zenity.xml: Add new option for --print-column, based 
+	on a patch by Paul Bolle.  Fixes #144496.
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Remove duplicate locale.h include. Patch
+	from Leonardo Boshell. Partly fixes #137993.
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml, help/sr/zenity.xml: Fix up 
+	documentation for correct usage of the Text Entry
+	dialog. Patch from Baptiste Mille-Mathias. Fixes #141513.
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/msg.c: Make sure the text can take markup, so
+	that people can create nice HIG compliant message
+	dialogs. Patch from Sebastian Heinlein. Fixes #140748.
+
+2004-07-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in, src/Makefile.am: Fix up compilation
+	using Forte compiler. Based on patch from Ivan Noris. 
+	Fixes #143041.
+
+2004-06-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* THANKS, src/about.c, src/progress.c: Patch
+	from Luke Suchocki to send HUP to parent 
+	instead of itself. Fixes #144542.
+
+2004-06-17  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Fix parsing errors. Patch from 
+	Paull Bolle. Fixes #144501.
+
+2004-06-08  Glynn Foster  <glynn.foster@sun.com>
+
+	* THANKS, src/about.c: Add Paul.
+	* src/main.c:  fix tyops in parsing.
+
+2004-05-27  Mohammad DAMT  <mdamt@bisnisweb.com>
+
+	* po/id.po: Added Indonesian translation by Ahmad 
+	Riza H Nst <rizahnst@eriagempita.co.id>
+	* configure.in: Added id to ALL_LINGUAS
+
+2004-05-26  Alexander Shopov <ash@contact.bg>
+
+	* po/bg.po:
+	* configure.in: Added Bulgarian translation
+	by Rostislav Raykov <zbrox@dir.bg>
+
+2004-04-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2004-04-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.6.2
+	* NEWS: Update.
+
+2004-04-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c, src/tree.c: Fix the list dialog not being
+	able to handle --text to change the text. It was also 
+	intentional but must have fallen through the gaps.
+	* data/zenity.1: Update
+	* help/C/zenity.xml: Update.
+
+2004-04-27  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/zenity.glade: Untranslate 3 strings again. Thanks
+	to Christian for pointing this out.
+
+2004-04-26  Glynn Foster  <glynn.foster@sun.com>
+
+	* THANKS, src/about.c: Add from the 2 Sebastian's, and make
+	email addresses more spam proof.
+	* src/calendar.c, src/entry.c, src/fileselection.c, src/msg.c,
+	* src/progress.c, src/text.c, src/tree.c, src/util.c,
+	* src/util.h: Patch from Sebastian Kapfer to make all zenity
+	dialogs transients of the parent xterm. Fixes #136226.
+	* src/zenity.glade: Patch from Sebastian Heinlein to
+	improve things HIG wise. Fixes #140745.
+
+2004-04-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post version bump.
+
+2004-04-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.6.1
+	* NEWS: Update.
+
+2004-04-20  Ross Burton  <ross@burtonini.com>
+
+	* help/C/zenity.xml: Fix a typo, "Calender". Patch from Matt Kraai
+	<kraai@ftbfs.org>.
+
+2004-04-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Fix documentation for text-info
+	as pointed out by the grand master of the zenity man
+	page, Ross Burton.
+
+2004-04-10  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+        * configure.in: Added "gu" (Gujarati) to ALL_LINGUAS.
+
+2004-03-30  Adam Weinberger  <adamw@gnome.org>
+
+	* configure.in: Added en_CA (Canadian English) to ALL_LINGUAS
+
+2004-03-28  Jesus Bravo Alvarez  <jba@pobox.com>
+
+	* configure.in: Added Galician (gl) to ALL_LINGUAS
+
+2004-03-23  Glynn Foster  <glynn.foster@sun.com>
+
+	* Makefile.am: Add workaround to scrollkeeper-update not
+	cleaning up after itself, as copied from gnome-panel.
+
+2004-03-23  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Post release bump.
+
+2004-03-23  Glynn Foster  <glynn.foster@sun.com>
+
+	* NEWS, THANKS, src/about.c: Update.
+	* configure.in: Release 2.6.0
+
+2004-03-21  Mugurel Tudor  <mugurelu@go.ro>
+
+	* configure.in: Added "ro" to ALL_LINGUAS
+
+2004-03-21  Danilo Segan  <dsegan@gmx.net>
+
+	* configure.in: Removed "en_CA" because the po/en_CA.po is missing.
+
+2004-03-21  Danilo Segan  <dsegan@gmx.net>
+
+	* help/Makefile.am (SUBDIRS): Add "sr" to SUBDIRS.
+	* configure.in: Add help/sr/Makefile to AC_OUTPUT.
+
+2004-03-21  Danilo Segan  <dsegan@gmx.net>
+
+	* help/sr/*: Added Serbian translation of documentation (with
+	screenshots); build system not adjusted yet.
+
+2004-03-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c, src/entry.c, src/fileselection.c,
+	src/msg.c, src/progress.c, src/text.c, src/tree.c:
+	Patch from Darren Adams <darrenadams@dsl.pipex.com> to make
+	sure the new file chooser resizes nicely. Sanitize the default
+	setting of the other widgets.
+	* configure.in, src/util.c: Lose gconf dependancy since we 
+	don't currently use it, although arguably we should to detect
+	which help browser we're supposed to run :/
+	* THANKS, src/about.c: Add Darren to the list.
+
+2004-03-16  Alexander Winston  <alexander.winston@comcast.net>
+
+	* configure.in: Added "en_CA" (Canadian English) to ALL_LINGUAS.
+
+2004-03-15  Glynn Foster  <glynn.foster@sun.com>
+
+	* NEWS: Update.
+	* autogen.sh: Use automake 1.7 since everyone has it by now.
+	* configure.in: Release 2.5.91
+
+2004-03-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/util.c: Remove some unused code.
+
+2004-03-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* AUTHORS: Update to add Mike.
+	* NEWS: Update for new release.
+	* THANKS, src/about.c: Add lots of people, probably get heaps 
+	of bug reports complaining their name is spelled wrongly - darn 
+	those weird characters.
+	* configure.in: Release 2.5.90
+
+2004-03-04  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+	* configure.in: Added "pa" for Punjabi to ALL_LINGUAS.
+
+2004-02-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c, src/util.c, src/util.h: Remove all the
+	stupid duplicated code to do the help stuff, and instead
+	do a simple call for 'yelp ghelp:zenity'. -418, +23. Eeek.
+	Fixes #135607.
+
+2004-02-21  Paisa Seeluangsawat  <paisa@users.sf.net>
+
+	* configure.in: Added Thai (th) to ALL_LINGUAS.
+
+2004-02-04  Tomasz K≥oczko <kloczek@pld.org.pl>
+
+	* configure.in: Trival cleanup: remove AC_SUBST(CFLAGS),
+	  AC_SUBST(CPPFLAGS) and AC_SUBST(LDFLAGS). This variables are
+	  substed by default.
+
+2004-02-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.5.2
+
+2004-01-26  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/text.c: Handle stdin. Fixes #132517.
+
+2004-01-20  ≈smund SkjÊveland  <aasmunds@fys.uio.no>
+
+	* configure.in: Added 'nn' to ALL_LINGUAS.
+	* po/nn.po: Added Norwegian Nynorsk translation.
+
+2004-01-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* Makefile.am: Back out the intltool stuff.
+	* configure.in: Require 0.29
+
+2004-01-05  Roozbeh Pournader  <roozbeh@sharif.edu>
+
+	* configure.in: Added "fa" (Persian) to ALL_LINGUAS.
+
+2004-01-04  Glynn Foster  <glynn.foster@sun.com>
+
+	* Makefile.am: Do the intltool-modules extra dist
+	foo.
+
+2004-01-03  Robert Sedak  <robert.sedak@sk.htnet.hr>
+
+        * configure.in: Added "hr" in ALL_LINGUAS.
+
+2003-12-30  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 2.5.1, a ridiculous bump
+	so that we sync with the GNOME desktop releases.
+
+2003-12-30  Jan Arne Petersen  <jpetersen@uni-bonn.de>
+
+	* src/fileselection.c: (zenity_fileselection),
+	(zenity_fileselection_dialog_response): Replace
+	GtkFileSelection with GtkFileChooser.
+
+2003-12-30  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 1.8
+
+2003-12-28  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "ne" to ALL_LINGUAS.
+
+2003-12-20  Arafat Medini <lumina@silverpen.de>
+                                                                                
+        * configure.in: Added Arabic locale "ar" to ALL_LINGUAS.
+
+2003-12-11  T√µivo Leedj√§rv  <toivo@linux.ee>
+
+	* configure.in: Added et to ALL_LINGUAS.
+
+2003-12-04  Sanlig Badral  <badral@openmn.org>
+
+	* configure.in: Added "mn" to ALL_LINGUAS.
+
+2003-12-02  Christian Mˆnneckes < c-w-m@gmx.de>
+
+	* src/gdialog.in: Fix quote and output bugs
+	in the gdialog wrapper #128149.
+
+2003-11-12  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 1.7
+
+2003-11-12  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/gdialog.in: Fix radiolist returning the
+	wrong argument. Patch from Peter ≈strand
+        <astrand@lysator.liu.se>. Fixes #125672.
+
+2003-11-12  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/gdialog.in: Make sure the gdialog wrapper 
+	handles spaces. Patch from Peter ≈strand 
+	<astrand@lysator.liu.se>. Fixes #125337.
+
+2003-10-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/zenity.glade: Unmark translation messages,
+	as reported by Christian. Fixes #125717.
+
+2003-10-28  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/zenity.glade: Make the dialogs resizable
+	so that --height/--width works. Reported by 
+	Ingo van Lil <inguin@gmx.de>.
+
+2003-10-27  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Patch from Leonardo Boshell to add the
+	locale.h header.
+
+2003-10-13  Sami Pesonen  <sampeson@iki.fi>
+
+	* configure.in: Added "fi" to ALL_LINGUAS.
+
+2003-10-06  ≈Ωygimantas Beruƒçka  <uid0@tuxfamily.org>
+
+	* configure.in: Added "lt" to ALL_LINGUAS.
+
+2003-09-30  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "eu" to ALL_LINGUAS.
+
+2003-09-17  Fatih Demir <kabalak@gtranslator.org>
+
+	* configure.in: Added "ta" (Tamil) to the languages' list.
+
+2003-09-12  Glynn Foster  <glynn.foster@sun.com>
+
+	* zenity.spec.in: Fix up spec file. Fixes #122040.
+
+2003-09-12  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/entry.c, src/zenity.glade: Better patch from 
+	raf@noduck.net to fix the activate on the entry dialog.
+
+2003-09-12  Damien Carbery <damien.carbery@sun.com>
+
+	* src/main.c: Make zenity compile on solaris. Whoops :)
+
+2003-09-11  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/entry.c: Hook up the 'activate' signal on 
+	the entry dialog. Fixes Debian bug #202332.
+
+2003-09-08  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 1.6
+
+2003-09-08  Marcel Telka  <marcel@telka.sk>
+
+	* configure.in (ALL_LINGUAS): Added sk.
+
+2003-09-05  Taneem Ahmed  <taneem@bengalinux.org>
+
+	* configure.in: Added "bn" to ALL_LINGUAS.
+
+2003-09-04  Glynn Foster  <glynn.foster@sun.com>
+
+	* THANKS: Update.
+	* src/about.c: Update.
+	* src/main.c: Patch from Toshi to fix encoding of passed 
+	text strings. Fixes #121389.
+
+2003-09-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/gdialog.in: Add patch from Buchan Milne to fix the gdialog
+	wrapper.
+
+2003-09-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Documentation updates from Nicholas Curran.
+	* THANKS, src/about.c: Add Nicholas.
+
+2003-08-27  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/tree.c:  Put horizontal scrolling on automatic, otherwise
+	we expand off the edge of the screen.
+
+2003-08-25  Mike Newman  <mikegtn@gnome.org>
+
+	* src/entry.c: s/g_printerr/g_print/ - last part of Kevin's patch
+	applied on 2003-07-11.
+
+2003-08-24  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 1.5
+
+2003-08-22  Sam√∫el J√≥n Gunnarsson  <sammi@techattack.nu>
+
+	* configure.in: Added "is" to ALL_LINGUAS.
+	
+2003-08-22 Paul Duffy <dubhthach@frink.nuigalway.ie>
+
+	* configure.in: Added ga to ALL_LINGUAS
+
+2003-08-22  Mike Newman <mikegtn@gnome.org>
+
+	* src/main.c: added call to setlocale to fix i18n of --help
+
+2003-08-18  Dmitry G. Mastrukov  <dmitry@taurussoft.org>
+
+	* configure.in: Added Russian to ALL_LINGUAS.
+
+2003-08-15  Glynn Foster  <glynn.foster@sun.com>
+
+	* COPYING: Add.
+
+2003-08-13  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+	* configure.in: Added "hi" (Hindi) in ALL_LINGUAS.
+
+2003-08-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 1.4.
+
+2003-08-06  Metin Amiroff <metin@karegen.com>
+
+	* configure.in: Added "az" (Azerbaijani) to ALL_LINGUAS
+
+2003-07-30  Dmitry G. Mastrukov  <dmitry@taurussoft.org>
+
+	* configure.in: Added Belarusian to ALL_LINGUAS.
+
+2003-07-26  Wang Jian  <lark@linux.net.cn>
+
+	* configure.in: Added "zh_CN" to ALL_LINGUAS.
+
+2003-07-19  Christophe Merlet  <redfox@redfoxcenter.org>
+
+	* configure.in: Added "fr" (French) to ALL_LINGUAS.
+
+2003-07-11  Kevin C. Krinke  <kckrinke@opendoorsoftware.com>
+
+       * src/calendar.c, src/entry.c, src/fileselection.c, src/text.c,
+       src/tree.c: user input data output to STDOUT via g_print instead
+       of outputting to STDERR via g_printerr. This makes it possible to
+       destinguish user input data from GTK+ warnings / errors.
+       * THANKS, src/about.c: I figure this is my second patch submission
+       so I belong in the credits...
+
+2003-07-10 John Fleck <jfleck@inkstain.net>
+
+	* autogen.sh
+	remove 
+	* xmldocs.make
+	* omf.make
+	Set up new docs build system
+
+2003-07-09  Hasbullah Bin Pit  <sebol@ikhlas.com>
+                                                                                
+	* configure.in: Added 'ms' (Malay) to ALL_LINGUAS.
+	* po/ms.po: Added Malay translation.
+
+2003-07-09  Andras Timar  <timar@gnome.hu>
+
+	* configure.in: Added "hu" (Hungarian) to ALL_LINGUAS.
+
+2003-07-09  Dafydd Harries  <daf@parnassus.ath.cx>
+
+	* configure.in: Added "cy" (Welsh) to ALL_LINGUAS.
+
+2003-07-01  Laurent Dhima  <laurenti@alblinux.net>
+
+	* configure.in: Added "sq" to ALL_LINGUAS.
+
+2003-06-20  Mike Newman  <mikegtn@gnome.org>
+
+	* src/gdialog.in: fix return value with patch from Yann
+	<bloch@iie.cnam.fr>. Thanks!
+
+2003-06-21  Mike Newman  <mikegtn@gnome.org>
+
+	* configure.in: Added en_GB to ALL_LINGUAS
+	* src/main.c: Fixed a typo s/in/is/ in error msg.
+
+2003-06-13  Mike Newman  <mikegtn@gnome.org>
+
+	* src/progress.c: allow \t and \n in text updated via '#' lines.
+	* src/about.c: fixed my email address.
+
+2003-06-10  Mike Newman  <mikegtn@gnome.org>
+
+	* src/fileselection.c, src/main.c, src/tree.c, TODO: Allow the use
+	of '\t' and '\n' in dialog text. Also, g_strcompress the separator
+	strings in --list and --file-selection so code declared as 'arse'
+	by Glynn can be removed :)
+
+	Also removed some completed tasks from TODO.
+
+2003-06-10  Mike Newman  <mikegtn@gnome.org>
+
+	* src/main.c: allow use of /t and /n in dialog text.
+
+2003-06-09  Kevin C. Krinke  <kckrinke@opendoorsoftware.com>
+
+	* src/gdialog.in: wrap gdialog.real/dialog when not in X-Window
+
+2003-06-09  Mike Newman  <mikegtn@gnome.org>
+
+	* data/zenity.1, help/C/zenity.xml: Update docs for new file selection
+	options.
+
+2003-06-09  Mike Newman  <mikegtn@gnome.org>
+
+	* src/fileselection.c, src/main.c, src/zenity.h: Add --multiple
+	mode to file selection, with --separator to divide returned filenames.
+	Change default separator for lists and file-sel to '|'.
+
+2003-06-07  Mike Newman  <mikegtn@gnome.org>
+
+	* src/calendar.c, src/entry.c, src/fileselection.c, src/msg.c
+	src/progress.c, src/text.c, src/tree.c, src/util.c, src/util.h
+	src/zenity.h: Allow user-defined return values via env vars.
+	Prefer ZENITY_OK etc, but also check for DIALOG_OK and fall through
+	to original zenity behaviour.
+
+2003-06-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/zenity.glade: Untranslate silly strings pointed out by
+	Kjartan Maraas.
+
+2003-06-04  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c, src/main.c, src/msg.c, 
+	src/progress.c, src/tree.c, src/util.c: Fix up some build warnings
+	as reported by Ross Burton and his amazing gcc 3.3 techno machine.
+
+2003-06-04  Jordi Mallach  <jordi@sindominio.net>
+
+	* src/main.c: Add a "no-c-format" xgettext header to unbreak po files
+	in the new auto-close string.
+
+2003-06-03  Mike Newman  <mikegtn@gnome.org>
+
+	* data/zenity.1: Update docs for --auto-close progress dialog
+	* help/C/zenity.xml: option.
+
+2003-06-03  Mike Newman  <mikegtn@gnome.org>
+
+	* src/gdialog.in: add a --help option, pointing to 
+	zenity docs. Fixes #114338
+
+2003-06-03  Changwoo Ryu  <cwryu@debian.org>
+
+	* configure.in: Added "ko" to ALL_LINGUAS.
+
+2003-06-01  Mike Newman <mikegtn@gnome.org>
+
+	* src/main.c: Implement --auto-close for --progress, which
+	* src/progress.c: behaves as if OK was clicked when reaching 100%
+	* src/zenity.h: Fixes #114125
+
+2003-05-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: release 1.3
+	* NEWS: Updated for new release
+
+2003-05-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* TODO: More updates for suggestions from Kevin.
+
+2003-05-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* TODO: Update with more suggestions.
+
+2003-05-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* TODO: Update some more items.
+	* data/zenity.1: Update man page a little, although it still
+	should contain more useful information I guess.
+
+2003-05-27  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/zenity.glade: Make the progress dialog resize. Lamely
+	fixes #113706.
+
+2003-05-27  Glynn Foster  <glynn.foster@sun.com>
+
+	* HACKING: Update information for submitting patches to bugzilla.
+
+2003-05-27  Mike Newman  <mikegtn@gnome.org>
+
+	* configure.in: Enable the gdialog compat wrapper script. Check for
+	* src/Makefile.am: path to perl, build the gdialog wrapper script
+	and install it in bindir. Also add it to distclean files. 
+	Warning - this will overwrite gdialog from gnome-utils!
+
+2003-05-27  Mike Newman  <mikegtn@gnome.org>
+
+	* src/calendar.c: clean up some inconsistent indentation.
+	* src/gdialog: take notice of height and width args in textbox
+	because gdialog did.
+
+2003-05-24  Mike Newman <mikegtn@gnome.org>
+
+	* src/progress.c: Make "OK" sensitive if progress bar has
+	reached 100%, and give it focus.
+
+2003-05-24  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Patch from Dagmar d'Surreal
+	<dagmar@speakeasy.net> to correct help docs and 
+	script examples for the change from --dialog-title to 
+	--title.
+
+	* THANKS, src/about.c: Add Dagmar.
+
+	* src/progress.c: For now, just send a SIGHUP to the 
+	parent process - not entirely sure if this is the best thing
+	to do right now.
+
+2003-05-23  Mike Newman <mikegtn@gnome.org>
+
+	* src/gdialog: fixed --textbox to actually load filename
+	specified. Added --separate-output support. Make sure we get
+	output from list widgets.
+
+2003-05-20  Mike Newman <mikegtn@gnome.org>
+
+	* src/gdialog: fixed --checklist and --radiolist and
+	added support for --menu
+
+2003-05-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: release 1.2
+	* NEWS: Updated for new release
+
+2003-05-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/Makefile.am, src/gdialog: Compatibility wrapper script 
+	from Mike Newman <mikegtn@gnome.org>. Disabled for the present
+	until I have a chance to review the code.
+
+2003-05-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/progress.c: Make the progress dialog actually work
+	and now uses g_io_channel. Woot! Need to be able to cancel
+	the dialog, which currently doesn't work too well. 
+
+	* TODO: Update.
+
+	* help/C/zenity.xml: Update help documentation.
+
+2003-05-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Update commandline error message, needs updating
+	of translations.
+	* src/tree.c: Remove some commented out code.
+	* src/zenity.glade: Updated error and info dialogs to do 
+	wrapping.
+
+2003-05-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/tree.c: Fix up the stdin list dialog stuff.
+	* NEWS: Updated to actually include the updated 
+	translations as well.
+
+2003-05-06  Danilo ≈†egan  <dsegan@gmx.net>
+
+	* configure.in: Added "sr" and "sr@Latn" to ALL_LINGUAS.
+
+2003-05-05  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Update docs for new commandline 
+	options.
+
+2003-05-05  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: release 1.1
+	NEWS: Updated for new release.
+
+2003-05-05  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/tree.c, src/util.c, src/util.h: Make the list dialog 
+	handle stdin - a little bit buggy still.
+	* TODO: Update
+
+2003-04-16  Jordi Mallach  <jordi@sindominio.net>
+
+	* configure.in: Added "ca" (Catalan) to ALL_LINGUAS.
+
+2003-04-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c, src/entry.c, src/fileselection.c,
+	src/main.c, src/msg.c, src/progress.c, src/text.c,
+	src/tree.c, src/zenity.h: Finish off the indentation cleanup.
+	Add new '--width' and '--height' options to the general options.
+	Fix up the radio list view, so that we can now act like a radio
+	button group.
+
+	* TODO: Update
+
+2003-04-08  Alessio Frusciante  <algol@firenze.linux.it>
+
+	* configure.in: Added "it" (Italian) to ALL_LINGUAS.
+
+2003-03-10  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c, src/calendar.c, src/entry.c, src/fileselection.c,
+	src/main.c, src/msg.c, src/progress.c, src/text.c, src/tree.c,
+	src/util.c, src/util.h, src/zenity.glade, src/zenity.h:
+
+	Mass indentation cleanup. Make sure the glade dialogs aren't initially
+	visible because this avoids a visibility jump. Apparently == TRUE is
+	bad mojo. Fix up.
+
+2003-03-08  Evandro Fernandes Giovanini <evandrofg@ig.com.br>
+
+	* configure.in(ALL_LINGUAS): Added "pt_BR" (Brazilian Portuguese).
+
+2003-03-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* zenity.spec.in: More updates.
+
+2003-03-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* zenity.spec.in: Fix up the %defines to include
+	automatic versioning.
+
+2003-03-03  Zbigniew Chyla  <cyba@gnome.pl>
+
+	* configure.in (ALL_LINGUAS): Added pl (Polish).
+
+2003-03-01  Duarte Loreto <happyguy_pt@hotmail.com>
+
+        * configure.in: Added "pt" to ALL_LINGUAS.
+
+2003-02-28  Takeshi AIHANA <aihana@gnome.gr.jp>
+
+	* configure.in: Added ja into ALL_LINGUAS.
+
+2003-02-25  Miloslav Trmac  <mitr@volny.cz>
+
+	* configure.in: Added cs (Czech) to ALL_LINGUAS.
+
+2003-02-12  Yuriy Syrota  <rasta renome.rovno.ua>
+
+	* configure.in: Added uk (Ukrainian) to ALL_LINGUAS.
+
+2003-02-09  Christian Neumair  <chris@gnome-de.org>
+
+	* .cvsignore: Added missing file.
+	* configure.in: Added de (German) to ALL_LINGUAS.
+
+2003-02-05  Glynn Foster  <glynn.foster@sun.com>
+	
+	* THANKS, src/about.c: Add Ross.
+
+2003-02-05  Ross Burton  <ross@burtonini.com>
+
+	* data/zenity.1: Added a simple man page.
+	* data/Makefile.am: Install the man page.
+
+2003-02-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Raise on mouse click
+
+2003-02-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* data/Makefile.am, data/hawaii-shirt.png, 
+	data/surfboard.png, src/about.c: Um, you don't really
+	want to know.
+
+2003-02-03  Glynn Foster  <glynn.foster@sun.com>
+
+	* Makefile.am, configure.in, zenity.spec.in: Add
+	spec file, thanks to Mihai T. Lazarescu.
+	
+	* THANKS, src/about.c: Update.
+
+2003-02-02  Daniel Yacob  <locales@geez.org>
+
+	* configure.in: Added Amharic (am) to ALL_LINGUAS
+
+2003-02-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* NEWS, THANKS, src/about.c: Fix Jonathan's 
+	name - I suck.
+
+2003-02-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Release 1.0
+	* NEWS: Updated for new release.
+
+2003-02-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Update the docs for new --editable
+	option in the List dialog.
+
+2003-02-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* data/Makefile.am, data/sunglasses.png: Add new.
+	* src/about.c: Update coordinates.
+
+2003-02-01  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Okay, I'm a glory hunter. Seperate out the
+	about dialog entries a little.
+
+	* THANKS: Update.
+
+2003-01-30  Pablo Saratxaga  <pablo@mandrakesoft.com>
+
+	* configure.in: Added Vietnamese (vi) to ALL_LINGUAS
+
+2003-01-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Don't do a g_assert_not_reached () if we don't have
+	any dialog types.
+
+2003-01-29  Glynn Foster  <glynn.foster@sun.com>
+
+	* README: Update
+
+	* configure.in: Remove some bogus configure checks that
+	we almost certainly don't need.
+
+	* src/about.c, data/Makefile.am, data/*.png: Add new pixbuf for 
+	about dialog.
+	
+	* TODO: Update accordingly
+
+2003-01-28  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Don't display the translators tab
+	unless there is stuff to show.
+
+	* src/entry.c: Add sanity NULL checking.
+
+	* src/tree.c, src/zenity.h: Add support for a new
+	--editable option.
+	
+	* src/main.c: Add support for new --editable option for
+	the List dialog. Merge in the list of Gtk+ options into
+	the popt table - ripped this from libbonoboui, thanks to
+	James for pointing this out.
+
+	* src/zenity.glade: Make the translatable strings less arse.
+
+	* TODO: Update accordingly.
+
+2003-01-26  Glynn Foster  <glynn.foster@sun.com>
+
+	* THANKS, src/about.c: Update
+
+2003-01-24 John Fleck <jfleck@inkstain.net>
+
+	* src/about.c: adding comma Glynn left out
+	that kept it from compiling
+
+2003-01-24  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Provide correct help URL.
+
+	* src/util.h, src/util.c: Add functions from 
+	libgnome/gnome-i18n so that we can correctly find the 
+	apropriate help file.
+
+	* xmldocs.make: Install help into $(datadir)/help/$(lang)/
+
+	* THANKS: Update from the code I stole from libgnome
+
+2003-01-24 John Fleck <jfleck@inkstain.net>
+
+	* help/C/zenity.xml: fix typo.
+	
+2003-01-23 John Fleck <jfleck@inkstain.net>
+
+	* help/C/zenity.xml: fixing tag mixup that made the 
+	docbook not valid.
+
+2003-01-24  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Added "no" to ALL_LINGUAS.
+	
+2003-01-23  Pablo Gonzalo del Campo  <pablodc@bigfoot.com> 
+
+	* configure.in: Added es to ALL_LINGUAS.
+
+2003-01-22  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Print out warning when we have no arguments to the
+	commandline.
+
+	* TODO: Add another item
+
+2003-01-22  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Clarify some of the documentation a little. Add
+	in a few example scripts and commandlines. I'm pretty useless at 
+	this though, since I don't know how to write scripts.
+
+	* TODO: Update accordingly. Only 2 things left.
+
+2003-01-21  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* src/text.c: fix a bug where a textbuffer was only being
+	associated with the textview if we had a filename to read in.
+
+2003-01-21  Abel Cheung  <maddog@linux.org.hk>
+
+	* configure.in: Added "zh_TW" (traditional Chinese) to ALL_LINGUAS.
+
+2003-01-20  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/zenity.glade: Remove some strings for translation that
+	should be done.
+
+2003-01-20  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "sv" to ALL_LINGUAS.
+
+2003-01-19  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* help/C/zenity.xml: s/data-format/date-format/ in calendar help.
+
+2003-01-19  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/about.c: Attempt to make things work after 2 bottles of
+	wine last night. Harmless changes though, so I'll commit them
+	for posterity.
+
+	* src/main.c: Add a new helper function for the error reporting
+	that makes the translators life easier. Thanks to Ole for spotting
+	this.
+
+	* src/text.c, src/zenity.h: Lame white spacing hacking.
+
+	* xmldocs.make: Put the docs in $(datadir)/help - not quite sure
+	yet if yelp is going to like this or not.
+
+2003-01-19  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* help/C/zenity.xml: fixed a missing closing tag.
+
+2003-01-19  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* src/main.c, src/text.c, src/zenity.h: add an --editable
+	option to --text-info. If set, return the contents of the
+	text buffer on dialog close.
+
+2003-01-19  Ole Laursen  <olau@hardworking.dk> 
+
+	* configure.in: Added da to ALL_LINGUAS.
+
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* Makefile.am, configure.in, omf.make, xmldocs.make: Enable
+	help documentation in the build.
+
+	* help/C/zenity-C.omf, help/C/zenity.xml: Fix up silly errors.
+
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Add in references to the screenshots.
+
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/figures/zenity-calendar-screenshot.png,
+	help/C/figures/zenity-entry-screenshot.png,
+	help/C/figures/zenity-error-screenshot.png,
+	help/C/figures/zenity-fileselection-screenshot.png,
+	help/C/figures/zenity-information-screenshot.png,
+	help/C/figures/zenity-list-screenshot.png,
+	help/C/figures/zenity-progress-screenshot.png,
+	help/C/figures/zenity-question-screenshot.png,
+	help/C/figures/zenity-text-screenshot.png,
+	help/C/figures/zenity-warning-screenshot.png: Add some 
+	screenshots for the help documentation.
+
+	* src/entry.c, src/msg.c: Don't set the text if it's NULL.
+
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Only some examples and some screenshots
+	and we're mostly done for a first draft.
+
+	* src/calendar.c: Don't set the text if it's NULL.
+
+	* src/main.c: Swap the order of the commandline dialogs so
+	that we're alphabetical.
+
+	* src/zenity.glade: Add some default strings.
+
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* data/Makefile.am, data/zenity.png, src/about.c: Hooray! 
+	Zenity now has an about window icon. It's very zen too.
+
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/zenity.xml: Update the docs a little. I have absolutely
+	no clue how the doc people don't get tired of this.
+
+2003-01-18  Glynn Foster  <glynn.foster@sun.com>
+
+	* data/Makefile.am, data/zenity-calendar.png, 
+	data/zenity-entry.png, data/zenity-progress.png, 
+	data/zenity-text.png: Some new window icons.
+
+	* src/text.c: Fix crash where the GladeXML ref was getting 
+	unref'd before we wanted to use it.
+
+	* src/main.c: Fix up commandline parsing a little, although we
+	should really add the parsing options for gtk+.
+
+	* src/zenity.glade: Give some saner defaults.
+
+	* THANKS, src/about.c: Update for all the people I stole icons 
+	and code from.
+
+	* TODO: Update accordingly.
+
+2003-01-16  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* src/tree.c: fix a segfault if a --list is constructed and there
+	is no data to put in it. Since a list with no contents to select
+	seemed pointless, return without showing dialog.
+
+2003-01-15  Glynn Foster  <glynn.foster@sun.com>
+
+	* help/C/Makefile.am, help/C/legal.xml, help/C/zenity-C.omf, 
+	help/C/zenity.xml, help/Makefile.am: First initial template
+	of the help documents. Still have to write the main bulk of
+	it.
+
+2003-01-14  Glynn Foster  <glynn.foster@sun.com>
+
+	* Makefile.am, src/Makefile.am: Updates to make 
+	distcheck. Wow, this is scarey, a 1.0 release is on the
+	horizon. Applications like this shouldn't reach 1.0.
+
+2003-01-14  Glynn Foster  <glynn.foster@sun.com>
+
+	* configure.in: Update to add new gconf requirement.
+
+	* src/zenity.h, src/about.c: Hurray for a new about box, 
+	although it lacks an icon. I wonder if people would actually 
+	like to see this as part of the dialog options. Can't think 
+	of any reason to do so at the moment though. Large chunks
+	copied from libgnomeui/gnome-about.[ch]
+
+	* src/util.h, src/util.c: Add new helper functions because I 
+	don't want to touch gnome_program with a bargepole. Copied from
+	libgnome/gnome-url.[ch]
+
+	* po/POTFILES.in: Add missing files. I think we have 
+	everything now.
+
+	* TODO: Update accordingly.
+
+2003-01-14  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/Makefile.am, src/about.c, src/main.c, 
+	src/zenity.glade: Add an about box. Still need to add 
+	an icon, and implement the callbacks for Help and Credits. Extra
+	hassle for not linking against libgnomeui. Sigh.
+
+2003-01-14  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/tree.c, src/zenity.h, src/main.c: Add support to 
+	separate the selected rows output with a character 
+	with '/' used by default.
+
+2003-01-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c: Re-structure the code to pass in the
+	ZenityData structure into the response_callback instead.
+
+	* src/main.c: Fix the screwups in the commandline parser
+	due to popt being teh suck.
+
+	* src/msg.c: Don't unref the GladeXML before you use it.
+
+	* THANKS: New file.
+
+2003-01-13  Mike Newman  <mike@gtnorthern.demon.co.uk>
+
+	* src/calendar.c, src/main.c, src/zenity.h: Make the calendar
+	return a localised date, and provide a means to override this with
+	a --date-format option which takes a strftime style string - 
+	"%A %d/%m/%Y" for example.
+
+2003-01-13  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Improve error handling.
+	* src/tree.c: Make --list actually return something 
+	useful, although I still need to actually seperate
+	things out so it's actually decipherable.
+
+	* TODO: Update accordingly.
+
+2003-01-09  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c: Fix up the date string, although I guess
+	this should be localized.
+
+	* src/main.c: Add a new --pulsate option, which reads from
+	stdin and pulsates the progress bar until we reach EOF.
+	* src/progress.c: Rewrite to actually work. Don't really need
+	GIOChannels here.
+	
+	* TODO: Updated accordingly.
+
+2003-01-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c, src/entry.c, src/fileselection.c,
+	src/main.c, src/msg.c, src/progress.c, src/text.c,
+	src/tree.c, src/zenity.glade, src/zenity.h: Fix up
+	the response signal handlers. Use returns of 0 for
+	'Ok' and 'Close', 1 for 'Cancel' and 'Escape' and 
+	-1 for 'Uh Oh'. Get stuff printing to stderr. Fix up
+	the error handling that I thought was improved,
+	although still have issues with popt callback getting
+	called numerous times because of more than one instance
+	of the same kind is being used in poptOption.
+	
+	* TODO: Update accordingly.
+
+2003-01-07  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Fix up the error returns.
+
+	* TODO: Update accordingly.
+
+2003-01-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/calendar.c, src/main.c, src/progress.c,
+	src/tree.c, src/zenity.h: Improve error handling...
+	a lot.
+
+2003-01-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c, src/tree.c, src/zenity.h: Finish off 
+	commandline parsing for the list dialog. Wow, this 
+	is almost approaching usable ;)
+
+	* TODO: Update accordingly
+
+2003-01-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c, src/msg.c, src/zenity.glade, 
+	src/zenity.h: I love featuritis. Instead of fixing 
+	stuff so it actually works, I add more stuff. Add
+	support for info dialog.
+
+2003-01-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/zenity.glade: Feeling stupid because I can't use
+	glade. Thanks to jrb and jamesh for showing me the light.
+	Update default strings to sensible stuff.
+
+2003-01-06  Glynn Foster  <glynn.foster@sun.com>
+
+	* src/main.c: Add functions to init and free the 
+	parsing options. Still not terribly pretty though.
+
+	* src/tree.c, src/zenity.h: Handle --column 
+	argument.
+	
+	* TODO: Update accordingly.
+
+2002-12-15  Glynn Foster  <glynn.foster@sun.com>
+
+        * zenity/*: Initial import into cvs.gnome.org. Don't 
+	expect things to work very well.
