@@ -861,6 +861,9 @@ zenity_option_free (void) {
   if (zenity_entry_entry_text)
     g_free (zenity_entry_entry_text);
 
+  if (zenity_file_filter)
+    g_strfreev (zenity_file_filter);
+
   if (zenity_list_columns)
     g_strfreev (zenity_list_columns);
   if (zenity_list_print_column)
