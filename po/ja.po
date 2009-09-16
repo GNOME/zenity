@@ -4,20 +4,22 @@
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2003-2008.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
+# Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zentiy trunk\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-09 23:12+0900\n"
-"PO-Revision-Date: 2008-09-09 22:41+0900\n"
-"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Project-Id-Version: zentiy gnome-2-28\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=zenity&component=general\n"
+"POT-Creation-Date: 2009-09-16 23:59+0900\n"
+"PO-Revision-Date: 2009-09-17 00:01+0900\n"
+"Last-Translator: Yasumichi Akahoshi <yasumichi@vinelinux.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/about.c:65
+#: ../src/about.c:64
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -28,7 +30,7 @@ msgstr ""
 "一般公衆利用許諾契約書の第二版、あるいはそれ以降の版が定める条項の下で本プロ"
 "グラムを再頒布または変更することができます。\n"
 
-#: ../src/about.c:69
+#: ../src/about.c:68
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -39,7 +41,7 @@ msgstr ""
 "的、その適合性についての暗黙の保証を含めて、いかなる保証も行ないません。詳細"
 "については GNU 一般公衆利用許諾契約書をご覧下さい。\n"
 
-#: ../src/about.c:73
+#: ../src/about.c:72
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -49,14 +51,15 @@ msgstr ""
 "るはずです。そうでない場合は、Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301, USA まで手紙を書いて下さい。"
 
-#: ../src/about.c:264
+#: ../src/about.c:265
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
 "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
-"日本GNOMEユーザー会 http://www.gnome.gr.jp"
+"Yasumichi Akahoshi <yasumichi@vinelinux.org>\n"
+"日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
-#: ../src/about.c:276
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "シェル・スクリプトからダイアログ・ボックスを表示します"
 
@@ -66,12 +69,12 @@ msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "ダイアログの種類を指定して下さい (詳細は `zenity --help` を参照して下さい)\n"
 
-#: ../src/notification.c:139
+#: ../src/notification.c:138
 #, c-format
 msgid "could not parse command from stdin\n"
 msgstr "標準入力からのコマンドラインを解析できませんでした\n"
 
-#: ../src/notification.c:252 ../src/notification.c:269
+#: ../src/notification.c:251 ../src/notification.c:268
 msgid "Zenity notification"
 msgstr "Zenity 通知"
 
@@ -85,89 +88,85 @@ msgstr "最大値は最小値よりも大きくして下さい\n"
 msgid "Value out of range.\n"
 msgstr "値は有効範囲外です\n"
 
-#: ../src/tree.c:320
+#: ../src/tree.c:321
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "一覧ダイアログに桁のタイトルが指定されていません\n"
 
-#: ../src/tree.c:326
+#: ../src/tree.c:327
 #, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "1個だけのリスト・ダイアログを使用して下さい\n"
 
-#: ../src/zenity.glade.h:1
+#: ../src/zenity.ui.h:1
 msgid "Add a new entry"
 msgstr "新しいエントリの追加"
 
-#: ../src/zenity.glade.h:2
+#: ../src/zenity.ui.h:2
 msgid "Adjust the scale value"
 msgstr "スケール値の調整"
 
-#: ../src/zenity.glade.h:3
+#: ../src/zenity.ui.h:3
 msgid "All updates are complete."
 msgstr "全ての更新が完了しました"
 
-#: ../src/zenity.glade.h:4
+#: ../src/zenity.ui.h:4
 msgid "An error has occurred."
 msgstr "エラーが発生しました"
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.ui.h:5
 msgid "Are you sure you want to proceed?"
 msgstr "処理を続行してもよろしいですか？"
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.ui.h:6
 msgid "C_alendar:"
 msgstr "カレンダ(_C):"
 
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.ui.h:7
 msgid "Calendar selection"
 msgstr "カレンダの選択"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.ui.h:8
 msgid "Error"
 msgstr "エラー"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.ui.h:9
 msgid "Information"
 msgstr "情報"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.ui.h:10
 msgid "Progress"
 msgstr "進捗"
 
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.ui.h:11
 msgid "Question"
 msgstr "質問"
 
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.ui.h:12
 msgid "Running..."
 msgstr "実行中..."
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.ui.h:13
 msgid "Select a date from below."
 msgstr "日付を選択して下さい"
 
-#: ../src/zenity.glade.h:14
-msgid "Select a file"
-msgstr "ファイルの選択"
-
-#: ../src/zenity.glade.h:15
+#: ../src/zenity.ui.h:14
 msgid "Select items from the list"
 msgstr "一覧からアイテムの選択"
 
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.ui.h:15
 msgid "Select items from the list below."
 msgstr "一覧からアイテムを選択して下さい"
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.ui.h:16
 msgid "Text View"
 msgstr "テキストの表示"
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.ui.h:17
 msgid "Warning"
 msgstr "警告"
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.ui.h:18
 msgid "_Enter new text:"
 msgstr "新しいテキストの入力(_E):"
 
@@ -217,16 +216,16 @@ msgid "Display calendar dialog"
 msgstr "カレンダ・ダイアログを表示する"
 
 #: ../src/option.c:181 ../src/option.c:241 ../src/option.c:284
-#: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
-#: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
+#: ../src/option.c:317 ../src/option.c:429 ../src/option.c:559
+#: ../src/option.c:621 ../src/option.c:705 ../src/option.c:738
 msgid "Set the dialog text"
 msgstr "ダイアログに表示する文字列を指定する"
 
 #: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
-#: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
-#: ../src/option.c:429 ../src/option.c:526 ../src/option.c:559
-#: ../src/option.c:621 ../src/option.c:630 ../src/option.c:639
-#: ../src/option.c:705 ../src/option.c:738
+#: ../src/option.c:285 ../src/option.c:318 ../src/option.c:430
+#: ../src/option.c:527 ../src/option.c:560 ../src/option.c:622
+#: ../src/option.c:631 ../src/option.c:640 ../src/option.c:706
+#: ../src/option.c:739
 msgid "TEXT"
 msgstr "TEXT"
 
@@ -278,8 +277,8 @@ msgstr "入力テキストを隠す"
 msgid "Display error dialog"
 msgstr "エラー・ダイアログを表示する"
 
-#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:647
-#: ../src/option.c:713
+#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:648
+#: ../src/option.c:714
 msgid "Do not enable text wrapping"
 msgstr "テキストをラッピングしない"
 
@@ -295,7 +294,7 @@ msgstr "ファイル選択ダイアログを表示する"
 msgid "Set the filename"
 msgstr "ファイル名を指定する"
 
-#: ../src/option.c:351 ../src/option.c:672
+#: ../src/option.c:351 ../src/option.c:673
 msgid "FILENAME"
 msgstr "FILENAME"
 
@@ -311,11 +310,11 @@ msgstr "フォルダのみ選択可能にする"
 msgid "Activate save mode"
 msgstr "保存モードを利用可能にする"
 
-#: ../src/option.c:386 ../src/option.c:464
+#: ../src/option.c:386 ../src/option.c:465
 msgid "Set output separator character"
 msgstr "出力を区切る文字を指定する"
 
-#: ../src/option.c:387 ../src/option.c:465
+#: ../src/option.c:387 ../src/option.c:466
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
@@ -327,269 +326,270 @@ msgstr "ファイル名が既に存在していたら確認をとる"
 msgid "Sets a filename filter"
 msgstr "ファイル名をフィルタするパターンを指定する"
 
-#: ../src/option.c:405
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:406
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAME | PATTERN1 PATTERN2 ..."
 
-#: ../src/option.c:419
+#: ../src/option.c:420
 msgid "Display list dialog"
 msgstr "一覧ダイアログを表示する"
 
-#: ../src/option.c:437
+#: ../src/option.c:438
 msgid "Set the column header"
 msgstr "カラム・ヘッダを指定する"
 
-#: ../src/option.c:438
+#: ../src/option.c:439
 msgid "COLUMN"
 msgstr "COLUMN"
 
-#: ../src/option.c:446
+#: ../src/option.c:447
 msgid "Use check boxes for first column"
 msgstr "先頭の桁にチェック・ボックスを使用する"
 
-#: ../src/option.c:455
+#: ../src/option.c:456
 msgid "Use radio buttons for first column"
 msgstr "先頭の桁にラジオ・ボタンを使用する"
 
-#: ../src/option.c:473
+#: ../src/option.c:474
 msgid "Allow multiple rows to be selected"
 msgstr "複数行を選択可能にする"
 
-#: ../src/option.c:482 ../src/option.c:680
+#: ../src/option.c:483 ../src/option.c:681
 msgid "Allow changes to text"
 msgstr "テキストを変更可能にする"
 
-#: ../src/option.c:491
+#: ../src/option.c:492
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "特定の桁を表示する ('1': デフォルト、'ALL': 全ての桁)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:493 ../src/option.c:502
+#: ../src/option.c:494 ../src/option.c:503
 msgid "NUMBER"
 msgstr "NUMBER"
 
-#: ../src/option.c:501
+#: ../src/option.c:502
 msgid "Hide a specific column"
 msgstr "指定した列を隠す"
 
-#: ../src/option.c:516
+#: ../src/option.c:517
 msgid "Display notification"
 msgstr "パネル通知エリアに表示する"
 
-#: ../src/option.c:525
+#: ../src/option.c:526
 msgid "Set the notification text"
 msgstr "通知する文字列を指定する"
 
-#: ../src/option.c:534
+#: ../src/option.c:535
 msgid "Listen for commands on stdin"
 msgstr "標準入力からコマンドを受け取る"
 
-#: ../src/option.c:549
+#: ../src/option.c:550
 msgid "Display progress indication dialog"
 msgstr "進捗表示ダイアログを表示する"
 
-#: ../src/option.c:567
+#: ../src/option.c:568
 msgid "Set initial percentage"
 msgstr "進捗率 (%) の初期値を指定する"
 
-#: ../src/option.c:568
+#: ../src/option.c:569
 msgid "PERCENTAGE"
 msgstr "PERCENTAGE"
 
-#: ../src/option.c:576
+#: ../src/option.c:577
 msgid "Pulsate progress bar"
 msgstr "進捗表示バーを動かす"
 
-#: ../src/option.c:586
+#: ../src/option.c:587
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "進捗率が 100% に到達したらダイアログを消す"
 
-#: ../src/option.c:596
+#: ../src/option.c:597
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
 msgstr "キャンセル・ボタンをクリックしたら親プロセスを強制終了する"
 
-#: ../src/option.c:611
+#: ../src/option.c:612
 msgid "Display question dialog"
 msgstr "質問ダイアログを表示する"
 
-#: ../src/option.c:629
+#: ../src/option.c:630
 msgid "Sets the label of the Ok button"
 msgstr "OK ボタンのラベルを指定する"
 
-#: ../src/option.c:638
+#: ../src/option.c:639
 msgid "Sets the label of the Cancel button"
 msgstr "キャンセル・ボタンのラベルを指定する"
 
-#: ../src/option.c:662
+#: ../src/option.c:663
 msgid "Display text information dialog"
 msgstr "テキスト情報ダイアログを表示する"
 
-#: ../src/option.c:671
+#: ../src/option.c:672
 msgid "Open file"
 msgstr "ファイルを開く"
 
-#: ../src/option.c:695
+#: ../src/option.c:696
 msgid "Display warning dialog"
 msgstr "警告ダイアログを表示する"
 
-#: ../src/option.c:728
+#: ../src/option.c:729
 msgid "Display scale dialog"
 msgstr "スケール・ダイアログを表示する"
 
-#: ../src/option.c:746
+#: ../src/option.c:747
 msgid "Set initial value"
 msgstr "初期値をセットする"
 
-#: ../src/option.c:747 ../src/option.c:756 ../src/option.c:765
-#: ../src/option.c:774
+#: ../src/option.c:748 ../src/option.c:757 ../src/option.c:766
+#: ../src/option.c:775
 msgid "VALUE"
 msgstr "VALUE"
 
-#: ../src/option.c:755
+#: ../src/option.c:756
 msgid "Set minimum value"
 msgstr "最小値を指定する"
 
-#: ../src/option.c:764
+#: ../src/option.c:765
 msgid "Set maximum value"
 msgstr "最大値を指定する"
 
-#: ../src/option.c:773
+#: ../src/option.c:774
 msgid "Set step size"
 msgstr "刻み幅を指定する"
 
-#: ../src/option.c:782
+#: ../src/option.c:783
 msgid "Print partial values"
 msgstr "値を表示する"
 
-#: ../src/option.c:791
+#: ../src/option.c:792
 msgid "Hide value"
 msgstr "値を表示しない"
 
-#: ../src/option.c:806
+#: ../src/option.c:807
 msgid "About zenity"
 msgstr "Zenity について"
 
-#: ../src/option.c:815
+#: ../src/option.c:816
 msgid "Print version"
 msgstr "バージョンを表示する"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1474
 msgid "General options"
 msgstr "一般的なオプション"
 
-#: ../src/option.c:1471
+#: ../src/option.c:1475
 msgid "Show general options"
 msgstr "一般的なオプションを表示する"
 
-#: ../src/option.c:1481
+#: ../src/option.c:1485
 msgid "Calendar options"
 msgstr "カレンダ・ダイアログのオプション"
 
-#: ../src/option.c:1482
+#: ../src/option.c:1486
 msgid "Show calendar options"
 msgstr "カレンダのオプションを表示する"
 
-#: ../src/option.c:1492
+#: ../src/option.c:1496
 msgid "Text entry options"
 msgstr "テキスト入力ダイアログのオプション"
 
-#: ../src/option.c:1493
+#: ../src/option.c:1497
 msgid "Show text entry options"
 msgstr "テキスト入力のオプションを表示する"
 
-#: ../src/option.c:1503
+#: ../src/option.c:1507
 msgid "Error options"
 msgstr "エラー・ダイアログのオプション"
 
-#: ../src/option.c:1504
+#: ../src/option.c:1508
 msgid "Show error options"
 msgstr "エラー・ダイアログのオプションを表示する"
 
-#: ../src/option.c:1514
+#: ../src/option.c:1518
 msgid "Info options"
 msgstr "情報ダイアログのオプション"
 
-#: ../src/option.c:1515
+#: ../src/option.c:1519
 msgid "Show info options"
 msgstr "情報ダイアログのオプションを表示する"
 
-#: ../src/option.c:1525
+#: ../src/option.c:1529
 msgid "File selection options"
 msgstr "ファイル選択ダイアログのオプション"
 
-#: ../src/option.c:1526
+#: ../src/option.c:1530
 msgid "Show file selection options"
 msgstr "ファイル選択ダイアログのオプションを表示する"
 
-#: ../src/option.c:1536
+#: ../src/option.c:1540
 msgid "List options"
 msgstr "一覧ダイアログのオプション"
 
-#: ../src/option.c:1537
+#: ../src/option.c:1541
 msgid "Show list options"
 msgstr "一覧ダイアログのオプションを表示する"
 
-#: ../src/option.c:1547
+#: ../src/option.c:1551
 msgid "Notification icon options"
 msgstr "通知アイコンのオプション"
 
-#: ../src/option.c:1548
+#: ../src/option.c:1552
 msgid "Show notification icon options"
 msgstr "通知アイコンのオプションを表示する"
 
-#: ../src/option.c:1558
+#: ../src/option.c:1562
 msgid "Progress options"
 msgstr "進捗表示ダイアログのオプション"
 
-#: ../src/option.c:1559
+#: ../src/option.c:1563
 msgid "Show progress options"
 msgstr "進捗表示ダイアログのオプションを表示する"
 
-#: ../src/option.c:1569
+#: ../src/option.c:1573
 msgid "Question options"
 msgstr "質問ダイアログのオプション"
 
-#: ../src/option.c:1570
+#: ../src/option.c:1574
 msgid "Show question options"
 msgstr "質問ダイアログのオプションを表示する"
 
-#: ../src/option.c:1580
+#: ../src/option.c:1584
 msgid "Warning options"
 msgstr "警告ダイアログのオプション"
 
-#: ../src/option.c:1581
+#: ../src/option.c:1585
 msgid "Show warning options"
 msgstr "警告ダイアログのオプションを表示する"
 
-#: ../src/option.c:1591
+#: ../src/option.c:1595
 msgid "Scale options"
 msgstr "スケールのオプション"
 
-#: ../src/option.c:1592
+#: ../src/option.c:1596
 msgid "Show scale options"
 msgstr "スケールのオプションを表示する"
 
-#: ../src/option.c:1602
+#: ../src/option.c:1606
 msgid "Text information options"
 msgstr "テキスト情報のオプション"
 
-#: ../src/option.c:1603
+#: ../src/option.c:1607
 msgid "Show text information options"
 msgstr "テキスト情報のオプションを表示する"
 
-#: ../src/option.c:1613
+#: ../src/option.c:1617
 msgid "Miscellaneous options"
 msgstr "その他のオプション"
 
-#: ../src/option.c:1614
+#: ../src/option.c:1618
 msgid "Show miscellaneous options"
 msgstr "その他のオプションを表示する"
 
-#: ../src/option.c:1639
+#: ../src/option.c:1643
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -597,12 +597,15 @@ msgstr ""
 "このオプションは利用できません (利用可能な全てのオプションは --help で確認し"
 "て下さい)\n"
 
-#: ../src/option.c:1643
+#: ../src/option.c:1647
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "このダイアログではオプション --%s をサポートしていません\n"
 
-#: ../src/option.c:1647
+#: ../src/option.c:1651
 #, c-format
 msgid "Two or more dialog options specified\n"
-msgstr "二つかそれ以上のオプションを指定して下さい\n"
+msgstr "二つ以上のダイアログオプションが指定されました\n"
+
+#~ msgid "Select a file"
+#~ msgstr "ファイルの選択"
