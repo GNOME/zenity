@@ -298,7 +298,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     return;
   }
         
-  separator = g_strdup (tree_data->separator);
+  separator = g_strcompress (tree_data->separator);
 
   n_columns = g_slist_length (tree_data->columns);
 
