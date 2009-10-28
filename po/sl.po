@@ -4,34 +4,37 @@
 # Andraz Tori <andraz.tori1@guest.arnes.si>, 2002.
 # Matjaž Horvat <m@owca.info>, 2006.
 # Matic Žgur <mr.zgur@gmail.com>, 2007.
-# Matej Urbančič <mateju@svn.gnome.org>, 2008.
+# Matej Urbančič <mateju@svn.gnome.org>, 2008 - 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-14 03:56+0100\n"
-"PO-Revision-Date: 2008-04-26 15:30+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=zenity&component=general\n"
+"POT-Creation-Date: 2009-10-27 06:58+0000\n"
+"PO-Revision-Date: 2009-10-28 09:53+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-Language: Slovenian\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
-#: ../src/about.c:65
+#: ../src/about.c:64
 msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
-msgstr "Ta program spada med prosto programje; lahko ga razširjate in/ali spreminjate pod pogoji Splošnega dovoljenja GNU (GNU General Public License), kot ga je objavila ustanova Free Software Foundation; bodisi različice 2 ali (po vaši izbiri) katerekoli poznejše različice.\n"
+msgstr "Ta program spada med prosto programsko opramo; lahko ga razširjate in/ali spreminjate pod pogoji Splošnega javnega dovoljenja GNU (GNU General Public License), kot ga je objavila ustanova Free Software Foundation; bodisi različice 2 ali (po vaši izbiri) katerekoli poznejše različice.\n"
 
-#: ../src/about.c:69
+#: ../src/about.c:68
 msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n"
 msgstr "Ta program se razširja v upanju, da bo uporaben, vendar BREZ VSAKRŠNEGA JAMSTVA; tudi brez posredne zagotovitve CENOVNE VREDNOSTI ali PRIMERNOSTI ZA DOLOČEN NAMEN.  Za podrobnosti glejte besedilo GNU General Public License.\n"
 
-#: ../src/about.c:73
+#: ../src/about.c:72
 msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr "Skupaj s tem programom bi morali prejeti izvod Splošnega dovoljenja GNU (GNU General Public License); če ga niste, pišite na Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr "Skupaj s tem programom bi morali prejeti izvod Splošnega dovoljenja GNU (GNU General Public License); V primeru, da ga niste, pišite na Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
-#: ../src/about.c:264
+#: ../src/about.c:265
 msgid "translator-credits"
 msgstr ""
 "Matic Žgur <mr.zgur@gmail.com>\n"
@@ -39,22 +42,27 @@ msgstr ""
 "Tilen Travnik <tilen.travnik@guest.arnes.si>\n"
 "Matej Urbančič <mateju@svn.gnome.org>"
 
-#: ../src/about.c:276
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
-msgstr "Prikaže pogovorna okna lupinskih skript"
+msgstr "Prikaži pogovorna okna lupinskih skript"
 
 #: ../src/main.c:94
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr "Določiti je treba tip pogovornega okna. Za podrobnejše podatke poglejte 'zenity --help'\n"
+msgstr "Določiti je treba vrsto pogovornega okna. Za podrobnejše podatke poglejte 'zenity --help'\n"
 
-#: ../src/notification.c:139
+#: ../src/notification.c:138
 #, c-format
 msgid "could not parse command from stdin\n"
 msgstr "ni mogoče razčleniti ukaza iz stdin\n"
 
-#: ../src/notification.c:252
-#: ../src/notification.c:269
+#: ../src/notification.c:177
+#, c-format
+msgid "Could not parse message from stdin\n"
+msgstr "Ni mogoče razčleniti sporočila stdin\n"
+
+#: ../src/notification.c:262
+#: ../src/notification.c:279
 msgid "Zenity notification"
 msgstr "Obvestila Zenity"
 
@@ -66,560 +74,563 @@ msgstr "Največja vrednost mora biti večja od najmanjše.\n"
 #: ../src/scale.c:63
 #, c-format
 msgid "Value out of range.\n"
-msgstr "Vrednost izven območja.\n"
+msgstr "Vrednost je izven območja.\n"
 
-#: ../src/tree.c:320
+#: ../src/tree.c:321
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Za pogovorno okno seznama ni določenih naslovov stolpcev.\n"
 
-#: ../src/tree.c:326
+#: ../src/tree.c:327
 #, c-format
 msgid "You should use only one List dialog type.\n"
-msgstr "Uporabiti bi morali samo eno vrsto pogovornega okna seznama.\n"
+msgstr "Uporabiti bi morali le eno vrsto pogovornega okna seznama.\n"
 
-#: ../src/zenity.glade.h:1
+#: ../src/zenity.ui.h:1
 msgid "Add a new entry"
 msgstr "Dodaj nov vnos"
 
-#: ../src/zenity.glade.h:2
+#: ../src/zenity.ui.h:2
 msgid "Adjust the scale value"
 msgstr "Prilagodi vrednost merila"
 
-#: ../src/zenity.glade.h:3
+#: ../src/zenity.ui.h:3
 msgid "All updates are complete."
 msgstr "Vse posodobitve so končane."
 
-#: ../src/zenity.glade.h:4
+#: ../src/zenity.ui.h:4
 msgid "An error has occurred."
 msgstr "Prišlo je do napake."
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.ui.h:5
 msgid "Are you sure you want to proceed?"
-msgstr "Ste prepričani, da želite nadaljevati?"
+msgstr "Ali ste prepričani, da želite nadaljevati?"
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.ui.h:6
 msgid "C_alendar:"
 msgstr "K_oledar:"
 
 # G:7 K:2 O:4
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.ui.h:7
 msgid "Calendar selection"
 msgstr "Izbira koledarja"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.ui.h:8
 msgid "Error"
 msgstr "Napaka"
 
 # G:12 K:1 O:6
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.ui.h:9
 msgid "Information"
 msgstr "Podatki"
 
 # G:9 K:0 O:0
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.ui.h:10
 msgid "Progress"
 msgstr "Napredek"
 
 # G:4 K:4 O:0
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.ui.h:11
 msgid "Question"
 msgstr "Vprašanje"
 
 # G:9 K:6 O:0
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.ui.h:12
 msgid "Running..."
-msgstr "Teče ..."
+msgstr "Zagnano ..."
 
 # G:7 K:2 O:0
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.ui.h:13
 msgid "Select a date from below."
 msgstr "Spodaj izberite datum."
 
-#: ../src/zenity.glade.h:14
-msgid "Select a file"
-msgstr "Izberi datoteko"
-
 # G:2 K:0 O:0
-#: ../src/zenity.glade.h:15
+#: ../src/zenity.ui.h:14
 msgid "Select items from the list"
 msgstr "Izberite predmete iz seznama"
 
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.ui.h:15
 msgid "Select items from the list below."
 msgstr "Izberite predmete s spodnjega seznama."
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.ui.h:16
 msgid "Text View"
 msgstr "Pogled besedila"
 
 # G:4 K:0 O:0
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.ui.h:17
 msgid "Warning"
 msgstr "Opozorilo"
 
 # G:1 K:0 O:0
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.ui.h:18
 msgid "_Enter new text:"
 msgstr "_Vnesite novo besedilo:"
 
-#: ../src/option.c:120
-msgid "Set the dialog title"
-msgstr "Nastavi naslov pogovornega okna"
-
 #: ../src/option.c:121
+msgid "Set the dialog title"
+msgstr "Nastavi naziv pogovornega okna"
+
+#: ../src/option.c:122
 msgid "TITLE"
 msgstr "NAZIV"
 
-#: ../src/option.c:129
+#: ../src/option.c:130
 msgid "Set the window icon"
 msgstr "Nastavi ikono okna"
 
-#: ../src/option.c:130
+#: ../src/option.c:131
 msgid "ICONPATH"
 msgstr "POTIKONE"
 
-#: ../src/option.c:138
+#: ../src/option.c:139
 msgid "Set the width"
 msgstr "Nastavi širino"
 
-#: ../src/option.c:139
+#: ../src/option.c:140
 msgid "WIDTH"
 msgstr "ŠIRINA"
 
-#: ../src/option.c:147
+#: ../src/option.c:148
 msgid "Set the height"
 msgstr "Nastavi višino"
 
-#: ../src/option.c:148
+#: ../src/option.c:149
 msgid "HEIGHT"
 msgstr "VIŠINA"
 
-#: ../src/option.c:156
+#: ../src/option.c:157
 msgid "Set dialog timeout in seconds"
 msgstr "Nastavitev časovnega zamika pogovornega okna v sekundah"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:158
+#: ../src/option.c:159
 msgid "TIMEOUT"
 msgstr "Zakasnitev"
 
-#: ../src/option.c:172
+#: ../src/option.c:173
 msgid "Display calendar dialog"
 msgstr "Prikaži pogovorno okno koledarja"
 
-#: ../src/option.c:181
-#: ../src/option.c:241
-#: ../src/option.c:284
-#: ../src/option.c:317
-#: ../src/option.c:428
-#: ../src/option.c:558
-#: ../src/option.c:620
-#: ../src/option.c:704
-#: ../src/option.c:737
+#: ../src/option.c:182
+#: ../src/option.c:242
+#: ../src/option.c:285
+#: ../src/option.c:318
+#: ../src/option.c:430
+#: ../src/option.c:569
+#: ../src/option.c:631
+#: ../src/option.c:715
+#: ../src/option.c:748
 msgid "Set the dialog text"
 msgstr "Nastavi besedilo pogovornega okna"
 
-#: ../src/option.c:182
-#: ../src/option.c:242
-#: ../src/option.c:251
-#: ../src/option.c:260
-#: ../src/option.c:285
-#: ../src/option.c:318
-#: ../src/option.c:429
-#: ../src/option.c:526
-#: ../src/option.c:559
-#: ../src/option.c:621
-#: ../src/option.c:630
-#: ../src/option.c:639
-#: ../src/option.c:705
-#: ../src/option.c:738
+#: ../src/option.c:183
+#: ../src/option.c:243
+#: ../src/option.c:252
+#: ../src/option.c:286
+#: ../src/option.c:319
+#: ../src/option.c:431
+#: ../src/option.c:537
+#: ../src/option.c:570
+#: ../src/option.c:632
+#: ../src/option.c:641
+#: ../src/option.c:650
+#: ../src/option.c:716
+#: ../src/option.c:749
 msgid "TEXT"
 msgstr "BESEDILO"
 
-#: ../src/option.c:190
+#: ../src/option.c:191
 msgid "Set the calendar day"
 msgstr "Nastavi dan na koledarju"
 
-#: ../src/option.c:191
+#: ../src/option.c:192
 msgid "DAY"
 msgstr "DAN"
 
-#: ../src/option.c:199
+#: ../src/option.c:200
 msgid "Set the calendar month"
 msgstr "Nastavi mesec na koledarju"
 
-#: ../src/option.c:200
+#: ../src/option.c:201
 msgid "MONTH"
 msgstr "MESEC"
 
-#: ../src/option.c:208
+#: ../src/option.c:209
 msgid "Set the calendar year"
 msgstr "Nastavi leto na koledarju"
 
-#: ../src/option.c:209
+#: ../src/option.c:210
 msgid "YEAR"
 msgstr "LETO"
 
-#: ../src/option.c:217
+#: ../src/option.c:218
 msgid "Set the format for the returned date"
 msgstr "Nastavi oblikovanje vrnjenega datuma"
 
-#: ../src/option.c:218
+#: ../src/option.c:219
 msgid "PATTERN"
 msgstr "VZOREC"
 
-#: ../src/option.c:232
+#: ../src/option.c:233
 msgid "Display text entry dialog"
 msgstr "Prikaži pogovorno okno vnos besedila"
 
-#: ../src/option.c:250
+#: ../src/option.c:251
 msgid "Set the entry text"
 msgstr "Nastavi začetno besedilo"
 
-#: ../src/option.c:259
+#: ../src/option.c:260
 msgid "Hide the entry text"
 msgstr "Skrij začetno besedilo"
 
-#: ../src/option.c:275
+#: ../src/option.c:276
 msgid "Display error dialog"
 msgstr "Prikaži pogovorno okno napake"
 
-#: ../src/option.c:293
-#: ../src/option.c:326
-#: ../src/option.c:647
-#: ../src/option.c:713
+#: ../src/option.c:294
+#: ../src/option.c:327
+#: ../src/option.c:658
+#: ../src/option.c:724
 msgid "Do not enable text wrapping"
 msgstr "Ne omogoči preloma besedila"
 
-#: ../src/option.c:308
+#: ../src/option.c:309
 msgid "Display info dialog"
 msgstr "Prikaži pogovorno okno podatkov"
 
-#: ../src/option.c:341
+#: ../src/option.c:342
 msgid "Display file selection dialog"
 msgstr "Prikaži pogovorno okno izbire datoteke"
 
-#: ../src/option.c:350
+#: ../src/option.c:351
 msgid "Set the filename"
 msgstr "Nastavi ime datoteke"
 
-#: ../src/option.c:351
-#: ../src/option.c:672
+#: ../src/option.c:352
+#: ../src/option.c:683
 msgid "FILENAME"
 msgstr "IMEDATOTEKE"
 
-#: ../src/option.c:359
+#: ../src/option.c:360
 msgid "Allow multiple files to be selected"
 msgstr "Dovoli izbrati več datotek"
 
-#: ../src/option.c:368
+#: ../src/option.c:369
 msgid "Activate directory-only selection"
 msgstr "Vključi izbor samo-mape"
 
-#: ../src/option.c:377
+#: ../src/option.c:378
 msgid "Activate save mode"
 msgstr "Vključi način shranjevanja"
 
-#: ../src/option.c:386
-#: ../src/option.c:464
+#: ../src/option.c:387
+#: ../src/option.c:466
 msgid "Set output separator character"
 msgstr "Nastavi znak za ločevanje izhoda"
 
-#: ../src/option.c:387
-#: ../src/option.c:465
+#: ../src/option.c:388
+#: ../src/option.c:467
 msgid "SEPARATOR"
 msgstr "LOČILO"
 
-#: ../src/option.c:395
+#: ../src/option.c:396
 msgid "Confirm file selection if filename already exists"
-msgstr "Potrdi izbor datotek, če ime datoteke že obstaja"
+msgstr "Potrdi izbor datotek, v primeru, da ime datoteke že obstaja"
 
-#: ../src/option.c:404
+#: ../src/option.c:405
 msgid "Sets a filename filter"
 msgstr "Določi filter imen datoteke"
 
-#: ../src/option.c:405
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:407
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "IME | VZOREC1 VZOREC2 ..."
 
-#: ../src/option.c:419
+#: ../src/option.c:421
 msgid "Display list dialog"
 msgstr "Prikaži pogovorno okno seznama"
 
-#: ../src/option.c:437
+#: ../src/option.c:439
 msgid "Set the column header"
 msgstr "Nastavi glavo stolpca"
 
-#: ../src/option.c:438
+#: ../src/option.c:440
 msgid "COLUMN"
 msgstr "STOLPEC"
 
-#: ../src/option.c:446
+#: ../src/option.c:448
 msgid "Use check boxes for first column"
 msgstr "Uporabi potrditveno škatlico za prvi stolpec"
 
-#: ../src/option.c:455
+#: ../src/option.c:457
 msgid "Use radio buttons for first column"
 msgstr "Uporabi radijski gumb za prvi stolpec"
 
-#: ../src/option.c:473
+#: ../src/option.c:475
 msgid "Allow multiple rows to be selected"
 msgstr "Dovoli izbor več vrstic"
 
-#: ../src/option.c:482
-#: ../src/option.c:680
+#: ../src/option.c:484
+#: ../src/option.c:691
 msgid "Allow changes to text"
 msgstr "Dovoli spremembe v besedilu"
 
-#: ../src/option.c:491
+#: ../src/option.c:493
 msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
 msgstr "Natisni določen stolpec (Privzet je 1. Za izpis vseh stolpcev lahko uporabite 'ALL')"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:493
-#: ../src/option.c:502
+#: ../src/option.c:495
+#: ../src/option.c:504
 msgid "NUMBER"
 msgstr "ŠTEVILKA"
 
-#: ../src/option.c:501
+#: ../src/option.c:503
 msgid "Hide a specific column"
 msgstr "Skrij določen stolpec"
 
-#: ../src/option.c:516
+#: ../src/option.c:512
+msgid "Hides the column headers"
+msgstr "Skrije glavo stolpca"
+
+#: ../src/option.c:527
 msgid "Display notification"
 msgstr "Prikaži obvestilo"
 
-#: ../src/option.c:525
+#: ../src/option.c:536
 msgid "Set the notification text"
 msgstr "Nastavi besedilo obvestila"
 
-#: ../src/option.c:534
+#: ../src/option.c:545
 msgid "Listen for commands on stdin"
 msgstr "Poslušaj ukaze na stdin"
 
-#: ../src/option.c:549
+#: ../src/option.c:560
 msgid "Display progress indication dialog"
 msgstr "Prikaži pogovorno okno indikatorja napredovanja"
 
-#: ../src/option.c:567
+#: ../src/option.c:578
 msgid "Set initial percentage"
 msgstr "Nastavi začetni odstotek"
 
-#: ../src/option.c:568
+#: ../src/option.c:579
 msgid "PERCENTAGE"
 msgstr "ODSTOTKI"
 
-#: ../src/option.c:576
+#: ../src/option.c:587
 msgid "Pulsate progress bar"
 msgstr "Merilnik napredka naj utripa"
 
-#: ../src/option.c:586
+#: ../src/option.c:597
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Opusti pogovorno okno, ko je doseženih 100%"
 
-#: ../src/option.c:596
+#: ../src/option.c:607
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
-msgstr "Ubije nadrejeni proces, če je pritisnjen gumb za preklic"
+msgstr "Ubije nadrejeni proces, kadar je pritisnjen gumb za preklic"
 
-#: ../src/option.c:611
+#: ../src/option.c:622
 msgid "Display question dialog"
 msgstr "Prikaži pogovorno okno vprašanja"
 
-#: ../src/option.c:629
+#: ../src/option.c:640
 msgid "Sets the label of the Ok button"
 msgstr "Nastavi besedilo gumba V redu"
 
-#: ../src/option.c:638
+#: ../src/option.c:649
 msgid "Sets the label of the Cancel button"
 msgstr "Nastavi besedilo gumba Prekliči"
 
-#: ../src/option.c:662
+#: ../src/option.c:673
 msgid "Display text information dialog"
 msgstr "Prikaži pogovorno okno podatkov o besedilu"
 
-#: ../src/option.c:671
+#: ../src/option.c:682
 msgid "Open file"
 msgstr "Odpri datoteko"
 
-#: ../src/option.c:695
+#: ../src/option.c:706
 msgid "Display warning dialog"
 msgstr "Prikaži pogovorno okno opozorila"
 
-#: ../src/option.c:728
+#: ../src/option.c:739
 msgid "Display scale dialog"
 msgstr "Prikaži pogovorno okno merila"
 
-#: ../src/option.c:746
+#: ../src/option.c:757
 msgid "Set initial value"
 msgstr "Nastavi začetno vrednost"
 
-#: ../src/option.c:747
-#: ../src/option.c:756
-#: ../src/option.c:765
-#: ../src/option.c:774
+#: ../src/option.c:758
+#: ../src/option.c:767
+#: ../src/option.c:776
+#: ../src/option.c:785
 msgid "VALUE"
 msgstr "VREDNOST"
 
-#: ../src/option.c:755
+#: ../src/option.c:766
 msgid "Set minimum value"
 msgstr "Nastavi najmanjšo vrednost"
 
-#: ../src/option.c:764
+#: ../src/option.c:775
 msgid "Set maximum value"
 msgstr "Nastavi največjo vrednost"
 
-#: ../src/option.c:773
+#: ../src/option.c:784
 msgid "Set step size"
 msgstr "Nastavi velikost koraka"
 
-#: ../src/option.c:782
+#: ../src/option.c:793
 msgid "Print partial values"
 msgstr "Natisni delne vrednosti"
 
-#: ../src/option.c:791
+#: ../src/option.c:802
 msgid "Hide value"
 msgstr "Skrij vrednost"
 
 # G:2 K:0 O:0
-#: ../src/option.c:806
+#: ../src/option.c:817
 msgid "About zenity"
 msgstr "O zenity"
 
-#: ../src/option.c:815
+#: ../src/option.c:826
 msgid "Print version"
 msgstr "Izpiši različico"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1490
 msgid "General options"
 msgstr "Splošne možnosti"
 
-#: ../src/option.c:1471
+#: ../src/option.c:1491
 msgid "Show general options"
 msgstr "Prikaži splošne možnosti"
 
 # G:0 K:7 O:1
-#: ../src/option.c:1481
+#: ../src/option.c:1501
 msgid "Calendar options"
 msgstr "Možnosti koledarja"
 
 # G:0 K:7 O:1
-#: ../src/option.c:1482
+#: ../src/option.c:1502
 msgid "Show calendar options"
 msgstr "Prikaži možnosti koledarja"
 
-#: ../src/option.c:1492
+#: ../src/option.c:1512
 msgid "Text entry options"
 msgstr "Možnosti vnosa besedila"
 
-#: ../src/option.c:1493
+#: ../src/option.c:1513
 msgid "Show text entry options"
 msgstr "Prikaži možnosti vnosa besedila"
 
-#: ../src/option.c:1503
+#: ../src/option.c:1523
 msgid "Error options"
 msgstr "Možnosti napak"
 
-#: ../src/option.c:1504
+#: ../src/option.c:1524
 msgid "Show error options"
 msgstr "Prikaži možnosti napak"
 
-#: ../src/option.c:1514
+#: ../src/option.c:1534
 msgid "Info options"
 msgstr "Možnosti info"
 
-#: ../src/option.c:1515
+#: ../src/option.c:1535
 msgid "Show info options"
 msgstr "Prikaži možnosti info"
 
-#: ../src/option.c:1525
+#: ../src/option.c:1545
 msgid "File selection options"
 msgstr "Možnosti izbire datoteke"
 
-#: ../src/option.c:1526
+#: ../src/option.c:1546
 msgid "Show file selection options"
 msgstr "Prikaži možnosti izbire datotek"
 
-#: ../src/option.c:1536
+#: ../src/option.c:1556
 msgid "List options"
 msgstr "Možnosti seznama"
 
-#: ../src/option.c:1537
+#: ../src/option.c:1557
 msgid "Show list options"
 msgstr "Prikaži možnosti seznama"
 
-#: ../src/option.c:1547
+#: ../src/option.c:1567
 msgid "Notification icon options"
 msgstr "Možnosti ikone obvestil"
 
-#: ../src/option.c:1548
+#: ../src/option.c:1568
 msgid "Show notification icon options"
 msgstr "Prikaži možnosti ikone obvestil"
 
-#: ../src/option.c:1558
+#: ../src/option.c:1578
 msgid "Progress options"
 msgstr "Možnosti prikaza napredka"
 
-#: ../src/option.c:1559
+#: ../src/option.c:1579
 msgid "Show progress options"
 msgstr "Prikaži možnosti prikaza napredka"
 
-#: ../src/option.c:1569
+#: ../src/option.c:1589
 msgid "Question options"
 msgstr "Možnosti vprašanja"
 
-#: ../src/option.c:1570
+#: ../src/option.c:1590
 msgid "Show question options"
 msgstr "Prikaži možnosti vprašanja"
 
-#: ../src/option.c:1580
+#: ../src/option.c:1600
 msgid "Warning options"
 msgstr "Možnosti opozorila"
 
-#: ../src/option.c:1581
+#: ../src/option.c:1601
 msgid "Show warning options"
 msgstr "Prikaži možnosti opozorila"
 
 # G:0 K:7 O:1
-#: ../src/option.c:1591
+#: ../src/option.c:1611
 msgid "Scale options"
 msgstr "Možnosti merila"
 
 # G:0 K:7 O:1
-#: ../src/option.c:1592
+#: ../src/option.c:1612
 msgid "Show scale options"
 msgstr "Prikaži možnosti merila"
 
-#: ../src/option.c:1602
+#: ../src/option.c:1622
 msgid "Text information options"
 msgstr "Možnosti podatkov besedila"
 
-#: ../src/option.c:1603
+#: ../src/option.c:1623
 msgid "Show text information options"
 msgstr "Prikaži možnosti podatkov besedila"
 
-#: ../src/option.c:1613
+#: ../src/option.c:1633
 msgid "Miscellaneous options"
 msgstr "Razne možnosti"
 
-#: ../src/option.c:1614
+#: ../src/option.c:1634
 msgid "Show miscellaneous options"
 msgstr "Prikaži razne možnosti"
 
-#: ../src/option.c:1639
+#: ../src/option.c:1659
 #, c-format
 msgid "This option is not available. Please see --help for all possible usages.\n"
-msgstr "Ta možnost ni na voljo. Za pregled vseh mogočih uporab si oglejte --help.\n"
+msgstr "Ta možnost ni razpoložljiva. Za pregled vseh mogočih uporab si oglejte --help.\n"
 
-#: ../src/option.c:1643
+#: ../src/option.c:1663
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s ni podprt v tem pogovornem oknu\n"
 
-#: ../src/option.c:1647
+#: ../src/option.c:1667
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Določeni sta dve ali več možnosti pogovornega okna\n"
+
+#~ msgid "Select a file"
+#~ msgstr "Izbor datoteke"
 
