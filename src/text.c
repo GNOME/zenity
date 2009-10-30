@@ -152,7 +152,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   g_object_unref (builder);
 
   if(data->timeout_delay > 0) {
-    g_timeout_add (data->timeout_delay * 1000, (GSourceFunc) zenity_util_timeout_handle, NULL);
+    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, NULL);
   }
 
   gtk_main ();
