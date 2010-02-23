@@ -84,6 +84,9 @@ main (gint argc, gchar **argv) {
     case MODE_TEXTINFO:
       zenity_text (results->data, results->text_data);
       break;
+    case MODE_COLOR:
+      zenity_colorselection (results->data, results->color_data);
+      break;
     case MODE_ABOUT:
       zenity_about (results->data);
       break;

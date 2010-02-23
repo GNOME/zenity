@@ -126,6 +126,11 @@ typedef struct {
   gboolean listen;
 } ZenityNotificationData;
 
+typedef struct {
+  gchar   *color;
+  gboolean show_palette;
+} ZenityColorData;
+
 void    zenity_calendar         (ZenityData             *data,
                                 ZenityCalendarData      *calendar_data);
 void    zenity_msg              (ZenityData             *data,
@@ -142,6 +147,8 @@ void    zenity_tree             (ZenityData             *data,
                                  ZenityTreeData         *tree_data);
 void	zenity_notification	(ZenityData		*data,
 				 ZenityNotificationData	*notification_data);
+void    zenity_colorselection   (ZenityData             *data,
+                                 ZenityColorData        *notification_data);
 void	zenity_scale		(ZenityData		*data,
 				 ZenityScaleData	*scale_data);
 void    zenity_about            (ZenityData             *data);

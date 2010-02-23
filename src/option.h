@@ -45,6 +45,7 @@ typedef enum {
   MODE_SCALE,
   MODE_INFO,
   MODE_NOTIFICATION,
+  MODE_COLOR,
   MODE_ABOUT,
   MODE_VERSION,
   MODE_LAST
@@ -70,6 +71,7 @@ typedef struct {
   ZenityTextData         *text_data;
   ZenityTreeData         *tree_data;
   ZenityNotificationData *notification_data;
+  ZenityColorData        *color_data;
 } ZenityParsingOptions;
 
 void			zenity_option_error (gchar	*string,
