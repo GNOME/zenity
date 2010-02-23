@@ -74,7 +74,7 @@ static gboolean zenity_list_checklist;
 static gboolean zenity_list_radiolist;
 static gchar   *zenity_list_print_column;
 static gchar   *zenity_list_hide_column;
-static gchar   *zenity_list_hide_header;
+static gboolean zenity_list_hide_header;
 
 /* Notification Dialog Options */
 static gboolean zenity_notification_active;
