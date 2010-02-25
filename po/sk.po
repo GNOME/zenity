@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&component=general\n"
-"POT-Creation-Date: 2010-02-23 18:29+0000\n"
-"PO-Revision-Date: 2010-02-23 01:06+0100\n"
+"POT-Creation-Date: 2010-02-25 01:08+0000\n"
+"PO-Revision-Date: 2010-02-25 18:00+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,6 @@ msgstr ""
 "uváženia) kterejkoľvek neskoršej verzie.\n"
 
 #: ../src/about.c:68
-#, fuzzy
-#| msgid ""
-#| "This program is distributed in the hope that it will be useful, but "
-#| "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#| "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
-#| "Public License for more details.\n"
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -43,7 +37,7 @@ msgid ""
 msgstr ""
 "Tento program je rozširovaný v nádeji, že bude užitočný, avšak BEZ "
 "AKEJKOĽVEK ZÁRUKY. Neposkytujú sa ani odvodené záruky PREDAJNOSTI alebo "
-"VHODNOSTI PRE URČITÝ ÚČEL. Ďalšie podrobnosti hľadajte vo Všeobecnej "
+"VHODNOSTI PRE URČITÝ ÚČEL. Ďalšie podrobnosti hľadajte v Menej všeobecnej "
 "verejnej licencii GNU.\n"
 
 #: ../src/about.c:72
@@ -420,15 +414,17 @@ msgstr "Pulzovať indikátor postupu"
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Zatvoriť dialógové okno pri dosiahnutí 100 %"
 
+# * https://bugzilla.gnome.org/show_bug.cgi?id=611103
 #: ../src/option.c:613
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
 msgstr "Zabiť rodičovský proces po stlačení tlačidla 'zrušiť'"
 
+# * https://bugzilla.gnome.org/show_bug.cgi?id=611103
 #: ../src/option.c:623
 #, no-c-format
 msgid "Hide cancel button"
-msgstr ""
+msgstr "Skryť tlačidlo 'zrušiť'"
 
 #: ../src/option.c:638
 msgid "Display question dialog"
@@ -488,22 +484,16 @@ msgid "Hide value"
 msgstr "Skryť hodnotu"
 
 #: ../src/option.c:833
-#, fuzzy
-#| msgid "Display file selection dialog"
 msgid "Display color selection dialog"
-msgstr "Zobraziť dialógové okno pre výber súboru"
+msgstr "Zobraziť dialógové okno pre výber farby"
 
 #: ../src/option.c:842
-#, fuzzy
-#| msgid "Set the column header"
 msgid "Set the color"
-msgstr "Nastaviť hlavičku stĺpca"
+msgstr "Nastaviť farbu"
 
 #: ../src/option.c:851
-#, fuzzy
-#| msgid "Set the dialog title"
 msgid "Show the palette"
-msgstr "Nastaviť titulok dialógového okna"
+msgstr "Zobraziť paletu"
 
 #: ../src/option.c:866
 msgid "About zenity"
@@ -618,16 +608,12 @@ msgid "Show text information options"
 msgstr "Zobraziť voľby textovej informácie"
 
 #: ../src/option.c:1727
-#, fuzzy
-#| msgid "File selection options"
 msgid "Color selection options"
-msgstr "Voľby výberu súboru"
+msgstr "Voľby výberu farby"
 
 #: ../src/option.c:1728
-#, fuzzy
-#| msgid "Show file selection options"
 msgid "Show color selection options"
-msgstr "Zobraziť voľby výberu súboru"
+msgstr "Zobraziť voľby výberu farby"
 
 #: ../src/option.c:1738
 msgid "Miscellaneous options"
@@ -654,6 +640,3 @@ msgstr "--%s nie je podporované pre toto dialógové okno\n"
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Zadané dve alebo viac volieb pre dialógové okno\n"
-
-#~ msgid "Select a file"
-#~ msgstr "Vyberte súbor"
