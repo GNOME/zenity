@@ -295,8 +295,6 @@ zenity_notification_handle_stdin (GIOChannel *channel,
 
   if ((condition & G_IO_HUP) != 0) {
     g_io_channel_shutdown (channel, TRUE, NULL);
-    zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-    gtk_main_quit ();
     return FALSE;
   }
 
