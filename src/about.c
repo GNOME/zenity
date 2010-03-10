@@ -295,9 +295,9 @@ zenity_about (ZenityData *data)
   
   gtk_widget_show (help_button);
   
-  gtk_box_pack_end (GTK_BOX (GTK_DIALOG (dialog)->action_area), 
+  gtk_box_pack_end (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))),
                     help_button, FALSE, TRUE, 0);
-  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (GTK_DIALOG (dialog)->action_area), 
+  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 
                                       help_button, TRUE);
 
   g_signal_connect (G_OBJECT (dialog), "response",

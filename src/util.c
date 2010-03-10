@@ -403,8 +403,8 @@ zenity_util_show_dialog (GtkWidget *dialog)
 {
   gtk_widget_realize (dialog);
 #ifdef GDK_WINDOWING_X11
-  g_assert (dialog->window);
-  zenity_util_make_transient (dialog->window);
+  g_assert (gtk_widget_get_window(dialog));
+  zenity_util_make_transient (gtk_widget_get_window(dialog));
 #endif
   gtk_widget_show (dialog);
 }
