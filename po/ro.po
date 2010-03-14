@@ -7,53 +7,35 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity.HEAD.ro\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&component=general\n"
-"POT-Creation-Date: 2010-02-07 10:52+0000\n"
-"PO-Revision-Date: 2010-02-13 00:13+0300\n"
-"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=zenity&component=general\n"
+"POT-Creation-Date: 2010-02-23 19:54+0000\n"
+"PO-Revision-Date: 2010-03-14 23:08+0200\n"
+"Last-Translator: Adi Roiban <adi@roiban.ro>\n"
 "Language-Team: Romanian GNOME Team <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);;\n"
 "X-Generator: Virtaal 0.5.2\n"
 "X-Launchpad-Export-Date: 2009-01-14 02:12+0000\n"
 
 #: ../src/about.c:64
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
-msgstr ""
-"Acest program este liber; îl puteți redistribui și/sau modifica în "
-"conformitate cu termenii licenței LGPL așa cum este publicată de Free "
-"Software Foundation; fie versiunea 2 a Licenței, fie (la latitudinea "
-"dumneavoastră) orice versiune ulterioară.\n"
+msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
+msgstr "Acest program este liber; îl puteți redistribui și/sau modifica în conformitate cu termenii licenței LGPL așa cum este publicată de Free Software Foundation; fie versiunea 2 a Licenței, fie (la latitudinea dumneavoastră) orice versiune ulterioară.\n"
 
 #: ../src/about.c:68
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
-msgstr ""
-"Acest program este distribuit cu speranța că va fi util, dar FĂRĂ NICI O "
-"GARANȚIE, fără garanție implicită de vandabilitate și  conformitate unui "
-"anumit scop.  Citiți Licența Publică Generală GNU pentru detalii.\n"
+#| msgid ""
+#| "This program is distributed in the hope that it will be useful, but "
+#| "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#| "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#| "Public License for more details.\n"
+msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.\n"
+msgstr "Acest program este distribuit cu speranța că va fi util, dar FĂRĂ NICI O GARANȚIE, fără garanție implicită de vandabilitate și  conformitate unui anumit scop. Pentru detalii citiți GNU Lesser General Public License.\n"
 
 #: ../src/about.c:72
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-"Ar trebui să fi primit o copie a Licenței LGPL împreună cu acest program; "
-"dacă nu, scrieți Free Software Foundation, Inc., 59 Temple Place, Suite 330, "
-"Boston, MA 02111-1307 USA"
+msgid "You should have received a copy of the GNU Lesser General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr "Ar trebui să fi primit o copie a Licenței LGPL împreună cu acest program; dacă nu, scrieți Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 
 #: ../src/about.c:265
 msgid "translator-credits"
@@ -72,9 +54,7 @@ msgstr "Afișează ferestre de dialog din scripturi shell"
 #: ../src/main.c:94
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
-"Trebuie să specificați un tip de dialog. Consultați „zenity --help“ pentru "
-"detalii\n"
+msgstr "Trebuie să specificați un tip de dialog. Consultați „zenity --help“ pentru detalii\n"
 
 #: ../src/notification.c:138
 #, c-format
@@ -86,7 +66,8 @@ msgstr "nu s-a putut parsa comanda de la stdin\n"
 msgid "Could not parse message from stdin\n"
 msgstr "Nu s-a putut parsa mesajul de la stdin\n"
 
-#: ../src/notification.c:262 ../src/notification.c:279
+#: ../src/notification.c:262
+#: ../src/notification.c:279
 msgid "Zenity notification"
 msgstr "Notificare Zenity"
 
@@ -103,8 +84,7 @@ msgstr "Valoare în afara intervalului acceptat.\n"
 #: ../src/tree.c:321
 #, c-format
 msgid "No column titles specified for List dialog.\n"
-msgstr ""
-"Nu s-a specificat niciun titlu de coloană pentru dialogul de tip Listă.\n"
+msgstr "Nu s-a specificat niciun titlu de coloană pentru dialogul de tip Listă.\n"
 
 #: ../src/tree.c:327
 #, c-format
@@ -228,16 +208,30 @@ msgstr "LIMITĂ_DE_TIMP"
 msgid "Display calendar dialog"
 msgstr "Afișează dialog de tip calendar"
 
-#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:285
-#: ../src/option.c:318 ../src/option.c:430 ../src/option.c:569
-#: ../src/option.c:631 ../src/option.c:715 ../src/option.c:748
+#: ../src/option.c:182
+#: ../src/option.c:242
+#: ../src/option.c:285
+#: ../src/option.c:318
+#: ../src/option.c:430
+#: ../src/option.c:569
+#: ../src/option.c:631
+#: ../src/option.c:715
+#: ../src/option.c:748
 msgid "Set the dialog text"
 msgstr "Specifică textul pentru dialog"
 
-#: ../src/option.c:183 ../src/option.c:243 ../src/option.c:252
-#: ../src/option.c:286 ../src/option.c:319 ../src/option.c:431
-#: ../src/option.c:537 ../src/option.c:570 ../src/option.c:632
-#: ../src/option.c:641 ../src/option.c:650 ../src/option.c:716
+#: ../src/option.c:183
+#: ../src/option.c:243
+#: ../src/option.c:252
+#: ../src/option.c:286
+#: ../src/option.c:319
+#: ../src/option.c:431
+#: ../src/option.c:537
+#: ../src/option.c:570
+#: ../src/option.c:632
+#: ../src/option.c:641
+#: ../src/option.c:650
+#: ../src/option.c:716
 #: ../src/option.c:749
 msgid "TEXT"
 msgstr "TEXT"
@@ -290,7 +284,9 @@ msgstr "Ascunde textul introdus"
 msgid "Display error dialog"
 msgstr "Afișează dialog eroare"
 
-#: ../src/option.c:294 ../src/option.c:327 ../src/option.c:658
+#: ../src/option.c:294
+#: ../src/option.c:327
+#: ../src/option.c:658
 #: ../src/option.c:724
 msgid "Do not enable text wrapping"
 msgstr "Nu activa formatarea textului"
@@ -307,7 +303,8 @@ msgstr "Afișează dialog pentru selecție fișier"
 msgid "Set the filename"
 msgstr "Specifică numele fișierului"
 
-#: ../src/option.c:352 ../src/option.c:683
+#: ../src/option.c:352
+#: ../src/option.c:683
 msgid "FILENAME"
 msgstr "NUME_FIȘIER"
 
@@ -323,11 +320,13 @@ msgstr "Activează selecția doar pentru directoare"
 msgid "Activate save mode"
 msgstr "Activează modul pentru salvare"
 
-#: ../src/option.c:387 ../src/option.c:466
+#: ../src/option.c:387
+#: ../src/option.c:466
 msgid "Set output separator character"
 msgstr "Specifică caracterul separator pentru ieșire"
 
-#: ../src/option.c:388 ../src/option.c:467
+#: ../src/option.c:388
+#: ../src/option.c:467
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
@@ -368,20 +367,18 @@ msgstr "Folosește butoane radio pentru prima coloană"
 msgid "Allow multiple rows to be selected"
 msgstr "Permite selecția de linii multiple"
 
-#: ../src/option.c:484 ../src/option.c:691
+#: ../src/option.c:484
+#: ../src/option.c:691
 msgid "Allow changes to text"
 msgstr "Permite modificarea textului"
 
 #: ../src/option.c:493
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
-msgstr ""
-"Tipărește o anume coloană (Implicit este 1. „ALL” poate fi folosit pentru a "
-"tipări toate coloanele)"
+msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
+msgstr "Tipărește o anume coloană (Implicit este 1. „ALL” poate fi folosit pentru a tipări toate coloanele)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:495 ../src/option.c:504
+#: ../src/option.c:495
+#: ../src/option.c:504
 msgid "NUMBER"
 msgstr "NUMĂR"
 
@@ -429,8 +426,7 @@ msgstr "Închide dialogul în momentul în care 100% a fost atins"
 #: ../src/option.c:607
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
-msgstr ""
-"Termină procesul părinte în cazul în care este apăsat butonul de revocare"
+msgstr "Termină procesul părinte în cazul în care este apăsat butonul de revocare"
 
 #: ../src/option.c:622
 msgid "Display question dialog"
@@ -464,7 +460,9 @@ msgstr "Afișează dialogul pentru scalare"
 msgid "Set initial value"
 msgstr "Specifică valoarea inițială"
 
-#: ../src/option.c:758 ../src/option.c:767 ../src/option.c:776
+#: ../src/option.c:758
+#: ../src/option.c:767
+#: ../src/option.c:776
 #: ../src/option.c:785
 msgid "VALUE"
 msgstr "VALOARE"
@@ -611,11 +609,8 @@ msgstr "Afișează opțiuni diverse"
 
 #: ../src/option.c:1659
 #, c-format
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
-"Această opțiune nu este disponibilă. Consultați --help pentru o listă de "
-"posibile utilizări.\n"
+msgid "This option is not available. Please see --help for all possible usages.\n"
+msgstr "Această opțiune nu este disponibilă. Consultați --help pentru o listă de posibile utilizări.\n"
 
 #: ../src/option.c:1663
 #, c-format
@@ -629,3 +624,4 @@ msgstr "Două sau mai multe opțiuni dialog specificate\n"
 
 #~ msgid "Select a file"
 #~ msgstr "Selectați un fișier"
+
