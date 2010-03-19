@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-22 17:36+0100\n"
-"PO-Revision-Date: 2008-10-21 12:06+0200\n"
-"Last-Translator: Nick Agianniotis <nickagian@gmail.com>\n"
+"POT-Creation-Date: 2010-03-19 22:17+0200\n"
+"PO-Revision-Date: 2010-03-19 19:57+0200\n"
+"Last-Translator: nikolaosx1 <nikolaosx1@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.2\n"
 
-#: ../src/about.c:65
+#: ../src/about.c:64
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version.\n"
 msgstr ""
 "Αυτό το πρόγραμμα είναι ελεύθερο λογισμικό. Επιτρέπεται η αναδιανομή ή/και "
 "τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU (GNU "
@@ -36,24 +36,23 @@ msgstr ""
 "Λογισμικού (Free Software Foundation) - είτε της έκδοσης 2 της άδειας, είτε "
 "(κατ' επιλογήν) οποιασδήποτε μεταγενέστερης έκδοσης.\n"
 
-#: ../src/about.c:69
+#: ../src/about.c:68
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
+"for more details.\n"
 msgstr ""
 "Αυτό το πρόγραμμα διανέμεται με την ελπίδα οτι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ "
-"ΚΑΜΜΙΑ ΑΠΟΛΥΤΩΣ ΕΓΓΥΗΣΗ - χωρίς ακόμη και την έμμεση εγγύηση "
-"ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ήΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Δείτε για "
-"περισσότερες λεπτομέρειες την Γενική Άδεια Δημόσιας Χρήσης GNU (GNU General "
-"Public License)..\n"
+"ΚΑΜΜΙΑ ΑΠΟΛΥΤΩΣ ΕΓΓΥΗΣΗ, χωρίς ακόμη και την έμμεση εγγύηση ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ "
+"ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Δείτε την Γενική Άδεια Δημόσιας "
+"Χρήσης GNU (GNU General Public License) για περισσότερες λεπτομέρειες.\n"
 
-#: ../src/about.c:73
+#: ../src/about.c:72
 msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this program; if not, write to the Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 "Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Άδειας Δημόσιας Χρήσης "
 "GNU (GNU General Public License) μαζί με αυτό το πρόγραμμα. Αν όχι, "
@@ -61,7 +60,7 @@ msgstr ""
 "Foundation, Inc.), 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
 "USA."
 
-#: ../src/about.c:264
+#: ../src/about.c:265
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -71,23 +70,28 @@ msgstr ""
 "\n"
 "Για περισσότερα δείτε http://www.gnome.gr/"
 
-#: ../src/about.c:276
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "Εμφάνιση κουτιών διαλόγου από δέσμες ενεργειών κελύφους"
 
-#: ../src/main.c:94
+#: ../src/main.c:97
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Θα πρέπει να καθορίσετε ένα τύπο διαλόγου. Βλέπε zenity --help για "
 "λεπτομέρειες\n"
 
-#: ../src/notification.c:139
+#: ../src/notification.c:138
 #, c-format
 msgid "could not parse command from stdin\n"
 msgstr "αδυναμία ανάλυσης εντολής από stdin\n"
 
-#: ../src/notification.c:252 ../src/notification.c:269
+#: ../src/notification.c:177
+#, c-format
+msgid "Could not parse message from stdin\n"
+msgstr "Αδυναμία ανάλυσης του μηνύματος από την προκαθορισμένη είσοδο\n"
+
+#: ../src/notification.c:262 ../src/notification.c:279
 msgid "Zenity notification"
 msgstr "Ειδοποίηση Zenity"
 
@@ -101,281 +105,278 @@ msgstr "Η μέγιστη τιμή θα πρέπει να είναι μεγαλ�
 msgid "Value out of range.\n"
 msgstr "Η τιμή είναι εκτός εύρους.\n"
 
-#: ../src/tree.c:320
+#: ../src/tree.c:321
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Δεν καθορίστηκαν τίτλοι στήλης για το διάλογο λίστας\n"
 
-#: ../src/tree.c:326
+#: ../src/tree.c:327
 #, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "Θα πρέπει να χρησιμοποιήσετε μόνο ένα τύπο διαλόγου λίστας.\n"
 
-#: ../src/zenity.glade.h:1
+#: ../src/zenity.ui.h:1
 msgid "Add a new entry"
 msgstr "Προσθήκη νέας καταχώρισης"
 
-#: ../src/zenity.glade.h:2
+#: ../src/zenity.ui.h:2
 msgid "Adjust the scale value"
 msgstr "Προσαρμογή της τιμής κλιμάκωσης"
 
-#: ../src/zenity.glade.h:3
+#: ../src/zenity.ui.h:3
 msgid "All updates are complete."
 msgstr "Όλες οι ενημερώσεις ολοκληρώθηκαν."
 
-#: ../src/zenity.glade.h:4
+#: ../src/zenity.ui.h:4
 msgid "An error has occurred."
 msgstr "Παρουσιάστηκε ένα σφάλμα."
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.ui.h:5
 msgid "Are you sure you want to proceed?"
 msgstr "Είσαστε βέβαιοι ότι θέλετε να προχωρήσετε;"
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.ui.h:6
 msgid "C_alendar:"
 msgstr "Η_μερολόγιο:"
 
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.ui.h:7
 msgid "Calendar selection"
 msgstr "Επιλογή ημερολογίου"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.ui.h:8
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.ui.h:9
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.ui.h:10
 msgid "Progress"
 msgstr "Πρόοδος"
 
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.ui.h:11
 msgid "Question"
 msgstr "Ερώτηση"
 
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.ui.h:12
 msgid "Running..."
 msgstr "Εκτελείται..."
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.ui.h:13
 msgid "Select a date from below."
 msgstr "Επιλογή της ημερομηνίας από παρακάτω."
 
-#: ../src/zenity.glade.h:14
-msgid "Select a file"
-msgstr "Επιλογή αρχείου"
-
-#: ../src/zenity.glade.h:15
+#: ../src/zenity.ui.h:14
 msgid "Select items from the list"
 msgstr "Επιλογή αντικειμένων από τη λίστα"
 
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.ui.h:15
 msgid "Select items from the list below."
 msgstr "Επιλογή αντικειμένων από την παρακάτω λίστα."
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.ui.h:16
 msgid "Text View"
 msgstr "Προβολή Κειμένου"
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.ui.h:17
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.ui.h:18
 msgid "_Enter new text:"
 msgstr "_Εισάγετε νέο κείμενο:"
 
-#: ../src/option.c:120
+#: ../src/option.c:127
 msgid "Set the dialog title"
 msgstr "Ορισμός τίτλου διαλόγου"
 
-#: ../src/option.c:121
+#: ../src/option.c:128
 msgid "TITLE"
 msgstr "ΤΊΤΛΟΣ"
 
-#: ../src/option.c:129
+#: ../src/option.c:136
 msgid "Set the window icon"
 msgstr "Ορισμός εικονιδίου παραθύρου"
 
-#: ../src/option.c:130
+#: ../src/option.c:137
 msgid "ICONPATH"
 msgstr "ΔΙΑΔΡΟΜΉΕΙΚΟΝΙΔΊΩΝ"
 
-#: ../src/option.c:138
+#: ../src/option.c:145
 msgid "Set the width"
 msgstr "Ορισμός του πλάτους"
 
-#: ../src/option.c:139
+#: ../src/option.c:146
 msgid "WIDTH"
 msgstr "ΠΛΆΤΟΣ"
 
-#: ../src/option.c:147
+#: ../src/option.c:154
 msgid "Set the height"
 msgstr "Ορισμός του ύψους"
 
-#: ../src/option.c:148
+#: ../src/option.c:155
 msgid "HEIGHT"
 msgstr "ΎΨΟΣ"
 
-#: ../src/option.c:156
+#: ../src/option.c:163
 msgid "Set dialog timeout in seconds"
 msgstr "Ορισμός του χρόνου εμφάνισης του διαλόγου σε δευτερόλεπτα"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:158
+#: ../src/option.c:165
 msgid "TIMEOUT"
 msgstr "ΟΡΙΟ ΧΡΟΝΟΥ"
 
-#: ../src/option.c:172
+#: ../src/option.c:179
 msgid "Display calendar dialog"
 msgstr "Εμφάνιση διαλόγου ημερολογίου"
 
-#: ../src/option.c:181 ../src/option.c:241 ../src/option.c:284
-#: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
-#: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
+#: ../src/option.c:188 ../src/option.c:248 ../src/option.c:291
+#: ../src/option.c:324 ../src/option.c:436 ../src/option.c:575
+#: ../src/option.c:647 ../src/option.c:731 ../src/option.c:764
 msgid "Set the dialog text"
 msgstr "Ορισμός του κειμένου του διαλόγου"
 
-#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
-#: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
-#: ../src/option.c:429 ../src/option.c:526 ../src/option.c:559
-#: ../src/option.c:621 ../src/option.c:630 ../src/option.c:639
-#: ../src/option.c:705 ../src/option.c:738
+#: ../src/option.c:189 ../src/option.c:249 ../src/option.c:258
+#: ../src/option.c:292 ../src/option.c:325 ../src/option.c:437
+#: ../src/option.c:543 ../src/option.c:576 ../src/option.c:648
+#: ../src/option.c:657 ../src/option.c:666 ../src/option.c:732
+#: ../src/option.c:765
 msgid "TEXT"
 msgstr "ΚΕΙΜΕΝΟ"
 
-#: ../src/option.c:190
+#: ../src/option.c:197
 msgid "Set the calendar day"
 msgstr "Ορισμός της ημέρας ημερολογίου"
 
-#: ../src/option.c:191
+#: ../src/option.c:198
 msgid "DAY"
 msgstr "ΗΜΕΡΑ"
 
-#: ../src/option.c:199
+#: ../src/option.c:206
 msgid "Set the calendar month"
 msgstr "Ορισμός του μήνα ημερολογίου"
 
-#: ../src/option.c:200
+#: ../src/option.c:207
 msgid "MONTH"
 msgstr "MHNAΣ"
 
-#: ../src/option.c:208
+#: ../src/option.c:215
 msgid "Set the calendar year"
 msgstr "Ορισμός του έτους ημερολογίου"
 
-#: ../src/option.c:209
+#: ../src/option.c:216
 msgid "YEAR"
 msgstr "ΕΤΟΣ"
 
-#: ../src/option.c:217
+#: ../src/option.c:224
 msgid "Set the format for the returned date"
 msgstr "Ορισμός της μορφής ημερομηνίας"
 
-#: ../src/option.c:218
+#: ../src/option.c:225
 msgid "PATTERN"
 msgstr "ΜΟΤΙΒΟ"
 
-#: ../src/option.c:232
+#: ../src/option.c:239
 msgid "Display text entry dialog"
 msgstr "Εμφάνιση διαλόγου καταχώρισης κειμένου"
 
-#: ../src/option.c:250
+#: ../src/option.c:257
 msgid "Set the entry text"
 msgstr "Ορισμός του κειμένου καταχώρισης"
 
-#: ../src/option.c:259
+#: ../src/option.c:266
 msgid "Hide the entry text"
 msgstr "Απόκρυψη του κειμένου καταχώρισης"
 
-#: ../src/option.c:275
+#: ../src/option.c:282
 msgid "Display error dialog"
 msgstr "Διάλογος εμφάνισης σφάλματος"
 
-#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:647
-#: ../src/option.c:713
+#: ../src/option.c:300 ../src/option.c:333 ../src/option.c:674
+#: ../src/option.c:740
 msgid "Do not enable text wrapping"
 msgstr "Να μην ενεργοποιηθεί η αναδίπλωση κειμένου"
 
-#: ../src/option.c:308
+#: ../src/option.c:315
 msgid "Display info dialog"
 msgstr "Εμφάνιση διαλόγου πληροφοριών"
 
-#: ../src/option.c:341
+#: ../src/option.c:348
 msgid "Display file selection dialog"
 msgstr "Προβολή διαλόγου επιλογής αρχείου"
 
-#: ../src/option.c:350
+#: ../src/option.c:357
 msgid "Set the filename"
 msgstr "Ορισμός του ονόματος αρχείου"
 
-#: ../src/option.c:351 ../src/option.c:672
+#: ../src/option.c:358 ../src/option.c:699
 msgid "FILENAME"
-msgstr "ΌΝΟΜΑΆΡΧΕΙΟΥ"
+msgstr "ΟΝΟΜΑ ΑΡΧΕΙΟΥ"
 
-#: ../src/option.c:359
+#: ../src/option.c:366
 msgid "Allow multiple files to be selected"
 msgstr "Να επιτρέπεται η επιλογή πολλαπλών αρχείων"
 
-#: ../src/option.c:368
+#: ../src/option.c:375
 msgid "Activate directory-only selection"
 msgstr "Ενεργοποίηση επιλογής μόνο καταλόγου"
 
-#: ../src/option.c:377
+#: ../src/option.c:384
 msgid "Activate save mode"
 msgstr "Ενεργοποίηση κατάστασης αποθήκευσης"
 
-#: ../src/option.c:386 ../src/option.c:464
+#: ../src/option.c:393 ../src/option.c:472
 msgid "Set output separator character"
 msgstr "Ορισμός χαρακτήρα διαχωριστικού εξόδου"
 
-#: ../src/option.c:387 ../src/option.c:465
+#: ../src/option.c:394 ../src/option.c:473
 msgid "SEPARATOR"
-msgstr "ΔΙΑΧΩΡΙΣΤΙΚΌ"
+msgstr "ΔΙΑΧΩΡΙΣΤΙΚΟ"
 
-#: ../src/option.c:395
+#: ../src/option.c:402
 msgid "Confirm file selection if filename already exists"
 msgstr "Επιβεβαίωση της επιλογής αν το όνομα αρχείου υπάρχει ήδη"
 
-#: ../src/option.c:404
+#: ../src/option.c:411
 msgid "Sets a filename filter"
 msgstr "Ορισμός ενός φίλτρου για όνομα αρχείου"
 
-#: ../src/option.c:405
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:413
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "ΟΝΟΜΑ | ΜΟΤΙΒΟ1 ΜΟΤΙΒΟ2 ..."
 
-#: ../src/option.c:419
+#: ../src/option.c:427
 msgid "Display list dialog"
 msgstr "Εμφάνιση διαλόγου λίστας"
 
-#: ../src/option.c:437
+#: ../src/option.c:445
 msgid "Set the column header"
 msgstr "Ορισμός της κεφαλίδας στήλης"
 
-#: ../src/option.c:438
+#: ../src/option.c:446
 msgid "COLUMN"
 msgstr "ΣΤΗΛΗ"
 
-#: ../src/option.c:446
+#: ../src/option.c:454
 msgid "Use check boxes for first column"
 msgstr "Χρήση κουτιών ελέγχου για την πρώτη στήλη"
 
-#: ../src/option.c:455
+#: ../src/option.c:463
 msgid "Use radio buttons for first column"
 msgstr "Χρήση κουτιών radio για την πρώτη στήλη"
 
-#: ../src/option.c:473
+#: ../src/option.c:481
 msgid "Allow multiple rows to be selected"
 msgstr "Να επιτρέπεται η επιλογή πολλαπλών γραμμών"
 
-#: ../src/option.c:482 ../src/option.c:680
+#: ../src/option.c:490 ../src/option.c:707
 msgid "Allow changes to text"
 msgstr "Να επιτρέπονται αλλαγές στο κείμενο"
 
-#: ../src/option.c:491
+#: ../src/option.c:499
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -384,230 +385,264 @@ msgstr ""
 "χρησιμοποιηθεί για την εκτύπωση όλων των στηλών)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:493 ../src/option.c:502
+#: ../src/option.c:501 ../src/option.c:510
 msgid "NUMBER"
 msgstr "ΑΡΙΘΜΟΣ"
 
-#: ../src/option.c:501
+#: ../src/option.c:509
 msgid "Hide a specific column"
 msgstr "Απόκρυψη μιας συγκεκριμένης στήλης"
 
-#: ../src/option.c:516
+#: ../src/option.c:518
+msgid "Hides the column headers"
+msgstr "Απόκρυψη των κεφαλίδων στήλης"
+
+#: ../src/option.c:533
 msgid "Display notification"
 msgstr "Εμφάνιση διαλόγου πληροφόρησης"
 
-#: ../src/option.c:525
+#: ../src/option.c:542
 msgid "Set the notification text"
 msgstr "Καθορισμός του κειμένου πληροφόρησης"
 
-#: ../src/option.c:534
+#: ../src/option.c:551
 msgid "Listen for commands on stdin"
 msgstr "Παρακολούθηση για εντολές από το stdin"
 
-#: ../src/option.c:549
+#: ../src/option.c:566
 msgid "Display progress indication dialog"
 msgstr "Εμφάνιση διαλόγου ένδειξης προόδου"
 
-#: ../src/option.c:567
+#: ../src/option.c:584
 msgid "Set initial percentage"
 msgstr "Ορισμός αρχικού ποσοστού"
 
-#: ../src/option.c:568
+#: ../src/option.c:585
 msgid "PERCENTAGE"
 msgstr "ΠΟΣΟΣΤΟ"
 
-#: ../src/option.c:576
+#: ../src/option.c:593
 msgid "Pulsate progress bar"
 msgstr "Παλλόμενη μπάρα προόδου"
 
-#: ../src/option.c:586
+#: ../src/option.c:603
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Κλείσιμο του διαλόγου όταν ολοκληρωθεί το 100%"
 
-#: ../src/option.c:596
+#: ../src/option.c:613
 #, no-c-format
 msgid "Kill parent process if cancel button is pressed"
 msgstr "Τερματισμός της διεργασίας-γονέα αν πατηθεί το κουμπί ακύρωσης"
 
-#: ../src/option.c:611
+#: ../src/option.c:623
+#, no-c-format
+msgid "Hide cancel button"
+msgstr ""
+
+#: ../src/option.c:638
 msgid "Display question dialog"
 msgstr "Εμφάνιση διαλόγου ερώτησης"
 
-#: ../src/option.c:629
+#: ../src/option.c:656
 msgid "Sets the label of the Ok button"
 msgstr "Ορισμός της ετικέτας του κουμπιού ΟΚ"
 
-#: ../src/option.c:638
+#: ../src/option.c:665
 msgid "Sets the label of the Cancel button"
 msgstr "Ορισμός της ετικέτας του κουμπιού ακύρωσης"
 
-#: ../src/option.c:662
+#: ../src/option.c:689
 msgid "Display text information dialog"
 msgstr "Εμφάνιση διαλόγου πληροφοριών κειμένου"
 
-#: ../src/option.c:671
+#: ../src/option.c:698
 msgid "Open file"
 msgstr "Άνοιγμα αρχείου"
 
-#: ../src/option.c:695
+#: ../src/option.c:722
 msgid "Display warning dialog"
 msgstr "Εμφάνιση διαλόγου προειδοποίησης"
 
-#: ../src/option.c:728
+#: ../src/option.c:755
 msgid "Display scale dialog"
 msgstr "Εμφάνιση διαλόγου κλιμάκωσης"
 
-#: ../src/option.c:746
+#: ../src/option.c:773
 msgid "Set initial value"
 msgstr "Ορισμός αρχικής τιμής"
 
-#: ../src/option.c:747 ../src/option.c:756 ../src/option.c:765
-#: ../src/option.c:774
+#: ../src/option.c:774 ../src/option.c:783 ../src/option.c:792
+#: ../src/option.c:801 ../src/option.c:843
 msgid "VALUE"
 msgstr "ΤΙΜΗ"
 
-#: ../src/option.c:755
+#: ../src/option.c:782
 msgid "Set minimum value"
 msgstr "Ορισμός ελάχιστης τιμής"
 
-#: ../src/option.c:764
+#: ../src/option.c:791
 msgid "Set maximum value"
 msgstr "Ορισμός μέγιστης τιμής"
 
-#: ../src/option.c:773
+#: ../src/option.c:800
 msgid "Set step size"
 msgstr "Ορισμός μεγέθους βήματος"
 
-#: ../src/option.c:782
+#: ../src/option.c:809
 msgid "Print partial values"
 msgstr "Εκτύπωση μερικών τιμών"
 
-#: ../src/option.c:791
+#: ../src/option.c:818
 msgid "Hide value"
 msgstr "Απόκρυψη τιμής"
 
-#: ../src/option.c:806
+#: ../src/option.c:833
+#, fuzzy
+msgid "Display color selection dialog"
+msgstr "Προβολή διαλόγου επιλογής αρχείου"
+
+#: ../src/option.c:842
+#, fuzzy
+msgid "Set the color"
+msgstr "Ορισμός της κεφαλίδας στήλης"
+
+#: ../src/option.c:851
+#, fuzzy
+msgid "Show the palette"
+msgstr "Ορισμός τίτλου διαλόγου"
+
+#: ../src/option.c:866
 msgid "About zenity"
 msgstr "Περί του zenity"
 
-#: ../src/option.c:815
+#: ../src/option.c:875
 msgid "Print version"
 msgstr "Έκδοση εκτύπωσης"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1584
 msgid "General options"
 msgstr "Γενικές επιλογές"
 
-#: ../src/option.c:1471
+#: ../src/option.c:1585
 msgid "Show general options"
 msgstr "Εμφάνιση γενικών επιλογών"
 
-#: ../src/option.c:1481
+#: ../src/option.c:1595
 msgid "Calendar options"
 msgstr "Επιλογές ημερολογίου"
 
-#: ../src/option.c:1482
+#: ../src/option.c:1596
 msgid "Show calendar options"
 msgstr "Εμφάνιση επιλογών ημερολογίου"
 
-#: ../src/option.c:1492
+#: ../src/option.c:1606
 msgid "Text entry options"
 msgstr "Επιλογές καταχώρισης κειμένου"
 
-#: ../src/option.c:1493
+#: ../src/option.c:1607
 msgid "Show text entry options"
 msgstr "Εμφάνιση επιλογών καταχώρισης κειμένου"
 
-#: ../src/option.c:1503
+#: ../src/option.c:1617
 msgid "Error options"
 msgstr "Επιλογές σφάλματος"
 
-#: ../src/option.c:1504
+#: ../src/option.c:1618
 msgid "Show error options"
 msgstr "Εμφάνιση επιλογών σφάλματος"
 
-#: ../src/option.c:1514
+#: ../src/option.c:1628
 msgid "Info options"
 msgstr "Επιλογές πληροφ."
 
-#: ../src/option.c:1515
+#: ../src/option.c:1629
 msgid "Show info options"
 msgstr "Εμφάνιση επιλογών πληροφ."
 
-#: ../src/option.c:1525
+#: ../src/option.c:1639
 msgid "File selection options"
 msgstr "Επιλογές διαλόγου επιλογής αρχείου"
 
-#: ../src/option.c:1526
+#: ../src/option.c:1640
 msgid "Show file selection options"
 msgstr "Εμφάνιση επιλογών επιλογής αρχείου"
 
-#: ../src/option.c:1536
+#: ../src/option.c:1650
 msgid "List options"
 msgstr "Επιλογές λίστας"
 
-#: ../src/option.c:1537
+#: ../src/option.c:1651
 msgid "Show list options"
 msgstr "Εμφάνιση επιλογών λίστας"
 
-#: ../src/option.c:1547
+#: ../src/option.c:1661
 msgid "Notification icon options"
 msgstr "Επιλογές εικονιδίου ειδοποίησης"
 
-#: ../src/option.c:1548
+#: ../src/option.c:1662
 msgid "Show notification icon options"
 msgstr "Εμφάνιση επιλογών εικονιδίου ειδοποίησης"
 
-#: ../src/option.c:1558
+#: ../src/option.c:1672
 msgid "Progress options"
 msgstr "Επιλογές προόδου"
 
-#: ../src/option.c:1559
+#: ../src/option.c:1673
 msgid "Show progress options"
 msgstr "Εμφάνιση επιλογών προόδου"
 
-#: ../src/option.c:1569
+#: ../src/option.c:1683
 msgid "Question options"
 msgstr "Επιλογές ερώτησης"
 
-#: ../src/option.c:1570
+#: ../src/option.c:1684
 msgid "Show question options"
 msgstr "Εμφάνιση επιλογών ερώτησης"
 
-#: ../src/option.c:1580
+#: ../src/option.c:1694
 msgid "Warning options"
 msgstr "Επιλογές προειδοποίησης"
 
-#: ../src/option.c:1581
+#: ../src/option.c:1695
 msgid "Show warning options"
 msgstr "Εμφάνιση επιλογών προειδοποίησης"
 
-#: ../src/option.c:1591
+#: ../src/option.c:1705
 msgid "Scale options"
 msgstr "Επιλογές κλιμάκωσης"
 
-#: ../src/option.c:1592
+#: ../src/option.c:1706
 msgid "Show scale options"
 msgstr "Εμφάνιση επιλογών κλιμάκωσης"
 
-#: ../src/option.c:1602
+#: ../src/option.c:1716
 msgid "Text information options"
 msgstr "Επιλογές πληροφοριών κειμένου"
 
-#: ../src/option.c:1603
+#: ../src/option.c:1717
 msgid "Show text information options"
 msgstr "Εμφάνιση επιλογών πληροφοριών κειμένου"
 
-#: ../src/option.c:1613
+#: ../src/option.c:1727
+#, fuzzy
+msgid "Color selection options"
+msgstr "Επιλογές διαλόγου επιλογής αρχείου"
+
+#: ../src/option.c:1728
+#, fuzzy
+msgid "Show color selection options"
+msgstr "Εμφάνιση επιλογών επιλογής αρχείου"
+
+#: ../src/option.c:1738
 msgid "Miscellaneous options"
 msgstr "Διάφορες επιλογές"
 
-#: ../src/option.c:1614
+#: ../src/option.c:1739
 msgid "Show miscellaneous options"
 msgstr "Εμφάνιση διάφορων επιλογών"
 
-#: ../src/option.c:1639
+#: ../src/option.c:1764
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -615,15 +650,18 @@ msgstr ""
 "Αυτή η επιλογή δεν είναι διαθέσιμη. Δείτε --help για όλες τις πιθανές "
 "χρήσεις.\n"
 
-#: ../src/option.c:1643
+#: ../src/option.c:1768
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "το --%s δεν υποστηρίζεται για αυτό το διάλογο\n"
 
-#: ../src/option.c:1647
+#: ../src/option.c:1772
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Καθορίστηκαν δύο ή περισσότεροι διάλογοι\n"
+
+#~ msgid "Select a file"
+#~ msgstr "Επιλογή αρχείου"
 
 #~ msgid "Adjust the scale value."
 #~ msgstr "Προσαρμογή της τιμής κλιμάκωσης."
