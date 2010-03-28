@@ -1,12 +1,12 @@
 # Danish translation of zenity.
-# Copyright (C) 2003-2007 Free Software Foundation, Inc.
+# Copyright (C) 2003-2007, 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 # Ole Laursen <olau@hardworking.dk>, 2003, 2005.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004-2005.
 # Lasse Bang Mikkelsen <lbm@fatalerror.dk>, 2006.
 # Peter Bach <bach.peter@gmail.com>, 2007.
 # Joe Hansen <joedalton2@yahoo.dk>, 2007.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2008.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2008-10.
 #
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
 #
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-13 03:55+0200\n"
-"PO-Revision-Date: 2009-09-12 22:25+0200\n"
+"POT-Creation-Date: 2010-03-28 20:16+0200\n"
+"PO-Revision-Date: 2010-03-28 00:21+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -26,12 +26,12 @@ msgstr ""
 #: ../src/about.c:64
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version.\n"
 msgstr ""
 "Dette program er fri software; det kan distribueres og/eller modificeres som "
-"betinget af GNU General Public License, udarbejdet af Free Software "
+"betinget af GNU Lesser General Public License, udarbejdet af Free Software "
 "Foundation; enten version 2 af licensen eller, efter eget valg, enhver nyere "
 "version.\n"
 
@@ -39,23 +39,24 @@ msgstr ""
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
+"for more details.\n"
 msgstr ""
 "Dette program distribueres i håb om at det viser sig nyttigt, men UDEN NOGEN "
 "GARANTI; selv uden de underforståede garantier SALGBARHED eller EGNETHED TIL "
-"ET BESTEMT FORMÅL, idet der henvises til GNU General Public License for "
-"detaljer.\n"
+"ET BESTEMT FORMÅL, idet der henvises til GNU Lesser General Public License "
+"for detaljer.\n"
 
 #: ../src/about.c:72
 msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this program; if not, write to the Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Du bør have modtaget en kopi af GNU General Public License sammen med dette "
-"program; er dette ikke tilfældet, så skriv til Free Software Foundation, "
-"Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA."
+"Du bør have modtaget en kopi af GNU Lesser General Public License sammen med "
+"dette program; er dette ikke tilfældet, så skriv til Free Software "
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
+"USA."
 
 #: ../src/about.c:265
 msgid "translator-credits"
@@ -85,9 +86,9 @@ msgid "could not parse command from stdin\n"
 msgstr "kunne ikke fortolke kommando fra standardinddata\n"
 
 #: ../src/notification.c:177
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse message from stdin\n"
-msgstr "kunne ikke fortolke kommando fra standardinddata\n"
+msgstr "Kunne ikke fortolke meddelelse fra standardinddata\n"
 
 #: ../src/notification.c:262 ../src/notification.c:279
 msgid "Zenity notification"
@@ -401,9 +402,8 @@ msgid "Hide a specific column"
 msgstr "Skjul en bestemt kolonne"
 
 #: ../src/option.c:512
-#, fuzzy
 msgid "Hides the column headers"
-msgstr "Angiv kolonneoverskriften"
+msgstr "Skjuler kolonneoverskrifterne"
 
 #: ../src/option.c:527
 msgid "Display notification"
