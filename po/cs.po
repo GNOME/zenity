@@ -3,18 +3,21 @@
 # Copyright (C) 2005, 2006 Miloslav Trmac <mitr@volny.cz>.
 # Copyright (C) 2008 Pavel Šefránek <ps@pjoul.cz>.
 # This file is distributed under the same license as the zenity.
+#
 # Miloslav Trmac <mitr@volny.cz>, 2003, 2005, 2006.
 # Jakub Friedl <jfriedl@suse.cz>, 2007.
 # Pavel Šefránek <ps@pjoul.cz>, 2008.
 # Petr Kovar <pknbe@volny.cz>, 2008.
+# Marek Černocký <marek@manet.cz>, 2010.
+# Lucas Lommer <llommer@svn.gnome.org>, 2010. (merge 2.30 -> master + fuzzy)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-26 11:00+0100\n"
-"PO-Revision-Date: 2010-02-26 11:01+0100\n"
-"Last-Translator: Andre Klapper <ak-47@gmx.net>\n"
+"POT-Creation-Date: 2010-04-05 00:57+0200\n"
+"PO-Revision-Date: 2010-03-07 16:34+0100\n"
+"Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +47,8 @@ msgid ""
 msgstr ""
 "Tento program je rozšiřován v naději, že bude užitečný, avšak BEZ JAKÉKOLIV "
 "ZÁRUKY; neposkytují se ani odvozené záruky PRODEJNOSTI anebo VHODNOSTI PRO "
-"URČITÝ ÚČEL. Další podrobnosti hledejte v GNU Lesser General Public License.\n"
+"URČITÝ ÚČEL. Další podrobnosti hledejte v GNU Lesser General Public "
+"License.\n"
 
 #: ../src/about.c:72
 msgid ""
@@ -61,7 +65,8 @@ msgid "translator-credits"
 msgstr ""
 "Miloslav Trmač <mitr@volny.cz>\n"
 "Pavel Šefránek <ps@pjoul.cz>\n"
-"Petr Kovář <pknbe@volny.cz>"
+"Petr Kovář <pknbe@volny.cz>\n"
+"Marek Černocký <marek@manet.cz>"
 
 #: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
@@ -152,7 +157,7 @@ msgstr "Otázka"
 
 #: ../src/zenity.ui.h:12
 msgid "Running..."
-msgstr "Pracuji..."
+msgstr "Pracuje se…"
 
 #: ../src/zenity.ui.h:13
 msgid "Select a date from below."
@@ -337,7 +342,7 @@ msgstr "Filtrovat soubory podle zadaného výrazu"
 #. Help for file-filter argument (name and patterns for file selection)
 #: ../src/option.c:413
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr "NÁZEVSOUBORU | VÝRAZ1 VÝRAZ2 ..."
+msgstr "NÁZEVSOUBORU | VÝRAZ1 VÝRAZ2 …"
 
 #: ../src/option.c:427
 msgid "Display list dialog"
@@ -372,8 +377,8 @@ msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
-"Vypsat konkrétní sloupec (implicitní je 1; \"ALL\" lze použít pro výpis "
-"všech sloupců)"
+"Vypsat konkrétní sloupec (výchozí je 1; „ALL“ lze použít pro výpis všech "
+"sloupců)"
 
 #. Column index number to print out on a list dialog
 #: ../src/option.c:501 ../src/option.c:510
@@ -429,7 +434,7 @@ msgstr "Zabít rodičovský proces při stisku tlačítka Zrušit"
 #: ../src/option.c:623
 #, no-c-format
 msgid "Hide cancel button"
-msgstr ""
+msgstr "Skrýt tlačítko zrušení"
 
 #: ../src/option.c:638
 msgid "Display question dialog"
@@ -489,19 +494,16 @@ msgid "Hide value"
 msgstr "Skrýt hodnotu"
 
 #: ../src/option.c:833
-#, fuzzy
 msgid "Display color selection dialog"
-msgstr "Zobrazit dialog výběru souborů"
+msgstr "Zobrazit dialog výběru barev"
 
 #: ../src/option.c:842
-#, fuzzy
 msgid "Set the color"
-msgstr "Nastavit nadpis sloupců"
+msgstr "Nastavit barvu"
 
 #: ../src/option.c:851
-#, fuzzy
 msgid "Show the palette"
-msgstr "Nastavit nadpis dialogu"
+msgstr "Zobrazit paletu"
 
 #: ../src/option.c:866
 msgid "About zenity"
@@ -616,14 +618,12 @@ msgid "Show text information options"
 msgstr "Zobrazit možnosti textové informace"
 
 #: ../src/option.c:1727
-#, fuzzy
 msgid "Color selection options"
-msgstr "Přepínače výběru souborů"
+msgstr "Přepínače výběru barev"
 
 #: ../src/option.c:1728
-#, fuzzy
 msgid "Show color selection options"
-msgstr "Zobrazit přepínače výběru souborů"
+msgstr "Zobrazit přepínače výběru barev"
 
 #: ../src/option.c:1738
 msgid "Miscellaneous options"
@@ -651,5 +651,6 @@ msgstr "--%s není tímto dialogem podporováno\n"
 msgid "Two or more dialog options specified\n"
 msgstr "Zadány dva nebo více dialogů\n"
 
+#, fuzzy
 #~ msgid "Select a file"
-#~ msgstr "Zvolte soubor"
+#~ msgstr "Nastavit název souboru"
