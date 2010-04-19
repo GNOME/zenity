@@ -323,13 +323,14 @@ transient_get_xterm (void)
   const char *wid_str = g_getenv ("WINDOWID");
   if (wid_str) {
     char *wid_str_end;
+    int ret;
     Window wid = strtoul (wid_str, &wid_str_end, 10);
     if (*wid_str != '\0' && *wid_str_end == '\0' && wid != 0) {
       XWindowAttributes attrs;
       gdk_error_trap_push ();
-      XGetWindowAttributes (GDK_DISPLAY(), wid, &attrs);
+      ret = XGetWindowAttributes (GDK_DISPLAY(), wid, &attrs);
       gdk_flush();
-      if (gdk_error_trap_pop () != 0) {
+      if (gdk_error_trap_pop () != 0 || ret == 0) {
         return None;
       }
       return wid;
