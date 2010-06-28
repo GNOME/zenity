@@ -60,6 +60,7 @@ Display warning dialog
 .TP
 .B \-\-scale
 Display scale dialog
+.TP
 .B \-\-color-selection
 Display color selection dialog
 
@@ -71,7 +72,7 @@ General options
 Set the dialog title
 .TP
 .B \-\-window-icon=ICONPATH
-Set the window icon
+Set the window icon with the path to an image. Alternatively, one of the four stock icons can be used: 'error', 'info', 'question' or 'warning'
 .TP
 .B \-\-width=WIDTH
 Set the dialog width
@@ -80,7 +81,7 @@ Set the dialog width
 Set the dialog height
 .TP
 .B \-\-timeout=TIMEOUT
-Set the dialog timeout
+Set the dialog timeout in seconds
 .PP 
 Calendar options
 
@@ -98,7 +99,7 @@ Set the calendar month
 Set the calendar year
 .TP
 .B \-\-date-format=PATTERN
-Set the format for the returned date
+Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
 
 .PP
 Text entry options
@@ -126,7 +127,7 @@ Do not enable text wrapping
 File selection options
 .TP
 .B \-\-filename=FILENAME
-Set the filename
+Set the file or directory to be selected by default
 .TP
 .B \-\-multiple
 Allow selection of multiple filenames in file selection dialog
@@ -142,6 +143,10 @@ Specify separator character when returning multiple filenames
 .TP
 .B \-\-confirm\-overwrite
 Confirm file selection if filename already exists
+.TP
+.B \-\-file\-filter=NAME | PATTERN1 PATTERN2
+Sets a filename filter
+
 
 .PP
 Info options
@@ -183,6 +188,9 @@ the first column. 'ALL' may be used to print all columns.
 .TP
 .B \-\-hide\-column=NUMBER
 Hide a specific column
+.TP
+.B \-\-hide\-header
+Hides the column headers
 
 .PP
 Notification options
@@ -192,7 +200,7 @@ Notification options
 Set the notification text
 .TP
 .B \-\-listen
-Listen for commands on stdin
+Listen for commands on stdin. Commands include 'message', 'tooltip', 'icon', and 'visible' separated by a colon. For example, 'message: Hello world', 'visible: false', or 'icon: /path/to/icon'. The icon command also accepts the four stock icon: 'error', 'info', 'question', and 'warning'
 
 .PP
 Progress options
@@ -212,6 +220,9 @@ Kill parent process if cancel button is pressed
 .TP
 .B \-\-pulsate
 Pulsate progress bar
+.TP
+.B \-\-no\-cancel
+Hides the cancel button
 
 .PP
 Question options
@@ -222,6 +233,12 @@ Set the dialog text
 .TP
 .B \-\-no\-wrap
 Do not enable text wrapping
+.TP
+.B \-\-ok\-label
+Set the text of the OK button
+.TP
+.B \-\-cancel\-label
+Set the text of the cancel button
 
 .PP
 Text options
