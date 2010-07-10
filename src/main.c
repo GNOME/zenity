@@ -87,6 +87,9 @@ main (gint argc, gchar **argv) {
     case MODE_COLOR:
       zenity_colorselection (results->data, results->color_data);
       break;
+    case MODE_PASSWORD:
+      zenity_password_dialog (results->data, results->password_data);
+      break;
     case MODE_ABOUT:
       zenity_about (results->data);
       break;

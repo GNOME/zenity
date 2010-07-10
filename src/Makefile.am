@@ -17,6 +17,7 @@ zenity_SOURCES = \
 	text.c		\
 	tree.c		\
 	color.c         \
+	password.c      \
 	util.c		\
 	util.h		\
 	zenity.h

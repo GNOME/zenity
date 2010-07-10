@@ -113,6 +113,10 @@ static gboolean zenity_colorsel_active;
 static gchar   *zenity_colorsel_color;
 static gboolean zenity_colorsel_show_palette;
 
+/* Password Dialog Options */
+static gboolean zenity_password_active;
+static gboolean zenity_password_show_username;
+
 /* Miscelaneus Options */
 static gboolean zenity_misc_about;
 static gboolean zenity_misc_version;
@@ -823,6 +827,30 @@ static GOptionEntry scale_options[] = {
   }
 };
 
+static GOptionEntry password_dialog_options[] = {
+  {
+    "password",
+    '\0',
+    G_OPTION_FLAG_IN_MAIN,
+    G_OPTION_ARG_NONE,
+    &zenity_password_active,
+    N_("Display password dialog"),
+    NULL
+  },
+  {
+    "username",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_password_show_username,
+    N_("Display the username option"),
+    NULL
+  },
+  {
+    NULL
+  } 
+};
+
 static GOptionEntry color_selection_options[] = {
   {
     "color-selection",
@@ -901,6 +929,7 @@ zenity_option_init (void) {
   results->tree_data = g_new0 (ZenityTreeData, 1);
   results->notification_data = g_new0 (ZenityNotificationData, 1);
   results->color_data = g_new0 (ZenityColorData, 1);
+  results->password_data = g_new0 (ZenityPasswordData, 1);
 }
 
 void
@@ -938,7 +967,7 @@ zenity_option_free (void) {
 
   if (zenity_colorsel_color)
     g_free (zenity_colorsel_color);
-
+  
   g_option_context_free (ctx);
 }
 
@@ -1168,6 +1197,18 @@ zenity_color_pre_callback (GOptionContext *context,
   zenity_colorsel_show_palette = FALSE;
 
   return TRUE;
+}
+
+static gboolean
+zenity_password_pre_callback (GOptionContext *context,
+                              GOptionGroup   *group,
+                              gpointer        data,
+                              GError        **error)
+{
+  zenity_password_active = FALSE;
+  zenity_password_show_username = FALSE;
+
+  return TRUE; 
 }
 
 static gboolean
@@ -1560,6 +1601,24 @@ zenity_color_post_callback (GOptionContext *context,
 }
 
 static gboolean
+zenity_password_post_callback (GOptionContext *context,
+                               GOptionGroup   *group,
+                               gpointer        data,
+                               GError        **error)
+{
+  zenity_option_set_dialog_mode (zenity_password_active, MODE_PASSWORD);
+  if (results->mode == MODE_PASSWORD) {
+    results->password_data->username = zenity_password_show_username;
+  } else {
+    if (zenity_password_show_username)
+      zenity_option_error (zenity_option_get_name(password_dialog_options, &zenity_password_show_username),
+                           ERROR_SUPPORT);
+  }
+
+  return TRUE;
+}
+
+static gboolean
 zenity_misc_post_callback (GOptionContext *context,
 		           GOptionGroup   *group,
 		           gpointer	   data,
@@ -1729,6 +1788,17 @@ zenity_create_context (void)
   g_option_group_add_entries(a_group, color_selection_options);
   g_option_group_set_parse_hooks (a_group,
                     zenity_color_pre_callback, zenity_color_post_callback);
+  g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
+  g_option_context_add_group(tmp_ctx, a_group);
+
+  /* Adds password dialog option entries */
+  a_group = g_option_group_new("password",
+                               N_("Password dialog options"),
+                               N_("Show password dialog options"), NULL, NULL);
+  g_option_group_add_entries (a_group, password_dialog_options);
+  g_option_group_set_parse_hooks (a_group,
+                    zenity_password_pre_callback, zenity_password_post_callback);
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
   g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);

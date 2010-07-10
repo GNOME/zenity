@@ -131,6 +131,13 @@ typedef struct {
   gboolean show_palette;
 } ZenityColorData;
 
+typedef struct {
+  gboolean username;
+  gchar *password;
+  GtkWidget *entry_username;
+  GtkWidget *entry_password;
+} ZenityPasswordData;
+
 void    zenity_calendar         (ZenityData             *data,
                                 ZenityCalendarData      *calendar_data);
 void    zenity_msg              (ZenityData             *data,
@@ -152,6 +159,9 @@ void    zenity_colorselection   (ZenityData             *data,
 void	zenity_scale		(ZenityData		*data,
 				 ZenityScaleData	*scale_data);
 void    zenity_about            (ZenityData             *data);
+
+void    zenity_password_dialog  (ZenityData             *data,
+                                 ZenityPasswordData     *password_data);
 
 G_END_DECLS
 
