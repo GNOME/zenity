@@ -67,7 +67,7 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                      FALSE,
                      FALSE,
                      12);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox),
+  gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))),
                      hbox,
                      FALSE,
                      TRUE,
@@ -77,7 +77,7 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   vbox_entries = gtk_vbox_new(FALSE, 5);
 
   hbox = gtk_hbox_new(FALSE, 5);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox),
+  gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))),
                      hbox,
                      FALSE,
                      TRUE,
@@ -135,7 +135,7 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_password_dialog_response),
                     password_data);
-  gtk_widget_show_all(GTK_WIDGET(GTK_DIALOG(dialog)->vbox));
+  gtk_widget_show_all(GTK_WIDGET(gtk_dialog_get_content_area(GTK_DIALOG(dialog))));
   zenity_util_show_dialog (dialog);
 
   if (data->timeout_delay > 0) {
