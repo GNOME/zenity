@@ -1,7 +1,7 @@
 /*
  * password.c
  *
- * Copyright (C) 2010 Berislav Kovacki
+ * Copyright (C) 2010 Arx Cruz
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
