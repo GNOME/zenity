@@ -1,3 +1,16 @@
+Zenity 2.31.5
+" Hello Sunshine "
+   * Fixed Bgo 616816  - Add new entries to Zenity's man page 
+     Patch from Carnë Draug <carandraug.ml@gmail.com>
+   * Add new password dialog (Arx Cruz)
+   * Change GTK_DIALOG(dialog)->vbox to gtk_dialog_get_content_area()
+     in order to compile with GTK 3.0 (Arx Cruz)
+   * Add password.c to be translated (Luis Medinas)
+   * Bump to 2.31.5 and use GTK+3.0 (Luis Medinas)
+   * New and updated translations
+       - Fran Diéguez (gl)
+       - Petr Kovar (cs)
+
 Zenity 2.31.3
 " Young Reborn "
    * Use g_timeout_add_seconds instead g_timeout_add
