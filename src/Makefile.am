@@ -39,8 +39,7 @@ zenity_LDFLAGS = \
 
 zenity_LDADD = \
 	$(ZENITY_LIBS)		\
-	$(LIBNOTIFY_LIBS)	\
-	$(X_LIBS)
+	$(LIBNOTIFY_LIBS)	
 
 uidir = $(datadir)/zenity
 
