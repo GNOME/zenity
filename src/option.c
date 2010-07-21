@@ -614,7 +614,7 @@ static GOptionEntry progress_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_progress_auto_kill,
     /* xgettext: no-c-format */
-    N_("Kill parent process if cancel button is pressed"),
+    N_("Kill parent process if Cancel button is pressed"),
     NULL
   },
   {
@@ -624,7 +624,7 @@ static GOptionEntry progress_options[] = {
    G_OPTION_ARG_NONE,
    &zenity_progress_no_cancel,
    /* xgettext: no-c-format */
-   N_("Hide cancel button"),
+   N_("Hide Cancel button"),
    NULL
   },
   { 
