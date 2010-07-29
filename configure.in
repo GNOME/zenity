@@ -18,9 +18,28 @@ IT_PROG_INTLTOOL([0.40.0])
 
 AC_PROG_CC
 
-GTK_REQUIRED=2.90.2
+GTK_REQUIRED=2.18.0
 
-PKG_CHECK_MODULES([ZENITY],[gtk+-3.0 >= $GTK_REQUIRED glib-2.0])
+AC_MSG_CHECKING([which gtk+ version to compile against])
+AC_ARG_WITH([gtk],
+  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
+  [case "$with_gtk" in
+     2.0|3.0) ;;
+     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
+   esac],
+  [with_gtk=2.0])
+AC_MSG_RESULT([$with_gtk])
+
+case "$with_gtk" in
+  2.0) GTK_API_VERSION=2.0
+       GTK_REQUIRED=2.18.0
+       ;;
+  3.0) GTK_API_VERSION=3.0
+       GTK_REQUIRED=2.90.4
+       ;;
+esac
+
+PKG_CHECK_MODULES([ZENITY],[gtk+-$GTK_API_VERSION >= $GTK_REQUIRED glib-2.0])
 AC_SUBST([ZENITY_CFLAGS])
 AC_SUBST([ZENITY_LIBS])
 
@@ -30,7 +49,7 @@ dnl *************************
 
 zenity_save_cflags="$CFLAGS"
 # pull in the CFLAGS to locate gdkconfig.h
-CFLAGS=`$PKG_CONFIG --cflags gtk+-3.0`
+CFLAGS=`$PKG_CONFIG --cflags gtk+-2.0`
 AC_COMPILE_IFELSE([
 #include <gdkconfig.h>
 
