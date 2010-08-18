@@ -97,6 +97,7 @@ static gchar   *zenity_question_cancel_button;
 
 /* Text Dialog Options */
 static gboolean zenity_text_active;
+static gchar   *zenity_text_font;
 
 /* Warning Dialog Options */
 static gboolean zenity_warning_active;
@@ -716,6 +717,15 @@ static GOptionEntry text_options[] = {
     N_("Allow changes to text"),
     NULL
   },
+  {
+    "font",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING,
+    &zenity_text_font,
+    N_("Set the text font"),
+    N_("TEXT")
+  },
   { 
     NULL 
   }
@@ -972,6 +982,9 @@ zenity_option_free (void) {
   if (zenity_question_cancel_button)
     g_free (zenity_question_cancel_button);
 
+  if (zenity_text_font)
+    g_free (zenity_text_font);
+
   if (zenity_colorsel_color)
     g_free (zenity_colorsel_color);
   
@@ -1163,6 +1176,7 @@ zenity_text_pre_callback (GOptionContext *context,
 		          GError        **error)
 {
   zenity_text_active = FALSE;
+  zenity_text_font = NULL;
 
   return TRUE;
 }
@@ -1544,7 +1558,13 @@ zenity_text_post_callback (GOptionContext *context,
   if (results->mode == MODE_TEXTINFO) {
     results->text_data->uri = zenity_general_uri;
     results->text_data->editable = zenity_general_editable;
-  } 
+    results->text_data->no_wrap = zenity_general_dialog_no_wrap;
+    results->text_data->font = zenity_text_font;
+  } else {
+    if (zenity_text_font)
+      zenity_option_error (zenity_option_get_name (text_options, &zenity_text_font),
+                           ERROR_SUPPORT);
+  }
     
   return TRUE;
 }
@@ -1895,7 +1915,7 @@ zenity_option_parse (gint argc, gchar **argv)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_general_uri), ERROR_SUPPORT);
   
   if (zenity_general_dialog_no_wrap)
-    if (results->mode != MODE_INFO && results->mode != MODE_ERROR && results->mode != MODE_QUESTION && results->mode != MODE_WARNING)
+    if (results->mode != MODE_INFO && results->mode != MODE_ERROR && results->mode != MODE_QUESTION && results->mode != MODE_WARNING && results->mode != MODE_TEXTINFO)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_general_dialog_no_wrap), ERROR_SUPPORT);
   
   return results; 

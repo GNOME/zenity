@@ -104,6 +104,8 @@ typedef struct {
 typedef struct {
   gchar         *uri;
   gboolean       editable;
+  gboolean       no_wrap;
+  gchar         *font;
   GtkTextBuffer	*buffer;
 } ZenityTextData;
 

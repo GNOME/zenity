@@ -134,6 +134,14 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   gtk_text_view_set_buffer (GTK_TEXT_VIEW (text_view), text_buffer);
   gtk_text_view_set_editable (GTK_TEXT_VIEW(text_view), text_data->editable);
 
+  if (text_data->no_wrap)
+    gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW(text_view), GTK_WRAP_NONE);
+
+  if (text_data->font) {
+      PangoFontDescription *fontDesc = pango_font_description_from_string (text_data->font);
+      gtk_widget_modify_font(GTK_TEXT_VIEW(text_view), fontDesc);
+  }
+
   if (text_data->uri)
     zenity_util_fill_file_buffer (text_buffer, text_data->uri);
   else
