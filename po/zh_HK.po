@@ -6,10 +6,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: zenity 2.26.1\n"
+"Project-Id-Version: zenity 2.30.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 20:16+0800\n"
-"PO-Revision-Date: 2010-03-06 20:16+0800\n"
+"POT-Creation-Date: 2010-08-21 21:23+0800\n"
+"PO-Revision-Date: 2010-08-21 21:24+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,26 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../src/about.c:64
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
+msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n"
 msgstr "本程式為自由軟件，你可根據據自由軟件基金會所發表的 GNU 通用公共授權條款 (可選用第二版或以後的任何版本) 規定，將本程式再散佈或修改，或兩者同時進行。\n"
 
 #: ../src/about.c:68
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
+msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.\n"
 msgstr "本程式係基於使用目的而加以散布，然而不負任何擔保責任；亦無對適售性或特定目的適用性所為的默示性擔保。詳情請參照 GNU 較寬鬆通用公共授權。\n"
 
 #: ../src/about.c:72
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgid "You should have received a copy of the GNU Lesser General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr "你應該已收到附於本程式的 GNU 通用公共授權的副本；如果沒有，請寫信至：the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #: ../src/about.c:265
@@ -68,7 +57,8 @@ msgstr "無法分析來自標準輸入的指令\n"
 msgid "Could not parse message from stdin\n"
 msgstr "無法分析來自標準輸入的訊息\n"
 
-#: ../src/notification.c:262 ../src/notification.c:279
+#: ../src/notification.c:262
+#: ../src/notification.c:279
 msgid "Zenity notification"
 msgstr "Zenity 通知"
 
@@ -209,16 +199,30 @@ msgstr "逾時"
 msgid "Display calendar dialog"
 msgstr "顯示日曆對話方塊"
 
-#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:285
-#: ../src/option.c:318 ../src/option.c:430 ../src/option.c:569
-#: ../src/option.c:631 ../src/option.c:715 ../src/option.c:748
+#: ../src/option.c:182
+#: ../src/option.c:242
+#: ../src/option.c:285
+#: ../src/option.c:318
+#: ../src/option.c:430
+#: ../src/option.c:569
+#: ../src/option.c:631
+#: ../src/option.c:715
+#: ../src/option.c:748
 msgid "Set the dialog text"
 msgstr "設定對話方塊中的文字"
 
-#: ../src/option.c:183 ../src/option.c:243 ../src/option.c:252
-#: ../src/option.c:286 ../src/option.c:319 ../src/option.c:431
-#: ../src/option.c:537 ../src/option.c:570 ../src/option.c:632
-#: ../src/option.c:641 ../src/option.c:650 ../src/option.c:716
+#: ../src/option.c:183
+#: ../src/option.c:243
+#: ../src/option.c:252
+#: ../src/option.c:286
+#: ../src/option.c:319
+#: ../src/option.c:431
+#: ../src/option.c:537
+#: ../src/option.c:570
+#: ../src/option.c:632
+#: ../src/option.c:641
+#: ../src/option.c:650
+#: ../src/option.c:716
 #: ../src/option.c:749
 msgid "TEXT"
 msgstr "文字"
@@ -271,7 +275,9 @@ msgstr "隱藏輸入欄中的文字"
 msgid "Display error dialog"
 msgstr "顯示錯誤訊息對話方塊"
 
-#: ../src/option.c:294 ../src/option.c:327 ../src/option.c:658
+#: ../src/option.c:294
+#: ../src/option.c:327
+#: ../src/option.c:658
 #: ../src/option.c:724
 msgid "Do not enable text wrapping"
 msgstr "文字不要斷行"
@@ -288,7 +294,8 @@ msgstr "顯示檔案選擇對話方塊"
 msgid "Set the filename"
 msgstr "設定檔案名稱"
 
-#: ../src/option.c:352 ../src/option.c:683
+#: ../src/option.c:352
+#: ../src/option.c:683
 msgid "FILENAME"
 msgstr "檔案名稱"
 
@@ -304,11 +311,13 @@ msgstr "只選取目錄"
 msgid "Activate save mode"
 msgstr "啟用安全模式"
 
-#: ../src/option.c:387 ../src/option.c:466
+#: ../src/option.c:387
+#: ../src/option.c:466
 msgid "Set output separator character"
 msgstr "設定分隔輸出結果的字符"
 
-#: ../src/option.c:388 ../src/option.c:467
+#: ../src/option.c:388
+#: ../src/option.c:467
 msgid "SEPARATOR"
 msgstr "分隔字符"
 
@@ -350,18 +359,18 @@ msgstr "第一欄使用多項選擇按鈕"
 msgid "Allow multiple rows to be selected"
 msgstr "允許同時選擇多列"
 
-#: ../src/option.c:484 ../src/option.c:691
+#: ../src/option.c:484
+#: ../src/option.c:691
 msgid "Allow changes to text"
 msgstr "允許更改文字"
 
 #: ../src/option.c:493
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
+msgid "Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
 msgstr "指定印出其中一欄（預設為第 1 欄，可以用‘ALL’來表示所有欄位）"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:495 ../src/option.c:504
+#: ../src/option.c:495
+#: ../src/option.c:504
 msgid "NUMBER"
 msgstr "序號"
 
@@ -408,6 +417,7 @@ msgstr "當進度達到 100% 時關閉對話方塊"
 
 #: ../src/option.c:607
 #, no-c-format
+#| msgid "Kill parent process if Cancel button is pressed"
 msgid "Kill parent process if cancel button is pressed"
 msgstr "若按下取消按鈕則中止父程序"
 
@@ -443,7 +453,9 @@ msgstr "顯示比例對話視窗"
 msgid "Set initial value"
 msgstr "設定初始值"
 
-#: ../src/option.c:758 ../src/option.c:767 ../src/option.c:776
+#: ../src/option.c:758
+#: ../src/option.c:767
+#: ../src/option.c:776
 #: ../src/option.c:785
 msgid "VALUE"
 msgstr "數值"
@@ -590,8 +602,7 @@ msgstr "顯示其它選項"
 
 #: ../src/option.c:1659
 #, c-format
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
+msgid "This option is not available. Please see --help for all possible usages.\n"
 msgstr "本選項不存在，請參考 --help 以取得有關用法的資料。\n"
 
 #: ../src/option.c:1663
@@ -604,5 +615,10 @@ msgstr "本類型的對話方塊不支援 %s 選項\n"
 msgid "Two or more dialog options specified\n"
 msgstr "使用了兩個或以上的對話方塊選項\n"
 
-#~ msgid "Select a file"
-#~ msgstr "請選取檔案"
+#~ msgid "Type your password"
+#~ msgstr "輸入您的密碼"
+#~ msgid "Username:"
+#~ msgstr "使用者名稱："
+#~ msgid "Password:"
+#~ msgstr "密碼： "
+
