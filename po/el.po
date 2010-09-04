@@ -13,10 +13,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-19 22:17+0200\n"
-"PO-Revision-Date: 2010-03-19 19:57+0200\n"
-"Last-Translator: nikolaosx1 <nikolaosx1@gmail.com>\n"
+"POT-Creation-Date: 2010-09-04 19:04+0300\n"
+"PO-Revision-Date: 2010-09-04 10:01+0200\n"
+"Last-Translator: Michael Kotsarinis <mk73628@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,7 +75,7 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Εμφάνιση κουτιών διαλόγου από δέσμες ενεργειών κελύφους"
 
-#: ../src/main.c:97
+#: ../src/main.c:100
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
@@ -94,6 +95,18 @@ msgstr "Αδυναμία ανάλυσης του μηνύματος από τη�
 #: ../src/notification.c:262 ../src/notification.c:279
 msgid "Zenity notification"
 msgstr "Ειδοποίηση Zenity"
+
+#: ../src/password.c:64
+msgid "Type your password"
+msgstr "πληκτρολογήστε τον κωδικό σας"
+
+#: ../src/password.c:99
+msgid "Username:"
+msgstr "Όνομα χρήστη:"
+
+#: ../src/password.c:115
+msgid "Password:"
+msgstr "Κωδικός:"
 
 #: ../src/scale.c:56
 #, c-format
@@ -187,196 +200,196 @@ msgstr "Προειδοποίηση"
 msgid "_Enter new text:"
 msgstr "_Εισάγετε νέο κείμενο:"
 
-#: ../src/option.c:127
+#: ../src/option.c:131
 msgid "Set the dialog title"
 msgstr "Ορισμός τίτλου διαλόγου"
 
-#: ../src/option.c:128
+#: ../src/option.c:132
 msgid "TITLE"
-msgstr "ΤΊΤΛΟΣ"
+msgstr "ΤΙΤΛΟΣ"
 
-#: ../src/option.c:136
+#: ../src/option.c:140
 msgid "Set the window icon"
 msgstr "Ορισμός εικονιδίου παραθύρου"
 
-#: ../src/option.c:137
+#: ../src/option.c:141
 msgid "ICONPATH"
-msgstr "ΔΙΑΔΡΟΜΉΕΙΚΟΝΙΔΊΩΝ"
+msgstr "ΔΙΑΔΡΟΜΗΕΙΚΟΝΙΔΙΩΝ"
 
-#: ../src/option.c:145
+#: ../src/option.c:149
 msgid "Set the width"
 msgstr "Ορισμός του πλάτους"
 
-#: ../src/option.c:146
+#: ../src/option.c:150
 msgid "WIDTH"
-msgstr "ΠΛΆΤΟΣ"
+msgstr "ΠΛΑΤΟΣ"
 
-#: ../src/option.c:154
+#: ../src/option.c:158
 msgid "Set the height"
 msgstr "Ορισμός του ύψους"
 
-#: ../src/option.c:155
+#: ../src/option.c:159
 msgid "HEIGHT"
-msgstr "ΎΨΟΣ"
+msgstr "ΥΨΟΣ"
 
-#: ../src/option.c:163
+#: ../src/option.c:167
 msgid "Set dialog timeout in seconds"
 msgstr "Ορισμός του χρόνου εμφάνισης του διαλόγου σε δευτερόλεπτα"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:165
+#: ../src/option.c:169
 msgid "TIMEOUT"
 msgstr "ΟΡΙΟ ΧΡΟΝΟΥ"
 
-#: ../src/option.c:179
+#: ../src/option.c:183
 msgid "Display calendar dialog"
 msgstr "Εμφάνιση διαλόγου ημερολογίου"
 
-#: ../src/option.c:188 ../src/option.c:248 ../src/option.c:291
-#: ../src/option.c:324 ../src/option.c:436 ../src/option.c:575
-#: ../src/option.c:647 ../src/option.c:731 ../src/option.c:764
+#: ../src/option.c:192 ../src/option.c:252 ../src/option.c:295
+#: ../src/option.c:328 ../src/option.c:440 ../src/option.c:579
+#: ../src/option.c:651 ../src/option.c:735 ../src/option.c:768
 msgid "Set the dialog text"
 msgstr "Ορισμός του κειμένου του διαλόγου"
 
-#: ../src/option.c:189 ../src/option.c:249 ../src/option.c:258
-#: ../src/option.c:292 ../src/option.c:325 ../src/option.c:437
-#: ../src/option.c:543 ../src/option.c:576 ../src/option.c:648
-#: ../src/option.c:657 ../src/option.c:666 ../src/option.c:732
-#: ../src/option.c:765
+#: ../src/option.c:193 ../src/option.c:253 ../src/option.c:262
+#: ../src/option.c:296 ../src/option.c:329 ../src/option.c:441
+#: ../src/option.c:547 ../src/option.c:580 ../src/option.c:652
+#: ../src/option.c:661 ../src/option.c:670 ../src/option.c:736
+#: ../src/option.c:769
 msgid "TEXT"
 msgstr "ΚΕΙΜΕΝΟ"
 
-#: ../src/option.c:197
+#: ../src/option.c:201
 msgid "Set the calendar day"
 msgstr "Ορισμός της ημέρας ημερολογίου"
 
-#: ../src/option.c:198
+#: ../src/option.c:202
 msgid "DAY"
 msgstr "ΗΜΕΡΑ"
 
-#: ../src/option.c:206
+#: ../src/option.c:210
 msgid "Set the calendar month"
 msgstr "Ορισμός του μήνα ημερολογίου"
 
-#: ../src/option.c:207
+#: ../src/option.c:211
 msgid "MONTH"
 msgstr "MHNAΣ"
 
-#: ../src/option.c:215
+#: ../src/option.c:219
 msgid "Set the calendar year"
 msgstr "Ορισμός του έτους ημερολογίου"
 
-#: ../src/option.c:216
+#: ../src/option.c:220
 msgid "YEAR"
 msgstr "ΕΤΟΣ"
 
-#: ../src/option.c:224
+#: ../src/option.c:228
 msgid "Set the format for the returned date"
 msgstr "Ορισμός της μορφής ημερομηνίας"
 
-#: ../src/option.c:225
+#: ../src/option.c:229
 msgid "PATTERN"
 msgstr "ΜΟΤΙΒΟ"
 
-#: ../src/option.c:239
+#: ../src/option.c:243
 msgid "Display text entry dialog"
 msgstr "Εμφάνιση διαλόγου καταχώρισης κειμένου"
 
-#: ../src/option.c:257
+#: ../src/option.c:261
 msgid "Set the entry text"
 msgstr "Ορισμός του κειμένου καταχώρισης"
 
-#: ../src/option.c:266
+#: ../src/option.c:270
 msgid "Hide the entry text"
 msgstr "Απόκρυψη του κειμένου καταχώρισης"
 
-#: ../src/option.c:282
+#: ../src/option.c:286
 msgid "Display error dialog"
 msgstr "Διάλογος εμφάνισης σφάλματος"
 
-#: ../src/option.c:300 ../src/option.c:333 ../src/option.c:674
-#: ../src/option.c:740
+#: ../src/option.c:304 ../src/option.c:337 ../src/option.c:678
+#: ../src/option.c:744
 msgid "Do not enable text wrapping"
 msgstr "Να μην ενεργοποιηθεί η αναδίπλωση κειμένου"
 
-#: ../src/option.c:315
+#: ../src/option.c:319
 msgid "Display info dialog"
 msgstr "Εμφάνιση διαλόγου πληροφοριών"
 
-#: ../src/option.c:348
+#: ../src/option.c:352
 msgid "Display file selection dialog"
 msgstr "Προβολή διαλόγου επιλογής αρχείου"
 
-#: ../src/option.c:357
+#: ../src/option.c:361
 msgid "Set the filename"
 msgstr "Ορισμός του ονόματος αρχείου"
 
-#: ../src/option.c:358 ../src/option.c:699
+#: ../src/option.c:362 ../src/option.c:703
 msgid "FILENAME"
 msgstr "ΟΝΟΜΑ ΑΡΧΕΙΟΥ"
 
-#: ../src/option.c:366
+#: ../src/option.c:370
 msgid "Allow multiple files to be selected"
 msgstr "Να επιτρέπεται η επιλογή πολλαπλών αρχείων"
 
-#: ../src/option.c:375
+#: ../src/option.c:379
 msgid "Activate directory-only selection"
 msgstr "Ενεργοποίηση επιλογής μόνο καταλόγου"
 
-#: ../src/option.c:384
+#: ../src/option.c:388
 msgid "Activate save mode"
 msgstr "Ενεργοποίηση κατάστασης αποθήκευσης"
 
-#: ../src/option.c:393 ../src/option.c:472
+#: ../src/option.c:397 ../src/option.c:476
 msgid "Set output separator character"
 msgstr "Ορισμός χαρακτήρα διαχωριστικού εξόδου"
 
-#: ../src/option.c:394 ../src/option.c:473
+#: ../src/option.c:398 ../src/option.c:477
 msgid "SEPARATOR"
 msgstr "ΔΙΑΧΩΡΙΣΤΙΚΟ"
 
-#: ../src/option.c:402
+#: ../src/option.c:406
 msgid "Confirm file selection if filename already exists"
 msgstr "Επιβεβαίωση της επιλογής αν το όνομα αρχείου υπάρχει ήδη"
 
-#: ../src/option.c:411
+#: ../src/option.c:415
 msgid "Sets a filename filter"
 msgstr "Ορισμός ενός φίλτρου για όνομα αρχείου"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:413
+#: ../src/option.c:417
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "ΟΝΟΜΑ | ΜΟΤΙΒΟ1 ΜΟΤΙΒΟ2 ..."
 
-#: ../src/option.c:427
+#: ../src/option.c:431
 msgid "Display list dialog"
 msgstr "Εμφάνιση διαλόγου λίστας"
 
-#: ../src/option.c:445
+#: ../src/option.c:449
 msgid "Set the column header"
 msgstr "Ορισμός της κεφαλίδας στήλης"
 
-#: ../src/option.c:446
+#: ../src/option.c:450
 msgid "COLUMN"
 msgstr "ΣΤΗΛΗ"
 
-#: ../src/option.c:454
+#: ../src/option.c:458
 msgid "Use check boxes for first column"
 msgstr "Χρήση κουτιών ελέγχου για την πρώτη στήλη"
 
-#: ../src/option.c:463
+#: ../src/option.c:467
 msgid "Use radio buttons for first column"
 msgstr "Χρήση κουτιών radio για την πρώτη στήλη"
 
-#: ../src/option.c:481
+#: ../src/option.c:485
 msgid "Allow multiple rows to be selected"
 msgstr "Να επιτρέπεται η επιλογή πολλαπλών γραμμών"
 
-#: ../src/option.c:490 ../src/option.c:707
+#: ../src/option.c:494 ../src/option.c:711
 msgid "Allow changes to text"
 msgstr "Να επιτρέπονται αλλαγές στο κείμενο"
 
-#: ../src/option.c:499
+#: ../src/option.c:503
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -385,264 +398,275 @@ msgstr ""
 "χρησιμοποιηθεί για την εκτύπωση όλων των στηλών)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:501 ../src/option.c:510
+#: ../src/option.c:505 ../src/option.c:514
 msgid "NUMBER"
 msgstr "ΑΡΙΘΜΟΣ"
 
-#: ../src/option.c:509
+#: ../src/option.c:513
 msgid "Hide a specific column"
 msgstr "Απόκρυψη μιας συγκεκριμένης στήλης"
 
-#: ../src/option.c:518
+#: ../src/option.c:522
 msgid "Hides the column headers"
 msgstr "Απόκρυψη των κεφαλίδων στήλης"
 
-#: ../src/option.c:533
+#: ../src/option.c:537
 msgid "Display notification"
 msgstr "Εμφάνιση διαλόγου πληροφόρησης"
 
-#: ../src/option.c:542
+#: ../src/option.c:546
 msgid "Set the notification text"
 msgstr "Καθορισμός του κειμένου πληροφόρησης"
 
-#: ../src/option.c:551
+#: ../src/option.c:555
 msgid "Listen for commands on stdin"
 msgstr "Παρακολούθηση για εντολές από το stdin"
 
-#: ../src/option.c:566
+#: ../src/option.c:570
 msgid "Display progress indication dialog"
 msgstr "Εμφάνιση διαλόγου ένδειξης προόδου"
 
-#: ../src/option.c:584
+#: ../src/option.c:588
 msgid "Set initial percentage"
 msgstr "Ορισμός αρχικού ποσοστού"
 
-#: ../src/option.c:585
+#: ../src/option.c:589
 msgid "PERCENTAGE"
 msgstr "ΠΟΣΟΣΤΟ"
 
-#: ../src/option.c:593
+#: ../src/option.c:597
 msgid "Pulsate progress bar"
 msgstr "Παλλόμενη μπάρα προόδου"
 
-#: ../src/option.c:603
+#: ../src/option.c:607
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Κλείσιμο του διαλόγου όταν ολοκληρωθεί το 100%"
 
-#: ../src/option.c:613
+#: ../src/option.c:617
 #, no-c-format
-msgid "Kill parent process if cancel button is pressed"
-msgstr "Τερματισμός της διεργασίας-γονέα αν πατηθεί το κουμπί ακύρωσης"
+msgid "Kill parent process if Cancel button is pressed"
+msgstr "Τερματισμός της γονικής διεργασίας αν πατηθεί το κουμπί Ακύρωση"
 
-#: ../src/option.c:623
+#: ../src/option.c:627
 #, no-c-format
-msgid "Hide cancel button"
-msgstr ""
+msgid "Hide Cancel button"
+msgstr "Απόκρυψη κουμπιού Ακύρωση"
 
-#: ../src/option.c:638
+#: ../src/option.c:642
 msgid "Display question dialog"
 msgstr "Εμφάνιση διαλόγου ερώτησης"
 
-#: ../src/option.c:656
+#: ../src/option.c:660
 msgid "Sets the label of the Ok button"
 msgstr "Ορισμός της ετικέτας του κουμπιού ΟΚ"
 
-#: ../src/option.c:665
+#: ../src/option.c:669
 msgid "Sets the label of the Cancel button"
 msgstr "Ορισμός της ετικέτας του κουμπιού ακύρωσης"
 
-#: ../src/option.c:689
+#: ../src/option.c:693
 msgid "Display text information dialog"
 msgstr "Εμφάνιση διαλόγου πληροφοριών κειμένου"
 
-#: ../src/option.c:698
+#: ../src/option.c:702
 msgid "Open file"
 msgstr "Άνοιγμα αρχείου"
 
-#: ../src/option.c:722
+#: ../src/option.c:726
 msgid "Display warning dialog"
 msgstr "Εμφάνιση διαλόγου προειδοποίησης"
 
-#: ../src/option.c:755
+#: ../src/option.c:759
 msgid "Display scale dialog"
 msgstr "Εμφάνιση διαλόγου κλιμάκωσης"
 
-#: ../src/option.c:773
+#: ../src/option.c:777
 msgid "Set initial value"
 msgstr "Ορισμός αρχικής τιμής"
 
-#: ../src/option.c:774 ../src/option.c:783 ../src/option.c:792
-#: ../src/option.c:801 ../src/option.c:843
+#: ../src/option.c:778 ../src/option.c:787 ../src/option.c:796
+#: ../src/option.c:805 ../src/option.c:871
 msgid "VALUE"
 msgstr "ΤΙΜΗ"
 
-#: ../src/option.c:782
+#: ../src/option.c:786
 msgid "Set minimum value"
 msgstr "Ορισμός ελάχιστης τιμής"
 
-#: ../src/option.c:791
+#: ../src/option.c:795
 msgid "Set maximum value"
 msgstr "Ορισμός μέγιστης τιμής"
 
-#: ../src/option.c:800
+#: ../src/option.c:804
 msgid "Set step size"
 msgstr "Ορισμός μεγέθους βήματος"
 
-#: ../src/option.c:809
+#: ../src/option.c:813
 msgid "Print partial values"
 msgstr "Εκτύπωση μερικών τιμών"
 
-#: ../src/option.c:818
+#: ../src/option.c:822
 msgid "Hide value"
 msgstr "Απόκρυψη τιμής"
 
-#: ../src/option.c:833
-#, fuzzy
+#: ../src/option.c:837
+msgid "Display password dialog"
+msgstr "Εμφάνιση διαλόγου κωδικού"
+
+#: ../src/option.c:846
+msgid "Display the username option"
+msgstr "Εμφάνιση επιλογής ονόματος χρήστη"
+
+#: ../src/option.c:861
 msgid "Display color selection dialog"
-msgstr "Προβολή διαλόγου επιλογής αρχείου"
+msgstr "Προβολή διαλόγου επιλογής χρώματος"
 
-#: ../src/option.c:842
-#, fuzzy
+#: ../src/option.c:870
 msgid "Set the color"
-msgstr "Ορισμός της κεφαλίδας στήλης"
+msgstr "Ορισμός χρώματος"
 
-#: ../src/option.c:851
-#, fuzzy
+#: ../src/option.c:879
 msgid "Show the palette"
-msgstr "Ορισμός τίτλου διαλόγου"
+msgstr "Εμφάνιση παλέτας χρωμάτων"
 
-#: ../src/option.c:866
+#: ../src/option.c:894
 msgid "About zenity"
 msgstr "Περί του zenity"
 
-#: ../src/option.c:875
+#: ../src/option.c:903
 msgid "Print version"
 msgstr "Έκδοση εκτύπωσης"
 
-#: ../src/option.c:1584
+#: ../src/option.c:1643
 msgid "General options"
 msgstr "Γενικές επιλογές"
 
-#: ../src/option.c:1585
+#: ../src/option.c:1644
 msgid "Show general options"
 msgstr "Εμφάνιση γενικών επιλογών"
 
-#: ../src/option.c:1595
+#: ../src/option.c:1654
 msgid "Calendar options"
 msgstr "Επιλογές ημερολογίου"
 
-#: ../src/option.c:1596
+#: ../src/option.c:1655
 msgid "Show calendar options"
 msgstr "Εμφάνιση επιλογών ημερολογίου"
 
-#: ../src/option.c:1606
+#: ../src/option.c:1665
 msgid "Text entry options"
 msgstr "Επιλογές καταχώρισης κειμένου"
 
-#: ../src/option.c:1607
+#: ../src/option.c:1666
 msgid "Show text entry options"
 msgstr "Εμφάνιση επιλογών καταχώρισης κειμένου"
 
-#: ../src/option.c:1617
+#: ../src/option.c:1676
 msgid "Error options"
 msgstr "Επιλογές σφάλματος"
 
-#: ../src/option.c:1618
+#: ../src/option.c:1677
 msgid "Show error options"
 msgstr "Εμφάνιση επιλογών σφάλματος"
 
-#: ../src/option.c:1628
+#: ../src/option.c:1687
 msgid "Info options"
 msgstr "Επιλογές πληροφ."
 
-#: ../src/option.c:1629
+#: ../src/option.c:1688
 msgid "Show info options"
 msgstr "Εμφάνιση επιλογών πληροφ."
 
-#: ../src/option.c:1639
+#: ../src/option.c:1698
 msgid "File selection options"
 msgstr "Επιλογές διαλόγου επιλογής αρχείου"
 
-#: ../src/option.c:1640
+#: ../src/option.c:1699
 msgid "Show file selection options"
 msgstr "Εμφάνιση επιλογών επιλογής αρχείου"
 
-#: ../src/option.c:1650
+#: ../src/option.c:1709
 msgid "List options"
 msgstr "Επιλογές λίστας"
 
-#: ../src/option.c:1651
+#: ../src/option.c:1710
 msgid "Show list options"
 msgstr "Εμφάνιση επιλογών λίστας"
 
-#: ../src/option.c:1661
+#: ../src/option.c:1720
 msgid "Notification icon options"
 msgstr "Επιλογές εικονιδίου ειδοποίησης"
 
-#: ../src/option.c:1662
+#: ../src/option.c:1721
 msgid "Show notification icon options"
 msgstr "Εμφάνιση επιλογών εικονιδίου ειδοποίησης"
 
-#: ../src/option.c:1672
+#: ../src/option.c:1731
 msgid "Progress options"
 msgstr "Επιλογές προόδου"
 
-#: ../src/option.c:1673
+#: ../src/option.c:1732
 msgid "Show progress options"
 msgstr "Εμφάνιση επιλογών προόδου"
 
-#: ../src/option.c:1683
+#: ../src/option.c:1742
 msgid "Question options"
 msgstr "Επιλογές ερώτησης"
 
-#: ../src/option.c:1684
+#: ../src/option.c:1743
 msgid "Show question options"
 msgstr "Εμφάνιση επιλογών ερώτησης"
 
-#: ../src/option.c:1694
+#: ../src/option.c:1753
 msgid "Warning options"
 msgstr "Επιλογές προειδοποίησης"
 
-#: ../src/option.c:1695
+#: ../src/option.c:1754
 msgid "Show warning options"
 msgstr "Εμφάνιση επιλογών προειδοποίησης"
 
-#: ../src/option.c:1705
+#: ../src/option.c:1764
 msgid "Scale options"
 msgstr "Επιλογές κλιμάκωσης"
 
-#: ../src/option.c:1706
+#: ../src/option.c:1765
 msgid "Show scale options"
 msgstr "Εμφάνιση επιλογών κλιμάκωσης"
 
-#: ../src/option.c:1716
+#: ../src/option.c:1775
 msgid "Text information options"
 msgstr "Επιλογές πληροφοριών κειμένου"
 
-#: ../src/option.c:1717
+#: ../src/option.c:1776
 msgid "Show text information options"
 msgstr "Εμφάνιση επιλογών πληροφοριών κειμένου"
 
-#: ../src/option.c:1727
-#, fuzzy
+#: ../src/option.c:1786
 msgid "Color selection options"
-msgstr "Επιλογές διαλόγου επιλογής αρχείου"
+msgstr "Επιλογές επιλογής χρώματος"
 
-#: ../src/option.c:1728
-#, fuzzy
+#: ../src/option.c:1787
 msgid "Show color selection options"
-msgstr "Εμφάνιση επιλογών επιλογής αρχείου"
+msgstr "Εμφάνιση επιλογών επιλογής χρώματος"
 
-#: ../src/option.c:1738
+#: ../src/option.c:1797
+msgid "Password dialog options"
+msgstr "Επιλογές διαλόγου κωδικού"
+
+#: ../src/option.c:1798
+msgid "Show password dialog options"
+msgstr "Εμφάνιση επιλογών διαλόγου κωδικού"
+
+#: ../src/option.c:1808
 msgid "Miscellaneous options"
 msgstr "Διάφορες επιλογές"
 
-#: ../src/option.c:1739
+#: ../src/option.c:1809
 msgid "Show miscellaneous options"
 msgstr "Εμφάνιση διάφορων επιλογών"
 
-#: ../src/option.c:1764
+#: ../src/option.c:1834
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -650,12 +674,12 @@ msgstr ""
 "Αυτή η επιλογή δεν είναι διαθέσιμη. Δείτε --help για όλες τις πιθανές "
 "χρήσεις.\n"
 
-#: ../src/option.c:1768
+#: ../src/option.c:1838
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "το --%s δεν υποστηρίζεται για αυτό το διάλογο\n"
 
-#: ../src/option.c:1772
+#: ../src/option.c:1842
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Καθορίστηκαν δύο ή περισσότεροι διάλογοι\n"
