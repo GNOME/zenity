@@ -123,6 +123,8 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   password_data->entry_password = gtk_entry_new();
   gtk_entry_set_visibility(GTK_ENTRY(password_data->entry_password), 
                            FALSE);
+  gtk_entry_set_activates_default (GTK_ENTRY(password_data->entry_password),
+				   TRUE);
   gtk_box_pack_start(GTK_BOX(vbox_entries),
                      password_data->entry_password,
                      TRUE,
