@@ -328,7 +328,7 @@ transient_get_xterm (void)
     if (*wid_str != '\0' && *wid_str_end == '\0' && wid != 0) {
       XWindowAttributes attrs;
       gdk_error_trap_push ();
-      ret = XGetWindowAttributes (GDK_DISPLAY(), wid, &attrs);
+      ret = XGetWindowAttributes (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), wid, &attrs);
       gdk_flush();
       if (gdk_error_trap_pop () != 0 || ret == 0) {
         return None;
@@ -350,7 +350,7 @@ static gboolean
 transient_is_toplevel (Window wid)
 {
   XTextProperty prop;
-  Display *dpy = GDK_DISPLAY ();
+  Display *dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
   if (!XGetWMName (dpy, wid, &prop))
     return FALSE;
   transient_x_free (prop.value);
@@ -367,7 +367,7 @@ static Window
 transient_get_xterm_toplevel (void)
 {
   Window xterm = transient_get_xterm ();
-  Display *dpy = GDK_DISPLAY ();
+  Display *dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
   while (xterm != None && !transient_is_toplevel (xterm))
   {
     Window root, parent, *children;
