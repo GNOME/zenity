@@ -2,484 +2,700 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 #  Abduxukur Abdurixit <abduxukur.abdurixit@t-systems.ch> 2005
-#
+# Gheyret Kenji <gheyret@yahoo.com>, 2010.
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
-"PO-Revision-Date: 2004-02-05 00:10+0100\n"
-"Last-Translator:  Abduxukur Abdurixit <abduxukur.abdurixit@t-systems.ch>\n"
-"Language-Team:  GNOME Uighur Translation Project <gnome-uighur@yahoogroups."
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=zenity&component=general\n"
+"POT-Creation-Date: 2010-10-20 23:43+0000\n"
+"PO-Revision-Date: 2010-10-22 08:58+0600\n"
+"Last-Translator: Sahran <sahran@live.com>\n"
+"Language-Team: GNOME Uighur Translation Project <gnome-uighur@yahoogroups."
 "com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
+#: ../src/about.c:64
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version.\n"
+msgstr ""
+"بۇ پروگرامما ئەركىن يۇمشاق دېتال؛ سىز ئەركىن يۇمشاق دېتال ۋەخپىسى تارقاتقان "
+"GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە بويىچە ئۇنى قايتا تارقىتىپ ياكى "
+"ئۆزگەرتەلەيسىز؛ سىز شۇ ئىجازەت كېلىشىمىنىڭ ئىككىنچى نەشرى ياكى يۇقىرى "
+"نەشرىنى ئىشلەتسىڭىز بولىدۇ.\n"
+
+#: ../src/about.c:68
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
+"for more details.\n"
+msgstr ""
+"بۇ پروگراممىنى تارقىتىشتىكى مەقسەت سىزگە قۇلايلىق ئېلىپ كېلىش، ئەمما "
+"ھېچقانداق كاپالەت يوق. ھەمدە خالىغان مەقسەتتە ئۇنى ئىشلىتىپ كېلىپ چىققان "
+"بىۋاسىتە ياكى ۋاسىتىلىك ھەر قانداق ئاقىۋەتكە ھېچقانداق مەسئۇلىيەتنى ئۈستىگە "
+"ئالمايدۇ. GNU ئادەتتىكى ئاممىۋى ئىجازەت كېلىشىمىنى كۆرۈپ تېخىمۇ كۆپ "
+"تەپسىلاتقا ئېرىشىڭ.\n"
+
+#: ../src/about.c:72
+msgid ""
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this program; if not, write to the Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+"مەزكۇر پروگرامما بىلەن بىرگە GNU ئادەتتىكى ئاممىۋى ئىجازەت كېلىشىمىدىن بىر "
+"نۇسخا تاپشۇرۇۋالىسىز؛ ئۇنداق بولمىسا بۇ ئادرېسقا خەت يېزىڭ: Free Software "
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
+"USA "
+
+#: ../src/about.c:265
 msgid "translator-credits"
-msgstr "تەرجىماننىڭ تەشەككۈرى"
+msgstr "تەرجىمان تۆھپىكارلار"
 
-#: ../src/about.c:433
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
-msgstr "shell script تىن دىئالوگ كۆزنىگى ئېچىش"
+msgstr "shell قوليازمىدا سۆزلەشكۈ كۆرسەت"
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(C) 2003 Sun Microsystems"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "تەشەككۈر"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "يازغۇچى"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "تەرجىمە قىلغۇچى"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "يۆلۈنۈش"
-
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "نىڭ يۆلۈنۇشى tray"
-
-#: ../src/main.c:90
+#: ../src/main.c:100
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
-"دىئالوگ تۈرىنى ئېنىق بەلگۈلىشىڭىز لازىم. چۈشەندۈرۈش ئۈچۈن 'zenity --help' گە "
-"قاراڭ.\n"
+"سۆزلەشكۈ تۈرىنى بەلگىلىشىڭىز لازىم. تەپسىلاتىنى 'zenity --help' دىن كۆرۈڭ.\n"
 
-#: ../src/notification.c:161
+#: ../src/notification.c:94
+#, c-format
 msgid "could not parse command from stdin\n"
-msgstr "دىن كىرگەن كوماندىنى بىر تەرەپ قىلىشقا ئامالسىز stdin. \n"
+msgstr "stdin نىڭ بۇيرۇقىنى تەھلىل قىلالمىدى\n"
 
-#: ../src/notification.c:230 ../src/notification.c:259
+#: ../src/notification.c:121
+#, c-format
+msgid "Could not parse message from stdin\n"
+msgstr "stdin نىڭ ئۇچۇرىنى تەھلىل قىلالمىدى\n"
+
+#: ../src/notification.c:195
 msgid "Zenity notification"
-msgstr "نىڭ ئۇختۇرىشى Zenity"
+msgstr "نىڭ ئۇقتۇرۇشى Zenity"
 
-#: ../src/tree.c:320
+#: ../src/password.c:64
+msgid "Type your password"
+msgstr "ئىم كىرگۈزۈڭ"
+
+#: ../src/password.c:99
+msgid "Username:"
+msgstr "ئىشلەتكۈچى ئاتى:"
+
+#: ../src/password.c:115
+msgid "Password:"
+msgstr "ئىم:"
+
+#: ../src/scale.c:56
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "ئەڭ چوڭ قىممىتى ئەڭ كىچىك قىممىتىدىن چوڭ بولۇشى كېرەك.\n"
+
+#: ../src/scale.c:63
+#, c-format
+msgid "Value out of range.\n"
+msgstr "قىممىتى دائىرىدىن ئېشىپ كەتتى.\n"
+
+#: ../src/tree.c:321
+#, c-format
 msgid "No column titles specified for List dialog.\n"
-msgstr "تىزىم دىئالوگىدا ئىستون تېمىسى بەلگۈلەنمىگەن\n"
+msgstr "تىزىملىك سۆزلەشكۈدە ئىستون تېمىسى بەلگىلەنمىگەن.\n"
 
-#: ../src/tree.c:326
+#: ../src/tree.c:327
+#, c-format
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "سىز پەقەت بىرلا تىزىملىك سۆزلەشكۈ تىپىنى ئىشلىتەلەيسىز.\n"
 
-#: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "Zenity ھەققىدە "
-
-#: ../src/zenity.glade.h:3
+#: ../src/zenity.ui.h:1
 msgid "Add a new entry"
-msgstr "يېڭى تۈرنى قوشۇش"
+msgstr "يېڭى تۈر قوش"
 
-#: ../src/zenity.glade.h:4
+#: ../src/zenity.ui.h:2
+msgid "Adjust the scale value"
+msgstr "دائىرە قىممەت تەڭشىكى"
+
+#: ../src/zenity.ui.h:3
 msgid "All updates are complete."
-msgstr "ھەممە يېڭىلاش تاماملاندى"
+msgstr "ھەممە يېڭىلاش تاماملاندى."
 
-#: ../src/zenity.glade.h:5
+#: ../src/zenity.ui.h:4
 msgid "An error has occurred."
-msgstr "خاتالىق يۈز بەردى"
+msgstr "خاتالىق يۈز بەردى."
 
-#: ../src/zenity.glade.h:6
+#: ../src/zenity.ui.h:5
 msgid "Are you sure you want to proceed?"
-msgstr "داۋاملاشتۇرامسىز؟"
+msgstr "راستىنىلا داۋاملاشتۇرامسىز؟"
 
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.ui.h:6
 msgid "C_alendar:"
-msgstr "كالېندار(_C)"
+msgstr "يىلنامە(_C)"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.ui.h:7
 msgid "Calendar selection"
-msgstr "كالېندارنى تاللاش"
+msgstr "يىلنامە تاللاش"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.ui.h:8
 msgid "Error"
-msgstr "خاتا"
+msgstr "خاتالىق"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.ui.h:9
 msgid "Information"
 msgstr "ئۇچۇر"
 
-#: ../src/zenity.glade.h:11
+#: ../src/zenity.ui.h:10
 msgid "Progress"
-msgstr "داۋاملىشىش"
+msgstr "سۈرئەت"
 
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.ui.h:11
 msgid "Question"
 msgstr "سوئال"
 
-#: ../src/zenity.glade.h:13
+#: ../src/zenity.ui.h:12
 msgid "Running..."
-msgstr "يۈرگۈزىلىۋاتىدۇ"
+msgstr "ئىجرا قىلىنىۋاتىدۇ..."
 
-#: ../src/zenity.glade.h:14
+#: ../src/zenity.ui.h:13
 msgid "Select a date from below."
-msgstr "تۆۋەندىكىدىن بىر كۈننى تاللاڭ"
+msgstr "تۆۋەندىكى چېسلادىن بىرنى تاللاڭ."
 
-#: ../src/zenity.glade.h:15
-msgid "Select a file"
-msgstr "بىر ھۆججەتنى تاللاڭ"
-
-#: ../src/zenity.glade.h:16
+#: ../src/zenity.ui.h:14
 msgid "Select items from the list"
-msgstr "تىزىملىكتىن بىر تۈرنى تاللاڭ"
+msgstr "تىزىملىكتىن تۈردىن بىرنى تاللاڭ"
 
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.ui.h:15
 msgid "Select items from the list below."
-msgstr "تۆۋەندىكىدىن بىر تۈرنى تاللاڭ"
+msgstr "تۆۋەندىكى تىزىملىكتىن تۈرنى تاللاڭ"
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.ui.h:16
 msgid "Text View"
-msgstr "تېكىست شەكلىدە كۆرۈش"
+msgstr "تېكىست كۆرۈنۈش"
 
-#: ../src/zenity.glade.h:19
+#: ../src/zenity.ui.h:17
 msgid "Warning"
 msgstr "ئاگاھلاندۇرۇش"
 
-#: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "تەشەككۈر"
-
-#: ../src/zenity.glade.h:21
+#: ../src/zenity.ui.h:18
 msgid "_Enter new text:"
-msgstr "يېڭى تېكىست كىرگۈزۈڭ"
+msgstr "يېڭى تېكىست كىرگۈزۈڭ(_E):"
 
-#: ../src/option.c:105
+#: ../src/option.c:131
 msgid "Set the dialog title"
-msgstr "دىئالوگ تېمىسىنى قويۇڭ"
+msgstr "سۆزلەشكۈ تېما تەڭشىكى"
 
-#: ../src/option.c:106
+#: ../src/option.c:132
 msgid "TITLE"
 msgstr "تېما"
 
-#: ../src/option.c:114
+#: ../src/option.c:140
 msgid "Set the window icon"
-msgstr "كۆزنەك ئىكونىنى بەلگۈلەڭ"
+msgstr "كۆزنەك سىنبەلگە تەڭشىكى"
 
-#: ../src/option.c:115
+#: ../src/option.c:141
 msgid "ICONPATH"
-msgstr "ئىكون يولى"
+msgstr "سىنبەلگە يولى"
 
-#: ../src/option.c:123
+#: ../src/option.c:149
 msgid "Set the width"
-msgstr "كەڭلىگىنى بەلگۈلەڭ"
+msgstr "كەڭلىك تەڭشىكى"
 
-#: ../src/option.c:124
+#: ../src/option.c:150
 msgid "WIDTH"
-msgstr "كەڭلىگى"
+msgstr "كەڭلىكى"
 
-#: ../src/option.c:132
+#: ../src/option.c:158
 msgid "Set the height"
-msgstr "ئىگىزلىگىنى بەلگۈلەڭ"
+msgstr "ئېگىزلىك تەڭشىكى"
 
-#: ../src/option.c:133
+#: ../src/option.c:159
 msgid "HEIGHT"
-msgstr "ئىگىزلىگى"
+msgstr "ئېگىزلىكى"
 
-#: ../src/option.c:147
-msgid "Display calendar dialog"
-msgstr "كالېندار دىئالوگىنى كۆرسىتىش"
+#: ../src/option.c:167
+msgid "Set dialog timeout in seconds"
+msgstr "سۆزلەشكۈنىڭ مۆھلەتتىن ھالقىش ۋاقتى(سېكۇنت) تەڭشىكى"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
-msgid "Set the dialog text"
-msgstr "دىئالوگ تېكىستىنى بەلگۈلەش"
-
-#: ../src/option.c:165
-msgid "Set the calendar day"
-msgstr "كۈننى بەلگۈلەڭ"
-
-#: ../src/option.c:174
-msgid "Set the calendar month"
-msgstr "ئاينى بەلگۈلەڭ"
+#. Timeout for closing the dialog
+#: ../src/option.c:169
+msgid "TIMEOUT"
+msgstr "مۆھلەتتىن ھالقىش ۋاقتى"
 
 #: ../src/option.c:183
+msgid "Display calendar dialog"
+msgstr "يىلنامە سۆزلەشكۈسىنى كۆرسەت"
+
+#: ../src/option.c:192 ../src/option.c:252 ../src/option.c:295
+#: ../src/option.c:328 ../src/option.c:440 ../src/option.c:579
+#: ../src/option.c:651 ../src/option.c:735 ../src/option.c:768
+msgid "Set the dialog text"
+msgstr "سۆزلەشكۈ تېكىست تەڭشىكى"
+
+#: ../src/option.c:193 ../src/option.c:253 ../src/option.c:262
+#: ../src/option.c:296 ../src/option.c:329 ../src/option.c:441
+#: ../src/option.c:547 ../src/option.c:580 ../src/option.c:652
+#: ../src/option.c:661 ../src/option.c:670 ../src/option.c:736
+#: ../src/option.c:769
+msgid "TEXT"
+msgstr "تېكىست"
+
+#: ../src/option.c:201
+msgid "Set the calendar day"
+msgstr "يىلنامەدىكى كۈن تەڭشىكى"
+
+#: ../src/option.c:202
+msgid "DAY"
+msgstr "كۈن"
+
+#: ../src/option.c:210
+msgid "Set the calendar month"
+msgstr "يىلنامەدىكى ئاي تەڭشىكى"
+
+#: ../src/option.c:211
+msgid "MONTH"
+msgstr "ئاي"
+
+#: ../src/option.c:219
 msgid "Set the calendar year"
-msgstr "يىلنى بەلگۈلەڭ"
+msgstr "يىلنامەدىكى يىل تەڭشىكى"
 
-#: ../src/option.c:192
+#: ../src/option.c:220
+msgid "YEAR"
+msgstr "يىل"
+
+#: ../src/option.c:228
 msgid "Set the format for the returned date"
-msgstr "كۆرسىتىلگەن چىسلانىڭ فورماتىنى بەلگۈلەش "
+msgstr "قايتۇرىدىغان چېسلا فورمات تەڭشىكى"
 
-#: ../src/option.c:207
+#: ../src/option.c:229
+msgid "PATTERN"
+msgstr "قېلىپ"
+
+#: ../src/option.c:243
 msgid "Display text entry dialog"
-msgstr "تېكىست كىرگۈزۈش دىئالوگىنى كۆرسىتىش"
+msgstr "تېكىست كىرگۈزۈش سۆزلەشكۈسىنى كۆرسەت"
 
-#: ../src/option.c:225
+#: ../src/option.c:261
 msgid "Set the entry text"
-msgstr "كىرگۈزۈش تېكىستىنى بەلگۈلەش"
+msgstr "كىرگۈزۈش تېكىست تەڭشىكى"
 
-#: ../src/option.c:234
+#: ../src/option.c:270
 msgid "Hide the entry text"
-msgstr "كىرگۈزۈش تېكىستىنى يوشۇرۇش"
+msgstr "كىرگۈزۈش تېكىستىنى يوشۇر"
 
-#: ../src/option.c:250
+#: ../src/option.c:286
 msgid "Display error dialog"
-msgstr "خاتالىق دىئالوگىنى كۆرسىتىش"
+msgstr "خاتالىق سۆزلەشكۈنى كۆرسەت"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: ../src/option.c:304 ../src/option.c:337 ../src/option.c:678
+#: ../src/option.c:744
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "تېكىست چۆرىدەشنى قوزغاتما"
 
-#: ../src/option.c:283
+#: ../src/option.c:319
 msgid "Display info dialog"
-msgstr "ئۇچۇر دىئالوگىنى كۆرسىتىش"
-
-#: ../src/option.c:316
-msgid "Display file selection dialog"
-msgstr "ھۆججەت تاللاش دىئالوگىنى كۆرسىتىش"
-
-#: ../src/option.c:325
-msgid "Set the filename"
-msgstr "ھۆججەت نامىنى بەلگۈلەش"
-
-#: ../src/option.c:326 ../src/option.c:600
-msgid "FILENAME"
-msgstr "ھۆججەت نامى"
-
-#: ../src/option.c:334
-msgid "Allow multiple files to be selected"
-msgstr "بىر نەچچە ھۆججەتنى تاالاشقا رۇخسەت قىلىش "
-
-#: ../src/option.c:343
-msgid "Activate directory-only selection"
-msgstr "مۇندەرىجىنىلا تاللاشنى ئاكتىپلاشتۇرۇش"
+msgstr "ئۇچۇر سۆزلەشكۈسىنى كۆرسەت"
 
 #: ../src/option.c:352
+msgid "Display file selection dialog"
+msgstr "ھۆججەت تاللاش سۆزلەشكۈسىنى كۆرسەت"
+
+#: ../src/option.c:361
+msgid "Set the filename"
+msgstr "ھۆججەت ئات تەڭشىكى"
+
+#: ../src/option.c:362 ../src/option.c:703
+msgid "FILENAME"
+msgstr "ھۆججەت ئاتى"
+
+#: ../src/option.c:370
+msgid "Allow multiple files to be selected"
+msgstr "بىر نەچچە ھۆججەتنى تاللاشقا يول قويۇلىدۇ"
+
+#: ../src/option.c:379
+msgid "Activate directory-only selection"
+msgstr "مۇندەرىجىنىلا تاللاشنى ئاكتىپلا"
+
+#: ../src/option.c:388
 msgid "Activate save mode"
-msgstr "ساقلاش شەكلىنى ئاكتىپلاشتۇرۇش"
+msgstr "ساقلاش شەكلىنى ئاكتىپلا"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: ../src/option.c:397 ../src/option.c:476
 msgid "Set output separator character"
-msgstr "نەتىجىنى ئايرىغۇچى ھەرپىنى بەلگۈلەش"
+msgstr "نەتىجىنى ئايرىغۇچى ھەرپ تەڭشىكى"
 
-#: ../src/option.c:362 ../src/option.c:422
+#: ../src/option.c:398 ../src/option.c:477
 msgid "SEPARATOR"
 msgstr "ئايرىغۇچ"
 
-#: ../src/option.c:376
+#: ../src/option.c:406
+msgid "Confirm file selection if filename already exists"
+msgstr "ھۆججەت مەۋجۇت بولسا قاپلىۋېتىشتە جەزملە"
+
+#: ../src/option.c:415
+msgid "Sets a filename filter"
+msgstr "ھۆججەت ئاتى سۈزگۈچ تەڭشىكى"
+
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:417
+msgid "NAME | PATTERN1 PATTERN2 ..."
+msgstr "ئات | نۇسخا1 نۇسخا2 …"
+
+#: ../src/option.c:431
 msgid "Display list dialog"
-msgstr "تىزىم دىئالوگىنى كۆرسىتىش"
+msgstr "تىزىملىك سۆزلەشكۈنى كۆرسەت"
 
-#: ../src/option.c:394
+#: ../src/option.c:449
 msgid "Set the column header"
-msgstr "ئىستون تېمىسىنى بەلگۈلەش"
+msgstr "ئىستون تېما تەڭشىكى"
 
-#: ../src/option.c:403
+#: ../src/option.c:450
+msgid "COLUMN"
+msgstr "ئىستون"
+
+#: ../src/option.c:458
 msgid "Use check boxes for first column"
-msgstr "بىرىنچى ئستون ئۈچۈن تاللاش كاتەكچىسىنى ئشلىتىش"
+msgstr "بىرىنچى ئىستون ئۈچۈن تاللاش كاتەكچىسىنى ئىشلەت"
 
-#: ../src/option.c:412
+#: ../src/option.c:467
 msgid "Use radio buttons for first column"
-msgstr "بىرىنچى ئستون ئۈچۈن تاللاش يۇمۇلاقچىسىنى ئشلىتىش"
+msgstr "بىرىنچى ئىستون ئۈچۈن تاق تاللاش توپچىسىنى ئىشلەت"
 
-#: ../src/option.c:430
-#, fuzzy
+#: ../src/option.c:485
 msgid "Allow multiple rows to be selected"
-msgstr "بىر نەچچە ھۆججەتنى تاالاشقا رۇخسەت قىلىش "
+msgstr "كۆپ قۇر تاللاشقا يول قوي"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: ../src/option.c:494 ../src/option.c:711
 msgid "Allow changes to text"
-msgstr "تېكىستنى ئۆزگەرىشكە رۇخسەت قىلىش"
+msgstr "تېكىستنى ئۆزگەرتىشكە يول قوي"
 
-#: ../src/option.c:448
+#: ../src/option.c:503
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
-"بەلگۈلەنگەن ئىستوننى بېسىپ چىقىرىش (ئادەتتە بىر ئستوننىلا باسىدۇ. ALL "
-"تاللانسا ھەممە ئىستوننى باسىدۇ.)"
+"بەلگىلەنگەن ئىستوننى باسىدۇ (ئادەتتە بىر ئىستوننىلا باسىدۇ. 'ALL' ھەممىسى "
+"تاللانسا ھەممە ئىستوننى باسىدۇ)"
 
-#: ../src/option.c:457
+#. Column index number to print out on a list dialog
+#: ../src/option.c:505 ../src/option.c:514
+msgid "NUMBER"
+msgstr "سان"
+
+#: ../src/option.c:513
 msgid "Hide a specific column"
-msgstr ""
+msgstr "بەلگىلەنگەن ئىستوننى يوشۇر"
 
-#: ../src/option.c:472
+#: ../src/option.c:522
+msgid "Hides the column headers"
+msgstr "ئىستون باشىنى يوشۇر"
+
+#: ../src/option.c:537
 msgid "Display notification"
-msgstr "ئۇختۇرۇشنى كۆرسىتىش"
+msgstr "ئۇقتۇرۇشنى كۆرسەت"
 
-#: ../src/option.c:481
+#: ../src/option.c:546
 msgid "Set the notification text"
-msgstr "ئۇىتۇرۇش تېكىستىنى بەلگۈلەش"
+msgstr "ئۇقتۇرۇش تېكىست تەڭشىكى"
 
-#: ../src/option.c:490
+#: ../src/option.c:555
 msgid "Listen for commands on stdin"
-msgstr "دىن كوماندڭلارنڭ كۈزىتىش stdin"
+msgstr "stdin دىن بۇيرۇق تىڭشا"
 
-#: ../src/option.c:505
+#: ../src/option.c:570
 msgid "Display progress indication dialog"
-msgstr "داۋاملىشىىش دىئالوگىنى كۆرسىتىش"
+msgstr "سۈرئەت بەلگە سۆزلەشكۈسىنى كۆرسەت"
 
-#: ../src/option.c:523
+#: ../src/option.c:588
 msgid "Set initial percentage"
-msgstr "دەسلەپكى پىرسەنتىنى بەلگۈلەش"
+msgstr "دەسلەپكى پىرسەنت تەڭشىكى"
 
-#: ../src/option.c:532
+#: ../src/option.c:589
+msgid "PERCENTAGE"
+msgstr "پىرسەنت"
+
+#: ../src/option.c:597
 msgid "Pulsate progress bar"
-msgstr "سەكرەپ كۆرۈنىدىغان داۋاملىشىش تاختىسى"
+msgstr "تەۋرەنمە سۈرئەت بالداق"
 
-#: ../src/option.c:542
+#: ../src/option.c:607
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr "گە يەتكەندە دىئالوگنى ئۆچۈرۈش %100"
+msgstr "%100 گە يەتكەندە سۆزلەشكۈنى ياپ "
 
-#: ../src/option.c:557
+#: ../src/option.c:617
+#, no-c-format
+msgid "Kill parent process if Cancel button is pressed"
+msgstr "ۋاز كەچ توپچا بېسىلسا ئاتا جەرياننى توختات"
+
+#: ../src/option.c:627
+#, no-c-format
+msgid "Hide Cancel button"
+msgstr "ۋاز كەچ توپچىنى يوشۇر"
+
+#: ../src/option.c:642
 msgid "Display question dialog"
-msgstr "سوئال دىئالوگىنى كۆرسىتىش"
+msgstr "سوئال سۆزلەشكۈنى كۆرسەت"
 
-#: ../src/option.c:590
+#: ../src/option.c:660
+msgid "Sets the label of the Ok button"
+msgstr "جەزملە توپچىنىڭ بەلگە تەڭشىكى"
+
+#: ../src/option.c:669
+msgid "Sets the label of the Cancel button"
+msgstr "ۋاز كەچ توپچىنىڭ بەلگە تەڭشىكى"
+
+#: ../src/option.c:693
 msgid "Display text information dialog"
-msgstr "تېكىست ئۇچۇر دىئالوگىنى كۆرسىتىش"
+msgstr "تېكىست ئۇچۇر سۆزلەشكۈنى كۆرسەت"
 
-#: ../src/option.c:599
+#: ../src/option.c:702
 msgid "Open file"
-msgstr "ھۆججەتنى ئېچىش"
+msgstr "ھۆججەت ئاچ"
 
-#: ../src/option.c:623
+#: ../src/option.c:726
 msgid "Display warning dialog"
-msgstr "ئاگاھلاندۇرۇش دىئالوگىنى كۆرسىتىش"
+msgstr "ئاگاھلاندۇرۇش سۆزلەشكۈنى كۆرسەت"
 
-#: ../src/option.c:656
+#: ../src/option.c:759
+msgid "Display scale dialog"
+msgstr "دائىرە سۆزلەشكۈنى كۆرسەت"
+
+#: ../src/option.c:777
+msgid "Set initial value"
+msgstr "دەسلەپكى قىممەت تەڭشىكى"
+
+#: ../src/option.c:778 ../src/option.c:787 ../src/option.c:796
+#: ../src/option.c:805 ../src/option.c:871
+msgid "VALUE"
+msgstr "قىممىتى"
+
+#: ../src/option.c:786
+msgid "Set minimum value"
+msgstr "ئەڭ كىچىك قىممەت تەڭشىكى"
+
+#: ../src/option.c:795
+msgid "Set maximum value"
+msgstr "ئەڭ چوڭ قىممەت تەڭشىكى"
+
+#: ../src/option.c:804
+msgid "Set step size"
+msgstr "قەدەم چوڭلۇق تەڭشىكى"
+
+#: ../src/option.c:813
+msgid "Print partial values"
+msgstr "قىسمەن قىممەتنى باس"
+
+#: ../src/option.c:822
+msgid "Hide value"
+msgstr "قىممىتىنى يوشۇر"
+
+#: ../src/option.c:837
+msgid "Display password dialog"
+msgstr "ئىم سۆزلەشكۈنى كۆرسەت"
+
+#: ../src/option.c:846
+msgid "Display the username option"
+msgstr "ئىشلەتكۈچى ئاتى سۆزلەشكۈنى كۆرسەت"
+
+#: ../src/option.c:861
+msgid "Display color selection dialog"
+msgstr "رەڭ تاللاش سۆزلەشكۈنى كۆرسەت"
+
+#: ../src/option.c:870
+msgid "Set the color"
+msgstr "رەڭ تەڭشىكى"
+
+#: ../src/option.c:879
+msgid "Show the palette"
+msgstr "رەڭ تاختىنى كۆرسەت"
+
+#: ../src/option.c:894
 msgid "About zenity"
 msgstr "ھەققىدە Zenity"
 
-#: ../src/option.c:665
+#: ../src/option.c:903
 msgid "Print version"
-msgstr "نۇسخىسىنى بېسىش"
+msgstr "نەشرىنى باس"
 
-#: ../src/option.c:1259
+#: ../src/option.c:1643
 msgid "General options"
-msgstr "كۆپ كۆرۈلىدىغان تاللاشلار"
+msgstr "ئادەتتىكى تاللانما"
 
-#: ../src/option.c:1260
+#: ../src/option.c:1644
 msgid "Show general options"
-msgstr "كۆپ كۆرۈلىدىغان تاللاشلارنى كۆرسىتىش"
+msgstr "ئادەتتىكى تاللانمىنى كۆرسەت"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1654
 msgid "Calendar options"
-msgstr "كالېندار تۈرلىرى"
+msgstr "يىلنامە تاللانما"
 
-#: ../src/option.c:1271
+#: ../src/option.c:1655
 msgid "Show calendar options"
-msgstr "كالېندار تۈرلىرىنى كۆرسىتىش"
+msgstr "يىلنامە تاللانمىنى كۆرسەت"
 
-#: ../src/option.c:1281
+#: ../src/option.c:1665
 msgid "Text entry options"
-msgstr "تېكىست كىرگۈزۈش تۈرلىرى"
+msgstr "تېكىست كىرگۈزۈش تاللانما"
 
-#: ../src/option.c:1282
+#: ../src/option.c:1666
 msgid "Show text entry options"
-msgstr "تېكىست كىرگۈزۈش تۈرلىرىنى كۆرسىتىش"
+msgstr "تېكىست كىرگۈزۈش تاللانمىنى كۆرسەت"
 
-#: ../src/option.c:1292
+#: ../src/option.c:1676
 msgid "Error options"
-msgstr "خاتالىق تۈرلىرى"
+msgstr "خاتالىق تاللانما"
 
-#: ../src/option.c:1293
+#: ../src/option.c:1677
 msgid "Show error options"
-msgstr "خاتالىق تۈرلىرى كۆرسىتىش"
+msgstr "خاتالىق تاللانما كۆرسەت"
 
-#: ../src/option.c:1303
+#: ../src/option.c:1687
 msgid "Info options"
-msgstr "ئۇچۇر تۈرلىرى"
+msgstr "ئۇچۇر تاللانما"
 
-#: ../src/option.c:1304
+#: ../src/option.c:1688
 msgid "Show info options"
-msgstr "ئۇچۇر تۈرلىرىنى كۆرسىتىش"
+msgstr "ئۇچۇر تاللانما كۆرسەت"
 
-#: ../src/option.c:1314
+#: ../src/option.c:1698
 msgid "File selection options"
-msgstr "ھۆججەت تاللاش تۈرلىرى"
+msgstr "ھۆججەت تاللاش تاللانما"
 
-#: ../src/option.c:1315
+#: ../src/option.c:1699
 msgid "Show file selection options"
-msgstr "ھۆججەت تاللاش تۈرلىرىنى كۆرسىتىش"
+msgstr "ھۆججەت تاللاش تاللانمىنى كۆرسەت"
 
-#: ../src/option.c:1325
+#: ../src/option.c:1709
 msgid "List options"
-msgstr "تىزىش تۈرلىرى"
+msgstr "تىزىملىك تاللانما"
 
-#: ../src/option.c:1326
+#: ../src/option.c:1710
 msgid "Show list options"
-msgstr " تىزىش تۈرلىرى كۆرسىتىش"
+msgstr "تىزىملىك تاللانما كۆرسەت"
 
-#: ../src/option.c:1336
+#: ../src/option.c:1720
 msgid "Notification icon options"
-msgstr "ئۇختۇرۇش ئىكون تۈرلىرى"
+msgstr "ئۇقتۇرۇش سىنبەلگە تاللانما"
 
-#: ../src/option.c:1337
+#: ../src/option.c:1721
 msgid "Show notification icon options"
-msgstr "ۇختۇرۇش ئىكون تۈرلىرىنى كۆرسىتىش"
+msgstr "ئۇقتۇرۇش سىنبەلگە تاللانما كۆرسەت"
 
-#: ../src/option.c:1347
+#: ../src/option.c:1731
 msgid "Progress options"
-msgstr "داۋاملىشش تۈرلىرى"
+msgstr "سۈرئەت تاللانما"
 
-#: ../src/option.c:1348
+#: ../src/option.c:1732
 msgid "Show progress options"
-msgstr "داۋاملىشش تۈرلىرىنى كۆرسىتىش "
+msgstr "سۈرئەت تاللانما كۆرسەت"
 
-#: ../src/option.c:1358
+#: ../src/option.c:1742
 msgid "Question options"
-msgstr "سوئال تۈرلىرى"
+msgstr "سوئال تاللانما"
 
-#: ../src/option.c:1359
+#: ../src/option.c:1743
 msgid "Show question options"
-msgstr "سوئال تۈرلىرىنى كۆرسىتىش"
+msgstr "سوئال تاللانما كۆرسەت"
 
-#: ../src/option.c:1369
+#: ../src/option.c:1753
 msgid "Warning options"
-msgstr "ئاگاھلاندۇرۇش تۈرلىرى"
+msgstr "ئاگاھلاندۇرۇش تاللانما"
 
-#: ../src/option.c:1370
+#: ../src/option.c:1754
 msgid "Show warning options"
-msgstr "ئاگاھلاندۇرۇش تۈرلىرىنى كۆرسىتىش "
+msgstr "ئاگاھلاندۇرۇش تاللانما كۆرسەت"
 
-#: ../src/option.c:1380
+#: ../src/option.c:1764
+msgid "Scale options"
+msgstr "دائىرە تاللانما"
+
+#: ../src/option.c:1765
+msgid "Show scale options"
+msgstr "دائىرە تاللانما كۆرسەت"
+
+#: ../src/option.c:1775
 msgid "Text information options"
-msgstr "تېكىست ئچۇر تۈرلىرى"
+msgstr "تېكىست ئۇچۇر تاللانما"
 
-#: ../src/option.c:1381
+#: ../src/option.c:1776
 msgid "Show text information options"
-msgstr "تېكىست ئچۇر تۈرلىرىنى كۆرسىتىش"
+msgstr "تېكىست ئۇچۇر تاللانمىنى كۆرسەت"
 
-#: ../src/option.c:1391
+#: ../src/option.c:1786
+msgid "Color selection options"
+msgstr "رەڭ تاللاش تاللانما"
+
+#: ../src/option.c:1787
+msgid "Show color selection options"
+msgstr "رەڭ تاللاش تاللانمىنى كۆرسەت"
+
+#: ../src/option.c:1797
+msgid "Password dialog options"
+msgstr "ئىم سۆزلەشكۈ تاللانما"
+
+#: ../src/option.c:1798
+msgid "Show password dialog options"
+msgstr "ئىم سۆزلەشكۈ تاللانمىنى كۆرسەت"
+
+#: ../src/option.c:1808
 msgid "Miscellaneous options"
-msgstr "قوشۇمچە تاللاشلار"
+msgstr "قوشۇمچە تاللانما"
 
-#: ../src/option.c:1392
+#: ../src/option.c:1809
 msgid "Show miscellaneous options"
-msgstr "قوشۇمچە تاللاشلارنى كۆرسىتىش"
+msgstr "قوشۇمچە تاللانمىنى كۆرسەت"
 
-#: ../src/option.c:1417
+#: ../src/option.c:1834
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
+"بۇ تاللانمىنى ئىشلەتكىلى بولمايدۇ، --help نىڭ ئىشلىتىش ئۇسۇلىدىن كۆرۈڭ.\n"
 
-#: ../src/option.c:1421
+#: ../src/option.c:1838
 #, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "--%s بۇ دىالوگدا قوبۇل ئېتىلمەيدۇ\n"
+msgstr "--%s نى بۇ سۆزلەشكۈ قوللىمايدۇ\n"
 
-#: ../src/option.c:1425
+#: ../src/option.c:1842
+#, c-format
 msgid "Two or more dialog options specified\n"
-msgstr "ئككى ياكى ئككىدىن ئارتۇق دىئالوگ تاللىشى بەلگۈلەندى\n"
+msgstr "ئىككى ياكى ئۇنىڭدىن ئارتۇق سۆزلەشكۈ تاللانما بەلگىلەنگەن\n"
+
+#~ msgid "(C) 2003 Sun Microsystems"
+#~ msgstr "(C) 2003 Sun Microsystems"
+
+#~ msgid "Credits"
+#~ msgstr "تەشەككۈر"
+
+#~ msgid "Written by"
+#~ msgstr "يازغۇچى"
+
+#~ msgid "Translated by"
+#~ msgstr "تەرجىمە قىلغۇچى"
+
+#~ msgid "Orientation"
+#~ msgstr "يۆنىلىش"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "نىڭ يۆلىنىشى tray"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "About Zenity"
+#~ msgstr "Zenity ھەققىدە "
+
+#~ msgid "Select a file"
+#~ msgstr "بىر ھۆججەتنى تاللاڭ"
+
+#~ msgid "_Credits"
+#~ msgstr "تەشەككۈر"
