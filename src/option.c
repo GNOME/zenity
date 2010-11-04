@@ -76,9 +76,11 @@ static gchar   *zenity_list_print_column;
 static gchar   *zenity_list_hide_column;
 static gboolean zenity_list_hide_header;
 
+#ifdef HAVE_LIBNOTIFY
 /* Notification Dialog Options */
 static gboolean zenity_notification_active;
 static gboolean zenity_notification_listen;
+#endif
 
 /* Progress Dialog Options */
 static gboolean zenity_progress_active;
@@ -527,6 +529,7 @@ static GOptionEntry list_options[] = {
   } 
 };
 
+#ifdef HAVE_LIBNOTIFY
 static GOptionEntry notification_options[] = {
   {
     "notification",
@@ -559,6 +562,8 @@ static GOptionEntry notification_options[] = {
     NULL 
   }
 };
+
+#endif
 
 static GOptionEntry progress_options[] = {
   {
@@ -927,7 +932,9 @@ zenity_option_init (void) {
   results->progress_data = g_new0 (ZenityProgressData, 1); 
   results->text_data = g_new0 (ZenityTextData, 1);
   results->tree_data = g_new0 (ZenityTreeData, 1);
+#ifdef HAVE_LIBNOTIFY
   results->notification_data = g_new0 (ZenityNotificationData, 1);
+#endif
   results->color_data = g_new0 (ZenityColorData, 1);
   results->password_data = g_new0 (ZenityPasswordData, 1);
 }
@@ -1109,6 +1116,7 @@ zenity_list_pre_callback (GOptionContext *context,
   return TRUE;
 }
 
+#ifdef HAVE_LIBNOTIFY
 static gboolean
 zenity_notification_pre_callback (GOptionContext *context,
 		                  GOptionGroup   *group,
@@ -1120,6 +1128,7 @@ zenity_notification_pre_callback (GOptionContext *context,
 
   return TRUE;
 }
+#endif
 
 static gboolean
 zenity_progress_pre_callback (GOptionContext *context,
@@ -1443,6 +1452,7 @@ zenity_list_post_callback (GOptionContext *context,
   return TRUE;
 }
 
+#ifdef HAVE_LIBNOTIFY
 static gboolean
 zenity_notification_post_callback (GOptionContext *context,
 		                   GOptionGroup   *group,
@@ -1462,6 +1472,7 @@ zenity_notification_post_callback (GOptionContext *context,
 
   return TRUE;
 }
+#endif
 
 static gboolean
 zenity_progress_post_callback (GOptionContext *context,
@@ -1714,7 +1725,8 @@ zenity_create_context (void)
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
   g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
-  
+ 
+#ifdef HAVE_LIBNOTIFY 
   /* Adds notification option entries */
   a_group = g_option_group_new("notification", 
                                N_("Notification icon options"), 
@@ -1725,6 +1737,7 @@ zenity_create_context (void)
   g_option_group_set_error_hook (a_group, zenity_option_error_callback);
   g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
+#endif
   
   /* Adds progress option entries */
   a_group = g_option_group_new("progress", 

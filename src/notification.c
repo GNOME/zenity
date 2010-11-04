@@ -34,6 +34,7 @@
 #include "zenity.h"
 #include "util.h"
 
+#ifdef HAVE_LIBNOTIFY
 static char *icon_file;
 
 static void
@@ -233,3 +234,4 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 
   gtk_main ();
 }
+#endif

@@ -75,9 +75,11 @@ main (gint argc, gchar **argv) {
       results->tree_data->data = (const gchar **) argv + 1;
       zenity_tree (results->data, results->tree_data);
       break;
+#ifdef HAVE_LIBNOTIFY
     case MODE_NOTIFICATION:
       zenity_notification (results->data, results->notification_data);
       break;
+#endif
     case MODE_PROGRESS:
       zenity_progress (results->data, results->progress_data);
       break;
