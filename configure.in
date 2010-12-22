@@ -32,7 +32,7 @@ zenity_save_cflags="$CFLAGS"
 # pull in the CFLAGS to locate gdkconfig.h
 CFLAGS=`$PKG_CONFIG --cflags gtk+-3.0`
 AC_COMPILE_IFELSE([
-#include <gdkconfig.h>
+#include <gdk/gdk.h>
 
 int main(void) {
 #ifndef GDK_WINDOWING_X11

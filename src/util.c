@@ -389,7 +389,7 @@ zenity_util_make_transient (GdkWindow *window)
 {
   Window xterm = transient_get_xterm_toplevel ();
   if (xterm != None) {
-    GdkWindow *gdkxterm = gdk_window_foreign_new (xterm);
+    GdkWindow *gdkxterm = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), xterm);
     if (gdkxterm) {
       gdk_window_set_transient_for (window, gdkxterm);
       g_object_unref (G_OBJECT (gdkxterm));
