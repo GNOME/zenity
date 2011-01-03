@@ -183,7 +183,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
     g_string_free (string, TRUE);
   }
 
-  if (condition != G_IO_IN) {
+  if ((condition != G_IO_IN) && (condition != G_IO_IN + G_IO_HUP)) {
     /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
     GtkWidget *button;
 
