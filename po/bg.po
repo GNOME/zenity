@@ -1,10 +1,10 @@
 # Bulgarian translation of zenity po-file.
 # Copyright (C) 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
-# Copyright (C) 2008, 2010 Free Software Foundation, Inc.
+# Copyright (C) 2008, 2010, 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 # Rostislav Raykov <zbrox@i-space.org>, 2004, 2005, 2006.
 # Vladimir Petkov <kaladan@gmail.com>, 2005.
-# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2010
+# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2010, 2011.
 #
 #
 #
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-22 22:36+0300\n"
-"PO-Revision-Date: 2010-08-22 22:34+0300\n"
+"POT-Creation-Date: 2011-01-12 23:23+0200\n"
+"PO-Revision-Date: 2011-01-12 23:23+0200\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -70,24 +70,24 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Показва диалогови прозорци от конзолни скриптове"
 
-#: ../src/main.c:100
+#: ../src/main.c:102
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Трябва да изберете вид на прозореца. Вижте „zenity --help“ за повече "
 "информация\n"
 
-#: ../src/notification.c:138
+#: ../src/notification.c:95
 #, c-format
 msgid "could not parse command from stdin\n"
 msgstr "не може да се подаде командата от стандартния вход\n"
 
-#: ../src/notification.c:177
+#: ../src/notification.c:122
 #, c-format
 msgid "Could not parse message from stdin\n"
 msgstr "Въведеното на стандартния вход не може да се анализира\n"
 
-#: ../src/notification.c:262 ../src/notification.c:279
+#: ../src/notification.c:196
 msgid "Zenity notification"
 msgstr "Уведомяване на Zenity"
 
@@ -195,198 +195,198 @@ msgstr "Внимание"
 msgid "_Enter new text:"
 msgstr "Въвеждан_е на нов текст:"
 
-#: ../src/option.c:131
+#: ../src/option.c:134
 msgid "Set the dialog title"
 msgstr "Задаване на заглавието на прозореца"
 
-#: ../src/option.c:132
+#: ../src/option.c:135
 msgid "TITLE"
 msgstr "ЗАГЛАВИЕ"
 
-#: ../src/option.c:140
+#: ../src/option.c:143
 msgid "Set the window icon"
 msgstr "Задаване на иконката на прозореца"
 
-#: ../src/option.c:141
+#: ../src/option.c:144
 msgid "ICONPATH"
 msgstr "ПЪТ_ДО_ИКОНКАТА"
 
-#: ../src/option.c:149
+#: ../src/option.c:152
 msgid "Set the width"
 msgstr "Задаване на широчината"
 
-#: ../src/option.c:150
+#: ../src/option.c:153
 msgid "WIDTH"
 msgstr "ШИРОЧИНА"
 
-#: ../src/option.c:158
+#: ../src/option.c:161
 msgid "Set the height"
 msgstr "Задаване на височината"
 
-#: ../src/option.c:159
+#: ../src/option.c:162
 msgid "HEIGHT"
 msgstr "ВИСОЧИНА"
 
-#: ../src/option.c:167
+#: ../src/option.c:170
 msgid "Set dialog timeout in seconds"
 msgstr "Задаване на времето за прозореца в секунди"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:169
+#: ../src/option.c:172
 msgid "TIMEOUT"
 msgstr "ВРЕМЕ_ЗА_ИЗТИЧАНЕ"
 
-#: ../src/option.c:183
+#: ../src/option.c:186
 msgid "Display calendar dialog"
 msgstr "Показване на прозорец с календар"
 
-#: ../src/option.c:192 ../src/option.c:252 ../src/option.c:295
-#: ../src/option.c:328 ../src/option.c:440 ../src/option.c:579
-#: ../src/option.c:651 ../src/option.c:735 ../src/option.c:768
+#: ../src/option.c:195 ../src/option.c:255 ../src/option.c:298
+#: ../src/option.c:331 ../src/option.c:443 ../src/option.c:585
+#: ../src/option.c:657 ../src/option.c:750 ../src/option.c:783
 msgid "Set the dialog text"
 msgstr "Задаване на текста на прозореца"
 
-#: ../src/option.c:193 ../src/option.c:253 ../src/option.c:262
-#: ../src/option.c:296 ../src/option.c:329 ../src/option.c:441
-#: ../src/option.c:547 ../src/option.c:580 ../src/option.c:652
-#: ../src/option.c:661 ../src/option.c:670 ../src/option.c:736
-#: ../src/option.c:769
+#: ../src/option.c:196 ../src/option.c:256 ../src/option.c:265
+#: ../src/option.c:299 ../src/option.c:332 ../src/option.c:444
+#: ../src/option.c:551 ../src/option.c:586 ../src/option.c:658
+#: ../src/option.c:667 ../src/option.c:676 ../src/option.c:727
+#: ../src/option.c:751 ../src/option.c:784
 msgid "TEXT"
 msgstr "ТЕКСТ"
 
-#: ../src/option.c:201
+#: ../src/option.c:204
 msgid "Set the calendar day"
 msgstr "Задаване на деня на календара"
 
-#: ../src/option.c:202
+#: ../src/option.c:205
 msgid "DAY"
 msgstr "ДЕН"
 
-#: ../src/option.c:210
+#: ../src/option.c:213
 msgid "Set the calendar month"
 msgstr "Задаване на месеца на календара"
 
-#: ../src/option.c:211
+#: ../src/option.c:214
 msgid "MONTH"
 msgstr "МЕСЕЦ"
 
-#: ../src/option.c:219
+#: ../src/option.c:222
 msgid "Set the calendar year"
 msgstr "Задаване на годината на календара"
 
-#: ../src/option.c:220
+#: ../src/option.c:223
 msgid "YEAR"
 msgstr "ГОДИНА"
 
-#: ../src/option.c:228
+#: ../src/option.c:231
 msgid "Set the format for the returned date"
 msgstr "Задаване на формата на връщаната дата"
 
-#: ../src/option.c:229
+#: ../src/option.c:232
 msgid "PATTERN"
 msgstr "ШАБЛОН"
 
-#: ../src/option.c:243
+#: ../src/option.c:246
 msgid "Display text entry dialog"
 msgstr "Показване на прозорец за въвеждане на текст"
 
-#: ../src/option.c:261
+#: ../src/option.c:264
 msgid "Set the entry text"
 msgstr "Задаване на текста на записа"
 
-#: ../src/option.c:270
+#: ../src/option.c:273
 msgid "Hide the entry text"
 msgstr "Скриване на текста на записа"
 
-#: ../src/option.c:286
+#: ../src/option.c:289
 msgid "Display error dialog"
 msgstr "Показване на прозорец за грешка"
 
-#: ../src/option.c:304 ../src/option.c:337 ../src/option.c:678
-#: ../src/option.c:744
+#: ../src/option.c:307 ../src/option.c:340 ../src/option.c:684
+#: ../src/option.c:759
 msgid "Do not enable text wrapping"
 msgstr "Текстът да не обгражда обектите"
 
-#: ../src/option.c:319
+#: ../src/option.c:322
 msgid "Display info dialog"
 msgstr "Показване на прозорец с информация"
 
-#: ../src/option.c:352
+#: ../src/option.c:355
 msgid "Display file selection dialog"
 msgstr "Показване на прозорец за избор на файл"
 
-#: ../src/option.c:361
+#: ../src/option.c:364
 msgid "Set the filename"
 msgstr "Задаване на файловото име"
 
-#: ../src/option.c:362 ../src/option.c:703
+#: ../src/option.c:365 ../src/option.c:709
 msgid "FILENAME"
 msgstr "ИМЕ_НА_ФАЙЛА"
 
-#: ../src/option.c:370
+#: ../src/option.c:373
 msgid "Allow multiple files to be selected"
 msgstr "Позволяване на избор на множество файлове"
 
-#: ../src/option.c:379
+#: ../src/option.c:382
 msgid "Activate directory-only selection"
 msgstr "Включване на избора само на папки"
 
-#: ../src/option.c:388
+#: ../src/option.c:391
 msgid "Activate save mode"
 msgstr "Активиране на режим на запазване"
 
-#: ../src/option.c:397 ../src/option.c:476
+#: ../src/option.c:400 ../src/option.c:479
 msgid "Set output separator character"
 msgstr "Задаване на изходния знак-разделител"
 
-#: ../src/option.c:398 ../src/option.c:477
+#: ../src/option.c:401 ../src/option.c:480
 msgid "SEPARATOR"
 msgstr "РАЗДЕЛИТЕЛ"
 
-#: ../src/option.c:406
+#: ../src/option.c:409
 msgid "Confirm file selection if filename already exists"
 msgstr ""
 "Потвърждаване на избора на файл, ако вече\n"
 "                                    съществува файл с такова име"
 
-#: ../src/option.c:415
+#: ../src/option.c:418
 msgid "Sets a filename filter"
 msgstr "Задаване на филтър по файлово име"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:417
+#: ../src/option.c:420
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "ИМЕ | ШАБЛОН1 ШАБЛОН2 …"
 
-#: ../src/option.c:431
+#: ../src/option.c:434
 msgid "Display list dialog"
 msgstr "Показване на прозорец със списък"
 
-#: ../src/option.c:449
+#: ../src/option.c:452
 msgid "Set the column header"
 msgstr "Задаване на заглавието на колоната"
 
-#: ../src/option.c:450
+#: ../src/option.c:453
 msgid "COLUMN"
 msgstr "КОЛОНА"
 
-#: ../src/option.c:458
+#: ../src/option.c:461
 msgid "Use check boxes for first column"
 msgstr "Ползване на поле за избор за първата колона"
 
-#: ../src/option.c:467
+#: ../src/option.c:470
 msgid "Use radio buttons for first column"
 msgstr "Ползване на радио бутони за първата колона"
 
-#: ../src/option.c:485
+#: ../src/option.c:488
 msgid "Allow multiple rows to be selected"
 msgstr "Позволяване на избор на множество редове"
 
-#: ../src/option.c:494 ../src/option.c:711
+#: ../src/option.c:497 ../src/option.c:717
 msgid "Allow changes to text"
 msgstr "Позволяване на промени по текста"
 
-#: ../src/option.c:503
+#: ../src/option.c:506
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -397,281 +397,285 @@ msgstr ""
 "                                    на всички колони)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:505 ../src/option.c:514
+#: ../src/option.c:508 ../src/option.c:517
 msgid "NUMBER"
 msgstr "НОМЕР"
 
-#: ../src/option.c:513
+#: ../src/option.c:516
 msgid "Hide a specific column"
 msgstr "Скриване на специфична колона"
 
-#: ../src/option.c:522
+#: ../src/option.c:525
 msgid "Hides the column headers"
 msgstr "Скрива заглавията на колоните"
 
-#: ../src/option.c:537
+#: ../src/option.c:541
 msgid "Display notification"
 msgstr "Показване на уведомяване"
 
-#: ../src/option.c:546
+#: ../src/option.c:550
 msgid "Set the notification text"
 msgstr "Задаване на текста за уведомяване"
 
-#: ../src/option.c:555
+#: ../src/option.c:559
 msgid "Listen for commands on stdin"
 msgstr "Очакване на команди от стандартния вход"
 
-#: ../src/option.c:570
+#: ../src/option.c:576
 msgid "Display progress indication dialog"
 msgstr "Показване на прозорец с индикация за прогрес"
 
-#: ../src/option.c:588
+#: ../src/option.c:594
 msgid "Set initial percentage"
 msgstr "Задаване на началния прогрес"
 
-#: ../src/option.c:589
+#: ../src/option.c:595
 msgid "PERCENTAGE"
 msgstr "ПРОЦЕНТ"
 
-#: ../src/option.c:597
+#: ../src/option.c:603
 msgid "Pulsate progress bar"
 msgstr "Пулсираща индикация за прогреса"
 
-#: ../src/option.c:607
+#: ../src/option.c:613
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Затваряне на прозореца след стигане на 100%"
 
-#: ../src/option.c:617
+#: ../src/option.c:623
 #, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr ""
 "Убиване на родителския процес при натискане \n"
 "                                    на бутона за отказ"
 
-#: ../src/option.c:627
+#: ../src/option.c:633
 #, no-c-format
 msgid "Hide Cancel button"
 msgstr "Скриване на бутона за отказ"
 
-#: ../src/option.c:642
+#: ../src/option.c:648
 msgid "Display question dialog"
 msgstr "Показване на прозорец с въпрос"
 
-#: ../src/option.c:660
+#: ../src/option.c:666
 msgid "Sets the label of the Ok button"
 msgstr "Задаване на текста на бутона за потвърждение"
 
-#: ../src/option.c:669
+#: ../src/option.c:675
 msgid "Sets the label of the Cancel button"
 msgstr "Задаване на текста на бутона за отказ"
 
-#: ../src/option.c:693
+#: ../src/option.c:699
 msgid "Display text information dialog"
 msgstr "Показване на прозорец с текстова информация"
 
-#: ../src/option.c:702
+#: ../src/option.c:708
 msgid "Open file"
 msgstr "Отваряне на файл"
 
 #: ../src/option.c:726
+msgid "Set the text font"
+msgstr "Задаване на шрифта текста"
+
+#: ../src/option.c:741
 msgid "Display warning dialog"
 msgstr "Показване на прозорец с предупреждение"
 
-#: ../src/option.c:759
+#: ../src/option.c:774
 msgid "Display scale dialog"
 msgstr "Показване на прозорец със скала"
 
-#: ../src/option.c:777
+#: ../src/option.c:792
 msgid "Set initial value"
 msgstr "Задаване на начална стойност"
 
-#: ../src/option.c:778 ../src/option.c:787 ../src/option.c:796
-#: ../src/option.c:805 ../src/option.c:871
+#: ../src/option.c:793 ../src/option.c:802 ../src/option.c:811
+#: ../src/option.c:820 ../src/option.c:886
 msgid "VALUE"
 msgstr "СТОЙНОСТ"
 
-#: ../src/option.c:786
+#: ../src/option.c:801
 msgid "Set minimum value"
 msgstr "Задаване на минимална стойност"
 
-#: ../src/option.c:795
+#: ../src/option.c:810
 msgid "Set maximum value"
 msgstr "Задаване на максимална стойност"
 
-#: ../src/option.c:804
+#: ../src/option.c:819
 msgid "Set step size"
 msgstr "Задаване на стъпка"
 
-#: ../src/option.c:813
+#: ../src/option.c:828
 msgid "Print partial values"
 msgstr "Отпечатване на частични стойности"
 
-#: ../src/option.c:822
+#: ../src/option.c:837
 msgid "Hide value"
 msgstr "Скриване на стойност"
 
-#: ../src/option.c:837
+#: ../src/option.c:852
 msgid "Display password dialog"
 msgstr "Показване на прозорец за парола"
 
-#: ../src/option.c:846
+#: ../src/option.c:861
 msgid "Display the username option"
 msgstr "Показване на опцията за потребителско име"
 
-#: ../src/option.c:861
+#: ../src/option.c:876
 msgid "Display color selection dialog"
 msgstr "Показване на прозорец за избор на цвят"
 
-#: ../src/option.c:870
+#: ../src/option.c:885
 msgid "Set the color"
 msgstr "Задаване на цвета"
 
-#: ../src/option.c:879
+#: ../src/option.c:894
 msgid "Show the palette"
 msgstr "Показване на палитрата"
 
-#: ../src/option.c:894
+#: ../src/option.c:909
 msgid "About zenity"
 msgstr "Относно Zenity"
 
-#: ../src/option.c:903
+#: ../src/option.c:918
 msgid "Print version"
 msgstr "Отпечатване на версията"
 
-#: ../src/option.c:1643
+#: ../src/option.c:1674
 msgid "General options"
 msgstr "Общи опции"
 
-#: ../src/option.c:1644
+#: ../src/option.c:1675
 msgid "Show general options"
 msgstr "Показване на общите опции"
 
-#: ../src/option.c:1654
+#: ../src/option.c:1685
 msgid "Calendar options"
 msgstr "Опции на календара"
 
-#: ../src/option.c:1655
+#: ../src/option.c:1686
 msgid "Show calendar options"
 msgstr "Показване на опциите на календара"
 
-#: ../src/option.c:1665
+#: ../src/option.c:1696
 msgid "Text entry options"
 msgstr "Опции на въвеждането на текст"
 
-#: ../src/option.c:1666
+#: ../src/option.c:1697
 msgid "Show text entry options"
 msgstr "Показване на опциите за въвеждането на текст"
 
-#: ../src/option.c:1676
+#: ../src/option.c:1707
 msgid "Error options"
 msgstr "Опции за грешките"
 
-#: ../src/option.c:1677
+#: ../src/option.c:1708
 msgid "Show error options"
 msgstr "Показване на опциите за грешки"
 
-#: ../src/option.c:1687
+#: ../src/option.c:1718
 msgid "Info options"
 msgstr "Опции на информацията"
 
-#: ../src/option.c:1688
+#: ../src/option.c:1719
 msgid "Show info options"
 msgstr "Показване на опциите за информация"
 
-#: ../src/option.c:1698
+#: ../src/option.c:1729
 msgid "File selection options"
 msgstr "Опции на избирането на файл"
 
-#: ../src/option.c:1699
+#: ../src/option.c:1730
 msgid "Show file selection options"
 msgstr "Показване на опциите за избор на файлове"
 
-#: ../src/option.c:1709
+#: ../src/option.c:1740
 msgid "List options"
 msgstr "Опции на списъците"
 
-#: ../src/option.c:1710
+#: ../src/option.c:1741
 msgid "Show list options"
 msgstr "Показване на опциите за списъци"
 
-#: ../src/option.c:1720
+#: ../src/option.c:1752
 msgid "Notification icon options"
 msgstr "Опции на иконата за уведомяване"
 
-#: ../src/option.c:1721
+#: ../src/option.c:1753
 msgid "Show notification icon options"
 msgstr ""
 "Показване на опциите на иконата за\n"
 "                                    уведомяване"
 
-#: ../src/option.c:1731
+#: ../src/option.c:1764
 msgid "Progress options"
 msgstr "Опции за отчитането на прогреса"
 
-#: ../src/option.c:1732
+#: ../src/option.c:1765
 msgid "Show progress options"
 msgstr "Показване на опциите за прогреса"
 
-#: ../src/option.c:1742
+#: ../src/option.c:1775
 msgid "Question options"
 msgstr "Опции на въпросите"
 
-#: ../src/option.c:1743
+#: ../src/option.c:1776
 msgid "Show question options"
 msgstr "Показване на опциите за въпросите"
 
-#: ../src/option.c:1753
+#: ../src/option.c:1786
 msgid "Warning options"
 msgstr "Опции на предупрежденията"
 
-#: ../src/option.c:1754
+#: ../src/option.c:1787
 msgid "Show warning options"
 msgstr "Показване на опциите за предупреждения"
 
-#: ../src/option.c:1764
+#: ../src/option.c:1797
 msgid "Scale options"
 msgstr "Опции на скалата"
 
-#: ../src/option.c:1765
+#: ../src/option.c:1798
 msgid "Show scale options"
 msgstr "Показване на опциите на скалата"
 
-#: ../src/option.c:1775
+#: ../src/option.c:1808
 msgid "Text information options"
 msgstr "Опции на текста за уведомяване"
 
-#: ../src/option.c:1776
+#: ../src/option.c:1809
 msgid "Show text information options"
 msgstr ""
 "Показване на опциите на текста за \n"
 "                                    уведомяване"
 
-#: ../src/option.c:1786
+#: ../src/option.c:1819
 msgid "Color selection options"
 msgstr "Опции на избирането на цвят"
 
-#: ../src/option.c:1787
+#: ../src/option.c:1820
 msgid "Show color selection options"
 msgstr "Показване на опциите за избор на цвят"
 
-#: ../src/option.c:1797
+#: ../src/option.c:1830
 msgid "Password dialog options"
 msgstr "Опции на прозореца за паролата"
 
-#: ../src/option.c:1798
+#: ../src/option.c:1831
 msgid "Show password dialog options"
 msgstr "Показване на опциите на прозореца за паролата"
 
-#: ../src/option.c:1808
+#: ../src/option.c:1841
 msgid "Miscellaneous options"
 msgstr "Други опции"
 
-#: ../src/option.c:1809
+#: ../src/option.c:1842
 msgid "Show miscellaneous options"
 msgstr "Показване на другите опции"
 
-#: ../src/option.c:1834
+#: ../src/option.c:1867
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -679,12 +683,12 @@ msgstr ""
 "Тази опция не е налична. Погледнете --help за всички възможни начини на "
 "употреба.\n"
 
-#: ../src/option.c:1838
+#: ../src/option.c:1871
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "опцията --%s не се поддържа от този прозорец\n"
 
-#: ../src/option.c:1842
+#: ../src/option.c:1875
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Указани са две или повече диалогови опции\n"
