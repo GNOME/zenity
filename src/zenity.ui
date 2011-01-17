@@ -7,7 +7,6 @@
     <property name="title" translatable="yes">Calendar selection</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -129,7 +128,6 @@
     <property name="title" translatable="yes">Warning</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -213,7 +211,6 @@
     <property name="title" translatable="yes">Question</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -278,7 +275,6 @@
     <property name="title" translatable="yes">Add a new entry</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -377,7 +373,6 @@
     <property name="default_width">300</property>
     <property name="default_height">200</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -455,7 +450,6 @@
     <property name="title" translatable="yes">Progress</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -551,7 +545,6 @@
     <property name="title" translatable="yes">Error</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -643,7 +636,6 @@
     <property name="default_width">300</property>
     <property name="default_height">196</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -744,7 +736,6 @@
     <property name="title" translatable="yes">Information</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -827,7 +818,6 @@
     <property name="default_width">300</property>
     <property name="default_height">100</property>
     <property name="type_hint">dialog</property>
-    <property name="focus_on_map">True</property>
     <property name="has_separator">False</property>
     <signal name="destroy" handler="gtk_main_quit"/>
     <child internal-child="vbox">
@@ -924,4 +914,96 @@
     <property name="page_increment">1</property>
   </object>
   <object class="GtkTextBuffer" id="textbuffer1"/>
+  <object class="GtkDialog" id="zenity_forms_dialog">
+    <property name="border_width">5</property>
+    <property name="type_hint">normal</property>
+    <property name="has_separator">False</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox12">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <object class="GtkFrame" id="frame1">
+            <property name="visible">True</property>
+            <property name="label_xalign">0</property>
+            <child>
+              <object class="GtkAlignment" id="alignment1">
+                <property name="visible">True</property>
+                <property name="top_padding">12</property>
+                <property name="left_padding">12</property>
+                <property name="right_padding">6</property>
+                <child>
+                  <object class="GtkTable" id="zenity_forms_table">
+                    <property name="visible">True</property>
+                    <property name="n_columns">2</property>
+                    <property name="column_spacing">10</property>
+                    <property name="row_spacing">6</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="label">
+              <object class="GtkLabel" id="zenity_forms_text">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">&lt;b&gt;Forms dialog&lt;/b&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area12">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="cancelbutton12">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="okbutton12">
+                <property name="label">gtk-ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="-6">cancelbutton12</action-widget>
+      <action-widget response="-5">okbutton12</action-widget>
+    </action-widgets>
+  </object>
 </interface>

@@ -20,6 +20,7 @@ zenity_SOURCES = \
 	password.c      \
 	util.c		\
 	util.h		\
+        forms.c		\
 	zenity.h
 
 zenity_CPPFLAGS = \

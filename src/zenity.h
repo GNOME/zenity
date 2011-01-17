@@ -136,6 +136,26 @@ typedef struct {
 } ZenityColorData;
 
 typedef struct {
+  GSList *list;
+  GSList *list_widgets;
+  gchar *dialog_text;
+  gchar *separator;
+  gchar *date_format;
+} ZenityFormsData;
+
+typedef enum {
+  ZENITY_FORMS_ENTRY,
+  ZENITY_FORMS_PASSWORD,
+  ZENITY_FORMS_CALENDAR
+} ZenityFormsType;
+
+typedef struct {
+  gchar *option_value;
+  ZenityFormsType type;
+  GtkWidget *forms_widget;
+} ZenityFormsValue;
+
+typedef struct {
   gboolean username;
   gchar *password;
   GtkWidget *entry_username;
@@ -169,7 +189,8 @@ void    zenity_about            (ZenityData             *data);
 
 void    zenity_password_dialog  (ZenityData             *data,
                                  ZenityPasswordData     *password_data);
-
+void    zenity_forms_dialog     (ZenityData             *data,
+                                 ZenityFormsData        *forms_data);
 G_END_DECLS
 
 #endif /* ZENITY_H */

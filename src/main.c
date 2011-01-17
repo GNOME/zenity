@@ -95,6 +95,9 @@ main (gint argc, gchar **argv) {
     case MODE_ABOUT:
       zenity_about (results->data);
       break;
+    case MODE_FORMS:
+      zenity_forms_dialog (results->data, results->forms_data);
+      break;
     case MODE_VERSION:
       g_print ("%s\n", VERSION); 
       break;

@@ -49,6 +49,7 @@ typedef enum {
 #endif
   MODE_COLOR,
   MODE_PASSWORD,
+  MODE_FORMS,
   MODE_ABOUT,
   MODE_VERSION,
   MODE_LAST
@@ -78,6 +79,7 @@ typedef struct {
 #endif
   ZenityColorData        *color_data;
   ZenityPasswordData     *password_data;
+  ZenityFormsData        *forms_data;
 } ZenityParsingOptions;
 
 void			zenity_option_error (gchar	*string,

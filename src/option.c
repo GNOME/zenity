@@ -120,9 +120,19 @@ static gboolean zenity_colorsel_show_palette;
 static gboolean zenity_password_active;
 static gboolean zenity_password_show_username;
 
+/* Forms Dialog Options */
+static gboolean zenity_forms_active;
+static gchar   *zenity_forms_date_format;
+
 /* Miscelaneus Options */
 static gboolean zenity_misc_about;
 static gboolean zenity_misc_version;
+
+static gboolean
+zenity_forms_callback (const gchar *option_name,
+                       const gchar *value,
+                       gpointer data,
+                       GError **error);
 
 static GOptionEntry general_options[] = {
   {
@@ -842,6 +852,75 @@ static GOptionEntry scale_options[] = {
   }
 };
 
+static GOptionEntry forms_dialog_options[] = {
+  {
+    "forms",
+    '\0',
+    G_OPTION_FLAG_IN_MAIN,
+    G_OPTION_ARG_NONE,
+    &zenity_forms_active,
+    N_("Display forms dialog"),
+    NULL
+  },
+  {
+    "add-entry",
+    '\0',
+    0,
+    G_OPTION_ARG_CALLBACK,
+    zenity_forms_callback,
+    N_("Add a new Entry in forms dialog"),
+    N_("Field name")
+  },
+  {
+    "add-password",
+    '\0',
+    0,
+    G_OPTION_ARG_CALLBACK,
+    zenity_forms_callback,
+    N_("Add a new Password Entry in forms dialog"),
+    N_("Field name")
+  },
+  {
+    "add-calendar",
+    '\0',
+    0,
+    G_OPTION_ARG_CALLBACK,
+    zenity_forms_callback,
+    N_("Add a new Calendar in forms dialog"),
+    N_("Calendar field name")
+  },
+  {
+    "text",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_dialog_text,
+    N_("Set the dialog text"),
+    N_("TEXT")
+  },
+  {
+    "separator",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_separator,
+    N_("Set output separator character"),
+    N_("SEPARATOR")
+  },
+  {
+    "date-format",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING,
+    &zenity_forms_date_format,
+    N_("Set the format for the returned date"),
+    N_("PATTERN")
+  },
+  {
+    NULL
+  }
+};
+
 static GOptionEntry password_dialog_options[] = {
   {
     "password",
@@ -947,6 +1026,7 @@ zenity_option_init (void) {
 #endif
   results->color_data = g_new0 (ZenityColorData, 1);
   results->password_data = g_new0 (ZenityPasswordData, 1);
+  results->forms_data = g_new0 (ZenityFormsData, 1);
 }
 
 void
@@ -963,6 +1043,9 @@ zenity_option_free (void) {
 
   if (zenity_calendar_date_format)
     g_free (zenity_calendar_date_format);
+
+  if (zenity_forms_date_format)
+    g_free (zenity_forms_date_format);
 
   if (zenity_entry_entry_text)
     g_free (zenity_entry_entry_text);
@@ -1012,6 +1095,27 @@ zenity_option_get_name (GOptionEntry *entries, gpointer arg_data)
       return (gchar *) entries[i].long_name;
   }
   return NULL;   
+}
+
+/* Forms callback */
+static gboolean
+zenity_forms_callback (const gchar *option_name,
+                       const gchar *value,
+                       gpointer data,
+                       GError **error)
+{
+  ZenityFormsValue *forms_value = g_new0 (ZenityFormsValue, 1);
+  forms_value->option_value = g_strdup(value);
+  if (g_strcmp0(option_name, "--add-entry") == 0)
+    forms_value->type = ZENITY_FORMS_ENTRY;
+  else if (g_strcmp0(option_name, "--add-calendar") == 0)
+    forms_value->type = ZENITY_FORMS_CALENDAR;
+  else if (g_strcmp0(option_name, "--add-password") == 0)
+    forms_value->type = ZENITY_FORMS_PASSWORD;
+
+  results->forms_data->list = g_slist_append(results->forms_data->list, forms_value);
+
+  return TRUE;
 }
 
 /* Error callback */
@@ -1232,6 +1336,17 @@ zenity_password_pre_callback (GOptionContext *context,
   zenity_password_show_username = FALSE;
 
   return TRUE; 
+}
+
+static gboolean
+zenity_forms_pre_callback (GOptionContext *context,
+                           GOptionGroup   *group,
+                           gpointer        data,
+                           GError        **error)
+{
+  zenity_forms_active = FALSE;
+  zenity_forms_date_format = NULL;
+  return TRUE;
 }
 
 static gboolean
@@ -1632,6 +1747,30 @@ zenity_color_post_callback (GOptionContext *context,
 }
 
 static gboolean
+zenity_forms_post_callback (GOptionContext *context,
+                            GOptionGroup   *group,
+                            gpointer        data,
+                            GError        **error)
+{
+  zenity_option_set_dialog_mode (zenity_forms_active, MODE_FORMS);
+  if (results->mode == MODE_FORMS) {
+    results->forms_data->dialog_text = zenity_general_dialog_text;
+    results->forms_data->separator = zenity_general_separator;
+    if (zenity_forms_date_format)
+      results->forms_data->date_format = zenity_forms_date_format;
+    else
+      results->forms_data->date_format = g_locale_to_utf8 (nl_langinfo (D_FMT), -1, NULL, NULL, NULL);
+  } else {
+    if (zenity_forms_date_format)
+      zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_date_format),
+                           ERROR_SUPPORT);
+  }
+
+  return TRUE;
+}
+
+
+static gboolean
 zenity_password_post_callback (GOptionContext *context,
                                GOptionGroup   *group,
                                gpointer        data,
@@ -1836,6 +1975,17 @@ zenity_create_context (void)
   g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
   g_option_context_add_group(tmp_ctx, a_group);
 
+  /* Adds forms dialog option entries */
+  a_group = g_option_group_new("forms",
+                               N_("Forms dialog options"),
+                               N_("Show forms dialog options"), NULL, NULL);
+  g_option_group_add_entries (a_group, forms_dialog_options);
+  g_option_group_set_parse_hooks (a_group,
+                    zenity_forms_pre_callback, zenity_forms_post_callback);
+  g_option_group_set_error_hook (a_group, zenity_option_error_callback);
+  g_option_group_set_translation_domain (a_group, GETTEXT_PACKAGE);
+  g_option_context_add_group(tmp_ctx, a_group);
+
   /* Adds misc option entries */
   a_group = g_option_group_new("misc", 
                                N_("Miscellaneous options"), 
@@ -1899,7 +2049,7 @@ zenity_option_parse (gint argc, gchar **argv)
       zenity_option_error (zenity_option_get_name (calendar_options, &zenity_general_dialog_text), ERROR_SUPPORT);
   
   if (strcmp (zenity_general_separator, "|") != 0)
-    if (results->mode != MODE_LIST && results->mode != MODE_FILE)
+    if (results->mode != MODE_LIST && results->mode != MODE_FILE && results->mode != MODE_FORMS)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_general_separator), ERROR_SUPPORT);
   
   if (zenity_general_multiple)
