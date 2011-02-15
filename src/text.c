@@ -139,7 +139,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
   if (text_data->font) {
       PangoFontDescription *fontDesc = pango_font_description_from_string (text_data->font);
-      gtk_widget_modify_font(GTK_TEXT_VIEW(text_view), fontDesc);
+      gtk_widget_modify_font (GTK_WIDGET(text_view), fontDesc);
   }
 
   if (text_data->uri)
