@@ -1,4 +1,4 @@
-AC_INIT([Zenity],[2.91.5],[http://bugzilla.gnome.org/enter_bug.cgi?product=zenity],[zenity])
+AC_INIT([Zenity],[2.91.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=zenity],[zenity])
 
 AC_PREREQ([2.63])
 
@@ -14,7 +14,7 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 # Check for programs
 AC_PROG_CC
 
-GTK_REQUIRED=2.91.0
+GTK_REQUIRED=3.0.0
 
 PKG_CHECK_MODULES([ZENITY],[gtk+-3.0 >= $GTK_REQUIRED glib-2.0])
 AC_SUBST([ZENITY_CFLAGS])
