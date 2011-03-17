@@ -869,7 +869,7 @@ static GOptionEntry forms_dialog_options[] = {
     G_OPTION_ARG_CALLBACK,
     zenity_forms_callback,
     N_("Add a new Entry in forms dialog"),
-    N_("Field name")
+    N_("FIELDNAME")
   },
   {
     "add-password",
@@ -878,7 +878,7 @@ static GOptionEntry forms_dialog_options[] = {
     G_OPTION_ARG_CALLBACK,
     zenity_forms_callback,
     N_("Add a new Password Entry in forms dialog"),
-    N_("Field name")
+    N_("FIELDNAME")
   },
   {
     "add-calendar",
@@ -887,7 +887,7 @@ static GOptionEntry forms_dialog_options[] = {
     G_OPTION_ARG_CALLBACK,
     zenity_forms_callback,
     N_("Add a new Calendar in forms dialog"),
-    N_("Calendar field name")
+    N_("CALENDARNAME")
   },
   {
     "text",
