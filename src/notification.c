@@ -29,12 +29,12 @@
 #include <gtk/gtk.h>
 #include <time.h>
 #include <string.h>
+#ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
 
 #include "zenity.h"
 #include "util.h"
 
-#ifdef HAVE_LIBNOTIFY
 static char *icon_file;
 
 static void
