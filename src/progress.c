@@ -286,7 +286,7 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   zenity_progress_read_info (progress_data);
 
   if(data->timeout_delay > 0) {
-    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, NULL);
+    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);
   }
 
   gtk_main ();

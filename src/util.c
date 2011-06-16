@@ -411,9 +411,14 @@ zenity_util_show_dialog (GtkWidget *dialog)
 }
 
 gboolean 
-zenity_util_timeout_handle (void)
+zenity_util_timeout_handle (gpointer data)
 {
-  gtk_main_quit();
-  exit(ZENITY_TIMEOUT);
+  GtkDialog *dialog = GTK_DIALOG(data);
+  if(dialog != NULL)
+    gtk_dialog_response(dialog, GTK_RESPONSE_OK);
+  else {
+    gtk_main_quit();
+    exit(ZENITY_TIMEOUT);
+  }
   return FALSE;
 }

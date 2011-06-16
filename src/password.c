@@ -143,7 +143,7 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   if (data->timeout_delay > 0) {
     g_timeout_add (data->timeout_delay * 1000,
                    (GSourceFunc) zenity_util_timeout_handle,
-                   NULL);
+                   dialog);
   }
   gtk_main();
 }
