@@ -138,7 +138,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   zenity_util_show_dialog (dialog);
 
   if(data->timeout_delay > 0) {
-    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);
+    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, NULL);
   }
 
   g_object_unref (builder);
