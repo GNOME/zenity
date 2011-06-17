@@ -112,8 +112,7 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
     
       if (date != NULL)
         g_date_free (date);
-    
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      zenity_util_exit_code_with_data (ZENITY_OK, zen_data);   
       break;
 
     case GTK_RESPONSE_CANCEL:

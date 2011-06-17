@@ -78,7 +78,7 @@ zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);      
       colorsel = gtk_color_selection_dialog_get_color_selection (GTK_COLOR_SELECTION_DIALOG (widget));
       gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (colorsel), &color);
       g_print ("%s\n", gdk_color_to_string (&color));

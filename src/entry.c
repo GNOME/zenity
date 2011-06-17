@@ -143,7 +143,7 @@ zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
       if (n_entries > 1) {
 	text = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (entry));
       }

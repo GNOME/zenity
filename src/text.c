@@ -187,7 +187,7 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
 
     default:
       /* Esc dialog */
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+      zenity_util_exit_code_with_data(ZENITY_ESC, zen_data);
       break;
   }
   gtk_main_quit ();

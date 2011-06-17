@@ -150,7 +150,7 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
 	  
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);		
+      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
       selections = gtk_file_chooser_get_filenames (GTK_FILE_CHOOSER (widget));
       for (iter = selections;iter != NULL; iter = iter->next) {
         g_print ("%s", g_filename_to_utf8 ((gchar*)iter->data, -1, NULL, NULL, NULL));

@@ -613,7 +613,7 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
                                              GTK_TREE_VIEW (tree_view));
       }
       zenity_tree_dialog_output ();
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
       break;
 
     case GTK_RESPONSE_CANCEL:

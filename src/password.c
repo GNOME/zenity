@@ -154,7 +154,7 @@ zenity_password_dialog_response (GtkWidget *widget, int response, gpointer data)
   ZenityPasswordData *password_data = (ZenityPasswordData *) data;
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
       if (password_data->username)
         g_print("%s|%s\n", gtk_entry_get_text (GTK_ENTRY(password_data->entry_username)), gtk_entry_get_text (GTK_ENTRY(password_data->entry_password)));
       else

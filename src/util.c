@@ -304,7 +304,15 @@ zenity_util_return_exit_code ( ZenityExitCode value )
     if (! env_var) 
           retval = ZENITY_ERROR_DEFAULT;
     break;
-    
+  
+  case ZENITY_TIMEOUT:
+    env_var = g_getenv("ZENITY_TIMEOUT");
+    if (! env_var)
+          env_var = g_getenv("DIALOG_TIMEOUT");
+    if (! env_var)
+          retval = ZENITY_TIMEOUT;
+    break;
+   
   default:
     retval = 1;
   }
@@ -314,6 +322,15 @@ zenity_util_return_exit_code ( ZenityExitCode value )
   return retval; 
 }
 
+void
+zenity_util_exit_code_with_data(ZenityExitCode value, ZenityData *zen_data)
+{
+  /* We assume it's being called with --timeout option and should return 5) */
+  if(zen_data->timeout_delay > 0)
+    zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
+  else
+    zen_data->exit_code = zenity_util_return_exit_code (value);
+}
 
 #ifdef GDK_WINDOWING_X11
 

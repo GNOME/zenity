@@ -297,7 +297,7 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   switch (response) {
     case GTK_RESPONSE_OK:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
       break;
 
     case GTK_RESPONSE_CANCEL:
