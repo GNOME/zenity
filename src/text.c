@@ -29,6 +29,7 @@
 static ZenityTextData	*zen_text_data;
 
 static void zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data);
+static void zenity_text_toggle_button (GtkToggleButton *button, gpointer data);
 
 static gboolean
 zenity_text_handle_stdin (GIOChannel  *channel,
@@ -103,6 +104,10 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 {
   GtkBuilder *builder;
   GtkWidget *dialog;
+  GtkWidget *ok_button;
+  GtkWidget *checkbox;
+  GtkWidget *cancel_button;
+
   GObject *text_view;
   GtkTextBuffer *text_buffer;
 
@@ -118,7 +123,11 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   gtk_builder_connect_signals (builder, NULL);
 	  
   dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_dialog"));
-	
+
+  ok_button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_close_button"));
+  cancel_button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_cancel_button"));
+  checkbox = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_checkbox"));
+
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_text_dialog_response), data);
 	
@@ -150,6 +159,21 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   if (text_data->editable)
     zen_text_data->buffer = text_buffer;
 
+  if (text_data->ok_label) 
+    gtk_button_set_label (GTK_BUTTON(ok_button), text_data->ok_label);
+
+  if (text_data->cancel_label)
+    gtk_button_set_label (GTK_BUTTON(cancel_button), text_data->cancel_label);
+
+  if (text_data->checkbox) {
+    gtk_widget_set_visible (GTK_WIDGET(checkbox), TRUE);
+    gtk_widget_set_sensitive (GTK_WIDGET(ok_button), FALSE);
+    gtk_button_set_label (GTK_BUTTON(checkbox), text_data->checkbox);
+
+    g_signal_connect (G_OBJECT (checkbox), "toggled",
+                      G_CALLBACK (zenity_text_toggle_button), ok_button);
+  }
+
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
   else
@@ -167,6 +191,13 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 }
 
 static void
+zenity_text_toggle_button (GtkToggleButton *button, gpointer data)
+{
+  GtkWidget *ok_button = (GtkWidget *)data;
+  gtk_widget_set_sensitive (GTK_WIDGET(ok_button), gtk_toggle_button_get_active(button));
+}
+
+static void
 zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data = data;
@@ -176,7 +207,6 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
       if (zen_text_data->editable) {
         GtkTextIter start, end;
         gchar *text;
-				    
         gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
         text = gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0);
         g_print ("%s", text);

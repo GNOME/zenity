@@ -107,6 +107,9 @@ typedef struct {
   gboolean       no_wrap;
   gchar         *font;
   GtkTextBuffer	*buffer;
+  gchar         *ok_label;
+  gchar         *cancel_label;
+  gchar         *checkbox;
 } ZenityTextData;
 
 typedef struct {
