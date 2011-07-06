@@ -40,6 +40,7 @@ static gboolean zenity_general_multiple;
 static gboolean zenity_general_editable;
 static gchar   *zenity_general_uri;
 static gboolean zenity_general_dialog_no_wrap;
+static gboolean zenity_general_dialog_no_markup;
 static gint     zenity_general_timeout_delay;
 static gchar   *zenity_general_ok_button;
 static gchar   *zenity_general_cancel_button;
@@ -318,6 +319,14 @@ static GOptionEntry error_options[] = {
     N_("Do not enable text wrapping"),
     NULL
   },
+  {
+    "no-markup",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_markup,
+    N_("Do not enable pango markup")
+  },
   { 
     NULL 
   } 
@@ -350,6 +359,14 @@ static GOptionEntry info_options[] = {
     &zenity_general_dialog_no_wrap,
     N_("Do not enable text wrapping"),
     NULL
+  },
+  {
+    "no-markup",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_markup,
+    N_("Do not enable pango markup")
   },
   { 
     NULL 
@@ -695,6 +712,14 @@ static GOptionEntry question_options[] = {
     N_("Do not enable text wrapping"),
     NULL
   },
+  {
+    "no-markup",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_markup,
+    N_("Do not enable pango markup")
+  },
   { 
     NULL 
   }
@@ -796,6 +821,14 @@ static GOptionEntry warning_options[] = {
     &zenity_general_dialog_no_wrap,
     N_("Do not enable text wrapping"),
     NULL
+  },
+  {
+    "no-markup",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_general_dialog_no_markup,
+    N_("Do not enable pango markup")
   },
   { 
     NULL 
@@ -1177,6 +1210,7 @@ zenity_general_pre_callback (GOptionContext *context,
   zenity_general_ok_button = NULL;
   zenity_general_cancel_button = NULL;
   zenity_general_dialog_no_wrap = FALSE;
+  zenity_general_dialog_no_markup = FALSE;
   zenity_general_timeout_delay = -1;
 
   return TRUE;
@@ -1498,6 +1532,7 @@ zenity_error_post_callback (GOptionContext *context,
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_ERROR; 
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
+    results->msg_data->no_markup = zenity_general_dialog_no_markup;
   }
     
   return TRUE;
@@ -1514,7 +1549,8 @@ zenity_info_post_callback (GOptionContext *context,
   if (results->mode == MODE_INFO) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_INFO; 
-    results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
+    results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
+    results->msg_data->no_markup = zenity_general_dialog_no_markup;
   }
   
   return TRUE;
@@ -1683,6 +1719,7 @@ zenity_question_post_callback (GOptionContext *context,
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_QUESTION;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
+    results->msg_data->no_markup = zenity_general_dialog_no_markup;
     results->msg_data->ok_label = zenity_general_ok_button;
     results->msg_data->cancel_label = zenity_general_cancel_button;
   }
@@ -1725,7 +1762,8 @@ zenity_warning_post_callback (GOptionContext *context,
   if (results->mode == MODE_WARNING) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->mode = ZENITY_MSG_WARNING;
-    results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
+    results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
+    results->msg_data->no_markup = zenity_general_dialog_no_markup;
   }
 
   return TRUE;
