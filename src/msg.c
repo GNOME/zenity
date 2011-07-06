@@ -129,11 +129,12 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
         
-  if (msg_data->dialog_text) 
-    gtk_label_set_markup (GTK_LABEL (text), g_strcompress (msg_data->dialog_text));
-   
-  if (msg_data->no_markup)
-    gtk_label_set_use_markup (GTK_LABEL (text), FALSE);
+  if (msg_data->dialog_text) {
+    if (msg_data->no_markup)
+      gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
+    else 
+      gtk_label_set_markup (GTK_LABEL (text), g_strcompress (msg_data->dialog_text));
+  }
  
   if (msg_data->no_wrap)
     gtk_label_set_line_wrap (GTK_LABEL (text), FALSE);
