@@ -130,6 +130,9 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
         while (gtk_events_pending ())
           gtk_main_iteration ();
 
+        // TODO: Find a better way to avoid 100% cpu utilization
+        g_usleep(10000);
+
       } while (status == G_IO_STATUS_AGAIN);
 
       if (status != G_IO_STATUS_NORMAL) {
