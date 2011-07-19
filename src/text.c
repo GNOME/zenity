@@ -26,10 +26,107 @@
 #include "zenity.h"
 #include "util.h"
 
+#ifdef HAVE_WEBKITGTK
+#include <webkit/webkit.h>
+#endif
+
 static ZenityTextData	*zen_text_data;
 
 static void zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data);
 static void zenity_text_toggle_button (GtkToggleButton *button, gpointer data);
+
+#ifdef HAVE_WEBKITGTK
+static void
+zenity_configure_webkit (WebKitWebView *web_view)
+{
+  WebKitWebSettings *settings;
+  settings = webkit_web_view_get_settings(web_view);
+  g_object_set(G_OBJECT(settings), "enable-scripts",     FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "auto-load-images",   TRUE, NULL);
+  g_object_set(G_OBJECT(settings), "auto-resize-window", TRUE, NULL);
+  g_object_set(G_OBJECT(settings), "auto-shrink-images", TRUE, NULL);
+  /*
+    Stick to the defaults
+    "cursive-font-family"      gchar*                : Read / Write / Construct
+    "default-encoding"         gchar*                : Read / Write / Construct
+    "default-font-family"      gchar*                : Read / Write / Construct
+    "default-font-size"        gint                  : Read / Write / Construct
+    "default-monospace-font-size" gint               : Read / Write / Construct
+    "editing-behavior"         WebKitEditingBehavior : Read / Write / Construct
+  */
+  g_object_set(G_OBJECT(settings), "enable-caret-browsing",       FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-default-context-menu", FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-developer-extras",     FALSE, NULL);
+  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-dns-prefetching",      FALSE, NULL);*/
+  g_object_set(G_OBJECT(settings), "enable-dom-paste",            FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-file-access-from-file-uris", FALSE, NULL);
+  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-frame-flattening",     FALSE, NULL);*/
+  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-fullscreen",           FALSE, NULL);*/
+  g_object_set(G_OBJECT(settings), "enable-html5-database",       FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-html5-local-storage",  FALSE, NULL);
+  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-hyperlink-auditing",   FALSE, NULL);*/
+  g_object_set(G_OBJECT(settings), "enable-java-applet",          FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-offline-web-application-cache", FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-page-cache",           FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-plugins",              FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-private-browsing",     TRUE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-scripts",              FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-site-specific-quirks", FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-spatial-navigation",   FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-spell-checking",       FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-universal-access-from-file-uris", FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-xss-auditor",          TRUE, NULL);
+  /*
+    Stick to defaults
+    "enforce-96-dpi"           gboolean              : Read / Write / Construct
+    "fantasy-font-family"      gchar*                : Read / Write / Construct
+  */
+  g_object_set(G_OBJECT(settings), "javascript-can-access-clipboard",           FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "javascript-can-open-windows-automatically", FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "javascript-can-open-windows-automatically", FALSE, NULL);
+  /*
+    Stick to defaults
+    "minimum-font-size"        gint                  : Read / Write / Construct
+    "minimum-logical-font-size" gint                 : Read / Write / Construct
+    "monospace-font-family"    gchar*                : Read / Write / Construct
+    "print-backgrounds"        gboolean              : Read / Write / Construct
+    "resizable-text-areas"     gboolean              : Read / Write / Construct
+    "sans-serif-font-family"   gchar*                : Read / Write / Construct
+    "serif-font-family"        gchar*                : Read / Write / Construct
+    "spell-checking-languages" gchar*                : Read / Write / Construct
+  */
+  g_object_set(G_OBJECT(settings), "tab-key-cycles-through-elements", FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "user-agent",
+               "Zenity with WebKit (KHTML, like Gecko) support", NULL);
+  /*
+    Stick to defaults
+    "user-stylesheet-uri"      gchar*                : Read / Write / Construct
+    "zoom-step"                gfloat                : Read / Write / Construct
+  */
+}
+
+static gboolean
+zenity_text_webview_decision_request (WebKitWebView             *webkitwebview,
+                                      WebKitWebFrame            *frame,
+                                      WebKitNetworkRequest      *request,
+                                      WebKitWebNavigationAction *navigation_action,
+                                      WebKitWebPolicyDecision   *policy_decision,
+                                      gpointer                   user_data)
+{
+  webkit_web_policy_decision_ignore (policy_decision);
+  return TRUE;
+}
+
+static void
+zenity_text_webview_load_finished (WebKitWebView  *webkitwebview,
+                                   WebKitWebFrame *frame,
+                                   gpointer        user_data)
+{
+  g_signal_connect (G_OBJECT (webkitwebview), "navigation-policy-decision-requested",
+                    G_CALLBACK (zenity_text_webview_decision_request), NULL);
+}
+
+#endif
 
 static gboolean
 zenity_text_handle_stdin (GIOChannel  *channel,
@@ -111,6 +208,12 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   GObject *text_view;
   GtkTextBuffer *text_buffer;
 
+#ifdef HAVE_WEBKITGTK
+  GtkWidget *web_kit;
+  GtkWidget *scrolled_window;
+  GtkTextIter start_iter, end_iter;
+  gchar *content;
+#endif
   zen_text_data = text_data;
   builder = zenity_util_load_ui_file ("zenity_text_dialog",
   				      "textbuffer1", NULL);
@@ -179,6 +282,41 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   else
     gtk_window_set_default_size (GTK_WINDOW (dialog), 300, 400); 
 
+#ifdef HAVE_WEBKITGTK
+  if(text_data->html) {
+    web_kit = webkit_web_view_new();
+    scrolled_window = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_scrolled_window"));
+
+    zenity_configure_webkit (WEBKIT_WEB_VIEW (web_kit));
+
+    if (text_data->url)
+    {
+      if (!(g_str_has_prefix (text_data->url, "http://") || g_str_has_prefix (text_data->url, "https://"))) 
+        text_data->url = g_strdup_printf ("http://%s", text_data->url);
+      
+
+      webkit_web_view_load_uri (WEBKIT_WEB_VIEW (web_kit), text_data->url);
+    }
+    else
+    {
+      gtk_text_buffer_get_start_iter (text_buffer, &start_iter);
+      gtk_text_buffer_get_end_iter (text_buffer, &end_iter);
+      content = gtk_text_buffer_get_text (text_buffer, &start_iter, &end_iter, TRUE);
+      webkit_web_view_load_string (WEBKIT_WEB_VIEW(web_kit), content, "text/html", "UTF-8", NULL);
+      g_free (content);
+    }
+
+    // We don't want user to click on links and navigate to another page.
+    // So, when page finish load, we block requests.
+
+    g_signal_connect (G_OBJECT (web_kit), "document-load-finished",
+                      G_CALLBACK (zenity_text_webview_load_finished), NULL); 
+
+    gtk_widget_destroy (GTK_WIDGET (text_view));
+    gtk_container_add (GTK_CONTAINER(scrolled_window), web_kit);
+    gtk_widget_show (GTK_WIDGET (web_kit));
+  }
+#endif
   zenity_util_show_dialog (dialog);
 
   g_object_unref (builder);

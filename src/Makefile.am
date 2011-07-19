@@ -32,6 +32,7 @@ zenity_CPPFLAGS = \
 zenity_CFLAGS = \
 	$(ZENITY_CFLAGS)	\
 	$(LIBNOTIFY_CFLAGS)	\
+	$(WEBKIT_CFLAGS)	\
 	$(WARN_CFLAGS)		\
 	$(AM_CFLAGS)
 
@@ -40,7 +41,8 @@ zenity_LDFLAGS = \
 
 zenity_LDADD = \
 	$(ZENITY_LIBS)		\
-	$(LIBNOTIFY_LIBS)	
+	$(LIBNOTIFY_LIBS)	\
+	$(WEBKIT_LIBS)
 
 uidir = $(datadir)/zenity
 

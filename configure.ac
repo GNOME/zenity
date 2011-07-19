@@ -77,6 +77,28 @@ if test x$enable_libnotify = xyes; then
 fi
 
 # *******************************
+# webkit check
+# *******************************
+
+WEBKITGTK_REQUIRED=1.4.0
+
+AC_ARG_ENABLE([webkitgtk],
+              [AS_HELP_STRING([--enable-webkitgtk],
+                              [Enable webkit support])],
+              [],
+              [enable_webkitgtk=yes])
+
+if test x$enable_webkitgtk = xyes; then
+        PKG_CHECK_MODULES([WEBKIT], [webkitgtk-3.0 >= $WEBKITGTK_REQUIRED],
+                          [HAVE_WEBKITGTK="yes"],[HAVE_WEBKITGTK="no"])
+        AC_SUBST([WEBKIT_CFLAGS])
+        AC_SUBST([WEBKIT_LIBS])
+        if test "x$HAVE_WEBKITGTK" = "xyes"; then
+                AC_DEFINE([HAVE_WEBKITGTK], [1], [webkitgtk is available on this machine])
+        fi
+fi
+
+# *******************************
 # Debug
 # ******************************* 
 

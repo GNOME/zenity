@@ -111,6 +111,10 @@ typedef struct {
   gchar         *ok_label;
   gchar         *cancel_label;
   gchar         *checkbox;
+#ifdef HAVE_WEBKITGTK
+  gboolean       html;
+  gchar         *url;
+#endif
 } ZenityTextData;
 
 typedef struct {

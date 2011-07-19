@@ -100,6 +100,10 @@ static gboolean zenity_question_active;
 static gboolean zenity_text_active;
 static gchar   *zenity_text_font;
 static gchar   *zenity_text_checkbox;
+#ifdef HAVE_WEBKITGTK
+static gboolean zenity_text_enable_html;
+static gchar   *zenity_text_url;
+#endif
 
 /* Warning Dialog Options */
 static gboolean zenity_warning_active;
@@ -786,9 +790,29 @@ static GOptionEntry text_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_text_checkbox,
-    N_("Enable a I read and agree checkbox"),
+    N_("Enable an I read and agree checkbox"),
     N_("TEXT")
   },
+#ifdef HAVE_WEBKITGTK
+  {
+    "html",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_text_enable_html,
+    N_("Enable html support"),
+    NULL
+  },
+  {
+    "url",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_text_url,
+    N_("Sets an url instead of a file. Only works if you use --html option"),
+    N_("URL")
+  },
+#endif
   { 
     NULL 
   }
@@ -1347,6 +1371,10 @@ zenity_text_pre_callback (GOptionContext *context,
   zenity_text_active = FALSE;
   zenity_text_font = NULL;
   zenity_text_checkbox = NULL;
+#ifdef HAVE_WEBKITGTK
+  zenity_text_enable_html = FALSE;
+  zenity_text_url = NULL;
+#endif
   return TRUE;
 }
 
@@ -1743,6 +1771,10 @@ zenity_text_post_callback (GOptionContext *context,
     results->text_data->ok_label = zenity_general_ok_button;
     results->text_data->cancel_label = zenity_general_cancel_button;
     results->text_data->checkbox = zenity_text_checkbox;
+#ifdef HAVE_WEBKITGTK
+    results->text_data->html = zenity_text_enable_html;
+    results->text_data->url = zenity_text_url;
+#endif
   } else {
     if (zenity_text_font) 
       zenity_option_error (zenity_option_get_name (text_options, &zenity_text_font),
