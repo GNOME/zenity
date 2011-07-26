@@ -227,6 +227,7 @@ void
 zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 {
   GtkWidget *dialog;
+  GtkWidget *button;
   GObject *text;
   GObject *progress_bar;
   GObject *cancel_button,*ok_button;
@@ -254,6 +255,20 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
+  if (data->ok_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_progress_ok_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
+  }
+
+  if (data->cancel_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_progress_cancel_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
+  }
 
   text = gtk_builder_get_object (builder, "zenity_progress_text");
 

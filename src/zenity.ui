@@ -365,7 +365,7 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="cancelbutton12">
+              <object class="GtkButton" id="zenity_forms_cancel_button">
                 <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -380,7 +380,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="okbutton12">
+              <object class="GtkButton" id="zenity_forms_ok_button">
                 <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -449,8 +449,8 @@
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-6">cancelbutton12</action-widget>
-      <action-widget response="-5">okbutton12</action-widget>
+      <action-widget response="-6">zenity_forms_cancel_button</action-widget>
+      <action-widget response="-5">zenity_forms_ok_button</action-widget>
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_info_dialog">
@@ -739,7 +739,7 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="cancelbutton1">
+              <object class="GtkButton" id="zenity_scale_cancel_button">
                 <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -755,7 +755,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="okbutton1">
+              <object class="GtkButton" id="zenity_scale_ok_button">
                 <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -823,8 +823,8 @@
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-6">cancelbutton1</action-widget>
-      <action-widget response="-5">okbutton1</action-widget>
+      <action-widget response="-6">zenity_scale_cancel_button</action-widget>
+      <action-widget response="-5">zenity_scale_ok_button</action-widget>
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_text_dialog">

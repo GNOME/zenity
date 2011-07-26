@@ -35,6 +35,7 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 {
   GtkWidget *dialog;
   GtkWidget *colorsel;
+  GtkWidget *button;
   GdkColor color;
 
   zen_data = data;
@@ -54,6 +55,22 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
     if (gdk_color_parse (color_data->color, &color))
       gtk_color_selection_set_current_color (GTK_COLOR_SELECTION (colorsel),
                                              &color);
+  }
+
+  if (data->ok_label) {
+    g_object_get (G_OBJECT (dialog), "ok-button", &button);
+    gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
+    g_object_unref (G_OBJECT (button));
+  }
+
+  if (data->cancel_label) {
+    g_object_get (G_OBJECT (dialog), "cancel-button", &button);
+    gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+    gtk_button_set_image (GTK_BUTTON (button), 
+                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
+    g_object_unref (G_OBJECT (button));
   }
 
   gtk_color_selection_set_has_palette (GTK_COLOR_SELECTION (colorsel),

@@ -287,6 +287,7 @@ void
 zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 {
   GtkWidget *dialog;
+  GtkWidget *button;
   GObject *tree_view;
   GObject *text;
   GtkTreeViewColumn *column;
@@ -343,6 +344,20 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
+
+  if (data->ok_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_tree_ok_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
+  }
+
+  if (data->cancel_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_tree_cancel_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
+  }
 
   text = gtk_builder_get_object (builder, "zenity_tree_text");
                                                                                 

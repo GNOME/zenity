@@ -262,16 +262,22 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   if (text_data->editable)
     zen_text_data->buffer = text_buffer;
 
-  if (text_data->ok_label) 
-    gtk_button_set_label (GTK_BUTTON(ok_button), text_data->ok_label);
+  if (data->ok_label) { 
+    gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
+    gtk_button_set_image (GTK_BUTTON (ok_button),
+                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
+  }
 
-  if (text_data->cancel_label)
-    gtk_button_set_label (GTK_BUTTON(cancel_button), text_data->cancel_label);
+  if (data->cancel_label) {
+    gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);
+    gtk_button_set_image (GTK_BUTTON (cancel_button), 
+                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
+  }
 
   if (text_data->checkbox) {
-    gtk_widget_set_visible (GTK_WIDGET(checkbox), TRUE);
-    gtk_widget_set_sensitive (GTK_WIDGET(ok_button), FALSE);
-    gtk_button_set_label (GTK_BUTTON(checkbox), text_data->checkbox);
+    gtk_widget_set_visible (GTK_WIDGET (checkbox), TRUE);
+    gtk_widget_set_sensitive (GTK_WIDGET (ok_button), FALSE);
+    gtk_button_set_label (GTK_BUTTON (checkbox), text_data->checkbox);
 
     g_signal_connect (G_OBJECT (checkbox), "toggled",
                       G_CALLBACK (zenity_text_toggle_button), ok_button);

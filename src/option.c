@@ -188,6 +188,24 @@ static GOptionEntry general_options[] = {
     N_("TIMEOUT")
   },
   {
+    "ok-label",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_ok_button,
+    N_("Sets the label of the Ok button"),
+    N_("TEXT")
+  },
+  {
+    "cancel-label",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_cancel_button,
+    N_("Sets the label of the Cancel button"),
+    N_("TEXT")
+  },
+  {
     NULL
   }
 };
@@ -690,24 +708,6 @@ static GOptionEntry question_options[] = {
     N_("TEXT")
   },
   {
-    "ok-label",
-    '\0',
-    G_OPTION_FLAG_NOALIAS,
-    G_OPTION_ARG_STRING,
-    &zenity_general_ok_button,
-    N_("Sets the label of the Ok button"),
-    N_("TEXT")
-  },
-  {
-    "cancel-label",
-    '\0',
-    G_OPTION_FLAG_NOALIAS,
-    G_OPTION_ARG_STRING,
-    &zenity_general_cancel_button,
-    N_("Sets the label of the Cancel button"),
-    N_("TEXT")
-  },
-  {
     "no-wrap",
     '\0',
     G_OPTION_FLAG_NOALIAS,
@@ -764,24 +764,6 @@ static GOptionEntry text_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_text_font,
     N_("Set the text font"),
-    N_("TEXT")
-  },
-  {
-    "ok-label",
-    '\0',
-    G_OPTION_FLAG_NOALIAS,
-    G_OPTION_ARG_STRING,
-    &zenity_general_ok_button,
-    N_("Sets the label of the Ok button"),
-    N_("TEXT")
-  },
-  {
-    "cancel-label",
-    '\0',
-    G_OPTION_FLAG_NOALIAS,
-    G_OPTION_ARG_STRING,
-    &zenity_general_cancel_button,
-    N_("Sets the label of the Cancel button"),
     N_("TEXT")
   },
   {
@@ -1467,7 +1449,9 @@ zenity_general_post_callback (GOptionContext *context,
   results->data->window_icon = zenity_general_window_icon;
   results->data->width = zenity_general_width;
   results->data->height = zenity_general_height;
-  results->data->timeout_delay=zenity_general_timeout_delay;
+  results->data->timeout_delay = zenity_general_timeout_delay;
+  results->data->ok_label = zenity_general_ok_button;
+  results->data->cancel_label = zenity_general_cancel_button;
   return TRUE;
 }
 
@@ -1497,6 +1481,7 @@ zenity_calendar_post_callback (GOptionContext *context,
     results->calendar_data->day = zenity_calendar_day;
     results->calendar_data->month = zenity_calendar_month;
     results->calendar_data->year = zenity_calendar_year;
+
     if (zenity_calendar_date_format)
       results->calendar_data->date_format = zenity_calendar_date_format;
     else
@@ -1748,8 +1733,6 @@ zenity_question_post_callback (GOptionContext *context,
     results->msg_data->mode = ZENITY_MSG_QUESTION;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
-    results->msg_data->ok_label = zenity_general_ok_button;
-    results->msg_data->cancel_label = zenity_general_cancel_button;
   }
 
   return TRUE;
@@ -1768,8 +1751,6 @@ zenity_text_post_callback (GOptionContext *context,
     results->text_data->editable = zenity_general_editable;
     results->text_data->no_wrap = zenity_general_dialog_no_wrap;
     results->text_data->font = zenity_text_font;
-    results->text_data->ok_label = zenity_general_ok_button;
-    results->text_data->cancel_label = zenity_general_cancel_button;
     results->text_data->checkbox = zenity_text_checkbox;
 #ifdef HAVE_WEBKITGTK
     results->text_data->html = zenity_text_enable_html;
@@ -2163,15 +2144,16 @@ zenity_option_parse (gint argc, gchar **argv)
   if (zenity_general_uri)
     if (results->mode != MODE_FILE && results->mode != MODE_TEXTINFO)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_general_uri), ERROR_SUPPORT);
-
+  
   if (zenity_general_ok_button)
-    if(results->mode != MODE_QUESTION && results->mode != MODE_TEXTINFO)
-      zenity_option_error (zenity_option_get_name (text_options, &zenity_general_ok_button), ERROR_SUPPORT);
+    if(results->mode == MODE_FILE)
+      zenity_option_error (zenity_option_get_name (general_options, &zenity_general_ok_button), ERROR_SUPPORT);
   
   if (zenity_general_cancel_button)
-    if(results->mode != MODE_QUESTION && results->mode != MODE_TEXTINFO)
-      zenity_option_error (zenity_option_get_name (text_options, &zenity_general_cancel_button), ERROR_SUPPORT);
- 
+    if(results->mode == MODE_FILE || results->mode == MODE_ERROR || results->mode == MODE_WARNING || results->mode == MODE_INFO)
+      zenity_option_error (zenity_option_get_name (general_options, &zenity_general_cancel_button), ERROR_SUPPORT);
+  
+
   if (zenity_general_dialog_no_wrap)
     if (results->mode != MODE_INFO && results->mode != MODE_ERROR && results->mode != MODE_QUESTION && results->mode != MODE_WARNING && results->mode != MODE_TEXTINFO)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_general_dialog_no_wrap), ERROR_SUPPORT);

@@ -36,6 +36,7 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 {
   GtkBuilder *builder;
   GtkWidget *dialog;
+  GtkWidget *button;
   GObject *text;
 
   builder = zenity_util_load_ui_file ("zenity_scale_dialog", "adjustment1", NULL);
@@ -75,6 +76,20 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
         
+  if (data->ok_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_ok_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
+  }
+
+  if (data->cancel_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_cancel_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
+  }
+
   if (scale_data->dialog_text) 
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (scale_data->dialog_text));
 

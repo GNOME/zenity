@@ -26,6 +26,8 @@ G_BEGIN_DECLS
 typedef struct {
   gchar *dialog_title;
   gchar *window_icon;
+  gchar *ok_label;
+  gchar *cancel_label;
   gint   width;
   gint   height;
   gint   exit_code;
@@ -61,8 +63,6 @@ typedef struct {
   MsgMode  mode;
   gboolean no_wrap;
   gboolean no_markup;
-  gchar   *ok_label;
-  gchar   *cancel_label;
 } ZenityMsgData;
 
 typedef struct {
@@ -108,8 +108,6 @@ typedef struct {
   gboolean       no_wrap;
   gchar         *font;
   GtkTextBuffer	*buffer;
-  gchar         *ok_label;
-  gchar         *cancel_label;
   gchar         *checkbox;
 #ifdef HAVE_WEBKITGTK
   gboolean       html;

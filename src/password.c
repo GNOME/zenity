@@ -45,10 +45,10 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   dialog = gtk_dialog_new ();
 
   gtk_dialog_add_button(GTK_DIALOG(dialog), 
-                        GTK_STOCK_CANCEL, 
+                        data->cancel_label != NULL ? data->cancel_label : GTK_STOCK_CANCEL, 
                         GTK_RESPONSE_CANCEL);
   gtk_dialog_add_button(GTK_DIALOG(dialog), 
-                        GTK_STOCK_OK, 
+                        data->ok_label != NULL ? data->ok_label : GTK_STOCK_OK, 
                         GTK_RESPONSE_OK);
   
   image = gtk_image_new_from_stock(GTK_STOCK_DIALOG_AUTHENTICATION,

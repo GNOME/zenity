@@ -36,6 +36,7 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
   GtkWidget *dialog;
   GtkWidget *table;
   GtkWidget *text;
+  GtkWidget *button;
 
   GSList *tmp;
 
@@ -62,7 +63,21 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
-  
+
+  if (data->ok_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_ok_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
+  }  
+
+  if (data->cancel_label) {
+    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_cancel_button"));
+    gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+    gtk_button_set_image (GTK_BUTTON (button),
+                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
+  }
+
   text = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_text"));
 
   if (forms_data->dialog_text)
