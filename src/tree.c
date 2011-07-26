@@ -39,6 +39,7 @@ static gchar *separator;
 static gboolean print_all_columns = FALSE;
 static gint *print_columns = NULL;
 static gint *hide_columns = NULL;
+static GIOChannel *channel;
 
 static int *zenity_tree_extract_column_indexes (char *indexes, gint n_columns);
 static gboolean zenity_tree_column_is_hidden (gint column_index);
@@ -125,7 +126,10 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
       gint status;
 
       do {
-        status = g_io_channel_read_line_string (channel, string, NULL, &error);
+        if (channel->is_readable == TRUE)
+          status = g_io_channel_read_line_string (channel, string, NULL, &error);
+        else
+          return FALSE;
 
         while (gtk_events_pending ())
           gtk_main_iteration ();
@@ -196,8 +200,6 @@ zenity_tree_fill_entries_from_stdin (GtkTreeView  *tree_view,
                                      gboolean      toggles,
                                      gboolean      editable)
 {
-  GIOChannel *channel;
-
   g_object_set_data (G_OBJECT (tree_view), "n_columns", GINT_TO_POINTER (n_columns));
   g_object_set_data (G_OBJECT (tree_view), "toggles", GINT_TO_POINTER (toggles));
   g_object_set_data (G_OBJECT (tree_view), "editable", GINT_TO_POINTER (editable)); 
@@ -628,6 +630,9 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
+  if (channel != NULL)
+    g_io_channel_shutdown (channel, TRUE, NULL);
+
   gtk_main_quit ();
 }
 
