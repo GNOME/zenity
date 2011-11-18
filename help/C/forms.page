@@ -1,0 +1,83 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="forms">
+  <info>
+    <link type="guide" xref="index#dialogs"/>
+    <desc>Use the <cmd>--forms</cmd> option.</desc>
+  </info>
+  <title>Forms Dialog</title>
+    <p>
+	Use the <cmd>--forms</cmd> option to create a forms dialog. 
+    </p>
+	
+    <p>
+	The forms dialog supports the following options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--add-entry</cmd>=<var>FieldName</var></title>
+	<p>Add a new Entry in forms dialog.</p>
+      </item>
+
+      <item>
+        <title>--add-password<cmd></cmd>=<var>FieldName</var></title>
+	<p>Add a new Password Entry in forms dialog. (Hide text)</p>
+      </item>
+
+      <item>
+        <title><cmd>--add-calendar</cmd>=<var>FieldName</var></title>
+	<p>Add a new Calendar in forms dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--text</cmd>=<var>TEXT</var></title>
+	<p>Set the dialog text.</p>
+      </item>
+
+      <item>
+        <title><cmd>--separator</cmd>=<var>SEPARATOR</var></title>
+	<p>Set output separator character. (Default: | )</p>
+      </item>
+
+      <item>
+        <title><cmd>--forms-date-format</cmd>=<var>PATTERN</var></title>
+	<p>Set the format for the returned date. The default format depends on your locale. format must be a Format that is acceptable to the <cmd>strftime</cmd> function, for example <var>%A %d/%m/%y</var>.</p>
+      </item>
+
+    </terms>
+
+    <p>
+      The following example script shows how to create a forms dialog:
+    </p>
+
+<code>
+#!/bin/sh
+
+zenity --forms --title="Add Friend" \
+	--text="Enter information about your friend." \
+	--separator="," \
+	--add-entry="First Name" \
+	--add-entry="Family Name" \
+	--add-entry="Email" \
+	--add-calendar="Birthday" >> addr.csv
+
+case $? in
+    0)
+        echo "Friend added.";;
+    1)
+        echo "No friend added."
+	;;
+    -1)
+        echo "An unexpected error has occurred."
+	;;
+esac
+</code>
+
+    <figure id="zenity-forms-screenshot">
+      <title>Forms Dialog Example</title>
+      <desc><app>Zenity</app> forms dialog example</desc>
+      <media type="image" mime="image/png" src="figures/zenity-forms-screenshot.png"/>
+    </figure>
+</page>

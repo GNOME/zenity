@@ -1,0 +1,39 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="notification">
+  <info>
+    <link type="guide" xref="index#dialogs"/>
+    <desc>Use the <cmd>--notification</cmd> option.</desc>
+  </info>
+  <title>Notification Icon</title>
+    <p>
+	Use the <cmd>--notification</cmd> option to create a notification icon.
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--text</cmd>=<var>text</var></title>
+	  <p>Specifies the text that is displayed in the notification area.</p>
+      </item>
+
+    </terms>
+
+    <p>
+      The following example script shows how to create a notification icon:
+    </p>
+<code>
+#!/bin/sh
+
+zenity --notification\
+  --window-icon="info" \
+  --text="There are system updates necessary!"
+</code>
+
+
+    <figure id="zenity-notification-screenshot">
+      <title>Notification Icon Example</title>
+      <desc><app>Zenity</app> notification icon example</desc>
+      <media type="image" mime="image/png" src="figures/zenity-notification-screenshot.png"/>
+   </figure>
+</page>

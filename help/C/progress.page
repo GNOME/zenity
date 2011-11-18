@@ -1,0 +1,79 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="progress">
+  <info>
+    <link type="guide" xref="index#dialogs"/>
+    <desc>Use the <cmd>--progress</cmd> option.</desc>
+  </info>
+  <title>Progress Dialog</title>
+    <p>
+	Use the <cmd>--progress</cmd> option to create a progress dialog. 
+    </p>
+
+    <p>
+      <app>Zenity</app> reads data from standard input line by line. If a line is prefixed with #, the text is updated with the text on that line. If a line contains only a number, the percentage is updated with that number.
+    </p>
+	
+    <p>
+	The progress dialog supports the following options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--text</cmd>=<var>text</var></title>
+	  <p>Specifies the text that is displayed in the progress dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--percentage</cmd>=<var>percentage</var></title>
+	  <p>Specifies the initial percentage that is set in the progress dialog.</p>
+      </item>
+
+      <item>
+	<title><cmd>--auto-close</cmd></title>
+	  <p>Closes the progress dialog when 100% has been reached.</p>
+      </item>
+
+      <item>
+        <title><cmd>--pulsate</cmd></title>
+	  <p>Specifies that the progress bar pulsates until an EOF character is read from standard input.</p>
+      </item>
+
+    </terms>
+
+    <p>
+      The following example script shows how to create a progress dialog:
+    </p>
+
+<code>
+#!/bin/sh
+(
+echo "10" ; sleep 1
+echo "# Updating mail logs" ; sleep 1
+echo "20" ; sleep 1
+echo "# Resetting cron jobs" ; sleep 1
+echo "50" ; sleep 1
+echo "This line will just be ignored" ; sleep 1
+echo "75" ; sleep 1
+echo "# Rebooting system" ; sleep 1
+echo "100" ; sleep 1
+) |
+zenity --progress \
+  --title="Update System Logs" \
+  --text="Scanning mail logs..." \
+  --percentage=0
+
+if [ "$?" = -1 ] ; then
+        zenity --error \
+          --text="Update canceled."
+fi
+</code>
+
+
+    <figure id="zenity-progress-screenshot">
+      <title>Progress Dialog Example</title>
+      <desc><app>Zenity</app> progress dialog example</desc>
+      <media type="image" mime="image/png" src="figures/zenity-progress-screenshot.png"/>
+    </figure>
+</page>

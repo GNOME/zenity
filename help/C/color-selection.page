@@ -1,0 +1,55 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="color-selection">
+  <info>
+    <link type="guide" xref="index#dialogs"/>
+    <desc>Use the <cmd>--color-selection</cmd> option.</desc>
+  </info>
+  <title>Color Selection Dialog</title>
+  <p>
+    Use the <cmd>--color-selection</cmd> option to create a color selection dialog. 
+  </p>
+  <p>
+    The color selection dialog supports the following options:
+  </p>
+
+  <terms>
+
+    <item>
+      <title><cmd>--color</cmd>=<var>VALUE</var></title>
+      <p>Set the initial color.(ex: #FF0000)</p>
+    </item>
+
+    <item>
+      <title><cmd>--show-palette</cmd></title>
+      <p>Show the palette.</p>
+    </item>
+
+  </terms>
+
+  <p>
+    The following example script shows how to create a color selection dialog:
+  </p>
+
+<code>
+#!/bin/sh
+
+COLOR=`zenity --color-selection --show-palette`
+
+case $? in
+         0)
+		echo "You selected $COLOR.";;
+         1)
+                echo "No color selected.";;
+        -1)
+                echo "An unexpected error has occurred.";;
+esac
+</code>
+
+  <figure id="zenity-colorselection-screenshot">
+    <title>Password Entry Dialog Example</title>
+    <desc><app>Zenity</app> password entry dialog example</desc>
+    <media type="image" mime="image/png" src="figures/zenity-colorselection-screenshot.png"/>
+  </figure>
+
+</page>

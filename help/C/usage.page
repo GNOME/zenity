@@ -1,0 +1,292 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="usage">
+<info>
+  <link type="guide" xref="index"/>
+  <desc>You can use <app>Zenity</app> to create simple dialogs that interact graphically with the user.</desc>
+</info>
+<title>Usage</title>
+    <p>
+	When you write scripts, you can use <app>Zenity</app> to create simple dialogs that interact graphically with the user, as follows:
+    </p>
+    <list>
+      <item>
+        <p>
+	    You can create a dialog to obtain information from the user. For example, you can prompt the user to select a date from a calendar dialog, or to select a file from a file selection dialog.
+        </p>
+      </item>
+      <item>
+        <p>
+	    You can create a dialog to provide the user with information. For example, you can use a progress dialog to indicate the current status of an operation, or use a warning message dialog to alert the user.
+        </p>
+      </item>
+    </list>
+    <p>
+	When the user closes the dialog, <app>Zenity</app> prints the text produced by the dialog to standard output.
+    </p>
+
+    <note>
+      <p>
+        When you write <app>Zenity</app> commands, ensure that you place quotation marks around each argument. 
+      </p>
+      <p>For example, use:</p>
+      <screen>zenity --calendar --title="Holiday Planner"</screen>
+      <p>Do not use:</p>
+      <screen>zenity --calendar --title=Holiday Planner</screen>
+      <p>
+	If you do not use quotation marks, you might get unexpected results.
+      </p>
+    </note>
+
+    <section id="zenity-usage-mnemonics">
+      <title>Access Keys</title>
+	<p>
+	  An access key is a key that enables you to perform an action from the keyboard rather than use the mouse to choose a command from a menu or dialog. Each access key is identified by an underlined letter on a menu or dialog option.
+	</p>
+	<p>
+          Some <app>Zenity</app> dialogs support the use of access keys. To specify the character to use as the access key, place an underscore before that character in the text of the dialog. The following example shows how to specify the letter 'C' as the access key:
+	</p>
+	<screen><input>"_Choose a name".</input></screen>
+    </section>
+
+    <section id="zenity-usage-exitcodes">
+      <title>Exit Codes</title>
+    <p>
+        Zenity returns the following exit codes:
+    </p>
+
+    <table frame="all" rules="all">
+        <thead>
+          <tr valign="top">
+            <td colname="COLSPEC0">
+              <p>Exit Code</p></td>
+            <td colname="COLSPEC1">
+              <p>Description</p></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr valign="top">
+            <td>
+              <p><var>0</var></p>
+            </td>
+            <td>
+              <p>The user has pressed either <gui style="button">OK</gui> or <gui style="button">Close</gui>.</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p><var>1</var></p>
+            </td>
+            <td>
+              <p>The user has either pressed <gui style="button">Cancel</gui>, or used the window functions to close the dialog.</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p><var>-1</var></p>
+            </td>
+            <td>
+              <p>An unexpected error has occurred.</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p><var>5</var></p>
+            </td>
+            <td>
+              <p>The dialog has been closed because the timeout has been reached.</p>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+
+    </section>
+
+
+  <!-- ==== General Options ====== -->
+
+  <section id="zenity-usage-general-options">
+    <title>General Options</title>
+
+    <p>
+	All Zenity dialogs support the following general options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--title</cmd>=<var>title</var></title>
+	<p>Specifies the title of a dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--window-icon</cmd>=<var>icon_path</var></title>
+	<p>Specifies the icon that is displayed in the window frame of the dialog. There are
+	      4 stock icons also available by providing the following keywords - 'info', 'warning', 'question' and
+	      'error'.
+        </p>
+      </item>
+
+      <item>
+        <title><cmd>--width</cmd>=<var>width</var></title>
+	<p>Specifies the width of the dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--height</cmd>=<var>height</var></title>
+	<p>Specifies the height of the dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--timeout</cmd>=<var>timeout</var></title>
+	<p>Specifies the timeout in seconds after which the dialog is closed.</p>
+      </item>
+
+    </terms>
+
+  </section>
+
+<!-- ==== Miscellaneous Options ====== -->
+
+  <section id="zenity-help-options">
+    <title>Help Options</title>
+
+    <p>
+	Zenity provides the following help options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--help</cmd></title>
+	<p>Displays shortened help text.</p>
+      </item>
+
+      <item>
+        <title><cmd>--help-all</cmd></title>
+	<p>Displays full help text for all dialogs.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-general</cmd></title>
+	<p>Displays help text for general dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-calendar</cmd></title>
+	<p>Displays help text for calendar dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-entry</cmd></title>
+	<p>Displays help text for text entry dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-error</cmd></title>
+	<p>Displays help text for error dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-info</cmd></title>
+	<p>Displays help text for information dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-file-selection</cmd></title>
+	<p>Displays help text for file selection dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-list</cmd></title>
+	<p>Displays help text for list dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-notification</cmd></title>
+	<p>Displays help text for notification icon options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-progress</cmd></title>
+	<p>Displays help text for progress dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-question</cmd></title>
+	<p>Displays help text for question dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-warning</cmd></title>
+	<p>Displays help text for warning dialog options.</p>
+      </item>
+ 
+      <item>
+	<title><cmd>--help-text-info</cmd></title>
+	<p>Displays help for text information dialog options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-misc</cmd></title>
+	<p>Displays help for miscellaneous options.</p>
+      </item>
+ 
+      <item>
+        <title><cmd>--help-gtk</cmd></title>
+	<p>Displays help for GTK+ options.</p>
+      </item>
+ 
+    </terms>
+
+  </section>
+
+<!-- ==== Miscellaneous Options ====== -->
+
+  <section id="zenity-miscellaneous-options">
+    <title>Miscellaneous Options</title>
+
+    <p>
+	Zenity also provides the following miscellaneous options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--about</cmd></title>
+	<p>Displays the <gui>About Zenity</gui> dialog, which contains Zenity version information, copyright information, and developer information.</p>
+      </item>
+
+      <item>
+        <title><cmd>--version</cmd></title>
+	<p>Displays the version number of Zenity.</p>
+      </item>
+
+    </terms>
+
+  </section>
+
+<!-- ==== GTK+ Options ====== -->
+
+  <section id="zenity-gtk-options">
+    <title>GTK+ Options</title>
+
+    <p>
+	Zenity supports the standard GTK+ options. For more information about the GTK+ options, execute the <cmd>zenity --help-gtk</cmd> command.
+    </p>
+
+  </section>
+
+<!-- ==== Environment variables ==== -->
+
+  <section id="zenity-environment-variables">
+    <title>Environment Variables</title>
+
+    <p>
+      Normally, Zenity detects the terminal window from which it was launched
+      and keeps itself above that window.  This behavior can be disabled by
+      unsetting the <var>WINDOWID</var> environment variable.
+    </p>
+
+  </section>
+</page>

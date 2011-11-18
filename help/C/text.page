@@ -1,0 +1,85 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="text">
+  <info>
+    <link type="guide" xref="index#dialogs"/>
+    <desc>Use the <cmd>--text-info</cmd> option.</desc>
+  </info>
+  <title>Text Information Dialog</title>
+    <p>
+	Use the <cmd>--text-info</cmd> option to create a text information dialog. 
+    </p>
+	
+    <p>
+	The text information dialog supports the following options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--filename</cmd>=<var>filename</var></title>
+	<p>Specifies a file that is loaded in the text information dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--editable</cmd></title>
+        <p>Allows the displayed text to be edited. The edited text is returned to standard output when the dialog is closed.</p>
+      </item>
+
+      <item>
+        <title><cmd>--font</cmd>=<var>FONT</var></title>
+	<p>Specifies the text font.</p>
+      </item>
+
+      <item>
+        <title><cmd>--checkbox</cmd>=<var>TEXT</var></title>
+	<p>Enable a checkbox for use like a 'I read and accept the terms.'</p>
+      </item>
+
+      <item>
+        <title><cmd>--html</cmd></title>
+        <p>Enable html support.</p>
+      </item>
+
+      <item>
+        <title><cmd>--url</cmd>=<var>URL</var></title>
+	<p>Sets an url instead of a file. Only works if you use --html option.</p>
+      </item>
+
+    </terms>
+
+    <p>
+      The following example script shows how to create a text information dialog:
+    </p>
+
+<code>
+#!/bin/sh
+
+# You must place file "COPYING" in same folder of this script.
+FILE=`dirname $0`/COPYING
+
+zenity --text-info \
+       --title="License" \
+       --filename=$FILE \
+       --checkbox="I read and accept the terms."
+
+case $? in
+    0)
+        echo "Start installation!"
+	# next step
+	;;
+    1)
+        echo "Stop installation!"
+	;;
+    -1)
+        echo "An unexpected error has occurred."
+	;;
+esac
+</code>
+
+    <figure id="zenity-text-screenshot">
+      <title>Text Information Dialog Example</title>
+      <desc><app>Zenity</app> text information dialog example</desc>
+      <media type="image" mime="image/png" src="figures/zenity-text-screenshot.png"/>
+    </figure>
+</page>

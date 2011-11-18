@@ -1,0 +1,57 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="entry">
+  <info>
+    <link type="guide" xref="index#dialogs"/>
+    <desc>Use the <cmd>--entry</cmd> option.</desc>
+  </info>
+  <title>Text Entry Dialog</title>
+    <p>
+        Use the <cmd>--entry</cmd> option to create a text entry dialog. <app>Zenity</app> returns the contents of the text entry to standard output. 
+    </p>	
+    <p>	
+	The text entry dialog supports the following options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--text</cmd>=<var>text</var></title>
+	<p>Specifies the text that is displayed in the text entry dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--entry-text</cmd>=<var>text</var></title>
+	<p>Specifies the text that is displayed in the entry field of the text entry dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--hide-text</cmd></title>
+	<p>Hides the text in the entry field of the text entry dialog.</p>
+      </item>
+
+    </terms>
+
+    <p>
+      The following example script shows how to create a text entry dialog:
+    </p>
+
+<code>
+#!/bin/sh
+
+if zenity --entry \
+--title="Add new profile" \
+--text="Enter name of new profile:" \
+--entry-text "NewProfile"
+  then echo $?
+  else echo "No name entered"
+fi
+</code>
+
+
+    <figure id="zenity-entry-screenshot">
+      <title>Text Entry Dialog Example</title>
+      <desc><app>Zenity</app> text entry dialog example</desc>
+      <media type="image" mime="image/png" src="figures/zenity-entry-screenshot.png"/>
+    </figure>
+</page>

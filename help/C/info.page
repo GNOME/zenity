@@ -1,0 +1,30 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="info">
+  <info>
+    <link type="guide" xref="message"/>
+    <desc>Use the <cmd>--info</cmd> option.</desc>
+  </info>
+  <title>Info Dialog</title>
+      <p>
+          Use the <cmd>--info</cmd> option to create an information dialog.
+      </p>
+
+      <p>
+        The following example script shows how to create an information dialog:
+      </p>
+
+<code>
+#!/bin/bash
+
+zenity --info \
+--text="Merge complete. Updated 3 of 10 files."
+</code>
+
+
+      <figure id="zenity-information-screenshot">
+        <title>Information Dialog Example</title>
+        <desc><app>Zenity</app> information dialog example</desc>
+        <media type="image" mime="image/png" src="figures/zenity-information-screenshot.png"/>
+      </figure>
+</page>

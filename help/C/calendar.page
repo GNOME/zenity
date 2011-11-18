@@ -1,0 +1,68 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="calendar">
+  <info>
+    <link type="guide" xref="index#dialogs"/>
+    <desc>Use the <cmd>--calendar</cmd> option.</desc>
+  </info>
+  <title>Calendar Dialog</title>
+    <p>
+        Use the <cmd>--calendar</cmd> option to create a calendar dialog. Zenity returns the selected date to standard output. If no date is specified on the command line, the dialog uses the current date.
+    </p>
+    <p>
+	The calendar dialog supports the following options:
+    </p>
+
+    <terms>
+
+      <item>
+        <title><cmd>--text</cmd>=<var>text</var></title>
+	<p>Specifies the text that is displayed in the calendar dialog.</p>
+      </item>
+     	
+      <item>
+        <title><cmd>--day</cmd>=<var>day</var></title>
+	<p>Specifies the day that is selected in the calendar dialog. day must be a number between 1 and 31 inclusive.</p>
+      </item>
+
+      <item>
+        <title><cmd>--month</cmd>=<var>month</var></title>
+	<p>Specifies the month that is selected in the calendar dialog. month must be a number between 1 and 12 inclusive.</p>
+      </item>
+
+      <item>
+        <title><cmd>--year</cmd>=<var>year</var></title>
+	<p>Specifies the year that is selected in the calendar dialog.</p>
+      </item>
+
+      <item>
+        <title><cmd>--date-format</cmd>=<var>format</var></title>
+	<p>Specifies the format that is returned from the calendar dialog after date selection. The default format depends on your locale. Format must be a format that is acceptable to the <cmd>strftime</cmd> function, for example <var>%A %d/%m/%y</var>.</p>
+      </item>
+
+    </terms>
+
+    <p>
+      The following example script shows how to create a calendar dialog:
+    </p>
+
+<code>
+#!/bin/sh
+
+
+if zenity --calendar \
+--title="Select a Date" \
+--text="Click on a date to select that date." \
+--day=10 --month=8 --year=2004
+  then echo $?
+  else echo "No date selected"
+fi
+</code>
+
+
+    <figure id="zenity-calendar-screenshot">
+      <title>Calendar Dialog Example</title>
+      <desc>Zenity calendar dialog example</desc>
+      <media type="image" mime="image/png" src="figures/zenity-calendar-screenshot.png"/>
+   </figure>
+</page>
