@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity-help.master\n"
-"POT-Creation-Date: 2011-12-18 18:14+0000\n"
+"POT-Creation-Date: 2011-12-18 21:23+0000\n"
 "PO-Revision-Date: 2011-12-18 22:21+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -21,9 +21,6 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/warning.page:28(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-warning-screenshot.png'; "
-#| "md5=cde1378d51f800a025b8c37ecdb60a20"
 msgid ""
 "@@image: 'figures/zenity-warning-screenshot.png'; "
 "md5=146ea22fcd7104b2f9ed7ca0cc25f51d"
@@ -40,29 +37,17 @@ msgid "Warning Dialog"
 msgstr "Diálogo de advertencia"
 
 #: C/warning.page:9(p)
-#| msgid ""
-#| "Use the <option>--warning</option> option to create a warning dialog."
 msgid "Use the <cmd>--warning</cmd> option to create a warning dialog."
 msgstr ""
 "Use la opción <cmd>--warning</cmd> para crear un diálogo de advertencia."
 
 #: C/warning.page:13(p)
-#| msgid ""
-#| "The following example script shows how to create a warning dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a warning dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo crear un diálogo de advertencia:"
 
 #: C/warning.page:17(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "          #!/bin/bash\n"
-#| "        \n"
-#| "          zenity --warning \\\n"
-#| "          --text=\"Disconnect the power cable to avoid electrical shock.\"\n"
-#| "        "
 msgid ""
 "\n"
 "#!/bin/bash\n"
@@ -81,14 +66,10 @@ msgid "Warning Dialog Example"
 msgstr "Ejemplo del diálogo de advertencia"
 
 #: C/warning.page:27(desc)
-#| msgid "<placeholder-1/> warning dialog example"
 msgid "<app>Zenity</app> warning dialog example"
 msgstr "Ejemplo del diálogo de advertencia de <app>Zenity</app>"
 
 #: C/usage.page:6(desc)
-#| msgid ""
-#| "When you write scripts, you can use <application>Zenity</application> to "
-#| "create simple dialogs that interact graphically with the user, as follows:"
 msgid ""
 "You can use <app>Zenity</app> to create simple dialogs that interact "
 "graphically with the user."
@@ -101,9 +82,6 @@ msgid "Usage"
 msgstr "Uso"
 
 #: C/usage.page:9(p)
-#| msgid ""
-#| "When you write scripts, you can use <application>Zenity</application> to "
-#| "create simple dialogs that interact graphically with the user, as follows:"
 msgid ""
 "When you write scripts, you can use <app>Zenity</app> to create simple "
 "dialogs that interact graphically with the user, as follows:"
@@ -133,9 +111,6 @@ msgstr ""
 "una operación, o usar un diálogo de advertencia para alertar al usuario."
 
 #: C/usage.page:24(p)
-#| msgid ""
-#| "When the user closes the dialog, <application>Zenity</application> prints "
-#| "the text produced by the dialog to standard output."
 msgid ""
 "When the user closes the dialog, <app>Zenity</app> prints the text produced "
 "by the dialog to standard output."
@@ -144,9 +119,6 @@ msgstr ""
 "producido por diálogo a la salida estándar de error."
 
 #: C/usage.page:29(p)
-#| msgid ""
-#| "When you write <application>Zenity</application> commands, ensure that "
-#| "you place quotation marks around each argument."
 msgid ""
 "When you write <app>Zenity</app> commands, ensure that you place quotation "
 "marks around each argument."
@@ -193,11 +165,6 @@ msgstr ""
 "opción del menú o de un diálogo."
 
 #: C/usage.page:46(p)
-#| msgid ""
-#| "Some <application>Zenity</application> dialogs support the use of access "
-#| "keys. To specify the character to use as the access key, place an "
-#| "underscore before that character in the text of the dialog. The following "
-#| "example shows how to specify the letter 'C' as the access key:"
 msgid ""
 "Some <app>Zenity</app> dialogs support the use of access keys. To specify "
 "the character to use as the access key, place an underscore before that "
@@ -219,7 +186,6 @@ msgid "Exit Codes"
 msgstr "Códigos de salida"
 
 #: C/usage.page:54(p)
-#| msgid "<application>Zenity</application> returns the following exit codes:"
 msgid "Zenity returns the following exit codes:"
 msgstr "Zenity devuelve los siguientes códigos de salida:"
 
@@ -236,9 +202,6 @@ msgid "0"
 msgstr "0"
 
 #: C/usage.page:73(p)
-#| msgid ""
-#| "The user has pressed either <guibutton>OK</guibutton> or "
-#| "<guibutton>Close</guibutton>."
 msgid ""
 "The user has pressed either <gui style=\"button\">OK</gui> or <gui style="
 "\"button\">Close</gui>."
@@ -251,9 +214,6 @@ msgid "1"
 msgstr "1"
 
 #: C/usage.page:81(p)
-#| msgid ""
-#| "The user has either pressed <guibutton>Cancel</guibutton>, or used the "
-#| "window functions to close the dialog."
 msgid ""
 "The user has either pressed <gui style=\"button\">Cancel</gui>, or used the "
 "window functions to close the dialog."
@@ -282,9 +242,6 @@ msgid "General Options"
 msgstr "Opciones generales"
 
 #: C/usage.page:111(p)
-#| msgid ""
-#| "All <application>Zenity</application> dialogs support the following "
-#| "general options:"
 msgid "All Zenity dialogs support the following general options:"
 msgstr ""
 "Todos los diálogos de Zenity soportan las siguientes opciones generales:"
@@ -298,7 +255,6 @@ msgid "Specifies the title of a dialog."
 msgstr "Especifica el título de un diálogo."
 
 #: C/usage.page:123(title)
-#| msgid "<option>--window-icon</option>=<replaceable>icon_path</replaceable>"
 msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
 msgstr "<cmd>--window-icon</cmd>=<var>ruta_al_icono</var>"
 
@@ -343,8 +299,6 @@ msgid "Help Options"
 msgstr "Opciones de ayuda"
 
 #: C/usage.page:154(p)
-#| msgid ""
-#| "<application>Zenity</application> provides the following help options:"
 msgid "Zenity provides the following help options:"
 msgstr "Zenity proporciona las siguientes opciones de ayuda:"
 
@@ -487,9 +441,6 @@ msgid "Miscellaneous Options"
 msgstr "Opciones misceláneas"
 
 #: C/usage.page:249(p)
-#| msgid ""
-#| "<application>Zenity</application> also provides the following "
-#| "miscellaneous options:"
 msgid "Zenity also provides the following miscellaneous options:"
 msgstr "Zenity también proporciona las siguientes opciones varias:"
 
@@ -498,10 +449,6 @@ msgid "--about"
 msgstr "--about"
 
 #: C/usage.page:257(p)
-#| msgid ""
-#| "Displays the <guilabel>About Zenity</guilabel> dialog, which contains "
-#| "<application>Zenity</application> version information, copyright "
-#| "information, and developer information."
 msgid ""
 "Displays the <gui>About Zenity</gui> dialog, which contains Zenity version "
 "information, copyright information, and developer information."
@@ -515,7 +462,6 @@ msgid "--version"
 msgstr "--version"
 
 #: C/usage.page:262(p)
-#| msgid "Displays the version number of <application>Zenity</application>."
 msgid "Displays the version number of Zenity."
 msgstr "Muestra el número de versión de Zenity."
 
@@ -524,10 +470,6 @@ msgid "GTK+ Options"
 msgstr "Opciones de GTK+"
 
 #: C/usage.page:274(p)
-#| msgid ""
-#| "<application>Zenity</application> supports the standard GTK+ options. For "
-#| "more information about the GTK+ options, execute the <command>zenity -?</"
-#| "command> command."
 msgid ""
 "Zenity supports the standard GTK+ options. For more information about the GTK"
 "+ options, execute the <cmd>zenity --help-gtk</cmd> command."
@@ -541,11 +483,6 @@ msgid "Environment Variables"
 msgstr "Variables de entorno"
 
 #: C/usage.page:285(p)
-#| msgid ""
-#| "Normally, <application>Zenity</application> detects the terminal window "
-#| "from which it was launched and keeps itself above that window. This "
-#| "behavior can be disabled by unsetting the <envar>WINDOWID</envar> "
-#| "environment variable."
 msgid ""
 "Normally, Zenity detects the terminal window from which it was launched and "
 "keeps itself above that window. This behavior can be disabled by unsetting "
@@ -558,9 +495,6 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/text.page:83(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-text-screenshot.png'; "
-#| "md5=55d2e2a0254f43ef3c7e9b3d0c4cde04"
 msgid ""
 "@@image: 'figures/zenity-text-screenshot.png'; "
 "md5=79446b388fa6c3c3a619c8d6565b9f61"
@@ -577,9 +511,6 @@ msgid "Text Information Dialog"
 msgstr "Diálogo para la texto de información"
 
 #: C/text.page:9(p)
-#| msgid ""
-#| "Use the <option>--text-info</option> option to create a text information "
-#| "dialog."
 msgid ""
 "Use the <cmd>--text-info</cmd> option to create a text information dialog."
 msgstr ""
@@ -616,7 +547,6 @@ msgid "<cmd>--font</cmd>=<var>FONT</var>"
 msgstr "<cmd>--font</cmd>=<var>TIPOGRAFÍA</var>"
 
 #: C/text.page:31(p)
-#| msgid "Specifies the title of a dialog."
 msgid "Specifies the text font."
 msgstr "Especifica la tipografía del texto."
 
@@ -629,7 +559,6 @@ msgid "Enable a checkbox for use like a 'I read and accept the terms.'"
 msgstr "Activar una casilla para usarla como «He leído y acepto los términos»."
 
 #: C/text.page:40(cmd)
-#| msgid "--help"
 msgid "--html"
 msgstr "--html"
 
@@ -648,9 +577,6 @@ msgstr ""
 "html»."
 
 #: C/text.page:51(p)
-#| msgid ""
-#| "The following example script shows how to create a text information "
-#| "dialog: <placeholder-1/>"
 msgid ""
 "The following example script shows how to create a text information dialog:"
 msgstr ""
@@ -713,16 +639,12 @@ msgid "Text Information Dialog Example"
 msgstr "Ejemplo del diálogo de texto de información"
 
 #: C/text.page:82(desc)
-#| msgid "<placeholder-1/> text information dialog example"
 msgid "<app>Zenity</app> text information dialog example"
 msgstr "Ejemplo del diálogo de texto de información de <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/scale.page:77(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-calendar-screenshot.png'; "
-#| "md5=b739d32aad963be4415d34ec103baf26"
 msgid ""
 "@@image: 'figures/zenity-scale-screenshot.png'; "
 "md5=d44259a5b5b6e6ba0aceffd8501d0873"
@@ -735,17 +657,14 @@ msgid "Use the <cmd>--scale</cmd> option."
 msgstr "Use la opción <cmd>--scale</cmd>."
 
 #: C/scale.page:8(title)
-#| msgid "Calendar Dialog"
 msgid "Scale Dialog"
 msgstr "Diálogo de escala"
 
 #: C/scale.page:9(p)
-#| msgid "Use the <option>--error</option> option to create an error dialog."
 msgid "Use the <cmd>--scale</cmd> option to create a scale dialog."
 msgstr "Use la opción <cmd>--scale</cmd> para crear un diálogo de escala."
 
 #: C/scale.page:12(p)
-#| msgid "The calendar dialog supports the following options:"
 msgid "The scale dialog supports the following options:"
 msgstr "El diálogo de escala soporta las siguientes opciones:"
 
@@ -804,40 +723,20 @@ msgid "Print value to standard output, whenever a value is changed."
 msgstr "Imprimir el valor a la salida estandar cuando se cambie el valor."
 
 #: C/scale.page:49(cmd)
-#| msgid "--hide-text"
 msgid "--hide-value"
 msgstr "--hide-value"
 
 #: C/scale.page:50(p)
-#| msgid "File Selection Dialog"
 msgid "Hide value on dialog."
 msgstr "Ocultar valor en un diálogo."
 
 #: C/scale.page:55(p)
-#| msgid ""
-#| "The following example script shows how to create a calendar dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a scale dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo crear un diálogo de escala:"
 
 #: C/scale.page:59(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        FILE=`zenity --file-selection --title=\"Select a File\"`\n"
-#| "\n"
-#| "        case $? in\n"
-#| "                 0)\n"
-#| "                        echo \"\\\"$FILE\\\" selected.\";;\n"
-#| "                 1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "                -1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "        esac\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -869,22 +768,17 @@ msgstr ""
 
 #: C/scale.page:75(title) C/password.page:45(title)
 #: C/color-selection.page:50(title)
-#| msgid "Text Entry Dialog Example"
 msgid "Password Entry Dialog Example"
 msgstr "Ejemplo de diálogo de contraseña"
 
 #: C/scale.page:76(desc) C/password.page:46(desc)
 #: C/color-selection.page:51(desc)
-#| msgid "<placeholder-1/> text entry dialog example"
 msgid "<app>Zenity</app> password entry dialog example"
 msgstr "Ejemplo del diálogo de contraseña de <app>Zenity</app>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/question.page:28(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-question-screenshot.png'; "
-#| "md5=df8414504f8c8ca946a3f1e63a460938"
 msgid ""
 "@@image: 'figures/zenity-question-screenshot.png'; "
 "md5=5889e2a57b9d1885f22977587a269610"
@@ -901,28 +795,16 @@ msgid "Question Dialog"
 msgstr "Diálogo de pregunta"
 
 #: C/question.page:9(p)
-#| msgid ""
-#| "Use the <option>--question</option> option to create a question dialog."
 msgid "Use the <cmd>--question</cmd> option to create a question dialog."
 msgstr "Use la opción <cmd>--question</cmd> para crear un diálogo de pregunta."
 
 #: C/question.page:13(p)
-#| msgid ""
-#| "The following example script shows how to create a question dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a question dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo crear un diálogo de pregunta:"
 
 #: C/question.page:17(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "          #!/bin/bash\n"
-#| "\n"
-#| "          zenity --question \\\n"
-#| "          --text=\"Are you sure you wish to proceed?\"\n"
-#| "        "
 msgid ""
 "\n"
 "#!/bin/bash\n"
@@ -941,16 +823,12 @@ msgid "Question Dialog Example"
 msgstr "Ejemplo del diálogo de pregunta"
 
 #: C/question.page:27(desc)
-#| msgid "<placeholder-1/> question dialog example"
 msgid "<app>Zenity</app> question dialog example"
 msgstr "Ejemplo del diálogo de pregunta de <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/progress.page:77(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-progress-screenshot.png'; "
-#| "md5=706736240f396ada12044c23b708a6a6"
 msgid ""
 "@@image: 'figures/zenity-progress-screenshot.png'; "
 "md5=75121bbbcb9cc92de4ebf7fbb92f0780"
@@ -967,17 +845,10 @@ msgid "Progress Dialog"
 msgstr "Diálogo de progreso"
 
 #: C/progress.page:9(p)
-#| msgid ""
-#| "Use the <option>--progress</option> option to create a progress dialog."
 msgid "Use the <cmd>--progress</cmd> option to create a progress dialog."
 msgstr "Use la opción <cmd>--progress</cmd> para crear un diálogo de progreso."
 
 #: C/progress.page:13(p)
-#| msgid ""
-#| "<application>Zenity</application> reads data from standard input line by "
-#| "line. If a line is prefixed with #, the text is updated with the text on "
-#| "that line. If a line contains only a number, the percentage is updated "
-#| "with that number."
 msgid ""
 "<app>Zenity</app> reads data from standard input line by line. If a line is "
 "prefixed with #, the text is updated with the text on that line. If a line "
@@ -1002,7 +873,6 @@ msgid "Specifies the text that is displayed in the progress dialog."
 msgstr "Especifica el texto que se muestra en el diálogo de progreso."
 
 #: C/progress.page:29(title)
-#| msgid "<option>--percentage</option>=<replaceable>percentage</replaceable>"
 msgid "<cmd>--percentage</cmd>=<var>percentage</var>"
 msgstr "<cmd>--percentage</cmd>=<var>porcentaje</var>"
 
@@ -1032,40 +902,12 @@ msgstr ""
 "desde la entrada estándar."
 
 #: C/progress.page:45(p)
-#| msgid ""
-#| "The following example script shows how to create a progress dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a progress dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo crear un diálogo de progreso:"
 
 #: C/progress.page:49(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "        (\n"
-#| "        echo \"10\" ; sleep 1\n"
-#| "        echo \"# Updating mail logs\" ; sleep 1\n"
-#| "        echo \"20\" ; sleep 1\n"
-#| "        echo \"# Resetting cron jobs\" ; sleep 1\n"
-#| "        echo \"50\" ; sleep 1\n"
-#| "        echo \"This line will just be ignored\" ; sleep 1\n"
-#| "        echo \"75\" ; sleep 1\n"
-#| "        echo \"# Rebooting system\" ; sleep 1\n"
-#| "        echo \"100\" ; sleep 1\n"
-#| "        ) |\n"
-#| "        zenity --progress \\\n"
-#| "          --title=\"Update System Logs\" \\\n"
-#| "          --text=\"Scanning mail logs...\" \\\n"
-#| "          --percentage=0\n"
-#| "\n"
-#| "        if [ \"$?\" = -1 ] ; then\n"
-#| "                zenity --error \\\n"
-#| "                  --text=\"Update canceled.\"\n"
-#| "        fi\n"
-#| "\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -1119,16 +961,12 @@ msgid "Progress Dialog Example"
 msgstr "Ejemplo de diálogo de progreso"
 
 #: C/progress.page:76(desc)
-#| msgid "<placeholder-1/> progress dialog example"
 msgid "<app>Zenity</app> progress dialog example"
 msgstr "Ejemplo del diálogo de progreso de <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/password.page:47(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-progress-screenshot.png'; "
-#| "md5=706736240f396ada12044c23b708a6a6"
 msgid ""
 "@@image: 'figures/zenity-password-screenshot.png'; "
 "md5=6adbeb624a307f78072593d6d1c6def6"
@@ -1141,24 +979,19 @@ msgid "Use the <cmd>--password</cmd> option."
 msgstr "Use la opción <cmd>--password</cmd>."
 
 #: C/password.page:8(title)
-#| msgid "Error Dialog"
 msgid "Password Dialog"
 msgstr "Diálogo de contraseña"
 
 #: C/password.page:9(p)
-#| msgid ""
-#| "Use the <option>--progress</option> option to create a progress dialog."
 msgid "Use the <cmd>--password</cmd> option to create a password entry dialog."
 msgstr ""
 "Use la opción <cmd>--password</cmd> para crear un diálogo de contraseña."
 
 #: C/password.page:12(p)
-#| msgid "The text entry dialog supports the following options:"
 msgid "The password entry dialog supports the following options:"
 msgstr "El diálogo de contraseña soporta las siguientes opciones:"
 
 #: C/password.page:18(cmd)
-#| msgid "--pulsate"
 msgid "--username"
 msgstr "--username"
 
@@ -1167,9 +1000,6 @@ msgid "Display the username field."
 msgstr "Mostrar el campo de nombre de usuario."
 
 #: C/password.page:23(p)
-#| msgid ""
-#| "The following example script shows how to create a text entry dialog: "
-#| "<placeholder-1/>"
 msgid ""
 "The following example script shows how to create a password entry dialog:"
 msgstr ""
@@ -1213,9 +1043,6 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/notification.page:37(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-notification-screenshot.png'; "
-#| "md5=d7a119ced7cdf49b307013551d94e11e"
 msgid ""
 "@@image: 'figures/zenity-notification-screenshot.png'; "
 "md5=b67bf309c6e479db8677947f1810a999"
@@ -1224,7 +1051,6 @@ msgstr ""
 "md5=b67bf309c6e479db8677947f1810a999"
 
 #: C/notification.page:6(desc)
-#| msgid "Displays help text for notification icon options."
 msgid "Use the <cmd>--notification</cmd> option."
 msgstr "Use la opción <cmd>--notification</cmd>."
 
@@ -1233,8 +1059,6 @@ msgid "Notification Icon"
 msgstr "Icono de notificación"
 
 #: C/notification.page:9(p)
-#| msgid ""
-#| "Use the <option>--info</option> option to create an information dialog."
 msgid "Use the <cmd>--notification</cmd> option to create a notification icon."
 msgstr ""
 "Use la opción <cmd>--notification</cmd> para crear un icono de notificación."
@@ -1244,23 +1068,12 @@ msgid "Specifies the text that is displayed in the notification area."
 msgstr "Especifica el texto que se mostrara en el área de la notificación."
 
 #: C/notification.page:22(p)
-#| msgid ""
-#| "The following example script shows how to create a notification icon: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a notification icon:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo crear un icono de notificación:"
 
 #: C/notification.page:25(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        zenity --notification\\\n"
-#| "          --window-icon=\"info\" \\\n"
-#| "          --text=\"There are system updates necessary!\"\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -1281,7 +1094,6 @@ msgid "Notification Icon Example"
 msgstr "Ejemplo de icono de notificación"
 
 #: C/notification.page:36(desc)
-#| msgid "<placeholder-1/> notification icon example"
 msgid "<app>Zenity</app> notification icon example"
 msgstr "Ejemplo del icono de notificación de <app>Zenity</app>"
 
@@ -1290,19 +1102,15 @@ msgid ""
 "<link xref=\"error\">Error</link>, <link xref=\"info\">Info</link>, <link "
 "xref=\"question\">Question</link>, <link xref=\"warning\">Warning</link>"
 msgstr ""
-"<link xref=\"error\">Error</link>, <link xref=\"info\">Info<rmación/link>, "
+"<link xref=\"error\">Error</link>, <link xref=\"info\">Información</link>, "
 "<link xref=\"question\">Pregunta</link>, <link xref=\"warning\">Advertencia</"
 "link>"
 
 #: C/message.page:13(title)
-#| msgid "Message Dialogs"
 msgid "Message Dialog"
 msgstr "Diálogo de mensaje"
 
 #: C/message.page:14(p)
-#| msgid ""
-#| "For each type, use the <option>--text</option> option to specify the text "
-#| "that is displayed in the dialog."
 msgid ""
 "For each type, use the <cmd>--text</cmd> option to specify the text that is "
 "displayed in the dialog."
@@ -1313,9 +1121,6 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/list.page:84(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-list-screenshot.png'; "
-#| "md5=9c5a2704eb27e21a8e8739c49f77b3fc"
 msgid ""
 "@@image: 'figures/zenity-list-screenshot.png'; "
 "md5=8bd9ad9c760516a966d3590b2019fa1e"
@@ -1332,10 +1137,6 @@ msgid "List Dialog"
 msgstr "Diálogo de lista"
 
 #: C/list.page:9(p)
-#| msgid ""
-#| "Use the <option>--list</option> option to create a list dialog. "
-#| "<application>Zenity</application> returns the entries in the first column "
-#| "of text of selected rows to standard output."
 msgid ""
 "Use the <cmd>--list</cmd> option to create a list dialog. <app>Zenity</app> "
 "returns the entries in the first column of text of selected rows to standard "
@@ -1356,9 +1157,6 @@ msgstr ""
 "Cada entrada se debe separar por un carácter de línea nueva."
 
 #: C/list.page:17(p)
-#| msgid ""
-#| "If you use the <option>--checklist</option> or <option>--radiolist</"
-#| "option> options, each row must start with either 'TRUE' or 'FALSE'."
 msgid ""
 "If you use the <cmd>--checklist</cmd> or <cmd>--radiolist</cmd> options, "
 "each row must start with either 'TRUE' or 'FALSE'."
@@ -1375,10 +1173,6 @@ msgid "<cmd>--column</cmd>=<var>column</var>"
 msgstr "<cmd>--column</cmd>=<var>columna</var>"
 
 #: C/list.page:29(p)
-#| msgid ""
-#| "Specifies the column headers that are displayed in the list dialog. You "
-#| "must specify a <option>--column</option> option for each column that you "
-#| "want to display in the dialog."
 msgid ""
 "Specifies the column headers that are displayed in the list dialog. You must "
 "specify a <cmd>--column</cmd> option for each column that you want to "
@@ -1415,7 +1209,6 @@ msgid "Allows the displayed items to be edited."
 msgstr "Permite editar los elementos mostrados."
 
 #: C/list.page:52(title) C/file-selection.page:40(title)
-#| msgid "<option>--separator</option>=<replaceable>separator</replaceable>"
 msgid "<cmd>--separator</cmd>=<var>separator</var>"
 msgstr "<cmd>--separator</cmd>=<var>separador</var>"
 
@@ -1428,7 +1221,6 @@ msgstr ""
 "devuelva las entradas seleccionadas."
 
 #: C/list.page:58(title)
-#| msgid "<option>--print-column</option>=<replaceable>column</replaceable>"
 msgid "<cmd>--print-column</cmd>=<var>column</var>"
 msgstr "<cmd>--print-column</cmd>=<var>columna</var>"
 
@@ -1441,25 +1233,11 @@ msgstr ""
 "predeterminada es '1', 'ALL' puede usarse para imprimir todas las columnas."
 
 #: C/list.page:66(p)
-#| msgid ""
-#| "The following example script shows how to create a list dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a list dialog:"
 msgstr "El siguiente script de ejemplo muestra cómo crear un diálogo de lista:"
 
 #: C/list.page:69(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        zenity --list \\\n"
-#| "          --title=\"Choose the Bugs You Wish to View\" \\\n"
-#| "          --column=\"Bug Number\" --column=\"Severity\" --column=\"Description\" \\\n"
-#| "            992383 Normal \"GtkTreeView crashes on multiple selections\" \\\n"
-#| "            293823 High \"GNOME Dictionary does not handle proxy\" \\\n"
-#| "            393823 Critical \"Menu editing does not work in GNOME 2.0\"\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -1486,14 +1264,10 @@ msgid "List Dialog Example"
 msgstr "Ejemplo del diálogo de lista"
 
 #: C/list.page:83(desc)
-#| msgid "<placeholder-1/> list dialog example"
 msgid "<app>Zenity</app> list dialog example"
 msgstr "Ejemplo del diálogo de lista de <app>Zenity</app>"
 
 #: C/intro.page:6(desc)
-#| msgid ""
-#| "<application>Zenity</application> enables you to create the following "
-#| "types of simple dialog:"
 msgid ""
 "<app>Zenity</app> enables you to create the various types of simple dialog."
 msgstr ""
@@ -1504,9 +1278,6 @@ msgid "Introduction"
 msgstr "Introducción"
 
 #: C/intro.page:9(p)
-#| msgid ""
-#| "<application>Zenity</application> enables you to create the following "
-#| "types of simple dialog:"
 msgid ""
 "<app>Zenity</app> enables you to create the following types of simple dialog:"
 msgstr ""
@@ -1573,16 +1344,12 @@ msgid "Scale"
 msgstr "Escala"
 
 #: C/intro.page:32(p)
-#| msgid "File selection"
 msgid "Color selection"
 msgstr "Selección de color"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/info.page:28(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-information-screenshot.png'; "
-#| "md5=5a9af4275678c8bfb9b48010860a45e5"
 msgid ""
 "@@image: 'figures/zenity-information-screenshot.png'; "
 "md5=72386d53a991c46e918ee6dd22795aa6"
@@ -1595,33 +1362,20 @@ msgid "Use the <cmd>--info</cmd> option."
 msgstr "Use la opción <cmd>--info</cmd>."
 
 #: C/info.page:8(title)
-#| msgid "Information Dialog"
 msgid "Info Dialog"
 msgstr "Diálogo de información"
 
 #: C/info.page:9(p)
-#| msgid ""
-#| "Use the <option>--info</option> option to create an information dialog."
 msgid "Use the <cmd>--info</cmd> option to create an information dialog."
 msgstr "Use la opción <cmd>--info</cmd> para crear un diálogo de información."
 
 #: C/info.page:13(p)
-#| msgid ""
-#| "The following example script shows how to create an information dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create an information dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo crear un diálogo de información:"
 
 #: C/info.page:17(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "          #!/bin/bash\n"
-#| "\n"
-#| "          zenity --info \\\n"
-#| "          --text=\"Merge complete. Updated 3 of 10 files.\"\n"
-#| "        "
 msgid ""
 "\n"
 "#!/bin/bash\n"
@@ -1640,7 +1394,6 @@ msgid "Information Dialog Example"
 msgstr "Ejemplo de diálogo de información"
 
 #: C/info.page:27(desc)
-#| msgid "<placeholder-1/> information dialog example"
 msgid "<app>Zenity</app> information dialog example"
 msgstr "Ejemplo del diálogo de información de <app>Zenity</app>"
 
@@ -1653,7 +1406,6 @@ msgid "Glynn Foster"
 msgstr "Glynn Foster"
 
 #: C/index.page:12(name)
-#| msgid "Nicholas"
 msgid "Nicholas Curran"
 msgstr "Nicholas Curran"
 
@@ -1674,16 +1426,12 @@ msgid "Zenity Manual"
 msgstr "Manual de Zenity"
 
 #: C/index.page:27(title)
-#| msgid "List Dialog"
 msgid "Dialogs"
 msgstr "Diálogos"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/forms.page:81(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-list-screenshot.png'; "
-#| "md5=9c5a2704eb27e21a8e8739c49f77b3fc"
 msgid ""
 "@@image: 'figures/zenity-forms-screenshot.png'; "
 "md5=c11fab02e4d51212a538ce6859799d5f"
@@ -1696,18 +1444,14 @@ msgid "Use the <cmd>--forms</cmd> option."
 msgstr "Use la opción <cmd>--forms</cmd>."
 
 #: C/forms.page:8(title)
-#| msgid "Error Dialog"
 msgid "Forms Dialog"
 msgstr "Diálogo de formularios"
 
 #: C/forms.page:9(p)
-#| msgid ""
-#| "Use the <option>--info</option> option to create an information dialog."
 msgid "Use the <cmd>--forms</cmd> option to create a forms dialog."
 msgstr "Use la opción <cmd>--forms</cmd> para crear un diálogo de formularios."
 
 #: C/forms.page:13(p)
-#| msgid "The progress dialog supports the following options:"
 msgid "The forms dialog supports the following options:"
 msgstr "El diálogo de formularios soporta las siguientes opciones:"
 
@@ -1753,12 +1497,6 @@ msgid "<cmd>--forms-date-format</cmd>=<var>PATTERN</var>"
 msgstr "<cmd>--forms-date-format</cmd>=<var>PATRÓN</var>"
 
 #: C/forms.page:46(p)
-#| msgid ""
-#| "Specifies the format that is returned from the calendar dialog after date "
-#| "selection. The default format depends on your locale. "
-#| "<replaceable>format</replaceable> must be a format that is acceptable to "
-#| "the <command>strftime</command> function, for example <literal>%A %d/%m/"
-#| "%y</literal>."
 msgid ""
 "Set the format for the returned date. The default format depends on your "
 "locale. format must be a Format that is acceptable to the <cmd>strftime</"
@@ -1770,9 +1508,6 @@ msgstr ""
 "var>."
 
 #: C/forms.page:51(p)
-#| msgid ""
-#| "The following example script shows how to create a progress dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a forms dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo se crea un diálogo de "
@@ -1826,21 +1561,16 @@ msgstr ""
 "esac\n"
 
 #: C/forms.page:79(title)
-#| msgid "Error Dialog Example"
 msgid "Forms Dialog Example"
 msgstr "Ejemplo de diálogo de formularios"
 
 #: C/forms.page:80(desc)
-#| msgid "<placeholder-1/> information dialog example"
 msgid "<app>Zenity</app> forms dialog example"
 msgstr "Ejemplo del diálogo de información de <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/file-selection.page:68(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-fileselection-screenshot.png'; "
-#| "md5=2c903cba26fb40462deea0bb6b931ea7"
 msgid ""
 "@@image: 'figures/zenity-fileselection-screenshot.png'; "
 "md5=bbba2652577f14ab4719f55a2ff57073"
@@ -1857,11 +1587,6 @@ msgid "File Selection Dialog"
 msgstr "Diálogo de selección de archivos"
 
 #: C/file-selection.page:9(p)
-#| msgid ""
-#| "Use the <option>--file-selection</option> option to create a file "
-#| "selection dialog. <application>Zenity</application> returns the selected "
-#| "files or directories to standard output. The default mode of the file "
-#| "selection dialog is open."
 msgid ""
 "Use the <cmd>--file-selection</cmd> option to create a file selection "
 "dialog. <app>Zenity</app> returns the selected files or directories to "
@@ -1919,9 +1644,6 @@ msgstr ""
 "archivo devuelta."
 
 #: C/file-selection.page:46(p)
-#| msgid ""
-#| "The following example script shows how to create a file selection dialog: "
-#| "<placeholder-1/>"
 msgid ""
 "The following example script shows how to create a file selection dialog:"
 msgstr ""
@@ -1930,21 +1652,6 @@ msgstr ""
 
 #: C/file-selection.page:50(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        FILE=`zenity --file-selection --title=\"Select a File\"`\n"
-#| "\n"
-#| "        case $? in\n"
-#| "                 0)\n"
-#| "                        echo \"\\\"$FILE\\\" selected.\";;\n"
-#| "                 1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "                -1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "        esac\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -1979,16 +1686,12 @@ msgid "File Selection Dialog Example"
 msgstr "Ejemplo del diálogo de selección de archivos"
 
 #: C/file-selection.page:67(desc)
-#| msgid "<placeholder-1/> file selection dialog example"
 msgid "<app>Zenity</app> file selection dialog example"
 msgstr "Ejemplo del diálogo de selección de archivo de <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/error.page:28(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-error-screenshot.png'; "
-#| "md5=c0fae27dcfc45eb335fd6bbc5e7f29b5"
 msgid ""
 "@@image: 'figures/zenity-error-screenshot.png'; "
 "md5=a4b287f89625cfd54ca38bc404d8bdf6"
@@ -2005,26 +1708,15 @@ msgid "Error Dialog"
 msgstr "Diálogo de error"
 
 #: C/error.page:9(p)
-#| msgid "Use the <option>--error</option> option to create an error dialog."
 msgid "Use the <cmd>--error</cmd> option to create an error dialog."
 msgstr "Use la opción <cmd>--error</cmd> para crear un diálogo de error."
 
 #: C/error.page:13(p)
-#| msgid ""
-#| "The following example script shows how to create an error dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create an error dialog:"
 msgstr "El siguiente script de ejemplo muestra cómo crear un diálogo de error:"
 
 #: C/error.page:17(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "          #!/bin/bash\n"
-#| "\n"
-#| "          zenity --error \\\n"
-#| "          --text=\"Could not find /var/log/syslog.\"\n"
-#| "        "
 msgid ""
 "\n"
 "#!/bin/bash\n"
@@ -2043,16 +1735,12 @@ msgid "Error Dialog Example"
 msgstr "Ejemplo de diálogo de error"
 
 #: C/error.page:27(desc)
-#| msgid "<placeholder-1/> error dialog example"
 msgid "<app>Zenity</app> error dialog example"
 msgstr "Ejemplo del diálogo de error de <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/entry.page:55(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-calendar-screenshot.png'; "
-#| "md5=b739d32aad963be4415d34ec103baf26"
 msgid ""
 "@@image: 'figures/zenity-entry-screenshot.png'; "
 "md5=bae6bf4342a66a3900deb15bde82ff42"
@@ -2069,10 +1757,6 @@ msgid "Text Entry Dialog"
 msgstr "Diálogo para la entrada de texto"
 
 #: C/entry.page:9(p)
-#| msgid ""
-#| "Use the <option>--entry</option> option to create a text entry dialog. "
-#| "<application>Zenity</application> returns the contents of the text entry "
-#| "to standard output."
 msgid ""
 "Use the <cmd>--entry</cmd> option to create a text entry dialog. "
 "<app>Zenity</app> returns the contents of the text entry to standard output."
@@ -2111,9 +1795,6 @@ msgstr ""
 "Oculta el texto en el campo de entrada del diálogo de entrada de texto."
 
 #: C/entry.page:35(p)
-#| msgid ""
-#| "The following example script shows how to create a text entry dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a text entry dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo se crea un diálogo de entrada de "
@@ -2121,19 +1802,6 @@ msgstr ""
 
 #: C/entry.page:39(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        if zenity --entry \\\n"
-#| "        --title=\"Add an Entry\" \\\n"
-#| "        --text=\"Enter your _password:\" \\\n"
-#| "        --entry-text \"password\" \\\n"
-#| "        --hide-text\n"
-#| "          then echo $?\n"
-#| "          else echo \"No password entered\"\n"
-#| "        fi\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -2162,16 +1830,12 @@ msgid "Text Entry Dialog Example"
 msgstr "Ejemplo de diálogo de entrada de texto"
 
 #: C/entry.page:54(desc)
-#| msgid "<placeholder-1/> text entry dialog example"
 msgid "<app>Zenity</app> text entry dialog example"
 msgstr "Ejemplo del diálogo de entrada de texto de <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/color-selection.page:52(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-fileselection-screenshot.png'; "
-#| "md5=2c903cba26fb40462deea0bb6b931ea7"
 msgid ""
 "@@image: 'figures/zenity-colorselection-screenshot.png'; "
 "md5=febe3f417acea789c9db628fbe44f798"
@@ -2184,13 +1848,10 @@ msgid "Use the <cmd>--color-selection</cmd> option."
 msgstr "Use la opción <cmd>--color-selection</cmd>."
 
 #: C/color-selection.page:8(title)
-#| msgid "File Selection Dialog"
 msgid "Color Selection Dialog"
 msgstr "Diálogo de selección de color"
 
 #: C/color-selection.page:9(p)
-#| msgid ""
-#| "Use the <option>--info</option> option to create an information dialog."
 msgid ""
 "Use the <cmd>--color-selection</cmd> option to create a color selection "
 "dialog."
@@ -2199,7 +1860,6 @@ msgstr ""
 "selección de color."
 
 #: C/color-selection.page:12(p)
-#| msgid "The file selection dialog supports the following options:"
 msgid "The color selection dialog supports the following options:"
 msgstr "El diálogo de selección de color soporta las siguientes opciones:"
 
@@ -2220,9 +1880,6 @@ msgid "Show the palette."
 msgstr "Mostrar la paleta"
 
 #: C/color-selection.page:30(p)
-#| msgid ""
-#| "The following example script shows how to create a file selection dialog: "
-#| "<placeholder-1/>"
 msgid ""
 "The following example script shows how to create a color selection dialog:"
 msgstr ""
@@ -2231,21 +1888,6 @@ msgstr ""
 
 #: C/color-selection.page:34(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        FILE=`zenity --file-selection --title=\"Select a File\"`\n"
-#| "\n"
-#| "        case $? in\n"
-#| "                 0)\n"
-#| "                        echo \"\\\"$FILE\\\" selected.\";;\n"
-#| "                 1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "                -1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "        esac\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -2278,9 +1920,6 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/calendar.page:66(None)
-#| msgid ""
-#| "@@image: 'figures/zenity-calendar-screenshot.png'; "
-#| "md5=b739d32aad963be4415d34ec103baf26"
 msgid ""
 "@@image: 'figures/zenity-calendar-screenshot.png'; "
 "md5=92bf5317d799665acf0d4005cee184c2"
@@ -2297,11 +1936,6 @@ msgid "Calendar Dialog"
 msgstr "Diálogo de calendario"
 
 #: C/calendar.page:9(p)
-#| msgid ""
-#| "Use the <option>--calendar</option> option to create a calendar dialog. "
-#| "<application>Zenity</application> returns the selected date to standard "
-#| "output. If no date is specified on the command line, the dialog uses the "
-#| "current date."
 msgid ""
 "Use the <cmd>--calendar</cmd> option to create a calendar dialog. Zenity "
 "returns the selected date to standard output. If no date is specified on the "
@@ -2324,10 +1958,6 @@ msgid "<cmd>--day</cmd>=<var>day</var>"
 msgstr "<cmd>--day</cmd>=<var>día</var>"
 
 #: C/calendar.page:25(p)
-#| msgid ""
-#| "Specifies the day that is selected in the calendar dialog. "
-#| "<replaceable>day</replaceable> must be a number between 1 and 31 "
-#| "inclusive."
 msgid ""
 "Specifies the day that is selected in the calendar dialog. day must be a "
 "number between 1 and 31 inclusive."
@@ -2340,10 +1970,6 @@ msgid "<cmd>--month</cmd>=<var>month</var>"
 msgstr "<cmd>--month</cmd>=<var>mes</var>"
 
 #: C/calendar.page:30(p)
-#| msgid ""
-#| "Specifies the month that is selected in the calendar dialog. "
-#| "<replaceable>month</replaceable> must be a number between 1 and 12 "
-#| "inclusive."
 msgid ""
 "Specifies the month that is selected in the calendar dialog. month must be a "
 "number between 1 and 12 inclusive."
@@ -2360,17 +1986,10 @@ msgid "Specifies the year that is selected in the calendar dialog."
 msgstr "Especifica el año que se selecciona en el diálogo del calendario."
 
 #: C/calendar.page:39(title)
-#| msgid "<option>--date-format</option>=<replaceable>format</replaceable>"
 msgid "<cmd>--date-format</cmd>=<var>format</var>"
 msgstr "<cmd>--date-format</cmd>=<var>formato</var>"
 
 #: C/calendar.page:40(p)
-#| msgid ""
-#| "Specifies the format that is returned from the calendar dialog after date "
-#| "selection. The default format depends on your locale. "
-#| "<replaceable>format</replaceable> must be a format that is acceptable to "
-#| "the <command>strftime</command> function, for example <literal>%A %d/%m/"
-#| "%y</literal>."
 msgid ""
 "Specifies the format that is returned from the calendar dialog after date "
 "selection. The default format depends on your locale. Format must be a "
@@ -2383,28 +2002,12 @@ msgstr ""
 "la función <cmd>strftime</cmd>, por ejemplo <var>%A %d/%m/%y</var>."
 
 #: C/calendar.page:45(p)
-#| msgid ""
-#| "The following example script shows how to create a calendar dialog: "
-#| "<placeholder-1/>"
 msgid "The following example script shows how to create a calendar dialog:"
 msgstr ""
 "El siguiente script de ejemplo muestra cómo se crea un diálogo de calendario:"
 
 #: C/calendar.page:49(code)
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "\n"
-#| "        if zenity --calendar \\\n"
-#| "        --title=\"Select a Date\" \\\n"
-#| "        --text=\"Click on a date to select that date.\" \\\n"
-#| "        --day=10 --month=8 --year=2004\n"
-#| "          then echo $?\n"
-#| "          else echo \"No date selected\"\n"
-#| "        fi\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -2435,7 +2038,6 @@ msgid "Calendar Dialog Example"
 msgstr "Ejemplo de un diálogo de calendario"
 
 #: C/calendar.page:65(desc)
-#| msgid "Calendar Dialog Example"
 msgid "Zenity calendar dialog example"
 msgstr "Ejemplo de un diálogo de calendario de Zenity"
 
