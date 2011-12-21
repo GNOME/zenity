@@ -1,7 +1,7 @@
 include $(top_srcdir)/gnome-doc-utils.make
 dist-hook: doc-dist-hook
 
-DOC_MODULE = zenity
+DOC_ID = zenity
 DOC_INCLUDES = legal.xml
 
 DOC_FIGURES = \
