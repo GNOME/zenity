@@ -128,7 +128,11 @@ static gboolean zenity_password_show_username;
 
 /* Forms Dialog Options */
 static gboolean zenity_forms_active;
+static gboolean zenity_forms_show_header;
 static gchar   *zenity_forms_date_format;
+//static gchar   *zenity_forms_hide_column;
+static gchar  **zenity_forms_list_values;
+static gchar  **zenity_forms_column_values;
 
 /* Miscelaneus Options */
 static gboolean zenity_misc_about;
@@ -957,6 +961,52 @@ static GOptionEntry forms_dialog_options[] = {
     N_("Calendar field name")
   },
   {
+    "add-list",
+    '\0',
+    0,
+    G_OPTION_ARG_CALLBACK,
+    zenity_forms_callback,
+    N_("Add a new List in forms dialog"),
+    N_("List field and header name")
+  },
+  {
+    "list-values",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING_ARRAY,
+    &zenity_forms_list_values,
+    N_("List of values for List"),
+    N_("List of values separated by |")
+  },
+  {
+    "column-values",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING_ARRAY,
+    &zenity_forms_column_values,
+    N_("List of values for columns"),
+    N_("List of values separated by |")
+  },
+ /* TODO: Implement how to hide specifc column 
+  {
+    "hide-column",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING,
+    &zenity_forms_hide_column,
+    N_("Hide a specific column"),
+    N_("NUMBER")
+  },*/
+  {
+    "show-header",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_forms_show_header,
+    N_("Show the columns header"),
+    NULL
+  },
+  {
     "text",
     '\0',
     G_OPTION_FLAG_NOALIAS,
@@ -1117,7 +1167,12 @@ zenity_option_free (void) {
 
   if (zenity_forms_date_format)
     g_free (zenity_forms_date_format);
-
+  if (zenity_forms_list_values)
+    g_strfreev (zenity_forms_list_values);
+  if (zenity_forms_column_values)
+    g_strfreev (zenity_forms_column_values);
+//  if (zenity_forms_hide_column)
+//    g_free (zenity_forms_hide_column);
   if (zenity_entry_entry_text)
     g_free (zenity_entry_entry_text);
 
@@ -1173,13 +1228,17 @@ zenity_forms_callback (const gchar *option_name,
                        GError **error)
 {
   ZenityFormsValue *forms_value = g_new0 (ZenityFormsValue, 1);
-  forms_value->option_value = g_strdup(value);
-  if (g_strcmp0(option_name, "--add-entry") == 0)
+
+  forms_value->option_value = g_strdup (value);
+
+  if (g_strcmp0 (option_name, "--add-entry") == 0)
     forms_value->type = ZENITY_FORMS_ENTRY;
-  else if (g_strcmp0(option_name, "--add-calendar") == 0)
+  else if (g_strcmp0 (option_name, "--add-calendar") == 0)
     forms_value->type = ZENITY_FORMS_CALENDAR;
-  else if (g_strcmp0(option_name, "--add-password") == 0)
+  else if (g_strcmp0 (option_name, "--add-password") == 0)
     forms_value->type = ZENITY_FORMS_PASSWORD;
+  else if (g_strcmp0 (option_name, "--add-list") == 0)
+    forms_value->type = ZENITY_FORMS_LIST;
 
   results->forms_data->list = g_slist_append(results->forms_data->list, forms_value);
 
@@ -1420,7 +1479,9 @@ zenity_forms_pre_callback (GOptionContext *context,
                            GError        **error)
 {
   zenity_forms_active = FALSE;
+  zenity_forms_show_header = FALSE;
   zenity_forms_date_format = NULL;
+//  zenity_forms_hide_column = NULL;
   return TRUE;
 }
 
@@ -1833,10 +1894,31 @@ zenity_forms_post_callback (GOptionContext *context,
                             gpointer        data,
                             GError        **error)
 {
+  gchar *values;
+  int i = 0;
+
   zenity_option_set_dialog_mode (zenity_forms_active, MODE_FORMS);
   if (results->mode == MODE_FORMS) {
     results->forms_data->dialog_text = zenity_general_dialog_text;
     results->forms_data->separator = zenity_general_separator;
+//    results->forms_data->hide_column = zenity_forms_hide_column;
+    results->forms_data->show_header = zenity_forms_show_header;
+
+    if (zenity_forms_list_values) {
+      values = zenity_forms_list_values[0];
+      while (values != NULL) {
+        results->forms_data->list_values = g_slist_append (results->forms_data->list_values, values);
+        values = zenity_forms_list_values[++i];
+      }
+    }
+    if (zenity_forms_column_values) {
+      i = 0;
+      values = zenity_forms_column_values[0];
+      while (values != NULL) {
+        results->forms_data->column_values = g_slist_append (results->forms_data->column_values, values);
+        values = zenity_forms_list_values[++i];
+      }
+    }
     if (zenity_forms_date_format)
       results->forms_data->date_format = zenity_forms_date_format;
     else
@@ -1845,6 +1927,18 @@ zenity_forms_post_callback (GOptionContext *context,
     if (zenity_forms_date_format)
       zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_date_format),
                            ERROR_SUPPORT);
+    if (zenity_forms_list_values)
+      zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_list_values),
+                           ERROR_SUPPORT);
+//    if (zenity_forms_hide_column)
+//      zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_hide_column),
+//                          ERROR_SUPPORT);
+    if (zenity_forms_column_values)
+      zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_column_values),
+                          ERROR_SUPPORT);
+    if (zenity_forms_show_header)
+      zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_show_header),
+                          ERROR_SUPPORT);
   }
 
   return TRUE;
