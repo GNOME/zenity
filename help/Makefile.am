@@ -6,6 +6,7 @@ DOC_INCLUDES = legal.xml
 
 DOC_FIGURES = \
 	figures/zenity-calendar-screenshot.png		\
+	figures/zenity-colorselection-screenshot.png	\
 	figures/zenity-entry-screenshot.png		\
 	figures/zenity-error-screenshot.png		\
 	figures/zenity-fileselection-screenshot.png	\
