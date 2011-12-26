@@ -10,10 +10,13 @@ DOC_FIGURES = \
 	figures/zenity-entry-screenshot.png		\
 	figures/zenity-error-screenshot.png		\
 	figures/zenity-fileselection-screenshot.png	\
+	figures/zenity-forms-screenshot.png		\
 	figures/zenity-information-screenshot.png	\
 	figures/zenity-list-screenshot.png		\
 	figures/zenity-notification-screenshot.png	\
+	figures/zenity-password-screenshot.png		\
 	figures/zenity-progress-screenshot.png		\
+	figures/zenity-scale-screenshot.png		\
 	figures/zenity-question-screenshot.png		\
 	figures/zenity-text-screenshot.png		\
 	figures/zenity-warning-screenshot.png
