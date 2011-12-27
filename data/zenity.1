@@ -1,4 +1,4 @@
-.TH ZENITY 1 "February 1st, 2003"
+.TH ZENITY 1 "December 2011"
 .SH NAME
 zenity \- display GTK+ dialogs
 .SH SYNOPSIS
@@ -63,6 +63,12 @@ Display scale dialog
 .TP
 .B \-\-color-selection
 Display color selection dialog
+.TP
+.B \-\-password
+Display password dialog
+.TP
+.B \-\-forms
+Display forms dialog
 
 .PP
 General options
@@ -317,6 +323,35 @@ Set the initial color
 Show the palette
 
 .PP
+Password dialog options
+
+.TP
+.B \-\-username
+Display the username field
+
+.PP
+Forms dialog options
+
+.TP
+.B \-\-add\-entry=FIELDNAME
+Add a new Entry in forms dialog
+.TP
+.B \-\-add\-password=FIELDNAME
+Add a new Password Entry in forms dialog
+.TP
+.B \-\-add\-calendar=FIELDNAME
+Add a new Calendar in forms dialog
+.TP
+.B \-\-text=STRING
+Set the dialog text
+.TP
+.B \-\-separator=STRING
+Set output separator character
+.TP
+.B \-\-forms\-date-format=PATTERN
+Set the format for the returned date. The default depends on the user locale or be set with the strftime style. For example %A %d/%m/%y
+
+.PP
 Miscellaneous options
 
 .TP
@@ -330,7 +365,9 @@ Display an about dialog.
 Show version of program.
 
 .PP
-Also the standard GTK+ options are accepted.
+Also the standard GTK+ options are accepted. For more information about the GTK+ options, execute following command.
+.IP
+zenity \-\-help\-gtk
 
 .SH ENVIRONMENT
 
