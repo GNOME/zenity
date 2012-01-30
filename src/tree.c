@@ -645,7 +645,7 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
-  if (channel != NULL)
+  if (channel->is_readable == TRUE)
     g_io_channel_shutdown (channel, TRUE, NULL);
 
   gtk_main_quit ();
