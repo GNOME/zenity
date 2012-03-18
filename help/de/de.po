@@ -1,11 +1,11 @@
 # German translation of the zenity manual.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2009, 2011.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2009, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
-"POT-Creation-Date: 2011-12-18 18:14+0000\n"
-"PO-Revision-Date: 2011-12-22 21:06+0100\n"
+"POT-Creation-Date: 2011-12-26 17:47+0000\n"
+"PO-Revision-Date: 2012-03-18 15:16+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "translated"
 
 #: C/warning.page:6(desc)
 msgid "Use the <cmd>--warning</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--warning</cmd> verwenden."
 
 #: C/warning.page:8(title)
 msgid "Warning Dialog"
@@ -162,17 +162,16 @@ msgstr ""
 "erlaubt, anstatt dafür die Maus zu benutzen."
 
 #: C/usage.page:46(p)
-#, fuzzy
 msgid ""
 "Some <app>Zenity</app> dialogs support the use of access keys. To specify the "
 "character to use as the access key, place an underscore before that character "
 "in the text of the dialog. The following example shows how to specify the "
 "letter 'C' as the access key:"
 msgstr ""
-"Einige <application>Zenity</application>-Dialoge unterstützen die Verwendung "
-"von Zugriffstasten. Um das Zeichen für den Tastaturzugriff festzulegen, "
-"setzen Sie einen Unterstrich vor das Zeichen im Dialogtext. Das folgende "
-"Beispiel zeigt, wie Sie den Buchstaben »W« als Zugriffstaste festlegen."
+"Einige <app>Zenity</app>-Dialoge unterstützen die Verwendung von "
+"Zugriffstasten. Um das Zeichen für den Tastaturzugriff festzulegen, setzen "
+"Sie einen Unterstrich vor das Zeichen im Dialogtext. Das folgende Beispiel "
+"zeigt, wie Sie den Buchstaben »W« als Zugriffstaste festlegen."
 
 #: C/usage.page:49(input)
 msgid "\"_Choose a name\"."
@@ -282,7 +281,7 @@ msgstr "Damit legen Sie die Höhe des Dialogs fest."
 
 #: C/usage.page:141(title)
 msgid "<cmd>--timeout</cmd>=<var>timeout</var>"
-msgstr ""
+msgstr "<cmd>--timeout</cmd>=<var>timeout</var>"
 
 #: C/usage.page:142(p)
 msgid "Specifies the timeout in seconds after which the dialog is closed."
@@ -498,7 +497,7 @@ msgstr "translated"
 
 #: C/text.page:6(desc)
 msgid "Use the <cmd>--text-info</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--text-info</cmd> verwenden."
 
 #: C/text.page:8(title)
 msgid "Text Information Dialog"
@@ -540,9 +539,8 @@ msgid "<cmd>--font</cmd>=<var>FONT</var>"
 msgstr "<cmd>--font</cmd>=<var>SCHRIFT</var>"
 
 #: C/text.page:31(p)
-#, fuzzy
 msgid "Specifies the text font."
-msgstr "Damit legen Sie den Titel des Dialogs fest."
+msgstr "Die Schriftart des Textes festlegen."
 
 #: C/text.page:35(title)
 msgid "<cmd>--checkbox</cmd>=<var>TEXT</var>"
@@ -558,7 +556,7 @@ msgstr "--html"
 
 #: C/text.page:41(p)
 msgid "Enable html support."
-msgstr ""
+msgstr "HTML-Unterstützung aktivieren."
 
 #: C/text.page:45(title)
 msgid "<cmd>--url</cmd>=<var>URL</var>"
@@ -567,6 +565,8 @@ msgstr "<cmd>--url</cmd>=<var>URL</var>"
 #: C/text.page:46(p)
 msgid "Sets an url instead of a file. Only works if you use --html option."
 msgstr ""
+"Eine URL anstelle einer Datei angeben. Das funktioniert nur mit der Option --"
+"html."
 
 #: C/text.page:51(p)
 msgid ""
@@ -622,24 +622,21 @@ msgstr "translated"
 
 #: C/scale.page:6(desc)
 msgid "Use the <cmd>--scale</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--scale</cmd> verwenden."
 
 #: C/scale.page:8(title)
-#, fuzzy
 msgid "Scale Dialog"
-msgstr "Kalenderdialog"
+msgstr "Schiebereglerdialog"
 
 #: C/scale.page:9(p)
-#, fuzzy
 msgid "Use the <cmd>--scale</cmd> option to create a scale dialog."
 msgstr ""
-"Verwenden Sie die Option <option>--error</option>, um einen Fehlerdialog zu "
-"erzeugen."
+"Verwenden Sie die Option <option>--scale</option>, um einen "
+"Schiebereglerdialog zu erzeugen."
 
 #: C/scale.page:12(p)
-#, fuzzy
 msgid "The scale dialog supports the following options:"
-msgstr "Der Kalenderdialog unterstützt die folgenden Optionen:"
+msgstr "Der Schiebereglerdialog unterstützt die folgenden Optionen:"
 
 #: C/scale.page:19(title) C/forms.page:35(title)
 msgid "<cmd>--text</cmd>=<var>TEXT</var>"
@@ -658,6 +655,8 @@ msgid ""
 "Set initial value. (Default: 0) You must specify value between minimum value "
 "to maximum value."
 msgstr ""
+"Den Anfangswert festlegen (Vorgabe: 0). Sie müssen einen Wert zwischen dem "
+"Maximal- und dem Minimalwert angeben."
 
 #: C/scale.page:29(title)
 msgid "<cmd>--min-value</cmd>=<var>VALUE</var>"
@@ -665,7 +664,7 @@ msgstr "<cmd>--min-value</cmd>=<var>WERT</var>"
 
 #: C/scale.page:30(p)
 msgid "Set minimum value. (Default: 0)"
-msgstr ""
+msgstr "Den Minimalwert festlegen (Vorgabe: 0)"
 
 #: C/scale.page:34(title)
 msgid "<cmd>--max-value</cmd>=<var>VALUE</var>"
@@ -673,7 +672,7 @@ msgstr "<cmd>--max-value</cmd>=<var>WERT</var>"
 
 #: C/scale.page:35(p)
 msgid "Set maximum value. (Default: 100)"
-msgstr ""
+msgstr "Den Maximalwert festlegen (Vorgabe: 100)"
 
 #: C/scale.page:39(title)
 msgid "<cmd>--step</cmd>=<var>VALUE</var>"
@@ -681,7 +680,7 @@ msgstr "<cmd>--step</cmd>=<var>WERT</var>"
 
 #: C/scale.page:40(p)
 msgid "Set step size. (Default: 1)"
-msgstr ""
+msgstr "Die Schrittweite festlegen (Vorgabe: 1)"
 
 #: C/scale.page:44(cmd)
 msgid "--print-partial"
@@ -690,22 +689,21 @@ msgstr "--print-partial"
 #: C/scale.page:45(p)
 msgid "Print value to standard output, whenever a value is changed."
 msgstr ""
+"Wert in die Standardausgabe schreiben, immer dann, wenn sich der Wert ändert."
 
 #: C/scale.page:49(cmd)
 msgid "--hide-value"
 msgstr "--hide-value"
 
 #: C/scale.page:50(p)
-#, fuzzy
 msgid "Hide value on dialog."
-msgstr "Dateiauswahldialog"
+msgstr "Den Wert im Dialog verbergen."
 
 #: C/scale.page:55(p)
-#, fuzzy
 msgid "The following example script shows how to create a scale dialog:"
 msgstr ""
-"Das folgende Beispielskript zeigt, wie Sie einen Kalenderdialog erzeugen "
-"können: <placeholder-1/>"
+"Das folgende Beispielskript zeigt, wie Sie einen Schiebereglerdialog erzeugen "
+"können:"
 
 #: C/scale.page:59(code)
 #, fuzzy, no-wrap
@@ -739,15 +737,13 @@ msgstr ""
 "        esac\n"
 "      "
 
-#: C/scale.page:75(title) C/password.page:45(title)
-#: C/color-selection.page:50(title)
-msgid "Password Entry Dialog Example"
-msgstr "Beispiel für einen Passworteingabe-Dialog"
+#: C/scale.page:75(title)
+msgid "Scale Dialog Example"
+msgstr "Beispiel für einen Schiebereglerdialog"
 
-#: C/scale.page:76(desc) C/password.page:46(desc)
-#: C/color-selection.page:51(desc)
-msgid "<app>Zenity</app> password entry dialog example"
-msgstr "Beispiel für einen Texteingabedialog in <app>Zenity</app>"
+#: C/scale.page:76(desc)
+msgid "<app>Zenity</app> scale dialog example"
+msgstr "Beispiel für einen Schiebereglerdialog in <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -760,17 +756,16 @@ msgstr "translated"
 
 #: C/question.page:6(desc)
 msgid "Use the <cmd>--question</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--question</cmd> verwenden."
 
 #: C/question.page:8(title)
 msgid "Question Dialog"
 msgstr "Fragedialog"
 
 #: C/question.page:9(p)
-#, fuzzy
 msgid "Use the <cmd>--question</cmd> option to create a question dialog."
 msgstr ""
-"Verwenden Sie die Option <option>--question</option>, um einen Fragedialog zu "
+"Verwenden Sie die Option <cmd>--question</cmd>, um einen Fragedialog zu "
 "erzeugen."
 
 #: C/question.page:13(p)
@@ -811,7 +806,7 @@ msgstr "translated"
 
 #: C/progress.page:6(desc)
 msgid "Use the <cmd>--progress</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--progress</cmd> verwenden."
 
 #: C/progress.page:8(title)
 msgid "Progress Dialog"
@@ -953,7 +948,7 @@ msgstr "translated"
 
 #: C/password.page:6(desc)
 msgid "Use the <cmd>--password</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--password</cmd> verwenden."
 
 #: C/password.page:8(title)
 msgid "Password Dialog"
@@ -975,7 +970,7 @@ msgstr "--username"
 
 #: C/password.page:19(p)
 msgid "Display the username field."
-msgstr ""
+msgstr "Das Feld für den Benutzernamen anzeigen."
 
 #: C/password.page:23(p)
 msgid ""
@@ -1003,6 +998,29 @@ msgid ""
 "                echo \"An unexpected error has occurred.\";;\n"
 "esac\n"
 msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"ENTRY=`zenity --password --username`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"\t \techo \"User Name: `echo $ENTRY | cut -d'|' -f1`\"\n"
+"\t \techo \"Password : `echo $ENTRY | cut -d'|' -f2`\"\n"
+"\t\t;;\n"
+"         1)\n"
+"                echo \"Stop login.\";;\n"
+"        -1)\n"
+"                echo \"An unexpected error has occurred.\";;\n"
+"esac\n"
+
+#: C/password.page:45(title)
+msgid "Password Entry Dialog Example"
+msgstr "Beispiel für einen Passworteingabe-Dialog"
+
+#: C/password.page:46(desc)
+msgid "<app>Zenity</app> password entry dialog example"
+msgstr "Beispiel für einen Texteingabedialog in <app>Zenity</app>"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -1014,10 +1032,8 @@ msgid ""
 msgstr "translated"
 
 #: C/notification.page:6(desc)
-#, fuzzy
 msgid "Use the <cmd>--notification</cmd> option."
-msgstr ""
-"Damit zeigen Sie den Hilfetext für Optionen des Benachrichtigungsymbols an."
+msgstr "Die Option <cmd>--notifications</cmd> verwenden."
 
 #: C/notification.page:8(title)
 msgid "Notification Icon"
@@ -1070,6 +1086,8 @@ msgid ""
 "<link xref=\"error\">Error</link>, <link xref=\"info\">Info</link>, <link "
 "xref=\"question\">Question</link>, <link xref=\"warning\">Warning</link>"
 msgstr ""
+"<link xref=\"error\">Fehler</link>, <link xref=\"info\">Info</link>, <link "
+"xref=\"question\">Frage</link>, <link xref=\"warning\">Warnung</link>"
 
 #: C/message.page:13(title)
 msgid "Message Dialog"
@@ -1094,7 +1112,7 @@ msgstr "translated"
 
 #: C/list.page:6(desc)
 msgid "Use the <cmd>--list</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--list</cmd> verwenden."
 
 #: C/list.page:8(title)
 msgid "List Dialog"
@@ -1135,7 +1153,7 @@ msgstr "Der Listendialog unterstützt die folgenden Optionen:"
 
 #: C/list.page:28(title)
 msgid "<cmd>--column</cmd>=<var>column</var>"
-msgstr ""
+msgstr "<cmd>--column</cmd>=<var>column</var>"
 
 #: C/list.page:29(p)
 msgid ""
@@ -1305,7 +1323,7 @@ msgstr "Textinformation"
 
 #: C/intro.page:31(p)
 msgid "Scale"
-msgstr ""
+msgstr "Schieberegler"
 
 #: C/intro.page:32(p)
 msgid "Color selection"
@@ -1322,7 +1340,7 @@ msgstr "translated"
 
 #: C/info.page:6(desc)
 msgid "Use the <cmd>--info</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--info</cmd> verwenden."
 
 #: C/info.page:8(title)
 msgid "Info Dialog"
@@ -1406,7 +1424,7 @@ msgstr "translated"
 
 #: C/forms.page:6(desc)
 msgid "Use the <cmd>--forms</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--forms</cmd> verwenden."
 
 #: C/forms.page:8(title)
 msgid "Forms Dialog"
@@ -1428,7 +1446,7 @@ msgstr "<cmd>--add-entry</cmd>=<var>Feldname</var>"
 
 #: C/forms.page:21(p)
 msgid "Add a new Entry in forms dialog."
-msgstr ""
+msgstr "Einen neuen Eintrag im Formulardialog hinzufügen."
 
 #: C/forms.page:25(title)
 msgid "--add-password<cmd/>=<var>FieldName</var>"
@@ -1437,6 +1455,7 @@ msgstr "--add-password<cmd/>=<var>Feldname</var>"
 #: C/forms.page:26(p)
 msgid "Add a new Password Entry in forms dialog. (Hide text)"
 msgstr ""
+"Einen neuen Passworteintrag im Formulardialog hinzufügen (Text verbergen)."
 
 #: C/forms.page:30(title)
 msgid "<cmd>--add-calendar</cmd>=<var>FieldName</var>"
@@ -1444,11 +1463,11 @@ msgstr "<cmd>--add-calendar</cmd>=<var>Feldname</var>"
 
 #: C/forms.page:31(p)
 msgid "Add a new Calendar in forms dialog."
-msgstr ""
+msgstr "Einen neuen Kalender im Formulardialog hinzufügen."
 
 #: C/forms.page:36(p)
 msgid "Set the dialog text."
-msgstr ""
+msgstr "Den Dialogtext festlegen."
 
 #: C/forms.page:40(title)
 msgid "<cmd>--separator</cmd>=<var>SEPARATOR</var>"
@@ -1456,7 +1475,7 @@ msgstr "<cmd>--separator</cmd>=<var>TRENNER</var>"
 
 #: C/forms.page:41(p)
 msgid "Set output separator character. (Default: | )"
-msgstr ""
+msgstr "Das Trennungszeichen für die Ausgabe festlegen (Vorgabe: |)."
 
 #: C/forms.page:45(title)
 msgid "<cmd>--forms-date-format</cmd>=<var>PATTERN</var>"
@@ -1525,7 +1544,7 @@ msgstr "translated"
 
 #: C/file-selection.page:6(desc)
 msgid "Use the <cmd>--file-selection</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--file-selection</cmd> verwenden."
 
 #: C/file-selection.page:8(title)
 msgid "File Selection Dialog"
@@ -1643,7 +1662,7 @@ msgstr "translated"
 
 #: C/error.page:6(desc)
 msgid "Use the <cmd>--error</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--error</cmd> verwenden."
 
 #: C/error.page:8(title)
 msgid "Error Dialog"
@@ -1693,7 +1712,7 @@ msgstr "translated"
 
 #: C/entry.page:6(desc)
 msgid "Use the <cmd>--entry</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--entry</cmd> verwenden."
 
 #: C/entry.page:8(title)
 msgid "Text Entry Dialog"
@@ -1784,7 +1803,7 @@ msgstr "translated"
 
 #: C/color-selection.page:6(desc)
 msgid "Use the <cmd>--color-selection</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--color-selection</cmd> verwenden."
 
 #: C/color-selection.page:8(title)
 msgid "Color Selection Dialog"
@@ -1808,7 +1827,7 @@ msgstr "<cmd>--color</cmd>=<var>WERT</var>"
 
 #: C/color-selection.page:20(p)
 msgid "Set the initial color.(ex: #FF0000)"
-msgstr ""
+msgstr "Die anfängliche Farbe festlegen (z.B. #FF0000)"
 
 #: C/color-selection.page:24(cmd)
 msgid "--show-palette"
@@ -1816,7 +1835,7 @@ msgstr "--show-palette"
 
 #: C/color-selection.page:25(p)
 msgid "Show the palette."
-msgstr ""
+msgstr "Die Palette anzeigen."
 
 #: C/color-selection.page:30(p)
 msgid ""
@@ -1857,6 +1876,14 @@ msgstr ""
 "        esac\n"
 "      "
 
+#: C/color-selection.page:50(title)
+msgid "Color Selection Dialog Example"
+msgstr "Beispiel für einen Farbauswahldialog"
+
+#: C/color-selection.page:51(desc)
+msgid "<app>Zenity</app> color selection dialog example"
+msgstr "Beispiel für einen Farbauswahldialog in <app>Zenity</app>"
+
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/calendar.page:66(None)
@@ -1868,7 +1895,7 @@ msgstr "translated"
 
 #: C/calendar.page:6(desc)
 msgid "Use the <cmd>--calendar</cmd> option."
-msgstr ""
+msgstr "Die Option <cmd>--calendar</cmd> verwenden."
 
 #: C/calendar.page:8(title)
 msgid "Calendar Dialog"
@@ -1930,7 +1957,6 @@ msgid "<cmd>--date-format</cmd>=<var>format</var>"
 msgstr "<cmd>--date-format</cmd>=<var>Format</var>"
 
 #: C/calendar.page:40(p)
-#, fuzzy
 msgid ""
 "Specifies the format that is returned from the calendar dialog after date "
 "selection. The default format depends on your locale. Format must be a format "
@@ -1939,9 +1965,9 @@ msgid ""
 msgstr ""
 "Damit legen Sie das Format fest, das vom Kalenderdialog nach der Auswahl des "
 "Datums zurückgegeben wird. Das Standardformat ist abhängig von Ihren "
-"Spracheinstellungen. <replaceable>Format</replaceable> muss ein Format sein, "
-"das von der <command>strftime</command>-Funktion unterstützt wird, zum "
-"Beispiel <literal>%A %d/%m/%y</literal>."
+"Spracheinstellungen. »Format« muss ein Format sein, das von der "
+"<cmd>strftime</cmd>-Funktion unterstützt wird, zum Beispiel <var>%A %d/%m/%y</"
+"var>."
 
 #: C/calendar.page:45(p)
 msgid "The following example script shows how to create a calendar dialog:"
@@ -1988,5 +2014,4 @@ msgstr "Beispiel für einen Kalenderdialog in <app>Zenity</app>"
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
 msgid "translator-credits"
-msgstr "Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2009, 2011"
-
+msgstr "Mario Blättermann <mario.blaettermann@gmail.com>, 2008-2012"
