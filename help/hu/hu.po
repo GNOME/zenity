@@ -1,0 +1,1400 @@
+# Hungarian translation of zenity_help
+# Copyright (C) 2012. Free Software Foundation, Inc.
+# This file is distributed under the same license as the zenity package.
+#
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: zenity_help master\n"
+"POT-Creation-Date: 2012-03-15 14:33+0000\n"
+"PO-Revision-Date: 2012-03-22 02:40+0100\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/warning.page:28(None)
+msgid "@@image: 'figures/zenity-warning-screenshot.png'; md5=146ea22fcd7104b2f9ed7ca0cc25f51d"
+msgstr "@@image: 'figures/zenity-warning-screenshot.png'; md5=146ea22fcd7104b2f9ed7ca0cc25f51d"
+
+#: C/warning.page:6(desc)
+msgid "Use the <cmd>--warning</cmd> option."
+msgstr "A <cmd>--warning</cmd> kapcsoló használata."
+
+#: C/warning.page:8(title)
+msgid "Warning Dialog"
+msgstr "Figyelmeztető ablak"
+
+#: C/warning.page:9(p)
+msgid "Use the <cmd>--warning</cmd> option to create a warning dialog."
+msgstr "A <cmd>--warning</cmd> kapcsoló használatával figyelmeztető ablakot hozhat létre."
+
+#: C/warning.page:13(p)
+msgid "The following example script shows how to create a warning dialog:"
+msgstr "A következő példa parancsfájl bemutatja a figyelmeztető ablak létrehozását:"
+
+#: C/warning.page:17(code)
+#, no-wrap
+msgid "\n#!/bin/bash\n\nzenity --warning \\\n--text=\"Disconnect the power cable to avoid electrical shock.\"\n"
+msgstr "\n#!/bin/bash\n\nzenity --warning \\\n--text=\"Az áramütés elkerülése érdekében húzza ki az elektromos kábelt.\"\n"
+
+#: C/warning.page:26(title)
+msgid "Warning Dialog Example"
+msgstr "Példa figyelmeztető ablak"
+
+#: C/warning.page:27(desc)
+msgid "<app>Zenity</app> warning dialog example"
+msgstr "<app>Zenity</app> példa figyelmeztető ablak"
+
+#: C/usage.page:6(desc)
+msgid "You can use <app>Zenity</app> to create simple dialogs that interact graphically with the user."
+msgstr "A <app>Zenity</app> segítségével egyszerű grafikus párbeszédablakokat hozhat létre."
+
+#: C/usage.page:8(title)
+msgid "Usage"
+msgstr "Használat"
+
+#: C/usage.page:9(p)
+msgid "When you write scripts, you can use <app>Zenity</app> to create simple dialogs that interact graphically with the user, as follows:"
+msgstr "Parancsfájlok írásakor a <app>Zenity</app> segítségével egyszerű grafikus párbeszédablakokat hozhat létre, amelyek a következőképpen kommunikálnak a felhasználóval:"
+
+#: C/usage.page:14(p)
+msgid "You can create a dialog to obtain information from the user. For example, you can prompt the user to select a date from a calendar dialog, or to select a file from a file selection dialog."
+msgstr "Létrehozhat egy ablakot, amelyben információkat kér a felhasználótól. Megkérheti például a felhasználót egy dátum kiválasztására a dátumválasztó ablakból, vagy fájl kiválasztására a fájlválasztó ablakból."
+
+#: C/usage.page:19(p)
+msgid "You can create a dialog to provide the user with information. For example, you can use a progress dialog to indicate the current status of an operation, or use a warning message dialog to alert the user."
+msgstr "Létrehozhat egy ablakot, amelyben információkat ad a felhasználónak. Egy folyamatjelző ablak használatával például jelezheti egy művelet aktuális állapotát, vagy egy figyelmeztető ablakkal felhívhatja valamire a felhasználó figyelmét."
+
+#: C/usage.page:24(p)
+msgid "When the user closes the dialog, <app>Zenity</app> prints the text produced by the dialog to standard output."
+msgstr "Amikor a felhasználó bezárja az ablakot, a <app>Zenity</app> kiírja az ablak által visszaadott szöveget a szabványos kimenetre."
+
+#: C/usage.page:29(p)
+msgid "When you write <app>Zenity</app> commands, ensure that you place quotation marks around each argument."
+msgstr "Amikor <app>Zenity</app> parancsokat ír, mindig tegye idézőjelek közé az egyes argumentumokat."
+
+#: C/usage.page:32(p)
+msgid "For example, use:"
+msgstr "Például így:"
+
+#: C/usage.page:33(screen)
+#, no-wrap
+msgid "zenity --calendar --title=\"Holiday Planner\""
+msgstr "zenity --calendar --title=\"Szabadság tervezése\""
+
+#: C/usage.page:34(p)
+msgid "Do not use:"
+msgstr "Ne használja így:"
+
+#: C/usage.page:35(screen)
+#, no-wrap
+msgid "zenity --calendar --title=Holiday Planner"
+msgstr "zenity --calendar --title=Szabadság tervezése"
+
+#: C/usage.page:36(p)
+msgid "If you do not use quotation marks, you might get unexpected results."
+msgstr "Ha nem használ idézőjeleket, akkor váratlan eredményeket kaphat."
+
+#: C/usage.page:42(title)
+msgid "Access Keys"
+msgstr "Hívóbetűk"
+
+#: C/usage.page:43(p)
+msgid "An access key is a key that enables you to perform an action from the keyboard rather than use the mouse to choose a command from a menu or dialog. Each access key is identified by an underlined letter on a menu or dialog option."
+msgstr "A hívóbetű lehetővé teszi egy művelet végrehajtását a billentyűzetről, így nem muszáj mindig az egérrel kiválasztania a parancsot a menüből vagy ablakból. A hívóbetűk a menüpontok vagy beállítások szövegének aláhúzott betűi."
+
+#: C/usage.page:46(p)
+msgid "Some <app>Zenity</app> dialogs support the use of access keys. To specify the character to use as the access key, place an underscore before that character in the text of the dialog. The following example shows how to specify the letter 'C' as the access key:"
+msgstr "Egyes <app>Zenity</app> ablakok támogatják a hívóbetűk használatát. A hívóbetűként használandó karakter megadásához helyezzen el egy aláhúzást az ablak szövegében. A következő példa bemutatja, hogyan adhatja meg a „V” betűt hívóbetűként:"
+
+#: C/usage.page:49(input)
+msgid "\"_Choose a name\"."
+msgstr "\"_Válasszon egy nevet.\""
+
+#: C/usage.page:53(title)
+msgid "Exit Codes"
+msgstr "Kilépési kódok"
+
+#: C/usage.page:54(p)
+msgid "Zenity returns the following exit codes:"
+msgstr "A Zenity a következő kilépési kódokat adja vissza:"
+
+#: C/usage.page:62(p)
+msgid "Exit Code"
+msgstr "Kilépési kód"
+
+#: C/usage.page:64(p)
+msgid "Description"
+msgstr "Leírás"
+
+#: C/usage.page:70(var)
+msgid "0"
+msgstr "0"
+
+#: C/usage.page:73(p)
+msgid "The user has pressed either <gui style=\"button\">OK</gui> or <gui style=\"button\">Close</gui>."
+msgstr "A felhasználó megnyomta az <gui style=\"button\">OK</gui> vagy a <gui style=\"button\">Bezárás</gui> gombot."
+
+#: C/usage.page:78(var)
+msgid "1"
+msgstr "1"
+
+#: C/usage.page:81(p)
+msgid "The user has either pressed <gui style=\"button\">Cancel</gui>, or used the window functions to close the dialog."
+msgstr "A felhasználó megnyomta a <gui style=\"button\">Mégse</gui> gombot, vagy az ablakvezérlő elemekkel bezárta az ablakot."
+
+#: C/usage.page:86(var)
+msgid "-1"
+msgstr "-1"
+
+#: C/usage.page:89(p)
+msgid "An unexpected error has occurred."
+msgstr "Váratlan hiba történt."
+
+#: C/usage.page:94(var)
+msgid "5"
+msgstr "5"
+
+#: C/usage.page:97(p)
+msgid "The dialog has been closed because the timeout has been reached."
+msgstr "Az ablak az időkorlát elérése miatt bezárva."
+
+#: C/usage.page:109(title)
+msgid "General Options"
+msgstr "Általános beállítások"
+
+#: C/usage.page:111(p)
+msgid "All Zenity dialogs support the following general options:"
+msgstr "Minden Zenity ablak támogatja a következő általános beállításokat:"
+
+#: C/usage.page:118(title)
+msgid "<cmd>--title</cmd>=<var>title</var>"
+msgstr "<cmd>--title</cmd>=<var>cím</var>"
+
+#: C/usage.page:119(p)
+msgid "Specifies the title of a dialog."
+msgstr "Az ablak címének megadása."
+
+#: C/usage.page:123(title)
+msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
+msgstr "<cmd>--window-icon</cmd>=<var>ikonútvonal</var>"
+
+#: C/usage.page:124(p)
+msgid "Specifies the icon that is displayed in the window frame of the dialog. There are 4 stock icons also available by providing the following keywords - 'info', 'warning', 'question' and 'error'."
+msgstr "Az ablakkeretben megjelenő ikon megadása. A következő kulcsszavak megadásával elérhető 4 alapértelmezett ikon is: „info”, „warning” (figyelmeztetés), „question” (kérdés) és „error” (hiba)."
+
+#: C/usage.page:131(title)
+msgid "<cmd>--width</cmd>=<var>width</var>"
+msgstr "<cmd>--width</cmd>=<var>szélesség</var>"
+
+#: C/usage.page:132(p)
+msgid "Specifies the width of the dialog."
+msgstr "Az ablak szélességének megadása."
+
+#: C/usage.page:136(title)
+msgid "<cmd>--height</cmd>=<var>height</var>"
+msgstr "<cmd>--height</cmd>=<var>magasság</var>"
+
+#: C/usage.page:137(p)
+msgid "Specifies the height of the dialog."
+msgstr "Az ablak magasságának megadása."
+
+#: C/usage.page:141(title)
+msgid "<cmd>--timeout</cmd>=<var>timeout</var>"
+msgstr "<cmd>--timeout</cmd>=<var>időkorlát</var>"
+
+#: C/usage.page:142(p)
+msgid "Specifies the timeout in seconds after which the dialog is closed."
+msgstr "Időkorlát megadása másodpercben, amely után az ablak bezárandó."
+
+#: C/usage.page:152(title)
+msgid "Help Options"
+msgstr "Súgólehetőségek"
+
+#: C/usage.page:154(p)
+msgid "Zenity provides the following help options:"
+msgstr "A Zenity a következő súgólehetőségeket biztosítja:"
+
+#: C/usage.page:161(cmd)
+msgid "--help"
+msgstr "--help"
+
+#: C/usage.page:162(p)
+msgid "Displays shortened help text."
+msgstr "Rövid súgószöveg megjelenítése."
+
+#: C/usage.page:166(cmd)
+msgid "--help-all"
+msgstr "--help-all"
+
+#: C/usage.page:167(p)
+msgid "Displays full help text for all dialogs."
+msgstr "Részletes súgószöveg megjelenítése minden ablakhoz."
+
+#: C/usage.page:171(cmd)
+msgid "--help-general"
+msgstr "--help-general"
+
+#: C/usage.page:172(p)
+msgid "Displays help text for general dialog options."
+msgstr "Súgószöveg megjelenítése az általános ablakbeállításokhoz."
+
+#: C/usage.page:176(cmd)
+msgid "--help-calendar"
+msgstr "--help-calendar"
+
+#: C/usage.page:177(p)
+msgid "Displays help text for calendar dialog options."
+msgstr "Súgószöveg megjelenítése a naptár ablak beállításaihoz."
+
+#: C/usage.page:181(cmd)
+msgid "--help-entry"
+msgstr "--help-entry"
+
+#: C/usage.page:182(p)
+msgid "Displays help text for text entry dialog options."
+msgstr "Súgószöveg megjelenítése a szövegbeviteli ablak beállításaihoz."
+
+#: C/usage.page:186(cmd)
+msgid "--help-error"
+msgstr "--help-error"
+
+#: C/usage.page:187(p)
+msgid "Displays help text for error dialog options."
+msgstr "Súgószöveg megjelenítése a hibaablak beállításaihoz."
+
+#: C/usage.page:191(cmd)
+msgid "--help-info"
+msgstr "--help-info"
+
+#: C/usage.page:192(p)
+msgid "Displays help text for information dialog options."
+msgstr "Súgószöveg megjelenítése az információs ablak beállításaihoz."
+
+#: C/usage.page:196(cmd)
+msgid "--help-file-selection"
+msgstr "--help-file-selection"
+
+#: C/usage.page:197(p)
+msgid "Displays help text for file selection dialog options."
+msgstr "Súgószöveg megjelenítése a fájlválasztó ablak beállításaihoz."
+
+#: C/usage.page:201(cmd)
+msgid "--help-list"
+msgstr "--help-list"
+
+#: C/usage.page:202(p)
+msgid "Displays help text for list dialog options."
+msgstr "Súgószöveg megjelenítése a lista ablak beállításaihoz."
+
+#: C/usage.page:206(cmd)
+msgid "--help-notification"
+msgstr "--help-notification"
+
+#: C/usage.page:207(p)
+msgid "Displays help text for notification icon options."
+msgstr "Súgószöveg megjelenítése az értesítési ikon beállításaihoz."
+
+#: C/usage.page:211(cmd)
+msgid "--help-progress"
+msgstr "--help-progress"
+
+#: C/usage.page:212(p)
+msgid "Displays help text for progress dialog options."
+msgstr "Súgószöveg megjelenítése a folyamatjelző ablak beállításaihoz."
+
+#: C/usage.page:216(cmd)
+msgid "--help-question"
+msgstr "--help-question"
+
+#: C/usage.page:217(p)
+msgid "Displays help text for question dialog options."
+msgstr "Súgószöveg megjelenítése a kérdés ablak beállításaihoz."
+
+#: C/usage.page:221(cmd)
+msgid "--help-warning"
+msgstr "--help-warning"
+
+#: C/usage.page:222(p)
+msgid "Displays help text for warning dialog options."
+msgstr "Súgószöveg megjelenítése a figyelmeztető ablak beállításaihoz."
+
+#: C/usage.page:226(cmd)
+msgid "--help-text-info"
+msgstr "--help-text-info"
+
+#: C/usage.page:227(p)
+msgid "Displays help for text information dialog options."
+msgstr "Súgószöveg megjelenítése a szöveges információs ablak beállításaihoz."
+
+#: C/usage.page:231(cmd)
+msgid "--help-misc"
+msgstr "--help-misc"
+
+#: C/usage.page:232(p)
+msgid "Displays help for miscellaneous options."
+msgstr "Súgószöveg megjelenítése egyéb beállításokhoz."
+
+#: C/usage.page:236(cmd)
+msgid "--help-gtk"
+msgstr "--help-gtk"
+
+#: C/usage.page:237(p)
+msgid "Displays help for GTK+ options."
+msgstr "Súgószöveg megjelenítése a GTK+ beállításokhoz."
+
+#: C/usage.page:247(title)
+msgid "Miscellaneous Options"
+msgstr "Egyéb beállítások"
+
+#: C/usage.page:249(p)
+msgid "Zenity also provides the following miscellaneous options:"
+msgstr "A Zenity a következő egyéb beállításokat is biztosítja:"
+
+#: C/usage.page:256(cmd)
+msgid "--about"
+msgstr "--about"
+
+#: C/usage.page:257(p)
+msgid "Displays the <gui>About Zenity</gui> dialog, which contains Zenity version information, copyright information, and developer information."
+msgstr "Megjeleníti a <gui>Zenity névjegye</gui> ablakot, amely verzió-, szerzői jogi és fejlesztői információkat tartalmaz."
+
+#: C/usage.page:261(cmd)
+msgid "--version"
+msgstr "--version"
+
+#: C/usage.page:262(p)
+msgid "Displays the version number of Zenity."
+msgstr "A Zenity verziószámának megjelenítése."
+
+#: C/usage.page:272(title)
+msgid "GTK+ Options"
+msgstr "GTK+ beállításai"
+
+#: C/usage.page:274(p)
+msgid "Zenity supports the standard GTK+ options. For more information about the GTK+ options, execute the <cmd>zenity --help-gtk</cmd> command."
+msgstr "A Zenity támogatja a szabványos GTK+ beállításokat. A GTK+ beállításokkal kapcsolatos további információkért adja ki a <cmd>zenity --help-gtk</cmd> parancsot."
+
+#: C/usage.page:283(title)
+msgid "Environment Variables"
+msgstr "Környezeti változók"
+
+#: C/usage.page:285(p)
+msgid "Normally, Zenity detects the terminal window from which it was launched and keeps itself above that window. This behavior can be disabled by unsetting the <var>WINDOWID</var> environment variable."
+msgstr "Általában a Zenity felismeri azt a terminálablakot, amelyből elindították, és azon ablak fölött tartja magát. Ez a viselkedés letiltható a <var>WINDOWID</var> környezeti változó törlésével."
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/text.page:83(None)
+msgid "@@image: 'figures/zenity-text-screenshot.png'; md5=79446b388fa6c3c3a619c8d6565b9f61"
+msgstr "@@image: 'figures/zenity-text-screenshot.png'; md5=79446b388fa6c3c3a619c8d6565b9f61"
+
+#: C/text.page:6(desc)
+msgid "Use the <cmd>--text-info</cmd> option."
+msgstr "A <cmd>--text-info</cmd> kapcsoló használata."
+
+#: C/text.page:8(title)
+msgid "Text Information Dialog"
+msgstr "Szöveges információs ablak"
+
+#: C/text.page:9(p)
+msgid "Use the <cmd>--text-info</cmd> option to create a text information dialog."
+msgstr "A <cmd>--text-info</cmd> kapcsoló használatával egy szöveges információs ablak hozható létre."
+
+#: C/text.page:13(p)
+msgid "The text information dialog supports the following options:"
+msgstr "A szöveges információs ablak a következő kapcsolókat támogatja:"
+
+#: C/text.page:20(title) C/file-selection.page:20(title)
+msgid "<cmd>--filename</cmd>=<var>filename</var>"
+msgstr "<cmd>--filename</cmd>=<var>fájlnév</var>"
+
+#: C/text.page:21(p)
+msgid "Specifies a file that is loaded in the text information dialog."
+msgstr "A szöveges információs ablakba betöltendő fájl megadása."
+
+#: C/text.page:25(cmd) C/list.page:46(cmd)
+msgid "--editable"
+msgstr "--editable"
+
+#: C/text.page:26(p)
+msgid "Allows the displayed text to be edited. The edited text is returned to standard output when the dialog is closed."
+msgstr "Lehetővé teszi a megjelenített szöveg szerkesztését. A szerkesztett szöveg a szabványos kimenetre kerül az ablak bezárásakor."
+
+#: C/text.page:30(title)
+msgid "<cmd>--font</cmd>=<var>FONT</var>"
+msgstr "<cmd>--font</cmd>=<var>BETŰKÉSZLET</var>"
+
+#: C/text.page:31(p)
+msgid "Specifies the text font."
+msgstr "A szöveg betűkészletének megadása."
+
+#: C/text.page:35(title)
+msgid "<cmd>--checkbox</cmd>=<var>TEXT</var>"
+msgstr "<cmd>--checkbox</cmd>=<var>SZÖVEG</var>"
+
+#: C/text.page:36(p)
+msgid "Enable a checkbox for use like a 'I read and accept the terms.'"
+msgstr "Jelölőnégyzet megjelenítése, például „Elolvastam és elfogadom a feltételeket” jellegű felhasználásra."
+
+#: C/text.page:40(cmd)
+msgid "--html"
+msgstr "--html"
+
+#: C/text.page:41(p)
+msgid "Enable html support."
+msgstr "HTML-támogatás engedélyezése."
+
+#: C/text.page:45(title)
+msgid "<cmd>--url</cmd>=<var>URL</var>"
+msgstr "<cmd>--url</cmd>=<var>URL</var>"
+
+#: C/text.page:46(p)
+msgid "Sets an url instead of a file. Only works if you use --html option."
+msgstr "URL-címet állít be fájl helyett. Csak a --html kapcsolóval együtt működik."
+
+#: C/text.page:51(p)
+msgid "The following example script shows how to create a text information dialog:"
+msgstr "A következő példa parancsfájl bemutatja a szöveges információs ablak létrehozását:"
+
+#: C/text.page:55(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\n# You must place file \"COPYING\" in same folder of this script.\nFILE=`dirname $0`/COPYING\n\nzenity --text-info \\\n       --title=\"License\" \\\n       --filename=$FILE \\\n       --checkbox=\"I read and accept the terms.\"\n\ncase $? in\n    0)\n        echo \"Start installation!\"\n\t# next step\n\t;;\n    1)\n        echo \"Stop installation!\"\n\t;;\n    -1)\n        echo \"An unexpected error has occurred.\"\n\t;;\nesac\n"
+msgstr "\n#!/bin/sh\n\n# A „COPYING” fájlt ugyanabba a mappába kell elhelyeznie, mint ezt a parancsfájlt.\nFILE=`dirname $0`/COPYING\n\nzenity --text-info \\\n       --title=\"Licenc\" \\\n       --filename=$FILE \\\n       --checkbox=\"Elolvastam és elfogadom a feltételeket.\"\n\ncase $? in\n    0)\n        echo \"Telepítés indítása!\"\n\t# következő lépés\n\t;;\n    1)\n        echo \"Telepítés leállítása!\"\n\t;;\n    -1)\n        echo \"Váratlan hiba történt.\"\n\t;;\nesac\n"
+
+#: C/text.page:81(title)
+msgid "Text Information Dialog Example"
+msgstr "Példa szöveges információs ablak"
+
+#: C/text.page:82(desc)
+msgid "<app>Zenity</app> text information dialog example"
+msgstr "<app>Zenity</app> példa szöveges információs ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/scale.page:77(None)
+msgid "@@image: 'figures/zenity-scale-screenshot.png'; md5=d44259a5b5b6e6ba0aceffd8501d0873"
+msgstr "@@image: 'figures/zenity-scale-screenshot.png'; md5=d44259a5b5b6e6ba0aceffd8501d0873"
+
+#: C/scale.page:6(desc)
+msgid "Use the <cmd>--scale</cmd> option."
+msgstr "A <cmd>--scale</cmd> kapcsoló használata."
+
+#: C/scale.page:8(title)
+msgid "Scale Dialog"
+msgstr "Méretezés ablak"
+
+#: C/scale.page:9(p)
+msgid "Use the <cmd>--scale</cmd> option to create a scale dialog."
+msgstr "A <cmd>--scale</cmd> kapcsoló használatával méretezés ablakot hozhat létre."
+
+#: C/scale.page:12(p)
+msgid "The scale dialog supports the following options:"
+msgstr "A méretezés ablak a következő kapcsolókat támogatja:"
+
+#: C/scale.page:19(title) C/forms.page:35(title)
+msgid "<cmd>--text</cmd>=<var>TEXT</var>"
+msgstr "<cmd>--text</cmd>=<var>SZÖVEG</var>"
+
+#: C/scale.page:20(p)
+msgid "Set the dialog text. (Default: Adjust the scale value)"
+msgstr "Az ablak szövegének beállítása. (Alapértelmezett: A méretezés értékének beállítása)"
+
+#: C/scale.page:24(title)
+msgid "<cmd>--value</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--value</cmd>=<var>ÉRTÉK</var>"
+
+#: C/scale.page:25(p)
+msgid "Set initial value. (Default: 0) You must specify value between minimum value to maximum value."
+msgstr "Kiinduló érték beállítása (Alapértelmezett: 0). Az értéket a minimális és a maximális érték között kell megadnia."
+
+#: C/scale.page:29(title)
+msgid "<cmd>--min-value</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--min-value</cmd>=<var>ÉRTÉK</var>"
+
+#: C/scale.page:30(p)
+msgid "Set minimum value. (Default: 0)"
+msgstr "Minimális érték beállítása (Alapértelmezett: 0)."
+
+#: C/scale.page:34(title)
+msgid "<cmd>--max-value</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--max-value</cmd>=<var>ÉRTÉK</var>"
+
+#: C/scale.page:35(p)
+msgid "Set maximum value. (Default: 100)"
+msgstr "Maximális érték beállítása (Alapértelmezett: 100)"
+
+#: C/scale.page:39(title)
+msgid "<cmd>--step</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--step</cmd>=<var>ÉRTÉK</var>"
+
+#: C/scale.page:40(p)
+msgid "Set step size. (Default: 1)"
+msgstr "Lépés értékének beállítása (Alapértelmezett: 1)"
+
+#: C/scale.page:44(cmd)
+msgid "--print-partial"
+msgstr "--print-partial"
+
+#: C/scale.page:45(p)
+msgid "Print value to standard output, whenever a value is changed."
+msgstr "Érték kiírása a szabványos kimenetre amikor csak az érték változik."
+
+#: C/scale.page:49(cmd)
+msgid "--hide-value"
+msgstr "--hide-value"
+
+#: C/scale.page:50(p)
+msgid "Hide value on dialog."
+msgstr "Érték elrejtése az ablakban."
+
+#: C/scale.page:55(p)
+msgid "The following example script shows how to create a scale dialog:"
+msgstr "A következő példa parancsfájl bemutatja a méretezés ablak létrehozását:"
+
+#: C/scale.page:59(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nVALUE=`zenity --scale --text=\"Select window transparency.\" --value=50`\n\ncase $? in\n         0)\n\t\techo \"You selected $VALUE%.\";;\n         1)\n                echo \"No value selected.\";;\n        -1)\n                echo \"An unexpected error has occurred.\";;\nesac\n"
+msgstr "\n#!/bin/sh\n\nVALUE=`zenity --scale --text=\"Válassza ki az ablak átlátszóságát.\" --value=50`\n\ncase $? in\n         0)\n\t\techo \"Ezt választotta: $VALUE%.\";;\n         1)\n                echo \"Nem választott értéket.\";;\n        -1)\n                echo \"Váratlan hiba történt.\";;\nesac\n"
+
+#: C/scale.page:75(title)
+msgid "Scale Dialog Example"
+msgstr "Példa méretezés ablak"
+
+#: C/scale.page:76(desc)
+msgid "<app>Zenity</app> scale dialog example"
+msgstr "<app>Zenity</app> példa méretezés ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/question.page:28(None)
+msgid "@@image: 'figures/zenity-question-screenshot.png'; md5=5889e2a57b9d1885f22977587a269610"
+msgstr "@@image: 'figures/zenity-question-screenshot.png'; md5=5889e2a57b9d1885f22977587a269610"
+
+#: C/question.page:6(desc)
+msgid "Use the <cmd>--question</cmd> option."
+msgstr "A <cmd>--question</cmd> kapcsoló használata."
+
+#: C/question.page:8(title)
+msgid "Question Dialog"
+msgstr "Kérdés ablak"
+
+#: C/question.page:9(p)
+msgid "Use the <cmd>--question</cmd> option to create a question dialog."
+msgstr "A <cmd>--question</cmd> kapcsoló használatával kérdés ablakot hozhat létre."
+
+#: C/question.page:13(p)
+msgid "The following example script shows how to create a question dialog:"
+msgstr "A következő példa parancsfájl bemutatja a kérdés ablak létrehozását:"
+
+#: C/question.page:17(code)
+#, no-wrap
+msgid "\n#!/bin/bash\n\nzenity --question \\\n--text=\"Are you sure you wish to proceed?\"\n"
+msgstr "\n#!/bin/bash\n\nzenity --question \\\n--text=\"Biztos, hogy folytatni szeretné?\"\n"
+
+#: C/question.page:26(title)
+msgid "Question Dialog Example"
+msgstr "Példa kérdés ablak"
+
+#: C/question.page:27(desc)
+msgid "<app>Zenity</app> question dialog example"
+msgstr "<app>Zenity</app> példa kérdés ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/progress.page:77(None)
+msgid "@@image: 'figures/zenity-progress-screenshot.png'; md5=75121bbbcb9cc92de4ebf7fbb92f0780"
+msgstr "@@image: 'figures/zenity-progress-screenshot.png'; md5=75121bbbcb9cc92de4ebf7fbb92f0780"
+
+#: C/progress.page:6(desc)
+msgid "Use the <cmd>--progress</cmd> option."
+msgstr "A <cmd>--progress</cmd> kapcsoló használata."
+
+#: C/progress.page:8(title)
+msgid "Progress Dialog"
+msgstr "Folyamatjelző ablak"
+
+#: C/progress.page:9(p)
+msgid "Use the <cmd>--progress</cmd> option to create a progress dialog."
+msgstr "A <cmd>--progress</cmd> kapcsoló használatával folyamatjelző ablakot hozhat létre."
+
+#: C/progress.page:13(p)
+msgid "<app>Zenity</app> reads data from standard input line by line. If a line is prefixed with #, the text is updated with the text on that line. If a line contains only a number, the percentage is updated with that number."
+msgstr "A <app>Zenity</app> az adatokat a szabványos bemenetről soronként olvassa. Ha egy sor #-tel kezdődik, akkor a szöveg frissítésre kerül ezen sor szövegével. Ha a sor csak egy számot tartalmaz, akkor a százalékérték azzal a számmal kerül frissítésre."
+
+#: C/progress.page:17(p)
+msgid "The progress dialog supports the following options:"
+msgstr "A folyamatjelző ablak a következő kapcsolókat támogatja:"
+
+#: C/progress.page:24(title) C/notification.page:16(title) C/entry.page:19(title) C/calendar.page:19(title)
+msgid "<cmd>--text</cmd>=<var>text</var>"
+msgstr "<cmd>--text</cmd>=<var>szöveg</var>"
+
+#: C/progress.page:25(p)
+msgid "Specifies the text that is displayed in the progress dialog."
+msgstr "A folyamatjelző ablakban megjelenítendő szöveg megadása."
+
+#: C/progress.page:29(title)
+msgid "<cmd>--percentage</cmd>=<var>percentage</var>"
+msgstr "<cmd>--percentage</cmd>=<var>százalék</var>"
+
+#: C/progress.page:30(p)
+msgid "Specifies the initial percentage that is set in the progress dialog."
+msgstr "A folyamatjelző ablakban megjelenítendő kiinduló százalékérték megadása."
+
+#: C/progress.page:34(cmd)
+msgid "--auto-close"
+msgstr "--auto-close"
+
+#: C/progress.page:35(p)
+msgid "Closes the progress dialog when 100% has been reached."
+msgstr "Folyamatjelző ablak bezárása amikor a 100%-ot elérte."
+
+#: C/progress.page:39(cmd)
+msgid "--pulsate"
+msgstr "--pulsate"
+
+#: C/progress.page:40(p)
+msgid "Specifies that the progress bar pulsates until an EOF character is read from standard input."
+msgstr "A folyamatjelző sáv pulzál, amíg nem olvas EOF karaktert a szabványos bemenetről."
+
+#: C/progress.page:45(p)
+msgid "The following example script shows how to create a progress dialog:"
+msgstr "A következő példa parancsfájl bemutatja a folyamatjelző ablak létrehozását:"
+
+#: C/progress.page:49(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n(\necho \"10\" ; sleep 1\necho \"# Updating mail logs\" ; sleep 1\necho \"20\" ; sleep 1\necho \"# Resetting cron jobs\" ; sleep 1\necho \"50\" ; sleep 1\necho \"This line will just be ignored\" ; sleep 1\necho \"75\" ; sleep 1\necho \"# Rebooting system\" ; sleep 1\necho \"100\" ; sleep 1\n) |\nzenity --progress \\\n  --title=\"Update System Logs\" \\\n  --text=\"Scanning mail logs...\" \\\n  --percentage=0\n\nif [ \"$?\" = -1 ] ; then\n        zenity --error \\\n          --text=\"Update canceled.\"\nfi\n"
+msgstr ""
+"\n#!/bin/sh\n(\necho \"10\" ; sleep 1\necho \"# Levelezőnaplók frissítése\" ; sleep 1\necho \"20\" ; sleep 1\necho \"# cron feladatok visszaállítása\" ; sleep 1\necho \"50\" ; sleep 1\necho \"Ez a sor figyelmen kívül marad\" ; sleep 1\necho \"75\" ; sleep 1\necho \"# Rendszer újraindítása\" ; sleep 1\necho \"100\" ; sleep 1\n) |\nzenity --progress \\\n  --title=\"Rendszernaplók frissítése\" \\\n  --text=\"Levelezőnaplók vizsgálata...\" \\\n  --percentage=0\n\nif [ \"$?\" = -1 ] ; then\n        zenity --error \\\n          "
+"--text=\"Frissítés megszakítva.\"\nfi\n"
+
+#: C/progress.page:75(title)
+msgid "Progress Dialog Example"
+msgstr "Példa folyamatjelző ablak"
+
+#: C/progress.page:76(desc)
+msgid "<app>Zenity</app> progress dialog example"
+msgstr "<app>Zenity</app> példa folyamatjelző ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/password.page:47(None)
+msgid "@@image: 'figures/zenity-password-screenshot.png'; md5=6adbeb624a307f78072593d6d1c6def6"
+msgstr "@@image: 'figures/zenity-password-screenshot.png'; md5=6adbeb624a307f78072593d6d1c6def6"
+
+#: C/password.page:6(desc)
+msgid "Use the <cmd>--password</cmd> option."
+msgstr "A <cmd>--password</cmd> kapcsoló használata."
+
+#: C/password.page:8(title)
+msgid "Password Dialog"
+msgstr "Jelszó ablak"
+
+#: C/password.page:9(p)
+msgid "Use the <cmd>--password</cmd> option to create a password entry dialog."
+msgstr "A <cmd>--password</cmd> kapcsoló használatával jelszóbeviteli ablakot hozhat létre."
+
+#: C/password.page:12(p)
+msgid "The password entry dialog supports the following options:"
+msgstr "A jelszóbeviteli ablak a következő kapcsolókat támogatja:"
+
+#: C/password.page:18(cmd)
+msgid "--username"
+msgstr "--username"
+
+#: C/password.page:19(p)
+msgid "Display the username field."
+msgstr "A felhasználónév mező megjelenítése."
+
+#: C/password.page:23(p)
+msgid "The following example script shows how to create a password entry dialog:"
+msgstr "A következő példa parancsfájl bemutatja a jelszóbeviteli ablak létrehozását:"
+
+#: C/password.page:27(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nENTRY=`zenity --password --username`\n\ncase $? in\n         0)\n\t \techo \"User Name: `echo $ENTRY | cut -d'|' -f1`\"\n\t \techo \"Password : `echo $ENTRY | cut -d'|' -f2`\"\n\t\t;;\n         1)\n                echo \"Stop login.\";;\n        -1)\n                echo \"An unexpected error has occurred.\";;\nesac\n"
+msgstr "\n#!/bin/sh\n\nENTRY=`zenity --password --username`\n\ncase $? in\n         0)\n\t \techo \"Felhasználónév: `echo $ENTRY | cut -d'|' -f1`\"\n\t \techo \"Jelszó : `echo $ENTRY | cut -d'|' -f2`\"\n\t\t;;\n         1)\n                echo \"Bejelentkezés leállítása.\";;\n        -1)\n                echo \"Váratlan hiba történt.\";;\nesac\n"
+
+#: C/password.page:45(title)
+msgid "Password Entry Dialog Example"
+msgstr "Példa jelszóbeviteli ablak"
+
+#: C/password.page:46(desc)
+msgid "<app>Zenity</app> password entry dialog example"
+msgstr "<app>Zenity</app> példa jelszóbeviteli ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/notification.page:37(None)
+msgid "@@image: 'figures/zenity-notification-screenshot.png'; md5=b67bf309c6e479db8677947f1810a999"
+msgstr "@@image: 'figures/zenity-notification-screenshot.png'; md5=b67bf309c6e479db8677947f1810a999"
+
+#: C/notification.page:6(desc)
+msgid "Use the <cmd>--notification</cmd> option."
+msgstr "A <cmd>--notification</cmd> kapcsoló használata."
+
+#: C/notification.page:8(title)
+msgid "Notification Icon"
+msgstr "Értesítési ikon"
+
+#: C/notification.page:9(p)
+msgid "Use the <cmd>--notification</cmd> option to create a notification icon."
+msgstr "A <cmd>--notification</cmd> kapcsoló használatával értesítési ikont hozhat létre."
+
+#: C/notification.page:17(p)
+msgid "Specifies the text that is displayed in the notification area."
+msgstr "Az értesítési területen megjelenítendő szöveg megadása."
+
+#: C/notification.page:22(p)
+msgid "The following example script shows how to create a notification icon:"
+msgstr "A következő példa parancsfájl bemutatja az értesítési ikon létrehozását:"
+
+#: C/notification.page:25(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nzenity --notification\\\n  --window-icon=\"info\" \\\n  --text=\"There are system updates necessary!\"\n"
+msgstr "\n#!/bin/sh\n\nzenity --notification\\\n  --window-icon=\"info\" \\\n  --text=\"Rendszerfrissítés szükséges!\"\n"
+
+#: C/notification.page:35(title)
+msgid "Notification Icon Example"
+msgstr "Példa értesítési ikon"
+
+#: C/notification.page:36(desc)
+msgid "<app>Zenity</app> notification icon example"
+msgstr "<app>Zenity</app> példa értesítési ikon"
+
+#: C/message.page:6(desc)
+msgid "<link xref=\"error\">Error</link>, <link xref=\"info\">Info</link>, <link xref=\"question\">Question</link>, <link xref=\"warning\">Warning</link>"
+msgstr "<link xref=\"error\">Hiba</link>, <link xref=\"info\">Info</link>, <link xref=\"question\">Kérdés</link>, <link xref=\"warning\">Figyelmeztetés</link>"
+
+#: C/message.page:13(title)
+msgid "Message Dialog"
+msgstr "Üzenet ablak"
+
+#: C/message.page:14(p)
+msgid "For each type, use the <cmd>--text</cmd> option to specify the text that is displayed in the dialog."
+msgstr "Minden típus esetén használja a <cmd>--text</cmd> kapcsolót az ablakban megjelenített szöveg megadásához."
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/list.page:84(None)
+msgid "@@image: 'figures/zenity-list-screenshot.png'; md5=8bd9ad9c760516a966d3590b2019fa1e"
+msgstr "@@image: 'figures/zenity-list-screenshot.png'; md5=8bd9ad9c760516a966d3590b2019fa1e"
+
+#: C/list.page:6(desc)
+msgid "Use the <cmd>--list</cmd> option."
+msgstr "A <cmd>--list</cmd> kapcsoló használata."
+
+#: C/list.page:8(title)
+msgid "List Dialog"
+msgstr "Lista ablak"
+
+#: C/list.page:9(p)
+msgid "Use the <cmd>--list</cmd> option to create a list dialog. <app>Zenity</app> returns the entries in the first column of text of selected rows to standard output."
+msgstr "A <cmd>--list</cmd> kapcsoló használatával lista ablakot hozhat létre. A <app>Zenity</app> a kijelölt sorok első szövegoszlopának bejegyzéseit kiírja a szabványos kimenetre."
+
+#: C/list.page:13(p)
+msgid "Data for the dialog must specified column by column, row by row. Data can be provided to the dialog through standard input. Each entry must be separated by a newline character."
+msgstr "Az ablak adatait oszlopról oszlopra, sorról sorra kell megadni. Az ablak adatai megadhatók a szabványos bemeneten keresztül. Minden bejegyzést új sor karakterrel kell elválasztani."
+
+#: C/list.page:17(p)
+msgid "If you use the <cmd>--checklist</cmd> or <cmd>--radiolist</cmd> options, each row must start with either 'TRUE' or 'FALSE'."
+msgstr "Ha a <cmd>--checklist</cmd> vagy <cmd>--radiolist</cmd> kapcsolókat használja, akkor minden sornak a „TRUE” vagy „FALSE” egyikével kell kezdődnie."
+
+#: C/list.page:21(p)
+msgid "The list dialog supports the following options:"
+msgstr "A lista ablak a következő kapcsolókat támogatja:"
+
+#: C/list.page:28(title)
+msgid "<cmd>--column</cmd>=<var>column</var>"
+msgstr "<cmd>--column</cmd>=<var>oszlop</var>"
+
+#: C/list.page:29(p)
+msgid "Specifies the column headers that are displayed in the list dialog. You must specify a <cmd>--column</cmd> option for each column that you want to display in the dialog."
+msgstr "A lista ablakban megjelenő oszlopfejlécek megadása. Az ablakban megjelenítendő minden oszlophoz meg kell adnia egy <cmd>--column</cmd> kapcsolót."
+
+#: C/list.page:34(cmd)
+msgid "--checklist"
+msgstr "--checklist"
+
+#: C/list.page:35(p)
+msgid "Specifies that the first column in the list dialog contains check boxes."
+msgstr "Megadja, hogy a lista ablak első oszlopa jelölőnégyzeteket tartalmaz."
+
+#: C/list.page:40(cmd)
+msgid "--radiolist"
+msgstr "--radiolist"
+
+#: C/list.page:41(p)
+msgid "Specifies that the first column in the list dialog contains radio boxes."
+msgstr "Megadja, hogy a lista ablak első oszlopa választógombokat tartalmaz."
+
+#: C/list.page:47(p)
+msgid "Allows the displayed items to be edited."
+msgstr "Lehetővé teszi a megjelenített elemek szerkesztését."
+
+#: C/list.page:52(title) C/file-selection.page:40(title)
+msgid "<cmd>--separator</cmd>=<var>separator</var>"
+msgstr "<cmd>--separator</cmd>=<var>elválasztó</var>"
+
+#: C/list.page:53(p)
+msgid "Specifies what string is used when the list dialog returns the selected entries."
+msgstr "Megadja, hogy melyik karakterlánc kerül felhasználásra, amikor a lista ablak visszaadja a kijelölt bejegyzéseket."
+
+#: C/list.page:58(title)
+msgid "<cmd>--print-column</cmd>=<var>column</var>"
+msgstr "<cmd>--print-column</cmd>=<var>oszlop</var>"
+
+#: C/list.page:59(p)
+msgid "Specifies what column should be printed out upon selection. The default column is '1'. 'ALL' can be used to print out all columns in the list."
+msgstr "Megadja, hogy melyik oszlopot kell kiírni kiválasztáskor. Az alapértelmezett oszlop az „1”. A lista összes oszlopának kiírására az „ALL” érték használható."
+
+#: C/list.page:66(p)
+msgid "The following example script shows how to create a list dialog:"
+msgstr "A következő példa parancsfájl bemutatja a lista ablak létrehozását:"
+
+#: C/list.page:69(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nzenity --list \\\n  --title=\"Choose the Bugs You Wish to View\" \\\n  --column=\"Bug Number\" --column=\"Severity\" --column=\"Description\" \\\n    992383 Normal \"GtkTreeView crashes on multiple selections\" \\\n    293823 High \"GNOME Dictionary does not handle proxy\" \\\n    393823 Critical \"Menu editing does not work in GNOME 2.0\"\n"
+msgstr "\n#!/bin/sh\n\nzenity --list \\\n  --title=\"Válassza ki a megjelenítendő hibajegyeket\" \\\n  --column=\"Hiba száma\" --column=\"Súlyosság\" --column=\"Leírás\" \\\n    992383 Normal \"GtkTreeView crashes on multiple selections\" \\\n    293823 High \"GNOME Dictionary does not handle proxy\" \\\n    393823 Critical \"Menu editing does not work in GNOME 2.0\"\n"
+
+#: C/list.page:82(title)
+msgid "List Dialog Example"
+msgstr "Példa lista ablak"
+
+#: C/list.page:83(desc)
+msgid "<app>Zenity</app> list dialog example"
+msgstr "<app>Zenity</app> példa lista ablak"
+
+#: C/intro.page:6(desc)
+msgid "<app>Zenity</app> enables you to create the various types of simple dialog."
+msgstr "A <app>Zenity</app> lehetővé teszi különböző egyszerű párbeszédablakok létrehozását."
+
+#: C/intro.page:8(title)
+msgid "Introduction"
+msgstr "Bevezetés"
+
+#: C/intro.page:9(p)
+msgid "<app>Zenity</app> enables you to create the following types of simple dialog:"
+msgstr "A <app>Zenity</app> lehetővé teszi a következő típusú egyszerű párbeszédablakok létrehozását:"
+
+#: C/intro.page:14(p)
+msgid "Calendar"
+msgstr "Naptár"
+
+#: C/intro.page:15(p)
+msgid "File selection"
+msgstr "Fájlválasztó"
+
+#: C/intro.page:16(p)
+msgid "Forms"
+msgstr "Űrlapok"
+
+#: C/intro.page:17(p)
+msgid "List"
+msgstr "Lista"
+
+#: C/intro.page:18(p)
+msgid "Notification icon"
+msgstr "Értesítési ikon"
+
+#: C/intro.page:19(p)
+msgid "Message"
+msgstr "Üzenet"
+
+#: C/intro.page:21(p)
+msgid "Error"
+msgstr "Hiba"
+
+#: C/intro.page:22(p)
+msgid "Information"
+msgstr "Információ"
+
+#: C/intro.page:23(p)
+msgid "Question"
+msgstr "Kérdés"
+
+#: C/intro.page:24(p)
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+#: C/intro.page:27(p)
+msgid "Password entry"
+msgstr "Jelszóbeviteli mező"
+
+#: C/intro.page:28(p)
+msgid "Progress"
+msgstr "Folyamatjelző"
+
+#: C/intro.page:29(p)
+msgid "Text entry"
+msgstr "Szövegmező"
+
+#: C/intro.page:30(p)
+msgid "Text information"
+msgstr "Szöveges információk"
+
+#: C/intro.page:31(p)
+msgid "Scale"
+msgstr "Méretezés"
+
+#: C/intro.page:32(p)
+msgid "Color selection"
+msgstr "Színválasztó"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/info.page:28(None)
+msgid "@@image: 'figures/zenity-information-screenshot.png'; md5=72386d53a991c46e918ee6dd22795aa6"
+msgstr "@@image: 'figures/zenity-information-screenshot.png'; md5=72386d53a991c46e918ee6dd22795aa6"
+
+#: C/info.page:6(desc)
+msgid "Use the <cmd>--info</cmd> option."
+msgstr "A <cmd>--info</cmd> kapcsoló használata."
+
+#: C/info.page:8(title)
+msgid "Info Dialog"
+msgstr "Információs ablak"
+
+#: C/info.page:9(p)
+msgid "Use the <cmd>--info</cmd> option to create an information dialog."
+msgstr "A <cmd>--info</cmd> kapcsoló használatával egy információs ablak hozható létre."
+
+#: C/info.page:13(p)
+msgid "The following example script shows how to create an information dialog:"
+msgstr "A következő példa parancsfájl bemutatja az információs ablak létrehozását:"
+
+#: C/info.page:17(code)
+#, no-wrap
+msgid "\n#!/bin/bash\n\nzenity --info \\\n--text=\"Merge complete. Updated 3 of 10 files.\"\n"
+msgstr "\n#!/bin/bash\n\nzenity --info \\\n--text=\"Az összefésülés kész. 10 fájlból 3 frissítve.\"\n"
+
+#: C/info.page:26(title)
+msgid "Information Dialog Example"
+msgstr "Példa információs ablak"
+
+#: C/info.page:27(desc)
+msgid "<app>Zenity</app> information dialog example"
+msgstr "<app>Zenity</app> példa információs ablak"
+
+#: C/index.page:6(name) C/index.page:6(name)
+msgid "Sun Java Desktop System Documentation Team"
+msgstr "Sun Java Desktop System Documentation Team"
+
+#: C/index.page:9(name) C/index.page:9(name)
+msgid "Glynn Foster"
+msgstr "Glynn Foster"
+
+#: C/index.page:12(name) C/index.page:12(name)
+msgid "Nicholas Curran"
+msgstr "Nicholas Curran"
+
+#: C/index.page:16(name) C/index.page:16(name)
+msgid "Yasumichi Akahoshi"
+msgstr "Yasumichi Akahoshi"
+
+#: C/index.page:17(email) C/index.page:17(email)
+msgid "yasumichi@vinelinux.org"
+msgstr "yasumichi@vinelinux.org"
+
+#: C/index.page:20(p) C/index.page:20(p)
+msgid "GNU Free Documentation License (GFDL)"
+msgstr "GNU Free Documentation License (GFDL)"
+
+#: C/index.page:24(title) C/index.page:24(title)
+msgid "Zenity Manual"
+msgstr "Zenity kézikönyv"
+
+#: C/index.page:27(title) C/index.page:27(title)
+msgid "Dialogs"
+msgstr "Párbeszédablakok"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/forms.page:81(None)
+msgid "@@image: 'figures/zenity-forms-screenshot.png'; md5=c11fab02e4d51212a538ce6859799d5f"
+msgstr "@@image: 'figures/zenity-forms-screenshot.png'; md5=c11fab02e4d51212a538ce6859799d5f"
+
+#: C/forms.page:6(desc)
+msgid "Use the <cmd>--forms</cmd> option."
+msgstr "A <cmd>--forms</cmd> kapcsoló használata."
+
+#: C/forms.page:8(title)
+msgid "Forms Dialog"
+msgstr "Űrlapok ablak"
+
+#: C/forms.page:9(p)
+msgid "Use the <cmd>--forms</cmd> option to create a forms dialog."
+msgstr "A <cmd>--forms</cmd> kapcsoló használatával űrlapok ablakot hozhat létre."
+
+#: C/forms.page:13(p)
+msgid "The forms dialog supports the following options:"
+msgstr "Az űrlapok ablak a következő kapcsolókat támogatja:"
+
+#: C/forms.page:20(title)
+msgid "<cmd>--add-entry</cmd>=<var>FieldName</var>"
+msgstr "<cmd>--add-entry</cmd>=<var>Mezőnév</var>"
+
+#: C/forms.page:21(p)
+msgid "Add a new Entry in forms dialog."
+msgstr "Új bejegyzés hozzáadása az Űrlapok ablakhoz."
+
+#: C/forms.page:25(title)
+msgid "--add-password<cmd/>=<var>FieldName</var>"
+msgstr "--add-password<cmd/>=<var>Mezőnév</var>"
+
+#: C/forms.page:26(p)
+msgid "Add a new Password Entry in forms dialog. (Hide text)"
+msgstr "Új jelszóbeviteli mező hozzáadása az Űrlapok ablakhoz. (szöveg elrejtése)"
+
+#: C/forms.page:30(title)
+msgid "<cmd>--add-calendar</cmd>=<var>FieldName</var>"
+msgstr "<cmd>--add-calendar</cmd>=<var>Mezőnév</var>"
+
+#: C/forms.page:31(p)
+msgid "Add a new Calendar in forms dialog."
+msgstr "Új naptár hozzáadása az Űrlapok ablakhoz."
+
+#: C/forms.page:36(p)
+msgid "Set the dialog text."
+msgstr "Ablak szövegének beállítása."
+
+#: C/forms.page:40(title)
+msgid "<cmd>--separator</cmd>=<var>SEPARATOR</var>"
+msgstr "<cmd>--separator</cmd>=<var>elválasztó</var>"
+
+#: C/forms.page:41(p)
+msgid "Set output separator character. (Default: | )"
+msgstr "A kimenet elválasztókarakterének beállítása. (Alapértelmezett: | )"
+
+#: C/forms.page:45(title)
+msgid "<cmd>--forms-date-format</cmd>=<var>PATTERN</var>"
+msgstr "<cmd>--forms-date-format</cmd>=<var>Minta</var>"
+
+#: C/forms.page:46(p)
+msgid "Set the format for the returned date. The default format depends on your locale. format must be a Format that is acceptable to the <cmd>strftime</cmd> function, for example <var>%A %d/%m/%y</var>."
+msgstr "A visszaadott dátum formátumának beállítása. Az alapértelmezett formátum függ a területi beállítástól. A formátumnak az <cmd>strftime</cmd> függvény által elfogadhatónak kell lennie, például: <var>%A %d/%m/%y</var>."
+
+#: C/forms.page:51(p)
+msgid "The following example script shows how to create a forms dialog:"
+msgstr "A következő példa parancsfájl bemutatja az űrlapok ablak létrehozását:"
+
+#: C/forms.page:55(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nzenity --forms --title=\"Add Friend\" \\\n\t--text=\"Enter information about your friend.\" \\\n\t--separator=\",\" \\\n\t--add-entry=\"First Name\" \\\n\t--add-entry=\"Family Name\" \\\n\t--add-entry=\"Email\" \\\n\t--add-calendar=\"Birthday\" &gt;&gt; addr.csv\n\ncase $? in\n    0)\n        echo \"Friend added.\";;\n    1)\n        echo \"No friend added.\"\n\t;;\n    -1)\n        echo \"An unexpected error has occurred.\"\n\t;;\nesac\n"
+msgstr "\n#!/bin/sh\n\nzenity --forms --title=\"Ismerős felvétele\" \\\n\t--text=\"Adja meg az ismerősével kapcsolatos információkat.\" \\\n\t--separator=\",\" \\\n\t--add-entry=\"Utónév\" \\\n\t--add-entry=\"Vezetéknév\" \\\n\t--add-entry=\"E-mail cím\" \\\n\t--add-calendar=\"Születésnap\" &gt;&gt; cím.csv\n\ncase $? in\n    0)\n        echo \"Ismerős felvéve.\";;\n    1)\n        echo \"Az ismerős nem lett felvéve.\"\n\t;;\n    -1)\n        echo \"Váratlan hiba történt.\"\n\t;;\nesac\n"
+
+#: C/forms.page:79(title)
+msgid "Forms Dialog Example"
+msgstr "Példa űrlapok ablak"
+
+#: C/forms.page:80(desc)
+msgid "<app>Zenity</app> forms dialog example"
+msgstr "<app>Zenity</app> példa űrlapok ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/file-selection.page:68(None)
+msgid "@@image: 'figures/zenity-fileselection-screenshot.png'; md5=bbba2652577f14ab4719f55a2ff57073"
+msgstr "@@image: 'figures/zenity-fileselection-screenshot.png'; md5=bbba2652577f14ab4719f55a2ff57073"
+
+#: C/file-selection.page:6(desc)
+msgid "Use the <cmd>--file-selection</cmd> option."
+msgstr "A <cmd>--file-selection</cmd> kapcsoló használata."
+
+#: C/file-selection.page:8(title)
+msgid "File Selection Dialog"
+msgstr "Fájlválasztó ablak"
+
+#: C/file-selection.page:9(p)
+msgid "Use the <cmd>--file-selection</cmd> option to create a file selection dialog. <app>Zenity</app> returns the selected files or directories to standard output. The default mode of the file selection dialog is open."
+msgstr "A <cmd>--file-selection</cmd> kapcsolóval fájlválasztó ablakot hozhat létre. A <app>Zenity</app> a kiválasztott fájlokat vagy könyvtárakat a szabványos kimenetre írja ki. A fájlválasztó ablak alapértelmezett módja a megnyitás."
+
+#: C/file-selection.page:13(p)
+msgid "The file selection dialog supports the following options:"
+msgstr "A fájlválasztó ablak a következő kapcsolókat támogatja:"
+
+#: C/file-selection.page:21(p)
+msgid "Specifies the file or directory that is selected in the file selection dialog when the dialog is first shown."
+msgstr "Megadja a fájlválasztó ablak első megjelenítésekor az ablakban megjelenő fájlt vagy könyvtárat."
+
+#: C/file-selection.page:25(cmd)
+msgid "--multiple"
+msgstr "--multiple"
+
+#: C/file-selection.page:26(p)
+msgid "Allows the selection of multiple filenames in the file selection dialog."
+msgstr "Lehetővé teszi több fájlnév kiválasztását a fájlválasztó ablakban."
+
+#: C/file-selection.page:30(cmd)
+msgid "--directory"
+msgstr "--directory"
+
+#: C/file-selection.page:31(p)
+msgid "Allows only selection of directories in the file selection dialog."
+msgstr "Csak könyvtárak kiválasztását teszi lehetővé a fájlválasztó ablakban."
+
+#: C/file-selection.page:35(cmd)
+msgid "--save"
+msgstr "--save"
+
+#: C/file-selection.page:36(p)
+msgid "Set the file selection dialog into save mode."
+msgstr "A fájlválasztó ablak mentés módba állítása."
+
+#: C/file-selection.page:41(p)
+msgid "Specifies the string that is used to divide the returned list of filenames."
+msgstr "Megadja a visszaadott fájlnevek listájának elválasztására használt karakterláncot."
+
+#: C/file-selection.page:46(p)
+msgid "The following example script shows how to create a file selection dialog:"
+msgstr "A következő példa parancsfájl bemutatja a fájlválasztó ablak létrehozását:"
+
+#: C/file-selection.page:50(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nFILE=`zenity --file-selection --title=\"Select a File\"`\n\ncase $? in\n         0)\n                echo \"\\\"$FILE\\\" selected.\";;\n         1)\n                echo \"No file selected.\";;\n        -1)\n                echo \"An unexpected error has occurred.\";;\nesac\n"
+msgstr "\n#!/bin/sh\n\nFILE=`zenity --file-selection --title=\"Válasszon egy fájlt\"`\n\ncase $? in\n         0)\n                echo \"\\\"$FILE\\\" kiválasztva.\";;\n         1)\n                echo \"Nincs fájl kiválasztva.\";;\n        -1)\n                echo \"Váratlan hiba történt.\";;\nesac\n"
+
+#: C/file-selection.page:66(title)
+msgid "File Selection Dialog Example"
+msgstr "Példa fájlválasztó ablak"
+
+#: C/file-selection.page:67(desc)
+msgid "<app>Zenity</app> file selection dialog example"
+msgstr "<app>Zenity</app> példa fájlválasztó ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/error.page:28(None)
+msgid "@@image: 'figures/zenity-error-screenshot.png'; md5=a4b287f89625cfd54ca38bc404d8bdf6"
+msgstr "@@image: 'figures/zenity-error-screenshot.png'; md5=a4b287f89625cfd54ca38bc404d8bdf6"
+
+#: C/error.page:6(desc)
+msgid "Use the <cmd>--error</cmd> option."
+msgstr "A <cmd>--error</cmd> kapcsoló használata."
+
+#: C/error.page:8(title)
+msgid "Error Dialog"
+msgstr "Hiba ablak"
+
+#: C/error.page:9(p)
+msgid "Use the <cmd>--error</cmd> option to create an error dialog."
+msgstr "A <cmd>--error</cmd> kapcsolóval hiba ablakot hozhat létre. "
+
+#: C/error.page:13(p)
+msgid "The following example script shows how to create an error dialog:"
+msgstr "A következő példa parancsfájl bemutatja a hiba ablak létrehozását:"
+
+#: C/error.page:17(code)
+#, no-wrap
+msgid "\n#!/bin/bash\n\nzenity --error \\\n--text=\"Could not find /var/log/syslog.\"\n"
+msgstr "\n#!/bin/bash\n\nzenity --error \\\n--text=\"A /var/log/syslog nem található.\"\n"
+
+#: C/error.page:26(title)
+msgid "Error Dialog Example"
+msgstr "Példa hiba ablak"
+
+#: C/error.page:27(desc)
+msgid "<app>Zenity</app> error dialog example"
+msgstr "<app>Zenity</app> példa hiba ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/entry.page:55(None)
+msgid "@@image: 'figures/zenity-entry-screenshot.png'; md5=bae6bf4342a66a3900deb15bde82ff42"
+msgstr "@@image: 'figures/zenity-entry-screenshot.png'; md5=bae6bf4342a66a3900deb15bde82ff42"
+
+#: C/entry.page:6(desc)
+msgid "Use the <cmd>--entry</cmd> option."
+msgstr "A <cmd>--entry</cmd> kapcsoló használata."
+
+#: C/entry.page:8(title)
+msgid "Text Entry Dialog"
+msgstr "Szövegbeviteli ablak"
+
+#: C/entry.page:9(p)
+msgid "Use the <cmd>--entry</cmd> option to create a text entry dialog. <app>Zenity</app> returns the contents of the text entry to standard output."
+msgstr "A <cmd>--entry</cmd> kapcsoló használatával szövegbeviteli ablakot hozhat létre. A <app>Zenity</app> a szövegbeviteli mező tartalmát kiírja a szabványos kimenetre."
+
+#: C/entry.page:12(p)
+msgid "The text entry dialog supports the following options:"
+msgstr "A szövegbeviteli ablak a következő kapcsolókat támogatja:"
+
+#: C/entry.page:20(p)
+msgid "Specifies the text that is displayed in the text entry dialog."
+msgstr "A szövegbeviteli ablakban megjelenítendő szöveg megadása."
+
+#: C/entry.page:24(title)
+msgid "<cmd>--entry-text</cmd>=<var>text</var>"
+msgstr "<cmd>--entry-text</cmd>=<var>szöveg</var>"
+
+#: C/entry.page:25(p)
+msgid "Specifies the text that is displayed in the entry field of the text entry dialog."
+msgstr "A szövegbeviteli ablak beviteli mezőjében megjelenítendő szöveg megadása."
+
+#: C/entry.page:29(cmd)
+msgid "--hide-text"
+msgstr "--hide-text"
+
+#: C/entry.page:30(p)
+msgid "Hides the text in the entry field of the text entry dialog."
+msgstr "A szöveg elrejtése a szövegbeviteli ablak beviteli mezőjében."
+
+#: C/entry.page:35(p)
+msgid "The following example script shows how to create a text entry dialog:"
+msgstr "A következő példa parancsfájl bemutatja a szövegbeviteli ablak létrehozását:"
+
+#: C/entry.page:39(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nif zenity --entry \\\n--title=\"Add new profile\" \\\n--text=\"Enter name of new profile:\" \\\n--entry-text \"NewProfile\"\n  then echo $?\n  else echo \"No name entered\"\nfi\n"
+msgstr "\n#!/bin/sh\n\nif zenity --entry \\\n--title=\"Új profil hozzáadása\" \\\n--text=\"Adja meg az új profil nevét:\" \\\n--entry-text \"ÚjProfil\"\n  then echo $?\n  else echo \"Nem adott meg nevet\"\nfi\n"
+
+#: C/entry.page:53(title)
+msgid "Text Entry Dialog Example"
+msgstr "Példa szövegbeviteli ablak"
+
+#: C/entry.page:54(desc)
+msgid "<app>Zenity</app> text entry dialog example"
+msgstr "<app>Zenity</app> példa szövegbeviteli ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/color-selection.page:52(None)
+msgid "@@image: 'figures/zenity-colorselection-screenshot.png'; md5=febe3f417acea789c9db628fbe44f798"
+msgstr "@@image: 'figures/zenity-colorselection-screenshot.png'; md5=febe3f417acea789c9db628fbe44f798"
+
+#: C/color-selection.page:6(desc)
+msgid "Use the <cmd>--color-selection</cmd> option."
+msgstr "A <cmd>--color-selection</cmd> kapcsoló használata."
+
+#: C/color-selection.page:8(title)
+msgid "Color Selection Dialog"
+msgstr "Színválasztó ablak"
+
+#: C/color-selection.page:9(p)
+msgid "Use the <cmd>--color-selection</cmd> option to create a color selection dialog."
+msgstr "A <cmd>--color-selection</cmd> kapcsoló használatával színválasztó ablakot hozhat létre."
+
+#: C/color-selection.page:12(p)
+msgid "The color selection dialog supports the following options:"
+msgstr "A színválasztó ablak a következő kapcsolókat támogatja:"
+
+#: C/color-selection.page:19(title)
+msgid "<cmd>--color</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--color</cmd>=<var>érték</var>"
+
+#: C/color-selection.page:20(p)
+msgid "Set the initial color.(ex: #FF0000)"
+msgstr "A kiinduló szín beállítása (például: #FF0000)"
+
+#: C/color-selection.page:24(cmd)
+msgid "--show-palette"
+msgstr "--show-palette"
+
+#: C/color-selection.page:25(p)
+msgid "Show the palette."
+msgstr "A paletta megjelenítése."
+
+#: C/color-selection.page:30(p)
+msgid "The following example script shows how to create a color selection dialog:"
+msgstr "A következő példa parancsfájl bemutatja a színválasztó ablak létrehozását:"
+
+#: C/color-selection.page:34(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\nCOLOR=`zenity --color-selection --show-palette`\n\ncase $? in\n         0)\n\t\techo \"You selected $COLOR.\";;\n         1)\n                echo \"No color selected.\";;\n        -1)\n                echo \"An unexpected error has occurred.\";;\nesac\n"
+msgstr "\n#!/bin/sh\n\nCOLOR=`zenity --color-selection --show-palette`\n\ncase $? in\n         0)\n\t\techo \"Ezt a színt választotta: $COLOR.\";;\n         1)\n                echo \"Nem választott színt.\";;\n        -1)\n                echo \"Váratlan hiba történt.\";;\nesac\n"
+
+#: C/color-selection.page:50(title)
+msgid "Color Selection Dialog Example"
+msgstr "Példa színválasztó ablak"
+
+#: C/color-selection.page:51(desc)
+msgid "<app>Zenity</app> color selection dialog example"
+msgstr "<app>Zenity</app> példa színválasztó ablak"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/calendar.page:66(None)
+msgid "@@image: 'figures/zenity-calendar-screenshot.png'; md5=92bf5317d799665acf0d4005cee184c2"
+msgstr "@@image: 'figures/zenity-calendar-screenshot.png'; md5=92bf5317d799665acf0d4005cee184c2"
+
+#: C/calendar.page:6(desc)
+msgid "Use the <cmd>--calendar</cmd> option."
+msgstr "A <cmd>--calendar</cmd> kapcsoló használata."
+
+#: C/calendar.page:8(title)
+msgid "Calendar Dialog"
+msgstr "Naptár ablak"
+
+#: C/calendar.page:9(p)
+msgid "Use the <cmd>--calendar</cmd> option to create a calendar dialog. Zenity returns the selected date to standard output. If no date is specified on the command line, the dialog uses the current date."
+msgstr "A <cmd>--calendar</cmd> kapcsoló használatával naptár ablakot hozhat létre. A Zenity a kiválasztott dátumot a szabványos kimenetre írja. Ha nincs megadva dátum a parancssorban, akkor az ablak az aktuális dátumot használja."
+
+#: C/calendar.page:12(p)
+msgid "The calendar dialog supports the following options:"
+msgstr "A naptár ablak a következő kapcsolókat támogatja:"
+
+#: C/calendar.page:20(p)
+msgid "Specifies the text that is displayed in the calendar dialog."
+msgstr "A naptár ablakban megjelenítendő szöveg megadása."
+
+#: C/calendar.page:24(title)
+msgid "<cmd>--day</cmd>=<var>day</var>"
+msgstr "<cmd>--day</cmd>=<var>nap</var>"
+
+#: C/calendar.page:25(p)
+msgid "Specifies the day that is selected in the calendar dialog. day must be a number between 1 and 31 inclusive."
+msgstr "Megadja a naptár ablakban kiválasztott napot. A napnak 1 és 31 között kell lennie, ezeket is beleértve."
+
+#: C/calendar.page:29(title)
+msgid "<cmd>--month</cmd>=<var>month</var>"
+msgstr "<cmd>--month</cmd>=<var>hónap</var>"
+
+#: C/calendar.page:30(p)
+msgid "Specifies the month that is selected in the calendar dialog. month must be a number between 1 and 12 inclusive."
+msgstr "Megadja a naptár ablakban kiválasztott hónapot. A hónapnak 1 és 12 között kell lennie, ezeket is beleértve."
+
+#: C/calendar.page:34(title)
+msgid "<cmd>--year</cmd>=<var>year</var>"
+msgstr "<cmd>--year</cmd>=<var>év</var>"
+
+#: C/calendar.page:35(p)
+msgid "Specifies the year that is selected in the calendar dialog."
+msgstr "Megadja a naptár ablakban kiválasztott évet."
+
+#: C/calendar.page:39(title)
+msgid "<cmd>--date-format</cmd>=<var>format</var>"
+msgstr "<cmd>--date-format</cmd>=<var>formátum</var>"
+
+#: C/calendar.page:40(p)
+msgid "Specifies the format that is returned from the calendar dialog after date selection. The default format depends on your locale. Format must be a format that is acceptable to the <cmd>strftime</cmd> function, for example <var>%A %d/%m/%y</var>."
+msgstr "A naptár ablakból a dátum választása után visszaadott dátum formátumát adja meg. Az alapértelmezett formátum függ a területi beállítástól. A formátumnak az <cmd>strftime</cmd> függvény által elfogadhatónak kell lennie, például: <var>%A %d/%m/%y</var>."
+
+#: C/calendar.page:45(p)
+msgid "The following example script shows how to create a calendar dialog:"
+msgstr "A következő példa parancsfájl bemutatja a naptár ablak létrehozását:"
+
+#: C/calendar.page:49(code)
+#, no-wrap
+msgid "\n#!/bin/sh\n\n\nif zenity --calendar \\\n--title=\"Select a Date\" \\\n--text=\"Click on a date to select that date.\" \\\n--day=10 --month=8 --year=2004\n  then echo $?\n  else echo \"No date selected\"\nfi\n"
+msgstr "\n#!/bin/sh\n\n\nif zenity --calendar \\\n--title=\"Válasszon egy dátumot\" \\\n--text=\"Kattintson egy dátumra annak kiválasztásához.\" \\\n--day=10 --month=8 --year=2004\n  then echo $?\n  else echo \"Nincs kiválasztva dátum\"\nfi\n"
+
+#: C/calendar.page:64(title)
+msgid "Calendar Dialog Example"
+msgstr "Példa naptár ablak"
+
+#: C/calendar.page:65(desc)
+msgid "Zenity calendar dialog example"
+msgstr "Zenity példa naptár ablak"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/index.page:0(None)
+msgid "translator-credits"
+msgstr "Kelemen Gábor <kelemeng at gnome dot hu>, 2012."
+
