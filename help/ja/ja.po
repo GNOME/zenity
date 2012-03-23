@@ -1,0 +1,2195 @@
+#
+# Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2011, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: zenity master\n"
+"POT-Creation-Date: 2012-03-22 06:57+0000\n"
+"PO-Revision-Date: 2012-03-22 22:47+0900\n"
+"Last-Translator: Yasumichi Akahoshi <yasumichi@vinelinux.org>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/warning.page:28(None)
+msgid ""
+"@@image: 'figures/zenity-warning-screenshot.png'; "
+"md5=146ea22fcd7104b2f9ed7ca0cc25f51d"
+msgstr ""
+"@@image: 'figures/zenity-warning-screenshot.png'; "
+"md5=0191dca893e44d4fce778742649fe9f1"
+
+#: C/warning.page:6(desc)
+msgid "Use the <cmd>--warning</cmd> option."
+msgstr "<cmd>--warning</cmd> オプションの使用"
+
+#: C/warning.page:8(title)
+msgid "Warning Dialog"
+msgstr "警告ダイアログ"
+
+#: C/warning.page:9(p)
+msgid "Use the <cmd>--warning</cmd> option to create a warning dialog."
+msgstr ""
+"警告ダイアログを作成するには、<cmd>--warning</cmd> というオプションを使ってく"
+"ださい。"
+
+#: C/warning.page:13(p)
+msgid "The following example script shows how to create a warning dialog:"
+msgstr "以下のスクリプトの例で警告ダイアログの作成方法を示します。"
+
+#: C/warning.page:17(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --warning \\\n"
+"--text=\"Disconnect the power cable to avoid electrical shock.\"\n"
+msgstr ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --warning \\\n"
+"--text=\"電気ショックを避けるために電源ケーブルの接続を解除しました。\"\n"
+
+#: C/warning.page:26(title)
+msgid "Warning Dialog Example"
+msgstr "警告ダイアログの例"
+
+#: C/warning.page:27(desc)
+msgid "<app>Zenity</app> warning dialog example"
+msgstr "<app>Zenity</app> 警告ダイアログの例"
+
+#: C/usage.page:6(desc)
+msgid ""
+"You can use <app>Zenity</app> to create simple dialogs that interact "
+"graphically with the user."
+msgstr ""
+"<app>Zenity</app> を使えば、ユーザーと視覚的に対話する簡単なダイアログを作成"
+"できます。"
+
+#: C/usage.page:8(title)
+msgid "Usage"
+msgstr "使用法"
+
+#: C/usage.page:9(p)
+msgid ""
+"When you write scripts, you can use <app>Zenity</app> to create simple "
+"dialogs that interact graphically with the user, as follows:"
+msgstr ""
+"スクリプトを書く際に <app>Zenity</app> を使えば、以下のようにユーザーと視覚的"
+"に対話する簡単なダイアログを作成できます。"
+
+#: C/usage.page:14(p)
+msgid ""
+"You can create a dialog to obtain information from the user. For example, "
+"you can prompt the user to select a date from a calendar dialog, or to "
+"select a file from a file selection dialog."
+msgstr ""
+"ユーザーからの情報を取得するダイアログを作成できます。たとえば、カレンダーか"
+"ら日付を選択したり、ファイル選択ダイアログからファイルを選択したりするように"
+"ユーザーに求めることができます。"
+
+#: C/usage.page:19(p)
+msgid ""
+"You can create a dialog to provide the user with information. For example, "
+"you can use a progress dialog to indicate the current status of an "
+"operation, or use a warning message dialog to alert the user."
+msgstr ""
+"ユーザーに情報を提供するダイアログが作成できます。たとえば、処理の現在の状況"
+"を示す進捗表示ダイアログやユーザーに注意を促す警告メッセージダイアログを使用"
+"できます。"
+
+#: C/usage.page:24(p)
+msgid ""
+"When the user closes the dialog, <app>Zenity</app> prints the text produced "
+"by the dialog to standard output."
+msgstr ""
+"ユーザーがダイアログを閉じると <app>Zenity</app> は標準出力へダイアログにより"
+"作成されたテキストを出力します。"
+
+#: C/usage.page:29(p)
+msgid ""
+"When you write <app>Zenity</app> commands, ensure that you place quotation "
+"marks around each argument."
+msgstr ""
+"<app>Zenity</app> コマンドを書く時は、確実に各引数を引用符で囲むようにしてく"
+"ださい。"
+
+#: C/usage.page:32(p)
+msgid "For example, use:"
+msgstr "たとえば、次のように使います。"
+
+#: C/usage.page:33(screen)
+#, no-wrap
+msgid "zenity --calendar --title=\"Holiday Planner\""
+msgstr "zenity --calendar --title=\"Holiday Planner\""
+
+#: C/usage.page:34(p)
+msgid "Do not use:"
+msgstr "次のように使ってはいけません。"
+
+#: C/usage.page:35(screen)
+#, no-wrap
+msgid "zenity --calendar --title=Holiday Planner"
+msgstr "zenity --calendar --title=Holiday Planner"
+
+#: C/usage.page:36(p)
+msgid "If you do not use quotation marks, you might get unexpected results."
+msgstr "引用符を利用しない場合、予期せぬ結果を招く恐れがあります。"
+
+#: C/usage.page:42(title)
+msgid "Access Keys"
+msgstr "アクセスキー"
+
+#: C/usage.page:43(p)
+msgid ""
+"An access key is a key that enables you to perform an action from the "
+"keyboard rather than use the mouse to choose a command from a menu or "
+"dialog. Each access key is identified by an underlined letter on a menu or "
+"dialog option."
+msgstr ""
+"アクセスキーは、メニューやダイアログからマウスでコマンドを選択する代わりに"
+"キーボードで操作ができるようにするキーです。それぞれのアクセスキーは、メ"
+"ニューやダイアログのオプションで下線によって識別されます。"
+
+#: C/usage.page:46(p)
+msgid ""
+"Some <app>Zenity</app> dialogs support the use of access keys. To specify "
+"the character to use as the access key, place an underscore before that "
+"character in the text of the dialog. The following example shows how to "
+"specify the letter 'C' as the access key:"
+msgstr ""
+"いくつかの <app>Zenity</app> ダイアログは、アクセスキーの利用をサポートしてい"
+"ます。アクセスキーとして利用する文字を指定するには、ダイアログのテキスト内に"
+"あるアクセスキーにしたい文字の前にアンダースコア (_) を置いてください。以下の"
+"例は、アクセスキーとして文字 'C' を指定する方法を示しています。"
+
+#: C/usage.page:49(input)
+msgid "\"_Choose a name\"."
+msgstr "\"名前の選択(_C)\""
+
+#: C/usage.page:53(title)
+msgid "Exit Codes"
+msgstr "終了コード"
+
+#: C/usage.page:54(p)
+msgid "Zenity returns the following exit codes:"
+msgstr "Zenity は、以下の終了コードを返します。"
+
+#: C/usage.page:62(p)
+msgid "Exit Code"
+msgstr "終了コード"
+
+#: C/usage.page:64(p)
+msgid "Description"
+msgstr "説明"
+
+#: C/usage.page:70(var)
+msgid "0"
+msgstr "0"
+
+#: C/usage.page:73(p)
+msgid ""
+"The user has pressed either <gui style=\"button\">OK</gui> or <gui style="
+"\"button\">Close</gui>."
+msgstr ""
+"ユーザーが、<gui style=\"button\">OK</gui> か <gui style=\"button\">閉じる</"
+"gui>を押しました。"
+
+#: C/usage.page:78(var)
+msgid "1"
+msgstr "1"
+
+#: C/usage.page:81(p)
+msgid ""
+"The user has either pressed <gui style=\"button\">Cancel</gui>, or used the "
+"window functions to close the dialog."
+msgstr ""
+"ユーザーが<gui style=\"button\">キャンセル</gui>を押したか、ウィンドウの機能"
+"を利用してダイアログを閉じました。"
+
+#: C/usage.page:86(var)
+msgid "-1"
+msgstr "-1"
+
+#: C/usage.page:89(p)
+msgid "An unexpected error has occurred."
+msgstr "予期しないエラーが発生しました。"
+
+#: C/usage.page:94(var)
+msgid "5"
+msgstr "5"
+
+#: C/usage.page:97(p)
+msgid "The dialog has been closed because the timeout has been reached."
+msgstr "タイムアウトに達したため、ダイアログが閉じました。"
+
+#: C/usage.page:109(title)
+msgid "General Options"
+msgstr "汎用的なオプション"
+
+#: C/usage.page:111(p)
+msgid "All Zenity dialogs support the following general options:"
+msgstr ""
+"すべての Zenity ダイアログは、以下の汎用的なオプションをサポートしています。"
+
+#: C/usage.page:118(title)
+msgid "<cmd>--title</cmd>=<var>title</var>"
+msgstr "<cmd>--title</cmd>=<var>タイトル</var>"
+
+#: C/usage.page:119(p)
+msgid "Specifies the title of a dialog."
+msgstr "ダイアログのタイトルを指定します。"
+
+#: C/usage.page:123(title)
+msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
+msgstr "<cmd>--window-icon</cmd>=<var>アイコンのパス</var>"
+
+#: C/usage.page:124(p)
+msgid ""
+"Specifies the icon that is displayed in the window frame of the dialog. "
+"There are 4 stock icons also available by providing the following keywords - "
+"'info', 'warning', 'question' and 'error'."
+msgstr ""
+"ダイアログのウィンドウフレームに表示するアイコンを指定します。「info」、"
+"「warning」、「question」および「error」というキーワードで提供される 4 つのス"
+"トックアイコンも利用可能です。"
+
+#: C/usage.page:131(title)
+msgid "<cmd>--width</cmd>=<var>width</var>"
+msgstr "<cmd>--width</cmd>=<var>幅</var>"
+
+#: C/usage.page:132(p)
+msgid "Specifies the width of the dialog."
+msgstr "ダイアログの幅を指定します。"
+
+#: C/usage.page:136(title)
+msgid "<cmd>--height</cmd>=<var>height</var>"
+msgstr "<cmd>--height</cmd>=<var>高さ</var>"
+
+#: C/usage.page:137(p)
+msgid "Specifies the height of the dialog."
+msgstr "ダイアログの高さを指定します。"
+
+#: C/usage.page:141(title)
+msgid "<cmd>--timeout</cmd>=<var>timeout</var>"
+msgstr "<cmd>--timeout</cmd>=<var>タイムアウト</var>"
+
+#: C/usage.page:142(p)
+msgid "Specifies the timeout in seconds after which the dialog is closed."
+msgstr "ダイアログが閉じるまでのタイムアウト値を秒数で指定します。"
+
+#: C/usage.page:152(title)
+msgid "Help Options"
+msgstr "ヘルプのオプション"
+
+#: C/usage.page:154(p)
+msgid "Zenity provides the following help options:"
+msgstr "Zenity は、以下のヘルプのオプションを提供しています。"
+
+#: C/usage.page:161(cmd)
+msgid "--help"
+msgstr "--help"
+
+#: C/usage.page:162(p)
+msgid "Displays shortened help text."
+msgstr "簡単なヘルプを表示します。"
+
+#: C/usage.page:166(cmd)
+msgid "--help-all"
+msgstr "--help-all"
+
+#: C/usage.page:167(p)
+msgid "Displays full help text for all dialogs."
+msgstr "すべてのダイアログに関する完全なヘルプを表示します。"
+
+#: C/usage.page:171(cmd)
+msgid "--help-general"
+msgstr "--help-general"
+
+#: C/usage.page:172(p)
+msgid "Displays help text for general dialog options."
+msgstr "汎用的なオプションを表示します。"
+
+#: C/usage.page:176(cmd)
+msgid "--help-calendar"
+msgstr "--help-calendar"
+
+#: C/usage.page:177(p)
+msgid "Displays help text for calendar dialog options."
+msgstr "カレンダーダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:181(cmd)
+msgid "--help-entry"
+msgstr "--help-entry"
+
+#: C/usage.page:182(p)
+msgid "Displays help text for text entry dialog options."
+msgstr "テキスト入力ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:186(cmd)
+msgid "--help-error"
+msgstr "--help-error"
+
+#: C/usage.page:187(p)
+msgid "Displays help text for error dialog options."
+msgstr "エラーダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:191(cmd)
+msgid "--help-info"
+msgstr "--help-info"
+
+#: C/usage.page:192(p)
+msgid "Displays help text for information dialog options."
+msgstr "情報ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:196(cmd)
+msgid "--help-file-selection"
+msgstr "--help-file-selection"
+
+#: C/usage.page:197(p)
+msgid "Displays help text for file selection dialog options."
+msgstr "ファイル選択ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:201(cmd)
+msgid "--help-list"
+msgstr "--help-list"
+
+#: C/usage.page:202(p)
+msgid "Displays help text for list dialog options."
+msgstr "一覧ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:206(cmd)
+msgid "--help-notification"
+msgstr "--help-notification"
+
+#: C/usage.page:207(p)
+msgid "Displays help text for notification icon options."
+msgstr "通知アイコンのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:211(cmd)
+msgid "--help-progress"
+msgstr "--help-progress"
+
+#: C/usage.page:212(p)
+msgid "Displays help text for progress dialog options."
+msgstr "進捗表示ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:216(cmd)
+msgid "--help-question"
+msgstr "--help-question"
+
+#: C/usage.page:217(p)
+msgid "Displays help text for question dialog options."
+msgstr "質問ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:221(cmd)
+msgid "--help-warning"
+msgstr "--help-warning"
+
+#: C/usage.page:222(p)
+msgid "Displays help text for warning dialog options."
+msgstr "警告ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:226(cmd)
+msgid "--help-text-info"
+msgstr "--help-text-info"
+
+#: C/usage.page:227(p)
+msgid "Displays help for text information dialog options."
+msgstr "テキスト情報ダイアログのオプションに関するヘルプを表示します。"
+
+#: C/usage.page:231(cmd)
+msgid "--help-misc"
+msgstr "--help-misc"
+
+#: C/usage.page:232(p)
+msgid "Displays help for miscellaneous options."
+msgstr "種々雑多なオプションに関するヘルプを表示します。"
+
+#: C/usage.page:236(cmd)
+msgid "--help-gtk"
+msgstr "--help-gtk"
+
+#: C/usage.page:237(p)
+msgid "Displays help for GTK+ options."
+msgstr "GTK+ のオプションに関するヘルプを表示します。"
+
+#: C/usage.page:247(title)
+msgid "Miscellaneous Options"
+msgstr "種々雑多なオプション"
+
+#: C/usage.page:249(p)
+msgid "Zenity also provides the following miscellaneous options:"
+msgstr "Zenity は、以下のような種々雑多なオプションも提供しています。"
+
+#: C/usage.page:256(cmd)
+msgid "--about"
+msgstr "--about"
+
+#: C/usage.page:257(p)
+msgid ""
+"Displays the <gui>About Zenity</gui> dialog, which contains Zenity version "
+"information, copyright information, and developer information."
+msgstr ""
+"Zenity のバージョン情報、著作権情報および開発者の情報を含んだ「<gui>Zenity に"
+"ついて</gui>」というダイアログを表示します。"
+
+#: C/usage.page:261(cmd)
+msgid "--version"
+msgstr "--version"
+
+#: C/usage.page:262(p)
+msgid "Displays the version number of Zenity."
+msgstr "Zenity のバージョン番号を標準出力に表示します。"
+
+#: C/usage.page:272(title)
+msgid "GTK+ Options"
+msgstr "GTK+ のオプション"
+
+#: C/usage.page:274(p)
+msgid ""
+"Zenity supports the standard GTK+ options. For more information about the GTK"
+"+ options, execute the <cmd>zenity --help-gtk</cmd> command."
+msgstr ""
+"Zenity は、標準的な GTK+ のオプションをサポートしています。GTK+ のオプション"
+"についての詳細は、<cmd>zenity --help-gtk</cmd> というコマンドを実行して確認し"
+"てください。"
+
+#: C/usage.page:283(title)
+msgid "Environment Variables"
+msgstr "環境変数"
+
+#: C/usage.page:285(p)
+msgid ""
+"Normally, Zenity detects the terminal window from which it was launched and "
+"keeps itself above that window. This behavior can be disabled by unsetting "
+"the <var>WINDOWID</var> environment variable."
+msgstr ""
+"通常、Zenity は自身が起動された端末ウィンドウを検出し、そのウィンドウより前面"
+"に位置し続けます。この振る舞いは、<var>WINDOWID</var> という環境変数の定義を"
+"解除することにより、無効にできます。"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/text.page:83(None)
+msgid ""
+"@@image: 'figures/zenity-text-screenshot.png'; "
+"md5=79446b388fa6c3c3a619c8d6565b9f61"
+msgstr ""
+"@@image: 'figures/zenity-text-screenshot.png'; "
+"md5=185d6411e52d5b14536ef318302cc1d2"
+
+#: C/text.page:6(desc)
+msgid "Use the <cmd>--text-info</cmd> option."
+msgstr "<cmd>--text-info</cmd> オプションの使用"
+
+#: C/text.page:8(title)
+msgid "Text Information Dialog"
+msgstr "テキスト情報ダイアログ"
+
+#: C/text.page:9(p)
+msgid ""
+"Use the <cmd>--text-info</cmd> option to create a text information dialog."
+msgstr ""
+"テキスト情報ダイアログを作成するには、<cmd>--text-info</cmd> というオプション"
+"を使ってください。"
+
+#: C/text.page:13(p)
+msgid "The text information dialog supports the following options:"
+msgstr "テキスト情報ダイアログは、以下のオプションをサポートしています。"
+
+#: C/text.page:20(title) C/file-selection.page:20(title)
+msgid "<cmd>--filename</cmd>=<var>filename</var>"
+msgstr "<cmd>--filename</cmd>=<var>ファイル名</var>"
+
+#: C/text.page:21(p)
+msgid "Specifies a file that is loaded in the text information dialog."
+msgstr "テキスト情報ダイアログに読み込むファイルを指定します。"
+
+#: C/text.page:25(cmd) C/list.page:46(cmd)
+msgid "--editable"
+msgstr "--editable"
+
+#: C/text.page:26(p)
+msgid ""
+"Allows the displayed text to be edited. The edited text is returned to "
+"standard output when the dialog is closed."
+msgstr ""
+"表示されたテキストの編集を許可します。ダイアログを閉じると標準出力へ編集され"
+"たテキストが返却されます。"
+
+#: C/text.page:30(title)
+msgid "<cmd>--font</cmd>=<var>FONT</var>"
+msgstr "<cmd>--font</cmd>=<var>フォント</var>"
+
+#: C/text.page:31(p)
+msgid "Specifies the text font."
+msgstr "テキストのフォントを指定します。"
+
+#: C/text.page:35(title)
+msgid "<cmd>--checkbox</cmd>=<var>TEXT</var>"
+msgstr "<cmd>--checkbox</cmd>=<var>テキスト</var>"
+
+#: C/text.page:36(p)
+msgid "Enable a checkbox for use like a 'I read and accept the terms.'"
+msgstr ""
+"「文書を読み承諾します。」というように使うチェックボックスを有効にします。"
+
+#: C/text.page:40(cmd)
+msgid "--html"
+msgstr "--html"
+
+#: C/text.page:41(p)
+msgid "Enable html support."
+msgstr "HTML サポートを有効にします。"
+
+#: C/text.page:45(title)
+msgid "<cmd>--url</cmd>=<var>URL</var>"
+msgstr "<cmd>--url</cmd>=<var>URL</var>"
+
+#: C/text.page:46(p)
+msgid "Sets an url instead of a file. Only works if you use --html option."
+msgstr ""
+"ファイルの代わりに URL を指定します。--html オプションを利用している場合にの"
+"み機能します。"
+
+#: C/text.page:51(p)
+msgid ""
+"The following example script shows how to create a text information dialog:"
+msgstr "以下のスクリプトの例でテキスト情報ダイアログの作成方法を示します。"
+
+#: C/text.page:55(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"# You must place file \"COPYING\" in same folder of this script.\n"
+"FILE=`dirname $0`/COPYING\n"
+"\n"
+"zenity --text-info \\\n"
+"       --title=\"License\" \\\n"
+"       --filename=$FILE \\\n"
+"       --checkbox=\"I read and accept the terms.\"\n"
+"\n"
+"case $? in\n"
+"    0)\n"
+"        echo \"Start installation!\"\n"
+"\t# next step\n"
+"\t;;\n"
+"    1)\n"
+"        echo \"Stop installation!\"\n"
+"\t;;\n"
+"    -1)\n"
+"        echo \"An unexpected error has occurred.\"\n"
+"\t;;\n"
+"esac\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"# You must place file \"COPYING\" in same folder of this script.\n"
+"FILE=`dirname $0`/COPYING\n"
+"\n"
+"zenity --text-info \\\n"
+"       --title=\"ライセンス\" \\\n"
+"       --filename=$FILE \\\n"
+"       --checkbox=\"文書を読み承諾します。\"\n"
+"\n"
+"case $? in\n"
+"    0)\n"
+"        echo \"インストールを開始します!\"\n"
+"\t# next step\n"
+"\t;;\n"
+"    1)\n"
+"        echo \"インストールを停止します!\"\n"
+"\t;;\n"
+"    -1)\n"
+"        echo \"予期せぬエラーが発生しました。\"\n"
+"\t;;\n"
+"esac\n"
+
+#: C/text.page:81(title)
+msgid "Text Information Dialog Example"
+msgstr "テキスト情報ダイアログの例"
+
+#: C/text.page:82(desc)
+msgid "<app>Zenity</app> text information dialog example"
+msgstr "<app>Zenity</app> テキスト情報ダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/scale.page:77(None)
+msgid ""
+"@@image: 'figures/zenity-scale-screenshot.png'; "
+"md5=d44259a5b5b6e6ba0aceffd8501d0873"
+msgstr ""
+"@@image: 'figures/zenity-scale-screenshot.png'; "
+"md5=7eb046e5edadba17052753d713eea016"
+
+#: C/scale.page:6(desc)
+msgid "Use the <cmd>--scale</cmd> option."
+msgstr "<cmd>--scale</cmd> の使用"
+
+#: C/scale.page:8(title)
+msgid "Scale Dialog"
+msgstr "スケールダイアログ"
+
+#: C/scale.page:9(p)
+msgid "Use the <cmd>--scale</cmd> option to create a scale dialog."
+msgstr ""
+"スケールダイアログを作成するには、<cmd>--scale</cmd> というオプションを使って"
+"ください。"
+
+#: C/scale.page:12(p)
+msgid "The scale dialog supports the following options:"
+msgstr "スケールダイアログは、以下のオプションをサポートしています。"
+
+#: C/scale.page:19(title) C/forms.page:35(title)
+msgid "<cmd>--text</cmd>=<var>TEXT</var>"
+msgstr "<cmd>--text</cmd>=<var>テキスト</var>"
+
+#: C/scale.page:20(p)
+msgid "Set the dialog text. (Default: Adjust the scale value)"
+msgstr "ダイアログのテキストを指定します。(既定値: スケール値の調整)"
+
+#: C/scale.page:24(title)
+msgid "<cmd>--value</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--value</cmd>=<var>値</var>"
+
+#: C/scale.page:25(p)
+msgid ""
+"Set initial value. (Default: 0) You must specify value between minimum value "
+"to maximum value."
+msgstr ""
+"初期値を指定します。 (既定値: 0) 最小値から最大値の間で指定しなければなりませ"
+"ん。"
+
+#: C/scale.page:29(title)
+msgid "<cmd>--min-value</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--min-value</cmd>=<var>値</var>"
+
+#: C/scale.page:30(p)
+msgid "Set minimum value. (Default: 0)"
+msgstr "最小値を指定します。 (既定値: 0)"
+
+#: C/scale.page:34(title)
+msgid "<cmd>--max-value</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--max-value</cmd>=<var>値</var>"
+
+#: C/scale.page:35(p)
+msgid "Set maximum value. (Default: 100)"
+msgstr "最大値を指定します。 (既定値: 100)"
+
+#: C/scale.page:39(title)
+msgid "<cmd>--step</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--step</cmd>=<var>値</var>"
+
+#: C/scale.page:40(p)
+msgid "Set step size. (Default: 1)"
+msgstr "刻み幅を指定します。 (既定値: 1)"
+
+#: C/scale.page:44(cmd)
+msgid "--print-partial"
+msgstr "--print-partial"
+
+#: C/scale.page:45(p)
+msgid "Print value to standard output, whenever a value is changed."
+msgstr "値が変更される度に標準出力へ値を出力します。"
+
+#: C/scale.page:49(cmd)
+msgid "--hide-value"
+msgstr "--hide-value"
+
+#: C/scale.page:50(p)
+msgid "Hide value on dialog."
+msgstr "ダイアログで値を非表示にします。"
+
+#: C/scale.page:55(p)
+msgid "The following example script shows how to create a scale dialog:"
+msgstr "以下のスクリプトの例でスケールダイアログの作成方法を示します。"
+
+#: C/scale.page:59(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"VALUE=`zenity --scale --text=\"Select window transparency.\" --value=50`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"\t\techo \"You selected $VALUE%.\";;\n"
+"         1)\n"
+"                echo \"No value selected.\";;\n"
+"        -1)\n"
+"                echo \"An unexpected error has occurred.\";;\n"
+"esac\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"VALUE=`zenity --scale --text=\"ウィンドウの透過率を指定してください。\" --value=50`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"\t\techo \"$VALUE% が指定されました。\";;\n"
+"         1)\n"
+"                echo \"値が指定されませんでした。\";;\n"
+"        -1)\n"
+"                echo \"予期せぬエラーが発生しました。\";;\n"
+"esac\n"
+
+#: C/scale.page:75(title)
+msgid "Scale Dialog Example"
+msgstr "スケールダイアログの例"
+
+#: C/scale.page:76(desc)
+msgid "<app>Zenity</app> scale dialog example"
+msgstr "<app>Zenity</app> スケールダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/question.page:28(None)
+msgid ""
+"@@image: 'figures/zenity-question-screenshot.png'; "
+"md5=5889e2a57b9d1885f22977587a269610"
+msgstr ""
+"@@image: 'figures/zenity-question-screenshot.png'; "
+"md5=4b62d43128b638a26189cd524a0e8d05"
+
+#: C/question.page:6(desc)
+msgid "Use the <cmd>--question</cmd> option."
+msgstr "<cmd>--question</cmd> オプションの使用"
+
+#: C/question.page:8(title)
+msgid "Question Dialog"
+msgstr "質問ダイアログ"
+
+#: C/question.page:9(p)
+msgid "Use the <cmd>--question</cmd> option to create a question dialog."
+msgstr ""
+"質問ダイアログを作成するには、<cmd>--question</cmd> というオプションを使って"
+"ください。"
+
+#: C/question.page:13(p)
+msgid "The following example script shows how to create a question dialog:"
+msgstr "以下のスクリプトの例で質問ダイアログの作成方法を示します。"
+
+#: C/question.page:17(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --question \\\n"
+"--text=\"Are you sure you wish to proceed?\"\n"
+msgstr ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --question \\\n"
+"--text=\"続行しますか?\"\n"
+
+#: C/question.page:26(title)
+msgid "Question Dialog Example"
+msgstr "質問ダイアログの例"
+
+#: C/question.page:27(desc)
+msgid "<app>Zenity</app> question dialog example"
+msgstr "<app>Zenity</app> 質問ダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/progress.page:77(None)
+msgid ""
+"@@image: 'figures/zenity-progress-screenshot.png'; "
+"md5=75121bbbcb9cc92de4ebf7fbb92f0780"
+msgstr ""
+"@@image: 'figures/zenity-progress-screenshot.png'; "
+"md5=96fde10f17f34b00393b7b950858c2a4"
+
+#: C/progress.page:6(desc)
+msgid "Use the <cmd>--progress</cmd> option."
+msgstr "<cmd>--progress</cmd> オプションの使用"
+
+#: C/progress.page:8(title)
+msgid "Progress Dialog"
+msgstr "進捗表示ダイアログ"
+
+#: C/progress.page:9(p)
+msgid "Use the <cmd>--progress</cmd> option to create a progress dialog."
+msgstr ""
+"進捗表示ダイアログを作成するには、<cmd>--progress</cmd> というオプションを"
+"使ってください。"
+
+#: C/progress.page:13(p)
+msgid ""
+"<app>Zenity</app> reads data from standard input line by line. If a line is "
+"prefixed with #, the text is updated with the text on that line. If a line "
+"contains only a number, the percentage is updated with that number."
+msgstr ""
+"<app>Zenity</app> は、標準入力から 1 行ごとにデータを読み込みます。行が # で"
+"始まっている場合、進捗表示ダイアログに表示しているテキストを更新します。行が"
+"数値のみを含んでいる場合、進捗状況のパーセンテージをその数値で更新します。"
+
+#: C/progress.page:17(p)
+msgid "The progress dialog supports the following options:"
+msgstr "進捗表示ダイアログは、以下のオプションをサポートしています。"
+
+#: C/progress.page:24(title) C/notification.page:16(title)
+#: C/entry.page:19(title) C/calendar.page:19(title)
+msgid "<cmd>--text</cmd>=<var>text</var>"
+msgstr "<cmd>--text</cmd>=<var>テキスト</var>"
+
+#: C/progress.page:25(p)
+msgid "Specifies the text that is displayed in the progress dialog."
+msgstr "進捗表示ダイアログに表示するテキストを指定します。"
+
+#: C/progress.page:29(title)
+msgid "<cmd>--percentage</cmd>=<var>percentage</var>"
+msgstr "<cmd>--percentage</cmd>=<var>パーセンテージ</var>"
+
+#: C/progress.page:30(p)
+msgid "Specifies the initial percentage that is set in the progress dialog."
+msgstr "進捗表示ダイアログに設定する初期のパーセンテージを指定します。"
+
+#: C/progress.page:34(cmd)
+msgid "--auto-close"
+msgstr "--auto-close"
+
+#: C/progress.page:35(p)
+msgid "Closes the progress dialog when 100% has been reached."
+msgstr "100% に到達した際に進捗表示ダイアログを閉じます。"
+
+#: C/progress.page:39(cmd)
+msgid "--pulsate"
+msgstr "--pulsate"
+
+#: C/progress.page:40(p)
+msgid ""
+"Specifies that the progress bar pulsates until an EOF character is read from "
+"standard input."
+msgstr ""
+"標準入力から EOF 文字を読み込むまで進捗表示バーを振動させたい場合に指定しま"
+"す。"
+
+#: C/progress.page:45(p)
+msgid "The following example script shows how to create a progress dialog:"
+msgstr "以下のスクリプトの例で進捗表示ダイアログの作成方法を示します。"
+
+#: C/progress.page:49(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"(\n"
+"echo \"10\" ; sleep 1\n"
+"echo \"# Updating mail logs\" ; sleep 1\n"
+"echo \"20\" ; sleep 1\n"
+"echo \"# Resetting cron jobs\" ; sleep 1\n"
+"echo \"50\" ; sleep 1\n"
+"echo \"This line will just be ignored\" ; sleep 1\n"
+"echo \"75\" ; sleep 1\n"
+"echo \"# Rebooting system\" ; sleep 1\n"
+"echo \"100\" ; sleep 1\n"
+") |\n"
+"zenity --progress \\\n"
+"  --title=\"Update System Logs\" \\\n"
+"  --text=\"Scanning mail logs...\" \\\n"
+"  --percentage=0\n"
+"\n"
+"if [ \"$?\" = -1 ] ; then\n"
+"        zenity --error \\\n"
+"          --text=\"Update canceled.\"\n"
+"fi\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"(\n"
+"echo \"10\" ; sleep 1\n"
+"echo \"# メールログの更新\" ; sleep 1\n"
+"echo \"20\" ; sleep 1\n"
+"echo \"# cron ジョブの再設定\" ; sleep 1\n"
+"echo \"50\" ; sleep 1\n"
+"echo \"この行は無視されます\" ; sleep 1\n"
+"echo \"75\" ; sleep 1\n"
+"echo \"# システムの再起動\" ; sleep 1\n"
+"echo \"100\" ; sleep 1\n"
+") |\n"
+"zenity --progress \\\n"
+"  --title=\"システムログの更新\" \\\n"
+"  --text=\"メールログを走査中...\" \\\n"
+"  --percentage=0\n"
+"\n"
+"if [ \"$?\" = -1 ] ; then\n"
+"        zenity --error \\\n"
+"          --text=\"更新がキャンセルされました。\"\n"
+"fi\n"
+"\n"
+
+#: C/progress.page:75(title)
+msgid "Progress Dialog Example"
+msgstr "進捗表示ダイアログの例"
+
+#: C/progress.page:76(desc)
+msgid "<app>Zenity</app> progress dialog example"
+msgstr "<app>Zenity</app> 進捗表示ダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/password.page:47(None)
+msgid ""
+"@@image: 'figures/zenity-password-screenshot.png'; "
+"md5=6adbeb624a307f78072593d6d1c6def6"
+msgstr ""
+"@@image: 'figures/zenity-password-screenshot.png'; "
+"md5=a3d2932400fb90d1f79bafd7d7e2ac2c"
+
+#: C/password.page:6(desc)
+msgid "Use the <cmd>--password</cmd> option."
+msgstr "<cmd>--password</cmd> オプションの使用"
+
+#: C/password.page:8(title)
+msgid "Password Dialog"
+msgstr "パスワードダイアログ"
+
+#: C/password.page:9(p)
+msgid "Use the <cmd>--password</cmd> option to create a password entry dialog."
+msgstr ""
+"パスワードダイアログを作成するには、<cmd>--password</cmd> というオプションを"
+"使ってください。"
+
+#: C/password.page:12(p)
+msgid "The password entry dialog supports the following options:"
+msgstr "パスワードダイアログは、以下のオプションをサポートしています。"
+
+#: C/password.page:18(cmd)
+msgid "--username"
+msgstr "--username"
+
+#: C/password.page:19(p)
+msgid "Display the username field."
+msgstr "ユーザー名入力欄を表示します。"
+
+#: C/password.page:23(p)
+msgid ""
+"The following example script shows how to create a password entry dialog:"
+msgstr "以下のスクリプトの例でパスワードダイアログの作成方法を示します。"
+
+#: C/password.page:27(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"ENTRY=`zenity --password --username`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"\t \techo \"User Name: `echo $ENTRY | cut -d'|' -f1`\"\n"
+"\t \techo \"Password : `echo $ENTRY | cut -d'|' -f2`\"\n"
+"\t\t;;\n"
+"         1)\n"
+"                echo \"Stop login.\";;\n"
+"        -1)\n"
+"                echo \"An unexpected error has occurred.\";;\n"
+"esac\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"ENTRY=`zenity --password --username`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"\t \techo \"ユーザー名: `echo $ENTRY | cut -d'|' -f1`\"\n"
+"\t \techo \"パスワード: `echo $ENTRY | cut -d'|' -f2`\"\n"
+"\t\t;;\n"
+"         1)\n"
+"                echo \"ログインを中止しました。\";;\n"
+"        -1)\n"
+"                echo \"予期せぬエラーが発生しました。\";;\n"
+"esac\n"
+
+#: C/password.page:45(title)
+msgid "Password Entry Dialog Example"
+msgstr "パスワード入力ダイアログの例"
+
+#: C/password.page:46(desc)
+msgid "<app>Zenity</app> password entry dialog example"
+msgstr "<app>Zenity</app> パスワード入力ダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/notification.page:37(None)
+msgid ""
+"@@image: 'figures/zenity-notification-screenshot.png'; "
+"md5=b67bf309c6e479db8677947f1810a999"
+msgstr ""
+"@@image: 'figures/zenity-notification-screenshot.png'; "
+"md5=12956333cdc73f5bf931cb8b6b85d806"
+
+#: C/notification.page:6(desc)
+msgid "Use the <cmd>--notification</cmd> option."
+msgstr "<cmd>--notification</cmd> オプションの使用"
+
+#: C/notification.page:8(title)
+msgid "Notification Icon"
+msgstr "通知アイコン"
+
+#: C/notification.page:9(p)
+msgid "Use the <cmd>--notification</cmd> option to create a notification icon."
+msgstr ""
+"通知アイコンを作成するには、<cmd>--notification</cmd> というオプションを使っ"
+"てください。"
+
+#: C/notification.page:17(p)
+msgid "Specifies the text that is displayed in the notification area."
+msgstr "通知領域に表示するテキストを指定します。"
+
+#: C/notification.page:22(p)
+msgid "The following example script shows how to create a notification icon:"
+msgstr "以下のスクリプトの例で通知アイコンの作成方法を示します。"
+
+#: C/notification.page:25(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"zenity --notification\\\n"
+"  --window-icon=\"info\" \\\n"
+"  --text=\"There are system updates necessary!\"\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"zenity --notification\\\n"
+"  --window-icon=\"info\" \\\n"
+"  --text=\"システムの更新が必要です!\"\n"
+
+#: C/notification.page:35(title)
+msgid "Notification Icon Example"
+msgstr "通知アイコンの例"
+
+#: C/notification.page:36(desc)
+msgid "<app>Zenity</app> notification icon example"
+msgstr "<app>Zenity</app> 通知アイコンの例"
+
+#: C/message.page:6(desc)
+msgid ""
+"<link xref=\"error\">Error</link>, <link xref=\"info\">Info</link>, <link "
+"xref=\"question\">Question</link>, <link xref=\"warning\">Warning</link>"
+msgstr ""
+"<link xref=\"error\">エラー</link>, <link xref=\"info\">情報</link>, <link "
+"xref=\"question\">質問</link>, <link xref=\"warning\">警告</link>"
+
+#: C/message.page:13(title)
+msgid "Message Dialog"
+msgstr "メッセージダイアログ"
+
+#: C/message.page:14(p)
+msgid ""
+"For each type, use the <cmd>--text</cmd> option to specify the text that is "
+"displayed in the dialog."
+msgstr ""
+"各種類ともダイアログに表示するテキストを指定するには、<cmd>--text</cmd> とい"
+"うオプションを使ってください。"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/list.page:84(None)
+msgid ""
+"@@image: 'figures/zenity-list-screenshot.png'; "
+"md5=8bd9ad9c760516a966d3590b2019fa1e"
+msgstr ""
+"@@image: 'figures/zenity-list-screenshot.png'; "
+"md5=182bb239ca06ce5115daa57d3607c7c4"
+
+#: C/list.page:6(desc)
+msgid "Use the <cmd>--list</cmd> option."
+msgstr "<cmd>--list</cmd> オプションの使用"
+
+#: C/list.page:8(title)
+msgid "List Dialog"
+msgstr "一覧ダイアログ"
+
+#: C/list.page:9(p)
+msgid ""
+"Use the <cmd>--list</cmd> option to create a list dialog. <app>Zenity</app> "
+"returns the entries in the first column of text of selected rows to standard "
+"output."
+msgstr ""
+"一覧ダイアログを作成するには、<cmd>--list</cmd> というオプションを使ってくだ"
+"さい。<app>Zenity</app> は、選択された行の最初の列のテキストを標準出力へ返却"
+"します。"
+
+#: C/list.page:13(p)
+msgid ""
+"Data for the dialog must specified column by column, row by row. Data can be "
+"provided to the dialog through standard input. Each entry must be separated "
+"by a newline character."
+msgstr ""
+"一覧ダイアログ向けのデータは、列ごと、行ごとに指定しなければなりません。デー"
+"タは、標準入力を通してダイアログに提供することができます。各項目は、改行文字"
+"によって分割されている必要があります。"
+
+#: C/list.page:17(p)
+msgid ""
+"If you use the <cmd>--checklist</cmd> or <cmd>--radiolist</cmd> options, "
+"each row must start with either 'TRUE' or 'FALSE'."
+msgstr ""
+"<cmd>--checklist</cmd> や <cmd>--radiolist</cmd> というオプションを使用する場"
+"合、各行は 'TRUE' か 'FALSE' で始める必要があります。"
+
+#: C/list.page:21(p)
+msgid "The list dialog supports the following options:"
+msgstr "一覧ダイアログは、以下のオプションをサポートしています。"
+
+#: C/list.page:28(title)
+msgid "<cmd>--column</cmd>=<var>column</var>"
+msgstr "<cmd>--column</cmd>=<var>列</var>"
+
+#: C/list.page:29(p)
+msgid ""
+"Specifies the column headers that are displayed in the list dialog. You must "
+"specify a <cmd>--column</cmd> option for each column that you want to "
+"display in the dialog."
+msgstr ""
+"一覧ダイアログに表示される列の見出しを指定します。ダイアログに表示したい各列"
+"ごとに <cmd>--column</cmd> オプションを指定しなければなりません。"
+
+#: C/list.page:34(cmd)
+msgid "--checklist"
+msgstr "--checklist"
+
+#: C/list.page:35(p)
+msgid ""
+"Specifies that the first column in the list dialog contains check boxes."
+msgstr ""
+"このオプションを指定すると一覧ダイアログの最初の列がチェックボックスになりま"
+"す。"
+
+#: C/list.page:40(cmd)
+msgid "--radiolist"
+msgstr "--radiolist"
+
+#: C/list.page:41(p)
+msgid ""
+"Specifies that the first column in the list dialog contains radio boxes."
+msgstr ""
+"このオプションを指定すると一覧ダイアログの最初の列がラジオボックスになりま"
+"す。"
+
+#: C/list.page:47(p)
+msgid "Allows the displayed items to be edited."
+msgstr "表示した項目の編集を許可します。"
+
+#: C/list.page:52(title) C/file-selection.page:40(title)
+msgid "<cmd>--separator</cmd>=<var>separator</var>"
+msgstr "<cmd>--separator</cmd>=<var>セパレーター</var>"
+
+#: C/list.page:53(p)
+msgid ""
+"Specifies what string is used when the list dialog returns the selected "
+"entries."
+msgstr "一覧ダイアログが選択した項目を返却する際に使用する文字を指定します。"
+
+#: C/list.page:58(title)
+msgid "<cmd>--print-column</cmd>=<var>column</var>"
+msgstr "<cmd>--print-column</cmd>=<var>列</var>"
+
+#: C/list.page:59(p)
+msgid ""
+"Specifies what column should be printed out upon selection. The default "
+"column is '1'. 'ALL' can be used to print out all columns in the list."
+msgstr ""
+"選択した項目を出力する列を指定します。デフォルトの列は、'1' です。'ALL' を使"
+"えば、一覧のすべての列を出力できます。"
+
+#: C/list.page:66(p)
+msgid "The following example script shows how to create a list dialog:"
+msgstr "以下のスクリプトの例で一覧ダイアログの作成方法を示します。"
+
+#: C/list.page:69(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"zenity --list \\\n"
+"  --title=\"Choose the Bugs You Wish to View\" \\\n"
+"  --column=\"Bug Number\" --column=\"Severity\" --column=\"Description\" \\\n"
+"    992383 Normal \"GtkTreeView crashes on multiple selections\" \\\n"
+"    293823 High \"GNOME Dictionary does not handle proxy\" \\\n"
+"    393823 Critical \"Menu editing does not work in GNOME 2.0\"\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"zenity --list \\\n"
+"  --title=\"閲覧したいバグを選択してください\" \\\n"
+"  --column=\"バグ番号\" --column=\"重大度\" --column=\"説明\" \\\n"
+"    992383 通常 \"GtkTreeView が複数選択時にクラッシュする\" \\\n"
+"    293823 高い \"GNOME 辞書がプロキシを操作できない\" \\\n"
+"    393823 重大 \"GNOME 2.0 でメニュー編集が動作しない\"\n"
+
+#: C/list.page:82(title)
+msgid "List Dialog Example"
+msgstr "一覧ダイアログの例"
+
+#: C/list.page:83(desc)
+msgid "<app>Zenity</app> list dialog example"
+msgstr "<app>Zenity</app> 一覧ダイアログの例"
+
+#: C/intro.page:6(desc)
+msgid ""
+"<app>Zenity</app> enables you to create the various types of simple dialog."
+msgstr ""
+"<app>Zenity</app> を使えば、様々な種類の簡単なダイアログを作成できます。"
+
+#: C/intro.page:8(title)
+msgid "Introduction"
+msgstr "はじめに"
+
+#: C/intro.page:9(p)
+msgid ""
+"<app>Zenity</app> enables you to create the following types of simple dialog:"
+msgstr ""
+"<app>Zenity</app> を使えば、以下の種類の簡単なダイアログを作成できます。"
+
+#: C/intro.page:14(p)
+msgid "Calendar"
+msgstr "カレンダー"
+
+#: C/intro.page:15(p)
+msgid "File selection"
+msgstr "ファイル選択"
+
+#: C/intro.page:16(p)
+msgid "Forms"
+msgstr "フォーム"
+
+#: C/intro.page:17(p)
+msgid "List"
+msgstr "一覧"
+
+#: C/intro.page:18(p)
+msgid "Notification icon"
+msgstr "通知アイコン"
+
+#: C/intro.page:19(p)
+msgid "Message"
+msgstr "メッセージ"
+
+#: C/intro.page:21(p)
+msgid "Error"
+msgstr "エラー"
+
+#: C/intro.page:22(p)
+msgid "Information"
+msgstr "情報"
+
+#: C/intro.page:23(p)
+msgid "Question"
+msgstr "質問"
+
+#: C/intro.page:24(p)
+msgid "Warning"
+msgstr "警告"
+
+#: C/intro.page:27(p)
+msgid "Password entry"
+msgstr "パスワード入力"
+
+#: C/intro.page:28(p)
+msgid "Progress"
+msgstr "進捗表示"
+
+#: C/intro.page:29(p)
+msgid "Text entry"
+msgstr "テキスト入力"
+
+#: C/intro.page:30(p)
+msgid "Text information"
+msgstr "テキスト情報"
+
+#: C/intro.page:31(p)
+msgid "Scale"
+msgstr "スケール"
+
+#: C/intro.page:32(p)
+msgid "Color selection"
+msgstr "色選択"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/info.page:28(None)
+msgid ""
+"@@image: 'figures/zenity-information-screenshot.png'; "
+"md5=72386d53a991c46e918ee6dd22795aa6"
+msgstr ""
+"@@image: 'figures/zenity-information-screenshot.png'; "
+"md5=49dd2b6fabd6288d5a74fc233c8f72b5"
+
+#: C/info.page:6(desc)
+msgid "Use the <cmd>--info</cmd> option."
+msgstr "<cmd>--info</cmd> オプションの使用"
+
+#: C/info.page:8(title)
+msgid "Info Dialog"
+msgstr "情報ダイアログ"
+
+#: C/info.page:9(p)
+msgid "Use the <cmd>--info</cmd> option to create an information dialog."
+msgstr ""
+"情報ダイアログを作成するには、<cmd>--info</cmd> というオプションを使ってくだ"
+"さい。"
+
+#: C/info.page:13(p)
+msgid "The following example script shows how to create an information dialog:"
+msgstr "以下のスクリプトの例で情報ダイアログの作成方法を示します。"
+
+#: C/info.page:17(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --info \\\n"
+"--text=\"Merge complete. Updated 3 of 10 files.\"\n"
+msgstr ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --info \\\n"
+"--text=\"マージが完了しました。10 個中 3 個のファイルが更新されました。\"\n"
+
+#: C/info.page:26(title)
+msgid "Information Dialog Example"
+msgstr "情報ダイアログの例"
+
+#: C/info.page:27(desc)
+msgid "<app>Zenity</app> information dialog example"
+msgstr "<app>Zenity</app> 情報ダイアログの例"
+
+#: C/index.page:6(name)
+msgid "Sun Java Desktop System Documentation Team"
+msgstr "サン Java デスクトップシステムドキュメンテーションチーム"
+
+#: C/index.page:9(name)
+msgid "Glynn Foster"
+msgstr "Glynn Foster"
+
+#: C/index.page:12(name)
+msgid "Nicholas Curran"
+msgstr "Nicholas Curran"
+
+#: C/index.page:16(name)
+msgid "Yasumichi Akahoshi"
+msgstr "赤星　柔充"
+
+#: C/index.page:17(email)
+msgid "yasumichi@vinelinux.org"
+msgstr "yasumichi@vinelinux.org"
+
+#: C/index.page:20(p)
+msgid "GNU Free Documentation License (GFDL)"
+msgstr "GNU Free Documentation License (GFDL)"
+
+#: C/index.page:24(title)
+msgid "Zenity Manual"
+msgstr "Zenity マニュアル"
+
+#: C/index.page:27(title)
+msgid "Dialogs"
+msgstr "ダイアログ"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/forms.page:81(None)
+msgid ""
+"@@image: 'figures/zenity-forms-screenshot.png'; "
+"md5=c11fab02e4d51212a538ce6859799d5f"
+msgstr ""
+"@@image: 'figures/zenity-forms-screenshot.png'; "
+"md5=251435ebb13fed36b2726d9a634fbf36"
+
+#: C/forms.page:6(desc)
+msgid "Use the <cmd>--forms</cmd> option."
+msgstr "<cmd>--forms</cmd> オプションの使用"
+
+#: C/forms.page:8(title)
+msgid "Forms Dialog"
+msgstr "フォームダイアログ"
+
+#: C/forms.page:9(p)
+msgid "Use the <cmd>--forms</cmd> option to create a forms dialog."
+msgstr ""
+"フォームダイアログを作成するには、<cmd>--forms</cmd> というオプションを使って"
+"ください。"
+
+#: C/forms.page:13(p)
+msgid "The forms dialog supports the following options:"
+msgstr "フォームダイアログは、以下のオプションをサポートしています。"
+
+#: C/forms.page:20(title)
+msgid "<cmd>--add-entry</cmd>=<var>FieldName</var>"
+msgstr "<cmd>--add-entry</cmd>=<var>項目名</var>"
+
+#: C/forms.page:21(p)
+msgid "Add a new Entry in forms dialog."
+msgstr "フォームダイアログに入力欄を追加します。"
+
+#: C/forms.page:25(title)
+msgid "--add-password<cmd/>=<var>FieldName</var>"
+msgstr "--add-password<cmd/>=<var>項目名</var>"
+
+#: C/forms.page:26(p)
+msgid "Add a new Password Entry in forms dialog. (Hide text)"
+msgstr ""
+"フォームダイアログにパスワード入力欄を追加します。 (入力テキストを隠します)"
+
+#: C/forms.page:30(title)
+msgid "<cmd>--add-calendar</cmd>=<var>FieldName</var>"
+msgstr "<cmd>--add-calendar</cmd>=<var>項目名</var>"
+
+#: C/forms.page:31(p)
+msgid "Add a new Calendar in forms dialog."
+msgstr "フォームダイアログにカレンダーを追加します。"
+
+#: C/forms.page:36(p)
+msgid "Set the dialog text."
+msgstr "ダイアログに表示するテキストを指定します。"
+
+#: C/forms.page:40(title)
+msgid "<cmd>--separator</cmd>=<var>SEPARATOR</var>"
+msgstr "<cmd>--separator</cmd>=<var>セパレーター</var>"
+
+#: C/forms.page:41(p)
+msgid "Set output separator character. (Default: | )"
+msgstr "セパレーターとして出力する文字を指定します。(既定値: | )"
+
+#: C/forms.page:45(title)
+msgid "<cmd>--forms-date-format</cmd>=<var>PATTERN</var>"
+msgstr "<cmd>--forms-date-format</cmd>=<var>パターン</var>"
+
+#: C/forms.page:46(p)
+msgid ""
+"Set the format for the returned date. The default format depends on your "
+"locale. format must be a Format that is acceptable to the <cmd>strftime</"
+"cmd> function, for example <var>%A %d/%m/%y</var>."
+msgstr ""
+"日付を返却する書式を指定します。デフォルトの書式は、locale に依存します。書式"
+"は、 <cmd>strftime</cmd> 関数が受け取れる書式でなければなりません。たとえば、"
+"<var>%A %d/%m/%y</var> です。"
+
+#: C/forms.page:51(p)
+msgid "The following example script shows how to create a forms dialog:"
+msgstr "以下のスクリプトの例でフォームダイアログの作成方法を示します。"
+
+#: C/forms.page:55(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"zenity --forms --title=\"Add Friend\" \\\n"
+"\t--text=\"Enter information about your friend.\" \\\n"
+"\t--separator=\",\" \\\n"
+"\t--add-entry=\"First Name\" \\\n"
+"\t--add-entry=\"Family Name\" \\\n"
+"\t--add-entry=\"Email\" \\\n"
+"\t--add-calendar=\"Birthday\" &gt;&gt; addr.csv\n"
+"\n"
+"case $? in\n"
+"    0)\n"
+"        echo \"Friend added.\";;\n"
+"    1)\n"
+"        echo \"No friend added.\"\n"
+"\t;;\n"
+"    -1)\n"
+"        echo \"An unexpected error has occurred.\"\n"
+"\t;;\n"
+"esac\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"zenity --forms --title=\"友達の追加\" \\\n"
+"\t--text=\"友達について情報を入力してください。\" \\\n"
+"\t--separator=\",\" \\\n"
+"\t--add-entry=\"名\" \\\n"
+"\t--add-entry=\"姓\" \\\n"
+"\t--add-entry=\"電子メール\" \\\n"
+"\t--add-calendar=\"誕生日\" &gt;&gt; addr.csv\n"
+"\n"
+"case $? in\n"
+"    0)\n"
+"        echo \"友達が追加されました。\";;\n"
+"    1)\n"
+"        echo \"友達は追加されませんでした。\"\n"
+"\t;;\n"
+"    -1)\n"
+"        echo \"予期せぬエラーが発生しました。\"\n"
+"\t;;\n"
+"esac\n"
+
+#: C/forms.page:79(title)
+msgid "Forms Dialog Example"
+msgstr "フォームダイアログの例"
+
+#: C/forms.page:80(desc)
+msgid "<app>Zenity</app> forms dialog example"
+msgstr "<app>Zenity</app> フォームダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/file-selection.page:68(None)
+msgid ""
+"@@image: 'figures/zenity-fileselection-screenshot.png'; "
+"md5=bbba2652577f14ab4719f55a2ff57073"
+msgstr ""
+"@@image: 'figures/zenity-fileselection-screenshot.png'; "
+"md5=9cafa0431b20920cc62be0fe0f598a8d"
+
+#: C/file-selection.page:6(desc)
+msgid "Use the <cmd>--file-selection</cmd> option."
+msgstr "<cmd>--file-selection</cmd> オプションの使用"
+
+#: C/file-selection.page:8(title)
+msgid "File Selection Dialog"
+msgstr "ファイル選択ダイアログ"
+
+#: C/file-selection.page:9(p)
+msgid ""
+"Use the <cmd>--file-selection</cmd> option to create a file selection "
+"dialog. <app>Zenity</app> returns the selected files or directories to "
+"standard output. The default mode of the file selection dialog is open."
+msgstr ""
+"ファイル選択ダイアログを作成するには、<cmd>--file-selection</cmd> というオプ"
+"ションを使ってください。<app>Zenity</app> は、選択されたファイルあるいはフォ"
+"ルダーを標準出力へ返却します。ファイル選択ダイアログのデフォルトのモードは、"
+"開くです。"
+
+#: C/file-selection.page:13(p)
+msgid "The file selection dialog supports the following options:"
+msgstr "ファイル選択ダイアログは、以下のオプションをサポートしています。"
+
+#: C/file-selection.page:21(p)
+msgid ""
+"Specifies the file or directory that is selected in the file selection "
+"dialog when the dialog is first shown."
+msgstr ""
+"ファイル選択ダイアログが最初に表示された時に選択されているファイルまたはフォ"
+"ルダーを指定します。"
+
+#: C/file-selection.page:25(cmd)
+msgid "--multiple"
+msgstr "--multiple"
+
+#: C/file-selection.page:26(p)
+msgid ""
+"Allows the selection of multiple filenames in the file selection dialog."
+msgstr "ファイル選択ダイアログで複数ファイルの選択を可能にします。"
+
+#: C/file-selection.page:30(cmd)
+msgid "--directory"
+msgstr "--directory"
+
+#: C/file-selection.page:31(p)
+msgid "Allows only selection of directories in the file selection dialog."
+msgstr "ファイル選択ダイアログでフォルダーのみを選択可能にします。"
+
+#: C/file-selection.page:35(cmd)
+msgid "--save"
+msgstr "--save"
+
+#: C/file-selection.page:36(p)
+msgid "Set the file selection dialog into save mode."
+msgstr "ファイル選択ダイアログを保存モードに設定します。"
+
+#: C/file-selection.page:41(p)
+msgid ""
+"Specifies the string that is used to divide the returned list of filenames."
+msgstr "返却するファイル名の一覧を区切るのに使う文字を指定します。"
+
+#: C/file-selection.page:46(p)
+msgid ""
+"The following example script shows how to create a file selection dialog:"
+msgstr "以下のスクリプトの例でファイル選択ダイアログの作成方法を示します。"
+
+#: C/file-selection.page:50(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"FILE=`zenity --file-selection --title=\"Select a File\"`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"                echo \"\\\"$FILE\\\" selected.\";;\n"
+"         1)\n"
+"                echo \"No file selected.\";;\n"
+"        -1)\n"
+"                echo \"An unexpected error has occurred.\";;\n"
+"esac\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"FILE=`zenity --file-selection --title=\"ファイルの選択\"`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"                echo \"\\\"$FILE\\\" が選択されました。\";;\n"
+"         1)\n"
+"                echo \"ファイルが選択されませんでした。\";;\n"
+"        -1)\n"
+"                echo \"予期せぬエラーが発生しました。\";;\n"
+"esac\n"
+
+#: C/file-selection.page:66(title)
+msgid "File Selection Dialog Example"
+msgstr "ファイル選択ダイアログの例"
+
+#: C/file-selection.page:67(desc)
+msgid "<app>Zenity</app> file selection dialog example"
+msgstr "<app>Zenity</app> ファイル選択ダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/error.page:28(None)
+msgid ""
+"@@image: 'figures/zenity-error-screenshot.png'; "
+"md5=a4b287f89625cfd54ca38bc404d8bdf6"
+msgstr ""
+"@@image: 'figures/zenity-error-screenshot.png'; "
+"md5=41f4ca4e63f0a578c4010ccfb9fccb23"
+
+#: C/error.page:6(desc)
+msgid "Use the <cmd>--error</cmd> option."
+msgstr "<cmd>--error</cmd> オプションの使用"
+
+#: C/error.page:8(title)
+msgid "Error Dialog"
+msgstr "エラーダイアログ"
+
+#: C/error.page:9(p)
+msgid "Use the <cmd>--error</cmd> option to create an error dialog."
+msgstr ""
+"エラーダイアログを作成するには、<cmd>--error</cmd> というオプションを使ってく"
+"ださい。"
+
+#: C/error.page:13(p)
+msgid "The following example script shows how to create an error dialog:"
+msgstr "以下のスクリプトの例でエラーダイアログの作成方法を示します。"
+
+#: C/error.page:17(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --error \\\n"
+"--text=\"Could not find /var/log/syslog.\"\n"
+msgstr ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"zenity --error \\\n"
+"--text=\"/var/log/syslog が見つかりません。\"\n"
+
+#: C/error.page:26(title)
+msgid "Error Dialog Example"
+msgstr "エラーダイアログの例"
+
+#: C/error.page:27(desc)
+msgid "<app>Zenity</app> error dialog example"
+msgstr "<app>Zenity</app> エラーダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/entry.page:55(None)
+msgid ""
+"@@image: 'figures/zenity-entry-screenshot.png'; "
+"md5=bae6bf4342a66a3900deb15bde82ff42"
+msgstr ""
+"@@image: 'figures/zenity-entry-screenshot.png'; "
+"md5=886020a439d7b3cc830a242cf43397e2"
+
+#: C/entry.page:6(desc)
+msgid "Use the <cmd>--entry</cmd> option."
+msgstr "<cmd>--entry</cmd> オプションの使用"
+
+#: C/entry.page:8(title)
+msgid "Text Entry Dialog"
+msgstr "テキスト入力ダイアログ"
+
+#: C/entry.page:9(p)
+msgid ""
+"Use the <cmd>--entry</cmd> option to create a text entry dialog. "
+"<app>Zenity</app> returns the contents of the text entry to standard output."
+msgstr ""
+"テキスト入力ダイアログを作成するには、<cmd>--entry</cmd> というオプションを"
+"使ってください。<app>Zenity</app> は、テキスト入力の内容を標準出力へ返却しま"
+"す。"
+
+#: C/entry.page:12(p)
+msgid "The text entry dialog supports the following options:"
+msgstr "テキスト入力ダイアログは、以下のオプションをサポートしています。"
+
+#: C/entry.page:20(p)
+msgid "Specifies the text that is displayed in the text entry dialog."
+msgstr "テキスト入力ダイアログに表示するテキストを指定します。"
+
+#: C/entry.page:24(title)
+msgid "<cmd>--entry-text</cmd>=<var>text</var>"
+msgstr "<cmd>--entry-text</cmd>=<var>テキスト</var>"
+
+#: C/entry.page:25(p)
+msgid ""
+"Specifies the text that is displayed in the entry field of the text entry "
+"dialog."
+msgstr "テキスト入力ダイアログの入力欄に表示されるテキストを指定します。"
+
+#: C/entry.page:29(cmd)
+msgid "--hide-text"
+msgstr "--hide-text"
+
+#: C/entry.page:30(p)
+msgid "Hides the text in the entry field of the text entry dialog."
+msgstr "テキスト入力ダイアログの入力欄にあるテキストを隠します。"
+
+#: C/entry.page:35(p)
+msgid "The following example script shows how to create a text entry dialog:"
+msgstr "以下のスクリプトの例でテキスト入力ダイアログの作成方法を示します。"
+
+#: C/entry.page:39(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"if zenity --entry \\\n"
+"--title=\"Add new profile\" \\\n"
+"--text=\"Enter name of new profile:\" \\\n"
+"--entry-text \"NewProfile\"\n"
+"  then echo $?\n"
+"  else echo \"No name entered\"\n"
+"fi\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"if zenity --entry \\\n"
+"--title=\"新しいプロファイルの追加\" \\\n"
+"--text=\"新しいプロファイルの名前を入力してください:\" \\\n"
+"--entry-text \"新しいプロファイル\"\n"
+"  then echo $?\n"
+"  else echo \"名前が入力されませんでした。\"\n"
+"fi\n"
+
+#: C/entry.page:53(title)
+msgid "Text Entry Dialog Example"
+msgstr "テキスト入力ダイアログの例"
+
+#: C/entry.page:54(desc)
+msgid "<app>Zenity</app> text entry dialog example"
+msgstr "<app>Zenity</app> テキスト入力ダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/color-selection.page:52(None)
+msgid ""
+"@@image: 'figures/zenity-colorselection-screenshot.png'; "
+"md5=febe3f417acea789c9db628fbe44f798"
+msgstr ""
+"@@image: 'figures/zenity-colorselection-screenshot.png'; "
+"md5=e484c95ca216f1491b539549244241c3"
+
+#: C/color-selection.page:6(desc)
+msgid "Use the <cmd>--color-selection</cmd> option."
+msgstr "<cmd>--color-selection</cmd> オプションの使用"
+
+#: C/color-selection.page:8(title)
+msgid "Color Selection Dialog"
+msgstr "色選択ダイアログ"
+
+#: C/color-selection.page:9(p)
+msgid ""
+"Use the <cmd>--color-selection</cmd> option to create a color selection "
+"dialog."
+msgstr ""
+"色選択ダイアログを作成するには、<cmd>--color-selection</cmd> というオプション"
+"を使ってください。"
+
+#: C/color-selection.page:12(p)
+msgid "The color selection dialog supports the following options:"
+msgstr "色選択ダイアログは、以下のオプションをサポートしています。"
+
+#: C/color-selection.page:19(title)
+msgid "<cmd>--color</cmd>=<var>VALUE</var>"
+msgstr "<cmd>--color</cmd>=<var>値</var>"
+
+#: C/color-selection.page:20(p)
+msgid "Set the initial color.(ex: #FF0000)"
+msgstr "初期の色を指定します。(例: #FF0000)"
+
+#: C/color-selection.page:24(cmd)
+msgid "--show-palette"
+msgstr "--show-palette"
+
+#: C/color-selection.page:25(p)
+msgid "Show the palette."
+msgstr "パレットを表示します。"
+
+#: C/color-selection.page:30(p)
+msgid ""
+"The following example script shows how to create a color selection dialog:"
+msgstr "以下のスクリプトの例で色選択ダイアログの作成方法を示します。"
+
+#: C/color-selection.page:34(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"COLOR=`zenity --color-selection --show-palette`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"\t\techo \"You selected $COLOR.\";;\n"
+"         1)\n"
+"                echo \"No color selected.\";;\n"
+"        -1)\n"
+"                echo \"An unexpected error has occurred.\";;\n"
+"esac\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"COLOR=`zenity --color-selection --show-palette`\n"
+"\n"
+"case $? in\n"
+"         0)\n"
+"\t\techo \"$COLOR を選択しました。\";;\n"
+"         1)\n"
+"                echo \"色が選択されませんでした。\";;\n"
+"        -1)\n"
+"                echo \"予期せぬエラーが発生しました。\";;\n"
+"esac\n"
+
+#: C/color-selection.page:50(title)
+msgid "Color Selection Dialog Example"
+msgstr "色選択ダイアログの例"
+
+#: C/color-selection.page:51(desc)
+msgid "<app>Zenity</app> color selection dialog example"
+msgstr "<app>Zenity</app> 色選択ダイアログの例"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/calendar.page:66(None)
+msgid ""
+"@@image: 'figures/zenity-calendar-screenshot.png'; "
+"md5=92bf5317d799665acf0d4005cee184c2"
+msgstr ""
+"@@image: 'figures/zenity-calendar-screenshot.png'; "
+"md5=7389014444a6b0cad0e5b71e16bf9fa6l"
+
+#: C/calendar.page:6(desc)
+msgid "Use the <cmd>--calendar</cmd> option."
+msgstr "<cmd>--calendar</cmd> オプションの使用"
+
+#: C/calendar.page:8(title)
+msgid "Calendar Dialog"
+msgstr "カレンダーダイアログ"
+
+#: C/calendar.page:9(p)
+msgid ""
+"Use the <cmd>--calendar</cmd> option to create a calendar dialog. Zenity "
+"returns the selected date to standard output. If no date is specified on the "
+"command line, the dialog uses the current date."
+msgstr ""
+"カレンダーダイアログを作成するには、<cmd>--calendar</cmd> というオプションを"
+"使ってください。<app>Zenity</app> は、標準出力へ選択された日付を返却します。"
+"コマンドラインで日付を指定しなかった場合、ダイアログは現在の日付を利用しま"
+"す。"
+
+#: C/calendar.page:12(p)
+msgid "The calendar dialog supports the following options:"
+msgstr "カレンダーダイアログは、以下のオプションをサポートしています。"
+
+#: C/calendar.page:20(p)
+msgid "Specifies the text that is displayed in the calendar dialog."
+msgstr "カレンダーダイアログに表示されるテキストを指定します。"
+
+#: C/calendar.page:24(title)
+msgid "<cmd>--day</cmd>=<var>day</var>"
+msgstr "<cmd>--day</cmd>=<var>日</var>"
+
+#: C/calendar.page:25(p)
+msgid ""
+"Specifies the day that is selected in the calendar dialog. day must be a "
+"number between 1 and 31 inclusive."
+msgstr ""
+"カレンダーダイアログで選択されている日を指定します。日は、1 から 31 の数字で"
+"なければなりません。"
+
+#: C/calendar.page:29(title)
+msgid "<cmd>--month</cmd>=<var>month</var>"
+msgstr "<cmd>--month</cmd>=<var>月</var>"
+
+#: C/calendar.page:30(p)
+msgid ""
+"Specifies the month that is selected in the calendar dialog. month must be a "
+"number between 1 and 12 inclusive."
+msgstr ""
+"カレンダーダイアログで選択されている月を指定します。月は、1 から 12 の数字で"
+"なければなりません。"
+
+#: C/calendar.page:34(title)
+msgid "<cmd>--year</cmd>=<var>year</var>"
+msgstr "<cmd>--year</cmd>=<var>年</var>"
+
+#: C/calendar.page:35(p)
+msgid "Specifies the year that is selected in the calendar dialog."
+msgstr ""
+"カレンダーダイアログで選択されている年を指定します。(訳注:西暦の数字部分で指"
+"定します。)"
+
+#: C/calendar.page:39(title)
+msgid "<cmd>--date-format</cmd>=<var>format</var>"
+msgstr "<cmd>--date-format</cmd>=<var>書式</var>"
+
+#: C/calendar.page:40(p)
+msgid ""
+"Specifies the format that is returned from the calendar dialog after date "
+"selection. The default format depends on your locale. Format must be a "
+"format that is acceptable to the <cmd>strftime</cmd> function, for example "
+"<var>%A %d/%m/%y</var>."
+msgstr ""
+"日付が選択された後、カレンダーダイアログが返却する書式を指定します。デフォル"
+"トの書式は、locale に依存します。書式は、 <cmd>strftime</cmd> 関数が受け取れ"
+"る書式でなければなりません。たとえば、<var>%A %d/%m/%y</var> です。"
+
+#: C/calendar.page:45(p)
+msgid "The following example script shows how to create a calendar dialog:"
+msgstr "以下のスクリプトの例でカレンダーダイアログの作成方法を示します。"
+
+#: C/calendar.page:49(code)
+#, no-wrap
+msgid ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"\n"
+"if zenity --calendar \\\n"
+"--title=\"Select a Date\" \\\n"
+"--text=\"Click on a date to select that date.\" \\\n"
+"--day=10 --month=8 --year=2004\n"
+"  then echo $?\n"
+"  else echo \"No date selected\"\n"
+"fi\n"
+msgstr ""
+"\n"
+"#!/bin/sh\n"
+"\n"
+"\n"
+"if zenity --calendar \\\n"
+"--title=\"日付の選択\" \\\n"
+"--text=\"日付をクリックして選択してください。\" \\\n"
+"--day=10 --month=8 --year=2004\n"
+"  then echo $?\n"
+"  else echo \"日付が選択されませんでした。\"\n"
+"fi\n"
+
+#: C/calendar.page:64(title)
+msgid "Calendar Dialog Example"
+msgstr "カレンダーダイアログの例"
+
+#: C/calendar.page:65(desc)
+msgid "Zenity calendar dialog example"
+msgstr "Zenity カレンダーダイアログの例"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/index.page:0(None)
+msgid "translator-credits"
+msgstr "Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2011"
+
+#~ msgid ""
+#~ "@@image: 'figures/zenity-entry-screenshot.png'; "
+#~ "md5=0fb790cbb6d13ec13a314b34f844ee80"
+#~ msgstr ""
+#~ "@@image: 'figures/zenity-entry-screenshot.png'; "
+#~ "md5=e35a423cc463ecbe48f672ed7fce2fa5"
+
+#~ msgid "Zenity Desktop Application Manual V2.0"
+#~ msgstr "Zenity デスクトップアプリケーションマニュアル V2.0"
+
+#~ msgid "2003"
+#~ msgstr "2003"
+
+#~ msgid "2004"
+#~ msgstr "2004"
+
+#~ msgid "Sun Microsystems, Inc."
+#~ msgstr "サン・マイクロシステムズ"
+
+#~ msgid "Sun"
+#~ msgstr "サン"
+
+#~ msgid "Java Desktop System Documentation Team"
+#~ msgstr "Java デスクトップシステムドキュメンテーションチーム"
+
+#~ msgid "Glynn"
+#~ msgstr "Glynn"
+
+#~ msgid "Foster"
+#~ msgstr "Foster"
+
+#~ msgid "GNOME Documentation Project"
+#~ msgstr "GNOME ドキュメンテーションプロジェクト"
+
+#~ msgid "Curran"
+#~ msgstr "Curran"
+
+#~ msgid "August 2004"
+#~ msgstr "2004年 8月"
+
+#~ msgid "Zenity Manual V1.0"
+#~ msgstr "Zenity マニュアル V1.0"
+
+#~ msgid "January 2003"
+#~ msgstr "2003年 1月"
+
+#~ msgid "This manual describes version 2.6.0 of Zenity."
+#~ msgstr "このマニュアルは、Zenity バージョン 2.6.0 について記述しています。"
+
+#~ msgid "Feedback"
+#~ msgstr "フィードバック"
+
+#~ msgid ""
+#~ "To send feedback, follow the directions in the <ulink url=\"ghelp:gnome-"
+#~ "feedback\" type=\"help\">Feedback Page</ulink>."
+#~ msgstr ""
+#~ "フィードバックを送るには、<ulink url=\"ghelp:gnome-feedback\" type=\"help"
+#~ "\">Feedback Page</ulink> の指示に従ってください。"
+
+#, fuzzy
+#~ msgid ""
+#~ "Zenity is a rewrite of gdialog, the GNOME port of dialog which allows you "
+#~ "to display dialog boxes from the commandline and shell scripts."
+#~ msgstr ""
+#~ "Zenity は gdialog を書きなおしたものです。コマンドラインやシェルスクリプト"
+#~ "から、ダイアログボックスを表示できるように GNOME に移植されました。"
+
+#~ msgid "zenity command"
+#~ msgstr "zenity コマンド"
+
+#~ msgid "dialog creator"
+#~ msgstr "ダイアログクリエーター"
+
+#~ msgid ""
+#~ "For example, use: <screen><userinput><command>zenity --calendar --title="
+#~ "\"Holiday Planner\"</command></userinput></screen> Do not use: "
+#~ "<screen><userinput><command>zenity --calendar --title=Holiday Planner</"
+#~ "command></userinput></screen>"
+#~ msgstr ""
+#~ "例えば、次のように使います: <screen><userinput><command>zenity --calendar "
+#~ "--title=\"Holiday Planner\"</command></userinput></screen> 次のように使っ"
+#~ "てはいけません: <screen><userinput><command>zenity --calendar --"
+#~ "title=Holiday Planner</command></userinput></screen>"
+
+#~ msgid "<option>--title</option>=<replaceable>title</replaceable>"
+#~ msgstr "<option>--title</option>=<replaceable>タイトル</replaceable>"
+
+#~ msgid "<option>--width</option>=<replaceable>width</replaceable>"
+#~ msgstr "<option>--width</option>=<replaceable>幅</replaceable>"
+
+#~ msgid "<option>--height</option>=<replaceable>height</replaceable>"
+#~ msgstr "<option>--height</option>=<replaceable>高さ</replaceable>"
+
+#~ msgid "<option>--timeout</option>=<replaceable>timeout</replaceable>"
+#~ msgstr "<option>--timeout</option>=<replaceable>タイムアウト</replaceable>"
+
+#~ msgid "<option>--text</option>=<replaceable>text</replaceable>"
+#~ msgstr "<option>--text</option>=<replaceable>テキスト</replaceable>"
+
+#~ msgid "<option>--day</option>=<replaceable>day</replaceable>"
+#~ msgstr "<option>--day</option>=<replaceable>日</replaceable>"
+
+#~ msgid "<option>--month</option>=<replaceable>month</replaceable>"
+#~ msgstr "<option>--month</option>=<replaceable>月</replaceable>"
+
+#~ msgid "<option>--year</option>=<replaceable>year</replaceable>"
+#~ msgstr "<option>--year</option>=<replaceable>年</replaceable>"
+
+#~ msgid "Zenity"
+#~ msgstr "Zenity"
+
+#~ msgid "<placeholder-1/> calendar dialog example"
+#~ msgstr "<placeholder-1/> カレンダーダイアログの例"
+
+#~ msgid "<option>--filename</option>=<replaceable>filename</replaceable>"
+#~ msgstr "<option>--filename</option>=<replaceable>ファイル名</replaceable>"
+
+#~ msgid "<option>--column</option>=<replaceable>column</replaceable>"
+#~ msgstr "<option>--column</option>=<replaceable>列</replaceable>"
+
+#~ msgid ""
+#~ "<application>Zenity</application> can create four types of message dialog:"
+#~ msgstr ""
+#~ "<application>Zenity</application> は、4 種類のメッセージダイアログを生成で"
+#~ "きます:"
+
+#~ msgid "<option>--entry-text</option>=<replaceable>text</replaceable>"
+#~ msgstr "<option>--entry-text</option>=<replaceable>テキスト</replaceable>"
+
+#~ msgid ""
+#~ "\n"
+#~ "        #!/bin/sh\n"
+#~ "\n"
+#~ "        FILE=`zenity --file-selection \\\n"
+#~ "          --title=\"Select a File\"`\n"
+#~ "\n"
+#~ "        case $? in\n"
+#~ "                 0)\n"
+#~ "                        zenity --text-info \\\n"
+#~ "                          --title=$FILE \\\n"
+#~ "                          --filename=$FILE \\\n"
+#~ "                          --editable 2&gt;/tmp/tmp.txt;;\n"
+#~ "                 1)\n"
+#~ "                        echo \"No file selected.\";;\n"
+#~ "                -1)\n"
+#~ "                        echo \"No file selected.\";;\n"
+#~ "        esac\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "        #!/bin/sh\n"
+#~ "\n"
+#~ "        FILE=`zenity --file-selection \\\n"
+#~ "          --title=\"ファイルの選択\"`\n"
+#~ "\n"
+#~ "        case $? in\n"
+#~ "                 0)\n"
+#~ "                        zenity --text-info \\\n"
+#~ "                          --title=$FILE \\\n"
+#~ "                          --filename=$FILE \\\n"
+#~ "                          --editable 2&gt;/tmp/tmp.txt;;\n"
+#~ "                 1)\n"
+#~ "                        echo \"ファイルが選択されませんでした。\";;\n"
+#~ "                -1)\n"
+#~ "                        echo \"予期せぬエラーが発生しました。\";;\n"
+#~ "        esac\n"
+#~ "      "

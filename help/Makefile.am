@@ -42,4 +42,4 @@ DOC_PAGES = \
 	usage.page		\
 	warning.page
 
-DOC_LINGUAS = bg ca cs da de el en_GB es eu fi fr gl hu oc pt_BR ru sl sv uk zh_CN
+DOC_LINGUAS = bg ca cs da de el en_GB es eu fi fr gl hu ja oc pt_BR ru sl sv uk zh_CN
