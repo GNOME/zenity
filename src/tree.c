@@ -120,13 +120,13 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
 
     string = g_string_new (NULL);
 
-    while (channel->is_readable != TRUE)
+    while (g_io_channel_get_flags(channel) != G_IO_FLAG_IS_READABLE)
       ;
     do {
       gint status;
 
       do {
-        if (channel->is_readable == TRUE)
+        if (g_io_channel_get_flags(channel) == G_IO_FLAG_IS_READABLE)
           status = g_io_channel_read_line_string (channel, string, NULL, &error);
         else
           return FALSE;
@@ -645,7 +645,7 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
-  if (channel->is_readable == TRUE)
+  if (channel != NULL && g_io_channel_get_flags (channel) == G_IO_FLAG_IS_READABLE)
     g_io_channel_shutdown (channel, TRUE, NULL);
 
   gtk_main_quit ();
