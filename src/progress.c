@@ -223,7 +223,6 @@ zenity_progress_read_info (ZenityProgressData *progress_data)
   if (progress_data->pulsate) {
       GObject *progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
       zenity_progress_pulsate_start (progress_bar);
-      g_object_unref(progress_bar);
   }
 }
 
