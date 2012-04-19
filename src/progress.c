@@ -92,10 +92,6 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
 
     string = g_string_new (NULL);
 
-    if (progress_data->pulsate) {
-      zenity_progress_pulsate_start (progress_bar);
-    }
-
     while (channel->is_readable != TRUE)
       ;
     do {
@@ -221,6 +217,14 @@ zenity_progress_read_info (ZenityProgressData *progress_data)
   g_io_channel_set_encoding (channel, NULL, NULL);
   g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
   g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_progress_handle_stdin, progress_data);
+  /* We need to check the pulsate state here, because, the g_io_add_watch
+     doesn't call the zenity_progress_handle_stdin function if there's no
+     input. This fix the Bug 567663 */
+  if (progress_data->pulsate) {
+      GObject *progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
+      zenity_progress_pulsate_start (progress_bar);
+      g_object_unref(progress_bar);
+  }
 }
 
 void
