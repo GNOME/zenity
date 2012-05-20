@@ -1918,7 +1918,9 @@ zenity_forms_post_callback (GOptionContext *context,
         results->forms_data->column_values = g_slist_append (results->forms_data->column_values, values);
         values = zenity_forms_list_values[++i];
       }
-    }
+    } else
+      results->forms_data->column_values = g_slist_append (NULL, "column");
+
     if (zenity_forms_date_format)
       results->forms_data->date_format = zenity_forms_date_format;
     else
