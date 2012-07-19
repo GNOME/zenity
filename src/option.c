@@ -525,7 +525,7 @@ static GOptionEntry list_options[] = {
     N_("Use radio buttons for first column"),
     NULL
   },
- /* {
+  {
     "imagelist",
     '\0',
     0,
@@ -533,7 +533,7 @@ static GOptionEntry list_options[] = {
     &zenity_list_imagelist,
     N_("Use an image for first column"),
     NULL
-  },*/
+  },
   {
     "separator",
     '\0',
