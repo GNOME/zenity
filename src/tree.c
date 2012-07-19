@@ -87,6 +87,44 @@ zenity_tree_toggled_callback (GtkCellRendererToggle *cell, gchar *path_string, g
   gtk_tree_path_free (path);
 }
 
+static void
+zenity_load_pixbuf (GtkTreeViewColumn *tree_column,
+                    GtkCellRenderer *cell,
+                    GtkTreeModel *tree_model,
+                    GtkTreeIter *iter,
+                    gpointer data)
+{
+  static GHashTable *pixbuf_cache = NULL;
+  GError *error = NULL;
+  GdkPixbuf *pixbuf;
+  gchar *str;
+
+  gtk_tree_model_get (tree_model, iter, 0, &str, -1);
+
+  if (!str) 
+    return;
+
+  if (!pixbuf_cache) {
+    pixbuf_cache = g_hash_table_new (g_str_hash, g_str_equal);
+    g_assert(pixbuf_cache);
+  }
+
+  pixbuf = g_hash_table_lookup (pixbuf_cache, str);
+
+  if (!pixbuf) {
+    pixbuf = gdk_pixbuf_new_from_file (str, &error);
+    if (!pixbuf) 
+      g_warning ("Failed to load '%s'", str);
+
+    g_hash_table_insert (pixbuf_cache, g_strdup (str), pixbuf);
+  }
+
+  if (pixbuf) 
+    g_object_set (cell, "pixbuf", pixbuf, NULL);
+
+  g_free (str);
+}
+
 static gboolean
 zenity_tree_handle_stdin (GIOChannel  *channel,
                           GIOCondition condition,
@@ -249,7 +287,7 @@ zenity_tree_fill_entries (GtkTreeView  *tree_view,
       GtkWidget *scrolled_window;
       GtkRequisition rectangle;
 
-      gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
+      gtk_widget_get_preferred_size (GTK_WIDGET (tree_view), &rectangle, NULL);
       scrolled_window = GTK_WIDGET (gtk_builder_get_object (builder,
       							 "zenity_tree_window"));
       gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
@@ -329,7 +367,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     return;
   }
 
-  if (tree_data->checkbox && tree_data->radiobox) {
+  if (tree_data->checkbox + tree_data->radiobox + tree_data->imagebox > 1) {
     g_printerr (_("You should use only one List dialog type.\n")); 
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
@@ -433,6 +471,12 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
         column = gtk_tree_view_column_new_with_attributes (tmp->data,
                                                            cell_renderer, 
                                                            "active", column_index, NULL);
+      } else if (tree_data->imagebox) {
+        GtkCellRenderer *cell_renderer = gtk_cell_renderer_pixbuf_new ();
+        column = gtk_tree_view_column_new_with_attributes (tmp->data,
+                                                           cell_renderer, NULL);
+        gtk_tree_view_column_set_cell_data_func (column, cell_renderer, 
+                                                 zenity_load_pixbuf, NULL, NULL);
       }
       else  {
         if (tree_data->editable) {
@@ -657,10 +701,7 @@ zenity_tree_row_activated (GtkTreeView *tree_view, GtkTreePath *tree_path,
 {
   ZenityData *zen_data = data;
   GtkTreeSelection *selection; 
-  GtkTreeModel *model;
-
-  model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
-
+  
   selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
   gtk_tree_selection_selected_foreach (selection, 
                                        (GtkTreeSelectionForeachFunc) zenity_tree_dialog_get_selected, 

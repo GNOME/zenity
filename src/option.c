@@ -78,6 +78,7 @@ static gboolean zenity_list_radiolist;
 static gchar   *zenity_list_print_column;
 static gchar   *zenity_list_hide_column;
 static gboolean zenity_list_hide_header;
+static gboolean zenity_list_imagelist;
 
 #ifdef HAVE_LIBNOTIFY
 /* Notification Dialog Options */
@@ -522,6 +523,15 @@ static GOptionEntry list_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_list_radiolist,
     N_("Use radio buttons for first column"),
+    NULL
+  },
+  {
+    "imagelist",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_list_imagelist,
+    N_("Use an image for first column"),
     NULL
   },
   {
@@ -1356,6 +1366,7 @@ zenity_list_pre_callback (GOptionContext *context,
   zenity_list_columns = NULL;
   zenity_list_checklist = FALSE;
   zenity_list_radiolist = FALSE;
+  zenity_list_imagelist = FALSE;
   zenity_list_hide_header = FALSE;
   zenity_list_print_column = NULL;
   zenity_list_hide_column = NULL;
@@ -1687,6 +1698,7 @@ zenity_list_post_callback (GOptionContext *context,
     
     results->tree_data->checkbox = zenity_list_checklist;
     results->tree_data->radiobox = zenity_list_radiolist;
+    results->tree_data->imagebox = zenity_list_imagelist;
     results->tree_data->multi = zenity_general_multiple;
     results->tree_data->editable = zenity_general_editable;
     results->tree_data->print_column = zenity_list_print_column;
@@ -1704,6 +1716,10 @@ zenity_list_post_callback (GOptionContext *context,
 
     if (zenity_list_radiolist)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_list_radiolist),
+                           ERROR_SUPPORT);
+
+    if (zenity_list_imagelist)
+      zenity_option_error (zenity_option_get_name (list_options, &zenity_list_imagelist), 
                            ERROR_SUPPORT);
 
     if (zenity_list_print_column)
