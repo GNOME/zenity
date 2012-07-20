@@ -121,7 +121,6 @@ typedef struct {
   gboolean      checkbox;
   gboolean      radiobox;
   gboolean      hide_header;
-  gboolean      imagebox;
   gchar        *separator;
   gboolean      multi;
   gboolean      editable;
