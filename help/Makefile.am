@@ -1,10 +1,8 @@
-include $(top_srcdir)/gnome-doc-utils.make
-dist-hook: doc-dist-hook
+@YELP_HELP_RULES@
 
-DOC_ID = zenity
-DOC_INCLUDES = legal.xml
+HELP_ID = zenity
 
-DOC_FIGURES = \
+HELP_MEDIA = \
 	figures/zenity-calendar-screenshot.png		\
 	figures/zenity-colorselection-screenshot.png	\
 	figures/zenity-entry-screenshot.png		\
@@ -21,7 +19,8 @@ DOC_FIGURES = \
 	figures/zenity-text-screenshot.png		\
 	figures/zenity-warning-screenshot.png
 
-DOC_PAGES = \
+HELP_FILES = \
+	legal.xml		\
 	calendar.page		\
 	color-selection.page	\
 	entry.page		\
@@ -42,4 +41,4 @@ DOC_PAGES = \
 	usage.page		\
 	warning.page
 
-DOC_LINGUAS = bg ca cs da de el en_GB es eu fi fr gl hu ja oc pt_BR ru sl sv uk zh_CN
+HELP_LINGUAS = bg ca cs da de el en_GB es eu fi fr gl hu ja oc pt_BR ru sl sv uk zh_CN

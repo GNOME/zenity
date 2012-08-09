@@ -13,14 +13,12 @@ EXTRA_DIST = \
 	ChangeLog		\
 	NEWS			\
 	README			\
-	AUTHORS			\
-	gnome-doc-utils.make
+	AUTHORS
 
 DISTCLEANFILES =                \
 	intltool-extract        \
 	intltool-merge          \
-	intltool-update		\
-	gnome-doc-utils.make
+	intltool-update
 
 DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
 

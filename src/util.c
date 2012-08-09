@@ -252,7 +252,7 @@ zenity_util_show_help (GError **error)
 
   if (tmp) {
     g_free (tmp);
-    g_spawn_command_line_async ("yelp ghelp:zenity", error);
+    g_spawn_command_line_async ("yelp help:zenity", error);
   }
 }
 
