@@ -58,7 +58,7 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
   }
 
   if (data->ok_label) {
-    g_object_get (G_OBJECT (dialog), "ok-button", &button);
+    g_object_get (G_OBJECT (dialog), "ok-button", &button, NULL);
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
     gtk_button_set_image (GTK_BUTTON (button),
                           gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
@@ -66,7 +66,7 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
   }
 
   if (data->cancel_label) {
-    g_object_get (G_OBJECT (dialog), "cancel-button", &button);
+    g_object_get (G_OBJECT (dialog), "cancel-button", &button, NULL);
     gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
     gtk_button_set_image (GTK_BUTTON (button), 
                           gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));

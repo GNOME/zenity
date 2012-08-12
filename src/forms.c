@@ -34,9 +34,9 @@ static void zenity_forms_dialog_get_selected (GtkTreeModel *model, GtkTreePath *
 {
   gint n_columns = 0;
   gint i = 0;
+  GValue value = {0, };
 
   n_columns = gtk_tree_model_get_n_columns (model);
-  GValue value = {0, };
   for (i = 0; i < n_columns; i++) {
     gtk_tree_model_get_value (model, iter, i, &value);
     selected = g_slist_append (selected, g_value_dup_string (&value));
@@ -157,6 +157,7 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 
   gint number_of_widgets = g_slist_length (forms_data->list);
   int list_count = 0;
+  int i = 0;
 
   zen_data = data;
 
@@ -202,8 +203,6 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
   table = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_table"));
 
   gtk_table_resize (GTK_TABLE (table), number_of_widgets, 2);
-
-  int i = 0;
 
   for (tmp = forms_data->list; tmp; tmp = tmp->next) {
     ZenityFormsValue *zenity_value = (ZenityFormsValue *) tmp->data;

@@ -54,7 +54,7 @@ zenity_progress_pulsate_progress_bar (gpointer user_data)
 }
 
 static void
-zenity_progress_pulsate_stop ()
+zenity_progress_pulsate_stop (void)
 {
   if (pulsate_timeout > 0) {
     g_source_remove (pulsate_timeout);
