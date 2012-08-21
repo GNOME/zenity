@@ -107,7 +107,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
   n_entries = g_slist_length (entries);
 
   if (n_entries > 1) {
-    entry = gtk_combo_box_new_with_entry ();
+    entry = gtk_combo_box_text_new_with_entry ();
 
     for (tmp = entries; tmp; tmp = tmp->next) {
       gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (entry), tmp->data);
