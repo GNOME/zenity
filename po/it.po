@@ -1,23 +1,24 @@
 # Italian translation of zenity
 # Copyright (C) 2003 - 2011 Free Software Foundation, Inc.
+# Copyright (C) 2012 the zenity copyright holders.
 # This file is distributed under the same license as the zenity package.
 # Stefano Canepa <sc@linux.it>, 2003, 2004, 2005, 2006.
 # Luca Ferretti <elle.uca@infinito.it>, 2005-2007.
-# Milo Casagrande <milo@ubuntu.com>, 2008, 2010.
 # Claudio Arseni <claudio.arseni@ubuntu.com>, 2011, 2012.
+# Milo Casagrande <milo@ubuntu.com>, 2008, 2010, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-08 07:26+0000\n"
-"PO-Revision-Date: 2012-02-10 11:50+0100\n"
-"Last-Translator: Claudio Arseni <claudio.arseni@ubuntu.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-26 21:31+0200\n"
+"PO-Revision-Date: 2012-08-26 21:32+0200\n"
+"Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../src/about.c:64
@@ -112,12 +113,12 @@ msgstr "Il valore massimo deve essere maggiore del valore minimo.\n"
 msgid "Value out of range.\n"
 msgstr "Valore fuori dai limiti.\n"
 
-#: ../src/tree.c:327
+#: ../src/tree.c:365
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Nessun titolo per le colonne nel dialogo Elenco.\n"
 
-#: ../src/tree.c:333
+#: ../src/tree.c:371
 #, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "Si dovrebbe usare solo un tipo di dialogo Elenco.\n"
@@ -200,236 +201,240 @@ msgid "Warning"
 msgstr "Avvertimento"
 
 # GNOME-2-20
-#: ../src/option.c:154
+#: ../src/option.c:155
 msgid "Set the dialog title"
 msgstr "Imposta il titolo del dialogo"
 
-#: ../src/option.c:155
+#: ../src/option.c:156
 msgid "TITLE"
 msgstr "TITOLO"
 
-#: ../src/option.c:163
+#: ../src/option.c:164
 msgid "Set the window icon"
 msgstr "Imposta l'icona della finestra"
 
-#: ../src/option.c:164
+#: ../src/option.c:165
 msgid "ICONPATH"
 msgstr "PERCORSO_ICONA"
 
-#: ../src/option.c:172
+#: ../src/option.c:173
 msgid "Set the width"
 msgstr "Imposta la larghezza"
 
-#: ../src/option.c:173
+#: ../src/option.c:174
 msgid "WIDTH"
 msgstr "LARGHEZZA"
 
-#: ../src/option.c:181
+#: ../src/option.c:182
 msgid "Set the height"
 msgstr "Imposta l'altezza"
 
-#: ../src/option.c:182
+#: ../src/option.c:183
 msgid "HEIGHT"
 msgstr "ALTEZZA"
 
 # GNOME-2-20
 # non mi va di stare a pensare a una traduzione per timeout --Luca
-#: ../src/option.c:190
+#: ../src/option.c:191
 msgid "Set dialog timeout in seconds"
 msgstr "Imposta il tempo massimo del dialogo in secondi"
 
 # GNOME 2.24
 #. Timeout for closing the dialog
-#: ../src/option.c:192
+#: ../src/option.c:193
 msgid "TIMEOUT"
 msgstr "TEMPO_MASSIMO"
 
 # GNOME 2.24
 #
 # (ndt) o semplicemente 'testo'?
-#: ../src/option.c:200
+#: ../src/option.c:201
 msgid "Sets the label of the Ok button"
 msgstr "Imposta l'etichetta del pulsante «OK»"
 
 # GNOME-2-20
-#: ../src/option.c:201 ../src/option.c:210 ../src/option.c:234
-#: ../src/option.c:294 ../src/option.c:303 ../src/option.c:337
-#: ../src/option.c:378 ../src/option.c:498 ../src/option.c:605
-#: ../src/option.c:640 ../src/option.c:712 ../src/option.c:771
-#: ../src/option.c:780 ../src/option.c:824 ../src/option.c:865
-#: ../src/option.c:1016
+#: ../src/option.c:202 ../src/option.c:211 ../src/option.c:235
+#: ../src/option.c:295 ../src/option.c:304 ../src/option.c:338
+#: ../src/option.c:379 ../src/option.c:499 ../src/option.c:615
+#: ../src/option.c:650 ../src/option.c:722 ../src/option.c:781
+#: ../src/option.c:790 ../src/option.c:834 ../src/option.c:875
+#: ../src/option.c:1026
 msgid "TEXT"
 msgstr "TESTO"
 
 # GNOME 2.24
-#: ../src/option.c:209
+#: ../src/option.c:210
 msgid "Sets the label of the Cancel button"
 msgstr "Imposta l'etichetta del pulsante «Annulla»"
 
 # GNOME-2-20
-#: ../src/option.c:224
+#: ../src/option.c:225
 msgid "Display calendar dialog"
 msgstr "Mostra un dialogo con il calendario"
 
 # GNOME-2-20
-#: ../src/option.c:233 ../src/option.c:293 ../src/option.c:336
-#: ../src/option.c:377 ../src/option.c:497 ../src/option.c:639
-#: ../src/option.c:711 ../src/option.c:823 ../src/option.c:864
-#: ../src/option.c:1015
+#: ../src/option.c:234 ../src/option.c:294 ../src/option.c:337
+#: ../src/option.c:378 ../src/option.c:498 ../src/option.c:649
+#: ../src/option.c:721 ../src/option.c:833 ../src/option.c:874
+#: ../src/option.c:1025
 msgid "Set the dialog text"
 msgstr "Imposta il testo del dialogo"
 
-#: ../src/option.c:242
+#: ../src/option.c:243
 msgid "Set the calendar day"
 msgstr "Imposta il giorno del calendario"
 
 # GNOME-2-20
-#: ../src/option.c:243
+#: ../src/option.c:244
 msgid "DAY"
 msgstr "GIORNO"
 
-#: ../src/option.c:251
+#: ../src/option.c:252
 msgid "Set the calendar month"
 msgstr "Imposta il mese del calendario"
 
 # GNOME-2-20
-#: ../src/option.c:252
+#: ../src/option.c:253
 msgid "MONTH"
 msgstr "MESE"
 
-#: ../src/option.c:260
+#: ../src/option.c:261
 msgid "Set the calendar year"
 msgstr "Imposta l'anno del calendario"
 
 # GNOME-2-20
-#: ../src/option.c:261
+#: ../src/option.c:262
 msgid "YEAR"
 msgstr "ANNO"
 
-#: ../src/option.c:269 ../src/option.c:1033
+#: ../src/option.c:270 ../src/option.c:1043
 msgid "Set the format for the returned date"
 msgstr "Imposta il formato della data restituita"
 
 # GNOME-2-20
-#: ../src/option.c:270 ../src/option.c:1034
+#: ../src/option.c:271 ../src/option.c:1044
 msgid "PATTERN"
 msgstr "MODELLO"
 
 # GNOME-2-20
-#: ../src/option.c:284
+#: ../src/option.c:285
 msgid "Display text entry dialog"
 msgstr "Mostra un dialogo di inserimento testo"
 
-#: ../src/option.c:302
+#: ../src/option.c:303
 msgid "Set the entry text"
 msgstr "Imposta il testo della casella di inserimento"
 
-#: ../src/option.c:311
+#: ../src/option.c:312
 msgid "Hide the entry text"
 msgstr "Nasconde il testo nella casella di inserimento"
 
 # GNOME-2-20
-#: ../src/option.c:327
+#: ../src/option.c:328
 msgid "Display error dialog"
 msgstr "Mostra un dialogo di errore"
 
 # Bruttina, ma non mi veniva in mente niente di meglio -Luca
-#: ../src/option.c:345 ../src/option.c:386 ../src/option.c:720
-#: ../src/option.c:832
+#: ../src/option.c:346 ../src/option.c:387 ../src/option.c:730
+#: ../src/option.c:842
 msgid "Do not enable text wrapping"
 msgstr "Non abilita il testo a capo"
 
 # Bruttina, ma non mi veniva in mente niente di meglio -Luca
-#: ../src/option.c:354 ../src/option.c:395 ../src/option.c:729
-#: ../src/option.c:841
+#: ../src/option.c:355 ../src/option.c:396 ../src/option.c:739
+#: ../src/option.c:851
 msgid "Do not enable pango markup"
 msgstr "Non abilita il markup pango"
 
 # GNOME-2-20
-#: ../src/option.c:368
+#: ../src/option.c:369
 msgid "Display info dialog"
 msgstr "Mostra un dialogo di informazioni"
 
 # GNOME-2-20
-#: ../src/option.c:409
+#: ../src/option.c:410
 msgid "Display file selection dialog"
 msgstr "Mostra un dialogo di selezione file"
 
-#: ../src/option.c:418
+#: ../src/option.c:419
 msgid "Set the filename"
 msgstr "Imposta il nome del file"
 
-#: ../src/option.c:419 ../src/option.c:753
+#: ../src/option.c:420 ../src/option.c:763
 msgid "FILENAME"
 msgstr "NOME_FILE"
 
-#: ../src/option.c:427
+#: ../src/option.c:428
 msgid "Allow multiple files to be selected"
 msgstr "Consente di selezionare più di un file"
 
-#: ../src/option.c:436
+#: ../src/option.c:437
 msgid "Activate directory-only selection"
 msgstr "Attiva la selezione delle sole directory"
 
-#: ../src/option.c:445
+#: ../src/option.c:446
 msgid "Activate save mode"
 msgstr "Attiva modalità sicura"
 
-#: ../src/option.c:454 ../src/option.c:533 ../src/option.c:1024
+#: ../src/option.c:455 ../src/option.c:543 ../src/option.c:1034
 msgid "Set output separator character"
 msgstr "Imposta il carattere separatore per l'output"
 
-#: ../src/option.c:455 ../src/option.c:534 ../src/option.c:1025
+#: ../src/option.c:456 ../src/option.c:544 ../src/option.c:1035
 msgid "SEPARATOR"
 msgstr "SEPARATORE"
 
 # GNOME-2-20
-#: ../src/option.c:463
+#: ../src/option.c:464
 msgid "Confirm file selection if filename already exists"
 msgstr "Confermare la selezione se il nome di file esiste già"
 
 # GNOME 2.24
-#: ../src/option.c:472
+#: ../src/option.c:473
 msgid "Sets a filename filter"
 msgstr "Imposta un filtro sul nome del file"
 
 # GNOME 2.24
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:474
+#: ../src/option.c:475
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NOME | MODELLO1 MODELLO2 ..."
 
 # GNOME-2-20
-#: ../src/option.c:488
+#: ../src/option.c:489
 msgid "Display list dialog"
 msgstr "Mostra un dialogo con un elenco"
 
-#: ../src/option.c:506
+#: ../src/option.c:507
 msgid "Set the column header"
 msgstr "Imposta il titolo della colonna"
 
 # GNOME-2-20
-#: ../src/option.c:507
+#: ../src/option.c:508
 msgid "COLUMN"
 msgstr "COLONNA"
 
-#: ../src/option.c:515
+#: ../src/option.c:516
 msgid "Use check boxes for first column"
 msgstr "Usa caselle di selezione per la prima colonna"
 
-#: ../src/option.c:524
+#: ../src/option.c:525
 msgid "Use radio buttons for first column"
 msgstr "Usa pulsanti radio per la prima colonna"
 
-#: ../src/option.c:542
+#: ../src/option.c:534
+msgid "Use an image for first column"
+msgstr "Usa un'immagine per la prima colonna"
+
+#: ../src/option.c:552
 msgid "Allow multiple rows to be selected"
 msgstr "Consente di selezionare più di una riga"
 
-#: ../src/option.c:551 ../src/option.c:761
+#: ../src/option.c:561 ../src/option.c:771
 msgid "Allow changes to text"
 msgstr "Consente la modifica del testo"
 
-#: ../src/option.c:560
+#: ../src/option.c:570
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -439,15 +444,15 @@ msgstr ""
 
 # GNOME-2-20
 #. Column index number to print out on a list dialog
-#: ../src/option.c:562 ../src/option.c:571
+#: ../src/option.c:572 ../src/option.c:581
 msgid "NUMBER"
 msgstr "NUMERO"
 
-#: ../src/option.c:570
+#: ../src/option.c:580
 msgid "Hide a specific column"
 msgstr "Nasconde una colonna specifica"
 
-#: ../src/option.c:579
+#: ../src/option.c:589
 msgid "Hides the column headers"
 msgstr "Nasconde le intestazioni delle colonne"
 
@@ -456,351 +461,351 @@ msgstr "Nasconde le intestazioni delle colonne"
 # la forma italiana, pur se non aderente all'originale
 # è più corretta e in linea con gli altri messaggi
 # che si ottengono eseguento `zenity --help`
-#: ../src/option.c:595
+#: ../src/option.c:605
 msgid "Display notification"
 msgstr "Mostra un'icona nell'area di notifica"
 
-#: ../src/option.c:604
+#: ../src/option.c:614
 msgid "Set the notification text"
 msgstr "Imposta il testo della notifica"
 
-#: ../src/option.c:613
+#: ../src/option.c:623
 msgid "Listen for commands on stdin"
 msgstr "Attende i comandi da stdin"
 
 # GNOME-2-20
-#: ../src/option.c:630
+#: ../src/option.c:640
 msgid "Display progress indication dialog"
 msgstr "Mostra un dialogo di indicazione dell'avanzamento"
 
-#: ../src/option.c:648
+#: ../src/option.c:658
 msgid "Set initial percentage"
 msgstr "Imposta la percentuale iniziale"
 
 # GNOME-2-20
-#: ../src/option.c:649
+#: ../src/option.c:659
 msgid "PERCENTAGE"
 msgstr "PERCENTUALE"
 
-#: ../src/option.c:657
+#: ../src/option.c:667
 msgid "Pulsate progress bar"
 msgstr "Fa pulsare la barra di avanzamento"
 
-#: ../src/option.c:667
+#: ../src/option.c:677
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Chiude il dialogo quando viene raggiunto il 100%"
 
-#: ../src/option.c:677
+#: ../src/option.c:687
 #, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Termina il processo genitore se è premuto il pulsante «Annulla»"
 
-#: ../src/option.c:687
+#: ../src/option.c:697
 #, no-c-format
 msgid "Hide Cancel button"
 msgstr "Nasconde il pulsante «Annulla»"
 
 # GNOME-2-20
-#: ../src/option.c:702
+#: ../src/option.c:712
 msgid "Display question dialog"
 msgstr "Mostra un dialogo di domanda"
 
 # GNOME-2-20
-#: ../src/option.c:743
+#: ../src/option.c:753
 msgid "Display text information dialog"
 msgstr "Mostra un dialogo di informazione testuale"
 
-#: ../src/option.c:752
+#: ../src/option.c:762
 msgid "Open file"
 msgstr "Apri file"
 
-#: ../src/option.c:770
+#: ../src/option.c:780
 msgid "Set the text font"
 msgstr "Imposta il carattere del testo"
 
-#: ../src/option.c:779
+#: ../src/option.c:789
 msgid "Enable an I read and agree checkbox"
 msgstr "Abilita un casella di spunta \"Ho letto e accetto\""
 
-#: ../src/option.c:789
+#: ../src/option.c:799
 msgid "Enable html support"
 msgstr "Abilita il supporto html"
 
-#: ../src/option.c:798
+#: ../src/option.c:808
 msgid "Sets an url instead of a file. Only works if you use --html option"
 msgstr ""
 "Imposta un URL al posto di un file. Funziona solo se viene utilizzata "
 "l'opzione --html"
 
-#: ../src/option.c:799
+#: ../src/option.c:809
 msgid "URL"
 msgstr "URL"
 
 # GNOME-2-20
-#: ../src/option.c:814
+#: ../src/option.c:824
 msgid "Display warning dialog"
 msgstr "Mostra un dialogo di avvertimento"
 
 # GNOME-2-20
-#: ../src/option.c:855
+#: ../src/option.c:865
 msgid "Display scale dialog"
 msgstr "Mostra un dialogo con un cursore"
 
-#: ../src/option.c:873
+#: ../src/option.c:883
 msgid "Set initial value"
 msgstr "Imposta il valore iniziale"
 
 # GNOME-2-20
-#: ../src/option.c:874 ../src/option.c:883 ../src/option.c:892
-#: ../src/option.c:901 ../src/option.c:1082
+#: ../src/option.c:884 ../src/option.c:893 ../src/option.c:902
+#: ../src/option.c:911 ../src/option.c:1092
 msgid "VALUE"
 msgstr "VALORE"
 
-#: ../src/option.c:882
+#: ../src/option.c:892
 msgid "Set minimum value"
 msgstr "Imposta il valore minimo"
 
-#: ../src/option.c:891
+#: ../src/option.c:901
 msgid "Set maximum value"
 msgstr "Imposta il valore massimo"
 
-#: ../src/option.c:900
+#: ../src/option.c:910
 msgid "Set step size"
 msgstr "Imposta la dimensione dello spostamento"
 
-#: ../src/option.c:909
+#: ../src/option.c:919
 msgid "Print partial values"
 msgstr "Stampa i valori parziali"
 
-#: ../src/option.c:918
+#: ../src/option.c:928
 msgid "Hide value"
 msgstr "Nasconde il valore"
 
 # GNOME-2-20
-#: ../src/option.c:933
+#: ../src/option.c:943
 msgid "Display forms dialog"
 msgstr "Mostra un dialogo modulo"
 
-#: ../src/option.c:942
+#: ../src/option.c:952
 msgid "Add a new Entry in forms dialog"
 msgstr "Aggiunge una nuova voce nel dialogo modulo"
 
-#: ../src/option.c:943 ../src/option.c:952
+#: ../src/option.c:953 ../src/option.c:962
 msgid "Field name"
 msgstr "NOME_CAMPO"
 
-#: ../src/option.c:951
+#: ../src/option.c:961
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Aggiunge un nuovo campo password nel dialogo modul1"
 
-#: ../src/option.c:960
+#: ../src/option.c:970
 msgid "Add a new Calendar in forms dialog"
 msgstr "Aggiunge un nuovo calendario nel dialogo modulI"
 
-#: ../src/option.c:961
+#: ../src/option.c:971
 msgid "Calendar field name"
 msgstr "NOME_CAMPO_CALENDARIO"
 
-#: ../src/option.c:969
+#: ../src/option.c:979
 msgid "Add a new List in forms dialog"
 msgstr "Aggiunge un nuovo Elenco nel dialogo modulo"
 
-#: ../src/option.c:970
+#: ../src/option.c:980
 msgid "List field and header name"
 msgstr "Elenco nome campo e titolo"
 
-#: ../src/option.c:978
+#: ../src/option.c:988
 msgid "List of values for List"
 msgstr "Valori per Elenco"
 
-#: ../src/option.c:979 ../src/option.c:988
+#: ../src/option.c:989 ../src/option.c:998
 msgid "List of values separated by |"
 msgstr "Elenco di valori separati da |"
 
-#: ../src/option.c:987
+#: ../src/option.c:997
 msgid "List of values for columns"
 msgstr "Elenco di valori per colonne"
 
-#: ../src/option.c:1006
+#: ../src/option.c:1016
 msgid "Show the columns header"
 msgstr "Mostra il titolo della colonna"
 
-#: ../src/option.c:1048
+#: ../src/option.c:1058
 msgid "Display password dialog"
 msgstr "Mostra dialogo della password"
 
-#: ../src/option.c:1057
+#: ../src/option.c:1067
 msgid "Display the username option"
 msgstr "Mostra l'opzione del nome utente"
 
-#: ../src/option.c:1072
+#: ../src/option.c:1082
 msgid "Display color selection dialog"
 msgstr "Mostra un dialogo di selezione del colore"
 
-#: ../src/option.c:1081
+#: ../src/option.c:1091
 msgid "Set the color"
 msgstr "Imposta il colore"
 
-#: ../src/option.c:1090
+#: ../src/option.c:1100
 msgid "Show the palette"
 msgstr "Mostra la tavolozza"
 
-#: ../src/option.c:1105
+#: ../src/option.c:1115
 msgid "About zenity"
 msgstr "Informazioni su Zenity"
 
-#: ../src/option.c:1114
+#: ../src/option.c:1124
 msgid "Print version"
 msgstr "Stampa la versione"
 
-#: ../src/option.c:1988
+#: ../src/option.c:2006
 msgid "General options"
 msgstr "Opzioni generiche"
 
-#: ../src/option.c:1989
+#: ../src/option.c:2007
 msgid "Show general options"
 msgstr "Mostra opzioni generiche"
 
-#: ../src/option.c:1999
+#: ../src/option.c:2017
 msgid "Calendar options"
 msgstr "Opzioni del calendario"
 
-#: ../src/option.c:2000
+#: ../src/option.c:2018
 msgid "Show calendar options"
 msgstr "Mostra le opzioni del calendario"
 
-#: ../src/option.c:2010
+#: ../src/option.c:2028
 msgid "Text entry options"
 msgstr "Opzioni della casella di inserimento del testo"
 
-#: ../src/option.c:2011
+#: ../src/option.c:2029
 msgid "Show text entry options"
 msgstr "Mostra le opzioni della casella di inserimento del testo"
 
 # GNOME-2-20
-#: ../src/option.c:2021
+#: ../src/option.c:2039
 msgid "Error options"
 msgstr "Opzioni del dialogo di errore"
 
 # GNOME-2-20
-#: ../src/option.c:2022
+#: ../src/option.c:2040
 msgid "Show error options"
 msgstr "Mostra le opzioni del dialogo di errore"
 
 # GNOME-2-20
-#: ../src/option.c:2032
+#: ../src/option.c:2050
 msgid "Info options"
 msgstr "Opzioni del dialogo di informazione"
 
 # GNOME-2-20
-#: ../src/option.c:2033
+#: ../src/option.c:2051
 msgid "Show info options"
 msgstr "Mostra le opzioni del dialogo di informazione"
 
 # GNOME-2-20
-#: ../src/option.c:2043
+#: ../src/option.c:2061
 msgid "File selection options"
 msgstr "Opzioni del dialogo di selezione file"
 
 # GNOME-2-20
-#: ../src/option.c:2044
+#: ../src/option.c:2062
 msgid "Show file selection options"
 msgstr "Mostra le opzioni del dialogo di selezione file"
 
-#: ../src/option.c:2054
+#: ../src/option.c:2072
 msgid "List options"
 msgstr "Opzioni del dialogo elenco"
 
-#: ../src/option.c:2055
+#: ../src/option.c:2073
 msgid "Show list options"
 msgstr "Mostra le opzioni del dialogo elenco"
 
-#: ../src/option.c:2066
+#: ../src/option.c:2084
 msgid "Notification icon options"
 msgstr "Opzioni dell'icona di notifica"
 
-#: ../src/option.c:2067
+#: ../src/option.c:2085
 msgid "Show notification icon options"
 msgstr "Mostra le opzioni dell'icona di notifica"
 
-#: ../src/option.c:2078
+#: ../src/option.c:2096
 msgid "Progress options"
 msgstr "Opzioni della barra di avanzamento"
 
-#: ../src/option.c:2079
+#: ../src/option.c:2097
 msgid "Show progress options"
 msgstr "Mostra le opzioni della barra di avanzamento"
 
 # GNOME-2-20
-#: ../src/option.c:2089
+#: ../src/option.c:2107
 msgid "Question options"
 msgstr "Opzioni di domanda"
 
 # GNOME-2-20
-#: ../src/option.c:2090
+#: ../src/option.c:2108
 msgid "Show question options"
 msgstr "Mostra le opzioni di domanda"
 
 # GNOME-2-20
-#: ../src/option.c:2100
+#: ../src/option.c:2118
 msgid "Warning options"
 msgstr "Opzioni di avvertimento"
 
 # GNOME-2-20
-#: ../src/option.c:2101
+#: ../src/option.c:2119
 msgid "Show warning options"
 msgstr "Mostra le opzioni di avvertimento"
 
-#: ../src/option.c:2111
+#: ../src/option.c:2129
 msgid "Scale options"
 msgstr "Opzioni cursore"
 
-#: ../src/option.c:2112
+#: ../src/option.c:2130
 msgid "Show scale options"
 msgstr "Mostra le opzioni del cursore"
 
-#: ../src/option.c:2122
+#: ../src/option.c:2140
 msgid "Text information options"
 msgstr "Opzioni del testo informativo"
 
-#: ../src/option.c:2123
+#: ../src/option.c:2141
 msgid "Show text information options"
 msgstr "Mostra le opzioni del testo informativo"
 
-#: ../src/option.c:2133
+#: ../src/option.c:2151
 msgid "Color selection options"
 msgstr "Opzioni di selezione del colore"
 
-#: ../src/option.c:2134
+#: ../src/option.c:2152
 msgid "Show color selection options"
 msgstr "Mostra le opzioni di selezione del colore"
 
-#: ../src/option.c:2144
+#: ../src/option.c:2162
 msgid "Password dialog options"
 msgstr "Opzioni del dialogo password"
 
-#: ../src/option.c:2145
+#: ../src/option.c:2163
 msgid "Show password dialog options"
 msgstr "Mostra le opzioni del dialogo password"
 
-#: ../src/option.c:2155
+#: ../src/option.c:2173
 msgid "Forms dialog options"
 msgstr "Opzioni del dialogo moduli"
 
-#: ../src/option.c:2156
+#: ../src/option.c:2174
 msgid "Show forms dialog options"
 msgstr "Mostra le opzioni del dialogo moduli"
 
-#: ../src/option.c:2166
+#: ../src/option.c:2184
 msgid "Miscellaneous options"
 msgstr "Opzioni varie"
 
-#: ../src/option.c:2167
+#: ../src/option.c:2185
 msgid "Show miscellaneous options"
 msgstr "Mostra opzioni varie"
 
-#: ../src/option.c:2192
+#: ../src/option.c:2210
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -808,21 +813,13 @@ msgstr ""
 "Questa opzione non è disponibile. Consultare --help per ogni possibile uso.\n"
 
 # GNOME-2-20
-#: ../src/option.c:2196
+#: ../src/option.c:2214
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "L'opzione --%s non è supportata da questo dialogo\n"
 
 # GNOME-2-20
-#: ../src/option.c:2200
+#: ../src/option.c:2218
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Specificate due o più opzioni per il dialogo\n"
-
-#~| msgid "FILENAME"
-#~ msgid "FIELDNAME"
-#~ msgstr "NOME_CAMPO"
-
-#~| msgid "FILENAME"
-#~ msgid "CALENDARNAME"
-#~ msgstr "NOME_CALENDARIO"
