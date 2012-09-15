@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-21 12:23+0000\n"
-"PO-Revision-Date: 2012-03-11 00:54+0900\n"
+"POT-Creation-Date: 2012-07-20 23:12+0000\n"
+"PO-Revision-Date: 2012-09-15 18:37+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
+"Language: Korean\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../src/about.c:64
@@ -108,645 +108,649 @@ msgstr "최대값은 최소값보다 커야 합니다.\n"
 msgid "Value out of range.\n"
 msgstr "값이 범위를 넘었습니다.\n"
 
-#: ../src/tree.c:327
+#: ../src/tree.c:365
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "목록 대화 상자에서 열 제목을 설정하지 않았습니다.\n"
 
-#: ../src/tree.c:333
+#: ../src/tree.c:371
 #, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "하나의 목록 대화 상자 형식만 쓸 수 있습니다.\n"
 
 #: ../src/zenity.ui.h:1
-msgid "Forms dialog"
-msgstr "형식 입력 대화 상자"
-
-#: ../src/zenity.ui.h:2
-msgid "Add a new entry"
-msgstr "항목 추가"
-
-#: ../src/zenity.ui.h:3
-msgid "Adjust the scale value"
-msgstr "눈금 값 조정"
-
-#: ../src/zenity.ui.h:4
-msgid "All updates are complete."
-msgstr "모든 업데이트가 끝났습니다."
-
-#: ../src/zenity.ui.h:5
-msgid "An error has occurred."
-msgstr "오류가 발생했습니다."
-
-#: ../src/zenity.ui.h:6
-msgid "Are you sure you want to proceed?"
-msgstr "계속 진행하겠습니까?"
-
-#: ../src/zenity.ui.h:7
-msgid "C_alendar:"
-msgstr "달력(_A):"
-
-#: ../src/zenity.ui.h:8
 msgid "Calendar selection"
 msgstr "달력 선택"
 
-#: ../src/zenity.ui.h:9
+#: ../src/zenity.ui.h:2
+msgid "Select a date from below."
+msgstr "아래에서 날짜를 선택하십시오."
+
+#: ../src/zenity.ui.h:3
+msgid "C_alendar:"
+msgstr "달력(_A):"
+
+#: ../src/zenity.ui.h:4
+msgid "Add a new entry"
+msgstr "항목 추가"
+
+#: ../src/zenity.ui.h:5
+msgid "_Enter new text:"
+msgstr "새 텍스트 입력(_E):"
+
+#: ../src/zenity.ui.h:6
 msgid "Error"
 msgstr "오류"
 
-#: ../src/zenity.ui.h:10
+#: ../src/zenity.ui.h:7
+msgid "An error has occurred."
+msgstr "오류가 발생했습니다."
+
+#: ../src/zenity.ui.h:8
+msgid "Forms dialog"
+msgstr "형식 입력 대화 상자"
+
+#: ../src/zenity.ui.h:9
 msgid "Information"
 msgstr "정보"
+
+#: ../src/zenity.ui.h:10
+msgid "All updates are complete."
+msgstr "모든 업데이트가 끝났습니다."
 
 #: ../src/zenity.ui.h:11
 msgid "Progress"
 msgstr "진행"
 
 #: ../src/zenity.ui.h:12
-msgid "Question"
-msgstr "물음"
-
-#: ../src/zenity.ui.h:13
 msgid "Running..."
 msgstr "실행 중..."
 
+#: ../src/zenity.ui.h:13
+msgid "Question"
+msgstr "물음"
+
 #: ../src/zenity.ui.h:14
-msgid "Select a date from below."
-msgstr "아래에서 날짜를 선택하십시오."
+msgid "Are you sure you want to proceed?"
+msgstr "계속 진행하겠습니까?"
 
 #: ../src/zenity.ui.h:15
-msgid "Select items from the list"
-msgstr "목록에서 항목을 선택하십시오"
+msgid "Adjust the scale value"
+msgstr "눈금 값 조정"
 
 #: ../src/zenity.ui.h:16
-msgid "Select items from the list below."
-msgstr "아래 목록에서 항목을 선택하십시오."
-
-#: ../src/zenity.ui.h:17
 msgid "Text View"
 msgstr "텍스트 보기"
 
+#: ../src/zenity.ui.h:17
+msgid "Select items from the list"
+msgstr "목록에서 항목을 선택하십시오"
+
 #: ../src/zenity.ui.h:18
+msgid "Select items from the list below."
+msgstr "아래 목록에서 항목을 선택하십시오."
+
+#: ../src/zenity.ui.h:19
 msgid "Warning"
 msgstr "경고"
 
-#: ../src/zenity.ui.h:19
-msgid "_Enter new text:"
-msgstr "새 텍스트 입력(_E):"
-
-#: ../src/option.c:154
+#: ../src/option.c:155
 msgid "Set the dialog title"
 msgstr "대화 상자 제목을 설정합니다"
 
-#: ../src/option.c:155
+#: ../src/option.c:156
 msgid "TITLE"
 msgstr "<제목>"
 
-#: ../src/option.c:163
+#: ../src/option.c:164
 msgid "Set the window icon"
 msgstr "창 아이콘을 설정합니다"
 
-#: ../src/option.c:164
+#: ../src/option.c:165
 msgid "ICONPATH"
 msgstr "<아이콘 경로>"
 
-#: ../src/option.c:172
+#: ../src/option.c:173
 msgid "Set the width"
 msgstr "너비를 설정합니다"
 
-#: ../src/option.c:173
+#: ../src/option.c:174
 msgid "WIDTH"
 msgstr "<너비>"
 
-#: ../src/option.c:181
+#: ../src/option.c:182
 msgid "Set the height"
 msgstr "높이를 설정합니다"
 
-#: ../src/option.c:182
+#: ../src/option.c:183
 msgid "HEIGHT"
 msgstr "<높이>"
 
-#: ../src/option.c:190
+#: ../src/option.c:191
 msgid "Set dialog timeout in seconds"
 msgstr "대화 상자 제한 시간을 초 단위로 설정합니다"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:192
+#: ../src/option.c:193
 msgid "TIMEOUT"
 msgstr "<제한시간>"
 
-#: ../src/option.c:200
+#: ../src/option.c:201
 msgid "Sets the label of the Ok button"
 msgstr "확인 단추의 레이블을 설정합니다"
 
-#: ../src/option.c:201 ../src/option.c:210 ../src/option.c:234
-#: ../src/option.c:294 ../src/option.c:303 ../src/option.c:337
-#: ../src/option.c:378 ../src/option.c:498 ../src/option.c:605
-#: ../src/option.c:640 ../src/option.c:712 ../src/option.c:771
-#: ../src/option.c:780 ../src/option.c:824 ../src/option.c:865
-#: ../src/option.c:1016
+#: ../src/option.c:202 ../src/option.c:211 ../src/option.c:235
+#: ../src/option.c:295 ../src/option.c:304 ../src/option.c:338
+#: ../src/option.c:379 ../src/option.c:499 ../src/option.c:615
+#: ../src/option.c:650 ../src/option.c:722 ../src/option.c:781
+#: ../src/option.c:790 ../src/option.c:834 ../src/option.c:875
+#: ../src/option.c:1026
 msgid "TEXT"
 msgstr "<텍스트>"
 
-#: ../src/option.c:209
+#: ../src/option.c:210
 msgid "Sets the label of the Cancel button"
 msgstr "취소 단추의 레이블을 설정합니다"
 
-#: ../src/option.c:224
+#: ../src/option.c:225
 msgid "Display calendar dialog"
 msgstr "달력 대화 상자를 표시합니다"
 
-#: ../src/option.c:233 ../src/option.c:293 ../src/option.c:336
-#: ../src/option.c:377 ../src/option.c:497 ../src/option.c:639
-#: ../src/option.c:711 ../src/option.c:823 ../src/option.c:864
-#: ../src/option.c:1015
+#: ../src/option.c:234 ../src/option.c:294 ../src/option.c:337
+#: ../src/option.c:378 ../src/option.c:498 ../src/option.c:649
+#: ../src/option.c:721 ../src/option.c:833 ../src/option.c:874
+#: ../src/option.c:1025
 msgid "Set the dialog text"
 msgstr "대화 상자의 텍스트를 설정합니다"
 
-#: ../src/option.c:242
+#: ../src/option.c:243
 msgid "Set the calendar day"
 msgstr "달력의 날짜를 설정합니다"
 
-#: ../src/option.c:243
+#: ../src/option.c:244
 msgid "DAY"
 msgstr "<날>"
 
-#: ../src/option.c:251
+#: ../src/option.c:252
 msgid "Set the calendar month"
 msgstr "달력의 달을 설정합니다"
 
-#: ../src/option.c:252
+#: ../src/option.c:253
 msgid "MONTH"
 msgstr "<달>"
 
-#: ../src/option.c:260
+#: ../src/option.c:261
 msgid "Set the calendar year"
 msgstr "달력의 연도를 설정합니다"
 
-#: ../src/option.c:261
+#: ../src/option.c:262
 msgid "YEAR"
 msgstr "<연도>"
 
-#: ../src/option.c:269 ../src/option.c:1033
+#: ../src/option.c:270 ../src/option.c:1043
 msgid "Set the format for the returned date"
 msgstr "리턴할 날짜의 형식을 설정합니다"
 
-#: ../src/option.c:270 ../src/option.c:1034
+#: ../src/option.c:271 ../src/option.c:1044
 msgid "PATTERN"
 msgstr "<형식>"
 
-#: ../src/option.c:284
+#: ../src/option.c:285
 msgid "Display text entry dialog"
 msgstr "텍스트 입력 대화 창을 표시합니다"
 
-#: ../src/option.c:302
+#: ../src/option.c:303
 msgid "Set the entry text"
 msgstr "입력란의 텍스트를 설정합니다"
 
-#: ../src/option.c:311
+#: ../src/option.c:312
 msgid "Hide the entry text"
 msgstr "입력란의 텍스트를 숨깁니다"
 
-#: ../src/option.c:327
+#: ../src/option.c:328
 msgid "Display error dialog"
 msgstr "오류 대화 상자를 표시합니다"
 
-#: ../src/option.c:345 ../src/option.c:386 ../src/option.c:720
-#: ../src/option.c:832
+#: ../src/option.c:346 ../src/option.c:387 ../src/option.c:730
+#: ../src/option.c:842
 msgid "Do not enable text wrapping"
 msgstr "텍스트 줄 바꾸기를 쓰지 않습니다"
 
-#: ../src/option.c:354 ../src/option.c:395 ../src/option.c:729
-#: ../src/option.c:841
+#: ../src/option.c:355 ../src/option.c:396 ../src/option.c:739
+#: ../src/option.c:851
 msgid "Do not enable pango markup"
 msgstr "판고 마크업을 쓰지 않습니다"
 
-#: ../src/option.c:368
+#: ../src/option.c:369
 msgid "Display info dialog"
 msgstr "정보 대화 상자를 표시합니다"
 
-#: ../src/option.c:409
+#: ../src/option.c:410
 msgid "Display file selection dialog"
 msgstr "파일 선택상자를 표시합니다"
 
-#: ../src/option.c:418
+#: ../src/option.c:419
 msgid "Set the filename"
 msgstr "파일 이름을 설정합니다"
 
-#: ../src/option.c:419 ../src/option.c:753
+#: ../src/option.c:420 ../src/option.c:763
 msgid "FILENAME"
 msgstr "<파일 이름>"
 
-#: ../src/option.c:427
+#: ../src/option.c:428
 msgid "Allow multiple files to be selected"
 msgstr "여러 파일을 선택할 수 있게 합니다"
 
-#: ../src/option.c:436
+#: ../src/option.c:437
 msgid "Activate directory-only selection"
 msgstr "디렉터리만 선택합니다"
 
-#: ../src/option.c:445
+#: ../src/option.c:446
 msgid "Activate save mode"
 msgstr "저장 모드를 사용합니다"
 
-#: ../src/option.c:454 ../src/option.c:533 ../src/option.c:1024
+#: ../src/option.c:455 ../src/option.c:543 ../src/option.c:1034
 msgid "Set output separator character"
 msgstr "출력 구분문자를 설정합니다"
 
-#: ../src/option.c:455 ../src/option.c:534 ../src/option.c:1025
+#: ../src/option.c:456 ../src/option.c:544 ../src/option.c:1035
 msgid "SEPARATOR"
 msgstr "<구분>"
 
-#: ../src/option.c:463
+#: ../src/option.c:464
 msgid "Confirm file selection if filename already exists"
 msgstr "파일 이름이 이미 있을 때 그 파일을 정말 선택할 지 확인합니다"
 
-#: ../src/option.c:472
+#: ../src/option.c:473
 msgid "Sets a filename filter"
 msgstr "파일 이름 필터를 설정합니다"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:474
+#: ../src/option.c:475
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "<이름> | <패턴1> <패턴2> ..."
 
-#: ../src/option.c:488
+#: ../src/option.c:489
 msgid "Display list dialog"
 msgstr "목록 대화 상자를 표시합니다"
 
-#: ../src/option.c:506
+#: ../src/option.c:507
 msgid "Set the column header"
 msgstr "열 머리글을 설정합니다"
 
-#: ../src/option.c:507
+#: ../src/option.c:508
 msgid "COLUMN"
 msgstr "<열>"
 
-#: ../src/option.c:515
+#: ../src/option.c:516
 msgid "Use check boxes for first column"
 msgstr "첫번째 열의 확인란을 사용합니다"
 
-#: ../src/option.c:524
+#: ../src/option.c:525
 msgid "Use radio buttons for first column"
 msgstr "첫번째 열의 라디오 단추를 사용합니다"
 
-#: ../src/option.c:542
+#: ../src/option.c:534
+msgid "Use an image for first column"
+msgstr "첫번째 열의 그림을 사용합니다"
+
+#: ../src/option.c:552
 msgid "Allow multiple rows to be selected"
 msgstr "여러 파일을 선택할 수 있게 합니다"
 
-#: ../src/option.c:551 ../src/option.c:761
+#: ../src/option.c:561 ../src/option.c:771
 msgid "Allow changes to text"
 msgstr "텍스트를 바꿀 수 있습니다"
 
-#: ../src/option.c:560
+#: ../src/option.c:570
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
-msgstr "특정 열을 출력합니다 (기본값은 1, 'ALL'을 쓰면 모든 열을 출력합니다)"
+msgstr "특정 열을 출력합니다(기본값은 1, 'ALL'을 쓰면 모든 열을 출력합니다)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:562 ../src/option.c:571
+#: ../src/option.c:572 ../src/option.c:581
 msgid "NUMBER"
 msgstr "<숫자>"
 
-#: ../src/option.c:570
+#: ../src/option.c:580
 msgid "Hide a specific column"
 msgstr "특정 열을 숨깁니다"
 
-#: ../src/option.c:579
+#: ../src/option.c:589
 msgid "Hides the column headers"
 msgstr "열 머리글을 숨깁니다"
 
-#: ../src/option.c:595
+#: ../src/option.c:605
 msgid "Display notification"
 msgstr "알림을 표시합니다"
 
-#: ../src/option.c:604
+#: ../src/option.c:614
 msgid "Set the notification text"
 msgstr "알림 텍스트를 설정합니다"
 
-#: ../src/option.c:613
+#: ../src/option.c:623
 msgid "Listen for commands on stdin"
 msgstr "표준 입력에서 명령어를 받습니다"
 
-#: ../src/option.c:630
+#: ../src/option.c:640
 msgid "Display progress indication dialog"
 msgstr "진행 표시상자를 표시합니다"
 
-#: ../src/option.c:648
+#: ../src/option.c:658
 msgid "Set initial percentage"
 msgstr "처음 퍼센트값을 설정합니다"
 
-#: ../src/option.c:649
+#: ../src/option.c:659
 msgid "PERCENTAGE"
 msgstr "<퍼센트값>"
 
-#: ../src/option.c:657
+#: ../src/option.c:667
 msgid "Pulsate progress bar"
 msgstr "진행률 표시줄을 움직입니다"
 
-#: ../src/option.c:667
+#: ../src/option.c:677
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "100%가 되면 대화 상자를 닫습니다"
 
-#: ../src/option.c:677
+#: ../src/option.c:687
 #, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "취소 단추를 누르면 상위 프로세스를 강제로 끝냅니다"
 
 # 옵션 설명 - 문장으로 번역
-#: ../src/option.c:687
+#: ../src/option.c:697
 #, no-c-format
 msgid "Hide Cancel button"
 msgstr "취소 단추를 감춥니다"
 
-#: ../src/option.c:702
+#: ../src/option.c:712
 msgid "Display question dialog"
 msgstr "질문 대화 상자를 표시합니다"
 
-#: ../src/option.c:743
+#: ../src/option.c:753
 msgid "Display text information dialog"
 msgstr "텍스트 정보 대화 창을 표시합니다"
 
-#: ../src/option.c:752
+#: ../src/option.c:762
 msgid "Open file"
 msgstr "파일 열기"
 
-#: ../src/option.c:770
+#: ../src/option.c:780
 msgid "Set the text font"
 msgstr "텍스트 글꼴을 설정합니다"
 
-#: ../src/option.c:779
+#: ../src/option.c:789
 msgid "Enable an I read and agree checkbox"
 msgstr "읽었고 동의한다는 확인란 사용"
 
-#: ../src/option.c:789
+#: ../src/option.c:799
 msgid "Enable html support"
 msgstr "HTML 기능 사용"
 
-#: ../src/option.c:798
+#: ../src/option.c:808
 msgid "Sets an url instead of a file. Only works if you use --html option"
 msgstr "파일 대신 URL 설정. --html 옵션을 사용해야 동작합니다."
 
-#: ../src/option.c:799
+#: ../src/option.c:809
 msgid "URL"
 msgstr "URL"
 
-#: ../src/option.c:814
+#: ../src/option.c:824
 msgid "Display warning dialog"
 msgstr "주의 대화 상자를 표시합니다"
 
-#: ../src/option.c:855
+#: ../src/option.c:865
 msgid "Display scale dialog"
 msgstr "눈금값 대화 상자를 표시합니다"
 
-#: ../src/option.c:873
+#: ../src/option.c:883
 msgid "Set initial value"
 msgstr "처음 값을 설정합니다"
 
-#: ../src/option.c:874 ../src/option.c:883 ../src/option.c:892
-#: ../src/option.c:901 ../src/option.c:1082
+#: ../src/option.c:884 ../src/option.c:893 ../src/option.c:902
+#: ../src/option.c:911 ../src/option.c:1092
 msgid "VALUE"
 msgstr "<값>"
 
-#: ../src/option.c:882
+#: ../src/option.c:892
 msgid "Set minimum value"
 msgstr "최소값을 설정합니다"
 
-#: ../src/option.c:891
+#: ../src/option.c:901
 msgid "Set maximum value"
 msgstr "최대값을 설정합니다"
 
-#: ../src/option.c:900
+#: ../src/option.c:910
 msgid "Set step size"
 msgstr "단계 크기를 설정합니다"
 
-#: ../src/option.c:909
+#: ../src/option.c:919
 msgid "Print partial values"
 msgstr "일부 값을 출력합니다"
 
-#: ../src/option.c:918
+#: ../src/option.c:928
 msgid "Hide value"
 msgstr "값을 숨깁니다"
 
-#: ../src/option.c:933
+#: ../src/option.c:943
 msgid "Display forms dialog"
 msgstr "형식 입력 대화 상자를 표시합니다"
 
-#: ../src/option.c:942
+#: ../src/option.c:952
 msgid "Add a new Entry in forms dialog"
 msgstr "형식 입력 대화 상자에 새 항목을 추가합니다"
 
-#: ../src/option.c:943 ../src/option.c:952
+#: ../src/option.c:953 ../src/option.c:962
 msgid "Field name"
 msgstr "항목 이름"
 
-#: ../src/option.c:951
+#: ../src/option.c:961
 msgid "Add a new Password Entry in forms dialog"
 msgstr "형식 입력 대화 상자에 새 암호 입력 창을 추가합니다"
 
-#: ../src/option.c:960
+#: ../src/option.c:970
 msgid "Add a new Calendar in forms dialog"
 msgstr "형식 입력 대화 상자에 새 달력을 추가합니다"
 
-#: ../src/option.c:961
+#: ../src/option.c:971
 msgid "Calendar field name"
 msgstr "달력 항목 이름"
 
-#: ../src/option.c:969
+#: ../src/option.c:979
 msgid "Add a new List in forms dialog"
 msgstr "형식 입력 대화 상자에 새 리스트를 추가합니다"
 
 # argument 설명
-#: ../src/option.c:970
+#: ../src/option.c:980
 msgid "List field and header name"
 msgstr "목록 항목 및 머리글 이름"
 
 # argument 설명
-#: ../src/option.c:978
+#: ../src/option.c:988
 msgid "List of values for List"
 msgstr "목록에 대한 값의 목록"
 
 # argument 설명
-#: ../src/option.c:979 ../src/option.c:988
+#: ../src/option.c:989 ../src/option.c:998
 msgid "List of values separated by |"
 msgstr "| 문자로 구분한 값의 목록"
 
 # argument 설명
-#: ../src/option.c:987
+#: ../src/option.c:997
 msgid "List of values for columns"
 msgstr "열의 값의 목록"
 
-#: ../src/option.c:1006
+#: ../src/option.c:1016
 msgid "Show the columns header"
 msgstr "열 머리글을 표시합니다"
 
-#: ../src/option.c:1048
+#: ../src/option.c:1058
 msgid "Display password dialog"
 msgstr "암호 대화 상자를 표시합니다"
 
-#: ../src/option.c:1057
+#: ../src/option.c:1067
 msgid "Display the username option"
 msgstr "사용자 이름 옵션을 표시합니다"
 
-#: ../src/option.c:1072
+#: ../src/option.c:1082
 msgid "Display color selection dialog"
 msgstr "색 선택 창을 표시합니다"
 
-#: ../src/option.c:1081
+#: ../src/option.c:1091
 msgid "Set the color"
 msgstr "색을 설정합니다"
 
-#: ../src/option.c:1090
+#: ../src/option.c:1100
 msgid "Show the palette"
 msgstr "팔레트를 표시합니다"
 
-#: ../src/option.c:1105
+#: ../src/option.c:1115
 msgid "About zenity"
 msgstr "제니티 정보"
 
-#: ../src/option.c:1114
+#: ../src/option.c:1124
 msgid "Print version"
 msgstr "버전 출력"
 
-#: ../src/option.c:1988
+#: ../src/option.c:2006
 msgid "General options"
 msgstr "일반 옵션"
 
-#: ../src/option.c:1989
+#: ../src/option.c:2007
 msgid "Show general options"
 msgstr "일반 옵션을 표시합니다"
 
-#: ../src/option.c:1999
+#: ../src/option.c:2017
 msgid "Calendar options"
 msgstr "달력 옵션"
 
-#: ../src/option.c:2000
+#: ../src/option.c:2018
 msgid "Show calendar options"
 msgstr "달력 옵션을 표시합니다"
 
-#: ../src/option.c:2010
+#: ../src/option.c:2028
 msgid "Text entry options"
 msgstr "텍스트 입력란 옵션"
 
-#: ../src/option.c:2011
+#: ../src/option.c:2029
 msgid "Show text entry options"
 msgstr "텍스트 입력란 옵션을 표시합니다"
 
-#: ../src/option.c:2021
+#: ../src/option.c:2039
 msgid "Error options"
 msgstr "오류 옵션"
 
-#: ../src/option.c:2022
+#: ../src/option.c:2040
 msgid "Show error options"
 msgstr "오류 옵션을 표시합니다"
 
-#: ../src/option.c:2032
+#: ../src/option.c:2050
 msgid "Info options"
 msgstr "정보 옵션"
 
-#: ../src/option.c:2033
+#: ../src/option.c:2051
 msgid "Show info options"
 msgstr "정보 옵션을 표시합니다"
 
-#: ../src/option.c:2043
+#: ../src/option.c:2061
 msgid "File selection options"
 msgstr "파일 선택 옵션"
 
-#: ../src/option.c:2044
+#: ../src/option.c:2062
 msgid "Show file selection options"
 msgstr "파일 선택 옵션을 표시합니다"
 
-#: ../src/option.c:2054
+#: ../src/option.c:2072
 msgid "List options"
 msgstr "목록 옵션"
 
-#: ../src/option.c:2055
+#: ../src/option.c:2073
 msgid "Show list options"
 msgstr "목록 옵션을 표시합니다"
 
-#: ../src/option.c:2066
+#: ../src/option.c:2084
 msgid "Notification icon options"
 msgstr "알림 아이콘 옵션"
 
-#: ../src/option.c:2067
+#: ../src/option.c:2085
 msgid "Show notification icon options"
 msgstr "알림 아이콘 옵션을 표시합니다"
 
-#: ../src/option.c:2078
+#: ../src/option.c:2096
 msgid "Progress options"
 msgstr "진행 옵션"
 
-#: ../src/option.c:2079
+#: ../src/option.c:2097
 msgid "Show progress options"
 msgstr "진행 옵션을 표시합니다"
 
-#: ../src/option.c:2089
+#: ../src/option.c:2107
 msgid "Question options"
 msgstr "물음 옵션"
 
-#: ../src/option.c:2090
+#: ../src/option.c:2108
 msgid "Show question options"
 msgstr "물음 옵션을 표시합니다"
 
-#: ../src/option.c:2100
+#: ../src/option.c:2118
 msgid "Warning options"
 msgstr "주의 옵션"
 
-#: ../src/option.c:2101
+#: ../src/option.c:2119
 msgid "Show warning options"
 msgstr "주의 옵션을 표시합니다"
 
-#: ../src/option.c:2111
+#: ../src/option.c:2129
 msgid "Scale options"
 msgstr "눈금 옵션"
 
-#: ../src/option.c:2112
+#: ../src/option.c:2130
 msgid "Show scale options"
 msgstr "눈금 옵션을 표시합니다"
 
-#: ../src/option.c:2122
+#: ../src/option.c:2140
 msgid "Text information options"
 msgstr "텍스트 정보 옵션"
 
-#: ../src/option.c:2123
+#: ../src/option.c:2141
 msgid "Show text information options"
 msgstr "텍스트 정보 옵션을 표시합니다"
 
-#: ../src/option.c:2133
+#: ../src/option.c:2151
 msgid "Color selection options"
 msgstr "색 선택 옵션"
 
-#: ../src/option.c:2134
+#: ../src/option.c:2152
 msgid "Show color selection options"
 msgstr "색 선택 옵션을 표시합니다"
 
-#: ../src/option.c:2144
+#: ../src/option.c:2162
 msgid "Password dialog options"
 msgstr "암호 대화 상자 옵션"
 
-#: ../src/option.c:2145
+#: ../src/option.c:2163
 msgid "Show password dialog options"
 msgstr "암호 대화 상자 옵션을 표시합니다"
 
-#: ../src/option.c:2155
+#: ../src/option.c:2173
 msgid "Forms dialog options"
 msgstr "형식 입력 대화 상자 옵션"
 
-#: ../src/option.c:2156
+#: ../src/option.c:2174
 msgid "Show forms dialog options"
 msgstr "형식 입력 대화 상자 옵션을 표시합니다"
 
-#: ../src/option.c:2166
+#: ../src/option.c:2184
 msgid "Miscellaneous options"
 msgstr "기타 옵션"
 
-#: ../src/option.c:2167
+#: ../src/option.c:2185
 msgid "Show miscellaneous options"
 msgstr "기타 옵션을 표시합니다"
 
-#: ../src/option.c:2192
+#: ../src/option.c:2210
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -754,12 +758,12 @@ msgstr ""
 "이 옵션을 사용할 수 없습니다. 사용할 수 있는 옵션을 모두 보려면 --help를 참고"
 "하십시오.\n"
 
-#: ../src/option.c:2196
+#: ../src/option.c:2214
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "이 대화 상자에서 --%s 옵션은 지원하지 않습니다\n"
 
-#: ../src/option.c:2200
+#: ../src/option.c:2218
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "두 개 이상의 대화 상자 옵션을 설정했습니다\n"
