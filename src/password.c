@@ -134,6 +134,9 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_password_dialog_response),
                     password_data);

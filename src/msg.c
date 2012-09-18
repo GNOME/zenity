@@ -142,6 +142,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
         
   if (msg_data->dialog_text) {
     if (msg_data->no_markup)

@@ -383,6 +383,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
   if (data->ok_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_tree_ok_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);

@@ -67,6 +67,9 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
   text = gtk_builder_get_object (builder, "zenity_calendar_text");
 
   if (cal_data->dialog_text)

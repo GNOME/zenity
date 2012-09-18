@@ -73,6 +73,9 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
     g_object_unref (G_OBJECT (button));
   }
 
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
   gtk_color_selection_set_has_palette (GTK_COLOR_SELECTION (colorsel),
                                        color_data->show_palette);
 

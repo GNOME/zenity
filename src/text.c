@@ -288,6 +288,9 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   else
     gtk_window_set_default_size (GTK_WINDOW (dialog), 300, 400); 
 
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
 #ifdef HAVE_WEBKITGTK
   if(text_data->html) {
     web_kit = webkit_web_view_new();

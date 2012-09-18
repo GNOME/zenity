@@ -67,6 +67,9 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 	
   zenity_util_set_window_icon (dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-file.png"));
 
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
   if (file_data->uri) {
     dir = g_path_get_dirname (file_data->uri);
 

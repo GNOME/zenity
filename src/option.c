@@ -44,6 +44,7 @@ static gboolean zenity_general_dialog_no_markup;
 static gint     zenity_general_timeout_delay;
 static gchar   *zenity_general_ok_button;
 static gchar   *zenity_general_cancel_button;
+static gboolean zenity_general_modal;
 
 /* Calendar Dialog Options */
 static gboolean zenity_calendar_active;
@@ -209,6 +210,15 @@ static GOptionEntry general_options[] = {
     &zenity_general_cancel_button,
     N_("Sets the label of the Cancel button"),
     N_("TEXT")
+  },
+  {
+    "modal",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_general_modal,
+    N_("Set the modal hint"),
+    NULL
   },
   {
     NULL
@@ -1287,6 +1297,7 @@ zenity_general_pre_callback (GOptionContext *context,
   zenity_general_dialog_no_wrap = FALSE;
   zenity_general_dialog_no_markup = FALSE;
   zenity_general_timeout_delay = -1;
+  zenity_general_modal = FALSE;
 
   return TRUE;
 }
@@ -1524,6 +1535,7 @@ zenity_general_post_callback (GOptionContext *context,
   results->data->timeout_delay = zenity_general_timeout_delay;
   results->data->ok_label = zenity_general_ok_button;
   results->data->cancel_label = zenity_general_cancel_button;
+  results->data->modal = zenity_general_modal;
   return TRUE;
 }
 

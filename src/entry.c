@@ -80,6 +80,9 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
+  if (data->modal)
+    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
   
   if (data->ok_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_entry_ok_button"));
