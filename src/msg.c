@@ -58,12 +58,14 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   GtkWidget *dialog;
   GtkWidget *ok_button;
   GObject *text;
+  GObject *image;
 
   switch (msg_data->mode) {
     case ZENITY_MSG_WARNING:
       builder = zenity_util_load_ui_file ("zenity_warning_dialog", NULL);
       dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_warning_dialog"));
       text = gtk_builder_get_object (builder, "zenity_warning_text");
+      image = gtk_builder_get_object (builder, "zenity_warning_image");
       ok_button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_warning_ok_button"));
       break;
 
@@ -71,6 +73,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       builder = zenity_util_load_ui_file ("zenity_question_dialog", NULL);
       dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_question_dialog"));
       text = gtk_builder_get_object (builder, "zenity_question_text");
+      image = gtk_builder_get_object (builder, "zenity_question_image");
       ok_button = NULL;
       break;
 
@@ -78,6 +81,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       builder = zenity_util_load_ui_file ("zenity_error_dialog", NULL);
       dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_error_dialog"));
       text = gtk_builder_get_object (builder, "zenity_error_text");
+      image = gtk_builder_get_object (builder, "zenity_error_image");
       ok_button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_error_ok_button"));
       break;
 
@@ -85,6 +89,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       builder = zenity_util_load_ui_file ("zenity_info_dialog", NULL);
       dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_info_dialog"));
       text = gtk_builder_get_object (builder, "zenity_info_text");
+      image = gtk_builder_get_object (builder, "zenity_info_image");
       ok_button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_info_ok_button"));
       break;
 		
@@ -92,6 +97,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       builder = NULL;
       dialog = NULL;
       text = NULL;
+      image = NULL;
       ok_button = NULL;
       g_assert_not_reached ();
       break;	
@@ -152,6 +158,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
     else 
       gtk_label_set_markup (GTK_LABEL (text), g_strcompress (msg_data->dialog_text));
   }
+
+  if (msg_data->dialog_icon)
+    gtk_image_set_from_icon_name (GTK_IMAGE (image), msg_data->dialog_icon, GTK_ICON_SIZE_DIALOG);
  
   if (msg_data->no_wrap)
     gtk_label_set_line_wrap (GTK_LABEL (text), FALSE);

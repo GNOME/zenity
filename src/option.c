@@ -35,6 +35,7 @@ static gchar   *zenity_general_window_icon;
 static int      zenity_general_width;
 static int      zenity_general_height;
 static gchar   *zenity_general_dialog_text;
+static gchar   *zenity_general_dialog_icon;
 static gchar   *zenity_general_separator;
 static gboolean zenity_general_multiple;
 static gboolean zenity_general_editable;
@@ -348,6 +349,15 @@ static GOptionEntry error_options[] = {
     N_("TEXT")
   },
   {
+    "icon-name",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_dialog_icon,
+    N_("Set the dialog icon"),
+    N_("ICON-NAME")
+  },
+  {
     "no-wrap",
     '\0',
     G_OPTION_FLAG_NOALIAS,
@@ -387,6 +397,15 @@ static GOptionEntry info_options[] = {
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
     N_("TEXT")
+  },
+  {
+    "icon-name",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_dialog_icon,
+    N_("Set the dialog icon"),
+    N_("ICON-NAME")
   },
   {
     "no-wrap",
@@ -732,6 +751,15 @@ static GOptionEntry question_options[] = {
     N_("TEXT")
   },
   {
+    "icon-name",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_dialog_icon,
+    N_("Set the dialog icon"),
+    N_("ICON-NAME")
+  },
+  {
     "no-wrap",
     '\0',
     G_OPTION_FLAG_NOALIAS,
@@ -842,6 +870,15 @@ static GOptionEntry warning_options[] = {
     &zenity_general_dialog_text,
     N_("Set the dialog text"),
     N_("TEXT")
+  },
+  {
+    "icon-name",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING,
+    &zenity_general_dialog_icon,
+    N_("Set the dialog icon"),
+    N_("ICON-NAME")
   },
   {
     "no-wrap",
@@ -1627,6 +1664,7 @@ zenity_error_post_callback (GOptionContext *context,
 
   if (results->mode == MODE_ERROR) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
+    results->msg_data->dialog_icon = zenity_general_dialog_icon;
     results->msg_data->mode = ZENITY_MSG_ERROR; 
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
@@ -1645,6 +1683,7 @@ zenity_info_post_callback (GOptionContext *context,
 
   if (results->mode == MODE_INFO) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
+    results->msg_data->dialog_icon = zenity_general_dialog_icon;
     results->msg_data->mode = ZENITY_MSG_INFO; 
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
@@ -1819,6 +1858,7 @@ zenity_question_post_callback (GOptionContext *context,
   zenity_option_set_dialog_mode (zenity_question_active, MODE_QUESTION);
   if (results->mode == MODE_QUESTION) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
+    results->msg_data->dialog_icon = zenity_general_dialog_icon;
     results->msg_data->mode = ZENITY_MSG_QUESTION;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
@@ -1863,6 +1903,7 @@ zenity_warning_post_callback (GOptionContext *context,
 
   if (results->mode == MODE_WARNING) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
+    results->msg_data->dialog_icon = zenity_general_dialog_icon;
     results->msg_data->mode = ZENITY_MSG_WARNING;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;

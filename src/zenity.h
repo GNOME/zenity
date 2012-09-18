@@ -61,6 +61,7 @@ typedef enum {
 
 typedef struct {
   gchar   *dialog_text;
+  gchar   *dialog_icon;
   MsgMode  mode;
   gboolean no_wrap;
   gboolean no_markup;
