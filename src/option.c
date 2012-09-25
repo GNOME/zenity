@@ -218,7 +218,7 @@ static GOptionEntry general_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_modal,
-    "Set the modal hint",
+    N_("Set the modal hint"),
     NULL
   },
   {
@@ -354,8 +354,8 @@ static GOptionEntry error_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_dialog_icon,
-    "Set the dialog icon",
-    "ICON-NAME"
+    N_("Set the dialog icon"),
+    N_("ICON-NAME")
   },
   {
     "no-wrap",
