@@ -92,7 +92,7 @@ zenity_notification_handle_stdin (GIOChannel *channel,
       zenity_util_strip_newline (string->str);
       colon = strchr(string->str, ':');
       if (colon == NULL) {
-	g_printerr (_("could not parse command from stdin\n"));
+	g_printerr (_("Could not parse command from stdin\n"));
 	continue;
       }
       /* split off the command and value */
