@@ -2,24 +2,27 @@
 #
 # This file is distributed under the same license as the zenity package.
 #
-# Vincent van Adrighem <adrighem@gnome.org>, 2003–2005
-# Wouter Bolsterlee <wbolster@gnome.org>, 2007, 2010–2011
-# Tino Meinen <a.t.meinen@chello.nl>, 2008
-# Reinout van Schouwen <reinouts@gnome.org>, 2010
 #
+# Vincent van Adrighem <adrighem@gnome.org>, 2003–2005.
+# Tino Meinen <a.t.meinen@chello.nl>, 2008.
+# Reinout van Schouwen <reinouts@gnome.org>, 2010.
+# Wouter Bolsterlee <wbolster@gnome.org>, 2007, 2010–2011, 2012.
+# Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenity\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-06 00:49+0200\n"
-"PO-Revision-Date: 2011-09-06 00:49+0200\n"
-"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=zenity&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-11-23 08:08+0000\n"
+"PO-Revision-Date: 2012-11-23 09:47+0100\n"
+"Last-Translator: Hannie Dumoleyn <hannie@ubuntu-nl.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../src/about.c:64
 msgid ""
@@ -28,10 +31,9 @@ msgid ""
 "Free Software Foundation; either version 2 of the License, or (at your "
 "option) any later version.\n"
 msgstr ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
+"Dit programma is vrije software; u mag het verspreiden en/of wijzigen onder "
+"de voorwaarden van de GNU Lesser General Public License, uitgegeven door de "
+"Free Software Foundation (versie 2 van de licentie of een nieuwere versie.\n"
 
 #: ../src/about.c:68
 msgid ""
@@ -40,10 +42,10 @@ msgid ""
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
 "for more details.\n"
 msgstr ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
+"Dit programma wordt verspreid in de hoop dat het nuttig zal zijn, maar "
+"ZONDER ENIGE GARANTIE; zelfs zonder de impliciete garantie van "
+"VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie voor meer "
+"informatie de GNU Lesser General Public License.\n"
 
 #: ../src/about.c:72
 msgid ""
@@ -51,9 +53,10 @@ msgid ""
 "along with this program; if not, write to the Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"Als het goed is heeft u bij dit programma een kopie van de GNU Lesser "
+"General Public License ontvangen; als dat niet zo is, stuur dan een brief "
+"naar de Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
+"Boston, MA 02110-1301, USA."
 
 #: ../src/about.c:265
 msgid "translator-credits"
@@ -77,8 +80,9 @@ msgstr ""
 "informatie.\n"
 
 #: ../src/notification.c:95
-#, c-format
-msgid "could not parse command from stdin\n"
+#, fuzzy, c-format
+#| msgid "could not parse command from stdin\n"
+msgid "Could not parse command from stdin\n"
 msgstr "ik begrijp opdracht van stdin niet\n"
 
 #: ../src/notification.c:122
@@ -112,298 +116,324 @@ msgstr "Maximumwaarde moet meer zijn dan de minimumwarde.\n"
 msgid "Value out of range.\n"
 msgstr "Waarde te groot.\n"
 
-#: ../src/tree.c:327
+#: ../src/tree.c:365
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Geen kolomtitels gegeven voor lijstweergave.\n"
 
-#: ../src/tree.c:333
+#: ../src/tree.c:371
 #, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "U dient slechts één type Lijstvenster te gebruiken.\n"
 
 #: ../src/zenity.ui.h:1
-msgid "Forms dialog"
-msgstr "Formuliervenster"
-
-#: ../src/zenity.ui.h:2
-msgid "Add a new entry"
-msgstr "Nieuwe ingang toevoegen"
-
-#: ../src/zenity.ui.h:3
-msgid "Adjust the scale value"
-msgstr "Waarde aanpassen"
-
-#: ../src/zenity.ui.h:4
-msgid "All updates are complete."
-msgstr "Alle updates zijn gebeurd."
-
-#: ../src/zenity.ui.h:5
-msgid "An error has occurred."
-msgstr "Er is een fout opgetreden."
-
-#: ../src/zenity.ui.h:6
-msgid "Are you sure you want to proceed?"
-msgstr "Weet u zeker dat u wilt doorgaan?"
-
-#: ../src/zenity.ui.h:7
-msgid "C_alendar:"
-msgstr "K_alender:"
-
-#: ../src/zenity.ui.h:8
 msgid "Calendar selection"
 msgstr "Kalenderselectie"
 
-#: ../src/zenity.ui.h:9
+#: ../src/zenity.ui.h:2
+msgid "Select a date from below."
+msgstr "Kies hieronder een datum."
+
+#: ../src/zenity.ui.h:3
+msgid "C_alendar:"
+msgstr "K_alender:"
+
+#: ../src/zenity.ui.h:4
+msgid "Add a new entry"
+msgstr "Nieuwe ingang toevoegen"
+
+#: ../src/zenity.ui.h:5
+msgid "_Enter new text:"
+msgstr "_Geef nieuwe tekst:"
+
+#: ../src/zenity.ui.h:6
 msgid "Error"
 msgstr "Fout"
 
-#: ../src/zenity.ui.h:10
+#: ../src/zenity.ui.h:7
+msgid "An error has occurred."
+msgstr "Er is een fout opgetreden."
+
+#: ../src/zenity.ui.h:8
+#, fuzzy
+#| msgid "<b>Forms dialog</b>"
+msgid "Forms dialog"
+msgstr "<b>Formuliervenster</b>"
+
+#: ../src/zenity.ui.h:9
 msgid "Information"
 msgstr "Informatie"
+
+#: ../src/zenity.ui.h:10
+msgid "All updates are complete."
+msgstr "Alle updates zijn gebeurd."
 
 #: ../src/zenity.ui.h:11
 msgid "Progress"
 msgstr "Voortgang"
 
 #: ../src/zenity.ui.h:12
-msgid "Question"
-msgstr "Vraag"
-
-#: ../src/zenity.ui.h:13
 msgid "Running..."
 msgstr "Actief..."
 
+#: ../src/zenity.ui.h:13
+msgid "Question"
+msgstr "Vraag"
+
 #: ../src/zenity.ui.h:14
-msgid "Select a date from below."
-msgstr "Kies hieronder een datum."
+msgid "Are you sure you want to proceed?"
+msgstr "Weet u zeker dat u wilt doorgaan?"
 
 #: ../src/zenity.ui.h:15
-msgid "Select items from the list"
-msgstr "Kies items uit de lijst"
+msgid "Adjust the scale value"
+msgstr "Waarde aanpassen"
 
 #: ../src/zenity.ui.h:16
-msgid "Select items from the list below."
-msgstr "Kies hieronder items uit de lijst."
-
-#: ../src/zenity.ui.h:17
 msgid "Text View"
 msgstr "Tekstweergave"
 
+#: ../src/zenity.ui.h:17
+msgid "Select items from the list"
+msgstr "Kies items uit de lijst"
+
 #: ../src/zenity.ui.h:18
+msgid "Select items from the list below."
+msgstr "Kies hieronder items uit de lijst."
+
+#: ../src/zenity.ui.h:19
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: ../src/zenity.ui.h:19
-msgid "_Enter new text:"
-msgstr "_Geef nieuwe tekst:"
-
-#: ../src/option.c:150
+#: ../src/option.c:157
 msgid "Set the dialog title"
 msgstr "Titel van dialoogvenster instellen"
 
-#: ../src/option.c:151
+#: ../src/option.c:158
 msgid "TITLE"
 msgstr "TITEL"
 
-#: ../src/option.c:159
+#: ../src/option.c:166
 msgid "Set the window icon"
 msgstr "Pictogram van dialoogvenster instellen"
 
-#: ../src/option.c:160
+#: ../src/option.c:167
 msgid "ICONPATH"
 msgstr "PICTOGRAMPAD"
 
-#: ../src/option.c:168
+#: ../src/option.c:175
 msgid "Set the width"
 msgstr "Breedte instellen"
 
-#: ../src/option.c:169
+#: ../src/option.c:176
 msgid "WIDTH"
 msgstr "BREEDTE"
 
-#: ../src/option.c:177
+#: ../src/option.c:184
 msgid "Set the height"
 msgstr "Hoogte instellen"
 
-#: ../src/option.c:178
+#: ../src/option.c:185
 msgid "HEIGHT"
 msgstr "HOOGTE"
 
-#: ../src/option.c:186
+#: ../src/option.c:193
 msgid "Set dialog timeout in seconds"
 msgstr "Timeout van dialoogvenster instellen (in seconden)"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:188
+#: ../src/option.c:195
 msgid "TIMEOUT"
 msgstr "TIJDSLIMIET"
 
 # zet/stelt in
-#: ../src/option.c:196
+#: ../src/option.c:203
 msgid "Sets the label of the Ok button"
 msgstr "Stelt het label van de knop ‘Ok’ in"
 
-#: ../src/option.c:197 ../src/option.c:206 ../src/option.c:230
-#: ../src/option.c:290 ../src/option.c:299 ../src/option.c:333
-#: ../src/option.c:374 ../src/option.c:494 ../src/option.c:601
-#: ../src/option.c:636 ../src/option.c:708 ../src/option.c:767
-#: ../src/option.c:776 ../src/option.c:820 ../src/option.c:861
-#: ../src/option.c:966
+#: ../src/option.c:204 ../src/option.c:213 ../src/option.c:246
+#: ../src/option.c:306 ../src/option.c:315 ../src/option.c:349
+#: ../src/option.c:399 ../src/option.c:528 ../src/option.c:644
+#: ../src/option.c:679 ../src/option.c:751 ../src/option.c:819
+#: ../src/option.c:828 ../src/option.c:872 ../src/option.c:922
+#: ../src/option.c:1073
 msgid "TEXT"
 msgstr "TEKST"
 
-#: ../src/option.c:205
+#: ../src/option.c:212
 msgid "Sets the label of the Cancel button"
 msgstr "Stelt het label van de knop ‘Annuleren’ in"
 
-#: ../src/option.c:220
+#: ../src/option.c:221
+#, fuzzy
+#| msgid "Set the dialog title"
+msgid "Set the modal hint"
+msgstr "Titel van dialoogvenster instellen"
+
+#: ../src/option.c:236
 msgid "Display calendar dialog"
 msgstr "Dialoogvenster kalender weergeven"
 
-#: ../src/option.c:229 ../src/option.c:289 ../src/option.c:332
-#: ../src/option.c:373 ../src/option.c:493 ../src/option.c:635
-#: ../src/option.c:707 ../src/option.c:819 ../src/option.c:860
-#: ../src/option.c:965
+#: ../src/option.c:245 ../src/option.c:305 ../src/option.c:348
+#: ../src/option.c:398 ../src/option.c:527 ../src/option.c:678
+#: ../src/option.c:750 ../src/option.c:871 ../src/option.c:921
+#: ../src/option.c:1072
 msgid "Set the dialog text"
 msgstr "Tekst van dialoogvenster instellen"
 
-#: ../src/option.c:238
+#: ../src/option.c:254
 msgid "Set the calendar day"
 msgstr "Kalenderdag van dialoogvenster instellen"
 
-#: ../src/option.c:239
+#: ../src/option.c:255
 msgid "DAY"
 msgstr "DAG"
 
-#: ../src/option.c:247
+#: ../src/option.c:263
 msgid "Set the calendar month"
 msgstr "Kalendermaand van dialoogvenster instellen"
 
-#: ../src/option.c:248
+#: ../src/option.c:264
 msgid "MONTH"
 msgstr "MAAND"
 
-#: ../src/option.c:256
+#: ../src/option.c:272
 msgid "Set the calendar year"
 msgstr "Kalenderjaar van dialoogvenster instellen"
 
-#: ../src/option.c:257
+#: ../src/option.c:273
 msgid "YEAR"
 msgstr "JAAR"
 
-#: ../src/option.c:265 ../src/option.c:983
+#: ../src/option.c:281 ../src/option.c:1090
 msgid "Set the format for the returned date"
 msgstr "Formattering van terug gegeven datum instellen"
 
-#: ../src/option.c:266 ../src/option.c:984
+#: ../src/option.c:282 ../src/option.c:1091
 msgid "PATTERN"
 msgstr "PATROON"
 
-#: ../src/option.c:280
+#: ../src/option.c:296
 msgid "Display text entry dialog"
 msgstr "Dialoogvenster tekstinvoer weergeven"
 
-#: ../src/option.c:298
+#: ../src/option.c:314
 msgid "Set the entry text"
 msgstr "Tekst van de tekstinvoer instellen"
 
-#: ../src/option.c:307
+#: ../src/option.c:323
 msgid "Hide the entry text"
 msgstr "Tekst van de tekstinvoer verbergen"
 
-#: ../src/option.c:323
+#: ../src/option.c:339
 msgid "Display error dialog"
 msgstr "Dialoogvenster ‘foutmelding’ weergeven"
 
-#: ../src/option.c:341 ../src/option.c:382 ../src/option.c:716
-#: ../src/option.c:828
+#: ../src/option.c:357 ../src/option.c:407 ../src/option.c:759
+#: ../src/option.c:880
+#, fuzzy
+#| msgid "Set the dialog title"
+msgid "Set the dialog icon"
+msgstr "Titel van dialoogvenster instellen"
+
+#: ../src/option.c:358 ../src/option.c:408 ../src/option.c:760
+#: ../src/option.c:881
+msgid "ICON-NAME"
+msgstr ""
+
+#: ../src/option.c:366 ../src/option.c:416 ../src/option.c:768
+#: ../src/option.c:889
 msgid "Do not enable text wrapping"
 msgstr "Regels niet afbreken"
 
-#: ../src/option.c:350 ../src/option.c:391 ../src/option.c:725
-#: ../src/option.c:837
+#: ../src/option.c:375 ../src/option.c:425 ../src/option.c:777
+#: ../src/option.c:898
 msgid "Do not enable pango markup"
 msgstr "Gebruik van Pango-markup niet inschakelen"
 
-#: ../src/option.c:364
+#: ../src/option.c:389
 msgid "Display info dialog"
 msgstr "Dialoogvenster ‘informatie’ weergeven"
 
-#: ../src/option.c:405
+#: ../src/option.c:439
 msgid "Display file selection dialog"
 msgstr "Dialoogvenster ‘bestand selecteren’ weergeven"
 
-#: ../src/option.c:414
+#: ../src/option.c:448
 msgid "Set the filename"
 msgstr "Bestandsnaam instellen"
 
-#: ../src/option.c:415 ../src/option.c:749
+#: ../src/option.c:449 ../src/option.c:801
 msgid "FILENAME"
 msgstr "BESTANDSNAAM"
 
-#: ../src/option.c:423
+#: ../src/option.c:457
 msgid "Allow multiple files to be selected"
 msgstr "Selecteren van meerdere bestanden toestaan"
 
-#: ../src/option.c:432
+#: ../src/option.c:466
 msgid "Activate directory-only selection"
 msgstr "Alleen mappen kiezen"
 
-#: ../src/option.c:441
+#: ../src/option.c:475
 msgid "Activate save mode"
 msgstr "Om op te slaan"
 
-#: ../src/option.c:450 ../src/option.c:529 ../src/option.c:974
+#: ../src/option.c:484 ../src/option.c:572 ../src/option.c:1081
 msgid "Set output separator character"
 msgstr "Scheidingsteken voor uitvoer instellen"
 
-#: ../src/option.c:451 ../src/option.c:530 ../src/option.c:975
+#: ../src/option.c:485 ../src/option.c:573 ../src/option.c:1082
 msgid "SEPARATOR"
 msgstr "SCHEIDING"
 
-#: ../src/option.c:459
+#: ../src/option.c:493
 msgid "Confirm file selection if filename already exists"
 msgstr "Bestandsselectie bevestigen indien bestand reeds bestaat"
 
-#: ../src/option.c:468
+#: ../src/option.c:502
 msgid "Sets a filename filter"
 msgstr "Stelt een bestandsnaamfilter in"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:470
+#: ../src/option.c:504
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAAM | PATROON 1 PATROON2 ..."
 
-#: ../src/option.c:484
+#: ../src/option.c:518
 msgid "Display list dialog"
 msgstr "Dialoogvenster ‘lijst’ weergeven"
 
-#: ../src/option.c:502
+#: ../src/option.c:536
 msgid "Set the column header"
 msgstr "Kop van kolom instellen"
 
-#: ../src/option.c:503
+#: ../src/option.c:537
 msgid "COLUMN"
 msgstr "KOLOM"
 
-#: ../src/option.c:511
+#: ../src/option.c:545
 msgid "Use check boxes for first column"
 msgstr "Aankruisvakjes gebruiken als eerste kolom"
 
-#: ../src/option.c:520
+#: ../src/option.c:554
 msgid "Use radio buttons for first column"
 msgstr "Radioknoppen gebruiken als eerste kolom"
 
-#: ../src/option.c:538
+#: ../src/option.c:563
+#, fuzzy
+#| msgid "Use check boxes for first column"
+msgid "Use an image for first column"
+msgstr "Aankruisvakjes gebruiken als eerste kolom"
+
+#: ../src/option.c:581
 msgid "Allow multiple rows to be selected"
 msgstr "Selecteren van meerdere rijen toestaan"
 
-#: ../src/option.c:547 ../src/option.c:757
+#: ../src/option.c:590 ../src/option.c:809
 msgid "Allow changes to text"
 msgstr "Tekst mag veranderd worden"
 
-#: ../src/option.c:556
+#: ../src/option.c:599
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -412,321 +442,345 @@ msgstr ""
 "om alle kolommen terug te geven)."
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:558 ../src/option.c:567
+#: ../src/option.c:601 ../src/option.c:610
 msgid "NUMBER"
 msgstr "GETAL"
 
-#: ../src/option.c:566
+#: ../src/option.c:609
 msgid "Hide a specific column"
 msgstr "Een specifieke kolom verbergen"
 
-#: ../src/option.c:575
+#: ../src/option.c:618
 msgid "Hides the column headers"
 msgstr "Kolomkoppen verbergen"
 
-#: ../src/option.c:591
+#: ../src/option.c:634
 msgid "Display notification"
 msgstr "Melding weergeven"
 
-#: ../src/option.c:600
+#: ../src/option.c:643
 msgid "Set the notification text"
 msgstr "Tekst van melding instellen"
 
-#: ../src/option.c:609
+#: ../src/option.c:652
 msgid "Listen for commands on stdin"
 msgstr "Luisteren naar opdrachten op stdin"
 
-#: ../src/option.c:626
+#: ../src/option.c:669
 msgid "Display progress indication dialog"
 msgstr "Dialoogvenster ‘voortgangsindicator’ weergeven"
 
-#: ../src/option.c:644
+#: ../src/option.c:687
 msgid "Set initial percentage"
 msgstr "Beginpercentage instellen"
 
-#: ../src/option.c:645
+#: ../src/option.c:688
 msgid "PERCENTAGE"
 msgstr "PERCENTAGE"
 
-#: ../src/option.c:653
+#: ../src/option.c:696
 msgid "Pulsate progress bar"
 msgstr "Voortgangsbalk laten pulseren"
 
-#: ../src/option.c:663
+#: ../src/option.c:706
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Dialoogvenster sluiten wanneer 100% is bereikt"
 
-#: ../src/option.c:673
+#: ../src/option.c:716
 #, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Ouderproces afsluiten als op de knop Annuleren geklikt wordt"
 
-#: ../src/option.c:683
+#: ../src/option.c:726
 #, no-c-format
 msgid "Hide Cancel button"
 msgstr "Annuleren-knop verbergen"
 
-#: ../src/option.c:698
+#: ../src/option.c:741
 msgid "Display question dialog"
 msgstr "Dialoogvenster ‘vraag’ weergeven"
 
-#: ../src/option.c:739
+#: ../src/option.c:791
 msgid "Display text information dialog"
 msgstr "Dialoogvenster ‘tekstinformatie’ weergeven"
 
-#: ../src/option.c:748
+#: ../src/option.c:800
 msgid "Open file"
 msgstr "Bestand openen"
 
-#: ../src/option.c:766
+#: ../src/option.c:818
 msgid "Set the text font"
 msgstr "Lettertype van de tekst instellen"
 
-#: ../src/option.c:775
+#: ../src/option.c:827
 msgid "Enable an I read and agree checkbox"
 msgstr "Een keuzevinkje voor ‘gelezen en akkoord’ inschakelen"
 
-#: ../src/option.c:785
+#: ../src/option.c:837
 msgid "Enable html support"
 msgstr "Ondersteuning voor HTML inschakelen"
 
-#: ../src/option.c:794
+#: ../src/option.c:846
 msgid "Sets an url instead of a file. Only works if you use --html option"
 msgstr ""
 "Een URL in plaats van een bestand gebruiken. Dit werkt alleen met de optie "
 "‘--html’."
 
-#: ../src/option.c:795
+#: ../src/option.c:847
 msgid "URL"
 msgstr "URL"
 
-#: ../src/option.c:810
+#: ../src/option.c:862
 msgid "Display warning dialog"
 msgstr "Waarschuwingvenster weergeven"
 
-#: ../src/option.c:851
+#: ../src/option.c:912
 msgid "Display scale dialog"
 msgstr "Dialoogvenster ‘schalen’ weergeven"
 
-#: ../src/option.c:869
+#: ../src/option.c:930
 msgid "Set initial value"
 msgstr "Beginwaarde instellen"
 
-#: ../src/option.c:870 ../src/option.c:879 ../src/option.c:888
-#: ../src/option.c:897 ../src/option.c:1032
+#: ../src/option.c:931 ../src/option.c:940 ../src/option.c:949
+#: ../src/option.c:958 ../src/option.c:1139
 msgid "VALUE"
 msgstr "WAARDE"
 
-#: ../src/option.c:878
+#: ../src/option.c:939
 msgid "Set minimum value"
 msgstr "Minimumwaarde instellen"
 
-#: ../src/option.c:887
+#: ../src/option.c:948
 msgid "Set maximum value"
 msgstr "Maximumwaarde instellen"
 
-#: ../src/option.c:896
+#: ../src/option.c:957
 msgid "Set step size"
 msgstr "Stapgrootte instellen"
 
-#: ../src/option.c:905
+#: ../src/option.c:966
 msgid "Print partial values"
 msgstr "Ook fracties van getallen"
 
-#: ../src/option.c:914
+#: ../src/option.c:975
 msgid "Hide value"
 msgstr "Waarde verbergen"
 
-#: ../src/option.c:929
+#: ../src/option.c:990
 msgid "Display forms dialog"
 msgstr "Formuliervenster weergeven"
 
-#: ../src/option.c:938
+#: ../src/option.c:999
 msgid "Add a new Entry in forms dialog"
 msgstr "Nieuwe invoer aan formuliervenster toevoegen"
 
-#: ../src/option.c:939 ../src/option.c:948
+#: ../src/option.c:1000 ../src/option.c:1009
 msgid "Field name"
 msgstr "Veldnaam"
 
-#: ../src/option.c:947
+#: ../src/option.c:1008
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Een nieuw wachtwoordveld aan het formuliervenster toevoegen"
 
-#: ../src/option.c:956
+#: ../src/option.c:1017
 msgid "Add a new Calendar in forms dialog"
 msgstr "Een nieuwe kalender aan het formuliervenster toevoegen"
 
-#: ../src/option.c:957
+#: ../src/option.c:1018
 msgid "Calendar field name"
 msgstr "Kalenderveldnaam"
 
-#: ../src/option.c:998
+#: ../src/option.c:1026
+msgid "Add a new List in forms dialog"
+msgstr "Een nieuwe lijst aan het formuliervenster toevoegen"
+
+#: ../src/option.c:1027
+msgid "List field and header name"
+msgstr "Veld- en kopnaam van de lijst"
+
+#: ../src/option.c:1035
+msgid "List of values for List"
+msgstr "Lijst van waarden voor de lijst"
+
+#: ../src/option.c:1036 ../src/option.c:1045
+msgid "List of values separated by |"
+msgstr "Lijst van waarden gescheiden door |"
+
+#: ../src/option.c:1044
+msgid "List of values for columns"
+msgstr "Lijst van waarden voor kolommen"
+
+#: ../src/option.c:1063
+msgid "Show the columns header"
+msgstr "Kop van kolom tonen"
+
+#: ../src/option.c:1105
 msgid "Display password dialog"
 msgstr "Dialoogvenster ‘wachtwoord’ weergeven"
 
-#: ../src/option.c:1007
+#: ../src/option.c:1114
 msgid "Display the username option"
 msgstr "Gebruikersnaam-optie weergeven"
 
-#: ../src/option.c:1022
+#: ../src/option.c:1129
 msgid "Display color selection dialog"
 msgstr "Kleurselectievenster weergeven"
 
-#: ../src/option.c:1031
+#: ../src/option.c:1138
 msgid "Set the color"
 msgstr "De kleur instellen"
 
-#: ../src/option.c:1040
+#: ../src/option.c:1147
 msgid "Show the palette"
 msgstr "Het palet tonen"
 
-#: ../src/option.c:1055
+#: ../src/option.c:1162
 msgid "About zenity"
 msgstr "Info over zenity"
 
-#: ../src/option.c:1064
+#: ../src/option.c:1171
 msgid "Print version"
 msgstr "Versie weergeven"
 
-#: ../src/option.c:1894
+#: ../src/option.c:2059
 msgid "General options"
 msgstr "Algemene instellingen"
 
-#: ../src/option.c:1895
+#: ../src/option.c:2060
 msgid "Show general options"
 msgstr "Algemene instellingen weergeven"
 
-#: ../src/option.c:1905
+#: ../src/option.c:2070
 msgid "Calendar options"
 msgstr "Kalenderinstellingen"
 
-#: ../src/option.c:1906
+#: ../src/option.c:2071
 msgid "Show calendar options"
 msgstr "Kalenderinstellingen weergeven"
 
-#: ../src/option.c:1916
+#: ../src/option.c:2081
 msgid "Text entry options"
 msgstr "Tekstinvoerinstellingen"
 
-#: ../src/option.c:1917
+#: ../src/option.c:2082
 msgid "Show text entry options"
 msgstr "Tekstinvoerinstellingen weergeven"
 
-#: ../src/option.c:1927
+#: ../src/option.c:2092
 msgid "Error options"
 msgstr "Foutmeldingsinstellingen"
 
-#: ../src/option.c:1928
+#: ../src/option.c:2093
 msgid "Show error options"
 msgstr "Foutmeldingsinstellingen weergeven"
 
-#: ../src/option.c:1938
+#: ../src/option.c:2103
 msgid "Info options"
 msgstr "Info-instellingen"
 
-#: ../src/option.c:1939
+#: ../src/option.c:2104
 msgid "Show info options"
 msgstr "Info-instellingen weergeven"
 
-#: ../src/option.c:1949
+#: ../src/option.c:2114
 msgid "File selection options"
 msgstr "Bestandsselectie-instellingen"
 
-#: ../src/option.c:1950
+#: ../src/option.c:2115
 msgid "Show file selection options"
 msgstr "Bestandsselectie-instellingen weergeven"
 
-#: ../src/option.c:1960
+#: ../src/option.c:2125
 msgid "List options"
 msgstr "Lijstinstellingen"
 
-#: ../src/option.c:1961
+#: ../src/option.c:2126
 msgid "Show list options"
 msgstr "Lijstinstellingen weergeven"
 
-#: ../src/option.c:1972
+#: ../src/option.c:2137
 msgid "Notification icon options"
 msgstr "Instellingen voor meldingspictogram"
 
-#: ../src/option.c:1973
+#: ../src/option.c:2138
 msgid "Show notification icon options"
 msgstr "Instellingen voor meldingspictogram weergeven"
 
-#: ../src/option.c:1984
+#: ../src/option.c:2149
 msgid "Progress options"
 msgstr "Voortgangsbalkinstellingen"
 
-#: ../src/option.c:1985
+#: ../src/option.c:2150
 msgid "Show progress options"
 msgstr "Voortgangsbalkinstellingen weergeven"
 
-#: ../src/option.c:1995
+#: ../src/option.c:2160
 msgid "Question options"
 msgstr "Vraag-instellingen"
 
-#: ../src/option.c:1996
+#: ../src/option.c:2161
 msgid "Show question options"
 msgstr "Vraag-instellingen weergeven"
 
-#: ../src/option.c:2006
+#: ../src/option.c:2171
 msgid "Warning options"
 msgstr "Waarschuwingsinstellingen"
 
-#: ../src/option.c:2007
+#: ../src/option.c:2172
 msgid "Show warning options"
 msgstr "Waarschuwingsinstellingen weergeven"
 
-#: ../src/option.c:2017
+#: ../src/option.c:2182
 msgid "Scale options"
 msgstr "Schaalinstellingen weergeven"
 
-#: ../src/option.c:2018
+#: ../src/option.c:2183
 msgid "Show scale options"
 msgstr "Schaalinstellingen weergeven"
 
-#: ../src/option.c:2028
+#: ../src/option.c:2193
 msgid "Text information options"
 msgstr "Instellingen voor tekstinformatie"
 
-#: ../src/option.c:2029
+#: ../src/option.c:2194
 msgid "Show text information options"
 msgstr "Instellingen voor tekstinformatie weergeven"
 
-#: ../src/option.c:2039
+#: ../src/option.c:2204
 msgid "Color selection options"
 msgstr "Kleursselectie-instellingen"
 
-#: ../src/option.c:2040
+#: ../src/option.c:2205
 msgid "Show color selection options"
 msgstr "Kleurselectie-instellingen weergeven"
 
-#: ../src/option.c:2050
+#: ../src/option.c:2215
 msgid "Password dialog options"
 msgstr "Opties voor wachtwoordvenster"
 
-#: ../src/option.c:2051
+#: ../src/option.c:2216
 msgid "Show password dialog options"
 msgstr "Opties voor wachtwoordvenster weergeven"
 
-#: ../src/option.c:2061
+#: ../src/option.c:2226
 msgid "Forms dialog options"
 msgstr "Opties voor formuliervenster"
 
-#: ../src/option.c:2062
+#: ../src/option.c:2227
 msgid "Show forms dialog options"
 msgstr "Opties voor formuliervenster weergeven"
 
-#: ../src/option.c:2072
+#: ../src/option.c:2237
 msgid "Miscellaneous options"
 msgstr "Diverse instellingen"
 
-#: ../src/option.c:2073
+#: ../src/option.c:2238
 msgid "Show miscellaneous options"
 msgstr "Diverse instellingen weergeven"
 
-#: ../src/option.c:2098
+#: ../src/option.c:2263
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -734,12 +788,12 @@ msgstr ""
 "Deze optie is niet beschikbaar. Kijk bij --help voor alle mogelijke manieren "
 "om te gebruiken.\n"
 
-#: ../src/option.c:2102
+#: ../src/option.c:2267
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s wordt niet ondersteund door dit dialoogvenster\n"
 
-#: ../src/option.c:2106
+#: ../src/option.c:2271
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Twee of meer dialoogvenster-opties gespecificeerd\n"
