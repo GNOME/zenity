@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-26 01:48+0200\n"
-"PO-Revision-Date: 2012-08-25 14:56+0200\n"
+"POT-Creation-Date: 2012-12-31 02:35+0100\n"
+"PO-Revision-Date: 2012-12-31 02:34+0100\n"
 "Last-Translator: cubells <vicent@vcubells.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca-XV\n"
@@ -72,8 +72,8 @@ msgstr ""
 
 #: ../src/notification.c:95
 #, c-format
-msgid "could not parse command from stdin\n"
-msgstr "no s'ha pogut analitzar l'orde de l'entrada estàndard\n"
+msgid "Could not parse command from stdin\n"
+msgstr "No s'ha pogut analitzar l'orde de l'entrada estàndard\n"
 
 #: ../src/notification.c:122
 #, c-format
@@ -251,6 +251,10 @@ msgstr "TEXT"
 msgid "Sets the label of the Cancel button"
 msgstr "Estableix l'etiqueta del botó Cancel·la"
 
+#: ../src/option.c:221
+msgid "Set the modal hint"
+msgstr "Estableix la pista de diàleg modal"
+
 #: ../src/option.c:236
 msgid "Display calendar dialog"
 msgstr "Mostra el diàleg de calendari"
@@ -310,6 +314,16 @@ msgstr "Amaga el text de l'entrada"
 msgid "Display error dialog"
 msgstr "Mostra el diàleg d'error"
 
+#: ../src/option.c:357 ../src/option.c:407 ../src/option.c:759
+#: ../src/option.c:880
+msgid "Set the dialog icon"
+msgstr "Estableix la icona del diàleg"
+
+#: ../src/option.c:358 ../src/option.c:408 ../src/option.c:760
+#: ../src/option.c:881
+msgid "ICON-NAME"
+msgstr "NOM-ICONA"
+
 #: ../src/option.c:366 ../src/option.c:416 ../src/option.c:768
 #: ../src/option.c:889
 msgid "Do not enable text wrapping"
@@ -323,14 +337,6 @@ msgstr "No habilitis el marcatge de la Pango"
 #: ../src/option.c:389
 msgid "Display info dialog"
 msgstr "Mostra el diàleg d'informació"
-
-#: ../src/option.c:407 ../src/option.c:759 ../src/option.c:880
-msgid "Set the dialog icon"
-msgstr "Estableix la icona del diàleg"
-
-#: ../src/option.c:408 ../src/option.c:760 ../src/option.c:881
-msgid "ICON-NAME"
-msgstr "NOM-ICONA"
 
 #: ../src/option.c:439
 msgid "Display file selection dialog"
@@ -773,9 +779,6 @@ msgstr "--%s no està implementat per a este diàleg\n"
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "S'han especificat dues o més opcions de diàleg\n"
-
-#~ msgid "Set the modal hint"
-#~ msgstr "Estableix la pista de diàleg modal"
 
 #~ msgid "Select a file"
 #~ msgstr "Seleccioneu un fitxer"
