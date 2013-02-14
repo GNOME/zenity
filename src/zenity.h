@@ -136,6 +136,7 @@ typedef struct {
 typedef struct {
   gchar   *notification_text;
   gboolean listen;
+  gchar  **notification_hints;
 } ZenityNotificationData;
 #endif
 

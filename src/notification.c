@@ -35,7 +35,10 @@
 #include "zenity.h"
 #include "util.h"
 
+#define MAX_HINTS 16
+
 static char *icon_file;
+static GHashTable *notification_hints;
 
 static void
 on_notification_default_action (NotifyNotification *n,
@@ -50,6 +53,117 @@ on_notification_default_action (NotifyNotification *n,
   zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 
   gtk_main_quit ();
+}
+
+static GHashTable *
+zenity_notification_parse_hints_array (gchar **hints)
+{
+  GHashTable *result;
+  gchar** pair;
+  int i;
+
+  result = g_hash_table_new_full (g_str_hash,
+                                  g_str_equal,
+                                  g_free,
+                                  g_free);
+
+  for(i = 0; i < g_strv_length (hints); i++) {
+    pair = g_strsplit (hints[i], ":", 2);
+    g_hash_table_replace (result, g_strdup (pair[0]), g_strdup (pair[1]));
+    g_strfreev (pair);
+  }
+  if (g_hash_table_size (result) == 0) {
+    g_hash_table_unref (result);
+    return NULL;
+  } else {
+    return result;
+  }
+}
+
+static GHashTable *
+zenity_notification_parse_hints (gchar *hints)
+{
+  GHashTable *result;
+  gchar** hint_array;
+
+  hint_array = g_strsplit (g_strcompress (hints), "\n", MAX_HINTS);
+  result = zenity_notification_parse_hints_array (hint_array);
+  g_strfreev (hint_array);
+  return result;
+}
+
+static void
+zenity_notification_set_hint(gpointer key, gpointer value, gpointer user_data)
+{
+  NotifyNotification *notification;
+  gchar *hint_name;
+  GVariant *hint_value;
+
+  gchar *string_value;
+  gboolean boolean_value;
+  gint32 int_value;
+  guchar byte_value;
+
+  hint_name = (gchar *) key;
+  string_value = (gchar *) value;
+  notification = (NotifyNotification *) user_data;
+
+  if ((g_ascii_strcasecmp ("action-icons", hint_name) == 0)
+      || (g_ascii_strcasecmp ("resident", hint_name) == 0)
+      || (g_ascii_strcasecmp ("suppress-sound", hint_name) == 0)
+      || (g_ascii_strcasecmp ("transient", hint_name) == 0)) {
+    /* boolean hints */
+    if (g_ascii_strcasecmp ("true", string_value) == 0) {
+      boolean_value = TRUE;
+    } else if (g_ascii_strcasecmp ("false", string_value) == 0) {
+      boolean_value = FALSE;
+    } else {
+      g_printerr (_("Invalid value for a boolean typed hint.\nSupported values are 'true' or 'false'.\n"));
+      return;
+    }
+    hint_value = g_variant_new_boolean (boolean_value);
+  } else if ((g_ascii_strcasecmp ("category", hint_name) == 0)
+             || (g_ascii_strcasecmp ("desktop-entry", hint_name) == 0)
+             || (g_ascii_strcasecmp ("image-path", hint_name) == 0)
+             || (g_ascii_strcasecmp ("image_path", hint_name) == 0)
+             || (g_ascii_strcasecmp ("sound-file", hint_name) == 0)
+             || (g_ascii_strcasecmp ("sound-name", hint_name) == 0)) {
+    /* string hints */
+    hint_value = g_variant_new_string (string_value);
+  } else if ((g_ascii_strcasecmp ("image-data", hint_name) == 0)
+             || (g_ascii_strcasecmp ("image_data", hint_name) == 0)
+             || (g_ascii_strcasecmp ("icon-data", hint_name) == 0)) {
+    /* (iibiiay) */
+    g_printerr (_("Unsupported hint. Skipping.\n"));
+    return;
+  } else if ((g_ascii_strcasecmp ("x", hint_name) == 0)
+             || (g_ascii_strcasecmp ("y", hint_name) == 0)) {
+    /* int hints */
+    int_value = (gint32) g_ascii_strtoll (string_value, NULL, 0);
+    hint_value = g_variant_new_int32 (int_value);
+  } else if ((g_ascii_strcasecmp ("urgency", hint_name) == 0)) {
+    /* byte hints */
+    byte_value = (guchar) g_ascii_strtoll (string_value, NULL, 0);
+    hint_value = g_variant_new_byte (byte_value);
+  } else {
+    /* unknown hints */
+    g_printerr (_("Unknown hint name. Skipping.\n"));
+    return;
+  }
+
+  notify_notification_set_hint (notification,
+                                hint_name,
+                                hint_value);
+}
+
+static void
+zenity_notification_set_hints (NotifyNotification *notification, GHashTable *hints)
+{
+  if (hints == NULL) {
+    return;
+  }
+
+  g_hash_table_foreach (hints, zenity_notification_set_hint, notification);
 }
 
 static gboolean
@@ -104,6 +218,11 @@ zenity_notification_handle_stdin (GIOChannel *channel,
       if (!g_ascii_strcasecmp (command, "icon")) {
         g_free (icon_file);
         icon_file = g_strdup (value);
+      } else if (!g_ascii_strcasecmp (command, "hints")) {
+        if (notification_hints != NULL) {
+          g_hash_table_unref (notification_hints);
+        }
+        notification_hints = zenity_notification_parse_hints (value);
       } else if (!g_ascii_strcasecmp (command, "message")) {
         /* display a notification bubble */
         if (!g_utf8_validate (value, -1, NULL)) {
@@ -129,6 +248,8 @@ zenity_notification_handle_stdin (GIOChannel *channel,
 
           g_strfreev (message);
 
+          zenity_notification_set_hints (notif, notification_hints);
+
           notify_notification_show (notif, &error);
           if (error) {
             g_warning ("Error showing notification: %s", error->message);
@@ -147,6 +268,9 @@ zenity_notification_handle_stdin (GIOChannel *channel,
           notif = notify_notification_new (value,
                                            NULL,
                                            icon_file);
+
+          zenity_notification_set_hints (notif, notification_hints);
+
           notify_notification_show (notif, &error);
           if (error) {
             g_warning ("Error showing notification: %s", error->message);
@@ -192,6 +316,7 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 {
   GError *error;
   NotifyNotification *notification;
+  GHashTable *notification_hints;
 
   /* create the notification widget */
   if (!notify_is_initted ()) {
@@ -218,6 +343,11 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
                                     data,
                                     NULL);
 
+    /* set the notification hints for the displayed notification */
+    notification_hints = zenity_notification_parse_hints_array (notification_data->notification_hints);
+    zenity_notification_set_hints(notification, notification_hints);
+    g_hash_table_unref (notification_hints);
+
     /* Show icon and wait */
     error = NULL;
     if (!notify_notification_show (notification, &error)) {
@@ -236,4 +366,5 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 
   gtk_main ();
 }
+
 #endif

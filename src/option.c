@@ -86,6 +86,7 @@ static gboolean zenity_list_imagelist;
 /* Notification Dialog Options */
 static gboolean zenity_notification_active;
 static gboolean zenity_notification_listen;
+static gchar  **zenity_notification_hints;
 #endif
 
 /* Progress Dialog Options */
@@ -651,6 +652,15 @@ static GOptionEntry notification_options[] = {
     &zenity_notification_listen,
     N_("Listen for commands on stdin"),
     NULL
+  },
+  {
+    "hint",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_STRING_ARRAY,
+    &zenity_notification_hints,
+    N_("Set the notification hints"),
+    N_("TEXT")
   },
   { 
     NULL 
@@ -1243,6 +1253,11 @@ zenity_option_free (void) {
   if (zenity_list_hide_column)
     g_free (zenity_list_hide_column);
 
+#ifdef HAVE_LIBNOTIFY
+  if (zenity_notification_hints)
+    g_strfreev (zenity_notification_hints);
+#endif
+
   if (zenity_text_font)
     g_free (zenity_text_font);
   if (zenity_text_checkbox)
@@ -1801,6 +1816,7 @@ zenity_notification_post_callback (GOptionContext *context,
   if (results->mode == MODE_NOTIFICATION) {
     results->notification_data->notification_text = zenity_general_dialog_text;
     results->notification_data->listen = zenity_notification_listen;
+    results->notification_data->notification_hints = zenity_notification_hints;
   } else {
     if (zenity_notification_listen)
       zenity_option_error (zenity_option_get_name (notification_options, &zenity_notification_listen),
