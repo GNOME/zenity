@@ -110,31 +110,42 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 
   gtk_main ();
 }
+static void 
+zenity_calendar_dialog_output (void)
+{
+  guint day, month, year;
+  gchar time_string[128];
+  GDate *date = NULL;
+  
+  gtk_calendar_get_date (GTK_CALENDAR (calendar), &day, &month, &year);
+  date = g_date_new_dmy (year, month + 1, day);
+  g_date_strftime (time_string, 127, zen_cal_data->date_format, date);
+  g_print ("%s\n", time_string);
+
+  if (date != NULL)
+    g_date_free (date);
+}
 
 static void
 zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data;
-  guint day, month, year;
-  gchar time_string[128];
-  GDate *date = NULL;
 
   zen_data = data;
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      gtk_calendar_get_date (GTK_CALENDAR (calendar), &day, &month, &year);
-      date = g_date_new_dmy (year, month + 1, day);
-      g_date_strftime (time_string, 127, zen_cal_data->date_format, date);
-      g_print ("%s\n", time_string);
-    
-      if (date != NULL)
-        g_date_free (date);
-      zenity_util_exit_code_with_data (ZENITY_OK, zen_data);   
+      zenity_calendar_dialog_output ();
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);   
       break;
 
     case GTK_RESPONSE_CANCEL:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+      break;
+
+    case ZENITY_TIMEOUT:
+      zenity_calendar_dialog_output ();
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
       break;
 
     default:

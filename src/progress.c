@@ -307,7 +307,7 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   zenity_progress_read_info (progress_data);
 
   if(data->timeout_delay > 0) {
-    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);
+    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, NULL);
   }
 
   gtk_main ();
@@ -333,6 +333,9 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       break;
 
+    case ZENITY_TIMEOUT:
+      zenity_util_exit_code_with_data (ZENITY_TIMEOUT, zen_data);
+      break;
     default:
       /* Esc dialog */
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);

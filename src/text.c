@@ -345,21 +345,32 @@ zenity_text_toggle_button (GtkToggleButton *button, gpointer data)
 }
 
 static void
+zenity_text_dialog_output (ZenityData *zen_data)
+{
+  if (zen_text_data->editable) {
+    GtkTextIter start, end;
+    gchar *text;
+    gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
+    text = gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0);
+    g_print ("%s", text);
+    g_free (text);
+  }
+}
+
+static void
 zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data = data;
 
   switch (response) {
     case GTK_RESPONSE_CLOSE:
-      if (zen_text_data->editable) {
-        GtkTextIter start, end;
-        gchar *text;
-        gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
-        text = gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0);
-        g_print ("%s", text);
-        g_free (text);
-      }
+      zenity_text_dialog_output (zen_data);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+      break;
+
+    case ZENITY_TIMEOUT:
+      zenity_text_dialog_output (zen_data);
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
       break;
 
     default:

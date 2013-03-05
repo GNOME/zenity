@@ -146,27 +146,38 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 }
 
 static void
+zenity_fileselection_dialog_output (GtkWidget *widget, ZenityFileData *file_data)
+{
+  GSList *selections, *iter;
+  selections = gtk_file_chooser_get_filenames (GTK_FILE_CHOOSER (widget));
+  for (iter = selections;iter != NULL; iter = iter->next) {
+    g_print ("%s", g_filename_to_utf8 ((gchar*)iter->data, -1, NULL, NULL, NULL));
+    g_free (iter->data);
+    if (iter->next != NULL)
+      g_print ("%s",file_data->separator);
+  }
+  g_print("\n");
+  g_slist_free(selections);
+}
+
+static void
 zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityFileData *file_data = data;
-  GSList *selections, *iter;
-	  
+  
   switch (response) {
     case GTK_RESPONSE_OK:
+      zenity_fileselection_dialog_output (widget, file_data);
       zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
-      selections = gtk_file_chooser_get_filenames (GTK_FILE_CHOOSER (widget));
-      for (iter = selections;iter != NULL; iter = iter->next) {
-        g_print ("%s", g_filename_to_utf8 ((gchar*)iter->data, -1, NULL, NULL, NULL));
-	g_free (iter->data);
-	if (iter->next != NULL)
-	    g_print ("%s",file_data->separator);
-      }
-      g_print("\n");
-      g_slist_free(selections);
       break;
 
     case GTK_RESPONSE_CANCEL:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+      break;
+
+    case ZENITY_TIMEOUT:
+      zenity_fileselection_dialog_output (widget, file_data);
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
       break;
 
     default:

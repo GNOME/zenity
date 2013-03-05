@@ -640,6 +640,23 @@ zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path, 
 static void
 zenity_tree_dialog_output (void)
 {
+GObject *tree_view;
+  GtkTreeSelection *selection;
+  GtkTreeModel *model;
+
+  tree_view = gtk_builder_get_object (builder, "zenity_tree_view");
+  model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
+
+  if (gtk_tree_model_get_column_type (model, 0) == G_TYPE_BOOLEAN)
+    gtk_tree_model_foreach (model, (GtkTreeModelForeachFunc) zenity_tree_dialog_toggle_get_selected,
+                            GTK_TREE_VIEW (tree_view));
+  else {
+    selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+    gtk_tree_selection_selected_foreach (selection,
+                                        (GtkTreeSelectionForeachFunc) zenity_tree_dialog_get_selected,
+                                         GTK_TREE_VIEW (tree_view));
+  }
+
   GSList *tmp;
 
   for (tmp = selected; tmp; tmp = tmp->next) {
@@ -661,30 +678,20 @@ static void
 zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data = data;
-  GObject *tree_view;
-  GtkTreeSelection *selection; 
-  GtkTreeModel *model;
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      tree_view = gtk_builder_get_object (builder, "zenity_tree_view");
-      model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
-
-      if (gtk_tree_model_get_column_type (model, 0) == G_TYPE_BOOLEAN)
-        gtk_tree_model_foreach (model, (GtkTreeModelForeachFunc) zenity_tree_dialog_toggle_get_selected,
-                                GTK_TREE_VIEW (tree_view));
-      else {
-        selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
-        gtk_tree_selection_selected_foreach (selection, 
-                                             (GtkTreeSelectionForeachFunc) zenity_tree_dialog_get_selected, 
-                                             GTK_TREE_VIEW (tree_view));
-      }
       zenity_tree_dialog_output ();
       zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
       break;
 
     case GTK_RESPONSE_CANCEL:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+      break;
+
+    case ZENITY_TIMEOUT:
+      zenity_tree_dialog_output ();
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
       break;
 
     default:

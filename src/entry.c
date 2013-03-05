@@ -154,28 +154,37 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 }
 
 static void
+zenity_entry_dialog_output (void)
+{
+  const gchar *text;
+  if (n_entries > 1)
+    text = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (entry));
+  else 
+    text = gtk_entry_get_text (GTK_ENTRY (entry));
+
+  if (text != NULL)
+    g_print ("%s\n", text);
+
+}
+
+static void
 zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityData *zen_data = data;
-  const gchar *text;
 
   switch (response) {
     case GTK_RESPONSE_OK:
+      zenity_entry_dialog_output ();
       zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
-      if (n_entries > 1) {
-	text = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (entry));
-      }
-      else {
-        text = gtk_entry_get_text (GTK_ENTRY (entry));      
-      }
-
-      if (text != NULL)
-        g_print ("%s\n", text);
-
       break;
 
     case GTK_RESPONSE_CANCEL:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+      break;
+
+    case ZENITY_TIMEOUT:
+      zenity_entry_dialog_output ();
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
       break;
 
     default:

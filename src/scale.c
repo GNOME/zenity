@@ -139,6 +139,11 @@ zenity_scale_dialog_response (GtkWidget *widget, int response, gpointer data)
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
       break;
 
+    case ZENITY_TIMEOUT:
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
+      g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
+      break;
+
     default:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;

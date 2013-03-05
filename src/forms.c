@@ -44,22 +44,6 @@ static void zenity_forms_dialog_get_selected (GtkTreeModel *model, GtkTreePath *
   }
 }
 
-static void zenity_forms_dialog_output (void)
-{
-  GSList *tmp;
-
-  for (tmp = selected; tmp; tmp = tmp->next) {
-    if (tmp->next != NULL) {
-        g_print ("%s,", (gchar *) tmp->data);
-    }
-    else
-      g_print ("%s", (gchar *) tmp->data);
-  }
-
-  g_slist_foreach (selected, (GFunc) g_free, NULL);
-  selected = NULL;
-}
-
 static GtkWidget * 
 zenity_forms_create_and_fill_list (ZenityFormsData        *forms_data, 
                                            int list_number, gchar *header)
@@ -317,47 +301,70 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 }
 
 static void
+zenity_forms_dialog_output (ZenityFormsData *forms_data)
+{
+  GSList *tmp, *tmp2;
+  guint day, year, month;
+  GDate *date = NULL;
+  gchar time_string[128];
+  GtkTreeSelection *selection;
+
+  for (tmp = forms_data->list; tmp; tmp = tmp->next) {
+    ZenityFormsValue *zenity_value = (ZenityFormsValue *) tmp->data;
+    switch (zenity_value->type) {
+      case ZENITY_FORMS_PASSWORD:
+      case ZENITY_FORMS_ENTRY:
+        g_print("%s", gtk_entry_get_text (GTK_ENTRY (zenity_value->forms_widget)));
+        break;
+      case ZENITY_FORMS_LIST:
+        selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (gtk_bin_get_child (GTK_BIN (zenity_value->forms_widget))));
+        gtk_tree_selection_selected_foreach (selection,
+                                            (GtkTreeSelectionForeachFunc) zenity_forms_dialog_get_selected,
+                                            GTK_TREE_VIEW (gtk_bin_get_child (GTK_BIN (zenity_value->forms_widget))));
+
+        for (tmp2 = selected; tmp2; tmp2 = tmp2->next) {
+          if (tmp->next != NULL) {
+            g_print ("%s,", (gchar *) tmp2->data);
+          }
+          else
+            g_print ("%s", (gchar *) tmp2->data);
+        }
+
+        g_slist_foreach (selected, (GFunc) g_free, NULL);
+        selected = NULL;
+
+        break;
+      case ZENITY_FORMS_CALENDAR:
+        gtk_calendar_get_date (GTK_CALENDAR (zenity_value->forms_widget), &day, &month, &year);
+        date = g_date_new_dmy (year, month + 1, day);
+        g_date_strftime (time_string, 127, forms_data->date_format, date);
+        g_print ("%s", time_string);
+        break;
+    }
+    if (tmp->next != NULL)
+      g_print("%s", forms_data->separator);
+  }
+  g_print("\n");
+}
+
+static void
 zenity_forms_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
   ZenityFormsData *forms_data = (ZenityFormsData *) data;
-  GSList *tmp;
-  guint day, year, month;
-  GDate *date = NULL;
-  gchar time_string[128]; 
-  GtkTreeSelection *selection;
 
   switch (response) {
     case GTK_RESPONSE_OK:
+      zenity_forms_dialog_output (forms_data);
       zenity_util_exit_code_with_data(ZENITY_OK, zen_data);      
-      for (tmp = forms_data->list; tmp; tmp = tmp->next) {
-        ZenityFormsValue *zenity_value = (ZenityFormsValue *) tmp->data;
-        switch (zenity_value->type) {
-          case ZENITY_FORMS_PASSWORD:
-          case ZENITY_FORMS_ENTRY:
-            g_print("%s", gtk_entry_get_text (GTK_ENTRY (zenity_value->forms_widget)));
-            break;
-          case ZENITY_FORMS_LIST:
-            selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (gtk_bin_get_child (GTK_BIN (zenity_value->forms_widget))));
-            gtk_tree_selection_selected_foreach (selection,
-                                             (GtkTreeSelectionForeachFunc) zenity_forms_dialog_get_selected,
-                                             GTK_TREE_VIEW (gtk_bin_get_child (GTK_BIN (zenity_value->forms_widget))));
-            zenity_forms_dialog_output ();
-            break;
-          case ZENITY_FORMS_CALENDAR:
-            gtk_calendar_get_date (GTK_CALENDAR (zenity_value->forms_widget), &day, &month, &year);
-            date = g_date_new_dmy (year, month + 1, day);
-            g_date_strftime (time_string, 127, forms_data->date_format, date);
-            g_print ("%s", time_string);
-            break;
-        }
-        if (tmp->next != NULL)
-          g_print("%s", forms_data->separator);
-      }
-      g_print("\n");
-
       break;
+
     case GTK_RESPONSE_CANCEL:
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+      break;
+
+    case ZENITY_TIMEOUT:
+      zenity_forms_dialog_output (forms_data);
+      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
       break;
 
     default:

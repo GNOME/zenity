@@ -312,7 +312,7 @@ zenity_util_return_exit_code ( ZenityExitCode value )
     if (! env_var)
           retval = ZENITY_TIMEOUT;
     break;
-   
+  
   default:
     retval = 1;
   }
@@ -325,10 +325,6 @@ zenity_util_return_exit_code ( ZenityExitCode value )
 void
 zenity_util_exit_code_with_data(ZenityExitCode value, ZenityData *zen_data)
 {
-  /* We assume it's being called with --timeout option and should return 5) */
-  if(zen_data->timeout_delay > 0)
-    zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
-  else
     zen_data->exit_code = zenity_util_return_exit_code (value);
 }
 
@@ -432,7 +428,7 @@ zenity_util_timeout_handle (gpointer data)
 {
   GtkDialog *dialog = GTK_DIALOG(data);
   if(dialog != NULL)
-    gtk_dialog_response(dialog, GTK_RESPONSE_OK);
+    gtk_dialog_response(dialog, ZENITY_TIMEOUT);
   else {
     gtk_main_quit();
     exit(ZENITY_TIMEOUT);
