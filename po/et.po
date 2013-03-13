@@ -7,15 +7,15 @@
 #
 # Priit Laes <amd store20 com>, 2003–2006.
 # Ivar Smolin <okul linux ee>, 2005–2011.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2012.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity MASTER\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-11-29 07:13+0000\n"
-"PO-Revision-Date: 2012-12-05 16:59+0300\n"
+"POT-Creation-Date: 2013-03-12 18:06+0000\n"
+"PO-Revision-Date: 2013-03-12 22:34+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "Language: et\n"
@@ -68,6 +68,24 @@ msgstr "Dialoogiakende kuvamine terminali skriptidest"
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Sa pead määrama dialoogiliigi. Lisateavet saad 'zenity --help' käsuga\n"
+
+#, c-format
+msgid ""
+"Invalid value for a boolean typed hint.\n"
+"Supported values are 'true' or 'false'.\n"
+msgstr ""
+"Sobimatu väärtus sisestatud tõeväärtuse jaoks.\n"
+"Lubatud väärtused on 'true' ja 'false'.\n"
+
+#. (iibiiay)
+#, c-format
+msgid "Unsupported hint. Skipping.\n"
+msgstr "Vihje pole toetatud. Jäetakse vahele.\n"
+
+#. unknown hints
+#, c-format
+msgid "Unknown hint name. Skipping.\n"
+msgstr "Tundmatu vihje nimi. Jäetakse vahele.\n"
 
 #, c-format
 msgid "Could not parse command from stdin\n"
@@ -345,6 +363,9 @@ msgstr "Teavitusteksti määramine"
 
 msgid "Listen for commands on stdin"
 msgstr "Standardsisendist tulevate käskude kuulamine"
+
+msgid "Set the notification hints"
+msgstr "Teavitusvihjete määramine"
 
 msgid "Display progress indication dialog"
 msgstr "Edenemisnäidiku dialoogi kuvamine"
