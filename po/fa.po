@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-20 23:12+0000\n"
-"PO-Revision-Date: 2012-09-08 02:14+0330\n"
+"POT-Creation-Date: 2013-02-25 23:13+0000\n"
+"PO-Revision-Date: 2013-03-22 17:59+0330\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian\n"
 "Language: fa_IR\n"
@@ -20,6 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../src/about.c:64
 msgid ""
@@ -71,17 +72,39 @@ msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "باید یک نوع محاوره را مشخص کنبد. برای جزئیات «zenity --help» را ببینید\n"
 
-#: ../src/notification.c:95
+#: ../src/notification.c:121
 #, c-format
-msgid "could not parse command from stdin\n"
+msgid ""
+"Invalid value for a boolean typed hint.\n"
+"Supported values are 'true' or 'false'.\n"
+msgstr ""
+"مقدار بولی نامعتبر برای نوع تذکر.\n"
+"مقدار پشتیبانی شده شامل «true» یا «false» است.\n"
+
+#. (iibiiay)
+#: ../src/notification.c:137
+#, c-format
+msgid "Unsupported hint. Skipping.\n"
+msgstr "تذکر پشتیبانی نشده. درحال رد کردن.\n"
+
+#. unknown hints
+#: ../src/notification.c:150
+#, c-format
+msgid "Unknown hint name. Skipping.\n"
+msgstr "نام تذکر ناشناس. درحال رد کردن.\n"
+
+#: ../src/notification.c:209
+#, c-format
+#| msgid "could not parse command from stdin\n"
+msgid "Could not parse command from stdin\n"
 msgstr "نمی‌توان فرمان را از طریق stdin تجزیه کرد\n"
 
-#: ../src/notification.c:122
+#: ../src/notification.c:241
 #, c-format
 msgid "Could not parse message from stdin\n"
 msgstr "نمی‌توان پیام را از طریق stdin تجزیه کرد\n"
 
-#: ../src/notification.c:198
+#: ../src/notification.c:323
 msgid "Zenity notification"
 msgstr "اعلان زنیتی"
 
@@ -193,216 +216,231 @@ msgstr "اقلام را از فهرست پایین انتخاب کنید."
 msgid "Warning"
 msgstr "اخطار"
 
-#: ../src/option.c:155
+#: ../src/option.c:158
 msgid "Set the dialog title"
 msgstr "تنظیم عنوان محاوره"
 
-#: ../src/option.c:156
+#: ../src/option.c:159
 msgid "TITLE"
 msgstr "عنوان"
 
-#: ../src/option.c:164
+#: ../src/option.c:167
 msgid "Set the window icon"
 msgstr "تنظیم شمایل پنجره"
 
-#: ../src/option.c:165
+#: ../src/option.c:168
 msgid "ICONPATH"
 msgstr "مسیر شمایل"
 
-#: ../src/option.c:173
+#: ../src/option.c:176
 msgid "Set the width"
 msgstr "تنظیم عرض"
 
-#: ../src/option.c:174
+#: ../src/option.c:177
 msgid "WIDTH"
 msgstr "عرض"
 
-#: ../src/option.c:182
+#: ../src/option.c:185
 msgid "Set the height"
 msgstr "تنظیم ارتفاع"
 
-#: ../src/option.c:183
+#: ../src/option.c:186
 msgid "HEIGHT"
 msgstr "ارتفاع"
 
-#: ../src/option.c:191
+#: ../src/option.c:194
 msgid "Set dialog timeout in seconds"
 msgstr "تنظیم زمان وقفه‌ی محاوره به ثانیه"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:193
+#: ../src/option.c:196
 msgid "TIMEOUT"
 msgstr "TIMEOUT"
 
-#: ../src/option.c:201
+#: ../src/option.c:204
 msgid "Sets the label of the Ok button"
 msgstr "تنظیم برچسب برای دکمه‌ی «تایید»"
 
-#: ../src/option.c:202 ../src/option.c:211 ../src/option.c:235
-#: ../src/option.c:295 ../src/option.c:304 ../src/option.c:338
-#: ../src/option.c:379 ../src/option.c:499 ../src/option.c:615
-#: ../src/option.c:650 ../src/option.c:722 ../src/option.c:781
-#: ../src/option.c:790 ../src/option.c:834 ../src/option.c:875
-#: ../src/option.c:1026
+#: ../src/option.c:205 ../src/option.c:214 ../src/option.c:247
+#: ../src/option.c:307 ../src/option.c:316 ../src/option.c:350
+#: ../src/option.c:400 ../src/option.c:529 ../src/option.c:645
+#: ../src/option.c:663 ../src/option.c:689 ../src/option.c:761
+#: ../src/option.c:829 ../src/option.c:838 ../src/option.c:882
+#: ../src/option.c:932 ../src/option.c:1083
 msgid "TEXT"
 msgstr "TEXT"
 
-#: ../src/option.c:210
+#: ../src/option.c:213
 msgid "Sets the label of the Cancel button"
 msgstr "تنظیم برچسب برای دکمه لغو"
 
-#: ../src/option.c:225
+#: ../src/option.c:222
+#| msgid "Set the dialog title"
+msgid "Set the modal hint"
+msgstr "تنظیم تدکر محاوره"
+
+#: ../src/option.c:237
 msgid "Display calendar dialog"
 msgstr "نمایش محاوره‌ی تقویم"
 
-#: ../src/option.c:234 ../src/option.c:294 ../src/option.c:337
-#: ../src/option.c:378 ../src/option.c:498 ../src/option.c:649
-#: ../src/option.c:721 ../src/option.c:833 ../src/option.c:874
-#: ../src/option.c:1025
+#: ../src/option.c:246 ../src/option.c:306 ../src/option.c:349
+#: ../src/option.c:399 ../src/option.c:528 ../src/option.c:688
+#: ../src/option.c:760 ../src/option.c:881 ../src/option.c:931
+#: ../src/option.c:1082
 msgid "Set the dialog text"
 msgstr "تنظیم متن محاوره"
 
-#: ../src/option.c:243
+#: ../src/option.c:255
 msgid "Set the calendar day"
 msgstr "تنظیم روز تقویم"
 
-#: ../src/option.c:244
+#: ../src/option.c:256
 msgid "DAY"
 msgstr "DAY"
 
-#: ../src/option.c:252
+#: ../src/option.c:264
 msgid "Set the calendar month"
 msgstr "تنظیم ماه تقویم"
 
-#: ../src/option.c:253
+#: ../src/option.c:265
 msgid "MONTH"
 msgstr "MONTH"
 
-#: ../src/option.c:261
+#: ../src/option.c:273
 msgid "Set the calendar year"
 msgstr "تنظیم سال تقویم"
 
-#: ../src/option.c:262
+#: ../src/option.c:274
 msgid "YEAR"
 msgstr "YEAR"
 
-#: ../src/option.c:270 ../src/option.c:1043
+#: ../src/option.c:282 ../src/option.c:1100
 msgid "Set the format for the returned date"
 msgstr "تنظیم قالب زمان بازگشتی"
 
-#: ../src/option.c:271 ../src/option.c:1044
+#: ../src/option.c:283 ../src/option.c:1101
 msgid "PATTERN"
 msgstr "PATTERN"
 
-#: ../src/option.c:285
+#: ../src/option.c:297
 msgid "Display text entry dialog"
 msgstr "نمایش محاوره‌ی ورودی متن"
 
-#: ../src/option.c:303
+#: ../src/option.c:315
 msgid "Set the entry text"
 msgstr "تنظیم متن ورودی"
 
-#: ../src/option.c:312
+#: ../src/option.c:324
 msgid "Hide the entry text"
 msgstr "پنهان کردن متن ورودی"
 
-#: ../src/option.c:328
+#: ../src/option.c:340
 msgid "Display error dialog"
 msgstr "نمایش محاوره‌ی خطا"
 
-#: ../src/option.c:346 ../src/option.c:387 ../src/option.c:730
-#: ../src/option.c:842
+#: ../src/option.c:358 ../src/option.c:408 ../src/option.c:769
+#: ../src/option.c:890
+#| msgid "Set the dialog title"
+msgid "Set the dialog icon"
+msgstr "تنظیم شمایل محاوره"
+
+#: ../src/option.c:359 ../src/option.c:409 ../src/option.c:770
+#: ../src/option.c:891
+msgid "ICON-NAME"
+msgstr "ICON-NAME"
+
+#: ../src/option.c:367 ../src/option.c:417 ../src/option.c:778
+#: ../src/option.c:899
 msgid "Do not enable text wrapping"
 msgstr "پیچش متن را فعال نکن"
 
-#: ../src/option.c:355 ../src/option.c:396 ../src/option.c:739
-#: ../src/option.c:851
+#: ../src/option.c:376 ../src/option.c:426 ../src/option.c:787
+#: ../src/option.c:908
 msgid "Do not enable pango markup"
 msgstr "نشانه‌گذاری‌های pango را فعال نکن"
 
-#: ../src/option.c:369
+#: ../src/option.c:390
 msgid "Display info dialog"
 msgstr "نمایش محاوره‌ی اطلاعات"
 
-#: ../src/option.c:410
+#: ../src/option.c:440
 msgid "Display file selection dialog"
 msgstr "نمایش محاوره‌ی انتخاب پرونده"
 
-#: ../src/option.c:419
+#: ../src/option.c:449
 msgid "Set the filename"
 msgstr "تنظیم نام پرونده"
 
-#: ../src/option.c:420 ../src/option.c:763
+#: ../src/option.c:450 ../src/option.c:811
 msgid "FILENAME"
 msgstr "نام‌پرونده"
 
-#: ../src/option.c:428
+#: ../src/option.c:458
 msgid "Allow multiple files to be selected"
 msgstr "اجازه برای انتخاب پرونده‌های متعدد"
 
-#: ../src/option.c:437
+#: ../src/option.c:467
 msgid "Activate directory-only selection"
 msgstr "فعال‌سازی انتخاب «فقط-شاخه‌ای»"
 
-#: ../src/option.c:446
+#: ../src/option.c:476
 msgid "Activate save mode"
 msgstr "فعال‌سازی حالت ذخیره"
 
-#: ../src/option.c:455 ../src/option.c:543 ../src/option.c:1034
+#: ../src/option.c:485 ../src/option.c:573 ../src/option.c:1091
 msgid "Set output separator character"
 msgstr "تنظیم نویسه‌ی جداساز خروجی"
 
-#: ../src/option.c:456 ../src/option.c:544 ../src/option.c:1035
+#: ../src/option.c:486 ../src/option.c:574 ../src/option.c:1092
 msgid "SEPARATOR"
 msgstr "جداساز"
 
-#: ../src/option.c:464
+#: ../src/option.c:494
 msgid "Confirm file selection if filename already exists"
 msgstr "تایید انتخاب پرونده چناچه نام پرونده هم‌اکنون وجود دارد"
 
-#: ../src/option.c:473
+#: ../src/option.c:503
 msgid "Sets a filename filter"
 msgstr "تنظیم صافیِ نام پرونده"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:475
+#: ../src/option.c:505
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAME | PATTERN1 PATTERN2 ..."
 
-#: ../src/option.c:489
+#: ../src/option.c:519
 msgid "Display list dialog"
 msgstr "نمایش محاوره‌ی فهرست"
 
-#: ../src/option.c:507
+#: ../src/option.c:537
 msgid "Set the column header"
 msgstr "تنظیم سرستون"
 
-#: ../src/option.c:508
+#: ../src/option.c:538
 msgid "COLUMN"
 msgstr "COLUMNc"
 
-#: ../src/option.c:516
+#: ../src/option.c:546
 msgid "Use check boxes for first column"
 msgstr "استفاده از جعبه‌ی نشان‌زنی برای ستون اول"
 
-#: ../src/option.c:525
+#: ../src/option.c:555
 msgid "Use radio buttons for first column"
 msgstr "استفاده از دکمه‌ی رادیویی برای ستون اول"
 
-#: ../src/option.c:534
-#| msgid "Use check boxes for first column"
+#: ../src/option.c:564
 msgid "Use an image for first column"
 msgstr "استفاده از یک عکس برای ستون اول"
 
-#: ../src/option.c:552
+#: ../src/option.c:582
 msgid "Allow multiple rows to be selected"
 msgstr "اجازه برای انتخاب ردیف‌های متعدد"
 
-#: ../src/option.c:561 ../src/option.c:771
+#: ../src/option.c:591 ../src/option.c:819
 msgid "Allow changes to text"
 msgstr "اجازه برای تغییرات متن"
 
-#: ../src/option.c:570
+#: ../src/option.c:600
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -411,356 +449,361 @@ msgstr ""
 "به کار گرفته شود.)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:572 ../src/option.c:581
+#: ../src/option.c:602 ../src/option.c:611
 msgid "NUMBER"
 msgstr "NUMBER"
 
-#: ../src/option.c:580
+#: ../src/option.c:610
 msgid "Hide a specific column"
 msgstr "مخفی کردن یک ستون خاص"
 
-#: ../src/option.c:589
+#: ../src/option.c:619
 msgid "Hides the column headers"
 msgstr "مخفی کردن سرستون‌ها"
 
-#: ../src/option.c:605
+#: ../src/option.c:635
 msgid "Display notification"
 msgstr "نمایش اعلان"
 
-#: ../src/option.c:614
+#: ../src/option.c:644
 msgid "Set the notification text"
 msgstr "تنظیم متن اعلان"
 
-#: ../src/option.c:623
+#: ../src/option.c:653
 msgid "Listen for commands on stdin"
 msgstr "گوش‌سپردن به stdin برای فرمان‌ها"
 
-#: ../src/option.c:640
+#: ../src/option.c:662
+#| msgid "Set the notification text"
+msgid "Set the notification hints"
+msgstr "تنظیم تذکر اعلان"
+
+#: ../src/option.c:679
 msgid "Display progress indication dialog"
 msgstr "نمایش محاوره‌ی نشانه‌ی پیشرفت"
 
-#: ../src/option.c:658
+#: ../src/option.c:697
 msgid "Set initial percentage"
 msgstr "تنظیم درصد اولیه"
 
-#: ../src/option.c:659
+#: ../src/option.c:698
 msgid "PERCENTAGE"
 msgstr "PERCENTAGE"
 
-#: ../src/option.c:667
+#: ../src/option.c:706
 msgid "Pulsate progress bar"
 msgstr "تپش نوار پیش‌رفت"
 
-#: ../src/option.c:677
+#: ../src/option.c:716
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "کنار گذاشتن محاوره هنگامی که پیش‌رفت به ۱۰۰٪ رسید"
 
-#: ../src/option.c:687
+#: ../src/option.c:726
 #, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "کشتن فراروند والد، در صورت فشرده شده دکمه‌ی لغو"
 
-#: ../src/option.c:697
+#: ../src/option.c:736
 #, no-c-format
 msgid "Hide Cancel button"
 msgstr "مخفی کردن دکمه‌ی لغو"
 
-#: ../src/option.c:712
+#: ../src/option.c:751
 msgid "Display question dialog"
 msgstr "نمایش محاوره‌ی سؤال"
 
-#: ../src/option.c:753
+#: ../src/option.c:801
 msgid "Display text information dialog"
 msgstr "نمایش محاوره‌ی اطلاعات متن"
 
-#: ../src/option.c:762
+#: ../src/option.c:810
 msgid "Open file"
 msgstr "باز کردن پرونده"
 
-#: ../src/option.c:780
+#: ../src/option.c:828
 msgid "Set the text font"
 msgstr "تنظیم قلم متن"
 
-#: ../src/option.c:789
+#: ../src/option.c:837
 msgid "Enable an I read and agree checkbox"
 msgstr "فعال ساختن یک مربع تیک برای «من و خواندم و قبول دارم»"
 
-#: ../src/option.c:799
+#: ../src/option.c:847
 msgid "Enable html support"
 msgstr "فعال‌سازی پشتیبانی از html"
 
-#: ../src/option.c:808
+#: ../src/option.c:856
 msgid "Sets an url instead of a file. Only works if you use --html option"
 msgstr ""
 "یک آدرس را به جای پرونده تنظیم می‌کند. تنها زمانی کار میکند که از گزینه "
 "html-- استفاده کنید"
 
-#: ../src/option.c:809
+#: ../src/option.c:857
 msgid "URL"
 msgstr "آدرس"
 
-#: ../src/option.c:824
+#: ../src/option.c:872
 msgid "Display warning dialog"
 msgstr "نمایش محاوره‌ی اخطار"
 
-#: ../src/option.c:865
+#: ../src/option.c:922
 msgid "Display scale dialog"
 msgstr "نمایش محاوره‌ی مقیاس"
 
-#: ../src/option.c:883
+#: ../src/option.c:940
 msgid "Set initial value"
 msgstr "تنظیم مقدار اولیه"
 
-#: ../src/option.c:884 ../src/option.c:893 ../src/option.c:902
-#: ../src/option.c:911 ../src/option.c:1092
+#: ../src/option.c:941 ../src/option.c:950 ../src/option.c:959
+#: ../src/option.c:968 ../src/option.c:1149
 msgid "VALUE"
 msgstr "VALUE"
 
-#: ../src/option.c:892
+#: ../src/option.c:949
 msgid "Set minimum value"
 msgstr "تنظیم مقدار کمینه"
 
-#: ../src/option.c:901
+#: ../src/option.c:958
 msgid "Set maximum value"
 msgstr "تنظیم مقدار بیشینه"
 
-#: ../src/option.c:910
+#: ../src/option.c:967
 msgid "Set step size"
 msgstr "تنظیم اندازه مرحله"
 
-#: ../src/option.c:919
+#: ../src/option.c:976
 msgid "Print partial values"
 msgstr "چاپ مقادیر نسبی"
 
-#: ../src/option.c:928
+#: ../src/option.c:985
 msgid "Hide value"
 msgstr "مخفی‌سازی مقادیر"
 
-#: ../src/option.c:943
+#: ../src/option.c:1000
 msgid "Display forms dialog"
 msgstr "نمایش محاوره‌ی فُرم‌ها"
 
-#: ../src/option.c:952
+#: ../src/option.c:1009
 msgid "Add a new Entry in forms dialog"
 msgstr "اضافه کردن یک ورودی جدید به محاوره‌ی فُرم‌ها"
 
-#: ../src/option.c:953 ../src/option.c:962
+#: ../src/option.c:1010 ../src/option.c:1019
 msgid "Field name"
 msgstr "نام فیلد"
 
-#: ../src/option.c:961
+#: ../src/option.c:1018
 msgid "Add a new Password Entry in forms dialog"
 msgstr "اضافه‌کردن یک ورودی گذرواژه جدید در محاوره فُرم‌ها"
 
-#: ../src/option.c:970
+#: ../src/option.c:1027
 msgid "Add a new Calendar in forms dialog"
 msgstr "اضافه‌کردن یک تقویم جدید به محاوره فُرم‌ها"
 
-#: ../src/option.c:971
+#: ../src/option.c:1028
 msgid "Calendar field name"
 msgstr "نام فیلد تقویم"
 
-#: ../src/option.c:979
+#: ../src/option.c:1036
 msgid "Add a new List in forms dialog"
 msgstr "اضافه کردن یک فهرست جدید در محاوره فرم‌ها"
 
-#: ../src/option.c:980
+#: ../src/option.c:1037
 msgid "List field and header name"
 msgstr "فهرست کردن فیلد و نام سرصفحه"
 
-#: ../src/option.c:988
+#: ../src/option.c:1045
 msgid "List of values for List"
 msgstr "فهرست مقدارها برای فهرست"
 
-#: ../src/option.c:989 ../src/option.c:998
+#: ../src/option.c:1046 ../src/option.c:1055
 msgid "List of values separated by |"
 msgstr "فهرست مقدارها جدا شده توسط |"
 
-#: ../src/option.c:997
+#: ../src/option.c:1054
 msgid "List of values for columns"
 msgstr "فهرست مقدارها برای ستون‌ها"
 
-#: ../src/option.c:1016
+#: ../src/option.c:1073
 msgid "Show the columns header"
 msgstr "نمایش سرصفحه ستون‌ها"
 
-#: ../src/option.c:1058
+#: ../src/option.c:1115
 msgid "Display password dialog"
 msgstr "نمایش محاوره‌ی گذرواژه"
 
-#: ../src/option.c:1067
+#: ../src/option.c:1124
 msgid "Display the username option"
 msgstr "نمایش گزینه نام‌کاربری"
 
-#: ../src/option.c:1082
+#: ../src/option.c:1139
 msgid "Display color selection dialog"
 msgstr "نمایش محاوره‌ی انتخاب رنگ"
 
-#: ../src/option.c:1091
+#: ../src/option.c:1148
 msgid "Set the color"
 msgstr "تنظیم رنگ"
 
-#: ../src/option.c:1100
+#: ../src/option.c:1157
 msgid "Show the palette"
 msgstr "نمایش تخته‌رنگ"
 
-#: ../src/option.c:1115
+#: ../src/option.c:1172
 msgid "About zenity"
 msgstr "درباره‌ی زنیتی"
 
-#: ../src/option.c:1124
+#: ../src/option.c:1181
 msgid "Print version"
 msgstr "نسخه‌ی چاپی"
 
-#: ../src/option.c:2006
+#: ../src/option.c:2075
 msgid "General options"
 msgstr "گزینه‌های عمومی"
 
-#: ../src/option.c:2007
+#: ../src/option.c:2076
 msgid "Show general options"
 msgstr "نمایش گزینه‌های عمومی"
 
-#: ../src/option.c:2017
+#: ../src/option.c:2086
 msgid "Calendar options"
 msgstr "گزینه‌های تقویم"
 
-#: ../src/option.c:2018
+#: ../src/option.c:2087
 msgid "Show calendar options"
 msgstr "نمایش گزینه‌های تقویم"
 
-#: ../src/option.c:2028
+#: ../src/option.c:2097
 msgid "Text entry options"
 msgstr "گزینه‌های ورودی متن"
 
-#: ../src/option.c:2029
+#: ../src/option.c:2098
 msgid "Show text entry options"
 msgstr "نمایش گزینه‌های ورودی متن"
 
-#: ../src/option.c:2039
+#: ../src/option.c:2108
 msgid "Error options"
 msgstr "گزینه‌های خطا"
 
-#: ../src/option.c:2040
+#: ../src/option.c:2109
 msgid "Show error options"
 msgstr "نمایش گزینه‌های خطا"
 
-#: ../src/option.c:2050
+#: ../src/option.c:2119
 msgid "Info options"
 msgstr "گزینه‌های اطلاعات"
 
-#: ../src/option.c:2051
+#: ../src/option.c:2120
 msgid "Show info options"
 msgstr "نمایش گزینه‌های اطلاعات"
 
-#: ../src/option.c:2061
+#: ../src/option.c:2130
 msgid "File selection options"
 msgstr "گزینه‌های انتخاب پرونده"
 
-#: ../src/option.c:2062
+#: ../src/option.c:2131
 msgid "Show file selection options"
 msgstr "نمایش گزینه‌های انتخاب پرونده"
 
-#: ../src/option.c:2072
+#: ../src/option.c:2141
 msgid "List options"
 msgstr "گزینه‌های فهرست"
 
-#: ../src/option.c:2073
+#: ../src/option.c:2142
 msgid "Show list options"
 msgstr "نمایش گزینه‌های فهرست"
 
-#: ../src/option.c:2084
+#: ../src/option.c:2153
 msgid "Notification icon options"
 msgstr "گزینه‌های شمایل اعلان"
 
-#: ../src/option.c:2085
+#: ../src/option.c:2154
 msgid "Show notification icon options"
 msgstr "نمایش گزینه‌های شمایل اعلان"
 
-#: ../src/option.c:2096
+#: ../src/option.c:2165
 msgid "Progress options"
 msgstr "گزینه‌های پیشرفت"
 
-#: ../src/option.c:2097
+#: ../src/option.c:2166
 msgid "Show progress options"
 msgstr "نمایش گزینه‌های پیشرفت"
 
-#: ../src/option.c:2107
+#: ../src/option.c:2176
 msgid "Question options"
 msgstr "گزینه‌های سؤال"
 
-#: ../src/option.c:2108
+#: ../src/option.c:2177
 msgid "Show question options"
 msgstr "نمایش گزینه‌های سؤال"
 
-#: ../src/option.c:2118
+#: ../src/option.c:2187
 msgid "Warning options"
 msgstr "گزینه‌های اخطار"
 
-#: ../src/option.c:2119
+#: ../src/option.c:2188
 msgid "Show warning options"
 msgstr "نمایش گزینه‌های اخطار"
 
-#: ../src/option.c:2129
+#: ../src/option.c:2198
 msgid "Scale options"
 msgstr "گزینه‌های مقیاس"
 
-#: ../src/option.c:2130
+#: ../src/option.c:2199
 msgid "Show scale options"
 msgstr "نمایش گزینه‌های مقیاس"
 
-#: ../src/option.c:2140
+#: ../src/option.c:2209
 msgid "Text information options"
 msgstr "گزینه‌های اطلاعات متن"
 
-#: ../src/option.c:2141
+#: ../src/option.c:2210
 msgid "Show text information options"
 msgstr "نمایش گزینه‌های اطلاعات متن"
 
-#: ../src/option.c:2151
+#: ../src/option.c:2220
 msgid "Color selection options"
 msgstr "گزینه‌های انتخاب رنگ"
 
-#: ../src/option.c:2152
+#: ../src/option.c:2221
 msgid "Show color selection options"
 msgstr "نمایش گزینه‌های انتخاب رنگ"
 
-#: ../src/option.c:2162
+#: ../src/option.c:2231
 msgid "Password dialog options"
 msgstr "گزینه‌های محاوره گذرواژه"
 
-#: ../src/option.c:2163
+#: ../src/option.c:2232
 msgid "Show password dialog options"
 msgstr "نمایش گزینه‌های محاوره گذرواژه"
 
-#: ../src/option.c:2173
+#: ../src/option.c:2242
 msgid "Forms dialog options"
 msgstr "گزینه‌های محاوره فُرم‌ها"
 
-#: ../src/option.c:2174
+#: ../src/option.c:2243
 msgid "Show forms dialog options"
 msgstr "نمایش گزینه‌های محاوره فُرم‌ها"
 
-#: ../src/option.c:2184
+#: ../src/option.c:2253
 msgid "Miscellaneous options"
 msgstr "گزینه‌های متفرقه"
 
-#: ../src/option.c:2185
+#: ../src/option.c:2254
 msgid "Show miscellaneous options"
 msgstr "نمایش گزینه‌های متفرقه"
 
-#: ../src/option.c:2210
+#: ../src/option.c:2279
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr "این گزینه موجود نیست. لطفا help-- برای تمام مقادیر ممکن ببینید.\n"
 
-#: ../src/option.c:2214
+#: ../src/option.c:2283
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s برای این محاوره پشتیبانی نمی‌شود\n"
 
-#: ../src/option.c:2218
+#: ../src/option.c:2287
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "دو گزینه‌ی محاوره یا بیشتر مشخص شده‌اند\n"
