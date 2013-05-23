@@ -710,12 +710,6 @@ zenity_tree_row_activated (GtkTreeView *tree_view, GtkTreePath *tree_path,
                            GtkTreeViewColumn *tree_col, gpointer data)
 {
   ZenityData *zen_data = data;
-  GtkTreeSelection *selection; 
-  
-  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
-  gtk_tree_selection_selected_foreach (selection, 
-                                       (GtkTreeSelectionForeachFunc) zenity_tree_dialog_get_selected, 
-                                       GTK_TREE_VIEW (tree_view));
  
   zenity_tree_dialog_output ();
   zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
