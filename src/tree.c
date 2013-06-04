@@ -139,6 +139,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
   static gboolean editable;
   static gboolean toggles;
   static gboolean first_time = TRUE;
+  GIOStatus status = G_IO_STATUS_NORMAL;
 
   tree_view = GTK_TREE_VIEW (data);
   n_columns = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
@@ -152,7 +153,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
     gtk_list_store_append (GTK_LIST_STORE (model), &iter);
   }
 
-  if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
+  if ((condition & G_IO_IN) == G_IO_IN) {
     GString *string;
     GError *error = NULL;
 
@@ -161,8 +162,6 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
     while ((g_io_channel_get_flags(channel) & G_IO_FLAG_IS_READABLE) != G_IO_FLAG_IS_READABLE)
       ;
     do {
-      gint status;
-
       do {
         if (g_io_channel_get_flags(channel) & G_IO_FLAG_IS_READABLE)
           status = g_io_channel_read_line_string (channel, string, NULL, &error);
@@ -221,11 +220,11 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
 
       column_count++;
 
-    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN); 
+    } while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) == G_IO_IN && status != G_IO_STATUS_EOF); 
     g_string_free (string, TRUE);
   }
 
-  if ((condition != G_IO_IN) && (condition != G_IO_IN + G_IO_HUP)) {
+  if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF) {
     g_io_channel_shutdown (channel, TRUE, NULL);
     return FALSE;
   }

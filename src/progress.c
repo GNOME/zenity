@@ -81,12 +81,13 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
   static GObject *progress_bar;
   static GObject *progress_label;
   float percentage = 0.0;
+  GIOStatus status = G_IO_STATUS_NORMAL;
   
   progress_data = (ZenityProgressData *) data;
   progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
   progress_label = gtk_builder_get_object (builder, "zenity_progress_text");
 
-  if ((condition == G_IO_IN) || (condition == G_IO_IN + G_IO_HUP)) {
+  if ((condition & G_IO_IN) != 0) {
     GString *string;
     GError *error = NULL;
 
@@ -95,8 +96,6 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
     while (channel->is_readable != TRUE)
       ;
     do {
-      gint status;
-
       do {
         status = g_io_channel_read_line_string (channel, string, NULL, &error);
 
@@ -175,11 +174,11 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
         }
       }
 
-    } while (g_io_channel_get_buffer_condition (channel) == G_IO_IN);
+    } while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) == G_IO_IN && status != G_IO_STATUS_EOF);
     g_string_free (string, TRUE);
   }
 
-  if ((condition != G_IO_IN) && (condition != G_IO_IN + G_IO_HUP)) {
+  if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF) {
     /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
     GtkWidget *button;
 
