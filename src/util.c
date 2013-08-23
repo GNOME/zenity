@@ -39,10 +39,6 @@
 #include "util.h"
 #include "zenity.h"
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#endif
-
 #define ZENITY_OK_DEFAULT	0
 #define ZENITY_CANCEL_DEFAULT	1
 #define ZENITY_ESC_DEFAULT	1
@@ -398,29 +394,27 @@ transient_get_xterm_toplevel (void)
 }
 
 static void
-zenity_util_make_transient (GdkWindow *window)
+zenity_util_make_transient (GdkWindow *window, Window parent)
 {
-  Window xterm = transient_get_xterm_toplevel ();
-  if (xterm != None) {
-    GdkWindow *gdkxterm = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), xterm);
-    if (gdkxterm) {
-      gdk_window_set_transient_for (window, gdkxterm);
-      g_object_unref (G_OBJECT (gdkxterm));
-    }
+  Window parent_window = parent;
+  if (parent_window == 0)
+    parent_window = transient_get_xterm_toplevel ();
+  if (parent_window != None) {
+    XSetTransientForHint (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), GDK_WINDOW_XID(window), parent_window);
   }
 }
 
 #endif /* GDK_WINDOWING_X11 */
 
 void
-zenity_util_show_dialog (GtkWidget *dialog)
+zenity_util_show_dialog (GtkWidget *dialog, Window parent)
 {
   gtk_widget_realize (dialog);
 #ifdef GDK_WINDOWING_X11
   if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
     {
       g_assert (gtk_widget_get_window(dialog));
-      zenity_util_make_transient (gtk_widget_get_window(dialog));
+      zenity_util_make_transient (gtk_widget_get_window(dialog), parent);
     }
 #endif
   gtk_widget_show (dialog);

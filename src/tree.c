@@ -562,7 +562,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
       zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view), n_columns, FALSE, tree_data->editable);
   }
 
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
 
   if(data->timeout_delay > 0) {
     g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);

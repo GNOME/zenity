@@ -107,7 +107,7 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
   if (scale_data->hide_value)
     gtk_scale_set_draw_value (GTK_SCALE (scale), FALSE);
   
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
 
   if(data->timeout_delay > 0) {
     g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);

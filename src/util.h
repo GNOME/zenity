@@ -4,6 +4,10 @@
 #include <gtk/gtk.h>
 #include "zenity.h"
 
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif
+
 G_BEGIN_DECLS
 
 #define ZENITY_UI_FILE_FULLPATH              ZENITY_DATADIR "/zenity.ui"
@@ -28,7 +32,7 @@ void		zenity_util_show_help                     (GError        **error);
 gint		zenity_util_return_exit_code 		  (ZenityExitCode value);                      
 void            zenity_util_exit_code_with_data           (ZenityExitCode value,
                                                            ZenityData     *data);
-void            zenity_util_show_dialog                   (GtkWidget      *widget);
+void            zenity_util_show_dialog                   (GtkWidget      *widget, Window parent);
 
 gboolean        zenity_util_timeout_handle                (gpointer data);
 

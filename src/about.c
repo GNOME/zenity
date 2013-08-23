@@ -308,7 +308,7 @@ zenity_about (ZenityData *data)
                     G_CALLBACK (zenity_zen_wisdom), NULL);
 #endif
 
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
   gtk_main ();
 }
 

@@ -141,7 +141,7 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                     G_CALLBACK (zenity_password_dialog_response),
                     password_data);
   gtk_widget_show_all(GTK_WIDGET(gtk_dialog_get_content_area(GTK_DIALOG(dialog))));
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
 
   if (data->timeout_delay > 0) {
     g_timeout_add (data->timeout_delay * 1000,

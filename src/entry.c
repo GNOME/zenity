@@ -144,7 +144,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
   g_object_unref (builder);
 
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
 
   if(data->timeout_delay > 0) {
     g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);

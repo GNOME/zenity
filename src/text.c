@@ -326,7 +326,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
     gtk_widget_show (GTK_WIDGET (web_kit));
   }
 #endif
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
 
   g_object_unref (builder);
 

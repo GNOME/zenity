@@ -302,7 +302,7 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   if (no_cancel && auto_close)
      gtk_widget_hide(GTK_WIDGET(ok_button));
 
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
   zenity_progress_read_info (progress_data);
 
   if(data->timeout_delay > 0) {
