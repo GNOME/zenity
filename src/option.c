@@ -46,6 +46,7 @@ static gint     zenity_general_timeout_delay;
 static gchar   *zenity_general_ok_button;
 static gchar   *zenity_general_cancel_button;
 static gboolean zenity_general_modal;
+static gint     zenity_general_attach;
 
 /* Calendar Dialog Options */
 static gboolean zenity_calendar_active;
@@ -221,6 +222,15 @@ static GOptionEntry general_options[] = {
     &zenity_general_modal,
     N_("Set the modal hint"),
     NULL
+  },
+  {
+    "attach",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_INT,
+    &zenity_general_attach,
+    N_("Set the parent window to attach to"),
+    N_("WINDOW")
   },
   {
     NULL
@@ -1350,6 +1360,7 @@ zenity_general_pre_callback (GOptionContext *context,
   zenity_general_dialog_no_markup = FALSE;
   zenity_general_timeout_delay = -1;
   zenity_general_modal = FALSE;
+  zenity_general_attach = 0;
 
   return TRUE;
 }
@@ -1588,6 +1599,7 @@ zenity_general_post_callback (GOptionContext *context,
   results->data->ok_label = zenity_general_ok_button;
   results->data->cancel_label = zenity_general_cancel_button;
   results->data->modal = zenity_general_modal;
+  results->data->attach = zenity_general_attach;
   return TRUE;
 }
 

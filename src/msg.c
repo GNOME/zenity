@@ -165,7 +165,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (msg_data->no_wrap)
     gtk_label_set_line_wrap (GTK_LABEL (text), FALSE);
 
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
 
   if(data->timeout_delay > 0) {
     g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, NULL);

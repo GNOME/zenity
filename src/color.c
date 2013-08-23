@@ -79,7 +79,7 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
   gtk_color_selection_set_has_palette (GTK_COLOR_SELECTION (colorsel),
                                        color_data->show_palette);
 
-  zenity_util_show_dialog (dialog);
+  zenity_util_show_dialog (dialog, data->attach);
 
   if (data->timeout_delay > 0) {
     g_timeout_add (data->timeout_delay * 1000,
