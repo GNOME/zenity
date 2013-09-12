@@ -2,14 +2,14 @@
 # Raivis Dejus <orvils@gmail.com>, 2006, 2009.
 # Peteris Krisjanis <pecisk@gmail.com>, 2009.
 # Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2013-08-31 03:27+0000\n"
-"PO-Revision-Date: 2012-09-26 11:53+0300\n"
+"PO-Revision-Date: 2013-09-12 14:19+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "X-Poedit-Language: Latvian\n"
 "X-Poedit-Country: LATVIA\n"
 
@@ -81,24 +81,26 @@ msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
 msgstr ""
+"Nederīga vērtība Bula tipa padomam.\n"
+"Atbalstītās vērtības ir “true” un “false”.\n"
 
 #. (iibiiay)
 #: ../src/notification.c:137
 #, c-format
 msgid "Unsupported hint. Skipping.\n"
-msgstr ""
+msgstr "Neatbalstīts padoms. Izlaiž.\n"
 
 #. unknown hints
 #: ../src/notification.c:150
 #, c-format
 msgid "Unknown hint name. Skipping.\n"
-msgstr ""
+msgstr "Nezināms padoma nosaukums. Izlaiž.\n"
 
 #: ../src/notification.c:209
-#, fuzzy, c-format
+#, c-format
 #| msgid "could not parse command from stdin\n"
 msgid "Could not parse command from stdin\n"
-msgstr "nevarēja parsēt komandu no stdin\n"
+msgstr "Nevarēja parsēt komandu no stdin\n"
 
 #: ../src/notification.c:241
 #, c-format
@@ -280,14 +282,13 @@ msgid "Set the modal hint"
 msgstr "Iestatīt modālo padomu"
 
 #: ../src/option.c:232
-#, fuzzy
 #| msgid "Set the window icon"
 msgid "Set the parent window to attach to"
-msgstr "Iestatīt loga ikonu"
+msgstr "Iestatīt vecāku logu, lai to pievienotu"
 
 #: ../src/option.c:233
 msgid "WINDOW"
-msgstr ""
+msgstr "LOGS"
 
 #: ../src/option.c:247
 msgid "Display calendar dialog"
@@ -483,10 +484,9 @@ msgid "Listen for commands on stdin"
 msgstr "Gaidīt komandu no stdin"
 
 #: ../src/option.c:672
-#, fuzzy
 #| msgid "Set the notification text"
 msgid "Set the notification hints"
-msgstr "Iestatīt paziņojuma tekstu"
+msgstr "Iestatīt paziņojumu padomus"
 
 #: ../src/option.c:689
 msgid "Display progress indication dialog"
