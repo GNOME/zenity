@@ -138,6 +138,7 @@ static gchar   *zenity_forms_date_format;
 //static gchar   *zenity_forms_hide_column;
 static gchar  **zenity_forms_list_values;
 static gchar  **zenity_forms_column_values;
+static gchar  **zenity_forms_combo_values;
 
 /* Miscelaneus Options */
 static gboolean zenity_misc_about;
@@ -1064,6 +1065,24 @@ static GOptionEntry forms_dialog_options[] = {
     N_("List of values for columns"),
     N_("List of values separated by |")
   },
+  {
+    "add-combo",
+    '\0',
+    0,
+    G_OPTION_ARG_CALLBACK,
+    zenity_forms_callback,
+    N_("Add a new combo box in forms dialog"),
+    N_("Combo box field name")
+  },
+  {
+    "combo-values",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING_ARRAY,
+    &zenity_forms_combo_values,
+    N_("List of values for combo box"),
+    N_("List of values separated by |")
+  },
  /* TODO: Implement how to hide specifc column 
   {
     "hide-column",
@@ -1246,6 +1265,8 @@ zenity_option_free (void) {
     g_free (zenity_forms_date_format);
   if (zenity_forms_list_values)
     g_strfreev (zenity_forms_list_values);
+  if (zenity_forms_combo_values)
+    g_strfreev (zenity_forms_combo_values);
   if (zenity_forms_column_values)
     g_strfreev (zenity_forms_column_values);
 //  if (zenity_forms_hide_column)
@@ -1321,6 +1342,8 @@ zenity_forms_callback (const gchar *option_name,
     forms_value->type = ZENITY_FORMS_PASSWORD;
   else if (g_strcmp0 (option_name, "--add-list") == 0)
     forms_value->type = ZENITY_FORMS_LIST;
+  else if (g_strcmp0 (option_name, "--add-combo") == 0)
+    forms_value->type = ZENITY_FORMS_COMBO;
 
   results->forms_data->list = g_slist_append(results->forms_data->list, forms_value);
 
@@ -2018,6 +2041,14 @@ zenity_forms_post_callback (GOptionContext *context,
     } else
       results->forms_data->column_values = g_slist_append (NULL, "column");
 
+    if (zenity_forms_combo_values) {
+      i = 0;
+      values = zenity_forms_combo_values[0];
+      while (values != NULL) {
+        results->forms_data->combo_values = g_slist_append (results->forms_data->combo_values, values);
+        values = zenity_forms_combo_values[++i];
+      }
+    }
     if (zenity_forms_date_format)
       results->forms_data->date_format = zenity_forms_date_format;
     else
@@ -2034,6 +2065,9 @@ zenity_forms_post_callback (GOptionContext *context,
 //                          ERROR_SUPPORT);
     if (zenity_forms_column_values)
       zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_column_values),
+                          ERROR_SUPPORT);
+    if (zenity_forms_combo_values)
+      zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_combo_values),
                           ERROR_SUPPORT);
     if (zenity_forms_show_header)
       zenity_option_error (zenity_option_get_name (forms_dialog_options, &zenity_forms_show_header),
