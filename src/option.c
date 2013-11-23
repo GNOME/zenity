@@ -106,6 +106,8 @@ static gboolean zenity_question_default_cancel;
 static gboolean zenity_text_active;
 static gchar   *zenity_text_font;
 static gchar   *zenity_text_checkbox;
+static gboolean zenity_text_auto_scroll;
+
 #ifdef HAVE_WEBKITGTK
 static gboolean zenity_text_enable_html;
 static gchar   *zenity_text_url;
@@ -878,6 +880,15 @@ static GOptionEntry text_options[] = {
     N_("URL")
   },
 #endif
+  {
+    "auto-scroll",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_text_auto_scroll,
+    N_("Auto scroll the text to the end. Only when text is captured from stdin"),
+    NULL
+  },
   { 
     NULL 
   }
@@ -1531,6 +1542,7 @@ zenity_text_pre_callback (GOptionContext *context,
   zenity_text_active = FALSE;
   zenity_text_font = NULL;
   zenity_text_checkbox = NULL;
+  zenity_text_auto_scroll = FALSE;
 #ifdef HAVE_WEBKITGTK
   zenity_text_enable_html = FALSE;
   zenity_text_url = NULL;
@@ -1944,6 +1956,7 @@ zenity_text_post_callback (GOptionContext *context,
     results->text_data->no_wrap = zenity_general_dialog_no_wrap;
     results->text_data->font = zenity_text_font;
     results->text_data->checkbox = zenity_text_checkbox;
+    results->text_data->auto_scroll = zenity_text_auto_scroll;
 #ifdef HAVE_WEBKITGTK
     results->text_data->html = zenity_text_enable_html;
     results->text_data->url = zenity_text_url;

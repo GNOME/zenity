@@ -134,11 +134,13 @@ zenity_text_handle_stdin (GIOChannel  *channel,
                           gpointer     data)
 {
   static GtkTextBuffer *buffer;
+  static GtkTextView *text_view;
   gchar buf[1024];
 
   gsize len;
 
-  buffer = GTK_TEXT_BUFFER (data);
+  text_view = GTK_TEXT_VIEW (data);
+  buffer = gtk_text_view_get_buffer (text_view);
 
   if ((condition & G_IO_IN) || (condition & (G_IO_IN | G_IO_HUP))) {
     GError *error = NULL;
@@ -179,6 +181,12 @@ zenity_text_handle_stdin (GIOChannel  *channel,
       } else {
         gtk_text_buffer_insert (buffer, &end, buf, len);
       }
+      if (zen_text_data->auto_scroll) {
+        GtkTextMark *mark = NULL;
+        mark = gtk_text_buffer_get_insert (buffer);
+        if (mark != NULL)
+          gtk_text_view_scroll_to_mark (text_view, mark, 0.0, FALSE, 0, 0);
+      }
     }
   }
 
@@ -186,14 +194,14 @@ zenity_text_handle_stdin (GIOChannel  *channel,
 }
 
 static void
-zenity_text_fill_entries_from_stdin (GtkTextBuffer *text_buffer)
+zenity_text_fill_entries_from_stdin (GtkTextView *text_view)
 {
   GIOChannel *channel; 
 
   channel = g_io_channel_unix_new (0);
   g_io_channel_set_encoding (channel, NULL, NULL);
   g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
-  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_text_handle_stdin, text_buffer);
+  g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_text_handle_stdin, text_view);
 }
 
 void
@@ -233,7 +241,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_text_dialog_response), data);
-	
+
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
@@ -257,7 +265,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
   if (text_data->uri)
     zenity_util_fill_file_buffer (text_buffer, text_data->uri);
   else
-    zenity_text_fill_entries_from_stdin (GTK_TEXT_BUFFER (text_buffer));
+    zenity_text_fill_entries_from_stdin (GTK_TEXT_VIEW(text_view));
 
   if (text_data->editable)
     zen_text_data->buffer = text_buffer;
@@ -326,6 +334,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
     gtk_widget_show (GTK_WIDGET (web_kit));
   }
 #endif
+
   zenity_util_show_dialog (dialog, data->attach);
 
   g_object_unref (builder);

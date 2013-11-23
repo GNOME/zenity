@@ -110,6 +110,7 @@ typedef struct {
   gchar         *uri;
   gboolean       editable;
   gboolean       no_wrap;
+  gboolean       auto_scroll;
   gchar         *font;
   GtkTextBuffer	*buffer;
   gchar         *checkbox;
