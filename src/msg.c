@@ -36,7 +36,7 @@ zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data
   cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_NO, GTK_RESPONSE_CANCEL);
   ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_YES, GTK_RESPONSE_OK);
 
-  gtk_widget_grab_focus (ok_button);
+  gtk_widget_grab_focus (msg_data->default_cancel ? cancel_button : ok_button);
 
   if (data->cancel_label) {
     gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);

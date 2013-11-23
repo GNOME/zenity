@@ -66,6 +66,7 @@ typedef struct {
   MsgMode  mode;
   gboolean no_wrap;
   gboolean no_markup;
+  gboolean default_cancel;
 } ZenityMsgData;
 
 typedef struct {

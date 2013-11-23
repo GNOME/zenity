@@ -100,6 +100,7 @@ static gboolean zenity_progress_no_cancel;
 
 /* Question Dialog Options */
 static gboolean zenity_question_active;
+static gboolean zenity_question_default_cancel;
 
 /* Text Dialog Options */
 static gboolean zenity_text_active;
@@ -796,6 +797,15 @@ static GOptionEntry question_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_markup,
     N_("Do not enable pango markup")
+  },
+  {
+    "default-cancel",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_question_default_cancel,
+    N_("Give cancel button focus by default"),
+    NULL
   },
   { 
     NULL 
@@ -1507,6 +1517,7 @@ zenity_question_pre_callback (GOptionContext *context,
 		              GError        **error)
 {
   zenity_question_active = FALSE;
+  zenity_question_default_cancel = FALSE;
 
   return TRUE;
 }
@@ -1913,6 +1924,7 @@ zenity_question_post_callback (GOptionContext *context,
     results->msg_data->mode = ZENITY_MSG_QUESTION;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
+    results->msg_data->default_cancel = zenity_question_default_cancel;
   }
 
   return TRUE;
