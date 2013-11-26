@@ -61,7 +61,15 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                      FALSE,
                      FALSE,
                      12);
-  label = gtk_label_new(_("Type your password"));
+
+  /* Checks if username has been passed as a parameter */
+  gchar *title_text = N_("Type your password");
+
+  if(password_data->username)
+    title_text = N_("Type your username and password");
+
+  label = gtk_label_new(title_text);
+
   gtk_box_pack_start(GTK_BOX(hbox),
                      label,
                      FALSE,
