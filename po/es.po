@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: zenity.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-11-23 22:34+0000\n"
-"PO-Revision-Date: 2013-11-25 10:39+0100\n"
+"POT-Creation-Date: 2013-11-26 02:02+0000\n"
+"PO-Revision-Date: 2013-11-26 11:25+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -114,15 +114,21 @@ msgstr "No se pudo analizar el mensaje de stdin\n"
 msgid "Zenity notification"
 msgstr "Notificación de Zenity"
 
-#: ../src/password.c:64
+#. Checks if username has been passed as a parameter
+#: ../src/password.c:66
 msgid "Type your password"
 msgstr "Escriba su contraseña"
 
-#: ../src/password.c:99
+#: ../src/password.c:69
+#| msgid "Type your password"
+msgid "Type your username and password"
+msgstr "Escriba su nombre de usuario y su contraseña"
+
+#: ../src/password.c:107
 msgid "Username:"
 msgstr "Nombre de usuario:"
 
-#: ../src/password.c:115
+#: ../src/password.c:123
 msgid "Password:"
 msgstr "Contraseña:"
 
