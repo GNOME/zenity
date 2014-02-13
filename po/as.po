@@ -5,14 +5,14 @@
 # Amitakhya Phukan <aphukan@redhat.com>, 2008.
 # Amitakhya Phukan <amitakhya@svn.gnome.org>, 2008.
 # Amitakhya Phukan <aphukan@fedoraproject.org>, 2009.
-# Nilamdyuti Goswami <ngoswami@redhat.com>, 2011, 2012, 2013.
+# Nilamdyuti Goswami <ngoswami@redhat.com>, 2011, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-25 12:35+0000\n"
-"PO-Revision-Date: 2013-09-26 17:03+0530\n"
+"POT-Creation-Date: 2014-02-13 12:00+0000\n"
+"PO-Revision-Date: 2014-02-13 22:26+0630\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
 "Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
 "Language: as\n"
@@ -111,15 +111,21 @@ msgstr "stdin ৰ পৰা বাৰ্তা বিশ্লেষণ কৰ�
 msgid "Zenity notification"
 msgstr "Zenity ৰ অধিসূচনা"
 
-#: ../src/password.c:64
+#. Checks if username has been passed as a parameter
+#: ../src/password.c:66
 msgid "Type your password"
 msgstr "আপোনাৰ পাছৱাৰ্ড লিখক"
 
-#: ../src/password.c:99
+#: ../src/password.c:69
+#| msgid "Type your password"
+msgid "Type your username and password"
+msgstr "আপোনাৰ ব্যৱহাৰকাৰীনাম আৰু পাছৱাৰ্ড টাইপ কৰক"
+
+#: ../src/password.c:107
 msgid "Username:"
 msgstr "ব্যৱহাৰকাৰী নাম:"
 
-#: ../src/password.c:115
+#: ../src/password.c:123
 msgid "Password:"
 msgstr "পাছৱাৰ্ড:"
 
@@ -219,237 +225,237 @@ msgstr "তলৰ তালিকাৰ পৰা বস্তুসমূহ �
 msgid "Warning"
 msgstr "সতৰ্কবাৰ্তা"
 
-#: ../src/option.c:160
+#: ../src/option.c:163
 msgid "Set the dialog title"
 msgstr "ডাইলগৰ শীৰ্ষক সংহতি কৰক"
 
-#: ../src/option.c:161
+#: ../src/option.c:164
 msgid "TITLE"
 msgstr "শীৰ্ষক"
 
-#: ../src/option.c:169
+#: ../src/option.c:172
 msgid "Set the window icon"
 msgstr "উইন্ডোৰ আইকন সংহতি কৰক"
 
-#: ../src/option.c:170
+#: ../src/option.c:173
 msgid "ICONPATH"
 msgstr "ICONPATH"
 
-#: ../src/option.c:178
+#: ../src/option.c:181
 msgid "Set the width"
 msgstr "প্ৰস্থ সংহতি কৰক"
 
-#: ../src/option.c:179
+#: ../src/option.c:182
 msgid "WIDTH"
 msgstr "WIDTH"
 
-#: ../src/option.c:187
+#: ../src/option.c:190
 msgid "Set the height"
 msgstr "উচ্চতা সংহতি কৰক"
 
-#: ../src/option.c:188
+#: ../src/option.c:191
 msgid "HEIGHT"
 msgstr "HEIGHT"
 
-#: ../src/option.c:196
+#: ../src/option.c:199
 msgid "Set dialog timeout in seconds"
 msgstr "ছেকেণ্ডত ডাইলগৰ বিৰতি নিৰ্ধাৰিত কৰক"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:198
+#: ../src/option.c:201
 msgid "TIMEOUT"
 msgstr "TIMEOUT"
 
-#: ../src/option.c:206
+#: ../src/option.c:209
 msgid "Sets the label of the Ok button"
 msgstr "ঠিক আছে বুটামৰ লেবেল সংহতি কৰে"
 
-#: ../src/option.c:207 ../src/option.c:216 ../src/option.c:258
-#: ../src/option.c:318 ../src/option.c:327 ../src/option.c:361
-#: ../src/option.c:411 ../src/option.c:540 ../src/option.c:656
-#: ../src/option.c:674 ../src/option.c:700 ../src/option.c:772
-#: ../src/option.c:840 ../src/option.c:849 ../src/option.c:893
-#: ../src/option.c:943 ../src/option.c:1112
+#: ../src/option.c:210 ../src/option.c:219 ../src/option.c:261
+#: ../src/option.c:321 ../src/option.c:330 ../src/option.c:364
+#: ../src/option.c:414 ../src/option.c:543 ../src/option.c:659
+#: ../src/option.c:677 ../src/option.c:703 ../src/option.c:775
+#: ../src/option.c:852 ../src/option.c:861 ../src/option.c:914
+#: ../src/option.c:964 ../src/option.c:1133
 msgid "TEXT"
 msgstr "TEXT"
 
-#: ../src/option.c:215
+#: ../src/option.c:218
 msgid "Sets the label of the Cancel button"
 msgstr "বাতিল বুটামৰ লেবেল সংহতি কৰে"
 
-#: ../src/option.c:224
+#: ../src/option.c:227
 msgid "Set the modal hint"
 msgstr "মডেল ইংগিত সংহতি কৰক"
 
-#: ../src/option.c:233
+#: ../src/option.c:236
 msgid "Set the parent window to attach to"
 msgstr "সংলগ্ন কৰিবলৈ উপধায়ক উইন্ডো সংহতি কৰক"
 
-#: ../src/option.c:234
+#: ../src/option.c:237
 msgid "WINDOW"
 msgstr "উইন্ডো"
 
-#: ../src/option.c:248
+#: ../src/option.c:251
 msgid "Display calendar dialog"
 msgstr "কেলেন্ডাৰৰ ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:257 ../src/option.c:317 ../src/option.c:360
-#: ../src/option.c:410 ../src/option.c:539 ../src/option.c:699
-#: ../src/option.c:771 ../src/option.c:892 ../src/option.c:942
-#: ../src/option.c:1111
+#: ../src/option.c:260 ../src/option.c:320 ../src/option.c:363
+#: ../src/option.c:413 ../src/option.c:542 ../src/option.c:702
+#: ../src/option.c:774 ../src/option.c:913 ../src/option.c:963
+#: ../src/option.c:1132
 msgid "Set the dialog text"
 msgstr "ডাইলগৰ লিখনী সংহতি কৰক"
 
-#: ../src/option.c:266
+#: ../src/option.c:269
 msgid "Set the calendar day"
 msgstr "কেলেন্ডাৰৰ দিন সংহতি কৰক"
 
-#: ../src/option.c:267
+#: ../src/option.c:270
 msgid "DAY"
 msgstr "DAY"
 
-#: ../src/option.c:275
+#: ../src/option.c:278
 msgid "Set the calendar month"
 msgstr "কেলেন্ডাৰৰ মাহ সংহতি কৰক"
 
-#: ../src/option.c:276
+#: ../src/option.c:279
 msgid "MONTH"
 msgstr "MONTH"
 
-#: ../src/option.c:284
+#: ../src/option.c:287
 msgid "Set the calendar year"
 msgstr "কেলেন্ডাৰ বছৰ সংহতি কৰক"
 
-#: ../src/option.c:285
+#: ../src/option.c:288
 msgid "YEAR"
 msgstr "YEAR"
 
-#: ../src/option.c:293 ../src/option.c:1129
+#: ../src/option.c:296 ../src/option.c:1150
 msgid "Set the format for the returned date"
 msgstr "ঘুৰাই দিয়া তাৰিখৰ বিন্যাস সংহতি কৰক"
 
-#: ../src/option.c:294 ../src/option.c:1130
+#: ../src/option.c:297 ../src/option.c:1151
 msgid "PATTERN"
 msgstr "PATTERN"
 
-#: ../src/option.c:308
+#: ../src/option.c:311
 msgid "Display text entry dialog"
 msgstr "লিখনী প্ৰবিষ্টি ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:326
+#: ../src/option.c:329
 msgid "Set the entry text"
 msgstr "প্ৰবিষ্টি লিখনী সংহতি কৰক"
 
-#: ../src/option.c:335
+#: ../src/option.c:338
 msgid "Hide the entry text"
 msgstr "প্ৰবিষ্টি লিখনী লুকুৱাওক"
 
-#: ../src/option.c:351
+#: ../src/option.c:354
 msgid "Display error dialog"
 msgstr "ত্ৰুটি ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:369 ../src/option.c:419 ../src/option.c:780
-#: ../src/option.c:901
+#: ../src/option.c:372 ../src/option.c:422 ../src/option.c:783
+#: ../src/option.c:922
 msgid "Set the dialog icon"
 msgstr "ডাইলগ আইকন সংহতি কৰক"
 
-#: ../src/option.c:370 ../src/option.c:420 ../src/option.c:781
-#: ../src/option.c:902
+#: ../src/option.c:373 ../src/option.c:423 ../src/option.c:784
+#: ../src/option.c:923
 msgid "ICON-NAME"
 msgstr "ICON-NAME"
 
-#: ../src/option.c:378 ../src/option.c:428 ../src/option.c:789
-#: ../src/option.c:910
+#: ../src/option.c:381 ../src/option.c:431 ../src/option.c:792
+#: ../src/option.c:931
 msgid "Do not enable text wrapping"
 msgstr "লিখনী মেৰিওৱা সামৰ্থবান নকৰিব"
 
-#: ../src/option.c:387 ../src/option.c:437 ../src/option.c:798
-#: ../src/option.c:919
+#: ../src/option.c:390 ../src/option.c:440 ../src/option.c:801
+#: ../src/option.c:940
 msgid "Do not enable pango markup"
 msgstr "pango মাৰ্কআপ সামৰ্থবান নকৰিব"
 
-#: ../src/option.c:401
+#: ../src/option.c:404
 msgid "Display info dialog"
 msgstr "তথ্য  ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:451
+#: ../src/option.c:454
 msgid "Display file selection dialog"
 msgstr "নথিপত্ৰ নিৰ্বাচনৰ ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:460
+#: ../src/option.c:463
 msgid "Set the filename"
 msgstr "নথিপত্ৰৰ নাম সংহতি কৰক"
 
-#: ../src/option.c:461 ../src/option.c:822
+#: ../src/option.c:464 ../src/option.c:834
 msgid "FILENAME"
 msgstr "FILENAME"
 
-#: ../src/option.c:469
+#: ../src/option.c:472
 msgid "Allow multiple files to be selected"
 msgstr "একাধিক নথিপত্ৰ নিৰ্বাচনৰ অনুমতি প্ৰদান কৰক"
 
-#: ../src/option.c:478
+#: ../src/option.c:481
 msgid "Activate directory-only selection"
 msgstr "অকল-ডাইৰেকটৰি নিৰ্বাচনৰ  সক্ৰিয় কৰক"
 
-#: ../src/option.c:487
+#: ../src/option.c:490
 msgid "Activate save mode"
 msgstr "সংৰক্ষণ অৱস্থা সক্ৰিয় কৰক"
 
-#: ../src/option.c:496 ../src/option.c:584 ../src/option.c:1120
+#: ../src/option.c:499 ../src/option.c:587 ../src/option.c:1141
 msgid "Set output separator character"
 msgstr "আউটপুট বিভাজক আখৰ সংহতি কৰক"
 
-#: ../src/option.c:497 ../src/option.c:585 ../src/option.c:1121
+#: ../src/option.c:500 ../src/option.c:588 ../src/option.c:1142
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
-#: ../src/option.c:505
+#: ../src/option.c:508
 msgid "Confirm file selection if filename already exists"
 msgstr "নথিপত্ৰৰ নাম পূৰ্বে উপস্থিত থাকিলে নথিপত্ৰ নিৰ্বাচন নিশ্চিত কৰক"
 
-#: ../src/option.c:514
+#: ../src/option.c:517
 msgid "Sets a filename filter"
 msgstr "নথিপত্ৰৰ নামৰ পৰিস্ৰাৱক সংহতি কৰে"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:516
+#: ../src/option.c:519
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAME | PATTERN1 PATTERN2 ..."
 
-#: ../src/option.c:530
+#: ../src/option.c:533
 msgid "Display list dialog"
 msgstr "তালিকা ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:548
+#: ../src/option.c:551
 msgid "Set the column header"
 msgstr "স্তম্ভৰ হেডাৰ সংহতি কৰক"
 
-#: ../src/option.c:549
+#: ../src/option.c:552
 msgid "COLUMN"
 msgstr "COLUMN"
 
-#: ../src/option.c:557
+#: ../src/option.c:560
 msgid "Use check boxes for first column"
 msgstr "প্ৰথম স্তম্ভৰ বাবে চেক বাকচ ব্যৱহাৰ কৰক"
 
-#: ../src/option.c:566
+#: ../src/option.c:569
 msgid "Use radio buttons for first column"
 msgstr "প্ৰথম স্তম্ভৰ বাবে ৰেডিও-বুটাম ব্যৱহাৰ কৰক"
 
-#: ../src/option.c:575
+#: ../src/option.c:578
 msgid "Use an image for first column"
 msgstr "প্ৰথম স্তৰৰ বাবে এটা ছবি ব্যৱহাৰ কৰক"
 
-#: ../src/option.c:593
+#: ../src/option.c:596
 msgid "Allow multiple rows to be selected"
 msgstr "একাধিক শাৰী নিৰ্বাচনৰ অনুমতি প্ৰদান কৰক"
 
-#: ../src/option.c:602 ../src/option.c:830
+#: ../src/option.c:605 ../src/option.c:842
 msgid "Allow changes to text"
 msgstr "লিখনী পৰিবৰ্তনৰ অনুমতি প্ৰদান কৰক"
 
-#: ../src/option.c:611
+#: ../src/option.c:614
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -459,364 +465,371 @@ msgstr ""
 "'ALL' মান প্ৰয়োগ কৰক)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:613 ../src/option.c:622
+#: ../src/option.c:616 ../src/option.c:625
 msgid "NUMBER"
 msgstr "NUMBER"
 
-#: ../src/option.c:621
+#: ../src/option.c:624
 msgid "Hide a specific column"
 msgstr "এটা নিৰ্দিষ্ট স্তম্ভ লুকুৱাওক"
 
-#: ../src/option.c:630
+#: ../src/option.c:633
 msgid "Hides the column headers"
 msgstr "স্তম্ভৰ হেডাৰসমূহ লুকাওক"
 
-#: ../src/option.c:646
+#: ../src/option.c:649
 msgid "Display notification"
 msgstr "অধিসূচনা প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:655
+#: ../src/option.c:658
 msgid "Set the notification text"
 msgstr "অধিসূচনাৰ লিখনী সংহতি কৰক"
 
-#: ../src/option.c:664
+#: ../src/option.c:667
 msgid "Listen for commands on stdin"
 msgstr "stdin ৰ  কমান্ড শুনক"
 
-#: ../src/option.c:673
+#: ../src/option.c:676
 msgid "Set the notification hints"
 msgstr "অধিসূচনাৰ সহায়সমূহ সংহতি কৰক"
 
-#: ../src/option.c:690
+#: ../src/option.c:693
 msgid "Display progress indication dialog"
 msgstr "কৰ্মৰ প্ৰগতি চিহ্নকাৰী ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:708
+#: ../src/option.c:711
 msgid "Set initial percentage"
 msgstr "আৰম্ভ শতাংশ সংহতি কৰক"
 
-#: ../src/option.c:709
+#: ../src/option.c:712
 msgid "PERCENTAGE"
 msgstr "PERCENTAGE"
 
-#: ../src/option.c:717
+#: ../src/option.c:720
 msgid "Pulsate progress bar"
 msgstr "প্ৰগতি বাৰ কপাওক"
 
-#: ../src/option.c:727
+#: ../src/option.c:730
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "১০০% সম্পূৰ্ণ হ'লে ডাইলগ বন্ধ কৰক"
 
-#: ../src/option.c:737
+#: ../src/option.c:740
 #, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "বাতিল বুটাম টিপা হলে উপধায়ক প্ৰক্ৰিয়া kill কৰক"
 
-#: ../src/option.c:747
+#: ../src/option.c:750
 #, no-c-format
 msgid "Hide Cancel button"
 msgstr "বাতিল বুটাম লুকাওক"
 
-#: ../src/option.c:762
+#: ../src/option.c:765
 msgid "Display question dialog"
 msgstr "প্ৰশ্ন ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:812
+#: ../src/option.c:809
+msgid "Give cancel button focus by default"
+msgstr "বাতিল কৰক বুটামক অবিকল্পিত ফকাচ দিয়ক"
+
+#: ../src/option.c:824
 msgid "Display text information dialog"
 msgstr "লিখনী  তথ্যৰ ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:821
+#: ../src/option.c:833
 msgid "Open file"
 msgstr "নথিপত্ৰ খোলক"
 
-#: ../src/option.c:839
+#: ../src/option.c:851
 msgid "Set the text font"
 msgstr "লিখনী ফন্ট সংহতি কৰক"
 
-#: ../src/option.c:848
+#: ../src/option.c:860
 msgid "Enable an I read and agree checkbox"
 msgstr "এটা মই পঢ়িছো আৰু মানি লৈছো চেকবাকচ সামৰ্থবান কৰক"
 
-#: ../src/option.c:858
+#: ../src/option.c:870
 msgid "Enable html support"
 msgstr "html সমৰ্থন সামৰ্থবান কৰক"
 
-#: ../src/option.c:867
+#: ../src/option.c:879
 msgid "Sets an url instead of a file. Only works if you use --html option"
 msgstr ""
 "এটা নথিপত্ৰৰ বিপৰিতে এটা url সংহতি কৰে। তেতিয়াহে কাম কৰিব যদি আপুনি --html "
 "বিকল্প ব্যৱহাৰ কৰে"
 
-#: ../src/option.c:868
+#: ../src/option.c:880
 msgid "URL"
 msgstr "URL"
 
-#: ../src/option.c:883
+#: ../src/option.c:889
+msgid "Auto scroll the text to the end. Only when text is captured from stdin"
+msgstr ""
+"লিখনীক অন্তলৈ স্বস্ক্ৰল কৰক। কেৱল তেতিয়া যেতিয়া লিখনীক stdin ৰ পৰা গ্ৰহণ কৰা "
+"হয়"
+
+#: ../src/option.c:904
 msgid "Display warning dialog"
 msgstr "সতৰ্কবাৰ্তা ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:933
+#: ../src/option.c:954
 msgid "Display scale dialog"
 msgstr "যোখৰ ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:951
+#: ../src/option.c:972
 msgid "Set initial value"
 msgstr "আৰম্ভ মান সংহতি কৰক"
 
-#: ../src/option.c:952 ../src/option.c:961 ../src/option.c:970
-#: ../src/option.c:979 ../src/option.c:1178
+#: ../src/option.c:973 ../src/option.c:982 ../src/option.c:991
+#: ../src/option.c:1000 ../src/option.c:1199
 msgid "VALUE"
 msgstr "VALUE"
 
-#: ../src/option.c:960
+#: ../src/option.c:981
 msgid "Set minimum value"
 msgstr "সৰ্বনিম্ন মান সংহতি কৰক"
 
-#: ../src/option.c:969
+#: ../src/option.c:990
 msgid "Set maximum value"
 msgstr "সৰ্বোচ্চ মান সংহতি কৰক"
 
-#: ../src/option.c:978
+#: ../src/option.c:999
 msgid "Set step size"
 msgstr "স্তৰ আকাৰ সংহতি কৰক"
 
-#: ../src/option.c:987
+#: ../src/option.c:1008
 msgid "Print partial values"
 msgstr "আংশিক মানসমূহ প্ৰিন্ট কৰক"
 
-#: ../src/option.c:996
+#: ../src/option.c:1017
 msgid "Hide value"
 msgstr "মান লুকুৱাওক"
 
-#: ../src/option.c:1011
+#: ../src/option.c:1032
 msgid "Display forms dialog"
 msgstr "ফৰ্মসমূহৰ ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:1020
+#: ../src/option.c:1041
 msgid "Add a new Entry in forms dialog"
 msgstr "ফৰ্মসমূহৰ ডাইলগত এটা নতুন প্ৰৱিষ্টি যোগ কৰক"
 
-#: ../src/option.c:1021 ../src/option.c:1030
+#: ../src/option.c:1042 ../src/option.c:1051
 msgid "Field name"
 msgstr "ফিল্ডৰ নাম"
 
-#: ../src/option.c:1029
+#: ../src/option.c:1050
 msgid "Add a new Password Entry in forms dialog"
 msgstr "ফৰ্মসমূহৰ ডাইলগত এটা নতুন পাছৱাৰ্ড প্ৰৱিষ্টি যোগ কৰক"
 
-#: ../src/option.c:1038
+#: ../src/option.c:1059
 msgid "Add a new Calendar in forms dialog"
 msgstr "ফৰ্মসমূহৰ ডাইলগত এটা নতুন কেলেনডাৰ যোগ কৰক"
 
-#: ../src/option.c:1039
+#: ../src/option.c:1060
 msgid "Calendar field name"
 msgstr "কেলেন্ডাৰ ফিল্ড নাম"
 
-#: ../src/option.c:1047
+#: ../src/option.c:1068
 msgid "Add a new List in forms dialog"
 msgstr "ফৰ্মসমূহৰ ডাইলগত এটা নতুন তালিকা যোগ কৰক"
 
-#: ../src/option.c:1048
+#: ../src/option.c:1069
 msgid "List field and header name"
 msgstr "ক্ষেত্ৰ আৰু হেডাৰ নাম তালিকাভুক্ত কৰক"
 
-#: ../src/option.c:1056
+#: ../src/option.c:1077
 msgid "List of values for List"
 msgstr "তালিকাৰ বাবে মানসমূহৰ তালিকা"
 
-#: ../src/option.c:1057 ../src/option.c:1066 ../src/option.c:1084
+#: ../src/option.c:1078 ../src/option.c:1087 ../src/option.c:1105
 msgid "List of values separated by |"
 msgstr "| দ্বাৰা পৃথকিত মানসমূহৰ তালিকা"
 
-#: ../src/option.c:1065
+#: ../src/option.c:1086
 msgid "List of values for columns"
 msgstr "স্তম্ভসমূহৰ বাবে মানসমূহৰ তালিকা"
 
-#: ../src/option.c:1074
-#| msgid "Add a new List in forms dialog"
+#: ../src/option.c:1095
 msgid "Add a new combo box in forms dialog"
 msgstr "ফৰ্ম ডাইলগত এটা নতুন কম্বো বাকচ যোগ কৰক"
 
-#: ../src/option.c:1075
-#| msgid "Calendar field name"
+#: ../src/option.c:1096
 msgid "Combo box field name"
 msgstr "কম্বো বাকচ ফিল্ড নাম"
 
-#: ../src/option.c:1083
-#| msgid "List of values for columns"
+#: ../src/option.c:1104
 msgid "List of values for combo box"
 msgstr "কম্বো বাকচৰ বাবে মানসমূহৰ তালিকা"
 
-#: ../src/option.c:1102
+#: ../src/option.c:1123
 msgid "Show the columns header"
 msgstr "স্তম্ভসমূহৰ হেডাৰ দেখুৱাওক"
 
-#: ../src/option.c:1144
+#: ../src/option.c:1165
 msgid "Display password dialog"
 msgstr "পাছৱাৰ্ড ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:1153
+#: ../src/option.c:1174
 msgid "Display the username option"
 msgstr "ব্যৱহাৰকাৰীৰ নাম বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:1168
+#: ../src/option.c:1189
 msgid "Display color selection dialog"
 msgstr "ৰঙ বাচনি ডাইলগ প্ৰদৰ্শন কৰক"
 
-#: ../src/option.c:1177
+#: ../src/option.c:1198
 msgid "Set the color"
 msgstr "ৰঙ সংহতি কৰক"
 
-#: ../src/option.c:1186
+#: ../src/option.c:1207
 msgid "Show the palette"
 msgstr "পেলেট দেখুৱাওক"
 
-#: ../src/option.c:1201
+#: ../src/option.c:1222
 msgid "About zenity"
 msgstr "zenity ৰ বিষয়ে"
 
-#: ../src/option.c:1210
+#: ../src/option.c:1231
 msgid "Print version"
 msgstr "সংস্কৰণ প্ৰিন্ট কৰক"
 
-#: ../src/option.c:2121
+#: ../src/option.c:2146
 msgid "General options"
 msgstr "সাধাৰণ বিকল্পসমূহ"
 
-#: ../src/option.c:2122
+#: ../src/option.c:2147
 msgid "Show general options"
 msgstr "সাধাৰণ বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2132
+#: ../src/option.c:2157
 msgid "Calendar options"
 msgstr "কেলেন্ডাৰ বিকল্পসমূহ"
 
-#: ../src/option.c:2133
+#: ../src/option.c:2158
 msgid "Show calendar options"
 msgstr "কেলেন্ডাৰ বিকল্পসমূহ"
 
-#: ../src/option.c:2143
+#: ../src/option.c:2168
 msgid "Text entry options"
 msgstr "লিখনী প্ৰবিষ্টি বিকল্পসমূহ"
 
-#: ../src/option.c:2144
+#: ../src/option.c:2169
 msgid "Show text entry options"
 msgstr "লিখনী প্ৰবিষ্টি বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2154
+#: ../src/option.c:2179
 msgid "Error options"
 msgstr "ত্ৰুটি বিকল্পসমূহ"
 
-#: ../src/option.c:2155
+#: ../src/option.c:2180
 msgid "Show error options"
 msgstr "ত্ৰুটি বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2165
+#: ../src/option.c:2190
 msgid "Info options"
 msgstr "তথ্য বিকল্পসমূহ"
 
-#: ../src/option.c:2166
+#: ../src/option.c:2191
 msgid "Show info options"
 msgstr "তথ্য বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2176
+#: ../src/option.c:2201
 msgid "File selection options"
 msgstr "নথিপত্ৰ নিৰ্বাচন বিকল্পসমূহ"
 
-#: ../src/option.c:2177
+#: ../src/option.c:2202
 msgid "Show file selection options"
 msgstr "নথিপত্ৰ নিৰ্বাচন বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2187
+#: ../src/option.c:2212
 msgid "List options"
 msgstr "তালিকা বিকল্পসমূহ"
 
-#: ../src/option.c:2188
+#: ../src/option.c:2213
 msgid "Show list options"
 msgstr "তালিকা বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2199
+#: ../src/option.c:2224
 msgid "Notification icon options"
 msgstr "অধিসূচনা আইকনৰ বিকল্পসমূহ"
 
-#: ../src/option.c:2200
+#: ../src/option.c:2225
 msgid "Show notification icon options"
 msgstr "অধিসূচনা আইকনৰ বিকল্পসমূহ"
 
-#: ../src/option.c:2211
+#: ../src/option.c:2236
 msgid "Progress options"
 msgstr "প্ৰগতি বিকল্পসমূহ"
 
-#: ../src/option.c:2212
+#: ../src/option.c:2237
 msgid "Show progress options"
 msgstr "প্ৰগতি বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2222
+#: ../src/option.c:2247
 msgid "Question options"
 msgstr "প্ৰশ্ন বিকল্পসমূহ"
 
-#: ../src/option.c:2223
+#: ../src/option.c:2248
 msgid "Show question options"
 msgstr "প্ৰশ্ন বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2233
+#: ../src/option.c:2258
 msgid "Warning options"
 msgstr "সতৰ্কবাৰ্তা বিকল্পসমূহ"
 
-#: ../src/option.c:2234
+#: ../src/option.c:2259
 msgid "Show warning options"
 msgstr "সতৰ্কবাৰ্তা বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2244
+#: ../src/option.c:2269
 msgid "Scale options"
 msgstr "যোখ বিকল্পসমূহ"
 
-#: ../src/option.c:2245
+#: ../src/option.c:2270
 msgid "Show scale options"
 msgstr "যোখ বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2255
+#: ../src/option.c:2280
 msgid "Text information options"
 msgstr "লিখনী  তথ্যৰ বিকল্পসমূহ"
 
-#: ../src/option.c:2256
+#: ../src/option.c:2281
 msgid "Show text information options"
 msgstr "লিখনী  তথ্যৰ বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2266
+#: ../src/option.c:2291
 msgid "Color selection options"
 msgstr "ৰঙ বাচনিৰ বিকল্পসমূহ"
 
-#: ../src/option.c:2267
+#: ../src/option.c:2292
 msgid "Show color selection options"
 msgstr "ৰঙ বাচনিৰ বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2277
+#: ../src/option.c:2302
 msgid "Password dialog options"
 msgstr "পাছৱাৰ্ড ডাইলগ বিকল্পসমূহ"
 
-#: ../src/option.c:2278
+#: ../src/option.c:2303
 msgid "Show password dialog options"
 msgstr "পাছৱাৰ্ড ডাইলগ বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2288
+#: ../src/option.c:2313
 msgid "Forms dialog options"
 msgstr "ফৰ্মসমূহৰ ডাইলগ বিকল্পসমূহ"
 
-#: ../src/option.c:2289
+#: ../src/option.c:2314
 msgid "Show forms dialog options"
 msgstr "ফৰ্মসমূহৰ ডাইলগ বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2299
+#: ../src/option.c:2324
 msgid "Miscellaneous options"
 msgstr "বিবিধ বিকল্পসমূহ"
 
-#: ../src/option.c:2300
+#: ../src/option.c:2325
 msgid "Show miscellaneous options"
 msgstr "বিবিধ বিকল্পসমূহ দেখুৱাওক"
 
-#: ../src/option.c:2325
+#: ../src/option.c:2350
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -825,12 +838,12 @@ msgstr ""
 "ফলাফল "
 "পঢ়ক।\n"
 
-#: ../src/option.c:2329
+#: ../src/option.c:2354
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s বৰ্তমান ডাইলগৰ বাবে সমৰ্থিত নহয়\n"
 
-#: ../src/option.c:2333
+#: ../src/option.c:2358
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "দুটা অথবা অধিক বিকল্পসমূহ ধাৰ্য্য কৰা আছে\n"
