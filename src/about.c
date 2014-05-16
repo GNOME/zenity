@@ -39,7 +39,6 @@
 
 static GtkWidget *dialog;
 
-static void zenity_about_display_help (GtkWidget *widget, gpointer data);
 static void zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 /* Sync with the people in the THANKS file */
@@ -258,7 +257,6 @@ void
 zenity_about (ZenityData *data)
 {
   GdkPixbuf *logo;
-  GtkWidget *help_button;
   char *license_trans;
 
 
@@ -287,18 +285,6 @@ zenity_about (ZenityData *data)
   g_free (license_trans);
 
   zenity_util_set_window_icon (dialog, NULL, ZENITY_IMAGE_FULLPATH ("zenity.png"));
-
-  help_button = gtk_button_new_from_stock (GTK_STOCK_HELP);
-  
-  g_signal_connect (G_OBJECT (help_button), "clicked",
-                    G_CALLBACK (zenity_about_display_help), data);
-  
-  gtk_widget_show (help_button);
-  
-  gtk_box_pack_end (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))),
-                    help_button, FALSE, TRUE, 0);
-  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 
-                                      help_button, TRUE);
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_about_dialog_response), data);
@@ -329,10 +315,4 @@ zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data)
   }
 
   gtk_main_quit ();
-}
-
-static void
-zenity_about_display_help (GtkWidget *widget, gpointer data)
-{
-  zenity_util_show_help (NULL);
 }
