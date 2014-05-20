@@ -396,7 +396,7 @@ static GOptionEntry error_options[] = {
 	G_OPTION_FLAG_NOALIAS,
 	G_OPTION_ARG_NONE,
 	&zenity_general_dialog_ellipsize,
-	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
+	N_("Enable ellipsizing in the dialog text. This fixes the high window size with long texts")
   },
   { 
     NULL 
@@ -454,7 +454,7 @@ static GOptionEntry info_options[] = {
 	G_OPTION_FLAG_NOALIAS,
 	G_OPTION_ARG_NONE,
 	&zenity_general_dialog_ellipsize,
-	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
+	N_("Enable ellipsizing in the dialog text. This fixes the high window size with long texts")
   },
   { 
     NULL 
@@ -832,7 +832,7 @@ static GOptionEntry question_options[] = {
 	G_OPTION_FLAG_NOALIAS,
 	G_OPTION_ARG_NONE,
 	&zenity_general_dialog_ellipsize,
-	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
+	N_("Enable ellipsizing in the dialog text. This fixes the high window size with long texts")
   },
   { 
     NULL 
@@ -970,7 +970,7 @@ static GOptionEntry warning_options[] = {
 	G_OPTION_FLAG_NOALIAS,
 	G_OPTION_ARG_NONE,
 	&zenity_general_dialog_ellipsize,
-	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
+	N_("Enable ellipsizing in the dialog text. This fixes the high window size with long texts")
   },
   { 
     NULL 
