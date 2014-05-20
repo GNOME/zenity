@@ -47,6 +47,7 @@ static gchar   *zenity_general_ok_button;
 static gchar   *zenity_general_cancel_button;
 static gboolean zenity_general_modal;
 static gint     zenity_general_attach;
+static gboolean zenity_general_dialog_ellipsize;
 
 /* Calendar Dialog Options */
 static gboolean zenity_calendar_active;
@@ -389,6 +390,14 @@ static GOptionEntry error_options[] = {
     &zenity_general_dialog_no_markup,
     N_("Do not enable pango markup")
   },
+  {
+	"ellipsize",
+	'\0',
+	G_OPTION_FLAG_NOALIAS,
+	G_OPTION_ARG_NONE,
+	&zenity_general_dialog_ellipsize,
+	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
+  },
   { 
     NULL 
   } 
@@ -438,6 +447,14 @@ static GOptionEntry info_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_markup,
     N_("Do not enable pango markup")
+  },
+  {
+	"ellipsize",
+	'\0',
+	G_OPTION_FLAG_NOALIAS,
+	G_OPTION_ARG_NONE,
+	&zenity_general_dialog_ellipsize,
+	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
   },
   { 
     NULL 
@@ -809,6 +826,14 @@ static GOptionEntry question_options[] = {
     N_("Give cancel button focus by default"),
     NULL
   },
+  {
+	"ellipsize",
+	'\0',
+	G_OPTION_FLAG_NOALIAS,
+	G_OPTION_ARG_NONE,
+	&zenity_general_dialog_ellipsize,
+	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
+  },
   { 
     NULL 
   }
@@ -938,6 +963,14 @@ static GOptionEntry warning_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_markup,
     N_("Do not enable pango markup")
+  },
+  {
+	"ellipsize",
+	'\0',
+	G_OPTION_FLAG_NOALIAS,
+	G_OPTION_ARG_NONE,
+	&zenity_general_dialog_ellipsize,
+	N_("Enable ellipsize in dialog text. This fix the high window size with big texts")
   },
   { 
     NULL 
@@ -1646,6 +1679,7 @@ zenity_general_post_callback (GOptionContext *context,
   results->data->cancel_label = zenity_general_cancel_button;
   results->data->modal = zenity_general_modal;
   results->data->attach = zenity_general_attach;
+
   return TRUE;
 }
 
@@ -1741,6 +1775,7 @@ zenity_error_post_callback (GOptionContext *context,
     results->msg_data->mode = ZENITY_MSG_ERROR; 
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap; 
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
+	results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
   }
     
   return TRUE;
@@ -1760,6 +1795,7 @@ zenity_info_post_callback (GOptionContext *context,
     results->msg_data->mode = ZENITY_MSG_INFO; 
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
+	results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
   }
   
   return TRUE;
@@ -1936,6 +1972,7 @@ zenity_question_post_callback (GOptionContext *context,
     results->msg_data->mode = ZENITY_MSG_QUESTION;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
+	results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
     results->msg_data->default_cancel = zenity_question_default_cancel;
   }
 
@@ -1983,6 +2020,7 @@ zenity_warning_post_callback (GOptionContext *context,
     results->msg_data->mode = ZENITY_MSG_WARNING;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
+	results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
   }
 
   return TRUE;
@@ -2405,10 +2443,13 @@ zenity_option_parse (gint argc, gchar **argv)
     if(results->mode == MODE_FILE || results->mode == MODE_ERROR || results->mode == MODE_WARNING || results->mode == MODE_INFO)
       zenity_option_error (zenity_option_get_name (general_options, &zenity_general_cancel_button), ERROR_SUPPORT);
   
-
   if (zenity_general_dialog_no_wrap)
     if (results->mode != MODE_INFO && results->mode != MODE_ERROR && results->mode != MODE_QUESTION && results->mode != MODE_WARNING && results->mode != MODE_TEXTINFO)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_general_dialog_no_wrap), ERROR_SUPPORT);
-  
+
+  if (zenity_general_dialog_ellipsize)
+    if (results->mode != MODE_INFO && results->mode != MODE_ERROR && results->mode != MODE_QUESTION && results->mode != MODE_WARNING)
+      zenity_option_error (zenity_option_get_name (text_options, &zenity_general_dialog_ellipsize), ERROR_SUPPORT);
+
   return results; 
 }

@@ -67,6 +67,7 @@ typedef struct {
   gboolean no_wrap;
   gboolean no_markup;
   gboolean default_cancel;
+  gboolean ellipsize;
 } ZenityMsgData;
 
 typedef struct {

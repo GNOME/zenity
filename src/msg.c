@@ -159,6 +159,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       gtk_label_set_markup (GTK_LABEL (text), g_strcompress (msg_data->dialog_text));
   }
 
+  if (msg_data->ellipsize)
+	gtk_label_set_ellipsize (GTK_LABEL(text), PANGO_ALIGN_RIGHT);
+  
   if (msg_data->dialog_icon)
     gtk_image_set_from_icon_name (GTK_IMAGE (image), msg_data->dialog_icon, GTK_ICON_SIZE_DIALOG);
  
@@ -175,6 +178,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 
   gtk_main ();
 }
+
 
 static void
 zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data)
