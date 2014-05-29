@@ -27,7 +27,7 @@
 #include "util.h"
 
 static void zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data);
-
+static void zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocation, gpointer data);
 static void
 zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data, ZenityData *data)
 {
@@ -161,6 +161,9 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 
   if (msg_data->ellipsize)
 	gtk_label_set_ellipsize (GTK_LABEL(text), PANGO_ALIGN_RIGHT);
+  else
+	g_signal_connect_after (G_OBJECT (text), "size-allocate",
+                          G_CALLBACK (zenity_text_size_allocate), data);
   
   if (msg_data->dialog_icon)
     gtk_image_set_from_icon_name (GTK_IMAGE (image), msg_data->dialog_icon, GTK_ICON_SIZE_DIALOG);
@@ -179,6 +182,11 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   gtk_main ();
 }
 
+static void 
+zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocation, gpointer data)
+{
+  gtk_widget_set_size_request (widget, allocation->width, -1);
+}
 
 static void
 zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data)
