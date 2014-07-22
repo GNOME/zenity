@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the zenity package.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2012, 2014.
+# Balázs Úr <urbalazs@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity_help master\n"
-"POT-Creation-Date: 2014-03-19 12:04+0000\n"
-"PO-Revision-Date: 2014-03-20 00:11+0100\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"POT-Creation-Date: 2014-07-21 22:59+0000\n"
+"PO-Revision-Date: 2014-07-22 11:02+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. (itstool) path: para/ulink
@@ -177,7 +178,7 @@ msgid "The calendar dialog supports the following options:"
 msgstr "A naptár ablak a következő kapcsolókat támogatja:"
 
 #. (itstool) path: item/title
-#: C/calendar.page:19 C/entry.page:19 C/notification.page:16
+#: C/calendar.page:19 C/entry.page:19 C/notification.page:13
 #: C/progress.page:24
 msgid "<cmd>--text</cmd>=<var>text</var>"
 msgstr "<cmd>--text</cmd>=<var>szöveg</var>"
@@ -1273,32 +1274,36 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:42
+#: C/notification.page:37
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-notification-listen-screenshot.png' "
+#| "md5='12df991de180a6d064fd9ec5ac2492c4'"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-screenshot.png' "
-"md5='b67bf309c6e479db8677947f1810a999'"
+"md5='49ebe82aa255c5536d018f2b4f919c51'"
 msgstr ""
 "external ref='figures/zenity-notification-screenshot.png' "
-"md5='b67bf309c6e479db8677947f1810a999'"
+"md5='49ebe82aa255c5536d018f2b4f919c51'"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:60
+#: C/notification.page:51
 #| msgctxt "_"
 #| msgid ""
-#| "external ref='figures/zenity-notification-screenshot.png' "
-#| "md5='b67bf309c6e479db8677947f1810a999'"
+#| "external ref='figures/zenity-notification-listen-screenshot.png' "
+#| "md5='12df991de180a6d064fd9ec5ac2492c4'"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
-"md5='12df991de180a6d064fd9ec5ac2492c4'"
+"md5='e7e6edba1c794426c4ce749bc355b25d'"
 msgstr ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
-"md5='12df991de180a6d064fd9ec5ac2492c4'"
+"md5='e7e6edba1c794426c4ce749bc355b25d'"
 
 #. (itstool) path: info/desc
 #: C/notification.page:6
@@ -1318,12 +1323,12 @@ msgstr ""
 "létre."
 
 #. (itstool) path: item/p
-#: C/notification.page:17
+#: C/notification.page:14
 msgid "Specifies the text that is displayed in the notification area."
 msgstr "Az értesítési területen megjelenítendő szöveg megadása."
 
 #. (itstool) path: item/title
-#: C/notification.page:20
+#: C/notification.page:17
 msgid ""
 "<cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', "
 "tooltip: '<var>text</var>', visible: '<var>text</var>',"
@@ -1332,99 +1337,110 @@ msgstr ""
 "tooltip: '<var>szöveg</var>', visible: '<var>szöveg</var>',"
 
 #. (itstool) path: item/p
-#: C/notification.page:21
+#: C/notification.page:18
 msgid ""
 "Listens for commands at standard input. At least one command must be "
 "specified. Commands are comma seperated. A command must be followed by a "
 "colon and a value."
 msgstr ""
-"Parancsokat vár a szabványos bemeneten. Legalább egy parancsot meg kell adni. "
-"A parancsokat vesszők választják el. Egy parancsot kettőspontnak és értéknek "
-"kell követnie."
+"Parancsokat vár a szabványos bemeneten. Legalább egy parancsot meg kell "
+"adni. A parancsokat vesszők választják el. Egy parancsot kettőspontnak és "
+"értéknek kell követnie."
 
 #. (itstool) path: note/p
-#: C/notification.page:23
+#: C/notification.page:20
 msgid ""
 "The <cmd>icon</cmd> command also accepts four stock icon values such as "
 "<var>error</var>, <var>info</var>, <var>question</var> and <var>warning</"
 "var>."
 msgstr ""
 "Az <cmd>icon</cmd> parancs elfogad négy alap ikonértéket is, mint az "
-"<var>error</var>, <var>info</var>, <var>question</var> és <var>warning</"
-"var>."
+"<var>error</var>, <var>info</var>, <var>question</var> és <var>warning</var>."
 
 #. (itstool) path: page/p
-#: C/notification.page:28
+#: C/notification.page:25
 msgid "The following example script shows how to create a notification icon:"
 msgstr ""
 "A következő példa parancsfájl bemutatja az értesítési ikon létrehozását:"
 
 #. (itstool) path: page/code
-#: C/notification.page:31
+#: C/notification.page:26
 #, no-wrap
+#| msgid ""
+#| "\n"
+#| "#!/bin/sh\n"
+#| "\n"
+#| "zenity --notification\\\n"
+#| "  --window-icon=\"info\" \\\n"
+#| "  --text=\"There are system updates necessary!\"\n"
 msgid ""
 "\n"
-"#!/bin/sh\n"
+"  #!/bin/sh\n"
 "\n"
-"zenity --notification\\\n"
-"  --window-icon=\"info\" \\\n"
-"  --text=\"There are system updates necessary!\"\n"
+"  zenity --notification\\\n"
+"    --window-icon=\"info\" \\\n"
+"    --text=\"There are system updates necessary!\"\n"
+"  "
 msgstr ""
 "\n"
-"#!/bin/sh\n"
+"  #!/bin/sh\n"
 "\n"
-"zenity --notification\\\n"
-"  --window-icon=\"info\" \\\n"
-"  --text=\"Rendszerfrissítés szükséges!\"\n"
+"  zenity --notification\\\n"
+"    --window-icon=\"info\" \\\n"
+"    --text=\"Rendszerfrissítés szükséges!\"\n"
+"  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:40
+#: C/notification.page:35
 msgid "Notification Icon Example"
 msgstr "Példa értesítési ikon"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:41
+#: C/notification.page:36
 msgid "<app>Zenity</app> notification icon example"
 msgstr "<app>Zenity</app> példa értesítési ikon"
 
 #. (itstool) path: page/p
-#: C/notification.page:45
-#| msgid ""
-#| "The following example script shows how to create a notification icon:"
+#: C/notification.page:40
 msgid ""
 "The following example script shows how to create a notification icon along "
 "with <cmd>--listen</cmd>:"
 msgstr ""
-"A következő példa parancsfájl bemutatja az értesítési ikon létrehozását a <"
-"cmd>--listen</cmd> használatával:"
+"A következő példa parancsfájl bemutatja az értesítési ikon létrehozását a "
+"<cmd>--listen</cmd> használatával:"
 
 #. (itstool) path: page/code
-#: C/notification.page:49
+#: C/notification.page:41
 #, no-wrap
+#| msgid ""
+#| "\n"
+#| "#!/bin/sh\n"
+#| "\n"
+#| "cat &lt;&lt;EOH| zenity --notification --listen\n"
+#| "message: this is the message text\n"
+#| "EOH\n"
 msgid ""
 "\n"
-"#!/bin/sh\n"
-"\n"
-"cat &lt;&lt;EOH| zenity --notification --listen\n"
-"message: this is the message text\n"
-"EOH\n"
+"  #!/bin/sh\n"
+"  cat &lt;&lt;EOH| zenity --notification --listen\n"
+"  message: this is the message text\n"
+"  EOH\n"
+"  "
 msgstr ""
 "\n"
-"#!/bin/sh\n"
-"\n"
-"cat &lt;&lt;EOH| zenity --notification --listen\n"
-"message: ez az üzenetszöveg\n"
-"EOH\n"
+"  #!/bin/sh\n"
+"  cat &lt;&lt;EOH| zenity --notification --listen\n"
+"  message: ez az üzenetszöveg\n"
+"  EOH\n"
+"  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:58
-#| msgid "Notification Icon Example"
+#: C/notification.page:49
 msgid "Notification Icon with <cmd>--listen</cmd> Example"
 msgstr "Példa értesítési ikon a <cmd>--listen</cmd> használatával"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:59
-#| msgid "<app>Zenity</app> notification icon example"
+#: C/notification.page:50
 msgid "<app>Zenity</app> notification with <cmd>--listen</cmd> example"
 msgstr ""
 "<app>Zenity</app> példa értesítési ikon a <cmd>--listen</cmd> használatával"
@@ -2623,6 +2639,14 @@ msgstr "Példa figyelmeztető ablak"
 #: C/warning.page:27
 msgid "<app>Zenity</app> warning dialog example"
 msgstr "<app>Zenity</app> példa figyelmeztető ablak"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/zenity-notification-screenshot.png' "
+#~ "md5='b67bf309c6e479db8677947f1810a999'"
+#~ msgstr ""
+#~ "external ref='figures/zenity-notification-screenshot.png' "
+#~ "md5='b67bf309c6e479db8677947f1810a999'"
 
 #~ msgid "0"
 #~ msgstr "0"
