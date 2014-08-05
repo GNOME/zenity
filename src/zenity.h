@@ -105,6 +105,7 @@ typedef struct {
   gboolean autokill;
   gdouble  percentage;
   gboolean no_cancel;
+  gboolean time_remaining;
 } ZenityProgressData;
 
 typedef struct {

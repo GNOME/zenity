@@ -98,6 +98,7 @@ static gboolean zenity_progress_pulsate;
 static gboolean zenity_progress_auto_close;
 static gboolean zenity_progress_auto_kill;
 static gboolean zenity_progress_no_cancel;
+static gboolean zenity_progress_time_remaining;
 
 /* Question Dialog Options */
 static gboolean zenity_question_active;
@@ -766,6 +767,15 @@ static GOptionEntry progress_options[] = {
    /* xgettext: no-c-format */
    N_("Hide Cancel button"),
    NULL
+  },
+  {
+    "time-remaining",
+    '\0',
+    0,
+    G_OPTION_ARG_NONE,
+    &zenity_progress_time_remaining,
+    N_("Estimate when progress will reach 100%"),
+    NULL
   },
   { 
     NULL 
@@ -1551,6 +1561,7 @@ zenity_progress_pre_callback (GOptionContext *context,
   zenity_progress_auto_close = FALSE;
   zenity_progress_auto_kill = FALSE;
   zenity_progress_no_cancel = FALSE;
+  zenity_progress_time_remaining = FALSE;
   return TRUE;
 }
 
@@ -1935,6 +1946,7 @@ zenity_progress_post_callback (GOptionContext *context,
     results->progress_data->autokill = zenity_progress_auto_kill;
     results->progress_data->percentage = zenity_progress_percentage;
     results->progress_data->no_cancel = zenity_progress_no_cancel;
+    results->progress_data->time_remaining = zenity_progress_time_remaining;
   } else {
     if (zenity_progress_pulsate)
       zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_pulsate),
@@ -1951,9 +1963,14 @@ zenity_progress_post_callback (GOptionContext *context,
     if (zenity_progress_auto_kill)
       zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_auto_kill),
                            ERROR_SUPPORT);
+
     if (zenity_progress_no_cancel)
       zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_no_cancel),
 			   ERROR_SUPPORT);
+
+    if (zenity_progress_time_remaining)
+      zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_time_remaining),
+                           ERROR_SUPPORT);
   }
     
   return TRUE;
