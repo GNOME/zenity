@@ -29,6 +29,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <signal.h>
+#include <time.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -69,6 +70,39 @@ zenity_progress_pulsate_start (GObject *progress_bar)
     pulsate_timeout = g_timeout_add (100,
                                      zenity_progress_pulsate_progress_bar,
                                      progress_bar);
+  }
+}
+
+static void
+zenity_progress_update_time_remaining (ZenityProgressData *progress_data)
+{
+  static GObject *progress_time = NULL;
+  static time_t start_time = (time_t)(-1);
+  float percentage = progress_data->percentage;
+
+  if (progress_time == NULL)
+    progress_time = gtk_builder_get_object (builder, "zenity_progress_time");
+  if (start_time == (time_t)(-1) || percentage <= 0.0 || percentage >= 100.0) {
+    start_time = time(NULL);
+    gtk_label_set_text (GTK_LABEL (progress_time), "");
+  } else {
+    time_t current_time = time (NULL);
+    time_t elapsed_time = current_time - start_time;
+    time_t total_time = (time_t) (100.0*elapsed_time/progress_data->percentage);
+    time_t remaining_time = total_time - elapsed_time;
+    gulong hours, minutes, seconds;
+    gchar *remaining_message;
+
+    seconds = (gulong) (remaining_time%60);
+    remaining_time /= 60;
+    minutes = (gulong) (remaining_time%60);
+    remaining_time /= 60;
+    hours = (gulong) remaining_time;
+
+    remaining_message = g_strdup_printf (_("Time remaining: %lu:%02lu:%02lu"),
+					 hours, minutes, seconds);
+    gtk_label_set_text (GTK_LABEL (progress_time), remaining_message);
+    g_free (remaining_message);
   }
 }
 
@@ -159,6 +193,9 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
                                        percentage / 100.0);
 
         progress_data->percentage = percentage;
+
+	if (progress_data->time_remaining == TRUE)
+	  zenity_progress_update_time_remaining (progress_data);
 
         if (percentage == 100) {
           GObject *button;
