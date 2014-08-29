@@ -139,10 +139,14 @@ zenity_notification_set_hint(gpointer key, gpointer value, gpointer user_data)
   } else if ((g_ascii_strcasecmp ("x", hint_name) == 0)
              || (g_ascii_strcasecmp ("y", hint_name) == 0)) {
     /* int hints */
+	if (string_value == NULL)
+	  string_value = "";
     int_value = (gint32) g_ascii_strtoll (string_value, NULL, 0);
     hint_value = g_variant_new_int32 (int_value);
   } else if ((g_ascii_strcasecmp ("urgency", hint_name) == 0)) {
     /* byte hints */
+	if (string_value == NULL)
+	  string_value = "";
     byte_value = (guchar) g_ascii_strtoll (string_value, NULL, 0);
     hint_value = g_variant_new_byte (byte_value);
   } else {
