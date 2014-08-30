@@ -23,6 +23,7 @@
 
 #include "config.h"
 
+#include <gio/gio.h>
 #include "zenity.h"
 #include "util.h"
 
@@ -114,6 +115,11 @@ zenity_text_webview_decision_request (WebKitWebView             *webkitwebview,
                                       gpointer                   user_data)
 {
   webkit_web_policy_decision_ignore (policy_decision);
+  if (!zen_text_data->no_interaction &&
+      webkit_web_navigation_action_get_reason (navigation_action) == WEBKIT_WEB_NAVIGATION_REASON_LINK_CLICKED) {
+    g_app_info_launch_default_for_uri (webkit_web_navigation_action_get_original_uri(navigation_action),
+                                       NULL, NULL);
+  }
   return TRUE;
 }
 
@@ -333,7 +339,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
     }
 
     // We don't want user to click on links and navigate to another page.
-    // So, when page finish load, we block requests.
+    // So, when the page finishes loading, we take handle of the requests.
 
     g_signal_connect (G_OBJECT (web_kit), "document-load-finished",
                       G_CALLBACK (zenity_text_webview_load_finished), NULL); 

@@ -118,6 +118,7 @@ typedef struct {
   gchar         *checkbox;
 #ifdef HAVE_WEBKITGTK
   gboolean       html;
+  gboolean       no_interaction;
   gchar         *url;
 #endif
 } ZenityTextData;

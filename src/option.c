@@ -113,6 +113,7 @@ static gboolean zenity_text_auto_scroll;
 
 #ifdef HAVE_WEBKITGTK
 static gboolean zenity_text_enable_html;
+static gboolean zenity_text_no_interaction;
 static gchar   *zenity_text_url;
 #endif
 
@@ -916,6 +917,15 @@ static GOptionEntry text_options[] = {
     NULL
   },
   {
+    "no-interaction",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_text_no_interaction,
+    N_("Do not enable user interaction with the WebView. Only works if you use --html option"),
+    NULL
+  },
+  {
     "url",
     '\0',
     G_OPTION_FLAG_NOALIAS,
@@ -1600,6 +1610,7 @@ zenity_text_pre_callback (GOptionContext *context,
   zenity_text_auto_scroll = FALSE;
 #ifdef HAVE_WEBKITGTK
   zenity_text_enable_html = FALSE;
+  zenity_text_no_interaction = FALSE;
   zenity_text_url = NULL;
 #endif
   return TRUE;
@@ -2028,6 +2039,7 @@ zenity_text_post_callback (GOptionContext *context,
     results->text_data->auto_scroll = zenity_text_auto_scroll;
 #ifdef HAVE_WEBKITGTK
     results->text_data->html = zenity_text_enable_html;
+    results->text_data->no_interaction = zenity_text_no_interaction;
     results->text_data->url = zenity_text_url;
 #endif
   } else {
