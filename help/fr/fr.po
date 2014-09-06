@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity fr\n"
-"POT-Creation-Date: 2014-03-21 12:07+0000\n"
-"PO-Revision-Date: 2014-03-22 13:45+0100\n"
+"POT-Creation-Date: 2014-09-06 11:01+0000\n"
+"PO-Revision-Date: 2014-09-06 23:49+0200\n"
 "Last-Translator: Mickael Albertus <mickael.albertus@gmail.com>\n"
 "Language-Team: français <gnomefr@traduc.org>\n"
 "Language: \n"
@@ -189,7 +189,7 @@ msgid "The calendar dialog supports the following options:"
 msgstr "Options de la boîte de dialogue de calendrier :"
 
 #. (itstool) path: item/title
-#: C/calendar.page:19 C/entry.page:19 C/notification.page:16
+#: C/calendar.page:19 C/entry.page:19 C/notification.page:13
 #: C/progress.page:24
 msgid "<cmd>--text</cmd>=<var>text</var>"
 msgstr "<cmd>--text</cmd>=<var>texte</var>"
@@ -1305,28 +1305,28 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:42
+#: C/notification.page:37
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-screenshot.png' "
-"md5='b67bf309c6e479db8677947f1810a999'"
+"md5='49ebe82aa255c5536d018f2b4f919c51'"
 msgstr ""
 "external ref='figures/zenity-notification-screenshot.png' "
-"md5='b67bf309c6e479db8677947f1810a999'"
+"md5='49ebe82aa255c5536d018f2b4f919c51'"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:60
+#: C/notification.page:51
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
-"md5='12df991de180a6d064fd9ec5ac2492c4'"
+"md5='e7e6edba1c794426c4ce749bc355b25d'"
 msgstr ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
-"md5='12df991de180a6d064fd9ec5ac2492c4'"
+"md5='e7e6edba1c794426c4ce749bc355b25d'"
 
 #. (itstool) path: info/desc
 #: C/notification.page:6
@@ -1346,21 +1346,21 @@ msgstr ""
 "notification."
 
 #. (itstool) path: item/p
-#: C/notification.page:17
+#: C/notification.page:14
 msgid "Specifies the text that is displayed in the notification area."
 msgstr "Spécifier le texte affiché dans la zone de notification."
 
 #. (itstool) path: item/title
-#: C/notification.page:20
+#: C/notification.page:17
 msgid ""
 "<cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', "
 "tooltip: '<var>text</var>', visible: '<var>text</var>',"
 msgstr ""
-"<cmd>--listen</cmd>=icon: « <var>texte</var> », message: « <var>texte</var> », "
-"tooltip: « <var>texte</var> », visible: « <var>texte</var> »,"
+"<cmd>--listen</cmd>=icon: « <var>texte</var> », message: « <var>texte</"
+"var> », tooltip: « <var>texte</var> », visible: « <var>texte</var> »,"
 
 #. (itstool) path: item/p
-#: C/notification.page:21
+#: C/notification.page:18
 msgid ""
 "Listens for commands at standard input. At least one command must be "
 "specified. Commands are comma seperated. A command must be followed by a "
@@ -1371,7 +1371,7 @@ msgstr ""
 "être suivie d'un double-point et d'une valeur."
 
 #. (itstool) path: note/p
-#: C/notification.page:23
+#: C/notification.page:20
 msgid ""
 "The <cmd>icon</cmd> command also accepts four stock icon values such as "
 "<var>error</var>, <var>info</var>, <var>question</var> and <var>warning</"
@@ -1382,41 +1382,43 @@ msgstr ""
 "var> et <var>warning</var>."
 
 #. (itstool) path: page/p
-#: C/notification.page:28
+#: C/notification.page:25
 msgid "The following example script shows how to create a notification icon:"
 msgstr ""
 "Le script d'exemple suivant montre comment créer une icône de notification :"
 
 #. (itstool) path: page/code
-#: C/notification.page:31
+#: C/notification.page:26
 #, no-wrap
 msgid ""
 "\n"
-"#!/bin/sh\n"
+"  #!/bin/sh\n"
 "\n"
-"zenity --notification\\\n"
-"  --window-icon=\"info\" \\\n"
-"  --text=\"There are system updates necessary!\"\n"
+"  zenity --notification\\\n"
+"    --window-icon=\"info\" \\\n"
+"    --text=\"There are system updates necessary!\"\n"
+"  "
 msgstr ""
 "\n"
-"#!/bin/sh\n"
+"  #!/bin/sh\n"
 "\n"
-"zenity --notification\\\n"
-"  --window-icon=\"info\" \\\n"
-"  --text=\"Mise à jour du système nécessaire !\"\n"
+"  zenity --notification\\\n"
+"    --window-icon=\"info\" \\\n"
+"    --text=\"Mise à jour du système nécessaire !\"\n"
+"    "
 
 #. (itstool) path: figure/title
-#: C/notification.page:40
+#: C/notification.page:35
 msgid "Notification Icon Example"
 msgstr "Exemple d'icône de notification"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:41
+#: C/notification.page:36
 msgid "<app>Zenity</app> notification icon example"
 msgstr "Exemple d'icône de notification <app>Zenity</app>"
 
 #. (itstool) path: page/p
-#: C/notification.page:45
+#: C/notification.page:40
 msgid ""
 "The following example script shows how to create a notification icon along "
 "with <cmd>--listen</cmd>:"
@@ -1425,30 +1427,30 @@ msgstr ""
 "avec <cmd>--listen</cmd> :"
 
 #. (itstool) path: page/code
-#: C/notification.page:49
+#: C/notification.page:41
 #, no-wrap
 msgid ""
 "\n"
-"#!/bin/sh\n"
-"\n"
-"cat &lt;&lt;EOH| zenity --notification --listen\n"
-"message: this is the message text\n"
-"EOH\n"
+"  #!/bin/sh\n"
+"  cat &lt;&lt;EOH| zenity --notification --listen\n"
+"  message: this is the message text\n"
+"  EOH\n"
+"  "
 msgstr ""
 "\n"
-"#!/bin/sh\n"
-"\n"
-"cat &lt;&lt;EOH| zenity --notification --listen\n"
-"message: ceci est le texte du message\n"
-"EOH\n"
+"  #!/bin/sh\n"
+"  cat &lt;&lt;EOH| zenity --notification --listen\n"
+"  message: ceci est le texte du message\n"
+"  EOH\n"
+"  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:58
+#: C/notification.page:49
 msgid "Notification Icon with <cmd>--listen</cmd> Example"
 msgstr "Exemple d'icône de notification avec <cmd>--listen</cmd>"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:59
+#: C/notification.page:50
 msgid "<app>Zenity</app> notification with <cmd>--listen</cmd> example"
 msgstr ""
 "Exemple d'icône de notification <app>Zenity</app> avec <cmd>--listen</cmd>"
@@ -2676,6 +2678,14 @@ msgstr "Exemple de boîte de dialogue d'avertissement"
 #: C/warning.page:27
 msgid "<app>Zenity</app> warning dialog example"
 msgstr "Exemple de boîte de dialogue d'avertissement <app>Zenity</app>"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/zenity-notification-screenshot.png' "
+#~ "md5='b67bf309c6e479db8677947f1810a999'"
+#~ msgstr ""
+#~ "external ref='figures/zenity-notification-screenshot.png' "
+#~ "md5='b67bf309c6e479db8677947f1810a999'"
 
 #~ msgid "0"
 #~ msgstr "0"
