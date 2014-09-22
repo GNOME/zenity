@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-25 16:31+0000\n"
-"PO-Revision-Date: 2013-09-27 17:46+0100\n"
+"POT-Creation-Date: 2014-09-21 10:55+0000\n"
+"PO-Revision-Date: 2014-09-22 07:18+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../src/about.c:64
+#: ../src/about.c:63
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -32,7 +32,7 @@ msgstr ""
 "buď verzie 2 tejto licencie, alebo (podľa vášho uváženia) ktorejkoľvek "
 "neskoršej verzie.\n"
 
-#: ../src/about.c:68
+#: ../src/about.c:67
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -44,7 +44,7 @@ msgstr ""
 "VHODNOSTI PRE URČITÝ ÚČEL. Ďalšie podrobnosti hľadajte v licencii GNU Lesser "
 "General Public License.\n"
 
-#: ../src/about.c:72
+#: ../src/about.c:71
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -55,14 +55,14 @@ msgstr ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
 "USA."
 
-#: ../src/about.c:265
+#: ../src/about.c:263
 msgid "translator-credits"
 msgstr ""
 "Marcel Telka <marcel@telka.sk>\n"
 "Dušan Kazik <prescott66@gmail.com>"
 
 # desc
-#: ../src/about.c:277
+#: ../src/about.c:275
 msgid "Display dialog boxes from shell scripts"
 msgstr "Zobrazuje dialógové okná zo skriptov shellu"
 
@@ -89,38 +89,45 @@ msgid "Unsupported hint. Skipping.\n"
 msgstr "Nepodporovaná rada. Vynecháva sa.\n"
 
 #. unknown hints
-#: ../src/notification.c:150
+#: ../src/notification.c:154
 #, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Neznámy názov rady. Vynecháva sa.\n"
 
-#: ../src/notification.c:209
+#: ../src/notification.c:213
 #, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "Nepodarilo sa analyzovať príkaz zo štandardného vstupu (stdin)\n"
 
-#: ../src/notification.c:241
+#: ../src/notification.c:245
 #, c-format
 msgid "Could not parse message from stdin\n"
 msgstr "Nepodarilo sa analyzovať správu zo štandardného vstupu (stdin)\n"
 
 # window title
-#: ../src/notification.c:323
+#: ../src/notification.c:327
 msgid "Zenity notification"
 msgstr "Zenity - oznámenie"
 
 # GtkLabel label
-#: ../src/password.c:64
+#. Checks if username has been passed as a parameter
+#: ../src/password.c:66
 msgid "Type your password"
 msgstr "Zadajte vaše heslo"
 
 # GtkLabel label
-#: ../src/password.c:99
+#: ../src/password.c:69
+#| msgid "Type your password"
+msgid "Type your username and password"
+msgstr "Zadajte vaše používateľské meno a heslo"
+
+# GtkLabel label
+#: ../src/password.c:107
 msgid "Username:"
 msgstr "Používateľské meno:"
 
 # GtkLabel label
-#: ../src/password.c:115
+#: ../src/password.c:123
 msgid "Password:"
 msgstr "Heslo:"
 
@@ -144,86 +151,86 @@ msgstr "Nie sú zadané názvy stĺpcov pre dialógové okno so zoznamom.\n"
 msgid "You should use only one List dialog type.\n"
 msgstr "Mali by ste použiť iba jeden typ dialógového okna so zoznamom.\n"
 
-# GtkDialog title
-#: ../src/zenity.ui.h:1
-msgid "Calendar selection"
-msgstr "Výber kalendára"
-
-# GtkLabel label
-#: ../src/zenity.ui.h:2
-msgid "Select a date from below."
-msgstr "Vyberte dátum nižšie."
-
-# GtkLabel label
-#: ../src/zenity.ui.h:3
-msgid "C_alendar:"
-msgstr "K_alendár:"
-
-# GtkDialog title
-#: ../src/zenity.ui.h:4
-msgid "Add a new entry"
-msgstr "Pridanie novej položky"
-
-# GtkLabel label
-#: ../src/zenity.ui.h:5
-msgid "_Enter new text:"
-msgstr "_Zadajte nový text:"
-
-# GtkDialog title
-#: ../src/zenity.ui.h:6
-msgid "Error"
-msgstr "Chyba"
-
-# GtkLabel label
-#: ../src/zenity.ui.h:7
-msgid "An error has occurred."
-msgstr "Vyskytla sa chyba."
-
-# GtkLabel label
-#: ../src/zenity.ui.h:8
-msgid "Forms dialog"
-msgstr "Dialógové okno s formulárom"
-
-# GtkDialog title
-#: ../src/zenity.ui.h:9
-msgid "Information"
-msgstr "Informácia"
-
-# GtkLabel label
-#: ../src/zenity.ui.h:10
-msgid "All updates are complete."
-msgstr "Všetky aktualizácie sú hotové."
-
-# GtkDialog title
-#: ../src/zenity.ui.h:11
-msgid "Progress"
-msgstr "Priebeh"
-
-# GtkLabel label
-#: ../src/zenity.ui.h:12
-msgid "Running..."
-msgstr "Spúšťa sa…"
-
-# GtkDialog title
-#: ../src/zenity.ui.h:13
-msgid "Question"
-msgstr "Otázka"
-
-# GtkLabel label
-#: ../src/zenity.ui.h:14
-msgid "Are you sure you want to proceed?"
-msgstr "Naozaj chcete pokračovať?"
-
 # DK: https://bugzilla.gnome.org/show_bug.cgi?id=687190
 # GtkDialog title
-#: ../src/zenity.ui.h:15
+#: ../src/zenity.ui.h:1
 msgid "Adjust the scale value"
 msgstr "Úprava hodnoty mierky"
 
 # GtkDialog title
-#: ../src/zenity.ui.h:16
+#: ../src/zenity.ui.h:2
 msgid "Text View"
 msgstr "Zobrazenie textu"
+
+# GtkDialog title
+#: ../src/zenity.ui.h:3
+msgid "Calendar selection"
+msgstr "Výber kalendára"
+
+# GtkLabel label
+#: ../src/zenity.ui.h:4
+msgid "Select a date from below."
+msgstr "Vyberte dátum nižšie."
+
+# GtkLabel label
+#: ../src/zenity.ui.h:5
+msgid "C_alendar:"
+msgstr "K_alendár:"
+
+# GtkDialog title
+#: ../src/zenity.ui.h:6
+msgid "Add a new entry"
+msgstr "Pridanie novej položky"
+
+# GtkLabel label
+#: ../src/zenity.ui.h:7
+msgid "_Enter new text:"
+msgstr "_Zadajte nový text:"
+
+# GtkDialog title
+#: ../src/zenity.ui.h:8
+msgid "Error"
+msgstr "Chyba"
+
+# GtkLabel label
+#: ../src/zenity.ui.h:9
+msgid "An error has occurred."
+msgstr "Vyskytla sa chyba."
+
+# GtkLabel label
+#: ../src/zenity.ui.h:10
+msgid "Forms dialog"
+msgstr "Dialógové okno s formulárom"
+
+# GtkDialog title
+#: ../src/zenity.ui.h:11
+msgid "Information"
+msgstr "Informácia"
+
+# GtkLabel label
+#: ../src/zenity.ui.h:12
+msgid "All updates are complete."
+msgstr "Všetky aktualizácie sú hotové."
+
+# GtkDialog title
+#: ../src/zenity.ui.h:13
+msgid "Progress"
+msgstr "Priebeh"
+
+# GtkLabel label
+#: ../src/zenity.ui.h:14
+msgid "Running..."
+msgstr "Spúšťa sa…"
+
+# GtkDialog title
+#: ../src/zenity.ui.h:15
+msgid "Question"
+msgstr "Otázka"
+
+# GtkLabel label
+#: ../src/zenity.ui.h:16
+msgid "Are you sure you want to proceed?"
+msgstr "Naozaj chcete pokračovať?"
 
 # GtkDialog title
 #: ../src/zenity.ui.h:17
@@ -241,277 +248,287 @@ msgid "Warning"
 msgstr "Upozornenie"
 
 # cmd desc
-#: ../src/option.c:160
+#: ../src/option.c:164
 msgid "Set the dialog title"
 msgstr "Nastaví titulok dialógového okna"
 
-#: ../src/option.c:161
+#: ../src/option.c:165
 msgid "TITLE"
 msgstr "TITULOK"
 
 # cmd desc
-#: ../src/option.c:169
+#: ../src/option.c:173
 msgid "Set the window icon"
 msgstr "Nastaví ikonu okna"
 
-#: ../src/option.c:170
+#: ../src/option.c:174
 msgid "ICONPATH"
 msgstr "CESTA_K_IKONE"
 
 # cmd desc
-#: ../src/option.c:178
+#: ../src/option.c:182
 msgid "Set the width"
 msgstr "Nastaví šírku"
 
-#: ../src/option.c:179
+#: ../src/option.c:183
 msgid "WIDTH"
 msgstr "ŠÍRKA"
 
 # cmd desc
-#: ../src/option.c:187
+#: ../src/option.c:191
 msgid "Set the height"
 msgstr "Nastaví výšku"
 
-#: ../src/option.c:188
+#: ../src/option.c:192
 msgid "HEIGHT"
 msgstr "VÝŠKA"
 
 # cmd desc
-#: ../src/option.c:196
+#: ../src/option.c:200
 msgid "Set dialog timeout in seconds"
 msgstr "Nastaví časový limit dialógového okna v sekundách"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:198
+#: ../src/option.c:202
 msgid "TIMEOUT"
 msgstr "ČASOVÝ_LIMIT"
 
 # cmd desc
-#: ../src/option.c:206
+#: ../src/option.c:210
 msgid "Sets the label of the Ok button"
 msgstr "Nastaví označenie tlačidla Ok"
 
-#: ../src/option.c:207 ../src/option.c:216 ../src/option.c:258
-#: ../src/option.c:318 ../src/option.c:327 ../src/option.c:361
-#: ../src/option.c:411 ../src/option.c:540 ../src/option.c:656
-#: ../src/option.c:674 ../src/option.c:700 ../src/option.c:772
-#: ../src/option.c:840 ../src/option.c:849 ../src/option.c:893
-#: ../src/option.c:943 ../src/option.c:1112
+#: ../src/option.c:211 ../src/option.c:220 ../src/option.c:262
+#: ../src/option.c:322 ../src/option.c:331 ../src/option.c:365
+#: ../src/option.c:423 ../src/option.c:560 ../src/option.c:676
+#: ../src/option.c:694 ../src/option.c:720 ../src/option.c:792
+#: ../src/option.c:877 ../src/option.c:886 ../src/option.c:939
+#: ../src/option.c:997 ../src/option.c:1166
 msgid "TEXT"
 msgstr "TEXT"
 
 # cmd desc
-#: ../src/option.c:215
+#: ../src/option.c:219
 msgid "Sets the label of the Cancel button"
 msgstr "Nastaví označenie tlačidla Zrušiť"
 
 # cmd desc
-#: ../src/option.c:224
+#: ../src/option.c:228
 msgid "Set the modal hint"
 msgstr "Nastaví typ modálneho okna"
 
 # cmd desc
-#: ../src/option.c:233
+#: ../src/option.c:237
 msgid "Set the parent window to attach to"
 msgstr "Nastaví rodičovské okno, ku ktorému sa má pripojiť"
 
-#: ../src/option.c:234
+#: ../src/option.c:238
 msgid "WINDOW"
 msgstr "OKNO"
 
 # cmd desc
-#: ../src/option.c:248
+#: ../src/option.c:252
 msgid "Display calendar dialog"
 msgstr "Zobrazí dialógové okno kalendára"
 
 # cmd desc
-#: ../src/option.c:257 ../src/option.c:317 ../src/option.c:360
-#: ../src/option.c:410 ../src/option.c:539 ../src/option.c:699
-#: ../src/option.c:771 ../src/option.c:892 ../src/option.c:942
-#: ../src/option.c:1111
+#: ../src/option.c:261 ../src/option.c:321 ../src/option.c:364
+#: ../src/option.c:422 ../src/option.c:559 ../src/option.c:719
+#: ../src/option.c:791 ../src/option.c:938 ../src/option.c:996
+#: ../src/option.c:1165
 msgid "Set the dialog text"
 msgstr "Nastaví text dialógového okna"
 
 # cmd desc
-#: ../src/option.c:266
+#: ../src/option.c:270
 msgid "Set the calendar day"
 msgstr "Nastaví deň v kalendári"
 
-#: ../src/option.c:267
+#: ../src/option.c:271
 msgid "DAY"
 msgstr "DEŇ"
 
 # cmd desc
-#: ../src/option.c:275
+#: ../src/option.c:279
 msgid "Set the calendar month"
 msgstr "Nastaví mesiac v kalendári"
 
-#: ../src/option.c:276
+#: ../src/option.c:280
 msgid "MONTH"
 msgstr "MESIAC"
 
 # cmd desc
-#: ../src/option.c:284
+#: ../src/option.c:288
 msgid "Set the calendar year"
 msgstr "Nastaví rok v kalendári"
 
-#: ../src/option.c:285
+#: ../src/option.c:289
 msgid "YEAR"
 msgstr "ROK"
 
 # cmd desc
-#: ../src/option.c:293 ../src/option.c:1129
+#: ../src/option.c:297 ../src/option.c:1183
 msgid "Set the format for the returned date"
 msgstr "Nastaví formát vráteného dátumu"
 
-#: ../src/option.c:294 ../src/option.c:1130
+#: ../src/option.c:298 ../src/option.c:1184
 msgid "PATTERN"
 msgstr "VZOR"
 
 # cmd desc
-#: ../src/option.c:308
+#: ../src/option.c:312
 msgid "Display text entry dialog"
 msgstr "Zobrazí dialógové okno na zadávanie textu"
 
 # cmd desc
-#: ../src/option.c:326
+#: ../src/option.c:330
 msgid "Set the entry text"
 msgstr "Nastaví text položky"
 
 # cmd desc
-#: ../src/option.c:335
+#: ../src/option.c:339
 msgid "Hide the entry text"
 msgstr "Skryje text položky"
 
 # cmd desc
-#: ../src/option.c:351
+#: ../src/option.c:355
 msgid "Display error dialog"
 msgstr "Zobrazí dialógové okno chyby"
 
 # cmd desc
-#: ../src/option.c:369 ../src/option.c:419 ../src/option.c:780
-#: ../src/option.c:901
+#: ../src/option.c:373 ../src/option.c:431 ../src/option.c:800
+#: ../src/option.c:947
 msgid "Set the dialog icon"
 msgstr "Nastaví ikonu dialógového okna"
 
-#: ../src/option.c:370 ../src/option.c:420 ../src/option.c:781
-#: ../src/option.c:902
+#: ../src/option.c:374 ../src/option.c:432 ../src/option.c:801
+#: ../src/option.c:948
 msgid "ICON-NAME"
 msgstr "NÁZOV_IKONY"
 
 # cmd desc
-#: ../src/option.c:378 ../src/option.c:428 ../src/option.c:789
-#: ../src/option.c:910
+#: ../src/option.c:382 ../src/option.c:440 ../src/option.c:809
+#: ../src/option.c:956
 msgid "Do not enable text wrapping"
 msgstr "Nepovolí zalomenie textu"
 
 # cmd desc
-#: ../src/option.c:387 ../src/option.c:437 ../src/option.c:798
-#: ../src/option.c:919
+#: ../src/option.c:391 ../src/option.c:449 ../src/option.c:818
+#: ../src/option.c:965
 msgid "Do not enable pango markup"
 msgstr "Nepovolí značkovací jazyk pango"
 
 # cmd desc
-#: ../src/option.c:401
+#: ../src/option.c:399 ../src/option.c:457 ../src/option.c:835
+#: ../src/option.c:973
+msgid ""
+"Enable ellipsizing in the dialog text. This fixes the high window size with "
+"long texts"
+msgstr ""
+"Povolí skracovanie textu v dialógových oknách. Týmto sa opraví nadmerná "
+"veľkosť okien s dlhými textami."
+
+# cmd desc
+#: ../src/option.c:413
 msgid "Display info dialog"
 msgstr "Zobrazí dialógové okno s informáciami"
 
 # cmd desc
-#: ../src/option.c:451
+#: ../src/option.c:471
 msgid "Display file selection dialog"
 msgstr "Zobrazí dialógové okno na výber súboru"
 
 # cmd desc
-#: ../src/option.c:460
+#: ../src/option.c:480
 msgid "Set the filename"
 msgstr "Nastaví názov súboru"
 
-#: ../src/option.c:461 ../src/option.c:822
+#: ../src/option.c:481 ../src/option.c:859
 msgid "FILENAME"
 msgstr "NÁZOV_SÚBORU"
 
 # cmd desc
-#: ../src/option.c:469
+#: ../src/option.c:489
 msgid "Allow multiple files to be selected"
 msgstr "Povolí výber viacerých súborov"
 
 # cmd desc
-#: ../src/option.c:478
+#: ../src/option.c:498
 msgid "Activate directory-only selection"
 msgstr "Aktivuje výber obmedzený iba na adresáre"
 
 # cmd desc
-#: ../src/option.c:487
+#: ../src/option.c:507
 msgid "Activate save mode"
 msgstr "Aktivuje ukladací režim"
 
 # cmd desc
-#: ../src/option.c:496 ../src/option.c:584 ../src/option.c:1120
+#: ../src/option.c:516 ../src/option.c:604 ../src/option.c:1174
 msgid "Set output separator character"
 msgstr "Nastaví oddeľovací znak výstupu"
 
-#: ../src/option.c:497 ../src/option.c:585 ../src/option.c:1121
+#: ../src/option.c:517 ../src/option.c:605 ../src/option.c:1175
 msgid "SEPARATOR"
 msgstr "ODDEĽOVAČ"
 
 # cmd desc
-#: ../src/option.c:505
+#: ../src/option.c:525
 msgid "Confirm file selection if filename already exists"
 msgstr "Potvrdí výber súboru, ak názov súboru už existuje"
 
 # cmd desc
-#: ../src/option.c:514
+#: ../src/option.c:534
 msgid "Sets a filename filter"
 msgstr "Nastaví filter názvu súboru"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:516
+#: ../src/option.c:536
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NÁZOV | VZOR1 VZOR2 …"
 
 # DK: "list dialog-om" je myslene toto:
 # http://library.gnome.org/users/zenity/stable/list.html.en  -  cize okno so zoznamom
 # cmd desc
-#: ../src/option.c:530
+#: ../src/option.c:550
 msgid "Display list dialog"
 msgstr "Zobrazí dialógové okno so zoznamom"
 
 # cmd desc
-#: ../src/option.c:548
+#: ../src/option.c:568
 msgid "Set the column header"
 msgstr "Nastaví hlavičku stĺpca"
 
-#: ../src/option.c:549
+#: ../src/option.c:569
 msgid "COLUMN"
 msgstr "STĹPEC"
 
 # cmd desc
-#: ../src/option.c:557
+#: ../src/option.c:577
 msgid "Use check boxes for first column"
 msgstr "Použije zaškrtávacie polia pre prvý stĺpec"
 
 # cmd desc
-#: ../src/option.c:566
+#: ../src/option.c:586
 msgid "Use radio buttons for first column"
 msgstr "Použije rádiové tlačidlá pre prvý stĺpec"
 
 # cmd desc
-#: ../src/option.c:575
+#: ../src/option.c:595
 msgid "Use an image for first column"
 msgstr "Použije obrázok pre prvý stĺpec"
 
 # cmd desc
-#: ../src/option.c:593
+#: ../src/option.c:613
 msgid "Allow multiple rows to be selected"
 msgstr "Povolí výber viacerých riadkov"
 
 # cmd desc
-#: ../src/option.c:602 ../src/option.c:830
+#: ../src/option.c:622 ../src/option.c:867
 msgid "Allow changes to text"
 msgstr "Povolí zmeny textu"
 
 # cmd desc
-#: ../src/option.c:611
+#: ../src/option.c:631
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -520,238 +537,250 @@ msgstr ""
 "Môžete použiť „ALL“ na vypísanie všetkých stĺpcov)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:613 ../src/option.c:622
+#: ../src/option.c:633 ../src/option.c:642
 msgid "NUMBER"
 msgstr "ČÍSLO"
 
 # cmd desc
-#: ../src/option.c:621
+#: ../src/option.c:641
 msgid "Hide a specific column"
 msgstr "Skryje zadaný stĺpec"
 
 # cmd desc
-#: ../src/option.c:630
+#: ../src/option.c:650
 msgid "Hides the column headers"
 msgstr "Skryje hlavičky stĺpcov"
 
 # cmd desc
-#: ../src/option.c:646
+#: ../src/option.c:666
 msgid "Display notification"
 msgstr "Zobrazí oznámenie"
 
 # cmd desc
-#: ../src/option.c:655
+#: ../src/option.c:675
 msgid "Set the notification text"
 msgstr "Nastaví text oznámenia"
 
 # cmd desc
-#: ../src/option.c:664
+#: ../src/option.c:684
 msgid "Listen for commands on stdin"
 msgstr "Bude očakávať príkazy zo štandardného vstupu (stdin)"
 
 # cmd desc
-#: ../src/option.c:673
+#: ../src/option.c:693
 msgid "Set the notification hints"
 msgstr "Nastaví rady pre oznámenia"
 
 # cmd desc
-#: ../src/option.c:690
+#: ../src/option.c:710
 msgid "Display progress indication dialog"
 msgstr "Zobrazí dialógové okno s indikátorom priebehu"
 
 # cmd desc
-#: ../src/option.c:708
+#: ../src/option.c:728
 msgid "Set initial percentage"
 msgstr "Nastaví počiatočné percento"
 
-#: ../src/option.c:709
+#: ../src/option.c:729
 msgid "PERCENTAGE"
 msgstr "PERCENTO"
 
 # cmd desc
-#: ../src/option.c:717
+#: ../src/option.c:737
 msgid "Pulsate progress bar"
 msgstr "Indikátor priebehu bude puzlovať"
 
 # cmd desc
-#: ../src/option.c:727
+#: ../src/option.c:747
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Zatvorí dialógové okno pri dosiahnutí 100 %"
 
 # cmd desc
 # * https://bugzilla.gnome.org/show_bug.cgi?id=611103
-#: ../src/option.c:737
+#: ../src/option.c:757
 #, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Zabije rodičovský proces po stlačení tlačidla Zrušiť"
 
 # cmd desc
 # * https://bugzilla.gnome.org/show_bug.cgi?id=611103
-#: ../src/option.c:747
+#: ../src/option.c:767
 #, no-c-format
 msgid "Hide Cancel button"
 msgstr "Skryje tlačidlo Zrušiť"
 
 # cmd desc
-#: ../src/option.c:762
+#: ../src/option.c:782
 msgid "Display question dialog"
 msgstr "Zobrazí dialógové okno s otázkou"
 
 # cmd desc
-#: ../src/option.c:812
+#: ../src/option.c:826
+msgid "Give cancel button focus by default"
+msgstr "Predvolené zameranie bude na tlačidlo Zrušiť"
+
+# cmd desc
+#: ../src/option.c:849
 msgid "Display text information dialog"
 msgstr "Zobrazí textové informačné dialógové okno"
 
 # cmd desc
-#: ../src/option.c:821
+#: ../src/option.c:858
 msgid "Open file"
 msgstr "Otvorí súbor"
 
 # cmd desc
-#: ../src/option.c:839
+#: ../src/option.c:876
 msgid "Set the text font"
 msgstr "Nastaví písmo textu"
 
 # cmd desc
-#: ../src/option.c:848
+#: ../src/option.c:885
 msgid "Enable an I read and agree checkbox"
 msgstr "Povolí zaškrtávacie pole o súhlase s textom"
 
 # cmd desc
-#: ../src/option.c:858
+#: ../src/option.c:895
 msgid "Enable html support"
 msgstr "Povolí podporu html"
 
 # cmd desc
-#: ../src/option.c:867
+#: ../src/option.c:904
 msgid "Sets an url instead of a file. Only works if you use --html option"
 msgstr ""
 "Nastaví adresu url namiesto súboru. Funguje iba pri použití voľby --html."
 
-#: ../src/option.c:868
+#: ../src/option.c:905
 msgid "URL"
 msgstr "URL"
 
 # cmd desc
-#: ../src/option.c:883
+#: ../src/option.c:914
+msgid "Auto scroll the text to the end. Only when text is captured from stdin"
+msgstr ""
+"Bude automaticky rolovať text až do konca. Iba keď je test zachytený zo "
+"štandardného vstupu."
+
+# cmd desc
+#: ../src/option.c:929
 msgid "Display warning dialog"
 msgstr "Zobrazí dialógové okno s upozornením"
 
 # cmd desc
-#: ../src/option.c:933
+#: ../src/option.c:987
 msgid "Display scale dialog"
 msgstr "Zobrazí dialógové okno s mierkou"
 
 # cmd desc
-#: ../src/option.c:951
+#: ../src/option.c:1005
 msgid "Set initial value"
 msgstr "Nastaví počiatočnú hodnotu"
 
-#: ../src/option.c:952 ../src/option.c:961 ../src/option.c:970
-#: ../src/option.c:979 ../src/option.c:1178
+#: ../src/option.c:1006 ../src/option.c:1015 ../src/option.c:1024
+#: ../src/option.c:1033 ../src/option.c:1232
 msgid "VALUE"
 msgstr "HODNOTA"
 
 # cmd desc
-#: ../src/option.c:960
+#: ../src/option.c:1014
 msgid "Set minimum value"
 msgstr "Nastaví minimálnu hodnotu"
 
 # cmd desc
-#: ../src/option.c:969
+#: ../src/option.c:1023
 msgid "Set maximum value"
 msgstr "Nastaví maximálnu hodnotu"
 
 # cmd desc
-#: ../src/option.c:978
+#: ../src/option.c:1032
 msgid "Set step size"
 msgstr "Nastaví veľkosť kroku"
 
 # cmd desc
-#: ../src/option.c:987
+#: ../src/option.c:1041
 msgid "Print partial values"
 msgstr "Vypíše čiastočné hodnoty"
 
 # cmd desc
-#: ../src/option.c:996
+#: ../src/option.c:1050
 msgid "Hide value"
 msgstr "Skryje hodnotu"
 
 # cmd desc
-#: ../src/option.c:1011
+#: ../src/option.c:1065
 msgid "Display forms dialog"
 msgstr "Zobrazí dialógové okno s formulármi"
 
 # cmd desc
-#: ../src/option.c:1020
+#: ../src/option.c:1074
 msgid "Add a new Entry in forms dialog"
 msgstr "Pridá novú položku do dialógového okna s formulármi"
 
-#: ../src/option.c:1021 ../src/option.c:1030
+#: ../src/option.c:1075 ../src/option.c:1084
 msgid "Field name"
 msgstr "Názov poľa"
 
 # cmd desc
-#: ../src/option.c:1029
+#: ../src/option.c:1083
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Pridá novú položku s heslom do dialógového okna s formulármi"
 
 # cmd desc
-#: ../src/option.c:1038
+#: ../src/option.c:1092
 msgid "Add a new Calendar in forms dialog"
 msgstr "Pridá nový kalendár do dialógového okna s formulármi"
 
-#: ../src/option.c:1039
+#: ../src/option.c:1093
 msgid "Calendar field name"
 msgstr "Názov poľa pre kalendár"
 
 # cmd desc
-#: ../src/option.c:1047
+#: ../src/option.c:1101
 msgid "Add a new List in forms dialog"
 msgstr "Pridá nový zoznam do dialógového okna s formulármi"
 
 # cmd desc
-#: ../src/option.c:1048
+#: ../src/option.c:1102
 msgid "List field and header name"
 msgstr "Pole so zoznamom a názov hlavičky"
 
 # cmd desc
-#: ../src/option.c:1056
+#: ../src/option.c:1110
 msgid "List of values for List"
 msgstr "Zoznam hodnôt pre zoznam"
 
 # cmd desc
-#: ../src/option.c:1057 ../src/option.c:1066 ../src/option.c:1084
+#: ../src/option.c:1111 ../src/option.c:1120 ../src/option.c:1138
 msgid "List of values separated by |"
 msgstr "Zoznam hodnôt oddelených znakom |"
 
 # cmd desc
-#: ../src/option.c:1065
+#: ../src/option.c:1119
 msgid "List of values for columns"
 msgstr "Zoznam hodnôt pre stĺpce"
 
 # cmd desc
-#: ../src/option.c:1074
+#: ../src/option.c:1128
 msgid "Add a new combo box in forms dialog"
 msgstr "Pridá nové kombinované pole do dialógového okna s formulármi"
 
-#: ../src/option.c:1075
+#: ../src/option.c:1129
 msgid "Combo box field name"
 msgstr "Názov poľa pre kombinované pole"
 
 # cmd desc
-#: ../src/option.c:1083
+#: ../src/option.c:1137
 msgid "List of values for combo box"
 msgstr "Zoznam hodnôt pre kombinované pole"
 
 # cmd desc
-#: ../src/option.c:1102
+#: ../src/option.c:1156
 msgid "Show the columns header"
 msgstr "Zobrazí hlavičku pre stĺpce"
 
 # cmd desc
-#: ../src/option.c:1144
+#: ../src/option.c:1198
 msgid "Display password dialog"
 msgstr "Zobrazí dialógové okno na zadanie hesla"
 
@@ -759,189 +788,189 @@ msgstr "Zobrazí dialógové okno na zadanie hesla"
 # DK: urobi to presne to, co som napisal."--username" sa pouziva pri volbe "--password" a sposobi to, ze sa zobrazi nie len pole na zadanie hesla ale aj pole na zadanie pouz. mena(username)
 # overenie: zadaj si prikaz "zenity --password --username"
 # cmd desc
-#: ../src/option.c:1153
+#: ../src/option.c:1207
 msgid "Display the username option"
 msgstr "Zobrazí pole na zadanie používateľského mena"
 
 # cmd desc
-#: ../src/option.c:1168
+#: ../src/option.c:1222
 msgid "Display color selection dialog"
 msgstr "Zobrazí dialógové okno na výber farby"
 
 # cmd desc
-#: ../src/option.c:1177
+#: ../src/option.c:1231
 msgid "Set the color"
 msgstr "Nastaví farbu"
 
 # cmd desc
-#: ../src/option.c:1186
+#: ../src/option.c:1240
 msgid "Show the palette"
 msgstr "Zobrazí paletu"
 
 # cmd desc
-#: ../src/option.c:1201
+#: ../src/option.c:1255
 msgid "About zenity"
 msgstr "O programe zenity"
 
 # cmd desc
-#: ../src/option.c:1210
+#: ../src/option.c:1264
 msgid "Print version"
 msgstr "Vypíše verziu"
 
-#: ../src/option.c:2121
+#: ../src/option.c:2184
 msgid "General options"
 msgstr "Všeobecné voľby"
 
 # cmd desc
-#: ../src/option.c:2122
+#: ../src/option.c:2185
 msgid "Show general options"
 msgstr "Zobrazí všeobecné voľby"
 
-#: ../src/option.c:2132
+#: ../src/option.c:2195
 msgid "Calendar options"
 msgstr "Voľby kalendára"
 
 # cmd desc
-#: ../src/option.c:2133
+#: ../src/option.c:2196
 msgid "Show calendar options"
 msgstr "Zobrazí voľby kalendára"
 
-#: ../src/option.c:2143
+#: ../src/option.c:2206
 msgid "Text entry options"
 msgstr "Voľby textového vstupu"
 
 # cmd desc
-#: ../src/option.c:2144
+#: ../src/option.c:2207
 msgid "Show text entry options"
 msgstr "Zobrazí voľby textového vstupu"
 
-#: ../src/option.c:2154
+#: ../src/option.c:2217
 msgid "Error options"
 msgstr "Voľby chýb"
 
 # cmd desc
-#: ../src/option.c:2155
+#: ../src/option.c:2218
 msgid "Show error options"
 msgstr "Zobrazí voľby chýb"
 
-#: ../src/option.c:2165
+#: ../src/option.c:2228
 msgid "Info options"
 msgstr "Voľby informácie"
 
 # cmd desc
-#: ../src/option.c:2166
+#: ../src/option.c:2229
 msgid "Show info options"
 msgstr "Zobrazí voľby informácie"
 
-#: ../src/option.c:2176
+#: ../src/option.c:2239
 msgid "File selection options"
 msgstr "Voľby výberu súboru"
 
 # cmd desc
-#: ../src/option.c:2177
+#: ../src/option.c:2240
 msgid "Show file selection options"
 msgstr "Zobrazí voľby výberu súboru"
 
-#: ../src/option.c:2187
+#: ../src/option.c:2250
 msgid "List options"
 msgstr "Voľby zoznamu"
 
 # cmd desc
-#: ../src/option.c:2188
+#: ../src/option.c:2251
 msgid "Show list options"
 msgstr "Zobrazí voľby zoznamu"
 
-#: ../src/option.c:2199
+#: ../src/option.c:2262
 msgid "Notification icon options"
 msgstr "Voľby oznamovacej ikony"
 
 # cmd desc
-#: ../src/option.c:2200
+#: ../src/option.c:2263
 msgid "Show notification icon options"
 msgstr "Zobrazí voľby oznamovacej ikony"
 
-#: ../src/option.c:2211
+#: ../src/option.c:2274
 msgid "Progress options"
 msgstr "Voľby indikátora priebehu"
 
 # cmd desc
-#: ../src/option.c:2212
+#: ../src/option.c:2275
 msgid "Show progress options"
 msgstr "Zobrazí voľby indikátora priebehu"
 
-#: ../src/option.c:2222
+#: ../src/option.c:2285
 msgid "Question options"
 msgstr "Voľby otázky"
 
 # cmd desc
-#: ../src/option.c:2223
+#: ../src/option.c:2286
 msgid "Show question options"
 msgstr "Zobrazí voľby otázky"
 
-#: ../src/option.c:2233
+#: ../src/option.c:2296
 msgid "Warning options"
 msgstr "Voľby upozornenia"
 
 # cmd desc
-#: ../src/option.c:2234
+#: ../src/option.c:2297
 msgid "Show warning options"
 msgstr "Zobrazí voľby upozornenia"
 
-#: ../src/option.c:2244
+#: ../src/option.c:2307
 msgid "Scale options"
 msgstr "Voľby mierky"
 
 # cmd desc
-#: ../src/option.c:2245
+#: ../src/option.c:2308
 msgid "Show scale options"
 msgstr "Zobrazí voľby mierky"
 
-#: ../src/option.c:2255
+#: ../src/option.c:2318
 msgid "Text information options"
 msgstr "Voľby textovej informácie"
 
 # cmd desc
-#: ../src/option.c:2256
+#: ../src/option.c:2319
 msgid "Show text information options"
 msgstr "Zobrazí voľby textovej informácie"
 
-#: ../src/option.c:2266
+#: ../src/option.c:2329
 msgid "Color selection options"
 msgstr "Voľby výberu farby"
 
 # cmd desc
-#: ../src/option.c:2267
+#: ../src/option.c:2330
 msgid "Show color selection options"
 msgstr "Zobrazí voľby výberu farby"
 
-#: ../src/option.c:2277
+#: ../src/option.c:2340
 msgid "Password dialog options"
 msgstr "Voľby dialógového okna na zadanie hesla"
 
 # cmd desc
-#: ../src/option.c:2278
+#: ../src/option.c:2341
 msgid "Show password dialog options"
 msgstr "Zobrazí voľby dialógového okna na zadanie hesla"
 
-#: ../src/option.c:2288
+#: ../src/option.c:2351
 msgid "Forms dialog options"
 msgstr "Voľby dialógového okna s formulármi"
 
 # cmd desc
-#: ../src/option.c:2289
+#: ../src/option.c:2352
 msgid "Show forms dialog options"
 msgstr "Zobrazí voľby dialógového okna s formulármi"
 
-#: ../src/option.c:2299
+#: ../src/option.c:2362
 msgid "Miscellaneous options"
 msgstr "Rôzne voľby"
 
 # cmd desc
-#: ../src/option.c:2300
+#: ../src/option.c:2363
 msgid "Show miscellaneous options"
 msgstr "Zobrazí rôzne voľby"
 
-#: ../src/option.c:2325
+#: ../src/option.c:2388
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
@@ -949,12 +978,12 @@ msgstr ""
 "Táto voľba nie je dostupná. Všetky možné voľby získate po zadaní „zenity --"
 "help“.\n"
 
-#: ../src/option.c:2329
+#: ../src/option.c:2392
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "Parameter „--%s“ nie je pre toto okno podporovaný\n"
 
-#: ../src/option.c:2333
+#: ../src/option.c:2396
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Zadané dve alebo viac volieb pre dialógové okno\n"
