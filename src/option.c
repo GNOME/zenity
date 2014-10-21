@@ -83,6 +83,7 @@ static gchar   *zenity_list_print_column;
 static gchar   *zenity_list_hide_column;
 static gboolean zenity_list_hide_header;
 static gboolean zenity_list_imagelist;
+static gboolean zenity_list_mid_search;
 
 #ifdef HAVE_LIBNOTIFY
 /* Notification Dialog Options */
@@ -649,6 +650,15 @@ static GOptionEntry list_options[] = {
     G_OPTION_ARG_NONE,
     &zenity_list_hide_header,
     N_("Hides the column headers"),
+    NULL
+  },
+  {
+    "mid-search",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_list_mid_search,
+    N_("Change list default search function searching for text in the middle, not on the beginning"),
     NULL
   },
   { 
@@ -1531,6 +1541,7 @@ zenity_list_pre_callback (GOptionContext *context,
   zenity_list_hide_header = FALSE;
   zenity_list_print_column = NULL;
   zenity_list_hide_column = NULL;
+  zenity_list_mid_search = FALSE;
 
   return TRUE;
 }
@@ -1876,6 +1887,7 @@ zenity_list_post_callback (GOptionContext *context,
     results->tree_data->hide_column = zenity_list_hide_column;
     results->tree_data->hide_header = zenity_list_hide_header;
     results->tree_data->separator = zenity_general_separator;
+    results->tree_data->mid_search = zenity_list_mid_search;
   } else {
     if (zenity_list_columns)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_list_columns),
@@ -1903,6 +1915,9 @@ zenity_list_post_callback (GOptionContext *context,
 
     if (zenity_list_hide_header)
       zenity_option_error (zenity_option_get_name (list_options, &zenity_list_hide_header),
+                           ERROR_SUPPORT);
+    if (zenity_list_mid_search)
+      zenity_option_error (zenity_option_get_name (list_options, &zenity_list_mid_search),
                            ERROR_SUPPORT);
   }
     

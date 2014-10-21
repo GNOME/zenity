@@ -132,6 +132,7 @@ typedef struct {
   gchar        *separator;
   gboolean      multi;
   gboolean      editable;
+  gboolean      mid_search;
   gchar	       *print_column;
   gchar	       *hide_column;
   const gchar **data;

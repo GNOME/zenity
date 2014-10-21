@@ -298,6 +298,17 @@ zenity_tree_fill_entries (GtkTreeView  *tree_view,
   }
 }
 
+static gboolean
+zenity_mid_search_func (GtkTreeModel *model, gint column,
+                    const gchar *key, GtkTreeIter *iter,
+                    gpointer search_data)
+{
+    gchar *iter_string = NULL;
+    gtk_tree_model_get (model, iter, column, &iter_string, -1); 
+    return  ! g_strrstr (g_utf8_strdown(iter_string, -1), 
+                         g_utf8_strdown(key, -1)) != NULL;
+}
+
 static void
 zenity_cell_edited_callback (GtkCellRendererText *cell, 
                              const gchar         *path_string, 
@@ -563,6 +574,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   }
 
   zenity_util_show_dialog (dialog, data->attach);
+
+  if (tree_data->mid_search)
+    gtk_tree_view_set_search_equal_func(GTK_TREE_VIEW(tree_view), (GtkTreeViewSearchEqualFunc) zenity_mid_search_func, model, NULL);
 
   if(data->timeout_delay > 0) {
     g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);
