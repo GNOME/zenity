@@ -82,9 +82,9 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
   zenity_util_show_dialog (dialog, data->attach);
 
   if (data->timeout_delay > 0) {
-    g_timeout_add (data->timeout_delay * 1000,
-                   (GSourceFunc) zenity_util_timeout_handle,
-                   dialog);
+    g_timeout_add_seconds (data->timeout_delay * 1000,
+                           (GSourceFunc) zenity_util_timeout_handle,
+                           dialog);
   }
 
   gtk_main();

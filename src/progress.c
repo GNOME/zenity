@@ -67,9 +67,9 @@ static void
 zenity_progress_pulsate_start (GObject *progress_bar)
 {
   if (pulsate_timeout == -1) {
-    pulsate_timeout = g_timeout_add (100,
-                                     zenity_progress_pulsate_progress_bar,
-                                     progress_bar);
+    pulsate_timeout = g_timeout_add_seconds (100,
+                                             zenity_progress_pulsate_progress_bar,
+                                             progress_bar);
   }
 }
 
