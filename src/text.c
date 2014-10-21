@@ -316,10 +316,19 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
     }
     else
     {
+      gchar *cwd;
+      gchar *dirname;
+      gchar *dirname_uri;
+      dirname = text_data->uri ? g_path_get_dirname (text_data->uri) : g_strdup ("/");
+      cwd = g_get_current_dir ();
+      dirname_uri = g_strconcat ("file://", cwd, "/", dirname, "/", NULL);
+      g_free (cwd);
+      g_free (dirname);
       gtk_text_buffer_get_start_iter (text_buffer, &start_iter);
       gtk_text_buffer_get_end_iter (text_buffer, &end_iter);
       content = gtk_text_buffer_get_text (text_buffer, &start_iter, &end_iter, TRUE);
-      webkit_web_view_load_string (WEBKIT_WEB_VIEW(web_kit), content, "text/html", "UTF-8", "file:///");
+      webkit_web_view_load_string (WEBKIT_WEB_VIEW(web_kit), content, "text/html", "UTF-8", dirname_uri);
+      g_free (dirname_uri);
       g_free (content);
     }
 
