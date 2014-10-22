@@ -146,8 +146,16 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       break;
   }
   
-  if (data->width > -1 || data->height > -1)
+  if (data->width > -1 || data->height > -1) 
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
+    if (data->width > -1)
+      gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
+    else
+      if (!msg_data->ellipsize)
+        g_signal_connect_after (G_OBJECT (text), "size-allocate",
+                            G_CALLBACK (zenity_text_size_allocate), data);
+
 
   if (data->modal)
     gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
@@ -161,13 +169,10 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 
   if (msg_data->ellipsize)
 	gtk_label_set_ellipsize (GTK_LABEL(text), PANGO_ALIGN_RIGHT);
-  else
-	g_signal_connect_after (G_OBJECT (text), "size-allocate",
-                          G_CALLBACK (zenity_text_size_allocate), data);
-  
+
   if (msg_data->dialog_icon)
     gtk_image_set_from_icon_name (GTK_IMAGE (image), msg_data->dialog_icon, GTK_ICON_SIZE_DIALOG);
- 
+
   if (msg_data->no_wrap)
     gtk_label_set_line_wrap (GTK_LABEL (text), FALSE);
 
@@ -185,7 +190,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 static void 
 zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocation, gpointer data)
 {
-  gtk_widget_set_size_request (widget, allocation->width, -1);
+  gtk_widget_set_size_request (widget, allocation->width/2, -1);
 }
 
 static void
