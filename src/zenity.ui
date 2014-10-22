@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
 <interface>
-  <requires lib="gtk+" version="3.0"/>
+  <!-- interface-requires gtk+ 3.0 -->
+  <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkAdjustment" id="adjustment1">
     <property name="upper">100</property>
     <property name="step_increment">1</property>
@@ -21,7 +21,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area11">
+          <object class="GtkHButtonBox" id="dialog-action_area11">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -127,7 +127,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area5">
+          <object class="GtkHButtonBox" id="dialog-action_area5">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -239,7 +239,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area2">
+          <object class="GtkHButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -370,7 +370,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area4">
+          <object class="GtkHButtonBox" id="dialog-action_area4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -474,7 +474,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area7">
+          <object class="GtkHButtonBox" id="dialog-action_area7">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -518,7 +518,7 @@
                     <property name="can_focus">False</property>
                     <property name="yalign">0</property>
                     <property name="stock">gtk-dialog-error</property>
-                    <property name="icon_size">6</property>
+                    <property name="icon-size">6</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -571,7 +571,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area12">
+          <object class="GtkHButtonBox" id="dialog-action_area12">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -666,6 +666,12 @@
                     <child>
                       <placeholder/>
                     </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
                   </object>
                 </child>
               </object>
@@ -707,7 +713,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area3">
+          <object class="GtkHButtonBox" id="dialog-action_area3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -746,7 +752,7 @@
                 <property name="can_focus">False</property>
                 <property name="yalign">0</property>
                 <property name="stock">gtk-dialog-info</property>
-                <property name="icon_size">6</property>
+                <property name="icon-size">6</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -795,7 +801,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area6">
+          <object class="GtkHButtonBox" id="dialog-action_area6">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -851,6 +857,7 @@
                 <property name="can_focus">False</property>
                 <property name="xalign">0</property>
                 <property name="label" translatable="yes">Running...</property>
+                <property name="wrap">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -885,7 +892,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">True</property>
+            <property name="fill">False</property>
             <property name="position">1</property>
           </packing>
         </child>
@@ -909,7 +916,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="zenity_question_button_box">
+          <object class="GtkHButtonBox" id="zenity_question_button_box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -934,7 +941,7 @@
                 <property name="xalign">0</property>
                 <property name="yalign">0</property>
                 <property name="stock">gtk-dialog-question</property>
-                <property name="icon_size">6</property>
+                <property name="icon-size">6</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -981,7 +988,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area8">
+          <object class="GtkHButtonBox" id="dialog-action_area8">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -1047,15 +1054,11 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
-                <property name="expand">True</property>
                 <child>
                   <object class="GtkTreeView" id="zenity_tree_view">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="has_focus">True</property>
-                    <child internal-child="selection">
-                      <object class="GtkTreeSelection" id="treeview-selection1"/>
-                    </child>
                   </object>
                 </child>
               </object>
@@ -1092,7 +1095,7 @@
         <property name="can_focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
-          <object class="GtkVButtonBox" id="dialog-action_area1">
+          <object class="GtkHButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -1133,7 +1136,7 @@
                 <property name="xalign">0</property>
                 <property name="yalign">0</property>
                 <property name="stock">gtk-dialog-warning</property>
-                <property name="icon_size">6</property>
+                <property name="icon-size">6</property>
               </object>
               <packing>
                 <property name="expand">False</property>

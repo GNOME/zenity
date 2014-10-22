@@ -149,13 +149,12 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (data->width > -1 || data->height > -1) 
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
 
-    if (data->width > -1)
-      gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
-    else
-      if (!msg_data->ellipsize)
-        g_signal_connect_after (G_OBJECT (text), "size-allocate",
-                            G_CALLBACK (zenity_text_size_allocate), data);
-
+  if (data->width > -1)
+    gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
+  else
+    if (!msg_data->ellipsize)
+      g_signal_connect_after (G_OBJECT (text), "size-allocate",
+                              G_CALLBACK (zenity_text_size_allocate), data);
 
   if (data->modal)
     gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);

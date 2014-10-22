@@ -262,6 +262,12 @@ zenity_progress_read_info (ZenityProgressData *progress_data)
   }
 }
 
+static void
+zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocation, gpointer data)
+{
+  gtk_widget_set_size_request (widget, allocation->width/2, -1);
+}
+
 void
 zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 {
@@ -281,6 +287,8 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
   gtk_builder_connect_signals (builder, NULL);
 
+  text = gtk_builder_get_object (builder, "zenity_progress_text");
+
   dialog = GTK_WIDGET (gtk_builder_get_object (builder,
                                                "zenity_progress_dialog"));
 
@@ -294,6 +302,16 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
   if (data->width > -1 || data->height > -1)
     gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+
+  if (data->width > -1) {
+    gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
+  }
+  else {
+    g_signal_connect_after (G_OBJECT (text), "size-allocate",
+                            G_CALLBACK (zenity_text_size_allocate), data);
+    g_signal_connect_after (G_OBJECT (progress_bar), "size-allocate",
+                            G_CALLBACK (zenity_text_size_allocate), data);
+  }
 
   if (data->modal)
     gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
@@ -311,8 +329,6 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
     gtk_button_set_image (GTK_BUTTON (button),
                           gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
   }
-
-  text = gtk_builder_get_object (builder, "zenity_progress_text");
 
   if (progress_data->dialog_text)
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (progress_data->dialog_text));
