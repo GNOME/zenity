@@ -199,7 +199,7 @@ zenity_text_fill_entries_from_stdin (GtkTextView *text_view)
   GIOChannel *channel; 
 
   channel = g_io_channel_unix_new (0);
-  g_io_channel_set_encoding (channel, NULL, NULL);
+  g_io_channel_set_encoding (channel, "UTF-8", NULL);
   g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
   g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_text_handle_stdin, text_view);
 }
