@@ -6,6 +6,8 @@
 
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#else
+typedef gint Window;
 #endif
 
 G_BEGIN_DECLS
