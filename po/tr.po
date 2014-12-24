@@ -6,22 +6,24 @@
 # Fatih Ergüven <fatih@erguven.org>, 2006, 2007.
 # Volkan, 2011.
 # Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2014.
+# Necdet Yücel <necdetyucel@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-08 12:06+0000\n"
-"PO-Revision-Date: 2014-12-08 23:28+0200\n"
-"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=zenity&"
+"keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-12-21 00:12+0000\n"
+"PO-Revision-Date: 2014-12-22 00:16+0000\n"
+"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1419207383.000000\n"
 
 #: ../src/about.c:63
 msgid ""
@@ -79,6 +81,8 @@ msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
 msgstr ""
+"Bir mantıksal ipucu için geçersiz değer.\n"
+"Desteklenen değerler 'doğru' veya 'yanlış'tır.\n"
 
 #. (iibiiay)
 #: ../src/notification.c:137
@@ -94,7 +98,6 @@ msgstr "Bilinmeyen ipucu adı. Atlanıyor.\n"
 
 #: ../src/notification.c:213
 #, c-format
-#| msgid "could not parse command from stdin\n"
 msgid "Could not parse command from stdin\n"
 msgstr "stdin'den gelen komut ayrıştırılamadı\n"
 
@@ -113,7 +116,6 @@ msgid "Type your password"
 msgstr "Parolanızı giriniz"
 
 #: ../src/password.c:69
-#| msgid "Type your password"
 msgid "Type your username and password"
 msgstr "Kullanıcı adınızı ve parolanızı yazın"
 
@@ -280,20 +282,18 @@ msgid "Sets the label of the Cancel button"
 msgstr "İptal düğmesinin etiketini ayarlar"
 
 #: ../src/option.c:231
-#, fuzzy
 #| msgid "Set the dialog title"
 msgid "Set the modal hint"
-msgstr "İpucu yok."
+msgstr "Kalıcı ipucu ayarlayın"
 
 #: ../src/option.c:240
-#, fuzzy
 #| msgid "Set the window icon"
 msgid "Set the parent window to attach to"
-msgstr "Yardımcı iletişim penceresini üst pencereye iliştir"
+msgstr "Eklenecek üst pencereyi ayarlayın"
 
 #: ../src/option.c:241
 msgid "WINDOW"
-msgstr ""
+msgstr "PENCERE"
 
 #: ../src/option.c:255
 msgid "Display calendar dialog"
@@ -356,15 +356,13 @@ msgstr "Hata penceresini görüntüle"
 
 #: ../src/option.c:376 ../src/option.c:434 ../src/option.c:821
 #: ../src/option.c:977
-#| msgid "Set the dialog title"
 msgid "Set the dialog icon"
 msgstr "İletişim penceresi simgesini ayarla"
 
 #: ../src/option.c:377 ../src/option.c:435 ../src/option.c:822
 #: ../src/option.c:978
-#, fuzzy
 msgid "ICON-NAME"
-msgstr "Simge İ_smi:"
+msgstr "SİMGE-ADI"
 
 #: ../src/option.c:385 ../src/option.c:443 ../src/option.c:830
 #: ../src/option.c:986
@@ -382,6 +380,8 @@ msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
 msgstr ""
+"İletişim metinlerini elipsleştirmeyi etkinleştir. Bu uzun metinlerle yüksek "
+"pencere boyutunu çözecektir"
 
 #: ../src/option.c:416
 msgid "Display info dialog"
@@ -490,6 +490,8 @@ msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
 msgstr ""
+"Listenin varsayılan arama özelliğini metnin başından değil ortasından olacak "
+"şekilde değiştir"
 
 #: ../src/option.c:678
 msgid "Display notification"
@@ -504,7 +506,6 @@ msgid "Listen for commands on stdin"
 msgstr "stdin'deki komutları dinle"
 
 #: ../src/option.c:705
-#| msgid "Set the notification text"
 msgid "Set the notification hints"
 msgstr "Bildirim ipuçlarını ayarla"
 
@@ -541,7 +542,7 @@ msgstr "İptal düğmesini gizle"
 
 #: ../src/option.c:788
 msgid "Estimate when progress will reach 100%"
-msgstr ""
+msgstr "İlerlemenin ne zaman %100 olacağını tahmin et"
 
 #: ../src/option.c:803
 msgid "Display question dialog"
@@ -549,7 +550,7 @@ msgstr "Soru penceresini göster"
 
 #: ../src/option.c:847
 msgid "Give cancel button focus by default"
-msgstr ""
+msgstr "Varsayılan olarak iptal düğmesine odaklan"
 
 #: ../src/option.c:870
 msgid "Display text information dialog"
@@ -572,14 +573,13 @@ msgid "Enable html support"
 msgstr "Html desteğini etkinleştir"
 
 #: ../src/option.c:925
-#, fuzzy
 #| msgid "Sets an url instead of a file. Only works if you use --html option"
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr ""
-"Bir dosya yerine bir url ayarlar. Sadece --html seçeneğini kullanırsanız "
-"çalışır."
+"Kullanıcının WebView ile etkileşimini kapat. Sadece --html seçeneğini "
+"kullandığınızda işe yarar"
 
 #: ../src/option.c:934
 msgid "Sets an url instead of a file. Only works if you use --html option"
@@ -594,6 +594,7 @@ msgstr "URL"
 #: ../src/option.c:944
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
+"Metnin sonuna otomatik kaydır. Sadece metin standart girdiden alındığında"
 
 #: ../src/option.c:959
 msgid "Display warning dialog"
@@ -677,22 +678,19 @@ msgid "List of values for columns"
 msgstr "Sütunlar için değerler listesi"
 
 #: ../src/option.c:1158
-#, fuzzy
 #| msgid "Add a new List in forms dialog"
 msgid "Add a new combo box in forms dialog"
-msgstr "Form iletişim penceresine yeni bir Parola Girdisi ekle"
+msgstr "Form iletişim penceresine yeni bir açılan kutu ekle"
 
 #: ../src/option.c:1159
-#, fuzzy
 #| msgid "Calendar field name"
 msgid "Combo box field name"
-msgstr "Çoklu kutucuğun modeli"
+msgstr "Açılan kutu alan adı"
 
 #: ../src/option.c:1167
-#, fuzzy
 #| msgid "List of values for columns"
 msgid "List of values for combo box"
-msgstr "Çoktu kutu için geçerli değerleri içeren model"
+msgstr "Açılan kutu için değerler listesi"
 
 #: ../src/option.c:1186
 msgid "Show the columns header"
