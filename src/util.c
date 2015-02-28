@@ -76,7 +76,7 @@ zenity_util_load_ui_file (const gchar *root_widget, ...)
   /* Enforce terminating NULL */
   g_ptr_array_add (ptrarray, NULL);
   objects = (gchar**) g_ptr_array_free (ptrarray, FALSE);
-
+  
   if (g_file_test (ZENITY_UI_FILE_RELATIVEPATH, G_FILE_TEST_EXISTS)) {
     /* Try current dir, for debugging */
     result = gtk_builder_add_objects_from_file (builder,

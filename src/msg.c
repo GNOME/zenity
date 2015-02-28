@@ -31,8 +31,10 @@ static void zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocat
 static void
 zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data, ZenityData *data)
 {
+
+
   GtkWidget *cancel_button, *ok_button;
-  
+
   cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_NO, GTK_RESPONSE_CANCEL);
   ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_YES, GTK_RESPONSE_OK);
 
@@ -49,6 +51,8 @@ zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data
     gtk_button_set_image (GTK_BUTTON (ok_button), 
                           gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
   }
+  
+
 }
 
 static void
@@ -95,6 +99,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       break;
 
     case ZENITY_MSG_QUESTION:
+    case ZENITY_MSG_SWITCH:
       builder = zenity_util_load_ui_file ("zenity_question_dialog", NULL);
       dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_question_dialog"));
       text = gtk_builder_get_object (builder, "zenity_question_text");
@@ -128,6 +133,14 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       break;	
   }
 
+  if (data->extra_label) {
+    gint i=0;
+    while(data->extra_label[i]!=NULL){
+      gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i);
+      i++;
+    }
+  }
+
   if (builder == NULL) {
     data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
     return;
@@ -157,6 +170,10 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
     case ZENITY_MSG_QUESTION:
       zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_QUESTION);
       zenity_msg_construct_question_dialog (dialog, msg_data, data);
+      break;
+      
+    case ZENITY_MSG_SWITCH:
+      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_QUESTION);
       break;
       
     case ZENITY_MSG_ERROR:
@@ -233,6 +250,8 @@ zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 
     default:
+      if (response < g_strv_length(zen_data->extra_label))
+        printf("%s\n",zen_data->extra_label[response]);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }

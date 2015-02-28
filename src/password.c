@@ -44,6 +44,14 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
 
   dialog = gtk_dialog_new ();
 
+  if (data->extra_label) {
+    gint i=0;
+    while(data->extra_label[i]!=NULL){
+      gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i);
+      i++;
+    }
+  }
+
   gtk_dialog_add_button(GTK_DIALOG(dialog), 
                         data->cancel_label != NULL ? data->cancel_label : GTK_STOCK_CANCEL, 
                         GTK_RESPONSE_CANCEL);
@@ -177,6 +185,8 @@ zenity_password_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 
     default:
+      if (response < g_strv_length(zen_data->extra_label))
+        printf("%s\n",zen_data->extra_label[response]);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }

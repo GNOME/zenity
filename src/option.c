@@ -45,6 +45,7 @@ static gboolean zenity_general_dialog_no_markup;
 static gint     zenity_general_timeout_delay;
 static gchar   *zenity_general_ok_button;
 static gchar   *zenity_general_cancel_button;
+static gchar  **zenity_general_extra_buttons;
 static gboolean zenity_general_modal;
 static gint     zenity_general_attach;
 static gboolean zenity_general_dialog_ellipsize;
@@ -104,6 +105,7 @@ static gboolean zenity_progress_time_remaining;
 /* Question Dialog Options */
 static gboolean zenity_question_active;
 static gboolean zenity_question_default_cancel;
+static gboolean zenity_question_switch;
 
 /* Text Dialog Options */
 static gboolean zenity_text_active;
@@ -220,6 +222,15 @@ static GOptionEntry general_options[] = {
     G_OPTION_ARG_STRING,
     &zenity_general_cancel_button,
     N_("Sets the label of the Cancel button"),
+    N_("TEXT")
+  },
+  {
+    "extra-button",
+    '\0',
+    0,
+    G_OPTION_ARG_STRING_ARRAY,
+    &zenity_general_extra_buttons,
+    N_("Add extra-button"),
     N_("TEXT")
   },
   {
@@ -855,6 +866,15 @@ static GOptionEntry question_options[] = {
 	&zenity_general_dialog_ellipsize,
 	N_("Enable ellipsizing in the dialog text. This fixes the high window size with long texts")
   },
+  {
+    "switch",
+    '\0',
+    G_OPTION_FLAG_NOALIAS,
+    G_OPTION_ARG_NONE,
+    &zenity_question_switch,
+    N_("Supress ok and cancel buttons"),
+    NULL
+  },
   { 
     NULL 
   }
@@ -1341,7 +1361,9 @@ zenity_option_free (void) {
     g_free (zenity_general_ok_button);
   if (zenity_general_cancel_button)
     g_free (zenity_general_cancel_button);
-
+  if (zenity_general_extra_buttons)
+    g_strfreev (zenity_general_extra_buttons);
+    
   if (zenity_calendar_date_format)
     g_free (zenity_calendar_date_format);
 
@@ -1463,6 +1485,7 @@ zenity_general_pre_callback (GOptionContext *context,
   zenity_general_uri = NULL;
   zenity_general_ok_button = NULL;
   zenity_general_cancel_button = NULL;
+  zenity_general_extra_buttons = NULL;
   zenity_general_dialog_no_wrap = FALSE;
   zenity_general_dialog_no_markup = FALSE;
   zenity_general_timeout_delay = -1;
@@ -1594,7 +1617,7 @@ zenity_question_pre_callback (GOptionContext *context,
 {
   zenity_question_active = FALSE;
   zenity_question_default_cancel = FALSE;
-
+  zenity_question_switch = FALSE;
   return TRUE;
 }
 
@@ -1710,6 +1733,7 @@ zenity_general_post_callback (GOptionContext *context,
   results->data->timeout_delay = zenity_general_timeout_delay;
   results->data->ok_label = zenity_general_ok_button;
   results->data->cancel_label = zenity_general_cancel_button;
+  results->data->extra_label = zenity_general_extra_buttons;
   results->data->modal = zenity_general_modal;
   results->data->attach = zenity_general_attach;
 
@@ -2012,13 +2036,18 @@ zenity_question_post_callback (GOptionContext *context,
   if (results->mode == MODE_QUESTION) {
     results->msg_data->dialog_text = zenity_general_dialog_text;
     results->msg_data->dialog_icon = zenity_general_dialog_icon;
-    results->msg_data->mode = ZENITY_MSG_QUESTION;
+    if(zenity_question_switch)
+      results->msg_data->mode = ZENITY_MSG_SWITCH;
+    else
+      results->msg_data->mode = ZENITY_MSG_QUESTION;
     results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
     results->msg_data->no_markup = zenity_general_dialog_no_markup;
-	results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
+    results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
     results->msg_data->default_cancel = zenity_question_default_cancel;
   }
-
+  if(zenity_question_switch && zenity_general_extra_buttons==NULL)
+    zenity_option_error (zenity_option_get_name (question_options, &zenity_question_switch), ERROR_SYNTAX);
+      
   return TRUE;
 }
 
@@ -2494,6 +2523,7 @@ zenity_option_parse (gint argc, gchar **argv)
   if (zenity_general_dialog_ellipsize)
     if (results->mode != MODE_INFO && results->mode != MODE_ERROR && results->mode != MODE_QUESTION && results->mode != MODE_WARNING)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_general_dialog_ellipsize), ERROR_SUPPORT);
+
 
   return results; 
 }

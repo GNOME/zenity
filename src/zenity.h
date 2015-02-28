@@ -28,6 +28,7 @@ typedef struct {
   gchar *window_icon;
   gchar *ok_label;
   gchar *cancel_label;
+  gchar **extra_label;
   gint   width;
   gint   height;
   gint   exit_code;
@@ -56,6 +57,7 @@ typedef struct {
 typedef enum {
   ZENITY_MSG_WARNING,
   ZENITY_MSG_QUESTION,
+  ZENITY_MSG_SWITCH,
   ZENITY_MSG_ERROR,
   ZENITY_MSG_INFO
 } MsgMode;

@@ -57,6 +57,14 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
                                              &color);
   }
 
+  if (data->extra_label) {
+    gint i=0;
+    while(data->extra_label[i]!=NULL){
+      gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i);
+      i++;
+    }
+  }
+
   if (data->ok_label) {
     g_object_get (G_OBJECT (dialog), "ok-button", &button, NULL);
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
@@ -109,6 +117,8 @@ zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer
       break;
 
     default:
+      if (response < g_strv_length(zen_data->extra_label))
+        printf("%s\n",zen_data->extra_label[response]);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }

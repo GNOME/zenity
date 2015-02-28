@@ -62,6 +62,14 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
   g_signal_connect (G_OBJECT (dialog), "response", 
                     G_CALLBACK (zenity_fileselection_dialog_response), file_data);
 
+  if (data->extra_label) {
+    gint i=0;
+    while(data->extra_label[i]!=NULL){
+      gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i);
+      i++;
+    }
+  }
+
   if (data->dialog_title)
     gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 	
@@ -181,7 +189,8 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
       break;
 
     default:
-      /* Esc dialog */
+      if (response < g_strv_length(zen_data->extra_label))
+        printf("%s\n",zen_data->extra_label[response]);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }

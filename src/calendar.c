@@ -91,7 +91,15 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
   if (data->timeout_delay > 0) {
     g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);
   }
-
+  
+  if (data->extra_label) {
+    gint i=0;
+    while(data->extra_label[i]!=NULL){
+      gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i);
+      i++;
+    }
+  }
+  
   if (data->ok_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_calendar_ok_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
@@ -149,7 +157,8 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 
     default:
-      /* Esc dialog */
+      if (response < g_strv_length(zen_data->extra_label))
+        printf("%s\n",zen_data->extra_label[response]);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
   }
