@@ -1,19 +1,20 @@
 # Vietnamese translation for Zenity.
-# Copyright © 2014 GNOME i18n Project for Vietnamese.
+# Bản dịch tiếng Việt dành cho for Zenity.
+# Copyright © 2015 GNOME i18n Project for Vietnamese.
 # This file is distributed under the same license as the zenity package.
 # Trinh Minh Thanh <tmthanh@yahoo.com>, 2003.
 # Nguyen Thai Ngoc Duy <pclouds@gmail.com>, 2003, 2012.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2008.
 # Lê Trường An <xinemdungkhoc1@gmail.com>, 2011.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2014.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenity master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-15 23:58+0000\n"
-"PO-Revision-Date: 2014-11-16 09:05+0700\n"
+"POT-Creation-Date: 2014-11-16 02:07+0000\n"
+"PO-Revision-Date: 2015-03-16 14:56+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
 "Language: vi\n"
@@ -59,7 +60,7 @@ msgstr ""
 
 #: ../src/about.c:263
 msgid "translator-credits"
-msgstr "Nhóm Việt hóa GNOME <https://l10n.gnome.org/teams/vi/>"
+msgstr "Nhóm dịch GNOME <gnome-vi-list@gnome.org>"
 
 #: ../src/about.c:275
 msgid "Display dialog boxes from shell scripts"
@@ -118,7 +119,7 @@ msgstr "Nhập tài khoản và mật khẩu của bạn"
 
 #: ../src/password.c:107
 msgid "Username:"
-msgstr "Tên người dùng:"
+msgstr "Tài khoản:"
 
 #: ../src/password.c:123
 msgid "Password:"
@@ -132,7 +133,7 @@ msgstr "Giá trị tối đa phải lớn hơn giá trị tối thiểu.\n"
 #: ../src/scale.c:64
 #, c-format
 msgid "Value out of range.\n"
-msgstr "Giá trị ngoài phạm vi.\n"
+msgstr "Giá trị nằm ngoài phạm vi.\n"
 
 #: ../src/tree.c:375
 #, c-format
@@ -146,7 +147,7 @@ msgstr "Bạn nên dùng chỉ một kiểu hộp thoại Danh sách.\n"
 
 #: ../src/zenity.ui.h:1
 msgid "Adjust the scale value"
-msgstr "Chỉnh giá trị co dãn"
+msgstr "Kéo con trượt để chọn giá trị"
 
 #: ../src/zenity.ui.h:2
 msgid "Text View"
@@ -154,11 +155,11 @@ msgstr "Xem văn bản"
 
 #: ../src/zenity.ui.h:3
 msgid "Calendar selection"
-msgstr "Chọn lịch"
+msgstr "Chọn ngày"
 
 #: ../src/zenity.ui.h:4
 msgid "Select a date from below."
-msgstr "Chọn một ngày bên dưới."
+msgstr "Chọn một ngày ở phía dưới."
 
 #: ../src/zenity.ui.h:5
 msgid "C_alendar:"
@@ -198,7 +199,7 @@ msgstr "Diễn biến"
 
 #: ../src/zenity.ui.h:14
 msgid "Running..."
-msgstr "Đang chạy..."
+msgstr "Đang chạy…"
 
 #: ../src/zenity.ui.h:15
 msgid "Question"
@@ -230,7 +231,7 @@ msgstr "TỰA_ĐỀ"
 
 #: ../src/option.c:176
 msgid "Set the window icon"
-msgstr "Lập biểu tượng cửa sổ"
+msgstr "Đặt biểu tượng cửa sổ"
 
 #: ../src/option.c:177
 msgid "ICONPATH"
@@ -425,7 +426,7 @@ msgstr "Đặt một bộ lọc tên tập tin"
 #. Help for file-filter argument (name and patterns for file selection)
 #: ../src/option.c:539
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr "TÊN | MẪU1 MẪU2 ..."
+msgstr "TÊN | MẪU1 MẪU2 …"
 
 #: ../src/option.c:553
 msgid "Display list dialog"
@@ -496,7 +497,7 @@ msgstr "Đặt văn bản thông báo"
 
 #: ../src/option.c:696
 msgid "Listen for commands on stdin"
-msgstr "Chờ lệnh từ stdin"
+msgstr "Chờ lệnh từ đầu vào tiêu chuẩn"
 
 #: ../src/option.c:705
 msgid "Set the notification hints"
@@ -508,7 +509,7 @@ msgstr "Hiển thị hộp thoại chỉ diễn biến"
 
 #: ../src/option.c:740
 msgid "Set initial percentage"
-msgstr "Đặt phần trăm đầu tiên"
+msgstr "Đặt phần trăm ban đầu"
 
 #: ../src/option.c:741
 msgid "PERCENTAGE"
@@ -543,7 +544,7 @@ msgstr "Hiển thị thoại câu hỏi"
 
 #: ../src/option.c:847
 msgid "Give cancel button focus by default"
-msgstr "Để nút bấm thôi được focus theo mặc định"
+msgstr "Để nút bấm thôi được đưa vào tầm ngắm theo mặc định"
 
 #: ../src/option.c:870
 msgid "Display text information dialog"
@@ -570,12 +571,12 @@ msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr ""
-"Không thể bật người dùng tương tác với WebView. Chỉ hoạt động với tuỳ chọn --"
+"Không thể bật người dùng tương tác với WebView. Chỉ hoạt động với tùy chọn --"
 "html"
 
 #: ../src/option.c:934
 msgid "Sets an url instead of a file. Only works if you use --html option"
-msgstr "Đặt url thay vì tập tin. Chỉ hoạt động với tuỳ chọn --html"
+msgstr "Đặt url thay vì tập tin. Chỉ hoạt động với tùy chọn --html"
 
 #: ../src/option.c:935
 msgid "URL"
@@ -592,7 +593,7 @@ msgstr "Hiển thị hộp thoại cảnh báo"
 
 #: ../src/option.c:1017
 msgid "Display scale dialog"
-msgstr "Hiển thị hộp thoại co dãn"
+msgstr "Hiển thị hộp thoại thanh trượt"
 
 #: ../src/option.c:1035
 msgid "Set initial value"
@@ -661,7 +662,7 @@ msgstr "Danh sách giá trị cho danh sách"
 
 #: ../src/option.c:1141 ../src/option.c:1150 ../src/option.c:1168
 msgid "List of values separated by |"
-msgstr "Danh sách giá trị cách bằng dấu |"
+msgstr "Các giá trị ngăn cách bằng dấu |"
 
 #: ../src/option.c:1149
 msgid "List of values for columns"
@@ -709,7 +710,7 @@ msgstr "Giới thiệu Zenity"
 
 #: ../src/option.c:1294
 msgid "Print version"
-msgstr "In ra phiên bản"
+msgstr "Hiển thị phiên bản"
 
 #: ../src/option.c:2228
 msgid "General options"
@@ -801,11 +802,11 @@ msgstr "Hiển thị tùy chọn về cảnh báo"
 
 #: ../src/option.c:2351
 msgid "Scale options"
-msgstr "Tùy chọn co dãn"
+msgstr "Tùy chọn thanh trượt"
 
 #: ../src/option.c:2352
 msgid "Show scale options"
-msgstr "Hiển thị tùy chọn về cách co dãn"
+msgstr "Hiển thị tùy chọn về thanh trượt"
 
 #: ../src/option.c:2362
 msgid "Text information options"
@@ -852,13 +853,13 @@ msgstr "Hiển thị các tùy chọn khác"
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
-"Không có tùy chọn này. Vui lòng chạy lệnh --help để xem mọi cách dùng có "
-"thể.\n"
+"Không có tùy chọn này. Vui lòng chạy lệnh --help để xem mọi cách có thể "
+"dùng.\n"
 
 #: ../src/option.c:2436
 #, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "Không hỗ trợ tùy chọn --%s cho hộp thoại này\n"
+msgstr "Không hỗ trợ tùy chọn --%s ở kiểu hộp thoại này\n"
 
 #: ../src/option.c:2440
 #, c-format
