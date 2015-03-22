@@ -175,10 +175,6 @@ zenity_notification_handle_stdin (GIOChannel *channel,
 				  GIOCondition condition,
 				  gpointer user_data)
 {
-  ZenityData *zen_data;
-
-  zen_data = (ZenityData *)user_data;
-
   if ((condition & G_IO_IN) != 0) {
     GString *string;
     GError *error = NULL;
