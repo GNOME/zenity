@@ -52,8 +52,8 @@ void zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 
   dialog = gtk_file_chooser_dialog_new (NULL, NULL,
 		  			action,
-					GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-					GTK_STOCK_OK, GTK_RESPONSE_OK,
+					_("_Cancel"), GTK_RESPONSE_CANCEL,
+					_("_OK"), GTK_RESPONSE_OK,
 					NULL);
 
   gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), 

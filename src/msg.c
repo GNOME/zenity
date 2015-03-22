@@ -40,14 +40,10 @@ zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data
 
   if (data->cancel_label) {
     gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);
-    gtk_button_set_image (GTK_BUTTON (cancel_button), 
-                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
   }
 
   if (data->ok_label) {
     gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
-    gtk_button_set_image (GTK_BUTTON (ok_button), 
-                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
   }
 }
 
@@ -119,8 +115,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (ok_button) {
     if (data->ok_label) {
       gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
-      gtk_button_set_image (GTK_BUTTON (ok_button),
-                            gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
     }
   }
 
