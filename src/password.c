@@ -38,7 +38,6 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   GtkWidget *vbox_labels;
   GtkWidget *vbox_entries;
   GtkWidget *label;
-  GtkWidget *align;
 
   zen_data = data;
 
@@ -103,11 +102,9 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                      12);
 
   if(password_data->username) {
-    align = gtk_alignment_new(0.0, 0.12, 0.0, 0.0);
     label = gtk_label_new(_("Username:"));
-    gtk_container_add(GTK_CONTAINER(align), label);
     gtk_box_pack_start(GTK_BOX(vbox_labels),
-                       align,
+                       label,
                        TRUE,
                        FALSE,
                        12);
@@ -119,12 +116,9 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                        12);
   }
 
-  align = gtk_alignment_new(0.0, 0.5, 0.0, 0.0);
   label = gtk_label_new(_("Password:"));
-  gtk_container_add(GTK_CONTAINER(align), label);
-
   gtk_box_pack_start(GTK_BOX(vbox_labels),
-                     align,
+                     label,
                      TRUE,
                      FALSE,
                      12);
