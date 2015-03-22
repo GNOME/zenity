@@ -551,8 +551,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     column_index++;
   }
 
-  gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree_view), TRUE);
-
   if (tree_data->hide_header)
     gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (tree_view), FALSE);
 
