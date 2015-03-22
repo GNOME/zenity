@@ -51,8 +51,8 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                         data->ok_label != NULL ? data->ok_label : _("_OK"),
                         GTK_RESPONSE_OK);
   
-  image = gtk_image_new_from_stock(GTK_STOCK_DIALOG_AUTHENTICATION,
-                                   GTK_ICON_SIZE_DIALOG); 
+  image = gtk_image_new_from_icon_name("dialog-password",
+                                       GTK_ICON_SIZE_DIALOG);
   gtk_dialog_set_default_response(GTK_DIALOG(dialog), 
                                   GTK_RESPONSE_OK);
   hbox = gtk_hbox_new(FALSE, 5);
