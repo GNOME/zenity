@@ -55,7 +55,7 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                                        GTK_ICON_SIZE_DIALOG);
   gtk_dialog_set_default_response(GTK_DIALOG(dialog), 
                                   GTK_RESPONSE_OK);
-  hbox = gtk_hbox_new(FALSE, 5);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
   gtk_box_pack_start(GTK_BOX(hbox),
                      image,
                      FALSE,
@@ -81,10 +81,10 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                      TRUE,
                      5);
                      
-  vbox_labels = gtk_vbox_new(FALSE, 5);
-  vbox_entries = gtk_vbox_new(FALSE, 5);
+  vbox_labels = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+  vbox_entries = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
 
-  hbox = gtk_hbox_new(FALSE, 5);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))),
                      hbox,
                      FALSE,
