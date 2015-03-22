@@ -27,12 +27,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_scale_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -42,12 +41,11 @@
             </child>
             <child>
               <object class="GtkButton" id="zenity_scale_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -133,11 +131,10 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_text_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -147,12 +144,11 @@
             </child>
             <child>
               <object class="GtkButton" id="zenity_text_close_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
                 <property name="image_position">right</property>
               </object>
               <packing>
@@ -245,12 +241,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_calendar_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -260,13 +255,12 @@
             </child>
             <child>
               <object class="GtkButton" id="zenity_calendar_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="has_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -376,12 +370,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_entry_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -391,13 +384,12 @@
             </child>
             <child>
               <object class="GtkButton" id="zenity_entry_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="has_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -480,12 +472,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_error_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -577,11 +568,10 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_forms_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -591,11 +581,10 @@
             </child>
             <child>
               <object class="GtkButton" id="zenity_forms_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -630,6 +619,12 @@
                     <property name="n_columns">2</property>
                     <property name="column_spacing">10</property>
                     <property name="row_spacing">6</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
                     <child>
                       <placeholder/>
                     </child>
@@ -725,12 +720,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_info_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -813,12 +807,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_progress_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -828,14 +821,13 @@
             </child>
             <child>
               <object class="GtkButton" id="zenity_progress_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
                 <property name="has_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1000,12 +992,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_tree_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1015,12 +1006,11 @@
             </child>
             <child>
               <object class="GtkButton" id="zenity_tree_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1110,13 +1100,12 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="zenity_warning_ok_button">
-                <property name="label">gtk-ok</property>
+                <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="has_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
