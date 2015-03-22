@@ -305,8 +305,9 @@ zenity_mid_search_func (GtkTreeModel *model, gint column,
 {
     gchar *iter_string = NULL;
     gtk_tree_model_get (model, iter, column, &iter_string, -1); 
-    return  ! g_strrstr (g_utf8_strdown(iter_string, -1), 
-                         g_utf8_strdown(key, -1)) != NULL;
+    return  ! (g_strrstr (g_utf8_strdown(iter_string, -1),
+                          g_utf8_strdown(key, -1)) != NULL);
+
 }
 
 static void
