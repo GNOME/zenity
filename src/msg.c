@@ -51,6 +51,31 @@ zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data
   }
 }
 
+static void
+zenity_label_widget_clipboard_selection(GtkWidget *widget)
+{
+  /* Workaround hotfix for suspected toolkit issue:
+     since focus change of the dialog's focussed widget (text)
+     somehow currently chooses to destroy
+     a pre-existing (read: foreign, user-initiated) X11 primary selection
+     (via gtk_label_select_region() -> ...
+     -> gtk_clipboard_set_contents()/gtk_clipboard_clear()),
+     we need to ensure
+     that the widget does have its gtk-label-select-on-focus property off,
+     in order to avoid having the label become selected automatically
+     and thereby having pre-existing clipboard content nullified.
+     Side note: this selection issue only applies to widgets
+     which have both
+                  <property name="can_focus">True</property>
+                  <property name="selectable">True</property>
+     .
+   */
+  g_object_set(gtk_widget_get_settings (widget),
+               "gtk-label-select-on-focus",
+               FALSE,
+               NULL);
+}
+
 void 
 zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 {
@@ -164,6 +189,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
     else 
       gtk_label_set_markup (GTK_LABEL (text), g_strcompress (msg_data->dialog_text));
+      zenity_label_widget_clipboard_selection(GTK_WIDGET (text));
   }
 
   if (msg_data->ellipsize)
