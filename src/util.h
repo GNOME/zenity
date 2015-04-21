@@ -21,14 +21,14 @@ GtkBuilder*     zenity_util_load_ui_file                  (const gchar    *widge
 gchar *         zenity_util_strip_newline                 (gchar          *string);
 gboolean        zenity_util_fill_file_buffer              (GtkTextBuffer  *buffer, 
                                                            const gchar    *filename);
-const gchar *   zenity_util_stock_from_filename		  (const gchar    *filename);
+const gchar *   zenity_util_icon_name_from_filename	  (const gchar    *filename);
 void		zenity_util_set_window_icon		  (GtkWidget      *widget,
 							   const gchar	  *filename,
 							   const gchar	  *default_file);
-void            zenity_util_set_window_icon_from_stock    (GtkWidget      *widget,
+void            zenity_util_set_window_icon_from_icon_name(GtkWidget      *widget,
 							   const gchar    *filename,
-                                                           const gchar    *default_stock_id);
-GdkPixbuf *	zenity_util_pixbuf_new_from_file	  (GtkWidget	  *widget,
+                                                           const gchar    *default_icon_name);
+void		zenity_util_set_window_icon_from_file	  (GtkWidget	  *widget,
 							   const gchar	  *filename);
 void		zenity_util_show_help                     (GError        **error);
 gint		zenity_util_return_exit_code 		  (ZenityExitCode value);                      

@@ -265,7 +265,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
   if (text_data->font) {
       PangoFontDescription *fontDesc = pango_font_description_from_string (text_data->font);
-      gtk_widget_modify_font (GTK_WIDGET(text_view), fontDesc);
+      gtk_widget_override_font (GTK_WIDGET(text_view), fontDesc);
   }
 
   if (text_data->uri)
@@ -286,14 +286,10 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
   if (data->ok_label) { 
     gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
-    gtk_button_set_image (GTK_BUTTON (ok_button),
-                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
   }
 
   if (data->cancel_label) {
     gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);
-    gtk_button_set_image (GTK_BUTTON (cancel_button), 
-                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
   }
 
   if (text_data->checkbox) {

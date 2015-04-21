@@ -38,7 +38,6 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   GtkWidget *vbox_labels;
   GtkWidget *vbox_entries;
   GtkWidget *label;
-  GtkWidget *align;
 
   zen_data = data;
 
@@ -53,17 +52,17 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
   }
 
   gtk_dialog_add_button(GTK_DIALOG(dialog), 
-                        data->cancel_label != NULL ? data->cancel_label : GTK_STOCK_CANCEL, 
+                        data->cancel_label != NULL ? data->cancel_label : _("_Cancel"),
                         GTK_RESPONSE_CANCEL);
   gtk_dialog_add_button(GTK_DIALOG(dialog), 
-                        data->ok_label != NULL ? data->ok_label : GTK_STOCK_OK, 
+                        data->ok_label != NULL ? data->ok_label : _("_OK"),
                         GTK_RESPONSE_OK);
   
-  image = gtk_image_new_from_stock(GTK_STOCK_DIALOG_AUTHENTICATION,
-                                   GTK_ICON_SIZE_DIALOG); 
+  image = gtk_image_new_from_icon_name("dialog-password",
+                                       GTK_ICON_SIZE_DIALOG);
   gtk_dialog_set_default_response(GTK_DIALOG(dialog), 
                                   GTK_RESPONSE_OK);
-  hbox = gtk_hbox_new(FALSE, 5);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
   gtk_box_pack_start(GTK_BOX(hbox),
                      image,
                      FALSE,
@@ -89,10 +88,10 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                      TRUE,
                      5);
                      
-  vbox_labels = gtk_vbox_new(FALSE, 5);
-  vbox_entries = gtk_vbox_new(FALSE, 5);
+  vbox_labels = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+  vbox_entries = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
 
-  hbox = gtk_hbox_new(FALSE, 5);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))),
                      hbox,
                      FALSE,
@@ -111,11 +110,9 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                      12);
 
   if(password_data->username) {
-    align = gtk_alignment_new(0.0, 0.12, 0.0, 0.0);
     label = gtk_label_new(_("Username:"));
-    gtk_container_add(GTK_CONTAINER(align), label);
     gtk_box_pack_start(GTK_BOX(vbox_labels),
-                       align,
+                       label,
                        TRUE,
                        FALSE,
                        12);
@@ -127,12 +124,9 @@ void zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data
                        12);
   }
 
-  align = gtk_alignment_new(0.0, 0.5, 0.0, 0.0);
   label = gtk_label_new(_("Password:"));
-  gtk_container_add(GTK_CONTAINER(align), label);
-
   gtk_box_pack_start(GTK_BOX(vbox_labels),
-                     align,
+                     label,
                      TRUE,
                      FALSE,
                      12);

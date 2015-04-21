@@ -327,15 +327,11 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   if (data->ok_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_progress_ok_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-    gtk_button_set_image (GTK_BUTTON (button),
-                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
   }
 
   if (data->cancel_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_progress_cancel_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-    gtk_button_set_image (GTK_BUTTON (button),
-                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
   }
 
   if (progress_data->dialog_text)

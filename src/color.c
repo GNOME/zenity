@@ -34,27 +34,21 @@ static void zenity_colorselection_dialog_response (GtkWidget *widget, int respon
 void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 {
   GtkWidget *dialog;
-  GtkWidget *colorsel;
   GtkWidget *button;
-  GdkColor color;
+  GdkRGBA color;
 
   zen_data = data;
 
-  dialog = gtk_color_selection_dialog_new (NULL);
+  dialog = gtk_color_chooser_dialog_new (data->dialog_title, NULL);
 
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_colorselection_dialog_response),
                     color_data);
 
-  if (data->dialog_title)
-    gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
-
-  colorsel = gtk_color_selection_dialog_get_color_selection (GTK_COLOR_SELECTION_DIALOG (dialog));
-
   if (color_data->color) {
-    if (gdk_color_parse (color_data->color, &color))
-      gtk_color_selection_set_current_color (GTK_COLOR_SELECTION (colorsel),
-                                             &color);
+    if (gdk_rgba_parse (&color, color_data->color)) {
+      gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (dialog), &color);
+    }
   }
 
   if (data->extra_label) {
@@ -68,24 +62,19 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
   if (data->ok_label) {
     g_object_get (G_OBJECT (dialog), "ok-button", &button, NULL);
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-    gtk_button_set_image (GTK_BUTTON (button),
-                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
     g_object_unref (G_OBJECT (button));
   }
 
   if (data->cancel_label) {
     g_object_get (G_OBJECT (dialog), "cancel-button", &button, NULL);
     gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-    gtk_button_set_image (GTK_BUTTON (button), 
-                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
     g_object_unref (G_OBJECT (button));
   }
 
   if (data->modal)
     gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
-  gtk_color_selection_set_has_palette (GTK_COLOR_SELECTION (colorsel),
-                                       color_data->show_palette);
+  g_object_set (dialog, "show-editor", !color_data->show_palette, NULL);
 
   zenity_util_show_dialog (dialog, data->attach);
 
@@ -101,15 +90,13 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 static void
 zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
-  GtkWidget *colorsel;
-  GdkColor color;
+  GdkRGBA color;
 
   switch (response) {
     case GTK_RESPONSE_OK:
-      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);      
-      colorsel = gtk_color_selection_dialog_get_color_selection (GTK_COLOR_SELECTION_DIALOG (widget));
-      gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (colorsel), &color);
-      g_print ("%s\n", gdk_color_to_string (&color));
+      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
+      gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
+      g_print ("%s\n", gdk_rgba_to_string (&color));
       break;
 
     case GTK_RESPONSE_CANCEL:

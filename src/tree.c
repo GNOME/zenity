@@ -305,8 +305,9 @@ zenity_mid_search_func (GtkTreeModel *model, gint column,
 {
     gchar *iter_string = NULL;
     gtk_tree_model_get (model, iter, column, &iter_string, -1); 
-    return  ! g_strrstr (g_utf8_strdown(iter_string, -1), 
-                         g_utf8_strdown(key, -1)) != NULL;
+    return  ! (g_strrstr (g_utf8_strdown(iter_string, -1),
+                          g_utf8_strdown(key, -1)) != NULL);
+
 }
 
 static void
@@ -407,15 +408,11 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
   if (data->ok_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_tree_ok_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-    gtk_button_set_image (GTK_BUTTON (button),
-                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
   }
 
   if (data->cancel_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_tree_cancel_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-    gtk_button_set_image (GTK_BUTTON (button),
-                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
   }
 
   text = gtk_builder_get_object (builder, "zenity_tree_text");
@@ -562,8 +559,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
     gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
     column_index++;
   }
-
-  gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree_view), TRUE);
 
   if (tree_data->hide_header)
     gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (tree_view), FALSE);

@@ -173,13 +173,12 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 {
   GtkBuilder *builder = NULL;
   GtkWidget *dialog;
-  GtkWidget *table;
+  GtkWidget *grid;
   GtkWidget *text;
   GtkWidget *button;
 
   GSList *tmp;
 
-  gint number_of_widgets = g_slist_length (forms_data->list);
   int list_count = 0;
   int combo_count = 0;
   int i = 0;
@@ -217,15 +216,11 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
   if (data->ok_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_ok_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-    gtk_button_set_image (GTK_BUTTON (button),
-                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
   }  
 
   if (data->cancel_label) {
     button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_cancel_button"));
     gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-    gtk_button_set_image (GTK_BUTTON (button),
-                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
   }
 
   text = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_text"));
@@ -233,122 +228,51 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
   if (forms_data->dialog_text)
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (forms_data->dialog_text));
   
-  table = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_table"));
-
-  gtk_table_resize (GTK_TABLE (table), number_of_widgets, 2);
+  grid = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_grid"));
 
   for (tmp = forms_data->list; tmp; tmp = tmp->next) {
     ZenityFormsValue *zenity_value = (ZenityFormsValue *) tmp->data;
     GtkWidget *label;
-    GtkWidget *align;
     
     label = gtk_label_new(zenity_value->option_value);
-    
-    align = gtk_alignment_new (0.0, 0.5, 0.0, 0.0);
-    gtk_container_add (GTK_CONTAINER (align), label);
-
-    gtk_table_attach (GTK_TABLE (table), 
-                      GTK_WIDGET (align),
-                      0,
-                      1,
-                      i,
-                      i+1,
-                      GTK_FILL,
-                      GTK_FILL,
-                      0,
-                      0);
+    gtk_widget_set_halign (label, GTK_ALIGN_START);
+    gtk_grid_attach (GTK_GRID (grid),
+                     label,
+                     0, i,
+                     1, 1);
                       
     switch(zenity_value->type)
     {
       case ZENITY_FORMS_ENTRY:
         zenity_value->forms_widget = gtk_entry_new();
-        gtk_table_attach (GTK_TABLE (table),
-                      GTK_WIDGET (zenity_value->forms_widget),
-                      1,
-                      2,
-                      i,
-                      i+1,
-                      GTK_EXPAND | GTK_FILL,
-                      GTK_EXPAND | GTK_FILL,
-                      0,
-                      0);
         break;
       case ZENITY_FORMS_PASSWORD:
         zenity_value->forms_widget = gtk_entry_new();
         gtk_entry_set_visibility(GTK_ENTRY(zenity_value->forms_widget), 
                                  FALSE);
-        gtk_table_attach (GTK_TABLE (table),
-                      GTK_WIDGET (zenity_value->forms_widget),
-                      1,
-                      2,
-                      i,
-                      i+1,
-                      GTK_EXPAND | GTK_FILL,
-                      GTK_EXPAND | GTK_FILL,
-                      0,
-                      0);
         break;
       case ZENITY_FORMS_CALENDAR:
         zenity_value->forms_widget = gtk_calendar_new();
-        gtk_alignment_set (GTK_ALIGNMENT (align), 0.0, 0.02, 0.0, 0.0);
-        align = gtk_alignment_new (0.0, 0.5, 0.0, 0.0);
-        gtk_container_add (GTK_CONTAINER (align), zenity_value->forms_widget);
-        gtk_table_attach (GTK_TABLE (table),
-                      GTK_WIDGET (align),
-                      1,
-                      2,
-                      i,
-                      i+1,
-                      GTK_FILL,
-                      GTK_FILL,
-                      0,
-                      0);
         break;
       case ZENITY_FORMS_LIST:
           zenity_value->forms_widget = zenity_forms_create_and_fill_list (forms_data, list_count,
                                                                           zenity_value->option_value);
-          gtk_alignment_set (GTK_ALIGNMENT (align), 0.0, 0.02, 0.0, 0.0);
-          gtk_table_attach (GTK_TABLE (table),
-                      GTK_WIDGET (zenity_value->forms_widget),
-                      1,
-                      2,
-                      i,
-                      i+1,
-                      GTK_EXPAND | GTK_FILL,
-                      GTK_EXPAND | GTK_FILL,
-                      0,
-                      0);
           list_count++;                                                                           
         break;
       case ZENITY_FORMS_COMBO:
           zenity_value->forms_widget = zenity_forms_create_and_fill_combo (forms_data, combo_count);
-          gtk_alignment_set (GTK_ALIGNMENT (align), 0.0, 0.02, 0.0, 0.0);
-          gtk_table_attach (GTK_TABLE (table),
-                      GTK_WIDGET (zenity_value->forms_widget),
-                      1,
-                      2,
-                      i,
-                      i+1,
-                      GTK_EXPAND | GTK_FILL,
-                      GTK_EXPAND | GTK_FILL,
-                      0,
-                      0);
           combo_count++;
         break;             
       default:
         zenity_value->forms_widget = gtk_entry_new();
-        gtk_table_attach (GTK_TABLE (table),
-                      GTK_WIDGET (zenity_value->forms_widget),
-                      1,
-                      2,
-                      i,
-                      i+1,
-                      GTK_EXPAND | GTK_FILL,
-                      GTK_EXPAND | GTK_FILL,
-                      0,
-                      0);
         break;
     }
+
+    gtk_grid_attach_next_to (GTK_GRID (grid),
+                             GTK_WIDGET (zenity_value->forms_widget),
+                             label,
+                             GTK_POS_RIGHT,
+                             1, 1);
     
     i++;
   }

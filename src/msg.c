@@ -34,22 +34,18 @@ zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data
 
 
   GtkWidget *cancel_button, *ok_button;
-
-  cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_NO, GTK_RESPONSE_CANCEL);
-  ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_YES, GTK_RESPONSE_OK);
+  
+  cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog), _("_No"), GTK_RESPONSE_CANCEL);
+  ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog), _("_Yes"), GTK_RESPONSE_OK);
 
   gtk_widget_grab_focus (msg_data->default_cancel ? cancel_button : ok_button);
 
   if (data->cancel_label) {
     gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);
-    gtk_button_set_image (GTK_BUTTON (cancel_button), 
-                          gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON));
   }
 
   if (data->ok_label) {
     gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
-    gtk_button_set_image (GTK_BUTTON (ok_button), 
-                          gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
   }
   
 
@@ -157,31 +153,29 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (ok_button) {
     if (data->ok_label) {
       gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
-      gtk_button_set_image (GTK_BUTTON (ok_button),
-                            gtk_image_new_from_stock (GTK_STOCK_OK, GTK_ICON_SIZE_BUTTON));
     }
   }
 
   switch (msg_data->mode) {
     case ZENITY_MSG_WARNING:
-      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_WARNING);
+      zenity_util_set_window_icon_from_icon_name (dialog, data->window_icon, "dialog-warning");
       break;
 
     case ZENITY_MSG_QUESTION:
-      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_QUESTION);
+      zenity_util_set_window_icon_from_icon_name (dialog, data->window_icon, "dialog-question");
       zenity_msg_construct_question_dialog (dialog, msg_data, data);
       break;
       
     case ZENITY_MSG_SWITCH:
-      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_QUESTION);
+      zenity_util_set_window_icon_from_icon_name (dialog, data->window_icon, "dialog-question");
       break;
       
     case ZENITY_MSG_ERROR:
-      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_ERROR);
+      zenity_util_set_window_icon_from_icon_name (dialog, data->window_icon, "dialog-error");
       break;
       
     case ZENITY_MSG_INFO:
-      zenity_util_set_window_icon_from_stock (dialog, data->window_icon, GTK_STOCK_DIALOG_INFO);
+      zenity_util_set_window_icon_from_icon_name (dialog, data->window_icon, "dialog-information");
       break;
   
     default:
