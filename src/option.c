@@ -872,7 +872,7 @@ static GOptionEntry question_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_question_switch,
-    N_("Supress ok and cancel buttons"),
+    N_("Suppress ok and cancel buttons"),
     NULL
   },
   { 
