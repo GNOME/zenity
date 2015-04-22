@@ -4,11 +4,6 @@
 #include <gtk/gtk.h>
 #include "zenity.h"
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#else
-typedef gint Window;
-#endif
 
 G_BEGIN_DECLS
 
@@ -34,7 +29,7 @@ void		zenity_util_show_help                     (GError        **error);
 gint		zenity_util_return_exit_code 		  (ZenityExitCode value);                      
 void            zenity_util_exit_code_with_data           (ZenityExitCode value,
                                                            ZenityData     *data);
-void            zenity_util_show_dialog                   (GtkWidget      *widget, Window parent);
+void            zenity_util_show_dialog                   (GtkWidget      *widget, guintptr parent);
 
 gboolean        zenity_util_timeout_handle                (gpointer data);
 

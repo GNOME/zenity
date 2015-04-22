@@ -39,6 +39,10 @@
 #include "util.h"
 #include "zenity.h"
 
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif
+
 #define ZENITY_OK_DEFAULT	0
 #define ZENITY_CANCEL_DEFAULT	1
 #define ZENITY_ESC_DEFAULT	1
@@ -402,7 +406,7 @@ zenity_util_make_transient (GdkWindow *window, Window parent)
 #endif /* GDK_WINDOWING_X11 */
 
 void
-zenity_util_show_dialog (GtkWidget *dialog, Window parent)
+zenity_util_show_dialog (GtkWidget *dialog, guintptr parent)
 {
   gtk_widget_realize (dialog);
 #ifdef GDK_WINDOWING_X11

@@ -47,7 +47,7 @@ static gchar   *zenity_general_ok_button;
 static gchar   *zenity_general_cancel_button;
 static gchar  **zenity_general_extra_buttons;
 static gboolean zenity_general_modal;
-static gint     zenity_general_attach;
+static guintptr zenity_general_attach;
 static gboolean zenity_general_dialog_ellipsize;
 
 /* Calendar Dialog Options */
