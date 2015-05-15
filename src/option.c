@@ -212,7 +212,7 @@ static GOptionEntry general_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_ok_button,
-    N_("Set the label of the OK button"),
+    N_("Sets the label of the Ok button"),
     N_("TEXT")
   },
   {
@@ -221,7 +221,7 @@ static GOptionEntry general_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_general_cancel_button,
-    N_("Set the label of the Cancel button"),
+    N_("Sets the label of the Cancel button"),
     N_("TEXT")
   },
   {
@@ -230,7 +230,7 @@ static GOptionEntry general_options[] = {
     0,
     G_OPTION_ARG_STRING_ARRAY,
     &zenity_general_extra_buttons,
-    N_("Add an extra button"),
+    N_("Add extra-button"),
     N_("TEXT")
   },
   {
@@ -402,7 +402,7 @@ static GOptionEntry error_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_markup,
-    N_("Do not enable Pango markup")
+    N_("Do not enable pango markup")
   },
   {
 	"ellipsize",
@@ -460,7 +460,7 @@ static GOptionEntry info_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_markup,
-    N_("Do not enable Pango markup")
+    N_("Do not enable pango markup")
   },
   {
 	"ellipsize",
@@ -545,7 +545,7 @@ static GOptionEntry file_selection_options[] = {
     0,
     G_OPTION_ARG_STRING_ARRAY,
     &zenity_file_filter,
-    N_("Set a filename filter"),
+    N_("Sets a filename filter"),
     /* Help for file-filter argument (name and patterns for file selection) */
     N_("NAME | PATTERN1 PATTERN2 ..."),
   },
@@ -588,7 +588,7 @@ static GOptionEntry list_options[] = {
     0,
     G_OPTION_ARG_NONE,
     &zenity_list_checklist,
-    N_("Use check boxes for the first column"),
+    N_("Use check boxes for first column"),
     NULL
   },
   {
@@ -597,7 +597,7 @@ static GOptionEntry list_options[] = {
     0,
     G_OPTION_ARG_NONE,
     &zenity_list_radiolist,
-    N_("Use radio buttons for the first column"),
+    N_("Use radio buttons for first column"),
     NULL
   },
   {
@@ -606,7 +606,7 @@ static GOptionEntry list_options[] = {
     0,
     G_OPTION_ARG_NONE,
     &zenity_list_imagelist,
-    N_("Use an image for the first column"),
+    N_("Use an image for first column"),
     NULL
   },
   {
@@ -661,7 +661,7 @@ static GOptionEntry list_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_list_hide_header,
-    N_("Hide the column headers"),
+    N_("Hides the column headers"),
     NULL
   },
   {
@@ -776,6 +776,7 @@ static GOptionEntry progress_options[] = {
     0,
     G_OPTION_ARG_NONE,
     &zenity_progress_auto_kill,
+    /* xgettext: no-c-format */
     N_("Kill parent process if Cancel button is pressed"),
     NULL
   },
@@ -785,6 +786,7 @@ static GOptionEntry progress_options[] = {
    0,
    G_OPTION_ARG_NONE,
    &zenity_progress_no_cancel,
+   /* xgettext: no-c-format */
    N_("Hide Cancel button"),
    NULL
   },
@@ -794,7 +796,6 @@ static GOptionEntry progress_options[] = {
     0,
     G_OPTION_ARG_NONE,
     &zenity_progress_time_remaining,
-    /* xgettext: no-c-format */
     N_("Estimate when progress will reach 100%"),
     NULL
   },
@@ -846,7 +847,7 @@ static GOptionEntry question_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_markup,
-    N_("Do not enable Pango markup")
+    N_("Do not enable pango markup")
   },
   {
     "default-cancel",
@@ -854,7 +855,7 @@ static GOptionEntry question_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_question_default_cancel,
-    N_("Give Cancel button focus by default"),
+    N_("Give cancel button focus by default"),
     NULL
   },
   {
@@ -871,7 +872,7 @@ static GOptionEntry question_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_question_switch,
-    N_("Suppress OK and Cancel buttons"),
+    N_("Suppress ok and cancel buttons"),
     NULL
   },
   { 
@@ -932,7 +933,7 @@ static GOptionEntry text_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_text_enable_html,
-    N_("Enable HTML support"),
+    N_("Enable html support"),
     NULL
   },
   {
@@ -950,7 +951,7 @@ static GOptionEntry text_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_STRING,
     &zenity_text_url,
-    N_("Set an URL instead of a file. Only works if you use --html option"),
+    N_("Sets an url instead of a file. Only works if you use --html option"),
     N_("URL")
   },
 #endif
@@ -1011,7 +1012,7 @@ static GOptionEntry warning_options[] = {
     G_OPTION_FLAG_NOALIAS,
     G_OPTION_ARG_NONE,
     &zenity_general_dialog_no_markup,
-    N_("Do not enable Pango markup")
+    N_("Do not enable pango markup")
   },
   {
 	"ellipsize",
