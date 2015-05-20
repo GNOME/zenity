@@ -2,605 +2,768 @@
 # Occitan translation of Zenity.
 # Copyright (C) 2003-2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Zenity package.
-#
-# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2006-2008.
+# 
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2006-2008, 2010.
+# Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-02 09:01+0200\n"
-"PO-Revision-Date: 2008-06-11 11:47+0200\n"
-"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
-"Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"POT-Creation-Date: 2012-05-04 19:09+0000\n"
+"PO-Revision-Date: 2015-05-17 15:29+0200\n"
+"Last-Translator: Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>\n"
+"Language-Team: Tot en òc (totenoc.eu)\n"
+"Language: oci\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Launchpad-Export-Date: 2012-08-31 07:48+0000\n"
 
-#: ../src/about.c:65
+#: ../src/about.c:64
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version.\n"
 msgstr ""
 "Aqueste programa es un logicial liure ; lo podètz tornar distribuir e/o lo "
 "modificar segon los tèrmes de la licéncia publica generala GNU, coma es "
 "publicada per la Free Software Foundation ; version 2 de la licéncia, o (se "
 "volètz) tota version seguenta.\n"
 
-#: ../src/about.c:69
+#: ../src/about.c:68
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
+"for more details.\n"
 msgstr ""
 "Aqueste programa es distribuit en esperant que vos serà util mas SENS CAP DE "
-"GARANTIA ; sens tanpauc la garantia implicita de VALOR MERCANDA o "
-"D'ADEQÜACION A UN BESONH PARTICULIER. Consultatz la licéncia publica "
-"generala GNU per mai d'entresenhas.\n"
+"GARANTIA ; sens tanpauc la garantida implicita de VALOR MERCANDA o "
+"D'ADEQÜACION A UN BESONH PARTICULAR. Consultatz la licéncia publica generala "
+"GNU per mai d'entresenhas.\n"
 
-#: ../src/about.c:73
+#: ../src/about.c:72
 msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this program; if not, write to the Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 "Deuriatz aver recebut una còpia de la licéncia GNU GPL amb Nautilus ; s'es "
 "pas lo cas, escrivètz a Free Software Foundation, Inc., 59 Temple Place, "
 "Suite 330, Boston, MA  02111-1307  USA."
 
-#: ../src/about.c:264
+#: ../src/about.c:265
 msgid "translator-credits"
-msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>"
+msgstr ""
+"Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"\n"
+"Launchpad Contributions:\n"
+"  Cédric VALMARY (Tot en òc) https://launchpad.net/~cvalmary\n"
+"  Yannig MARCHEGAY (Kokoyaya) https://launchpad.net/~yannick-marchegay"
 
-#: ../src/about.c:276
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
-msgstr "Visualizar de fenèstras a partir d'escripts shell"
+msgstr "Aficha de bóstias de dialòg a partir d'escripts shell"
 
-#: ../src/main.c:94
+#: ../src/main.c:105
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
-"Debètz balhar una mena de fenèstra. Legissètz 'zenity --help' per mai "
-"d'entresenhas\n"
+"Vos cal indicar un tipe de bóstia de dialòg. Aviar « zenity --help » per mai "
+"de detalhs.\n"
 
-#: ../src/notification.c:139
+#: ../src/notification.c:95
 #, c-format
 msgid "could not parse command from stdin\n"
-msgstr "impossible d'analizar la comanda que ven de stdin\n"
+msgstr "impossible d'analisar la comanda que ven de stdin\n"
 
-#: ../src/notification.c:252 ../src/notification.c:269
+#: ../src/notification.c:122
+#, c-format
+msgid "Could not parse message from stdin\n"
+msgstr "Impossible d'analisar lo messatge eissit de stdin\n"
+
+#: ../src/notification.c:196
 msgid "Zenity notification"
 msgstr "Notificacion de Zenity"
 
-#: ../src/scale.c:56
+#: ../src/password.c:64
+msgid "Type your password"
+msgstr "Picatz vòstre senhal"
+
+#: ../src/password.c:99
+msgid "Username:"
+msgstr "Nom d'utilizaire :"
+
+#: ../src/password.c:115
+msgid "Password:"
+msgstr "Senhal :"
+
+#: ../src/scale.c:57
 #, c-format
 msgid "Maximum value must be greater than minimum value.\n"
-msgstr ""
+msgstr "La valor maximum deu èsser superiora a la valor minimum.\n"
 
-#: ../src/scale.c:63
+#: ../src/scale.c:64
 #, c-format
 msgid "Value out of range.\n"
-msgstr ""
+msgstr "Valor en defòra dels limits.\n"
 
-#: ../src/tree.c:320
+#: ../src/tree.c:327
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr ""
+"Pas cap de títol de colomna indicat dins la bóstia de dialòg Lista.\n"
 
-#: ../src/tree.c:326
+#: ../src/tree.c:333
 #, c-format
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "Vos caldriá pas utilizar qu'un sol tipe de bóstia de dialòg Lista.\n"
 
-#: ../src/zenity.glade.h:1
-msgid "Add a new entry"
-msgstr "Apondre una dintrada novèla"
-
-#: ../src/zenity.glade.h:2
-msgid "Adjust the scale value"
-msgstr "Reglar la valor d'escala"
-
-#: ../src/zenity.glade.h:3
-msgid "All updates are complete."
-msgstr "Totas las mesas a jorn son acabadas."
-
-#: ../src/zenity.glade.h:4
-msgid "An error has occurred."
-msgstr "I a aguda una error."
-
-#: ../src/zenity.glade.h:5
-msgid "Are you sure you want to proceed?"
-msgstr ""
-
-#: ../src/zenity.glade.h:6
-msgid "C_alendar:"
-msgstr "C_alendièr :"
-
-#: ../src/zenity.glade.h:7
+#: ../src/zenity.ui.h:1
 msgid "Calendar selection"
-msgstr "Seleccion de calendièr"
+msgstr "Seleccionatz dins lo calendièr"
 
-#: ../src/zenity.glade.h:8
+#: ../src/zenity.ui.h:2
+msgid "Select a date from below."
+msgstr "Causissètz una data çaijós."
+
+#: ../src/zenity.ui.h:3
+msgid "C_alendar:"
+msgstr "_Calendièr :"
+
+#: ../src/zenity.ui.h:4
+msgid "Add a new entry"
+msgstr "Apondètz una zòna de picada novèla"
+
+#: ../src/zenity.ui.h:5
+msgid "_Enter new text:"
+msgstr "_Picatz un tèxte novèl :"
+
+#: ../src/zenity.ui.h:6
 msgid "Error"
 msgstr "Error"
 
-#: ../src/zenity.glade.h:9
+#: ../src/zenity.ui.h:7
+msgid "An error has occurred."
+msgstr "Una error s'es producha."
+
+#: ../src/zenity.ui.h:8
+msgid "<b>Forms dialog</b>"
+msgstr "<b>Bóstia de dialòg de formulari</b>"
+
+#: ../src/zenity.ui.h:9
 msgid "Information"
 msgstr "Entresenhas"
 
-#: ../src/zenity.glade.h:10
+#: ../src/zenity.ui.h:10
+msgid "All updates are complete."
+msgstr "Totas las mesas a jorn son acabadas."
+
+#: ../src/zenity.ui.h:11
 msgid "Progress"
-msgstr "Avançament"
+msgstr "Progression"
 
-#: ../src/zenity.glade.h:11
-msgid "Question"
-msgstr "Question"
-
-#: ../src/zenity.glade.h:12
+#: ../src/zenity.ui.h:12
 msgid "Running..."
 msgstr "En cors d'execucion"
 
-#: ../src/zenity.glade.h:13
-msgid "Select a date from below."
-msgstr ""
+#: ../src/zenity.ui.h:13
+msgid "Question"
+msgstr "Question"
 
-#: ../src/zenity.glade.h:14
-msgid "Select a file"
-msgstr "Seleccionar un fichièr"
+#: ../src/zenity.ui.h:14
+msgid "Are you sure you want to proceed?"
+msgstr "Sètz segur que volètz contunhar ?"
 
-#: ../src/zenity.glade.h:15
-msgid "Select items from the list"
-msgstr ""
+#: ../src/zenity.ui.h:15
+msgid "Adjust the scale value"
+msgstr "Apondètz la valor de l'escala"
 
-#: ../src/zenity.glade.h:16
-msgid "Select items from the list below."
-msgstr ""
-
-#: ../src/zenity.glade.h:17
+#: ../src/zenity.ui.h:16
 msgid "Text View"
-msgstr "Visualizacion de tèxt"
+msgstr "Vista tèxte"
 
-#: ../src/zenity.glade.h:18
+#: ../src/zenity.ui.h:17
+msgid "Select items from the list"
+msgstr "Causissètz d'objèctes dins la lista"
+
+#: ../src/zenity.ui.h:18
+msgid "Select items from the list below."
+msgstr "Causissètz d'objèctes dins la lista çaijós."
+
+#: ../src/zenity.ui.h:19
 msgid "Warning"
-msgstr "Alèrta"
+msgstr "Avertiment"
 
-#: ../src/zenity.glade.h:19
-msgid "_Enter new text:"
-msgstr "_Picatz un tèxt novèl"
-
-#: ../src/option.c:120
+#: ../src/option.c:154
 msgid "Set the dialog title"
-msgstr ""
+msgstr "Definís lo títol de la bóstia de dialòg"
 
-#: ../src/option.c:121
+#: ../src/option.c:155
 msgid "TITLE"
-msgstr "Títol"
+msgstr "TÍTOL"
 
-#: ../src/option.c:129
+#: ../src/option.c:163
 msgid "Set the window icon"
-msgstr "Definir l'icòna de la fenèstra"
+msgstr "Definís l'icòna de la fenèstra"
 
-#: ../src/option.c:130
+#: ../src/option.c:164
 msgid "ICONPATH"
-msgstr "CAMIN_DE_L'ICÒNA"
+msgstr "CAMIN_DE_LAS_ICÒNAS"
 
-#: ../src/option.c:138
+#: ../src/option.c:172
 msgid "Set the width"
-msgstr "Definir la largor"
+msgstr "Definís la largor"
 
-#: ../src/option.c:139
+#: ../src/option.c:173
 msgid "WIDTH"
 msgstr "LARGOR"
 
-#: ../src/option.c:147
+#: ../src/option.c:181
 msgid "Set the height"
-msgstr "Definir la nautor"
+msgstr "Definís la nautor"
 
-#: ../src/option.c:148
+#: ../src/option.c:182
 msgid "HEIGHT"
 msgstr "NAUTOR"
 
-#: ../src/option.c:156
+#: ../src/option.c:190
 msgid "Set dialog timeout in seconds"
-msgstr ""
+msgstr "Definís lo relambi d'expiracion de la bóstia de dialòg en segondas"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:158
+#: ../src/option.c:192
 msgid "TIMEOUT"
-msgstr ""
+msgstr "EXPIRACION"
 
-#: ../src/option.c:172
-msgid "Display calendar dialog"
-msgstr ""
+#: ../src/option.c:200
+msgid "Sets the label of the Ok button"
+msgstr "Definís l'etiqueta del boton Validar"
 
-#: ../src/option.c:181 ../src/option.c:241 ../src/option.c:284
-#: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
-#: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
-msgid "Set the dialog text"
-msgstr ""
-
-#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
-#: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
-#: ../src/option.c:429 ../src/option.c:526 ../src/option.c:559
-#: ../src/option.c:621 ../src/option.c:630 ../src/option.c:639
-#: ../src/option.c:705 ../src/option.c:738
+#: ../src/option.c:201 ../src/option.c:210 ../src/option.c:234
+#: ../src/option.c:294 ../src/option.c:303 ../src/option.c:337
+#: ../src/option.c:378 ../src/option.c:498 ../src/option.c:605
+#: ../src/option.c:640 ../src/option.c:712 ../src/option.c:771
+#: ../src/option.c:780 ../src/option.c:824 ../src/option.c:865
+#: ../src/option.c:1016
 msgid "TEXT"
-msgstr "TEXT"
+msgstr "TÈXTE"
 
-#: ../src/option.c:190
+#: ../src/option.c:209
+msgid "Sets the label of the Cancel button"
+msgstr "Definís l'etiqueta del boton Anullar"
+
+#: ../src/option.c:224
+msgid "Display calendar dialog"
+msgstr "Aficha una bóstia de dialòg calendièr"
+
+#: ../src/option.c:233 ../src/option.c:293 ../src/option.c:336
+#: ../src/option.c:377 ../src/option.c:497 ../src/option.c:639
+#: ../src/option.c:711 ../src/option.c:823 ../src/option.c:864
+#: ../src/option.c:1015
+msgid "Set the dialog text"
+msgstr "Definís lo tèxte de la bóstia de dialòg"
+
+#: ../src/option.c:242
 msgid "Set the calendar day"
-msgstr "Definir lo jorn del calendièr"
+msgstr "Definís lo jorn del calendièr"
 
-#: ../src/option.c:191
+#: ../src/option.c:243
 msgid "DAY"
 msgstr "JORN"
 
-#: ../src/option.c:199
+#: ../src/option.c:251
 msgid "Set the calendar month"
-msgstr "Definir lo mes del calendièr"
+msgstr "Definís lo mes del calendièr"
 
-#: ../src/option.c:200
+#: ../src/option.c:252
 msgid "MONTH"
 msgstr "MES"
 
-#: ../src/option.c:208
+#: ../src/option.c:260
 msgid "Set the calendar year"
-msgstr "Definir l'annada del calendièr"
+msgstr "Definís l'annada del calendièr"
 
-#: ../src/option.c:209
+#: ../src/option.c:261
 msgid "YEAR"
 msgstr "ANNADA"
 
-#: ../src/option.c:217
+#: ../src/option.c:269 ../src/option.c:1033
 msgid "Set the format for the returned date"
-msgstr ""
+msgstr "Definís lo format de la data tornada"
 
-#: ../src/option.c:218
+#: ../src/option.c:270 ../src/option.c:1034
 msgid "PATTERN"
-msgstr ""
+msgstr "MODÈL"
 
-#: ../src/option.c:232
+#: ../src/option.c:284
 msgid "Display text entry dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg de picada de tèxte"
 
-#: ../src/option.c:250
+#: ../src/option.c:302
 msgid "Set the entry text"
-msgstr ""
+msgstr "Definís lo tèxte de picada"
 
-#: ../src/option.c:259
+#: ../src/option.c:311
 msgid "Hide the entry text"
-msgstr ""
+msgstr "Amaga lo tèxte de picada"
 
-#: ../src/option.c:275
+#: ../src/option.c:327
 msgid "Display error dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg d'error"
 
-#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:647
-#: ../src/option.c:713
+#: ../src/option.c:345 ../src/option.c:386 ../src/option.c:720
+#: ../src/option.c:832
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "Desactiva lo retorn a la linha"
 
-#: ../src/option.c:308
-msgid "Display info dialog"
-msgstr ""
-
-#: ../src/option.c:341
-msgid "Display file selection dialog"
-msgstr ""
-
-#: ../src/option.c:350
-msgid "Set the filename"
-msgstr "Definir lo nom de fichièr"
-
-#: ../src/option.c:351 ../src/option.c:672
-msgid "FILENAME"
-msgstr "NOM_DE_FICHIÈR"
-
-#: ../src/option.c:359
-msgid "Allow multiple files to be selected"
-msgstr ""
+#: ../src/option.c:354 ../src/option.c:395 ../src/option.c:729
+#: ../src/option.c:841
+msgid "Do not enable pango markup"
+msgstr "Desactiva lo balisatge pango"
 
 #: ../src/option.c:368
+msgid "Display info dialog"
+msgstr "Aficha una bóstia de dialòg d'informacion"
+
+#: ../src/option.c:409
+msgid "Display file selection dialog"
+msgstr "Aficha una bóstia de dialòg de seleccion de fichièr"
+
+#: ../src/option.c:418
+msgid "Set the filename"
+msgstr "Definís lo nom del fichièr"
+
+#: ../src/option.c:419 ../src/option.c:753
+msgid "FILENAME"
+msgstr "NOM_DEL_FICHIÈR"
+
+#: ../src/option.c:427
+msgid "Allow multiple files to be selected"
+msgstr "Autoriza la seleccion de mai d'un fichièr"
+
+#: ../src/option.c:436
 msgid "Activate directory-only selection"
 msgstr "Activa pas que la seleccion dels repertòris"
 
-#: ../src/option.c:377
+#: ../src/option.c:445
 msgid "Activate save mode"
-msgstr "Activar lo mòde d'enregistrament"
+msgstr "Activa lo mòde de salvament"
 
-#: ../src/option.c:386 ../src/option.c:464
+#: ../src/option.c:454 ../src/option.c:533 ../src/option.c:1024
 msgid "Set output separator character"
-msgstr ""
+msgstr "Definís lo caractèr separador de sortida"
 
-#: ../src/option.c:387 ../src/option.c:465
+#: ../src/option.c:455 ../src/option.c:534 ../src/option.c:1025
 msgid "SEPARATOR"
 msgstr "SEPARADOR"
 
-#: ../src/option.c:395
+#: ../src/option.c:463
 msgid "Confirm file selection if filename already exists"
-msgstr ""
+msgstr "Confirma la seleccion del fichièr se le nom del fichièr existís ja"
 
-#: ../src/option.c:404
+#: ../src/option.c:472
 msgid "Sets a filename filter"
-msgstr "Definís un filtre sul nom de fichièr"
+msgstr "Definís un filtre de nom de fichièr"
 
-#: ../src/option.c:405
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:474
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr ""
+msgstr "NOM | MODÈL1 MODÈL2 ..."
 
-#: ../src/option.c:419
+#: ../src/option.c:488
 msgid "Display list dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg de lista"
 
-#: ../src/option.c:437
+#: ../src/option.c:506
 msgid "Set the column header"
-msgstr "Definir lo títol de colomna"
+msgstr "Definís l'entèst de la colomna"
 
-#: ../src/option.c:438
+#: ../src/option.c:507
 msgid "COLUMN"
 msgstr "COLOMNA"
 
-#: ../src/option.c:446
+#: ../src/option.c:515
 msgid "Use check boxes for first column"
-msgstr ""
+msgstr "Utiliza de casas de marcar per la primièra colomna"
 
-#: ../src/option.c:455
+#: ../src/option.c:524
 msgid "Use radio buttons for first column"
-msgstr ""
+msgstr "Utiliza de botons radiò per la primièra colomna"
 
-#: ../src/option.c:473
+#: ../src/option.c:542
 msgid "Allow multiple rows to be selected"
-msgstr ""
+msgstr "Autoriza la seleccion de mai d'una linha"
 
-#: ../src/option.c:482 ../src/option.c:680
+#: ../src/option.c:551 ../src/option.c:761
 msgid "Allow changes to text"
-msgstr "Autorizar las modificacions del tèxt"
+msgstr "Autoriza las modificacions del tèxte"
 
-#: ../src/option.c:491
+#: ../src/option.c:560
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
+"Estampa una colomna especifica (per defaut la primièra, « ALL » pòt èsser "
+"utilizat per estampar totas las colomnas)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:493 ../src/option.c:502
+#: ../src/option.c:562 ../src/option.c:571
 msgid "NUMBER"
-msgstr "NUMERÒ"
+msgstr "NUMÈRO"
 
-#: ../src/option.c:501
+#: ../src/option.c:570
 msgid "Hide a specific column"
-msgstr ""
+msgstr "Amaga una colomna precisa"
 
-#: ../src/option.c:516
+#: ../src/option.c:579
+msgid "Hides the column headers"
+msgstr "Amaga las entèstas de colomnas"
+
+#: ../src/option.c:595
 msgid "Display notification"
-msgstr "Visualizar la notificacion"
+msgstr "Aficha una notificacion"
 
-#: ../src/option.c:525
+#: ../src/option.c:604
 msgid "Set the notification text"
-msgstr "Definir lo tèxt de notificacion"
+msgstr "Definís lo tèxte de notificacion"
 
-#: ../src/option.c:534
+#: ../src/option.c:613
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "Escota las comandas eissidas de stdin"
 
-#: ../src/option.c:549
+#: ../src/option.c:630
 msgid "Display progress indication dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg de barra de progression"
 
-#: ../src/option.c:567
+#: ../src/option.c:648
 msgid "Set initial percentage"
-msgstr ""
+msgstr "Definís lo percentatge inicial"
 
-#: ../src/option.c:568
+#: ../src/option.c:649
 msgid "PERCENTAGE"
 msgstr "PERCENTATGE"
 
-#: ../src/option.c:576
+#: ../src/option.c:657
 msgid "Pulsate progress bar"
-msgstr ""
+msgstr "Barra de progression discontinua"
 
-#: ../src/option.c:586
+#: ../src/option.c:667
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr ""
+msgstr "Far desaparéisser la fenèstra quand 100 % es estat atench"
 
-#: ../src/option.c:596
+#: ../src/option.c:677
 #, no-c-format
-msgid "Kill parent process if cancel button is pressed"
-msgstr ""
+msgid "Kill parent process if Cancel button is pressed"
+msgstr "Tua lo processus parent se lo boton Anullar es clicat"
 
-#: ../src/option.c:611
+#: ../src/option.c:687
+#, no-c-format
+msgid "Hide Cancel button"
+msgstr "Amaga lo boton Anullar"
+
+#: ../src/option.c:702
 msgid "Display question dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg de question"
 
-#: ../src/option.c:629
-msgid "Sets the label of the Ok button"
-msgstr ""
-
-#: ../src/option.c:638
-msgid "Sets the label of the Cancel button"
-msgstr ""
-
-#: ../src/option.c:662
+#: ../src/option.c:743
 msgid "Display text information dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg de tèxte d'informacion"
 
-#: ../src/option.c:671
+#: ../src/option.c:752
 msgid "Open file"
-msgstr "Dobrir un fichièr"
+msgstr "Dobrís un fichièr"
 
-#: ../src/option.c:695
+#: ../src/option.c:770
+msgid "Set the text font"
+msgstr "Definís la poliça del tèxte"
+
+#: ../src/option.c:779
+msgid "Enable an I read and agree checkbox"
+msgstr "Activa una casa de marcarr « Ai legit e accèpti »"
+
+#: ../src/option.c:789
+msgid "Enable html support"
+msgstr "Activa la presa en carga del HTML"
+
+#: ../src/option.c:798
+msgid "Sets an url instead of a file. Only works if you use --html option"
+msgstr ""
+"Definís una URL al luòc d'un fichièr. Fonciona unicament amb l'opcion --html"
+
+#: ../src/option.c:799
+msgid "URL"
+msgstr "Adreça Internet"
+
+#: ../src/option.c:814
 msgid "Display warning dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg d'avertiment"
 
-#: ../src/option.c:728
+#: ../src/option.c:855
 msgid "Display scale dialog"
-msgstr ""
+msgstr "Aficha una bóstia de dialòg d'escala"
 
-#: ../src/option.c:746
+#: ../src/option.c:873
 msgid "Set initial value"
-msgstr ""
+msgstr "Definís la valor iniciala"
 
-#: ../src/option.c:747 ../src/option.c:756 ../src/option.c:765
-#: ../src/option.c:774
+#: ../src/option.c:874 ../src/option.c:883 ../src/option.c:892
+#: ../src/option.c:901 ../src/option.c:1082
 msgid "VALUE"
 msgstr "VALOR"
 
-#: ../src/option.c:755
+#: ../src/option.c:882
 msgid "Set minimum value"
-msgstr ""
+msgstr "Definís la valor minimala"
 
-#: ../src/option.c:764
+#: ../src/option.c:891
 msgid "Set maximum value"
-msgstr ""
+msgstr "Definís la valor maximala"
 
-#: ../src/option.c:773
+#: ../src/option.c:900
 msgid "Set step size"
-msgstr ""
+msgstr "Definís lo pas"
 
-#: ../src/option.c:782
+#: ../src/option.c:909
 msgid "Print partial values"
-msgstr ""
+msgstr "Aficha las valors intermediàrias"
 
-#: ../src/option.c:791
+#: ../src/option.c:918
 msgid "Hide value"
-msgstr "Amagar la valor"
+msgstr "Amaga la valor"
 
-#: ../src/option.c:806
+#: ../src/option.c:933
+msgid "Display forms dialog"
+msgstr "Aficha una bóstia de dialòg de formulari"
+
+#: ../src/option.c:942
+msgid "Add a new Entry in forms dialog"
+msgstr ""
+"Apond una novèla zòna de picada dins la bóstia de dialòg de formulari"
+
+#: ../src/option.c:943 ../src/option.c:952
+msgid "Field name"
+msgstr "Nom del camp"
+
+#: ../src/option.c:951
+msgid "Add a new Password Entry in forms dialog"
+msgstr ""
+"Apond una novèla zòna de picada de senhal dins la bóstia de dialòg de "
+"formulari"
+
+#: ../src/option.c:960
+msgid "Add a new Calendar in forms dialog"
+msgstr "Apond un calendièr novèl dins la bóstia de dialòg de formulari"
+
+#: ../src/option.c:961
+msgid "Calendar field name"
+msgstr "Nom del camp calendièr"
+
+#: ../src/option.c:969
+msgid "Add a new List in forms dialog"
+msgstr "Apond una novèla lista dins la bóstia de dialòg de formulari"
+
+#: ../src/option.c:970
+msgid "List field and header name"
+msgstr "Camp de lista e nom d'entèsta"
+
+#: ../src/option.c:978
+msgid "List of values for List"
+msgstr "Lista de las valors de la lista"
+
+#: ../src/option.c:979 ../src/option.c:988
+msgid "List of values separated by |"
+msgstr "Lista de las valors separadas per |"
+
+#: ../src/option.c:987
+msgid "List of values for columns"
+msgstr "Lista de las valors per las colomnas"
+
+#: ../src/option.c:1006
+msgid "Show the columns header"
+msgstr "Aficha las entèstas de las colomnas"
+
+#: ../src/option.c:1048
+msgid "Display password dialog"
+msgstr "Aficha una bóstia de dialòg de senhal"
+
+#: ../src/option.c:1057
+msgid "Display the username option"
+msgstr "Aficha l'opcion del nom d'utilizaire"
+
+#: ../src/option.c:1072
+msgid "Display color selection dialog"
+msgstr "Lo títol de la bóstia de dialòg de seleccion de color"
+
+#: ../src/option.c:1081
+msgid "Set the color"
+msgstr "Definir la color"
+
+#: ../src/option.c:1090
+msgid "Show the palette"
+msgstr "Visualizar la paleta"
+
+#: ../src/option.c:1105
 msgid "About zenity"
 msgstr "A prepaus de zenity"
 
-#: ../src/option.c:815
+#: ../src/option.c:1114
 msgid "Print version"
-msgstr "Visualizar la version"
+msgstr "Aficha la version"
 
-#: ../src/option.c:1470
+#: ../src/option.c:1988
 msgid "General options"
 msgstr "Opcions generalas"
 
-#: ../src/option.c:1471
+#: ../src/option.c:1989
 msgid "Show general options"
-msgstr "Visualizar las opcions generalas"
+msgstr "Aficha las opcions generalas"
 
-#: ../src/option.c:1481
+#: ../src/option.c:1999
 msgid "Calendar options"
 msgstr "Opcions del calendièr"
 
-#: ../src/option.c:1482
+#: ../src/option.c:2000
 msgid "Show calendar options"
-msgstr "Visualizar las opcions de calendièr"
+msgstr "Aficha las opcions del calendièr"
 
-#: ../src/option.c:1492
+#: ../src/option.c:2010
 msgid "Text entry options"
-msgstr ""
+msgstr "Opcions de picada de tèxte"
 
-#: ../src/option.c:1493
+#: ../src/option.c:2011
 msgid "Show text entry options"
-msgstr ""
+msgstr "Aficha las opcions de picada de tèxte"
 
-#: ../src/option.c:1503
+#: ../src/option.c:2021
 msgid "Error options"
-msgstr "Opcion d'error"
+msgstr "Opcions d'errors"
 
-#: ../src/option.c:1504
+#: ../src/option.c:2022
 msgid "Show error options"
-msgstr "Visualizar las opcions de las errors"
+msgstr "Aficha las opcions d'errors"
 
-#: ../src/option.c:1514
+#: ../src/option.c:2032
 msgid "Info options"
-msgstr ""
+msgstr "Opcions d'informacion"
 
-#: ../src/option.c:1515
+#: ../src/option.c:2033
 msgid "Show info options"
-msgstr ""
+msgstr "Aficha las opcions d'informacion"
 
-#: ../src/option.c:1525
+#: ../src/option.c:2043
 msgid "File selection options"
-msgstr ""
+msgstr "Opcions de seleccion de fichièrs"
 
-#: ../src/option.c:1526
+#: ../src/option.c:2044
 msgid "Show file selection options"
-msgstr ""
+msgstr "Aficha las opcions de seleccion de fichièrs"
 
-#: ../src/option.c:1536
+#: ../src/option.c:2054
 msgid "List options"
-msgstr "Opcions de tièra"
+msgstr "Opcions de lista"
 
-#: ../src/option.c:1537
+#: ../src/option.c:2055
 msgid "Show list options"
-msgstr "Visualizar las opcions de tièra"
+msgstr "Aficha las opcions de lista"
 
-#: ../src/option.c:1547
+#: ../src/option.c:2066
 msgid "Notification icon options"
 msgstr "Opcions de l'icòna de notificacion"
 
-#: ../src/option.c:1548
+#: ../src/option.c:2067
 msgid "Show notification icon options"
-msgstr ""
+msgstr "Aficha las opcions de l'icòna de notificacion"
 
-#: ../src/option.c:1558
+#: ../src/option.c:2078
 msgid "Progress options"
-msgstr ""
+msgstr "Opcions de barra de progression"
 
-#: ../src/option.c:1559
+#: ../src/option.c:2079
 msgid "Show progress options"
-msgstr ""
+msgstr "Aficha las opcions de barra de progression"
 
-#: ../src/option.c:1569
+#: ../src/option.c:2089
 msgid "Question options"
-msgstr ""
+msgstr "Opcions de question"
 
-#: ../src/option.c:1570
+#: ../src/option.c:2090
 msgid "Show question options"
-msgstr ""
+msgstr "Aficha las opcions de question"
 
-#: ../src/option.c:1580
+#: ../src/option.c:2100
 msgid "Warning options"
-msgstr "Opcions d'alèrta"
+msgstr "Opcions d'avertiment"
 
-#: ../src/option.c:1581
+#: ../src/option.c:2101
 msgid "Show warning options"
-msgstr "Visualizar las opcions d'alèrta"
+msgstr "Aficha las opcions d'avertiment"
 
-#: ../src/option.c:1591
+#: ../src/option.c:2111
 msgid "Scale options"
-msgstr "Opcions d'escala"
+msgstr "Opcions de l'escala"
 
-#: ../src/option.c:1592
+#: ../src/option.c:2112
 msgid "Show scale options"
-msgstr "Visualizar las opcions d'escala"
+msgstr "Aficha las opcions de l'escala"
 
-#: ../src/option.c:1602
+#: ../src/option.c:2122
 msgid "Text information options"
-msgstr ""
+msgstr "Opcions del tèxte d'informacion"
 
-#: ../src/option.c:1603
+#: ../src/option.c:2123
 msgid "Show text information options"
-msgstr ""
+msgstr "Aficha las opcions del tèxte d'informacion"
 
-#: ../src/option.c:1613
+#: ../src/option.c:2133
+msgid "Color selection options"
+msgstr "Opcions de color de seleccion"
+
+#: ../src/option.c:2134
+msgid "Show color selection options"
+msgstr "Visualizar las opcions de color de seleccion"
+
+#: ../src/option.c:2144
+msgid "Password dialog options"
+msgstr "Opcions de la bóstia de dialòg de senhal"
+
+#: ../src/option.c:2145
+msgid "Show password dialog options"
+msgstr "Aficha las opcions de la bóstia de dialòg de senhal"
+
+#: ../src/option.c:2155
+msgid "Forms dialog options"
+msgstr "Opcions de la bóstia de dialòg de formulari"
+
+#: ../src/option.c:2156
+msgid "Show forms dialog options"
+msgstr "Aficha las opcions de la bóstia de dialòg de formulari"
+
+#: ../src/option.c:2166
 msgid "Miscellaneous options"
 msgstr "Opcions divèrsas"
 
-#: ../src/option.c:1614
+#: ../src/option.c:2167
 msgid "Show miscellaneous options"
-msgstr ""
+msgstr "Aficha las opcions divèrsas"
 
-#: ../src/option.c:1639
+#: ../src/option.c:2192
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
+"Aquesta opcion es pas disponibla. Consultatz --help per totas las "
+"utilizacions possiblas.\n"
 
-#: ../src/option.c:1643
+#: ../src/option.c:2196
 #, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr ""
+msgstr "--%s es pas pres en carga per aquesta bóstia de dialòg\n"
 
-#: ../src/option.c:1647
+#: ../src/option.c:2200
 #, c-format
 msgid "Two or more dialog options specified\n"
-msgstr ""
+msgstr "Doas opcions de bóstia de dialòg o mai son indicadas\n"
