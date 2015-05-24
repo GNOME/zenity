@@ -28,7 +28,7 @@
 #include "util.h"
 
 #ifdef HAVE_WEBKITGTK
-#include <webkit/webkit.h>
+#include <webkit2/webkit2.h>
 #endif
 
 static ZenityTextData	*zen_text_data;
@@ -40,12 +40,9 @@ static void zenity_text_toggle_button (GtkToggleButton *button, gpointer data);
 static void
 zenity_configure_webkit (WebKitWebView *web_view)
 {
-  WebKitWebSettings *settings;
+  WebKitSettings *settings;
   settings = webkit_web_view_get_settings(web_view);
-  g_object_set(G_OBJECT(settings), "enable-scripts",     FALSE, NULL);
   g_object_set(G_OBJECT(settings), "auto-load-images",   TRUE, NULL);
-  g_object_set(G_OBJECT(settings), "auto-resize-window", TRUE, NULL);
-  g_object_set(G_OBJECT(settings), "auto-shrink-images", TRUE, NULL);
   /*
     Stick to the defaults
     "cursive-font-family"      gchar*                : Read / Write / Construct
@@ -56,35 +53,21 @@ zenity_configure_webkit (WebKitWebView *web_view)
     "editing-behavior"         WebKitEditingBehavior : Read / Write / Construct
   */
   g_object_set(G_OBJECT(settings), "enable-caret-browsing",       FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-default-context-menu", FALSE, NULL);
   g_object_set(G_OBJECT(settings), "enable-developer-extras",     FALSE, NULL);
-  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-dns-prefetching",      FALSE, NULL);*/
-  g_object_set(G_OBJECT(settings), "enable-dom-paste",            FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-file-access-from-file-uris", TRUE, NULL);
-  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-frame-flattening",     FALSE, NULL);*/
-  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-fullscreen",           FALSE, NULL);*/
+  g_object_set(G_OBJECT(settings), "enable-fullscreen",           FALSE, NULL);
   g_object_set(G_OBJECT(settings), "enable-html5-database",       FALSE, NULL);
   g_object_set(G_OBJECT(settings), "enable-html5-local-storage",  FALSE, NULL);
-  /* unexisting property? g_object_set(G_OBJECT(settings), "enable-hyperlink-auditing",   FALSE, NULL);*/
-  g_object_set(G_OBJECT(settings), "enable-java-applet",          FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-java",                 FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-javascript",           FALSE, NULL);
   g_object_set(G_OBJECT(settings), "enable-offline-web-application-cache", FALSE, NULL);
   g_object_set(G_OBJECT(settings), "enable-page-cache",           FALSE, NULL);
   g_object_set(G_OBJECT(settings), "enable-plugins",              FALSE, NULL);
   g_object_set(G_OBJECT(settings), "enable-private-browsing",     TRUE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-scripts",              FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-site-specific-quirks", FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-spatial-navigation",   FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-spell-checking",       FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-universal-access-from-file-uris", FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "enable-xss-auditor",          TRUE, NULL);
   /*
     Stick to defaults
     "enforce-96-dpi"           gboolean              : Read / Write / Construct
     "fantasy-font-family"      gchar*                : Read / Write / Construct
   */
-  g_object_set(G_OBJECT(settings), "javascript-can-access-clipboard",           FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "javascript-can-open-windows-automatically", FALSE, NULL);
-  g_object_set(G_OBJECT(settings), "javascript-can-open-windows-automatically", FALSE, NULL);
   /*
     Stick to defaults
     "minimum-font-size"        gint                  : Read / Write / Construct
@@ -96,7 +79,7 @@ zenity_configure_webkit (WebKitWebView *web_view)
     "serif-font-family"        gchar*                : Read / Write / Construct
     "spell-checking-languages" gchar*                : Read / Write / Construct
   */
-  g_object_set(G_OBJECT(settings), "tab-key-cycles-through-elements", FALSE, NULL);
+  g_object_set(G_OBJECT(settings), "enable-tabs-to-links", FALSE, NULL);
   g_object_set(G_OBJECT(settings), "user-agent",
                "Zenity with WebKit (KHTML, like Gecko) support", NULL);
   /*
@@ -107,29 +90,32 @@ zenity_configure_webkit (WebKitWebView *web_view)
 }
 
 static gboolean
-zenity_text_webview_decision_request (WebKitWebView             *webkitwebview,
-                                      WebKitWebFrame            *frame,
-                                      WebKitNetworkRequest      *request,
-                                      WebKitWebNavigationAction *navigation_action,
-                                      WebKitWebPolicyDecision   *policy_decision,
-                                      gpointer                   user_data)
+zenity_text_webview_decision_request (WebKitWebView *web_view,
+                                      WebKitPolicyDecision *decision,
+                                      WebKitPolicyDecisionType type)
 {
-  webkit_web_policy_decision_ignore (policy_decision);
-  if (!zen_text_data->no_interaction &&
-      webkit_web_navigation_action_get_reason (navigation_action) == WEBKIT_WEB_NAVIGATION_REASON_LINK_CLICKED) {
-    g_app_info_launch_default_for_uri (webkit_web_navigation_action_get_original_uri(navigation_action),
-                                       NULL, NULL);
+  if (type == WEBKIT_POLICY_DECISION_TYPE_NAVIGATION_ACTION) {
+    WebKitNavigationPolicyDecision *navigation_decision = WEBKIT_NAVIGATION_POLICY_DECISION (decision);
+    WebKitNavigationAction *navigation_action = webkit_navigation_policy_decision_get_navigation_action(navigation_decision);
+    webkit_policy_decision_ignore (decision);
+    if (!zen_text_data->no_interaction &&
+        webkit_navigation_action_get_navigation_type (navigation_action) == WEBKIT_NAVIGATION_TYPE_LINK_CLICKED) {
+      WebKitURIRequest *request = webkit_navigation_action_get_request(navigation_action);
+      g_app_info_launch_default_for_uri (webkit_uri_request_get_uri(request), NULL, NULL);
+    }
   }
   return TRUE;
 }
 
 static void
-zenity_text_webview_load_finished (WebKitWebView  *webkitwebview,
-                                   WebKitWebFrame *frame,
-                                   gpointer        user_data)
+zenity_text_webview_load_changed (WebKitWebView  *webkitwebview,
+                                  WebKitLoadEvent event,
+                                  gpointer        user_data)
 {
-  g_signal_connect (G_OBJECT (webkitwebview), "navigation-policy-decision-requested",
-                    G_CALLBACK (zenity_text_webview_decision_request), NULL);
+  if (event == WEBKIT_LOAD_FINISHED) {
+    g_signal_connect (G_OBJECT (webkitwebview), "decide-policy",
+                      G_CALLBACK (zenity_text_webview_decision_request), NULL);
+  }
 }
 
 #endif
@@ -337,7 +323,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
       gtk_text_buffer_get_start_iter (text_buffer, &start_iter);
       gtk_text_buffer_get_end_iter (text_buffer, &end_iter);
       content = gtk_text_buffer_get_text (text_buffer, &start_iter, &end_iter, TRUE);
-      webkit_web_view_load_string (WEBKIT_WEB_VIEW(web_kit), content, "text/html", "UTF-8", dirname_uri);
+      webkit_web_view_load_html (WEBKIT_WEB_VIEW(web_kit), content, dirname_uri);
       g_free (dirname_uri);
       g_free (content);
     }
@@ -345,8 +331,8 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
     // We don't want user to click on links and navigate to another page.
     // So, when the page finishes loading, we take handle of the requests.
 
-    g_signal_connect (G_OBJECT (web_kit), "document-load-finished",
-                      G_CALLBACK (zenity_text_webview_load_finished), NULL); 
+    g_signal_connect (G_OBJECT (web_kit), "load-changed",
+                      G_CALLBACK (zenity_text_webview_load_changed), NULL);
 
     gtk_widget_destroy (GTK_WIDGET (text_view));
     gtk_container_add (GTK_CONTAINER(scrolled_window), web_kit);

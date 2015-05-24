@@ -80,7 +80,7 @@ fi
 # webkit check
 # *******************************
 
-WEBKITGTK_REQUIRED=1.4.0
+WEBKITGTK_REQUIRED=2.8.1
 
 AC_ARG_ENABLE([webkitgtk],
               [AS_HELP_STRING([--enable-webkitgtk],
@@ -89,7 +89,7 @@ AC_ARG_ENABLE([webkitgtk],
               [enable_webkitgtk=yes])
 
 if test x$enable_webkitgtk = xyes; then
-        PKG_CHECK_MODULES([WEBKIT], [webkitgtk-3.0 >= $WEBKITGTK_REQUIRED],
+        PKG_CHECK_MODULES([WEBKIT], [webkit2gtk-4.0 >= $WEBKITGTK_REQUIRED],
                           [HAVE_WEBKITGTK="yes"],[HAVE_WEBKITGTK="no"])
         AC_SUBST([WEBKIT_CFLAGS])
         AC_SUBST([WEBKIT_LIBS])
