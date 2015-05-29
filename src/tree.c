@@ -210,7 +210,7 @@ zenity_tree_handle_stdin (GIOChannel  *channel,
         GtkWidget *scrolled_window;
         GtkRequisition rectangle;
 
-        gtk_widget_size_request (GTK_WIDGET (tree_view), &rectangle);
+        gtk_widget_get_preferred_size (GTK_WIDGET (tree_view), &rectangle, NULL);
         scrolled_window = GTK_WIDGET (gtk_builder_get_object (builder,
 							 "zenity_tree_window"));
         gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
