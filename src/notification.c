@@ -342,9 +342,11 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
                                     NULL);
 
     /* set the notification hints for the displayed notification */
-    notification_hints = zenity_notification_parse_hints_array (notification_data->notification_hints);
-    zenity_notification_set_hints(notification, notification_hints);
-    g_hash_table_unref (notification_hints);
+    if (notification_data->notification_hints != NULL) {
+      notification_hints = zenity_notification_parse_hints_array (notification_data->notification_hints);
+      zenity_notification_set_hints(notification, notification_hints);
+      g_hash_table_unref (notification_hints);
+    }
 
     /* Show icon and wait */
     error = NULL;
