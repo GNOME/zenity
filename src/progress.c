@@ -292,6 +292,8 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
   dialog = GTK_WIDGET (gtk_builder_get_object (builder,
                                                "zenity_progress_dialog"));
 
+  progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
+
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (zenity_progress_dialog_response), data);
 
@@ -336,8 +338,6 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
   if (progress_data->dialog_text)
     gtk_label_set_markup (GTK_LABEL (text), g_strcompress (progress_data->dialog_text));
-
-  progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
 
   if (progress_data->percentage > -1)
     gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 
