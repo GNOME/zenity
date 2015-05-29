@@ -323,6 +323,7 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 
   if (notification_data->listen) {
     zenity_notification_listen_on_stdin (data);
+    gtk_main();
   } else {
     if (notification_data->notification_text == NULL) {
       exit (1);
@@ -362,9 +363,8 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
 
   if (data->timeout_delay > 0) {
     g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, NULL);
+    gtk_main();
   }
-
-  gtk_main ();
 }
 
 #endif
