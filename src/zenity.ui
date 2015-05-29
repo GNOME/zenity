@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.18.1 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <object class="GtkAdjustment" id="adjustment1">
@@ -72,9 +72,9 @@
               <object class="GtkLabel" id="zenity_scale_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="ypad">4</property>
                 <property name="label" translatable="yes">Adjust the scale value</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -151,6 +151,7 @@
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="image_position">right</property>
+                <accelerator key="Return" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -171,6 +172,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
+            <property name="orientation">vertical</property>
             <child>
               <object class="GtkScrolledWindow" id="zenity_text_scrolled_window">
                 <property name="visible">True</property>
@@ -293,9 +295,9 @@
                   <object class="GtkLabel" id="zenity_calendar_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
                     <property name="label" translatable="yes">Select a date from below.</property>
                     <property name="wrap">True</property>
+                    <property name="xalign">0</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -314,10 +316,10 @@
               <object class="GtkLabel" id="zenity_calendar_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">C_alendar:</property>
                 <property name="use_underline">True</property>
                 <property name="mnemonic_widget">zenity_calendar</property>
+                <property name="xalign">0</property>
                 <accessibility>
                   <relation type="label-for" target="zenity_calendar"/>
                 </accessibility>
@@ -422,9 +424,9 @@
                   <object class="GtkLabel" id="zenity_entry_text">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
                     <property name="label" translatable="yes">_Enter new text:</property>
                     <property name="use_underline">True</property>
+                    <property name="xalign">0</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -524,10 +526,10 @@
                   <object class="GtkLabel" id="zenity_error_text">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="yalign">0</property>
                     <property name="label" translatable="yes">An error has occurred.</property>
                     <property name="wrap">True</property>
                     <property name="selectable">True</property>
+                    <property name="yalign">0</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -618,6 +620,33 @@
                 <property name="margin_bottom">6</property>
                 <property name="row_spacing">6</property>
                 <property name="column_spacing">10</property>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
               </object>
             </child>
             <child type="label">
@@ -707,10 +736,10 @@
               <object class="GtkLabel" id="zenity_info_text">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="yalign">0</property>
                 <property name="label" translatable="yes">All updates are complete.</property>
                 <property name="wrap">True</property>
                 <property name="selectable">True</property>
+                <property name="yalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -797,9 +826,9 @@
               <object class="GtkLabel" id="zenity_progress_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">Running...</property>
                 <property name="wrap">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -895,10 +924,10 @@
               <object class="GtkLabel" id="zenity_question_text">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="yalign">0</property>
                 <property name="label" translatable="yes">Are you sure you want to proceed?</property>
                 <property name="wrap">True</property>
                 <property name="selectable">True</property>
+                <property name="yalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -981,8 +1010,8 @@
               <object class="GtkLabel" id="zenity_tree_text">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">Select items from the list below.</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -995,7 +1024,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
-                <property name="expand">True</property>
                 <child>
                   <object class="GtkTreeView" id="zenity_tree_view">
                     <property name="visible">True</property>
@@ -1092,10 +1120,10 @@
               <object class="GtkLabel" id="zenity_warning_text">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="yalign">0</property>
                 <property name="label" translatable="yes">Are you sure you want to proceed?</property>
                 <property name="wrap">True</property>
                 <property name="selectable">True</property>
+                <property name="yalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
