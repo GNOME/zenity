@@ -315,6 +315,7 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
   GError *error;
   NotifyNotification *notification;
   GHashTable *notification_hints;
+  gchar **message;
 
   /* create the notification widget */
   if (!notify_is_initted ()) {
@@ -328,8 +329,16 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
     if (notification_data->notification_text == NULL) {
       exit (1);
     }
+    
+    message = g_strsplit (g_strcompress (notification_data->notification_text), "\n", 2);
+    if (*message == NULL) {
+      g_printerr (_("Could not parse message\n"));
+      exit (1);
+    }
 
-    notification = notify_notification_new (notification_data->notification_text, NULL, data->window_icon);
+    notification = notify_notification_new (message[0], /* title */
+                                            message[1], /* summary */
+                                            data->window_icon);
     if (notification == NULL) {
       exit (1);
     }
