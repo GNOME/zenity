@@ -40,6 +40,25 @@
 static char *icon_file;
 static GHashTable *notification_hints;
 
+static NotifyNotification *
+zenity_notification_new(gchar *message, gchar *icon_file)
+{
+  NotifyNotification *notif;
+  gchar **text;
+
+  text = g_strsplit (g_strcompress (message), "\n", 2);
+  if (*text == NULL) {
+    g_printerr (_("Could not parse message\n"));
+	return NULL;
+  }
+	
+  notif = notify_notification_new (text[0], /* title */
+                                   text[1], /* summary */
+                                   icon_file);
+  g_strfreev (text);
+  return notif;
+}
+
 static void
 on_notification_default_action (NotifyNotification *n,
                                 const char         *action,
@@ -229,24 +248,11 @@ zenity_notification_handle_stdin (GIOChannel *channel,
           g_warning ("Invalid UTF-8 in input!");
         } else {
           NotifyNotification *notif;
-          gchar **message;
           error = NULL;
 
-          /* message[1] (the summary) will be NULL in case there's
-           * no \n in the string. In which case only the title is
-           * defined */
-          message = g_strsplit (g_strcompress (value), "\n", 2);
-
-          if (*message == NULL) {
-            g_printerr (_("Could not parse message from stdin\n"));
-            continue;
-          }
-
-          notif = notify_notification_new (message[0] /* title */,
-                                           message[1] /* summary */,
-                                           icon_file);
-
-          g_strfreev (message);
+          notif = zenity_notification_new (value, icon_file);
+          if (notif == NULL)
+			continue;
 
           zenity_notification_set_hints (notif, notification_hints);
 
@@ -264,10 +270,9 @@ zenity_notification_handle_stdin (GIOChannel *channel,
           g_warning ("Invalid UTF-8 in input!");
         } else {
           NotifyNotification *notif;
-
-          notif = notify_notification_new (value,
-                                           NULL,
-                                           icon_file);
+          notif = zenity_notification_new (value, icon_file);
+		  if (notif == NULL)
+            continue;
 
           zenity_notification_set_hints (notif, notification_hints);
 
@@ -315,7 +320,6 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
   GError *error;
   NotifyNotification *notification;
   GHashTable *notification_hints;
-  gchar **message;
 
   /* create the notification widget */
   if (!notify_is_initted ()) {
@@ -329,16 +333,10 @@ zenity_notification (ZenityData *data, ZenityNotificationData *notification_data
     if (notification_data->notification_text == NULL) {
       exit (1);
     }
-    
-    message = g_strsplit (g_strcompress (notification_data->notification_text), "\n", 2);
-    if (*message == NULL) {
-      g_printerr (_("Could not parse message\n"));
-      exit (1);
-    }
 
-    notification = notify_notification_new (message[0], /* title */
-                                            message[1], /* summary */
+    notification = zenity_notification_new (notification_data->notification_text,
                                             data->window_icon);
+
     if (notification == NULL) {
       exit (1);
     }
