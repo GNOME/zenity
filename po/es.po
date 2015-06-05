@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: zenity.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-05-26 14:06+0000\n"
-"PO-Revision-Date: 2015-05-26 19:20+0200\n"
+"POT-Creation-Date: 2015-06-05 00:13+0000\n"
+"PO-Revision-Date: 2015-06-05 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -79,7 +79,13 @@ msgstr ""
 "Debe especificar un tipo de diálogo. Vea «zenity --help» para obtener más "
 "información\n"
 
-#: ../src/notification.c:121
+#: ../src/notification.c:51
+#, c-format
+#| msgid "Could not parse message from stdin\n"
+msgid "Could not parse message\n"
+msgstr "No se pudo analizar el mensaje\n"
+
+#: ../src/notification.c:140
 #, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
@@ -89,28 +95,23 @@ msgstr ""
 "Los valores soportados son «true» o «false».\n"
 
 #. (iibiiay)
-#: ../src/notification.c:137
+#: ../src/notification.c:156
 #, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Opción no válida. Omitiendo.\n"
 
 #. unknown hints
-#: ../src/notification.c:154
+#: ../src/notification.c:173
 #, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Nombre de opción desconocido. Omitiendo.\n"
 
-#: ../src/notification.c:209
+#: ../src/notification.c:228
 #, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "No se pudo analizar el comando desde stdin\n"
 
-#: ../src/notification.c:241
-#, c-format
-msgid "Could not parse message from stdin\n"
-msgstr "No se pudo analizar el mensaje de stdin\n"
-
-#: ../src/notification.c:321
+#: ../src/notification.c:326
 msgid "Zenity notification"
 msgstr "Notificación de Zenity"
 
@@ -202,7 +203,6 @@ msgid "TIMEOUT"
 msgstr "TIEMPO DE EXPIRACIÓN"
 
 #: ../src/option.c:215
-#| msgid "Sets the label of the Ok button"
 msgid "Set the label of the OK button"
 msgstr "Establece la etiqueta del botón Aceptar"
 
@@ -216,12 +216,10 @@ msgid "TEXT"
 msgstr "TEXTO"
 
 #: ../src/option.c:224
-#| msgid "Sets the label of the Cancel button"
 msgid "Set the label of the Cancel button"
 msgstr "Establece la etiqueta del botón Cancelar"
 
 #: ../src/option.c:233
-#| msgid "Hide Cancel button"
 msgid "Add an extra button"
 msgstr "Añadir un botón adicional"
 
@@ -313,7 +311,6 @@ msgstr "No activar el ajuste de texto"
 
 #: ../src/option.c:405 ../src/option.c:463 ../src/option.c:849
 #: ../src/option.c:1014
-#| msgid "Do not enable pango markup"
 msgid "Do not enable Pango markup"
 msgstr "No activar el marcado de Pango"
 
@@ -367,7 +364,6 @@ msgid "Confirm file selection if filename already exists"
 msgstr "Confirmar selección de archivos si el nombre ya existe"
 
 #: ../src/option.c:548
-#| msgid "Sets a filename filter"
 msgid "Set a filename filter"
 msgstr "Establece un filtro por el nombre de archivo"
 
@@ -389,17 +385,14 @@ msgid "COLUMN"
 msgstr "COLUMNA"
 
 #: ../src/option.c:591
-#| msgid "Use check boxes for first column"
 msgid "Use check boxes for the first column"
 msgstr "Usar casillas de verificación para la primera columna"
 
 #: ../src/option.c:600
-#| msgid "Use radio buttons for first column"
 msgid "Use radio buttons for the first column"
 msgstr "Usar botones de radio para la primera columna"
 
 #: ../src/option.c:609
-#| msgid "Use an image for first column"
 msgid "Use an image for the first column"
 msgstr "Usar una imagen para la primera columna"
 
@@ -429,7 +422,6 @@ msgid "Hide a specific column"
 msgstr "Ocultar una columna específica"
 
 #: ../src/option.c:664
-#| msgid "Hides the column headers"
 msgid "Hide the column headers"
 msgstr "Ocultar las cabeceras de la columna"
 
@@ -496,12 +488,10 @@ msgid "Display question dialog"
 msgstr "Mostrar el diálogo de pregunta"
 
 #: ../src/option.c:857
-#| msgid "Give cancel button focus by default"
 msgid "Give Cancel button focus by default"
 msgstr "Dar el foco al botón de cancelar de manera predeterminada"
 
 #: ../src/option.c:874
-#| msgid "Hide Cancel button"
 msgid "Suppress OK and Cancel buttons"
 msgstr "Eliminar los botones «Aceptar» y «Cancelar»"
 
@@ -522,7 +512,6 @@ msgid "Enable an I read and agree checkbox"
 msgstr "Activa una casilla «He leído y acepto»"
 
 #: ../src/option.c:935
-#| msgid "Enable html support"
 msgid "Enable HTML support"
 msgstr "Activar soporte de HTML"
 
@@ -535,7 +524,6 @@ msgstr ""
 "la opción «--html»"
 
 #: ../src/option.c:953
-#| msgid "Sets an url instead of a file. Only works if you use --html option"
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "Configura un URL en lugar de un archivo. Sólo funciona si usa la opción «--"
