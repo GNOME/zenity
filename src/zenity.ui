@@ -202,7 +202,6 @@
               <object class="GtkCheckButton" id="zenity_text_checkbox">
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -560,6 +559,7 @@
   <object class="GtkDialog" id="zenity_forms_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
+    <property name="window_position">center</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox12">
