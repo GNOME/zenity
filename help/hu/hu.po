@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the zenity package.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2012, 2014.
-# Balázs Úr <urbalazs@gmail.com>, 2014.
+# Balázs Úr <urbalazs@gmail.com>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity_help master\n"
-"POT-Creation-Date: 2014-07-21 23:00+0000\n"
-"PO-Revision-Date: 2014-07-22 10:48+0200\n"
+"POT-Creation-Date: 2015-07-17 12:22+0000\n"
+"PO-Revision-Date: 2015-07-17 16:48+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
@@ -1275,10 +1275,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/notification.page:37
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-notification-listen-screenshot.png' "
-#| "md5='12df991de180a6d064fd9ec5ac2492c4'"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-screenshot.png' "
@@ -1293,10 +1289,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/notification.page:51
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-notification-listen-screenshot.png' "
-#| "md5='12df991de180a6d064fd9ec5ac2492c4'"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
@@ -1338,9 +1330,13 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/notification.page:18
+#| msgid ""
+#| "Listens for commands at standard input. At least one command must be "
+#| "specified. Commands are comma seperated. A command must be followed by a "
+#| "colon and a value."
 msgid ""
 "Listens for commands at standard input. At least one command must be "
-"specified. Commands are comma seperated. A command must be followed by a "
+"specified. Commands are comma separated. A command must be followed by a "
 "colon and a value."
 msgstr ""
 "Parancsokat vár a szabványos bemeneten. Legalább egy parancsot meg kell "
@@ -1366,13 +1362,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/notification.page:26
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "#!/bin/sh\n"
-#| "\n"
-#| "zenity --notification\\\n"
-#| "  --window-icon=\"info\" \\\n"
-#| "  --text=\"There are system updates necessary!\"\n"
 msgid ""
 "\n"
 "  #!/bin/sh\n"
@@ -1412,13 +1401,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/notification.page:41
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "#!/bin/sh\n"
-#| "\n"
-#| "cat &lt;&lt;EOH| zenity --notification --listen\n"
-#| "message: this is the message text\n"
-#| "EOH\n"
 msgid ""
 "\n"
 "  #!/bin/sh\n"
