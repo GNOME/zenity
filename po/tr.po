@@ -5,25 +5,25 @@
 # Baris Cicek <baris@teamforce.name.tr>, 2005, 2007, 2008.
 # Fatih Ergüven <fatih@erguven.org>, 2006, 2007.
 # Volkan, 2011.
-# Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2014.
-# Necdet Yücel <necdetyucel@gmail.com>, 2014.
+# Necdet Yücel <necdetyucel@gmail.com>, 2014, 2015.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=zenity&"
-"keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-21 00:12+0000\n"
-"PO-Revision-Date: 2014-12-22 00:16+0000\n"
-"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=zenity&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-06-16 12:22+0000\n"
+"PO-Revision-Date: 2015-08-09 18:41+0300\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1419207383.000000\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-POOTLE-MTIME: 1433335499.000000\n"
 
 #: ../src/about.c:63
 msgid ""
@@ -75,7 +75,13 @@ msgstr "Kabuk betiklerinden pencere kutularını görüntüle"
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "Pencere çeşidi girmelisiniz. Detaylar için 'zenity --help'e bakınız.\n"
 
-#: ../src/notification.c:121
+#: ../src/notification.c:51
+#, c-format
+#| msgid "Could not parse message from stdin\n"
+msgid "Could not parse message\n"
+msgstr "İleti ayrıştırılamadı\n"
+
+#: ../src/notification.c:140
 #, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
@@ -85,45 +91,48 @@ msgstr ""
 "Desteklenen değerler 'doğru' veya 'yanlış'tır.\n"
 
 #. (iibiiay)
-#: ../src/notification.c:137
+#: ../src/notification.c:156
 #, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Desteklenmeyen ipucu. Atlanıyor.\n"
 
 #. unknown hints
-#: ../src/notification.c:154
+#: ../src/notification.c:173
 #, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Bilinmeyen ipucu adı. Atlanıyor.\n"
 
-#: ../src/notification.c:213
+#: ../src/notification.c:228
 #, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "stdin'den gelen komut ayrıştırılamadı\n"
 
-#: ../src/notification.c:245
-#, c-format
-msgid "Could not parse message from stdin\n"
-msgstr "stdin'den gelen ileti ayrıştırılamadı\n"
-
-#: ../src/notification.c:325
+#: ../src/notification.c:326
 msgid "Zenity notification"
 msgstr "Zenity uyarısı"
 
+#: ../src/password.c:55
+msgid "_Cancel"
+msgstr "_İptal"
+
+#: ../src/password.c:58
+msgid "_OK"
+msgstr "_Tamam"
+
 #. Checks if username has been passed as a parameter
-#: ../src/password.c:66
+#: ../src/password.c:73
 msgid "Type your password"
 msgstr "Parolanızı giriniz"
 
-#: ../src/password.c:69
+#: ../src/password.c:76
 msgid "Type your username and password"
 msgstr "Kullanıcı adınızı ve parolanızı yazın"
 
-#: ../src/password.c:107
+#: ../src/password.c:113
 msgid "Username:"
 msgstr "Kullanıcı adı:"
 
-#: ../src/password.c:123
+#: ../src/password.c:127
 msgid "Password:"
 msgstr "Parola:"
 
@@ -137,245 +146,171 @@ msgstr "En yüksek değer en düşük değerden büyük olmalıdır.\n"
 msgid "Value out of range.\n"
 msgstr "Değer aralık dışında.\n"
 
-#: ../src/tree.c:375
+#: ../src/tree.c:376
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Liste penceresi için başlık belirtilmedi.\n"
 
-#: ../src/tree.c:381
+#: ../src/tree.c:382
 #, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "Sadece tek bit Liste diyalog çeşidi kullanabilirsiniz.\n"
 
-#: ../src/zenity.ui.h:1
-msgid "Adjust the scale value"
-msgstr "Ölçek değerini ayarla"
-
-#: ../src/zenity.ui.h:2
-msgid "Text View"
-msgstr "Metin Görünümü"
-
-#: ../src/zenity.ui.h:3
-msgid "Calendar selection"
-msgstr "Takvim seçimi"
-
-#: ../src/zenity.ui.h:4
-msgid "Select a date from below."
-msgstr "Aşağıdan bir tarih seçin."
-
-#: ../src/zenity.ui.h:5
-msgid "C_alendar:"
-msgstr "T_akvim:"
-
-#: ../src/zenity.ui.h:6
-msgid "Add a new entry"
-msgstr "Yeni bir giriş ekle"
-
-#: ../src/zenity.ui.h:7
-msgid "_Enter new text:"
-msgstr "_Yeni metin girişi:"
-
-#: ../src/zenity.ui.h:8
-msgid "Error"
-msgstr "Hata"
-
-#: ../src/zenity.ui.h:9
-msgid "An error has occurred."
-msgstr "Hata oluştu."
-
-#: ../src/zenity.ui.h:10
-msgid "Forms dialog"
-msgstr "Formlar iletişim penceresi"
-
-#: ../src/zenity.ui.h:11
-msgid "Information"
-msgstr "Bilgi"
-
-#: ../src/zenity.ui.h:12
-msgid "All updates are complete."
-msgstr "Bütün güncellemeler tamam."
-
-#: ../src/zenity.ui.h:13
-msgid "Progress"
-msgstr "İlerleme"
-
-#: ../src/zenity.ui.h:14
-msgid "Running..."
-msgstr "Çalışıyor..."
-
-#: ../src/zenity.ui.h:15
-msgid "Question"
-msgstr "Soru"
-
-#: ../src/zenity.ui.h:16
-msgid "Are you sure you want to proceed?"
-msgstr "Devam etmek istediğinize emin misiniz?"
-
-#: ../src/zenity.ui.h:17
-msgid "Select items from the list"
-msgstr "Öğeleri listeden seçiniz"
-
-#: ../src/zenity.ui.h:18
-msgid "Select items from the list below."
-msgstr "Aşağıdaki listeden öğeleri seçiniz."
-
-#: ../src/zenity.ui.h:19
-msgid "Warning"
-msgstr "Uyarı"
-
-#: ../src/option.c:167
+#: ../src/option.c:169
 msgid "Set the dialog title"
 msgstr "Pencere başlığını ayarla"
 
-#: ../src/option.c:168
+#: ../src/option.c:170
 msgid "TITLE"
 msgstr "BAŞLIK"
 
-#: ../src/option.c:176
+#: ../src/option.c:178
 msgid "Set the window icon"
 msgstr "Pencere simgesini ayarla"
 
-#: ../src/option.c:177
+#: ../src/option.c:179
 msgid "ICONPATH"
 msgstr "SİMGEYOLU"
 
-#: ../src/option.c:185
+#: ../src/option.c:187
 msgid "Set the width"
 msgstr "Genişliği ayarla"
 
-#: ../src/option.c:186
+#: ../src/option.c:188
 msgid "WIDTH"
 msgstr "GENİŞLİK"
 
-#: ../src/option.c:194
+#: ../src/option.c:196
 msgid "Set the height"
 msgstr "Yüksekliği ayarla"
 
-#: ../src/option.c:195
+#: ../src/option.c:197
 msgid "HEIGHT"
 msgstr "YÜKSEKLİK"
 
-#: ../src/option.c:203
+#: ../src/option.c:205
 msgid "Set dialog timeout in seconds"
 msgstr "Pencere zaman aşımını olabildiğince kısa tut"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:205
+#: ../src/option.c:207
 msgid "TIMEOUT"
 msgstr "ZAMANAŞIMI"
 
-#: ../src/option.c:213
-msgid "Sets the label of the Ok button"
-msgstr "Tamam düğmesinin etiketini ayarlar"
+#: ../src/option.c:215
+msgid "Set the label of the OK button"
+msgstr "Tamam düğmesinin etiketini ayarla"
 
-#: ../src/option.c:214 ../src/option.c:223 ../src/option.c:265
-#: ../src/option.c:325 ../src/option.c:334 ../src/option.c:368
-#: ../src/option.c:426 ../src/option.c:563 ../src/option.c:688
-#: ../src/option.c:706 ../src/option.c:732 ../src/option.c:813
-#: ../src/option.c:898 ../src/option.c:907 ../src/option.c:969
-#: ../src/option.c:1027 ../src/option.c:1196
+#: ../src/option.c:216 ../src/option.c:225 ../src/option.c:234
+#: ../src/option.c:276 ../src/option.c:336 ../src/option.c:345
+#: ../src/option.c:379 ../src/option.c:437 ../src/option.c:574
+#: ../src/option.c:699 ../src/option.c:717 ../src/option.c:743
+#: ../src/option.c:823 ../src/option.c:917 ../src/option.c:926
+#: ../src/option.c:988 ../src/option.c:1046 ../src/option.c:1215
 msgid "TEXT"
 msgstr "METİN"
 
-#: ../src/option.c:222
-msgid "Sets the label of the Cancel button"
-msgstr "İptal düğmesinin etiketini ayarlar"
+#: ../src/option.c:224
+msgid "Set the label of the Cancel button"
+msgstr "İptal düğmesinin etiketini ayarla"
 
-#: ../src/option.c:231
-#| msgid "Set the dialog title"
+#: ../src/option.c:233
+msgid "Add an extra button"
+msgstr "Fazladan bir düğme ekle"
+
+#: ../src/option.c:242
 msgid "Set the modal hint"
 msgstr "Kalıcı ipucu ayarlayın"
 
-#: ../src/option.c:240
-#| msgid "Set the window icon"
+#: ../src/option.c:251
 msgid "Set the parent window to attach to"
 msgstr "Eklenecek üst pencereyi ayarlayın"
 
-#: ../src/option.c:241
+#: ../src/option.c:252
 msgid "WINDOW"
 msgstr "PENCERE"
 
-#: ../src/option.c:255
+#: ../src/option.c:266
 msgid "Display calendar dialog"
 msgstr "Takvim penceresini görüntüle"
 
-#: ../src/option.c:264 ../src/option.c:324 ../src/option.c:367
-#: ../src/option.c:425 ../src/option.c:562 ../src/option.c:731
-#: ../src/option.c:812 ../src/option.c:968 ../src/option.c:1026
-#: ../src/option.c:1195
+#: ../src/option.c:275 ../src/option.c:335 ../src/option.c:378
+#: ../src/option.c:436 ../src/option.c:573 ../src/option.c:742
+#: ../src/option.c:822 ../src/option.c:987 ../src/option.c:1045
+#: ../src/option.c:1214
 msgid "Set the dialog text"
 msgstr "Pencere metnini ayarla"
 
-#: ../src/option.c:273
+#: ../src/option.c:284
 msgid "Set the calendar day"
 msgstr "Takvim gününü ayarla"
 
-#: ../src/option.c:274
+#: ../src/option.c:285
 msgid "DAY"
 msgstr "GÜN"
 
-#: ../src/option.c:282
+#: ../src/option.c:293
 msgid "Set the calendar month"
 msgstr "Takvim ayını ayarla"
 
-#: ../src/option.c:283
+#: ../src/option.c:294
 msgid "MONTH"
 msgstr "AY"
 
-#: ../src/option.c:291
+#: ../src/option.c:302
 msgid "Set the calendar year"
 msgstr "Takvim yılını ayarla"
 
-#: ../src/option.c:292
+#: ../src/option.c:303
 msgid "YEAR"
 msgstr "YIL"
 
-#: ../src/option.c:300 ../src/option.c:1213
+#: ../src/option.c:311 ../src/option.c:1232
 msgid "Set the format for the returned date"
 msgstr "Dönecek tarihler için tarih biçimini ayarla"
 
-#: ../src/option.c:301 ../src/option.c:1214
+#: ../src/option.c:312 ../src/option.c:1233
 msgid "PATTERN"
 msgstr "DESEN"
 
-#: ../src/option.c:315
+#: ../src/option.c:326
 msgid "Display text entry dialog"
 msgstr "Metin girişi penceresini görüntüle"
 
-#: ../src/option.c:333
+#: ../src/option.c:344
 msgid "Set the entry text"
 msgstr "Giriş metnini ayarla"
 
-#: ../src/option.c:342
+#: ../src/option.c:353
 msgid "Hide the entry text"
 msgstr "Giriş metnini gizle"
 
-#: ../src/option.c:358
+#: ../src/option.c:369
 msgid "Display error dialog"
 msgstr "Hata penceresini görüntüle"
 
-#: ../src/option.c:376 ../src/option.c:434 ../src/option.c:821
-#: ../src/option.c:977
+#: ../src/option.c:387 ../src/option.c:445 ../src/option.c:831
+#: ../src/option.c:996
 msgid "Set the dialog icon"
 msgstr "İletişim penceresi simgesini ayarla"
 
-#: ../src/option.c:377 ../src/option.c:435 ../src/option.c:822
-#: ../src/option.c:978
+#: ../src/option.c:388 ../src/option.c:446 ../src/option.c:832
+#: ../src/option.c:997
 msgid "ICON-NAME"
 msgstr "SİMGE-ADI"
 
-#: ../src/option.c:385 ../src/option.c:443 ../src/option.c:830
-#: ../src/option.c:986
+#: ../src/option.c:396 ../src/option.c:454 ../src/option.c:840
+#: ../src/option.c:1005
 msgid "Do not enable text wrapping"
 msgstr "Metin bölmesini etkinleştirme"
 
-#: ../src/option.c:394 ../src/option.c:452 ../src/option.c:839
-#: ../src/option.c:995
-msgid "Do not enable pango markup"
+#: ../src/option.c:405 ../src/option.c:463 ../src/option.c:849
+#: ../src/option.c:1014
+msgid "Do not enable Pango markup"
 msgstr "Pango imlemesini etkinleştirme"
 
-#: ../src/option.c:402 ../src/option.c:460 ../src/option.c:856
-#: ../src/option.c:1003
+#: ../src/option.c:413 ../src/option.c:471 ../src/option.c:866
+#: ../src/option.c:1022
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -383,88 +318,88 @@ msgstr ""
 "İletişim metinlerini elipsleştirmeyi etkinleştir. Bu uzun metinlerle yüksek "
 "pencere boyutunu çözecektir"
 
-#: ../src/option.c:416
+#: ../src/option.c:427
 msgid "Display info dialog"
 msgstr "Bilgi penceresini görüntüle"
 
-#: ../src/option.c:474
+#: ../src/option.c:485
 msgid "Display file selection dialog"
 msgstr "Dosya seçme penceresini görüntüle"
 
-#: ../src/option.c:483
+#: ../src/option.c:494
 msgid "Set the filename"
 msgstr "Dosya adını ayarla"
 
-#: ../src/option.c:484 ../src/option.c:880
+#: ../src/option.c:495 ../src/option.c:899
 msgid "FILENAME"
 msgstr "DOSYAADI"
 
-#: ../src/option.c:492
+#: ../src/option.c:503
 msgid "Allow multiple files to be selected"
 msgstr "Birden fazla dosya seçimine izin ver"
 
-#: ../src/option.c:501
+#: ../src/option.c:512
 msgid "Activate directory-only selection"
 msgstr "Sadece-dizin seçeneğini etkinleştir"
 
-#: ../src/option.c:510
+#: ../src/option.c:521
 msgid "Activate save mode"
 msgstr "Saklama kipini etkinleştir"
 
-#: ../src/option.c:519 ../src/option.c:607 ../src/option.c:1204
+#: ../src/option.c:530 ../src/option.c:618 ../src/option.c:1223
 msgid "Set output separator character"
 msgstr "Çıktı ayraç karakterini ayarla"
 
-#: ../src/option.c:520 ../src/option.c:608 ../src/option.c:1205
+#: ../src/option.c:531 ../src/option.c:619 ../src/option.c:1224
 msgid "SEPARATOR"
 msgstr "AYRAÇ"
 
-#: ../src/option.c:528
+#: ../src/option.c:539
 msgid "Confirm file selection if filename already exists"
 msgstr "Dosya adı zaten varsa dosya seçimini doğrula"
 
-#: ../src/option.c:537
-msgid "Sets a filename filter"
-msgstr "Dosya adı filtresi ayarlar"
+#: ../src/option.c:548
+msgid "Set a filename filter"
+msgstr "Bir dosya adı süzgeci ayarla"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:539
+#: ../src/option.c:550
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "İSİM | DOKU1 DOKU2 ..."
 
-#: ../src/option.c:553
+#: ../src/option.c:564
 msgid "Display list dialog"
 msgstr "Liste penceresini görüntüle"
 
-#: ../src/option.c:571
+#: ../src/option.c:582
 msgid "Set the column header"
 msgstr "Sütun başlığını ayarla"
 
-#: ../src/option.c:572
+#: ../src/option.c:583
 msgid "COLUMN"
 msgstr "SÜTUN"
 
-#: ../src/option.c:580
-msgid "Use check boxes for first column"
+#: ../src/option.c:591
+msgid "Use check boxes for the first column"
 msgstr "İlk sütun için onay kutularını kullan"
 
-#: ../src/option.c:589
-msgid "Use radio buttons for first column"
+#: ../src/option.c:600
+msgid "Use radio buttons for the first column"
 msgstr "İlk sütun için radyo düğmelerini kullan"
 
-#: ../src/option.c:598
-msgid "Use an image for first column"
-msgstr "Bu sütun için bir resim kullan"
+#: ../src/option.c:609
+msgid "Use an image for the first column"
+msgstr "İlk sütun için bir resim kullan"
 
-#: ../src/option.c:616
+#: ../src/option.c:627
 msgid "Allow multiple rows to be selected"
 msgstr "Birden fazla satır seçimine izin ver"
 
-#: ../src/option.c:625 ../src/option.c:888
+#: ../src/option.c:636 ../src/option.c:907
 msgid "Allow changes to text"
 msgstr "Metinde değişikliklere izin ver"
 
-#: ../src/option.c:634
+#: ../src/option.c:645
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -473,107 +408,109 @@ msgstr ""
 "için kullanılabilir)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:636 ../src/option.c:645
+#: ../src/option.c:647 ../src/option.c:656
 msgid "NUMBER"
 msgstr "SAYI"
 
-#: ../src/option.c:644
+#: ../src/option.c:655
 msgid "Hide a specific column"
 msgstr "Belirli sütuna gizle"
 
-#: ../src/option.c:653
-msgid "Hides the column headers"
-msgstr "Sütun başlıklarını gizler"
+#: ../src/option.c:664
+msgid "Hide the column headers"
+msgstr "Sütun başlıklarını gizle"
 
-#: ../src/option.c:662
+#: ../src/option.c:673
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
 msgstr ""
-"Listenin varsayılan arama özelliğini metnin başından değil ortasından olacak "
+"Listenin öntanımlı arama özelliğini metnin başından değil ortasından olacak "
 "şekilde değiştir"
 
-#: ../src/option.c:678
+#: ../src/option.c:689
 msgid "Display notification"
 msgstr "Uyarıyı görüntüle"
 
-#: ../src/option.c:687
+#: ../src/option.c:698
 msgid "Set the notification text"
 msgstr "Uyarı metnini ayarla"
 
-#: ../src/option.c:696
+#: ../src/option.c:707
 msgid "Listen for commands on stdin"
 msgstr "stdin'deki komutları dinle"
 
-#: ../src/option.c:705
+#: ../src/option.c:716
 msgid "Set the notification hints"
 msgstr "Bildirim ipuçlarını ayarla"
 
-#: ../src/option.c:722
+#: ../src/option.c:733
 msgid "Display progress indication dialog"
 msgstr "İlerleme belirtim penceresini görüntüle"
 
-#: ../src/option.c:740
+#: ../src/option.c:751
 msgid "Set initial percentage"
 msgstr "Başlangıç yüzdesini ayarla"
 
-#: ../src/option.c:741
+#: ../src/option.c:752
 msgid "PERCENTAGE"
 msgstr "YÜZDE"
 
-#: ../src/option.c:749
+#: ../src/option.c:760
 msgid "Pulsate progress bar"
 msgstr "İlerleme çubuğunu sallandır"
 
-#: ../src/option.c:759
+#: ../src/option.c:770
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "%100'e ulaşıldığında pencereyi kapat"
 
-#: ../src/option.c:769
-#, no-c-format
+#: ../src/option.c:779
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Eğer vazgeç tuşuna basılırsa üst süreci yok et"
 
-#: ../src/option.c:779
-#, no-c-format
+#: ../src/option.c:788
 msgid "Hide Cancel button"
 msgstr "İptal düğmesini gizle"
 
-#: ../src/option.c:788
+#: ../src/option.c:798
+#, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "İlerlemenin ne zaman %100 olacağını tahmin et"
 
-#: ../src/option.c:803
+#: ../src/option.c:813
 msgid "Display question dialog"
 msgstr "Soru penceresini göster"
 
-#: ../src/option.c:847
-msgid "Give cancel button focus by default"
-msgstr "Varsayılan olarak iptal düğmesine odaklan"
+#: ../src/option.c:857
+msgid "Give Cancel button focus by default"
+msgstr "Öntanımlı olarak iptal düğmesine odaklan"
 
-#: ../src/option.c:870
+#: ../src/option.c:874
+msgid "Suppress OK and Cancel buttons"
+msgstr "Tamam ve İptal tuşlarını baskıla"
+
+#: ../src/option.c:889
 msgid "Display text information dialog"
 msgstr "Metin bilgisi penceresini göster"
 
-#: ../src/option.c:879
+#: ../src/option.c:898
 msgid "Open file"
 msgstr "Dosya aç"
 
-#: ../src/option.c:897
+#: ../src/option.c:916
 msgid "Set the text font"
 msgstr "Metin yazı tipini ayarla"
 
-#: ../src/option.c:906
+#: ../src/option.c:925
 msgid "Enable an I read and agree checkbox"
 msgstr "Okudum ve Onayladım onay kutusunu etkinleştir"
 
-#: ../src/option.c:916
-msgid "Enable html support"
-msgstr "Html desteğini etkinleştir"
+#: ../src/option.c:935
+msgid "Enable HTML support"
+msgstr "HTML desteğini etkinleştir"
 
-#: ../src/option.c:925
-#| msgid "Sets an url instead of a file. Only works if you use --html option"
+#: ../src/option.c:944
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -581,301 +518,355 @@ msgstr ""
 "Kullanıcının WebView ile etkileşimini kapat. Sadece --html seçeneğini "
 "kullandığınızda işe yarar"
 
-#: ../src/option.c:934
-msgid "Sets an url instead of a file. Only works if you use --html option"
+#: ../src/option.c:953
+msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
-"Bir dosya yerine bir url ayarlar. Sadece --html seçeneğini kullanırsanız "
+"Bir dosya yerine bir adres ayarla. Sadece --html seçeneğini kullanırsanız "
 "çalışır."
 
-#: ../src/option.c:935
+#: ../src/option.c:954
 msgid "URL"
 msgstr "URL"
 
-#: ../src/option.c:944
+#: ../src/option.c:963
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "Metnin sonuna otomatik kaydır. Sadece metin standart girdiden alındığında"
 
-#: ../src/option.c:959
+#: ../src/option.c:978
 msgid "Display warning dialog"
 msgstr "Uyarı penceresini görüntüle"
 
-#: ../src/option.c:1017
+#: ../src/option.c:1036
 msgid "Display scale dialog"
 msgstr "Ölçek penceresini görüntüle"
 
-#: ../src/option.c:1035
+#: ../src/option.c:1054
 msgid "Set initial value"
 msgstr "Başlangıç değerini ayarla"
 
-#: ../src/option.c:1036 ../src/option.c:1045 ../src/option.c:1054
-#: ../src/option.c:1063 ../src/option.c:1262
+#: ../src/option.c:1055 ../src/option.c:1064 ../src/option.c:1073
+#: ../src/option.c:1082 ../src/option.c:1281
 msgid "VALUE"
 msgstr "DEĞER"
 
-#: ../src/option.c:1044
+#: ../src/option.c:1063
 msgid "Set minimum value"
 msgstr "En düşük değeri ayarla"
 
-#: ../src/option.c:1053
+#: ../src/option.c:1072
 msgid "Set maximum value"
 msgstr "En yüksek değeri ayarla"
 
-#: ../src/option.c:1062
+#: ../src/option.c:1081
 msgid "Set step size"
 msgstr "Adım boyutunu ayarla"
 
-#: ../src/option.c:1071
+#: ../src/option.c:1090
 msgid "Print partial values"
 msgstr "Kısmi değerleri yaz"
 
-#: ../src/option.c:1080
+#: ../src/option.c:1099
 msgid "Hide value"
 msgstr "Değeri gizle"
 
-#: ../src/option.c:1095
+#: ../src/option.c:1114
 msgid "Display forms dialog"
 msgstr "Form iletişim penceresini görüntüle"
 
-#: ../src/option.c:1104
+#: ../src/option.c:1123
 msgid "Add a new Entry in forms dialog"
 msgstr "Form iletişim penceresine yeni bir giriş ekle"
 
-#: ../src/option.c:1105 ../src/option.c:1114
+#: ../src/option.c:1124 ../src/option.c:1133
 msgid "Field name"
 msgstr "Alan adı"
 
-#: ../src/option.c:1113
+#: ../src/option.c:1132
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Form iletişim penceresine yeni bir Parola Girdisi ekle"
 
-#: ../src/option.c:1122
+#: ../src/option.c:1141
 msgid "Add a new Calendar in forms dialog"
 msgstr "Form iletişim penceresine yeni bir Takvim ekle"
 
-#: ../src/option.c:1123
+#: ../src/option.c:1142
 msgid "Calendar field name"
 msgstr "Takvim alanının adı"
 
-#: ../src/option.c:1131
+#: ../src/option.c:1150
 msgid "Add a new List in forms dialog"
 msgstr "Form iletişim penceresine yeni bir Liste ekle"
 
-#: ../src/option.c:1132
+#: ../src/option.c:1151
 msgid "List field and header name"
 msgstr "Liste alanı ve başlık adı"
 
-#: ../src/option.c:1140
+#: ../src/option.c:1159
 msgid "List of values for List"
 msgstr "Liste için değerler listesi"
 
-#: ../src/option.c:1141 ../src/option.c:1150 ../src/option.c:1168
+#: ../src/option.c:1160 ../src/option.c:1169 ../src/option.c:1187
 msgid "List of values separated by |"
 msgstr "| ile ayrılmış değerler listesi"
 
-#: ../src/option.c:1149
+#: ../src/option.c:1168
 msgid "List of values for columns"
 msgstr "Sütunlar için değerler listesi"
 
-#: ../src/option.c:1158
-#| msgid "Add a new List in forms dialog"
+#: ../src/option.c:1177
 msgid "Add a new combo box in forms dialog"
 msgstr "Form iletişim penceresine yeni bir açılan kutu ekle"
 
-#: ../src/option.c:1159
-#| msgid "Calendar field name"
+#: ../src/option.c:1178
 msgid "Combo box field name"
 msgstr "Açılan kutu alan adı"
 
-#: ../src/option.c:1167
-#| msgid "List of values for columns"
+#: ../src/option.c:1186
 msgid "List of values for combo box"
 msgstr "Açılan kutu için değerler listesi"
 
-#: ../src/option.c:1186
+#: ../src/option.c:1205
 msgid "Show the columns header"
 msgstr "Sütun başlığını göster"
 
-#: ../src/option.c:1228
+#: ../src/option.c:1247
 msgid "Display password dialog"
 msgstr "Parola penceresini görüntüle"
 
-#: ../src/option.c:1237
+#: ../src/option.c:1256
 msgid "Display the username option"
 msgstr "Kullanıcı adı seçeneğini göster"
 
-#: ../src/option.c:1252
+#: ../src/option.c:1271
 msgid "Display color selection dialog"
 msgstr "Renk seçme penceresini görüntüle"
 
-#: ../src/option.c:1261
+#: ../src/option.c:1280
 msgid "Set the color"
 msgstr "Rengi düzenle"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1289
 msgid "Show the palette"
 msgstr "Paleti göster"
 
-#: ../src/option.c:1285
+#: ../src/option.c:1304
 msgid "About zenity"
 msgstr "Zenity hakkında"
 
-#: ../src/option.c:1294
+#: ../src/option.c:1313
 msgid "Print version"
 msgstr "Sürümü yazdır"
 
-#: ../src/option.c:2228
+#: ../src/option.c:2256
 msgid "General options"
 msgstr "Genel seçenekler"
 
-#: ../src/option.c:2229
+#: ../src/option.c:2257
 msgid "Show general options"
 msgstr "Genel seçenekleri göster"
 
-#: ../src/option.c:2239
+#: ../src/option.c:2267
 msgid "Calendar options"
 msgstr "Takvim seçenekleri"
 
-#: ../src/option.c:2240
+#: ../src/option.c:2268
 msgid "Show calendar options"
 msgstr "Takvim seçeneklerini göster"
 
-#: ../src/option.c:2250
+#: ../src/option.c:2278
 msgid "Text entry options"
 msgstr "Metin giriş seçenekleri"
 
-#: ../src/option.c:2251
+#: ../src/option.c:2279
 msgid "Show text entry options"
 msgstr "Metin giriş seçeneklerini göster"
 
-#: ../src/option.c:2261
+#: ../src/option.c:2289
 msgid "Error options"
 msgstr "Hata seçenekleri"
 
-#: ../src/option.c:2262
+#: ../src/option.c:2290
 msgid "Show error options"
 msgstr "Hata seçeneklerini göster"
 
-#: ../src/option.c:2272
+#: ../src/option.c:2300
 msgid "Info options"
 msgstr "Bilgi seçenekleri"
 
-#: ../src/option.c:2273
+#: ../src/option.c:2301
 msgid "Show info options"
 msgstr "Bilgi seçeneklerini göster"
 
-#: ../src/option.c:2283
+#: ../src/option.c:2311
 msgid "File selection options"
 msgstr "Dosya seçme özellikleri"
 
-#: ../src/option.c:2284
+#: ../src/option.c:2312
 msgid "Show file selection options"
 msgstr "Dosya seçme seçeneklerini göster"
 
-#: ../src/option.c:2294
+#: ../src/option.c:2322
 msgid "List options"
 msgstr "Liste seçenekleri"
 
-#: ../src/option.c:2295
+#: ../src/option.c:2323
 msgid "Show list options"
 msgstr "Liste seçeneklerini göster"
 
-#: ../src/option.c:2306
+#: ../src/option.c:2334
 msgid "Notification icon options"
 msgstr "Uyarı simgesi seçenekleri"
 
-#: ../src/option.c:2307
+#: ../src/option.c:2335
 msgid "Show notification icon options"
 msgstr "Uyarı simgesi seçeneklerini göster"
 
-#: ../src/option.c:2318
+#: ../src/option.c:2346
 msgid "Progress options"
 msgstr "İlerleme seçenekleri"
 
-#: ../src/option.c:2319
+#: ../src/option.c:2347
 msgid "Show progress options"
 msgstr "İlerleme seçeneklerini göster"
 
-#: ../src/option.c:2329
+#: ../src/option.c:2357
 msgid "Question options"
 msgstr "Soru seçenekleri"
 
-#: ../src/option.c:2330
+#: ../src/option.c:2358
 msgid "Show question options"
 msgstr "Soru seçeneklerini göster"
 
-#: ../src/option.c:2340
+#: ../src/option.c:2368
 msgid "Warning options"
 msgstr "Uyarı seçenekleri"
 
-#: ../src/option.c:2341
+#: ../src/option.c:2369
 msgid "Show warning options"
 msgstr "Uyarı seçeneklerini göster"
 
-#: ../src/option.c:2351
+#: ../src/option.c:2379
 msgid "Scale options"
 msgstr "Ölçek seçenekleri"
 
-#: ../src/option.c:2352
+#: ../src/option.c:2380
 msgid "Show scale options"
 msgstr "Ölçek seçeneklerini göster"
 
-#: ../src/option.c:2362
+#: ../src/option.c:2390
 msgid "Text information options"
 msgstr "Metin bilgi seçenekleri"
 
-#: ../src/option.c:2363
+#: ../src/option.c:2391
 msgid "Show text information options"
 msgstr "Metin bilgi seçeneklerini göster"
 
-#: ../src/option.c:2373
+#: ../src/option.c:2401
 msgid "Color selection options"
 msgstr "Renk seçme özellikleri"
 
-#: ../src/option.c:2374
+#: ../src/option.c:2402
 msgid "Show color selection options"
 msgstr "Renk seçme seçeneklerini göster"
 
-#: ../src/option.c:2384
+#: ../src/option.c:2412
 msgid "Password dialog options"
 msgstr "Parola seçenekleri penceresi"
 
-#: ../src/option.c:2385
+#: ../src/option.c:2413
 msgid "Show password dialog options"
 msgstr "Parola seçenekleri penceresini göster"
 
-#: ../src/option.c:2395
+#: ../src/option.c:2423
 msgid "Forms dialog options"
 msgstr "Form iletişim penceresi seçenekleri"
 
-#: ../src/option.c:2396
+#: ../src/option.c:2424
 msgid "Show forms dialog options"
 msgstr "Form iletişim penceresi seçeneklerini göster"
 
-#: ../src/option.c:2406
+#: ../src/option.c:2434
 msgid "Miscellaneous options"
 msgstr "Çeşitli seçenekler"
 
-#: ../src/option.c:2407
+#: ../src/option.c:2435
 msgid "Show miscellaneous options"
 msgstr "Çeşitli seçenekleri göster"
 
-#: ../src/option.c:2432
+#: ../src/option.c:2460
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Bu seçenek mevcut değil. Mevcut kullanımlar için lütfen --help'e bakınız.\n"
 
-#: ../src/option.c:2436
+#: ../src/option.c:2464
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s bu pencere için desteklenmiyor\n"
 
-#: ../src/option.c:2440
+#: ../src/option.c:2468
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "İki veya daha fazla pencere seçeneği belirtildi\n"
+
+#~ msgid "Adjust the scale value"
+#~ msgstr "Ölçek değerini ayarla"
+
+#~ msgid "Text View"
+#~ msgstr "Metin Görünümü"
+
+#~ msgid "Calendar selection"
+#~ msgstr "Takvim seçimi"
+
+#~ msgid "Select a date from below."
+#~ msgstr "Aşağıdan bir tarih seçin."
+
+#~ msgid "C_alendar:"
+#~ msgstr "T_akvim:"
+
+#~ msgid "Add a new entry"
+#~ msgstr "Yeni bir giriş ekle"
+
+#~ msgid "_Enter new text:"
+#~ msgstr "_Yeni metin girişi:"
+
+#~ msgid "Error"
+#~ msgstr "Hata"
+
+#~ msgid "An error has occurred."
+#~ msgstr "Hata oluştu."
+
+#~ msgid "Forms dialog"
+#~ msgstr "Formlar iletişim penceresi"
+
+#~ msgid "Information"
+#~ msgstr "Bilgi"
+
+#~ msgid "All updates are complete."
+#~ msgstr "Bütün güncellemeler tamam."
+
+#~ msgid "Progress"
+#~ msgstr "İlerleme"
+
+#~ msgid "Running..."
+#~ msgstr "Çalışıyor..."
+
+#~ msgid "Question"
+#~ msgstr "Soru"
+
+#~ msgid "Are you sure you want to proceed?"
+#~ msgstr "Devam etmek istediğinize emin misiniz?"
+
+#~ msgid "Select items from the list"
+#~ msgstr "Öğeleri listeden seçiniz"
+
+#~ msgid "Select items from the list below."
+#~ msgstr "Aşağıdaki listeden öğeleri seçiniz."
+
+#~ msgid "Warning"
+#~ msgstr "Uyarı"
 
 #~ msgid "Select a file"
 #~ msgstr "Bir dosya seçiniz"
