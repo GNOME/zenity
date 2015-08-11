@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity 3.17.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-14 16:56+0200\n"
-"PO-Revision-Date: 2015-05-14 16:58+0200\n"
+"POT-Creation-Date: 2015-08-11 19:44+0200\n"
+"PO-Revision-Date: 2015-08-11 19:44+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -63,7 +63,12 @@ msgstr "Vis dialogbokser fra skallskript"
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "Du må oppgi en type dialog. Se «zenity --help» for detaljer\n"
 
-#: ../src/notification.c:121
+#: ../src/notification.c:51
+#, c-format
+msgid "Could not parse message\n"
+msgstr "kunne ikke lese melding\n"
+
+#: ../src/notification.c:140
 #, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
@@ -73,28 +78,23 @@ msgstr ""
 "Støttede verdier er «true» eller «false».\n"
 
 #. (iibiiay)
-#: ../src/notification.c:137
+#: ../src/notification.c:156
 #, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Ikke støttet hint. Hopper over.\n"
 
 #. unknown hints
-#: ../src/notification.c:154
+#: ../src/notification.c:173
 #, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Ukjent navn på hint. Hopper over.\n"
 
-#: ../src/notification.c:209
+#: ../src/notification.c:228
 #, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "kunne ikke lese kommando fra stdin\n"
 
-#: ../src/notification.c:241
-#, c-format
-msgid "Could not parse message from stdin\n"
-msgstr "kunne ikke lese melding fra stdin\n"
-
-#: ../src/notification.c:321
+#: ../src/notification.c:326
 msgid "Zenity notification"
 msgstr "Zenity-melding"
 
@@ -507,7 +507,8 @@ msgstr ""
 
 #: ../src/option.c:953
 msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr "Sett en URL i stedet for en fil. Virker kun hvis du bruker flagget --html"
+msgstr ""
+"Sett en URL i stedet for en fil. Virker kun hvis du bruker flagget --html"
 
 #: ../src/option.c:954
 msgid "URL"
