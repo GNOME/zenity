@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Zenity master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-05-15 00:02+0000\n"
-"PO-Revision-Date: 2015-02-22 19:07+0100\n"
+"POT-Creation-Date: 2015-08-15 00:22+0000\n"
+"PO-Revision-Date: 2015-08-15 13:39+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -82,7 +82,12 @@ msgstr ""
 "Vous devez indiquer un type de boîte de dialogue. Lancer « zenity --help » "
 "pour plus de détails.\n"
 
-#: ../src/notification.c:121
+#: ../src/notification.c:51
+#, c-format
+msgid "Could not parse message\n"
+msgstr "Impossible d'analyser le message\n"
+
+#: ../src/notification.c:140
 #, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
@@ -92,28 +97,23 @@ msgstr ""
 "Les valeurs prises en charge sont « true » ou « false ».\n"
 
 #. (iibiiay)
-#: ../src/notification.c:137
+#: ../src/notification.c:156
 #, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Indication non prise en charge. Ignorée.\n"
 
 #. unknown hints
-#: ../src/notification.c:154
+#: ../src/notification.c:173
 #, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Nom d'indication inconnu. Ignorée.\n"
 
-#: ../src/notification.c:209
+#: ../src/notification.c:228
 #, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "Impossible d'analyser la commande issue de stdin\n"
 
-#: ../src/notification.c:241
-#, c-format
-msgid "Could not parse message from stdin\n"
-msgstr "Impossible d'analyser le message issu de stdin\n"
-
-#: ../src/notification.c:321
+#: ../src/notification.c:326
 msgid "Zenity notification"
 msgstr "Notification Zenity"
 
