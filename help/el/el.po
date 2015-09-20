@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity-help.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-12 10:47+0000\n"
-"PO-Revision-Date: 2014-05-12 23:48+0200\n"
+"POT-Creation-Date: 2015-09-20 00:46+0000\n"
+"PO-Revision-Date: 2015-09-20 13:53+0300\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9
@@ -128,6 +128,7 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME <team@gnome.gr>, 2009-2014 \n"
 "Στέργιος Προσινικλής <steriosprosiniklis@gmail.com>, 2009\n"
 "Θάνος Τρυφωνίδης <tomtryf@gmail.com>, 2012\n"
 "Δημήτρης Σπίγγος <dmtrs32@gmail.com>, 2014"
@@ -174,8 +175,7 @@ msgid "The calendar dialog supports the following options:"
 msgstr "Ο διάλογος ημερολογίου υποστηρίζει τις εξής επιλογές:"
 
 #. (itstool) path: item/title
-#: C/calendar.page:19 C/entry.page:19 C/notification.page:13
-#: C/progress.page:24
+#: C/calendar.page:19 C/entry.page:19 C/notification.page:13 C/progress.page:24
 msgid "<cmd>--text</cmd>=<var>text</var>"
 msgstr "<cmd>--text</cmd>=<var>κείμενο</var>"
 
@@ -1298,10 +1298,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/notification.page:37
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-notification-listen-screenshot.png' "
-#| "md5='12df991de180a6d064fd9ec5ac2492c4'"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-screenshot.png' "
@@ -1316,10 +1312,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/notification.page:51
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-notification-listen-screenshot.png' "
-#| "md5='12df991de180a6d064fd9ec5ac2492c4'"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
@@ -1363,12 +1355,12 @@ msgstr ""
 #: C/notification.page:18
 msgid ""
 "Listens for commands at standard input. At least one command must be "
-"specified. Commands are comma seperated. A command must be followed by a "
+"specified. Commands are comma separated. A command must be followed by a "
 "colon and a value."
 msgstr ""
 "Αποκρίνεται σε εντολές στην τυπική είσοδο. Τουλάχιστον μια εντολή πρέπει να "
 "οριστεί. Οι εντολές χωρίζονται με κόμμα. Μια εντολή πρέπει να ακολουθείται "
-"από : και μια τιμή."
+"από μια άνω και κάτω τελεία και μια τιμή."
 
 #. (itstool) path: note/p
 #: C/notification.page:20
@@ -1391,13 +1383,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/notification.page:26
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "#!/bin/sh\n"
-#| "\n"
-#| "zenity --notification\\\n"
-#| "  --window-icon=\"info\" \\\n"
-#| "  --text=\"There are system updates necessary!\"\n"
 msgid ""
 "\n"
 "  #!/bin/sh\n"
@@ -1437,13 +1422,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/notification.page:41
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "#!/bin/sh\n"
-#| "\n"
-#| "cat &lt;&lt;EOH| zenity --notification --listen\n"
-#| "message: this is the message text\n"
-#| "EOH\n"
 msgid ""
 "\n"
 "  #!/bin/sh\n"
