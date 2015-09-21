@@ -24,7 +24,6 @@ zenity_SOURCES = \
 	zenity.h
 
 zenity_CPPFLAGS = \
-	-I$(includedir)					\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
 	-DZENITY_DATADIR=\""$(pkgdatadir)"\"		\
 	$(AM_CPPFLAGS)

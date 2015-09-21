@@ -1,4 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+INCLUDES = src
 
 SUBDIRS = \
 	src	\
