@@ -388,7 +388,7 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
       break;
 
     default:
-      if (response < g_strv_length(zen_data->extra_label))
+      if (zen_data->extra_label && response < g_strv_length(zen_data->extra_label))
         printf("%s\n",zen_data->extra_label[response]);
       zenity_util_exit_code_with_data(ZENITY_ESC, zen_data);
       break;

@@ -393,7 +393,7 @@ zenity_progress_dialog_response (GtkWidget *widget, int response, gpointer data)
       zenity_util_exit_code_with_data (ZENITY_TIMEOUT, zen_data);
       break;
     default:
-      if (response < g_strv_length(zen_data->extra_label))
+      if (zen_data->extra_label && response < g_strv_length(zen_data->extra_label))
         printf("%s\n",zen_data->extra_label[response]);
       zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
       break;
