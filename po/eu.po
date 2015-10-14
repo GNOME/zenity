@@ -2,24 +2,23 @@
 # Copyright (C) 2003, 2004, 2006, 2007, 2008, 2010, 2011 the Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 #
+#
 # Alberto Fernández Benito <afernn@euskalnet.net>, 2003.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2003, 2004, 2005, 2006, 2007, 2008, 2010.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011, 2012, 2013, 2014, 2015.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-08 18:33+0100\n"
-"PO-Revision-Date: 2015-01-08 18:34+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-14 13:45+0200\n"
+"PO-Revision-Date: 2015-10-09 23:05+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: Basque <librezale@librezale.org>\n"
+"Language-Team: Basque <Basque <librezale@librezale.org>>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../src/about.c:63
@@ -74,7 +73,12 @@ msgstr ""
 "Elkarrizketa-koadro mota bat zehaztu behar duzu. Ikusi 'zenity --help' "
 "xehetasun gehiagorako\n"
 
-#: ../src/notification.c:121
+#: ../src/notification.c:51
+#, c-format
+msgid "Could not parse message\n"
+msgstr "Ezin izan da mezua aztertu\n"
+
+#: ../src/notification.c:140
 #, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
@@ -84,45 +88,48 @@ msgstr ""
 "Onartutako balioak 'true' edo 'false'.\n"
 
 #. (iibiiay)
-#: ../src/notification.c:137
+#: ../src/notification.c:156
 #, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Onartu gabeko argibidea. Baztertzen.\n"
 
 #. unknown hints
-#: ../src/notification.c:154
+#: ../src/notification.c:173
 #, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Argibidearen izena ezezaguna. Baztertzen.\n"
 
-#: ../src/notification.c:213
+#: ../src/notification.c:228
 #, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "Ezin izan da stdin-eko komandoa analizatu\n"
 
-#: ../src/notification.c:245
-#, c-format
-msgid "Could not parse message from stdin\n"
-msgstr "Ezin izan da stdin-eko mezua analizatu\n"
-
-#: ../src/notification.c:325
+#: ../src/notification.c:326
 msgid "Zenity notification"
 msgstr "Zenity-ren jakinarazpena"
 
+#: ../src/password.c:55
+msgid "_Cancel"
+msgstr "_Utzi"
+
+#: ../src/password.c:58
+msgid "_OK"
+msgstr "_Ados"
+
 #. Checks if username has been passed as a parameter
-#: ../src/password.c:66
+#: ../src/password.c:73
 msgid "Type your password"
 msgstr "Idatzi zure pasahitza"
 
-#: ../src/password.c:69
+#: ../src/password.c:76
 msgid "Type your username and password"
 msgstr "Idatzi zure erabiltzaile-izena eta pasahitza"
 
-#: ../src/password.c:107
+#: ../src/password.c:113
 msgid "Username:"
 msgstr "Erabiltzaile-izena:"
 
-#: ../src/password.c:123
+#: ../src/password.c:127
 msgid "Password:"
 msgstr "Pasahitza:"
 
@@ -136,244 +143,172 @@ msgstr "Gehienezko balioak gutxieneko balioa baino handiagoa izan behar du.\n"
 msgid "Value out of range.\n"
 msgstr "Balioa barrutitik kanpo.\n"
 
-#: ../src/tree.c:375
+#: ../src/tree.c:376
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Ez da zutabe izenbururik zehaztu zerrendaren elkarrizketa-koadroan\n"
 
-#: ../src/tree.c:381
+#: ../src/tree.c:382
 #, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr ""
 "'Zerrenda' motako elkarrizketa-koadroan bakarrik erabili beharko zenuke.\n"
 
-#: ../src/zenity.ui.h:1
-msgid "Adjust the scale value"
-msgstr "Doitu eskalaren balioa"
-
-#: ../src/zenity.ui.h:2
-msgid "Text View"
-msgstr "Testu-ikuspegia"
-
-#: ../src/zenity.ui.h:3
-msgid "Calendar selection"
-msgstr "Egutegiaren hautapena"
-
-#: ../src/zenity.ui.h:4
-msgid "Select a date from below."
-msgstr "Hautatu beheko data bat."
-
-#: ../src/zenity.ui.h:5
-msgid "C_alendar:"
-msgstr "_Egutegia:"
-
-#: ../src/zenity.ui.h:6
-msgid "Add a new entry"
-msgstr "Gehitu sarrera berria"
-
-#: ../src/zenity.ui.h:7
-msgid "_Enter new text:"
-msgstr "Sartu _testu berria:"
-
-#: ../src/zenity.ui.h:8
-msgid "Error"
-msgstr "Errorea"
-
-#: ../src/zenity.ui.h:9
-msgid "An error has occurred."
-msgstr "Errorea gertatu da."
-
-#: ../src/zenity.ui.h:10
-msgid "Forms dialog"
-msgstr "Inprimakien elkarrizketa-koadroa"
-
-#: ../src/zenity.ui.h:11
-msgid "Information"
-msgstr "Informazioa"
-
-#: ../src/zenity.ui.h:12
-msgid "All updates are complete."
-msgstr "Eguneraketa guztiak burutu dira."
-
-#: ../src/zenity.ui.h:13
-msgid "Progress"
-msgstr "Aurrerapena"
-
-#: ../src/zenity.ui.h:14
-msgid "Running..."
-msgstr "Exekutatzen..."
-
-#: ../src/zenity.ui.h:15
-msgid "Question"
-msgstr "Galdera"
-
-#: ../src/zenity.ui.h:16
-msgid "Are you sure you want to proceed?"
-msgstr "Ziur zaude jarraitu nahi duzula?"
-
-#: ../src/zenity.ui.h:17
-msgid "Select items from the list"
-msgstr "Hautatu elementuak zerrendatik"
-
-#: ../src/zenity.ui.h:18
-msgid "Select items from the list below."
-msgstr "Hautatu elementuak beheko zerrendatik."
-
-#: ../src/zenity.ui.h:19
-msgid "Warning"
-msgstr "Abisua"
-
-#: ../src/option.c:167
+#: ../src/option.c:169
 msgid "Set the dialog title"
 msgstr "Ezarri elkarrizketa-koadroaren izenburua"
 
-#: ../src/option.c:168
+#: ../src/option.c:170
 msgid "TITLE"
 msgstr "IZENBURUA"
 
-#: ../src/option.c:176
+#: ../src/option.c:178
 msgid "Set the window icon"
 msgstr "Ezarri leihoaren ikonoa"
 
-#: ../src/option.c:177
+#: ../src/option.c:179
 msgid "ICONPATH"
 msgstr "IKONOBIDEA"
 
-#: ../src/option.c:185
+#: ../src/option.c:187
 msgid "Set the width"
 msgstr "Ezarri zabalera"
 
-#: ../src/option.c:186
+#: ../src/option.c:188
 msgid "WIDTH"
 msgstr "ZABALERA"
 
-#: ../src/option.c:194
+#: ../src/option.c:196
 msgid "Set the height"
 msgstr "Ezarri altuera"
 
-#: ../src/option.c:195
+#: ../src/option.c:197
 msgid "HEIGHT"
 msgstr "ALTUERA"
 
-#: ../src/option.c:203
+#: ../src/option.c:205
 msgid "Set dialog timeout in seconds"
 msgstr "Ezarri elkarrizketa-koadroaren denbora-muga (segundotan)"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:205
+#: ../src/option.c:207
 msgid "TIMEOUT"
 msgstr "DENBORA-MUGA"
 
-#: ../src/option.c:213
-msgid "Sets the label of the Ok button"
-msgstr "'Ados' botoiaren etiketa ezartzen du"
+#: ../src/option.c:215
+msgid "Set the label of the OK button"
+msgstr "Ezarri 'Ados' botoiaren etiketa"
 
-#: ../src/option.c:214 ../src/option.c:223 ../src/option.c:265
-#: ../src/option.c:325 ../src/option.c:334 ../src/option.c:368
-#: ../src/option.c:426 ../src/option.c:563 ../src/option.c:688
-#: ../src/option.c:706 ../src/option.c:732 ../src/option.c:813
-#: ../src/option.c:898 ../src/option.c:907 ../src/option.c:969
-#: ../src/option.c:1027 ../src/option.c:1196
+#: ../src/option.c:216 ../src/option.c:225 ../src/option.c:234
+#: ../src/option.c:276 ../src/option.c:336 ../src/option.c:345
+#: ../src/option.c:379 ../src/option.c:437 ../src/option.c:574
+#: ../src/option.c:699 ../src/option.c:717 ../src/option.c:743
+#: ../src/option.c:823 ../src/option.c:917 ../src/option.c:926
+#: ../src/option.c:988 ../src/option.c:1046 ../src/option.c:1215
 msgid "TEXT"
 msgstr "TESTUA"
 
-#: ../src/option.c:222
-msgid "Sets the label of the Cancel button"
-msgstr "'Utzi' botoiaren etiketa ezartzen du"
+#: ../src/option.c:224
+msgid "Set the label of the Cancel button"
+msgstr "Ezarri 'Utzi' botoiaren etiketa"
 
-#: ../src/option.c:231
+#: ../src/option.c:233
+msgid "Add an extra button"
+msgstr "Gehitu botoi gehigarri bat"
+
+#: ../src/option.c:242
 msgid "Set the modal hint"
 msgstr "Ezarri argibidearen modua"
 
-#: ../src/option.c:240
+#: ../src/option.c:251
 msgid "Set the parent window to attach to"
 msgstr "Ezarri leiho gurasoa (honi atxikitzeko)"
 
-#: ../src/option.c:241
+#: ../src/option.c:252
 msgid "WINDOW"
 msgstr "LEIHOA"
 
-#: ../src/option.c:255
+#: ../src/option.c:266
 msgid "Display calendar dialog"
 msgstr "Bistaratu egutegiaren elkarrizketa-koadroa"
 
-#: ../src/option.c:264 ../src/option.c:324 ../src/option.c:367
-#: ../src/option.c:425 ../src/option.c:562 ../src/option.c:731
-#: ../src/option.c:812 ../src/option.c:968 ../src/option.c:1026
-#: ../src/option.c:1195
+#: ../src/option.c:275 ../src/option.c:335 ../src/option.c:378
+#: ../src/option.c:436 ../src/option.c:573 ../src/option.c:742
+#: ../src/option.c:822 ../src/option.c:987 ../src/option.c:1045
+#: ../src/option.c:1214
 msgid "Set the dialog text"
 msgstr "Ezarri elkarrizketa-koadroaren testua"
 
-#: ../src/option.c:273
+#: ../src/option.c:284
 msgid "Set the calendar day"
 msgstr "Ezarri egutegiaren eguna"
 
-#: ../src/option.c:274
+#: ../src/option.c:285
 msgid "DAY"
 msgstr "EGUNA"
 
-#: ../src/option.c:282
+#: ../src/option.c:293
 msgid "Set the calendar month"
 msgstr "Ezarri egutegiaren hilabetea"
 
-#: ../src/option.c:283
+#: ../src/option.c:294
 msgid "MONTH"
 msgstr "HILABETEA"
 
-#: ../src/option.c:291
+#: ../src/option.c:302
 msgid "Set the calendar year"
 msgstr "Ezarri egutegiaren urtea"
 
-#: ../src/option.c:292
+#: ../src/option.c:303
 msgid "YEAR"
 msgstr "URTEA"
 
-#: ../src/option.c:300 ../src/option.c:1213
+#: ../src/option.c:311 ../src/option.c:1232
 msgid "Set the format for the returned date"
 msgstr "Ezarri itzulerako dataren formatua"
 
-#: ../src/option.c:301 ../src/option.c:1214
+#: ../src/option.c:312 ../src/option.c:1233
 msgid "PATTERN"
 msgstr "EREDUA"
 
-#: ../src/option.c:315
+#: ../src/option.c:326
 msgid "Display text entry dialog"
 msgstr "Bistaratu testua sartzeko elkarrizketa-koadroa"
 
-#: ../src/option.c:333
+#: ../src/option.c:344
 msgid "Set the entry text"
 msgstr "Ezarri sarreraren testua"
 
-#: ../src/option.c:342
+#: ../src/option.c:353
 msgid "Hide the entry text"
 msgstr "Ezkutatu sarreraren testua"
 
-#: ../src/option.c:358
+#: ../src/option.c:369
 msgid "Display error dialog"
 msgstr "Bistaratu errorearen elkarrizketa-koadroa"
 
-#: ../src/option.c:376 ../src/option.c:434 ../src/option.c:821
-#: ../src/option.c:977
+#: ../src/option.c:387 ../src/option.c:445 ../src/option.c:831
+#: ../src/option.c:996
 msgid "Set the dialog icon"
 msgstr "Ezarri elkarrizketa-koadroaren ikonoa"
 
-#: ../src/option.c:377 ../src/option.c:435 ../src/option.c:822
-#: ../src/option.c:978
+#: ../src/option.c:388 ../src/option.c:446 ../src/option.c:832
+#: ../src/option.c:997
 msgid "ICON-NAME"
 msgstr "IKONO-IZENA"
 
-#: ../src/option.c:385 ../src/option.c:443 ../src/option.c:830
-#: ../src/option.c:986
+#: ../src/option.c:396 ../src/option.c:454 ../src/option.c:840
+#: ../src/option.c:1005
 msgid "Do not enable text wrapping"
 msgstr "Ez gaitu testua itzulbiratzea"
 
-#: ../src/option.c:394 ../src/option.c:452 ../src/option.c:839
-#: ../src/option.c:995
-msgid "Do not enable pango markup"
-msgstr "Ez gaitu pango-ren markatzea"
+#: ../src/option.c:405 ../src/option.c:463 ../src/option.c:849
+#: ../src/option.c:1014
+msgid "Do not enable Pango markup"
+msgstr "Ez gaitu Pango-ren markatzea"
 
-#: ../src/option.c:402 ../src/option.c:460 ../src/option.c:856
-#: ../src/option.c:1003
+#: ../src/option.c:413 ../src/option.c:471 ../src/option.c:866
+#: ../src/option.c:1022
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -381,88 +316,88 @@ msgstr ""
 "Gaitu elipsia testuaren elkarrizketa-koadroan. Testu luzeko leihoen altuera "
 "zuzentzen du honek."
 
-#: ../src/option.c:416
+#: ../src/option.c:427
 msgid "Display info dialog"
 msgstr "Bistaratu informazioaren elkarrizketa-koadroa"
 
-#: ../src/option.c:474
+#: ../src/option.c:485
 msgid "Display file selection dialog"
 msgstr "Bistaratu fitxategiak hautatzeko elkarrizketa-koadroa"
 
-#: ../src/option.c:483
+#: ../src/option.c:494
 msgid "Set the filename"
 msgstr "Ezarri fitxategiaren izena"
 
-#: ../src/option.c:484 ../src/option.c:880
+#: ../src/option.c:495 ../src/option.c:899
 msgid "FILENAME"
 msgstr "FITXATEGI-IZENA"
 
-#: ../src/option.c:492
+#: ../src/option.c:503
 msgid "Allow multiple files to be selected"
 msgstr "Baimendu fitxategi anitzen hautapena"
 
-#: ../src/option.c:501
+#: ../src/option.c:512
 msgid "Activate directory-only selection"
 msgstr "Aktibatu 'direktorioa soilik' hautapena"
 
-#: ../src/option.c:510
+#: ../src/option.c:521
 msgid "Activate save mode"
 msgstr "Aktibatu babes modua"
 
-#: ../src/option.c:519 ../src/option.c:607 ../src/option.c:1204
+#: ../src/option.c:530 ../src/option.c:618 ../src/option.c:1223
 msgid "Set output separator character"
 msgstr "Ezarri irteerako karaktere bereizlea"
 
-#: ../src/option.c:520 ../src/option.c:608 ../src/option.c:1205
+#: ../src/option.c:531 ../src/option.c:619 ../src/option.c:1224
 msgid "SEPARATOR"
 msgstr "BEREIZLEA"
 
-#: ../src/option.c:528
+#: ../src/option.c:539
 msgid "Confirm file selection if filename already exists"
 msgstr "Baieztatu fitxategiaren hautapena fitxategia jadanik existitzen bada"
 
-#: ../src/option.c:537
-msgid "Sets a filename filter"
-msgstr "Fitxategi-izenaren iragazkia ezartzen du"
+#: ../src/option.c:548
+msgid "Set a filename filter"
+msgstr "Ezarri fitxategi-izenaren iragazkia"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:539
+#: ../src/option.c:550
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "IZENA | EREDUA1 EREDUA2 ..."
 
-#: ../src/option.c:553
+#: ../src/option.c:564
 msgid "Display list dialog"
 msgstr "Bistaratu zerrendaren elkarrizketa-koadroa"
 
-#: ../src/option.c:571
+#: ../src/option.c:582
 msgid "Set the column header"
 msgstr "Ezarri zutabearen goiburua"
 
-#: ../src/option.c:572
+#: ../src/option.c:583
 msgid "COLUMN"
 msgstr "ZUTABEA"
 
-#: ../src/option.c:580
-msgid "Use check boxes for first column"
+#: ../src/option.c:591
+msgid "Use check boxes for the first column"
 msgstr "Erabili kontrol-laukiak lehenengo zutabean"
 
-#: ../src/option.c:589
-msgid "Use radio buttons for first column"
+#: ../src/option.c:600
+msgid "Use radio buttons for the first column"
 msgstr "Erabili irrati-botoiak lehenengo zutabean"
 
-#: ../src/option.c:598
-msgid "Use an image for first column"
+#: ../src/option.c:609
+msgid "Use an image for the first column"
 msgstr "Erabili irudi bat lehenengo zutabean"
 
-#: ../src/option.c:616
+#: ../src/option.c:627
 msgid "Allow multiple rows to be selected"
 msgstr "Baimendu errenkada anitzen hautapena"
 
-#: ../src/option.c:625 ../src/option.c:888
+#: ../src/option.c:636 ../src/option.c:907
 msgid "Allow changes to text"
 msgstr "Baimendu aldaketak testuan"
 
-#: ../src/option.c:634
+#: ../src/option.c:645
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -471,19 +406,19 @@ msgstr ""
 "inprimatzeko)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:636 ../src/option.c:645
+#: ../src/option.c:647 ../src/option.c:656
 msgid "NUMBER"
 msgstr "ZENBAKIA"
 
-#: ../src/option.c:644
+#: ../src/option.c:655
 msgid "Hide a specific column"
 msgstr "Ezkutatu zutabe zehatz bat"
 
-#: ../src/option.c:653
-msgid "Hides the column headers"
-msgstr "Zutabearen goiburuak ezkutatzen ditu"
+#: ../src/option.c:664
+msgid "Hide the column headers"
+msgstr "Ezkutatu zutabearen goiburuak"
 
-#: ../src/option.c:662
+#: ../src/option.c:673
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
@@ -491,86 +426,89 @@ msgstr ""
 "Aldatu zerrendaren bilaketa funtzio lehenetsia, testuaren bilaketa erdian "
 "(ez hasieran) bilatzeko."
 
-#: ../src/option.c:678
+#: ../src/option.c:689
 msgid "Display notification"
 msgstr "Bistaratu jakinarazpena"
 
-#: ../src/option.c:687
+#: ../src/option.c:698
 msgid "Set the notification text"
 msgstr "Ezarri jakinarazpenaren testua"
 
-#: ../src/option.c:696
+#: ../src/option.c:707
 msgid "Listen for commands on stdin"
 msgstr "Entzun 'stdin'eko komandoei"
 
-#: ../src/option.c:705
+#: ../src/option.c:716
 msgid "Set the notification hints"
 msgstr "Ezarri jakinarazpenaren argibideak"
 
-#: ../src/option.c:722
+#: ../src/option.c:733
 msgid "Display progress indication dialog"
 msgstr "Bistaratu progresioaren elkarrizketa-koadroa"
 
-#: ../src/option.c:740
+#: ../src/option.c:751
 msgid "Set initial percentage"
 msgstr "Ezarri hasierako ehunekoa"
 
-#: ../src/option.c:741
+#: ../src/option.c:752
 msgid "PERCENTAGE"
 msgstr "EHUNEKOA"
 
-#: ../src/option.c:749
+#: ../src/option.c:760
 msgid "Pulsate progress bar"
 msgstr "Progresio-barra keinukaria"
 
-#: ../src/option.c:759
+#: ../src/option.c:770
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Itxi elkarrizketa-koadroa %100 lortzean"
 
-#: ../src/option.c:769
-#, no-c-format
+#: ../src/option.c:779
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Hil prozesu-gurasoa 'Utzi' botoia sakatzean"
 
-#: ../src/option.c:779
-#, no-c-format
+#: ../src/option.c:788
 msgid "Hide Cancel button"
 msgstr "Ezkutatu 'Utzi' botoia"
 
-#: ../src/option.c:788
+#: ../src/option.c:798
+#, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Aurreikusi aurrerapena noiz iritsiko den %100era"
 
-#: ../src/option.c:803
+#: ../src/option.c:813
 msgid "Display question dialog"
 msgstr "Bistaratu galderen elkarrizketa-koadroa"
 
-#: ../src/option.c:847
-msgid "Give cancel button focus by default"
-msgstr "Eman fokua Utzi botoiari lehenetsi gisa"
+#: ../src/option.c:857
+msgid "Give Cancel button focus by default"
+msgstr "Eman fokua 'Utzi' botoiari lehenetsi gisa"
 
-#: ../src/option.c:870
+#: ../src/option.c:874
+msgid "Suppress OK and Cancel buttons"
+msgstr "Kendu 'Ados' eta 'Utzi' botoiak"
+
+#: ../src/option.c:889
 msgid "Display text information dialog"
 msgstr "Bistaratu testu-informazioaren elkarrizketa-koadroa"
 
-#: ../src/option.c:879
+#: ../src/option.c:898
 msgid "Open file"
 msgstr "Ireki fitxategia"
 
-#: ../src/option.c:897
+#: ../src/option.c:916
 msgid "Set the text font"
 msgstr "Ezarri testuaren letra-tipoa"
 
-#: ../src/option.c:906
+#: ../src/option.c:925
 msgid "Enable an I read and agree checkbox"
 msgstr "Gaitu 'Irakurri eta onartzen dut' kontrol-koadroa"
 
-#: ../src/option.c:916
-msgid "Enable html support"
+#: ../src/option.c:935
+msgid "Enable HTML support"
 msgstr "Gaitu HTML euskarria"
 
-#: ../src/option.c:925
+#: ../src/option.c:944
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -578,298 +516,354 @@ msgstr ""
 "Ez gaitu erabiltzailearen WebView-rekin elkarreragiketa. Soilik --html "
 "aukerarekin funtzionatzen du"
 
-#: ../src/option.c:934
-msgid "Sets an url instead of a file. Only works if you use --html option"
+#: ../src/option.c:953
+msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
-"URL bat ezartzen du fitxategi baten ordez. Soilik --html aukerarekin "
+"Ezarri URL bat fitxategi baten ordez. Soilik --html aukerarekin "
 "funtzionatzen du"
 
-#: ../src/option.c:935
+#: ../src/option.c:954
 msgid "URL"
 msgstr "URLa"
 
-#: ../src/option.c:944
+#: ../src/option.c:963
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "Korritu automatikoki testua amaierara. Soilik testua sarrera estandarretik "
 "jasotzen denean"
 
-#: ../src/option.c:959
+#: ../src/option.c:978
 msgid "Display warning dialog"
 msgstr "Bistaratu abisuaren elkarrizketa-koadroa"
 
-#: ../src/option.c:1017
+#: ../src/option.c:1036
 msgid "Display scale dialog"
 msgstr "Bistaratu eskalaren elkarrizketa-koadroa"
 
-#: ../src/option.c:1035
+#: ../src/option.c:1054
 msgid "Set initial value"
 msgstr "Ezarri hasierako balioa"
 
-#: ../src/option.c:1036 ../src/option.c:1045 ../src/option.c:1054
-#: ../src/option.c:1063 ../src/option.c:1262
+#: ../src/option.c:1055 ../src/option.c:1064 ../src/option.c:1073
+#: ../src/option.c:1082 ../src/option.c:1281
 msgid "VALUE"
 msgstr "BALIOA"
 
-#: ../src/option.c:1044
+#: ../src/option.c:1063
 msgid "Set minimum value"
 msgstr "Ezarri gutxieneko balioa"
 
-#: ../src/option.c:1053
+#: ../src/option.c:1072
 msgid "Set maximum value"
 msgstr "Ezarri gehienezko balioa"
 
-#: ../src/option.c:1062
+#: ../src/option.c:1081
 msgid "Set step size"
 msgstr "Ezarri urratsaren tamaina"
 
-#: ../src/option.c:1071
+#: ../src/option.c:1090
 msgid "Print partial values"
 msgstr "Inprimatu balio partzialak"
 
-#: ../src/option.c:1080
+#: ../src/option.c:1099
 msgid "Hide value"
 msgstr "Ezkutatu balioa"
 
-#: ../src/option.c:1095
+#: ../src/option.c:1114
 msgid "Display forms dialog"
 msgstr "Bistaratu inprimakien elkarrizketa-koadroa"
 
-#: ../src/option.c:1104
+#: ../src/option.c:1123
 msgid "Add a new Entry in forms dialog"
 msgstr "Gehitu sarrera berria inprimakien elkarrizketa-koadroari"
 
-#: ../src/option.c:1105 ../src/option.c:1114
+#: ../src/option.c:1124 ../src/option.c:1133
 msgid "Field name"
 msgstr "Eremuaren izena"
 
-#: ../src/option.c:1113
+#: ../src/option.c:1132
 msgid "Add a new Password Entry in forms dialog"
 msgstr ""
 "Gehitu pasahitzaren sarrera berri bat inprimakien elkarrizketa-koadroari"
 
-#: ../src/option.c:1122
+#: ../src/option.c:1141
 msgid "Add a new Calendar in forms dialog"
 msgstr "Gehitu egutegi berria inprimakien elkarrizketa-koadroari"
 
-#: ../src/option.c:1123
+#: ../src/option.c:1142
 msgid "Calendar field name"
 msgstr "Egutegia eremuaren izena"
 
-#: ../src/option.c:1131
+#: ../src/option.c:1150
 msgid "Add a new List in forms dialog"
 msgstr "Gehitu zerrenda sarrera berria inprimakien elkarrizketa-koadroan"
 
-#: ../src/option.c:1132
+#: ../src/option.c:1151
 msgid "List field and header name"
 msgstr "Zerrendatu eremu eta goiburuaren izena"
 
-#: ../src/option.c:1140
+#: ../src/option.c:1159
 msgid "List of values for List"
 msgstr "Zerrendaren balioak zerrendarentzako"
 
-#: ../src/option.c:1141 ../src/option.c:1150 ../src/option.c:1168
+#: ../src/option.c:1160 ../src/option.c:1169 ../src/option.c:1187
 msgid "List of values separated by |"
 msgstr "Zerrendako balioak |-rekin bereiztuta"
 
-#: ../src/option.c:1149
+#: ../src/option.c:1168
 msgid "List of values for columns"
 msgstr "Balioen zerrenda zutabeentzako"
 
-#: ../src/option.c:1158
+#: ../src/option.c:1177
 msgid "Add a new combo box in forms dialog"
 msgstr "Gehitu konbinazio-koadro berria inprimakien elkarrizketa-koadroan"
 
-#: ../src/option.c:1159
+#: ../src/option.c:1178
 msgid "Combo box field name"
 msgstr "Konbinazio-koadroaren eremuaren izena"
 
-#: ../src/option.c:1167
+#: ../src/option.c:1186
 msgid "List of values for combo box"
 msgstr "Balioen zerrenda konbinazio-koadroarentzako"
 
-#: ../src/option.c:1186
+#: ../src/option.c:1205
 msgid "Show the columns header"
 msgstr "Erakutsi zutabearen goiburua"
 
-#: ../src/option.c:1228
+#: ../src/option.c:1247
 msgid "Display password dialog"
 msgstr "Bistaratu pasahitzaren elkarrizketa-koadroa"
 
-#: ../src/option.c:1237
+#: ../src/option.c:1256
 msgid "Display the username option"
 msgstr "Bistaratu erabiltzaile-izenaren elkarrizketa-koadroa"
 
-#: ../src/option.c:1252
+#: ../src/option.c:1271
 msgid "Display color selection dialog"
 msgstr "Bistaratu kolorea hautatzeko elkarrizketa-koadroa"
 
-#: ../src/option.c:1261
+#: ../src/option.c:1280
 msgid "Set the color"
 msgstr "Ezarri kolorea"
 
-#: ../src/option.c:1270
+#: ../src/option.c:1289
 msgid "Show the palette"
 msgstr "Erakutsi paleta"
 
-#: ../src/option.c:1285
+#: ../src/option.c:1304
 msgid "About zenity"
 msgstr "Zenity-ri buruz"
 
-#: ../src/option.c:1294
+#: ../src/option.c:1313
 msgid "Print version"
 msgstr "Inprimatu bertsioa"
 
-#: ../src/option.c:2228
+#: ../src/option.c:2259
 msgid "General options"
 msgstr "Aukera orokorrak"
 
-#: ../src/option.c:2229
+#: ../src/option.c:2260
 msgid "Show general options"
 msgstr "Erakutsi aukera orokorrak"
 
-#: ../src/option.c:2239
+#: ../src/option.c:2270
 msgid "Calendar options"
 msgstr "Egutegiaren aukerak"
 
-#: ../src/option.c:2240
+#: ../src/option.c:2271
 msgid "Show calendar options"
 msgstr "Erakutsi egutegiaren aukerak"
 
-#: ../src/option.c:2250
+#: ../src/option.c:2281
 msgid "Text entry options"
 msgstr "Testu-sarreraren aukerak"
 
-#: ../src/option.c:2251
+#: ../src/option.c:2282
 msgid "Show text entry options"
 msgstr "Erakutsi testu-sarreraren aukerak"
 
-#: ../src/option.c:2261
+#: ../src/option.c:2292
 msgid "Error options"
 msgstr "Errore-aukerak"
 
-#: ../src/option.c:2262
+#: ../src/option.c:2293
 msgid "Show error options"
 msgstr "Erakutsi errore-aukerak"
 
-#: ../src/option.c:2272
+#: ../src/option.c:2303
 msgid "Info options"
 msgstr "Informazioaren aukerak"
 
-#: ../src/option.c:2273
+#: ../src/option.c:2304
 msgid "Show info options"
 msgstr "Erakutsi informazioaren aukerak"
 
-#: ../src/option.c:2283
+#: ../src/option.c:2314
 msgid "File selection options"
 msgstr "Fitxategiak hautatzeko aukerak"
 
-#: ../src/option.c:2284
+#: ../src/option.c:2315
 msgid "Show file selection options"
 msgstr "Erakutsi fitxategiak hautatzeko aukerak"
 
-#: ../src/option.c:2294
+#: ../src/option.c:2325
 msgid "List options"
 msgstr "Zerrendaren aukerak"
 
-#: ../src/option.c:2295
+#: ../src/option.c:2326
 msgid "Show list options"
 msgstr "Erakutsi zerrendaren aukerak"
 
-#: ../src/option.c:2306
+#: ../src/option.c:2337
 msgid "Notification icon options"
 msgstr "Jakinarazpen-ikonoaren aukerak"
 
-#: ../src/option.c:2307
+#: ../src/option.c:2338
 msgid "Show notification icon options"
 msgstr "Erakutsi jakinarazpen-ikonoaren aukerak"
 
-#: ../src/option.c:2318
+#: ../src/option.c:2349
 msgid "Progress options"
 msgstr "Progresioaren aukerak"
 
-#: ../src/option.c:2319
+#: ../src/option.c:2350
 msgid "Show progress options"
 msgstr "Erakutsi progresioaren aukerak"
 
-#: ../src/option.c:2329
+#: ../src/option.c:2360
 msgid "Question options"
 msgstr "Galderaren aukerak"
 
-#: ../src/option.c:2330
+#: ../src/option.c:2361
 msgid "Show question options"
 msgstr "Erakutsi galderaren aukerak"
 
-#: ../src/option.c:2340
+#: ../src/option.c:2371
 msgid "Warning options"
 msgstr "Abisuaren aukerak"
 
-#: ../src/option.c:2341
+#: ../src/option.c:2372
 msgid "Show warning options"
 msgstr "Erakutsi abisuaren aukerak"
 
-#: ../src/option.c:2351
+#: ../src/option.c:2382
 msgid "Scale options"
 msgstr "Eskalaren aukerak"
 
-#: ../src/option.c:2352
+#: ../src/option.c:2383
 msgid "Show scale options"
 msgstr "Erakutsi eskalaren aukerak"
 
-#: ../src/option.c:2362
+#: ../src/option.c:2393
 msgid "Text information options"
 msgstr "Testu-informazioaren aukerak"
 
-#: ../src/option.c:2363
+#: ../src/option.c:2394
 msgid "Show text information options"
 msgstr "Erakutsi testu-informazioaren aukerak"
 
-#: ../src/option.c:2373
+#: ../src/option.c:2404
 msgid "Color selection options"
 msgstr "Kolorea hautatzeko aukerak"
 
-#: ../src/option.c:2374
+#: ../src/option.c:2405
 msgid "Show color selection options"
 msgstr "Erakutsi kolorea hautatzeko aukerak"
 
-#: ../src/option.c:2384
+#: ../src/option.c:2415
 msgid "Password dialog options"
 msgstr "Pasahitzaren elkarrizketa-koadroaren aukerak"
 
-#: ../src/option.c:2385
+#: ../src/option.c:2416
 msgid "Show password dialog options"
 msgstr "Erakutsi pasahitzaren elkarrizketa-koadroaren aukerak"
 
-#: ../src/option.c:2395
+#: ../src/option.c:2426
 msgid "Forms dialog options"
 msgstr "Inprimakien elkarrizketa-koadroaren aukerak"
 
-#: ../src/option.c:2396
+#: ../src/option.c:2427
 msgid "Show forms dialog options"
 msgstr "Erakutsi inprimakien elkarrizketa-koadroaren aukerak"
 
-#: ../src/option.c:2406
+#: ../src/option.c:2437
 msgid "Miscellaneous options"
 msgstr "Hainbat aukera"
 
-#: ../src/option.c:2407
+#: ../src/option.c:2438
 msgid "Show miscellaneous options"
 msgstr "Erakutsi hainbat aukera"
 
-#: ../src/option.c:2432
+#: ../src/option.c:2463
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Aukera hau ez dago erabilgarri. Ikusi --help erabilera guztiak ezagutzeko.\n"
 
-#: ../src/option.c:2436
+#: ../src/option.c:2467
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s ez da onartzen elkarrizketa-koadro honetan\n"
 
-#: ../src/option.c:2440
+#: ../src/option.c:2471
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Elkarrizketa-koadroaren bi aukera edo gehiago zehaztu dira\n"
 
+#~ msgid "Adjust the scale value"
+#~ msgstr "Doitu eskalaren balioa"
+
+#~ msgid "Text View"
+#~ msgstr "Testu-ikuspegia"
+
+#~ msgid "Calendar selection"
+#~ msgstr "Egutegiaren hautapena"
+
+#~ msgid "Select a date from below."
+#~ msgstr "Hautatu beheko data bat."
+
+#~ msgid "C_alendar:"
+#~ msgstr "_Egutegia:"
+
+#~ msgid "Add a new entry"
+#~ msgstr "Gehitu sarrera berria"
+
+#~ msgid "_Enter new text:"
+#~ msgstr "Sartu _testu berria:"
+
+#~ msgid "Error"
+#~ msgstr "Errorea"
+
+#~ msgid "An error has occurred."
+#~ msgstr "Errorea gertatu da."
+
+#~ msgid "Forms dialog"
+#~ msgstr "Inprimakien elkarrizketa-koadroa"
+
+#~ msgid "Information"
+#~ msgstr "Informazioa"
+
+#~ msgid "All updates are complete."
+#~ msgstr "Eguneraketa guztiak burutu dira."
+
+#~ msgid "Progress"
+#~ msgstr "Aurrerapena"
+
+#~ msgid "Running..."
+#~ msgstr "Exekutatzen..."
+
+#~ msgid "Question"
+#~ msgstr "Galdera"
+
+#~ msgid "Are you sure you want to proceed?"
+#~ msgstr "Ziur zaude jarraitu nahi duzula?"
+
+#~ msgid "Select items from the list"
+#~ msgstr "Hautatu elementuak zerrendatik"
+
+#~ msgid "Select items from the list below."
+#~ msgstr "Hautatu elementuak beheko zerrendatik."
+
+#~ msgid "Warning"
+#~ msgstr "Abisua"
