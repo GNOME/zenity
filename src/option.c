@@ -2074,9 +2074,11 @@ zenity_text_post_callback (GOptionContext *context,
     if (zenity_text_font) 
       zenity_option_error (zenity_option_get_name (text_options, &zenity_text_font),
                            ERROR_SUPPORT);
+#ifdef HAVE_WEBKITGTK
     if (zenity_text_enable_html)
       zenity_option_error (zenity_option_get_name (text_options, &zenity_text_enable_html),
                            ERROR_SUPPORT);
+#endif
   }
   return TRUE;
 }
