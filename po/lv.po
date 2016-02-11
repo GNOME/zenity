@@ -2,14 +2,14 @@
 # Raivis Dejus <orvils@gmail.com>, 2006, 2009.
 # Peteris Krisjanis <pecisk@gmail.com>, 2009.
 # Rudolfs <rudolfs.mazurs@gmail.com>, 2011.
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013, 2014, 2015.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-08 12:28+0000\n"
-"PO-Revision-Date: 2015-03-13 15:03+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=zenity&"
+"keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-02-11 15:26+0000\n"
+"PO-Revision-Date: 2016-02-11 23:13+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 2.0\n"
 "X-Poedit-Language: Latvian\n"
 "X-Poedit-Country: LATVIA\n"
 
-#: ../src/about.c:63
+#: src/about.c:63
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -34,7 +34,7 @@ msgstr ""
 "publicējis Brīvas programmatūras fonds; vai nu pēc licences 2. versijas, vai "
 "arī (pēc jūsu izvēles) jebkuras vēlākās versijas.\n"
 
-#: ../src/about.c:67
+#: src/about.c:67
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -46,7 +46,7 @@ msgstr ""
 "KONKRĒTIEM NOLŪKIEM garantijām. Sīkāku informāciju meklējiet GNU Mazajā "
 "vispārējā publiskajā licencē.\n"
 
-#: ../src/about.c:71
+#: src/about.c:71
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -57,26 +57,29 @@ msgstr ""
 "fondam uz šo adresi: Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301, USA."
 
-#: ../src/about.c:263
+#: src/about.c:263
 msgid "translator-credits"
 msgstr ""
 "Sandra Zabarovska\n"
 "Pēteris Krišjānis <pecisk@gmail.com>\n"
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/about.c:275
+#: src/about.c:275
 msgid "Display dialog boxes from shell scripts"
 msgstr "Rādīt dialoglodziņus no čaulas skriptiem"
 
-#: ../src/main.c:105
-#, c-format
+#: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Jānorāda dialoglodziņa veids. Skatiet “zenity --help”, lai iegūtu papildu "
 "informāciju\n"
 
-#: ../src/notification.c:121
-#, c-format
+#: src/notification.c:51
+#| msgid "Could not parse message from stdin\n"
+msgid "Could not parse message\n"
+msgstr "Nevarēja parsēt ziņojumu\n"
+
+#: src/notification.c:140
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
@@ -85,295 +88,303 @@ msgstr ""
 "Atbalstītās vērtības ir “true” un “false”.\n"
 
 #. (iibiiay)
-#: ../src/notification.c:137
-#, c-format
+#: src/notification.c:156
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Neatbalstīts padoms. Izlaiž.\n"
 
 #. unknown hints
-#: ../src/notification.c:154
-#, c-format
+#: src/notification.c:173
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Nezināms padoma nosaukums. Izlaiž.\n"
 
-#: ../src/notification.c:213
-#, c-format
+#: src/notification.c:228
 msgid "Could not parse command from stdin\n"
 msgstr "Nevarēja parsēt komandu no stdin\n"
 
-#: ../src/notification.c:245
-#, c-format
-msgid "Could not parse message from stdin\n"
-msgstr "Nevarēja parsēt komandu no stdin\n"
-
-#: ../src/notification.c:325
+#: src/notification.c:326
 msgid "Zenity notification"
 msgstr "Zenity paziņojums"
 
+#: src/password.c:55
+msgid "_Cancel"
+msgstr "At_celt"
+
+#: src/password.c:58
+msgid "_OK"
+msgstr "_Labi"
+
 #. Checks if username has been passed as a parameter
-#: ../src/password.c:66
+#: src/password.c:73
 msgid "Type your password"
 msgstr "Ievadiet savu paroli"
 
-#: ../src/password.c:69
+#: src/password.c:76
 msgid "Type your username and password"
 msgstr "Ievadiet savu lietotājvārdu un paroli"
 
-#: ../src/password.c:107
+#: src/password.c:113
 msgid "Username:"
 msgstr "Lietotājvārds:"
 
-#: ../src/password.c:123
+#: src/password.c:127
 msgid "Password:"
 msgstr "Parole:"
 
-#: ../src/scale.c:57
-#, c-format
+#: src/scale.c:57
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Maksimālajai vērtībai jābūt lielākai par minimālo vērtību.\n"
 
-#: ../src/scale.c:64
-#, c-format
+#: src/scale.c:64
 msgid "Value out of range.\n"
 msgstr "Vērtība ir ārpus intervāla.\n"
 
-#: ../src/tree.c:375
-#, c-format
+#: src/tree.c:376
 msgid "No column titles specified for List dialog.\n"
 msgstr "Saraksta dialoglodziņam nav norādīti kolonnu nosaukumi.\n"
 
-#: ../src/tree.c:381
-#, c-format
+#: src/tree.c:382
 msgid "You should use only one List dialog type.\n"
 msgstr "Vajadzētu lietot tikai vienu saraksta dialoglodziņa tipu.\n"
 
-#: ../src/zenity.ui.h:1
+#: src/zenity.ui:14 src/zenity.ui:76
 msgid "Adjust the scale value"
 msgstr "Pielāgot mēroga vērtību"
 
-#: ../src/zenity.ui.h:2
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Atcelt"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "Labi"
+
+#: src/zenity.ui:117
 msgid "Text View"
 msgstr "Teksta skats"
 
-#: ../src/zenity.ui.h:3
+#: src/zenity.ui:231
 msgid "Calendar selection"
 msgstr "Kalendāra izvēle"
 
-#: ../src/zenity.ui.h:4
+#: src/zenity.ui:298
 msgid "Select a date from below."
 msgstr "Izvēlieties datumu no apakšā esošajiem."
 
-#: ../src/zenity.ui.h:5
+#: src/zenity.ui:319
 msgid "C_alendar:"
 msgstr "K_alendārs:"
 
-#: ../src/zenity.ui.h:6
+#: src/zenity.ui:361
 msgid "Add a new entry"
 msgstr "Pievienot jaunu ierakstu"
 
-#: ../src/zenity.ui.h:7
+#: src/zenity.ui:428
 msgid "_Enter new text:"
 msgstr "I_evadiet jaunu tekstu:"
 
-#: ../src/zenity.ui.h:8
+#: src/zenity.ui:465
 msgid "Error"
 msgstr "Kļūda"
 
-#: ../src/zenity.ui.h:9
+#: src/zenity.ui:530
 msgid "An error has occurred."
 msgstr "Gadījās kļūda."
 
-#: ../src/zenity.ui.h:10
+#: src/zenity.ui:658
 msgid "Forms dialog"
 msgstr "Formu dialoglodziņš"
 
-#: ../src/zenity.ui.h:11
+#: src/zenity.ui:681
 msgid "Information"
 msgstr "Informācija"
 
-#: ../src/zenity.ui.h:12
+#: src/zenity.ui:741
 msgid "All updates are complete."
 msgstr "Visi atjauninājumi ir pabeigti."
 
-#: ../src/zenity.ui.h:13
+#: src/zenity.ui:768
 msgid "Progress"
 msgstr "Progress"
 
-#: ../src/zenity.ui.h:14
+#: src/zenity.ui:831
 msgid "Running..."
 msgstr "Darbojas..."
 
-#: ../src/zenity.ui.h:15
+#: src/zenity.ui:882
 msgid "Question"
 msgstr "Jautājums"
 
-#: ../src/zenity.ui.h:16
+#: src/zenity.ui:929 src/zenity.ui:1126
 msgid "Are you sure you want to proceed?"
 msgstr "Vai tiešām vēlaties turpināt?"
 
-#: ../src/zenity.ui.h:17
+#: src/zenity.ui:953
 msgid "Select items from the list"
 msgstr "Izvēlieties vienumus no saraksta"
 
-#: ../src/zenity.ui.h:18
+#: src/zenity.ui:1015
 msgid "Select items from the list below."
 msgstr "Izvēlieties vienumus no apakšā esošā saraksta."
 
-#: ../src/zenity.ui.h:19
+#: src/zenity.ui:1064
 msgid "Warning"
 msgstr "Brīdinājums"
 
-#: ../src/option.c:167
+#: src/option.c:169
 msgid "Set the dialog title"
 msgstr "Iestatīt dialoglodziņa nosaukumu"
 
-#: ../src/option.c:168
+#: src/option.c:170
 msgid "TITLE"
 msgstr "NOSAUKUMS"
 
-#: ../src/option.c:176
+#: src/option.c:178
 msgid "Set the window icon"
 msgstr "Iestatīt loga ikonu"
 
-#: ../src/option.c:177
+#: src/option.c:179
 msgid "ICONPATH"
 msgstr "IKONCEĻŠ"
 
-#: ../src/option.c:185
+#: src/option.c:187
 msgid "Set the width"
 msgstr "Iestatīt platumu"
 
-#: ../src/option.c:186
+#: src/option.c:188
 msgid "WIDTH"
 msgstr "PLATUMS"
 
-#: ../src/option.c:194
+#: src/option.c:196
 msgid "Set the height"
 msgstr "Iestatīt augstumu"
 
-#: ../src/option.c:195
+#: src/option.c:197
 msgid "HEIGHT"
 msgstr "AUGSTUMS"
 
-#: ../src/option.c:203
+#: src/option.c:205
 msgid "Set dialog timeout in seconds"
 msgstr "Iestatīt dialoglodziņa noilgumu sekundēs"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:205
+#: src/option.c:207
 msgid "TIMEOUT"
 msgstr "NOILDZE"
 
-#: ../src/option.c:213
-msgid "Sets the label of the Ok button"
-msgstr "Iestatīt apstiprināšanas pogas tekstu"
+#: src/option.c:215
+#| msgid "Sets the label of the Ok button"
+msgid "Set the label of the OK button"
+msgstr "Iestatīt etiķeti pogai “Labi”"
 
-#: ../src/option.c:214 ../src/option.c:223 ../src/option.c:265
-#: ../src/option.c:325 ../src/option.c:334 ../src/option.c:368
-#: ../src/option.c:426 ../src/option.c:563 ../src/option.c:688
-#: ../src/option.c:706 ../src/option.c:732 ../src/option.c:813
-#: ../src/option.c:898 ../src/option.c:907 ../src/option.c:969
-#: ../src/option.c:1027 ../src/option.c:1196
+#: src/option.c:216 src/option.c:225 src/option.c:234 src/option.c:276
+#: src/option.c:336 src/option.c:345 src/option.c:379 src/option.c:437
+#: src/option.c:574 src/option.c:699 src/option.c:717 src/option.c:743
+#: src/option.c:823 src/option.c:917 src/option.c:926 src/option.c:988
+#: src/option.c:1046 src/option.c:1215
 msgid "TEXT"
 msgstr "TEKSTS"
 
-#: ../src/option.c:222
-msgid "Sets the label of the Cancel button"
-msgstr "Iestata atcelšanas pogas tekstu"
+#: src/option.c:224
+#| msgid "Sets the label of the Cancel button"
+msgid "Set the label of the Cancel button"
+msgstr "Iestatīt etiķeti pogai “Atcelt”"
 
-#: ../src/option.c:231
+#: src/option.c:233
+#| msgid "Hide Cancel button"
+msgid "Add an extra button"
+msgstr "Pievienot papildu pogu"
+
+#: src/option.c:242
 msgid "Set the modal hint"
 msgstr "Iestatīt modālo padomu"
 
-#: ../src/option.c:240
+#: src/option.c:251
 msgid "Set the parent window to attach to"
 msgstr "Iestatīt vecāku logu, lai to pievienotu"
 
-#: ../src/option.c:241
+#: src/option.c:252
 msgid "WINDOW"
 msgstr "LOGS"
 
-#: ../src/option.c:255
+#: src/option.c:266
 msgid "Display calendar dialog"
 msgstr "Rādīt kalendāra dialoglodziņu"
 
-#: ../src/option.c:264 ../src/option.c:324 ../src/option.c:367
-#: ../src/option.c:425 ../src/option.c:562 ../src/option.c:731
-#: ../src/option.c:812 ../src/option.c:968 ../src/option.c:1026
-#: ../src/option.c:1195
+#: src/option.c:275 src/option.c:335 src/option.c:378 src/option.c:436
+#: src/option.c:573 src/option.c:742 src/option.c:822 src/option.c:987
+#: src/option.c:1045 src/option.c:1214
 msgid "Set the dialog text"
 msgstr "Iestatīt dialoglodziņa tekstu"
 
-#: ../src/option.c:273
+#: src/option.c:284
 msgid "Set the calendar day"
 msgstr "Iestatīt kalendāra dienu"
 
-#: ../src/option.c:274
+#: src/option.c:285
 msgid "DAY"
 msgstr "DIENA"
 
-#: ../src/option.c:282
+#: src/option.c:293
 msgid "Set the calendar month"
 msgstr "Iestatīt kalendāra mēnesi"
 
-#: ../src/option.c:283
+#: src/option.c:294
 msgid "MONTH"
 msgstr "MĒNESIS"
 
-#: ../src/option.c:291
+#: src/option.c:302
 msgid "Set the calendar year"
 msgstr "Iestatīt kalendāra gadu"
 
-#: ../src/option.c:292
+#: src/option.c:303
 msgid "YEAR"
 msgstr "GADS"
 
-#: ../src/option.c:300 ../src/option.c:1213
+#: src/option.c:311 src/option.c:1232
 msgid "Set the format for the returned date"
 msgstr "Iestatīt paziņotā datuma formātu"
 
-#: ../src/option.c:301 ../src/option.c:1214
+#: src/option.c:312 src/option.c:1233
 msgid "PATTERN"
 msgstr "ŠABLONS"
 
-#: ../src/option.c:315
+#: src/option.c:326
 msgid "Display text entry dialog"
 msgstr "Rādīt teksta ievades dialoglodziņu"
 
-#: ../src/option.c:333
+#: src/option.c:344
 msgid "Set the entry text"
 msgstr "Iestatīt ievades tekstu"
 
-#: ../src/option.c:342
+#: src/option.c:353
 msgid "Hide the entry text"
 msgstr "Slēpt ievades tekstu"
 
-#: ../src/option.c:358
+#: src/option.c:369
 msgid "Display error dialog"
 msgstr "Rādīt kļūdas dialoglodziņu"
 
-#: ../src/option.c:376 ../src/option.c:434 ../src/option.c:821
-#: ../src/option.c:977
+#: src/option.c:387 src/option.c:445 src/option.c:831 src/option.c:996
 msgid "Set the dialog icon"
 msgstr "Iestatīt dialoglodziņa ikonu"
 
-#: ../src/option.c:377 ../src/option.c:435 ../src/option.c:822
-#: ../src/option.c:978
+#: src/option.c:388 src/option.c:446 src/option.c:832 src/option.c:997
 msgid "ICON-NAME"
 msgstr "IKONAS-NOSAUKUMS"
 
-#: ../src/option.c:385 ../src/option.c:443 ../src/option.c:830
-#: ../src/option.c:986
+#: src/option.c:396 src/option.c:454 src/option.c:840 src/option.c:1005
 msgid "Do not enable text wrapping"
-msgstr "Neaktivēt teksta aplaušanu"
+msgstr "Neieslēgt teksta aplaušanu"
 
-#: ../src/option.c:394 ../src/option.c:452 ../src/option.c:839
-#: ../src/option.c:995
-msgid "Do not enable pango markup"
-msgstr "Neaktivēt pango marķēšanu"
+#: src/option.c:405 src/option.c:463 src/option.c:849 src/option.c:1014
+#| msgid "Do not enable pango markup"
+msgid "Do not enable Pango markup"
+msgstr "Neieslēgt Pango marķēšanu"
 
-#: ../src/option.c:402 ../src/option.c:460 ../src/option.c:856
-#: ../src/option.c:1003
+#: src/option.c:413 src/option.c:471 src/option.c:866 src/option.c:1022
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -381,88 +392,92 @@ msgstr ""
 "Ieslēdz dialoglodziņu tekstu apraušanu ar trīspunkti. Tas salabo augsto logu "
 "problēmu, kad ir gari teksti"
 
-#: ../src/option.c:416
+#: src/option.c:427
 msgid "Display info dialog"
 msgstr "Rādīt informācijas dialoglodziņu"
 
-#: ../src/option.c:474
+#: src/option.c:485
 msgid "Display file selection dialog"
 msgstr "Rādīt datņu izvēles dialoglodziņu"
 
-#: ../src/option.c:483
+#: src/option.c:494
 msgid "Set the filename"
 msgstr "Iestatīt datnes nosaukumu"
 
-#: ../src/option.c:484 ../src/option.c:880
+#: src/option.c:495 src/option.c:899
 msgid "FILENAME"
 msgstr "DATNES_NOSAUKUMS"
 
-#: ../src/option.c:492
+#: src/option.c:503
 msgid "Allow multiple files to be selected"
 msgstr "Atļaut vairāku datņu izvēlēšanos"
 
-#: ../src/option.c:501
+#: src/option.c:512
 msgid "Activate directory-only selection"
 msgstr "Aktivizēt “tikai direktorijas” izvēli"
 
-#: ../src/option.c:510
+#: src/option.c:521
 msgid "Activate save mode"
 msgstr "Aktivizēt saglabāšanas režīmu"
 
-#: ../src/option.c:519 ../src/option.c:607 ../src/option.c:1204
+#: src/option.c:530 src/option.c:618 src/option.c:1223
 msgid "Set output separator character"
 msgstr "Iestatīt izvades atdalītājrakstzīmi"
 
-#: ../src/option.c:520 ../src/option.c:608 ../src/option.c:1205
+#: src/option.c:531 src/option.c:619 src/option.c:1224
 msgid "SEPARATOR"
 msgstr "ATDALĪTĀJS"
 
-#: ../src/option.c:528
+#: src/option.c:539
 msgid "Confirm file selection if filename already exists"
 msgstr "Apstiprināt datnes izvēli, ja tāds datnes nosaukums jau eksistē"
 
-#: ../src/option.c:537
-msgid "Sets a filename filter"
-msgstr "Iestata datņu nosaukumu filtru"
+#: src/option.c:548
+#| msgid "Sets a filename filter"
+msgid "Set a filename filter"
+msgstr "Iestatīt datņu nosaukumu filtru"
 
 #. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:539
+#: src/option.c:550
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr "NOSAUKUMS | FILTRS1 FILTRS2 ..."
+msgstr "NOSAUKUMS | RAKSTS1 RAKSTS2 ..."
 
-#: ../src/option.c:553
+#: src/option.c:564
 msgid "Display list dialog"
 msgstr "Rādīt saraksta dialoglodziņu"
 
-#: ../src/option.c:571
+#: src/option.c:582
 msgid "Set the column header"
 msgstr "Iestatīt kolonnas virsrakstu"
 
-#: ../src/option.c:572
+#: src/option.c:583
 msgid "COLUMN"
 msgstr "KOLONA"
 
-#: ../src/option.c:580
-msgid "Use check boxes for first column"
-msgstr "Pirmajai kolonnai lietot izvēles rūtiņas"
+#: src/option.c:591
+#| msgid "Use check boxes for first column"
+msgid "Use check boxes for the first column"
+msgstr "Izmantot izvēles rūtiņas pirmajai kolonnai"
 
-#: ../src/option.c:589
-msgid "Use radio buttons for first column"
-msgstr "Pirmajai kolonnai lietot radio pogas"
+#: src/option.c:600
+#| msgid "Use radio buttons for first column"
+msgid "Use radio buttons for the first column"
+msgstr "Izmantot radio pogas pirmajai kolonnai"
 
-#: ../src/option.c:598
-msgid "Use an image for first column"
-msgstr "Pirmajai kolonnai lietot attēlu"
+#: src/option.c:609
+#| msgid "Use an image for first column"
+msgid "Use an image for the first column"
+msgstr "Izmantot attēlu pirmajai kolonnai"
 
-#: ../src/option.c:616
+#: src/option.c:627
 msgid "Allow multiple rows to be selected"
 msgstr "Atļaut vairāku rindiņu izvēlēšanos"
 
-#: ../src/option.c:625 ../src/option.c:888
+#: src/option.c:636 src/option.c:907
 msgid "Allow changes to text"
 msgstr "Atļaut izmaiņas tekstā"
 
-#: ../src/option.c:634
+#: src/option.c:645
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -471,403 +486,408 @@ msgstr ""
 "visas kolonnas)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:636 ../src/option.c:645
+#: src/option.c:647 src/option.c:656
 msgid "NUMBER"
 msgstr "NUMURS"
 
-#: ../src/option.c:644
+#: src/option.c:655
 msgid "Hide a specific column"
 msgstr "Paslēpt noteiktu kolonnu"
 
-#: ../src/option.c:653
-msgid "Hides the column headers"
-msgstr "Iestatīt kolonnas virsrakstu"
+#: src/option.c:664
+#| msgid "Hides the column headers"
+msgid "Hide the column headers"
+msgstr "Slēpt kolonnas virsrakstus"
 
-#: ../src/option.c:662
+#: src/option.c:673
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
 msgstr ""
 "Mainīt saraksta noklusējuma meklēšanas funkciju tekstam vidū, nevis no sākuma"
 
-#: ../src/option.c:678
+#: src/option.c:689
 msgid "Display notification"
 msgstr "Parādīt paziņojumu"
 
-#: ../src/option.c:687
+#: src/option.c:698
 msgid "Set the notification text"
 msgstr "Iestatīt paziņojuma tekstu"
 
-#: ../src/option.c:696
+#: src/option.c:707
 msgid "Listen for commands on stdin"
 msgstr "Gaidīt komandu no stdin"
 
-#: ../src/option.c:705
+#: src/option.c:716
 msgid "Set the notification hints"
 msgstr "Iestatīt paziņojumu padomus"
 
-#: ../src/option.c:722
+#: src/option.c:733
 msgid "Display progress indication dialog"
 msgstr "Rādīt progresa rādītāja dialoglodziņu"
 
-#: ../src/option.c:740
+#: src/option.c:751
 msgid "Set initial percentage"
 msgstr "Iestatīt sākotnējos procentus"
 
-#: ../src/option.c:741
+#: src/option.c:752
 msgid "PERCENTAGE"
 msgstr "PROCENTI"
 
-#: ../src/option.c:749
+#: src/option.c:760
 msgid "Pulsate progress bar"
 msgstr "Iestatīt pulsējošu progresa joslu"
 
-#: ../src/option.c:759
+#: src/option.c:770
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Aizvērt dialoglodziņu, kad sasniegti 100%"
 
-#: ../src/option.c:769
-#, no-c-format
+#: src/option.c:779
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Pārtraukt vecāka procesu, ja tiek nospiesta atcelšanas poga"
 
-#: ../src/option.c:779
-#, no-c-format
+#: src/option.c:788
 msgid "Hide Cancel button"
 msgstr "Slēpt pogu “Atcelt”"
 
-#: ../src/option.c:788
+#: src/option.c:798
+#, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Novērtēt, kad progress būs sasniedzis 100%"
 
-#: ../src/option.c:803
+#: src/option.c:813
 msgid "Display question dialog"
 msgstr "Rādīt jautājumu dialoglodziņu"
 
-#: ../src/option.c:847
-msgid "Give cancel button focus by default"
+#: src/option.c:857
+#| msgid "Give cancel button focus by default"
+msgid "Give Cancel button focus by default"
 msgstr "Pēc noklusējuma fokusu dot atcelšanas pogai"
 
-#: ../src/option.c:870
+#: src/option.c:874
+#| msgid "Hide Cancel button"
+msgid "Suppress OK and Cancel buttons"
+msgstr "Slēpt ”Labi“ un “Atcelt” pogas"
+
+#: src/option.c:889
 msgid "Display text information dialog"
 msgstr "Rādīt teksta informācijas dialoglodziņu"
 
-#: ../src/option.c:879
+#: src/option.c:898
 msgid "Open file"
 msgstr "Atvērt datni"
 
-#: ../src/option.c:897
+#: src/option.c:916
 msgid "Set the text font"
 msgstr "Iestatīt teksta fontu"
 
-#: ../src/option.c:906
+#: src/option.c:925
 msgid "Enable an I read and agree checkbox"
-msgstr "Aktivēt “izlasīju un piekrītu” izvēles rūtiņu"
+msgstr "Ieslēgt “izlasīju un piekrītu” izvēles rūtiņu"
 
-#: ../src/option.c:916
-msgid "Enable html support"
-msgstr "Aktivēt html atbalstu"
+#: src/option.c:935
+#| msgid "Enable html support"
+msgid "Enable HTML support"
+msgstr "Ieslēgt HTML atbalstu"
 
-#: ../src/option.c:925
-#| msgid "Sets an url instead of a file. Only works if you use --html option"
+#: src/option.c:944
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr ""
-"Neieslēgt lietotāja mijiedarbību ar WebView. Darbojas tikai, ja izmantojat "
-"--html opciju"
+"Neieslēgt lietotāja mijiedarbību ar WebView. Darbojas tikai, ja izmantojat --"
+"html opciju"
 
-#: ../src/option.c:934
-msgid "Sets an url instead of a file. Only works if you use --html option"
-msgstr "Iestata url nevis datni. Darbojas tikai, ja izmantojat --html opciju"
+#: src/option.c:953
+#| msgid "Sets an url instead of a file. Only works if you use --html option"
+msgid "Set an URL instead of a file. Only works if you use --html option"
+msgstr "Iestatīt URL nevis datni. Darbojas tikai, ja izmantojat --html opciju"
 
-#: ../src/option.c:935
+#: src/option.c:954
 msgid "URL"
 msgstr "URL"
 
-#: ../src/option.c:944
+#: src/option.c:963
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "Automātiski ritināt tekstu uz leju. Tikai, kad tekst ir tverts no standarta "
 "ievades"
 
-#: ../src/option.c:959
+#: src/option.c:978
 msgid "Display warning dialog"
 msgstr "Rādīt brīdinājuma dialoglodziņu"
 
-#: ../src/option.c:1017
+#: src/option.c:1036
 msgid "Display scale dialog"
 msgstr "Rādīt mēroga dialoglodziņu"
 
-#: ../src/option.c:1035
+#: src/option.c:1054
 msgid "Set initial value"
 msgstr "Iestatīt sākotnējo vērtību"
 
-#: ../src/option.c:1036 ../src/option.c:1045 ../src/option.c:1054
-#: ../src/option.c:1063 ../src/option.c:1262
+#: src/option.c:1055 src/option.c:1064 src/option.c:1073 src/option.c:1082
+#: src/option.c:1281
 msgid "VALUE"
 msgstr "VĒRTĪBA"
 
-#: ../src/option.c:1044
+#: src/option.c:1063
 msgid "Set minimum value"
 msgstr "Iestatīt minimālo vērtību"
 
-#: ../src/option.c:1053
+#: src/option.c:1072
 msgid "Set maximum value"
 msgstr "Iestatīt maksimālo vērtību"
 
-#: ../src/option.c:1062
+#: src/option.c:1081
 msgid "Set step size"
 msgstr "Iestatīt soļa izmēru"
 
-#: ../src/option.c:1071
+#: src/option.c:1090
 msgid "Print partial values"
 msgstr "Drukāt daļējās vērtības"
 
-#: ../src/option.c:1080
+#: src/option.c:1099
 msgid "Hide value"
 msgstr "Slēpt vērtību"
 
-#: ../src/option.c:1095
+#: src/option.c:1114
 msgid "Display forms dialog"
 msgstr "Rādīt formas dialoglodziņu"
 
-#: ../src/option.c:1104
+#: src/option.c:1123
 msgid "Add a new Entry in forms dialog"
 msgstr "Pievienot jaunu ierakstu formas dialoglodziņam"
 
-#: ../src/option.c:1105 ../src/option.c:1114
+#: src/option.c:1124 src/option.c:1133
 msgid "Field name"
 msgstr "Lauka nosaukums"
 
-#: ../src/option.c:1113
+#: src/option.c:1132
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Pievienot jaunu paroles ierakstu formas dialoglodziņam"
 
-#: ../src/option.c:1122
+#: src/option.c:1141
 msgid "Add a new Calendar in forms dialog"
 msgstr "Pievienot jaunu kalendāru formas dialoglodziņam"
 
-#: ../src/option.c:1123
+#: src/option.c:1142
 msgid "Calendar field name"
 msgstr "Kalendāra lauka nosaukums"
 
-#: ../src/option.c:1131
+#: src/option.c:1150
 msgid "Add a new List in forms dialog"
 msgstr "Pievienot jaunu sarakstu formu dialoglodziņam"
 
-#: ../src/option.c:1132
+#: src/option.c:1151
 msgid "List field and header name"
 msgstr "Saraksta lauka nosaukums"
 
-#: ../src/option.c:1140
+#: src/option.c:1159
 msgid "List of values for List"
 msgstr "Vērtības sarakstam"
 
-#: ../src/option.c:1141 ../src/option.c:1150 ../src/option.c:1168
+#: src/option.c:1160 src/option.c:1169 src/option.c:1187
 msgid "List of values separated by |"
 msgstr "Ar | atdalītu vērtību saraksts"
 
-#: ../src/option.c:1149
+#: src/option.c:1168
 msgid "List of values for columns"
 msgstr "Vērtību saraksts kolonnām"
 
-#: ../src/option.c:1158
+#: src/option.c:1177
 msgid "Add a new combo box in forms dialog"
 msgstr "Pievienot jaunu kombinēto lodziņu formu dialoglodziņam"
 
-#: ../src/option.c:1159
+#: src/option.c:1178
 msgid "Combo box field name"
 msgstr "Kombinētā lodziņa lauka nosaukums"
 
-#: ../src/option.c:1167
+#: src/option.c:1186
 msgid "List of values for combo box"
 msgstr "Vērtību saraksts kombinētajam lodziņam"
 
-#: ../src/option.c:1186
+#: src/option.c:1205
 msgid "Show the columns header"
 msgstr "Rādīt kolonnu virsrakstu"
 
-#: ../src/option.c:1228
+#: src/option.c:1247
 msgid "Display password dialog"
 msgstr "Rādīt paroles dialoglodziņu"
 
-#: ../src/option.c:1237
+#: src/option.c:1256
 msgid "Display the username option"
 msgstr "Rādīt lietotājvārda opciju"
 
-#: ../src/option.c:1252
+#: src/option.c:1271
 msgid "Display color selection dialog"
 msgstr "Rādīt krāsu izvēles dialoglodziņu"
 
-#: ../src/option.c:1261
+#: src/option.c:1280
 msgid "Set the color"
 msgstr "Iestatīt krāsu"
 
-#: ../src/option.c:1270
+#: src/option.c:1289
 msgid "Show the palette"
 msgstr "Rādīt palieti"
 
-#: ../src/option.c:1285
+#: src/option.c:1304
 msgid "About zenity"
 msgstr "Par zenity"
 
-#: ../src/option.c:1294
+#: src/option.c:1313
 msgid "Print version"
 msgstr "Drukāt versiju"
 
-#: ../src/option.c:2228
+#: src/option.c:2261
 msgid "General options"
 msgstr "Vispārīgās opcijas"
 
-#: ../src/option.c:2229
+#: src/option.c:2262
 msgid "Show general options"
 msgstr "Rādīt vispārīgās opcijas"
 
-#: ../src/option.c:2239
+#: src/option.c:2272
 msgid "Calendar options"
 msgstr "Kalendāra opcijas"
 
-#: ../src/option.c:2240
+#: src/option.c:2273
 msgid "Show calendar options"
 msgstr "Rādīt kalendāra opcijas"
 
-#: ../src/option.c:2250
+#: src/option.c:2283
 msgid "Text entry options"
 msgstr "Teksta ievades opcijas"
 
-#: ../src/option.c:2251
+#: src/option.c:2284
 msgid "Show text entry options"
 msgstr "Rādīt teksta ievades opcijas"
 
-#: ../src/option.c:2261
+#: src/option.c:2294
 msgid "Error options"
 msgstr "Kļūdas opcijas"
 
-#: ../src/option.c:2262
+#: src/option.c:2295
 msgid "Show error options"
 msgstr "Rādīt kļūdas opcijas"
 
-#: ../src/option.c:2272
+#: src/option.c:2305
 msgid "Info options"
 msgstr "Informācijas opcijas"
 
-#: ../src/option.c:2273
+#: src/option.c:2306
 msgid "Show info options"
 msgstr "Rādīt informācijas opcijas"
 
-#: ../src/option.c:2283
+#: src/option.c:2316
 msgid "File selection options"
 msgstr "Datņu izvēles opcijas"
 
-#: ../src/option.c:2284
+#: src/option.c:2317
 msgid "Show file selection options"
 msgstr "Rādīt datņu izvēles opcijas"
 
-#: ../src/option.c:2294
+#: src/option.c:2327
 msgid "List options"
 msgstr "Saraksta opcijas"
 
-#: ../src/option.c:2295
+#: src/option.c:2328
 msgid "Show list options"
 msgstr "Rādīt saraksta opcijas"
 
-#: ../src/option.c:2306
+#: src/option.c:2339
 msgid "Notification icon options"
 msgstr "Paziņojuma ikonas opcijas"
 
-#: ../src/option.c:2307
+#: src/option.c:2340
 msgid "Show notification icon options"
 msgstr "Rādīt paziņojuma ikonas opcijas"
 
-#: ../src/option.c:2318
+#: src/option.c:2351
 msgid "Progress options"
 msgstr "Progresa opcijas"
 
-#: ../src/option.c:2319
+#: src/option.c:2352
 msgid "Show progress options"
 msgstr "Rādīt progresa opcijas"
 
-#: ../src/option.c:2329
+#: src/option.c:2362
 msgid "Question options"
 msgstr "Jautājumu opcijas"
 
-#: ../src/option.c:2330
+#: src/option.c:2363
 msgid "Show question options"
 msgstr "Rādīt jautājumu opcijas"
 
-#: ../src/option.c:2340
+#: src/option.c:2373
 msgid "Warning options"
 msgstr "Brīdinājuma opcijas"
 
-#: ../src/option.c:2341
+#: src/option.c:2374
 msgid "Show warning options"
 msgstr "Rādīt brīdinājuma opcijas"
 
-#: ../src/option.c:2351
+#: src/option.c:2384
 msgid "Scale options"
 msgstr "Mēroga opcijas"
 
-#: ../src/option.c:2352
+#: src/option.c:2385
 msgid "Show scale options"
 msgstr "Rādīt mēroga opcijas"
 
-#: ../src/option.c:2362
+#: src/option.c:2395
 msgid "Text information options"
 msgstr "Teksta informācijas opcijas"
 
-#: ../src/option.c:2363
+#: src/option.c:2396
 msgid "Show text information options"
 msgstr "Rādīt teksta informācijas opcijas"
 
-#: ../src/option.c:2373
+#: src/option.c:2406
 msgid "Color selection options"
 msgstr "Krāsu izvēles opcijas"
 
-#: ../src/option.c:2374
+#: src/option.c:2407
 msgid "Show color selection options"
 msgstr "Rādīt krāsu izvēles opcijas"
 
-#: ../src/option.c:2384
+#: src/option.c:2417
 msgid "Password dialog options"
 msgstr "Paroles dialoglodziņa opcijas"
 
-#: ../src/option.c:2385
+#: src/option.c:2418
 msgid "Show password dialog options"
 msgstr "Rādīt paroles dialoglodziņa opcijas"
 
-#: ../src/option.c:2395
+#: src/option.c:2428
 msgid "Forms dialog options"
 msgstr "Formas dialoglodziņa opcijas"
 
-#: ../src/option.c:2396
+#: src/option.c:2429
 msgid "Show forms dialog options"
 msgstr "Rādīt formas dialoglodziņa opcijas"
 
-#: ../src/option.c:2406
+#: src/option.c:2439
 msgid "Miscellaneous options"
 msgstr "Dažādas opcijas"
 
-#: ../src/option.c:2407
+#: src/option.c:2440
 msgid "Show miscellaneous options"
 msgstr "Rādīt dažādas opcijas"
 
-#: ../src/option.c:2432
-#, c-format
+#: src/option.c:2465
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Šī opcija nav pieejama. Visiem iespējamiem lietojumiem, lūdzu skatīt --"
 "help.\n"
 
-#: ../src/option.c:2436
+#: src/option.c:2469
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s šajā dialoglodziņā nav atbalstīta\n"
 
-#: ../src/option.c:2440
-#, c-format
+#: src/option.c:2473
 msgid "Two or more dialog options specified\n"
 msgstr "Norādītas divas vai vairāk dialoga opcijas\n"
 
