@@ -233,18 +233,26 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
   for (tmp = forms_data->list; tmp; tmp = tmp->next) {
     ZenityFormsValue *zenity_value = (ZenityFormsValue *) tmp->data;
     GtkWidget *label;
+
+    gchar **values = g_strsplit_set (zenity_value->option_value, "|", 2);
+    gchar *label_text = values[0];
+    gchar *prefill_text = values[1];
     
-    label = gtk_label_new(zenity_value->option_value);
+    label = gtk_label_new(label_text);
     gtk_widget_set_halign (label, GTK_ALIGN_START);
     gtk_grid_attach (GTK_GRID (grid),
                      label,
                      0, i,
                      1, 1);
-                      
+
     switch(zenity_value->type)
     {
       case ZENITY_FORMS_ENTRY:
         zenity_value->forms_widget = gtk_entry_new();
+        if (prefill_text) {
+          gtk_entry_set_text(GTK_ENTRY(zenity_value->forms_widget),
+                               prefill_text);
+        }
         break;
       case ZENITY_FORMS_PASSWORD:
         zenity_value->forms_widget = gtk_entry_new();
@@ -267,6 +275,8 @@ void zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
         zenity_value->forms_widget = gtk_entry_new();
         break;
     }
+
+    g_strfreev(values);
 
     gtk_grid_attach_next_to (GTK_GRID (grid),
                              GTK_WIDGET (zenity_value->forms_widget),
