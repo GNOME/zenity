@@ -60,15 +60,13 @@ void zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
   }
 
   if (data->ok_label) {
-    g_object_get (G_OBJECT (dialog), "ok-button", &button, NULL);
+    button = gtk_dialog_get_widget_for_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
     gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-    g_object_unref (G_OBJECT (button));
   }
 
   if (data->cancel_label) {
-    g_object_get (G_OBJECT (dialog), "cancel-button", &button, NULL);
+    button = gtk_dialog_get_widget_for_response (GTK_DIALOG (dialog), GTK_RESPONSE_CANCEL);
     gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-    g_object_unref (G_OBJECT (button));
   }
 
   if (data->modal)
