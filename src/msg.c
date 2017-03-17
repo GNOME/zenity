@@ -200,7 +200,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
       gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
     else 
       gtk_label_set_markup (GTK_LABEL (text), g_strcompress (msg_data->dialog_text));
-      zenity_label_widget_clipboard_selection(GTK_WIDGET (text));
+    zenity_label_widget_clipboard_selection(GTK_WIDGET (text));
   }
 
   if (msg_data->ellipsize)
