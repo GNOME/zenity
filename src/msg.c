@@ -27,7 +27,6 @@
 #include "util.h"
 
 static void zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data);
-static void zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocation, gpointer data);
 static void
 zenity_msg_construct_question_dialog (GtkWidget *dialog, ZenityMsgData *msg_data, ZenityData *data)
 {
@@ -188,9 +187,13 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   if (data->width > -1)
     gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
   else
-    if (!msg_data->ellipsize)
-      g_signal_connect_after (G_OBJECT (text), "size-allocate",
-                              G_CALLBACK (zenity_text_size_allocate), data);
+    if (!msg_data->ellipsize && !msg_data->no_wrap) {
+      // the magic number 60 is picked from gtk+/gtk/ui/gtkmessagedialog.ui
+      // however, 60 would increase the distance between the icon and the text,
+      // decreasing to 10 fix it.
+      gtk_label_set_width_chars (text, 10);
+      gtk_label_set_max_width_chars (text, 10);
+    }
 
   if (data->modal)
     gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
@@ -221,12 +224,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
   g_object_unref (builder);
 
   gtk_main ();
-}
-
-static void 
-zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocation, gpointer data)
-{
-  gtk_widget_set_size_request (widget, allocation->width/2, -1);
 }
 
 static void
