@@ -23,179 +23,189 @@
 
 #include "config.h"
 
-#include "zenity.h"
 #include "util.h"
+#include "zenity.h"
 
-static void zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data);
+static void zenity_entry_dialog_response (
+	GtkWidget *widget, int response, gpointer data);
 
 static GtkWidget *entry;
 static gint n_entries = 0;
 
 static void
-zenity_entry_fill_entries (GSList **entries, const gchar **args)
-{
-  gint i = 0;
+zenity_entry_fill_entries (GSList **entries, const gchar **args) {
+	gint i = 0;
 
-  while (args[i] != NULL) {
-    *entries = g_slist_append (*entries, (gchar *) args[i]);
-    i++;
-  }
+	while (args[i] != NULL) {
+		*entries = g_slist_append (*entries, (gchar *) args[i]);
+		i++;
+	}
 }
 
 static void
-zenity_entry_combo_activate_default (GtkEntry *entry, gpointer window)
-{
-  gtk_window_activate_default (GTK_WINDOW (window));
+zenity_entry_combo_activate_default (GtkEntry *entry, gpointer window) {
+	gtk_window_activate_default (GTK_WINDOW (window));
 }
 
-void 
-zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
-{
-  GtkBuilder *builder = NULL;
-  GtkWidget *dialog;
-  GtkWidget *button;
-  GObject *text;
-  GSList *entries = NULL; 
-  GSList *tmp;
-  GObject *vbox;
-  
-  builder = zenity_util_load_ui_file ("zenity_entry_dialog", NULL);
+void
+zenity_entry (ZenityData *data, ZenityEntryData *entry_data) {
+	GtkBuilder *builder = NULL;
+	GtkWidget *dialog;
+	GtkWidget *button;
+	GObject *text;
+	GSList *entries = NULL;
+	GSList *tmp;
+	GObject *vbox;
 
-  if (builder == NULL) {
-    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
-    return;
-  }
-	
-  gtk_builder_connect_signals (builder, NULL);
-	
-  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_entry_dialog"));
-	
-  g_signal_connect (G_OBJECT (dialog), "response",
-                    G_CALLBACK (zenity_entry_dialog_response), data);
+	builder = zenity_util_load_ui_file ("zenity_entry_dialog", NULL);
 
-  if (data->dialog_title)
-    gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
-	
-  zenity_util_set_window_icon (dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-entry.png"));
+	if (builder == NULL) {
+		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+		return;
+	}
 
-  if (data->width > -1 || data->height > -1)
-    gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+	gtk_builder_connect_signals (builder, NULL);
 
-  if (data->modal)
-    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+	dialog =
+		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_entry_dialog"));
 
-  if (data->extra_label) {
-    gint i=0;
-    while(data->extra_label[i]!=NULL){
-      gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i);
-      i++;
-    }
-  }
+	g_signal_connect (G_OBJECT (dialog),
+		"response",
+		G_CALLBACK (zenity_entry_dialog_response),
+		data);
 
-  if (data->ok_label) {
-    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_entry_ok_button"));
-    gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-  }
+	if (data->dialog_title)
+		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-  if (data->cancel_label) {
-    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_entry_cancel_button"));
-    gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-  }
+	zenity_util_set_window_icon (
+		dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-entry.png"));
 
-  text = gtk_builder_get_object (builder, "zenity_entry_text");
+	if (data->width > -1 || data->height > -1)
+		gtk_window_set_default_size (
+			GTK_WINDOW (dialog), data->width, data->height);
 
-  if (entry_data->dialog_text)
-    gtk_label_set_text_with_mnemonic (GTK_LABEL (text), g_strcompress (entry_data->dialog_text));
-  
-  vbox = gtk_builder_get_object (builder, "vbox4");
-  
-  zenity_entry_fill_entries(&entries, entry_data->data);
-  
-  n_entries = g_slist_length (entries);
+	if (data->modal)
+		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
-  if (n_entries > 1) {
-    entry = gtk_combo_box_text_new_with_entry ();
+	if (data->extra_label) {
+		gint i = 0;
+		while (data->extra_label[i] != NULL) {
+			gtk_dialog_add_button (
+				GTK_DIALOG (dialog), data->extra_label[i], i);
+			i++;
+		}
+	}
 
-    for (tmp = entries; tmp; tmp = tmp->next) {
-      gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (entry), tmp->data);
-    }
+	if (data->ok_label) {
+		button = GTK_WIDGET (
+			gtk_builder_get_object (builder, "zenity_entry_ok_button"));
+		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+	}
 
-    if (entry_data->entry_text) {
-      gtk_combo_box_text_prepend_text (GTK_COMBO_BOX_TEXT (entry), entry_data->entry_text);
-      gtk_combo_box_set_active (GTK_COMBO_BOX (entry), 0);
-    }
+	if (data->cancel_label) {
+		button = GTK_WIDGET (
+			gtk_builder_get_object (builder, "zenity_entry_cancel_button"));
+		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+	}
 
-    g_signal_connect (gtk_bin_get_child (GTK_BIN (entry)), "activate",
-                      G_CALLBACK (zenity_entry_combo_activate_default),
-                      GTK_WINDOW (dialog));
-  } else {
-    entry = gtk_entry_new();
+	text = gtk_builder_get_object (builder, "zenity_entry_text");
 
-    gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
-    
-    if (entry_data->entry_text)
-      gtk_entry_set_text (GTK_ENTRY (entry), entry_data->entry_text);
+	if (entry_data->dialog_text)
+		gtk_label_set_text_with_mnemonic (
+			GTK_LABEL (text), g_strcompress (entry_data->dialog_text));
 
-    if (entry_data->hide_text)
-      g_object_set (G_OBJECT (entry), "visibility", FALSE, NULL);
-  }
+	vbox = gtk_builder_get_object (builder, "vbox4");
 
-  gtk_widget_show (entry);
+	zenity_entry_fill_entries (&entries, entry_data->data);
 
-  gtk_box_pack_end (GTK_BOX (vbox), entry, FALSE, FALSE, 0);
+	n_entries = g_slist_length (entries);
 
-  gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
+	if (n_entries > 1) {
+		entry = gtk_combo_box_text_new_with_entry ();
 
-  g_object_unref (builder);
+		for (tmp = entries; tmp; tmp = tmp->next) {
+			gtk_combo_box_text_append_text (
+				GTK_COMBO_BOX_TEXT (entry), tmp->data);
+		}
 
-  zenity_util_show_dialog (dialog, data->attach);
+		if (entry_data->entry_text) {
+			gtk_combo_box_text_prepend_text (
+				GTK_COMBO_BOX_TEXT (entry), entry_data->entry_text);
+			gtk_combo_box_set_active (GTK_COMBO_BOX (entry), 0);
+		}
 
-  if(data->timeout_delay > 0) {
-    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);
-  }
+		g_signal_connect (gtk_bin_get_child (GTK_BIN (entry)),
+			"activate",
+			G_CALLBACK (zenity_entry_combo_activate_default),
+			GTK_WINDOW (dialog));
+	} else {
+		entry = gtk_entry_new ();
 
-  gtk_main ();
+		gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
+
+		if (entry_data->entry_text)
+			gtk_entry_set_text (GTK_ENTRY (entry), entry_data->entry_text);
+
+		if (entry_data->hide_text)
+			g_object_set (G_OBJECT (entry), "visibility", FALSE, NULL);
+	}
+
+	gtk_widget_show (entry);
+
+	gtk_box_pack_end (GTK_BOX (vbox), entry, FALSE, FALSE, 0);
+
+	gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
+
+	g_object_unref (builder);
+
+	zenity_util_show_dialog (dialog, data->attach);
+
+	if (data->timeout_delay > 0) {
+		g_timeout_add_seconds (data->timeout_delay,
+			(GSourceFunc) zenity_util_timeout_handle,
+			dialog);
+	}
+
+	gtk_main ();
 }
 
 static void
-zenity_entry_dialog_output (void)
-{
-  const gchar *text;
-  if (n_entries > 1)
-    text = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (entry));
-  else 
-    text = gtk_entry_get_text (GTK_ENTRY (entry));
+zenity_entry_dialog_output (void) {
+	const gchar *text;
+	if (n_entries > 1)
+		text = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (entry));
+	else
+		text = gtk_entry_get_text (GTK_ENTRY (entry));
 
-  if (text != NULL)
-    g_print ("%s\n", text);
-
+	if (text != NULL)
+		g_print ("%s\n", text);
 }
 
 static void
-zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
-{
-  ZenityData *zen_data = data;
+zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data) {
+	ZenityData *zen_data = data;
 
-  switch (response) {
-    case GTK_RESPONSE_OK:
-      zenity_entry_dialog_output ();
-      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
-      break;
+	switch (response) {
+		case GTK_RESPONSE_OK:
+			zenity_entry_dialog_output ();
+			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
+			break;
 
-    case GTK_RESPONSE_CANCEL:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
-      break;
+		case GTK_RESPONSE_CANCEL:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+			break;
 
-    case ZENITY_TIMEOUT:
-      zenity_entry_dialog_output ();
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
-      break;
+		case ZENITY_TIMEOUT:
+			zenity_entry_dialog_output ();
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
+			break;
 
-    default:
-      if (zen_data->extra_label && response < g_strv_length(zen_data->extra_label))
-        printf("%s\n",zen_data->extra_label[response]);
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
-      break;
-  }
-  gtk_main_quit ();
+		default:
+			if (zen_data->extra_label &&
+				response < g_strv_length (zen_data->extra_label))
+				printf ("%s\n", zen_data->extra_label[response]);
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
+	}
+	gtk_main_quit ();
 }

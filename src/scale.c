@@ -23,136 +23,151 @@
 
 #include "config.h"
 
-#include "zenity.h"
 #include "util.h"
+#include "zenity.h"
 
 static GtkWidget *scale;
 
 static void zenity_scale_value_changed (GtkWidget *widget, gpointer data);
-static void zenity_scale_dialog_response (GtkWidget *widget, int response, gpointer data);
+static void zenity_scale_dialog_response (
+	GtkWidget *widget, int response, gpointer data);
 
-void 
-zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
-{
-  GtkBuilder *builder;
-  GtkWidget *dialog;
-  GtkWidget *button;
-  GObject *text;
+void
+zenity_scale (ZenityData *data, ZenityScaleData *scale_data) {
+	GtkBuilder *builder;
+	GtkWidget *dialog;
+	GtkWidget *button;
+	GObject *text;
 
-  builder = zenity_util_load_ui_file ("zenity_scale_dialog", "adjustment1", NULL);
+	builder =
+		zenity_util_load_ui_file ("zenity_scale_dialog", "adjustment1", NULL);
 
-  if (builder == NULL) {
-    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
-    return;
-  }
+	if (builder == NULL) {
+		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+		return;
+	}
 
-  dialog = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_dialog"));
-  scale = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_hscale"));
-  text = gtk_builder_get_object (builder, "zenity_scale_text");
+	dialog =
+		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_dialog"));
+	scale =
+		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_hscale"));
+	text = gtk_builder_get_object (builder, "zenity_scale_text");
 
-  g_signal_connect (G_OBJECT (dialog), "response",
-                    G_CALLBACK (zenity_scale_dialog_response), data);
-	
-  if (scale_data->min_value >= scale_data->max_value) {
-    g_printerr (_("Maximum value must be greater than minimum value.\n")); 
-    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
-    return;
-  }
+	g_signal_connect (G_OBJECT (dialog),
+		"response",
+		G_CALLBACK (zenity_scale_dialog_response),
+		data);
 
-  if (scale_data->value < scale_data->min_value ||
-      scale_data->value > scale_data->max_value) {
-    g_printerr (_("Value out of range.\n")); 
-    data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
-    return;
-  }
+	if (scale_data->min_value >= scale_data->max_value) {
+		g_printerr (_ ("Maximum value must be greater than minimum value.\n"));
+		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+		return;
+	}
 
-  gtk_builder_connect_signals (builder, NULL);
-        
-  if (data->dialog_title)
-    gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
+	if (scale_data->value < scale_data->min_value ||
+		scale_data->value > scale_data->max_value) {
+		g_printerr (_ ("Value out of range.\n"));
+		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+		return;
+	}
 
-  zenity_util_set_window_icon (dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-scale.png"));
-  
-  if (data->width > -1 || data->height > -1)
-    gtk_window_set_default_size (GTK_WINDOW (dialog), data->width, data->height);
+	gtk_builder_connect_signals (builder, NULL);
 
-  if (data->modal)
-    gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+	if (data->dialog_title)
+		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-  if (data->extra_label) {
-    gint i=0;
-    while(data->extra_label[i]!=NULL){
-      gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i);
-      i++;
-    }
-  }
+	zenity_util_set_window_icon (
+		dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-scale.png"));
 
-  if (data->ok_label) {
-    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_ok_button"));
-    gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-  }
+	if (data->width > -1 || data->height > -1)
+		gtk_window_set_default_size (
+			GTK_WINDOW (dialog), data->width, data->height);
 
-  if (data->cancel_label) {
-    button = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_cancel_button"));
-    gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-  }
+	if (data->modal)
+		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
-  if (scale_data->dialog_text) 
-    gtk_label_set_markup (GTK_LABEL (text), g_strcompress (scale_data->dialog_text));
+	if (data->extra_label) {
+		gint i = 0;
+		while (data->extra_label[i] != NULL) {
+			gtk_dialog_add_button (
+				GTK_DIALOG (dialog), data->extra_label[i], i);
+			i++;
+		}
+	}
 
-  gtk_range_set_range (GTK_RANGE (scale), scale_data->min_value, scale_data->max_value);
-  gtk_range_set_value (GTK_RANGE (scale), scale_data->value);
-  gtk_range_set_increments (GTK_RANGE (scale), scale_data->step, 0);
+	if (data->ok_label) {
+		button = GTK_WIDGET (
+			gtk_builder_get_object (builder, "zenity_scale_ok_button"));
+		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+	}
 
-  if (scale_data->print_partial) 
-    g_signal_connect (G_OBJECT (scale), "value-changed",
-                      G_CALLBACK (zenity_scale_value_changed), data);
-  
-  if (scale_data->hide_value)
-    gtk_scale_set_draw_value (GTK_SCALE (scale), FALSE);
-  
-  zenity_util_show_dialog (dialog, data->attach);
+	if (data->cancel_label) {
+		button = GTK_WIDGET (
+			gtk_builder_get_object (builder, "zenity_scale_cancel_button"));
+		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+	}
 
-  if(data->timeout_delay > 0) {
-    g_timeout_add_seconds (data->timeout_delay, (GSourceFunc) zenity_util_timeout_handle, dialog);
-  }
+	if (scale_data->dialog_text)
+		gtk_label_set_markup (
+			GTK_LABEL (text), g_strcompress (scale_data->dialog_text));
 
-  g_object_unref (builder);
+	gtk_range_set_range (
+		GTK_RANGE (scale), scale_data->min_value, scale_data->max_value);
+	gtk_range_set_value (GTK_RANGE (scale), scale_data->value);
+	gtk_range_set_increments (GTK_RANGE (scale), scale_data->step, 0);
 
-  gtk_main ();
+	if (scale_data->print_partial)
+		g_signal_connect (G_OBJECT (scale),
+			"value-changed",
+			G_CALLBACK (zenity_scale_value_changed),
+			data);
+
+	if (scale_data->hide_value)
+		gtk_scale_set_draw_value (GTK_SCALE (scale), FALSE);
+
+	zenity_util_show_dialog (dialog, data->attach);
+
+	if (data->timeout_delay > 0) {
+		g_timeout_add_seconds (data->timeout_delay,
+			(GSourceFunc) zenity_util_timeout_handle,
+			dialog);
+	}
+
+	g_object_unref (builder);
+
+	gtk_main ();
 }
 
 static void
-zenity_scale_value_changed (GtkWidget *widget, gpointer data)
-{
-  g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (widget)));
+zenity_scale_value_changed (GtkWidget *widget, gpointer data) {
+	g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (widget)));
 }
 
 static void
-zenity_scale_dialog_response (GtkWidget *widget, int response, gpointer data)
-{
-  ZenityData *zen_data = data;
+zenity_scale_dialog_response (GtkWidget *widget, int response, gpointer data) {
+	ZenityData *zen_data = data;
 
-  switch (response) {
-    case GTK_RESPONSE_OK:
-      zenity_util_exit_code_with_data(ZENITY_OK, zen_data);
-      g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
-      break;
+	switch (response) {
+		case GTK_RESPONSE_OK:
+			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
+			g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
+			break;
 
-    case GTK_RESPONSE_CANCEL:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
-      break;
+		case GTK_RESPONSE_CANCEL:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+			break;
 
-    case ZENITY_TIMEOUT:
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
-      g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
-      break;
+		case ZENITY_TIMEOUT:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
+			g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
+			break;
 
-    default:
-      if (zen_data->extra_label && response < g_strv_length(zen_data->extra_label))
-        printf("%s\n",zen_data->extra_label[response]);
-      zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
-      break;
-  }
-  gtk_main_quit ();
+		default:
+			if (zen_data->extra_label &&
+				response < g_strv_length (zen_data->extra_label))
+				printf ("%s\n", zen_data->extra_label[response]);
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
+	}
+	gtk_main_quit ();
 }
