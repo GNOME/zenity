@@ -30,14 +30,18 @@
 static ZenityData *zen_data;
 
 static void zenity_fileselection_dialog_response (
-	GtkWidget *widget, int response, gpointer data);
+	gpointer obj, int response, gpointer data);
 
 void
 zenity_fileselection (ZenityData *data, ZenityFileData *file_data) {
-	GtkWidget *dialog;
 	gchar *dir;
 	gchar *basename;
 	GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
+#if GTK_CHECK_VERSION(3, 20, 0)
+	GtkFileChooserNative *dialog;
+#else
+	GtkWidget *dialog;
+#endif
 
 	zen_data = data;
 
@@ -51,22 +55,37 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data) {
 			action = GTK_FILE_CHOOSER_ACTION_SAVE;
 	}
 
+#if GTK_CHECK_VERSION(3, 20, 0)
+	dialog = gtk_file_chooser_native_new (data->dialog_title,
+		NULL, /* TODO: Get parent from xid */
+		action,
+		_ ("_OK"),
+		_ ("_Cancel")
+	);
+
+	if (data->modal)
+		gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG(dialog), TRUE);
+
+	if (data->extra_label)
+		g_warning ("Cannot add extra labels to GtkFileChooserNative");
+#else
 	dialog = gtk_file_chooser_dialog_new (NULL,
 		NULL,
 		action,
 		_ ("_Cancel"),
 		GTK_RESPONSE_CANCEL,
 		_ ("_OK"),
-		GTK_RESPONSE_OK,
+		GTK_RESPONSE_ACCEPT,
 		NULL);
 
-	gtk_file_chooser_set_do_overwrite_confirmation (
-		GTK_FILE_CHOOSER (dialog), file_data->confirm_overwrite);
+	if (data->dialog_title)
+		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-	g_signal_connect (G_OBJECT (dialog),
-		"response",
-		G_CALLBACK (zenity_fileselection_dialog_response),
-		file_data);
+	if (data->modal)
+		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
+	zenity_util_set_window_icon (
+		dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-file.png"));
 
 	if (data->extra_label) {
 		gint i = 0;
@@ -76,15 +95,15 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data) {
 			i++;
 		}
 	}
+#endif
 
-	if (data->dialog_title)
-		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
+	gtk_file_chooser_set_do_overwrite_confirmation (
+		GTK_FILE_CHOOSER (dialog), file_data->confirm_overwrite);
 
-	zenity_util_set_window_icon (
-		dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-file.png"));
-
-	if (data->modal)
-		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+	g_signal_connect (G_OBJECT (dialog),
+		"response",
+		G_CALLBACK (zenity_fileselection_dialog_response),
+		file_data);
 
 	if (file_data->uri) {
 		dir = g_path_get_dirname (file_data->uri);
@@ -156,7 +175,11 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data) {
 		}
 	}
 
+#if GTK_CHECK_VERSION(3, 20, 0)
+	gtk_native_dialog_show (GTK_NATIVE_DIALOG(dialog));
+#else
 	zenity_util_show_dialog (dialog, data->attach);
+#endif
 
 	if (data->timeout_delay > 0) {
 		g_timeout_add_seconds (data->timeout_delay,
@@ -169,9 +192,9 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data) {
 
 static void
 zenity_fileselection_dialog_output (
-	GtkWidget *widget, ZenityFileData *file_data) {
+	GtkFileChooser *chooser, ZenityFileData *file_data) {
 	GSList *selections, *iter;
-	selections = gtk_file_chooser_get_filenames (GTK_FILE_CHOOSER (widget));
+	selections = gtk_file_chooser_get_filenames (chooser);
 	for (iter = selections; iter != NULL; iter = iter->next) {
 		g_print ("%s",
 			g_filename_to_utf8 ((gchar *) iter->data, -1, NULL, NULL, NULL));
@@ -185,12 +208,14 @@ zenity_fileselection_dialog_output (
 
 static void
 zenity_fileselection_dialog_response (
-	GtkWidget *widget, int response, gpointer data) {
+	gpointer obj, int response, gpointer data) {
 	ZenityFileData *file_data = data;
 
+	GtkFileChooser *chooser = GTK_FILE_CHOOSER(obj);
+
 	switch (response) {
-		case GTK_RESPONSE_OK:
-			zenity_fileselection_dialog_output (widget, file_data);
+		case GTK_RESPONSE_ACCEPT:
+			zenity_fileselection_dialog_output (chooser, file_data);
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
 
@@ -199,7 +224,7 @@ zenity_fileselection_dialog_response (
 			break;
 
 		case ZENITY_TIMEOUT:
-			zenity_fileselection_dialog_output (widget, file_data);
+			zenity_fileselection_dialog_output (chooser, file_data);
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
 			break;
 
