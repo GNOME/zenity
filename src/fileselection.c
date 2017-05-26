@@ -60,11 +60,10 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data) {
 		NULL, /* TODO: Get parent from xid */
 		action,
 		_ ("_OK"),
-		_ ("_Cancel")
-	);
+		_ ("_Cancel"));
 
 	if (data->modal)
-		gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG(dialog), TRUE);
+		gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (dialog), TRUE);
 
 	if (data->extra_label)
 		g_warning ("Cannot add extra labels to GtkFileChooserNative");
@@ -176,7 +175,7 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data) {
 	}
 
 #if GTK_CHECK_VERSION(3, 20, 0)
-	gtk_native_dialog_show (GTK_NATIVE_DIALOG(dialog));
+	gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog));
 #else
 	zenity_util_show_dialog (dialog, data->attach);
 #endif
@@ -211,7 +210,7 @@ zenity_fileselection_dialog_response (
 	gpointer obj, int response, gpointer data) {
 	ZenityFileData *file_data = data;
 
-	GtkFileChooser *chooser = GTK_FILE_CHOOSER(obj);
+	GtkFileChooser *chooser = GTK_FILE_CHOOSER (obj);
 
 	switch (response) {
 		case GTK_RESPONSE_ACCEPT:
