@@ -110,8 +110,15 @@ zenity_forms_create_and_fill_list (
 	tree_view = gtk_tree_view_new ();
 
 	if (forms_data->column_values) {
+		int columns_values_count =
+			g_slist_length (forms_data->column_values);
+		int column_number = 0;
+		if (list_number < columns_values_count) {
+			column_number = list_number;
+		}
+
 		column_values =
-			g_slist_nth_data (forms_data->column_values, list_number);
+			g_slist_nth_data (forms_data->column_values, column_number);
 		if (column_values) {
 			gchar **values = g_strsplit_set (column_values, "|", -1);
 			if (values) {
@@ -130,6 +137,10 @@ zenity_forms_create_and_fill_list (
 					column_index++;
 				}
 			}
+		} else {
+			/* If no values available, add one with string type*/
+			column_types = g_new (GType, n_columns);
+			column_types[0] = G_TYPE_STRING;
 		}
 	}
 
