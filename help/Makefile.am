@@ -42,4 +42,4 @@ HELP_FILES = \
 	usage.page		\
 	warning.page
 
-HELP_LINGUAS = bg ca cs da de el en_GB es eu fi fr gl hu ja oc pt_BR ru sl sv uk zh_CN
+HELP_LINGUAS = bg ca cs da de el en_GB es eu fi fr gl hu ja oc pl pt_BR ru sl sv uk zh_CN
