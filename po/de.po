@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the zenity package.
 # Christian Neumair <chris@gnome-de.org>, 2003, 2004.
 # Hendrik Richter <hendrikr@gnome.org>, 2004-2007.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2010-2013.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2010-2013, 2017.
 # Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>, 2012.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2012, 2015.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2010, 2013.
@@ -13,20 +13,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-10-01 19:22+0000\n"
-"PO-Revision-Date: 2015-10-01 22:44+0200\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
+"POT-Creation-Date: 2017-11-26 20:40+0000\n"
+"PO-Revision-Date: 2017-11-29 20:35+0100\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.4\n"
 
-#: src/about.c:63
+#: src/about.c:60
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -38,7 +38,7 @@ msgstr ""
 "veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 "
 "der Lizenz oder (nach Ihrer Option) jeder späteren Version.\n"
 
-#: src/about.c:67
+#: src/about.c:65
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -51,7 +51,7 @@ msgstr ""
 "BESTIMMTEN ZWECK. Details finden Sie in der GNU Lesser General Public "
 "License.\n"
 
-#: src/about.c:71
+#: src/about.c:69
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -62,20 +62,28 @@ msgstr ""
 "Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, "
 "USA."
 
-#: src/about.c:263
+#: src/about.c:260
 msgid "translator-credits"
 msgstr ""
 "Christian Neumair <chris@gnome-de.org>\n"
 "Hendrik Richter <hendrikr@gnome.org>\n"
-"Mario Blättermann <mariobl@freenet.de>\n"
+"Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Christian Kirbach <Christian.Kirbach@gmail.com>\n"
 "Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>\n"
 "Benjamin Steinwender <b@stbe.at>\n"
 "Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>"
 
-#: src/about.c:275
+#: src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "Dialogfenster aus Shell-Skripten heraus aufrufen"
+
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+msgid "_OK"
+msgstr "_OK"
+
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+msgid "_Cancel"
+msgstr "_Abbrechen"
 
 #: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
@@ -83,11 +91,19 @@ msgstr ""
 "Sie müssen einen Dialogtypen angeben. Siehe »zenity --help« für weitere "
 "Details.\n"
 
-#: src/notification.c:51
+#: src/msg.c:38
+msgid "_No"
+msgstr "_Nein"
+
+#: src/msg.c:40
+msgid "_Yes"
+msgstr "_Ja"
+
+#: src/notification.c:50
 msgid "Could not parse message\n"
 msgstr "Nachricht konnte nicht interpretiert werden\n"
 
-#: src/notification.c:140
+#: src/notification.c:132
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
@@ -96,299 +112,171 @@ msgstr ""
 "Unterstützte Werte sind »true« oder »false«.\n"
 
 #. (iibiiay)
-#: src/notification.c:156
+#: src/notification.c:149
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Unbekannter Hinweis. Wird übersprungen.\n"
 
 #. unknown hints
-#: src/notification.c:173
+#: src/notification.c:166
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Unbekannter Hinweisname. Wird übersprungen.\n"
 
-#: src/notification.c:228
+#: src/notification.c:218
 msgid "Could not parse command from stdin\n"
 msgstr "Befehl von Standardeingabe konnte nicht interpretiert werden\n"
 
-#: src/notification.c:326
+#: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Zenity-Benachrichtigung"
 
-#: src/password.c:55
-msgid "_Cancel"
-msgstr "_Abbrechen"
-
-#: src/password.c:58
-msgid "_OK"
-msgstr "_OK"
-
-#. Checks if username has been passed as a parameter
-#: src/password.c:73
-msgid "Type your password"
-msgstr "Geben Sie Ihr Passwort ein"
-
-#: src/password.c:76
-msgid "Type your username and password"
-msgstr "Geben Sie Ihren Benutzernamen und Ihr Passwort ein"
-
-#: src/password.c:113
-msgid "Username:"
-msgstr "Benutzername:"
-
-#: src/password.c:127
-msgid "Password:"
-msgstr "Passwort:"
-
-#: src/scale.c:57
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Der maximale Wert muss größer als der minimale sein.\n"
-
-#: src/scale.c:64
-msgid "Value out of range.\n"
-msgstr "Wert außerhalb des gültigen Bereichs.\n"
-
-#: src/tree.c:376
-msgid "No column titles specified for List dialog.\n"
-msgstr "Keine Spaltentitel für Listendialog angegeben\n"
-
-#: src/tree.c:382
-msgid "You should use only one List dialog type.\n"
-msgstr "Sie können nur einen Listendialogtyp verwenden.\n"
-
-#: src/zenity.ui:14 src/zenity.ui:76
-msgid "Adjust the scale value"
-msgstr "Wert des Schiebereglers anpassen"
-
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:246 src/zenity.ui:376
-#: src/zenity.ui:576 src/zenity.ui:782 src/zenity.ui:968
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:260 src/zenity.ui:390
-#: src/zenity.ui:479 src/zenity.ui:589 src/zenity.ui:695 src/zenity.ui:796
-#: src/zenity.ui:982 src/zenity.ui:1078
-msgid "OK"
-msgstr "Ok"
-
-#: src/zenity.ui:117
-msgid "Text View"
-msgstr "Textansicht"
-
-#: src/zenity.ui:230
-msgid "Calendar selection"
-msgstr "Wählen Sie ein Datum"
-
-#: src/zenity.ui:297
-msgid "Select a date from below."
-msgstr "Wählen Sie ein Datum."
-
-#: src/zenity.ui:318
-msgid "C_alendar:"
-msgstr "_Kalender:"
-
-#: src/zenity.ui:360
-msgid "Add a new entry"
-msgstr "Einen neuen Eintrag hinzufügen"
-
-#: src/zenity.ui:426
-msgid "_Enter new text:"
-msgstr "_Geben Sie den neuen Text ein:"
-
-#: src/zenity.ui:463
-msgid "Error"
-msgstr "Fehler"
-
-#: src/zenity.ui:528
-msgid "An error has occurred."
-msgstr "Ein Fehler ist aufgetreten."
-
-#: src/zenity.ui:656
-msgid "Forms dialog"
-msgstr "Formulardialog"
-
-#: src/zenity.ui:679
-msgid "Information"
-msgstr "Informationen"
-
-#: src/zenity.ui:739
-msgid "All updates are complete."
-msgstr "Alle Aktualisierungen wurden fertiggestellt."
-
-#: src/zenity.ui:766
-msgid "Progress"
-msgstr "Fortschritt"
-
-#: src/zenity.ui:829
-msgid "Running..."
-msgstr "Läuft …"
-
-#: src/zenity.ui:880
-msgid "Question"
-msgstr "Frage"
-
-#: src/zenity.ui:927 src/zenity.ui:1124
-msgid "Are you sure you want to proceed?"
-msgstr "Wollen Sie fortfahren?"
-
-#: src/zenity.ui:951
-msgid "Select items from the list"
-msgstr "Wählen Sie Objekte aus der Liste"
-
-#: src/zenity.ui:1013
-msgid "Select items from the list below."
-msgstr "Wählen Sie Objekte aus der Liste."
-
-#: src/zenity.ui:1062
-msgid "Warning"
-msgstr "Warnung"
-
-#: src/option.c:169
+#: src/option.c:164
 msgid "Set the dialog title"
 msgstr "Den Dialogtitel festlegen"
 
-#: src/option.c:170
+#: src/option.c:165
 msgid "TITLE"
 msgstr "TITEL"
 
-#: src/option.c:178
+#: src/option.c:171
 msgid "Set the window icon"
 msgstr "Das Fenstersymbol festlegen"
 
-#: src/option.c:179
+#: src/option.c:172
 msgid "ICONPATH"
 msgstr "SYMBOLPFAD"
 
-#: src/option.c:187
+#: src/option.c:178
 msgid "Set the width"
 msgstr "Die Breite festlegen"
 
-#: src/option.c:188
+#: src/option.c:179
 msgid "WIDTH"
 msgstr "BREITE"
 
-#: src/option.c:196
+#: src/option.c:185
 msgid "Set the height"
 msgstr "Die Höhe festlegen"
 
-#: src/option.c:197
+#: src/option.c:186
 msgid "HEIGHT"
 msgstr "HÖHE"
 
-#: src/option.c:205
+#: src/option.c:192
 msgid "Set dialog timeout in seconds"
 msgstr "Die Wartezeit des Dialogs in Sekunden festlegen"
 
 #. Timeout for closing the dialog
-#: src/option.c:207
+#: src/option.c:194
 msgid "TIMEOUT"
 msgstr "WARTEZEIT"
 
-#: src/option.c:215
+#: src/option.c:200
 msgid "Set the label of the OK button"
 msgstr "Legt die Beschriftung des OK-Knopfes fest"
 
-#: src/option.c:216 src/option.c:225 src/option.c:234 src/option.c:276
-#: src/option.c:336 src/option.c:345 src/option.c:379 src/option.c:437
-#: src/option.c:574 src/option.c:699 src/option.c:717 src/option.c:743
-#: src/option.c:823 src/option.c:917 src/option.c:926 src/option.c:988
-#: src/option.c:1046 src/option.c:1215
+#: src/option.c:201 src/option.c:208 src/option.c:215 src/option.c:245
+#: src/option.c:289 src/option.c:296 src/option.c:319 src/option.c:362
+#: src/option.c:468 src/option.c:565 src/option.c:579 src/option.c:598
+#: src/option.c:658 src/option.c:730 src/option.c:737 src/option.c:786
+#: src/option.c:829 src/option.c:960
 msgid "TEXT"
 msgstr "TEXT"
 
-#: src/option.c:224
+#: src/option.c:207
 msgid "Set the label of the Cancel button"
 msgstr "Die Beschriftung des Abbrechen-Knopfes festlegen"
 
-#: src/option.c:233
+#: src/option.c:214
 msgid "Add an extra button"
 msgstr "Einen zusätzlichen Knopf hinzufügen"
 
-#: src/option.c:242
+#: src/option.c:221
 msgid "Set the modal hint"
 msgstr "Den modalen Hinweis festlegen"
 
-#: src/option.c:251
+#: src/option.c:228
 msgid "Set the parent window to attach to"
 msgstr "Das übergeordnete Fenster zum Anhängen festlegen"
 
-#: src/option.c:252
+#: src/option.c:229
 msgid "WINDOW"
 msgstr "FENSTER"
 
-#: src/option.c:266
+#: src/option.c:237
 msgid "Display calendar dialog"
 msgstr "Kalenderdialog anzeigen"
 
-#: src/option.c:275 src/option.c:335 src/option.c:378 src/option.c:436
-#: src/option.c:573 src/option.c:742 src/option.c:822 src/option.c:987
-#: src/option.c:1045 src/option.c:1214
+#: src/option.c:244 src/option.c:288 src/option.c:318 src/option.c:361
+#: src/option.c:467 src/option.c:597 src/option.c:657 src/option.c:785
+#: src/option.c:828 src/option.c:959
 msgid "Set the dialog text"
 msgstr "Den Dialogtext festlegen"
 
-#: src/option.c:284
+#: src/option.c:251
 msgid "Set the calendar day"
 msgstr "Den Kalendertag festlegen"
 
-#: src/option.c:285
+#: src/option.c:252
 msgid "DAY"
 msgstr "TAG"
 
-#: src/option.c:293
+#: src/option.c:258
 msgid "Set the calendar month"
 msgstr "Den Kalendermonat festlegen"
 
-#: src/option.c:294
+#: src/option.c:259
 msgid "MONTH"
 msgstr "MONAT"
 
-#: src/option.c:302
+#: src/option.c:265
 msgid "Set the calendar year"
 msgstr "Das Kalenderjahr festlegen"
 
-#: src/option.c:303
+#: src/option.c:266
 msgid "YEAR"
 msgstr "JAHR"
 
-#: src/option.c:311 src/option.c:1232
+#: src/option.c:272 src/option.c:973
 msgid "Set the format for the returned date"
 msgstr "Das Format für das zurückgegebene Datum festlegen"
 
-#: src/option.c:312 src/option.c:1233
+#: src/option.c:273 src/option.c:974
 msgid "PATTERN"
 msgstr "MUSTER"
 
-#: src/option.c:326
+#: src/option.c:281
 msgid "Display text entry dialog"
 msgstr "Texteingabe-Dialog anzeigen"
 
-#: src/option.c:344
+#: src/option.c:295
 msgid "Set the entry text"
 msgstr "Den Eingabetext festlegen"
 
-#: src/option.c:353
+#: src/option.c:302
 msgid "Hide the entry text"
 msgstr "Den Eingabetext verbergen"
 
-#: src/option.c:369
+#: src/option.c:311
 msgid "Display error dialog"
 msgstr "Fehlerdialog anzeigen"
 
-#: src/option.c:387 src/option.c:445 src/option.c:831 src/option.c:996
+#: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
 msgid "Set the dialog icon"
 msgstr "Das Dialogsymbol festlegen"
 
-#: src/option.c:388 src/option.c:446 src/option.c:832 src/option.c:997
+#: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
 msgid "ICON-NAME"
 msgstr "SYMBOL-NAME"
 
-#: src/option.c:396 src/option.c:454 src/option.c:840 src/option.c:1005
+#: src/option.c:332 src/option.c:375 src/option.c:671 src/option.c:799
 msgid "Do not enable text wrapping"
 msgstr "Zeilenumbrüche nicht aktivieren"
 
-#: src/option.c:405 src/option.c:463 src/option.c:849 src/option.c:1014
+#: src/option.c:339 src/option.c:382 src/option.c:678 src/option.c:806
 msgid "Do not enable Pango markup"
 msgstr "Pango-Markup nicht aktivieren"
 
-#: src/option.c:413 src/option.c:471 src/option.c:866 src/option.c:1022
+#: src/option.c:345 src/option.c:388 src/option.c:691 src/option.c:812
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -396,89 +284,90 @@ msgstr ""
 "Aktiviert Auslassungen im Dialogtext. Dadurch wird die Fenstergröße bei "
 "langen Texten korrigiert."
 
-#: src/option.c:427
+#: src/option.c:354
 msgid "Display info dialog"
 msgstr "Info-Dialog anzeigen"
 
-#: src/option.c:485
+#: src/option.c:398
 msgid "Display file selection dialog"
 msgstr "Dateiwähler-Dialog anzeigen"
 
-#: src/option.c:494
+#: src/option.c:405
 msgid "Set the filename"
 msgstr "Den Dateinamen festlegen"
 
-#: src/option.c:495 src/option.c:899
+#: src/option.c:406 src/option.c:716
 msgid "FILENAME"
 msgstr "DATEINAME"
 
-#: src/option.c:503
+#: src/option.c:412
 msgid "Allow multiple files to be selected"
 msgstr "Auswahl mehrerer Dateien zulassen"
 
 # CHECK
-#: src/option.c:512
+#: src/option.c:419
 msgid "Activate directory-only selection"
 msgstr "Nur Verzeichnisse auswählen"
 
-#: src/option.c:521
+#: src/option.c:426
 msgid "Activate save mode"
 msgstr "Speichermodus aktivieren"
 
-#: src/option.c:530 src/option.c:618 src/option.c:1223
+#: src/option.c:433 src/option.c:502 src/option.c:966
 msgid "Set output separator character"
 msgstr "Das Trennzeichen für die Ausgabe festlegen"
 
-#: src/option.c:531 src/option.c:619 src/option.c:1224
+#: src/option.c:434 src/option.c:503 src/option.c:967
 msgid "SEPARATOR"
 msgstr "TRENNZEICHEN"
 
-#: src/option.c:539
+#: src/option.c:440
 msgid "Confirm file selection if filename already exists"
 msgstr "Dateiauswahl bestätigen, falls ein Dateiname bereits existiert"
 
-#: src/option.c:548
+#: src/option.c:448
 msgid "Set a filename filter"
 msgstr "Einen Filter für den Dateinamen festlegen"
 
-#. Help for file-filter argument (name and patterns for file selection)
-#: src/option.c:550
+#. Help for file-filter argument (name and patterns for file
+#. selection)
+#: src/option.c:451
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAME | PATTERN1 PATTERN2 ..."
 
-#: src/option.c:564
+#: src/option.c:460
 msgid "Display list dialog"
 msgstr "Listendialog anzeigen"
 
-#: src/option.c:582
+#: src/option.c:474
 msgid "Set the column header"
 msgstr "Den Spaltentitel festlegen"
 
-#: src/option.c:583
+#: src/option.c:475
 msgid "COLUMN"
 msgstr "SPALTE"
 
-#: src/option.c:591
+#: src/option.c:481
 msgid "Use check boxes for the first column"
 msgstr "Ankreuzfelder für die erste Spalte verwenden"
 
-#: src/option.c:600
+#: src/option.c:488
 msgid "Use radio buttons for the first column"
 msgstr "Auswahlknöpfe für die erste Spalte verwenden"
 
-#: src/option.c:609
+#: src/option.c:495
 msgid "Use an image for the first column"
 msgstr "Ein Bild für die erste Spalte verwenden"
 
-#: src/option.c:627
+#: src/option.c:509
 msgid "Allow multiple rows to be selected"
 msgstr "Auswahl mehrerer Reihen zulassen"
 
-#: src/option.c:636 src/option.c:907
+#: src/option.c:516 src/option.c:722
 msgid "Allow changes to text"
 msgstr "Änderungen am Text zulassen"
 
-#: src/option.c:645
+#: src/option.c:523
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -487,19 +376,19 @@ msgstr ""
 "alle Spalten zu drucken)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:647 src/option.c:656
+#: src/option.c:526 src/option.c:533
 msgid "NUMBER"
 msgstr "NUMMER"
 
-#: src/option.c:655
+#: src/option.c:532
 msgid "Hide a specific column"
 msgstr "Eine bestimmte Spalte verbergen."
 
-#: src/option.c:664
+#: src/option.c:539
 msgid "Hide the column headers"
 msgstr "Die Spaltentitel verbergen"
 
-#: src/option.c:673
+#: src/option.c:546
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
@@ -507,89 +396,89 @@ msgstr ""
 "Ändern der Standardsuchfunktion für Listen auf Suche nach Text in der Mitte, "
 "nicht am Anfang"
 
-#: src/option.c:689
+#: src/option.c:557
 msgid "Display notification"
 msgstr "Benachrichtigung anzeigen"
 
-#: src/option.c:698
+#: src/option.c:564
 msgid "Set the notification text"
 msgstr "Den Benachrichtigungstext festlegen"
 
-#: src/option.c:707
+#: src/option.c:571
 msgid "Listen for commands on stdin"
 msgstr "Auf der Standardeingabe nach Befehlen horchen"
 
-#: src/option.c:716
+#: src/option.c:578
 msgid "Set the notification hints"
 msgstr "Den Benachrichtigungshinweis festlegen"
 
-#: src/option.c:733
+#: src/option.c:590
 msgid "Display progress indication dialog"
 msgstr "Fortschrittsanzeige-Dialog anzeigen"
 
-#: src/option.c:751
+#: src/option.c:604
 msgid "Set initial percentage"
 msgstr "Den anfänglichen Prozentsatz festlegen"
 
-#: src/option.c:752
+#: src/option.c:605
 msgid "PERCENTAGE"
 msgstr "PROZENT"
 
-#: src/option.c:760
+#: src/option.c:611
 msgid "Pulsate progress bar"
 msgstr "Pulsierende Fortschrittsleiste"
 
-#: src/option.c:770
+#: src/option.c:619
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Den Dialog beenden, wenn 100% erreicht sind"
 
-#: src/option.c:779
+#: src/option.c:626
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Elternprozess beenden, wenn der Abbrechen-Knopf angeklickt wird"
 
-#: src/option.c:788
+#: src/option.c:633
 msgid "Hide Cancel button"
 msgstr "Abbrechen-Knopf verbergen"
 
-#: src/option.c:798
+#: src/option.c:641
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Fortschritt zum Erreichen von 100% schätzen"
 
-#: src/option.c:813
+#: src/option.c:650
 msgid "Display question dialog"
 msgstr "Fragedialog anzeigen"
 
-#: src/option.c:857
+#: src/option.c:684
 msgid "Give Cancel button focus by default"
 msgstr "Vorgabe fokussiert den Abbrechen-Knopf"
 
-#: src/option.c:874
+#: src/option.c:698
 msgid "Suppress OK and Cancel buttons"
 msgstr "OK- und Abbrechen-Knöpfe unterdrücken"
 
-#: src/option.c:889
+#: src/option.c:708
 msgid "Display text information dialog"
 msgstr "Text-Informationsdialog anzeigen"
 
-#: src/option.c:898
+#: src/option.c:715
 msgid "Open file"
 msgstr "Datei öffnen"
 
-#: src/option.c:916
+#: src/option.c:729
 msgid "Set the text font"
 msgstr "Schriftart für Text festlegen"
 
-#: src/option.c:925
+#: src/option.c:736
 msgid "Enable an I read and agree checkbox"
 msgstr "Ankreuzfeld zum »Lesen und Bestätigen« aktivieren"
 
-#: src/option.c:935
+#: src/option.c:744
 msgid "Enable HTML support"
 msgstr "HTML-Unterstützung aktivieren"
 
-#: src/option.c:944
+#: src/option.c:751
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -597,328 +486,420 @@ msgstr ""
 "Benutzerinteraktion mit WebView nicht einschalten. Funktioniert nur zusammen "
 "mit der Option »--html«"
 
-#: src/option.c:953
+#: src/option.c:759
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "Legt eine Adresse anstelle einer Datei fest. Funktioniert nur zusammen mit "
 "der Option --html."
 
-#: src/option.c:954
+#: src/option.c:761
 msgid "URL"
 msgstr "Adresse"
 
-#: src/option.c:963
+#: src/option.c:768
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "Automatisch an das Textende springen. Nur wenn Text von Standardeingabe "
 "aufgenommen wird"
 
-#: src/option.c:978
+#: src/option.c:778
 msgid "Display warning dialog"
 msgstr "Warndialog anzeigen"
 
-#: src/option.c:1036
+#: src/option.c:821
 msgid "Display scale dialog"
 msgstr "Schieberegler-Dialog anzeigen"
 
-#: src/option.c:1054
+#: src/option.c:835
 msgid "Set initial value"
 msgstr "Den anfänglichen Wert festlegen"
 
-#: src/option.c:1055 src/option.c:1064 src/option.c:1073 src/option.c:1082
-#: src/option.c:1281
+#: src/option.c:836 src/option.c:843 src/option.c:850 src/option.c:857
+#: src/option.c:1008
 msgid "VALUE"
 msgstr "WERT"
 
-#: src/option.c:1063
+#: src/option.c:842
 msgid "Set minimum value"
 msgstr "Den minimalen Wert festlegen"
 
-#: src/option.c:1072
+#: src/option.c:849
 msgid "Set maximum value"
 msgstr "Den maximalen Wert festlegen"
 
-#: src/option.c:1081
+#: src/option.c:856
 msgid "Set step size"
 msgstr "Die Schrittgröße festlegen"
 
-#: src/option.c:1090
+#: src/option.c:863
 msgid "Print partial values"
 msgstr "Zwischenwerte anzeigen"
 
-#: src/option.c:1099
+#: src/option.c:870
 msgid "Hide value"
 msgstr "Den Wert ausblenden"
 
-#: src/option.c:1114
+#: src/option.c:879
 msgid "Display forms dialog"
 msgstr "Formulardialog anzeigen"
 
-#: src/option.c:1123
+#: src/option.c:886
 msgid "Add a new Entry in forms dialog"
 msgstr "Einen neuen Eintrag im Formulardialog hinzufügen"
 
-#: src/option.c:1124 src/option.c:1133
+#: src/option.c:887 src/option.c:894
 msgid "Field name"
 msgstr "Feldname"
 
-#: src/option.c:1132
+#: src/option.c:893
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Neues Passworteingabefeld im Formulardialog hinzufügen"
 
-#: src/option.c:1141
+#: src/option.c:900
 msgid "Add a new Calendar in forms dialog"
 msgstr "Neuen Kalender im Formulardialog hinzufügen"
 
-#: src/option.c:1142
+#: src/option.c:901
 msgid "Calendar field name"
 msgstr "Kalenderfeldname"
 
-#: src/option.c:1150
+#: src/option.c:907
 msgid "Add a new List in forms dialog"
 msgstr "Eine neue Liste im Formulardialog hinzufügen"
 
-#: src/option.c:1151
+#: src/option.c:908
 msgid "List field and header name"
 msgstr "Listenfeld und Kopfzeilenname"
 
-#: src/option.c:1159
+#: src/option.c:914
 msgid "List of values for List"
 msgstr "Liste der Werte für die Liste"
 
-#: src/option.c:1160 src/option.c:1169 src/option.c:1187
+#: src/option.c:915 src/option.c:922 src/option.c:936
 msgid "List of values separated by |"
 msgstr "Liste der Werte, mit | getrennt"
 
-#: src/option.c:1168
+#: src/option.c:921
 msgid "List of values for columns"
 msgstr "Liste der Werte für Spalten"
 
-#: src/option.c:1177
+#: src/option.c:928
 msgid "Add a new combo box in forms dialog"
 msgstr "Eine neues Auswahlfeld im Formulardialog hinzufügen"
 
-#: src/option.c:1178
+#: src/option.c:929
 msgid "Combo box field name"
 msgstr "Feldname des Auswahlfelds"
 
-#: src/option.c:1186
+#: src/option.c:935
 msgid "List of values for combo box"
 msgstr "Liste der Werte für das Auswahlfeld"
 
-#: src/option.c:1205
+#: src/option.c:952
 msgid "Show the columns header"
 msgstr "Den Spaltentitel anzeigen"
 
-#: src/option.c:1247
+#: src/option.c:983
 msgid "Display password dialog"
 msgstr "Passwortdialog anzeigen"
 
-#: src/option.c:1256
+#: src/option.c:990
 msgid "Display the username option"
 msgstr "Benutzername-Option anzeigen"
 
-#: src/option.c:1271
+#: src/option.c:1000
 msgid "Display color selection dialog"
 msgstr "Farbwahldialog anzeigen"
 
-#: src/option.c:1280
+#: src/option.c:1007
 msgid "Set the color"
 msgstr "Die Farbe festlegen"
 
-#: src/option.c:1289
+#: src/option.c:1014
 msgid "Show the palette"
 msgstr "Die Palette anzeigen"
 
-#: src/option.c:1304
+#: src/option.c:1023
 msgid "About zenity"
 msgstr "Info zu zenity"
 
-#: src/option.c:1313
+#: src/option.c:1030
 msgid "Print version"
 msgstr "Druckversion"
 
-#: src/option.c:2256
+#: src/option.c:1913
 msgid "General options"
 msgstr "Allgemeine Einstellungen"
 
-#: src/option.c:2257
+#: src/option.c:1914
 msgid "Show general options"
 msgstr "Allgemeine Einstellungen anzeigen"
 
-#: src/option.c:2267
+#: src/option.c:1926
 msgid "Calendar options"
 msgstr "Kalendereinstellungen"
 
-#: src/option.c:2268
+#: src/option.c:1927
 msgid "Show calendar options"
 msgstr "Kalendereinstellungen anzeigen"
 
-#: src/option.c:2278
+#: src/option.c:1939
 msgid "Text entry options"
 msgstr "Einstellungen der Texteingabe"
 
-#: src/option.c:2279
+#: src/option.c:1940
 msgid "Show text entry options"
 msgstr "Einstellungen der Texteingabe anzeigen"
 
-#: src/option.c:2289
+#: src/option.c:1952
 msgid "Error options"
 msgstr "Fehlereinstellungen"
 
-#: src/option.c:2290
+#: src/option.c:1952
 msgid "Show error options"
 msgstr "Fehlereinstellungen"
 
-#: src/option.c:2300
+#: src/option.c:1962
 msgid "Info options"
 msgstr "Info-Einstellungen"
 
-#: src/option.c:2301
+#: src/option.c:1962
 msgid "Show info options"
 msgstr "Info-Einstellungen anzeigen"
 
-#: src/option.c:2311
+#: src/option.c:1972
 msgid "File selection options"
 msgstr "Einstellungen des Dateiwählers"
 
-#: src/option.c:2312
+#: src/option.c:1973
 msgid "Show file selection options"
 msgstr "Einstellungen des Dateiwählers anzeigen"
 
-#: src/option.c:2322
+#: src/option.c:1985
 msgid "List options"
 msgstr "Listeneinstellungen"
 
-#: src/option.c:2323
+#: src/option.c:1985
 msgid "Show list options"
 msgstr "Listeneinstellungen anzeigen"
 
-#: src/option.c:2334
+#: src/option.c:1996
 msgid "Notification icon options"
 msgstr "Benachrichtigungssymbol-Einstellungen"
 
-#: src/option.c:2335
+#: src/option.c:1997
 msgid "Show notification icon options"
 msgstr "Benachrichtigungssymbol-Einstellungen anzeigen"
 
-#: src/option.c:2346
+#: src/option.c:2011
 msgid "Progress options"
 msgstr "Fortschrittseinstellungen"
 
-#: src/option.c:2347
+#: src/option.c:2012
 msgid "Show progress options"
 msgstr "Fortschrittseinstellungen anzeigen"
 
-#: src/option.c:2357
+#: src/option.c:2024
 msgid "Question options"
 msgstr "Frageeinstellungen"
 
-#: src/option.c:2358
+#: src/option.c:2025
 msgid "Show question options"
 msgstr "Frageeinstellungen anzeigen"
 
-#: src/option.c:2368
+#: src/option.c:2037
 msgid "Warning options"
 msgstr "Warneinstellungen"
 
-#: src/option.c:2369
+#: src/option.c:2038
 msgid "Show warning options"
 msgstr "Warneinstellungen anzeigen"
 
-#: src/option.c:2379
+#: src/option.c:2050
 msgid "Scale options"
 msgstr "Schiebereglereinstellungen"
 
-#: src/option.c:2380
+#: src/option.c:2050
 msgid "Show scale options"
 msgstr "Schiebereglereinstellungen anzeigen"
 
-#: src/option.c:2390
+#: src/option.c:2060
 msgid "Text information options"
 msgstr "Textinformationseinstellungen"
 
-#: src/option.c:2391
+#: src/option.c:2061
 msgid "Show text information options"
 msgstr "Textinformationseinstellungen anzeigen"
 
-#: src/option.c:2401
+#: src/option.c:2073
 msgid "Color selection options"
 msgstr "Einstellungen des Farbwählers"
 
-#: src/option.c:2402
+#: src/option.c:2074
 msgid "Show color selection options"
 msgstr "Einstellungen des Farbwählers anzeigen"
 
-#: src/option.c:2412
+#: src/option.c:2086
 msgid "Password dialog options"
 msgstr "Optionen für Passwortdialog"
 
-#: src/option.c:2413
+#: src/option.c:2087
 msgid "Show password dialog options"
 msgstr "Optionen für Passwortdialog anzeigen"
 
-#: src/option.c:2423
+#: src/option.c:2099
 msgid "Forms dialog options"
 msgstr "Optionen für Formulardialog"
 
-#: src/option.c:2424
+#: src/option.c:2100
 msgid "Show forms dialog options"
 msgstr "Optionen für Formulardialog anzeigen"
 
-#: src/option.c:2434
+#: src/option.c:2112
 msgid "Miscellaneous options"
 msgstr "Verschiedene Einstellungen"
 
-#: src/option.c:2435
+#: src/option.c:2113
 msgid "Show miscellaneous options"
 msgstr "Verschiedene Einstellungen anzeigen"
 
-#: src/option.c:2460
+#: src/option.c:2139
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Diese Option steht nicht zur Verfügung. Bitte verwenden Sie »--help« für "
 "alle Anwendungsmöglichkeiten.\n"
 
-#: src/option.c:2464
+#: src/option.c:2144
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s wird von diesem Dialog nicht unterstützt\n"
 
-#: src/option.c:2468
+#: src/option.c:2148
 msgid "Two or more dialog options specified\n"
 msgstr "Dialog-Option mehrfach übergeben\n"
 
-#~ msgid "Select a file"
-#~ msgstr "Wählen Sie eine Datei"
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Geben Sie Ihr Passwort ein"
 
-#~ msgid "Orientation"
-#~ msgstr "Ausrichtung"
+#: src/password.c:73
+msgid "Type your username and password"
+msgstr "Geben Sie Ihren Benutzernamen und Ihr Passwort ein"
 
-#~ msgid "The orientation of the tray."
-#~ msgstr "Die Ausrichtung der Anzeige."
+#: src/password.c:100
+msgid "Username:"
+msgstr "Benutzername:"
 
-#~ msgid "Adjust the scale value."
-#~ msgstr "Den Wert des Schiebereglers anpassen."
+#: src/password.c:110
+msgid "Password:"
+msgstr "Passwort:"
 
-#~ msgid "(C) 2003 Sun Microsystems"
-#~ msgstr "Copyright (C) 2003 Sun Microsystems"
+#: src/progress.c:102
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr "Verbleibende Zeit: %lu:%02lu:%02lu"
 
-#~ msgid "Credits"
-#~ msgstr "Mitwirkende"
+#: src/scale.c:62
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Der maximale Wert muss größer als der minimale sein.\n"
 
-#~ msgid "Written by"
-#~ msgstr "Programm von"
+#: src/scale.c:69
+msgid "Value out of range.\n"
+msgstr "Wert außerhalb des gültigen Bereichs.\n"
 
-#~ msgid "Translated by"
-#~ msgstr "Übersetzung von"
+#: src/tree.c:393
+msgid "No column titles specified for List dialog.\n"
+msgstr "Keine Spaltentitel für Listendialog angegeben\n"
 
-#~ msgid "*"
-#~ msgstr "*"
+#: src/tree.c:399
+msgid "You should use only one List dialog type.\n"
+msgstr "Sie können nur einen Listendialogtyp verwenden.\n"
 
-#~ msgid "About Zenity"
-#~ msgstr "Info zu Zenity"
+#: src/zenity.ui:14 src/zenity.ui:76
+msgid "Adjust the scale value"
+msgstr "Wert des Schiebereglers anpassen"
 
-#~ msgid "_Credits"
-#~ msgstr "_Mitwirkende"
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "Ok"
+
+#: src/zenity.ui:117
+msgid "Text View"
+msgstr "Textansicht"
+
+#: src/zenity.ui:231
+msgid "Calendar selection"
+msgstr "Wählen Sie ein Datum"
+
+#: src/zenity.ui:298
+msgid "Select a date from below."
+msgstr "Wählen Sie ein Datum."
+
+#: src/zenity.ui:319
+msgid "C_alendar:"
+msgstr "_Kalender:"
+
+#: src/zenity.ui:361
+msgid "Add a new entry"
+msgstr "Einen neuen Eintrag hinzufügen"
+
+#: src/zenity.ui:428
+msgid "_Enter new text:"
+msgstr "_Geben Sie den neuen Text ein:"
+
+#: src/zenity.ui:465
+msgid "Error"
+msgstr "Fehler"
+
+#: src/zenity.ui:530
+msgid "An error has occurred."
+msgstr "Ein Fehler ist aufgetreten."
+
+#: src/zenity.ui:658
+msgid "Forms dialog"
+msgstr "Formulardialog"
+
+#: src/zenity.ui:681
+msgid "Information"
+msgstr "Informationen"
+
+#: src/zenity.ui:741
+msgid "All updates are complete."
+msgstr "Alle Aktualisierungen wurden fertiggestellt."
+
+#: src/zenity.ui:768
+msgid "Progress"
+msgstr "Fortschritt"
+
+#: src/zenity.ui:831
+msgid "Running..."
+msgstr "Läuft …"
+
+#: src/zenity.ui:882
+msgid "Question"
+msgstr "Frage"
+
+#: src/zenity.ui:929 src/zenity.ui:1126
+msgid "Are you sure you want to proceed?"
+msgstr "Wollen Sie fortfahren?"
+
+#: src/zenity.ui:953
+msgid "Select items from the list"
+msgstr "Wählen Sie Objekte aus der Liste"
+
+#: src/zenity.ui:1015
+msgid "Select items from the list below."
+msgstr "Wählen Sie Objekte aus der Liste."
+
+#: src/zenity.ui:1064
+msgid "Warning"
+msgstr "Warnung"
