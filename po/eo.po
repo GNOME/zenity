@@ -1,15 +1,15 @@
 # Esperanto translation for zenity.
 # Copyright (C) 2010-2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
-# Tiffany Antopolski <tiffany.antopolski@gmail.com>, 2011.
+# Tiffany ANTOPOLSKI <tiffany.antopolski@gmail.com>, 2011.
 # Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=zenity"
 "&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-06-28 17:36+0000\n"
-"PO-Revision-Date: 2017-09-14 23:43+0200\n"
+"POT-Creation-Date: 2017-11-26 20:40+0000\n"
+"PO-Revision-Date: 2017-12-23 00:13+0200\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
 "Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
 "Language: eo\n"
@@ -18,7 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.1\n"
-"X-Launchpad-Export-Date: 2012-04-10 16:16+0000\n"
 "X-Project-Style: gnome\n"
 
 #: src/about.c:60
@@ -30,8 +29,8 @@ msgid ""
 msgstr ""
 "Tiu programo estas libera programaro; vi povas distribui kaj/aŭ modifi ĝin "
 "laŭ la kondiĉoj de la Malsupera Ĝenerala Publika Permesilo de GNU eldonite "
-"de 'Free Software Foundation'; aŭ en la 2a versio de la permesilo aŭ (laŭ "
-"via volo) en iu sekva versio.\n"
+"de Free Software Foundation; aŭ en la 2a versio de la permesilo aŭ (laŭ via "
+"volo) en iu sekva versio.\n"
 
 #: src/about.c:65
 msgid ""
@@ -66,12 +65,27 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr ""
 
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+msgid "_OK"
+msgstr "_Bone"
+
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+msgid "_Cancel"
+msgstr "_Rezigni"
+
 #: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "Vi devas specifi specon de dialogo. Vidu 'zenity --help' por detaloj\n"
 
+#: src/msg.c:38
+msgid "_No"
+msgstr "_Ne"
+
+#: src/msg.c:40
+msgid "_Yes"
+msgstr "_Jes"
+
 #: src/notification.c:50
-#| msgid "Could not parse message from stdin\n"
 msgid "Could not parse message\n"
 msgstr "Ne eblis analizi mesaĝon\n"
 
@@ -92,143 +106,12 @@ msgid "Unknown hint name. Skipping.\n"
 msgstr ""
 
 #: src/notification.c:218
-#| msgid "could not parse command from stdin\n"
 msgid "Could not parse command from stdin\n"
 msgstr "Ne eblis analizi komandon de stdin\n"
 
 #: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Zenity-sciigo"
-
-#: src/password.c:57
-msgid "_Cancel"
-msgstr "_Nuligi"
-
-#: src/password.c:60
-msgid "_OK"
-msgstr "_Bone"
-
-#. Checks if username has been passed as a parameter
-#: src/password.c:70
-msgid "Type your password"
-msgstr "Enigu vian pasvorton"
-
-#: src/password.c:73
-#, fuzzy
-#| msgid "Type your password"
-msgid "Type your username and password"
-msgstr "Enigu vian pasvorton"
-
-#: src/password.c:100
-msgid "Username:"
-msgstr "Uzantonomo:"
-
-#: src/password.c:110
-msgid "Password:"
-msgstr "Pasvorto:"
-
-#: src/scale.c:62
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr ""
-
-#: src/scale.c:69
-msgid "Value out of range.\n"
-msgstr "Valoro estas ekster la intervalo.\n"
-
-#: src/tree.c:393
-msgid "No column titles specified for List dialog.\n"
-msgstr ""
-
-#: src/tree.c:399
-msgid "You should use only one List dialog type.\n"
-msgstr ""
-
-#: src/zenity.ui:14 src/zenity.ui:76
-msgid "Adjust the scale value"
-msgstr "Agordi la skal-valoron"
-
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "Nuligi"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "Bone"
-
-#: src/zenity.ui:117
-msgid "Text View"
-msgstr "Tekst-vido"
-
-#: src/zenity.ui:231
-msgid "Calendar selection"
-msgstr "Kalendaro-elekto"
-
-#: src/zenity.ui:298
-msgid "Select a date from below."
-msgstr "Elekti daton malsupre."
-
-#: src/zenity.ui:319
-msgid "C_alendar:"
-msgstr "K_alendaro:"
-
-#: src/zenity.ui:361
-msgid "Add a new entry"
-msgstr "Aldoni novan elementon"
-
-#: src/zenity.ui:428
-msgid "_Enter new text:"
-msgstr "_Enigi novan tekston:"
-
-#: src/zenity.ui:465
-msgid "Error"
-msgstr "Eraro"
-
-#: src/zenity.ui:530
-msgid "An error has occurred."
-msgstr "Eraro okazis."
-
-#: src/zenity.ui:658
-msgid "Forms dialog"
-msgstr "Formular-dialogujo"
-
-#: src/zenity.ui:681
-msgid "Information"
-msgstr "Informo"
-
-#: src/zenity.ui:741
-msgid "All updates are complete."
-msgstr "Ĉiuj ĝisdatigoj estas kompletaj."
-
-#: src/zenity.ui:768
-msgid "Progress"
-msgstr "Progreso"
-
-#: src/zenity.ui:831
-msgid "Running..."
-msgstr "Rulante..."
-
-#: src/zenity.ui:882
-msgid "Question"
-msgstr "Demando"
-
-#: src/zenity.ui:929 src/zenity.ui:1126
-msgid "Are you sure you want to proceed?"
-msgstr "Ĉu vi estas certa ke vi volas procedi?"
-
-#: src/zenity.ui:953
-msgid "Select items from the list"
-msgstr "Elekti elementojn de la listo"
-
-#: src/zenity.ui:1015
-msgid "Select items from the list below."
-msgstr "Elektu elementojn de la suba listo."
-
-#: src/zenity.ui:1064
-msgid "Warning"
-msgstr "Averto"
 
 #: src/option.c:164
 msgid "Set the dialog title"
@@ -272,7 +155,6 @@ msgid "TIMEOUT"
 msgstr "TEMPOLIMO"
 
 #: src/option.c:200
-#| msgid "Set the dialog text"
 msgid "Set the label of the OK button"
 msgstr "Agordi la etikedon de la Bone-butonon"
 
@@ -286,10 +168,9 @@ msgstr "TEKSTO"
 
 #: src/option.c:207
 msgid "Set the label of the Cancel button"
-msgstr ""
+msgstr "Agordi la etikedon de la Rezigni-butonon"
 
 #: src/option.c:214
-#| msgid "Hide Cancel button"
 msgid "Add an extra button"
 msgstr "Aldoni kroman butonon"
 
@@ -353,7 +234,7 @@ msgstr "ŜABLONO"
 
 #: src/option.c:281
 msgid "Display text entry dialog"
-msgstr ""
+msgstr "Montri dialogon por tekstenigo"
 
 #: src/option.c:295
 msgid "Set the entry text"
@@ -368,10 +249,9 @@ msgid "Display error dialog"
 msgstr "Montri erardialogon"
 
 #: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
-#, fuzzy
 #| msgid "Set the dialog title"
 msgid "Set the dialog icon"
-msgstr "Agordi la dialog-titolon"
+msgstr "Agordi la dialog-piktogramon"
 
 #: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
 msgid "ICON-NAME"
@@ -432,10 +312,9 @@ msgid "Confirm file selection if filename already exists"
 msgstr ""
 
 #: src/option.c:448
-#, fuzzy
 #| msgid "Set the filename"
 msgid "Set a filename filter"
-msgstr "Agordi la dosiernomon"
+msgstr "Agordi filtrilon por dosiernomon"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
@@ -491,10 +370,9 @@ msgid "Hide a specific column"
 msgstr "Kaŝi specifan kolumnon"
 
 #: src/option.c:539
-#, fuzzy
 #| msgid "Hides the column headers"
 msgid "Hide the column headers"
-msgstr "Kaŝi kolumnotitolojn"
+msgstr "Kaŝi la kolumnotitolojn"
 
 #: src/option.c:546
 msgid ""
@@ -515,10 +393,9 @@ msgid "Listen for commands on stdin"
 msgstr ""
 
 #: src/option.c:578
-#, fuzzy
 #| msgid "Set the notification text"
 msgid "Set the notification hints"
-msgstr "Agordi la sciigotekston"
+msgstr "Agordi la sciigo-konsiletojn"
 
 #: src/option.c:590
 msgid "Display progress indication dialog"
@@ -559,13 +436,11 @@ msgid "Display question dialog"
 msgstr "Montri demand-dialogon"
 
 #: src/option.c:684
-#, fuzzy
 #| msgid "Hide Cancel button"
 msgid "Give Cancel button focus by default"
 msgstr "Doni defaŭlte fokuson al Rezigni-butonon"
 
 #: src/option.c:698
-#| msgid "Hide Cancel button"
 msgid "Suppress OK and Cancel buttons"
 msgstr "Kaŝi Bone- kaj Rezigni-butonojn"
 
@@ -586,7 +461,6 @@ msgid "Enable an I read and agree checkbox"
 msgstr ""
 
 #: src/option.c:744
-#, fuzzy
 #| msgid "Enable html support"
 msgid "Enable HTML support"
 msgstr "Ebligi HTML-subtenon"
@@ -890,3 +764,129 @@ msgstr "--%s estas ne subtenita por tiu dialogo\n"
 #: src/option.c:2148
 msgid "Two or more dialog options specified\n"
 msgstr "Specifis du aŭ pli dialogajn opciojn\n"
+
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Enigu vian pasvorton"
+
+#: src/password.c:73
+#| msgid "Type your password"
+msgid "Type your username and password"
+msgstr "Enigu viajn uzantonomon kaj pasvorton"
+
+#: src/password.c:100
+msgid "Username:"
+msgstr "Uzantonomo:"
+
+#: src/password.c:110
+msgid "Password:"
+msgstr "Pasvorto:"
+
+#: src/progress.c:102
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr ""
+
+#: src/scale.c:62
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr ""
+
+#: src/scale.c:69
+msgid "Value out of range.\n"
+msgstr "Valoro estas ekster la intervalo.\n"
+
+#: src/tree.c:393
+msgid "No column titles specified for List dialog.\n"
+msgstr ""
+
+#: src/tree.c:399
+msgid "You should use only one List dialog type.\n"
+msgstr ""
+
+#: src/zenity.ui:14 src/zenity.ui:76
+msgid "Adjust the scale value"
+msgstr "Agordi la skal-valoron"
+
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Rezigni"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "Bone"
+
+#: src/zenity.ui:117
+msgid "Text View"
+msgstr "Tekst-vido"
+
+#: src/zenity.ui:231
+msgid "Calendar selection"
+msgstr "Kalendaro-elekto"
+
+#: src/zenity.ui:298
+msgid "Select a date from below."
+msgstr "Elekti daton malsupre."
+
+#: src/zenity.ui:319
+msgid "C_alendar:"
+msgstr "K_alendaro:"
+
+#: src/zenity.ui:361
+msgid "Add a new entry"
+msgstr "Aldoni novan elementon"
+
+#: src/zenity.ui:428
+msgid "_Enter new text:"
+msgstr "_Enigi novan tekston:"
+
+#: src/zenity.ui:465
+msgid "Error"
+msgstr "Eraro"
+
+#: src/zenity.ui:530
+msgid "An error has occurred."
+msgstr "Eraro okazis."
+
+#: src/zenity.ui:658
+msgid "Forms dialog"
+msgstr "Formular-dialogujo"
+
+#: src/zenity.ui:681
+msgid "Information"
+msgstr "Informo"
+
+#: src/zenity.ui:741
+msgid "All updates are complete."
+msgstr "Ĉiuj ĝisdatigoj estas kompletaj."
+
+#: src/zenity.ui:768
+msgid "Progress"
+msgstr "Progreso"
+
+#: src/zenity.ui:831
+msgid "Running..."
+msgstr "Rulante..."
+
+#: src/zenity.ui:882
+msgid "Question"
+msgstr "Demando"
+
+#: src/zenity.ui:929 src/zenity.ui:1126
+msgid "Are you sure you want to proceed?"
+msgstr "Ĉu vi estas certa ke vi volas procedi?"
+
+#: src/zenity.ui:953
+msgid "Select items from the list"
+msgstr "Elekti elementojn de la listo"
+
+#: src/zenity.ui:1015
+msgid "Select items from the list below."
+msgstr "Elektu elementojn de la suba listo."
+
+#: src/zenity.ui:1064
+msgid "Warning"
+msgstr "Averto"
