@@ -1825,7 +1825,7 @@ zenity_forms_post_callback (GOptionContext *context, GOptionGroup *group,
 			while (values != NULL) {
 				results->forms_data->column_values =
 					g_slist_append (results->forms_data->column_values, values);
-				values = zenity_forms_list_values[++i];
+				values = zenity_forms_column_values[++i];
 			}
 		} else
 			results->forms_data->column_values =
