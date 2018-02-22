@@ -8,14 +8,14 @@
 # Reinout van Schouwen <reinouts@gnome.org>, 2010.
 # Wouter Bolsterlee <wbolster@gnome.org>, 2007, 2010–2011, 2012.
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2012.
-# Nathan Follens <nthn@unseen.is>, 2017.
+# Nathan Follens <nthn@unseen.is>, 2017-2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenity\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-09-02 08:37+0000\n"
-"PO-Revision-Date: 2017-09-10 13:22+0200\n"
+"POT-Creation-Date: 2017-11-26 20:40+0000\n"
+"PO-Revision-Date: 2018-02-08 19:48+0100\n"
 "Last-Translator: Nathan Follens <nthn@unseen.is>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: src/about.c:60
 msgid ""
@@ -74,11 +74,27 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Dialoogvenster weergeven vanuit shellscripts"
 
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+msgid "_OK"
+msgstr "_Oké"
+
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+msgid "_Cancel"
+msgstr "_Annuleren"
+
 #: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "U moet een type dialoogvenster meeegeven. Kijk naar ‘zenity --help’ voor "
 "meer informatie\n"
+
+#: src/msg.c:38
+msgid "_No"
+msgstr "_Nee"
+
+#: src/msg.c:40
+msgid "_Yes"
+msgstr "_Ja"
 
 #: src/notification.c:50
 msgid "Could not parse message\n"
@@ -109,134 +125,6 @@ msgstr "Kon de opdracht van stdin niet verwerken\n"
 #: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Zenity melding"
-
-#: src/password.c:57
-msgid "_Cancel"
-msgstr "_Annuleren"
-
-#: src/password.c:60
-msgid "_OK"
-msgstr "_Oké"
-
-#. Checks if username has been passed as a parameter
-#: src/password.c:70
-msgid "Type your password"
-msgstr "Voer uw wachtwoord in"
-
-#: src/password.c:73
-msgid "Type your username and password"
-msgstr "Voer uw gebruikersnaam en wachtwoord in"
-
-#: src/password.c:100
-msgid "Username:"
-msgstr "Gebruikersnaam:"
-
-#: src/password.c:110
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: src/scale.c:62
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Maximumwaarde moet meer zijn dan de minimumwarde.\n"
-
-#: src/scale.c:69
-msgid "Value out of range.\n"
-msgstr "Waarde te groot.\n"
-
-#: src/tree.c:393
-msgid "No column titles specified for List dialog.\n"
-msgstr "Geen kolomtitels gegeven voor lijstweergave.\n"
-
-#: src/tree.c:399
-msgid "You should use only one List dialog type.\n"
-msgstr "U dient slechts één type Lijstvenster te gebruiken.\n"
-
-#: src/zenity.ui:14 src/zenity.ui:76
-msgid "Adjust the scale value"
-msgstr "Waarde aanpassen"
-
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "Oké"
-
-#: src/zenity.ui:117
-msgid "Text View"
-msgstr "Tekstweergave"
-
-#: src/zenity.ui:231
-msgid "Calendar selection"
-msgstr "Kalenderselectie"
-
-#: src/zenity.ui:298
-msgid "Select a date from below."
-msgstr "Kies hieronder een datum."
-
-#: src/zenity.ui:319
-msgid "C_alendar:"
-msgstr "K_alender:"
-
-#: src/zenity.ui:361
-msgid "Add a new entry"
-msgstr "Nieuwe ingang toevoegen"
-
-#: src/zenity.ui:428
-msgid "_Enter new text:"
-msgstr "_Geef nieuwe tekst:"
-
-#: src/zenity.ui:465
-msgid "Error"
-msgstr "Fout"
-
-#: src/zenity.ui:530
-msgid "An error has occurred."
-msgstr "Er is een fout opgetreden."
-
-#: src/zenity.ui:658
-msgid "Forms dialog"
-msgstr "Formuliervenster"
-
-#: src/zenity.ui:681
-msgid "Information"
-msgstr "Informatie"
-
-#: src/zenity.ui:741
-msgid "All updates are complete."
-msgstr "Alle updates zijn gebeurd."
-
-#: src/zenity.ui:768
-msgid "Progress"
-msgstr "Voortgang"
-
-#: src/zenity.ui:831
-msgid "Running..."
-msgstr "Actief..."
-
-#: src/zenity.ui:882
-msgid "Question"
-msgstr "Vraag"
-
-#: src/zenity.ui:929 src/zenity.ui:1126
-msgid "Are you sure you want to proceed?"
-msgstr "Weet u zeker dat u wilt doorgaan?"
-
-#: src/zenity.ui:953
-msgid "Select items from the list"
-msgstr "Kies items uit de lijst"
-
-#: src/zenity.ui:1015
-msgid "Select items from the list below."
-msgstr "Kies hieronder items uit de lijst."
-
-#: src/zenity.ui:1064
-msgid "Warning"
-msgstr "Waarschuwing"
 
 #: src/option.c:164
 msgid "Set the dialog title"
@@ -324,7 +212,7 @@ msgstr "Tekst van dialoogvenster instellen"
 
 #: src/option.c:251
 msgid "Set the calendar day"
-msgstr "Kalenderdag van dialoogvenster instellen"
+msgstr "Kalenderdag instellen"
 
 #: src/option.c:252
 msgid "DAY"
@@ -332,7 +220,7 @@ msgstr "DAG"
 
 #: src/option.c:258
 msgid "Set the calendar month"
-msgstr "Kalendermaand van dialoogvenster instellen"
+msgstr "Kalendermaand instellen"
 
 #: src/option.c:259
 msgid "MONTH"
@@ -340,7 +228,7 @@ msgstr "MAAND"
 
 #: src/option.c:265
 msgid "Set the calendar year"
-msgstr "Kalenderjaar van dialoogvenster instellen"
+msgstr "Kalenderjaar instellen"
 
 #: src/option.c:266
 msgid "YEAR"
@@ -442,7 +330,7 @@ msgstr "Stel een bestandsnaamfilter in"
 #. selection)
 #: src/option.c:451
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr "NAAM | PATROON 1 PATROON2 ..."
+msgstr "NAAM | PATROON 1 PATROON2 …"
 
 #: src/option.c:460
 msgid "Display list dialog"
@@ -481,7 +369,7 @@ msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
-"Een specifieke kolom teruggeven (Standaard is 1. 'ALL' kan gebruikt worden "
+"Een specifieke kolom teruggeven (Standaard is 1. ‘ALL’ kan gebruikt worden "
 "om alle kolommen terug te geven)."
 
 #. Column index number to print out on a list dialog
@@ -886,6 +774,131 @@ msgstr "--%s wordt niet ondersteund door dit dialoogvenster\n"
 #: src/option.c:2148
 msgid "Two or more dialog options specified\n"
 msgstr "Twee of meer dialoogvenster-opties gespecificeerd\n"
+
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Voer uw wachtwoord in"
+
+#: src/password.c:73
+msgid "Type your username and password"
+msgstr "Voer uw gebruikersnaam en wachtwoord in"
+
+#: src/password.c:100
+msgid "Username:"
+msgstr "Gebruikersnaam:"
+
+#: src/password.c:110
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: src/progress.c:102
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr "Resterende tijd: %lu:%02lu:%02lu"
+
+#: src/scale.c:62
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Maximumwaarde moet meer zijn dan de minimumwarde.\n"
+
+#: src/scale.c:69
+msgid "Value out of range.\n"
+msgstr "Waarde te groot.\n"
+
+#: src/tree.c:393
+msgid "No column titles specified for List dialog.\n"
+msgstr "Geen kolomtitels gegeven voor lijstweergave.\n"
+
+#: src/tree.c:399
+msgid "You should use only one List dialog type.\n"
+msgstr "U dient slechts één type Lijstvenster te gebruiken.\n"
+
+#: src/zenity.ui:14 src/zenity.ui:76
+msgid "Adjust the scale value"
+msgstr "Waarde aanpassen"
+
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "Oké"
+
+#: src/zenity.ui:117
+msgid "Text View"
+msgstr "Tekstweergave"
+
+#: src/zenity.ui:231
+msgid "Calendar selection"
+msgstr "Kalenderselectie"
+
+#: src/zenity.ui:298
+msgid "Select a date from below."
+msgstr "Kies hieronder een datum."
+
+#: src/zenity.ui:319
+msgid "C_alendar:"
+msgstr "K_alender:"
+
+#: src/zenity.ui:361
+msgid "Add a new entry"
+msgstr "Nieuwe ingang toevoegen"
+
+#: src/zenity.ui:428
+msgid "_Enter new text:"
+msgstr "_Geef nieuwe tekst:"
+
+#: src/zenity.ui:465
+msgid "Error"
+msgstr "Fout"
+
+#: src/zenity.ui:530
+msgid "An error has occurred."
+msgstr "Er is een fout opgetreden."
+
+#: src/zenity.ui:658
+msgid "Forms dialog"
+msgstr "Formuliervenster"
+
+#: src/zenity.ui:681
+msgid "Information"
+msgstr "Informatie"
+
+#: src/zenity.ui:741
+msgid "All updates are complete."
+msgstr "Alle updates zijn voltooid."
+
+#: src/zenity.ui:768
+msgid "Progress"
+msgstr "Voortgang"
+
+#: src/zenity.ui:831
+msgid "Running..."
+msgstr "Actief…"
+
+#: src/zenity.ui:882
+msgid "Question"
+msgstr "Vraag"
+
+#: src/zenity.ui:929 src/zenity.ui:1126
+msgid "Are you sure you want to proceed?"
+msgstr "Weet u zeker dat u wilt doorgaan?"
+
+#: src/zenity.ui:953
+msgid "Select items from the list"
+msgstr "Kies items uit de lijst"
+
+#: src/zenity.ui:1015
+msgid "Select items from the list below."
+msgstr "Kies hieronder items uit de lijst."
+
+#: src/zenity.ui:1064
+msgid "Warning"
+msgstr "Waarschuwing"
 
 #~ msgid "Select a file"
 #~ msgstr "Kies een bestand"
