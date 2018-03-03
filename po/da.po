@@ -12,10 +12,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: "
-"https://bugzilla.gnome.org/enter_bug.cgi?product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-06-28 17:36+0000\n"
-"PO-Revision-Date: 2015-10-11 18:25+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=zenity&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-11-26 20:40+0000\n"
+"PO-Revision-Date: 2018-02-28 11:51+0100\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: \n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Language: da_DK\n"
 "X-Source-Language: C\n"
 "X-Project-Style: gnome\n"
@@ -79,10 +79,25 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Vis meddelelsesvinduer fra kommandoskalprogrammer"
 
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+msgid "_OK"
+msgstr "_OK"
+
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+msgid "_Cancel"
+msgstr "_Annullér"
+
 #: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
-"Du skal angive en vinduestype. Se “zenity --help” for flere detaljer\n"
+msgstr "Du skal angive en vinduestype. Se “zenity --help” for flere detaljer\n"
+
+#: src/msg.c:38
+msgid "_No"
+msgstr "_Nej"
+
+#: src/msg.c:40
+msgid "_Yes"
+msgstr "_Ja"
 
 #: src/notification.c:50
 msgid "Could not parse message\n"
@@ -113,135 +128,6 @@ msgstr "Kunne ikke fortolke kommando fra standardinddata\n"
 #: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Zenity-påmindelse"
-
-#: src/password.c:57
-msgid "_Cancel"
-msgstr "_Annullér"
-
-#: src/password.c:60
-msgid "_OK"
-msgstr "_OK"
-
-#. Checks if username has been passed as a parameter
-#: src/password.c:70
-msgid "Type your password"
-msgstr "Indtast din adgangskode"
-
-#: src/password.c:73
-msgid "Type your username and password"
-msgstr "Skriv dit brugernavn og adgangskode"
-
-#: src/password.c:100
-msgid "Username:"
-msgstr "Brugernavn:"
-
-#: src/password.c:110
-msgid "Password:"
-msgstr "Adgangskode:"
-
-#: src/scale.c:62
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Maksimal værdi skal være højere end minimal værdi.\n"
-
-#: src/scale.c:69
-msgid "Value out of range.\n"
-msgstr "Værdi uden for område.\n"
-
-#: src/tree.c:393
-msgid "No column titles specified for List dialog.\n"
-msgstr "Ingen kolonneoverskrifter angivet til listevindue.\n"
-
-#: src/tree.c:399
-msgid "You should use only one List dialog type.\n"
-msgstr "Du kan kun bruge én listevinduestype.\n"
-
-#: src/zenity.ui:14 src/zenity.ui:76
-msgid "Adjust the scale value"
-msgstr "Justér skaleringsværdien"
-
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "Annullér"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "OK"
-
-#: src/zenity.ui:117
-msgid "Text View"
-msgstr "Tekstvisning"
-
-# zenity --calendar viser en kalender hvor man vælger en dato.  Calendar selection refererer til dette, som altså reelt er en datovælger
-#: src/zenity.ui:231
-msgid "Calendar selection"
-msgstr "Datovælger"
-
-#: src/zenity.ui:298
-msgid "Select a date from below."
-msgstr "Vælg en dato herunder."
-
-#: src/zenity.ui:319
-msgid "C_alendar:"
-msgstr "K_alender:"
-
-#: src/zenity.ui:361
-msgid "Add a new entry"
-msgstr "Tilføj et nyt indtastningsfelt"
-
-#: src/zenity.ui:428
-msgid "_Enter new text:"
-msgstr "_Indtast ny tekst:"
-
-#: src/zenity.ui:465
-msgid "Error"
-msgstr "Fejl"
-
-#: src/zenity.ui:530
-msgid "An error has occurred."
-msgstr "Der opstod en fejl."
-
-#: src/zenity.ui:658
-msgid "Forms dialog"
-msgstr "Formulardialog"
-
-#: src/zenity.ui:681
-msgid "Information"
-msgstr "Information"
-
-#: src/zenity.ui:741
-msgid "All updates are complete."
-msgstr "Alle opdateringer er fuldført."
-
-#: src/zenity.ui:768
-msgid "Progress"
-msgstr "Fremgang"
-
-#: src/zenity.ui:831
-msgid "Running..."
-msgstr "Kører …"
-
-#: src/zenity.ui:882
-msgid "Question"
-msgstr "Spørgsmål"
-
-#: src/zenity.ui:929 src/zenity.ui:1126
-msgid "Are you sure you want to proceed?"
-msgstr "Er du sikker på, at du vil fortsætte?"
-
-#: src/zenity.ui:953
-msgid "Select items from the list"
-msgstr "Vælg punkter fra listen"
-
-#: src/zenity.ui:1015
-msgid "Select items from the list below."
-msgstr "Vælg punkter fra listen herunder."
-
-#: src/zenity.ui:1064
-msgid "Warning"
-msgstr "Advarsel"
 
 #: src/option.c:164
 msgid "Set the dialog title"
@@ -603,8 +489,8 @@ msgstr "Aktivér HTML-understøttelse"
 
 #: src/option.c:751
 msgid ""
-"Do not enable user interaction with the WebView. Only works if you use "
-"--html option"
+"Do not enable user interaction with the WebView. Only works if you use --"
+"html option"
 msgstr ""
 "Slå ikke brugerinteraktion til i webvisningen. Virker kun hvis du bruger "
 "tilvalget --html"
@@ -612,8 +498,8 @@ msgstr ""
 #: src/option.c:759
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
-"Angiver en URL i stedet for en fil. Virker kun hvis du bruger tilvalget "
-"--html"
+"Angiver en URL i stedet for en fil. Virker kun hvis du bruger tilvalget --"
+"html"
 
 #: src/option.c:761
 msgid "URL"
@@ -900,4 +786,128 @@ msgstr "--%s understøttes ikke for dette vindue\n"
 msgid "Two or more dialog options specified\n"
 msgstr "To eller flere vinduestilvalg angivet\n"
 
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Indtast din adgangskode"
 
+#: src/password.c:73
+msgid "Type your username and password"
+msgstr "Skriv dit brugernavn og adgangskode"
+
+#: src/password.c:100
+msgid "Username:"
+msgstr "Brugernavn:"
+
+#: src/password.c:110
+msgid "Password:"
+msgstr "Adgangskode:"
+
+#: src/progress.c:102
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr "Resterende tid: %lu:%02lu:%02lu"
+
+#: src/scale.c:62
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Maksimal værdi skal være højere end minimal værdi.\n"
+
+#: src/scale.c:69
+msgid "Value out of range.\n"
+msgstr "Værdi uden for område.\n"
+
+#: src/tree.c:393
+msgid "No column titles specified for List dialog.\n"
+msgstr "Ingen kolonneoverskrifter angivet til listevindue.\n"
+
+#: src/tree.c:399
+msgid "You should use only one List dialog type.\n"
+msgstr "Du kan kun bruge én listevinduestype.\n"
+
+#: src/zenity.ui:14 src/zenity.ui:76
+msgid "Adjust the scale value"
+msgstr "Justér skaleringsværdien"
+
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Annullér"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "OK"
+
+#: src/zenity.ui:117
+msgid "Text View"
+msgstr "Tekstvisning"
+
+# zenity --calendar viser en kalender hvor man vælger en dato.  Calendar selection refererer til dette, som altså reelt er en datovælger
+#: src/zenity.ui:231
+msgid "Calendar selection"
+msgstr "Datovælger"
+
+#: src/zenity.ui:298
+msgid "Select a date from below."
+msgstr "Vælg en dato herunder."
+
+#: src/zenity.ui:319
+msgid "C_alendar:"
+msgstr "K_alender:"
+
+#: src/zenity.ui:361
+msgid "Add a new entry"
+msgstr "Tilføj et nyt indtastningsfelt"
+
+#: src/zenity.ui:428
+msgid "_Enter new text:"
+msgstr "_Indtast ny tekst:"
+
+#: src/zenity.ui:465
+msgid "Error"
+msgstr "Fejl"
+
+#: src/zenity.ui:530
+msgid "An error has occurred."
+msgstr "Der opstod en fejl."
+
+#: src/zenity.ui:658
+msgid "Forms dialog"
+msgstr "Formulardialog"
+
+#: src/zenity.ui:681
+msgid "Information"
+msgstr "Information"
+
+#: src/zenity.ui:741
+msgid "All updates are complete."
+msgstr "Alle opdateringer er fuldført."
+
+#: src/zenity.ui:768
+msgid "Progress"
+msgstr "Fremgang"
+
+#: src/zenity.ui:831
+msgid "Running..."
+msgstr "Kører …"
+
+#: src/zenity.ui:882
+msgid "Question"
+msgstr "Spørgsmål"
+
+#: src/zenity.ui:929 src/zenity.ui:1126
+msgid "Are you sure you want to proceed?"
+msgstr "Er du sikker på, at du vil fortsætte?"
+
+#: src/zenity.ui:953
+msgid "Select items from the list"
+msgstr "Vælg punkter fra listen"
+
+#: src/zenity.ui:1015
+msgid "Select items from the list below."
+msgstr "Vælg punkter fra listen herunder."
+
+#: src/zenity.ui:1064
+msgid "Warning"
+msgstr "Advarsel"
