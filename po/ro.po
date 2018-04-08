@@ -8,11 +8,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity.HEAD.ro\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=zenity&"
-"keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-22 14:07+0000\n"
-"PO-Revision-Date: 2014-12-08 18:58+0200\n"
-"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=zenity&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2018-03-11 08:56+0000\n"
+"PO-Revision-Date: 2018-04-06 01:02+0300\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Launchpad-Export-Date: 2012-08-31 07:52+0000\n"
 "X-Project-Style: gnome\n"
 
-#: ../src/about.c:63
+#: src/about.c:60
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -36,7 +36,7 @@ msgstr ""
 "Software Foundation; fie versiunea 2 a Licenței, fie (la latitudinea "
 "dumneavoastră) orice versiune ulterioară.\n"
 
-#: ../src/about.c:67
+#: src/about.c:65
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -47,21 +47,22 @@ msgstr ""
 "GARANȚIE, fără garanție implicită de vandabilitate și conformitate unui "
 "anumit scop. Pentru detalii vezi Licența Publică Generală GNU Lesser.\n"
 
-#: ../src/about.c:71
+#: src/about.c:69
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Ar trebui să fi primit o copie a Licenței LGPL împreună cu acest program; "
-"dacă nu, scrieți Free Software Foundation, Inc., 59 Temple Place, Suite 330, "
-"Boston, MA 02111-1307 USA"
+"Ar fi trebuit să primiți o copie a Licenței GNU LGPL împreună cu acest "
+"program; dacă nu, scrieți la Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
-#: ../src/about.c:263
+#: src/about.c:260
 msgid "translator-credits"
 msgstr ""
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
 "Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "\n"
 "Launchpad Contributions:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
@@ -72,410 +73,300 @@ msgstr ""
 "  Mugurel Tudor https://launchpad.net/~mugurelu-gnome\n"
 "  angelescu https://launchpad.net/~titus0818"
 
-#: ../src/about.c:275
+#: src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "Afișează ferestre de dialog din scripturi shell"
 
-#: ../src/main.c:105
-#, c-format
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+msgid "_OK"
+msgstr "_OK"
+
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+msgid "_Cancel"
+msgstr "_Anulează"
+
+#: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Trebuie să specificați un tip de dialog. Consultați „zenity --help“ pentru "
 "detalii\n"
 
-#: ../src/notification.c:121
-#, c-format
+#: src/msg.c:38
+msgid "_No"
+msgstr "_Nu"
+
+#: src/msg.c:40
+msgid "_Yes"
+msgstr "_Da"
+
+#: src/notification.c:50
+msgid "Could not parse message\n"
+msgstr "Nu s-a putut parsa mesajul\n"
+
+#: src/notification.c:132
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
 msgstr ""
+"Valoare nevalidă pentru un indiciu de tipul boolean.\n"
+"Valorile suportate sunt „true” sau „false”.\n"
 
 #. (iibiiay)
-#: ../src/notification.c:137
-#, c-format
+#: src/notification.c:149
 msgid "Unsupported hint. Skipping.\n"
-msgstr ""
+msgstr "Indiciu nesuportat. Se omite.\n"
 
 #. unknown hints
-#: ../src/notification.c:154
-#, c-format
+#: src/notification.c:166
 msgid "Unknown hint name. Skipping.\n"
-msgstr ""
+msgstr "Nume de indiciu necunoscut. Se omite.\n"
 
-#: ../src/notification.c:213
-#, c-format
-#| msgid "could not parse command from stdin\n"
+#: src/notification.c:218
 msgid "Could not parse command from stdin\n"
 msgstr "Nu s-a putut parsa comanda de la stdin\n"
 
-#: ../src/notification.c:245
-#, c-format
-msgid "Could not parse message from stdin\n"
-msgstr "Nu s-a putut parsa mesajul de la stdin\n"
-
-#: ../src/notification.c:325
+#: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Notificare Zenity"
 
-#. Checks if username has been passed as a parameter
-#: ../src/password.c:66
-msgid "Type your password"
-msgstr "Tastați parola"
-
-#: ../src/password.c:69
-#| msgid "Type your password"
-msgid "Type your username and password"
-msgstr "Tastați utilizatorul și parola"
-
-#: ../src/password.c:107
-msgid "Username:"
-msgstr "Nume utilizator:"
-
-#: ../src/password.c:123
-msgid "Password:"
-msgstr "Parolă:"
-
-#: ../src/scale.c:57
-#, c-format
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Valoarea maximă trebuie să fie mai mare decât valoarea minimă.\n"
-
-#: ../src/scale.c:64
-#, c-format
-msgid "Value out of range.\n"
-msgstr "Valoare în afara intervalului acceptat.\n"
-
-#: ../src/tree.c:375
-#, c-format
-msgid "No column titles specified for List dialog.\n"
-msgstr ""
-"Nu s-a specificat niciun titlu de coloană pentru dialogul de tip listă.\n"
-
-#: ../src/tree.c:381
-#, c-format
-msgid "You should use only one List dialog type.\n"
-msgstr "Ar trebui să folosiți doar un tip de dialog listă.\n"
-
-#: ../src/zenity.ui.h:1
-msgid "Adjust the scale value"
-msgstr "Ajustează valoarea scalei"
-
-#: ../src/zenity.ui.h:2
-msgid "Text View"
-msgstr "Vizualizare text"
-
-#: ../src/zenity.ui.h:3
-msgid "Calendar selection"
-msgstr "Selecție calendar"
-
-#: ../src/zenity.ui.h:4
-msgid "Select a date from below."
-msgstr "Selectați o dată de mai jos."
-
-#: ../src/zenity.ui.h:5
-msgid "C_alendar:"
-msgstr "C_alendar:"
-
-#: ../src/zenity.ui.h:6
-msgid "Add a new entry"
-msgstr "Adăugă o nouă intrare"
-
-#: ../src/zenity.ui.h:7
-msgid "_Enter new text:"
-msgstr "Introduceți noul t_ext:"
-
-#: ../src/zenity.ui.h:8
-msgid "Error"
-msgstr "Eroare"
-
-#: ../src/zenity.ui.h:9
-msgid "An error has occurred."
-msgstr "A intervenit o eroare."
-
-#: ../src/zenity.ui.h:10
-#| msgid "<b>Forms dialog</b>"
-msgid "Forms dialog"
-msgstr "Dialog formular"
-
-#: ../src/zenity.ui.h:11
-msgid "Information"
-msgstr "Informație"
-
-#: ../src/zenity.ui.h:12
-msgid "All updates are complete."
-msgstr "Toate actualizările au fost făcute."
-
-#: ../src/zenity.ui.h:13
-msgid "Progress"
-msgstr "Progres"
-
-#: ../src/zenity.ui.h:14
-msgid "Running..."
-msgstr "Se execută..."
-
-#: ../src/zenity.ui.h:15
-msgid "Question"
-msgstr "Întrebare"
-
-#: ../src/zenity.ui.h:16
-msgid "Are you sure you want to proceed?"
-msgstr "Sigur doriți să continuați?"
-
-#: ../src/zenity.ui.h:17
-msgid "Select items from the list"
-msgstr "Selectați elemente din listă"
-
-#: ../src/zenity.ui.h:18
-msgid "Select items from the list below."
-msgstr "Selectați elemente din lista de mai jos."
-
-#: ../src/zenity.ui.h:19
-msgid "Warning"
-msgstr "Avertisment"
-
-#: ../src/option.c:167
+#: src/option.c:164
 msgid "Set the dialog title"
 msgstr "Specifică titlul dialogului"
 
-#: ../src/option.c:168
+#: src/option.c:165
 msgid "TITLE"
 msgstr "TITLU"
 
-#: ../src/option.c:176
+#: src/option.c:171
 msgid "Set the window icon"
-msgstr "Specifică iconița ferestrei"
+msgstr "Stabilește iconița ferestrei"
 
-#: ../src/option.c:177
+#: src/option.c:172
 msgid "ICONPATH"
-msgstr "CALE_ICONIȚE"
+msgstr "CALE_ICONIȚĂ"
 
-#: ../src/option.c:185
+#: src/option.c:178
 msgid "Set the width"
 msgstr "Specifică lățimea"
 
-#: ../src/option.c:186
+#: src/option.c:179
 msgid "WIDTH"
 msgstr "LĂȚIME"
 
-#: ../src/option.c:194
+#: src/option.c:185
 msgid "Set the height"
 msgstr "Specifică înălțimea"
 
-#: ../src/option.c:195
+#: src/option.c:186
 msgid "HEIGHT"
 msgstr "ÎNĂLȚIME"
 
-#: ../src/option.c:203
+#: src/option.c:192
 msgid "Set dialog timeout in seconds"
 msgstr "Specifică expirarea dialogului în secunde"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:205
+#: src/option.c:194
 msgid "TIMEOUT"
 msgstr "LIMITĂ_DE_TIMP"
 
-#: ../src/option.c:213
-msgid "Sets the label of the Ok button"
-msgstr "Specifică eticheta pentru butonul „OK”"
+#: src/option.c:200
+msgid "Set the label of the OK button"
+msgstr "Stabilește eticheta pentru butonul OK"
 
-#: ../src/option.c:214 ../src/option.c:223 ../src/option.c:265
-#: ../src/option.c:325 ../src/option.c:334 ../src/option.c:368
-#: ../src/option.c:426 ../src/option.c:563 ../src/option.c:688
-#: ../src/option.c:706 ../src/option.c:732 ../src/option.c:813
-#: ../src/option.c:898 ../src/option.c:907 ../src/option.c:969
-#: ../src/option.c:1027 ../src/option.c:1196
+#: src/option.c:201 src/option.c:208 src/option.c:215 src/option.c:245
+#: src/option.c:289 src/option.c:296 src/option.c:319 src/option.c:362
+#: src/option.c:468 src/option.c:565 src/option.c:579 src/option.c:598
+#: src/option.c:658 src/option.c:730 src/option.c:737 src/option.c:786
+#: src/option.c:829 src/option.c:960
 msgid "TEXT"
 msgstr "TEXT"
 
-#: ../src/option.c:222
-msgid "Sets the label of the Cancel button"
-msgstr "Specifică eticheta pentru butonul „Renunță”"
+#: src/option.c:207
+msgid "Set the label of the Cancel button"
+msgstr "Stabilește eticheta pentru butonul anulează"
 
-#: ../src/option.c:231
-#, fuzzy
-#| msgid "Set the dialog title"
+#: src/option.c:214
+msgid "Add an extra button"
+msgstr "Adaugă un buton extra"
+
+#: src/option.c:221
 msgid "Set the modal hint"
-msgstr "Specifică titlul dialogului"
+msgstr "Stabilește indiciul modal"
 
-#: ../src/option.c:240
-#| msgid "Set the window icon"
+#: src/option.c:228
 msgid "Set the parent window to attach to"
 msgstr "Specifică fereastra părinte de care se atașează"
 
-#: ../src/option.c:241
+#: src/option.c:229
 msgid "WINDOW"
 msgstr "FEREASTRĂ"
 
-#: ../src/option.c:255
+#: src/option.c:237
 msgid "Display calendar dialog"
 msgstr "Afișează dialog de tip calendar"
 
-#: ../src/option.c:264 ../src/option.c:324 ../src/option.c:367
-#: ../src/option.c:425 ../src/option.c:562 ../src/option.c:731
-#: ../src/option.c:812 ../src/option.c:968 ../src/option.c:1026
-#: ../src/option.c:1195
+#: src/option.c:244 src/option.c:288 src/option.c:318 src/option.c:361
+#: src/option.c:467 src/option.c:597 src/option.c:657 src/option.c:785
+#: src/option.c:828 src/option.c:959
 msgid "Set the dialog text"
 msgstr "Specifică textul pentru dialog"
 
-#: ../src/option.c:273
+#: src/option.c:251
 msgid "Set the calendar day"
 msgstr "Specifică ziua calendarului"
 
-#: ../src/option.c:274
+#: src/option.c:252
 msgid "DAY"
 msgstr "ZI"
 
-#: ../src/option.c:282
+#: src/option.c:258
 msgid "Set the calendar month"
 msgstr "Specifică luna calendarului"
 
-#: ../src/option.c:283
+#: src/option.c:259
 msgid "MONTH"
 msgstr "LUNĂ"
 
-#: ../src/option.c:291
+#: src/option.c:265
 msgid "Set the calendar year"
 msgstr "Specifică anul calendarului"
 
-#: ../src/option.c:292
+#: src/option.c:266
 msgid "YEAR"
 msgstr "AN"
 
-#: ../src/option.c:300 ../src/option.c:1213
+#: src/option.c:272 src/option.c:973
 msgid "Set the format for the returned date"
 msgstr "Specifică formatul pentru data returnată"
 
-#: ../src/option.c:301 ../src/option.c:1214
+#: src/option.c:273 src/option.c:974
 msgid "PATTERN"
 msgstr "MODEL"
 
-#: ../src/option.c:315
+#: src/option.c:281
 msgid "Display text entry dialog"
-msgstr "Afișează un dialog pentru introducere de text"
+msgstr "Afișează un dialog pentru introducerea de text"
 
-#: ../src/option.c:333
+#: src/option.c:295
 msgid "Set the entry text"
-msgstr "Specifică textul intrării"
+msgstr "Stabilește textul de intrare"
 
-#: ../src/option.c:342
+#: src/option.c:302
 msgid "Hide the entry text"
 msgstr "Ascunde textul introdus"
 
-#: ../src/option.c:358
+#: src/option.c:311
 msgid "Display error dialog"
 msgstr "Afișează un dialog de eroare"
 
-#: ../src/option.c:376 ../src/option.c:434 ../src/option.c:821
-#: ../src/option.c:977
-#| msgid "Set the dialog title"
+#: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
 msgid "Set the dialog icon"
-msgstr "Specifică iconița dialogului"
+msgstr "Stabilește iconița dialogului"
 
-#: ../src/option.c:377 ../src/option.c:435 ../src/option.c:822
-#: ../src/option.c:978
+#: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
 msgid "ICON-NAME"
-msgstr "NUMELE-ICONIȚEI"
+msgstr "NUME-ICONIȚĂ"
 
-#: ../src/option.c:385 ../src/option.c:443 ../src/option.c:830
-#: ../src/option.c:986
+#: src/option.c:332 src/option.c:375 src/option.c:671 src/option.c:799
 msgid "Do not enable text wrapping"
 msgstr "Nu activa ruperea rândurilor textului"
 
-#: ../src/option.c:394 ../src/option.c:452 ../src/option.c:839
-#: ../src/option.c:995
-msgid "Do not enable pango markup"
-msgstr "Nu activa marcajul pango"
+#: src/option.c:339 src/option.c:382 src/option.c:678 src/option.c:806
+msgid "Do not enable Pango markup"
+msgstr "Nu activa marcarea Pango"
 
-#: ../src/option.c:402 ../src/option.c:460 ../src/option.c:856
-#: ../src/option.c:1003
+#: src/option.c:345 src/option.c:388 src/option.c:691 src/option.c:812
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
 msgstr ""
+"Activează elipsa în textul de dialog. Aceasta rezolvă dimensiunea mare a "
+"ferestrei cu texte lungi"
 
-#: ../src/option.c:416
+#: src/option.c:354
 msgid "Display info dialog"
 msgstr "Afișează un dialog informațional"
 
-#: ../src/option.c:474
+#: src/option.c:398
 msgid "Display file selection dialog"
 msgstr "Afișează un dialog pentru selecție de fișiere"
 
-#: ../src/option.c:483
+#: src/option.c:405
 msgid "Set the filename"
 msgstr "Specifică numele fișierului"
 
-#: ../src/option.c:484 ../src/option.c:880
+#: src/option.c:406 src/option.c:716
 msgid "FILENAME"
 msgstr "NUME_FIȘIER"
 
-#: ../src/option.c:492
+#: src/option.c:412
 msgid "Allow multiple files to be selected"
 msgstr "Permite selecția de fișiere multiple"
 
-#: ../src/option.c:501
+#: src/option.c:419
 msgid "Activate directory-only selection"
 msgstr "Activează selecția doar pentru directoare"
 
-#: ../src/option.c:510
+#: src/option.c:426
 msgid "Activate save mode"
 msgstr "Activează modul pentru salvare"
 
-#: ../src/option.c:519 ../src/option.c:607 ../src/option.c:1204
+#: src/option.c:433 src/option.c:502 src/option.c:966
 msgid "Set output separator character"
 msgstr "Specifică caracterul separator pentru ieșire"
 
-#: ../src/option.c:520 ../src/option.c:608 ../src/option.c:1205
+#: src/option.c:434 src/option.c:503 src/option.c:967
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
-#: ../src/option.c:528
+#: src/option.c:440
 msgid "Confirm file selection if filename already exists"
 msgstr "Confirmă selectarea fișierului în cazul în care acesta există"
 
-#: ../src/option.c:537
-msgid "Sets a filename filter"
-msgstr "Definește un filtru pentru numele fișierului"
+#: src/option.c:448
+msgid "Set a filename filter"
+msgstr "Stabilește un filtru pentru numele fișierului"
 
-#. Help for file-filter argument (name and patterns for file selection)
-#: ../src/option.c:539
+#. Help for file-filter argument (name and patterns for file
+#. selection)
+#: src/option.c:451
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NUME | ȘABLON1 ȘABLON2 ..."
 
-#: ../src/option.c:553
+#: src/option.c:460
 msgid "Display list dialog"
 msgstr "Afișează un dialog de tip listă"
 
-#: ../src/option.c:571
+#: src/option.c:474
 msgid "Set the column header"
 msgstr "Specifică antetul coloanei"
 
-#: ../src/option.c:572
+#: src/option.c:475
 msgid "COLUMN"
 msgstr "COLOANĂ"
 
-#: ../src/option.c:580
-msgid "Use check boxes for first column"
-msgstr "Folosește căsuțe de bifare pentru prima coloană"
+#: src/option.c:481
+msgid "Use check boxes for the first column"
+msgstr "Utilizează căsuțe de bifare pentru prima coloană"
 
-#: ../src/option.c:589
-msgid "Use radio buttons for first column"
-msgstr "Folosește butoane radio pentru prima coloană"
+#: src/option.c:488
+msgid "Use radio buttons for the first column"
+msgstr "Utilizează butoane radio pentru prima coloană"
 
-#: ../src/option.c:598
-#| msgid "Use check boxes for first column"
-msgid "Use an image for first column"
-msgstr "Folosește o imagine pentru prima coloană"
+#: src/option.c:495
+msgid "Use an image for the first column"
+msgstr "Utilizează o imagine pentru prima coloană"
 
-#: ../src/option.c:616
+#: src/option.c:509
 msgid "Allow multiple rows to be selected"
 msgstr "Permite selecția de linii multiple"
 
-#: ../src/option.c:625 ../src/option.c:888
+#: src/option.c:516 src/option.c:722
 msgid "Allow changes to text"
 msgstr "Permite modificarea textului"
 
-#: ../src/option.c:634
+#: src/option.c:523
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -484,107 +375,109 @@ msgstr ""
 "tipări toate coloanele)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:636 ../src/option.c:645
+#: src/option.c:526 src/option.c:533
 msgid "NUMBER"
 msgstr "NUMĂR"
 
-#: ../src/option.c:644
+#: src/option.c:532
 msgid "Hide a specific column"
 msgstr "Ascunde o anumită coloană"
 
-#: ../src/option.c:653
-msgid "Hides the column headers"
-msgstr "Ascunde antetele coloanelor"
+#: src/option.c:539
+msgid "Hide the column headers"
+msgstr "Ascunde anteturile coloanelor"
 
-#: ../src/option.c:662
+#: src/option.c:546
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
 msgstr ""
+"Modifică funcția de căutare implicită în listă pentru a căuta text în "
+"mijloc, nu la început"
 
-#: ../src/option.c:678
+#: src/option.c:557
 msgid "Display notification"
 msgstr "Afișează notificarea"
 
-#: ../src/option.c:687
+#: src/option.c:564
 msgid "Set the notification text"
 msgstr "Specifică textul pentru notificare"
 
-#: ../src/option.c:696
+#: src/option.c:571
 msgid "Listen for commands on stdin"
 msgstr "Ascultă pentru comenzi la stdin"
 
-#: ../src/option.c:705
-#| msgid "Set the notification text"
+#: src/option.c:578
 msgid "Set the notification hints"
 msgstr "Specifică sugestiile pentru notificări"
 
-#: ../src/option.c:722
+#: src/option.c:590
 msgid "Display progress indication dialog"
 msgstr "Afișează un dialog de indicare a progresului"
 
-#: ../src/option.c:740
+#: src/option.c:604
 msgid "Set initial percentage"
 msgstr "Specifică procentajul inițial"
 
-#: ../src/option.c:741
+#: src/option.c:605
 msgid "PERCENTAGE"
 msgstr "PROCENTAJ"
 
-#: ../src/option.c:749
+#: src/option.c:611
 msgid "Pulsate progress bar"
 msgstr "Bară de progres pulsatilă"
 
-#: ../src/option.c:759
+#: src/option.c:619
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Închide dialogul în momentul în care 100% a fost atins"
 
-#: ../src/option.c:769
-#, no-c-format
+#: src/option.c:626
 msgid "Kill parent process if Cancel button is pressed"
-msgstr ""
-"Termină procesul părinte în cazul în care este apăsat butonul „Renunță”"
+msgstr "Termină procesul superior dacă este apăsat butonul anulează"
 
-#: ../src/option.c:779
-#, no-c-format
+#: src/option.c:633
 msgid "Hide Cancel button"
-msgstr "Ascunde butonul „Renunță”"
+msgstr "Ascunde butonul anulează"
 
-#: ../src/option.c:788
+#: src/option.c:641
+#, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Estimează când progresul va ajunge la 100%"
 
-#: ../src/option.c:803
+#: src/option.c:650
 msgid "Display question dialog"
 msgstr "Afișează un dialog de interogare"
 
-#: ../src/option.c:847
-msgid "Give cancel button focus by default"
-msgstr ""
+#: src/option.c:684
+msgid "Give Cancel button focus by default"
+msgstr "Focalizează implicit butonul anulează"
 
-#: ../src/option.c:870
+#: src/option.c:698
+msgid "Suppress OK and Cancel buttons"
+msgstr "Suprimează butoanele OK și Anulează"
+
+#: src/option.c:708
 msgid "Display text information dialog"
 msgstr "Afișează un dialog pentru informație de tip text"
 
-#: ../src/option.c:879
+#: src/option.c:715
 msgid "Open file"
 msgstr "Deschide fișier"
 
-#: ../src/option.c:897
+#: src/option.c:729
 msgid "Set the text font"
 msgstr "Specifică fontul textului"
 
-#: ../src/option.c:906
+#: src/option.c:736
 msgid "Enable an I read and agree checkbox"
-msgstr "Activează o casetă de selecție „Eu citesc și aprob”"
+msgstr "Activează o căsuță de bifare Eu citesc și aprob"
 
-#: ../src/option.c:916
-msgid "Enable html support"
-msgstr "Activează suport html"
+#: src/option.c:744
+msgid "Enable HTML support"
+msgstr "Activează suportul HTML"
 
-#: ../src/option.c:925
-#| msgid "Sets an url instead of a file. Only works if you use --html option"
+#: src/option.c:751
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -592,299 +485,420 @@ msgstr ""
 "Nu activa iteracțiunea cu utilizatorul cu WebView. Funcționează numai dacă "
 "folosiți opțiunea --html"
 
-#: ../src/option.c:934
-msgid "Sets an url instead of a file. Only works if you use --html option"
+#: src/option.c:759
+msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
-"Stabilește un url în locul unui fișier. Funcționează numai dacă folosiți "
+"Stabilește un URL în locul unui fișier. Funcționează doar dacă utilizați "
 "opțiunea --html"
 
-#: ../src/option.c:935
+#: src/option.c:761
 msgid "URL"
 msgstr "URL"
 
-#: ../src/option.c:944
+#: src/option.c:768
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
+"Derulează automat textul la sfârșit. Doar când textul este capturat din stdin"
 
-#: ../src/option.c:959
+#: src/option.c:778
 msgid "Display warning dialog"
 msgstr "Afișează un dialog de avertizare"
 
-#: ../src/option.c:1017
+#: src/option.c:821
 msgid "Display scale dialog"
 msgstr "Afișează un dialog cu scală"
 
-#: ../src/option.c:1035
+#: src/option.c:835
 msgid "Set initial value"
 msgstr "Specifică valoarea inițială"
 
-#: ../src/option.c:1036 ../src/option.c:1045 ../src/option.c:1054
-#: ../src/option.c:1063 ../src/option.c:1262
+#: src/option.c:836 src/option.c:843 src/option.c:850 src/option.c:857
+#: src/option.c:1008
 msgid "VALUE"
 msgstr "VALOARE"
 
-#: ../src/option.c:1044
+#: src/option.c:842
 msgid "Set minimum value"
 msgstr "Specifică valoarea minimă"
 
-#: ../src/option.c:1053
+#: src/option.c:849
 msgid "Set maximum value"
 msgstr "Specifică valoarea maximă"
 
-#: ../src/option.c:1062
+#: src/option.c:856
 msgid "Set step size"
 msgstr "Specifică mărimea pasului"
 
-#: ../src/option.c:1071
+#: src/option.c:863
 msgid "Print partial values"
 msgstr "Afișează valori parțiale"
 
-#: ../src/option.c:1080
+#: src/option.c:870
 msgid "Hide value"
 msgstr "Ascunde valoarea"
 
-#: ../src/option.c:1095
+#: src/option.c:879
 msgid "Display forms dialog"
 msgstr "Afișează un dialog formular"
 
-#: ../src/option.c:1104
+#: src/option.c:886
 msgid "Add a new Entry in forms dialog"
 msgstr "Adăugă o nouă intrare în dialogul formular"
 
-#: ../src/option.c:1105 ../src/option.c:1114
+#: src/option.c:887 src/option.c:894
 msgid "Field name"
 msgstr "Nume câmp"
 
-#: ../src/option.c:1113
+#: src/option.c:893
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Adăugă o nouă intrare de tip parolă în dialogul formular"
 
-#: ../src/option.c:1122
+#: src/option.c:900
 msgid "Add a new Calendar in forms dialog"
 msgstr "Adăugă un nou calendar în dialogul formular"
 
-#: ../src/option.c:1123
+#: src/option.c:901
 msgid "Calendar field name"
 msgstr "Numele de câmp al calendarului"
 
-#: ../src/option.c:1131
+#: src/option.c:907
 msgid "Add a new List in forms dialog"
 msgstr "Adaugă o nouă listă în formular"
 
-#: ../src/option.c:1132
+#: src/option.c:908
 msgid "List field and header name"
 msgstr "Lista câmpurilor și a numelor pentru tabel"
 
-#: ../src/option.c:1140
+#: src/option.c:914
 msgid "List of values for List"
 msgstr "Listă de valori pentru listă"
 
-#: ../src/option.c:1141 ../src/option.c:1150 ../src/option.c:1168
+#: src/option.c:915 src/option.c:922 src/option.c:936
 msgid "List of values separated by |"
 msgstr "Listă de valori separată de |"
 
-#: ../src/option.c:1149
+#: src/option.c:921
 msgid "List of values for columns"
 msgstr "Listă de valori pentru coloane"
 
-#: ../src/option.c:1158
-#, fuzzy
-#| msgid "Add a new List in forms dialog"
+#: src/option.c:928
 msgid "Add a new combo box in forms dialog"
-msgstr "Adaugă o nouă listă în formular"
+msgstr "Adaugă o nouă căsuță combo în dialogul de formulare"
 
-#: ../src/option.c:1159
-#| msgid "Calendar field name"
+#: src/option.c:929
 msgid "Combo box field name"
 msgstr "Numele de câmp al listei de selecție"
 
-#: ../src/option.c:1167
-#| msgid "List of values for columns"
+#: src/option.c:935
 msgid "List of values for combo box"
 msgstr "Listă de valori pentru lista de selecție"
 
-#: ../src/option.c:1186
+#: src/option.c:952
 msgid "Show the columns header"
 msgstr "Afișează capul de tabel"
 
-#: ../src/option.c:1228
+#: src/option.c:983
 msgid "Display password dialog"
 msgstr "Afișează un dialog de tip parolă"
 
-#: ../src/option.c:1237
+#: src/option.c:990
 msgid "Display the username option"
 msgstr "Afișează opțiunea nume de utilizator"
 
-#: ../src/option.c:1252
+#: src/option.c:1000
 msgid "Display color selection dialog"
 msgstr "Afișează un dialog de selecție de culoare"
 
-#: ../src/option.c:1261
+#: src/option.c:1007
 msgid "Set the color"
 msgstr "Stabilește culoarea"
 
-#: ../src/option.c:1270
+#: src/option.c:1014
 msgid "Show the palette"
 msgstr "Afișează setul de culori"
 
-#: ../src/option.c:1285
+#: src/option.c:1023
 msgid "About zenity"
 msgstr "Despre zenity"
 
-#: ../src/option.c:1294
+#: src/option.c:1030
 msgid "Print version"
 msgstr "Afișează versiunea"
 
-#: ../src/option.c:2228
+#: src/option.c:1913
 msgid "General options"
 msgstr "Opțiuni generale"
 
-#: ../src/option.c:2229
+#: src/option.c:1914
 msgid "Show general options"
 msgstr "Afișează opțiunile generale"
 
-#: ../src/option.c:2239
+#: src/option.c:1926
 msgid "Calendar options"
 msgstr "Opțiuni calendar"
 
-#: ../src/option.c:2240
+#: src/option.c:1927
 msgid "Show calendar options"
 msgstr "Afișează opțiunile pentru calendar"
 
-#: ../src/option.c:2250
+#: src/option.c:1939
 msgid "Text entry options"
 msgstr "Opțiuni introducere text"
 
-#: ../src/option.c:2251
+#: src/option.c:1940
 msgid "Show text entry options"
 msgstr "Afișează opțiunile pentru introducere text"
 
-#: ../src/option.c:2261
+#: src/option.c:1952
 msgid "Error options"
 msgstr "Opțiuni eroare"
 
-#: ../src/option.c:2262
+#: src/option.c:1952
 msgid "Show error options"
 msgstr "Afișează opțiunile pentru eroare"
 
-#: ../src/option.c:2272
+#: src/option.c:1962
 msgid "Info options"
 msgstr "Opțiuni dialog informațional"
 
-#: ../src/option.c:2273
+#: src/option.c:1962
 msgid "Show info options"
 msgstr "Afișează opțiunile dialogului informațional"
 
-#: ../src/option.c:2283
+#: src/option.c:1972
 msgid "File selection options"
 msgstr "Opțiuni selecție fișier"
 
-#: ../src/option.c:2284
+#: src/option.c:1973
 msgid "Show file selection options"
 msgstr "Afișează opțiunile pentru selecție fișier"
 
-#: ../src/option.c:2294
+#: src/option.c:1985
 msgid "List options"
 msgstr "Opțiuni listă"
 
-#: ../src/option.c:2295
+#: src/option.c:1985
 msgid "Show list options"
 msgstr "Afișează opțiunile pentru listă"
 
-#: ../src/option.c:2306
+#: src/option.c:1996
 msgid "Notification icon options"
-msgstr "Opțiuni pentru iconițele de notificare"
+msgstr "Opțiuni pentru iconița de notificare"
 
-#: ../src/option.c:2307
+#: src/option.c:1997
 msgid "Show notification icon options"
-msgstr "Afișează opțiunile pentru iconițele de notificare"
+msgstr "Afișează opțiunile pentru iconița de notificare"
 
-#: ../src/option.c:2318
+#: src/option.c:2011
 msgid "Progress options"
 msgstr "Opțiuni progres"
 
-#: ../src/option.c:2319
+#: src/option.c:2012
 msgid "Show progress options"
 msgstr "Afișează opțiunile progresului"
 
-#: ../src/option.c:2329
+#: src/option.c:2024
 msgid "Question options"
 msgstr "Opțiuni interogare"
 
-#: ../src/option.c:2330
+#: src/option.c:2025
 msgid "Show question options"
 msgstr "Afișează opțiunile interogării"
 
-#: ../src/option.c:2340
+#: src/option.c:2037
 msgid "Warning options"
 msgstr "Opțiuni avertisment"
 
-#: ../src/option.c:2341
+#: src/option.c:2038
 msgid "Show warning options"
 msgstr "Afișează opțiunile pentru avertisment"
 
-#: ../src/option.c:2351
+#: src/option.c:2050
 msgid "Scale options"
 msgstr "Opțiuni dialog cu scală"
 
-#: ../src/option.c:2352
+#: src/option.c:2050
 msgid "Show scale options"
 msgstr "Afișează opțiunile dialogului cu scală"
 
-#: ../src/option.c:2362
+#: src/option.c:2060
 msgid "Text information options"
 msgstr "Opțiuni despre informațiile text"
 
-#: ../src/option.c:2363
+#: src/option.c:2061
 msgid "Show text information options"
 msgstr "Afișează opțiunile despre informațiile text"
 
-#: ../src/option.c:2373
+#: src/option.c:2073
 msgid "Color selection options"
 msgstr "Opțiuni selecție culoare"
 
-#: ../src/option.c:2374
+#: src/option.c:2074
 msgid "Show color selection options"
 msgstr "Afișează opțiunile pentru selecția culorii"
 
-#: ../src/option.c:2384
+#: src/option.c:2086
 msgid "Password dialog options"
 msgstr "Opțiunile dialogului de introducere a parolei"
 
-#: ../src/option.c:2385
+#: src/option.c:2087
 msgid "Show password dialog options"
 msgstr "Afișează opțiunile dialogului de introducere a parolei"
 
-#: ../src/option.c:2395
+#: src/option.c:2099
 msgid "Forms dialog options"
 msgstr "Opțiunile dialogului formular"
 
-#: ../src/option.c:2396
+#: src/option.c:2100
 msgid "Show forms dialog options"
 msgstr "Afișează opțiunile dialogului formular"
 
-#: ../src/option.c:2406
+#: src/option.c:2112
 msgid "Miscellaneous options"
 msgstr "Opțiuni diverse"
 
-#: ../src/option.c:2407
+#: src/option.c:2113
 msgid "Show miscellaneous options"
 msgstr "Afișează opțiuni diverse"
 
-#: ../src/option.c:2432
-#, c-format
+#: src/option.c:2139
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Această opțiune nu este disponibilă. Consultați --help pentru o listă de "
 "posibile utilizări.\n"
 
-#: ../src/option.c:2436
+#: src/option.c:2144
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s nu este suportată pentru acest dialog\n"
 
-#: ../src/option.c:2440
-#, c-format
+#: src/option.c:2148
 msgid "Two or more dialog options specified\n"
 msgstr "Două sau mai multe opțiuni dialog specificate\n"
+
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Tastați parola"
+
+#: src/password.c:73
+msgid "Type your username and password"
+msgstr "Tastați utilizatorul și parola"
+
+#: src/password.c:100
+msgid "Username:"
+msgstr "Nume utilizator:"
+
+#: src/password.c:110
+msgid "Password:"
+msgstr "Parolă:"
+
+#: src/progress.c:102
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr "Timp rămas: %lu:%02lu:%02lu"
+
+#: src/scale.c:62
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Valoarea maximă trebuie să fie mai mare decât valoarea minimă.\n"
+
+#: src/scale.c:69
+msgid "Value out of range.\n"
+msgstr "Valoare în afara intervalului acceptat.\n"
+
+#: src/tree.c:393
+msgid "No column titles specified for List dialog.\n"
+msgstr ""
+"Nu s-a specificat niciun titlu de coloană pentru dialogul de tip listă.\n"
+
+#: src/tree.c:399
+msgid "You should use only one List dialog type.\n"
+msgstr "Ar trebui să folosiți doar un tip de dialog listă.\n"
+
+#: src/zenity.ui:14 src/zenity.ui:76
+msgid "Adjust the scale value"
+msgstr "Ajustează valoarea scalei"
+
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Anulează"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "OK"
+
+#: src/zenity.ui:117
+msgid "Text View"
+msgstr "Vizualizare text"
+
+#: src/zenity.ui:231
+msgid "Calendar selection"
+msgstr "Selecție calendar"
+
+#: src/zenity.ui:298
+msgid "Select a date from below."
+msgstr "Selectați o dată de mai jos."
+
+#: src/zenity.ui:319
+msgid "C_alendar:"
+msgstr "C_alendar:"
+
+#: src/zenity.ui:361
+msgid "Add a new entry"
+msgstr "Adăugă o nouă intrare"
+
+#: src/zenity.ui:428
+msgid "_Enter new text:"
+msgstr "Introduceți noul t_ext:"
+
+#: src/zenity.ui:465
+msgid "Error"
+msgstr "Eroare"
+
+#: src/zenity.ui:530
+msgid "An error has occurred."
+msgstr "A intervenit o eroare."
+
+#: src/zenity.ui:658
+msgid "Forms dialog"
+msgstr "Dialog de formulare"
+
+#: src/zenity.ui:681
+msgid "Information"
+msgstr "Informație"
+
+#: src/zenity.ui:741
+msgid "All updates are complete."
+msgstr "Toate actualizările au fost făcute."
+
+#: src/zenity.ui:768
+msgid "Progress"
+msgstr "Progres"
+
+#: src/zenity.ui:831
+msgid "Running..."
+msgstr "Se execută..."
+
+#: src/zenity.ui:882
+msgid "Question"
+msgstr "Întrebare"
+
+#: src/zenity.ui:929 src/zenity.ui:1126
+msgid "Are you sure you want to proceed?"
+msgstr "Sigur doriți să continuați?"
+
+#: src/zenity.ui:953
+msgid "Select items from the list"
+msgstr "Selectați elemente din listă"
+
+#: src/zenity.ui:1015
+msgid "Select items from the list below."
+msgstr "Selectați elemente din lista de mai jos."
+
+#: src/zenity.ui:1064
+msgid "Warning"
+msgstr "Avertisment"
