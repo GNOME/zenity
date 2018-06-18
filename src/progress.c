@@ -105,6 +105,27 @@ zenity_progress_update_time_remaining (ZenityProgressData *progress_data) {
 	}
 }
 
+static float
+stof(const char* s) {
+	float rez = 0, fact = 1;
+	if (*s == '-') {
+		s++;
+		fact = -1;
+	}
+	for (int point_seen = 0; *s; s++) {
+		if (*s == '.' || *s == ',') {
+			point_seen = 1;
+			continue;
+		}
+		int d = *s - '0';
+		if (d >= 0 && d <= 9) {
+			if (point_seen) fact /= 10.0f;
+			rez = rez * 10.0f + (float)d;
+		}
+	}
+	return rez * fact;
+}
+
 static gboolean
 zenity_progress_handle_stdin (
 	GIOChannel *channel, GIOCondition condition, gpointer data) {
@@ -190,7 +211,7 @@ zenity_progress_handle_stdin (
 					continue;
 
 				/* Now try to convert the thing to a number */
-				percentage = CLAMP (atoi (string->str), 0, 100);
+				percentage = CLAMP (stof (string->str), 0, 100);
 
 				gtk_progress_bar_set_fraction (
 					GTK_PROGRESS_BAR (progress_bar), percentage / 100.0);
