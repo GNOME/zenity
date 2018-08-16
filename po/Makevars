@@ -18,7 +18,7 @@ XGETTEXT_OPTIONS = --from-code=UTF-8 --keyword=_ --keyword=N_ --keyword=C_:1c,2 
 # or entity, or to disclaim their copyright.  The empty string stands for
 # the public domain; in this case the translators are expected to disclaim
 # their copyright.
-COPYRIGHT_HOLDER = Zenity contributors
+COPYRIGHT_HOLDER = Zenity authors
 
 # This tells whether or not to prepend "GNU " prefix to the package
 # name that gets inserted into the header of the $(DOMAIN).pot file.
@@ -41,7 +41,7 @@ PACKAGE_GNU = no
 # It can be your email address, or a mailing list address where translators
 # can write to without being subscribed, or the URL of a web page through
 # which the translators can contact you.
-MSGID_BUGS_ADDRESS = https://bugzilla.gnome.org/enter_bug.cgi?product=zenity&keywords=I18N+L10N&component=general
+MSGID_BUGS_ADDRESS = https://gitlab.gnome.org/GNOME/zenity/issues
 
 # This is the list of locale categories, beyond LC_MESSAGES, for which the
 # message catalogs shall be used.  It is usually empty.
@@ -51,7 +51,7 @@ EXTRA_LOCALE_CATEGORIES =
 # context.  Possible values are "yes" and "no".  Set this to yes if the
 # package uses functions taking also a message context, like pgettext(), or
 # if in $(XGETTEXT_OPTIONS) you define keywords with a context argument.
-USE_MSGCTXT = no
+USE_MSGCTXT = yes
 
 # These options get passed to msgmerge.
 # Useful options are in particular:
