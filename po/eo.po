@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the zenity package.
 # Tiffany ANTOPOLSKI <tiffany.antopolski@gmail.com>, 2011.
 # Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012, 2017.
+# Carmen Bianca BAKKER <carmen@carmenbianca.eu>, 2018.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=zenity"
-"&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-11-26 20:40+0000\n"
-"PO-Revision-Date: 2017-12-23 00:13+0200\n"
-"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
+"POT-Creation-Date: 2018-09-07 11:06+0000\n"
+"PO-Revision-Date: 2018-10-29 16:50+0100\n"
+"Last-Translator: Carmen Bianca Bakker <carmen@carmenbianca.eu>\n"
 "Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Project-Style: gnome\n"
 
 #: src/about.c:60
@@ -52,18 +53,19 @@ msgid ""
 msgstr ""
 "Vi devintus ricevi kopion de la Malsupera Ĝenerala Publika Permesilo de GNU "
 "kun tiu ĉi programo; se ne, skribu al la Fondaĵo Libera Programaro: Free "
-"Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-"
-"1301, Usono."
+"Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
+"02110-1301, Usono."
 
 #: src/about.c:260
 msgid "translator-credits"
 msgstr ""
 "Kristjan SCHMIDT\n"
-"Tiffany ANTOPOLSKI"
+"Tiffany ANTOPOLSKI\n"
+"Carmen Bianca BAKKER <carmen@carmenbianca.eu>"
 
 #: src/about.c:277
 msgid "Display dialog boxes from shell scripts"
-msgstr ""
+msgstr "Montri dialogajn skatolojn el ŝelskriptoj"
 
 #: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
 msgid "_OK"
@@ -71,7 +73,7 @@ msgstr "_Bone"
 
 #: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
 msgid "_Cancel"
-msgstr "_Rezigni"
+msgstr "_Nuligi"
 
 #: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
@@ -94,16 +96,18 @@ msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
 msgstr ""
+"Nevalida valoro por bulea konsileto.\n"
+"Subtenitaj valoroj estas 'true' (vera) aŭ 'false' (malvera).\n"
 
 #. (iibiiay)
 #: src/notification.c:149
 msgid "Unsupported hint. Skipping.\n"
-msgstr ""
+msgstr "Nesubtenita konsileto. Preterpasante.\n"
 
 #. unknown hints
 #: src/notification.c:166
 msgid "Unknown hint name. Skipping.\n"
-msgstr ""
+msgstr "Nekonata konsileta nomo. Preterpasante.\n"
 
 #: src/notification.c:218
 msgid "Could not parse command from stdin\n"
@@ -147,7 +151,7 @@ msgstr "ALTO"
 
 #: src/option.c:192
 msgid "Set dialog timeout in seconds"
-msgstr ""
+msgstr "Agordi dialogan tempolimon en sekundoj"
 
 #. Timeout for closing the dialog
 #: src/option.c:194
@@ -168,23 +172,19 @@ msgstr "TEKSTO"
 
 #: src/option.c:207
 msgid "Set the label of the Cancel button"
-msgstr "Agordi la etikedon de la Rezigni-butonon"
+msgstr "Agordi la etikedon de la Nuligi-butonon"
 
 #: src/option.c:214
 msgid "Add an extra button"
 msgstr "Aldoni kroman butonon"
 
 #: src/option.c:221
-#, fuzzy
-#| msgid "Set the dialog title"
 msgid "Set the modal hint"
-msgstr "Agordi la dialog-titolon"
+msgstr "Agordi la modalan konsileton"
 
 #: src/option.c:228
-#, fuzzy
-#| msgid "Set the window icon"
 msgid "Set the parent window to attach to"
-msgstr "Agordi la fenestran piktogramon"
+msgstr "Agordi la gepatran fenestron, al kiu oni alfiksos"
 
 #: src/option.c:229
 msgid "WINDOW"
@@ -226,7 +226,7 @@ msgstr "JARO"
 
 #: src/option.c:272 src/option.c:973
 msgid "Set the format for the returned date"
-msgstr ""
+msgstr "Agordi la formon de la liverita dato"
 
 #: src/option.c:273 src/option.c:974
 msgid "PATTERN"
@@ -238,38 +238,39 @@ msgstr "Montri dialogon por tekstenigo"
 
 #: src/option.c:295
 msgid "Set the entry text"
-msgstr ""
+msgstr "Agordi la enigan tekston"
 
 #: src/option.c:302
 msgid "Hide the entry text"
-msgstr ""
+msgstr "Kaŝi la enigan tekston"
 
 #: src/option.c:311
 msgid "Display error dialog"
 msgstr "Montri erardialogon"
 
 #: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
-#| msgid "Set the dialog title"
 msgid "Set the dialog icon"
 msgstr "Agordi la dialog-piktogramon"
 
 #: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
 msgid "ICON-NAME"
-msgstr ""
+msgstr "BILDSIMBOL-NOMO"
 
 #: src/option.c:332 src/option.c:375 src/option.c:671 src/option.c:799
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "Ne ŝalti tekstan ĉirkaŭfluon"
 
 #: src/option.c:339 src/option.c:382 src/option.c:678 src/option.c:806
 msgid "Do not enable Pango markup"
-msgstr ""
+msgstr "Ne ŝalti Pango-markadon"
 
 #: src/option.c:345 src/option.c:388 src/option.c:691 src/option.c:812
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
 msgstr ""
+"Ŝalti tripunktigadon en dialoga teksto. Ĉi tiu riparas la altan fenestran "
+"gradon kun longaj tekstoj"
 
 #: src/option.c:354
 msgid "Display info dialog"
@@ -293,7 +294,7 @@ msgstr "Permesi elekton de pluraj dosieroj"
 
 #: src/option.c:419
 msgid "Activate directory-only selection"
-msgstr ""
+msgstr "Aktivigi nur-dosierujan elektadon"
 
 #: src/option.c:426
 msgid "Activate save mode"
@@ -301,7 +302,7 @@ msgstr "Enŝalti konserv-reĝimon"
 
 #: src/option.c:433 src/option.c:502 src/option.c:966
 msgid "Set output separator character"
-msgstr ""
+msgstr "Agordi eligan apartigitan signon"
 
 #: src/option.c:434 src/option.c:503 src/option.c:967
 msgid "SEPARATOR"
@@ -309,10 +310,9 @@ msgstr "APARTIGILO"
 
 #: src/option.c:440
 msgid "Confirm file selection if filename already exists"
-msgstr ""
+msgstr "Konfirmi dosierselekton se la dosiernomo jam ekzistas"
 
 #: src/option.c:448
-#| msgid "Set the filename"
 msgid "Set a filename filter"
 msgstr "Agordi filtrilon por dosiernomon"
 
@@ -320,7 +320,7 @@ msgstr "Agordi filtrilon por dosiernomon"
 #. selection)
 #: src/option.c:451
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr ""
+msgstr "NOMO | PATRONO1 PATRONO2 ..."
 
 #: src/option.c:460
 msgid "Display list dialog"
@@ -336,15 +336,15 @@ msgstr "KOLUMNO"
 
 #: src/option.c:481
 msgid "Use check boxes for the first column"
-msgstr ""
+msgstr "Uzi markobutonojn por la unua kolumno"
 
 #: src/option.c:488
 msgid "Use radio buttons for the first column"
-msgstr ""
+msgstr "Uzi radiobutonojn por la unua kolumno"
 
 #: src/option.c:495
 msgid "Use an image for the first column"
-msgstr ""
+msgstr "Uzi bildon por la unua kolumno"
 
 #: src/option.c:509
 msgid "Allow multiple rows to be selected"
@@ -359,6 +359,8 @@ msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
+"Presi specifan kolumnon (Implicito estas 1. 'ALL' (ĉiujn) oni povas uzi por "
+"presi ĉiujn kolumnojn)"
 
 #. Column index number to print out on a list dialog
 #: src/option.c:526 src/option.c:533
@@ -370,7 +372,6 @@ msgid "Hide a specific column"
 msgstr "Kaŝi specifan kolumnon"
 
 #: src/option.c:539
-#| msgid "Hides the column headers"
 msgid "Hide the column headers"
 msgstr "Kaŝi la kolumnotitolojn"
 
@@ -390,16 +391,15 @@ msgstr "Agordi la sciigotekston"
 
 #: src/option.c:571
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "Aŭskulti por komandoj per stdin"
 
 #: src/option.c:578
-#| msgid "Set the notification text"
 msgid "Set the notification hints"
 msgstr "Agordi la sciigo-konsiletojn"
 
 #: src/option.c:590
 msgid "Display progress indication dialog"
-msgstr ""
+msgstr "Montri plenumindikilan dialogon"
 
 #: src/option.c:604
 msgid "Set initial percentage"
@@ -416,33 +416,32 @@ msgstr "Pulsada progresbreto"
 #: src/option.c:619
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr ""
+msgstr "Rezigni la dialogon kiam oni atingas 100%"
 
 #: src/option.c:626
 msgid "Kill parent process if Cancel button is pressed"
-msgstr ""
+msgstr "Ĉesigi gepatran procezon se oni premas la Nuligi butonon"
 
 #: src/option.c:633
 msgid "Hide Cancel button"
-msgstr "Kaŝi Rezigni-butonon"
+msgstr "Kaŝi Nuligi-butonon"
 
 #: src/option.c:641
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
-msgstr ""
+msgstr "Konjekti kiam plenumo atingos 100%"
 
 #: src/option.c:650
 msgid "Display question dialog"
 msgstr "Montri demand-dialogon"
 
 #: src/option.c:684
-#| msgid "Hide Cancel button"
 msgid "Give Cancel button focus by default"
-msgstr "Doni defaŭlte fokuson al Rezigni-butonon"
+msgstr "Doni defaŭlte fokuson al Nuligi-butonon"
 
 #: src/option.c:698
 msgid "Suppress OK and Cancel buttons"
-msgstr "Kaŝi Bone- kaj Rezigni-butonojn"
+msgstr "Kaŝi Bone- kaj Nuligi-butonojn"
 
 #: src/option.c:708
 msgid "Display text information dialog"
@@ -458,10 +457,9 @@ msgstr "Agordi la teksttiparon"
 
 #: src/option.c:736
 msgid "Enable an I read and agree checkbox"
-msgstr ""
+msgstr "Ŝalti “mi legis kaj konsentas” markobutonon"
 
 #: src/option.c:744
-#| msgid "Enable html support"
 msgid "Enable HTML support"
 msgstr "Ebligi HTML-subtenon"
 
@@ -470,10 +468,12 @@ msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr ""
+"Ne ŝalti uzantan interagon kun la WebView. Nur funkcias se vi uzas --html "
+"opcion"
 
 #: src/option.c:759
 msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr ""
+msgstr "Agordi URL-on anstataŭ dosieron. Nur funkcias se vi uzas --html opcion"
 
 #: src/option.c:761
 msgid "URL"
@@ -482,6 +482,8 @@ msgstr "URL"
 #: src/option.c:768
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
+"Aŭtomata rulumi la tekston ĝis la subo. Nur kiam teksto estas kaptata el "
+"stdin"
 
 #: src/option.c:778
 msgid "Display warning dialog"
@@ -565,22 +567,16 @@ msgid "List of values for columns"
 msgstr "Listo da valoroj por kolumnoj"
 
 #: src/option.c:928
-#, fuzzy
-#| msgid "Add a new List in forms dialog"
 msgid "Add a new combo box in forms dialog"
-msgstr "Aldoni novan liston al la formular-dialogujo"
+msgstr "Aldoni novan falliston al la formular-dialogo"
 
 #: src/option.c:929
-#, fuzzy
-#| msgid "Calendar field name"
 msgid "Combo box field name"
-msgstr "Kalendara nomo de kampo"
+msgstr "Fallista kampa nomo"
 
 #: src/option.c:935
-#, fuzzy
-#| msgid "List of values for columns"
 msgid "List of values for combo box"
-msgstr "Listo da valoroj por kolumnoj"
+msgstr "Listo da valoroj por fallisto"
 
 #: src/option.c:952
 msgid "Show the columns header"
@@ -771,7 +767,6 @@ msgid "Type your password"
 msgstr "Enigu vian pasvorton"
 
 #: src/password.c:73
-#| msgid "Type your password"
 msgid "Type your username and password"
 msgstr "Enigu viajn uzantonomon kaj pasvorton"
 
@@ -786,11 +781,11 @@ msgstr "Pasvorto:"
 #: src/progress.c:102
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
-msgstr ""
+msgstr "Tempo restanta: %lu:%02lu:%02lu"
 
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
-msgstr ""
+msgstr "Maksimuma valoro devas esti pli granda ol minimuma valoro.\n"
 
 #: src/scale.c:69
 msgid "Value out of range.\n"
@@ -798,11 +793,11 @@ msgstr "Valoro estas ekster la intervalo.\n"
 
 #: src/tree.c:393
 msgid "No column titles specified for List dialog.\n"
-msgstr ""
+msgstr "Neniu kolumna titolo agordita por lista dialogo.\n"
 
 #: src/tree.c:399
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "Vi devus uzi nur unu listan dialogan specon.\n"
 
 #: src/zenity.ui:14 src/zenity.ui:76
 msgid "Adjust the scale value"
@@ -811,7 +806,7 @@ msgstr "Agordi la skal-valoron"
 #: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
 #: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
 msgid "Cancel"
-msgstr "Rezigni"
+msgstr "Nuligi"
 
 #: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
 #: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
