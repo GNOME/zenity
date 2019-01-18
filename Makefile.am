@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-INCLUDES = src
+AM_CPPFLAGS = src
 
 SUBDIRS = \
 	src	\
