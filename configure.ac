@@ -102,8 +102,8 @@ fi
 # Debug
 # ******************************* 
 
-GNOME_DEBUG_CHECK
-GNOME_COMPILE_WARNINGS([maximum])
+AX_CHECK_ENABLE_DEBUG([yes],[GNOME_ENABLE_DEBUG])
+
 
 # *******************************
 # Internationalization
