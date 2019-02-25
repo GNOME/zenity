@@ -1,14 +1,17 @@
 # Swedish messages for Zenity manual.
-# Copyright © 2006-2016 zenity's COPYRIGHT HOLDER
-# Daniel Nylander <po@danielnylander.se>, 2006, 2009
+# Copyright © 2006-2019 zenity's COPYRIGHT HOLDER
+# Daniel Nylander <po@danielnylander.se>, 2006, 2009.
+# Josef Andersson, <l10nl18nsweja@gmail.com>, 2015.
 # Sebastian Rasmussen <sebras@gmail.com>, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017, 2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=docs\n"
-"POT-Creation-Date: 2017-01-18 22:27+0000\n"
-"PO-Revision-Date: 2017-02-12 15:32+0100\n"
+"POT-Creation-Date: 2019-01-18 01:23+0000\n"
+"PO-Revision-Date: 2019-02-25 12:08+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9
@@ -140,20 +143,6 @@ msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>, 2006, 2009\n"
 "Sebastian Rasmussen <sebras@gmail.com>, 2016"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/calendar.page:66
-msgctxt "_"
-msgid ""
-"external ref='figures/zenity-calendar-screenshot.png' "
-"md5='92bf5317d799665acf0d4005cee184c2'"
-msgstr ""
-"external ref='figures/zenity-calendar-screenshot.png' "
-"md5='92bf5317d799665acf0d4005cee184c2'"
 
 #. (itstool) path: info/desc
 #: C/calendar.page:6
@@ -290,19 +279,23 @@ msgstr "Exempel på kalenderdialog"
 msgid "Zenity calendar dialog example"
 msgstr "Zenity-exempel på kalenderdialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/color-selection.page:52
+#: C/calendar.page:66
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-calendar-screenshot.png' "
+#| "md5='92bf5317d799665acf0d4005cee184c2'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-colorselection-screenshot.png' "
-"md5='febe3f417acea789c9db628fbe44f798'"
+"external ref='figures/zenity-calendar-screenshot.png' "
+"md5='5179d22e4b3bd9b106792ea5f3b037ca'"
 msgstr ""
-"external ref='figures/zenity-colorselection-screenshot.png' "
-"md5='febe3f417acea789c9db628fbe44f798'"
+"external ref='figures/zenity-calendar-screenshot.png' "
+"md5='5179d22e4b3bd9b106792ea5f3b037ca'"
 
 #. (itstool) path: info/desc
 #: C/color-selection.page:6
@@ -396,19 +389,23 @@ msgstr "Exempel på färgväljardialog"
 msgid "<app>Zenity</app> color selection dialog example"
 msgstr "<app>Zenity</app>-exempel på färgväljardialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/entry.page:55
+#: C/color-selection.page:52
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-colorselection-screenshot.png' "
+#| "md5='febe3f417acea789c9db628fbe44f798'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-entry-screenshot.png' "
-"md5='bae6bf4342a66a3900deb15bde82ff42'"
+"external ref='figures/zenity-colorselection-screenshot.png' "
+"md5='9256ba82db5dd61942cddb2e9b801ce4'"
 msgstr ""
-"external ref='figures/zenity-entry-screenshot.png' "
-"md5='bae6bf4342a66a3900deb15bde82ff42'"
+"external ref='figures/zenity-colorselection-screenshot.png' "
+"md5='9256ba82db5dd61942cddb2e9b801ce4'"
 
 #. (itstool) path: info/desc
 #: C/entry.page:6
@@ -486,8 +483,8 @@ msgstr ""
 "\n"
 "if zenity --entry \\\n"
 "--title=\"Lägg till ny profil\" \\\n"
-"--text=\"Ange namn för ny profil:\" \\\n"
-"--entry-text \"NewProfile\"\n"
+"--text=\"Ange namn på ny profil:\" \\\n"
+"--entry-text \"NyProfil\"\n"
 "  then echo $?\n"
 "  else echo \"Inget namn angavs\"\n"
 "fi\n"
@@ -502,19 +499,23 @@ msgstr "Exempel på textinmatningsdialog"
 msgid "<app>Zenity</app> text entry dialog example"
 msgstr "<app>Zenity</app>-exempel på textinmatningsdialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/error.page:28
+#: C/entry.page:55
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-entry-screenshot.png' "
+#| "md5='bae6bf4342a66a3900deb15bde82ff42'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-error-screenshot.png' "
-"md5='a4b287f89625cfd54ca38bc404d8bdf6'"
+"external ref='figures/zenity-entry-screenshot.png' "
+"md5='d7698dcc8b153c1be72fe8324b79d0f4'"
 msgstr ""
-"external ref='figures/zenity-error-screenshot.png' "
-"md5='a4b287f89625cfd54ca38bc404d8bdf6'"
+"external ref='figures/zenity-entry-screenshot.png' "
+"md5='d7698dcc8b153c1be72fe8324b79d0f4'"
 
 #. (itstool) path: info/desc
 #: C/error.page:6
@@ -562,19 +563,23 @@ msgstr "Exempel på feldialog"
 msgid "<app>Zenity</app> error dialog example"
 msgstr "<app>Zenity</app>-exempel på feldialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/file-selection.page:68
+#: C/error.page:28
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-error-screenshot.png' "
+#| "md5='a4b287f89625cfd54ca38bc404d8bdf6'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-fileselection-screenshot.png' "
-"md5='bbba2652577f14ab4719f55a2ff57073'"
+"external ref='figures/zenity-error-screenshot.png' "
+"md5='4b461076520bc0ad570367af8279ef83'"
 msgstr ""
-"external ref='figures/zenity-fileselection-screenshot.png' "
-"md5='bbba2652577f14ab4719f55a2ff57073'"
+"external ref='figures/zenity-error-screenshot.png' "
+"md5='4b461076520bc0ad570367af8279ef83'"
 
 #. (itstool) path: info/desc
 #: C/file-selection.page:6
@@ -708,19 +713,23 @@ msgstr "Exempel på filväljardialog"
 msgid "<app>Zenity</app> file selection dialog example"
 msgstr "<app>Zenity</app>-exempel på filväljardialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/forms.page:81
+#: C/file-selection.page:68
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-fileselection-screenshot.png' "
+#| "md5='bbba2652577f14ab4719f55a2ff57073'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-forms-screenshot.png' "
-"md5='c11fab02e4d51212a538ce6859799d5f'"
+"external ref='figures/zenity-fileselection-screenshot.png' "
+"md5='3b722199d9524d2a1928895df5441e81'"
 msgstr ""
-"external ref='figures/zenity-forms-screenshot.png' "
-"md5='c11fab02e4d51212a538ce6859799d5f'"
+"external ref='figures/zenity-fileselection-screenshot.png' "
+"md5='3b722199d9524d2a1928895df5441e81'"
 
 #. (itstool) path: info/desc
 #: C/forms.page:6
@@ -843,9 +852,9 @@ msgstr ""
 "#!/bin/sh\n"
 "\n"
 "zenity --forms --title=\"Lägg till vän\" \\\n"
-"\t--text=\"Mata in information om din vän.\" \\\n"
+"\t--text=\"Ange information om din vän.\" \\\n"
 "\t--separator=\",\" \\\n"
-"\t--add-entry=\"Tilltalsnamn\" \\\n"
+"\t--add-entry=\"Förnamn\" \\\n"
 "\t--add-entry=\"Efternamn\" \\\n"
 "\t--add-entry=\"E-post\" \\\n"
 "\t--add-calendar=\"Födelsedag\" &gt;&gt; adr.csv\n"
@@ -870,6 +879,24 @@ msgstr "Exempel på formulärdialog"
 #: C/forms.page:80
 msgid "<app>Zenity</app> forms dialog example"
 msgstr "<app>Zenity</app>-exempel på informationsdialog"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/forms.page:81
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-forms-screenshot.png' "
+#| "md5='c11fab02e4d51212a538ce6859799d5f'"
+msgctxt "_"
+msgid ""
+"external ref='figures/zenity-forms-screenshot.png' "
+"md5='4582609dd023b5b963192e6950578d79'"
+msgstr ""
+"external ref='figures/zenity-forms-screenshot.png' "
+"md5='4582609dd023b5b963192e6950578d79'"
 
 #. (itstool) path: credit/name
 #: C/index.page:6
@@ -905,20 +932,6 @@ msgstr "Handbok för Zenity"
 #: C/index.page:27
 msgid "Dialogs"
 msgstr "Dialoger"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/info.page:28
-msgctxt "_"
-msgid ""
-"external ref='figures/zenity-information-screenshot.png' "
-"md5='72386d53a991c46e918ee6dd22795aa6'"
-msgstr ""
-"external ref='figures/zenity-information-screenshot.png' "
-"md5='72386d53a991c46e918ee6dd22795aa6'"
 
 #. (itstool) path: info/desc
 #: C/info.page:6
@@ -965,6 +978,24 @@ msgstr "Exempel på informationsdialog"
 #: C/info.page:27
 msgid "<app>Zenity</app> information dialog example"
 msgstr "<app>Zenity</app>-exempel på informationsdialog"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/info.page:28
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-information-screenshot.png' "
+#| "md5='72386d53a991c46e918ee6dd22795aa6'"
+msgctxt "_"
+msgid ""
+"external ref='figures/zenity-information-screenshot.png' "
+"md5='d5ac93589e2fb31c085a06b0d91f3206'"
+msgstr ""
+"external ref='figures/zenity-information-screenshot.png' "
+"md5='d5ac93589e2fb31c085a06b0d91f3206'"
 
 #. (itstool) path: info/desc
 #: C/intro.page:6
@@ -1062,20 +1093,6 @@ msgstr "Skala"
 #: C/intro.page:32
 msgid "Color selection"
 msgstr "Färgval"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/list.page:84
-msgctxt "_"
-msgid ""
-"external ref='figures/zenity-list-screenshot.png' "
-"md5='8bd9ad9c760516a966d3590b2019fa1e'"
-msgstr ""
-"external ref='figures/zenity-list-screenshot.png' "
-"md5='8bd9ad9c760516a966d3590b2019fa1e'"
 
 #. (itstool) path: info/desc
 #: C/list.page:6
@@ -1218,9 +1235,9 @@ msgstr ""
 "zenity --list \\\n"
 "  --title=\"Välj de fel som du önskar att se\" \\\n"
 "  --column=\"Felnummer\" --column=\"Allvarlighetsgrad\" --column=\"Beskrivning\" \\\n"
-"    992383 Normal \"GtkTreeView kraschar vid flera markeringar\" \\\n"
-"    293823 Hög \"GNOME-ordboken kan inte hantera proxyservrar\" \\\n"
-"    393823 Kritisk \"Menyredigering fungerar inte i GNOME 2.0\"\n"
+"    992383 Normal \"GtkTreeView crashes on multiple selections\" \\\n"
+"    293823 High \"GNOME Dictionary does not handle proxy\" \\\n"
+"    393823 Critical \"Menu editing does not work in GNOME 2.0\"\n"
 
 #. (itstool) path: figure/title
 #: C/list.page:82
@@ -1231,6 +1248,24 @@ msgstr "Exempel på listdialog"
 #: C/list.page:83
 msgid "<app>Zenity</app> list dialog example"
 msgstr "<app>Zenity</app>-exempel på listdialog"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/list.page:84
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-list-screenshot.png' "
+#| "md5='8bd9ad9c760516a966d3590b2019fa1e'"
+msgctxt "_"
+msgid ""
+"external ref='figures/zenity-list-screenshot.png' "
+"md5='a538e91abd09009fa36ad3f8f575a2ca'"
+msgstr ""
+"external ref='figures/zenity-list-screenshot.png' "
+"md5='a538e91abd09009fa36ad3f8f575a2ca'"
 
 #. (itstool) path: info/desc
 #: C/message.page:6
@@ -1254,34 +1289,6 @@ msgid ""
 msgstr ""
 "För varje typ, använd flaggan <cmd>--text</cmd> för att ange texten som "
 "visas i dialogrutan."
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/notification.page:37
-msgctxt "_"
-msgid ""
-"external ref='figures/zenity-notification-screenshot.png' "
-"md5='49ebe82aa255c5536d018f2b4f919c51'"
-msgstr ""
-"external ref='figures/zenity-notification-screenshot.png' "
-"md5='49ebe82aa255c5536d018f2b4f919c51'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/notification.page:51
-msgctxt "_"
-msgid ""
-"external ref='figures/zenity-notification-listen-screenshot.png' "
-"md5='e7e6edba1c794426c4ce749bc355b25d'"
-msgstr ""
-"external ref='figures/zenity-notification-listen-screenshot.png' "
-"md5='e7e6edba1c794426c4ce749bc355b25d'"
 
 #. (itstool) path: info/desc
 #: C/notification.page:6
@@ -1370,6 +1377,24 @@ msgstr "Exempel på aviseringsikon"
 msgid "<app>Zenity</app> notification icon example"
 msgstr "<app>Zenity</app>-exempel på aviseringsikon"
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/notification.page:37
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-notification-screenshot.png' "
+#| "md5='49ebe82aa255c5536d018f2b4f919c51'"
+msgctxt "_"
+msgid ""
+"external ref='figures/zenity-notification-screenshot.png' "
+"md5='723bd2d1283f5a888967815991cbe858'"
+msgstr ""
+"external ref='figures/zenity-notification-screenshot.png' "
+"md5='723bd2d1283f5a888967815991cbe858'"
+
 #. (itstool) path: page/p
 #: C/notification.page:40
 msgid ""
@@ -1393,7 +1418,7 @@ msgstr ""
 "\n"
 "  #!/bin/sh\n"
 "  cat &lt;&lt;EOH| zenity --notification --listen\n"
-"  message: detta är en meddelandetext\n"
+"  message: Detta är meddelandetexten\n"
 "  EOH\n"
 "  "
 
@@ -1407,19 +1432,23 @@ msgstr "Exempel på aviseringsikon med <cmd>--listen</cmd>"
 msgid "<app>Zenity</app> notification with <cmd>--listen</cmd> example"
 msgstr "<app>Zenity</app>-aviseringsexempel med <cmd>--listen</cmd>"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/password.page:47
+#: C/notification.page:51
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-notification-listen-screenshot.png' "
+#| "md5='e7e6edba1c794426c4ce749bc355b25d'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-password-screenshot.png' "
-"md5='6adbeb624a307f78072593d6d1c6def6'"
+"external ref='figures/zenity-notification-listen-screenshot.png' "
+"md5='a1fe47d166ef20c0b35f9ba3ca15a03f'"
 msgstr ""
-"external ref='figures/zenity-password-screenshot.png' "
-"md5='6adbeb624a307f78072593d6d1c6def6'"
+"external ref='figures/zenity-notification-listen-screenshot.png' "
+"md5='a1fe47d166ef20c0b35f9ba3ca15a03f'"
 
 #. (itstool) path: info/desc
 #: C/password.page:6
@@ -1506,19 +1535,23 @@ msgstr "Exempel på lösenordsinmatningsdialog"
 msgid "<app>Zenity</app> password entry dialog example"
 msgstr "<app>Zenity</app>-exempel på lösenordsinmatningsdialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/progress.page:77
+#: C/password.page:47
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-password-screenshot.png' "
+#| "md5='6adbeb624a307f78072593d6d1c6def6'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-progress-screenshot.png' "
-"md5='75121bbbcb9cc92de4ebf7fbb92f0780'"
+"external ref='figures/zenity-password-screenshot.png' "
+"md5='5555776db3dfda22137e5c0583e0f3da'"
 msgstr ""
-"external ref='figures/zenity-progress-screenshot.png' "
-"md5='75121bbbcb9cc92de4ebf7fbb92f0780'"
+"external ref='figures/zenity-password-screenshot.png' "
+"md5='5555776db3dfda22137e5c0583e0f3da'"
 
 #. (itstool) path: info/desc
 #: C/progress.page:6
@@ -1636,7 +1669,7 @@ msgstr ""
 "echo \"100\" ; sleep 1\n"
 ") |\n"
 "zenity --progress \\\n"
-"  --title=\"Uppdaterar systemloggar\" \\\n"
+"  --title=\"Uppdatera systemloggar\" \\\n"
 "  --text=\"Söker av e-postloggarna...\" \\\n"
 "  --percentage=0\n"
 "\n"
@@ -1655,19 +1688,23 @@ msgstr "Exempel på förloppsdialog"
 msgid "<app>Zenity</app> progress dialog example"
 msgstr "<app>Zenity</app>-exempel på förloppsdialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/question.page:28
+#: C/progress.page:77
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-error-screenshot.png' "
+#| "md5='a4b287f89625cfd54ca38bc404d8bdf6'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-question-screenshot.png' "
-"md5='5889e2a57b9d1885f22977587a269610'"
+"external ref='figures/zenity-progress-screenshot.png' "
+"md5='a9f492a4c872ef2fe4484c310d78eb6a'"
 msgstr ""
-"external ref='figures/zenity-question-screenshot.png' "
-"md5='5889e2a57b9d1885f22977587a269610'"
+"external ref='figures/zenity-progress-screenshot.png' "
+"md5='a9f492a4c872ef2fe4484c310d78eb6a'"
 
 #. (itstool) path: info/desc
 #: C/question.page:6
@@ -1715,19 +1752,23 @@ msgstr "Exempel på frågedialog"
 msgid "<app>Zenity</app> question dialog example"
 msgstr "<app>Zenity</app>-exempel på frågedialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/scale.page:77
+#: C/question.page:28
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-question-screenshot.png' "
+#| "md5='5889e2a57b9d1885f22977587a269610'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-scale-screenshot.png' "
-"md5='d44259a5b5b6e6ba0aceffd8501d0873'"
+"external ref='figures/zenity-question-screenshot.png' "
+"md5='962af0ddab7e11f11288e1f188066a84'"
 msgstr ""
-"external ref='figures/zenity-scale-screenshot.png' "
-"md5='d44259a5b5b6e6ba0aceffd8501d0873'"
+"external ref='figures/zenity-question-screenshot.png' "
+"md5='962af0ddab7e11f11288e1f188066a84'"
 
 #. (itstool) path: info/desc
 #: C/scale.page:6
@@ -1865,19 +1906,23 @@ msgstr "Exempel på skaldialog"
 msgid "<app>Zenity</app> scale dialog example"
 msgstr "<app>Zenity</app>-exempel på skaldialog"
 
-#. (itstool) path: media
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/text.page:83
+#: C/scale.page:77
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-scale-screenshot.png' "
+#| "md5='d44259a5b5b6e6ba0aceffd8501d0873'"
 msgctxt "_"
 msgid ""
-"external ref='figures/zenity-text-screenshot.png' "
-"md5='79446b388fa6c3c3a619c8d6565b9f61'"
+"external ref='figures/zenity-scale-screenshot.png' "
+"md5='efab2668ba53b567551697665a34f7f8'"
 msgstr ""
-"external ref='figures/zenity-text-screenshot.png' "
-"md5='79446b388fa6c3c3a619c8d6565b9f61'"
+"external ref='figures/zenity-scale-screenshot.png' "
+"md5='efab2668ba53b567551697665a34f7f8'"
 
 #. (itstool) path: info/desc
 #: C/text.page:6
@@ -2027,6 +2072,24 @@ msgstr "Exempel på textinformationsdialog"
 #: C/text.page:82
 msgid "<app>Zenity</app> text information dialog example"
 msgstr "<app>Zenity</app>-exempel på textinformationsdialog"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/text.page:83
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-text-screenshot.png' "
+#| "md5='79446b388fa6c3c3a619c8d6565b9f61'"
+msgctxt "_"
+msgid ""
+"external ref='figures/zenity-text-screenshot.png' "
+"md5='225d7ab143dc8fa5850ebd789eb5304f'"
+msgstr ""
+"external ref='figures/zenity-text-screenshot.png' "
+"md5='225d7ab143dc8fa5850ebd789eb5304f'"
 
 #. (itstool) path: info/desc
 #: C/usage.page:6
@@ -2525,20 +2588,6 @@ msgstr ""
 "startades och håller sig själv ovanför det fönstret. Detta beteende kan "
 "inaktiveras genom att tömma ur miljövariabeln <var>WINDOWID</var>."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/warning.page:28
-msgctxt "_"
-msgid ""
-"external ref='figures/zenity-warning-screenshot.png' "
-"md5='146ea22fcd7104b2f9ed7ca0cc25f51d'"
-msgstr ""
-"external ref='figures/zenity-warning-screenshot.png' "
-"md5='146ea22fcd7104b2f9ed7ca0cc25f51d'"
-
 #. (itstool) path: info/desc
 #: C/warning.page:6
 msgid "Use the <cmd>--warning</cmd> option."
@@ -2576,14 +2625,40 @@ msgstr ""
 "--text=\"Koppla från strömkabeln för att undvika elektriska stötar.\"\n"
 
 #. (itstool) path: figure/title
-#: C/warning.page:26
+#: C/warning.page:25
 msgid "Warning Dialog Example"
 msgstr "Exempel på varningsdialog"
 
 #. (itstool) path: figure/desc
-#: C/warning.page:27
+#: C/warning.page:26
 msgid "<app>Zenity</app> warning dialog example"
 msgstr "<app>Zenity</app>-exempel på varningsdialog"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/warning.page:27
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/zenity-warning-screenshot.png' "
+#| "md5='146ea22fcd7104b2f9ed7ca0cc25f51d'"
+msgctxt "_"
+msgid ""
+"external ref='figures/zenity-warning-screenshot.png' "
+"md5='a2d07437efca06b775ceae24816d96a6'"
+msgstr ""
+"external ref='figures/zenity-warning-screenshot.png' "
+"md5='a2d07437efca06b775ceae24816d96a6'"
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/zenity-progress-screenshot.png' "
+#~ "md5='75121bbbcb9cc92de4ebf7fbb92f0780'"
+#~ msgstr ""
+#~ "external ref='figures/zenity-progress-screenshot.png' "
+#~ "md5='75121bbbcb9cc92de4ebf7fbb92f0780'"
 
 #~ msgid ""
 #~ "@@image: 'figures/zenity-entry-screenshot.png'; "
