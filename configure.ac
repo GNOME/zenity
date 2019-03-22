@@ -1,4 +1,4 @@
-AC_INIT([Zenity],[3.30.0],[https://bugzilla.gnome.org/enter_bug.cgi?product=zenity],[zenity])
+AC_INIT([Zenity],[3.32.0],[https://bugzilla.gnome.org/enter_bug.cgi?product=zenity],[zenity])
 
 AC_PREREQ([2.69])
 
