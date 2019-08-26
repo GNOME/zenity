@@ -9,9 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of zenity\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-28 17:49+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
+"POT-Creation-Date: 2018-09-07 11:06+0000\n"
 "PO-Revision-Date: 2017-09-01 20:02+0200\n"
 "Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -66,11 +65,27 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Mostra caixes de diàleg de scripts de l'intèrpret d'ordres"
 
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+msgid "_OK"
+msgstr "_D'acord"
+
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+msgid "_Cancel"
+msgstr "_Cancel·la"
+
 #: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Heu d'especificar un tipus de diàleg. Vegeu «zenity --help» per a més "
 "detalls\n"
+
+#: src/msg.c:38
+msgid "_No"
+msgstr "_No"
+
+#: src/msg.c:40
+msgid "_Yes"
+msgstr "_Sí"
 
 #: src/notification.c:50
 msgid "Could not parse message\n"
@@ -101,135 +116,6 @@ msgstr "No s'ha pogut analitzar l'ordre de l'entrada estàndard\n"
 #: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Notificació del Zenity"
-
-#: src/password.c:57
-msgid "_Cancel"
-msgstr "_Cancel·la"
-
-#: src/password.c:60
-msgid "_OK"
-msgstr "_D'acord"
-
-#. Checks if username has been passed as a parameter
-#: src/password.c:70
-msgid "Type your password"
-msgstr "Teclegeu la contrasenya"
-
-#: src/password.c:73
-msgid "Type your username and password"
-msgstr "Teclegeu l'usuari i la contrasenya"
-
-#: src/password.c:100
-msgid "Username:"
-msgstr "Nom d'usuari:"
-
-#: src/password.c:110
-msgid "Password:"
-msgstr "Contrasenya:"
-
-#: src/scale.c:62
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "El valor màxim ha de ser major que el valor mínim.\n"
-
-#: src/scale.c:69
-msgid "Value out of range.\n"
-msgstr "El valor està fora de l'abast.\n"
-
-#: src/tree.c:393
-msgid "No column titles specified for List dialog.\n"
-msgstr ""
-"No s'han especificat els títols de les columnes per al diàleg de llista.\n"
-
-#: src/tree.c:399
-msgid "You should use only one List dialog type.\n"
-msgstr "Només hauríeu d'usar un tipus de diàleg de llista.\n"
-
-#: src/zenity.ui:14 src/zenity.ui:76
-msgid "Adjust the scale value"
-msgstr "Ajusta el valor de l'escala"
-
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "Cancel·la"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "D'acord"
-
-#: src/zenity.ui:117
-msgid "Text View"
-msgstr "Vista de text"
-
-#: src/zenity.ui:231
-msgid "Calendar selection"
-msgstr "Selecció del calendari"
-
-#: src/zenity.ui:298
-msgid "Select a date from below."
-msgstr "Seleccioneu una data d'aquí sota."
-
-#: src/zenity.ui:319
-msgid "C_alendar:"
-msgstr "C_alendari:"
-
-#: src/zenity.ui:361
-msgid "Add a new entry"
-msgstr "Afegeix una entrada nova"
-
-#: src/zenity.ui:428
-msgid "_Enter new text:"
-msgstr "_Introduïu text nou:"
-
-#: src/zenity.ui:465
-msgid "Error"
-msgstr "Error"
-
-#: src/zenity.ui:530
-msgid "An error has occurred."
-msgstr "S'ha produït un error."
-
-#: src/zenity.ui:658
-msgid "Forms dialog"
-msgstr "Diàleg de formularis"
-
-#: src/zenity.ui:681
-msgid "Information"
-msgstr "Informació"
-
-#: src/zenity.ui:741
-msgid "All updates are complete."
-msgstr "Totes les actualitzacions estan completes."
-
-#: src/zenity.ui:768
-msgid "Progress"
-msgstr "Progrés"
-
-#: src/zenity.ui:831
-msgid "Running..."
-msgstr "S'està executant..."
-
-#: src/zenity.ui:882
-msgid "Question"
-msgstr "Pregunta"
-
-#: src/zenity.ui:929 src/zenity.ui:1126
-msgid "Are you sure you want to proceed?"
-msgstr "Esteu segur que voleu continuar?"
-
-#: src/zenity.ui:953
-msgid "Select items from the list"
-msgstr "Seleccioneu elements de la llista"
-
-#: src/zenity.ui:1015
-msgid "Select items from the list below."
-msgstr "Seleccioneu elements de la llista d'aquí sota."
-
-#: src/zenity.ui:1064
-msgid "Warning"
-msgstr "Avís"
 
 #: src/option.c:164
 msgid "Set the dialog title"
@@ -384,7 +270,7 @@ msgid ""
 "long texts"
 msgstr ""
 "Habilita posar punts suspensius en el text del diàleg. Això permet arreglar "
-"el problema de la mida de la finestra en texts molt llargs."
+"el problema de la mida de la finestra en texts molt llargs"
 
 #: src/option.c:354
 msgid "Display info dialog"
@@ -601,7 +487,7 @@ msgstr "URL"
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "Desplaça automàticament el text al final. Només en capturar el text des de "
-"l'entrada estàndard."
+"l'entrada estàndard"
 
 #: src/option.c:778
 msgid "Display warning dialog"
@@ -879,3 +765,129 @@ msgstr "--%s no està implementat per a aquest diàleg\n"
 #: src/option.c:2148
 msgid "Two or more dialog options specified\n"
 msgstr "S'han especificat dues o més opcions de diàleg\n"
+
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Teclegeu la contrasenya"
+
+#: src/password.c:73
+msgid "Type your username and password"
+msgstr "Teclegeu l'usuari i la contrasenya"
+
+#: src/password.c:100
+msgid "Username:"
+msgstr "Nom d'usuari:"
+
+#: src/password.c:110
+msgid "Password:"
+msgstr "Contrasenya:"
+
+#: src/progress.c:102
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr "Temps restant: %lu:%02lu:%02lu"
+
+#: src/scale.c:62
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "El valor màxim ha de ser major que el valor mínim.\n"
+
+#: src/scale.c:69
+msgid "Value out of range.\n"
+msgstr "El valor està fora de l'abast.\n"
+
+#: src/tree.c:393
+msgid "No column titles specified for List dialog.\n"
+msgstr ""
+"No s'han especificat els títols de les columnes per al diàleg de llista.\n"
+
+#: src/tree.c:399
+msgid "You should use only one List dialog type.\n"
+msgstr "Només hauríeu d'usar un tipus de diàleg de llista.\n"
+
+#: src/zenity.ui:14 src/zenity.ui:76
+msgid "Adjust the scale value"
+msgstr "Ajusta el valor de l'escala"
+
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "D'acord"
+
+#: src/zenity.ui:117
+msgid "Text View"
+msgstr "Vista de text"
+
+#: src/zenity.ui:231
+msgid "Calendar selection"
+msgstr "Selecció del calendari"
+
+#: src/zenity.ui:298
+msgid "Select a date from below."
+msgstr "Seleccioneu una data d'aquí sota."
+
+#: src/zenity.ui:319
+msgid "C_alendar:"
+msgstr "C_alendari:"
+
+#: src/zenity.ui:361
+msgid "Add a new entry"
+msgstr "Afegeix una entrada nova"
+
+#: src/zenity.ui:428
+msgid "_Enter new text:"
+msgstr "_Introduïu text nou:"
+
+#: src/zenity.ui:465
+msgid "Error"
+msgstr "Error"
+
+#: src/zenity.ui:530
+msgid "An error has occurred."
+msgstr "S'ha produït un error."
+
+#: src/zenity.ui:658
+msgid "Forms dialog"
+msgstr "Diàleg de formularis"
+
+#: src/zenity.ui:681
+msgid "Information"
+msgstr "Informació"
+
+#: src/zenity.ui:741
+msgid "All updates are complete."
+msgstr "Totes les actualitzacions estan completes."
+
+#: src/zenity.ui:768
+msgid "Progress"
+msgstr "Progrés"
+
+#: src/zenity.ui:831
+msgid "Running..."
+msgstr "S'està executant..."
+
+#: src/zenity.ui:882
+msgid "Question"
+msgstr "Pregunta"
+
+#: src/zenity.ui:929 src/zenity.ui:1126
+msgid "Are you sure you want to proceed?"
+msgstr "Esteu segur que voleu continuar?"
+
+#: src/zenity.ui:953
+msgid "Select items from the list"
+msgstr "Seleccioneu elements de la llista"
+
+#: src/zenity.ui:1015
+msgid "Select items from the list below."
+msgstr "Seleccioneu elements de la llista d'aquí sota."
+
+#: src/zenity.ui:1064
+msgid "Warning"
+msgstr "Avís"
