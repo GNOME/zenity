@@ -4,19 +4,21 @@
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2003-2008.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
-# Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2009, 2011.
 # Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
+# Yasumichi Akahoshi <yasumichi@vinelinux.org>, 2009, 2011.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010, 2012.
 # Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011, 2012, 2015.
 # Mitsuya Shibata <mty.shibata@gmail.com>, 2012.
+# Hajime Taira <htaira@redhat.com>, 2015.
+# sicklylife <translation@sicklylife.jp>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
 "POT-Creation-Date: 2018-06-10 18:57+0000\n"
-"PO-Revision-Date: 2015-03-30 12:11+0900\n"
-"Last-Translator: Hajime Taira <htaira@redhat.com>\n"
+"PO-Revision-Date: 2019-08-29 21:15+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -62,13 +64,16 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
-"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
-"Yasumichi Akahoshi <yasumichi@vinelinux.org>\n"
-"Satoru SATOH <ss@gnome.gr.jp>\n"
-"Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
 "草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
+"日本 GNOME ユーザー会 <http://www.gnome.gr.jp/>\n"
 "松澤 二郎 <jmatsuzawa@src.gnome.org>\n"
-"日本GNOMEユーザー会 <http://www.gnome.gr.jp/>"
+"Hajime Taira <htaira@redhat.com>\n"
+"Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
+"Mitsuya Shibata <mty.shibata@gmail.com>\n"
+"Satoru SATOH <ss@gnome.gr.jp>\n"
+"sicklylife <translation@sicklylife.jp>\n"
+"Yasumichi Akahoshi <yasumichi@vinelinux.org>"
 
 #: src/about.c:277
 msgid "Display dialog boxes from shell scripts"
@@ -76,11 +81,11 @@ msgstr "シェルスクリプトからダイアログボックスを表示しま
 
 #: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
 msgid "_OK"
-msgstr ""
+msgstr "OK(_O)"
 
 #: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
 msgid "_Cancel"
-msgstr ""
+msgstr "キャンセル(_C)"
 
 #: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
@@ -90,11 +95,11 @@ msgstr ""
 
 #: src/msg.c:38
 msgid "_No"
-msgstr ""
+msgstr "いいえ(_N)"
 
 #: src/msg.c:40
 msgid "_Yes"
-msgstr ""
+msgstr "はい(_Y)"
 
 #: src/notification.c:50
 msgid "Could not parse message\n"
@@ -184,10 +189,8 @@ msgid "Set the label of the Cancel button"
 msgstr "キャンセルボタンのラベルを指定する"
 
 #: src/option.c:214
-#, fuzzy
-#| msgid "Hide Cancel button"
 msgid "Add an extra button"
-msgstr "キャンセルボタンを隠す"
+msgstr "指定したボタンを追加する"
 
 #: src/option.c:221
 msgid "Set the modal hint"
@@ -451,10 +454,8 @@ msgid "Give Cancel button focus by default"
 msgstr "デフォルトでキャンセルボタンにフォーカスを当てる"
 
 #: src/option.c:698
-#, fuzzy
-#| msgid "Hide Cancel button"
 msgid "Suppress OK and Cancel buttons"
-msgstr "キャンセルボタンを隠す"
+msgstr ""
 
 #: src/option.c:708
 msgid "Display text information dialog"
@@ -797,7 +798,7 @@ msgstr "パスワード:"
 #: src/progress.c:102
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
-msgstr ""
+msgstr "残り時間: %lu:%02lu:%02lu"
 
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
@@ -822,13 +823,13 @@ msgstr "スケール値の調整"
 #: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
 #: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
 #: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
 #: src/zenity.ui:984 src/zenity.ui:1080
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: src/zenity.ui:117
 msgid "Text View"
