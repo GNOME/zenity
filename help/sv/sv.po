@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=zenity&keywords=I18N+L10N&component=docs\n"
-"POT-Creation-Date: 2019-01-18 01:23+0000\n"
-"PO-Revision-Date: 2019-02-25 12:08+0100\n"
+"POT-Creation-Date: 2019-09-07 13:19+0000\n"
+"PO-Revision-Date: 2019-09-07 21:14+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,31 +19,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
-#. (itstool) path: para/ulink
-#: C/legal.xml:9
+#. (itstool) path: p/link
+#: C/legal.xml:5
+msgid "GNU Free Documentation License Version 1.1"
+msgstr "GNU Free Documentation License Version 1.1"
+
+#. (itstool) path: license/p
+#: C/legal.xml:4
+msgid "This work is licensed under a <_:link-1/> or any later version."
+msgstr ""
+"Detta verk är licensierat under <_:link-1/> eller någon senare version."
+
+#. (itstool) path: p/link
+#: C/legal.xml:15
 msgid "link"
 msgstr "länk"
 
-#. (itstool) path: legalnotice/para
-#: C/legal.xml:2
+#. (itstool) path: license/p
+#: C/legal.xml:8
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
 "Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
-"with this manual."
+"of the GFDL at this <_:link-1/>."
 msgstr ""
 "Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges "
 "under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller "
 "senare, utgivet av Free Software Foundation utan standardavsnitt och "
-"omslagstexter.  En kopia av GFDL finns att hämta på denna <_:ulink-1/> eller "
-"i filen COPYING-DOCS som medföljer denna handbok."
+"omslagstexter.  En kopia av GFDL finns att hämta på denna <_:ulink-1/>."
 
-#. (itstool) path: legalnotice/para
-#: C/legal.xml:12
+#. (itstool) path: license/p
+#: C/legal.xml:17
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -55,8 +64,8 @@ msgstr ""
 "handböcker kan du göra detta genom att lägga till en kopia av licensavtalet "
 "i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
 
-#. (itstool) path: legalnotice/para
-#: C/legal.xml:19
+#. (itstool) path: license/p
+#: C/legal.xml:24
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -69,8 +78,18 @@ msgstr ""
 "dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med "
 "versaler eller med inledande versal."
 
-#. (itstool) path: listitem/para
-#: C/legal.xml:35
+#. (itstool) path: license/p
+#: C/legal.xml:33
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT:"
+msgstr ""
+"DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER "
+"VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE "
+"FÖRUTSÄTTNINGAR:"
+
+#. (itstool) path: item/p
+#: C/legal.xml:40
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -99,8 +118,8 @@ msgstr ""
 "ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST "
 "UNDER DENNA ANSVARSFRISKRIVNING;"
 
-#. (itstool) path: listitem/para
-#: C/legal.xml:55
+#. (itstool) path: item/p
+#: C/legal.xml:60
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -126,17 +145,6 @@ msgstr ""
 "DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA "
 "SKADOR."
 
-#. (itstool) path: legalnotice/para
-#: C/legal.xml:28
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
-msgstr ""
-"DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER "
-"VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE "
-"FÖRUTSÄTTNINGAR: <_:orderedlist-1/>"
-
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
@@ -150,12 +158,12 @@ msgid "Use the <cmd>--calendar</cmd> option."
 msgstr "Använd flaggan <cmd>--calendar</cmd>."
 
 #. (itstool) path: page/title
-#: C/calendar.page:8
+#: C/calendar.page:9
 msgid "Calendar Dialog"
 msgstr "Kalenderdialog"
 
 #. (itstool) path: page/p
-#: C/calendar.page:9
+#: C/calendar.page:10
 msgid ""
 "Use the <cmd>--calendar</cmd> option to create a calendar dialog. Zenity "
 "returns the selected date to standard output. If no date is specified on the "
@@ -166,27 +174,27 @@ msgstr ""
 "angivits på kommandoraden, kommer dialogrutan att använda dagens datum."
 
 #. (itstool) path: page/p
-#: C/calendar.page:12
+#: C/calendar.page:13
 msgid "The calendar dialog supports the following options:"
 msgstr "Kalenderdialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/title
-#: C/calendar.page:19 C/entry.page:19 C/notification.page:13 C/progress.page:24
+#: C/calendar.page:20 C/entry.page:20 C/notification.page:14 C/progress.page:25
 msgid "<cmd>--text</cmd>=<var>text</var>"
 msgstr "<cmd>--text</cmd>=<var>text</var>"
 
 #. (itstool) path: item/p
-#: C/calendar.page:20
+#: C/calendar.page:21
 msgid "Specifies the text that is displayed in the calendar dialog."
 msgstr "Anger texten som visas i kalenderdialogen."
 
 #. (itstool) path: item/title
-#: C/calendar.page:24
+#: C/calendar.page:25
 msgid "<cmd>--day</cmd>=<var>day</var>"
 msgstr "<cmd>--day</cmd>=<var>dag</var>"
 
 #. (itstool) path: item/p
-#: C/calendar.page:25
+#: C/calendar.page:26
 msgid ""
 "Specifies the day that is selected in the calendar dialog. day must be a "
 "number between 1 and 31 inclusive."
@@ -195,12 +203,12 @@ msgstr ""
 "slutna intervallet 1 till 31."
 
 #. (itstool) path: item/title
-#: C/calendar.page:29
+#: C/calendar.page:30
 msgid "<cmd>--month</cmd>=<var>month</var>"
 msgstr "<cmd>--month</cmd>=<var>månad</var>"
 
 #. (itstool) path: item/p
-#: C/calendar.page:30
+#: C/calendar.page:31
 msgid ""
 "Specifies the month that is selected in the calendar dialog. month must be a "
 "number between 1 and 12 inclusive."
@@ -209,22 +217,22 @@ msgstr ""
 "det slutna intervallet 1 till 12."
 
 #. (itstool) path: item/title
-#: C/calendar.page:34
+#: C/calendar.page:35
 msgid "<cmd>--year</cmd>=<var>year</var>"
 msgstr "<cmd>--year</cmd>=<var>år</var>"
 
 #. (itstool) path: item/p
-#: C/calendar.page:35
+#: C/calendar.page:36
 msgid "Specifies the year that is selected in the calendar dialog."
 msgstr "Anger året som är markerat i kalenderdialogen."
 
 #. (itstool) path: item/title
-#: C/calendar.page:39
+#: C/calendar.page:40
 msgid "<cmd>--date-format</cmd>=<var>format</var>"
 msgstr "<cmd>--date-format</cmd>=<var>format</var>"
 
 #. (itstool) path: item/p
-#: C/calendar.page:40
+#: C/calendar.page:41
 msgid ""
 "Specifies the format that is returned from the calendar dialog after date "
 "selection. The default format depends on your locale. Format must be a "
@@ -237,12 +245,12 @@ msgstr ""
 "%Y-%m-%d</var>."
 
 #. (itstool) path: page/p
-#: C/calendar.page:45
+#: C/calendar.page:46
 msgid "The following example script shows how to create a calendar dialog:"
 msgstr "Följande exempelskript visar hur man skapar en kalenderdialog:"
 
 #. (itstool) path: page/code
-#: C/calendar.page:49
+#: C/calendar.page:50
 #, no-wrap
 msgid ""
 "\n"
@@ -270,12 +278,12 @@ msgstr ""
 "fi\n"
 
 #. (itstool) path: figure/title
-#: C/calendar.page:64
+#: C/calendar.page:65
 msgid "Calendar Dialog Example"
 msgstr "Exempel på kalenderdialog"
 
 #. (itstool) path: figure/desc
-#: C/calendar.page:65
+#: C/calendar.page:66
 msgid "Zenity calendar dialog example"
 msgstr "Zenity-exempel på kalenderdialog"
 
@@ -284,11 +292,7 @@ msgstr "Zenity-exempel på kalenderdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/calendar.page:66
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-calendar-screenshot.png' "
-#| "md5='92bf5317d799665acf0d4005cee184c2'"
+#: C/calendar.page:67
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-calendar-screenshot.png' "
@@ -303,12 +307,12 @@ msgid "Use the <cmd>--color-selection</cmd> option."
 msgstr "Använd flaggan <cmd>--color-selection</cmd>."
 
 #. (itstool) path: page/title
-#: C/color-selection.page:8
+#: C/color-selection.page:9
 msgid "Color Selection Dialog"
 msgstr "Färgväljardialog"
 
 #. (itstool) path: page/p
-#: C/color-selection.page:9
+#: C/color-selection.page:10
 msgid ""
 "Use the <cmd>--color-selection</cmd> option to create a color selection "
 "dialog."
@@ -317,38 +321,38 @@ msgstr ""
 "färgväljardialog."
 
 #. (itstool) path: page/p
-#: C/color-selection.page:12
+#: C/color-selection.page:13
 msgid "The color selection dialog supports the following options:"
 msgstr "Färgväljardialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/title
-#: C/color-selection.page:19
+#: C/color-selection.page:20
 msgid "<cmd>--color</cmd>=<var>VALUE</var>"
 msgstr "<cmd>--color</cmd>=<var>VÄRDE</var>"
 
 #. (itstool) path: item/p
-#: C/color-selection.page:20
+#: C/color-selection.page:21
 msgid "Set the initial color.(ex: #FF0000)"
 msgstr "Ställ in förvald färg.(ex: #FF0000)"
 
 #. (itstool) path: item/title
-#: C/color-selection.page:24
+#: C/color-selection.page:25
 msgid "<cmd>--show-palette</cmd>"
 msgstr "<cmd>--show-palette</cmd>"
 
 #. (itstool) path: item/p
-#: C/color-selection.page:25
+#: C/color-selection.page:26
 msgid "Show the palette."
 msgstr "Visa paletten."
 
 #. (itstool) path: page/p
-#: C/color-selection.page:30
+#: C/color-selection.page:31
 msgid ""
 "The following example script shows how to create a color selection dialog:"
 msgstr "Följande exempelskript visar hur man skapar en färgväljardialog:"
 
 #. (itstool) path: page/code
-#: C/color-selection.page:34
+#: C/color-selection.page:35
 #, no-wrap
 msgid ""
 "\n"
@@ -380,12 +384,12 @@ msgstr ""
 "esac\n"
 
 #. (itstool) path: figure/title
-#: C/color-selection.page:50
+#: C/color-selection.page:51
 msgid "Color Selection Dialog Example"
 msgstr "Exempel på färgväljardialog"
 
 #. (itstool) path: figure/desc
-#: C/color-selection.page:51
+#: C/color-selection.page:52
 msgid "<app>Zenity</app> color selection dialog example"
 msgstr "<app>Zenity</app>-exempel på färgväljardialog"
 
@@ -394,11 +398,7 @@ msgstr "<app>Zenity</app>-exempel på färgväljardialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/color-selection.page:52
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-colorselection-screenshot.png' "
-#| "md5='febe3f417acea789c9db628fbe44f798'"
+#: C/color-selection.page:53
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-colorselection-screenshot.png' "
@@ -413,12 +413,12 @@ msgid "Use the <cmd>--entry</cmd> option."
 msgstr "Använd flaggan <cmd>--entry</cmd>."
 
 #. (itstool) path: page/title
-#: C/entry.page:8
+#: C/entry.page:9
 msgid "Text Entry Dialog"
 msgstr "Textinmatningsdialog"
 
 #. (itstool) path: page/p
-#: C/entry.page:9
+#: C/entry.page:10
 msgid ""
 "Use the <cmd>--entry</cmd> option to create a text entry dialog. "
 "<app>Zenity</app> returns the contents of the text entry to standard output."
@@ -427,44 +427,44 @@ msgstr ""
 "<app>Zenity</app> returnerar innehållet av textinmatningen till standard ut."
 
 #. (itstool) path: page/p
-#: C/entry.page:12
+#: C/entry.page:13
 msgid "The text entry dialog supports the following options:"
 msgstr "Textinmatningsdialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/p
-#: C/entry.page:20
+#: C/entry.page:21
 msgid "Specifies the text that is displayed in the text entry dialog."
 msgstr "Anger texten som visas i textinmatningsdialogen."
 
 #. (itstool) path: item/title
-#: C/entry.page:24
+#: C/entry.page:25
 msgid "<cmd>--entry-text</cmd>=<var>text</var>"
 msgstr "<cmd>--entry-text</cmd>=<var>text</var>"
 
 #. (itstool) path: item/p
-#: C/entry.page:25
+#: C/entry.page:26
 msgid ""
 "Specifies the text that is displayed in the entry field of the text entry "
 "dialog."
 msgstr "Anger texten som visas i inmatningsfältet för textinmatningsdialogen."
 
 #. (itstool) path: item/title
-#: C/entry.page:29
+#: C/entry.page:30
 msgid "<cmd>--hide-text</cmd>"
 msgstr "<cmd>--hide-text</cmd>"
 
 #. (itstool) path: item/p
-#: C/entry.page:30
+#: C/entry.page:31
 msgid "Hides the text in the entry field of the text entry dialog."
 msgstr "Döljer texten i inmatningsfältet för textinmatningsdialogen."
 
 #. (itstool) path: page/p
-#: C/entry.page:35
+#: C/entry.page:36
 msgid "The following example script shows how to create a text entry dialog:"
 msgstr "Följande exempelskript visar hur man skapar en textinmatningsdialog:"
 
 #. (itstool) path: page/code
-#: C/entry.page:39
+#: C/entry.page:40
 #, no-wrap
 msgid ""
 "\n"
@@ -490,12 +490,12 @@ msgstr ""
 "fi\n"
 
 #. (itstool) path: figure/title
-#: C/entry.page:53
+#: C/entry.page:54
 msgid "Text Entry Dialog Example"
 msgstr "Exempel på textinmatningsdialog"
 
 #. (itstool) path: figure/desc
-#: C/entry.page:54
+#: C/entry.page:55
 msgid "<app>Zenity</app> text entry dialog example"
 msgstr "<app>Zenity</app>-exempel på textinmatningsdialog"
 
@@ -504,11 +504,7 @@ msgstr "<app>Zenity</app>-exempel på textinmatningsdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/entry.page:55
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-entry-screenshot.png' "
-#| "md5='bae6bf4342a66a3900deb15bde82ff42'"
+#: C/entry.page:56
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-entry-screenshot.png' "
@@ -523,22 +519,22 @@ msgid "Use the <cmd>--error</cmd> option."
 msgstr "Använd flaggan <cmd>--error</cmd>."
 
 #. (itstool) path: page/title
-#: C/error.page:8
+#: C/error.page:9
 msgid "Error Dialog"
 msgstr "Feldialog"
 
 #. (itstool) path: page/p
-#: C/error.page:9
+#: C/error.page:10
 msgid "Use the <cmd>--error</cmd> option to create an error dialog."
 msgstr "Använd flaggan <cmd>--error</cmd> för att skapa en feldialog."
 
 #. (itstool) path: page/p
-#: C/error.page:13
+#: C/error.page:14
 msgid "The following example script shows how to create an error dialog:"
 msgstr "Följande exempelskript visar hur man skapar en feldialog:"
 
 #. (itstool) path: page/code
-#: C/error.page:17
+#: C/error.page:18
 #, no-wrap
 msgid ""
 "\n"
@@ -554,12 +550,12 @@ msgstr ""
 "--text=\"Kunde inte hitta /var/log/syslog.\"\n"
 
 #. (itstool) path: figure/title
-#: C/error.page:26
+#: C/error.page:27
 msgid "Error Dialog Example"
 msgstr "Exempel på feldialog"
 
 #. (itstool) path: figure/desc
-#: C/error.page:27
+#: C/error.page:28
 msgid "<app>Zenity</app> error dialog example"
 msgstr "<app>Zenity</app>-exempel på feldialog"
 
@@ -568,11 +564,7 @@ msgstr "<app>Zenity</app>-exempel på feldialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/error.page:28
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-error-screenshot.png' "
-#| "md5='a4b287f89625cfd54ca38bc404d8bdf6'"
+#: C/error.page:29
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-error-screenshot.png' "
@@ -587,12 +579,12 @@ msgid "Use the <cmd>--file-selection</cmd> option."
 msgstr "Använd flaggan <cmd>--file-selection</cmd>."
 
 #. (itstool) path: page/title
-#: C/file-selection.page:8
+#: C/file-selection.page:9
 msgid "File Selection Dialog"
 msgstr "Filväljardialog"
 
 #. (itstool) path: page/p
-#: C/file-selection.page:9
+#: C/file-selection.page:10
 msgid ""
 "Use the <cmd>--file-selection</cmd> option to create a file selection "
 "dialog. <app>Zenity</app> returns the selected files or directories to "
@@ -603,17 +595,17 @@ msgstr ""
 "standard ut. Standardläget för filväljardialogen är öppna."
 
 #. (itstool) path: page/p
-#: C/file-selection.page:13
+#: C/file-selection.page:14
 msgid "The file selection dialog supports the following options:"
 msgstr "Filväljardialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/title
-#: C/file-selection.page:20 C/text.page:20
+#: C/file-selection.page:21 C/text.page:21
 msgid "<cmd>--filename</cmd>=<var>filename</var>"
 msgstr "<cmd>--filename</cmd>=<var>filnamn</var>"
 
 #. (itstool) path: item/p
-#: C/file-selection.page:21
+#: C/file-selection.page:22
 msgid ""
 "Specifies the file or directory that is selected in the file selection "
 "dialog when the dialog is first shown."
@@ -622,43 +614,43 @@ msgstr ""
 "först visas."
 
 #. (itstool) path: item/title
-#: C/file-selection.page:25
+#: C/file-selection.page:26
 msgid "<cmd>--multiple</cmd>"
 msgstr "<cmd>--multiple</cmd>"
 
 #. (itstool) path: item/p
-#: C/file-selection.page:26
+#: C/file-selection.page:27
 msgid ""
 "Allows the selection of multiple filenames in the file selection dialog."
 msgstr "Tillåter markering av flera filnamn i filväljardialogen."
 
 #. (itstool) path: item/title
-#: C/file-selection.page:30
+#: C/file-selection.page:31
 msgid "<cmd>--directory</cmd>"
 msgstr "<cmd>--directory</cmd>"
 
 #. (itstool) path: item/p
-#: C/file-selection.page:31
+#: C/file-selection.page:32
 msgid "Allows only selection of directories in the file selection dialog."
 msgstr "Tillåter endast markering av kataloger i filväljardialogen."
 
 #. (itstool) path: item/title
-#: C/file-selection.page:35
+#: C/file-selection.page:36
 msgid "<cmd>--save</cmd>"
 msgstr "<cmd>--save</cmd>"
 
 #. (itstool) path: item/p
-#: C/file-selection.page:36
+#: C/file-selection.page:37
 msgid "Set the file selection dialog into save mode."
 msgstr "Ställ in filväljardialogen till sparningsläge."
 
 #. (itstool) path: item/title
-#: C/file-selection.page:40 C/list.page:52
+#: C/file-selection.page:41 C/list.page:53
 msgid "<cmd>--separator</cmd>=<var>separator</var>"
 msgstr "<cmd>--separator</cmd>=<var>avgränsare</var>"
 
 #. (itstool) path: item/p
-#: C/file-selection.page:41
+#: C/file-selection.page:42
 msgid ""
 "Specifies the string that is used to divide the returned list of filenames."
 msgstr ""
@@ -666,13 +658,13 @@ msgstr ""
 "filnamn."
 
 #. (itstool) path: page/p
-#: C/file-selection.page:46
+#: C/file-selection.page:47
 msgid ""
 "The following example script shows how to create a file selection dialog:"
 msgstr "Följande exempelskript visar hur man skapar en filväljardialog:"
 
 #. (itstool) path: page/code
-#: C/file-selection.page:50
+#: C/file-selection.page:51
 #, no-wrap
 msgid ""
 "\n"
@@ -704,12 +696,12 @@ msgstr ""
 "esac\n"
 
 #. (itstool) path: figure/title
-#: C/file-selection.page:66
+#: C/file-selection.page:67
 msgid "File Selection Dialog Example"
 msgstr "Exempel på filväljardialog"
 
 #. (itstool) path: figure/desc
-#: C/file-selection.page:67
+#: C/file-selection.page:68
 msgid "<app>Zenity</app> file selection dialog example"
 msgstr "<app>Zenity</app>-exempel på filväljardialog"
 
@@ -718,11 +710,7 @@ msgstr "<app>Zenity</app>-exempel på filväljardialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/file-selection.page:68
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-fileselection-screenshot.png' "
-#| "md5='bbba2652577f14ab4719f55a2ff57073'"
+#: C/file-selection.page:69
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-fileselection-screenshot.png' "
@@ -737,77 +725,77 @@ msgid "Use the <cmd>--forms</cmd> option."
 msgstr "Använd flaggan <cmd>--forms</cmd>."
 
 #. (itstool) path: page/title
-#: C/forms.page:8
+#: C/forms.page:9
 msgid "Forms Dialog"
 msgstr "Formulärdialog"
 
 #. (itstool) path: page/p
-#: C/forms.page:9
+#: C/forms.page:10
 msgid "Use the <cmd>--forms</cmd> option to create a forms dialog."
 msgstr "Använd flaggan <cmd>--forms</cmd> för att skapa en formulärdialog."
 
 #. (itstool) path: page/p
-#: C/forms.page:13
+#: C/forms.page:14
 msgid "The forms dialog supports the following options:"
 msgstr "Formulärdialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/title
-#: C/forms.page:20
+#: C/forms.page:21
 msgid "<cmd>--add-entry</cmd>=<var>FieldName</var>"
 msgstr "<cmd>--add-entry</cmd>=<var>Fältnamn</var>"
 
 #. (itstool) path: item/p
-#: C/forms.page:21
+#: C/forms.page:22
 msgid "Add a new Entry in forms dialog."
 msgstr "Lägg till en ny inmatningsruta i formulärdialogen."
 
 #. (itstool) path: item/title
-#: C/forms.page:25
+#: C/forms.page:26
 msgid "--add-password<cmd/>=<var>FieldName</var>"
 msgstr "--add-password<cmd/>=<var>Fältnamn</var>"
 
 #. (itstool) path: item/p
-#: C/forms.page:26
+#: C/forms.page:27
 msgid "Add a new Password Entry in forms dialog. (Hide text)"
 msgstr "Lägg till en ny lösenordsinmatningsruta i formulärdialogen. (Göm text)"
 
 #. (itstool) path: item/title
-#: C/forms.page:30
+#: C/forms.page:31
 msgid "<cmd>--add-calendar</cmd>=<var>FieldName</var>"
 msgstr "<cmd>--add-calendar</cmd>=<var>Fältnamn</var>"
 
 #. (itstool) path: item/p
-#: C/forms.page:31
+#: C/forms.page:32
 msgid "Add a new Calendar in forms dialog."
 msgstr "Lägg till en ny kalender i formulärdialogen."
 
 #. (itstool) path: item/title
-#: C/forms.page:35 C/scale.page:19
+#: C/forms.page:36 C/scale.page:20
 msgid "<cmd>--text</cmd>=<var>TEXT</var>"
 msgstr "<cmd>--text</cmd>=<var>TEXT</var>"
 
 #. (itstool) path: item/p
-#: C/forms.page:36
+#: C/forms.page:37
 msgid "Set the dialog text."
 msgstr "Ställer in dialogtexten."
 
 #. (itstool) path: item/title
-#: C/forms.page:40
+#: C/forms.page:41
 msgid "<cmd>--separator</cmd>=<var>SEPARATOR</var>"
 msgstr "<cmd>--separator</cmd>=<var>AVGRÄNSARE</var>"
 
 #. (itstool) path: item/p
-#: C/forms.page:41
+#: C/forms.page:42
 msgid "Set output separator character. (Default: | )"
 msgstr "Ställ in tecken för utmatningsavgränsning. (Standardvärde: | )"
 
 #. (itstool) path: item/title
-#: C/forms.page:45
+#: C/forms.page:46
 msgid "<cmd>--forms-date-format</cmd>=<var>PATTERN</var>"
 msgstr "<cmd>--forms-date-format</cmd>=<var>MÖNSTER</var>"
 
 #. (itstool) path: item/p
-#: C/forms.page:46
+#: C/forms.page:47
 msgid ""
 "Set the format for the returned date. The default format depends on your "
 "locale. format must be a Format that is acceptable to the <cmd>strftime</"
@@ -818,12 +806,12 @@ msgstr ""
 "funktionen <cmd>strftime</cmd>, till exempel <var>%A %Y-%m-%d</var>."
 
 #. (itstool) path: page/p
-#: C/forms.page:51
+#: C/forms.page:52
 msgid "The following example script shows how to create a forms dialog:"
 msgstr "Följande exempelskript visar hur man skapar en formulärdialog:"
 
 #. (itstool) path: page/code
-#: C/forms.page:55
+#: C/forms.page:56
 #, no-wrap
 msgid ""
 "\n"
@@ -871,12 +859,12 @@ msgstr ""
 "esac\n"
 
 #. (itstool) path: figure/title
-#: C/forms.page:79
+#: C/forms.page:80
 msgid "Forms Dialog Example"
 msgstr "Exempel på formulärdialog"
 
 #. (itstool) path: figure/desc
-#: C/forms.page:80
+#: C/forms.page:81
 msgid "<app>Zenity</app> forms dialog example"
 msgstr "<app>Zenity</app>-exempel på informationsdialog"
 
@@ -885,11 +873,7 @@ msgstr "<app>Zenity</app>-exempel på informationsdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/forms.page:81
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-forms-screenshot.png' "
-#| "md5='c11fab02e4d51212a538ce6859799d5f'"
+#: C/forms.page:82
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-forms-screenshot.png' "
@@ -918,18 +902,13 @@ msgstr "Nicholas Curran"
 msgid "Yasumichi Akahoshi"
 msgstr "Yasumichi Akahoshi"
 
-#. (itstool) path: license/p
-#: C/index.page:20
-msgid "GNU Free Documentation License (GFDL)"
-msgstr "GNU Free Documentation License (GFDL)"
-
 #. (itstool) path: page/title
-#: C/index.page:24
+#: C/index.page:26
 msgid "Zenity Manual"
 msgstr "Handbok för Zenity"
 
 #. (itstool) path: section/title
-#: C/index.page:27
+#: C/index.page:29
 msgid "Dialogs"
 msgstr "Dialoger"
 
@@ -939,22 +918,22 @@ msgid "Use the <cmd>--info</cmd> option."
 msgstr "Använd flaggan <cmd>--info</cmd>."
 
 #. (itstool) path: page/title
-#: C/info.page:8
+#: C/info.page:9
 msgid "Info Dialog"
 msgstr "Informationsdialog"
 
 #. (itstool) path: page/p
-#: C/info.page:9
+#: C/info.page:10
 msgid "Use the <cmd>--info</cmd> option to create an information dialog."
 msgstr "Använd flaggan <cmd>--info</cmd> för att skapa en informationsdialog."
 
 #. (itstool) path: page/p
-#: C/info.page:13
+#: C/info.page:14
 msgid "The following example script shows how to create an information dialog:"
 msgstr "Följande exempelskript visar hur man skapar en informationsdialog:"
 
 #. (itstool) path: page/code
-#: C/info.page:17
+#: C/info.page:18
 #, no-wrap
 msgid ""
 "\n"
@@ -970,12 +949,12 @@ msgstr ""
 "--text=\"Sammanslagning färdig. Uppdaterade 3 av 10 filer.\"\n"
 
 #. (itstool) path: figure/title
-#: C/info.page:26
+#: C/info.page:27
 msgid "Information Dialog Example"
 msgstr "Exempel på informationsdialog"
 
 #. (itstool) path: figure/desc
-#: C/info.page:27
+#: C/info.page:28
 msgid "<app>Zenity</app> information dialog example"
 msgstr "<app>Zenity</app>-exempel på informationsdialog"
 
@@ -984,11 +963,7 @@ msgstr "<app>Zenity</app>-exempel på informationsdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/info.page:28
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-information-screenshot.png' "
-#| "md5='72386d53a991c46e918ee6dd22795aa6'"
+#: C/info.page:29
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-information-screenshot.png' "
@@ -1004,93 +979,93 @@ msgid ""
 msgstr "<app>Zenity</app> låter dig skapa olika typer av enkla dialoger."
 
 #. (itstool) path: page/title
-#: C/intro.page:8
+#: C/intro.page:9
 msgid "Introduction"
 msgstr "Introduktion"
 
 #. (itstool) path: page/p
-#: C/intro.page:9
+#: C/intro.page:10
 msgid ""
 "<app>Zenity</app> enables you to create the following types of simple dialog:"
 msgstr "<app>Zenity</app> låter dig skapa följande typer av enkla dialoger:"
 
 #. (itstool) path: item/p
-#: C/intro.page:14
+#: C/intro.page:15
 msgid "Calendar"
 msgstr "Kalender"
 
 #. (itstool) path: item/p
-#: C/intro.page:15
+#: C/intro.page:16
 msgid "File selection"
 msgstr "Filval"
 
 #. (itstool) path: item/p
-#: C/intro.page:16
+#: C/intro.page:17
 msgid "Forms"
 msgstr "Formulär"
 
 #. (itstool) path: item/p
-#: C/intro.page:17
+#: C/intro.page:18
 msgid "List"
 msgstr "Lista"
 
 #. (itstool) path: item/p
-#: C/intro.page:18
+#: C/intro.page:19
 msgid "Notification icon"
 msgstr "Aviseringsikon"
 
 #. (itstool) path: item/p
-#: C/intro.page:19
+#: C/intro.page:20
 msgid "Message"
 msgstr "Meddelande"
 
 #. (itstool) path: item/p
-#: C/intro.page:21
+#: C/intro.page:22
 msgid "Error"
 msgstr "Fel"
 
 #. (itstool) path: item/p
-#: C/intro.page:22
+#: C/intro.page:23
 msgid "Information"
 msgstr "Information"
 
 #. (itstool) path: item/p
-#: C/intro.page:23
+#: C/intro.page:24
 msgid "Question"
 msgstr "Fråga"
 
 #. (itstool) path: item/p
-#: C/intro.page:24
+#: C/intro.page:25
 msgid "Warning"
 msgstr "Varning"
 
 #. (itstool) path: item/p
-#: C/intro.page:27
+#: C/intro.page:28
 msgid "Password entry"
 msgstr "Lösenordsinmatning"
 
 #. (itstool) path: item/p
-#: C/intro.page:28
+#: C/intro.page:29
 msgid "Progress"
 msgstr "Förlopp"
 
 #. (itstool) path: item/p
-#: C/intro.page:29
+#: C/intro.page:30
 msgid "Text entry"
 msgstr "Textinmatning"
 
 #. (itstool) path: item/p
-#: C/intro.page:30
+#: C/intro.page:31
 msgid "Text information"
 msgstr "Textinformation"
 
 #. (itstool) path: item/p
-#: C/intro.page:31
+#: C/intro.page:32
 msgid "Scale"
 msgstr "Skala"
 
 #. (itstool) path: item/p
-#: C/intro.page:32
+#: C/intro.page:33
 msgid "Color selection"
 msgstr "Färgval"
 
@@ -1100,12 +1075,12 @@ msgid "Use the <cmd>--list</cmd> option."
 msgstr "Använd flaggan <cmd>--list</cmd>."
 
 #. (itstool) path: page/title
-#: C/list.page:8
+#: C/list.page:9
 msgid "List Dialog"
 msgstr "Listdialog"
 
 #. (itstool) path: page/p
-#: C/list.page:9
+#: C/list.page:10
 msgid ""
 "Use the <cmd>--list</cmd> option to create a list dialog. <app>Zenity</app> "
 "returns the entries in the first column of text of selected rows to standard "
@@ -1116,7 +1091,7 @@ msgstr ""
 "standard ut."
 
 #. (itstool) path: page/p
-#: C/list.page:13
+#: C/list.page:14
 msgid ""
 "Data for the dialog must specified column by column, row by row. Data can be "
 "provided to the dialog through standard input. Each entry must be separated "
@@ -1127,7 +1102,7 @@ msgstr ""
 "med ett nyradstecken."
 
 #. (itstool) path: page/p
-#: C/list.page:17
+#: C/list.page:18
 msgid ""
 "If you use the <cmd>--checklist</cmd> or <cmd>--radiolist</cmd> options, "
 "each row must start with either 'TRUE' or 'FALSE'."
@@ -1136,17 +1111,17 @@ msgstr ""
 "cmd>, måste varje rad börja med antingen 'TRUE' eller 'FALSE'."
 
 #. (itstool) path: page/p
-#: C/list.page:21
+#: C/list.page:22
 msgid "The list dialog supports the following options:"
 msgstr "Listdialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/title
-#: C/list.page:28
+#: C/list.page:29
 msgid "<cmd>--column</cmd>=<var>column</var>"
 msgstr "<cmd>--column</cmd>=<var>kolumn</var>"
 
 #. (itstool) path: item/p
-#: C/list.page:29
+#: C/list.page:30
 msgid ""
 "Specifies the column headers that are displayed in the list dialog. You must "
 "specify a <cmd>--column</cmd> option for each column that you want to "
@@ -1156,39 +1131,39 @@ msgstr ""
 "column</cmd> för varje kolumn som du vill visa i dialogen."
 
 #. (itstool) path: item/title
-#: C/list.page:34
+#: C/list.page:35
 msgid "<cmd>--checklist</cmd>"
 msgstr "<cmd>--checklist</cmd>"
 
 #. (itstool) path: item/p
-#: C/list.page:35
+#: C/list.page:36
 msgid ""
 "Specifies that the first column in the list dialog contains check boxes."
 msgstr "Anger att den första kolumnen i listdialogen innehåller kryssrutor."
 
 #. (itstool) path: item/title
-#: C/list.page:40
+#: C/list.page:41
 msgid "<cmd>--radiolist</cmd>"
 msgstr "<cmd>--radiolist</cmd>"
 
 #. (itstool) path: item/p
-#: C/list.page:41
+#: C/list.page:42
 msgid ""
 "Specifies that the first column in the list dialog contains radio boxes."
 msgstr "Anger att första kolumnen i listdialogen innehåller radioknappar."
 
 #. (itstool) path: item/title
-#: C/list.page:46 C/text.page:25
+#: C/list.page:47 C/text.page:26
 msgid "<cmd>--editable</cmd>"
 msgstr "<cmd>--editable</cmd>"
 
 #. (itstool) path: item/p
-#: C/list.page:47
+#: C/list.page:48
 msgid "Allows the displayed items to be edited."
 msgstr "Tillåter att de visade posterna kan redigeras."
 
 #. (itstool) path: item/p
-#: C/list.page:53
+#: C/list.page:54
 msgid ""
 "Specifies what string is used when the list dialog returns the selected "
 "entries."
@@ -1197,12 +1172,12 @@ msgstr ""
 "posterna."
 
 #. (itstool) path: item/title
-#: C/list.page:58
+#: C/list.page:59
 msgid "<cmd>--print-column</cmd>=<var>column</var>"
 msgstr "<cmd>--print-column</cmd>=<var>kolumn</var>"
 
 #. (itstool) path: item/p
-#: C/list.page:59
+#: C/list.page:60
 msgid ""
 "Specifies what column should be printed out upon selection. The default "
 "column is '1'. 'ALL' can be used to print out all columns in the list."
@@ -1211,12 +1186,12 @@ msgstr ""
 "\"1\". \"ALL\" kan användas för att skriva ut alla kolumner i listan."
 
 #. (itstool) path: page/p
-#: C/list.page:66
+#: C/list.page:67
 msgid "The following example script shows how to create a list dialog:"
 msgstr "Följande exempelskript visar hur man skapar en listdialog:"
 
 #. (itstool) path: page/code
-#: C/list.page:69
+#: C/list.page:70
 #, no-wrap
 msgid ""
 "\n"
@@ -1240,12 +1215,12 @@ msgstr ""
 "    393823 Critical \"Menu editing does not work in GNOME 2.0\"\n"
 
 #. (itstool) path: figure/title
-#: C/list.page:82
+#: C/list.page:83
 msgid "List Dialog Example"
 msgstr "Exempel på listdialog"
 
 #. (itstool) path: figure/desc
-#: C/list.page:83
+#: C/list.page:84
 msgid "<app>Zenity</app> list dialog example"
 msgstr "<app>Zenity</app>-exempel på listdialog"
 
@@ -1254,11 +1229,7 @@ msgstr "<app>Zenity</app>-exempel på listdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/list.page:84
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-list-screenshot.png' "
-#| "md5='8bd9ad9c760516a966d3590b2019fa1e'"
+#: C/list.page:85
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-list-screenshot.png' "
@@ -1277,12 +1248,12 @@ msgstr ""
 "\"question\">Fråga</link>, <link xref=\"warning\">Varning</link>"
 
 #. (itstool) path: page/title
-#: C/message.page:13
+#: C/message.page:14
 msgid "Message Dialog"
 msgstr "Meddelandedialoger"
 
 #. (itstool) path: page/p
-#: C/message.page:14
+#: C/message.page:15
 msgid ""
 "For each type, use the <cmd>--text</cmd> option to specify the text that is "
 "displayed in the dialog."
@@ -1296,23 +1267,23 @@ msgid "Use the <cmd>--notification</cmd> option."
 msgstr "Använd flaggan <cmd>--notification</cmd>."
 
 #. (itstool) path: page/title
-#: C/notification.page:8
+#: C/notification.page:9
 msgid "Notification Icon"
 msgstr "Aviseringsikon"
 
 #. (itstool) path: page/p
-#: C/notification.page:9
+#: C/notification.page:10
 msgid "Use the <cmd>--notification</cmd> option to create a notification icon."
 msgstr ""
 "Använd flaggan <cmd>--notification</cmd> för att skapa en aviseringsikon."
 
 #. (itstool) path: item/p
-#: C/notification.page:14
+#: C/notification.page:15
 msgid "Specifies the text that is displayed in the notification area."
 msgstr "Anger texten som visas i aviseringsytan."
 
 #. (itstool) path: item/title
-#: C/notification.page:17
+#: C/notification.page:18
 msgid ""
 "<cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', "
 "tooltip: '<var>text</var>', visible: '<var>text</var>',"
@@ -1321,7 +1292,7 @@ msgstr ""
 "tooltip: '<var>text</var>', visible: '<var>text</var>',"
 
 #. (itstool) path: item/p
-#: C/notification.page:18
+#: C/notification.page:19
 msgid ""
 "Listens for commands at standard input. At least one command must be "
 "specified. Commands are comma separated. A command must be followed by a "
@@ -1332,7 +1303,7 @@ msgstr ""
 "värde."
 
 #. (itstool) path: note/p
-#: C/notification.page:20
+#: C/notification.page:21
 msgid ""
 "The <cmd>icon</cmd> command also accepts four stock icon values such as "
 "<var>error</var>, <var>info</var>, <var>question</var> and <var>warning</"
@@ -1343,12 +1314,12 @@ msgstr ""
 "var>."
 
 #. (itstool) path: page/p
-#: C/notification.page:25
+#: C/notification.page:26
 msgid "The following example script shows how to create a notification icon:"
 msgstr "Följande exempelskript visar hur man skapar en aviseringsikon:"
 
 #. (itstool) path: page/code
-#: C/notification.page:26
+#: C/notification.page:27
 #, no-wrap
 msgid ""
 "\n"
@@ -1368,12 +1339,12 @@ msgstr ""
 "  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:35
+#: C/notification.page:36
 msgid "Notification Icon Example"
 msgstr "Exempel på aviseringsikon"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:36
+#: C/notification.page:37
 msgid "<app>Zenity</app> notification icon example"
 msgstr "<app>Zenity</app>-exempel på aviseringsikon"
 
@@ -1382,11 +1353,7 @@ msgstr "<app>Zenity</app>-exempel på aviseringsikon"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:37
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-notification-screenshot.png' "
-#| "md5='49ebe82aa255c5536d018f2b4f919c51'"
+#: C/notification.page:38
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-screenshot.png' "
@@ -1396,7 +1363,7 @@ msgstr ""
 "md5='723bd2d1283f5a888967815991cbe858'"
 
 #. (itstool) path: page/p
-#: C/notification.page:40
+#: C/notification.page:41
 msgid ""
 "The following example script shows how to create a notification icon along "
 "with <cmd>--listen</cmd>:"
@@ -1405,7 +1372,7 @@ msgstr ""
 "med <cmd>--listen</cmd>:"
 
 #. (itstool) path: page/code
-#: C/notification.page:41
+#: C/notification.page:42
 #, no-wrap
 msgid ""
 "\n"
@@ -1423,12 +1390,12 @@ msgstr ""
 "  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:49
+#: C/notification.page:50
 msgid "Notification Icon with <cmd>--listen</cmd> Example"
 msgstr "Exempel på aviseringsikon med <cmd>--listen</cmd>"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:50
+#: C/notification.page:51
 msgid "<app>Zenity</app> notification with <cmd>--listen</cmd> example"
 msgstr "<app>Zenity</app>-aviseringsexempel med <cmd>--listen</cmd>"
 
@@ -1437,11 +1404,7 @@ msgstr "<app>Zenity</app>-aviseringsexempel med <cmd>--listen</cmd>"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:51
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-notification-listen-screenshot.png' "
-#| "md5='e7e6edba1c794426c4ce749bc355b25d'"
+#: C/notification.page:52
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
@@ -1456,41 +1419,41 @@ msgid "Use the <cmd>--password</cmd> option."
 msgstr "Använd flaggan <cmd>--password</cmd>."
 
 #. (itstool) path: page/title
-#: C/password.page:8
+#: C/password.page:9
 msgid "Password Dialog"
 msgstr "Lösenordsdialog"
 
 #. (itstool) path: page/p
-#: C/password.page:9
+#: C/password.page:10
 msgid "Use the <cmd>--password</cmd> option to create a password entry dialog."
 msgstr ""
 "Använd flaggan <cmd>--password</cmd> för att skapa en "
 "lösenordsinmatningsdialog."
 
 #. (itstool) path: page/p
-#: C/password.page:12
+#: C/password.page:13
 msgid "The password entry dialog supports the following options:"
 msgstr "Lösenordsinmatningsdialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/title
-#: C/password.page:18
+#: C/password.page:19
 msgid "<cmd>--username</cmd>"
 msgstr "<cmd>--username</cmd>"
 
 #. (itstool) path: item/p
-#: C/password.page:19
+#: C/password.page:20
 msgid "Display the username field."
 msgstr "Visa fältet användarnamn."
 
 #. (itstool) path: page/p
-#: C/password.page:23
+#: C/password.page:24
 msgid ""
 "The following example script shows how to create a password entry dialog:"
 msgstr ""
 "Följande exempelskript visar hur man skapar en lösenordsinmatningsdialog:"
 
 #. (itstool) path: page/code
-#: C/password.page:27
+#: C/password.page:28
 #, no-wrap
 msgid ""
 "\n"
@@ -1526,12 +1489,12 @@ msgstr ""
 "esac\n"
 
 #. (itstool) path: figure/title
-#: C/password.page:45
+#: C/password.page:46
 msgid "Password Entry Dialog Example"
 msgstr "Exempel på lösenordsinmatningsdialog"
 
 #. (itstool) path: figure/desc
-#: C/password.page:46
+#: C/password.page:47
 msgid "<app>Zenity</app> password entry dialog example"
 msgstr "<app>Zenity</app>-exempel på lösenordsinmatningsdialog"
 
@@ -1540,11 +1503,7 @@ msgstr "<app>Zenity</app>-exempel på lösenordsinmatningsdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/password.page:47
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-password-screenshot.png' "
-#| "md5='6adbeb624a307f78072593d6d1c6def6'"
+#: C/password.page:48
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-password-screenshot.png' "
@@ -1559,17 +1518,17 @@ msgid "Use the <cmd>--progress</cmd> option."
 msgstr "Använd flaggan <cmd>--progress</cmd>."
 
 #. (itstool) path: page/title
-#: C/progress.page:8
+#: C/progress.page:9
 msgid "Progress Dialog"
 msgstr "Förloppsdialog"
 
 #. (itstool) path: page/p
-#: C/progress.page:9
+#: C/progress.page:10
 msgid "Use the <cmd>--progress</cmd> option to create a progress dialog."
 msgstr "Använd flaggan <cmd>--progress</cmd> för att skapa en förloppsdialog."
 
 #. (itstool) path: page/p
-#: C/progress.page:13
+#: C/progress.page:14
 msgid ""
 "<app>Zenity</app> reads data from standard input line by line. If a line is "
 "prefixed with #, the text is updated with the text on that line. If a line "
@@ -1580,42 +1539,42 @@ msgstr ""
 "endast innehåller en tal, kommer procenttalet att uppdateras med det talet."
 
 #. (itstool) path: page/p
-#: C/progress.page:17
+#: C/progress.page:18
 msgid "The progress dialog supports the following options:"
 msgstr "Förloppsdialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/p
-#: C/progress.page:25
+#: C/progress.page:26
 msgid "Specifies the text that is displayed in the progress dialog."
 msgstr "Anger texten som visas i förloppsdialogen."
 
 #. (itstool) path: item/title
-#: C/progress.page:29
+#: C/progress.page:30
 msgid "<cmd>--percentage</cmd>=<var>percentage</var>"
 msgstr "<cmd>--percentage</cmd>=<var>procenttal</var>"
 
 #. (itstool) path: item/p
-#: C/progress.page:30
+#: C/progress.page:31
 msgid "Specifies the initial percentage that is set in the progress dialog."
 msgstr "Anger den initiala procenttalet som är inställt i förloppsdialogen."
 
 #. (itstool) path: item/title
-#: C/progress.page:34
+#: C/progress.page:35
 msgid "<cmd>--auto-close</cmd>"
 msgstr "<cmd>--auto-close</cmd>"
 
 #. (itstool) path: item/p
-#: C/progress.page:35
+#: C/progress.page:36
 msgid "Closes the progress dialog when 100% has been reached."
 msgstr "Stänger förloppsdialogen när 100% har nåtts."
 
 #. (itstool) path: item/title
-#: C/progress.page:39
+#: C/progress.page:40
 msgid "<cmd>--pulsate</cmd>"
 msgstr "<cmd>--pulsate</cmd>"
 
 #. (itstool) path: item/p
-#: C/progress.page:40
+#: C/progress.page:41
 msgid ""
 "Specifies that the progress bar pulsates until an EOF character is read from "
 "standard input."
@@ -1624,12 +1583,12 @@ msgstr ""
 "standard in."
 
 #. (itstool) path: page/p
-#: C/progress.page:45
+#: C/progress.page:46
 msgid "The following example script shows how to create a progress dialog:"
 msgstr "Följande exempelskript visar hur man skapar en förloppsdialog:"
 
 #. (itstool) path: page/code
-#: C/progress.page:49
+#: C/progress.page:50
 #, no-wrap
 msgid ""
 "\n"
@@ -1679,12 +1638,12 @@ msgstr ""
 "fi\n"
 
 #. (itstool) path: figure/title
-#: C/progress.page:75
+#: C/progress.page:76
 msgid "Progress Dialog Example"
 msgstr "Exempel på förloppsdialog"
 
 #. (itstool) path: figure/desc
-#: C/progress.page:76
+#: C/progress.page:77
 msgid "<app>Zenity</app> progress dialog example"
 msgstr "<app>Zenity</app>-exempel på förloppsdialog"
 
@@ -1693,11 +1652,7 @@ msgstr "<app>Zenity</app>-exempel på förloppsdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/progress.page:77
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-error-screenshot.png' "
-#| "md5='a4b287f89625cfd54ca38bc404d8bdf6'"
+#: C/progress.page:78
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-progress-screenshot.png' "
@@ -1712,22 +1667,22 @@ msgid "Use the <cmd>--question</cmd> option."
 msgstr "Använd flaggan <cmd>--question</cmd>."
 
 #. (itstool) path: page/title
-#: C/question.page:8
+#: C/question.page:9
 msgid "Question Dialog"
 msgstr "Frågedialog"
 
 #. (itstool) path: page/p
-#: C/question.page:9
+#: C/question.page:10
 msgid "Use the <cmd>--question</cmd> option to create a question dialog."
 msgstr "Använd flaggan <cmd>--question</cmd> för att skapa en frågedialog."
 
 #. (itstool) path: page/p
-#: C/question.page:13
+#: C/question.page:14
 msgid "The following example script shows how to create a question dialog:"
 msgstr "Följande exempelskript visar hur man skapar en frågedialog:"
 
 #. (itstool) path: page/code
-#: C/question.page:17
+#: C/question.page:18
 #, no-wrap
 msgid ""
 "\n"
@@ -1743,12 +1698,12 @@ msgstr ""
 "--text=\"Är du säker på att du vill fortsätta?\"\n"
 
 #. (itstool) path: figure/title
-#: C/question.page:26
+#: C/question.page:27
 msgid "Question Dialog Example"
 msgstr "Exempel på frågedialog"
 
 #. (itstool) path: figure/desc
-#: C/question.page:27
+#: C/question.page:28
 msgid "<app>Zenity</app> question dialog example"
 msgstr "<app>Zenity</app>-exempel på frågedialog"
 
@@ -1757,11 +1712,7 @@ msgstr "<app>Zenity</app>-exempel på frågedialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/question.page:28
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-question-screenshot.png' "
-#| "md5='5889e2a57b9d1885f22977587a269610'"
+#: C/question.page:29
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-question-screenshot.png' "
@@ -1776,32 +1727,32 @@ msgid "Use the <cmd>--scale</cmd> option."
 msgstr "Använd flaggan <cmd>--scale</cmd>."
 
 #. (itstool) path: page/title
-#: C/scale.page:8
+#: C/scale.page:9
 msgid "Scale Dialog"
 msgstr "Skaldialog"
 
 #. (itstool) path: page/p
-#: C/scale.page:9
+#: C/scale.page:10
 msgid "Use the <cmd>--scale</cmd> option to create a scale dialog."
 msgstr "Använd flaggan <cmd>--scale</cmd> för att skapa en skaldialog."
 
 #. (itstool) path: page/p
-#: C/scale.page:12
+#: C/scale.page:13
 msgid "The scale dialog supports the following options:"
 msgstr "Skaldialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/p
-#: C/scale.page:20
+#: C/scale.page:21
 msgid "Set the dialog text. (Default: Adjust the scale value)"
 msgstr "Ställ in dialogtexten. (Standardvärde: Justera skalningsvärdet)"
 
 #. (itstool) path: item/title
-#: C/scale.page:24
+#: C/scale.page:25
 msgid "<cmd>--value</cmd>=<var>VALUE</var>"
 msgstr "<cmd>--value</cmd>=<var>VÄRDE</var>"
 
 #. (itstool) path: item/p
-#: C/scale.page:25
+#: C/scale.page:26
 msgid ""
 "Set initial value. (Default: 0) You must specify value between minimum value "
 "to maximum value."
@@ -1810,62 +1761,62 @@ msgstr ""
 "minimivärdet och maximivärdet."
 
 #. (itstool) path: item/title
-#: C/scale.page:29
+#: C/scale.page:30
 msgid "<cmd>--min-value</cmd>=<var>VALUE</var>"
 msgstr "<cmd>--min-value</cmd>=<var>VÄRDE</var>"
 
 #. (itstool) path: item/p
-#: C/scale.page:30
+#: C/scale.page:31
 msgid "Set minimum value. (Default: 0)"
 msgstr "Ställ in minimivärde. (Standardvärde: 0)"
 
 #. (itstool) path: item/title
-#: C/scale.page:34
+#: C/scale.page:35
 msgid "<cmd>--max-value</cmd>=<var>VALUE</var>"
 msgstr "<cmd>--max-value</cmd>=<var>VÄRDE</var>"
 
 #. (itstool) path: item/p
-#: C/scale.page:35
+#: C/scale.page:36
 msgid "Set maximum value. (Default: 100)"
 msgstr "Ställ in maximivärde. (Standardvärde: 100)"
 
 #. (itstool) path: item/title
-#: C/scale.page:39
+#: C/scale.page:40
 msgid "<cmd>--step</cmd>=<var>VALUE</var>"
 msgstr "<cmd>--step</cmd>=<var>VÄRDE</var>"
 
 #. (itstool) path: item/p
-#: C/scale.page:40
+#: C/scale.page:41
 msgid "Set step size. (Default: 1)"
 msgstr "Ställ in stegstorlek. (Standardvärde: 1)"
 
 #. (itstool) path: item/title
-#: C/scale.page:44
+#: C/scale.page:45
 msgid "<cmd>--print-partial</cmd>"
 msgstr "<cmd>--print-partial</cmd>"
 
 #. (itstool) path: item/p
-#: C/scale.page:45
+#: C/scale.page:46
 msgid "Print value to standard output, whenever a value is changed."
 msgstr "Skriv ut värde till standard ut, närhelst ett värde ändras."
 
 #. (itstool) path: item/title
-#: C/scale.page:49
+#: C/scale.page:50
 msgid "<cmd>--hide-value</cmd>"
 msgstr "<cmd>--hide-value</cmd>"
 
 #. (itstool) path: item/p
-#: C/scale.page:50
+#: C/scale.page:51
 msgid "Hide value on dialog."
 msgstr "Dölj värde i dialog."
 
 #. (itstool) path: page/p
-#: C/scale.page:55
+#: C/scale.page:56
 msgid "The following example script shows how to create a scale dialog:"
 msgstr "Följande exempelskript visar hur man skapar en skaldialog:"
 
 #. (itstool) path: page/code
-#: C/scale.page:59
+#: C/scale.page:60
 #, no-wrap
 msgid ""
 "\n"
@@ -1897,12 +1848,12 @@ msgstr ""
 "esac\n"
 
 #. (itstool) path: figure/title
-#: C/scale.page:75
+#: C/scale.page:76
 msgid "Scale Dialog Example"
 msgstr "Exempel på skaldialog"
 
 #. (itstool) path: figure/desc
-#: C/scale.page:76
+#: C/scale.page:77
 msgid "<app>Zenity</app> scale dialog example"
 msgstr "<app>Zenity</app>-exempel på skaldialog"
 
@@ -1911,11 +1862,7 @@ msgstr "<app>Zenity</app>-exempel på skaldialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/scale.page:77
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-scale-screenshot.png' "
-#| "md5='d44259a5b5b6e6ba0aceffd8501d0873'"
+#: C/scale.page:78
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-scale-screenshot.png' "
@@ -1930,12 +1877,12 @@ msgid "Use the <cmd>--text-info</cmd> option."
 msgstr "Använd flaggan <cmd>--text-info</cmd>."
 
 #. (itstool) path: page/title
-#: C/text.page:8
+#: C/text.page:9
 msgid "Text Information Dialog"
 msgstr "Textinformationsdialog"
 
 #. (itstool) path: page/p
-#: C/text.page:9
+#: C/text.page:10
 msgid ""
 "Use the <cmd>--text-info</cmd> option to create a text information dialog."
 msgstr ""
@@ -1943,17 +1890,17 @@ msgstr ""
 "textinformationsdialog."
 
 #. (itstool) path: page/p
-#: C/text.page:13
+#: C/text.page:14
 msgid "The text information dialog supports the following options:"
 msgstr "Textinformationsdialogen har stöd för följande flaggor:"
 
 #. (itstool) path: item/p
-#: C/text.page:21
+#: C/text.page:22
 msgid "Specifies a file that is loaded in the text information dialog."
 msgstr "Anger en fil som läses in i textinformationsdialogen."
 
 #. (itstool) path: item/p
-#: C/text.page:26
+#: C/text.page:27
 msgid ""
 "Allows the displayed text to be edited. The edited text is returned to "
 "standard output when the dialog is closed."
@@ -1962,57 +1909,57 @@ msgstr ""
 "till standard ut när dialogrutan stängs."
 
 #. (itstool) path: item/title
-#: C/text.page:30
+#: C/text.page:31
 msgid "<cmd>--font</cmd>=<var>FONT</var>"
 msgstr "<cmd>--font</cmd>=<var>TYPSNITT</var>"
 
 #. (itstool) path: item/p
-#: C/text.page:31
+#: C/text.page:32
 msgid "Specifies the text font."
 msgstr "Anger texttypsnittet."
 
 #. (itstool) path: item/title
-#: C/text.page:35
+#: C/text.page:36
 msgid "<cmd>--checkbox</cmd>=<var>TEXT</var>"
 msgstr "<cmd>--checkbox</cmd>=<var>TEXT</var>"
 
 #. (itstool) path: item/p
-#: C/text.page:36
+#: C/text.page:37
 msgid "Enable a checkbox for use like a 'I read and accept the terms.'"
 msgstr ""
 "Aktivera en kryssruta för användning i stil med ”Jag har läst och accepterar "
 "villkoren.”"
 
 #. (itstool) path: item/title
-#: C/text.page:40
+#: C/text.page:41
 msgid "<cmd>--html</cmd>"
 msgstr "<cmd>--html</cmd>"
 
 #. (itstool) path: item/p
-#: C/text.page:41
+#: C/text.page:42
 msgid "Enable html support."
 msgstr "Aktivera html-stöd."
 
 #. (itstool) path: item/title
-#: C/text.page:45
+#: C/text.page:46
 msgid "<cmd>--url</cmd>=<var>URL</var>"
 msgstr "<cmd>--url</cmd>=<var>URL</var>"
 
 #. (itstool) path: item/p
-#: C/text.page:46
+#: C/text.page:47
 msgid "Sets an url instead of a file. Only works if you use --html option."
 msgstr ""
 "Ställer in en url istället för en fil. Fungerar endast om du använder "
 "flaggan --html."
 
 #. (itstool) path: page/p
-#: C/text.page:51
+#: C/text.page:52
 msgid ""
 "The following example script shows how to create a text information dialog:"
 msgstr "Följande exempelskript visar hur man skapar en textinformationsdialog:"
 
 #. (itstool) path: page/code
-#: C/text.page:55
+#: C/text.page:56
 #, no-wrap
 msgid ""
 "\n"
@@ -2064,12 +2011,12 @@ msgstr ""
 "esac\n"
 
 #. (itstool) path: figure/title
-#: C/text.page:81
+#: C/text.page:82
 msgid "Text Information Dialog Example"
 msgstr "Exempel på textinformationsdialog"
 
 #. (itstool) path: figure/desc
-#: C/text.page:82
+#: C/text.page:83
 msgid "<app>Zenity</app> text information dialog example"
 msgstr "<app>Zenity</app>-exempel på textinformationsdialog"
 
@@ -2078,11 +2025,7 @@ msgstr "<app>Zenity</app>-exempel på textinformationsdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/text.page:83
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-text-screenshot.png' "
-#| "md5='79446b388fa6c3c3a619c8d6565b9f61'"
+#: C/text.page:84
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-text-screenshot.png' "
@@ -2101,12 +2044,12 @@ msgstr ""
 "interagerar grafiskt med användaren."
 
 #. (itstool) path: page/title
-#: C/usage.page:8
+#: C/usage.page:9
 msgid "Usage"
 msgstr "Användning"
 
 #. (itstool) path: page/p
-#: C/usage.page:9
+#: C/usage.page:10
 msgid ""
 "When you write scripts, you can use <app>Zenity</app> to create simple "
 "dialogs that interact graphically with the user, as follows:"
@@ -2115,7 +2058,7 @@ msgstr ""
 "dialogrutor som interagerar grafiskt med användaren enligt följande:"
 
 #. (itstool) path: item/p
-#: C/usage.page:14
+#: C/usage.page:15
 msgid ""
 "You can create a dialog to obtain information from the user. For example, "
 "you can prompt the user to select a date from a calendar dialog, or to "
@@ -2126,7 +2069,7 @@ msgstr ""
 "kalenderdialog, eller att välja en fil från en filväljardialog."
 
 #. (itstool) path: item/p
-#: C/usage.page:19
+#: C/usage.page:20
 msgid ""
 "You can create a dialog to provide the user with information. For example, "
 "you can use a progress dialog to indicate the current status of an "
@@ -2138,7 +2081,7 @@ msgstr ""
 "användaren."
 
 #. (itstool) path: page/p
-#: C/usage.page:24
+#: C/usage.page:25
 msgid ""
 "When the user closes the dialog, <app>Zenity</app> prints the text produced "
 "by the dialog to standard output."
@@ -2147,7 +2090,7 @@ msgstr ""
 "producerats av dialogrutan till standard ut."
 
 #. (itstool) path: note/p
-#: C/usage.page:29
+#: C/usage.page:30
 msgid ""
 "When you write <app>Zenity</app> commands, ensure that you place quotation "
 "marks around each argument."
@@ -2156,39 +2099,39 @@ msgstr ""
 "citationstecken runt varje argument."
 
 #. (itstool) path: note/p
-#: C/usage.page:32
+#: C/usage.page:33
 msgid "For example, use:"
 msgstr "Använd till exempel:"
 
 #. (itstool) path: note/screen
-#: C/usage.page:33
+#: C/usage.page:34
 #, no-wrap
 msgid "zenity --calendar --title=\"Holiday Planner\""
 msgstr "zenity --calendar --title=\"Min helgplanerare\""
 
 #. (itstool) path: note/p
-#: C/usage.page:34
+#: C/usage.page:35
 msgid "Do not use:"
 msgstr "Använd inte:"
 
 #. (itstool) path: note/screen
-#: C/usage.page:35
+#: C/usage.page:36
 #, no-wrap
 msgid "zenity --calendar --title=Holiday Planner"
 msgstr "zenity --calendar --title=Min helgplanerare"
 
 #. (itstool) path: note/p
-#: C/usage.page:36
+#: C/usage.page:37
 msgid "If you do not use quotation marks, you might get unexpected results."
 msgstr "Om du inte använder citationstecken kan du få oväntade resultat."
 
 #. (itstool) path: section/title
-#: C/usage.page:42
+#: C/usage.page:43
 msgid "Access Keys"
 msgstr "Snabbtangenter"
 
 #. (itstool) path: section/p
-#: C/usage.page:43
+#: C/usage.page:44
 msgid ""
 "An access key is a key that enables you to perform an action from the "
 "keyboard rather than use the mouse to choose a command from a menu or "
@@ -2201,7 +2144,7 @@ msgstr ""
 "bokstav i en meny eller dialogflagga."
 
 #. (itstool) path: section/p
-#: C/usage.page:46
+#: C/usage.page:47
 msgid ""
 "Some <app>Zenity</app> dialogs support the use of access keys. To specify "
 "the character to use as the access key, place an underscore before that "
@@ -2214,38 +2157,38 @@ msgstr ""
 "exempel visar hur man specificerar bokstaven ”V” som en snabbtangent:"
 
 #. (itstool) path: section/screen
-#: C/usage.page:49
+#: C/usage.page:50
 #, no-wrap
 msgid "<input>\"_Choose a name\".</input>"
 msgstr "<input>\"_Välj ett namn\".</input>"
 
 #. (itstool) path: section/title
-#: C/usage.page:53
+#: C/usage.page:54
 msgid "Exit Codes"
 msgstr "Avslutningskoder"
 
 #. (itstool) path: section/p
-#: C/usage.page:54
+#: C/usage.page:55
 msgid "Zenity returns the following exit codes:"
 msgstr "Zenity returnerar följande avslutningskoder:"
 
 #. (itstool) path: td/p
-#: C/usage.page:62
+#: C/usage.page:63
 msgid "Exit Code"
 msgstr "Avslutningskod"
 
 #. (itstool) path: td/p
-#: C/usage.page:64
+#: C/usage.page:65
 msgid "Description"
 msgstr "Beskrivning"
 
 #. (itstool) path: td/p
-#: C/usage.page:70
+#: C/usage.page:71
 msgid "<var>0</var>"
 msgstr "<var>0</var>"
 
 #. (itstool) path: td/p
-#: C/usage.page:73
+#: C/usage.page:74
 msgid ""
 "The user has pressed either <gui style=\"button\">OK</gui> or <gui style="
 "\"button\">Close</gui>."
@@ -2254,12 +2197,12 @@ msgstr ""
 "style=\"button\">Stäng</gui>."
 
 #. (itstool) path: td/p
-#: C/usage.page:78
+#: C/usage.page:79
 msgid "<var>1</var>"
 msgstr "<var>1</var>"
 
 #. (itstool) path: td/p
-#: C/usage.page:81
+#: C/usage.page:82
 msgid ""
 "The user has either pressed <gui style=\"button\">Cancel</gui>, or used the "
 "window functions to close the dialog."
@@ -2268,52 +2211,52 @@ msgstr ""
 "använt fönsterfunktioner för att stänga dialogrutan."
 
 #. (itstool) path: td/p
-#: C/usage.page:86
+#: C/usage.page:87
 msgid "<var>-1</var>"
 msgstr "<var>-1</var>"
 
 #. (itstool) path: td/p
-#: C/usage.page:89
+#: C/usage.page:90
 msgid "An unexpected error has occurred."
 msgstr "Ett oväntat fel har inträffat."
 
 #. (itstool) path: td/p
-#: C/usage.page:94
+#: C/usage.page:95
 msgid "<var>5</var>"
 msgstr "<var>5</var>"
 
 #. (itstool) path: td/p
-#: C/usage.page:97
+#: C/usage.page:98
 msgid "The dialog has been closed because the timeout has been reached."
 msgstr "Dialogrutan har stängts därför att tidsgränsen har nåtts."
 
 #. (itstool) path: section/title
-#: C/usage.page:109
+#: C/usage.page:110
 msgid "General Options"
 msgstr "Allmänna alternativ"
 
 #. (itstool) path: section/p
-#: C/usage.page:111
+#: C/usage.page:112
 msgid "All Zenity dialogs support the following general options:"
 msgstr "Alla Zenity-dialoger har stöd för följande allmänna flaggor:"
 
 #. (itstool) path: item/title
-#: C/usage.page:118
+#: C/usage.page:119
 msgid "<cmd>--title</cmd>=<var>title</var>"
 msgstr "<cmd>--title</cmd>=<var>titel</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:119
+#: C/usage.page:120
 msgid "Specifies the title of a dialog."
 msgstr "Anger titeln på en dialogruta."
 
 #. (itstool) path: item/title
-#: C/usage.page:123
+#: C/usage.page:124
 msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
 msgstr "<cmd>--window-icon</cmd>=<var>ikonsökväg</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:124
+#: C/usage.page:125
 msgid ""
 "Specifies the icon that is displayed in the window frame of the dialog. "
 "There are 4 stock icons also available by providing the following keywords - "
@@ -2324,222 +2267,222 @@ msgstr ""
 "nyckelord - \"info\", \"warning\", \"question\" och \"error\"."
 
 #. (itstool) path: item/title
-#: C/usage.page:131
+#: C/usage.page:132
 msgid "<cmd>--width</cmd>=<var>width</var>"
 msgstr "<cmd>--width</cmd>=<var>bredd</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:132
+#: C/usage.page:133
 msgid "Specifies the width of the dialog."
 msgstr "Anger bredden på dialogrutan."
 
 #. (itstool) path: item/title
-#: C/usage.page:136
+#: C/usage.page:137
 msgid "<cmd>--height</cmd>=<var>height</var>"
 msgstr "<cmd>--height</cmd>=<var>höjd</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:137
+#: C/usage.page:138
 msgid "Specifies the height of the dialog."
 msgstr "Anger höjden på dialogrutan."
 
 #. (itstool) path: item/title
-#: C/usage.page:141
+#: C/usage.page:142
 msgid "<cmd>--timeout</cmd>=<var>timeout</var>"
 msgstr "<cmd>--timeout</cmd>=<var>tidsgräns</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:142
+#: C/usage.page:143
 msgid "Specifies the timeout in seconds after which the dialog is closed."
 msgstr "Anger tidsgränsen i sekunder efter vilken dialogrutan stängs."
 
 #. (itstool) path: section/title
-#: C/usage.page:152
+#: C/usage.page:153
 msgid "Help Options"
 msgstr "Hjälpflaggor"
 
 #. (itstool) path: section/p
-#: C/usage.page:154
+#: C/usage.page:155
 msgid "Zenity provides the following help options:"
 msgstr "Zenity tillhandahåller följande hjälpflaggor:"
 
 #. (itstool) path: item/title
-#: C/usage.page:161
+#: C/usage.page:162
 msgid "<cmd>--help</cmd>"
 msgstr "<cmd>--help</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:162
+#: C/usage.page:163
 msgid "Displays shortened help text."
 msgstr "Visar förkortad hjälptext."
 
 #. (itstool) path: item/title
-#: C/usage.page:166
+#: C/usage.page:167
 msgid "<cmd>--help-all</cmd>"
 msgstr "<cmd>--help-all</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:167
+#: C/usage.page:168
 msgid "Displays full help text for all dialogs."
 msgstr "Visar fullständig hjälptext för alla dialoger."
 
 #. (itstool) path: item/title
-#: C/usage.page:171
+#: C/usage.page:172
 msgid "<cmd>--help-general</cmd>"
 msgstr "<cmd>--help-general</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:172
+#: C/usage.page:173
 msgid "Displays help text for general dialog options."
 msgstr "Visar hjälptext för allmänna dialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:176
+#: C/usage.page:177
 msgid "<cmd>--help-calendar</cmd>"
 msgstr "<cmd>--help-calendar</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:177
+#: C/usage.page:178
 msgid "Displays help text for calendar dialog options."
 msgstr "Visar hjälptext för kalenderdialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:181
+#: C/usage.page:182
 msgid "<cmd>--help-entry</cmd>"
 msgstr "<cmd>--help-entry</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:182
+#: C/usage.page:183
 msgid "Displays help text for text entry dialog options."
 msgstr "Visar hjälptext för textinmatningsdialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:186
+#: C/usage.page:187
 msgid "<cmd>--help-error</cmd>"
 msgstr "<cmd>--help-error</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:187
+#: C/usage.page:188
 msgid "Displays help text for error dialog options."
 msgstr "Visar hjälptext för feldialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:191
+#: C/usage.page:192
 msgid "<cmd>--help-info</cmd>"
 msgstr "<cmd>--help-info</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:192
+#: C/usage.page:193
 msgid "Displays help text for information dialog options."
 msgstr "Visar hjälptext för informationsdialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:196
+#: C/usage.page:197
 msgid "<cmd>--help-file-selection</cmd>"
 msgstr "<cmd>--help-file-selection</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:197
+#: C/usage.page:198
 msgid "Displays help text for file selection dialog options."
 msgstr "Visar hjälptext för filväljardialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:201
+#: C/usage.page:202
 msgid "<cmd>--help-list</cmd>"
 msgstr "<cmd>--help-list</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:202
+#: C/usage.page:203
 msgid "Displays help text for list dialog options."
 msgstr "Visar hjälptext för listdialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:206
+#: C/usage.page:207
 msgid "<cmd>--help-notification</cmd>"
 msgstr "<cmd>--help-notification</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:207
+#: C/usage.page:208
 msgid "Displays help text for notification icon options."
 msgstr "Visar hjälptext för aviseringsikonflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:211
+#: C/usage.page:212
 msgid "<cmd>--help-progress</cmd>"
 msgstr "<cmd>--help-progress</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:212
+#: C/usage.page:213
 msgid "Displays help text for progress dialog options."
 msgstr "Visar hjälptext för förloppsdialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:216
+#: C/usage.page:217
 msgid "<cmd>--help-question</cmd>"
 msgstr "<cmd>--help-question</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:217
+#: C/usage.page:218
 msgid "Displays help text for question dialog options."
 msgstr "Visar hjälptext för frågedialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:221
+#: C/usage.page:222
 msgid "<cmd>--help-warning</cmd>"
 msgstr "<cmd>--help-warning</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:222
+#: C/usage.page:223
 msgid "Displays help text for warning dialog options."
 msgstr "Visar hjälptext för varningsdialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:226
+#: C/usage.page:227
 msgid "<cmd>--help-text-info</cmd>"
 msgstr "<cmd>--help-text-info</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:227
+#: C/usage.page:228
 msgid "Displays help for text information dialog options."
 msgstr "Visar hjälp för textinformationsdialogflaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:231
+#: C/usage.page:232
 msgid "<cmd>--help-misc</cmd>"
 msgstr "<cmd>--help-misc</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:232
+#: C/usage.page:233
 msgid "Displays help for miscellaneous options."
 msgstr "Visar hjälp för diverse flaggor."
 
 #. (itstool) path: item/title
-#: C/usage.page:236
+#: C/usage.page:237
 msgid "<cmd>--help-gtk</cmd>"
 msgstr "<cmd>--help-gtk</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:237
+#: C/usage.page:238
 msgid "Displays help for GTK+ options."
 msgstr "Visar hjälp för GTK+-flaggor."
 
 #. (itstool) path: section/title
-#: C/usage.page:247
+#: C/usage.page:248
 msgid "Miscellaneous Options"
 msgstr "Diverse flaggor"
 
 #. (itstool) path: section/p
-#: C/usage.page:249
+#: C/usage.page:250
 msgid "Zenity also provides the following miscellaneous options:"
 msgstr "Zenity tillhandahåller även följande flaggor för diverse saker:"
 
 #. (itstool) path: item/title
-#: C/usage.page:256
+#: C/usage.page:257
 msgid "<cmd>--about</cmd>"
 msgstr "<cmd>--about</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:257
+#: C/usage.page:258
 msgid ""
 "Displays the <gui>About Zenity</gui> dialog, which contains Zenity version "
 "information, copyright information, and developer information."
@@ -2549,22 +2492,22 @@ msgstr ""
 "utvecklarinformation."
 
 #. (itstool) path: item/title
-#: C/usage.page:261
+#: C/usage.page:262
 msgid "<cmd>--version</cmd>"
 msgstr "<cmd>--version</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:262
+#: C/usage.page:263
 msgid "Displays the version number of Zenity."
 msgstr "Visar versionsnumret för Zenity."
 
 #. (itstool) path: section/title
-#: C/usage.page:272
+#: C/usage.page:273
 msgid "GTK+ Options"
 msgstr "GTK+-flaggor"
 
 #. (itstool) path: section/p
-#: C/usage.page:274
+#: C/usage.page:275
 msgid ""
 "Zenity supports the standard GTK+ options. For more information about the GTK"
 "+ options, execute the <cmd>zenity --help-gtk</cmd> command."
@@ -2573,12 +2516,12 @@ msgstr ""
 "flaggorna, kör kommandot <cmd>zenity --help-gtk</cmd>."
 
 #. (itstool) path: section/title
-#: C/usage.page:283
+#: C/usage.page:284
 msgid "Environment Variables"
 msgstr "Miljövariabler"
 
 #. (itstool) path: section/p
-#: C/usage.page:285
+#: C/usage.page:286
 msgid ""
 "Normally, Zenity detects the terminal window from which it was launched and "
 "keeps itself above that window. This behavior can be disabled by unsetting "
@@ -2594,22 +2537,22 @@ msgid "Use the <cmd>--warning</cmd> option."
 msgstr "Använd flaggan <cmd>--warning</cmd>."
 
 #. (itstool) path: page/title
-#: C/warning.page:8
+#: C/warning.page:9
 msgid "Warning Dialog"
 msgstr "Varningsdialog"
 
 #. (itstool) path: page/p
-#: C/warning.page:9
+#: C/warning.page:10
 msgid "Use the <cmd>--warning</cmd> option to create a warning dialog."
 msgstr "Använd flaggan <cmd>--warning</cmd> för att skapa en varningsdialog."
 
 #. (itstool) path: page/p
-#: C/warning.page:13
+#: C/warning.page:14
 msgid "The following example script shows how to create a warning dialog:"
 msgstr "Följande exempelskript visar hur man skapar en varningsdialog:"
 
 #. (itstool) path: page/code
-#: C/warning.page:17
+#: C/warning.page:18
 #, no-wrap
 msgid ""
 "\n"
@@ -2625,12 +2568,12 @@ msgstr ""
 "--text=\"Koppla från strömkabeln för att undvika elektriska stötar.\"\n"
 
 #. (itstool) path: figure/title
-#: C/warning.page:25
+#: C/warning.page:26
 msgid "Warning Dialog Example"
 msgstr "Exempel på varningsdialog"
 
 #. (itstool) path: figure/desc
-#: C/warning.page:26
+#: C/warning.page:27
 msgid "<app>Zenity</app> warning dialog example"
 msgstr "<app>Zenity</app>-exempel på varningsdialog"
 
@@ -2639,11 +2582,7 @@ msgstr "<app>Zenity</app>-exempel på varningsdialog"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/warning.page:27
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/zenity-warning-screenshot.png' "
-#| "md5='146ea22fcd7104b2f9ed7ca0cc25f51d'"
+#: C/warning.page:28
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-warning-screenshot.png' "
