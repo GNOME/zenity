@@ -96,6 +96,7 @@ typedef struct {
 	gchar *dialog_text;
 	gchar *entry_text;
 	gboolean hide_text;
+	gboolean no_markup;
 	const gchar **data;
 } ZenityEntryData;
 

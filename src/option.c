@@ -301,6 +301,12 @@ static GOptionEntry entry_options[] = {{"entry",
 		&zenity_entry_hide_text,
 		N_ ("Hide the entry text"),
 		NULL},
+	{"no-markup",
+		'\0',
+		G_OPTION_FLAG_NOALIAS,
+		G_OPTION_ARG_NONE,
+		&zenity_general_dialog_no_markup,
+		N_ ("Do not enable Pango markup")},
 	{NULL}};
 
 static GOptionEntry error_options[] = {{"error",
@@ -1455,6 +1461,7 @@ zenity_entry_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->entry_data->dialog_text = zenity_general_dialog_text;
 		results->entry_data->entry_text = zenity_entry_entry_text;
 		results->entry_data->hide_text = zenity_entry_hide_text;
+		results->entry_data->no_markup = zenity_general_dialog_no_markup;
 	} else {
 		if (zenity_entry_entry_text)
 			zenity_option_error (zenity_option_get_name (
