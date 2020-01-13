@@ -4,13 +4,13 @@
 # traduccion al español del manual de zenity
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2019.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity-help.master\n"
-"POT-Creation-Date: 2019-09-23 15:28+0000\n"
-"PO-Revision-Date: 2019-10-02 10:11+0200\n"
+"POT-Creation-Date: 2019-10-02 10:50+0000\n"
+"PO-Revision-Date: 2020-01-13 09:13+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -22,7 +22,6 @@ msgstr ""
 
 #. (itstool) path: p/link
 #: C/legal.xml:5
-#| msgid "GNU Free Documentation License (GFDL)"
 msgid "GNU Free Documentation License Version 1.1"
 msgstr "Licencia libre de documentación de GNU versión 1.1"
 
@@ -40,13 +39,6 @@ msgstr "enlace"
 
 #. (itstool) path: license/p
 #: C/legal.xml:8
-#| msgid ""
-#| "Permission is granted to copy, distribute and/or modify this document "
-#| "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
-#| "or any later version published by the Free Software Foundation with no "
-#| "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
-#| "can find a copy of the GFDL at this <_:ulink-1/> or in the file COPYING-"
-#| "DOCS distributed with this manual."
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
@@ -91,10 +83,6 @@ msgstr ""
 
 #. (itstool) path: license/p
 #: C/legal.xml:33
-#| msgid ""
-#| "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
-#| "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
-#| "UNDERSTANDING THAT: <_:orderedlist-1/>"
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT:"
@@ -1248,14 +1236,14 @@ msgid ""
 "    393823 Critical \"Menu editing does not work in GNOME 2.0\"\n"
 msgstr ""
 "\n"
-"  bin/sh\n"
+"#!/bin/sh\n"
 "\n"
 "zenity --list \\\n"
-"  title=\"Elija los fallos que quiere ver\" \\\n"
-"  column=\"Número del fallo\" --column=\"Severidad\" --column=\"Descripción\" \\\n"
-"  992383 Normal \"GtkTreeView se cuelga con selecciones múltiples\" \\\n"
-"  293823 Alto \"El diccionario de GNOME no manera proxys\" \\\n"
-"  393823 Crítico \"El editor de menú no funciona en GNOME 2.0\"\n"
+"  --title=\"Elija los fallos que quiere ver\" \\\n"
+"  --column=\"Número del fallo\" --column=\"Severidad\" --column=\"Descripción\" \\\n"
+"    992383 Normal \"GtkTreeView se cuelga con selecciones múltiples\" \\\n"
+"    293823 Alto \"El diccionario de GNOME no manera proxys\" \\\n"
+"    393823 Crítico \"El editor de menú no funciona en GNOME 2.0\"\n"
 
 #. (itstool) path: figure/title
 #: C/list.page:83
@@ -1677,13 +1665,13 @@ msgstr ""
 "echo \"100\" ; sleep 1\n"
 ") |\n"
 "zenity --progress \\\n"
-"  title=\"Actualizando los registros del sistema\" \\\n"
-"  text=\"Rastreando los registros de los correos...\" \\\n"
-"  percentage=0\n"
+"  --title=\"Actualizando los registros del sistema\" \\\n"
+"  --text=\"Rastreando los registros de los correos...\" \\\n"
+"  --percentage=0\n"
 "\n"
 "if [ \"$?\" = -1 ] ; then\n"
-"zenity --error \\\n"
-"text=\"Actualización cancelada.\"\n"
+"        zenity --error \\\n"
+"          --text=\"Actualización cancelada.\"\n"
 "fi\n"
 "\n"
 
