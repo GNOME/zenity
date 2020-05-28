@@ -1,11 +1,3 @@
-clothesdir = $(datadir)/zenity/clothes
-clothes_DATA = \
-	monk.png		\
-	gnome-tshirt.png	\
-	sunglasses.png		\
-	surfboard.png		\
-	hawaii-shirt.png
-
 imagesdir = $(datadir)/zenity
 images_DATA = \
 	zenity.png		\
@@ -20,4 +12,4 @@ images_DATA = \
 
 man_MANS = zenity.1
 
-EXTRA_DIST = $(images_DATA) $(clothes_DATA) $(man_MANS)
+EXTRA_DIST = $(images_DATA) $(man_MANS)
