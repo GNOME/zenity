@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.0 -->
+<!-- Generated with glade 3.38.2 -->
 <interface>
-  <requires lib="gtk+" version="3.0"/>
+  <requires lib="gtk+" version="3.16"/>
   <object class="GtkAdjustment" id="adjustment1">
     <property name="upper">100</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">1</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">1</property>
   </object>
   <object class="GtkDialog" id="zenity_scale_dialog">
     <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Adjust the scale value</property>
-    <property name="default_width">300</property>
-    <property name="default_height">100</property>
-    <property name="type_hint">dialog</property>
+    <property name="default-width">300</property>
+    <property name="default-height">100</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox11">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area11">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_scale_cancel_button">
                 <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -43,9 +43,9 @@
               <object class="GtkButton" id="zenity_scale_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -57,21 +57,21 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="vbox13">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="zenity_scale_text">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="ypad">4</property>
                 <property name="label" translatable="yes">Adjust the scale value</property>
                 <property name="xalign">0</property>
@@ -85,10 +85,10 @@
             <child>
               <object class="GtkScale" id="zenity_scale_hscale">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can-focus">True</property>
                 <property name="adjustment">adjustment1</property>
                 <property name="digits">0</property>
-                <property name="value_pos">right</property>
+                <property name="value-pos">right</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -112,30 +112,30 @@
   </object>
   <object class="GtkTextBuffer" id="textbuffer1"/>
   <object class="GtkDialog" id="zenity_text_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Text View</property>
-    <property name="window_position">center</property>
-    <property name="default_width">300</property>
-    <property name="default_height">200</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="default-width">300</property>
+    <property name="default-height">200</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox5">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area5">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_text_cancel_button">
                 <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -147,10 +147,10 @@
               <object class="GtkButton" id="zenity_text_close_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">True</property>
-                <property name="image_position">right</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">True</property>
+                <property name="image-position">right</property>
                 <accelerator key="Return" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
               </object>
               <packing>
@@ -163,31 +163,31 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="vbox5">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkScrolledWindow" id="zenity_text_scrolled_window">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="shadow_type">etched-in</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">etched-in</property>
                 <child>
                   <object class="GtkTextView" id="zenity_text_view">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="pixels_above_lines">2</property>
-                    <property name="pixels_below_lines">2</property>
+                    <property name="can-focus">True</property>
+                    <property name="pixels-above-lines">2</property>
+                    <property name="pixels-below-lines">2</property>
                     <property name="editable">False</property>
-                    <property name="wrap_mode">word</property>
-                    <property name="left_margin">2</property>
-                    <property name="right_margin">2</property>
+                    <property name="wrap-mode">word</property>
+                    <property name="left-margin">2</property>
+                    <property name="right-margin">2</property>
                     <property name="buffer">textbuffer1</property>
                   </object>
                 </child>
@@ -200,10 +200,10 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="zenity_text_checkbox">
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
                 <property name="xalign">0.5</property>
-                <property name="draw_indicator">True</property>
+                <property name="draw-indicator">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -226,29 +226,29 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_calendar_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Calendar selection</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox2">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_calendar_cancel_button">
                 <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -260,10 +260,10 @@
               <object class="GtkButton" id="zenity_calendar_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="has_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="has-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -275,26 +275,26 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="vbox1">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkBox" id="vbox2">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="zenity_calendar_text">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
+                    <property name="can-focus">False</property>
                     <property name="label" translatable="yes">Select a date from below.</property>
                     <property name="wrap">True</property>
                     <property name="xalign">0</property>
@@ -315,10 +315,10 @@
             <child>
               <object class="GtkLabel" id="zenity_calendar_label">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="label" translatable="yes">C_alendar:</property>
-                <property name="use_underline">True</property>
-                <property name="mnemonic_widget">zenity_calendar</property>
+                <property name="use-underline">True</property>
+                <property name="mnemonic-widget">zenity_calendar</property>
                 <property name="xalign">0</property>
                 <accessibility>
                   <relation type="label-for" target="zenity_calendar"/>
@@ -333,7 +333,7 @@
             <child>
               <object class="GtkCalendar" id="zenity_calendar">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can-focus">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -356,30 +356,30 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_entry_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Add a new entry</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox4">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area4">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_entry_cancel_button">
                 <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -391,10 +391,10 @@
               <object class="GtkButton" id="zenity_entry_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="has_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="has-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -406,27 +406,27 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="vbox3">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">6</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">6</property>
             <child>
               <object class="GtkBox" id="vbox4">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="zenity_entry_text">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
+                    <property name="can-focus">False</property>
                     <property name="label" translatable="yes">_Enter new text:</property>
-                    <property name="use_underline">True</property>
+                    <property name="use-underline">True</property>
                     <property name="xalign">0</property>
                   </object>
                   <packing>
@@ -460,29 +460,29 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_error_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Error</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox7">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area7">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_error_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -494,27 +494,27 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="vbox8">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">6</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">6</property>
             <child>
               <object class="GtkBox" id="hbox3">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="border_width">5</property>
+                <property name="can-focus">False</property>
+                <property name="border-width">5</property>
                 <property name="spacing">12</property>
                 <child>
                   <object class="GtkImage" id="zenity_error_image">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
+                    <property name="can-focus">False</property>
                     <property name="yalign">0</property>
-                    <property name="icon_name">dialog-error</property>
+                    <property name="icon-name">dialog-error</property>
                     <property name="icon_size">6</property>
                   </object>
                   <packing>
@@ -526,7 +526,7 @@
                 <child>
                   <object class="GtkLabel" id="zenity_error_text">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
+                    <property name="can-focus">True</property>
                     <property name="label" translatable="yes">An error has occurred.</property>
                     <property name="wrap">True</property>
                     <property name="selectable">True</property>
@@ -559,26 +559,26 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_forms_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">normal</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">normal</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox12">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area12">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_forms_cancel_button">
                 <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -590,8 +590,8 @@
               <object class="GtkButton" id="zenity_forms_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -603,25 +603,26 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkFrame" id="frame1">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label_xalign">0</property>
+            <property name="can-focus">False</property>
+            <property name="label-xalign">0</property>
             <child>
+              <!-- n-columns=3 n-rows=3 -->
               <object class="GtkGrid" id="zenity_forms_grid">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="margin_left">12</property>
-                <property name="margin_right">6</property>
-                <property name="margin_top">12</property>
-                <property name="margin_bottom">6</property>
-                <property name="row_spacing">6</property>
-                <property name="column_spacing">10</property>
+                <property name="can-focus">False</property>
+                <property name="margin-left">12</property>
+                <property name="margin-right">6</property>
+                <property name="margin-top">12</property>
+                <property name="margin-bottom">6</property>
+                <property name="row-spacing">6</property>
+                <property name="column-spacing">10</property>
                 <child>
                   <placeholder/>
                 </child>
@@ -654,7 +655,7 @@
             <child type="label">
               <object class="GtkLabel" id="zenity_forms_text">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="label" translatable="yes">Forms dialog</property>
                 <attributes>
                   <attribute name="weight" value="bold"/>
@@ -676,29 +677,29 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_info_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Information</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox9">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area3">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_info_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -710,22 +711,22 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="hbox4">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="spacing">12</property>
             <child>
               <object class="GtkImage" id="zenity_info_image">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="yalign">0</property>
-                <property name="icon_name">dialog-information</property>
+                <property name="icon-name">dialog-information</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -737,7 +738,7 @@
             <child>
               <object class="GtkLabel" id="zenity_info_text">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can-focus">True</property>
                 <property name="label" translatable="yes">All updates are complete.</property>
                 <property name="wrap">True</property>
                 <property name="selectable">True</property>
@@ -763,29 +764,29 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_progress_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Progress</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox6">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area6">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_progress_cancel_button">
                 <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -798,10 +799,10 @@
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
                 <property name="sensitive">False</property>
-                <property name="can_focus">True</property>
-                <property name="has_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="has-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -813,21 +814,21 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="vbox7">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="zenity_progress_text">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="label" translatable="yes">Running...</property>
                 <property name="wrap">True</property>
                 <property name="xalign">0</property>
@@ -841,8 +842,8 @@
             <child>
               <object class="GtkProgressBar" id="zenity_progress_bar">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="pulse_step">0.10000000149</property>
+                <property name="can-focus">False</property>
+                <property name="pulse-step">0.10000000149</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -853,7 +854,7 @@
             <child>
               <object class="GtkLabel" id="zenity_progress_time">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="xalign">0</property>
               </object>
               <packing>
@@ -877,43 +878,43 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_question_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Question</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox3">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="zenity_question_button_box">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="hbox1">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="spacing">12</property>
             <child>
               <object class="GtkImage" id="zenity_question_image">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="xalign">0</property>
                 <property name="yalign">0</property>
-                <property name="icon_name">dialog-question</property>
+                <property name="icon-name">dialog-question</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -925,7 +926,7 @@
             <child>
               <object class="GtkLabel" id="zenity_question_text">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can-focus">True</property>
                 <property name="label" translatable="yes">Are you sure you want to proceed?</property>
                 <property name="wrap">True</property>
                 <property name="selectable">True</property>
@@ -948,30 +949,30 @@
     </child>
   </object>
   <object class="GtkDialog" id="zenity_tree_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Select items from the list</property>
-    <property name="window_position">center</property>
-    <property name="default_width">300</property>
-    <property name="default_height">196</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="default-width">300</property>
+    <property name="default-height">196</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox8">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area8">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_tree_cancel_button">
                 <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -983,9 +984,9 @@
               <object class="GtkButton" id="zenity_tree_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -997,21 +998,21 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="vbox10">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="zenity_tree_text">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="label" translatable="yes">Select items from the list below.</property>
                 <property name="xalign">0</property>
               </object>
@@ -1024,14 +1025,13 @@
             <child>
               <object class="GtkScrolledWindow" id="zenity_tree_window">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="shadow_type">in</property>
-                <property name="expand">True</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">in</property>
                 <child>
                   <object class="GtkTreeView" id="zenity_tree_view">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="has_focus">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="has-focus">True</property>
                     <child internal-child="selection">
                       <object class="GtkTreeSelection" id="treeview-selection1"/>
                     </child>
@@ -1059,30 +1059,30 @@
     </action-widgets>
   </object>
   <object class="GtkDialog" id="zenity_warning_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="title" translatable="yes">Warning</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
+    <property name="window-position">center</property>
+    <property name="type-hint">dialog</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="spacing">14</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
             <child>
               <object class="GtkButton" id="zenity_warning_ok_button">
                 <property name="label" translatable="yes">OK</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="has_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
+                <property name="can-focus">True</property>
+                <property name="has-focus">True</property>
+                <property name="can-default">True</property>
+                <property name="receives-default">False</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1094,23 +1094,23 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkBox" id="hbox2">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
             <property name="spacing">12</property>
             <child>
               <object class="GtkImage" id="zenity_warning_image">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can-focus">False</property>
                 <property name="xalign">0</property>
                 <property name="yalign">0</property>
-                <property name="icon_name">dialog-warning</property>
+                <property name="icon-name">dialog-warning</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -1122,7 +1122,7 @@
             <child>
               <object class="GtkLabel" id="zenity_warning_text">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can-focus">True</property>
                 <property name="label" translatable="yes">Are you sure you want to proceed?</property>
                 <property name="wrap">True</property>
                 <property name="selectable">True</property>
