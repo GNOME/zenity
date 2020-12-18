@@ -206,8 +206,8 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 		// however, 60 would increase the distance between the icon and the
 		// text,
 		// decreasing to 10 fix it.
-		gtk_label_set_width_chars (text, 10);
-		gtk_label_set_max_width_chars (text, 10);
+		gtk_label_set_width_chars (GTK_LABEL (text), 10);
+		gtk_label_set_max_width_chars (GTK_LABEL (text), 10);
 	}
 
 	if (data->modal)

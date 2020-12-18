@@ -153,7 +153,7 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
 		gtk_text_buffer_insert (buffer, &iter, buf, leftover - buf);
 
 		remaining = (buf + remaining + count) - leftover;
-		g_memmove (buf, leftover, remaining);
+		memmove (buf, leftover, remaining);
 
 		if (remaining > 6 || count < to_read)
 			break;
@@ -326,11 +326,12 @@ transient_get_xterm (void) {
 		Window wid = strtoul (wid_str, &wid_str_end, 10);
 		if (*wid_str != '\0' && *wid_str_end == '\0' && wid != 0) {
 			XWindowAttributes attrs;
-			gdk_error_trap_push ();
+			GdkDisplay *display;
+			display = gdk_display_get_default ();
+			gdk_x11_display_error_trap_push (display);
 			ret = XGetWindowAttributes (
 				GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), wid, &attrs);
-			gdk_flush ();
-			if (gdk_error_trap_pop () != 0 || ret == 0) {
+			if (gdk_x11_display_error_trap_pop (display) != 0 || ret == 0) {
 				return None;
 			}
 			return wid;
