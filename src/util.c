@@ -387,9 +387,9 @@ zenity_util_make_transient (GdkWindow *window, Window parent) {
 #endif /* GDK_WINDOWING_X11 */
 
 void
-zenity_util_show_dialog (GtkWidget *dialog, guintptr parent)
+zenity_util_show_dialog (GtkWidget *dialog)
 {
-	gtk_widget_realize (dialog);
+	gtk_widget_realize (dialog);	// FIXME - doubt this is necessary.
 	gtk_widget_show (dialog);
 }
 
@@ -401,8 +401,7 @@ zenity_util_timeout_handle (gpointer data)
 	if (dialog != NULL)
 		gtk_dialog_response (dialog, ZENITY_TIMEOUT);
 	else {
-		// FIXME - TEST - delete window from app
-		gtk_window_set_application (GTK_WINDOW(dialog), NULL);
+		zenity_util_gapp_quit (GTK_WINDOW(dialog));
 		exit (ZENITY_TIMEOUT);
 	}
 	return FALSE;
@@ -431,4 +430,12 @@ zenity_util_gapp_main (GtkWindow *window) {
 	g_object_unref (app);
 
 	return status;
+}
+
+void
+zenity_util_gapp_quit (GtkWindow *window)
+{
+	g_assert (GTK_IS_WINDOW (window));
+
+	gtk_window_set_application (window, NULL);
 }

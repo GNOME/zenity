@@ -34,7 +34,6 @@ typedef struct {
 	gint exit_code;
 	gint timeout_delay;
 	gboolean modal;
-	guintptr attach;
 } ZenityData;
 
 typedef enum {
