@@ -27,8 +27,8 @@ void zenity_util_show_help (GError **error);
 gint zenity_util_return_exit_code (ZenityExitCode value);
 void zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *data);
 void zenity_util_show_dialog (GtkWidget *widget, guintptr parent);
-
 gboolean zenity_util_timeout_handle (gpointer data);
+int zenity_util_gapp_main (GtkWindow *window);
 
 G_END_DECLS
 

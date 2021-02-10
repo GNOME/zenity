@@ -1,7 +1,10 @@
+/* vim: colorcolumn=80 ts=4 sw=4
+ */
 /*
  * msg.c
  *
  * Copyright (C) 2002 Sun Microsystems, Inc.
+ * Copyright © 2021 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -21,13 +24,14 @@
  * Authors: Glynn Foster <glynn.foster@sun.com>
  */
 
-#include "config.h"
+#include <config.h>
 
 #include "util.h"
 #include "zenity.h"
 
-static void zenity_msg_dialog_response (
-	GtkWidget *widget, int response, gpointer data);
+static void zenity_msg_dialog_response (GtkWidget *widget,
+		int response, gpointer data);
+
 static void
 zenity_msg_construct_question_dialog (
 	GtkWidget *dialog, ZenityMsgData *msg_data, ZenityData *data) {
@@ -153,8 +157,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 		G_CALLBACK (zenity_msg_dialog_response),
 		data);
 
-	gtk_builder_connect_signals (builder, NULL);
-
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
@@ -202,12 +204,12 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 	if (data->width > -1)
 		gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
 	else if (!msg_data->ellipsize && !msg_data->no_wrap) {
-		// the magic number 60 is picked from gtk+/gtk/ui/gtkmessagedialog.ui
-		// however, 60 would increase the distance between the icon and the
-		// text,
-		// decreasing to 10 fix it.
-		gtk_label_set_width_chars (text, 10);
-		gtk_label_set_max_width_chars (text, 10);
+		/* the magic number 60 is picked from gtk+/gtk/ui/gtkmessagedialog.ui
+		 * however, 60 would increase the distance between the icon and the
+		 * text, decreasing to 10 fix it.
+		 */
+		gtk_label_set_width_chars (GTK_LABEL(text), 10);
+		gtk_label_set_max_width_chars (GTK_LABEL(text), 10);
 	}
 
 	if (data->modal)
@@ -223,14 +225,14 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 	}
 
 	if (msg_data->ellipsize)
-		gtk_label_set_ellipsize (GTK_LABEL (text), PANGO_ALIGN_RIGHT);
+		gtk_label_set_ellipsize (GTK_LABEL (text), PANGO_ELLIPSIZE_END);
 
 	if (msg_data->dialog_icon)
 		gtk_image_set_from_icon_name (
-			GTK_IMAGE (image), msg_data->dialog_icon, GTK_ICON_SIZE_DIALOG);
+			GTK_IMAGE (image), msg_data->dialog_icon);
 
 	if (msg_data->no_wrap)
-		gtk_label_set_line_wrap (GTK_LABEL (text), FALSE);
+		gtk_label_set_wrap (GTK_LABEL (text), FALSE);
 
 	zenity_util_show_dialog (dialog, data->attach);
 
@@ -242,7 +244,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 
 	g_object_unref (builder);
 
-	gtk_main ();
+	zenity_util_gapp_main ();
 }
 
 static void
@@ -260,10 +262,11 @@ zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data) {
 
 		default:
 			if (zen_data->extra_label &&
-				response < g_strv_length (zen_data->extra_label))
+				response < (int)g_strv_length (zen_data->extra_label))
 				printf ("%s\n", zen_data->extra_label[response]);
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	gtk_main_quit ();
+
+	// FIXME - replace gtk_main_quit here.
 }
