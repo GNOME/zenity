@@ -80,14 +80,16 @@ zenity_label_widget_clipboard_selection (GtkWidget *widget) {
 }
 
 void
-zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
+zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
+{
 	GtkBuilder *builder;
 	GtkWidget *dialog;
 	GtkWidget *ok_button;
 	GObject *text;
 	GObject *image;
 
-	switch (msg_data->mode) {
+	switch (msg_data->mode)
+	{
 		case ZENITY_MSG_WARNING:
 			builder = zenity_util_load_ui_file ("zenity_warning_dialog", NULL);
 			dialog = GTK_WIDGET (
@@ -166,7 +168,8 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 		}
 	}
 
-	switch (msg_data->mode) {
+	switch (msg_data->mode)
+	{
 		case ZENITY_MSG_WARNING:
 			zenity_util_set_window_icon_from_icon_name (
 				dialog, data->window_icon, "dialog-warning");
@@ -234,7 +237,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 	if (msg_data->no_wrap)
 		gtk_label_set_wrap (GTK_LABEL (text), FALSE);
 
-	zenity_util_show_dialog (dialog, data->attach);
+	zenity_util_show_dialog (dialog);
 
 	if (data->timeout_delay > 0) {
 		g_timeout_add_seconds (data->timeout_delay,
@@ -244,14 +247,15 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 
 	g_object_unref (builder);
 
-	zenity_util_gapp_main ();
+	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
 
 static void
 zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data) {
 	ZenityData *zen_data = data;
 
-	switch (response) {
+	switch (response)
+	{	
 		case GTK_RESPONSE_OK:
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
@@ -267,6 +271,5 @@ zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data) {
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-
-	// FIXME - replace gtk_main_quit here.
+	zenity_util_gapp_quit (GTK_WINDOW(widget));
 }

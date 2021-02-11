@@ -24,15 +24,15 @@ G_BEGIN_DECLS
 #endif
 
 typedef struct {
-	gchar *dialog_title;
-	gchar *window_icon;
-	gchar *ok_label;
-	gchar *cancel_label;
-	gchar **extra_label;
-	gint width;
-	gint height;
-	gint exit_code;
-	gint timeout_delay;
+	char *dialog_title;
+	char *window_icon;
+	char *ok_label;
+	char *cancel_label;
+	char **extra_label;
+	int width;
+	int height;
+	int exit_code;
+	int timeout_delay;
 	gboolean modal;
 } ZenityData;
 
@@ -158,10 +158,9 @@ typedef struct {
 	GSList *list_values;
 	GSList *column_values;
 	GSList *combo_values;
-	gchar *dialog_text;
-	gchar *separator;
-	gchar *date_format;
-	//  gchar *hide_column;
+	char *dialog_text;
+	char *separator;
+	char *date_format;
 	gboolean show_header;
 } ZenityFormsData;
 
