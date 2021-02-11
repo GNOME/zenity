@@ -1,42 +1,48 @@
+/* vim: colorcolumn=80 ts=4 sw=4
+ */
 /*
  * text.c
  *
- * Copyright (C) 2002 Sun Microsystems, Inc.
+ * Copyright © 2002 Sun Microsystems, Inc.
+ * Copyright © 2021 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Library General Public
+ * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2 of the License, or (at your option) any later version.
  *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Library General Public License for more details.
+ * Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Library General Public
+ * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  *
- * Authors: Glynn Foster <glynn.foster@sun.com>
+ * Original Author: Glynn Foster <glynn.foster@sun.com>
  */
 
-#include "config.h"
 
 #include "util.h"
 #include "zenity.h"
+
 #include <gio/gio.h>
 
 #ifdef HAVE_WEBKITGTK
 #include <webkit2/webkit2.h>
 #endif
 
+#include <config.h>
+
 static ZenityTextData *zen_text_data;
 
-static void zenity_text_dialog_response (
-	GtkWidget *widget, int response, gpointer data);
+static void zenity_text_dialog_response (GtkWidget *widget, int response,
+		gpointer data);
 static void zenity_text_toggle_button (GtkToggleButton *button, gpointer data);
 
+// TODO - I don't think gtk4 support for webkit is fully "there" yet.
 #ifdef HAVE_WEBKITGTK
 static void
 zenity_configure_webkit (WebKitWebView *web_view) {
@@ -146,21 +152,24 @@ zenity_text_webview_load_changed (
 	}
 }
 
-#endif
+#endif	/* HAVE_WEBKITGTK */
 
 static gboolean
-zenity_text_handle_stdin (
-	GIOChannel *channel, GIOCondition condition, gpointer data) {
+zenity_text_handle_stdin (GIOChannel *channel, GIOCondition condition,
+		gpointer data)
+{
+#define BUF_SIZE 1024
 	static GtkTextBuffer *buffer;
 	static GtkTextView *text_view;
-	gchar buf[1024];
+	char buf[BUF_SIZE];
 
 	gsize len;
 
 	text_view = GTK_TEXT_VIEW (data);
 	buffer = gtk_text_view_get_buffer (text_view);
 
-	if ((condition & G_IO_IN) || (condition & (G_IO_IN | G_IO_HUP))) {
+	if ((condition & G_IO_IN) || (condition & (G_IO_IN | G_IO_HUP)))
+	{
 		GError *error = NULL;
 		gint status;
 
@@ -168,31 +177,36 @@ zenity_text_handle_stdin (
 			;
 
 		do {
-			status = g_io_channel_read_chars (channel, buf, 1024, &len, &error);
+			status = g_io_channel_read_chars (channel, buf, BUF_SIZE,
+					&len, &error);
 
-			while (gtk_events_pending ())
-				gtk_main_iteration ();
-
+			while (g_main_context_pending (NULL)) {
+				g_main_context_iteration (NULL, FALSE);
+			}
 		} while (status == G_IO_STATUS_AGAIN);
 
-		if (status != G_IO_STATUS_NORMAL) {
+		if (status != G_IO_STATUS_NORMAL)
+		{
 			if (error) {
-				g_warning ("zenity_text_handle_stdin () : %s", error->message);
+				g_warning ("%s: %s",
+						__func__, error->message);
 				g_error_free (error);
 				error = NULL;
 			}
 			return FALSE;
 		}
 
-		if (len > 0) {
+		if (len > 0)
+		{
 			GtkTextIter end;
-			gchar *utftext;
+			char *utftext;
 			gsize localelen;
 			gsize utflen;
 
 			gtk_text_buffer_get_end_iter (buffer, &end);
 
-			if (!g_utf8_validate (buf, len, NULL)) {
+			if (! g_utf8_validate (buf, len, NULL))
+			{
 				utftext = g_convert_with_fallback (buf,
 					len,
 					"UTF-8",
@@ -203,35 +217,42 @@ zenity_text_handle_stdin (
 					NULL);
 				gtk_text_buffer_insert (buffer, &end, utftext, utflen);
 				g_free (utftext);
-			} else {
+			}
+			else
+			{
 				gtk_text_buffer_insert (buffer, &end, buf, len);
 			}
-			if (zen_text_data->auto_scroll) {
-				GtkTextMark *mark = NULL;
-				mark = gtk_text_buffer_get_insert (buffer);
+
+			if (zen_text_data->auto_scroll)
+			{
+				GtkTextMark *mark = gtk_text_buffer_get_insert (buffer);
+
 				if (mark != NULL)
-					gtk_text_view_scroll_to_mark (
-						text_view, mark, 0.0, FALSE, 0, 0);
+				{
+					gtk_text_view_scroll_to_mark (text_view, mark,
+							0.0, FALSE, 0, 0);
+				}
 			}
 		}
 	}
-
 	return TRUE;
 }
 
 static void
-zenity_text_fill_entries_from_stdin (GtkTextView *text_view) {
+zenity_text_fill_entries_from_stdin (GtkTextView *text_view)
+{
 	GIOChannel *channel;
 
 	channel = g_io_channel_unix_new (0);
 	g_io_channel_set_encoding (channel, "UTF-8", NULL);
 	g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
-	g_io_add_watch (
-		channel, G_IO_IN | G_IO_HUP, zenity_text_handle_stdin, text_view);
+	g_io_add_watch (channel,
+			G_IO_IN | G_IO_HUP, zenity_text_handle_stdin, text_view);
 }
 
 void
-zenity_text (ZenityData *data, ZenityTextData *text_data) {
+zenity_text (ZenityData *data, ZenityTextData *text_data)
+{
 	GtkBuilder *builder;
 	GtkWidget *dialog;
 	GtkWidget *ok_button;
@@ -247,6 +268,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data) {
 	GtkTextIter start_iter, end_iter;
 	gchar *content;
 #endif
+
 	zen_text_data = text_data;
 	builder =
 		zenity_util_load_ui_file ("zenity_text_dialog", "textbuffer1", NULL);
@@ -256,28 +278,24 @@ zenity_text (ZenityData *data, ZenityTextData *text_data) {
 		return;
 	}
 
-	gtk_builder_connect_signals (builder, NULL);
+	dialog = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_dialog"));
 
-	dialog =
-		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_dialog"));
+	ok_button = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_close_button"));
+	cancel_button = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_cancel_button"));
+	checkbox = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_checkbox"));
 
-	ok_button = GTK_WIDGET (
-		gtk_builder_get_object (builder, "zenity_text_close_button"));
-	cancel_button = GTK_WIDGET (
-		gtk_builder_get_object (builder, "zenity_text_cancel_button"));
-	checkbox =
-		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_text_checkbox"));
-
-	g_signal_connect (G_OBJECT (dialog),
-		"response",
-		G_CALLBACK (zenity_text_dialog_response),
-		data);
+	g_signal_connect (dialog, "response",
+		G_CALLBACK(zenity_text_dialog_response), data);
 
 	if (data->dialog_title)
-		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
+		gtk_window_set_title (GTK_WINDOW(dialog), data->dialog_title);
 
-	zenity_util_set_window_icon (
-		dialog, data->window_icon, ZENITY_IMAGE_FULLPATH ("zenity-text.png"));
+	zenity_util_set_window_icon (dialog, data->window_icon,
+			ZENITY_IMAGE_FULLPATH ("zenity-text.png"));
 
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 
@@ -289,10 +307,26 @@ zenity_text (ZenityData *data, ZenityTextData *text_data) {
 	if (text_data->no_wrap)
 		gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (text_view), GTK_WRAP_NONE);
 
-	if (text_data->font) {
-		PangoFontDescription *fontDesc =
-			pango_font_description_from_string (text_data->font);
-		gtk_widget_override_font (GTK_WIDGET (text_view), fontDesc);
+	if (text_data->font)
+	{
+		GtkStyleContext *context;
+		GtkCssProvider *provider;
+		char *font_str;
+
+		font_str = g_strdup_printf (
+				"* { \n"
+				"  font: %s\n"
+				"}\n",
+				text_data->font);
+			
+		provider = gtk_css_provider_new ();
+		gtk_css_provider_load_from_data (provider, font_str, -1);
+		g_free (font_str);
+
+		context = gtk_widget_get_style_context (GTK_WIDGET(text_view));
+		gtk_style_context_add_provider (context,
+				GTK_STYLE_PROVIDER(provider),
+				GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	}
 
 	if (text_data->uri)
@@ -303,12 +337,12 @@ zenity_text (ZenityData *data, ZenityTextData *text_data) {
 	if (text_data->editable)
 		zen_text_data->buffer = text_buffer;
 
-	if (data->extra_label) {
-		gint i = 0;
-		while (data->extra_label[i] != NULL) {
-			gtk_dialog_add_button (
-				GTK_DIALOG (dialog), data->extra_label[i], i);
-			i++;
+	if (data->extra_label)
+	{
+		for (int i = 0; data->extra_label[i] != NULL; ++i)
+		{
+			gtk_dialog_add_button (GTK_DIALOG(dialog),
+					data->extra_label[i], i);
 		}
 	}
 
@@ -325,21 +359,23 @@ zenity_text (ZenityData *data, ZenityTextData *text_data) {
 		gtk_widget_set_sensitive (GTK_WIDGET (ok_button), FALSE);
 		gtk_button_set_label (GTK_BUTTON (checkbox), text_data->checkbox);
 
-		g_signal_connect (G_OBJECT (checkbox),
-			"toggled",
-			G_CALLBACK (zenity_text_toggle_button),
-			ok_button);
+		g_signal_connect (checkbox, "toggled",
+			G_CALLBACK(zenity_text_toggle_button), ok_button);
 	}
 
 	if (data->width > -1 || data->height > -1)
-		gtk_window_set_default_size (
-			GTK_WINDOW (dialog), data->width, data->height);
-	else
+	{
+		gtk_window_set_default_size (GTK_WINDOW (dialog),
+				data->width, data->height);
+	}
+	else {
 		gtk_window_set_default_size (GTK_WINDOW (dialog), 300, 400);
+	}
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
+// FIXME - TODO
 #ifdef HAVE_WEBKITGTK
 	if (text_data->html) {
 		web_kit = webkit_web_view_new ();
@@ -387,46 +423,53 @@ zenity_text (ZenityData *data, ZenityTextData *text_data) {
 		gtk_container_add (GTK_CONTAINER (scrolled_window), web_kit);
 		gtk_widget_show (GTK_WIDGET (web_kit));
 	}
-#endif
+#endif /* HAVE_WEBKITGTK */
 
-	zenity_util_show_dialog (dialog, data->attach);
+	zenity_util_show_dialog (dialog);
 
 	g_object_unref (builder);
 
-	if (data->timeout_delay > 0) {
+	if (data->timeout_delay > 0)
+	{
 		g_timeout_add_seconds (data->timeout_delay,
 			(GSourceFunc) zenity_util_timeout_handle,
 			dialog);
 	}
-
-	gtk_main ();
+	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
 
 static void
-zenity_text_toggle_button (GtkToggleButton *button, gpointer data) {
-	GtkWidget *ok_button = (GtkWidget *) data;
-	gtk_widget_set_sensitive (
-		GTK_WIDGET (ok_button), gtk_toggle_button_get_active (button));
+zenity_text_toggle_button (GtkToggleButton *button, gpointer data)
+{
+	GtkWidget *ok_button = GTK_WIDGET(data);
+
+	gtk_widget_set_sensitive (ok_button,
+			gtk_toggle_button_get_active (button));
 }
 
 static void
-zenity_text_dialog_output (ZenityData *zen_data) {
-	if (zen_text_data->editable) {
+zenity_text_dialog_output (ZenityData *zen_data)
+{
+	if (zen_text_data->editable)
+	{
 		GtkTextIter start, end;
-		gchar *text;
+		char *text;
+
 		gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
-		text =
-			gtk_text_buffer_get_text (zen_text_data->buffer, &start, &end, 0);
+		text = gtk_text_buffer_get_text (zen_text_data->buffer,
+				&start, &end, 0);
 		g_print ("%s", text);
 		g_free (text);
 	}
 }
 
 static void
-zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data) {
+zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data)
+{
 	ZenityData *zen_data = data;
 
-	switch (response) {
+	switch (response)
+	{
 		case GTK_RESPONSE_CLOSE:
 			zenity_text_dialog_output (zen_data);
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
@@ -439,10 +482,12 @@ zenity_text_dialog_response (GtkWidget *widget, int response, gpointer data) {
 
 		default:
 			if (zen_data->extra_label &&
-				response < g_strv_length (zen_data->extra_label))
+				response < (int)g_strv_length (zen_data->extra_label))
+			{
 				printf ("%s\n", zen_data->extra_label[response]);
+			}
 			zenity_util_exit_code_with_data (ZENITY_ESC, zen_data);
 			break;
 	}
-	gtk_main_quit ();
+	zenity_util_gapp_quit (GTK_WINDOW(widget));
 }

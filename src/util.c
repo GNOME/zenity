@@ -304,7 +304,8 @@ zenity_util_return_exit_code (ZenityExitCode value) {
 }
 
 void
-zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *zen_data) {
+zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *zen_data)
+{
 	zen_data->exit_code = zenity_util_return_exit_code (value);
 }
 
