@@ -86,7 +86,6 @@ typedef struct {
 	gboolean multi;
 	gboolean directory;
 	gboolean save;
-	gboolean confirm_overwrite;
 	gchar *separator;
 	gchar **filter;
 } ZenityFileData;
