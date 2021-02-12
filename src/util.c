@@ -49,7 +49,8 @@
 #define ZENITY_EXTRA_DEFAULT 127
 
 GtkBuilder *
-zenity_util_load_ui_file (const gchar *root_widget, ...) {
+zenity_util_load_ui_file (const char *root_widget, ...)
+{
 	va_list args;
 	char *arg = NULL;
 	GPtrArray *ptrarray;
@@ -67,11 +68,11 @@ zenity_util_load_ui_file (const gchar *root_widget, ...) {
 
 	va_start (args, root_widget);
 
-	arg = va_arg (args, gchar *);
+	arg = va_arg (args, char *);
 
 	while (arg) {
 		g_ptr_array_add (ptrarray, g_strdup (arg));
-		arg = va_arg (args, gchar *);
+		arg = va_arg (args, char *);
 	}
 	va_end (args);
 
@@ -81,13 +82,13 @@ zenity_util_load_ui_file (const gchar *root_widget, ...) {
 
 	if (g_file_test (ZENITY_UI_FILE_RELATIVEPATH, G_FILE_TEST_EXISTS)) {
 		/* Try current dir, for debugging */
-		result = gtk_builder_add_objects_from_file (
-			builder, ZENITY_UI_FILE_RELATIVEPATH, (const char **)objects, NULL);
+		result = gtk_builder_add_objects_from_file (builder,
+				ZENITY_UI_FILE_RELATIVEPATH, (const char **)objects, NULL);
 	}
 
 	if (result == 0)
-		result = gtk_builder_add_objects_from_file (
-			builder, ZENITY_UI_FILE_FULLPATH, (const char **)objects, &error);
+		result = gtk_builder_add_objects_from_file (builder,
+				ZENITY_UI_FILE_FULLPATH, (const char **)objects, &error);
 
 	g_strfreev (objects);
 
@@ -102,8 +103,9 @@ zenity_util_load_ui_file (const gchar *root_widget, ...) {
 
 	return builder;
 }
-gchar *
-zenity_util_strip_newline (gchar *string) {
+
+char *
+zenity_util_strip_newline (char *string) {
 	gsize len;
 
 	g_return_val_if_fail (string != NULL, NULL);
@@ -120,11 +122,11 @@ zenity_util_strip_newline (gchar *string) {
 }
 
 gboolean
-zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
+zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const char *filename) {
 	GtkTextIter iter, end;
 	FILE *f;
-	gchar buf[2048];
-	gint remaining = 0;
+	char buf[2048];
+	int remaining = 0;
 
 	if (filename == NULL)
 		return FALSE;
@@ -139,7 +141,7 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
 	gtk_text_buffer_get_iter_at_offset (buffer, &iter, 0);
 
 	while (!feof (f)) {
-		gint count;
+		int count;
 		const char *leftover;
 		int to_read = 2047 - remaining;
 
@@ -176,8 +178,8 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
 	return TRUE;
 }
 
-const gchar *
-zenity_util_icon_name_from_filename (const gchar *filename) {
+const char *
+zenity_util_icon_name_from_filename (const char *filename) {
 	if (!filename || !filename[0])
 		return "dialog-warning"; /* default */
 
@@ -194,8 +196,8 @@ zenity_util_icon_name_from_filename (const gchar *filename) {
 
 void
 zenity_util_set_window_icon_from_file (
-	GtkWidget *widget, const gchar *filename) {
-	const gchar *icon_name;
+	GtkWidget *widget, const char *filename) {
+	const char *icon_name;
 
 	icon_name = zenity_util_icon_name_from_filename (filename);
 	if (icon_name) {
@@ -208,7 +210,7 @@ zenity_util_set_window_icon_from_file (
 
 void
 zenity_util_set_window_icon (GtkWidget *widget,
-		const gchar *filename, const gchar *default_file)
+		const char *filename, const char *default_file)
 {
 	if (filename != NULL) {
 		zenity_util_set_window_icon_from_file (widget, filename);
@@ -220,7 +222,7 @@ zenity_util_set_window_icon (GtkWidget *widget,
 
 void
 zenity_util_set_window_icon_from_icon_name (
-	GtkWidget *widget, const gchar *filename, const gchar *default_icon_name) {
+	GtkWidget *widget, const char *filename, const char *default_icon_name) {
 	if (filename != NULL)
 		zenity_util_set_window_icon_from_file (widget, filename);
 	else
@@ -229,7 +231,7 @@ zenity_util_set_window_icon_from_icon_name (
 
 void
 zenity_util_show_help (GError **error) {
-	gchar *tmp;
+	char *tmp;
 	tmp = g_find_program_in_path ("yelp");
 
 	if (tmp) {
@@ -238,11 +240,11 @@ zenity_util_show_help (GError **error) {
 	}
 }
 
-gint
+int
 zenity_util_return_exit_code (ZenityExitCode value) {
 
-	const gchar *env_var = NULL;
-	gint retval;
+	const char *env_var = NULL;
+	int retval;
 
 	switch (value) {
 
@@ -400,8 +402,9 @@ zenity_util_timeout_handle (gpointer data)
 {
 	GtkDialog *dialog = GTK_DIALOG (data);
 	
-	if (dialog != NULL)
+	if (dialog != NULL) {
 		gtk_dialog_response (dialog, ZENITY_TIMEOUT);
+	}
 	else {
 		zenity_util_gapp_quit (GTK_WINDOW(dialog));
 		exit (ZENITY_TIMEOUT);
@@ -409,29 +412,15 @@ zenity_util_timeout_handle (gpointer data)
 	return FALSE;
 }
 
-/* zenity_util_gapp_main Helper */
-
-static void
-activate_cb (GtkApplication *app, gpointer user_data) {
-	GtkWindow *window = GTK_WINDOW(user_data);
-
-	gtk_application_add_window (app, window);
-}
-
-int
-zenity_util_gapp_main (GtkWindow *window) {
+void
+zenity_util_gapp_main (GtkWindow *window)
+{
 	GtkApplication *app;
-	int status;
 
 	g_assert (GTK_IS_WINDOW (window));
 
-	app = gtk_application_new ("org.gnome.Zenity", G_APPLICATION_FLAGS_NONE);
-	g_signal_connect (app, "activate",
-			G_CALLBACK(activate_cb), window);
-	status = g_application_run (G_APPLICATION(app), 0, NULL);
-	g_object_unref (app);
-
-	return status;
+	app = GTK_APPLICATION(g_application_get_default ());
+	gtk_application_add_window (app, window);
 }
 
 void

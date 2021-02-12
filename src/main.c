@@ -33,26 +33,20 @@
 
 #include <config.h>
 
+typedef struct {
+	int argc;
+	char **argv;
+} ZenityArgs;
 
-int
-main (int argc, char *argv[])
+static void
+activate_cb (GtkApplication *app, gpointer user_data)
 {
+	ZenityArgs *args = user_data;
 	ZenityParsingOptions *results;
 	int retval;
 
-	/* boilerplate i18n stuff */                                                
-	setlocale (LC_ALL, "");
-	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
-                                                                                
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-	textdomain (GETTEXT_PACKAGE);
-	/* </i18n> */
-
-	// FIXME - may not be needed at all with the way I've factored util.c.
-	// But may need to replace this with gapplication here instead, depending.
-//	gtk_init (&argc, &argv);
-
-	results = zenity_option_parse (argc, argv);
+	results = zenity_option_parse (args->argc, args->argv);
+	g_free (args);
 
 	switch (results->mode)
 	{
@@ -61,7 +55,7 @@ main (int argc, char *argv[])
 			break;
 
 		case MODE_ENTRY:
-			results->entry_data->data = (const char **) argv + 1;
+			results->entry_data->data = (const char **) args->argv + 1;
 			zenity_entry (results->data, results->entry_data);
 			break;
 
@@ -81,7 +75,7 @@ main (int argc, char *argv[])
 			break;
 
 		case MODE_LIST:
-			results->tree_data->data = (const char **) argv + 1;
+			results->tree_data->data = (const char **) args->argv + 1;
 			zenity_tree (results->data, results->tree_data);
 			break;
 			
@@ -135,5 +129,34 @@ main (int argc, char *argv[])
 
 	zenity_option_free ();
 
-	exit (retval);
+	// FIXME - pass retval to gapplication properly.
+//	exit (retval);
+}
+
+int
+main (int argc, char *argv[])
+{
+	ZenityArgs *args;
+	GtkApplication *app;
+	int status;
+
+	/* boilerplate i18n stuff */                                                
+	setlocale (LC_ALL, "");
+	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+                                                                                
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+	textdomain (GETTEXT_PACKAGE);
+	/* </i18n> */
+
+	args = g_new (ZenityArgs, 1);
+	args->argc = argc;
+	args->argv = argv;
+
+	app = gtk_application_new ("org.gnome.Zenity", G_APPLICATION_FLAGS_NONE);
+	g_signal_connect (app, "activate",
+			G_CALLBACK(activate_cb), args);
+	status = g_application_run (G_APPLICATION(app), 0, NULL);
+	g_object_unref (app);
+
+	return status;
 }
