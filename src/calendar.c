@@ -112,13 +112,11 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 			dialog);
 	}
 
-	if (data->extra_label) {
-		int i = 0;
-
-		while (data->extra_label[i] != NULL) {
+	if (data->extra_label)
+	{
+		for (int i = 0; data->extra_label[i] != NULL; ++i) {
 			gtk_dialog_add_button (GTK_DIALOG(dialog),
 					data->extra_label[i], i);
-			i++;
 		}
 	}
 

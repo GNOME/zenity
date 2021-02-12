@@ -63,6 +63,7 @@ int zenity_util_return_exit_code (ZenityExitCode value);
 void zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *data);
 void zenity_util_show_dialog (GtkWidget *widget);
 gboolean zenity_util_timeout_handle (gpointer data);
+char *zenity_util_pango_font_description_to_css (PangoFontDescription *desc);
 void zenity_util_gapp_main (GtkWindow *window);
 void zenity_util_gapp_quit (GtkWindow *window);
 

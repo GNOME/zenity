@@ -46,7 +46,6 @@ activate_cb (GtkApplication *app, gpointer user_data)
 	int retval;
 
 	results = zenity_option_parse (args->argc, args->argv);
-	g_free (args);
 
 	switch (results->mode)
 	{
@@ -128,6 +127,7 @@ activate_cb (GtkApplication *app, gpointer user_data)
 	retval = results->data->exit_code;
 
 	zenity_option_free ();
+	g_free (args);
 
 	// FIXME - pass retval to gapplication properly.
 //	exit (retval);

@@ -33,18 +33,18 @@ static void zenity_msg_dialog_response (GtkWidget *widget,
 		int response, gpointer data);
 
 static void
-zenity_msg_construct_question_dialog (
-	GtkWidget *dialog, ZenityMsgData *msg_data, ZenityData *data) {
-
+zenity_msg_construct_question_dialog (GtkWidget *dialog,
+		ZenityMsgData *msg_data, ZenityData *data)
+{
 	GtkWidget *cancel_button, *ok_button;
 
-	cancel_button = gtk_dialog_add_button (
-		GTK_DIALOG (dialog), _ ("_No"), GTK_RESPONSE_CANCEL);
-	ok_button = gtk_dialog_add_button (
-		GTK_DIALOG (dialog), _ ("_Yes"), GTK_RESPONSE_OK);
+	cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
+			_("_No"), GTK_RESPONSE_CANCEL);
+	ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
+			_("_Yes"), GTK_RESPONSE_OK);
 
-	gtk_widget_grab_focus (
-		msg_data->default_cancel ? cancel_button : ok_button);
+	gtk_widget_grab_focus
+		(msg_data->default_cancel ? cancel_button : ok_button);
 
 	if (data->cancel_label) {
 		gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);
@@ -56,7 +56,8 @@ zenity_msg_construct_question_dialog (
 }
 
 static void
-zenity_label_widget_clipboard_selection (GtkWidget *widget) {
+zenity_label_widget_clipboard_selection (GtkWidget *widget)
+{
 	/* Workaround hotfix for suspected toolkit issue:
 	   since focus change of the dialog's focussed widget (text)
 	   somehow currently chooses to destroy
@@ -140,12 +141,12 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			break;
 	}
 
-	if (data->extra_label) {
-		gint i = 0;
-		while (data->extra_label[i] != NULL) {
-			gtk_dialog_add_button (
-				GTK_DIALOG (dialog), data->extra_label[i], i);
-			i++;
+	if (data->extra_label)
+	{
+		for (int i = 0; data->extra_label[i] != NULL; ++i)
+		{
+			gtk_dialog_add_button (GTK_DIALOG (dialog),
+					data->extra_label[i], i);
 		}
 	}
 
@@ -199,31 +200,32 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 		default:
 			break;
 	}
+	if (data->width > -1 || data->height > -1) {
+		gtk_window_set_default_size (GTK_WINDOW(dialog),
+				data->width, data->height);
+	}
 
-	if (data->width > -1 || data->height > -1)
-		gtk_window_set_default_size (
-			GTK_WINDOW (dialog), data->width, data->height);
-
-	if (data->width > -1)
+	if (data->width > -1) {
 		gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
+	}
 	else if (!msg_data->ellipsize && !msg_data->no_wrap) {
 		/* the magic number 60 is picked from gtk+/gtk/ui/gtkmessagedialog.ui
-		 * however, 60 would increase the distance between the icon and the
-		 * text, decreasing to 10 fix it.
 		 */
-		gtk_label_set_width_chars (GTK_LABEL(text), 10);
-		gtk_label_set_max_width_chars (GTK_LABEL(text), 10);
+		gtk_label_set_max_width_chars (GTK_LABEL(text), 60);
 	}
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
-	if (msg_data->dialog_text) {
-		if (msg_data->no_markup)
+	if (msg_data->dialog_text)
+	{
+		if (msg_data->no_markup) {
 			gtk_label_set_text (GTK_LABEL (text), msg_data->dialog_text);
-		else
-			gtk_label_set_markup (
-				GTK_LABEL (text), g_strcompress (msg_data->dialog_text));
+		}
+		else {
+			gtk_label_set_markup (GTK_LABEL (text),
+					g_strcompress (msg_data->dialog_text));
+		}
 		zenity_label_widget_clipboard_selection (GTK_WIDGET (text));
 	}
 
@@ -235,7 +237,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			GTK_IMAGE (image), msg_data->dialog_icon);
 
 	if (msg_data->no_wrap)
-		gtk_label_set_wrap (GTK_LABEL (text), FALSE);
+		gtk_label_set_wrap (GTK_LABEL(text), FALSE);
 
 	zenity_util_show_dialog (dialog);
 

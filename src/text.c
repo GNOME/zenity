@@ -309,19 +309,17 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
 	if (text_data->font)
 	{
+		PangoFontDescription *desc;
 		GtkStyleContext *context;
 		GtkCssProvider *provider;
-		char *font_str;
+		char *css_str;
 
-		font_str = g_strdup_printf (
-				"* { \n"
-				"  font: %s\n"
-				"}\n",
-				text_data->font);
+		desc = pango_font_description_from_string (text_data->font);
+		css_str = zenity_util_pango_font_description_to_css (desc);
 			
 		provider = gtk_css_provider_new ();
-		gtk_css_provider_load_from_data (provider, font_str, -1);
-		g_free (font_str);
+		gtk_css_provider_load_from_data (provider, css_str, -1);
+		g_free (css_str);
 
 		context = gtk_widget_get_style_context (GTK_WIDGET(text_view));
 		gtk_style_context_add_provider (context,
