@@ -92,13 +92,10 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	if (data->extra_label)
 	{
-		int i = 0;
-
-		while (data->extra_label[i] != NULL)
+		for (int i = 0; data->extra_label[i] != NULL; ++i)
 		{
 			gtk_dialog_add_button (GTK_DIALOG (dialog),
 					data->extra_label[i], i);
-			i++;
 		}
 	}
 
@@ -109,7 +106,8 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 		gtk_button_set_label (GTK_BUTTON(button), data->ok_label);
 	}
 
-	if (data->cancel_label) {
+	if (data->cancel_label)
+	{
 		button = GTK_WIDGET(gtk_builder_get_object (builder,
 					"zenity_entry_cancel_button"));
 		gtk_button_set_label (GTK_BUTTON(button), data->cancel_label);
@@ -117,9 +115,10 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	text = gtk_builder_get_object (builder, "zenity_entry_text");
 
-	if (entry_data->dialog_text)
+	if (entry_data->dialog_text) {
 		gtk_label_set_text_with_mnemonic (GTK_LABEL (text),
 				g_strcompress (entry_data->dialog_text));
+	}
 
 	vbox = gtk_builder_get_object (builder, "vbox4");
 

@@ -39,17 +39,26 @@ static void zenity_password_dialog_response (GtkWidget *widget,
 void
 zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 {
+	GtkBuilder *builder;
 	GtkWidget *dialog;
-	GtkWidget *image;
-	GtkWidget *hbox;
-	GtkWidget *vbox_labels;
-	GtkWidget *vbox_entries;
+	GtkWidget *button;
+	GtkWidget *grid;
 	GtkWidget *label;
-	char *title_text;
+	int pass_row = 0;
 
+	/* Set global */
 	zen_data = data;
 
-	dialog = gtk_dialog_new ();
+	builder = zenity_util_load_ui_file ("zenity_password_dialog", NULL);
+
+	if (builder == NULL)
+	{
+		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+		return;
+	}
+
+	dialog = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_password_dialog"));
 
 	if (data->extra_label)
 	{
@@ -60,61 +69,66 @@ zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 		}
 	}
 
-	gtk_dialog_add_button (GTK_DIALOG (dialog),
-		data->cancel_label != NULL ? data->cancel_label : _("_Cancel"),
-		GTK_RESPONSE_CANCEL);
+	if (data->ok_label)
+	{
+		button = GTK_WIDGET(gtk_builder_get_object (builder,
+					"zenity_password_ok_button"));
+		gtk_button_set_label (GTK_BUTTON(button), data->ok_label);
+	}
 
-	gtk_dialog_add_button (GTK_DIALOG (dialog),
-		data->ok_label != NULL ? data->ok_label : _("_OK"),
-		GTK_RESPONSE_OK);
+	if (data->cancel_label)
+	{
+		button = GTK_WIDGET(gtk_builder_get_object (builder,
+					"zenity_password_cancel_button"));
+		gtk_button_set_label (GTK_BUTTON(button), data->cancel_label);
+	}
 
-	image = gtk_image_new_from_icon_name ("dialog-password");
-
-	gtk_dialog_set_default_response (GTK_DIALOG(dialog), GTK_RESPONSE_OK);
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
-	gtk_box_append (GTK_BOX(hbox), image);
+	grid = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_password_grid"));
 
 	/* Checks if username has been passed as a parameter */
 	if (password_data->username)
-		title_text = _("Type your username and password");
-	else
-		title_text = _("Type your password");
-
-	label = gtk_label_new (title_text);
-
-	gtk_box_append (GTK_BOX(hbox), label);
-	gtk_box_append (GTK_BOX(gtk_dialog_get_content_area (GTK_DIALOG(dialog))),
-		hbox);
-
-	vbox_labels = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
-	vbox_entries = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
-
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
-	gtk_box_append (GTK_BOX(gtk_dialog_get_content_area (GTK_DIALOG(dialog))),
-		hbox);
-
-	gtk_box_append (GTK_BOX(hbox), vbox_labels);
-	gtk_box_append (GTK_BOX (hbox), vbox_entries);
-
-	if (password_data->username)
 	{
+		/* Change the password label to ask for both username and password */
+		label = GTK_WIDGET(gtk_builder_get_object (builder,
+					"zenity_password_title"));
+		gtk_label_set_text (GTK_LABEL(label),
+				_("Type your username and password"));
+
+		/* Add the username label and entry and increment the row for the
+		 * password entry so it will be added below the username.
+		 */
 		label = gtk_label_new (_("Username:"));
-		gtk_box_append (GTK_BOX(vbox_labels), label);
+		gtk_grid_attach (GTK_GRID(grid), label,
+				0,		/* col */
+				0,		/* row */
+				1, 1);	/* width/height by cell. */	
 
 		password_data->entry_username = gtk_entry_new ();
-		gtk_box_append (GTK_BOX(vbox_entries),
-				password_data->entry_username);
+		gtk_grid_attach (GTK_GRID(grid), password_data->entry_username,
+				1,
+				0,
+				1, 1);
+
+		++pass_row;
 	}
 
 	label = gtk_label_new (_("Password:"));
-	gtk_box_append (GTK_BOX(vbox_labels), label);
+	gtk_grid_attach (GTK_GRID(grid), label,
+			0,		/* col */
+			pass_row,		/* row */
+			1, 1);	/* width/height by cell. */	
+
 	password_data->entry_password = gtk_entry_new ();
 	gtk_entry_set_visibility (GTK_ENTRY(password_data->entry_password), FALSE);
 	gtk_entry_set_input_purpose (GTK_ENTRY(password_data->entry_password),
 			GTK_INPUT_PURPOSE_PASSWORD);
 	gtk_entry_set_activates_default (GTK_ENTRY(password_data->entry_password),
 			TRUE);
-	gtk_box_append (GTK_BOX(vbox_entries), password_data->entry_password);
+	gtk_grid_attach (GTK_GRID(grid), password_data->entry_password,
+			1,
+			pass_row,
+			1, 1);
 
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW(dialog), data->dialog_title);

@@ -676,4 +676,76 @@
 			</object>
 		</child>
 	</object>
+
+
+
+
+
+
+
+	<object class="GtkDialog" id="zenity_password_dialog">
+		<property name="title" translatable="yes">Warning</property>
+		<property name="resizable">false</property>
+
+		<child internal-child="content_area">
+			<object class="GtkBox"> <!-- vbox -->
+				<property name="orientation">vertical</property>
+				<property name="spacing">14</property>
+				<property name="margin-start">12</property>
+				<property name="margin-end">12</property>
+				<property name="margin-bottom">12</property>
+				<property name="margin-top">12</property>
+				<child>
+					<object class="GtkBox">
+						<property name="orientation">horizontal</property>
+						<property name="spacing">12</property>
+						<child>
+							<object class="GtkImage" id="zenity_password_image">
+								<property name="icon_name">dialog-password</property>
+								<property name="icon_size">large</property>
+							</object>
+						</child>
+						<child>
+							<object class="GtkLabel" id="zenity_password_title">
+								<property name="label" translatable="yes">Type your password</property>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkGrid" id="zenity_password_grid">
+						<property name="column-spacing">12</property>
+						<property name="row-spacing">6</property>
+					</object>
+				</child>
+			</object> <!-- !vbox -->
+		</child>
+		<action-widgets>
+			<action-widget response="ok" default="true">zenity_password_ok_button</action-widget>
+			<action-widget response="cancel">zenity_password_cancel_button</action-widget>
+		</action-widgets>
+		<child internal-child="action_area">
+			<object class="GtkBox">
+				<property name="visible">True</property>
+				<property name="can_focus">False</property>
+				<child>
+					<object class="GtkButton" id="zenity_password_ok_button">
+						<property name="use-underline">true</property>
+						<property name="label" translatable="yes">_OK</property>
+					</object>
+				</child>
+				<child>
+					<object class="GtkButton" id="zenity_password_cancel_button">
+						<property name="use-underline">true</property>
+						<property name="label" translatable="yes">_Cancel</property>
+					</object>
+				</child>
+			</object>
+		</child>
+	</object>
+
+
+
+
+	
 </interface>
