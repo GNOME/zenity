@@ -54,6 +54,10 @@ activate_cb (GtkApplication *app, gpointer user_data)
 			break;
 
 		case MODE_ENTRY:
+			/* allow for a series of tokens (or even a bash array!) to be
+			 * passed as arguments so as to auto-populate the entry with
+			 * a list of options as a combo-box.
+			 */
 			results->entry_data->data = (const char **) args->argv + 1;
 			zenity_entry (results->data, results->entry_data);
 			break;

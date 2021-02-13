@@ -161,7 +161,12 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 			(GSourceFunc) zenity_util_timeout_handle,
 			dialog);
 	}
-	zenity_util_gapp_main (GTK_WINDOW(dialog));
+
+	/* Since a native dialog is not a GtkWindow, we can't use our handy
+	 * util function.
+	 */
+	gtk_native_dialog_show (GTK_NATIVE_DIALOG(dialog));
+	g_application_hold (g_application_get_default ());
 }
 
 static void
@@ -218,5 +223,9 @@ zenity_fileselection_dialog_response (GtkDialog *dialog,
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(dialog));
+
+	/* Since a native dialog is not a GtkWindow, we can't use our handy
+	 * util function.
+	 */
+	g_application_release (g_application_get_default ());
 }

@@ -33,16 +33,14 @@ static void zenity_entry_dialog_response (GtkWidget *widget,
 		int response, gpointer data);
 
 static GtkWidget *entry;
-static gint n_entries = 0;
+static int n_entries = 0;
 
 static void
 zenity_entry_fill_entries (GSList **entries, const char **args)
 {
-	int i = 0;
-
-	while (args[i] != NULL) {
+	for (int i = 0; args[i] != NULL; ++i)
+	{
 		*entries = g_slist_append (*entries, (char *)args[i]);
-		i++;
 	}
 }
 

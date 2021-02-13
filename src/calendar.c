@@ -37,8 +37,10 @@ static ZenityCalendarData *zen_cal_data;
 
 static void zenity_calendar_dialog_response (GtkWidget *widget,
 		int response, gpointer data);
+#if 0
 static void zenity_calendar_day_selected (GtkCalendar *calendar,
 		gpointer data);
+#endif
 
 void
 zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
@@ -57,8 +59,8 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 		return;
 	}
 
-	dialog =
-		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_calendar_dialog"));
+	dialog = GTK_WIDGET (gtk_builder_get_object (builder,
+				"zenity_calendar_dialog"));
 
 	g_signal_connect (dialog, "response",
 		G_CALLBACK(zenity_calendar_dialog_response), data);
@@ -96,12 +98,17 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 	if (cal_data->day > 0)
 	{
 		g_object_set (calendar,
-				"day", cal_data->day,
+				"day", cal_data->day - 1,
 				NULL);
 	}
 
+	/* day-selected-double-click is gone in gtk4, and having this emit upon
+	 * single-click violates POLA more than just disabling the behaviour,
+	 * IMO. */
+#if 0
 	g_signal_connect (calendar, "day-selected",
 		G_CALLBACK(zenity_calendar_day_selected), data);
+#endif
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
 	zenity_util_show_dialog (dialog);
@@ -141,25 +148,28 @@ static void
 zenity_calendar_dialog_output (void)
 {
 	int day, month, year;
-	char time_string[128];
-	GDate *date = NULL;
+	char *time_string;
+	GDateTime *date;
 
 	g_object_get (calendar,
 			"day", &day,
 			"month", &month,
 			"year", &year,
 			NULL);
-	date = g_date_new_dmy (year, month + 1, day);
-	g_date_strftime (time_string, 127, zen_cal_data->date_format, date);
+
+	date = g_date_time_new_local (year, month + 1, day + 1,
+			0, 0, 0);
+
+	time_string = g_date_time_format (date, zen_cal_data->date_format);
 	g_print ("%s\n", time_string);
 
-	if (date != NULL)
-		g_date_free (date);
+	g_date_time_unref (date);
+	g_free (time_string);
 }
 
 static void
-zenity_calendar_dialog_response (GtkWidget *widget,
-		int response, gpointer data)
+zenity_calendar_dialog_response (GtkWidget *widget, int response,
+		gpointer data)
 {
 	ZenityData *zen_data = data;
 
@@ -186,11 +196,13 @@ zenity_calendar_dialog_response (GtkWidget *widget,
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(gtk_widget_get_native (widget)));
 }
 
+#if 0
 static void
 zenity_calendar_day_selected (GtkCalendar *cal, gpointer data)
 {
-	zenity_calendar_dialog_response (NULL, GTK_RESPONSE_OK, data);
+	zenity_calendar_dialog_response (GTK_WIDGET(cal), GTK_RESPONSE_OK, data);
 }
+#endif
