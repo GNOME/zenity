@@ -57,7 +57,7 @@ zenity_util_load_ui_file (const char *root_widget, ...)
 	GtkBuilder *builder = gtk_builder_new ();
 	GError *error = NULL;
 	char **objects;
-	guint result = 0;
+	gboolean result = FALSE;
 
 	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
 
@@ -80,25 +80,25 @@ zenity_util_load_ui_file (const char *root_widget, ...)
 	g_ptr_array_add (ptrarray, NULL);
 	objects = (char **)g_ptr_array_free (ptrarray, FALSE);
 
-	if (g_file_test (ZENITY_UI_FILE_RELATIVEPATH, G_FILE_TEST_EXISTS)) {
-		/* Try current dir, for debugging */
-		result = gtk_builder_add_objects_from_file (builder,
-				ZENITY_UI_FILE_RELATIVEPATH, (const char **)objects, NULL);
-	}
-
-	if (result == 0)
-		result = gtk_builder_add_objects_from_file (builder,
-				ZENITY_UI_FILE_FULLPATH, (const char **)objects, &error);
+	result = gtk_builder_add_objects_from_resource (builder,
+			ZENITY_UI_RESOURCE_PATH,
+			(const char **)objects,
+			&error);
 
 	g_strfreev (objects);
 
-	if (result == 0) {
-		g_warning ("Could not load ui file %s: %s",
-			ZENITY_UI_FILE_FULLPATH,
-			error->message);
+	if (! result) {
+		g_error ("Could not load ui resource %s: %s",
+				ZENITY_UI_RESOURCE_PATH,
+				error->message);
+	}
+
+	/* This should never happen, but if an unexpected error is logged, print
+	 * it for debugging purposes. */
+	if (error) {
+		g_debug ("%s: Error generated: %s",
+				__func__, error->message);
 		g_error_free (error);
-		g_object_unref (builder);
-		return NULL;
 	}
 
 	return builder;
@@ -544,18 +544,31 @@ zenity_util_timeout_handle (gpointer data)
 void
 zenity_util_gapp_main (GtkWindow *window)
 {
-	GtkApplication *app;
+	GApplication *app = g_application_get_default ();
 
-	g_assert (GTK_IS_WINDOW (window));
+	if (window)
+	{
+		/* As this behaves quite differently if a window is provided vs. not,
+		 * let's ensure any window passed is valid.
+		 */
+		g_assert (GTK_IS_WINDOW (window));
 
-	app = GTK_APPLICATION(g_application_get_default ());
-	gtk_application_add_window (app, window);
+		gtk_application_add_window (GTK_APPLICATION(app), window);
+	}
+	else {
+		g_application_hold (g_application_get_default ());
+	}
 }
 
 void
 zenity_util_gapp_quit (GtkWindow *window)
 {
-	g_assert (GTK_IS_WINDOW (window));
-
-	gtk_window_set_application (window, NULL);
+	if (window)
+	{
+		g_assert (GTK_IS_WINDOW (window));
+		gtk_window_set_application (window, NULL);
+	}
+	else {
+		g_application_release (g_application_get_default ());
+	}
 }

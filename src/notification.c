@@ -377,8 +377,11 @@ zenity_notification (ZenityData *data,
 	if (notification_data->listen)
 	{
 		zenity_notification_listen_on_stdin (data);
-		// FIXME - not sure what to replace this with atm.
-//		gtk_main ();
+
+		/* FIXME - gtk_main () was here. Possibly replace this with the
+		 * zenity_util_gapp_main function and a corresponding  _quit in
+		 * place of the exit calls. 
+		 */
 	}
 	else
 	{
@@ -427,8 +430,11 @@ zenity_notification (ZenityData *data,
 		g_timeout_add_seconds (data->timeout_delay,
 			(GSourceFunc) zenity_util_timeout_handle,
 			NULL);
-		// FIXME - not sure what to replace this with here.
-//		gtk_main ();
+
+		/* FIXME - gtk_main () was here. Possibly replace this with the
+		 * zenity_util_gapp_main function and a corresponding  _quit in
+		 * place of the exit calls. 
+		 */
 	}
 }
 

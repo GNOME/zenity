@@ -55,6 +55,7 @@ zenity_msg_construct_question_dialog (GtkWidget *dialog,
 	}
 }
 
+/* FIXME - Is this still necessary with gtk4? */
 static void
 zenity_label_widget_clipboard_selection (GtkWidget *widget)
 {
@@ -104,8 +105,8 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 		case ZENITY_MSG_QUESTION:
 		case ZENITY_MSG_SWITCH:
 			builder = zenity_util_load_ui_file ("zenity_question_dialog", NULL);
-			dialog = GTK_WIDGET (
-				gtk_builder_get_object (builder, "zenity_question_dialog"));
+			dialog = GTK_WIDGET (gtk_builder_get_object (builder,
+						"zenity_question_dialog"));
 			text = gtk_builder_get_object (builder, "zenity_question_text");
 			image = gtk_builder_get_object (builder, "zenity_question_image");
 			ok_button = NULL;
@@ -113,22 +114,22 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 
 		case ZENITY_MSG_ERROR:
 			builder = zenity_util_load_ui_file ("zenity_error_dialog", NULL);
-			dialog = GTK_WIDGET (
-				gtk_builder_get_object (builder, "zenity_error_dialog"));
+			dialog = GTK_WIDGET (gtk_builder_get_object (builder,
+						"zenity_error_dialog"));
 			text = gtk_builder_get_object (builder, "zenity_error_text");
 			image = gtk_builder_get_object (builder, "zenity_error_image");
-			ok_button = GTK_WIDGET (
-				gtk_builder_get_object (builder, "zenity_error_ok_button"));
+			ok_button = GTK_WIDGET (gtk_builder_get_object (builder,
+						"zenity_error_ok_button"));
 			break;
 
 		case ZENITY_MSG_INFO:
 			builder = zenity_util_load_ui_file ("zenity_info_dialog", NULL);
-			dialog = GTK_WIDGET (
-				gtk_builder_get_object (builder, "zenity_info_dialog"));
+			dialog = GTK_WIDGET (gtk_builder_get_object (builder,
+						"zenity_info_dialog"));
 			text = gtk_builder_get_object (builder, "zenity_info_text");
 			image = gtk_builder_get_object (builder, "zenity_info_image");
-			ok_button = GTK_WIDGET (
-				gtk_builder_get_object (builder, "zenity_info_ok_button"));
+			ok_button = GTK_WIDGET (gtk_builder_get_object (builder,
+						"zenity_info_ok_button"));
 			break;
 
 		default:

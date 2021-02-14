@@ -133,8 +133,9 @@ activate_cb (GtkApplication *app, gpointer user_data)
 	zenity_option_free ();
 	g_free (args);
 
-	// FIXME - pass retval to gapplication properly.
-//	exit (retval);
+	/* FIXME - pass retval to gapplication properly.
+	 * exit (retval);
+	 */
 }
 
 int

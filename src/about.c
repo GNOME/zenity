@@ -35,8 +35,6 @@
 #include <config.h>
 
 #define GTK_RESPONSE_CREDITS 0
-#define ZENITY_HELP_PATH ZENITY_DATADIR "/help/"
-#define ZENITY_CLOTHES_PATH ZENITY_DATADIR "/clothes/"
 
 #define ZENITY_CANVAS_X 400.0
 #define ZENITY_CANVAS_Y 280.0
