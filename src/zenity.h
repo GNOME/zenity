@@ -1,8 +1,12 @@
+/* vim: colorcolumn=80 ts=4 sw=4
+ */
 #ifndef ZENITY_H
 #define ZENITY_H
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
+
+#include <config.h>
 
 G_BEGIN_DECLS
 
@@ -176,8 +180,8 @@ void zenity_progress (ZenityData *data, ZenityProgressData *progress_data);
 void zenity_text (ZenityData *data, ZenityTextData *text_data);
 void zenity_tree (ZenityData *data, ZenityTreeData *tree_data);
 #ifdef HAVE_LIBNOTIFY
-void zenity_notification (
-	ZenityData *data, ZenityNotificationData *notification_data);
+void zenity_notification (ZenityData *data,
+		ZenityNotificationData *notification_data);
 #endif
 
 void zenity_colorselection (

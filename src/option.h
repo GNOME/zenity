@@ -25,11 +25,9 @@
 #define OPTION_H
 
 #include "zenity.h"
+
 #include <glib.h>
-#include <langinfo.h>
-#ifdef HAVE_LOCALE_H
-#include <locale.h>
-#endif
+#include <config.h>
 
 typedef enum {
 	MODE_CALENDAR,

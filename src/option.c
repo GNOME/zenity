@@ -28,6 +28,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <locale.h>
+#include <langinfo.h>
 
 #include <config.h>
 
