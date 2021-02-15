@@ -76,9 +76,6 @@ General options
 .B \-\-title=TITLE
 Set the dialog title
 .TP
-.B \-\-window-icon=ICONPATH
-Set the window icon with the path to an image. Alternatively, one of the four stock icons can be used: 'error', 'info', 'question' or 'warning'
-.TP
 .B \-\-width=WIDTH
 Set the dialog width
 .TP
@@ -211,7 +208,7 @@ Notification options
 Set the notification text
 .TP
 .B \-\-listen
-Listen for commands on stdin. Commands include 'message', 'tooltip', 'icon', and 'visible' separated by a colon. For example, 'message: Hello world', 'visible: false', or 'icon: /path/to/icon'. The icon command also accepts the four stock icon: 'error', 'info', 'question', and 'warning'
+Listen for commands on stdin. Commands include 'message', 'tooltip', 'icon', and 'visible' separated by a colon. For example, 'message: Hello world', or 'visible: false'.
 
 .PP
 Progress options
@@ -400,7 +397,7 @@ find . \-name '*.h' | zenity \-\-list \-\-title "Search Results" \-\-text "Findi
 .PP
 Show a notification in the message tray
 .IP
-zenity \-\-notification \-\-window-icon=update.png \-\-text "System update necessary!"
+zenity \-\-notification \-\-icon=update.png \-\-text "System update necessary!"
 .PP
 Display a weekly shopping list in a check list dialog with \fIApples\fP and \fIOranges\fP pre selected
 .IP

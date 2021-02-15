@@ -178,66 +178,6 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const char *filename) {
 	return TRUE;
 }
 
-#if 0
-const char *
-zenity_util_icon_name_from_filename (const char *filename) {
-	if (!filename || !filename[0])
-		return "dialog-warning"; /* default */
-
-	if (!g_ascii_strcasecmp (filename, "warning"))
-		return "dialog-warning";
-	if (!g_ascii_strcasecmp (filename, "info"))
-		return "dialog-information";
-	if (!g_ascii_strcasecmp (filename, "question"))
-		return "dialog-question";
-	if (!g_ascii_strcasecmp (filename, "error"))
-		return "dialog-error";
-	return NULL;
-}
-#endif
-
-#if 0
-void
-zenity_util_set_window_icon_from_file (GtkWidget *widget,
-		const char *filename)
-{
-	const char *icon_name;
-
-	icon_name = zenity_util_icon_name_from_filename (filename);
-	if (icon_name) {
-		gtk_window_set_icon_name (GTK_WINDOW (widget), icon_name);
-	} else {
-		g_debug ("%s: NOT IMPLEMENTED with icon name not existing.",
-				__func__);
-	}
-}
-#endif
-
-#if 0
-void
-zenity_util_set_window_icon (GtkWidget *widget, const char *icon_name)
-{
-	if (filename != NULL) {
-		zenity_util_set_window_icon_from_file (widget, filename);
-	} else {
-		g_debug ("%s: setting icon where no filename: NOT IMPLEMENTED",
-				__func__);
-	}
-}
-#endif
-
-#if 0
-void
-zenity_util_set_window_icon_from_icon_name (GtkWidget *widget,
-		const char *filename, const char *default_icon_name)
-{
-	if (filename != NULL)
-		zenity_util_set_window_icon_from_file (widget, filename);
-	else
-		gtk_window_set_icon_name (GTK_WINDOW (widget), default_icon_name);
-}
-#endif
-
 void
 zenity_util_show_help (GError **error) {
 	char *tmp;

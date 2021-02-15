@@ -35,7 +35,6 @@
 
 /* General Options */
 static char *zenity_general_dialog_title;
-static char *zenity_general_window_icon;
 static int zenity_general_width;
 static int zenity_general_height;
 static char *zenity_general_dialog_text;
@@ -92,6 +91,7 @@ static gboolean zenity_list_mid_search;
 /* Notification Dialog Options */
 static gboolean zenity_notification_active;
 static gboolean zenity_notification_listen;
+static char *zenity_notification_icon;
 static char **zenity_notification_hints;
 #endif
 
@@ -165,13 +165,6 @@ static GOptionEntry general_options[] =
 			 &zenity_general_dialog_title,
 			 N_ ("Set the dialog title"),
 			 N_ ("TITLE")},
-		{"window-icon",
-			'\0',
-			0,
-			G_OPTION_ARG_FILENAME,
-			&zenity_general_window_icon,
-			N_ ("Set the window icon"),
-			N_ ("ICONPATH")},
 		{"width",
 			'\0',
 			0,
@@ -562,6 +555,13 @@ static GOptionEntry notification_options[] =
 			&zenity_general_dialog_text,
 			N_ ("Set the notification text"),
 			N_ ("TEXT")},
+		{"icon",
+			'\0',
+			0,
+			G_OPTION_ARG_FILENAME,
+			&zenity_notification_icon,
+			N_ ("Set the notification icon"),
+			N_ ("ICONPATH")},
 		{"listen",
 			'\0',
 			0,
@@ -1073,8 +1073,6 @@ zenity_option_free (void)
 {
 	if (zenity_general_dialog_title)
 		g_free (zenity_general_dialog_title);
-	if (zenity_general_window_icon)
-		g_free (zenity_general_window_icon);
 	if (zenity_general_dialog_text)
 		g_free (zenity_general_dialog_text);
 	if (zenity_general_uri)
@@ -1114,6 +1112,8 @@ zenity_option_free (void)
 #ifdef HAVE_LIBNOTIFY
 	if (zenity_notification_hints)
 		g_strfreev (zenity_notification_hints);
+	if (zenity_notification_icon)
+		g_free (zenity_notification_icon);
 #endif
 
 	if (zenity_text_font)
@@ -1191,7 +1191,6 @@ zenity_general_pre_callback (GOptionContext *context, GOptionGroup *group,
 	gpointer data, GError **error)
 {
 	zenity_general_dialog_title = NULL;
-	zenity_general_window_icon = NULL;
 	zenity_general_width = -1;
 	zenity_general_height = -1;
 	zenity_general_dialog_text = NULL;
@@ -1288,6 +1287,7 @@ zenity_notification_pre_callback (GOptionContext *context, GOptionGroup *group,
 {
 	zenity_notification_active = FALSE;
 	zenity_notification_listen = FALSE;
+	zenity_notification_icon = NULL;
 
 	return TRUE;
 }
@@ -1410,7 +1410,6 @@ zenity_general_post_callback (GOptionContext *context, GOptionGroup *group,
 	gpointer data, GError **error)
 {
 	results->data->dialog_title = zenity_general_dialog_title;
-	results->data->window_icon = zenity_general_window_icon;
 	results->data->width = zenity_general_width;
 	results->data->height = zenity_general_height;
 	results->data->timeout_delay = zenity_general_timeout_delay;
@@ -1682,6 +1681,7 @@ zenity_notification_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->notification_data->notification_text =
 			zenity_general_dialog_text;
 		results->notification_data->listen = zenity_notification_listen;
+		results->notification_data->icon = zenity_notification_icon;
 		results->notification_data->notification_hints =
 			zenity_notification_hints;
 	}

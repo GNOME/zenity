@@ -12,7 +12,6 @@ G_BEGIN_DECLS
 
 typedef struct {
 	char *dialog_title;
-	char *window_icon;
 	char *ok_label;
 	char *cancel_label;
 	char **extra_label;
@@ -33,11 +32,11 @@ typedef enum {
 } ZenityExitCode;
 
 typedef struct {
-	gchar *dialog_text;
-	gint day;
-	gint month;
-	gint year;
-	gchar *date_format;
+	char *dialog_text;
+	int day;
+	int month;
+	int year;
+	char *date_format;
 } ZenityCalendarData;
 
 typedef enum {
@@ -49,8 +48,8 @@ typedef enum {
 } MsgMode;
 
 typedef struct {
-	gchar *dialog_text;
-	gchar *dialog_icon;
+	char *dialog_text;
+	char *dialog_icon;
 	MsgMode mode;
 	gboolean no_wrap;
 	gboolean no_markup;
@@ -59,34 +58,34 @@ typedef struct {
 } ZenityMsgData;
 
 typedef struct {
-	gchar *dialog_text;
-	gint value;
-	gint min_value;
-	gint max_value;
-	gint step;
+	char *dialog_text;
+	int value;
+	int min_value;
+	int max_value;
+	int step;
 	gboolean print_partial;
 	gboolean hide_value;
 } ZenityScaleData;
 
 typedef struct {
-	gchar *uri;
+	char *uri;
 	gboolean multi;
 	gboolean directory;
 	gboolean save;
-	gchar *separator;
-	gchar **filter;
+	char *separator;
+	char **filter;
 } ZenityFileData;
 
 typedef struct {
-	gchar *dialog_text;
-	gchar *entry_text;
+	char *dialog_text;
+	char *entry_text;
 	gboolean hide_text;
-	const gchar **data;
+	const char **data;
 } ZenityEntryData;
 
 typedef struct {
-	gchar *dialog_text;
-	gchar *entry_text;
+	char *dialog_text;
+	char *entry_text;
 	gboolean pulsate;
 	gboolean autoclose;
 	gboolean autokill;
@@ -96,46 +95,47 @@ typedef struct {
 } ZenityProgressData;
 
 typedef struct {
-	gchar *uri;
+	char *uri;
 	gboolean editable;
 	gboolean no_wrap;
 	gboolean auto_scroll;
-	gchar *font;
+	char *font;
 	GtkTextBuffer *buffer;
-	gchar *checkbox;
+	char *checkbox;
 #ifdef HAVE_WEBKITGTK
 	gboolean html;
 	gboolean no_interaction;
-	gchar *url;
+	char *url;
 #endif
 } ZenityTextData;
 
 typedef struct {
-	gchar *dialog_text;
+	char *dialog_text;
 	GSList *columns;
 	gboolean checkbox;
 	gboolean radiobox;
 	gboolean hide_header;
 	gboolean imagebox;
-	gchar *separator;
+	char *separator;
 	gboolean multi;
 	gboolean editable;
 	gboolean mid_search;
-	gchar *print_column;
-	gchar *hide_column;
-	const gchar **data;
+	char *print_column;
+	char *hide_column;
+	const char **data;
 } ZenityTreeData;
 
 #ifdef HAVE_LIBNOTIFY
 typedef struct {
-	gchar *notification_text;
+	char *notification_text;
 	gboolean listen;
-	gchar **notification_hints;
+	char *icon;
+	char **notification_hints;
 } ZenityNotificationData;
 #endif
 
 typedef struct {
-	gchar *color;
+	char *color;
 	gboolean show_palette;
 } ZenityColorData;
 
@@ -160,14 +160,14 @@ typedef enum {
 } ZenityFormsType;
 
 typedef struct {
-	gchar *option_value;
+	char *option_value;
 	ZenityFormsType type;
 	GtkWidget *forms_widget;
 } ZenityFormsValue;
 
 typedef struct {
 	gboolean username;
-	gchar *password;
+	char *password;
 	GtkWidget *entry_username;
 	GtkWidget *entry_password;
 } ZenityPasswordData;

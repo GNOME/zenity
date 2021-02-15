@@ -44,7 +44,7 @@ static char *icon_file;
 static GHashTable *notification_hints;
 
 static NotifyNotification *
-zenity_notification_new (gchar *message, gchar *icon_file)
+zenity_notification_new (char *message, char *icon_file)
 {
 	NotifyNotification *notif;
 	char **text;
@@ -79,10 +79,10 @@ on_notification_default_action (NotifyNotification *n,
 }
 
 static GHashTable *
-zenity_notification_parse_hints_array (gchar **hints)
+zenity_notification_parse_hints_array (char **hints)
 {
 	GHashTable *result;
-	gchar **pair;
+	char **pair;
 	int i;
 
 	result = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
@@ -103,10 +103,10 @@ zenity_notification_parse_hints_array (gchar **hints)
 }
 
 static GHashTable *
-zenity_notification_parse_hints (gchar *hints)
+zenity_notification_parse_hints (char *hints)
 {
 	GHashTable *result;
-	gchar **hint_array;
+	char **hint_array;
 
 	hint_array = g_strsplit (g_strcompress (hints), "\n", MAX_HINTS);
 	result = zenity_notification_parse_hints_array (hint_array);
@@ -387,7 +387,7 @@ zenity_notification (ZenityData *data,
 
 		notification =
 			zenity_notification_new (notification_data->notification_text,
-					data->window_icon);
+					notification_data->icon);
 
 		if (notification == NULL)
 			exit (1);
