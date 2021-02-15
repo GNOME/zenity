@@ -75,7 +75,7 @@ on_notification_default_action (NotifyNotification *n,
 
 	zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 
-	exit(zen_data->exit_code);
+	zenity_util_gapp_quit (NULL);
 }
 
 static GHashTable *
@@ -378,10 +378,7 @@ zenity_notification (ZenityData *data,
 	{
 		zenity_notification_listen_on_stdin (data);
 
-		/* FIXME - gtk_main () was here. Possibly replace this with the
-		 * zenity_util_gapp_main function and a corresponding  _quit in
-		 * place of the exit calls. 
-		 */
+		zenity_util_gapp_main (NULL);
 	}
 	else
 	{
@@ -431,10 +428,7 @@ zenity_notification (ZenityData *data,
 			(GSourceFunc) zenity_util_timeout_handle,
 			NULL);
 
-		/* FIXME - gtk_main () was here. Possibly replace this with the
-		 * zenity_util_gapp_main function and a corresponding  _quit in
-		 * place of the exit calls. 
-		 */
+		zenity_util_gapp_main (NULL);
 	}
 }
 

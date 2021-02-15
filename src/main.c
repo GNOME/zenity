@@ -39,11 +39,12 @@ typedef struct {
 } ZenityArgs;
 
 static void
-activate_cb (GtkApplication *app, gpointer user_data)
+command_line_cb (GtkApplication *app,
+               GApplicationCommandLine *command_line,
+               gpointer user_data)
 {
 	ZenityArgs *args = user_data;
 	ZenityParsingOptions *results;
-	int retval;
 
 	results = zenity_option_parse (args->argc, args->argv);
 
@@ -128,14 +129,11 @@ activate_cb (GtkApplication *app, gpointer user_data)
 			exit (-1);
 	}
 
-	retval = results->data->exit_code;
-
 	zenity_option_free ();
 	g_free (args);
 
-	/* FIXME - pass retval to gapplication properly.
-	 * exit (retval);
-	 */
+	g_application_command_line_set_exit_status (command_line,
+			results->data->exit_code);
 }
 
 int
@@ -157,9 +155,12 @@ main (int argc, char *argv[])
 	args->argc = argc;
 	args->argv = argv;
 
-	app = gtk_application_new ("org.gnome.Zenity", G_APPLICATION_FLAGS_NONE);
-	g_signal_connect (app, "activate",
-			G_CALLBACK(activate_cb), args);
+	app = gtk_application_new ("org.gnome.Zenity",
+			G_APPLICATION_HANDLES_COMMAND_LINE);
+
+	g_signal_connect (app, "command-line",
+			G_CALLBACK(command_line_cb), args);
+
 	status = g_application_run (G_APPLICATION(app), 0, NULL);
 	g_object_unref (app);
 

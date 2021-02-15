@@ -35,10 +35,10 @@
 
 #include <config.h>
 
-#define MAX_ELEMENTS_BEFORE_SCROLLING 5
 #define PRINT_HIDE_COLUMN_SEPARATOR ","
 
 static GtkBuilder *builder;
+static GtkTreeView *tree_view;
 static GSList *selected;
 static char *separator;
 static gboolean print_all_columns = FALSE;
@@ -138,7 +138,6 @@ static gboolean
 zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		gpointer data)
 {
-	static GtkTreeView *tree_view;
 	GtkTreeModel *model;
 	static GtkTreeIter iter;
 	static int column_count = 0;
@@ -149,7 +148,9 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 	static gboolean first_time = TRUE;
 	GIOStatus status = G_IO_STATUS_NORMAL;
 
-	tree_view = GTK_TREE_VIEW (data);
+	/* Make sure global is properly defined */
+	g_return_val_if_fail (GTK_IS_TREE_VIEW (tree_view), FALSE);
+
 	n_columns =
 		GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tree_view), "n_columns"));
 	editable =
@@ -195,8 +196,8 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 			if (status != G_IO_STATUS_NORMAL)
 			{
 				if (error) {
-					g_warning (
-						"zenity_tree_handle_stdin () : %s", error->message);
+					g_warning ("%s: %s",
+						__func__, error->message);
 					g_error_free (error);
 					error = NULL;
 				}
@@ -239,22 +240,6 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 						&iter, n_columns, TRUE, -1);
 			}
 
-			if (row_count == MAX_ELEMENTS_BEFORE_SCROLLING)
-			{
-				GtkWidget *scrolled_window;
-				GtkRequisition rectangle;
-
-				gtk_widget_get_preferred_size (GTK_WIDGET(tree_view),
-						&rectangle, NULL);
-				scrolled_window = GTK_WIDGET(gtk_builder_get_object (builder,
-							"zenity_tree_window"));
-				gtk_widget_set_size_request (scrolled_window,
-						-1, rectangle.height);
-				gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(scrolled_window),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
-			}
-
 			column_count++;
 
 		} while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) ==
@@ -273,9 +258,13 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 }
 
 static void
-zenity_tree_fill_entries_from_stdin (GtkTreeView *tree_view, gint n_columns,
+zenity_tree_fill_entries_from_stdin (GtkTreeView *loc_tv, int n_columns,
 	gboolean toggles, gboolean editable)
 {
+	/* No reason this should fail. Sanity check. */
+	g_return_if_fail (GTK_IS_TREE_VIEW (tree_view));
+	g_assert (loc_tv == tree_view);
+
 	g_object_set_data (
 		G_OBJECT (tree_view), "n_columns", GINT_TO_POINTER (n_columns));
 	g_object_set_data (
@@ -286,17 +275,21 @@ zenity_tree_fill_entries_from_stdin (GtkTreeView *tree_view, gint n_columns,
 	channel = g_io_channel_unix_new (0);
 	g_io_channel_set_encoding (channel, NULL, NULL);
 	g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
-	g_io_add_watch (
-		channel, G_IO_IN | G_IO_HUP, zenity_tree_handle_stdin, tree_view);
+	g_io_add_watch (channel,
+			G_IO_IN | G_IO_HUP, zenity_tree_handle_stdin, NULL);
 }
 
 static void
-zenity_tree_fill_entries (GtkTreeView *tree_view, const char **args,
+zenity_tree_fill_entries (GtkTreeView *loc_tv, const char **args,
 	int n_columns, gboolean toggles, gboolean editable)
 {
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	int i = 0;
+
+	/* No reason this should fail. Sanity check. */
+	g_return_if_fail (GTK_IS_TREE_VIEW (tree_view));
+	g_assert (loc_tv == tree_view);
 
 	model = gtk_tree_view_get_model (tree_view);
 
@@ -323,26 +316,10 @@ zenity_tree_fill_entries (GtkTreeView *tree_view, const char **args,
 					GTK_LIST_STORE (model), &iter, j, args[i + j], -1);
 		}
 
-		if (editable)
-			gtk_list_store_set (
-				GTK_LIST_STORE (model), &iter, n_columns, TRUE, -1);
-
-		if (i == MAX_ELEMENTS_BEFORE_SCROLLING)
-		{
-			GtkWidget *scrolled_window;
-			GtkRequisition rectangle;
-
-			gtk_widget_get_preferred_size (
-				GTK_WIDGET (tree_view), &rectangle, NULL);
-			scrolled_window = GTK_WIDGET (
-				gtk_builder_get_object (builder, "zenity_tree_window"));
-			gtk_widget_set_size_request (scrolled_window, -1, rectangle.height);
-			gtk_scrolled_window_set_policy (
-				GTK_SCROLLED_WINDOW (scrolled_window),
-				GTK_POLICY_AUTOMATIC,
-				GTK_POLICY_AUTOMATIC);
+		if (editable) {
+			gtk_list_store_set (GTK_LIST_STORE(model),
+					&iter, n_columns, TRUE, -1);
 		}
-
 		i += n_columns;
 	}
 }
@@ -384,7 +361,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 {
 	GtkWidget *dialog;
 	GtkWidget *button;
-	GObject *tree_view;
 	GObject *text;
 	GtkTreeViewColumn *column;
 	GtkListStore *model;
@@ -477,15 +453,17 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 		gtk_label_set_markup (GTK_LABEL(text),
 				g_strcompress (tree_data->dialog_text));
 
-	zenity_util_set_window_icon (dialog, data->window_icon,
-			ZENITY_IMAGE_FULLPATH ("zenity-list.png"));
+	gtk_window_set_icon_name (GTK_WINDOW(dialog),
+			"view-sort-ascending");
 
 	if (data->width > -1 || data->height > -1) {
 		gtk_window_set_default_size (GTK_WINDOW(dialog),
 				data->width, data->height);
 	}
 
-	tree_view = gtk_builder_get_object (builder, "zenity_tree_view");
+	/* Define global tree_view. */
+	tree_view = GTK_TREE_VIEW(gtk_builder_get_object (builder,
+				"zenity_tree_view"));
 
 	if (!(tree_data->radiobox || tree_data->checkbox))
 	{
@@ -519,23 +497,23 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	else
 		gtk_list_store_set_column_types (model, n_columns, column_types);
 
-	gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (model));
+	gtk_tree_view_set_model (tree_view, GTK_TREE_MODEL(model));
 
 	if (! (tree_data->radiobox || tree_data->checkbox))
 	{
 		if (tree_data->multi)
 			gtk_tree_selection_set_mode (
-				gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+				gtk_tree_view_get_selection (tree_view),
 				GTK_SELECTION_MULTIPLE);
 		else
 			gtk_tree_selection_set_mode (
-				gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+				gtk_tree_view_get_selection (tree_view),
 				GTK_SELECTION_SINGLE);
 	}
 	else
 	{
 		gtk_tree_selection_set_mode (
-			gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+			gtk_tree_view_get_selection (tree_view),
 			GTK_SELECTION_NONE);
 	}
 
@@ -585,7 +563,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 					cell_renderer = gtk_cell_renderer_text_new ();
 					g_signal_connect (cell_renderer, "edited",
 						G_CALLBACK (zenity_cell_edited_callback),
-						gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view)));
+						gtk_tree_view_get_model (tree_view));
 
 					g_object_set_data (G_OBJECT (cell_renderer),
 						"column",
@@ -627,7 +605,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 				cell_renderer = gtk_cell_renderer_text_new ();
 				g_signal_connect (cell_renderer, "edited",
 					G_CALLBACK (zenity_cell_edited_callback),
-					gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view)));
+					gtk_tree_view_get_model (tree_view));
 
 				g_object_set_data (G_OBJECT (cell_renderer),
 					"column",
@@ -657,24 +635,24 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 				gtk_tree_view_column_set_visible (column, FALSE);
 		}
 
-		gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+		gtk_tree_view_append_column (tree_view, column);
 		column_index++;
 	}
 
 	if (tree_data->hide_header)
-		gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (tree_view), FALSE);
+		gtk_tree_view_set_headers_visible (tree_view, FALSE);
 
 	if (tree_data->radiobox || tree_data->checkbox)
 	{
 		if (tree_data->data && *tree_data->data) {
-			zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view),
+			zenity_tree_fill_entries (tree_view,
 				tree_data->data,
 				n_columns,
 				TRUE,
 				tree_data->editable);
 		}
 		else {
-			zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view),
+			zenity_tree_fill_entries_from_stdin (tree_view,
 				n_columns,
 				TRUE,
 				tree_data->editable);
@@ -683,13 +661,13 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	else
 	{
 		if (tree_data->data && *tree_data->data) {
-			zenity_tree_fill_entries (GTK_TREE_VIEW (tree_view),
+			zenity_tree_fill_entries (tree_view,
 				tree_data->data,
 				n_columns,
 				FALSE,
 				tree_data->editable);
 		} else {
-			zenity_tree_fill_entries_from_stdin (GTK_TREE_VIEW (tree_view),
+			zenity_tree_fill_entries_from_stdin (tree_view,
 				n_columns,
 				FALSE,
 				tree_data->editable);
@@ -699,7 +677,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	zenity_util_show_dialog (dialog);
 
 	if (tree_data->mid_search) {
-		gtk_tree_view_set_search_equal_func (GTK_TREE_VIEW (tree_view),
+		gtk_tree_view_set_search_equal_func (tree_view,
 			(GtkTreeViewSearchEqualFunc) zenity_mid_search_func,
 			model,
 			NULL);
@@ -718,7 +696,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
 static void
 zenity_tree_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf,
-	GtkTreeIter *iter, GtkTreeView *tree_view)
+	GtkTreeIter *iter, gpointer user_data)
 {
 	GValue value = G_VALUE_INIT;
 	int n_columns, i;
@@ -749,7 +727,7 @@ zenity_tree_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf,
 
 static gboolean
 zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path,
-	GtkTreeIter *iter, GtkTreeView *tree_view)
+	GtkTreeIter *iter, gpointer user_data)
 {
 	GValue toggle_value = G_VALUE_INIT;
 	int n_columns, i;
@@ -794,25 +772,25 @@ zenity_tree_dialog_toggle_get_selected (GtkTreeModel *model, GtkTreePath *path,
 static void
 zenity_tree_dialog_output (void)
 {
-	GObject *tree_view;
 	GtkTreeSelection *selection;
 	GtkTreeModel *model;
 
-	tree_view = gtk_builder_get_object (builder, "zenity_tree_view");
-	model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
+	g_return_if_fail (GTK_IS_TREE_VIEW (tree_view));
+
+	model = gtk_tree_view_get_model (tree_view);
 
 	if (gtk_tree_model_get_column_type (model, 0) == G_TYPE_BOOLEAN)
 	{
 		gtk_tree_model_foreach (model,
 			(GtkTreeModelForeachFunc) zenity_tree_dialog_toggle_get_selected,
-			GTK_TREE_VIEW (tree_view));
+			NULL);
 	}
 	else
 	{
-		selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+		selection = gtk_tree_view_get_selection (tree_view);
 		gtk_tree_selection_selected_foreach (selection,
 			(GtkTreeSelectionForeachFunc) zenity_tree_dialog_get_selected,
-			GTK_TREE_VIEW (tree_view));
+			NULL);
 	}
 
 
@@ -871,16 +849,22 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
 }
 
 static void
-zenity_tree_row_activated (GtkTreeView *tree_view, GtkTreePath *tree_path,
+zenity_tree_row_activated (GtkTreeView *loc_tv, GtkTreePath *tree_path,
 	GtkTreeViewColumn *tree_col, gpointer data)
 {
+	GtkWindow *parent;
 	ZenityData *zen_data = data;
+
+	/* No reason this should fail. Sanity check. */
+	g_return_if_fail (GTK_IS_TREE_VIEW (tree_view));
+	g_assert (loc_tv == tree_view);
 
 	zenity_tree_dialog_output ();
 	zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 
-	// FIXME - TEST - not sure how to replace gtk_main_quit here.
-	exit(zen_data->exit_code);
+	parent = GTK_WINDOW(gtk_widget_get_native (GTK_WIDGET(tree_view)));
+
+	zenity_util_gapp_quit (parent);
 }
 
 static gboolean

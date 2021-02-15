@@ -294,8 +294,8 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW(dialog), data->dialog_title);
 
-	zenity_util_set_window_icon (dialog, data->window_icon,
-			ZENITY_IMAGE_FULLPATH ("zenity-text.png"));
+	gtk_window_set_icon_name (GTK_WINDOW(dialog),
+			"accessories-text-editor");
 
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 
@@ -373,7 +373,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
-// FIXME - TODO
+/* TODO once gtk4 support fully lands in webkitgtk. */
 #ifdef HAVE_WEBKITGTK
 	if (text_data->html) {
 		web_kit = webkit_web_view_new ();

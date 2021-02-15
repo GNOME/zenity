@@ -1,7 +1,7 @@
 project('zenity', 'c',
   version: '4.alpha.1',
-  meson_version: '>=0.50.0',
-  license: 'LGPL-2.0-or-later'
+  meson_version: '>=0.53.0',
+  license: 'LGPL-2.1-or-later'
 )
 
 version_arr = meson.project_version().split('.')
@@ -10,11 +10,10 @@ zenity_version_minor = version_arr[1]
 zenity_version_micro = version_arr[2].to_int()
 
 zenity_prefix = get_option('prefix')
+zenity_bindir = join_paths(zenity_prefix, get_option('bindir'))
 zenity_libdir = join_paths(zenity_prefix, get_option('libdir'))
-zenity_includedir = join_paths(zenity_prefix, get_option('includedir'))
 zenity_datadir = join_paths(zenity_prefix, get_option('datadir'))
 zenity_localedir = join_paths(zenity_prefix, get_option('localedir'))
-zenity_appdatadir = join_paths(zenity_datadir, 'metainfo')
 zenity_iconsdir = join_paths(zenity_datadir, 'icons')
 
 zenity_root_dir = include_directories('.')
@@ -53,28 +52,56 @@ endforeach
 
 gtk_dep = dependency('gtk4', version: '>= 4.0.0')
 
+# Optional dependencies
+
+opt_missing_str = '''
+Requested optional @0@ support but library not found.
+Please ensure you have any required development libraries installed.'''
+
+libnotify = dependency('libnotify', version: '>= 0.6.1', required: false)
 if get_option('libnotify')
-  libnotify = dependency('libnotify', version: '>= 0.6.1')
-  zenity_conf.set('HAVE_LIBNOTIFY', true)
+  if libnotify.found()
+    zenity_conf.set('HAVE_LIBNOTIFY', true)
+  else
+    error(opt_missing_str.format('libnotify'))
+  endif
 endif
 
 # TODO
+#webkitgtk = dependency('webkit2gtk-4.0', version: '>= 2.8.1', required: false)
 #if get_option('webkitgtk')
-#  webkitgtk = dependency('webkit2gtk-4.0', version: '>= 2.8.1')
-#  zenity_conf.set('HAVE_WEBKITGTK', true)
+#  if webkitgtk.found()
+#    zenity_conf.set('HAVE_WEBKITGTK', true)
+#  else
+#    error(opt_missing_str.format('webkitgtk'))
+#  endif
 #endif
+
+perl = find_program('perl', required: false)
+if perl.found()
+  zenity_conf.set('PERL', perl.path())
+endif
 
 configure_file(
   output: 'config.h',
   configuration: zenity_conf
 )
 
-update_icon_cache_prg = find_program('gtk-update-icon-cache',
-  required : false)
+# Print a summary of options at the end.
 
-perl = find_program('perl', required: true)
+summary({'prefix': zenity_prefix,
+         'libdir': zenity_libdir,
+         'datadir': zenity_datadir,
+	 'localedir': zenity_localedir,
+	 'iconsdir': zenity_iconsdir,
+        }, section: 'Directories')
+
+summary({'libnotify': get_option('libnotify'),
+         'gdialog script': perl.found(),
+        }, section: 'Configuration')
 
 subdir('src')
-#subdir('data')
-#subdir('po')
-#subdir('help')
+subdir('data')
+subdir('icons')
+subdir('po')
+subdir('help')

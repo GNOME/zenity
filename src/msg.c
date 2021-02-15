@@ -173,29 +173,29 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 	switch (msg_data->mode)
 	{
 		case ZENITY_MSG_WARNING:
-			zenity_util_set_window_icon_from_icon_name (
-				dialog, data->window_icon, "dialog-warning");
+			gtk_window_set_icon_name (GTK_WINDOW(dialog),
+					"dialog-warning");
 			break;
 
 		case ZENITY_MSG_QUESTION:
-			zenity_util_set_window_icon_from_icon_name (
-				dialog, data->window_icon, "dialog-question");
+			gtk_window_set_icon_name (GTK_WINDOW(dialog),
+					"dialog-question");
 			zenity_msg_construct_question_dialog (dialog, msg_data, data);
 			break;
 
 		case ZENITY_MSG_SWITCH:
-			zenity_util_set_window_icon_from_icon_name (
-				dialog, data->window_icon, "dialog-question");
+			gtk_window_set_icon_name (GTK_WINDOW(dialog),
+					"dialog-question");
 			break;
 
 		case ZENITY_MSG_ERROR:
-			zenity_util_set_window_icon_from_icon_name (
-				dialog, data->window_icon, "dialog-error");
+			gtk_window_set_icon_name (GTK_WINDOW(dialog),
+					"dialog-error");
 			break;
 
 		case ZENITY_MSG_INFO:
-			zenity_util_set_window_icon_from_icon_name (
-				dialog, data->window_icon, "dialog-information");
+			gtk_window_set_icon_name (GTK_WINDOW(dialog),
+					"dialog-information");
 			break;
 
 		default:

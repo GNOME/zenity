@@ -39,7 +39,6 @@ void
 zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 {
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GdkRGBA color;
 
 	zen_data = data;
@@ -59,30 +58,12 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 
 	if (data->extra_label)
 	{
-		int i = 0;
-
-		while (data->extra_label[i] != NULL)
+		for (int i = 0; data->extra_label[i] != NULL; ++i)
 		{
 			gtk_dialog_add_button (GTK_DIALOG (dialog),
 					data->extra_label[i], i);
-			i++;
 		}
 	}
-
-	// FIXME
-#if 0
-	if (data->ok_label) {
-		g_object_get (G_OBJECT (dialog), "ok-button", &button, NULL);
-		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-		g_object_unref (G_OBJECT (button));
-	}
-
-	if (data->cancel_label) {
-		g_object_get (G_OBJECT (dialog), "cancel-button", &button, NULL);
-		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-		g_object_unref (G_OBJECT (button));
-	}
-#endif
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
@@ -99,7 +80,6 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
 
-// FIXME - this shoudl probably use the color-activated signal
 static void
 zenity_colorselection_dialog_response (GtkWidget *widget,
 		int response, gpointer data)

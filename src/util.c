@@ -178,6 +178,7 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const char *filename) {
 	return TRUE;
 }
 
+#if 0
 const char *
 zenity_util_icon_name_from_filename (const char *filename) {
 	if (!filename || !filename[0])
@@ -193,10 +194,13 @@ zenity_util_icon_name_from_filename (const char *filename) {
 		return "dialog-error";
 	return NULL;
 }
+#endif
 
+#if 0
 void
-zenity_util_set_window_icon_from_file (
-	GtkWidget *widget, const char *filename) {
+zenity_util_set_window_icon_from_file (GtkWidget *widget,
+		const char *filename)
+{
 	const char *icon_name;
 
 	icon_name = zenity_util_icon_name_from_filename (filename);
@@ -207,10 +211,11 @@ zenity_util_set_window_icon_from_file (
 				__func__);
 	}
 }
+#endif
 
+#if 0
 void
-zenity_util_set_window_icon (GtkWidget *widget,
-		const char *filename, const char *default_file)
+zenity_util_set_window_icon (GtkWidget *widget, const char *icon_name)
 {
 	if (filename != NULL) {
 		zenity_util_set_window_icon_from_file (widget, filename);
@@ -219,15 +224,19 @@ zenity_util_set_window_icon (GtkWidget *widget,
 				__func__);
 	}
 }
+#endif
 
+#if 0
 void
-zenity_util_set_window_icon_from_icon_name (
-	GtkWidget *widget, const char *filename, const char *default_icon_name) {
+zenity_util_set_window_icon_from_icon_name (GtkWidget *widget,
+		const char *filename, const char *default_icon_name)
+{
 	if (filename != NULL)
 		zenity_util_set_window_icon_from_file (widget, filename);
 	else
 		gtk_window_set_icon_name (GTK_WINDOW (widget), default_icon_name);
 }
+#endif
 
 void
 zenity_util_show_help (GError **error) {
@@ -311,88 +320,7 @@ zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *zen_data)
 	zen_data->exit_code = zenity_util_return_exit_code (value);
 }
 
-#if 0
-// FIXME - ???
-//#ifdef GDK_WINDOWING_X11
-
-static Window
-transient_get_xterm (void) {
-	const char *wid_str = g_getenv ("WINDOWID");
-	if (wid_str) {
-		char *wid_str_end;
-		int ret;
-		Window wid = strtoul (wid_str, &wid_str_end, 10);
-		if (*wid_str != '\0' && *wid_str_end == '\0' && wid != 0) {
-			XWindowAttributes attrs;
-			gdk_error_trap_push ();
-			ret = XGetWindowAttributes (
-				GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), wid, &attrs);
-			gdk_flush ();
-			if (gdk_error_trap_pop () != 0 || ret == 0) {
-				return None;
-			}
-			return wid;
-		}
-	}
-	return None;
-}
-
-static void
-transient_x_free (void *ptr) {
-	if (ptr)
-		XFree (ptr);
-}
-
-static gboolean
-transient_is_toplevel (Window wid) {
-	XTextProperty prop;
-	Display *dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
-	if (!XGetWMName (dpy, wid, &prop))
-		return FALSE;
-	transient_x_free (prop.value);
-	return !!prop.value;
-}
-
-/*
- * GNOME Terminal doesn't give us its toplevel window, but the WM needs a
- * toplevel XID for proper stacking.  Other terminals work fine without this
- * magic.  We can't use GDK here since "xterm" is a foreign window.
- */
-
-static Window
-transient_get_xterm_toplevel (void) {
-	Window xterm = transient_get_xterm ();
-	Display *dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
-	while (xterm != None && !transient_is_toplevel (xterm)) {
-		Window root, parent, *children;
-		unsigned nchildren;
-		XQueryTree (dpy, xterm, &root, &parent, &children, &nchildren);
-		transient_x_free (children);
-		if (parent == root)
-			xterm = None;
-		else
-			xterm = parent;
-	}
-	return xterm;
-}
-
-static void
-zenity_util_make_transient (GdkWindow *window, Window parent) {
-	Window parent_window = parent;
-	if (parent_window == 0)
-		parent_window = transient_get_xterm_toplevel ();
-	if (parent_window != None) {
-		XSetTransientForHint (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-			GDK_WINDOW_XID (window),
-			parent_window);
-	}
-}
-
-#endif /* GDK_WINDOWING_X11 */
-
-/* helper for common_set_gtkhex_font_from_settings.
- * 
- * This function was written by Matthias Clasen and is included somewhere in
+/* This function was written by Matthias Clasen and is included somewhere in
  * the GTK source tree.. I believe it is also included in libdazzle, but I
  * didn't want to include a whole dependency just for one function. LGPL, but
  * credit where credit is due!
@@ -522,7 +450,6 @@ zenity_util_pango_font_description_to_css (PangoFontDescription *desc)
 void
 zenity_util_show_dialog (GtkWidget *dialog)
 {
-	gtk_widget_realize (dialog);	// FIXME - doubt this is necessary.
 	gtk_widget_show (dialog);
 }
 

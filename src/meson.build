@@ -41,3 +41,13 @@ zenity = executable(
   c_args: zenity_c_args,
   install: true
 )
+
+if perl.found()
+  configure_file(
+    input: 'gdialog.in',
+    output: 'gdialog',
+    configuration: zenity_conf,
+    install_dir: zenity_bindir,
+    install: true
+  )
+endif

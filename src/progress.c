@@ -156,12 +156,14 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 	static ZenityProgressData *progress_data;
 	static GObject *progress_bar;
 	static GObject *progress_label;
+	static GtkWindow *parent;
 	float percentage = 0.0;
 	GIOStatus status = G_IO_STATUS_NORMAL;
 
 	progress_data = data;
 	progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
 	progress_label = gtk_builder_get_object (builder, "zenity_progress_text");
+	parent = GTK_WINDOW(gtk_widget_get_native (GTK_WIDGET(progress_bar)));
 
 	if ((condition & G_IO_IN) != 0)
 	{
@@ -259,12 +261,12 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 					gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
 					gtk_widget_grab_focus (GTK_WIDGET (button));
 
-					if (progress_data->autoclose) {
+					if (progress_data->autoclose)
+					{
 						zen_data->exit_code =
 							zenity_util_return_exit_code (ZENITY_OK);
-						// FIXME - don't know how to replace gtk_main_quit
-						// here.
-						exit(zen_data->exit_code);
+
+						zenity_util_gapp_quit (parent);
 					}
 				}
 			}
@@ -296,10 +298,10 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 		g_object_unref (builder);
 
-		if (progress_data->autoclose) {
+		if (progress_data->autoclose)
+		{
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-			// FIXME - not sure how to replace gtk_main_quit here
-			exit(zen_data->exit_code);
+			zenity_util_gapp_quit (parent);
 		}
 
 		g_io_channel_shutdown (channel, TRUE, NULL);
@@ -329,18 +331,6 @@ zenity_progress_read_info (ZenityProgressData *progress_data)
 		zenity_progress_pulsate_start (progress_bar);
 	}
 }
-
-// FIXME - I don't have context as to what this is supposed to accomplish,
-// and it uses signals that are gone in gtk4, so I'm just going to remove
-// for now and see if necessary - if so will replace later.
-#if 0
-static void
-zenity_text_size_allocate (GtkWidget *widget, GtkAllocation *allocation,
-		gpointer data)
-{
-	gtk_widget_set_size_request (widget, allocation->width / 2, -1);
-}
-#endif
 
 void
 zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
@@ -372,9 +362,8 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW(dialog), data->dialog_title);
 
-	zenity_util_set_window_icon (dialog,
-		data->window_icon,
-		ZENITY_IMAGE_FULLPATH ("zenity-progress.png"));
+	gtk_window_set_icon_name (GTK_WINDOW(dialog),
+			"appointment-soon");
 
 	if (data->width > -1 || data->height > -1)
 		gtk_window_set_default_size (GTK_WINDOW(dialog),

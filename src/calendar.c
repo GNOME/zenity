@@ -64,9 +64,8 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-	zenity_util_set_window_icon (dialog,
-		data->window_icon,
-		ZENITY_IMAGE_FULLPATH ("zenity-calendar.png"));
+	gtk_window_set_icon_name (GTK_WINDOW(dialog),
+			"x-office-calendar");
 
 	if (data->width > -1 || data->height > -1)
 		gtk_window_set_default_size (GTK_WINDOW(dialog),
