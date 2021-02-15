@@ -9,9 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-05-05 15:28+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-15 15:49-0500\n"
 "PO-Revision-Date: 2016-05-25 14:02+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -20,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/about.c:63
+#: src/about.c:54
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -31,7 +30,7 @@ msgstr ""
 "GNU Lesser General Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี "
 "ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2 หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)\n"
 
-#: src/about.c:67
+#: src/about.c:59
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -43,7 +42,7 @@ msgstr ""
 "*ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ* กรุณาอ่าน GNU Lesser General Public "
 "License เพื่อดูรายละเอียดเพิ่มเติม\n"
 
-#: src/about.c:71
+#: src/about.c:63
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -53,30 +52,43 @@ msgstr ""
 "ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301, USA"
 
-#: src/about.c:263
-msgid "translator-credits"
-msgstr ""
-"Supranee Thirawatthanasuk <supranee@opentle.org>\n"
-"Paisa Seeluangsawat <paisa@users.sf.net>\n"
-"Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
-"\n"
-"ถ้ามีเวลาโปรดมาช่วยกับแปล\n"
-"http://gnome-th.sf.net"
-
-#: src/about.c:275
+#: src/about.c:88
 msgid "Display dialog boxes from shell scripts"
 msgstr "แสดงกล่องโต้ตอบจากเชลล์สริปต์"
 
-#: src/main.c:105
+#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
+#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
+#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
+msgid "_OK"
+msgstr "_ตกลง"
+
+#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
+#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
+#: src/zenity.ui:746
+msgid "_Cancel"
+msgstr "_ยกเลิก"
+
+#: src/main.c:121
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "คุณต้องกำหนดชนิดของกล่องโต้ตอบด้วย โปรดดู 'zenity --help' สำหรับรายละเอียดเพิ่มเติม\n"
 
-#: src/notification.c:51
+#: src/msg.c:42
+msgid "_No"
+msgstr ""
+
+#: src/msg.c:44
+msgid "_Yes"
+msgstr ""
+
+#: src/notification.c:55
+#, c-format
 msgid "Could not parse message\n"
 msgstr "ไม่สามารถแจงข้อความได้\n"
 
-#: src/notification.c:140
+#: src/notification.c:142
+#, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
@@ -85,299 +97,158 @@ msgstr ""
 "ค่าที่ใช้ได้คือ 'true' หรือ 'false' เท่านั้น\n"
 
 #. (iibiiay)
-#: src/notification.c:156
+#: src/notification.c:163
+#, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr "พบค่ากำหนดที่ไม่รองรับ ขอข้าม\n"
 
 #. unknown hints
-#: src/notification.c:173
+#: src/notification.c:186
+#, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "พบชื่อค่ากำหนดที่ไม่รู้จัก ขอข้าม\n"
 
-#: src/notification.c:228
+#: src/notification.c:247
+#, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "ไม่สามารถแจงคำสั่งจาก stdin\n"
 
-#: src/notification.c:326
+#: src/notification.c:374
 msgid "Zenity notification"
 msgstr "การแจ้งเหตุของ Zenity"
 
-#: src/password.c:55
-msgid "_Cancel"
-msgstr "_ยกเลิก"
-
-#: src/password.c:58
-msgid "_OK"
-msgstr "_ตกลง"
-
-#. Checks if username has been passed as a parameter
-#: src/password.c:73
-msgid "Type your password"
-msgstr "กรุณาป้อนรหัสผ่านของคุณ"
-
-#: src/password.c:76
-msgid "Type your username and password"
-msgstr "กรุณาป้อนชื่อผู้ใช้และรหัสผ่านของคุณ"
-
-#: src/password.c:113
-msgid "Username:"
-msgstr "ชื่อผู้ใช้:"
-
-#: src/password.c:127
-msgid "Password:"
-msgstr "รหัสผ่าน:"
-
-#: src/scale.c:57
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "ค่าสูงสุดต้องมากกว่าค่าต่ำสุด\n"
-
-#: src/scale.c:64
-msgid "Value out of range.\n"
-msgstr "ค่าอยู่นอกขอบเขต\n"
-
-#: src/tree.c:376
-msgid "No column titles specified for List dialog.\n"
-msgstr "ไม่ได้กำหนดชื่อของคอลัมน์ไว้สำหรับกล่องโต้ตอบเรียงรายการ\n"
-
-#: src/tree.c:382
-msgid "You should use only one List dialog type.\n"
-msgstr "คุณควรเลือกชนิดกล่องโต้ตอบเรียงรายการเพียงชนิดเดียว\n"
-
-#: src/zenity.ui:14 src/zenity.ui:76
-msgid "Adjust the scale value"
-msgstr "ปรับค่าอัตราส่วน"
-
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "ยกเลิก"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "ตกลง"
-
-#: src/zenity.ui:117
-msgid "Text View"
-msgstr "ข้อความ"
-
-#: src/zenity.ui:231
-msgid "Calendar selection"
-msgstr "เลือกวันจากปฏิทิน"
-
-#: src/zenity.ui:298
-msgid "Select a date from below."
-msgstr "เลือกวันที่จากข้างล่างนี้"
-
-#: src/zenity.ui:319
-msgid "C_alendar:"
-msgstr "_ปฏิทิน:"
-
-#: src/zenity.ui:361
-msgid "Add a new entry"
-msgstr "เพิ่มข้อความใหม่"
-
-#: src/zenity.ui:428
-msgid "_Enter new text:"
-msgstr "_ป้อนข้อความใหม่:"
-
-#: src/zenity.ui:465
-msgid "Error"
-msgstr "ผิดพลาด"
-
-#: src/zenity.ui:530
-msgid "An error has occurred."
-msgstr "เกิดข้อผิดพลาด"
-
-#: src/zenity.ui:658
-msgid "Forms dialog"
-msgstr "กล่องโต้ตอบแบบฟอร์ม"
-
-#: src/zenity.ui:681
-msgid "Information"
-msgstr "แจ้งเพื่อทราบ"
-
-#: src/zenity.ui:741
-msgid "All updates are complete."
-msgstr "การอัพเดตทั้งหมดเสร็จสมบูรณ์"
-
-#: src/zenity.ui:768
-msgid "Progress"
-msgstr "ความคืบหน้า"
-
-#: src/zenity.ui:831
-msgid "Running..."
-msgstr "กำลังดำเนินการ..."
-
-#: src/zenity.ui:882
-msgid "Question"
-msgstr "คำถาม"
-
-#: src/zenity.ui:929 src/zenity.ui:1126
-msgid "Are you sure you want to proceed?"
-msgstr "คุณมั่นใจว่าจะทำต่อไปหรือไม่?"
-
-#: src/zenity.ui:953
-msgid "Select items from the list"
-msgstr "เลือกรายการจากบัญชีรายการ"
-
-#: src/zenity.ui:1015
-msgid "Select items from the list below."
-msgstr "เลือกรายการจากบัญชีรายการข้างล่าง"
-
-#: src/zenity.ui:1064
-msgid "Warning"
-msgstr "คำเตือน"
-
-#: src/option.c:169
+#: src/option.c:166
 msgid "Set the dialog title"
 msgstr "ตั้งชื่อกล่องโต้ตอบ"
 
-#: src/option.c:170
+#: src/option.c:167
 msgid "TITLE"
 msgstr "ชื่อ"
 
-#: src/option.c:178
-msgid "Set the window icon"
-msgstr "กำหนดไอคอนของหน้าต่าง"
-
-#: src/option.c:179
-msgid "ICONPATH"
-msgstr "พาธของไอคอน"
-
-#: src/option.c:187
+#: src/option.c:173
 msgid "Set the width"
 msgstr "กำหนดความกว้าง"
 
-#: src/option.c:188
+#: src/option.c:174
 msgid "WIDTH"
 msgstr "ความกว้าง"
 
-#: src/option.c:196
+#: src/option.c:180
 msgid "Set the height"
 msgstr "กำหนดความสูง"
 
-#: src/option.c:197
+#: src/option.c:181
 msgid "HEIGHT"
 msgstr "ความสูง"
 
-#: src/option.c:205
+#: src/option.c:187
 msgid "Set dialog timeout in seconds"
 msgstr "กำหนดเวลาคอยของกล่องโต้ตอบ เป็นวินาที"
 
 #. Timeout for closing the dialog
-#: src/option.c:207
+#: src/option.c:189
 msgid "TIMEOUT"
 msgstr "TIMEOUT"
 
-#: src/option.c:215
+#: src/option.c:195
 msgid "Set the label of the OK button"
 msgstr "กำหนดฉลากของปุ่ม \"ตกลง\""
 
-#: src/option.c:216 src/option.c:225 src/option.c:234 src/option.c:276
-#: src/option.c:336 src/option.c:345 src/option.c:379 src/option.c:437
-#: src/option.c:574 src/option.c:699 src/option.c:717 src/option.c:743
-#: src/option.c:823 src/option.c:917 src/option.c:926 src/option.c:988
-#: src/option.c:1046 src/option.c:1215
+#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
+#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
+#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
+#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
+#: src/option.c:837 src/option.c:969
 msgid "TEXT"
 msgstr "TEXT"
 
-#: src/option.c:224
+#: src/option.c:202
 msgid "Set the label of the Cancel button"
 msgstr "กำหนดฉลากของปุ่ม \"ยกเลิก\""
 
-#: src/option.c:233
+#: src/option.c:209
 msgid "Add an extra button"
 msgstr "เพิ่มปุ่ม"
 
-#: src/option.c:242
+#: src/option.c:216
 msgid "Set the modal hint"
 msgstr "กำหนดว่าเป็นกล่องโต้ตอบแบบโมดัล"
 
-#: src/option.c:251
-msgid "Set the parent window to attach to"
-msgstr "กำหนดหน้าต่างแม่สำหรับหน้าต่างที่จะเปิด"
-
-#: src/option.c:252
-msgid "WINDOW"
-msgstr "WINDOW"
-
-#: src/option.c:266
+#: src/option.c:226
 msgid "Display calendar dialog"
 msgstr "แสดงกล่องโต้ตอบปฏิทิน"
 
-#: src/option.c:275 src/option.c:335 src/option.c:378 src/option.c:436
-#: src/option.c:573 src/option.c:742 src/option.c:822 src/option.c:987
-#: src/option.c:1045 src/option.c:1214
+#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
+#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
+#: src/option.c:836 src/option.c:968
 msgid "Set the dialog text"
 msgstr "กำหนดข้อความของกล่องโต้ตอบ"
 
-#: src/option.c:284
+#: src/option.c:240
 msgid "Set the calendar day"
 msgstr "กำหนดวันของปฏิทิน"
 
-#: src/option.c:285
+#: src/option.c:241
 msgid "DAY"
 msgstr "DAY"
 
-#: src/option.c:293
+#: src/option.c:247
 msgid "Set the calendar month"
 msgstr "กำหนดเดือนของปฏิทิน"
 
-#: src/option.c:294
+#: src/option.c:248
 msgid "MONTH"
 msgstr "MONTH"
 
-#: src/option.c:302
+#: src/option.c:254
 msgid "Set the calendar year"
 msgstr "กำหนดปีของปฏิทิน"
 
-#: src/option.c:303
+#: src/option.c:255
 msgid "YEAR"
 msgstr "YEAR"
 
-#: src/option.c:311 src/option.c:1232
+#: src/option.c:261 src/option.c:982
 msgid "Set the format for the returned date"
 msgstr "กำหนดรูปแบบของวันเวลาที่รายงานกลับ"
 
-#: src/option.c:312 src/option.c:1233
+#: src/option.c:262 src/option.c:983
 msgid "PATTERN"
 msgstr "PATTERN"
 
-#: src/option.c:326
+#: src/option.c:271
 msgid "Display text entry dialog"
 msgstr "แสดงกล่องโต้ตอบรับข้อความ"
 
-#: src/option.c:344
+#: src/option.c:285
 msgid "Set the entry text"
 msgstr "กำหนดข้อความของกล่องรับข้อความ"
 
-#: src/option.c:353
+#: src/option.c:292
 msgid "Hide the entry text"
 msgstr "ซ่อนข้อความของกล่องรับข้อความ"
 
-#: src/option.c:369
+#: src/option.c:302
 msgid "Display error dialog"
 msgstr "แสดงกล่องโต้ตอบข้อผิดพลาด"
 
-#: src/option.c:387 src/option.c:445 src/option.c:831 src/option.c:996
+#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
 msgid "Set the dialog icon"
 msgstr "กำหนดไอคอนของกล่องโต้ตอบ"
 
-#: src/option.c:388 src/option.c:446 src/option.c:832 src/option.c:997
+#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
 msgid "ICON-NAME"
 msgstr "ICON-NAME"
 
-#: src/option.c:396 src/option.c:454 src/option.c:840 src/option.c:1005
+#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
 msgid "Do not enable text wrapping"
 msgstr "ไม่ต้องแบ่งบรรทัด"
 
-#: src/option.c:405 src/option.c:463 src/option.c:849 src/option.c:1014
+#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
 msgid "Do not enable Pango markup"
 msgstr "ไม่เปิดใช้มาร์กอัปของ Pango"
 
-#: src/option.c:413 src/option.c:471 src/option.c:866 src/option.c:1022
+#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -385,486 +256,646 @@ msgstr ""
 "เปิดใช้การละข้อความด้วยจุดไข่ปลาในข้อความของกล่องโต้ตอบ "
 "เป็นการแก้ปัญหาหน้าต่างมีขนาดสูงเมื่อข้อความยาว"
 
-#: src/option.c:427
+#: src/option.c:349
 msgid "Display info dialog"
 msgstr "แสดงกล่องโต้ตอบแสดงข้อความ"
 
-#: src/option.c:485
+#: src/option.c:396
 msgid "Display file selection dialog"
 msgstr "แสดงกล่องโต้ตอบเลือกแฟ้ม"
 
-#: src/option.c:494
+#: src/option.c:403
 msgid "Set the filename"
 msgstr "กำหนดชื่อแฟ้ม"
 
-#: src/option.c:495 src/option.c:899
+#: src/option.c:404 src/option.c:719
 msgid "FILENAME"
 msgstr "ชื่อแฟ้ม"
 
-#: src/option.c:503
+#: src/option.c:410
 msgid "Allow multiple files to be selected"
 msgstr "อนุญาตให้เลือกได้หลายแฟ้ม"
 
-#: src/option.c:512
+#: src/option.c:417
 msgid "Activate directory-only selection"
 msgstr "ใช้โหมดเลือกไดเรกทอรีเท่านั้น"
 
-#: src/option.c:521
+#: src/option.c:424
 msgid "Activate save mode"
 msgstr "ใช้โหมดเก็บบันทึก"
 
-#: src/option.c:530 src/option.c:618 src/option.c:1223
+#: src/option.c:431 src/option.c:493 src/option.c:975
 msgid "Set output separator character"
 msgstr "ตั้งตัวอักษรที่ใช้แยกข้อมูลเอาท์พุต"
 
-#: src/option.c:531 src/option.c:619 src/option.c:1224
+#: src/option.c:432 src/option.c:494 src/option.c:976
 msgid "SEPARATOR"
 msgstr "ตัวแยก"
 
-#: src/option.c:539
-msgid "Confirm file selection if filename already exists"
-msgstr "ยืนยันการเลือกแฟ้ม ถ้ามีแฟ้มชื่อเดียวกันอยู่ก่อนแล้ว"
-
-#: src/option.c:548
+#: src/option.c:438
 msgid "Set a filename filter"
 msgstr "กำหนดรูปแบบชื่อแฟ้ม"
 
-#. Help for file-filter argument (name and patterns for file selection)
-#: src/option.c:550
+#. Help for file-filter argument (name and patterns for file
+#. selection)
+#: src/option.c:441
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAME | PATTERN1 PATTERN2 ..."
 
-#: src/option.c:564
+#: src/option.c:451
 msgid "Display list dialog"
 msgstr "แสดงกล่องโต้ตอบเรียงรายการ"
 
-#: src/option.c:582
+#: src/option.c:465
 msgid "Set the column header"
 msgstr "กำหนดหัวคอลัมน์"
 
-#: src/option.c:583
+#: src/option.c:466
 msgid "COLUMN"
 msgstr "COLUMN"
 
-#: src/option.c:591
+#: src/option.c:472
 msgid "Use check boxes for the first column"
 msgstr "ใช้กล่องกากบาทสำหรับคอลัมน์แรก"
 
-#: src/option.c:600
+#: src/option.c:479
 msgid "Use radio buttons for the first column"
 msgstr "ใช้ปุ่มวิทยุสำหรับคอลัมน์แรก"
 
-#: src/option.c:609
+#: src/option.c:486
 msgid "Use an image for the first column"
 msgstr "ใช้รูปภาพสำหรับคอลัมน์แรก"
 
-#: src/option.c:627
+#: src/option.c:500
 msgid "Allow multiple rows to be selected"
 msgstr "อนุญาตให้เลือกได้หลายแถว"
 
-#: src/option.c:636 src/option.c:907
+#: src/option.c:507 src/option.c:725
 msgid "Allow changes to text"
 msgstr "อนุญาตให้แก้ไขข้อความ"
 
-#: src/option.c:645
+#: src/option.c:514
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "พิมพ์เฉพาะคอลัมน์ที่ระบุ (ค่าปกติคือ 1 คุณสามารถใช้ 'ALL' เพื่อสั่งพิมพ์ทุกคอลัมน์ได้)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:647 src/option.c:656
+#: src/option.c:517 src/option.c:524
 msgid "NUMBER"
 msgstr "NUMBER"
 
-#: src/option.c:655
+#: src/option.c:523
 msgid "Hide a specific column"
 msgstr "ซ่อนคอลัมน์ที่กำหนด"
 
-#: src/option.c:664
+#: src/option.c:530
 msgid "Hide the column headers"
 msgstr "ซ่อนหัวคอลัมน์"
 
-#: src/option.c:673
+#: src/option.c:537
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
 msgstr "เปลี่ยนฟังก์ชันค้นหาปกติของรายการให้เป็นการค้นหากลางข้อความ ไม่ใช่ต้นข้อความ"
 
-#: src/option.c:689
+#: src/option.c:549
 msgid "Display notification"
 msgstr "แสดงการแจ้งเหตุ"
 
-#: src/option.c:698
+#: src/option.c:556
 msgid "Set the notification text"
 msgstr "กำหนดข้อความของการแจ้งเหตุ"
 
-#: src/option.c:707
+#: src/option.c:563
+#, fuzzy
+msgid "Set the notification icon"
+msgstr "กำหนดค่าต่างๆ ของการแจ้งเหตุ"
+
+#: src/option.c:564
+msgid "ICONPATH"
+msgstr "พาธของไอคอน"
+
+#: src/option.c:570
 msgid "Listen for commands on stdin"
 msgstr "รอคำสั่งจาก stdin"
 
-#: src/option.c:716
+#: src/option.c:577
 msgid "Set the notification hints"
 msgstr "กำหนดค่าต่างๆ ของการแจ้งเหตุ"
 
-#: src/option.c:733
+#: src/option.c:589
 msgid "Display progress indication dialog"
 msgstr "แสดงกล่องโต้ตอบบอกความคืบหน้า"
 
-#: src/option.c:751
+#: src/option.c:603
 msgid "Set initial percentage"
 msgstr "กำหนดค่าร้อยละเริ่มต้น"
 
-#: src/option.c:752
+#: src/option.c:604
 msgid "PERCENTAGE"
 msgstr "PERCENTAGE"
 
-#: src/option.c:760
+#: src/option.c:610
 msgid "Pulsate progress bar"
 msgstr "แถบความคืบหน้าแบบวิ่งไปมา"
 
-#: src/option.c:770
+#: src/option.c:618
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "ปลดกล่องโต้ตอบทิ้งเมื่อไปถึงที่ 100%"
 
-#: src/option.c:779
+#: src/option.c:625
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "ฆ่าโพรเซสแม่ถ้ามีการกดปุ่ม \"ยกเลิก\""
 
-#: src/option.c:788
+#: src/option.c:632
 msgid "Hide Cancel button"
 msgstr "ซ่อนปุ่ม \"ยกเลิก\""
 
-#: src/option.c:798
+#: src/option.c:640
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "ประเมินความคืบหน้าว่าจะเสร็จ 100% เมื่อใด"
 
-#: src/option.c:813
+#: src/option.c:650
 msgid "Display question dialog"
 msgstr "แสดงกล่องโต้ตอบถามคำถาม"
 
-#: src/option.c:857
+#: src/option.c:685
 msgid "Give Cancel button focus by default"
 msgstr "ให้โฟกัสกับปุ่มยกเลิกโดยปริยาย"
 
-#: src/option.c:874
+#: src/option.c:701
 msgid "Suppress OK and Cancel buttons"
 msgstr "ซ่อนปุ่ม \"ตกลง\" และ\"ยกเลิก\""
 
-#: src/option.c:889
+#: src/option.c:711
 msgid "Display text information dialog"
 msgstr "แสดงกล่องโต้ตอบแจ้งเพื่อทราบ"
 
-#: src/option.c:898
+#: src/option.c:718
 msgid "Open file"
 msgstr "เปิดแฟ้ม"
 
-#: src/option.c:916
+#: src/option.c:732
 msgid "Set the text font"
 msgstr "กำหนดแบบอักษรของข้อความ"
 
-#: src/option.c:925
+#: src/option.c:739
 msgid "Enable an I read and agree checkbox"
 msgstr "เปิดใช้กล่องกา \"ฉันได้อ่านแล้วและเห็นด้วย\""
 
-#: src/option.c:935
+#: src/option.c:747
 msgid "Enable HTML support"
 msgstr "เปิดใช้การรองรับ HTML"
 
-#: src/option.c:944
+#: src/option.c:754
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr "ไม่เปิดการโต้ตอบกับผู้ใช้ด้วย WebView ใช้ได้กับตัวเลือก --html เท่านั้น"
 
-#: src/option.c:953
+#: src/option.c:762
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr "กำหนด URL แทนการใช้แฟ้ม ใช้ได้กับตัวเลือก --html เท่านั้น"
 
-#: src/option.c:954
+#: src/option.c:764
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:963
+#: src/option.c:771
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr "เลื่อนจอไปที่ท้ายข้อความโดยอัตโนมัติ ใช้เมื่อจับข้อความจาก stdin เท่านั้น"
 
-#: src/option.c:978
+#: src/option.c:782
 msgid "Display warning dialog"
 msgstr "แสดงกล่องโต้ตอบสำหรับเตือน"
 
-#: src/option.c:1036
+#: src/option.c:829
 msgid "Display scale dialog"
 msgstr "แสดงกล่องโต้ตอบปรับอัตราส่วน"
 
-#: src/option.c:1054
+#: src/option.c:843
 msgid "Set initial value"
 msgstr "กำหนดค่าเริ่มต้น"
 
-#: src/option.c:1055 src/option.c:1064 src/option.c:1073 src/option.c:1082
-#: src/option.c:1281
+#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
+#: src/option.c:1017
 msgid "VALUE"
 msgstr "VALUE"
 
-#: src/option.c:1063
+#: src/option.c:850
 msgid "Set minimum value"
 msgstr "กำหนดค่าต่ำสุด"
 
-#: src/option.c:1072
+#: src/option.c:857
 msgid "Set maximum value"
 msgstr "กำหนดค่าสูงสุด"
 
-#: src/option.c:1081
+#: src/option.c:864
 msgid "Set step size"
 msgstr "กำหนดขนาดขั้นการปรับ"
 
-#: src/option.c:1090
+#: src/option.c:871
 msgid "Print partial values"
 msgstr "พิมพ์ค่าระหว่างการปรับ"
 
-#: src/option.c:1099
+#: src/option.c:878
 msgid "Hide value"
 msgstr "ซ่อนค่า"
 
-#: src/option.c:1114
+#: src/option.c:888
 msgid "Display forms dialog"
 msgstr "แสดงกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:1123
+#: src/option.c:895
 msgid "Add a new Entry in forms dialog"
 msgstr "เพิ่มช่องข้อมูลในกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:1124 src/option.c:1133
+#: src/option.c:896 src/option.c:903
 msgid "Field name"
 msgstr "ชื่อช่องข้อมูล"
 
-#: src/option.c:1132
+#: src/option.c:902
 msgid "Add a new Password Entry in forms dialog"
 msgstr "เพิ่มช่องรหัสผ่านในกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:1141
+#: src/option.c:909
 msgid "Add a new Calendar in forms dialog"
 msgstr "เพิ่มปฏิทินในกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:1142
+#: src/option.c:910
 msgid "Calendar field name"
 msgstr "ชื่อช่องข้อมูลปฏิทิน"
 
-#: src/option.c:1150
+#: src/option.c:916
 msgid "Add a new List in forms dialog"
 msgstr "เพิ่มกล่องเรียงรายการในกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:1151
+#: src/option.c:917
 msgid "List field and header name"
 msgstr "ขื่อช่องข้อมูลของกล่องเรียงรายการ"
 
-#: src/option.c:1159
+#: src/option.c:923
 msgid "List of values for List"
 msgstr "รายการของค่าต่างๆ ในกล่องเรียงรายการ"
 
-#: src/option.c:1160 src/option.c:1169 src/option.c:1187
+#: src/option.c:924 src/option.c:931 src/option.c:945
 msgid "List of values separated by |"
 msgstr "รายการของค่า คั่นด้วย |"
 
-#: src/option.c:1168
+#: src/option.c:930
 msgid "List of values for columns"
 msgstr "รายชื่อหัวข้อของคอลัมน์ต่างๆ"
 
-#: src/option.c:1177
+#: src/option.c:937
 msgid "Add a new combo box in forms dialog"
 msgstr "เพิ่มกล่องคอมโบในกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:1178
+#: src/option.c:938
 msgid "Combo box field name"
 msgstr "ชื่อช่องข้อมูลของกล่องคอมโบ"
 
-#: src/option.c:1186
+#: src/option.c:944
 msgid "List of values for combo box"
 msgstr "รายชื่อของค่าต่างๆ ของกล่องคอมโบ"
 
-#: src/option.c:1205
+#: src/option.c:961
 msgid "Show the columns header"
 msgstr "กำหนดหัวคอลัมน์"
 
-#: src/option.c:1247
+#: src/option.c:992
 msgid "Display password dialog"
 msgstr "แสดงกล่องโต้ตอบรับรหัสผ่าน"
 
-#: src/option.c:1256
+#: src/option.c:999
 msgid "Display the username option"
 msgstr "แสดงตัวเลือกสำหรับชื่อผู้ใช้"
 
-#: src/option.c:1271
+#: src/option.c:1009
 msgid "Display color selection dialog"
 msgstr "แสดงกล่องโต้ตอบเลือกสี"
 
-#: src/option.c:1280
+#: src/option.c:1016
 msgid "Set the color"
 msgstr "กำหนดสี"
 
-#: src/option.c:1289
+#: src/option.c:1023
 msgid "Show the palette"
 msgstr "แสดงจานสี"
 
-#: src/option.c:1304
+#: src/option.c:1033
 msgid "About zenity"
 msgstr "เกี่ยวกับ zenity"
 
-#: src/option.c:1313
+#: src/option.c:1040
 msgid "Print version"
 msgstr "แสดงรุ่น"
 
-#: src/option.c:2261
+#: src/option.c:2007
 msgid "General options"
 msgstr "ตัวเลือกทั่วไป"
 
-#: src/option.c:2262
+#: src/option.c:2008
 msgid "Show general options"
 msgstr "แสดงตัวเลือกทั่วไป"
 
-#: src/option.c:2272
+#: src/option.c:2020
 msgid "Calendar options"
 msgstr "ตัวเลือกสำหรับปฏิทิน"
 
-#: src/option.c:2273
+#: src/option.c:2021
 msgid "Show calendar options"
 msgstr "แสดงตัวเลือกสำหรับปฏิทิน"
 
-#: src/option.c:2283
+#: src/option.c:2033
 msgid "Text entry options"
 msgstr "ตัวเลือกสำหรับการรับข้อความ"
 
-#: src/option.c:2284
+#: src/option.c:2034
 msgid "Show text entry options"
 msgstr "แสดงตัวเลือกสำหรับกล่องรับข้อความ"
 
-#: src/option.c:2294
+#: src/option.c:2046
 msgid "Error options"
 msgstr "ตัวเลือกสำหรับการแสดงข้อผิดพลาด"
 
-#: src/option.c:2295
+#: src/option.c:2046
 msgid "Show error options"
 msgstr "แสดงตัวเลือกสำหรับการแสดงข้อผิดพลาด"
 
-#: src/option.c:2305
+#: src/option.c:2056
 msgid "Info options"
 msgstr "ตัวเลือกสำหรับการแจ้งเพื่อทราบ"
 
-#: src/option.c:2306
+#: src/option.c:2056
 msgid "Show info options"
 msgstr "แสดงตัวเลือกสำหรับการแจ้งเพื่อทราบ"
 
-#: src/option.c:2316
+#: src/option.c:2066
 msgid "File selection options"
 msgstr "ตัวเลือกสำหรับการเลือกแฟ้ม"
 
-#: src/option.c:2317
+#: src/option.c:2067
 msgid "Show file selection options"
 msgstr "แสดงตัวเลือกสำหรับการเลือกแฟ้ม"
 
-#: src/option.c:2327
+#: src/option.c:2079
 msgid "List options"
 msgstr "ตัวเลือกสำหรับการแสดงรายการ"
 
-#: src/option.c:2328
+#: src/option.c:2079
 msgid "Show list options"
 msgstr "แสดงตัวเลือกสำหรับการแสดงรายการ"
 
-#: src/option.c:2339
+#: src/option.c:2090
 msgid "Notification icon options"
 msgstr "ตัวเลือกสำหรับไอคอน"
 
-#: src/option.c:2340
+#: src/option.c:2091
 msgid "Show notification icon options"
 msgstr "แสดงตัวเลือกสำหรับไอคอนในพื้นที่แจ้งเหตุ"
 
-#: src/option.c:2351
+#: src/option.c:2105
 msgid "Progress options"
 msgstr "ตัวเลือกสำหรับแถบแสดงความคืบหน้า"
 
-#: src/option.c:2352
+#: src/option.c:2106
 msgid "Show progress options"
 msgstr "แสดงตัวเลือกสำหรับแถบแสดงความคืบหน้า"
 
-#: src/option.c:2362
+#: src/option.c:2118
 msgid "Question options"
 msgstr "ตัวเลือกสำหรับคำถาม"
 
-#: src/option.c:2363
+#: src/option.c:2119
 msgid "Show question options"
 msgstr "แสดงตัวเลือกสำหรับกล่องคำถาม"
 
-#: src/option.c:2373
+#: src/option.c:2131
 msgid "Warning options"
 msgstr "ตัวเลือกสำหรับคำเตือน"
 
-#: src/option.c:2374
+#: src/option.c:2132
 msgid "Show warning options"
 msgstr "แสดงตัวเลือกสำหรับกล่องคำเตือน"
 
-#: src/option.c:2384
+#: src/option.c:2144
 msgid "Scale options"
 msgstr "ตัวเลือกสำหรับการปรับอัตราส่วน"
 
-#: src/option.c:2385
+#: src/option.c:2144
 msgid "Show scale options"
 msgstr "แสดงตัวเลือกสำหรับการปรับอัตราส่วน"
 
-#: src/option.c:2395
+#: src/option.c:2154
 msgid "Text information options"
 msgstr "ตัวเลือกสำหรับข้อความแจ้งเพื่อทราบ"
 
-#: src/option.c:2396
+#: src/option.c:2155
 msgid "Show text information options"
 msgstr "แสดงตัวเลือกสำหรับข้อความแจ้งเพื่อทราบ"
 
-#: src/option.c:2406
+#: src/option.c:2167
 msgid "Color selection options"
 msgstr "ตัวเลือกสำหรับการเลือกสี"
 
-#: src/option.c:2407
+#: src/option.c:2168
 msgid "Show color selection options"
 msgstr "แสดงตัวเลือกสำหรับการเลือกสี"
 
-#: src/option.c:2417
+#: src/option.c:2180
 msgid "Password dialog options"
 msgstr "ตัวเลือกสำหรับกล่องโต้ตอบรับรหัสผ่าน"
 
-#: src/option.c:2418
+#: src/option.c:2181
 msgid "Show password dialog options"
 msgstr "แสดงตัวเลือกสำหรับกล่องโต้ตอบรับรหัสผ่าน"
 
-#: src/option.c:2428
+#: src/option.c:2193
 msgid "Forms dialog options"
 msgstr "ตัวเลือกสำหรับกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:2429
+#: src/option.c:2194
 msgid "Show forms dialog options"
 msgstr "แสดงตัวเลือกสำหรับกล่องโต้ตอบแบบฟอร์ม"
 
-#: src/option.c:2439
+#: src/option.c:2206
 msgid "Miscellaneous options"
 msgstr "ตัวเลือกเบ็ดเตล็ด"
 
-#: src/option.c:2440
+#: src/option.c:2207
 msgid "Show miscellaneous options"
 msgstr "แสดงตัวเลือกเบ็ดเตล็ด"
 
-#: src/option.c:2465
+#: src/option.c:2230
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr "ไม่มีตัวเลือกนี้ กรุณาดู --help สำหรับวิธีใช้ทั้งหมดที่เป็นไปได้\n"
 
-#: src/option.c:2469
+#: src/option.c:2236
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "ไม่รองรับ --%s สำหรับกล่องโต้ตอบนี้\n"
 
-#: src/option.c:2473
+#: src/option.c:2241
+#, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "กรุณาระบุชนิดของกล่องโต้ตอบที่จะใช้เพียงชนิดเดียว\n"
+
+#: src/password.c:96
+msgid "Type your username and password"
+msgstr "กรุณาป้อนชื่อผู้ใช้และรหัสผ่านของคุณ"
+
+#. Add the username label and entry and increment the row for the
+#. * password entry so it will be added below the username.
+#.
+#: src/password.c:101
+msgid "Username:"
+msgstr "ชื่อผู้ใช้:"
+
+#: src/password.c:116
+msgid "Password:"
+msgstr "รหัสผ่าน:"
+
+#: src/progress.c:116
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr ""
+
+#: src/scale.c:66
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "ค่าสูงสุดต้องมากกว่าค่าต่ำสุด\n"
+
+#: src/scale.c:74
+#, c-format
+msgid "Value out of range.\n"
+msgstr "ค่าอยู่นอกขอบเขต\n"
+
+#: src/tree.c:405
+#, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr "ไม่ได้กำหนดชื่อของคอลัมน์ไว้สำหรับกล่องโต้ตอบเรียงรายการ\n"
+
+#: src/tree.c:412
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr "คุณควรเลือกชนิดกล่องโต้ตอบเรียงรายการเพียงชนิดเดียว\n"
+
+#: src/zenity.ui:16 src/zenity.ui:31
+msgid "Adjust the scale value"
+msgstr "ปรับค่าอัตราส่วน"
+
+#: src/zenity.ui:74
+msgid "Text View"
+msgstr "ข้อความ"
+
+#: src/zenity.ui:137
+msgid "Calendar selection"
+msgstr "เลือกวันจากปฏิทิน"
+
+#: src/zenity.ui:156
+msgid "Select a date from below."
+msgstr "เลือกวันที่จากข้างล่างนี้"
+
+#: src/zenity.ui:167
+msgid "C_alendar:"
+msgstr "_ปฏิทิน:"
+
+#: src/zenity.ui:172
+#, fuzzy
+msgid "Calendar"
+msgstr "_ปฏิทิน:"
+
+#: src/zenity.ui:211
+msgid "Add a new entry"
+msgstr "เพิ่มข้อความใหม่"
+
+#: src/zenity.ui:234
+msgid "_Enter new text:"
+msgstr "_ป้อนข้อความใหม่:"
+
+#: src/zenity.ui:273
+msgid "Error"
+msgstr "ผิดพลาด"
+
+#: src/zenity.ui:301
+msgid "An error has occurred."
+msgstr "เกิดข้อผิดพลาด"
+
+#: src/zenity.ui:378
+msgid "Forms dialog"
+msgstr "กล่องโต้ตอบแบบฟอร์ม"
+
+#: src/zenity.ui:413
+msgid "Information"
+msgstr "แจ้งเพื่อทราบ"
+
+#: src/zenity.ui:438
+msgid "All updates are complete."
+msgstr "การอัพเดตทั้งหมดเสร็จสมบูรณ์"
+
+#: src/zenity.ui:466
+msgid "Progress"
+msgstr "ความคืบหน้า"
+
+#: src/zenity.ui:481
+msgid "Running..."
+msgstr "กำลังดำเนินการ..."
+
+#: src/zenity.ui:530
+msgid "Question"
+msgstr "คำถาม"
+
+#: src/zenity.ui:553 src/zenity.ui:660
+msgid "Are you sure you want to proceed?"
+msgstr "คุณมั่นใจว่าจะทำต่อไปหรือไม่?"
+
+#: src/zenity.ui:573
+msgid "Select items from the list"
+msgstr "เลือกรายการจากบัญชีรายการ"
+
+#: src/zenity.ui:588
+msgid "Select items from the list below."
+msgstr "เลือกรายการจากบัญชีรายการข้างล่าง"
+
+#: src/zenity.ui:633 src/zenity.ui:693
+msgid "Warning"
+msgstr "คำเตือน"
+
+#: src/zenity.ui:716
+msgid "Type your password"
+msgstr "กรุณาป้อนรหัสผ่านของคุณ"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Supranee Thirawatthanasuk <supranee@opentle.org>\n"
+#~ "Paisa Seeluangsawat <paisa@users.sf.net>\n"
+#~ "Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
+#~ "\n"
+#~ "ถ้ามีเวลาโปรดมาช่วยกับแปล\n"
+#~ "http://gnome-th.sf.net"
+
+#~ msgid "Cancel"
+#~ msgstr "ยกเลิก"
+
+#~ msgid "OK"
+#~ msgstr "ตกลง"
+
+#~ msgid "Set the window icon"
+#~ msgstr "กำหนดไอคอนของหน้าต่าง"
+
+#~ msgid "Set the parent window to attach to"
+#~ msgstr "กำหนดหน้าต่างแม่สำหรับหน้าต่างที่จะเปิด"
+
+#~ msgid "WINDOW"
+#~ msgstr "WINDOW"
+
+#~ msgid "Confirm file selection if filename already exists"
+#~ msgstr "ยืนยันการเลือกแฟ้ม ถ้ามีแฟ้มชื่อเดียวกันอยู่ก่อนแล้ว"
 
 #~ msgid "Select a file"
 #~ msgstr "เลือกแฟ้ม"

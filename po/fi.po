@@ -15,9 +15,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-11 08:56+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-15 15:49-0500\n"
 "PO-Revision-Date: 2018-04-10 16:43+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
@@ -29,7 +28,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/about.c:60
+#: src/about.c:54
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -42,7 +41,7 @@ msgstr ""
 "lisenssin versiota 2 taikka mitä tahansa tämän jälkeen ilmestynyttä "
 "versiota.\n"
 
-#: src/about.c:65
+#: src/about.c:59
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -54,7 +53,7 @@ msgstr ""
 "SOVELTUMISESTA TIETTYYN ERITYISEEN TARKOITUKSEEN. Yksityiskohtien osalta "
 "katso GNU:n LGPL-lisenssiä.\n"
 
-#: src/about.c:69
+#: src/about.c:63
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -64,333 +63,295 @@ msgstr ""
 "mukana; jos et sitä saanut, niin lähetä kirje Free Software Foundation, "
 "Inc. :lle, 51 Franklin Street, Fifth Floor, Boston, MA 02111-1307, USA"
 
-#: src/about.c:260
-msgid "translator-credits"
-msgstr ""
-"Jiri Grönroos, 2015, 2017, 2018\n"
-"Tommi Vainikainen, 2005\n"
-"Ilkka Tuohela, 2005\n"
-"Sami Pesonen, 2004\n"
-"Jarkko Ranta, 2003-2004\n"
-"Johanna Makkonen, 2003\n"
-"\n"
-"https://l10n.gnome.org/teams/fi/"
-
-#: src/about.c:277
+#: src/about.c:88
 msgid "Display dialog boxes from shell scripts"
 msgstr "Näytä ikkunoita kuoren komentotiedostojen pohjalta"
 
-#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
+#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
+#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
 msgid "_OK"
 msgstr "_OK"
 
-#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
+#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
+#: src/zenity.ui:746
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: src/main.c:105
+#: src/main.c:121
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Ikkunatyyppi täytyy määrittää. Aja ”zenity --help” saadaksesi lisätietoja\n"
 
-#: src/msg.c:38
+#: src/msg.c:42
 msgid "_No"
 msgstr "_Ei"
 
-#: src/msg.c:40
+#: src/msg.c:44
 msgid "_Yes"
 msgstr "_Kyllä"
 
-#: src/notification.c:50
-#, fuzzy
-#| msgid "Could not parse message from stdin\n"
+#: src/notification.c:55
+#, fuzzy, c-format
 msgid "Could not parse message\n"
 msgstr "vakiosyötteestä tullutta viestiä ei voi jäsentää\n"
 
-#: src/notification.c:132
+#: src/notification.c:142
+#, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
 msgstr ""
 
 #. (iibiiay)
-#: src/notification.c:149
+#: src/notification.c:163
+#, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr ""
 
 #. unknown hints
-#: src/notification.c:166
+#: src/notification.c:186
+#, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr ""
 
-#: src/notification.c:218
-#, fuzzy
-#| msgid "could not parse command from stdin\n"
+#: src/notification.c:247
+#, fuzzy, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "vakiosyötteestä tullutta komentoa ei voi jäsentää\n"
 
-#: src/notification.c:318
+#: src/notification.c:374
 msgid "Zenity notification"
 msgstr "Zenity-ilmoitus"
 
-#: src/option.c:164
+#: src/option.c:166
 msgid "Set the dialog title"
 msgstr "Aseta ikkunan otsikko"
 
-#: src/option.c:165
+#: src/option.c:167
 msgid "TITLE"
 msgstr "OTSIKKO"
 
-#: src/option.c:171
-msgid "Set the window icon"
-msgstr "Aseta ikkunan kuvake"
-
-#: src/option.c:172
-msgid "ICONPATH"
-msgstr "KUVAKE"
-
-#: src/option.c:178
+#: src/option.c:173
 msgid "Set the width"
 msgstr "Aseta leveys"
 
-#: src/option.c:179
+#: src/option.c:174
 msgid "WIDTH"
 msgstr "LEVEYS"
 
-#: src/option.c:185
+#: src/option.c:180
 msgid "Set the height"
 msgstr "Aseta korkeus"
 
-#: src/option.c:186
+#: src/option.c:181
 msgid "HEIGHT"
 msgstr "KORKEUS"
 
-#: src/option.c:192
+#: src/option.c:187
 msgid "Set dialog timeout in seconds"
 msgstr "Aseta ikkunan aikakatkaisu sekunteina"
 
 #. Timeout for closing the dialog
-#: src/option.c:194
+#: src/option.c:189
 msgid "TIMEOUT"
 msgstr "AIKAKATKAISU"
 
-#: src/option.c:200
+#: src/option.c:195
 #, fuzzy
-#| msgid "Sets the label of the Ok button"
 msgid "Set the label of the OK button"
 msgstr "Aseta OK-painikkeen tekstin"
 
-#: src/option.c:201 src/option.c:208 src/option.c:215 src/option.c:245
-#: src/option.c:289 src/option.c:296 src/option.c:319 src/option.c:362
-#: src/option.c:468 src/option.c:565 src/option.c:579 src/option.c:598
-#: src/option.c:658 src/option.c:730 src/option.c:737 src/option.c:786
-#: src/option.c:829 src/option.c:960
+#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
+#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
+#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
+#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
+#: src/option.c:837 src/option.c:969
 msgid "TEXT"
 msgstr "TEKSTI"
 
-#: src/option.c:207
+#: src/option.c:202
 #, fuzzy
-#| msgid "Sets the label of the Cancel button"
 msgid "Set the label of the Cancel button"
 msgstr "Asettaa perumispainikkeen tekstin"
 
-#: src/option.c:214
+#: src/option.c:209
 #, fuzzy
-#| msgid "Hide Cancel button"
 msgid "Add an extra button"
 msgstr "Piilota perumispainike"
 
-#: src/option.c:221
+#: src/option.c:216
 #, fuzzy
-#| msgid "Set the dialog title"
 msgid "Set the modal hint"
 msgstr "Aseta ikkunan otsikko"
 
-#: src/option.c:228
-#, fuzzy
-#| msgid "Set the window icon"
-msgid "Set the parent window to attach to"
-msgstr "Aseta ikkunan kuvake"
-
-#: src/option.c:229
-msgid "WINDOW"
-msgstr ""
-
-#: src/option.c:237
+#: src/option.c:226
 msgid "Display calendar dialog"
 msgstr "Näytä kalenteri-ikkuna"
 
-#: src/option.c:244 src/option.c:288 src/option.c:318 src/option.c:361
-#: src/option.c:467 src/option.c:597 src/option.c:657 src/option.c:785
-#: src/option.c:828 src/option.c:959
+#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
+#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
+#: src/option.c:836 src/option.c:968
 msgid "Set the dialog text"
 msgstr "Aseta ikkunan teksti"
 
-#: src/option.c:251
+#: src/option.c:240
 msgid "Set the calendar day"
 msgstr "Aseta kalenterin päivä"
 
-#: src/option.c:252
+#: src/option.c:241
 msgid "DAY"
 msgstr "PÄIVÄ"
 
-#: src/option.c:258
+#: src/option.c:247
 msgid "Set the calendar month"
 msgstr "Aseta kalenterin kuukausi"
 
-#: src/option.c:259
+#: src/option.c:248
 msgid "MONTH"
 msgstr "KUUKAUSI"
 
-#: src/option.c:265
+#: src/option.c:254
 msgid "Set the calendar year"
 msgstr "Aseta kalenterin vuosi"
 
-#: src/option.c:266
+#: src/option.c:255
 msgid "YEAR"
 msgstr "VUOSI"
 
-#: src/option.c:272 src/option.c:973
+#: src/option.c:261 src/option.c:982
 msgid "Set the format for the returned date"
 msgstr "Aseta palautettavan päiväyksen muoto"
 
-#: src/option.c:273 src/option.c:974
+#: src/option.c:262 src/option.c:983
 msgid "PATTERN"
 msgstr "MALLI"
 
-#: src/option.c:281
+#: src/option.c:271
 msgid "Display text entry dialog"
 msgstr "Näytä teksti-ikkuna"
 
-#: src/option.c:295
+#: src/option.c:285
 msgid "Set the entry text"
 msgstr "Aseta tekstikentän teksti"
 
-#: src/option.c:302
+#: src/option.c:292
 msgid "Hide the entry text"
 msgstr "Piilota tekstikentän teksti"
 
-#: src/option.c:311
+#: src/option.c:302
 msgid "Display error dialog"
 msgstr "Näytä virheikkuna"
 
-#: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
+#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
 #, fuzzy
-#| msgid "Set the dialog title"
 msgid "Set the dialog icon"
 msgstr "Aseta ikkunan otsikko"
 
-#: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
+#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
 msgid "ICON-NAME"
 msgstr ""
 
-#: src/option.c:332 src/option.c:375 src/option.c:671 src/option.c:799
+#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
 msgid "Do not enable text wrapping"
 msgstr "Älä rivitä tekstiä"
 
-#: src/option.c:339 src/option.c:382 src/option.c:678 src/option.c:806
+#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
 #, fuzzy
-#| msgid "Do not enable pango markup"
 msgid "Do not enable Pango markup"
 msgstr "Älä ota käyttöön Pango-merkintöjä"
 
-#: src/option.c:345 src/option.c:388 src/option.c:691 src/option.c:812
+#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
 msgstr ""
 
-#: src/option.c:354
+#: src/option.c:349
 msgid "Display info dialog"
 msgstr "Näytä tietoikkuna"
 
-#: src/option.c:398
+#: src/option.c:396
 msgid "Display file selection dialog"
 msgstr "Näytä tiedoston valintaikkuna"
 
-#: src/option.c:405
+#: src/option.c:403
 msgid "Set the filename"
 msgstr "Aseta tiedostonimi"
 
-#: src/option.c:406 src/option.c:716
+#: src/option.c:404 src/option.c:719
 msgid "FILENAME"
 msgstr "TIEDOSTONIMI"
 
-#: src/option.c:412
+#: src/option.c:410
 msgid "Allow multiple files to be selected"
 msgstr "Salli valittavan useita tiedostoja"
 
-#: src/option.c:419
+#: src/option.c:417
 msgid "Activate directory-only selection"
 msgstr "Aktivoi pelkän hakemiston valinta"
 
-#: src/option.c:426
+#: src/option.c:424
 msgid "Activate save mode"
 msgstr "Aktivoi tallennustila"
 
-#: src/option.c:433 src/option.c:502 src/option.c:966
+#: src/option.c:431 src/option.c:493 src/option.c:975
 msgid "Set output separator character"
 msgstr "Aseta tulosteen erotinmerkki"
 
-#: src/option.c:434 src/option.c:503 src/option.c:967
+#: src/option.c:432 src/option.c:494 src/option.c:976
 msgid "SEPARATOR"
 msgstr "EROTIN"
 
-#: src/option.c:440
-msgid "Confirm file selection if filename already exists"
-msgstr "Varmista tiedoston valinta, jos tiedostonimi on jo olemassa"
-
-#: src/option.c:448
+#: src/option.c:438
 #, fuzzy
-#| msgid "Sets a filename filter"
 msgid "Set a filename filter"
 msgstr "Asettaa tiedostonimisuotimen"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
-#: src/option.c:451
+#: src/option.c:441
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NIMI | MALLI1 MALLI2 …"
 
-#: src/option.c:460
+#: src/option.c:451
 msgid "Display list dialog"
 msgstr "Näytä luetteloikkuna"
 
-#: src/option.c:474
+#: src/option.c:465
 msgid "Set the column header"
 msgstr "Aseta sarakkeen otsikko"
 
-#: src/option.c:475
+#: src/option.c:466
 msgid "COLUMN"
 msgstr "SARAKE"
 
-#: src/option.c:481
+#: src/option.c:472
 #, fuzzy
-#| msgid "Use check boxes for first column"
 msgid "Use check boxes for the first column"
 msgstr "Käytä ensimmäisessä sarakkeessa valintaruutuja"
 
-#: src/option.c:488
+#: src/option.c:479
 #, fuzzy
-#| msgid "Use radio buttons for first column"
 msgid "Use radio buttons for the first column"
 msgstr "Käytä ensimmäisessä sarakkeessa radiopainikkeita"
 
-#: src/option.c:495
+#: src/option.c:486
 #, fuzzy
-#| msgid "Use check boxes for first column"
 msgid "Use an image for the first column"
 msgstr "Käytä ensimmäisessä sarakkeessa valintaruutuja"
 
-#: src/option.c:509
+#: src/option.c:500
 msgid "Allow multiple rows to be selected"
 msgstr "Salli valittavan useita rivejä"
 
-#: src/option.c:516 src/option.c:722
+#: src/option.c:507 src/option.c:725
 msgid "Allow changes to text"
 msgstr "Salli muutokset tekstiin"
 
-#: src/option.c:523
+#: src/option.c:514
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -399,74 +360,81 @@ msgstr ""
 "sarakkeidentulostamiseen)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:526 src/option.c:533
+#: src/option.c:517 src/option.c:524
 msgid "NUMBER"
 msgstr "NUMERO"
 
-#: src/option.c:532
+#: src/option.c:523
 msgid "Hide a specific column"
 msgstr "Piilota tietty sarake"
 
-#: src/option.c:539
+#: src/option.c:530
 #, fuzzy
-#| msgid "Hides the column headers"
 msgid "Hide the column headers"
 msgstr "Piilottaa sarakkeiden otsikot"
 
-#: src/option.c:546
+#: src/option.c:537
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
 msgstr ""
 
-#: src/option.c:557
+#: src/option.c:549
 msgid "Display notification"
 msgstr "Näytä ilmoitus"
 
-#: src/option.c:564
+#: src/option.c:556
 msgid "Set the notification text"
 msgstr "Aseta ilmoitusteksti"
 
-#: src/option.c:571
+#: src/option.c:563
+#, fuzzy
+msgid "Set the notification icon"
+msgstr "Aseta ilmoitusteksti"
+
+#: src/option.c:564
+msgid "ICONPATH"
+msgstr "KUVAKE"
+
+#: src/option.c:570
 msgid "Listen for commands on stdin"
 msgstr "Kuuntele komentoja vakiosyötteestä"
 
-#: src/option.c:578
+#: src/option.c:577
 #, fuzzy
-#| msgid "Set the notification text"
 msgid "Set the notification hints"
 msgstr "Aseta ilmoitusteksti"
 
-#: src/option.c:590
+#: src/option.c:589
 msgid "Display progress indication dialog"
 msgstr "Näytä edistymisikkuna"
 
-#: src/option.c:604
+#: src/option.c:603
 msgid "Set initial percentage"
 msgstr "Aseta aloitusprosentti"
 
-#: src/option.c:605
+#: src/option.c:604
 msgid "PERCENTAGE"
 msgstr "PROSENTTI"
 
-#: src/option.c:611
+#: src/option.c:610
 msgid "Pulsate progress bar"
 msgstr "Edistymispalkki sykkii"
 
-#: src/option.c:619
+#: src/option.c:618
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Sulje ikkuna kun 100 % on saavutettu"
 
-#: src/option.c:626
+#: src/option.c:625
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Lopeta äitiprosessi, jos perumispainiketta painetaan"
 
-#: src/option.c:633
+#: src/option.c:632
 msgid "Hide Cancel button"
 msgstr "Piilota perumispainike"
 
-#: src/option.c:641
+#: src/option.c:640
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr ""
@@ -475,465 +443,490 @@ msgstr ""
 msgid "Display question dialog"
 msgstr "Näytä kysymysikkuna"
 
-#: src/option.c:684
+#: src/option.c:685
 msgid "Give Cancel button focus by default"
 msgstr "Kohdista perumispainikkeeseen oletuksena"
 
-#: src/option.c:698
+#: src/option.c:701
 #, fuzzy
-#| msgid "Hide Cancel button"
 msgid "Suppress OK and Cancel buttons"
 msgstr "Piilota perumispainike"
 
-#: src/option.c:708
+#: src/option.c:711
 msgid "Display text information dialog"
 msgstr "Näytä tekstin tietoikkuna"
 
-#: src/option.c:715
+#: src/option.c:718
 msgid "Open file"
 msgstr "Avaa tiedosto"
 
-#: src/option.c:729
+#: src/option.c:732
 msgid "Set the text font"
 msgstr "Aseta tekstikentän fontti"
 
-#: src/option.c:736
+#: src/option.c:739
 msgid "Enable an I read and agree checkbox"
 msgstr "Ota käyttöön Olen lukenut ja hyväksyn -valintaruutu"
 
-#: src/option.c:744
+#: src/option.c:747
 msgid "Enable HTML support"
 msgstr "Ota käyttöön HTML-tuki"
 
-#: src/option.c:751
+#: src/option.c:754
 #, fuzzy
-#| msgid "Sets an url instead of a file. Only works if you use --html option"
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr ""
 "Asettaa URLin tiedoston sijaan. Toimii vain jos käytät --html-valitsinta"
 
-#: src/option.c:759
+#: src/option.c:762
 #, fuzzy
-#| msgid "Sets an url instead of a file. Only works if you use --html option"
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "Asettaa URLin tiedoston sijaan. Toimii vain jos käytät --html-valitsinta"
 
-#: src/option.c:761
+#: src/option.c:764
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:768
+#: src/option.c:771
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 
-#: src/option.c:778
+#: src/option.c:782
 msgid "Display warning dialog"
 msgstr "Näytä varoitusikkuna"
 
-#: src/option.c:821
+#: src/option.c:829
 msgid "Display scale dialog"
 msgstr "Näytä asteikkoikkuna"
 
-#: src/option.c:835
+#: src/option.c:843
 msgid "Set initial value"
 msgstr "Aseta aloitusarvo"
 
-#: src/option.c:836 src/option.c:843 src/option.c:850 src/option.c:857
-#: src/option.c:1008
+#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
+#: src/option.c:1017
 msgid "VALUE"
 msgstr "ARVO"
 
-#: src/option.c:842
+#: src/option.c:850
 msgid "Set minimum value"
 msgstr "Aseta minimiarvo"
 
-#: src/option.c:849
+#: src/option.c:857
 msgid "Set maximum value"
 msgstr "Aseta maksimiarvo"
 
-#: src/option.c:856
+#: src/option.c:864
 msgid "Set step size"
 msgstr "Aseta askelkoko"
 
-#: src/option.c:863
+#: src/option.c:871
 msgid "Print partial values"
 msgstr "Näytä osittaisia arvoja"
 
-#: src/option.c:870
+#: src/option.c:878
 msgid "Hide value"
 msgstr "Piilota arvo"
 
-#: src/option.c:879
+#: src/option.c:888
 msgid "Display forms dialog"
 msgstr "Näytä lomakeikkuna"
 
-#: src/option.c:886
+#: src/option.c:895
 msgid "Add a new Entry in forms dialog"
 msgstr "Lisää uusi kenttä lomakeikkunaan"
 
-#: src/option.c:887 src/option.c:894
+#: src/option.c:896 src/option.c:903
 msgid "Field name"
 msgstr "Kentän nimi"
 
-#: src/option.c:893
+#: src/option.c:902
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Lisää uusi salasanakenttä lomakeikkunaan"
 
-#: src/option.c:900
+#: src/option.c:909
 msgid "Add a new Calendar in forms dialog"
 msgstr "Lisää uusi kalenterikenttä lomakeikkunaan"
 
-#: src/option.c:901
+#: src/option.c:910
 msgid "Calendar field name"
 msgstr "Kalenterin kenttänimi"
 
-#: src/option.c:907
+#: src/option.c:916
 #, fuzzy
 msgid "Add a new List in forms dialog"
 msgstr "Lisää uusi kenttä lomakeikkunaan"
 
-#: src/option.c:908
+#: src/option.c:917
 msgid "List field and header name"
 msgstr "Luettelon kenttä ja otsake"
 
-#: src/option.c:914
+#: src/option.c:923
 msgid "List of values for List"
 msgstr "Luettelo arvoista luettelolle"
 
-#: src/option.c:915 src/option.c:922 src/option.c:936
+#: src/option.c:924 src/option.c:931 src/option.c:945
 msgid "List of values separated by |"
 msgstr "Luettelo arvoista, jotka on eroteltu merkillä |"
 
-#: src/option.c:921
+#: src/option.c:930
 msgid "List of values for columns"
 msgstr "Luettelo arvoista sarakkeille"
 
-#: src/option.c:928
+#: src/option.c:937
 #, fuzzy
 msgid "Add a new combo box in forms dialog"
 msgstr "Lisää uusi kenttä lomakeikkunaan"
 
-#: src/option.c:929
+#: src/option.c:938
 #, fuzzy
-#| msgid "Calendar field name"
 msgid "Combo box field name"
 msgstr "Kalenterin kenttänimi"
 
-#: src/option.c:935
+#: src/option.c:944
 #, fuzzy
-#| msgid "List of values for columns"
 msgid "List of values for combo box"
 msgstr "Luettelo arvoista sarakkeille"
 
-#: src/option.c:952
+#: src/option.c:961
 #, fuzzy
 msgid "Show the columns header"
 msgstr "Aseta sarakkeen otsikko"
 
-#: src/option.c:983
+#: src/option.c:992
 msgid "Display password dialog"
 msgstr "Näytä salasanaikkuna"
 
-#: src/option.c:990
+#: src/option.c:999
 msgid "Display the username option"
 msgstr "Näytä käyttäjätunnusvalinta"
 
-#: src/option.c:1000
+#: src/option.c:1009
 msgid "Display color selection dialog"
 msgstr "Näytä värinvalintaikkuna"
 
-#: src/option.c:1007
+#: src/option.c:1016
 msgid "Set the color"
 msgstr "Aseta väri"
 
-#: src/option.c:1014
+#: src/option.c:1023
 msgid "Show the palette"
 msgstr "Näytä väripaletti"
 
-#: src/option.c:1023
+#: src/option.c:1033
 msgid "About zenity"
 msgstr "Tietoja Zenitystä"
 
-#: src/option.c:1030
+#: src/option.c:1040
 msgid "Print version"
 msgstr "Näytä versiotiedot"
 
-#: src/option.c:1913
+#: src/option.c:2007
 msgid "General options"
 msgstr "Yleiset asetukset"
 
-#: src/option.c:1914
+#: src/option.c:2008
 msgid "Show general options"
 msgstr "Näytä yleiset asetukset"
 
-#: src/option.c:1926
+#: src/option.c:2020
 msgid "Calendar options"
 msgstr "Kalenteriasetukset"
 
-#: src/option.c:1927
+#: src/option.c:2021
 msgid "Show calendar options"
 msgstr "Näytä kalenteriasetukset"
 
-#: src/option.c:1939
+#: src/option.c:2033
 msgid "Text entry options"
 msgstr "Tekstikenttäasetukset"
 
-#: src/option.c:1940
+#: src/option.c:2034
 msgid "Show text entry options"
 msgstr "Näytä tekstikenttäasetukset"
 
-#: src/option.c:1952
+#: src/option.c:2046
 msgid "Error options"
 msgstr "Virheasetukset"
 
-#: src/option.c:1952
+#: src/option.c:2046
 msgid "Show error options"
 msgstr "Näytä Virheasetukset"
 
-#: src/option.c:1962
+#: src/option.c:2056
 msgid "Info options"
 msgstr "Tietoasetukset"
 
-#: src/option.c:1962
+#: src/option.c:2056
 msgid "Show info options"
 msgstr "Näytä tietoasetukset"
 
-#: src/option.c:1972
+#: src/option.c:2066
 msgid "File selection options"
 msgstr "Tiedostonvalitsimen asetukset"
 
-#: src/option.c:1973
+#: src/option.c:2067
 msgid "Show file selection options"
 msgstr "Näytä tiedostonvalitsimen asetukset"
 
-#: src/option.c:1985
+#: src/option.c:2079
 msgid "List options"
 msgstr "Luetteloasetukset"
 
-#: src/option.c:1985
+#: src/option.c:2079
 msgid "Show list options"
 msgstr "Näytä luetteloasetukset"
 
-#: src/option.c:1996
+#: src/option.c:2090
 msgid "Notification icon options"
 msgstr "Ilmoituskuvakeasetukset"
 
-#: src/option.c:1997
+#: src/option.c:2091
 msgid "Show notification icon options"
 msgstr "Näytä ilmoituskuvakeasetukset"
 
-#: src/option.c:2011
+#: src/option.c:2105
 msgid "Progress options"
 msgstr "Edistymisasetukset"
 
-#: src/option.c:2012
+#: src/option.c:2106
 msgid "Show progress options"
 msgstr "Näytä edistymisasetukset"
 
-#: src/option.c:2024
+#: src/option.c:2118
 msgid "Question options"
 msgstr "Kysymysasetukset"
 
-#: src/option.c:2025
+#: src/option.c:2119
 msgid "Show question options"
 msgstr "Näytä kysymysasetukset"
 
-#: src/option.c:2037
+#: src/option.c:2131
 msgid "Warning options"
 msgstr "Varoitusasetukset"
 
-#: src/option.c:2038
+#: src/option.c:2132
 msgid "Show warning options"
 msgstr "Näytä varoitusasetukset"
 
-#: src/option.c:2050
+#: src/option.c:2144
 msgid "Scale options"
 msgstr "Asteikkoasetukset"
 
-#: src/option.c:2050
+#: src/option.c:2144
 msgid "Show scale options"
 msgstr "Näytä asteikkoasetukset"
 
-#: src/option.c:2060
+#: src/option.c:2154
 msgid "Text information options"
 msgstr "Teksti-ilmoitusasetukset"
 
-#: src/option.c:2061
+#: src/option.c:2155
 msgid "Show text information options"
 msgstr "Näytä teksti-ilmoitusasetukset"
 
-#: src/option.c:2073
+#: src/option.c:2167
 msgid "Color selection options"
 msgstr "Värivalitsimen asetukset"
 
-#: src/option.c:2074
+#: src/option.c:2168
 msgid "Show color selection options"
 msgstr "Näytä värivalitsimen asetukset"
 
-#: src/option.c:2086
+#: src/option.c:2180
 msgid "Password dialog options"
 msgstr "Salasanaikkunan asetukset"
 
-#: src/option.c:2087
+#: src/option.c:2181
 msgid "Show password dialog options"
 msgstr "Näytä salasanaikkunan asetukset"
 
-#: src/option.c:2099
+#: src/option.c:2193
 msgid "Forms dialog options"
 msgstr "Lomakeikkunan asetukset"
 
-#: src/option.c:2100
+#: src/option.c:2194
 msgid "Show forms dialog options"
 msgstr "Näytä lomakeikkunan asetukset"
 
-#: src/option.c:2112
+#: src/option.c:2206
 msgid "Miscellaneous options"
 msgstr "Sekalaiset asetukset"
 
-#: src/option.c:2113
+#: src/option.c:2207
 msgid "Show miscellaneous options"
 msgstr "Näytä sekalaiset asetukset"
 
-#: src/option.c:2139
+#: src/option.c:2230
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Tämä valitsin ei ole käytettävissä. Katso lista sallituista valitsimista "
 "valitsimella --help.\n"
 
-#: src/option.c:2144
+#: src/option.c:2236
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s ei tueta tässä ikkunassa\n"
 
-#: src/option.c:2148
+#: src/option.c:2241
+#, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Kaksi tai useampia ikkunavalitsimia annettu\n"
 
-#. Checks if username has been passed as a parameter
-#: src/password.c:70
-msgid "Type your password"
-msgstr "Syötä salasanasi"
-
-#: src/password.c:73
+#: src/password.c:96
 msgid "Type your username and password"
 msgstr "Syötä käyttäjätunnuksesi ja salasanasi"
 
-#: src/password.c:100
+#. Add the username label and entry and increment the row for the
+#. * password entry so it will be added below the username.
+#.
+#: src/password.c:101
 msgid "Username:"
 msgstr "Käyttäjätunnus:"
 
-#: src/password.c:110
+#: src/password.c:116
 msgid "Password:"
 msgstr "Salasana:"
 
-#: src/progress.c:102
+#: src/progress.c:116
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Aikaa jäljellä: %lu:%02lu:%02lu"
 
-#: src/scale.c:62
+#: src/scale.c:66
+#, c-format
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Maksimiarvon tulee olla suurempi kuin minimiarvon.\n"
 
-#: src/scale.c:69
+#: src/scale.c:74
+#, c-format
 msgid "Value out of range.\n"
 msgstr "Arvo sallitun alueen ulkopuolella.\n"
 
-#: src/tree.c:393
+#: src/tree.c:405
+#, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Luetteloikkunalle ei annettu sarakenimiä.\n"
 
-#: src/tree.c:399
+#: src/tree.c:412
+#, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "Sinun tulisi käyttää vain yhtä listaikkunan tyyppiä.\n"
 
-#: src/zenity.ui:14 src/zenity.ui:76
+#: src/zenity.ui:16 src/zenity.ui:31
 msgid "Adjust the scale value"
 msgstr "Säädä asteikon arvoa"
 
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "Peru"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "OK"
-
-#: src/zenity.ui:117
+#: src/zenity.ui:74
 msgid "Text View"
 msgstr "Tekstinäkymä"
 
-#: src/zenity.ui:231
+#: src/zenity.ui:137
 msgid "Calendar selection"
 msgstr "Kalenterivalinnat"
 
-#: src/zenity.ui:298
+#: src/zenity.ui:156
 msgid "Select a date from below."
 msgstr "Valitse päiväys alta."
 
-#: src/zenity.ui:319
+#: src/zenity.ui:167
 msgid "C_alendar:"
 msgstr "K_alenteri:"
 
-#: src/zenity.ui:361
+#: src/zenity.ui:172
+#, fuzzy
+msgid "Calendar"
+msgstr "K_alenteri:"
+
+#: src/zenity.ui:211
 msgid "Add a new entry"
 msgstr "Lisää kohta"
 
-#: src/zenity.ui:428
+#: src/zenity.ui:234
 msgid "_Enter new text:"
 msgstr "_Anna uusi teksti:"
 
-#: src/zenity.ui:465
+#: src/zenity.ui:273
 msgid "Error"
 msgstr "Virhe"
 
-#: src/zenity.ui:530
+#: src/zenity.ui:301
 msgid "An error has occurred."
 msgstr "Virhe."
 
-#: src/zenity.ui:658
+#: src/zenity.ui:378
 msgid "Forms dialog"
 msgstr "Lomakeikkuna"
 
-#: src/zenity.ui:681
+#: src/zenity.ui:413
 msgid "Information"
 msgstr "Tiedoksi"
 
-#: src/zenity.ui:741
+#: src/zenity.ui:438
 msgid "All updates are complete."
 msgstr "Kaikki päivitykset on nyt tehty."
 
-#: src/zenity.ui:768
+#: src/zenity.ui:466
 msgid "Progress"
 msgstr "Edistyminen"
 
-#: src/zenity.ui:831
+#: src/zenity.ui:481
 msgid "Running..."
 msgstr "Ajetaan…"
 
-#: src/zenity.ui:882
+#: src/zenity.ui:530
 msgid "Question"
 msgstr "Kysymys"
 
-#: src/zenity.ui:929 src/zenity.ui:1126
+#: src/zenity.ui:553 src/zenity.ui:660
 msgid "Are you sure you want to proceed?"
 msgstr "Haluatko varmasti jatkaa?"
 
-#: src/zenity.ui:953
+#: src/zenity.ui:573
 msgid "Select items from the list"
 msgstr "Valitse luettelon kohtia"
 
-#: src/zenity.ui:1015
+#: src/zenity.ui:588
 msgid "Select items from the list below."
 msgstr "Valitse kohtia alla olevasta luettelosta."
 
-#: src/zenity.ui:1064
+#: src/zenity.ui:633 src/zenity.ui:693
 msgid "Warning"
 msgstr "Varoitus"
+
+#: src/zenity.ui:716
+msgid "Type your password"
+msgstr "Syötä salasanasi"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Jiri Grönroos, 2015, 2017, 2018\n"
+#~ "Tommi Vainikainen, 2005\n"
+#~ "Ilkka Tuohela, 2005\n"
+#~ "Sami Pesonen, 2004\n"
+#~ "Jarkko Ranta, 2003-2004\n"
+#~ "Johanna Makkonen, 2003\n"
+#~ "\n"
+#~ "https://l10n.gnome.org/teams/fi/"
+
+#~ msgid "Set the window icon"
+#~ msgstr "Aseta ikkunan kuvake"
+
+#, fuzzy
+#~| msgid "Set the window icon"
+#~ msgid "Set the parent window to attach to"
+#~ msgstr "Aseta ikkunan kuvake"
+
+#~ msgid "Confirm file selection if filename already exists"
+#~ msgstr "Varmista tiedoston valinta, jos tiedostonimi on jo olemassa"
+
+#~ msgid "Cancel"
+#~ msgstr "Peru"
+
+#~ msgid "OK"
+#~ msgstr "OK"

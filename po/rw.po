@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity 2.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
+"POT-Creation-Date: 2021-02-15 15:49-0500\n"
 "PO-Revision-Date: 2005-03-28 19:36-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -24,311 +24,286 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
-#, fuzzy
-msgid "translator-credits"
+#: src/about.c:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version.\n"
 msgstr ""
-"Philibert Ndandali  <ndandali@yahoo.fr>, 2005.\n"
-"# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.\n"
-"# Noëlla Mupole <s24211045@tuks.co.za>, 2005.\n"
-"# Carole Karema <karemacarole@hotmail.com>, 2005.\n"
-"# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.\n"
-"# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.\n"
-"# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005."
 
-#: ../src/about.c:433
+#: src/about.c:59
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
+"for more details.\n"
+msgstr ""
+
+#: src/about.c:63
+msgid ""
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this program; if not, write to the Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+
+#: src/about.c:88
 #, fuzzy
 msgid "Display dialog boxes from shell scripts"
 msgstr "Ikiganiro Bivuye Igikonoshwa Inyandikoporogaramu"
 
-#: ../src/about.c:437
-#, fuzzy
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(C"
-
-#: ../src/about.c:521
-msgid "Credits"
+#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
+#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
+#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
+msgid "_OK"
 msgstr ""
 
-#: ../src/about.c:548
-#, fuzzy
-msgid "Written by"
-msgstr "ku"
+#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
+#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
+#: src/zenity.ui:746
+msgid "_Cancel"
+msgstr ""
 
-#: ../src/about.c:561
-#, fuzzy
-msgid "Translated by"
-msgstr "ku"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "Icyerekezo"
-
-#: ../src/eggtrayicon.c:119
-#, fuzzy
-msgid "The orientation of the tray."
-msgstr "Icyerekezo Bya"
-
-#: ../src/main.c:90
-#, fuzzy
+#: src/main.c:121
+#, fuzzy, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "a Ikiganiro Ubwoko kugirango"
 
-#: ../src/notification.c:161
-#, fuzzy
-msgid "could not parse command from stdin\n"
+#: src/msg.c:42
+msgid "_No"
+msgstr ""
+
+#: src/msg.c:44
+msgid "_Yes"
+msgstr ""
+
+#: src/notification.c:55
+#, fuzzy, c-format
+msgid "Could not parse message\n"
 msgstr "OYA Komandi: Bivuye"
 
-#: ../src/notification.c:230 ../src/notification.c:259
+#: src/notification.c:142
+#, c-format
+msgid ""
+"Invalid value for a boolean typed hint.\n"
+"Supported values are 'true' or 'false'.\n"
+msgstr ""
+
+#. (iibiiay)
+#: src/notification.c:163
+#, c-format
+msgid "Unsupported hint. Skipping.\n"
+msgstr ""
+
+#. unknown hints
+#: src/notification.c:186
+#, c-format
+msgid "Unknown hint name. Skipping.\n"
+msgstr ""
+
+#: src/notification.c:247
+#, fuzzy, c-format
+msgid "Could not parse command from stdin\n"
+msgstr "OYA Komandi: Bivuye"
+
+#: src/notification.c:374
 #, fuzzy
 msgid "Zenity notification"
 msgstr "Ikimenyetso"
 
-#: ../src/tree.c:320
-#, fuzzy
-msgid "No column titles specified for List dialog.\n"
-msgstr "Inkingi Imitwe kugirango Ikiganiro"
-
-#: ../src/tree.c:326
-msgid "You should use only one List dialog type.\n"
-msgstr ""
-
-#: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr ""
-
-#: ../src/zenity.glade.h:3
-#, fuzzy
-msgid "Add a new entry"
-msgstr "a Gishya Icyinjijwe"
-
-#: ../src/zenity.glade.h:4
-#, fuzzy
-msgid "All updates are complete."
-msgstr "Byuzuye"
-
-# wizards/source\template\template.src:CorrespondenceMsgError.text
-#: ../src/zenity.glade.h:5
-msgid "An error has occurred."
-msgstr "Ikosa yagaragaye."
-
-#: ../src/zenity.glade.h:6
-#, fuzzy
-msgid "Are you sure you want to proceed?"
-msgstr "Kuri"
-
-# svtools/source\dialogs\addresstemplate.src:STR_FIELD_CALENDAR.text
-#: ../src/zenity.glade.h:7
-#, fuzzy
-msgid "C_alendar:"
-msgstr "Kalindari"
-
-#: ../src/zenity.glade.h:8
-#, fuzzy
-msgid "Calendar selection"
-msgstr "Ihitamo"
-
-#: ../src/zenity.glade.h:9
-msgid "Error"
-msgstr "Ikosa"
-
-#: ../src/zenity.glade.h:10
-msgid "Information"
-msgstr "Ibisobanuro"
-
-# padmin/source\padialog.src:RID_PROGRESS_DLG.RID_PROGRESS_PROGRESS_TXT.text
-#: ../src/zenity.glade.h:11
-msgid "Progress"
-msgstr "Aho bigeze"
-
-#: ../src/zenity.glade.h:12
-msgid "Question"
-msgstr ""
-
-#: ../src/zenity.glade.h:13
-msgid "Running..."
-msgstr ""
-
-#: ../src/zenity.glade.h:14
-#, fuzzy
-msgid "Select a date from below."
-msgstr "a Itariki Bivuye munsi"
-
-#: ../src/zenity.glade.h:15
-#, fuzzy
-msgid "Select a file"
-msgstr "a IDOSIYE"
-
-#: ../src/zenity.glade.h:16
-#, fuzzy
-msgid "Select items from the list"
-msgstr "Bivuye Urutonde"
-
-#: ../src/zenity.glade.h:17
-#, fuzzy
-msgid "Select items from the list below."
-msgstr "Bivuye Urutonde munsi"
-
-#: ../src/zenity.glade.h:18
-msgid "Text View"
-msgstr ""
-
-#: ../src/zenity.glade.h:19
-msgid "Warning"
-msgstr "Iburira"
-
-#: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr ""
-
-#: ../src/zenity.glade.h:21
-#, fuzzy
-msgid "_Enter new text:"
-msgstr "Gishya Umwandiko"
-
-#: ../src/option.c:105
+#: src/option.c:166
 #, fuzzy
 msgid "Set the dialog title"
 msgstr "Ikiganiro Umutwe"
 
-#: ../src/option.c:106
+#: src/option.c:167
 #, fuzzy
 msgid "TITLE"
 msgstr "Umutwe"
 
-#: ../src/option.c:114
-#, fuzzy
-msgid "Set the window icon"
-msgstr "Idirishya Agashushondanga"
-
-#: ../src/option.c:115
-msgid "ICONPATH"
-msgstr ""
-
-#: ../src/option.c:123
+#: src/option.c:173
 #, fuzzy
 msgid "Set the width"
 msgstr "Ubugari"
 
-#: ../src/option.c:124
+#: src/option.c:174
 #, fuzzy
 msgid "WIDTH"
 msgstr "Ubugari"
 
-#: ../src/option.c:132
+#: src/option.c:180
 #, fuzzy
 msgid "Set the height"
 msgstr "Ubuhagarike"
 
-#: ../src/option.c:133
+#: src/option.c:181
 #, fuzzy
 msgid "HEIGHT"
 msgstr "Ubuhagarike"
 
-#: ../src/option.c:147
+#: src/option.c:187
+#, fuzzy
+msgid "Set dialog timeout in seconds"
+msgstr "Ikiganiro Umutwe"
+
+#. Timeout for closing the dialog
+#: src/option.c:189
+msgid "TIMEOUT"
+msgstr ""
+
+#: src/option.c:195
+#, fuzzy
+msgid "Set the label of the OK button"
+msgstr "Ikiganiro Umwandiko"
+
+#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
+#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
+#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
+#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
+#: src/option.c:837 src/option.c:969
+msgid "TEXT"
+msgstr ""
+
+#: src/option.c:202
+msgid "Set the label of the Cancel button"
+msgstr ""
+
+#: src/option.c:209
+msgid "Add an extra button"
+msgstr ""
+
+#: src/option.c:216
+#, fuzzy
+msgid "Set the modal hint"
+msgstr "Ikiganiro Umutwe"
+
+#: src/option.c:226
 #, fuzzy
 msgid "Display calendar dialog"
 msgstr "Kalindari Ikiganiro"
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
+#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
+#: src/option.c:836 src/option.c:968
 #, fuzzy
 msgid "Set the dialog text"
 msgstr "Ikiganiro Umwandiko"
 
-#: ../src/option.c:165
+#: src/option.c:240
 #, fuzzy
 msgid "Set the calendar day"
 msgstr "Kalindari UMUNSI"
 
-#: ../src/option.c:174
+#: src/option.c:241
+msgid "DAY"
+msgstr ""
+
+#: src/option.c:247
 #, fuzzy
 msgid "Set the calendar month"
 msgstr "Kalindari Ukwezi"
 
-#: ../src/option.c:183
+#: src/option.c:248
+msgid "MONTH"
+msgstr ""
+
+#: src/option.c:254
 #, fuzzy
 msgid "Set the calendar year"
 msgstr "Kalindari Umwaka"
 
-#: ../src/option.c:192
+#: src/option.c:255
+msgid "YEAR"
+msgstr ""
+
+#: src/option.c:261 src/option.c:982
 #, fuzzy
 msgid "Set the format for the returned date"
 msgstr "Imiterere kugirango Itariki"
 
-#: ../src/option.c:207
+#: src/option.c:262 src/option.c:983
+msgid "PATTERN"
+msgstr ""
+
+#: src/option.c:271
 #, fuzzy
 msgid "Display text entry dialog"
 msgstr "Umwandiko Icyinjijwe Ikiganiro"
 
-#: ../src/option.c:225
+#: src/option.c:285
 #, fuzzy
 msgid "Set the entry text"
 msgstr "Icyinjijwe Umwandiko"
 
-#: ../src/option.c:234
+#: src/option.c:292
 #, fuzzy
 msgid "Hide the entry text"
 msgstr "Icyinjijwe Umwandiko"
 
-#: ../src/option.c:250
+#: src/option.c:302
 #, fuzzy
 msgid "Display error dialog"
 msgstr "Ikosa Ikiganiro"
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
+#, fuzzy
+msgid "Set the dialog icon"
+msgstr "Ikiganiro Umutwe"
+
+#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
+msgid "ICON-NAME"
+msgstr ""
+
+#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
 msgid "Do not enable text wrapping"
 msgstr ""
 
-#: ../src/option.c:283
+#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
+msgid "Do not enable Pango markup"
+msgstr ""
+
+#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
+msgid ""
+"Enable ellipsizing in the dialog text. This fixes the high window size with "
+"long texts"
+msgstr ""
+
+#: src/option.c:349
 #, fuzzy
 msgid "Display info dialog"
 msgstr "Ibisobanuro Ikiganiro"
 
-#: ../src/option.c:316
+#: src/option.c:396
 #, fuzzy
 msgid "Display file selection dialog"
 msgstr "IDOSIYE Ihitamo Ikiganiro"
 
-#: ../src/option.c:325
+#: src/option.c:403
 #, fuzzy
 msgid "Set the filename"
 msgstr "Izina ry'idosiye:"
 
-#: ../src/option.c:326 ../src/option.c:600
+#: src/option.c:404 src/option.c:719
 #, fuzzy
 msgid "FILENAME"
 msgstr "Izina ry'idosiye"
 
-#: ../src/option.c:334
+#: src/option.c:410
 #, fuzzy
 msgid "Allow multiple files to be selected"
 msgstr "Igikubo Idosiye Kuri Byahiswemo"
 
-#: ../src/option.c:343
+#: src/option.c:417
 #, fuzzy
 msgid "Activate directory-only selection"
 msgstr "bushyinguro Ihitamo"
 
-#: ../src/option.c:352
+#: src/option.c:424
 #, fuzzy
 msgid "Activate save mode"
 msgstr "Kubika Ubwoko"
 
-#: ../src/option.c:361 ../src/option.c:421
+#: src/option.c:431 src/option.c:493 src/option.c:975
 #, fuzzy
 msgid "Set output separator character"
 msgstr "Ibisohoka Mutandukanya Inyuguti"
@@ -353,258 +328,709 @@ msgstr "Ibisohoka Mutandukanya Inyuguti"
 # officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....Insert.Caption.OfficeObject.Impress.Settings.Delimiter.text
 # #-#-#-#-#  officecfg.pot (Gnome 2.12)  #-#-#-#-#
 # officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....Insert.Caption.OfficeObject.OLEMisc.Settings.Delimiter.text
-#: ../src/option.c:362 ../src/option.c:422
+#: src/option.c:432 src/option.c:494 src/option.c:976
 #, fuzzy
 msgid "SEPARATOR"
 msgstr "Mutandukanya"
 
-#: ../src/option.c:376
+#: src/option.c:438
+#, fuzzy
+msgid "Set a filename filter"
+msgstr "Izina ry'idosiye:"
+
+#. Help for file-filter argument (name and patterns for file
+#. selection)
+#: src/option.c:441
+msgid "NAME | PATTERN1 PATTERN2 ..."
+msgstr ""
+
+#: src/option.c:451
 #, fuzzy
 msgid "Display list dialog"
 msgstr "Urutonde Ikiganiro"
 
-#: ../src/option.c:394
+#: src/option.c:465
 #, fuzzy
 msgid "Set the column header"
 msgstr "Inkingi Umutwempangano"
 
-#: ../src/option.c:403
+#: src/option.c:466
+msgid "COLUMN"
+msgstr ""
+
+#: src/option.c:472
 #, fuzzy
-msgid "Use check boxes for first column"
+msgid "Use check boxes for the first column"
 msgstr "Kugenzura... kugirango Itangira Inkingi"
 
-#: ../src/option.c:412
+#: src/option.c:479
 #, fuzzy
-msgid "Use radio buttons for first column"
+msgid "Use radio buttons for the first column"
 msgstr "Utubuto kugirango Itangira Inkingi"
 
-#: ../src/option.c:430
+#: src/option.c:486
+#, fuzzy
+msgid "Use an image for the first column"
+msgstr "Kugenzura... kugirango Itangira Inkingi"
+
+#: src/option.c:500
 #, fuzzy
 msgid "Allow multiple rows to be selected"
 msgstr "Igikubo Idosiye Kuri Byahiswemo"
 
-#: ../src/option.c:439 ../src/option.c:608
+#: src/option.c:507 src/option.c:725
 #, fuzzy
 msgid "Allow changes to text"
 msgstr "Amahinduka Kuri Umwandiko"
 
-#: ../src/option.c:448
+#: src/option.c:514
 #, fuzzy
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "a Inkingi ni 1. Kuri Gucapa Byose Inkingi"
 
-#: ../src/option.c:457
+#. Column index number to print out on a list dialog
+#: src/option.c:517 src/option.c:524
+msgid "NUMBER"
+msgstr ""
+
+#: src/option.c:523
 msgid "Hide a specific column"
 msgstr ""
 
-#: ../src/option.c:472
+#: src/option.c:530
+#, fuzzy
+msgid "Hide the column headers"
+msgstr "Inkingi Umutwempangano"
+
+#: src/option.c:537
+msgid ""
+"Change list default search function searching for text in the middle, not on "
+"the beginning"
+msgstr ""
+
+#: src/option.c:549
 #, fuzzy
 msgid "Display notification"
 msgstr "Ikimenyetso"
 
-#: ../src/option.c:481
+#: src/option.c:556
 #, fuzzy
 msgid "Set the notification text"
 msgstr "Ikimenyetso Umwandiko"
 
-#: ../src/option.c:490
+#: src/option.c:563
+#, fuzzy
+msgid "Set the notification icon"
+msgstr "Ikimenyetso Umwandiko"
+
+#: src/option.c:564
+msgid "ICONPATH"
+msgstr ""
+
+#: src/option.c:570
 #, fuzzy
 msgid "Listen for commands on stdin"
 msgstr "kugirango Amabwiriza ku"
 
-#: ../src/option.c:505
+#: src/option.c:577
+#, fuzzy
+msgid "Set the notification hints"
+msgstr "Ikimenyetso Umwandiko"
+
+#: src/option.c:589
 #, fuzzy
 msgid "Display progress indication dialog"
 msgstr "Aho bigeze Ikiganiro"
 
-#: ../src/option.c:523
+#: src/option.c:603
 #, fuzzy
 msgid "Set initial percentage"
 msgstr "Ijanisha"
 
-#: ../src/option.c:532
+#: src/option.c:604
+msgid "PERCENTAGE"
+msgstr ""
+
+#: src/option.c:610
 #, fuzzy
 msgid "Pulsate progress bar"
 msgstr "Aho bigeze"
 
-#: ../src/option.c:542
+#: src/option.c:618
 #, fuzzy, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Ikiganiro Ryari: 100"
 
-#: ../src/option.c:557
+#: src/option.c:625
+msgid "Kill parent process if Cancel button is pressed"
+msgstr ""
+
+#: src/option.c:632
+msgid "Hide Cancel button"
+msgstr ""
+
+#: src/option.c:640
+#, no-c-format
+msgid "Estimate when progress will reach 100%"
+msgstr ""
+
+#: src/option.c:650
 #, fuzzy
 msgid "Display question dialog"
 msgstr "Ikiganiro"
 
-#: ../src/option.c:590
+#: src/option.c:685
+msgid "Give Cancel button focus by default"
+msgstr ""
+
+#: src/option.c:701
+msgid "Suppress OK and Cancel buttons"
+msgstr ""
+
+#: src/option.c:711
 #, fuzzy
 msgid "Display text information dialog"
 msgstr "Umwandiko Ibisobanuro Ikiganiro"
 
 # sfx2/sdi\sfxslots.src:SID_OPENDOC.text
-#: ../src/option.c:599
+#: src/option.c:718
 #, fuzzy
 msgid "Open file"
 msgstr "Gufungura Dosiye"
 
-#: ../src/option.c:623
+#: src/option.c:732
+#, fuzzy
+msgid "Set the text font"
+msgstr "Icyinjijwe Umwandiko"
+
+#: src/option.c:739
+msgid "Enable an I read and agree checkbox"
+msgstr ""
+
+#: src/option.c:747
+msgid "Enable HTML support"
+msgstr ""
+
+#: src/option.c:754
+msgid ""
+"Do not enable user interaction with the WebView. Only works if you use --"
+"html option"
+msgstr ""
+
+#: src/option.c:762
+msgid "Set an URL instead of a file. Only works if you use --html option"
+msgstr ""
+
+#: src/option.c:764
+msgid "URL"
+msgstr ""
+
+#: src/option.c:771
+msgid "Auto scroll the text to the end. Only when text is captured from stdin"
+msgstr ""
+
+#: src/option.c:782
 #, fuzzy
 msgid "Display warning dialog"
 msgstr "Iburira Ikiganiro"
 
-#: ../src/option.c:656
+#: src/option.c:829
+#, fuzzy
+msgid "Display scale dialog"
+msgstr "Kalindari Ikiganiro"
+
+#: src/option.c:843
+#, fuzzy
+msgid "Set initial value"
+msgstr "Ijanisha"
+
+#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
+#: src/option.c:1017
+msgid "VALUE"
+msgstr ""
+
+#: src/option.c:850
+msgid "Set minimum value"
+msgstr ""
+
+#: src/option.c:857
+msgid "Set maximum value"
+msgstr ""
+
+#: src/option.c:864
+#, fuzzy
+msgid "Set step size"
+msgstr "Izina ry'idosiye:"
+
+#: src/option.c:871
+msgid "Print partial values"
+msgstr ""
+
+#: src/option.c:878
+msgid "Hide value"
+msgstr ""
+
+#: src/option.c:888
+#, fuzzy
+msgid "Display forms dialog"
+msgstr "Ibisobanuro Ikiganiro"
+
+#: src/option.c:895
+#, fuzzy
+msgid "Add a new Entry in forms dialog"
+msgstr "a Gishya Icyinjijwe"
+
+#: src/option.c:896 src/option.c:903
+msgid "Field name"
+msgstr ""
+
+#: src/option.c:902
+msgid "Add a new Password Entry in forms dialog"
+msgstr ""
+
+#: src/option.c:909
+msgid "Add a new Calendar in forms dialog"
+msgstr ""
+
+#: src/option.c:910
+#, fuzzy
+msgid "Calendar field name"
+msgstr "Ihitamo"
+
+#: src/option.c:916
+msgid "Add a new List in forms dialog"
+msgstr ""
+
+#: src/option.c:917
+msgid "List field and header name"
+msgstr ""
+
+#: src/option.c:923
+msgid "List of values for List"
+msgstr ""
+
+#: src/option.c:924 src/option.c:931 src/option.c:945
+msgid "List of values separated by |"
+msgstr ""
+
+#: src/option.c:930
+msgid "List of values for columns"
+msgstr ""
+
+#: src/option.c:937
+msgid "Add a new combo box in forms dialog"
+msgstr ""
+
+#: src/option.c:938
+msgid "Combo box field name"
+msgstr ""
+
+#: src/option.c:944
+msgid "List of values for combo box"
+msgstr ""
+
+#: src/option.c:961
+#, fuzzy
+msgid "Show the columns header"
+msgstr "Inkingi Umutwempangano"
+
+#: src/option.c:992
+#, fuzzy
+msgid "Display password dialog"
+msgstr "Ikosa Ikiganiro"
+
+#: src/option.c:999
+#, fuzzy
+msgid "Display the username option"
+msgstr "Umwandiko Icyinjijwe Ikiganiro"
+
+#: src/option.c:1009
+#, fuzzy
+msgid "Display color selection dialog"
+msgstr "IDOSIYE Ihitamo Ikiganiro"
+
+#: src/option.c:1016
+#, fuzzy
+msgid "Set the color"
+msgstr "Inkingi Umutwempangano"
+
+#: src/option.c:1023
+#, fuzzy
+msgid "Show the palette"
+msgstr "Ikiganiro Umutwe"
+
+#: src/option.c:1033
 msgid "About zenity"
 msgstr ""
 
-#: ../src/option.c:665
+#: src/option.c:1040
 #, fuzzy
 msgid "Print version"
 msgstr "Verisiyo"
 
 # svx/source\options\optctl.src:RID_SVXPAGE_OPTIONS_CTL.FL_GENERAL.text
-#: ../src/option.c:1259
+#: src/option.c:2007
 msgid "General options"
 msgstr "Amahitamo rusange"
 
-#: ../src/option.c:1260
+#: src/option.c:2008
 #, fuzzy
 msgid "Show general options"
 msgstr "Rusange Amahitamo"
 
-#: ../src/option.c:1270
+#: src/option.c:2020
 #, fuzzy
 msgid "Calendar options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1271
+#: src/option.c:2021
 #, fuzzy
 msgid "Show calendar options"
 msgstr "Kalindari Amahitamo"
 
-#: ../src/option.c:1281
+#: src/option.c:2033
 #, fuzzy
 msgid "Text entry options"
 msgstr "Icyinjijwe Amahitamo"
 
-#: ../src/option.c:1282
+#: src/option.c:2034
 #, fuzzy
 msgid "Show text entry options"
 msgstr "Umwandiko Icyinjijwe Amahitamo"
 
-#: ../src/option.c:1292
+#: src/option.c:2046
 #, fuzzy
 msgid "Error options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1293
+#: src/option.c:2046
 #, fuzzy
 msgid "Show error options"
 msgstr "Ikosa Amahitamo"
 
-#: ../src/option.c:1303
+#: src/option.c:2056
 #, fuzzy
 msgid "Info options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1304
+#: src/option.c:2056
 #, fuzzy
 msgid "Show info options"
 msgstr "Ibisobanuro Amahitamo"
 
-#: ../src/option.c:1314
+#: src/option.c:2066
 #, fuzzy
 msgid "File selection options"
 msgstr "Idosiye Ihitamo Amahitamo"
 
-#: ../src/option.c:1315
+#: src/option.c:2067
 #, fuzzy
 msgid "Show file selection options"
 msgstr "IDOSIYE Ihitamo Amahitamo"
 
-#: ../src/option.c:1325
+#: src/option.c:2079
 #, fuzzy
 msgid "List options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1326
+#: src/option.c:2079
 #, fuzzy
 msgid "Show list options"
 msgstr "Urutonde Amahitamo"
 
-#: ../src/option.c:1336
+#: src/option.c:2090
 #, fuzzy
 msgid "Notification icon options"
 msgstr "Agashushondanga Amahitamo"
 
-#: ../src/option.c:1337
+#: src/option.c:2091
 #, fuzzy
 msgid "Show notification icon options"
 msgstr "Ikimenyetso Agashushondanga Amahitamo"
 
-#: ../src/option.c:1347
+#: src/option.c:2105
 #, fuzzy
 msgid "Progress options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1348
+#: src/option.c:2106
 #, fuzzy
 msgid "Show progress options"
 msgstr "Aho bigeze Amahitamo"
 
-#: ../src/option.c:1358
+#: src/option.c:2118
 #, fuzzy
 msgid "Question options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1359
+#: src/option.c:2119
 #, fuzzy
 msgid "Show question options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1369
+#: src/option.c:2131
 #, fuzzy
 msgid "Warning options"
 msgstr "Amahitamo"
 
-#: ../src/option.c:1370
+#: src/option.c:2132
 #, fuzzy
 msgid "Show warning options"
 msgstr "Iburira Amahitamo"
 
-#: ../src/option.c:1380
+#: src/option.c:2144
+#, fuzzy
+msgid "Scale options"
+msgstr "Kalindari Amahitamo"
+
+#: src/option.c:2144
+#, fuzzy
+msgid "Show scale options"
+msgstr "Kalindari Amahitamo"
+
+#: src/option.c:2154
 #, fuzzy
 msgid "Text information options"
 msgstr "Ibisobanuro Amahitamo"
 
-#: ../src/option.c:1381
+#: src/option.c:2155
 #, fuzzy
 msgid "Show text information options"
 msgstr "Umwandiko Ibisobanuro Amahitamo"
 
+#: src/option.c:2167
+#, fuzzy
+msgid "Color selection options"
+msgstr "Idosiye Ihitamo Amahitamo"
+
+#: src/option.c:2168
+#, fuzzy
+msgid "Show color selection options"
+msgstr "IDOSIYE Ihitamo Amahitamo"
+
+#: src/option.c:2180
+#, fuzzy
+msgid "Password dialog options"
+msgstr "Amahitamo"
+
+#: src/option.c:2181
+#, fuzzy
+msgid "Show password dialog options"
+msgstr "Iburira Amahitamo"
+
+#: src/option.c:2193
+#, fuzzy
+msgid "Forms dialog options"
+msgstr "Ibisobanuro Amahitamo"
+
+#: src/option.c:2194
+#, fuzzy
+msgid "Show forms dialog options"
+msgstr "Ibisobanuro Amahitamo"
+
 # starmath/source\smres.src:RID_PRINTOPTIONPAGE.FL_MISC_OPTIONS.text
-#: ../src/option.c:1391
+#: src/option.c:2206
 msgid "Miscellaneous options"
 msgstr "Amahitamo anyuranye"
 
-#: ../src/option.c:1392
+#: src/option.c:2207
 #, fuzzy
 msgid "Show miscellaneous options"
 msgstr "Binyuranye Amahitamo"
 
-#: ../src/option.c:1417
+#: src/option.c:2230
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 
-#: ../src/option.c:1421
+#: src/option.c:2236
 #, fuzzy, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%sni OYA kugirango iyi"
 
-#: ../src/option.c:1425
-#, fuzzy
+#: src/option.c:2241
+#, fuzzy, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Cyangwa Birenzeho Ikiganiro Amahitamo"
+
+#: src/password.c:96
+msgid "Type your username and password"
+msgstr ""
+
+#. Add the username label and entry and increment the row for the
+#. * password entry so it will be added below the username.
+#.
+#: src/password.c:101
+msgid "Username:"
+msgstr ""
+
+#: src/password.c:116
+msgid "Password:"
+msgstr ""
+
+#: src/progress.c:116
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr ""
+
+#: src/scale.c:66
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr ""
+
+#: src/scale.c:74
+#, c-format
+msgid "Value out of range.\n"
+msgstr ""
+
+#: src/tree.c:405
+#, fuzzy, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr "Inkingi Imitwe kugirango Ikiganiro"
+
+#: src/tree.c:412
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr ""
+
+#: src/zenity.ui:16 src/zenity.ui:31
+msgid "Adjust the scale value"
+msgstr ""
+
+#: src/zenity.ui:74
+msgid "Text View"
+msgstr ""
+
+#: src/zenity.ui:137
+#, fuzzy
+msgid "Calendar selection"
+msgstr "Ihitamo"
+
+#: src/zenity.ui:156
+#, fuzzy
+msgid "Select a date from below."
+msgstr "a Itariki Bivuye munsi"
+
+# svtools/source\dialogs\addresstemplate.src:STR_FIELD_CALENDAR.text
+#: src/zenity.ui:167
+#, fuzzy
+msgid "C_alendar:"
+msgstr "Kalindari"
+
+# svtools/source\dialogs\addresstemplate.src:STR_FIELD_CALENDAR.text
+#: src/zenity.ui:172
+#, fuzzy
+msgid "Calendar"
+msgstr "Kalindari"
+
+#: src/zenity.ui:211
+#, fuzzy
+msgid "Add a new entry"
+msgstr "a Gishya Icyinjijwe"
+
+#: src/zenity.ui:234
+#, fuzzy
+msgid "_Enter new text:"
+msgstr "Gishya Umwandiko"
+
+#: src/zenity.ui:273
+msgid "Error"
+msgstr "Ikosa"
+
+# wizards/source\template\template.src:CorrespondenceMsgError.text
+#: src/zenity.ui:301
+msgid "An error has occurred."
+msgstr "Ikosa yagaragaye."
+
+#: src/zenity.ui:378
+msgid "Forms dialog"
+msgstr ""
+
+#: src/zenity.ui:413
+msgid "Information"
+msgstr "Ibisobanuro"
+
+#: src/zenity.ui:438
+#, fuzzy
+msgid "All updates are complete."
+msgstr "Byuzuye"
+
+# padmin/source\padialog.src:RID_PROGRESS_DLG.RID_PROGRESS_PROGRESS_TXT.text
+#: src/zenity.ui:466
+msgid "Progress"
+msgstr "Aho bigeze"
+
+#: src/zenity.ui:481
+msgid "Running..."
+msgstr ""
+
+#: src/zenity.ui:530
+msgid "Question"
+msgstr ""
+
+#: src/zenity.ui:553 src/zenity.ui:660
+#, fuzzy
+msgid "Are you sure you want to proceed?"
+msgstr "Kuri"
+
+#: src/zenity.ui:573
+#, fuzzy
+msgid "Select items from the list"
+msgstr "Bivuye Urutonde"
+
+#: src/zenity.ui:588
+#, fuzzy
+msgid "Select items from the list below."
+msgstr "Bivuye Urutonde munsi"
+
+#: src/zenity.ui:633 src/zenity.ui:693
+msgid "Warning"
+msgstr "Iburira"
+
+#: src/zenity.ui:716
+msgid "Type your password"
+msgstr ""
+
+#, fuzzy
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Philibert Ndandali  <ndandali@yahoo.fr>, 2005.\n"
+#~ "# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.\n"
+#~ "# Noëlla Mupole <s24211045@tuks.co.za>, 2005.\n"
+#~ "# Carole Karema <karemacarole@hotmail.com>, 2005.\n"
+#~ "# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.\n"
+#~ "# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.\n"
+#~ "# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005."
+
+#, fuzzy
+#~ msgid "(C) 2003 Sun Microsystems"
+#~ msgstr "(C"
+
+#, fuzzy
+#~ msgid "Written by"
+#~ msgstr "ku"
+
+#, fuzzy
+#~ msgid "Translated by"
+#~ msgstr "ku"
+
+#~ msgid "Orientation"
+#~ msgstr "Icyerekezo"
+
+#, fuzzy
+#~ msgid "The orientation of the tray."
+#~ msgstr "Icyerekezo Bya"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#, fuzzy
+#~ msgid "Select a file"
+#~ msgstr "a IDOSIYE"
+
+#, fuzzy
+#~ msgid "Set the window icon"
+#~ msgstr "Idirishya Agashushondanga"

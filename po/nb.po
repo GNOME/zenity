@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity 3.23.x\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-18 22:27+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-15 15:49-0500\n"
 "PO-Revision-Date: 2017-02-18 11:57+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/about.c:63
+#: src/about.c:54
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -27,7 +27,7 @@ msgstr ""
 "utgitt av Free Software Foundation; enten versjon 2 av lisensen, eller (hvis "
 "du ønsker det) enhver senere versjon.\n"
 
-#: src/about.c:67
+#: src/about.c:59
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -39,7 +39,7 @@ msgstr ""
 "PASSER ET BESTEMT FORMÅL. Se GNU Lesser General Public License for "
 "detaljer.\n"
 
-#: src/about.c:71
+#: src/about.c:63
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -50,23 +50,42 @@ msgstr ""
 "Software Foundation, Inc. 51 Franklin Street, Fifth Floor, Boston, MA "
 "02110-1301 USA."
 
-#: src/about.c:263
-msgid "translator-credits"
-msgstr "Kjartan Maraas <kmaraas@gnome.org>"
-
-#: src/about.c:275
+#: src/about.c:88
 msgid "Display dialog boxes from shell scripts"
 msgstr "Vis dialogbokser fra skallskript"
 
-#: src/main.c:105
+#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
+#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
+#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
+msgid "_OK"
+msgstr "_OK"
+
+#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
+#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
+#: src/zenity.ui:746
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: src/main.c:121
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "Du må oppgi en type dialog. Se «zenity --help» for detaljer\n"
 
-#: src/notification.c:51
+#: src/msg.c:42
+msgid "_No"
+msgstr ""
+
+#: src/msg.c:44
+msgid "_Yes"
+msgstr ""
+
+#: src/notification.c:55
+#, c-format
 msgid "Could not parse message\n"
 msgstr "kunne ikke lese melding\n"
 
-#: src/notification.c:140
+#: src/notification.c:142
+#, c-format
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
@@ -75,299 +94,158 @@ msgstr ""
 "Støttede verdier er «true» eller «false».\n"
 
 #. (iibiiay)
-#: src/notification.c:156
+#: src/notification.c:163
+#, c-format
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Ikke støttet hint. Hopper over.\n"
 
 #. unknown hints
-#: src/notification.c:173
+#: src/notification.c:186
+#, c-format
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Ukjent navn på hint. Hopper over.\n"
 
-#: src/notification.c:228
+#: src/notification.c:247
+#, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "kunne ikke lese kommando fra stdin\n"
 
-#: src/notification.c:326
+#: src/notification.c:374
 msgid "Zenity notification"
 msgstr "Zenity-melding"
 
-#: src/password.c:55
-msgid "_Cancel"
-msgstr "A_vbryt"
-
-#: src/password.c:58
-msgid "_OK"
-msgstr "_OK"
-
-#. Checks if username has been passed as a parameter
-#: src/password.c:73
-msgid "Type your password"
-msgstr "Skriv ditt passord"
-
-#: src/password.c:76
-msgid "Type your username and password"
-msgstr "Skriv ditt brukernavn og passord"
-
-#: src/password.c:113
-msgid "Username:"
-msgstr "Brukernavn:"
-
-#: src/password.c:127
-msgid "Password:"
-msgstr "Passord:"
-
-#: src/scale.c:57
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Høyeste verdi må være større enn laveste verdi.\n"
-
-#: src/scale.c:64
-msgid "Value out of range.\n"
-msgstr "Verdi utenfor gyldig område.\n"
-
-#: src/tree.c:376
-msgid "No column titles specified for List dialog.\n"
-msgstr "Ingen kolonnetittel oppgitt for listedialogen.\n"
-
-#: src/tree.c:382
-msgid "You should use only one List dialog type.\n"
-msgstr "Du bør kun bruke en type listedialog.\n"
-
-#: src/zenity.ui:14 src/zenity.ui:76
-msgid "Adjust the scale value"
-msgstr "Juster verdi for skalering"
-
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "OK"
-
-#: src/zenity.ui:117
-msgid "Text View"
-msgstr "Tekstvisning"
-
-#: src/zenity.ui:231
-msgid "Calendar selection"
-msgstr "Kalenderutvalg"
-
-#: src/zenity.ui:298
-msgid "Select a date from below."
-msgstr "Velg en dato under."
-
-#: src/zenity.ui:319
-msgid "C_alendar:"
-msgstr "K_alender:"
-
-#: src/zenity.ui:361
-msgid "Add a new entry"
-msgstr "Legg til en ny oppføring"
-
-#: src/zenity.ui:428
-msgid "_Enter new text:"
-msgstr "Oppgi ny t_ekst:"
-
-#: src/zenity.ui:465
-msgid "Error"
-msgstr "Feil"
-
-#: src/zenity.ui:530
-msgid "An error has occurred."
-msgstr "En feil har oppstått:"
-
-#: src/zenity.ui:658
-msgid "Forms dialog"
-msgstr "Skjemadialog"
-
-#: src/zenity.ui:681
-msgid "Information"
-msgstr "Informasjon"
-
-#: src/zenity.ui:741
-msgid "All updates are complete."
-msgstr "Alle oppdateringer er fullført."
-
-#: src/zenity.ui:768
-msgid "Progress"
-msgstr "Fremgang"
-
-#: src/zenity.ui:831
-msgid "Running..."
-msgstr "Kjører …"
-
-#: src/zenity.ui:882
-msgid "Question"
-msgstr "Spørsmål"
-
-#: src/zenity.ui:929 src/zenity.ui:1126
-msgid "Are you sure you want to proceed?"
-msgstr "Er du sikker på at du vil fortsette?"
-
-#: src/zenity.ui:953
-msgid "Select items from the list"
-msgstr "Velg oppføringer fra listen"
-
-#: src/zenity.ui:1015
-msgid "Select items from the list below."
-msgstr "Velg oppføringer fra listen under."
-
-#: src/zenity.ui:1064
-msgid "Warning"
-msgstr "Advarsel"
-
-#: src/option.c:169
+#: src/option.c:166
 msgid "Set the dialog title"
 msgstr "Sett tittel for dialog"
 
-#: src/option.c:170
+#: src/option.c:167
 msgid "TITLE"
 msgstr "TITTEL"
 
-#: src/option.c:178
-msgid "Set the window icon"
-msgstr "Sett ikon for vindu"
-
-#: src/option.c:179
-msgid "ICONPATH"
-msgstr "IKONSTI"
-
-#: src/option.c:187
+#: src/option.c:173
 msgid "Set the width"
 msgstr "Sett bredden"
 
-#: src/option.c:188
+#: src/option.c:174
 msgid "WIDTH"
 msgstr "BREDDE"
 
-#: src/option.c:196
+#: src/option.c:180
 msgid "Set the height"
 msgstr "Sett høyden"
 
-#: src/option.c:197
+#: src/option.c:181
 msgid "HEIGHT"
 msgstr "HØYDE"
 
-#: src/option.c:205
+#: src/option.c:187
 msgid "Set dialog timeout in seconds"
 msgstr "Sett tidsavbrudd for dialog i sekunder"
 
 #. Timeout for closing the dialog
-#: src/option.c:207
+#: src/option.c:189
 msgid "TIMEOUT"
 msgstr "TIDSAVBRUDD"
 
-#: src/option.c:215
+#: src/option.c:195
 msgid "Set the label of the OK button"
 msgstr "Setter etiketten for OK-knappen"
 
-#: src/option.c:216 src/option.c:225 src/option.c:234 src/option.c:276
-#: src/option.c:336 src/option.c:345 src/option.c:379 src/option.c:437
-#: src/option.c:574 src/option.c:699 src/option.c:717 src/option.c:743
-#: src/option.c:823 src/option.c:917 src/option.c:926 src/option.c:988
-#: src/option.c:1046 src/option.c:1215
+#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
+#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
+#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
+#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
+#: src/option.c:837 src/option.c:969
 msgid "TEXT"
 msgstr "TEKST"
 
-#: src/option.c:224
+#: src/option.c:202
 msgid "Set the label of the Cancel button"
 msgstr "Sett etiketten for Avbryt-knappen"
 
-#: src/option.c:233
+#: src/option.c:209
 msgid "Add an extra button"
 msgstr "Legg til en ekstra knapp"
 
-#: src/option.c:242
+#: src/option.c:216
 msgid "Set the modal hint"
 msgstr "Sett modalt hint"
 
-#: src/option.c:251
-msgid "Set the parent window to attach to"
-msgstr "Sett opphavsvindu å koble til"
-
-#: src/option.c:252
-msgid "WINDOW"
-msgstr "VINDU"
-
-#: src/option.c:266
+#: src/option.c:226
 msgid "Display calendar dialog"
 msgstr "Vis kalenderdialog"
 
-#: src/option.c:275 src/option.c:335 src/option.c:378 src/option.c:436
-#: src/option.c:573 src/option.c:742 src/option.c:822 src/option.c:987
-#: src/option.c:1045 src/option.c:1214
+#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
+#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
+#: src/option.c:836 src/option.c:968
 msgid "Set the dialog text"
 msgstr "Sett teksten i dialogen"
 
-#: src/option.c:284
+#: src/option.c:240
 msgid "Set the calendar day"
 msgstr "Sett dag i kalenderen"
 
-#: src/option.c:285
+#: src/option.c:241
 msgid "DAY"
 msgstr "DAG"
 
-#: src/option.c:293
+#: src/option.c:247
 msgid "Set the calendar month"
 msgstr "Sett måned i kalenderen"
 
-#: src/option.c:294
+#: src/option.c:248
 msgid "MONTH"
 msgstr "MÅNED"
 
-#: src/option.c:302
+#: src/option.c:254
 msgid "Set the calendar year"
 msgstr "Sett år i kalenderen"
 
-#: src/option.c:303
+#: src/option.c:255
 msgid "YEAR"
 msgstr "ÅR"
 
-#: src/option.c:311 src/option.c:1232
+#: src/option.c:261 src/option.c:982
 msgid "Set the format for the returned date"
 msgstr "Sett format for returnert dato"
 
-#: src/option.c:312 src/option.c:1233
+#: src/option.c:262 src/option.c:983
 msgid "PATTERN"
 msgstr "MØNSTER"
 
-#: src/option.c:326
+#: src/option.c:271
 msgid "Display text entry dialog"
 msgstr "Vis tekstoppføringsdialog"
 
-#: src/option.c:344
+#: src/option.c:285
 msgid "Set the entry text"
 msgstr "Sett tekst i oppføringen"
 
-#: src/option.c:353
+#: src/option.c:292
 msgid "Hide the entry text"
 msgstr "Skjul tekst i oppføringen"
 
-#: src/option.c:369
+#: src/option.c:302
 msgid "Display error dialog"
 msgstr "Vis feildialog"
 
-#: src/option.c:387 src/option.c:445 src/option.c:831 src/option.c:996
+#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
 msgid "Set the dialog icon"
 msgstr "Sett ikon for dialog"
 
-#: src/option.c:388 src/option.c:446 src/option.c:832 src/option.c:997
+#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
 msgid "ICON-NAME"
 msgstr "IKONNAVN"
 
-#: src/option.c:396 src/option.c:454 src/option.c:840 src/option.c:1005
+#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
 msgid "Do not enable text wrapping"
 msgstr "Ikke aktiver tekstbryting"
 
-#: src/option.c:405 src/option.c:463 src/option.c:849 src/option.c:1014
+#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
 msgid "Do not enable Pango markup"
 msgstr "Ikke slå på tekstmerking med pango"
 
-#: src/option.c:413 src/option.c:471 src/option.c:866 src/option.c:1022
+#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -375,88 +253,85 @@ msgstr ""
 "Slå på ellipser i dialogteksten. Dette fikser høy vindustørrelse med lange "
 "tekster"
 
-#: src/option.c:427
+#: src/option.c:349
 msgid "Display info dialog"
 msgstr "Vis informasjonsdialog"
 
-#: src/option.c:485
+#: src/option.c:396
 msgid "Display file selection dialog"
 msgstr "Vis dialog for filvalg"
 
-#: src/option.c:494
+#: src/option.c:403
 msgid "Set the filename"
 msgstr "Sett filnavnet"
 
-#: src/option.c:495 src/option.c:899
+#: src/option.c:404 src/option.c:719
 msgid "FILENAME"
 msgstr "FILNAVN"
 
-#: src/option.c:503
+#: src/option.c:410
 msgid "Allow multiple files to be selected"
 msgstr "Tillat valg av flere filer"
 
-#: src/option.c:512
+#: src/option.c:417
 msgid "Activate directory-only selection"
 msgstr "Aktiver utvalg kun på katalog"
 
-#: src/option.c:521
+#: src/option.c:424
 msgid "Activate save mode"
 msgstr "Aktiver lagre-modus"
 
-#: src/option.c:530 src/option.c:618 src/option.c:1223
+#: src/option.c:431 src/option.c:493 src/option.c:975
 msgid "Set output separator character"
 msgstr "Sett skilletegn for utdata"
 
-#: src/option.c:531 src/option.c:619 src/option.c:1224
+#: src/option.c:432 src/option.c:494 src/option.c:976
 msgid "SEPARATOR"
 msgstr "SKILLETEGN"
 
-#: src/option.c:539
-msgid "Confirm file selection if filename already exists"
-msgstr "Bekreft filutvalget hvis filnavnet allerede eksisterer"
-
-#: src/option.c:548
+#: src/option.c:438
 msgid "Set a filename filter"
 msgstr "Sett et filter for filnavn"
 
-#. Help for file-filter argument (name and patterns for file selection)
-#: src/option.c:550
+#. Help for file-filter argument (name and patterns for file
+#. selection)
+#: src/option.c:441
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAVN | MØNSTER1 MØNSTER2 …"
 
-#: src/option.c:564
+#: src/option.c:451
 msgid "Display list dialog"
 msgstr "Vis listedialog"
 
-#: src/option.c:582
+#: src/option.c:465
 msgid "Set the column header"
 msgstr "Sett kolonnetopptekst"
 
-#: src/option.c:583
+#: src/option.c:466
 msgid "COLUMN"
 msgstr "KOLONNE"
 
-#: src/option.c:591
+#: src/option.c:472
 msgid "Use check boxes for the first column"
 msgstr "Bruk avkrysningsbokser for første kolonne"
 
-#: src/option.c:600
+#: src/option.c:479
 msgid "Use radio buttons for the first column"
 msgstr "Bruk radioknapper for første kolonne"
 
-#: src/option.c:609
+#: src/option.c:486
 msgid "Use an image for the first column"
 msgstr "Bruk et bilde for første kolonne"
 
-#: src/option.c:627
+#: src/option.c:500
 msgid "Allow multiple rows to be selected"
 msgstr "Tillat valg av flere rader"
 
-#: src/option.c:636 src/option.c:907
+#: src/option.c:507 src/option.c:725
 msgid "Allow changes to text"
 msgstr "Tillat endringer i tekst"
 
-#: src/option.c:645
+#: src/option.c:514
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -465,19 +340,19 @@ msgstr ""
 "alle kolonner)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:647 src/option.c:656
+#: src/option.c:517 src/option.c:524
 msgid "NUMBER"
 msgstr "TALL"
 
-#: src/option.c:655
+#: src/option.c:523
 msgid "Hide a specific column"
 msgstr "Skjul en bestemt kolonne"
 
-#: src/option.c:664
+#: src/option.c:530
 msgid "Hide the column headers"
 msgstr "Skjul kolonnetopptekst"
 
-#: src/option.c:673
+#: src/option.c:537
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
@@ -485,89 +360,98 @@ msgstr ""
 "Endre forvalgt søkefunksjon for søk i tekst til å søke i midten, ikke på "
 "begynnelsen"
 
-#: src/option.c:689
+#: src/option.c:549
 msgid "Display notification"
 msgstr "Vis melding"
 
-#: src/option.c:698
+#: src/option.c:556
 msgid "Set the notification text"
 msgstr "Sett meldingsteksten"
 
-#: src/option.c:707
+#: src/option.c:563
+#, fuzzy
+msgid "Set the notification icon"
+msgstr "Sett hint for varsling"
+
+#: src/option.c:564
+msgid "ICONPATH"
+msgstr "IKONSTI"
+
+#: src/option.c:570
 msgid "Listen for commands on stdin"
 msgstr "Lytt etter kommandoer på stdin"
 
-#: src/option.c:716
+#: src/option.c:577
 msgid "Set the notification hints"
 msgstr "Sett hint for varsling"
 
-#: src/option.c:733
+#: src/option.c:589
 msgid "Display progress indication dialog"
 msgstr "Vis dialog for indikering av fremgang"
 
-#: src/option.c:751
+#: src/option.c:603
 msgid "Set initial percentage"
 msgstr "Sett startprosent"
 
-#: src/option.c:752
+#: src/option.c:604
 msgid "PERCENTAGE"
 msgstr "PROSENT"
 
-#: src/option.c:760
+#: src/option.c:610
 msgid "Pulsate progress bar"
 msgstr "Pulserende fremgangslinje"
 
-#: src/option.c:770
+#: src/option.c:618
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Lukk dialogen når 100% er nådd"
 
-#: src/option.c:779
+#: src/option.c:625
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Terminer opphavsprosess hvis Avbryt-knappen trykkes"
 
-#: src/option.c:788
+#: src/option.c:632
 msgid "Hide Cancel button"
 msgstr "Skjul Avbryt-knapp"
 
-#: src/option.c:798
+#: src/option.c:640
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Estimer når fremdriften når 100%"
 
-#: src/option.c:813
+#: src/option.c:650
 msgid "Display question dialog"
 msgstr "Vis spørsmålsdialog"
 
-#: src/option.c:857
+#: src/option.c:685
 msgid "Give Cancel button focus by default"
 msgstr "Gi Avbryt-knappen fokus som standard"
 
-#: src/option.c:874
+#: src/option.c:701
 msgid "Suppress OK and Cancel buttons"
 msgstr "Skjul OK- og avbryt-knappene"
 
-#: src/option.c:889
+#: src/option.c:711
 msgid "Display text information dialog"
 msgstr "Vis dialog med tekstinformasjon"
 
-#: src/option.c:898
+#: src/option.c:718
 msgid "Open file"
 msgstr "Åpne fil"
 
-#: src/option.c:916
+#: src/option.c:732
 msgid "Set the text font"
 msgstr "Sett skrift for tekst"
 
-#: src/option.c:925
+#: src/option.c:739
 msgid "Enable an I read and agree checkbox"
 msgstr "Slå på en avkryssingsboks for «Lest og godtatt»"
 
-#: src/option.c:935
+#: src/option.c:747
 msgid "Enable HTML support"
 msgstr "Slå på støtte for HTML"
 
-#: src/option.c:944
+#: src/option.c:754
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -575,294 +459,442 @@ msgstr ""
 "Ikke slå på brukerinteraksjon med WebView. Virker kun hvis du bruker flagget "
 "--html"
 
-#: src/option.c:953
+#: src/option.c:762
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "Sett en URL i stedet for en fil. Virker kun hvis du bruker flagget --html"
 
-#: src/option.c:954
+#: src/option.c:764
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:963
+#: src/option.c:771
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "Rull teksten til slutten automatisk. Kun når tekst fanges fra standard "
 "inndata"
 
-#: src/option.c:978
+#: src/option.c:782
 msgid "Display warning dialog"
 msgstr "Vis advarselsdialog"
 
-#: src/option.c:1036
+#: src/option.c:829
 msgid "Display scale dialog"
 msgstr "Vis skaleringsdialog"
 
-#: src/option.c:1054
+#: src/option.c:843
 msgid "Set initial value"
 msgstr "Sett startverdi"
 
-#: src/option.c:1055 src/option.c:1064 src/option.c:1073 src/option.c:1082
-#: src/option.c:1281
+#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
+#: src/option.c:1017
 msgid "VALUE"
 msgstr "VERDI"
 
-#: src/option.c:1063
+#: src/option.c:850
 msgid "Set minimum value"
 msgstr "Sett minste verdi"
 
-#: src/option.c:1072
+#: src/option.c:857
 msgid "Set maximum value"
 msgstr "Set høyeste verdi"
 
-#: src/option.c:1081
+#: src/option.c:864
 msgid "Set step size"
 msgstr "Sett størrelse på steg"
 
-#: src/option.c:1090
+#: src/option.c:871
 msgid "Print partial values"
 msgstr "Skriv ut delverdier"
 
-#: src/option.c:1099
+#: src/option.c:878
 msgid "Hide value"
 msgstr "Skjul verdi"
 
-#: src/option.c:1114
+#: src/option.c:888
 msgid "Display forms dialog"
 msgstr "Vis skjemadialog"
 
-#: src/option.c:1123
+#: src/option.c:895
 msgid "Add a new Entry in forms dialog"
 msgstr "Legg til en ny oppføring i skjemadialog"
 
-#: src/option.c:1124 src/option.c:1133
+#: src/option.c:896 src/option.c:903
 msgid "Field name"
 msgstr "Feltnavn"
 
-#: src/option.c:1132
+#: src/option.c:902
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Legg til en ny passordoppføring i skjemadialog"
 
-#: src/option.c:1141
+#: src/option.c:909
 msgid "Add a new Calendar in forms dialog"
 msgstr "Legg til en ny kalender i skjemadialog"
 
-#: src/option.c:1142
+#: src/option.c:910
 msgid "Calendar field name"
 msgstr "Feltnavn for kalender"
 
-#: src/option.c:1150
+#: src/option.c:916
 msgid "Add a new List in forms dialog"
 msgstr "Legg til en ny liste i skjemadialog"
 
-#: src/option.c:1151
+#: src/option.c:917
 msgid "List field and header name"
 msgstr "Felt i liste og navn på topptekst"
 
-#: src/option.c:1159
+#: src/option.c:923
 msgid "List of values for List"
 msgstr "Liste med verdier for en liste"
 
-#: src/option.c:1160 src/option.c:1169 src/option.c:1187
+#: src/option.c:924 src/option.c:931 src/option.c:945
 msgid "List of values separated by |"
 msgstr "Liste med verdier adskilt med |"
 
-#: src/option.c:1168
+#: src/option.c:930
 msgid "List of values for columns"
 msgstr "Liste med verdier for kolonner"
 
-#: src/option.c:1177
+#: src/option.c:937
 msgid "Add a new combo box in forms dialog"
 msgstr "Legg til en ny komboboks i skjemadialog"
 
-#: src/option.c:1178
+#: src/option.c:938
 msgid "Combo box field name"
 msgstr "Feltnavn for komboboks"
 
-#: src/option.c:1186
+#: src/option.c:944
 msgid "List of values for combo box"
 msgstr "Liste med verdier for komboboks"
 
-#: src/option.c:1205
+#: src/option.c:961
 msgid "Show the columns header"
 msgstr "Vis kolonnetopptekst"
 
-#: src/option.c:1247
+#: src/option.c:992
 msgid "Display password dialog"
 msgstr "Vis passorddialog"
 
-#: src/option.c:1256
+#: src/option.c:999
 msgid "Display the username option"
 msgstr "Vis brukernavnalternativet"
 
-#: src/option.c:1271
+#: src/option.c:1009
 msgid "Display color selection dialog"
 msgstr "Vis dialog for fargevalg"
 
-#: src/option.c:1280
+#: src/option.c:1016
 msgid "Set the color"
 msgstr "Sett farge"
 
-#: src/option.c:1289
+#: src/option.c:1023
 msgid "Show the palette"
 msgstr "Vis palett"
 
-#: src/option.c:1304
+#: src/option.c:1033
 msgid "About zenity"
 msgstr "Om Zenity"
 
-#: src/option.c:1313
+#: src/option.c:1040
 msgid "Print version"
 msgstr "Skriv ut versjon"
 
-#: src/option.c:2261
+#: src/option.c:2007
 msgid "General options"
 msgstr "Generelle alternativer"
 
-#: src/option.c:2262
+#: src/option.c:2008
 msgid "Show general options"
 msgstr "Vis generelle alternativer"
 
-#: src/option.c:2272
+#: src/option.c:2020
 msgid "Calendar options"
 msgstr "Alternativer for kalender"
 
-#: src/option.c:2273
+#: src/option.c:2021
 msgid "Show calendar options"
 msgstr "Vis alternativer for kalender"
 
-#: src/option.c:2283
+#: src/option.c:2033
 msgid "Text entry options"
 msgstr "Alternativer for tekstoppføring"
 
-#: src/option.c:2284
+#: src/option.c:2034
 msgid "Show text entry options"
 msgstr "Vis alternativer for tekstoppføring"
 
-#: src/option.c:2294
+#: src/option.c:2046
 msgid "Error options"
 msgstr "Alternativer for feil"
 
-#: src/option.c:2295
+#: src/option.c:2046
 msgid "Show error options"
 msgstr "Vis alternativer for feil"
 
-#: src/option.c:2305
+#: src/option.c:2056
 msgid "Info options"
 msgstr "Alternativer for informasjon"
 
-#: src/option.c:2306
+#: src/option.c:2056
 msgid "Show info options"
 msgstr "Vis alternativer for infosider"
 
-#: src/option.c:2316
+#: src/option.c:2066
 msgid "File selection options"
 msgstr "Alternativer for filvalg"
 
-#: src/option.c:2317
+#: src/option.c:2067
 msgid "Show file selection options"
 msgstr "Vis alternativer for filvalg"
 
-#: src/option.c:2327
+#: src/option.c:2079
 msgid "List options"
 msgstr "Alternativer for liste"
 
-#: src/option.c:2328
+#: src/option.c:2079
 msgid "Show list options"
 msgstr "Vis alternativer for liste"
 
-#: src/option.c:2339
+#: src/option.c:2090
 msgid "Notification icon options"
 msgstr "Alternativer for varselikon"
 
-#: src/option.c:2340
+#: src/option.c:2091
 msgid "Show notification icon options"
 msgstr "Vis alternativer for varselikon"
 
-#: src/option.c:2351
+#: src/option.c:2105
 msgid "Progress options"
 msgstr "Alternativer for fremgang"
 
-#: src/option.c:2352
+#: src/option.c:2106
 msgid "Show progress options"
 msgstr "Vis alternativer for fremgang"
 
-#: src/option.c:2362
+#: src/option.c:2118
 msgid "Question options"
 msgstr "Alternativer for spørsmål"
 
-#: src/option.c:2363
+#: src/option.c:2119
 msgid "Show question options"
 msgstr "Vis alternativer for spørsmål"
 
-#: src/option.c:2373
+#: src/option.c:2131
 msgid "Warning options"
 msgstr "Alternativer for advarsel"
 
-#: src/option.c:2374
+#: src/option.c:2132
 msgid "Show warning options"
 msgstr "Vis alternativer for advarsel"
 
-#: src/option.c:2384
+#: src/option.c:2144
 msgid "Scale options"
 msgstr "Alternativer for skalering"
 
-#: src/option.c:2385
+#: src/option.c:2144
 msgid "Show scale options"
 msgstr "Vis alternativer for skalering"
 
-#: src/option.c:2395
+#: src/option.c:2154
 msgid "Text information options"
 msgstr "Alternativer for tekstinformasjon"
 
-#: src/option.c:2396
+#: src/option.c:2155
 msgid "Show text information options"
 msgstr "Vis alternativer for tekstinformasjon"
 
-#: src/option.c:2406
+#: src/option.c:2167
 msgid "Color selection options"
 msgstr "Alternativer for fargevalg"
 
-#: src/option.c:2407
+#: src/option.c:2168
 msgid "Show color selection options"
 msgstr "Vis alternativer for fargevalg"
 
-#: src/option.c:2417
+#: src/option.c:2180
 msgid "Password dialog options"
 msgstr "Alternativer for passorddialog"
 
-#: src/option.c:2418
+#: src/option.c:2181
 msgid "Show password dialog options"
 msgstr "Vis alternativer for passorddialog"
 
-#: src/option.c:2428
+#: src/option.c:2193
 msgid "Forms dialog options"
 msgstr "Alternativer for skjemadialog"
 
-#: src/option.c:2429
+#: src/option.c:2194
 msgid "Show forms dialog options"
 msgstr "Vis alternativer for skjemadialog"
 
-#: src/option.c:2439
+#: src/option.c:2206
 msgid "Miscellaneous options"
 msgstr "Forskjellige alternativer"
 
-#: src/option.c:2440
+#: src/option.c:2207
 msgid "Show miscellaneous options"
 msgstr "Vis forskjellige alternativer"
 
-#: src/option.c:2465
+#: src/option.c:2230
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Dette flagget er ikke tilgjengelig. Vennligst bruk --help for å se mulige "
 "flagg.\n"
 
-#: src/option.c:2469
+#: src/option.c:2236
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s er ikke støttet for denne dialogen\n"
 
-#: src/option.c:2473
+#: src/option.c:2241
+#, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "To eller flere dialogflagg oppgitt\n"
+
+#: src/password.c:96
+msgid "Type your username and password"
+msgstr "Skriv ditt brukernavn og passord"
+
+#. Add the username label and entry and increment the row for the
+#. * password entry so it will be added below the username.
+#.
+#: src/password.c:101
+msgid "Username:"
+msgstr "Brukernavn:"
+
+#: src/password.c:116
+msgid "Password:"
+msgstr "Passord:"
+
+#: src/progress.c:116
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr ""
+
+#: src/scale.c:66
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Høyeste verdi må være større enn laveste verdi.\n"
+
+#: src/scale.c:74
+#, c-format
+msgid "Value out of range.\n"
+msgstr "Verdi utenfor gyldig område.\n"
+
+#: src/tree.c:405
+#, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr "Ingen kolonnetittel oppgitt for listedialogen.\n"
+
+#: src/tree.c:412
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr "Du bør kun bruke en type listedialog.\n"
+
+#: src/zenity.ui:16 src/zenity.ui:31
+msgid "Adjust the scale value"
+msgstr "Juster verdi for skalering"
+
+#: src/zenity.ui:74
+msgid "Text View"
+msgstr "Tekstvisning"
+
+#: src/zenity.ui:137
+msgid "Calendar selection"
+msgstr "Kalenderutvalg"
+
+#: src/zenity.ui:156
+msgid "Select a date from below."
+msgstr "Velg en dato under."
+
+#: src/zenity.ui:167
+msgid "C_alendar:"
+msgstr "K_alender:"
+
+#: src/zenity.ui:172
+#, fuzzy
+msgid "Calendar"
+msgstr "K_alender:"
+
+#: src/zenity.ui:211
+msgid "Add a new entry"
+msgstr "Legg til en ny oppføring"
+
+#: src/zenity.ui:234
+msgid "_Enter new text:"
+msgstr "Oppgi ny t_ekst:"
+
+#: src/zenity.ui:273
+msgid "Error"
+msgstr "Feil"
+
+#: src/zenity.ui:301
+msgid "An error has occurred."
+msgstr "En feil har oppstått:"
+
+#: src/zenity.ui:378
+msgid "Forms dialog"
+msgstr "Skjemadialog"
+
+#: src/zenity.ui:413
+msgid "Information"
+msgstr "Informasjon"
+
+#: src/zenity.ui:438
+msgid "All updates are complete."
+msgstr "Alle oppdateringer er fullført."
+
+#: src/zenity.ui:466
+msgid "Progress"
+msgstr "Fremgang"
+
+#: src/zenity.ui:481
+msgid "Running..."
+msgstr "Kjører …"
+
+#: src/zenity.ui:530
+msgid "Question"
+msgstr "Spørsmål"
+
+#: src/zenity.ui:553 src/zenity.ui:660
+msgid "Are you sure you want to proceed?"
+msgstr "Er du sikker på at du vil fortsette?"
+
+#: src/zenity.ui:573
+msgid "Select items from the list"
+msgstr "Velg oppføringer fra listen"
+
+#: src/zenity.ui:588
+msgid "Select items from the list below."
+msgstr "Velg oppføringer fra listen under."
+
+#: src/zenity.ui:633 src/zenity.ui:693
+msgid "Warning"
+msgstr "Advarsel"
+
+#: src/zenity.ui:716
+msgid "Type your password"
+msgstr "Skriv ditt passord"
+
+#~ msgid "translator-credits"
+#~ msgstr "Kjartan Maraas <kmaraas@gnome.org>"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Set the window icon"
+#~ msgstr "Sett ikon for vindu"
+
+#~ msgid "Set the parent window to attach to"
+#~ msgstr "Sett opphavsvindu å koble til"
+
+#~ msgid "WINDOW"
+#~ msgstr "VINDU"
+
+#~ msgid "Confirm file selection if filename already exists"
+#~ msgstr "Bekreft filutvalget hvis filnavnet allerede eksisterer"

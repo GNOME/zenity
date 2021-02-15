@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-22 10:32+0000\n"
+"POT-Creation-Date: 2021-02-15 15:49-0500\n"
 "PO-Revision-Date: 2008-09-27 18:51+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -17,593 +17,898 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/about.c:65
+#: src/about.c:54
+#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version.\n"
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version.\n"
 msgstr ""
 "Ky program është software i lirë; mund ta rishpërndani apo/dhe ndryshoni nën "
 "kushtet e Liçencës Publike të Përgjithshme GNU sikurse publikuar nga "
 "Fondacioni Free Software; duke zgjedhur midis versionit 2 të Liçencës, ose "
 "(sipas dëshirës suaj) çdo versioni tjetër më të përditësuar.\n"
 
-#: ../src/about.c:69
+#: src/about.c:59
+#, fuzzy
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
-"more details.\n"
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
+"for more details.\n"
 msgstr ""
 "Ky program shpërndahet me dëshirën që të jetë i vlefshëm për ju, por PA "
 "ASNJË LLOJ GARANCIE; bile as pa garancinë e TREGTIMIT apo PËRDORIMIT PËR "
 "QËLLIME TË VEÇANTA.  Shiko Liçencën Publike të Përgjithshme GNU për hollësi "
 "të mëtejshme.\n"
 
-#: ../src/about.c:73
+#: src/about.c:63
+#, fuzzy
 msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this program; if not, write to the Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Së bashku me këtë program duhet të keni marrë edhe një kopje të "
-"GNU General Public License; nëse jo, shkruaj tek Free Software "
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
-"MA 02110-1301, USA."
+"Së bashku me këtë program duhet të keni marrë edhe një kopje të GNU General "
+"Public License; nëse jo, shkruaj tek Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
-#: ../src/about.c:264
-msgid "translator-credits"
-msgstr "Laurent Dhima <laurenti@alblinux.net>, 2003-2008"
-
-#: ../src/about.c:276
+#: src/about.c:88
 msgid "Display dialog boxes from shell scripts"
 msgstr "Shfaq dialogët nga script e shell"
 
-#: ../src/main.c:94
+#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
+#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
+#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
+msgid "_OK"
+msgstr ""
+
+#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
+#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
+#: src/zenity.ui:746
+msgid "_Cancel"
+msgstr ""
+
+#: src/main.c:121
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr "Duhet specifikuar lloji i dialogut. Shiko \"zenity --help\" për hollësitë\n"
+msgstr ""
+"Duhet specifikuar lloji i dialogut. Shiko \"zenity --help\" për hollësitë\n"
 
-#: ../src/notification.c:139
-#, c-format
-msgid "could not parse command from stdin\n"
+#: src/msg.c:42
+msgid "_No"
+msgstr ""
+
+#: src/msg.c:44
+msgid "_Yes"
+msgstr ""
+
+#: src/notification.c:55
+#, fuzzy, c-format
+msgid "Could not parse message\n"
 msgstr "i pamundur analizimi i komandës nga stdin\n"
 
-#: ../src/notification.c:252 ../src/notification.c:269
+#: src/notification.c:142
+#, c-format
+msgid ""
+"Invalid value for a boolean typed hint.\n"
+"Supported values are 'true' or 'false'.\n"
+msgstr ""
+
+#. (iibiiay)
+#: src/notification.c:163
+#, c-format
+msgid "Unsupported hint. Skipping.\n"
+msgstr ""
+
+#. unknown hints
+#: src/notification.c:186
+#, c-format
+msgid "Unknown hint name. Skipping.\n"
+msgstr ""
+
+#: src/notification.c:247
+#, fuzzy, c-format
+msgid "Could not parse command from stdin\n"
+msgstr "i pamundur analizimi i komandës nga stdin\n"
+
+#: src/notification.c:374
 msgid "Zenity notification"
 msgstr "Njoftim i zenity"
 
-#: ../src/scale.c:56
-#, c-format
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Vlera maksimale duhet të jetë më e madhe se vlera minimale.\n"
-
-#: ../src/scale.c:63
-#, c-format
-msgid "Value out of range.\n"
-msgstr "Vlerë jashtë limitit.\n"
-
-#: ../src/tree.c:320
-#, c-format
-msgid "No column titles specified for List dialog.\n"
-msgstr "Asnjë titull për kollonat në dialogun \"Lista\".\n"
-
-#: ../src/tree.c:326
-#, c-format
-msgid "You should use only one List dialog type.\n"
-msgstr "Duhet përdorur vetëm një lloj dialogu \"Lista\".\n"
-
-#: ../src/zenity.glade.h:1
-msgid "Add a new entry"
-msgstr "Shto një zë të ri"
-
-#: ../src/zenity.glade.h:2
-msgid "Adjust the scale value"
-msgstr "Rregullo vlerën e shkallës"
-
-#: ../src/zenity.glade.h:3
-msgid "All updates are complete."
-msgstr "Të gjithë përditësimet u plotësuan."
-
-#: ../src/zenity.glade.h:4
-msgid "An error has occurred."
-msgstr "U verifikua një gabim."
-
-#: ../src/zenity.glade.h:5
-msgid "Are you sure you want to proceed?"
-msgstr "Dëshirohet vazhdimi?"
-
-#: ../src/zenity.glade.h:6
-msgid "C_alendar:"
-msgstr "K_alendari:"
-
-#: ../src/zenity.glade.h:7
-msgid "Calendar selection"
-msgstr "Zgjedhje nga kalendari"
-
-#: ../src/zenity.glade.h:8
-msgid "Error"
-msgstr "Gabim"
-
-#: ../src/zenity.glade.h:9
-msgid "Information"
-msgstr "Informacione"
-
-#: ../src/zenity.glade.h:10
-msgid "Progress"
-msgstr "Përparimi"
-
-#: ../src/zenity.glade.h:11
-msgid "Question"
-msgstr "Pyetje"
-
-#: ../src/zenity.glade.h:12
-msgid "Running..."
-msgstr "Në ekzekutim..."
-
-#: ../src/zenity.glade.h:13
-msgid "Select a date from below."
-msgstr "Zgjidh një datë."
-
-#: ../src/zenity.glade.h:14
-msgid "Select a file"
-msgstr "Zgjidh një file"
-
-#: ../src/zenity.glade.h:15
-msgid "Select items from the list"
-msgstr "Zgjidh elementë nga lista"
-
-#: ../src/zenity.glade.h:16
-msgid "Select items from the list below."
-msgstr "Zgjidh elementët nga lista në vijim."
-
-#: ../src/zenity.glade.h:17
-msgid "Text View"
-msgstr "Tekst"
-
-#: ../src/zenity.glade.h:18
-msgid "Warning"
-msgstr "Paralajmërim"
-
-#: ../src/zenity.glade.h:19
-msgid "_Enter new text:"
-msgstr "S_hto tekstin e ri:"
-
-#: ../src/option.c:120
+#: src/option.c:166
 msgid "Set the dialog title"
 msgstr "Përcakto titullin e dialogut"
 
-#: ../src/option.c:121
+#: src/option.c:167
 msgid "TITLE"
 msgstr "TITULLI"
 
-#: ../src/option.c:129
-msgid "Set the window icon"
-msgstr "Përcakto ikonën e dritares"
-
-#: ../src/option.c:130
-msgid "ICONPATH"
-msgstr "POZICIONI_IKONËS"
-
-#: ../src/option.c:138
+#: src/option.c:173
 msgid "Set the width"
 msgstr "Përcakto gjerësinë"
 
-#: ../src/option.c:139
+#: src/option.c:174
 msgid "WIDTH"
 msgstr "GJERËSIA"
 
-#: ../src/option.c:147
+#: src/option.c:180
 msgid "Set the height"
 msgstr "Përcakto lartësinë"
 
-#: ../src/option.c:148
+#: src/option.c:181
 msgid "HEIGHT"
 msgstr "LARTËSIA"
 
-#: ../src/option.c:156
+#: src/option.c:187
 msgid "Set dialog timeout in seconds"
 msgstr "Përcakto timeout e dialogut në sekonda"
 
 #. Timeout for closing the dialog
-#: ../src/option.c:158
+#: src/option.c:189
 msgid "TIMEOUT"
 msgstr "KOHA_MAKSIMUM"
 
-#: ../src/option.c:172
-msgid "Display calendar dialog"
-msgstr "Shfaq një dialog me kalendarin"
+#: src/option.c:195
+#, fuzzy
+msgid "Set the label of the OK button"
+msgstr "Përcakton etiketën e pulsantit \"Ok\""
 
-#: ../src/option.c:181 ../src/option.c:241 ../src/option.c:284
-#: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
-#: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
-msgid "Set the dialog text"
-msgstr "Përcakto tekstin e dialogut"
-
-#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
-#: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
-#: ../src/option.c:429 ../src/option.c:526 ../src/option.c:559
-#: ../src/option.c:621 ../src/option.c:630 ../src/option.c:639
-#: ../src/option.c:705 ../src/option.c:738
+#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
+#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
+#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
+#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
+#: src/option.c:837 src/option.c:969
 msgid "TEXT"
 msgstr "TEKSTI"
 
-#: ../src/option.c:190
+#: src/option.c:202
+#, fuzzy
+msgid "Set the label of the Cancel button"
+msgstr "Përcakton etiketën e pulsantit \"Anullo\""
+
+#: src/option.c:209
+msgid "Add an extra button"
+msgstr ""
+
+#: src/option.c:216
+#, fuzzy
+msgid "Set the modal hint"
+msgstr "Përcakto titullin e dialogut"
+
+#: src/option.c:226
+msgid "Display calendar dialog"
+msgstr "Shfaq një dialog me kalendarin"
+
+#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
+#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
+#: src/option.c:836 src/option.c:968
+msgid "Set the dialog text"
+msgstr "Përcakto tekstin e dialogut"
+
+#: src/option.c:240
 msgid "Set the calendar day"
 msgstr "Përcakto ditën e kalendarit"
 
-#: ../src/option.c:191
+#: src/option.c:241
 msgid "DAY"
 msgstr "DITA"
 
-#: ../src/option.c:199
+#: src/option.c:247
 msgid "Set the calendar month"
 msgstr "Përcakto muajin e kalendarit"
 
-#: ../src/option.c:200
+#: src/option.c:248
 msgid "MONTH"
 msgstr "MUAJI"
 
-#: ../src/option.c:208
+#: src/option.c:254
 msgid "Set the calendar year"
 msgstr "Përcakto vitin e kalendarit"
 
-#: ../src/option.c:209
+#: src/option.c:255
 msgid "YEAR"
 msgstr "VITI"
 
-#: ../src/option.c:217
+#: src/option.c:261 src/option.c:982
 msgid "Set the format for the returned date"
 msgstr "Përcakto formatin e datës së kthyer"
 
-#: ../src/option.c:218
+#: src/option.c:262 src/option.c:983
 msgid "PATTERN"
 msgstr "MODELI"
 
-#: ../src/option.c:232
+#: src/option.c:271
 msgid "Display text entry dialog"
 msgstr "Shfaq një dialog për shtim teksti"
 
-#: ../src/option.c:250
+#: src/option.c:285
 msgid "Set the entry text"
 msgstr "Përcakton tekstin e kutizës së futjes"
 
-#: ../src/option.c:259
+#: src/option.c:292
 msgid "Hide the entry text"
 msgstr "Fsheh tekstin tek kutiza e futjes"
 
-#: ../src/option.c:275
+#: src/option.c:302
 msgid "Display error dialog"
 msgstr "Shfaq një dialog gabimi"
 
-#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:647
-#: ../src/option.c:713
+#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
+#, fuzzy
+msgid "Set the dialog icon"
+msgstr "Përcakto titullin e dialogut"
+
+#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
+msgid "ICON-NAME"
+msgstr ""
+
+#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
 msgid "Do not enable text wrapping"
 msgstr "Nuk aktivizon ndërprerjen e tekstit"
 
-#: ../src/option.c:308
+#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
+#, fuzzy
+msgid "Do not enable Pango markup"
+msgstr "Nuk aktivizon ndërprerjen e tekstit"
+
+#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
+msgid ""
+"Enable ellipsizing in the dialog text. This fixes the high window size with "
+"long texts"
+msgstr ""
+
+#: src/option.c:349
 msgid "Display info dialog"
 msgstr "Shfaq një dialog informacionesh"
 
-#: ../src/option.c:341
+#: src/option.c:396
 msgid "Display file selection dialog"
 msgstr "Shfaq një dialog për zgjedhje file"
 
-#: ../src/option.c:350
+#: src/option.c:403
 msgid "Set the filename"
 msgstr "Përcakton emrin e file"
 
-#: ../src/option.c:351 ../src/option.c:672
+#: src/option.c:404 src/option.c:719
 msgid "FILENAME"
 msgstr "EMRIFILE"
 
-#: ../src/option.c:359
+#: src/option.c:410
 msgid "Allow multiple files to be selected"
 msgstr "Lejon zgjedhjen e më shumë se një file"
 
-#: ../src/option.c:368
+#: src/option.c:417
 msgid "Activate directory-only selection"
 msgstr "Aktivizon zgjedhjen e vetëm directory"
 
-#: ../src/option.c:377
+#: src/option.c:424
 msgid "Activate save mode"
 msgstr "Aktivizon modalitetin e sigurtë"
 
-#: ../src/option.c:386 ../src/option.c:464
+#: src/option.c:431 src/option.c:493 src/option.c:975
 msgid "Set output separator character"
 msgstr "Përcakton simbolin ndarës për output"
 
-#: ../src/option.c:387 ../src/option.c:465
+#: src/option.c:432 src/option.c:494 src/option.c:976
 msgid "SEPARATOR"
 msgstr "NDARËSI"
 
-#: ../src/option.c:395
-msgid "Confirm file selection if filename already exists"
-msgstr "Konfermon zgjedhjen e file nëse emri i file ekziston rregullisht"
-
-#: ../src/option.c:404
-msgid "Sets a filename filter"
+#: src/option.c:438
+#, fuzzy
+msgid "Set a filename filter"
 msgstr "Përcakton një filtër mbi emrin e file"
 
-#: ../src/option.c:405
+#. Help for file-filter argument (name and patterns for file
+#. selection)
+#: src/option.c:441
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "EMRI | MODELI1 MODELI2 ..."
 
-#: ../src/option.c:419
+#: src/option.c:451
 msgid "Display list dialog"
 msgstr "Shfaq një dialog me një listë"
 
-#: ../src/option.c:437
+#: src/option.c:465
 msgid "Set the column header"
 msgstr "Përcakton titullin e kollonës"
 
-#: ../src/option.c:438
+#: src/option.c:466
 msgid "COLUMN"
 msgstr "KOLLONA"
 
-#: ../src/option.c:446
-msgid "Use check boxes for first column"
+#: src/option.c:472
+#, fuzzy
+msgid "Use check boxes for the first column"
 msgstr "Përdor kutiza zgjedhje për kollonën e parë"
 
-#: ../src/option.c:455
-msgid "Use radio buttons for first column"
+#: src/option.c:479
+#, fuzzy
+msgid "Use radio buttons for the first column"
 msgstr "Përdor butonë radio për kollonën e parë"
 
-#: ../src/option.c:473
+#: src/option.c:486
+#, fuzzy
+msgid "Use an image for the first column"
+msgstr "Përdor kutiza zgjedhje për kollonën e parë"
+
+#: src/option.c:500
 msgid "Allow multiple rows to be selected"
 msgstr "Lejon zgjedhjen e më shumë se një rreshti"
 
-#: ../src/option.c:482 ../src/option.c:680
+#: src/option.c:507 src/option.c:725
 msgid "Allow changes to text"
 msgstr "Lejon ndryshimin e tekstit"
 
-#: ../src/option.c:491
+#: src/option.c:514
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
-"Printon një kollonë të caktuar (Vlera e paracaktuar është 1. 'ALL' "
-"mund të përdoret për të printuar të gjitha kollonat)"
+"Printon një kollonë të caktuar (Vlera e paracaktuar është 1. 'ALL' mund të "
+"përdoret për të printuar të gjitha kollonat)"
 
 #. Column index number to print out on a list dialog
-#: ../src/option.c:493 ../src/option.c:502
+#: src/option.c:517 src/option.c:524
 msgid "NUMBER"
 msgstr "NUMRI"
 
-#: ../src/option.c:501
+#: src/option.c:523
 msgid "Hide a specific column"
 msgstr "Fsheh një kollonë të specifikuar"
 
-#: ../src/option.c:516
+#: src/option.c:530
+#, fuzzy
+msgid "Hide the column headers"
+msgstr "Përcakton titullin e kollonës"
+
+#: src/option.c:537
+msgid ""
+"Change list default search function searching for text in the middle, not on "
+"the beginning"
+msgstr ""
+
+#: src/option.c:549
 msgid "Display notification"
 msgstr "Shfaq një ikonë në zonën e njoftimeve"
 
-#: ../src/option.c:525
+#: src/option.c:556
 msgid "Set the notification text"
 msgstr "Përcakton tekstin e njoftimit"
 
-#: ../src/option.c:534
+#: src/option.c:563
+#, fuzzy
+msgid "Set the notification icon"
+msgstr "Përcakton tekstin e njoftimit"
+
+#: src/option.c:564
+msgid "ICONPATH"
+msgstr "POZICIONI_IKONËS"
+
+#: src/option.c:570
 msgid "Listen for commands on stdin"
 msgstr "Në pritje për komandat nga stdin"
 
-#: ../src/option.c:549
+#: src/option.c:577
+#, fuzzy
+msgid "Set the notification hints"
+msgstr "Përcakton tekstin e njoftimit"
+
+#: src/option.c:589
 msgid "Display progress indication dialog"
 msgstr "Shfaq një dialog me treguesin e përparimit"
 
-#: ../src/option.c:567
+#: src/option.c:603
 msgid "Set initial percentage"
 msgstr "Përcakton përqindjen fillestare"
 
-#: ../src/option.c:568
+#: src/option.c:604
 msgid "PERCENTAGE"
 msgstr "PËRQINDJA"
 
-#: ../src/option.c:576
+#: src/option.c:610
 msgid "Pulsate progress bar"
 msgstr "Bën të pulsojë shtyllën e përparimit"
 
-#: ../src/option.c:586
+#: src/option.c:618
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Mbyll dialogun kur arrihet 100%"
 
-#: ../src/option.c:596
-#, no-c-format
-msgid "Kill parent process if cancel button is pressed"
+#: src/option.c:625
+#, fuzzy
+msgid "Kill parent process if Cancel button is pressed"
 msgstr "Vret proçesin prind nëse shtypet butoni \"anullo\""
 
-#: ../src/option.c:611
+#: src/option.c:632
+msgid "Hide Cancel button"
+msgstr ""
+
+#: src/option.c:640
+#, no-c-format
+msgid "Estimate when progress will reach 100%"
+msgstr ""
+
+#: src/option.c:650
 msgid "Display question dialog"
 msgstr "Shfaq një dialog pyetje"
 
-#: ../src/option.c:629
-msgid "Sets the label of the Ok button"
-msgstr "Përcakton etiketën e pulsantit \"Ok\""
+#: src/option.c:685
+msgid "Give Cancel button focus by default"
+msgstr ""
 
-#: ../src/option.c:638
-msgid "Sets the label of the Cancel button"
+#: src/option.c:701
+#, fuzzy
+msgid "Suppress OK and Cancel buttons"
 msgstr "Përcakton etiketën e pulsantit \"Anullo\""
 
-#: ../src/option.c:662
+#: src/option.c:711
 msgid "Display text information dialog"
 msgstr "Shfaq një dialog informacioni me tekst"
 
-#: ../src/option.c:671
+#: src/option.c:718
 msgid "Open file"
 msgstr "Hap file"
 
-#: ../src/option.c:695
+#: src/option.c:732
+#, fuzzy
+msgid "Set the text font"
+msgstr "Përcakton tekstin e kutizës së futjes"
+
+#: src/option.c:739
+msgid "Enable an I read and agree checkbox"
+msgstr ""
+
+#: src/option.c:747
+msgid "Enable HTML support"
+msgstr ""
+
+#: src/option.c:754
+msgid ""
+"Do not enable user interaction with the WebView. Only works if you use --"
+"html option"
+msgstr ""
+
+#: src/option.c:762
+msgid "Set an URL instead of a file. Only works if you use --html option"
+msgstr ""
+
+#: src/option.c:764
+msgid "URL"
+msgstr ""
+
+#: src/option.c:771
+msgid "Auto scroll the text to the end. Only when text is captured from stdin"
+msgstr ""
+
+#: src/option.c:782
 msgid "Display warning dialog"
 msgstr "Shfaq një dialog paralajmërimi"
 
-#: ../src/option.c:728
+#: src/option.c:829
 msgid "Display scale dialog"
 msgstr "Shfaq një dialog me shkallën"
 
-#: ../src/option.c:746
+#: src/option.c:843
 msgid "Set initial value"
 msgstr "Përcakton vlerën fillestare"
 
-#: ../src/option.c:747 ../src/option.c:756 ../src/option.c:765
-#: ../src/option.c:774
+#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
+#: src/option.c:1017
 msgid "VALUE"
 msgstr "VLERA"
 
-#: ../src/option.c:755
+#: src/option.c:850
 msgid "Set minimum value"
 msgstr "Përcakton vlerën minimale"
 
-#: ../src/option.c:764
+#: src/option.c:857
 msgid "Set maximum value"
 msgstr "Përcakton vlerën maksimale"
 
-#: ../src/option.c:773
+#: src/option.c:864
 msgid "Set step size"
 msgstr "Përcakton madhësinë e hapit"
 
-#: ../src/option.c:782
+#: src/option.c:871
 msgid "Print partial values"
 msgstr "Printon vlerat e pjesëshme"
 
-#: ../src/option.c:791
+#: src/option.c:878
 msgid "Hide value"
 msgstr "Fshih vlerën"
 
-#: ../src/option.c:806
+#: src/option.c:888
+#, fuzzy
+msgid "Display forms dialog"
+msgstr "Shfaq një dialog informacionesh"
+
+#: src/option.c:895
+#, fuzzy
+msgid "Add a new Entry in forms dialog"
+msgstr "Shto një zë të ri"
+
+#: src/option.c:896 src/option.c:903
+msgid "Field name"
+msgstr ""
+
+#: src/option.c:902
+msgid "Add a new Password Entry in forms dialog"
+msgstr ""
+
+#: src/option.c:909
+msgid "Add a new Calendar in forms dialog"
+msgstr ""
+
+#: src/option.c:910
+#, fuzzy
+msgid "Calendar field name"
+msgstr "Zgjedhje nga kalendari"
+
+#: src/option.c:916
+msgid "Add a new List in forms dialog"
+msgstr ""
+
+#: src/option.c:917
+msgid "List field and header name"
+msgstr ""
+
+#: src/option.c:923
+msgid "List of values for List"
+msgstr ""
+
+#: src/option.c:924 src/option.c:931 src/option.c:945
+msgid "List of values separated by |"
+msgstr ""
+
+#: src/option.c:930
+msgid "List of values for columns"
+msgstr ""
+
+#: src/option.c:937
+msgid "Add a new combo box in forms dialog"
+msgstr ""
+
+#: src/option.c:938
+msgid "Combo box field name"
+msgstr ""
+
+#: src/option.c:944
+msgid "List of values for combo box"
+msgstr ""
+
+#: src/option.c:961
+#, fuzzy
+msgid "Show the columns header"
+msgstr "Përcakton titullin e kollonës"
+
+#: src/option.c:992
+#, fuzzy
+msgid "Display password dialog"
+msgstr "Shfaq një dialog gabimi"
+
+#: src/option.c:999
+#, fuzzy
+msgid "Display the username option"
+msgstr "Shfaq një dialog për shtim teksti"
+
+#: src/option.c:1009
+#, fuzzy
+msgid "Display color selection dialog"
+msgstr "Shfaq një dialog për zgjedhje file"
+
+#: src/option.c:1016
+#, fuzzy
+msgid "Set the color"
+msgstr "Përcakton titullin e kollonës"
+
+#: src/option.c:1023
+#, fuzzy
+msgid "Show the palette"
+msgstr "Përcakto titullin e dialogut"
+
+#: src/option.c:1033
 msgid "About zenity"
 msgstr "Informacione mbi zenity"
 
-#: ../src/option.c:815
+#: src/option.c:1040
 msgid "Print version"
 msgstr "Printo versionin"
 
-#: ../src/option.c:1470
+#: src/option.c:2007
 msgid "General options"
 msgstr "Opsione të përgjithshme"
 
-#: ../src/option.c:1471
+#: src/option.c:2008
 msgid "Show general options"
 msgstr "Shfaq opsionet e përgjithshme"
 
-#: ../src/option.c:1481
+#: src/option.c:2020
 msgid "Calendar options"
 msgstr "Opsione të kalendarit"
 
-#: ../src/option.c:1482
+#: src/option.c:2021
 msgid "Show calendar options"
 msgstr "Shfaq opsionet e kalendarit"
 
-#: ../src/option.c:1492
+#: src/option.c:2033
 msgid "Text entry options"
 msgstr "Opsionet e kutizës së shtimit të tekstit"
 
-#: ../src/option.c:1493
+#: src/option.c:2034
 msgid "Show text entry options"
 msgstr "Shfaq opsionet e kutizës së shtimit të tekstit"
 
-#: ../src/option.c:1503
+#: src/option.c:2046
 msgid "Error options"
 msgstr "Opsione të dialogut të gabimeve"
 
-#: ../src/option.c:1504
+#: src/option.c:2046
 msgid "Show error options"
 msgstr "Shfaq opsionet e dialogut të gabimeve"
 
-#: ../src/option.c:1514
+#: src/option.c:2056
 msgid "Info options"
 msgstr "Opsione të dialogut të informacioneve"
 
-#: ../src/option.c:1515
+#: src/option.c:2056
 msgid "Show info options"
 msgstr "Shfaq opsionet e dialogut të informacioneve"
 
-#: ../src/option.c:1525
+#: src/option.c:2066
 msgid "File selection options"
 msgstr "Opsione të dialogut të zgjedhjes së file"
 
-#: ../src/option.c:1526
+#: src/option.c:2067
 msgid "Show file selection options"
 msgstr "Shfaq opsionet e dialogut të zgjedhjes së file"
 
-#: ../src/option.c:1536
+#: src/option.c:2079
 msgid "List options"
 msgstr "Opsionet e listës"
 
-#: ../src/option.c:1537
+#: src/option.c:2079
 msgid "Show list options"
 msgstr "Shfaq opsionet e listës"
 
-#: ../src/option.c:1547
+#: src/option.c:2090
 msgid "Notification icon options"
 msgstr "Opsione të ikonës së njoftimeve"
 
-#: ../src/option.c:1548
+#: src/option.c:2091
 msgid "Show notification icon options"
 msgstr "Shfaq opsionet e ikonës së njoftimeve"
 
-#: ../src/option.c:1558
+#: src/option.c:2105
 msgid "Progress options"
 msgstr "Opsione të shtyllës së përparimit"
 
-#: ../src/option.c:1559
+#: src/option.c:2106
 msgid "Show progress options"
 msgstr "Shfaq opsionet e shtyllës së përparimit"
 
-#: ../src/option.c:1569
+#: src/option.c:2118
 msgid "Question options"
 msgstr "Opsione të dialogut pyetje"
 
-#: ../src/option.c:1570
+#: src/option.c:2119
 msgid "Show question options"
 msgstr "Shfaq opsione të dialogut të pyetjes"
 
-#: ../src/option.c:1580
+#: src/option.c:2131
 msgid "Warning options"
 msgstr "Opsione të dialogut të paralajmërimit"
 
-#: ../src/option.c:1581
+#: src/option.c:2132
 msgid "Show warning options"
 msgstr "Shfaq opsionet e dialogut të paralajmërimit"
 
-#: ../src/option.c:1591
+#: src/option.c:2144
 msgid "Scale options"
 msgstr "Opsionet e shkallës"
 
-#: ../src/option.c:1592
+#: src/option.c:2144
 msgid "Show scale options"
 msgstr "Shfaq opsionet e shkallës"
 
-#: ../src/option.c:1602
+#: src/option.c:2154
 msgid "Text information options"
 msgstr "Opsionet e tekstit informues"
 
-#: ../src/option.c:1603
+#: src/option.c:2155
 msgid "Show text information options"
 msgstr "Shfaq opsionet e tekstit informues"
 
-#: ../src/option.c:1613
+#: src/option.c:2167
+#, fuzzy
+msgid "Color selection options"
+msgstr "Opsione të dialogut të zgjedhjes së file"
+
+#: src/option.c:2168
+#, fuzzy
+msgid "Show color selection options"
+msgstr "Shfaq opsionet e dialogut të zgjedhjes së file"
+
+#: src/option.c:2180
+#, fuzzy
+msgid "Password dialog options"
+msgstr "Opsione të dialogut të paralajmërimit"
+
+#: src/option.c:2181
+#, fuzzy
+msgid "Show password dialog options"
+msgstr "Shfaq opsionet e dialogut të paralajmërimit"
+
+#: src/option.c:2193
+#, fuzzy
+msgid "Forms dialog options"
+msgstr "Shfaq opsionet e dialogut të informacioneve"
+
+#: src/option.c:2194
+#, fuzzy
+msgid "Show forms dialog options"
+msgstr "Shfaq opsionet e shkallës"
+
+#: src/option.c:2206
 msgid "Miscellaneous options"
 msgstr "Opsione të ndryshme"
 
-#: ../src/option.c:1614
+#: src/option.c:2207
 msgid "Show miscellaneous options"
 msgstr "Shfaq opsione të ndryshme"
 
-#: ../src/option.c:1639
+#: src/option.c:2230
 #, c-format
-msgid "This option is not available. Please see --help for all possible usages.\n"
+msgid ""
+"This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
-"Ky opsion nuk gjendet në dispozicion. Shiko --help për të gjitha "
-"përdorimet e mundshme.\n"
+"Ky opsion nuk gjendet në dispozicion. Shiko --help për të gjitha përdorimet "
+"e mundshme.\n"
 
-#: ../src/option.c:1643
+#: src/option.c:2236
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "Opsioni --%s nuk suportohet nga ky dialog\n"
 
-#: ../src/option.c:1647
+#: src/option.c:2241
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Janë specifikuar dy apo më shumë opsione për dialogun\n"
 
+#: src/password.c:96
+msgid "Type your username and password"
+msgstr ""
+
+#. Add the username label and entry and increment the row for the
+#. * password entry so it will be added below the username.
+#.
+#: src/password.c:101
+msgid "Username:"
+msgstr ""
+
+#: src/password.c:116
+msgid "Password:"
+msgstr ""
+
+#: src/progress.c:116
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr ""
+
+#: src/scale.c:66
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Vlera maksimale duhet të jetë më e madhe se vlera minimale.\n"
+
+#: src/scale.c:74
+#, c-format
+msgid "Value out of range.\n"
+msgstr "Vlerë jashtë limitit.\n"
+
+#: src/tree.c:405
+#, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr "Asnjë titull për kollonat në dialogun \"Lista\".\n"
+
+#: src/tree.c:412
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr "Duhet përdorur vetëm një lloj dialogu \"Lista\".\n"
+
+#: src/zenity.ui:16 src/zenity.ui:31
+msgid "Adjust the scale value"
+msgstr "Rregullo vlerën e shkallës"
+
+#: src/zenity.ui:74
+msgid "Text View"
+msgstr "Tekst"
+
+#: src/zenity.ui:137
+msgid "Calendar selection"
+msgstr "Zgjedhje nga kalendari"
+
+#: src/zenity.ui:156
+msgid "Select a date from below."
+msgstr "Zgjidh një datë."
+
+#: src/zenity.ui:167
+msgid "C_alendar:"
+msgstr "K_alendari:"
+
+#: src/zenity.ui:172
+#, fuzzy
+msgid "Calendar"
+msgstr "K_alendari:"
+
+#: src/zenity.ui:211
+msgid "Add a new entry"
+msgstr "Shto një zë të ri"
+
+#: src/zenity.ui:234
+msgid "_Enter new text:"
+msgstr "S_hto tekstin e ri:"
+
+#: src/zenity.ui:273
+msgid "Error"
+msgstr "Gabim"
+
+#: src/zenity.ui:301
+msgid "An error has occurred."
+msgstr "U verifikua një gabim."
+
+#: src/zenity.ui:378
+msgid "Forms dialog"
+msgstr ""
+
+#: src/zenity.ui:413
+msgid "Information"
+msgstr "Informacione"
+
+#: src/zenity.ui:438
+msgid "All updates are complete."
+msgstr "Të gjithë përditësimet u plotësuan."
+
+#: src/zenity.ui:466
+msgid "Progress"
+msgstr "Përparimi"
+
+#: src/zenity.ui:481
+msgid "Running..."
+msgstr "Në ekzekutim..."
+
+#: src/zenity.ui:530
+msgid "Question"
+msgstr "Pyetje"
+
+#: src/zenity.ui:553 src/zenity.ui:660
+msgid "Are you sure you want to proceed?"
+msgstr "Dëshirohet vazhdimi?"
+
+#: src/zenity.ui:573
+msgid "Select items from the list"
+msgstr "Zgjidh elementë nga lista"
+
+#: src/zenity.ui:588
+msgid "Select items from the list below."
+msgstr "Zgjidh elementët nga lista në vijim."
+
+#: src/zenity.ui:633 src/zenity.ui:693
+msgid "Warning"
+msgstr "Paralajmërim"
+
+#: src/zenity.ui:716
+msgid "Type your password"
+msgstr ""
+
+#~ msgid "translator-credits"
+#~ msgstr "Laurent Dhima <laurenti@alblinux.net>, 2003-2008"
+
+#~ msgid "Select a file"
+#~ msgstr "Zgjidh një file"
+
+#~ msgid "Set the window icon"
+#~ msgstr "Përcakto ikonën e dritares"
+
+#~ msgid "Confirm file selection if filename already exists"
+#~ msgstr "Konfermon zgjedhjen e file nëse emri i file ekziston rregullisht"

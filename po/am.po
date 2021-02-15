@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-24 17:41+0200\n"
+"POT-Creation-Date: 2021-02-15 15:49-0500\n"
 "PO-Revision-Date: 2003-02-03 10:13+EDT\n"
 "Last-Translator: Ge'ez Frontier Foundation <locales@geez.org>\n"
 "Language-Team: Amharic <locales@geez.org>\n"
@@ -17,481 +17,892 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Translators: This is a special message that shouldn't be translated
-#. literally. It is used in the about box to give credits to
-#. the translators.
-#. Thus, you should translate it to your name and email address.
-#. You can also include other translators who have contributed to
-#. this translation; in that case, please write them on separate
-#. lines seperated by newlines (\n).
-#: ../src/about.c:403
-#, fuzzy
-msgid "translator-credits"
-msgstr "ዘግዕዝ Frontier Foundation"
+#: src/about.c:54
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version.\n"
+msgstr ""
 
-#: ../src/about.c:433
+#: src/about.c:59
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
+"for more details.\n"
+msgstr ""
+
+#: src/about.c:63
+msgid ""
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this program; if not, write to the Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+
+#: src/about.c:88
 msgid "Display dialog boxes from shell scripts"
 msgstr ""
 
-#: ../src/about.c:437
-msgid "(C) 2003 Sun Microsystems"
-msgstr "(ም) 2003 Sun Microsystems"
-
-#: ../src/about.c:521
-msgid "Credits"
-msgstr "ተሳታፊዎች"
-
-#: ../src/about.c:548
-msgid "Written by"
-msgstr "ፀሐፊው"
-
-#: ../src/about.c:561
-msgid "Translated by"
-msgstr "ተርጓሚ"
-
-#: ../src/eggtrayicon.c:118
-msgid "Orientation"
+#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
+#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
+#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
+msgid "_OK"
 msgstr ""
 
-#: ../src/eggtrayicon.c:119
-msgid "The orientation of the tray."
+#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
+#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
+#: src/zenity.ui:746
+msgid "_Cancel"
 msgstr ""
 
-#: ../src/main.c:90
+#: src/main.c:121
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 
-#: ../src/notification.c:161
-msgid "could not parse command from stdin\n"
+#: src/msg.c:42
+msgid "_No"
 msgstr ""
 
-#: ../src/notification.c:230 ../src/notification.c:259
+#: src/msg.c:44
+msgid "_Yes"
+msgstr ""
+
+#: src/notification.c:55
+#, c-format
+msgid "Could not parse message\n"
+msgstr ""
+
+#: src/notification.c:142
+#, c-format
+msgid ""
+"Invalid value for a boolean typed hint.\n"
+"Supported values are 'true' or 'false'.\n"
+msgstr ""
+
+#. (iibiiay)
+#: src/notification.c:163
+#, c-format
+msgid "Unsupported hint. Skipping.\n"
+msgstr ""
+
+#. unknown hints
+#: src/notification.c:186
+#, c-format
+msgid "Unknown hint name. Skipping.\n"
+msgstr ""
+
+#: src/notification.c:247
+#, c-format
+msgid "Could not parse command from stdin\n"
+msgstr ""
+
+#: src/notification.c:374
 msgid "Zenity notification"
 msgstr ""
 
-#: ../src/tree.c:320
-msgid "No column titles specified for List dialog.\n"
-msgstr ""
-
-#: ../src/tree.c:326
-msgid "You should use only one List dialog type.\n"
-msgstr ""
-
-#: ../src/zenity.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/zenity.glade.h:2
-msgid "About Zenity"
-msgstr "ስለ ዘኒቲ"
-
-#: ../src/zenity.glade.h:3
-msgid "Add a new entry"
-msgstr "አዲስ ዕቃ ጨምር"
-
-#: ../src/zenity.glade.h:4
-msgid "All updates are complete."
-msgstr ""
-
-#: ../src/zenity.glade.h:5
-msgid "An error has occurred."
-msgstr ""
-
-#: ../src/zenity.glade.h:6
-msgid "Are you sure you want to proceed?"
-msgstr ""
-
-#: ../src/zenity.glade.h:7
-msgid "C_alendar:"
-msgstr "ቀን መቁጠሪያ፦ (_A)"
-
-#: ../src/zenity.glade.h:8
-msgid "Calendar selection"
-msgstr "የቀን መቁጠሪያ ምርጫ"
-
-#: ../src/zenity.glade.h:9
-msgid "Error"
-msgstr "ስህተት"
-
-#: ../src/zenity.glade.h:10
-msgid "Information"
-msgstr "መረጃ (_I)"
-
-#: ../src/zenity.glade.h:11
-msgid "Progress"
-msgstr "ይሻሻል"
-
-#: ../src/zenity.glade.h:12
-msgid "Question"
-msgstr "ጥያቄ"
-
-#: ../src/zenity.glade.h:13
-msgid "Running..."
-msgstr "በሥራ ላይ..."
-
-#: ../src/zenity.glade.h:14
-msgid "Select a date from below."
-msgstr "ከስር ቀን ምረጡ።"
-
-#: ../src/zenity.glade.h:15
-msgid "Select a file"
-msgstr "ፋይል ምረጡ"
-
-#: ../src/zenity.glade.h:16
-msgid "Select items from the list"
-msgstr "ከዝርዝር ዕቃዎች ምረጡ"
-
-#: ../src/zenity.glade.h:17
-msgid "Select items from the list below."
-msgstr "ከስር ዝርዝር ዕቃዎች ምረጡ።"
-
-#: ../src/zenity.glade.h:18
-msgid "Text View"
-msgstr "የጽሑፍ ዕይታ"
-
-#: ../src/zenity.glade.h:19
-msgid "Warning"
-msgstr "ማስጠንቀቂያ"
-
-#: ../src/zenity.glade.h:20
-msgid "_Credits"
-msgstr "ተሳታፊዎች (_C)"
-
-#: ../src/zenity.glade.h:21
-msgid "_Enter new text:"
-msgstr "አዲስ ጽሑፍ አስገቡ፦ (_E)"
-
-#: ../src/option.c:105
+#: src/option.c:166
 msgid "Set the dialog title"
 msgstr ""
 
-#: ../src/option.c:106
+#: src/option.c:167
 msgid "TITLE"
 msgstr "አርእስት"
 
-#: ../src/option.c:114
-msgid "Set the window icon"
-msgstr ""
-
-#: ../src/option.c:115
-msgid "ICONPATH"
-msgstr "የቁልፉ መደብ"
-
-#: ../src/option.c:123
+#: src/option.c:173
 msgid "Set the width"
 msgstr ""
 
-#: ../src/option.c:124
+#: src/option.c:174
 msgid "WIDTH"
 msgstr ""
 
-#: ../src/option.c:132
+#: src/option.c:180
 msgid "Set the height"
 msgstr ""
 
-#: ../src/option.c:133
+#: src/option.c:181
 msgid "HEIGHT"
 msgstr ""
 
-#: ../src/option.c:147
+#: src/option.c:187
+msgid "Set dialog timeout in seconds"
+msgstr ""
+
+#. Timeout for closing the dialog
+#: src/option.c:189
+msgid "TIMEOUT"
+msgstr ""
+
+#: src/option.c:195
+msgid "Set the label of the OK button"
+msgstr ""
+
+#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
+#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
+#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
+#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
+#: src/option.c:837 src/option.c:969
+msgid "TEXT"
+msgstr ""
+
+#: src/option.c:202
+msgid "Set the label of the Cancel button"
+msgstr ""
+
+#: src/option.c:209
+msgid "Add an extra button"
+msgstr ""
+
+#: src/option.c:216
+msgid "Set the modal hint"
+msgstr ""
+
+#: src/option.c:226
 msgid "Display calendar dialog"
 msgstr ""
 
-#: ../src/option.c:156 ../src/option.c:216 ../src/option.c:259
-#: ../src/option.c:292 ../src/option.c:385 ../src/option.c:514
-#: ../src/option.c:566 ../src/option.c:632
+#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
+#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
+#: src/option.c:836 src/option.c:968
 msgid "Set the dialog text"
 msgstr ""
 
-#: ../src/option.c:165
+#: src/option.c:240
 msgid "Set the calendar day"
 msgstr ""
 
-#: ../src/option.c:174
+#: src/option.c:241
+msgid "DAY"
+msgstr ""
+
+#: src/option.c:247
 msgid "Set the calendar month"
 msgstr ""
 
-#: ../src/option.c:183
+#: src/option.c:248
+msgid "MONTH"
+msgstr ""
+
+#: src/option.c:254
 msgid "Set the calendar year"
 msgstr ""
 
-#: ../src/option.c:192
+#: src/option.c:255
+msgid "YEAR"
+msgstr ""
+
+#: src/option.c:261 src/option.c:982
 msgid "Set the format for the returned date"
 msgstr ""
 
-#: ../src/option.c:207
+#: src/option.c:262 src/option.c:983
+msgid "PATTERN"
+msgstr ""
+
+#: src/option.c:271
 msgid "Display text entry dialog"
 msgstr ""
 
-#: ../src/option.c:225
+#: src/option.c:285
 msgid "Set the entry text"
 msgstr ""
 
-#: ../src/option.c:234
+#: src/option.c:292
 msgid "Hide the entry text"
 msgstr ""
 
-#: ../src/option.c:250
+#: src/option.c:302
 msgid "Display error dialog"
 msgstr ""
 
-#: ../src/option.c:268 ../src/option.c:301 ../src/option.c:575
-#: ../src/option.c:641
+#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
+msgid "Set the dialog icon"
+msgstr ""
+
+#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
+msgid "ICON-NAME"
+msgstr ""
+
+#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
 msgid "Do not enable text wrapping"
 msgstr ""
 
-#: ../src/option.c:283
+#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
+msgid "Do not enable Pango markup"
+msgstr ""
+
+#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
+msgid ""
+"Enable ellipsizing in the dialog text. This fixes the high window size with "
+"long texts"
+msgstr ""
+
+#: src/option.c:349
 msgid "Display info dialog"
 msgstr ""
 
-#: ../src/option.c:316
+#: src/option.c:396
 msgid "Display file selection dialog"
 msgstr ""
 
-#: ../src/option.c:325
+#: src/option.c:403
 msgid "Set the filename"
 msgstr ""
 
-#: ../src/option.c:326 ../src/option.c:600
+#: src/option.c:404 src/option.c:719
 msgid "FILENAME"
 msgstr "የፋይል ስም"
 
-#: ../src/option.c:334
+#: src/option.c:410
 msgid "Allow multiple files to be selected"
 msgstr ""
 
-#: ../src/option.c:343
+#: src/option.c:417
 msgid "Activate directory-only selection"
 msgstr ""
 
-#: ../src/option.c:352
+#: src/option.c:424
 msgid "Activate save mode"
 msgstr ""
 
-#: ../src/option.c:361 ../src/option.c:421
+#: src/option.c:431 src/option.c:493 src/option.c:975
 msgid "Set output separator character"
 msgstr ""
 
-#: ../src/option.c:362 ../src/option.c:422
+#: src/option.c:432 src/option.c:494 src/option.c:976
 msgid "SEPARATOR"
 msgstr ""
 
-#: ../src/option.c:376
+#: src/option.c:438
+msgid "Set a filename filter"
+msgstr ""
+
+#. Help for file-filter argument (name and patterns for file
+#. selection)
+#: src/option.c:441
+msgid "NAME | PATTERN1 PATTERN2 ..."
+msgstr ""
+
+#: src/option.c:451
 msgid "Display list dialog"
 msgstr ""
 
-#: ../src/option.c:394
+#: src/option.c:465
 msgid "Set the column header"
 msgstr ""
 
-#: ../src/option.c:403
-msgid "Use check boxes for first column"
+#: src/option.c:466
+msgid "COLUMN"
 msgstr ""
 
-#: ../src/option.c:412
-msgid "Use radio buttons for first column"
+#: src/option.c:472
+msgid "Use check boxes for the first column"
 msgstr ""
 
-#: ../src/option.c:430
+#: src/option.c:479
+msgid "Use radio buttons for the first column"
+msgstr ""
+
+#: src/option.c:486
+msgid "Use an image for the first column"
+msgstr ""
+
+#: src/option.c:500
 msgid "Allow multiple rows to be selected"
 msgstr ""
 
-#: ../src/option.c:439 ../src/option.c:608
+#: src/option.c:507 src/option.c:725
 msgid "Allow changes to text"
 msgstr ""
 
-#: ../src/option.c:448
+#: src/option.c:514
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
 
-#: ../src/option.c:457
+#. Column index number to print out on a list dialog
+#: src/option.c:517 src/option.c:524
+msgid "NUMBER"
+msgstr ""
+
+#: src/option.c:523
 msgid "Hide a specific column"
 msgstr ""
 
-#: ../src/option.c:472
+#: src/option.c:530
+msgid "Hide the column headers"
+msgstr ""
+
+#: src/option.c:537
+msgid ""
+"Change list default search function searching for text in the middle, not on "
+"the beginning"
+msgstr ""
+
+#: src/option.c:549
 msgid "Display notification"
 msgstr ""
 
-#: ../src/option.c:481
+#: src/option.c:556
 msgid "Set the notification text"
 msgstr ""
 
-#: ../src/option.c:490
+#: src/option.c:563
+#, fuzzy
+msgid "Set the notification icon"
+msgstr "የማስጠንቀቂያ መርጫዎች"
+
+#: src/option.c:564
+msgid "ICONPATH"
+msgstr "የቁልፉ መደብ"
+
+#: src/option.c:570
 msgid "Listen for commands on stdin"
 msgstr ""
 
-#: ../src/option.c:505
+#: src/option.c:577
+#, fuzzy
+msgid "Set the notification hints"
+msgstr "የማስጠንቀቂያ መርጫዎች"
+
+#: src/option.c:589
 msgid "Display progress indication dialog"
 msgstr ""
 
-#: ../src/option.c:523
+#: src/option.c:603
 msgid "Set initial percentage"
 msgstr ""
 
-#: ../src/option.c:532
+#: src/option.c:604
+msgid "PERCENTAGE"
+msgstr ""
+
+#: src/option.c:610
 msgid "Pulsate progress bar"
 msgstr ""
 
-#: ../src/option.c:542
+#: src/option.c:618
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr ""
 
-#: ../src/option.c:557
+#: src/option.c:625
+msgid "Kill parent process if Cancel button is pressed"
+msgstr ""
+
+#: src/option.c:632
+msgid "Hide Cancel button"
+msgstr ""
+
+#: src/option.c:640
+#, no-c-format
+msgid "Estimate when progress will reach 100%"
+msgstr ""
+
+#: src/option.c:650
 msgid "Display question dialog"
 msgstr ""
 
-#: ../src/option.c:590
+#: src/option.c:685
+msgid "Give Cancel button focus by default"
+msgstr ""
+
+#: src/option.c:701
+msgid "Suppress OK and Cancel buttons"
+msgstr ""
+
+#: src/option.c:711
 msgid "Display text information dialog"
 msgstr ""
 
-#: ../src/option.c:599
+#: src/option.c:718
 msgid "Open file"
 msgstr "ፋይል ክፈት"
 
-#: ../src/option.c:623
+#: src/option.c:732
+msgid "Set the text font"
+msgstr ""
+
+#: src/option.c:739
+msgid "Enable an I read and agree checkbox"
+msgstr ""
+
+#: src/option.c:747
+msgid "Enable HTML support"
+msgstr ""
+
+#: src/option.c:754
+msgid ""
+"Do not enable user interaction with the WebView. Only works if you use --"
+"html option"
+msgstr ""
+
+#: src/option.c:762
+msgid "Set an URL instead of a file. Only works if you use --html option"
+msgstr ""
+
+#: src/option.c:764
+msgid "URL"
+msgstr ""
+
+#: src/option.c:771
+msgid "Auto scroll the text to the end. Only when text is captured from stdin"
+msgstr ""
+
+#: src/option.c:782
 msgid "Display warning dialog"
 msgstr ""
 
-#: ../src/option.c:656
+#: src/option.c:829
+msgid "Display scale dialog"
+msgstr ""
+
+#: src/option.c:843
+msgid "Set initial value"
+msgstr ""
+
+#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
+#: src/option.c:1017
+msgid "VALUE"
+msgstr ""
+
+#: src/option.c:850
+msgid "Set minimum value"
+msgstr ""
+
+#: src/option.c:857
+msgid "Set maximum value"
+msgstr ""
+
+#: src/option.c:864
+msgid "Set step size"
+msgstr ""
+
+#: src/option.c:871
+msgid "Print partial values"
+msgstr ""
+
+#: src/option.c:878
+msgid "Hide value"
+msgstr ""
+
+#: src/option.c:888
+msgid "Display forms dialog"
+msgstr ""
+
+#: src/option.c:895
+#, fuzzy
+msgid "Add a new Entry in forms dialog"
+msgstr "አዲስ ዕቃ ጨምር"
+
+#: src/option.c:896 src/option.c:903
+msgid "Field name"
+msgstr ""
+
+#: src/option.c:902
+msgid "Add a new Password Entry in forms dialog"
+msgstr ""
+
+#: src/option.c:909
+msgid "Add a new Calendar in forms dialog"
+msgstr ""
+
+#: src/option.c:910
+#, fuzzy
+msgid "Calendar field name"
+msgstr "የቀን መቁጠሪያ ምርጫ"
+
+#: src/option.c:916
+msgid "Add a new List in forms dialog"
+msgstr ""
+
+#: src/option.c:917
+msgid "List field and header name"
+msgstr ""
+
+#: src/option.c:923
+msgid "List of values for List"
+msgstr ""
+
+#: src/option.c:924 src/option.c:931 src/option.c:945
+msgid "List of values separated by |"
+msgstr ""
+
+#: src/option.c:930
+msgid "List of values for columns"
+msgstr ""
+
+#: src/option.c:937
+msgid "Add a new combo box in forms dialog"
+msgstr ""
+
+#: src/option.c:938
+msgid "Combo box field name"
+msgstr ""
+
+#: src/option.c:944
+msgid "List of values for combo box"
+msgstr ""
+
+#: src/option.c:961
+msgid "Show the columns header"
+msgstr ""
+
+#: src/option.c:992
+msgid "Display password dialog"
+msgstr ""
+
+#: src/option.c:999
+msgid "Display the username option"
+msgstr ""
+
+#: src/option.c:1009
+msgid "Display color selection dialog"
+msgstr ""
+
+#: src/option.c:1016
+msgid "Set the color"
+msgstr ""
+
+#: src/option.c:1023
+msgid "Show the palette"
+msgstr ""
+
+#: src/option.c:1033
 msgid "About zenity"
 msgstr "ስለ ዘኒቲ"
 
-#: ../src/option.c:665
+#: src/option.c:1040
 msgid "Print version"
 msgstr ""
 
-#: ../src/option.c:1259
+#: src/option.c:2007
 msgid "General options"
 msgstr "አጠቃላይ መርጫዎች"
 
-#: ../src/option.c:1260
+#: src/option.c:2008
 #, fuzzy
 msgid "Show general options"
 msgstr "አጠቃላይ መርጫዎች"
 
-#: ../src/option.c:1270
+#: src/option.c:2020
 msgid "Calendar options"
 msgstr "የቀን መቁጠሪያ መርጫዎች"
 
-#: ../src/option.c:1271
+#: src/option.c:2021
 #, fuzzy
 msgid "Show calendar options"
 msgstr "የቀን መቁጠሪያ መርጫዎች"
 
-#: ../src/option.c:1281
+#: src/option.c:2033
 msgid "Text entry options"
 msgstr ""
 
-#: ../src/option.c:1282
+#: src/option.c:2034
 #, fuzzy
 msgid "Show text entry options"
 msgstr "የጽሑፍ መርጫዎች"
 
-#: ../src/option.c:1292
+#: src/option.c:2046
 msgid "Error options"
 msgstr "የስህተት መርጫዎች"
 
-#: ../src/option.c:1293
+#: src/option.c:2046
 #, fuzzy
 msgid "Show error options"
 msgstr "የስህተት መርጫዎች"
 
-#: ../src/option.c:1303
+#: src/option.c:2056
 msgid "Info options"
 msgstr "የመረጃ መርጫዎች"
 
-#: ../src/option.c:1304
+#: src/option.c:2056
 #, fuzzy
 msgid "Show info options"
 msgstr "የመረጃ መርጫዎች"
 
-#: ../src/option.c:1314
+#: src/option.c:2066
 msgid "File selection options"
 msgstr ""
 
-#: ../src/option.c:1315
+#: src/option.c:2067
 #, fuzzy
 msgid "Show file selection options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1325
+#: src/option.c:2079
 msgid "List options"
 msgstr "የዝርዝር መርጫዎች"
 
-#: ../src/option.c:1326
+#: src/option.c:2079
 #, fuzzy
 msgid "Show list options"
 msgstr "የዝርዝር መርጫዎች"
 
-#: ../src/option.c:1336
+#: src/option.c:2090
 #, fuzzy
 msgid "Notification icon options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1337
+#: src/option.c:2091
 #, fuzzy
 msgid "Show notification icon options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1347
+#: src/option.c:2105
 msgid "Progress options"
 msgstr ""
 
-#: ../src/option.c:1348
+#: src/option.c:2106
 #, fuzzy
 msgid "Show progress options"
 msgstr "የስህተት መርጫዎች"
 
-#: ../src/option.c:1358
+#: src/option.c:2118
 msgid "Question options"
 msgstr ""
 
-#: ../src/option.c:1359
+#: src/option.c:2119
 #, fuzzy
 msgid "Show question options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1369
+#: src/option.c:2131
 msgid "Warning options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1370
+#: src/option.c:2132
 #, fuzzy
 msgid "Show warning options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1380
+#: src/option.c:2144
+#, fuzzy
+msgid "Scale options"
+msgstr "የቀን መቁጠሪያ መርጫዎች"
+
+#: src/option.c:2144
+#, fuzzy
+msgid "Show scale options"
+msgstr "የቀን መቁጠሪያ መርጫዎች"
+
+#: src/option.c:2154
 #, fuzzy
 msgid "Text information options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1381
+#: src/option.c:2155
 #, fuzzy
 msgid "Show text information options"
 msgstr "የማስጠንቀቂያ መርጫዎች"
 
-#: ../src/option.c:1391
+#: src/option.c:2167
+#, fuzzy
+msgid "Color selection options"
+msgstr "የማስጠንቀቂያ መርጫዎች"
+
+#: src/option.c:2168
+#, fuzzy
+msgid "Show color selection options"
+msgstr "የማስጠንቀቂያ መርጫዎች"
+
+#: src/option.c:2180
+#, fuzzy
+msgid "Password dialog options"
+msgstr "የማስጠንቀቂያ መርጫዎች"
+
+#: src/option.c:2181
+#, fuzzy
+msgid "Show password dialog options"
+msgstr "የማስጠንቀቂያ መርጫዎች"
+
+#: src/option.c:2193
+#, fuzzy
+msgid "Forms dialog options"
+msgstr "የመረጃ መርጫዎች"
+
+#: src/option.c:2194
+#, fuzzy
+msgid "Show forms dialog options"
+msgstr "የመረጃ መርጫዎች"
+
+#: src/option.c:2206
 msgid "Miscellaneous options"
 msgstr "የተለያየ መርጫዎች"
 
-#: ../src/option.c:1392
+#: src/option.c:2207
 #, fuzzy
 msgid "Show miscellaneous options"
 msgstr "የተለያየ መርጫዎች"
 
-#: ../src/option.c:1417
+#: src/option.c:2230
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 
-#: ../src/option.c:1421
+#: src/option.c:2236
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr ""
 
-#: ../src/option.c:1425
+#: src/option.c:2241
+#, c-format
 msgid "Two or more dialog options specified\n"
 msgstr ""
+
+#: src/password.c:96
+msgid "Type your username and password"
+msgstr ""
+
+#. Add the username label and entry and increment the row for the
+#. * password entry so it will be added below the username.
+#.
+#: src/password.c:101
+msgid "Username:"
+msgstr ""
+
+#: src/password.c:116
+msgid "Password:"
+msgstr ""
+
+#: src/progress.c:116
+#, c-format
+msgid "Time remaining: %lu:%02lu:%02lu"
+msgstr ""
+
+#: src/scale.c:66
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr ""
+
+#: src/scale.c:74
+#, c-format
+msgid "Value out of range.\n"
+msgstr ""
+
+#: src/tree.c:405
+#, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr ""
+
+#: src/tree.c:412
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr ""
+
+#: src/zenity.ui:16 src/zenity.ui:31
+msgid "Adjust the scale value"
+msgstr ""
+
+#: src/zenity.ui:74
+msgid "Text View"
+msgstr "የጽሑፍ ዕይታ"
+
+#: src/zenity.ui:137
+msgid "Calendar selection"
+msgstr "የቀን መቁጠሪያ ምርጫ"
+
+#: src/zenity.ui:156
+msgid "Select a date from below."
+msgstr "ከስር ቀን ምረጡ።"
+
+#: src/zenity.ui:167
+msgid "C_alendar:"
+msgstr "ቀን መቁጠሪያ፦ (_A)"
+
+#: src/zenity.ui:172
+#, fuzzy
+msgid "Calendar"
+msgstr "ቀን መቁጠሪያ፦ (_A)"
+
+#: src/zenity.ui:211
+msgid "Add a new entry"
+msgstr "አዲስ ዕቃ ጨምር"
+
+#: src/zenity.ui:234
+msgid "_Enter new text:"
+msgstr "አዲስ ጽሑፍ አስገቡ፦ (_E)"
+
+#: src/zenity.ui:273
+msgid "Error"
+msgstr "ስህተት"
+
+#: src/zenity.ui:301
+msgid "An error has occurred."
+msgstr ""
+
+#: src/zenity.ui:378
+msgid "Forms dialog"
+msgstr ""
+
+#: src/zenity.ui:413
+msgid "Information"
+msgstr "መረጃ (_I)"
+
+#: src/zenity.ui:438
+msgid "All updates are complete."
+msgstr ""
+
+#: src/zenity.ui:466
+msgid "Progress"
+msgstr "ይሻሻል"
+
+#: src/zenity.ui:481
+msgid "Running..."
+msgstr "በሥራ ላይ..."
+
+#: src/zenity.ui:530
+msgid "Question"
+msgstr "ጥያቄ"
+
+#: src/zenity.ui:553 src/zenity.ui:660
+msgid "Are you sure you want to proceed?"
+msgstr ""
+
+#: src/zenity.ui:573
+msgid "Select items from the list"
+msgstr "ከዝርዝር ዕቃዎች ምረጡ"
+
+#: src/zenity.ui:588
+msgid "Select items from the list below."
+msgstr "ከስር ዝርዝር ዕቃዎች ምረጡ።"
+
+#: src/zenity.ui:633 src/zenity.ui:693
+msgid "Warning"
+msgstr "ማስጠንቀቂያ"
+
+#: src/zenity.ui:716
+msgid "Type your password"
+msgstr ""
+
+#, fuzzy
+#~ msgid "translator-credits"
+#~ msgstr "ዘግዕዝ Frontier Foundation"
+
+#~ msgid "(C) 2003 Sun Microsystems"
+#~ msgstr "(ም) 2003 Sun Microsystems"
+
+#~ msgid "Credits"
+#~ msgstr "ተሳታፊዎች"
+
+#~ msgid "Written by"
+#~ msgstr "ፀሐፊው"
+
+#~ msgid "Translated by"
+#~ msgstr "ተርጓሚ"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "About Zenity"
+#~ msgstr "ስለ ዘኒቲ"
+
+#~ msgid "Select a file"
+#~ msgstr "ፋይል ምረጡ"
+
+#~ msgid "_Credits"
+#~ msgstr "ተሳታፊዎች (_C)"
