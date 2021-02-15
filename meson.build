@@ -105,3 +105,5 @@ subdir('data')
 subdir('icons')
 subdir('po')
 subdir('help')
+
+meson.add_install_script('meson_post_install.py')
