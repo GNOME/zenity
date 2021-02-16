@@ -15,6 +15,10 @@
       <p>Specifies the text that is displayed in the notification area.</p>
     </item>
     <item>
+      <title><cmd>--icon</cmd>=<var>text</var></title>
+      <p>Set the notification icon using a string containing either a filename, or a string conforming to the FreeDesktop.org Icon Naming Specification.</p>
+    </item>
+    <item>
       <title><cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', tooltip: '<var>text</var>', visible: '<var>text</var>',</title>
       <p>Listens for commands at standard input. At least one command must be specified. Commands are comma separated. A command must be followed by a colon and a value. </p>
       <note style="tip">
@@ -27,8 +31,8 @@
   <code>
   #!/bin/sh
 
-  zenity --notification\
-    --window-icon="info" \
+  zenity --notification \
+    --icon="dialog-information" \
     --text="There are system updates necessary!"
   </code>
 
