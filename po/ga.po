@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 15:49-0500\n"
+"POT-Creation-Date: 2009-08-17 12:15-0600\n"
 "PO-Revision-Date: 2009-08-17 12:30-0600\n"
 "Last-Translator: Seán de Búrca <leftmostcat@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -16,881 +16,598 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : (n%10==1 || n%10==2) ? 1 : (n"
-"%10>=3 && n%10<= 6) ? 2 : ((n%10>=7 && n%10<=9) || n==10) ? 3 : 4;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : (n%10==1 || n%10==2) ? 1 : (n%"
+"10>=3 && n%10<= 6) ? 2 : ((n%10>=7 && n%10<=9) || n==10) ? 3 : 4;\n"
 
-#: src/about.c:54
-#, fuzzy
+#: ../src/about.c:64
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
 msgstr ""
 "Is bogearraí saor é an clár seo; is féidir leat é a athdháileadh nó a athrú "
 "faoi théarmaí an GNU General Public License mar foilsíodh é ag an Free "
 "Software Foundation; leagan 2 an License, nó (de do rogha) aon leagan níos "
 "déanaí.\n"
 
-#: src/about.c:59
-#, fuzzy
+#: ../src/about.c:68
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
 msgstr ""
 "Dáileadh an clár seo le súil go mbeidh sé úsáideach, ach GAN AON BHARÁNTA; "
 "gan an baránta intuigthe INDÍOLTÓIREACHTA nó OIRIÚNACHTA D'FHEIDHM ÁIRITHE "
 "fiú. Féach an GNU General Public License le haghaidh tuilleadh mionsonraí.\n"
 
-#: src/about.c:63
-#, fuzzy
+#: ../src/about.c:72
 msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 "Ba chóir go bhfuair tú cóip an GNU General Public License in éineacht leis "
 "an gclár seo; mura bhfuair tú é, scríobh chuig an Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA."
 
-#: src/about.c:88
+#: ../src/about.c:265
+msgid "translator-credits"
+msgstr ""
+"Paul Duffy <dubhthaigh@frink.nuigalway.ie>\n"
+"Seán de Búrca <leftmostcat@gmail.com>"
+
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr ""
 
-#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
-#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
-#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
-msgid "_OK"
-msgstr ""
-
-#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
-#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
-#: src/zenity.ui:746
-msgid "_Cancel"
-msgstr ""
-
-#: src/main.c:121
+#: ../src/main.c:94
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 
-#: src/msg.c:42
-msgid "_No"
-msgstr ""
-
-#: src/msg.c:44
-msgid "_Yes"
-msgstr ""
-
-#: src/notification.c:55
+#: ../src/notification.c:138
 #, c-format
-msgid "Could not parse message\n"
+msgid "could not parse command from stdin\n"
 msgstr ""
 
-#: src/notification.c:142
+#: ../src/notification.c:177
 #, c-format
-msgid ""
-"Invalid value for a boolean typed hint.\n"
-"Supported values are 'true' or 'false'.\n"
+msgid "Could not parse message from stdin\n"
 msgstr ""
 
-#. (iibiiay)
-#: src/notification.c:163
-#, c-format
-msgid "Unsupported hint. Skipping.\n"
-msgstr ""
-
-#. unknown hints
-#: src/notification.c:186
-#, c-format
-msgid "Unknown hint name. Skipping.\n"
-msgstr ""
-
-#: src/notification.c:247
-#, c-format
-msgid "Could not parse command from stdin\n"
-msgstr ""
-
-#: src/notification.c:374
+#: ../src/notification.c:262 ../src/notification.c:279
 msgid "Zenity notification"
 msgstr "Fógra Zenity"
 
-#: src/option.c:166
+#: ../src/scale.c:56
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr ""
+
+#: ../src/scale.c:63
+#, c-format
+msgid "Value out of range.\n"
+msgstr ""
+
+#: ../src/tree.c:321
+#, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr ""
+
+#: ../src/tree.c:327
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr ""
+
+#: ../src/zenity.ui.h:1
+msgid "Add a new entry"
+msgstr "Cuir iontráil nua leis"
+
+#: ../src/zenity.ui.h:2
+msgid "Adjust the scale value"
+msgstr ""
+
+#: ../src/zenity.ui.h:3
+msgid "All updates are complete."
+msgstr ""
+
+#: ../src/zenity.ui.h:4
+msgid "An error has occurred."
+msgstr "Tharla earráid."
+
+#: ../src/zenity.ui.h:5
+msgid "Are you sure you want to proceed?"
+msgstr ""
+
+#: ../src/zenity.ui.h:6
+msgid "C_alendar:"
+msgstr "Fé_ilire:"
+
+#: ../src/zenity.ui.h:7
+msgid "Calendar selection"
+msgstr "Roghnú féilire"
+
+#: ../src/zenity.ui.h:8
+msgid "Error"
+msgstr "Earráid"
+
+#: ../src/zenity.ui.h:9
+msgid "Information"
+msgstr "Eolas"
+
+#: ../src/zenity.ui.h:10
+msgid "Progress"
+msgstr "Cur Chun Cinn"
+
+#: ../src/zenity.ui.h:11
+msgid "Question"
+msgstr "Ceist"
+
+#: ../src/zenity.ui.h:12
+msgid "Running..."
+msgstr "Á Rith..."
+
+#: ../src/zenity.ui.h:13
+msgid "Select a date from below."
+msgstr "Roghnaigh dáta ó thíos."
+
+#: ../src/zenity.ui.h:14
+msgid "Select items from the list"
+msgstr "Roghnaigh míreanna ón liosta"
+
+#: ../src/zenity.ui.h:15
+msgid "Select items from the list below."
+msgstr "Roghnaigh míreanna ón liosta thíos."
+
+#: ../src/zenity.ui.h:16
+msgid "Text View"
+msgstr "Amharc Téacs"
+
+#: ../src/zenity.ui.h:17
+msgid "Warning"
+msgstr "Rabhadh"
+
+#: ../src/zenity.ui.h:18
+msgid "_Enter new text:"
+msgstr "_Iontráil téacs nua:"
+
+#: ../src/option.c:121
 msgid "Set the dialog title"
 msgstr "Socraigh teideal na dialóige"
 
-#: src/option.c:167
+#: ../src/option.c:122
 msgid "TITLE"
 msgstr "TEIDEAL"
 
-#: src/option.c:173
+#: ../src/option.c:130
+msgid "Set the window icon"
+msgstr "Socraigh deilbhín na fuinneoige"
+
+#: ../src/option.c:131
+msgid "ICONPATH"
+msgstr "CONAIR-DHEILBHÍN"
+
+#: ../src/option.c:139
 msgid "Set the width"
 msgstr "Socraigh an leithead"
 
-#: src/option.c:174
+#: ../src/option.c:140
 msgid "WIDTH"
 msgstr "LEITHEAD"
 
-#: src/option.c:180
+#: ../src/option.c:148
 msgid "Set the height"
 msgstr "Socraigh an airde"
 
-#: src/option.c:181
+#: ../src/option.c:149
 msgid "HEIGHT"
 msgstr "AIRDE"
 
-#: src/option.c:187
+#: ../src/option.c:157
 msgid "Set dialog timeout in seconds"
 msgstr ""
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: ../src/option.c:159
 msgid "TIMEOUT"
 msgstr "TEORAINN-AMA"
 
-#: src/option.c:195
-#, fuzzy
-msgid "Set the label of the OK button"
-msgstr "Socraigh téacs na dialóige"
-
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
-#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
-#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
-#: src/option.c:837 src/option.c:969
-msgid "TEXT"
-msgstr "TÉACS"
-
-#: src/option.c:202
-msgid "Set the label of the Cancel button"
-msgstr ""
-
-#: src/option.c:209
-msgid "Add an extra button"
-msgstr ""
-
-#: src/option.c:216
-#, fuzzy
-msgid "Set the modal hint"
-msgstr "Socraigh teideal na dialóige"
-
-#: src/option.c:226
+#: ../src/option.c:173
 msgid "Display calendar dialog"
 msgstr "Taispeáin dialóg fhéilire"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
-#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
-#: src/option.c:836 src/option.c:968
+#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:285
+#: ../src/option.c:318 ../src/option.c:430 ../src/option.c:569
+#: ../src/option.c:631 ../src/option.c:715 ../src/option.c:748
 msgid "Set the dialog text"
 msgstr "Socraigh téacs na dialóige"
 
-#: src/option.c:240
+#: ../src/option.c:183 ../src/option.c:243 ../src/option.c:252
+#: ../src/option.c:286 ../src/option.c:319 ../src/option.c:431
+#: ../src/option.c:537 ../src/option.c:570 ../src/option.c:632
+#: ../src/option.c:641 ../src/option.c:650 ../src/option.c:716
+#: ../src/option.c:749
+msgid "TEXT"
+msgstr "TÉACS"
+
+#: ../src/option.c:191
 msgid "Set the calendar day"
 msgstr "Socraigh lá an fhéilire"
 
-#: src/option.c:241
+#: ../src/option.c:192
 msgid "DAY"
 msgstr "LÁ"
 
-#: src/option.c:247
+#: ../src/option.c:200
 msgid "Set the calendar month"
 msgstr "Socraigh mí an fhéilire"
 
-#: src/option.c:248
+#: ../src/option.c:201
 msgid "MONTH"
 msgstr "MÍ"
 
-#: src/option.c:254
+#: ../src/option.c:209
 msgid "Set the calendar year"
 msgstr "Socraigh bliain an fhéilire"
 
-#: src/option.c:255
+#: ../src/option.c:210
 msgid "YEAR"
 msgstr "BLIAIN"
 
-#: src/option.c:261 src/option.c:982
+#: ../src/option.c:218
 msgid "Set the format for the returned date"
 msgstr ""
 
-#: src/option.c:262 src/option.c:983
+#: ../src/option.c:219
 msgid "PATTERN"
 msgstr "PATRÚN"
 
-#: src/option.c:271
+#: ../src/option.c:233
 msgid "Display text entry dialog"
 msgstr ""
 
-#: src/option.c:285
+#: ../src/option.c:251
 msgid "Set the entry text"
 msgstr ""
 
-#: src/option.c:292
+#: ../src/option.c:260
 msgid "Hide the entry text"
 msgstr ""
 
-#: src/option.c:302
+#: ../src/option.c:276
 msgid "Display error dialog"
 msgstr "Taispeáin dialóg earráide"
 
-#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
-#, fuzzy
-msgid "Set the dialog icon"
-msgstr "Socraigh teideal na dialóige"
-
-#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
-msgid "ICON-NAME"
-msgstr ""
-
-#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
+#: ../src/option.c:294 ../src/option.c:327 ../src/option.c:658
+#: ../src/option.c:724
 msgid "Do not enable text wrapping"
 msgstr ""
 
-#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
-msgid "Do not enable Pango markup"
-msgstr ""
-
-#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
-msgid ""
-"Enable ellipsizing in the dialog text. This fixes the high window size with "
-"long texts"
-msgstr ""
-
-#: src/option.c:349
+#: ../src/option.c:309
 msgid "Display info dialog"
 msgstr "Taispeáin dialóg eolais"
 
-#: src/option.c:396
+#: ../src/option.c:342
 msgid "Display file selection dialog"
 msgstr ""
 
-#: src/option.c:403
+#: ../src/option.c:351
 msgid "Set the filename"
 msgstr "Socraigh ainm an chomhaid"
 
-#: src/option.c:404 src/option.c:719
+#: ../src/option.c:352 ../src/option.c:683
 msgid "FILENAME"
 msgstr "AINM-COMHAID"
 
-#: src/option.c:410
+#: ../src/option.c:360
 msgid "Allow multiple files to be selected"
 msgstr ""
 
-#: src/option.c:417
+#: ../src/option.c:369
 msgid "Activate directory-only selection"
 msgstr ""
 
-#: src/option.c:424
+#: ../src/option.c:378
 msgid "Activate save mode"
 msgstr ""
 
-#: src/option.c:431 src/option.c:493 src/option.c:975
+#: ../src/option.c:387 ../src/option.c:466
 msgid "Set output separator character"
 msgstr ""
 
-#: src/option.c:432 src/option.c:494 src/option.c:976
+#: ../src/option.c:388 ../src/option.c:467
 msgid "SEPARATOR"
 msgstr "DEIGHILTEOIR"
 
-#: src/option.c:438
-#, fuzzy
-msgid "Set a filename filter"
+#: ../src/option.c:396
+msgid "Confirm file selection if filename already exists"
+msgstr ""
+
+#: ../src/option.c:405
+msgid "Sets a filename filter"
 msgstr "Socraíonn sé seo scagaire ainmneacha comhaid"
 
-#. Help for file-filter argument (name and patterns for file
-#. selection)
-#: src/option.c:441
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:407
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "AINM | PATRÚN1 PATRÚN2 ..."
 
-#: src/option.c:451
+#: ../src/option.c:421
 msgid "Display list dialog"
 msgstr "Taispeáin dialóg liosta"
 
-#: src/option.c:465
+#: ../src/option.c:439
 msgid "Set the column header"
 msgstr ""
 
-#: src/option.c:466
+#: ../src/option.c:440
 msgid "COLUMN"
 msgstr "COLÚN"
 
-#: src/option.c:472
-msgid "Use check boxes for the first column"
+#: ../src/option.c:448
+msgid "Use check boxes for first column"
 msgstr ""
 
-#: src/option.c:479
-msgid "Use radio buttons for the first column"
+#: ../src/option.c:457
+msgid "Use radio buttons for first column"
 msgstr ""
 
-#: src/option.c:486
-msgid "Use an image for the first column"
-msgstr ""
-
-#: src/option.c:500
+#: ../src/option.c:475
 msgid "Allow multiple rows to be selected"
 msgstr ""
 
-#: src/option.c:507 src/option.c:725
+#: ../src/option.c:484 ../src/option.c:691
 msgid "Allow changes to text"
 msgstr ""
 
-#: src/option.c:514
+#: ../src/option.c:493
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
 
 #. Column index number to print out on a list dialog
-#: src/option.c:517 src/option.c:524
+#: ../src/option.c:495 ../src/option.c:504
 msgid "NUMBER"
 msgstr "UIMHIR"
 
-#: src/option.c:523
+#: ../src/option.c:503
 msgid "Hide a specific column"
 msgstr ""
 
-#: src/option.c:530
-msgid "Hide the column headers"
+#: ../src/option.c:512
+msgid "Hides the column headers"
 msgstr ""
 
-#: src/option.c:537
-msgid ""
-"Change list default search function searching for text in the middle, not on "
-"the beginning"
-msgstr ""
-
-#: src/option.c:549
+#: ../src/option.c:527
 msgid "Display notification"
 msgstr "Taispeáin fógra"
 
-#: src/option.c:556
+#: ../src/option.c:536
 msgid "Set the notification text"
 msgstr "Socraigh téacs an fhógra"
 
-#: src/option.c:563
-#, fuzzy
-msgid "Set the notification icon"
-msgstr "Socraigh téacs an fhógra"
-
-#: src/option.c:564
-msgid "ICONPATH"
-msgstr "CONAIR-DHEILBHÍN"
-
-#: src/option.c:570
+#: ../src/option.c:545
 msgid "Listen for commands on stdin"
 msgstr ""
 
-#: src/option.c:577
-#, fuzzy
-msgid "Set the notification hints"
-msgstr "Socraigh téacs an fhógra"
-
-#: src/option.c:589
+#: ../src/option.c:560
 msgid "Display progress indication dialog"
 msgstr ""
 
-#: src/option.c:603
+#: ../src/option.c:578
 msgid "Set initial percentage"
 msgstr ""
 
-#: src/option.c:604
+#: ../src/option.c:579
 msgid "PERCENTAGE"
 msgstr "CÉATADÁN"
 
-#: src/option.c:610
+#: ../src/option.c:587
 msgid "Pulsate progress bar"
 msgstr ""
 
-#: src/option.c:618
+#: ../src/option.c:597
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr ""
 
-#: src/option.c:625
-msgid "Kill parent process if Cancel button is pressed"
-msgstr ""
-
-#: src/option.c:632
-msgid "Hide Cancel button"
-msgstr ""
-
-#: src/option.c:640
+#: ../src/option.c:607
 #, no-c-format
-msgid "Estimate when progress will reach 100%"
+msgid "Kill parent process if cancel button is pressed"
 msgstr ""
 
-#: src/option.c:650
+#: ../src/option.c:622
 msgid "Display question dialog"
 msgstr "Taispeáin dialóg cheiste"
 
-#: src/option.c:685
-msgid "Give Cancel button focus by default"
+#: ../src/option.c:640
+msgid "Sets the label of the Ok button"
 msgstr ""
 
-#: src/option.c:701
-msgid "Suppress OK and Cancel buttons"
+#: ../src/option.c:649
+msgid "Sets the label of the Cancel button"
 msgstr ""
 
-#: src/option.c:711
+#: ../src/option.c:673
 msgid "Display text information dialog"
 msgstr "Taispeáin dialóg eolas téacs"
 
-#: src/option.c:718
+#: ../src/option.c:682
 msgid "Open file"
 msgstr "Oscail comhad"
 
-#: src/option.c:732
-#, fuzzy
-msgid "Set the text font"
-msgstr "Socraigh téacs na dialóige"
-
-#: src/option.c:739
-msgid "Enable an I read and agree checkbox"
-msgstr ""
-
-#: src/option.c:747
-msgid "Enable HTML support"
-msgstr ""
-
-#: src/option.c:754
-msgid ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
-msgstr ""
-
-#: src/option.c:762
-msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr ""
-
-#: src/option.c:764
-msgid "URL"
-msgstr ""
-
-#: src/option.c:771
-msgid "Auto scroll the text to the end. Only when text is captured from stdin"
-msgstr ""
-
-#: src/option.c:782
+#: ../src/option.c:706
 msgid "Display warning dialog"
 msgstr "Taispeáin dialóg rabhaidh"
 
-#: src/option.c:829
+#: ../src/option.c:739
 msgid "Display scale dialog"
 msgstr "Taispeáin dialóg scálaithe"
 
-#: src/option.c:843
+#: ../src/option.c:757
 msgid "Set initial value"
 msgstr ""
 
-#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
-#: src/option.c:1017
+#: ../src/option.c:758 ../src/option.c:767 ../src/option.c:776
+#: ../src/option.c:785
 msgid "VALUE"
 msgstr "LUACH"
 
-#: src/option.c:850
+#: ../src/option.c:766
 msgid "Set minimum value"
 msgstr ""
 
-#: src/option.c:857
+#: ../src/option.c:775
 msgid "Set maximum value"
 msgstr ""
 
-#: src/option.c:864
+#: ../src/option.c:784
 msgid "Set step size"
 msgstr "Socraigh méid chéime"
 
-#: src/option.c:871
+#: ../src/option.c:793
 msgid "Print partial values"
 msgstr ""
 
-#: src/option.c:878
+#: ../src/option.c:802
 msgid "Hide value"
 msgstr ""
 
-#: src/option.c:888
-#, fuzzy
-msgid "Display forms dialog"
-msgstr "Taispeáin dialóg eolais"
-
-#: src/option.c:895
-#, fuzzy
-msgid "Add a new Entry in forms dialog"
-msgstr "Cuir iontráil nua leis"
-
-#: src/option.c:896 src/option.c:903
-msgid "Field name"
-msgstr ""
-
-#: src/option.c:902
-msgid "Add a new Password Entry in forms dialog"
-msgstr ""
-
-#: src/option.c:909
-msgid "Add a new Calendar in forms dialog"
-msgstr ""
-
-#: src/option.c:910
-#, fuzzy
-msgid "Calendar field name"
-msgstr "Roghnú féilire"
-
-#: src/option.c:916
-msgid "Add a new List in forms dialog"
-msgstr ""
-
-#: src/option.c:917
-msgid "List field and header name"
-msgstr ""
-
-#: src/option.c:923
-msgid "List of values for List"
-msgstr ""
-
-#: src/option.c:924 src/option.c:931 src/option.c:945
-msgid "List of values separated by |"
-msgstr ""
-
-#: src/option.c:930
-msgid "List of values for columns"
-msgstr ""
-
-#: src/option.c:937
-msgid "Add a new combo box in forms dialog"
-msgstr ""
-
-#: src/option.c:938
-msgid "Combo box field name"
-msgstr ""
-
-#: src/option.c:944
-msgid "List of values for combo box"
-msgstr ""
-
-#: src/option.c:961
-msgid "Show the columns header"
-msgstr ""
-
-#: src/option.c:992
-#, fuzzy
-msgid "Display password dialog"
-msgstr "Taispeáin dialóg earráide"
-
-#: src/option.c:999
-msgid "Display the username option"
-msgstr ""
-
-#: src/option.c:1009
-#, fuzzy
-msgid "Display color selection dialog"
-msgstr "Taispeáin dialóg cheiste"
-
-#: src/option.c:1016
-#, fuzzy
-msgid "Set the color"
-msgstr "Socraigh lá an fhéilire"
-
-#: src/option.c:1023
-#, fuzzy
-msgid "Show the palette"
-msgstr "Socraigh teideal na dialóige"
-
-#: src/option.c:1033
+#: ../src/option.c:817
 msgid "About zenity"
 msgstr "Maidir le zenity"
 
-#: src/option.c:1040
+#: ../src/option.c:826
 msgid "Print version"
 msgstr "Priontáil leagan"
 
-#: src/option.c:2007
+#: ../src/option.c:1490
 msgid "General options"
 msgstr "Roghanna ginearálta"
 
-#: src/option.c:2008
+#: ../src/option.c:1491
 msgid "Show general options"
 msgstr "Taispeáin roghanna ginearálta"
 
-#: src/option.c:2020
+#: ../src/option.c:1501
 msgid "Calendar options"
 msgstr "Roghanna féilire"
 
-#: src/option.c:2021
+#: ../src/option.c:1502
 msgid "Show calendar options"
 msgstr "Taispeáin roghanna féilire"
 
-#: src/option.c:2033
+#: ../src/option.c:1512
 msgid "Text entry options"
 msgstr "Roghanna iontráil téacs"
 
-#: src/option.c:2034
+#: ../src/option.c:1513
 msgid "Show text entry options"
 msgstr "Taispeáin roghanna iontráil téacs"
 
-#: src/option.c:2046
+#: ../src/option.c:1523
 msgid "Error options"
 msgstr "Roghanna earráide"
 
-#: src/option.c:2046
+#: ../src/option.c:1524
 msgid "Show error options"
 msgstr "Taispeáin roghanna earráide"
 
-#: src/option.c:2056
+#: ../src/option.c:1534
 msgid "Info options"
 msgstr "Roghanna eolais"
 
-#: src/option.c:2056
+#: ../src/option.c:1535
 msgid "Show info options"
 msgstr "Taispeáin roghanna eolais"
 
-#: src/option.c:2066
+#: ../src/option.c:1545
 msgid "File selection options"
 msgstr "Roghanna roghnú comhad"
 
-#: src/option.c:2067
+#: ../src/option.c:1546
 msgid "Show file selection options"
 msgstr "Taispeáin roghanna roghnú comhad"
 
-#: src/option.c:2079
+#: ../src/option.c:1556
 msgid "List options"
 msgstr "Roghanna liosta"
 
-#: src/option.c:2079
+#: ../src/option.c:1557
 msgid "Show list options"
 msgstr "Taispeáin roghanna liosta"
 
-#: src/option.c:2090
+#: ../src/option.c:1567
 msgid "Notification icon options"
 msgstr "Roghanna dheilbhín fógartha"
 
-#: src/option.c:2091
+#: ../src/option.c:1568
 msgid "Show notification icon options"
 msgstr "Taispeáin roghanna dheilbhín fógartha"
 
-#: src/option.c:2105
+#: ../src/option.c:1578
 msgid "Progress options"
 msgstr "Roghanna chur chun cinn"
 
-#: src/option.c:2106
+#: ../src/option.c:1579
 msgid "Show progress options"
 msgstr "Taispeáin roghanna chur chun cinn"
 
-#: src/option.c:2118
+#: ../src/option.c:1589
 msgid "Question options"
 msgstr "Roghanna ceiste"
 
-#: src/option.c:2119
+#: ../src/option.c:1590
 msgid "Show question options"
 msgstr "Taispeáin roghanna ceiste"
 
-#: src/option.c:2131
+#: ../src/option.c:1600
 msgid "Warning options"
 msgstr "Roghanna rabhaidh"
 
-#: src/option.c:2132
+#: ../src/option.c:1601
 msgid "Show warning options"
 msgstr "Taispeáin roghanna rabhaidh"
 
-#: src/option.c:2144
+#: ../src/option.c:1611
 msgid "Scale options"
 msgstr "Roghanna scálaithe"
 
-#: src/option.c:2144
+#: ../src/option.c:1612
 msgid "Show scale options"
 msgstr "Taispeáin roghanna scálaithe"
 
-#: src/option.c:2154
+#: ../src/option.c:1622
 msgid "Text information options"
 msgstr "Roghanna eolas téacs"
 
-#: src/option.c:2155
+#: ../src/option.c:1623
 msgid "Show text information options"
 msgstr "Taispeáin roghanna eolas téacs"
 
-#: src/option.c:2167
-#, fuzzy
-msgid "Color selection options"
-msgstr "Roghanna roghnú comhad"
-
-#: src/option.c:2168
-#, fuzzy
-msgid "Show color selection options"
-msgstr "Taispeáin roghanna roghnú comhad"
-
-#: src/option.c:2180
-#, fuzzy
-msgid "Password dialog options"
-msgstr "Roghanna rabhaidh"
-
-#: src/option.c:2181
-#, fuzzy
-msgid "Show password dialog options"
-msgstr "Taispeáin roghanna rabhaidh"
-
-#: src/option.c:2193
-#, fuzzy
-msgid "Forms dialog options"
-msgstr "Taispeáin roghanna eolais"
-
-#: src/option.c:2194
-#, fuzzy
-msgid "Show forms dialog options"
-msgstr "Taispeáin roghanna scálaithe"
-
-#: src/option.c:2206
+#: ../src/option.c:1633
 msgid "Miscellaneous options"
 msgstr "Roghanna éagsúla"
 
-#: src/option.c:2207
+#: ../src/option.c:1634
 msgid "Show miscellaneous options"
 msgstr "Taispeáin roghanna éagsúla"
 
-#: src/option.c:2230
+#: ../src/option.c:1659
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 
-#: src/option.c:2236
+#: ../src/option.c:1663
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr ""
 
-#: src/option.c:2241
+#: ../src/option.c:1667
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr ""
-
-#: src/password.c:96
-msgid "Type your username and password"
-msgstr ""
-
-#. Add the username label and entry and increment the row for the
-#. * password entry so it will be added below the username.
-#.
-#: src/password.c:101
-msgid "Username:"
-msgstr ""
-
-#: src/password.c:116
-msgid "Password:"
-msgstr ""
-
-#: src/progress.c:116
-#, c-format
-msgid "Time remaining: %lu:%02lu:%02lu"
-msgstr ""
-
-#: src/scale.c:66
-#, c-format
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr ""
-
-#: src/scale.c:74
-#, c-format
-msgid "Value out of range.\n"
-msgstr ""
-
-#: src/tree.c:405
-#, c-format
-msgid "No column titles specified for List dialog.\n"
-msgstr ""
-
-#: src/tree.c:412
-#, c-format
-msgid "You should use only one List dialog type.\n"
-msgstr ""
-
-#: src/zenity.ui:16 src/zenity.ui:31
-msgid "Adjust the scale value"
-msgstr ""
-
-#: src/zenity.ui:74
-msgid "Text View"
-msgstr "Amharc Téacs"
-
-#: src/zenity.ui:137
-msgid "Calendar selection"
-msgstr "Roghnú féilire"
-
-#: src/zenity.ui:156
-msgid "Select a date from below."
-msgstr "Roghnaigh dáta ó thíos."
-
-#: src/zenity.ui:167
-msgid "C_alendar:"
-msgstr "Fé_ilire:"
-
-#: src/zenity.ui:172
-#, fuzzy
-msgid "Calendar"
-msgstr "Fé_ilire:"
-
-#: src/zenity.ui:211
-msgid "Add a new entry"
-msgstr "Cuir iontráil nua leis"
-
-#: src/zenity.ui:234
-msgid "_Enter new text:"
-msgstr "_Iontráil téacs nua:"
-
-#: src/zenity.ui:273
-msgid "Error"
-msgstr "Earráid"
-
-#: src/zenity.ui:301
-msgid "An error has occurred."
-msgstr "Tharla earráid."
-
-#: src/zenity.ui:378
-msgid "Forms dialog"
-msgstr ""
-
-#: src/zenity.ui:413
-msgid "Information"
-msgstr "Eolas"
-
-#: src/zenity.ui:438
-msgid "All updates are complete."
-msgstr ""
-
-#: src/zenity.ui:466
-msgid "Progress"
-msgstr "Cur Chun Cinn"
-
-#: src/zenity.ui:481
-msgid "Running..."
-msgstr "Á Rith..."
-
-#: src/zenity.ui:530
-msgid "Question"
-msgstr "Ceist"
-
-#: src/zenity.ui:553 src/zenity.ui:660
-msgid "Are you sure you want to proceed?"
-msgstr ""
-
-#: src/zenity.ui:573
-msgid "Select items from the list"
-msgstr "Roghnaigh míreanna ón liosta"
-
-#: src/zenity.ui:588
-msgid "Select items from the list below."
-msgstr "Roghnaigh míreanna ón liosta thíos."
-
-#: src/zenity.ui:633 src/zenity.ui:693
-msgid "Warning"
-msgstr "Rabhadh"
-
-#: src/zenity.ui:716
-msgid "Type your password"
-msgstr ""
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Paul Duffy <dubhthaigh@frink.nuigalway.ie>\n"
-#~ "Seán de Búrca <leftmostcat@gmail.com>"
-
-#~ msgid "Set the window icon"
-#~ msgstr "Socraigh deilbhín na fuinneoige"

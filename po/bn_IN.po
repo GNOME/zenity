@@ -10,8 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 15:49-0500\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=zenity&component=general\n"
+"POT-Creation-Date: 2011-03-03 03:00+0000\n"
 "PO-Revision-Date: 2011-03-24 20:41+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
@@ -25,7 +26,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: src/about.c:54
+#: ../src/about.c:64
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -36,7 +37,7 @@ msgstr ""
 "Lesser General Public License-র শর্তানুযায়ী এটি বিতরণ ও পরিবর্তন করা যাবে; "
 "লাইনসেন্সের সংস্করণ ২ অথবা (আপনার সুবিধানুযায়ী) ঊর্ধ্বতন কোনো সংস্করণের অধীন।\n"
 
-#: src/about.c:59
+#: ../src/about.c:68
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -48,7 +49,7 @@ msgstr ""
 "অন্তর্নিহীত ওয়ারেন্টিও অনুপস্থিত। অধিক জানতে GNU Lesser General Public License "
 "পড়ুন।\n"
 
-#: src/about.c:63
+#: ../src/about.c:72
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -59,296 +60,338 @@ msgstr ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
 "USA."
 
-#: src/about.c:88
+#: ../src/about.c:265
+msgid "translator-credits"
+msgstr ""
+"সায়মিন্দু দাশগুপ্ত <unmadindu@bengalinux.org> \n"
+"মাহে আলম খান <makl10n@yahoo.com> \n"
+"রুণা ভট্টাচার্য <runabh@gmail.com> \n"
+" (অঙ্কুর বাংলা প্রকল্পের তরফ থেকে)"
+
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "শেল স্ক্রিপ্ট থেকে প্রাপ্ত ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
-#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
-#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
-msgid "_OK"
-msgstr ""
-
-#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
-#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
-#: src/zenity.ui:746
-msgid "_Cancel"
-msgstr ""
-
-#: src/main.c:121
+#: ../src/main.c:105
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "ডায়লগ বক্সের ধরন উল্লেখ করা আবশ্যক। বিস্তারিত জানতে 'zenity --help' কমান্ডের "
 "ফলাফল পড়ুন\n"
 
-#: src/msg.c:42
-msgid "_No"
-msgstr ""
-
-#: src/msg.c:44
-msgid "_Yes"
-msgstr ""
-
-#: src/notification.c:55
-#, fuzzy, c-format
-msgid "Could not parse message\n"
-msgstr "stdin থেকে বার্তা পার্স করা যায়নি\n"
-
-#: src/notification.c:142
+#: ../src/notification.c:95
 #, c-format
-msgid ""
-"Invalid value for a boolean typed hint.\n"
-"Supported values are 'true' or 'false'.\n"
-msgstr ""
-
-#. (iibiiay)
-#: src/notification.c:163
-#, c-format
-msgid "Unsupported hint. Skipping.\n"
-msgstr ""
-
-#. unknown hints
-#: src/notification.c:186
-#, c-format
-msgid "Unknown hint name. Skipping.\n"
-msgstr ""
-
-#: src/notification.c:247
-#, fuzzy, c-format
-msgid "Could not parse command from stdin\n"
+msgid "could not parse command from stdin\n"
 msgstr "stdin থেকে কমান্ড পার্স করা যায়নি\n"
 
-#: src/notification.c:374
+#: ../src/notification.c:122
+#, c-format
+msgid "Could not parse message from stdin\n"
+msgstr "stdin থেকে বার্তা পার্স করা যায়নি\n"
+
+#: ../src/notification.c:198
 msgid "Zenity notification"
 msgstr "Zenity'র বিজ্ঞপ্তি"
 
-#: src/option.c:166
+#: ../src/password.c:64
+msgid "Type your password"
+msgstr "পাসওয়ার্ড লিখুন"
+
+#: ../src/password.c:99
+msgid "Username:"
+msgstr "ব্যবহারকারীর নাম:"
+
+#: ../src/password.c:115
+msgid "Password:"
+msgstr "পাসওয়ার্ড:"
+
+#: ../src/scale.c:56
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "সর্বনিম্ন মানের তূলনায় সর্বোচ্চ মান অধিক হওয়া আবশ্যক।\n"
+
+#: ../src/scale.c:63
+#, c-format
+msgid "Value out of range.\n"
+msgstr "উল্লিখিত মান সীমাবহির্ভূত।\n"
+
+#: ../src/tree.c:321
+#, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr "তালিকা প্রদর্শনকারী ডায়লগ বক্সের ক্ষেত্রে কলামের শিরোনাম ধার্য করা হয়নি।\n"
+
+#: ../src/tree.c:327
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr "তালিকা প্রদর্শনকারী ডায়লগের ক্ষেত্রে শুধুমাত্র একটি ধরন ব্যবহার করা আবশ্যক।\n"
+
+#: ../src/zenity.ui.h:1
+msgid "Forms dialog"
+msgstr "ফর্ম সংক্রান্ত ডায়লগ"
+
+#: ../src/zenity.ui.h:2
+msgid "Add a new entry"
+msgstr "নতুন এন্ট্রি যোগ করুন"
+
+#: ../src/zenity.ui.h:3
+msgid "Adjust the scale value"
+msgstr "পরিবর্ধন মাপ পরিবর্তন করুন"
+
+#: ../src/zenity.ui.h:4
+msgid "All updates are complete."
+msgstr "সমস্ত পরিবর্তন সম্পন্ন।"
+
+#: ../src/zenity.ui.h:5
+msgid "An error has occurred."
+msgstr "ত্রুটি দেখা দিয়েছে।"
+
+#: ../src/zenity.ui.h:6
+msgid "Are you sure you want to proceed?"
+msgstr "আপনি নি নিশ্চিতরূপে এগিয়ে চলতে ইচ্ছুক?"
+
+#: ../src/zenity.ui.h:7
+msgid "C_alendar:"
+msgstr "বর্ষপঞ্জি:(_a)"
+
+#: ../src/zenity.ui.h:8
+msgid "Calendar selection"
+msgstr "বর্ষপঞ্জি নির্বাচন"
+
+#: ../src/zenity.ui.h:9
+msgid "Error"
+msgstr "ত্রুটি"
+
+#: ../src/zenity.ui.h:10
+msgid "Information"
+msgstr "তথ্য"
+
+#: ../src/zenity.ui.h:11
+msgid "Progress"
+msgstr "প্রগতি"
+
+#: ../src/zenity.ui.h:12
+msgid "Question"
+msgstr "প্রশ্ন"
+
+#: ../src/zenity.ui.h:13
+msgid "Running..."
+msgstr "চলমান..."
+
+#: ../src/zenity.ui.h:14
+msgid "Select a date from below."
+msgstr "নীচে একটি তারিখ নির্বাচন করুন।"
+
+#: ../src/zenity.ui.h:15
+msgid "Select items from the list"
+msgstr "তালিকা থেকে বস্তু নির্বাচন করুন"
+
+#: ../src/zenity.ui.h:16
+msgid "Select items from the list below."
+msgstr "নীচের তালিকা থেকে বস্তু নির্বাচন করুন।"
+
+#: ../src/zenity.ui.h:17
+msgid "Text View"
+msgstr "টেক্সট অনযায়ী প্রদর্শন"
+
+#: ../src/zenity.ui.h:18
+msgid "Warning"
+msgstr "সতর্কবার্তা"
+
+#: ../src/zenity.ui.h:19
+msgid "_Enter new text:"
+msgstr "নতুন টেক্সট লিখুন:(_E)"
+
+#: ../src/option.c:144
 msgid "Set the dialog title"
 msgstr "ডায়ালগ বক্সের শিরোনাম নির্ধারণ করুন"
 
-#: src/option.c:167
+#: ../src/option.c:145
 msgid "TITLE"
 msgstr "TITLE"
 
-#: src/option.c:173
+#: ../src/option.c:153
+msgid "Set the window icon"
+msgstr "উইন্ডোর আইকন নির্ধারণ করুন"
+
+#: ../src/option.c:154
+msgid "ICONPATH"
+msgstr "ICONPATH"
+
+#: ../src/option.c:162
 msgid "Set the width"
 msgstr "প্রস্থের মাপ নির্ধারণ করুন"
 
-#: src/option.c:174
+#: ../src/option.c:163
 msgid "WIDTH"
 msgstr "WIDTH"
 
-#: src/option.c:180
+#: ../src/option.c:171
 msgid "Set the height"
 msgstr "উচ্চতার পরিমাণ নির্ধারণ করুন"
 
-#: src/option.c:181
+#: ../src/option.c:172
 msgid "HEIGHT"
 msgstr "HEIGHT"
 
-#: src/option.c:187
+#: ../src/option.c:180
 msgid "Set dialog timeout in seconds"
 msgstr "ডায়ালগের মেয়াদ সেকেন্ড অনুযায়ী নির্ধারণ করুন"
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: ../src/option.c:182
 msgid "TIMEOUT"
 msgstr "TIMEOUT"
 
-#: src/option.c:195
-#, fuzzy
-msgid "Set the label of the OK button"
-msgstr "Ok (ঠিক আছে) বাটনের লেবেল নির্ধারণ করতে ব্যবহৃত"
-
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
-#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
-#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
-#: src/option.c:837 src/option.c:969
-msgid "TEXT"
-msgstr "TEXT"
-
-#: src/option.c:202
-#, fuzzy
-msgid "Set the label of the Cancel button"
-msgstr "Cancel (বাতিল) বাটনের লেবেল নির্ধারণ করতে ব্যবহৃত"
-
-#: src/option.c:209
-#, fuzzy
-msgid "Add an extra button"
-msgstr "বাতিল শীর্ষক বাটন আড়াল করা হবে"
-
-#: src/option.c:216
-#, fuzzy
-msgid "Set the modal hint"
-msgstr "ডায়ালগ বক্সের শিরোনাম নির্ধারণ করুন"
-
-#: src/option.c:226
+#: ../src/option.c:196
 msgid "Display calendar dialog"
 msgstr "বর্ষপঞ্জির ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
-#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
-#: src/option.c:836 src/option.c:968
+#: ../src/option.c:205 ../src/option.c:265 ../src/option.c:308
+#: ../src/option.c:341 ../src/option.c:453 ../src/option.c:595
+#: ../src/option.c:667 ../src/option.c:760 ../src/option.c:793
+#: ../src/option.c:898
 msgid "Set the dialog text"
 msgstr "ডায়লগ বক্সের টেক্সট নির্ধারণ করুন"
 
-#: src/option.c:240
+#: ../src/option.c:206 ../src/option.c:266 ../src/option.c:275
+#: ../src/option.c:309 ../src/option.c:342 ../src/option.c:454
+#: ../src/option.c:561 ../src/option.c:596 ../src/option.c:668
+#: ../src/option.c:677 ../src/option.c:686 ../src/option.c:737
+#: ../src/option.c:761 ../src/option.c:794 ../src/option.c:899
+msgid "TEXT"
+msgstr "TEXT"
+
+#: ../src/option.c:214
 msgid "Set the calendar day"
 msgstr "বর্ষপঞ্জিতে দিন নির্ধারণ করুন"
 
-#: src/option.c:241
+#: ../src/option.c:215
 msgid "DAY"
 msgstr "DAY"
 
-#: src/option.c:247
+#: ../src/option.c:223
 msgid "Set the calendar month"
 msgstr "বর্ষপঞ্জিতে মাস নির্ধারণ করুন"
 
-#: src/option.c:248
+#: ../src/option.c:224
 msgid "MONTH"
 msgstr "MONTH"
 
-#: src/option.c:254
+#: ../src/option.c:232
 msgid "Set the calendar year"
 msgstr "বর্ষপঞ্জিতে বৎসর নির্ধারণ করুন"
 
-#: src/option.c:255
+#: ../src/option.c:233
 msgid "YEAR"
 msgstr "YEAR"
 
-#: src/option.c:261 src/option.c:982
+#: ../src/option.c:241 ../src/option.c:916
 msgid "Set the format for the returned date"
 msgstr "প্রাপ্ত তারিখ প্রদর্শনের বিন্যাস নির্ধারণ করুন"
 
-#: src/option.c:262 src/option.c:983
+#: ../src/option.c:242 ../src/option.c:917
 msgid "PATTERN"
 msgstr "PATTERN"
 
-#: src/option.c:271
+#: ../src/option.c:256
 msgid "Display text entry dialog"
 msgstr "টেক্সেট লেখার ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:285
+#: ../src/option.c:274
 msgid "Set the entry text"
 msgstr "এন্ট্রি টেক্সট নির্ধারণ করুন"
 
-#: src/option.c:292
+#: ../src/option.c:283
 msgid "Hide the entry text"
 msgstr "এন্ট্রি টেক্সট আড়াল করুন"
 
-#: src/option.c:302
+#: ../src/option.c:299
 msgid "Display error dialog"
 msgstr "ত্রুটিসূচক ডায়ালগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
-#, fuzzy
-msgid "Set the dialog icon"
-msgstr "ডায়ালগ বক্সের শিরোনাম নির্ধারণ করুন"
-
-#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
-msgid "ICON-NAME"
-msgstr ""
-
-#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
+#: ../src/option.c:317 ../src/option.c:350 ../src/option.c:694
+#: ../src/option.c:769
 msgid "Do not enable text wrapping"
 msgstr "পংক্তি বিভাজন বৈশিষ্ট্য সক্রিয় করা হবে না"
 
-#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
-#, fuzzy
-msgid "Do not enable Pango markup"
-msgstr "পংক্তি বিভাজন বৈশিষ্ট্য সক্রিয় করা হবে না"
-
-#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
-msgid ""
-"Enable ellipsizing in the dialog text. This fixes the high window size with "
-"long texts"
-msgstr ""
-
-#: src/option.c:349
+#: ../src/option.c:332
 msgid "Display info dialog"
 msgstr "তথ্য সংক্রান্ত ডায়লগ প্রদর্শন করা হবে"
 
-#: src/option.c:396
+#: ../src/option.c:365
 msgid "Display file selection dialog"
 msgstr "ফাইল নির্বাচনের ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:403
+#: ../src/option.c:374
 msgid "Set the filename"
 msgstr "ফাইলের নাম নির্ধারণ"
 
-#: src/option.c:404 src/option.c:719
+#: ../src/option.c:375 ../src/option.c:719
 msgid "FILENAME"
 msgstr "FILENAME"
 
-#: src/option.c:410
+#: ../src/option.c:383
 msgid "Allow multiple files to be selected"
 msgstr "একাধিক ফাইল নির্বাচনের অনুমতি প্রদান করা হবে"
 
-#: src/option.c:417
+#: ../src/option.c:392
 msgid "Activate directory-only selection"
 msgstr "শুধুমাত্র-ডিরেক্টরি নির্বাচনের বৈশিষ্ট্য সক্রিয় করা হবে"
 
-#: src/option.c:424
+#: ../src/option.c:401
 msgid "Activate save mode"
 msgstr "সংরক্ষণের মোড সক্রিয় করা হবে"
 
-#: src/option.c:431 src/option.c:493 src/option.c:975
+#: ../src/option.c:410 ../src/option.c:489 ../src/option.c:907
 msgid "Set output separator character"
 msgstr "ফলাফলে প্রদর্শনে বিভাজনকারী অক্ষর নির্ধারণ করুন"
 
-#: src/option.c:432 src/option.c:494 src/option.c:976
+#: ../src/option.c:411 ../src/option.c:490 ../src/option.c:908
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
-#: src/option.c:438
-#, fuzzy
-msgid "Set a filename filter"
+#: ../src/option.c:419
+msgid "Confirm file selection if filename already exists"
+msgstr "ফাইলের নাম পূর্বে উপস্থিত থাকলে ফাইল নির্বাচন নিশ্চিত করা হবে"
+
+#: ../src/option.c:428
+msgid "Sets a filename filter"
 msgstr "ফাইলের নামের ফিল্টার নির্ধারণ করা হয়"
 
-#. Help for file-filter argument (name and patterns for file
-#. selection)
-#: src/option.c:441
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:430
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAME | PATTERN1 PATTERN2 ..."
 
-#: src/option.c:451
+#: ../src/option.c:444
 msgid "Display list dialog"
 msgstr "তালিকাসহ ডায়লগ প্রদর্শন করা হবে"
 
-#: src/option.c:465
+#: ../src/option.c:462
 msgid "Set the column header"
 msgstr "কলামের হেডার নির্ধারণ করুন"
 
-#: src/option.c:466
+#: ../src/option.c:463
 msgid "COLUMN"
 msgstr "COLUMN"
 
-#: src/option.c:472
-#, fuzzy
-msgid "Use check boxes for the first column"
+#: ../src/option.c:471
+msgid "Use check boxes for first column"
 msgstr "প্রথম কলামের জন্য চেক বক্স ব্যবহৃত হবে"
 
-#: src/option.c:479
-#, fuzzy
-msgid "Use radio buttons for the first column"
+#: ../src/option.c:480
+msgid "Use radio buttons for first column"
 msgstr "প্রথম কলামের জন্য রেডিও-বাটন ব্যবহৃত হবে"
 
-#: src/option.c:486
-#, fuzzy
-msgid "Use an image for the first column"
-msgstr "প্রথম কলামের জন্য চেক বক্স ব্যবহৃত হবে"
-
-#: src/option.c:500
+#: ../src/option.c:498
 msgid "Allow multiple rows to be selected"
 msgstr "একাধিক সারি নির্বাচনের অনুমতি প্রদান করুন"
 
-#: src/option.c:507 src/option.c:725
+#: ../src/option.c:507 ../src/option.c:727
 msgid "Allow changes to text"
 msgstr "টেক্সট পরিবর্তনের অনুমতি প্রদান করুন"
 
-#: src/option.c:514
+#: ../src/option.c:516
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -357,555 +400,330 @@ msgstr ""
 "মান প্রয়োগ করুন)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:517 src/option.c:524
+#: ../src/option.c:518 ../src/option.c:527
 msgid "NUMBER"
 msgstr "NUMBER"
 
-#: src/option.c:523
+#: ../src/option.c:526
 msgid "Hide a specific column"
 msgstr "একটি নির্দিষ্ট কলাম আড়াল করুন"
 
-#: src/option.c:530
-#, fuzzy
-msgid "Hide the column headers"
+#: ../src/option.c:535
+msgid "Hides the column headers"
 msgstr "কলামের হেডার আড়াল করতে ব্যবহৃত"
 
-#: src/option.c:537
-msgid ""
-"Change list default search function searching for text in the middle, not on "
-"the beginning"
-msgstr ""
-
-#: src/option.c:549
+#: ../src/option.c:551
 msgid "Display notification"
 msgstr "সূচনাবার্তা প্রদর্শন করা হবে"
 
-#: src/option.c:556
+#: ../src/option.c:560
 msgid "Set the notification text"
 msgstr "সূচনাবার্তার টেক্সট নির্ধারণ করুন"
 
-#: src/option.c:563
-#, fuzzy
-msgid "Set the notification icon"
-msgstr "সূচনাবার্তার টেক্সট নির্ধারণ করুন"
-
-#: src/option.c:564
-msgid "ICONPATH"
-msgstr "ICONPATH"
-
-#: src/option.c:570
+#: ../src/option.c:569
 msgid "Listen for commands on stdin"
 msgstr "stdin থেকে কমান্ডপ্রাপ্তির অপেক্ষা করা হবে"
 
-#: src/option.c:577
-#, fuzzy
-msgid "Set the notification hints"
-msgstr "সূচনাবার্তার টেক্সট নির্ধারণ করুন"
-
-#: src/option.c:589
+#: ../src/option.c:586
 msgid "Display progress indication dialog"
 msgstr "কর্মের প্রগতি চিহ্নকারী ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:603
+#: ../src/option.c:604
 msgid "Set initial percentage"
 msgstr "প্রারম্ভিক শতাংশ নির্ধারণ করুন"
 
-#: src/option.c:604
+#: ../src/option.c:605
 msgid "PERCENTAGE"
 msgstr "PERCENTAGE"
 
-#: src/option.c:610
+#: ../src/option.c:613
 msgid "Pulsate progress bar"
 msgstr "প্রগতিসূচক বার কাঁপানো হবে"
 
-#: src/option.c:618
+#: ../src/option.c:623
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "১০০% সম্পূর্ণ হলে ডায়লগ বক্স বন্ধ করা হবে"
 
-#: src/option.c:625
+#: ../src/option.c:633
+#, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "বাতিল শীর্ষক বাটন টেপা হলে প্যারেন্ট প্রসেস kill করা হবে"
 
-#: src/option.c:632
+#: ../src/option.c:643
+#, no-c-format
 msgid "Hide Cancel button"
 msgstr "বাতিল শীর্ষক বাটন আড়াল করা হবে"
 
-#: src/option.c:640
-#, no-c-format
-msgid "Estimate when progress will reach 100%"
-msgstr ""
-
-#: src/option.c:650
+#: ../src/option.c:658
 msgid "Display question dialog"
 msgstr "প্রশ্নসূচক ডায়লগ প্রদর্শন করা হবে"
 
-#: src/option.c:685
-#, fuzzy
-msgid "Give Cancel button focus by default"
-msgstr "বাতিল শীর্ষক বাটন আড়াল করা হবে"
+#: ../src/option.c:676
+msgid "Sets the label of the Ok button"
+msgstr "Ok (ঠিক আছে) বাটনের লেবেল নির্ধারণ করতে ব্যবহৃত"
 
-#: src/option.c:701
-#, fuzzy
-msgid "Suppress OK and Cancel buttons"
-msgstr "বাতিল শীর্ষক বাটন আড়াল করা হবে"
+#: ../src/option.c:685
+msgid "Sets the label of the Cancel button"
+msgstr "Cancel (বাতিল) বাটনের লেবেল নির্ধারণ করতে ব্যবহৃত"
 
-#: src/option.c:711
+#: ../src/option.c:709
 msgid "Display text information dialog"
 msgstr "টেক্সট সম্পর্কিত তথ্যের ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:718
+#: ../src/option.c:718
 msgid "Open file"
 msgstr "ফাইল খুলুন"
 
-#: src/option.c:732
+#: ../src/option.c:736
+#| msgid "Set the entry text"
 msgid "Set the text font"
 msgstr "টেক্সট ফন্ট নির্ধারণ করুন"
 
-#: src/option.c:739
-msgid "Enable an I read and agree checkbox"
-msgstr ""
-
-#: src/option.c:747
-msgid "Enable HTML support"
-msgstr ""
-
-#: src/option.c:754
-msgid ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
-msgstr ""
-
-#: src/option.c:762
-msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr ""
-
-#: src/option.c:764
-msgid "URL"
-msgstr ""
-
-#: src/option.c:771
-msgid "Auto scroll the text to the end. Only when text is captured from stdin"
-msgstr ""
-
-#: src/option.c:782
+#: ../src/option.c:751
 msgid "Display warning dialog"
 msgstr "সতর্কতাসূচক ডায়ালগ প্রদর্শন করা হবে"
 
-#: src/option.c:829
+#: ../src/option.c:784
 msgid "Display scale dialog"
 msgstr "পরিবর্ধন মাপের ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:843
+#: ../src/option.c:802
 msgid "Set initial value"
 msgstr "প্রারম্ভিক মান নির্ধারণ করুন"
 
-#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
-#: src/option.c:1017
+#: ../src/option.c:803 ../src/option.c:812 ../src/option.c:821
+#: ../src/option.c:830 ../src/option.c:965
 msgid "VALUE"
 msgstr "VALUE"
 
-#: src/option.c:850
+#: ../src/option.c:811
 msgid "Set minimum value"
 msgstr "সর্বনিম্ন মান নির্ধারণ করুন"
 
-#: src/option.c:857
+#: ../src/option.c:820
 msgid "Set maximum value"
 msgstr "সর্বোচ্চ মান নির্ধারণ করুন"
 
-#: src/option.c:864
+#: ../src/option.c:829
 msgid "Set step size"
 msgstr "আংশিক বৃদ্ধির পরিমাণ নির্ধারণ করুন"
 
-#: src/option.c:871
+#: ../src/option.c:838
 msgid "Print partial values"
 msgstr "আংশিক মান প্রিন্ট করুন"
 
-#: src/option.c:878
+#: ../src/option.c:847
 msgid "Hide value"
 msgstr "মান আড়াল করুন"
 
-#: src/option.c:888
+#: ../src/option.c:862
+#| msgid "Display info dialog"
 msgid "Display forms dialog"
 msgstr "ফর্ম সংক্রান্ত ডায়লগ প্রদর্শন করা হবে"
 
-#: src/option.c:895
+#: ../src/option.c:871
+#| msgid "Add a new entry"
 msgid "Add a new Entry in forms dialog"
 msgstr "ফর্ম সংক্রান্ত ডায়লগের মধ্যে একটি নতুন এন্ট্রি যোগ করুন"
 
-#: src/option.c:896 src/option.c:903
+#: ../src/option.c:872 ../src/option.c:881
 msgid "Field name"
 msgstr "ক্ষেত্রের নাম"
 
-#: src/option.c:902
+#: ../src/option.c:880
 msgid "Add a new Password Entry in forms dialog"
 msgstr "ফর্ম সংক্রান্ত ডায়লগের মধ্যে একটি নতুন পাসওয়ার্ড এনট্রি যোগ করুন"
 
-#: src/option.c:909
+#: ../src/option.c:889
 msgid "Add a new Calendar in forms dialog"
 msgstr "ফর্ম সংক্রান্ত ডায়লগের মধ্যে একটি নতুন বর্ষপঞ্জি যোগ করুন"
 
-#: src/option.c:910
+#: ../src/option.c:890
+#| msgid "Calendar selection"
 msgid "Calendar field name"
 msgstr "বর্ষপঞ্জি ক্ষেত্রের নাম"
 
-#: src/option.c:916
-#, fuzzy
-msgid "Add a new List in forms dialog"
-msgstr "ফর্ম সংক্রান্ত ডায়লগের মধ্যে একটি নতুন এন্ট্রি যোগ করুন"
-
-#: src/option.c:917
-msgid "List field and header name"
-msgstr ""
-
-#: src/option.c:923
-msgid "List of values for List"
-msgstr ""
-
-#: src/option.c:924 src/option.c:931 src/option.c:945
-msgid "List of values separated by |"
-msgstr ""
-
-#: src/option.c:930
-msgid "List of values for columns"
-msgstr ""
-
-#: src/option.c:937
-#, fuzzy
-msgid "Add a new combo box in forms dialog"
-msgstr "ফর্ম সংক্রান্ত ডায়লগের মধ্যে একটি নতুন এন্ট্রি যোগ করুন"
-
-#: src/option.c:938
-#, fuzzy
-msgid "Combo box field name"
-msgstr "বর্ষপঞ্জি ক্ষেত্রের নাম"
-
-#: src/option.c:944
-msgid "List of values for combo box"
-msgstr ""
-
-#: src/option.c:961
-#, fuzzy
-msgid "Show the columns header"
-msgstr "কলামের হেডার নির্ধারণ করুন"
-
-#: src/option.c:992
+#: ../src/option.c:931
 msgid "Display password dialog"
 msgstr "পাসওয়ার্ড ডায়লগ প্রদর্শন করা হবেহবে"
 
-#: src/option.c:999
+#: ../src/option.c:940
 msgid "Display the username option"
 msgstr "ব্যবহারকারীর নাম লেখার বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:1009
+#: ../src/option.c:955
 msgid "Display color selection dialog"
 msgstr "রং নির্বাচনের ডায়লগ বক্স প্রদর্শন করা হবে"
 
-#: src/option.c:1016
+#: ../src/option.c:964
 msgid "Set the color"
 msgstr "রং নির্ধারণ করুন"
 
-#: src/option.c:1023
+#: ../src/option.c:973
 msgid "Show the palette"
 msgstr "প্যালেট প্রদর্শন করা হবে"
 
-#: src/option.c:1033
+#: ../src/option.c:988
 msgid "About zenity"
 msgstr "Zenity পরিচিতি"
 
-#: src/option.c:1040
+#: ../src/option.c:997
 msgid "Print version"
 msgstr "প্রিন্ট করার যোগ্য সংস্করণ"
 
-#: src/option.c:2007
+#: ../src/option.c:1813
 msgid "General options"
 msgstr "সাধারণ বিকল্প"
 
-#: src/option.c:2008
+#: ../src/option.c:1814
 msgid "Show general options"
 msgstr "সাধারণ বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2020
+#: ../src/option.c:1824
 msgid "Calendar options"
 msgstr "বর্ষপঞ্জি সংক্রান্ত বিকল্প"
 
-#: src/option.c:2021
+#: ../src/option.c:1825
 msgid "Show calendar options"
 msgstr "বর্ষপঞ্জি সংক্রান্ত বিকল্প"
 
-#: src/option.c:2033
+#: ../src/option.c:1835
 msgid "Text entry options"
 msgstr "টেক্সট এন্ট্রি সংক্রান্ত বিকল্প"
 
-#: src/option.c:2034
+#: ../src/option.c:1836
 msgid "Show text entry options"
 msgstr "টেক্সট এন্ট্রি সংক্রান্ত বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2046
+#: ../src/option.c:1846
 msgid "Error options"
 msgstr "ত্রুটি সম্বন্ধীয় বিকল্প"
 
-#: src/option.c:2046
+#: ../src/option.c:1847
 msgid "Show error options"
 msgstr "ত্রুটি সম্বন্ধীয় বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2056
+#: ../src/option.c:1857
 msgid "Info options"
 msgstr "তথ্য সম্বন্ধীয় বিকল্প"
 
-#: src/option.c:2056
+#: ../src/option.c:1858
 msgid "Show info options"
 msgstr "তথ্য সম্বন্ধীয় বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2066
+#: ../src/option.c:1868
 msgid "File selection options"
 msgstr "ফাইল নির্বাচন সংক্রান্ত বিকল্প"
 
-#: src/option.c:2067
+#: ../src/option.c:1869
 msgid "Show file selection options"
 msgstr "ফাইল নির্বাচন সংক্রান্ত বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2079
+#: ../src/option.c:1879
 msgid "List options"
 msgstr "তালিকা সম্বন্ধীয় বিকল্প"
 
-#: src/option.c:2079
+#: ../src/option.c:1880
 msgid "Show list options"
 msgstr "তালিকা সম্বন্ধীয় বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2090
+#: ../src/option.c:1891
 msgid "Notification icon options"
 msgstr "বিজ্ঞপ্তি সম্বন্ধীয় আইকনের বিকল্প"
 
-#: src/option.c:2091
+#: ../src/option.c:1892
 msgid "Show notification icon options"
 msgstr "বিজ্ঞপ্তি সম্বন্ধীয় আইকনের বিকল্প"
 
-#: src/option.c:2105
+#: ../src/option.c:1903
 msgid "Progress options"
 msgstr "কর্ম প্রগতি সংক্রান্ত বিকল্প"
 
-#: src/option.c:2106
+#: ../src/option.c:1904
 msgid "Show progress options"
 msgstr "কর্ম প্রগতি সংক্রান্ত বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2118
+#: ../src/option.c:1914
 msgid "Question options"
 msgstr "প্রশ্ন সম্বন্ধীয় বিকল্প"
 
-#: src/option.c:2119
+#: ../src/option.c:1915
 msgid "Show question options"
 msgstr "প্রশ্ন সম্বন্ধীয় বিকল্প"
 
-#: src/option.c:2131
+#: ../src/option.c:1925
 msgid "Warning options"
 msgstr "সতর্কবার্তা সম্বন্ধীয় বিকল্প"
 
-#: src/option.c:2132
+#: ../src/option.c:1926
 msgid "Show warning options"
 msgstr "সতর্কবার্তা সম্বন্ধীয় বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2144
+#: ../src/option.c:1936
 msgid "Scale options"
 msgstr "পরিবর্ধন সংক্রান্ত বিকল্প"
 
-#: src/option.c:2144
+#: ../src/option.c:1937
 msgid "Show scale options"
 msgstr "পরিবর্ধন সংক্রান্ত বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2154
+#: ../src/option.c:1947
 msgid "Text information options"
 msgstr "টেক্সট সম্বন্ধীয় তথ্যের বিকল্প"
 
-#: src/option.c:2155
+#: ../src/option.c:1948
 msgid "Show text information options"
 msgstr "টেক্সট সম্বন্ধীয় তথ্যের বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2167
+#: ../src/option.c:1958
 msgid "Color selection options"
 msgstr "রং নির্বাচন সংক্রান্ত বিকল্প"
 
-#: src/option.c:2168
+#: ../src/option.c:1959
 msgid "Show color selection options"
 msgstr "রং নির্বাচন সংক্রান্ত বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2180
+#: ../src/option.c:1969
 msgid "Password dialog options"
 msgstr "পাসওয়ার্ড ডায়লগ সংক্রান্ত বিকল্প"
 
-#: src/option.c:2181
+#: ../src/option.c:1970
 msgid "Show password dialog options"
 msgstr "পাসওয়ার্ড ডায়লগ সম্বন্ধীয় বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2193
+#: ../src/option.c:1980
+#| msgid "Password dialog options"
 msgid "Forms dialog options"
 msgstr "ফর্ম ডায়লগ সংক্রান্ত বিকল্প"
 
-#: src/option.c:2194
+#: ../src/option.c:1981
+#| msgid "Show password dialog options"
 msgid "Show forms dialog options"
 msgstr "ফর্ম ডায়লগ সম্বন্ধীয় বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2206
+#: ../src/option.c:1991
 msgid "Miscellaneous options"
 msgstr "বিবিধ বিকল্প"
 
-#: src/option.c:2207
+#: ../src/option.c:1992
 msgid "Show miscellaneous options"
 msgstr "বিবিধ বিকল্প প্রদর্শন করা হবে"
 
-#: src/option.c:2230
+#: ../src/option.c:2017
 #, c-format
-msgid ""
-"This option is not available. Please see --help for all possible usages.\n"
+msgid "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "এই বিকল্পটি উপলব্ধ নয়। সর্বধরনের ব্যবহার প্রণালী জানতে অনুগ্রহ করে --help বিকল্পের "
 "ফলাফল পড়ুন।\n"
 
-#: src/option.c:2236
+#: ../src/option.c:2021
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s বর্তমান ডায়লগ বক্সের জন্য সমর্থিত হবে না\n"
 
-#: src/option.c:2241
+#: ../src/option.c:2025
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "ডায়লগ বক্সের ক্ষেত্রে দুই অথবা অধিক বিকল্প উল্লিখিত হয়েছে\n"
 
-#: src/password.c:96
-#, fuzzy
-msgid "Type your username and password"
-msgstr "পাসওয়ার্ড লিখুন"
-
-#. Add the username label and entry and increment the row for the
-#. * password entry so it will be added below the username.
-#.
-#: src/password.c:101
-msgid "Username:"
-msgstr "ব্যবহারকারীর নাম:"
-
-#: src/password.c:116
-msgid "Password:"
-msgstr "পাসওয়ার্ড:"
-
-#: src/progress.c:116
-#, c-format
-msgid "Time remaining: %lu:%02lu:%02lu"
-msgstr ""
-
-#: src/scale.c:66
-#, c-format
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "সর্বনিম্ন মানের তূলনায় সর্বোচ্চ মান অধিক হওয়া আবশ্যক।\n"
-
-#: src/scale.c:74
-#, c-format
-msgid "Value out of range.\n"
-msgstr "উল্লিখিত মান সীমাবহির্ভূত।\n"
-
-#: src/tree.c:405
-#, c-format
-msgid "No column titles specified for List dialog.\n"
-msgstr "তালিকা প্রদর্শনকারী ডায়লগ বক্সের ক্ষেত্রে কলামের শিরোনাম ধার্য করা হয়নি।\n"
-
-#: src/tree.c:412
-#, c-format
-msgid "You should use only one List dialog type.\n"
-msgstr "তালিকা প্রদর্শনকারী ডায়লগের ক্ষেত্রে শুধুমাত্র একটি ধরন ব্যবহার করা আবশ্যক।\n"
-
-#: src/zenity.ui:16 src/zenity.ui:31
-msgid "Adjust the scale value"
-msgstr "পরিবর্ধন মাপ পরিবর্তন করুন"
-
-#: src/zenity.ui:74
-msgid "Text View"
-msgstr "টেক্সট অনযায়ী প্রদর্শন"
-
-#: src/zenity.ui:137
-msgid "Calendar selection"
-msgstr "বর্ষপঞ্জি নির্বাচন"
-
-#: src/zenity.ui:156
-msgid "Select a date from below."
-msgstr "নীচে একটি তারিখ নির্বাচন করুন।"
-
-#: src/zenity.ui:167
-msgid "C_alendar:"
-msgstr "বর্ষপঞ্জি:(_a)"
-
-#: src/zenity.ui:172
-#, fuzzy
-msgid "Calendar"
-msgstr "বর্ষপঞ্জি:(_a)"
-
-#: src/zenity.ui:211
-msgid "Add a new entry"
-msgstr "নতুন এন্ট্রি যোগ করুন"
-
-#: src/zenity.ui:234
-msgid "_Enter new text:"
-msgstr "নতুন টেক্সট লিখুন:(_E)"
-
-#: src/zenity.ui:273
-msgid "Error"
-msgstr "ত্রুটি"
-
-#: src/zenity.ui:301
-msgid "An error has occurred."
-msgstr "ত্রুটি দেখা দিয়েছে।"
-
-#: src/zenity.ui:378
-msgid "Forms dialog"
-msgstr "ফর্ম সংক্রান্ত ডায়লগ"
-
-#: src/zenity.ui:413
-msgid "Information"
-msgstr "তথ্য"
-
-#: src/zenity.ui:438
-msgid "All updates are complete."
-msgstr "সমস্ত পরিবর্তন সম্পন্ন।"
-
-#: src/zenity.ui:466
-msgid "Progress"
-msgstr "প্রগতি"
-
-#: src/zenity.ui:481
-msgid "Running..."
-msgstr "চলমান..."
-
-#: src/zenity.ui:530
-msgid "Question"
-msgstr "প্রশ্ন"
-
-#: src/zenity.ui:553 src/zenity.ui:660
-msgid "Are you sure you want to proceed?"
-msgstr "আপনি নি নিশ্চিতরূপে এগিয়ে চলতে ইচ্ছুক?"
-
-#: src/zenity.ui:573
-msgid "Select items from the list"
-msgstr "তালিকা থেকে বস্তু নির্বাচন করুন"
-
-#: src/zenity.ui:588
-msgid "Select items from the list below."
-msgstr "নীচের তালিকা থেকে বস্তু নির্বাচন করুন।"
-
-#: src/zenity.ui:633 src/zenity.ui:693
-msgid "Warning"
-msgstr "সতর্কবার্তা"
-
-#: src/zenity.ui:716
-msgid "Type your password"
-msgstr "পাসওয়ার্ড লিখুন"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "সায়মিন্দু দাশগুপ্ত <unmadindu@bengalinux.org> \n"
-#~ "মাহে আলম খান <makl10n@yahoo.com> \n"
-#~ "রুণা ভট্টাচার্য <runabh@gmail.com> \n"
-#~ " (অঙ্কুর বাংলা প্রকল্পের তরফ থেকে)"
-
-#~ msgid "Set the window icon"
-#~ msgstr "উইন্ডোর আইকন নির্ধারণ করুন"
-
-#~ msgid "Confirm file selection if filename already exists"
-#~ msgstr "ফাইলের নাম পূর্বে উপস্থিত থাকলে ফাইল নির্বাচন নিশ্চিত করা হবে"

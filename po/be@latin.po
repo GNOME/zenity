@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 15:49-0500\n"
+"POT-Creation-Date: 2008-10-11 13:21+0300\n"
 "PO-Revision-Date: 2008-02-23 19:54+0200\n"
 "Last-Translator: Ihar Hrachyshka <booxter@lacinka.org>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -18,900 +18,587 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.9.6\n"
 
-#: src/about.c:54
-#, fuzzy
+#: ../src/about.c:65
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
 msgstr ""
 "Heta svabodnaja prahrama; ty možaš raspaŭsiudžvać jaje i/albo madyfikavać "
 "zhodna z umovami Ahulnaj hramadzkaj licenzii GNU (GNU GPL), apublikavanaj "
 "Fundacyjaj svabodnych prahramaŭ (Free Software Foundation), u versii 2 albo "
 "(pry žadańni) luboj paźniejšaj.\n"
 
-#: src/about.c:59
-#, fuzzy
+#: ../src/about.c:69
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
 msgstr ""
 "Hetaja prahrama raspaŭsiudžvajecca sa spadziavańniami, što jana budzie "
 "karysnaj, ale BIEŹ NIJAKICH HARANTYJAŬ; navat biez harantavańnia PRYDATNAŚCI "
 "DA KANKRETNAHA VYKARYSTAŃNIA. Padrabiaznaści možna pračytać u Ahulnaj "
 "hramadzkaj licenzii GNU (GNU GPL).\n"
 
-#: src/about.c:63
-#, fuzzy
+#: ../src/about.c:73
 msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 "Ty musiŭ atrymać kopiju Ahulnaj hramadzkaj licenzii GNU (GNU GPL) razam z "
 "Totemam; kali ty nie atrymaŭ jaje, napišy pra heta (pa-anhielsku) pa "
 "adrasie: Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
 "Boston, MA 02110-1301, USA."
 
-#: src/about.c:88
+#: ../src/about.c:264
+msgid "translator-credits"
+msgstr ""
+"Alaksandar Niachajčyk\n"
+"Ihar Hračyška <booxter@lacinka.org>"
+
+#: ../src/about.c:276
 msgid "Display dialog boxes from shell scripts"
 msgstr "Pakazvaje dyjalohavyja vokny sa skryptoŭ abałonki"
 
-#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
-#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
-#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
-msgid "_OK"
-msgstr ""
-
-#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
-#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
-#: src/zenity.ui:746
-msgid "_Cancel"
-msgstr ""
-
-#: src/main.c:121
-#, c-format
+#: ../src/main.c:94
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Ty pavinny akreślić typ dyjalohu. Hladzi vyjście \"zenity --help\" dla \n"
 "padrabiaźniejšych źviestak\n"
 
-#: src/msg.c:42
-msgid "_No"
-msgstr ""
-
-#: src/msg.c:44
-msgid "_Yes"
-msgstr ""
-
-#: src/notification.c:55
-#, fuzzy, c-format
-msgid "Could not parse message\n"
+#: ../src/notification.c:139
+msgid "could not parse command from stdin\n"
 msgstr "niemahčyma razabrać zahad sa standartnaha ŭvachodu\n"
 
-#: src/notification.c:142
-#, c-format
-msgid ""
-"Invalid value for a boolean typed hint.\n"
-"Supported values are 'true' or 'false'.\n"
-msgstr ""
-
-#. (iibiiay)
-#: src/notification.c:163
-#, c-format
-msgid "Unsupported hint. Skipping.\n"
-msgstr ""
-
-#. unknown hints
-#: src/notification.c:186
-#, c-format
-msgid "Unknown hint name. Skipping.\n"
-msgstr ""
-
-#: src/notification.c:247
-#, fuzzy, c-format
-msgid "Could not parse command from stdin\n"
-msgstr "niemahčyma razabrać zahad sa standartnaha ŭvachodu\n"
-
-#: src/notification.c:374
+#: ../src/notification.c:252 ../src/notification.c:269
 msgid "Zenity notification"
 msgstr "Nahadvańnie Zenity"
 
-#: src/option.c:166
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Maksymalnaja vartaść pavinna być bolšaj za minimalnuju.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Vartaść vyjšła za dazvolenyja miežy.\n"
+
+#: ../src/tree.c:320
+msgid "No column titles specified for List dialog.\n"
+msgstr "Nie akreślena nazvaŭ słupkoŭ dla akna śpisu.\n"
+
+#: ../src/tree.c:326
+msgid "You should use only one List dialog type.\n"
+msgstr "Ty pavinny vykarystoŭvać tolki adzin typ akna śpisu.\n"
+
+#: ../src/zenity.glade.h:1
+msgid "Add a new entry"
+msgstr "Dadaj novy element"
+
+#: ../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "Uzhadniaj maštabavańnie"
+
+#: ../src/zenity.glade.h:3
+msgid "All updates are complete."
+msgstr "Usie aktualizacyi skončanyja."
+
+#: ../src/zenity.glade.h:4
+msgid "An error has occurred."
+msgstr "Uźnikła pamyłka."
+
+#: ../src/zenity.glade.h:5
+msgid "Are you sure you want to proceed?"
+msgstr "Ty nasamreč chočaš praciahvać?"
+
+#: ../src/zenity.glade.h:6
+msgid "C_alendar:"
+msgstr "K_alandar:"
+
+#: ../src/zenity.glade.h:7
+msgid "Calendar selection"
+msgstr "Vybar kalendara"
+
+#: ../src/zenity.glade.h:8
+msgid "Error"
+msgstr "Pamyłka"
+
+#: ../src/zenity.glade.h:9
+msgid "Information"
+msgstr "Źviestki"
+
+#: ../src/zenity.glade.h:10
+msgid "Progress"
+msgstr "Prahres"
+
+#: ../src/zenity.glade.h:11
+msgid "Question"
+msgstr "Pytańnie"
+
+#: ../src/zenity.glade.h:12
+msgid "Running..."
+msgstr "Vykonvajecca..."
+
+#: ../src/zenity.glade.h:13
+msgid "Select a date from below."
+msgstr "Abiary nižej datu."
+
+#: ../src/zenity.glade.h:14
+msgid "Select a file"
+msgstr "Abiary fajł"
+
+#: ../src/zenity.glade.h:15
+msgid "Select items from the list"
+msgstr "Abiary elementy sa śpisu"
+
+#: ../src/zenity.glade.h:16
+msgid "Select items from the list below."
+msgstr "Abiary elementy sa śpisu, prapanavanaha nižej."
+
+#: ../src/zenity.glade.h:17
+msgid "Text View"
+msgstr "Pakaz tekstu"
+
+#: ../src/zenity.glade.h:18
+msgid "Warning"
+msgstr "Papiaredžańnie"
+
+#: ../src/zenity.glade.h:19
+msgid "_Enter new text:"
+msgstr "U_viadzi novy tekst:"
+
+#: ../src/option.c:120
 msgid "Set the dialog title"
 msgstr "Akreśl zahałovak akna"
 
-#: src/option.c:167
+#: ../src/option.c:121
 msgid "TITLE"
 msgstr "ZAHAŁOVAK"
 
-#: src/option.c:173
+#: ../src/option.c:129
+msgid "Set the window icon"
+msgstr "Akreśl ikonu akna"
+
+#: ../src/option.c:130
+msgid "ICONPATH"
+msgstr "ŚCIEŽKA_IKONY"
+
+#: ../src/option.c:138
 msgid "Set the width"
 msgstr "Akreśl šyryniu"
 
-#: src/option.c:174
+#: ../src/option.c:139
 msgid "WIDTH"
 msgstr "ŠYRYNIA"
 
-#: src/option.c:180
+#: ../src/option.c:147
 msgid "Set the height"
 msgstr "Akreśl vyšyniu"
 
-#: src/option.c:181
+#: ../src/option.c:148
 msgid "HEIGHT"
 msgstr "VYŠYNIA"
 
-#: src/option.c:187
+#: ../src/option.c:156
 msgid "Set dialog timeout in seconds"
 msgstr "Akreśl čas tryvańnia akna ŭ sekundach"
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: ../src/option.c:158
 msgid "TIMEOUT"
 msgstr "TERMIN"
 
-#: src/option.c:195
-#, fuzzy
-msgid "Set the label of the OK button"
-msgstr "Akreślaje podpis dla knopki „OK”"
-
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
-#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
-#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
-#: src/option.c:837 src/option.c:969
-msgid "TEXT"
-msgstr "TEKST"
-
-#: src/option.c:202
-#, fuzzy
-msgid "Set the label of the Cancel button"
-msgstr "Akreślaje podpis dla knopki „Anuluj”"
-
-#: src/option.c:209
-msgid "Add an extra button"
-msgstr ""
-
-#: src/option.c:216
-#, fuzzy
-msgid "Set the modal hint"
-msgstr "Akreśl zahałovak akna"
-
-#: src/option.c:226
+#: ../src/option.c:172
 msgid "Display calendar dialog"
 msgstr "Pakažy akno kalendara"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
-#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
-#: src/option.c:836 src/option.c:968
+#: ../src/option.c:181 ../src/option.c:241 ../src/option.c:284
+#: ../src/option.c:317 ../src/option.c:428 ../src/option.c:558
+#: ../src/option.c:620 ../src/option.c:704 ../src/option.c:737
 msgid "Set the dialog text"
 msgstr "Akreśl tekst akna"
 
-#: src/option.c:240
+#: ../src/option.c:182 ../src/option.c:242 ../src/option.c:251
+#: ../src/option.c:260 ../src/option.c:285 ../src/option.c:318
+#: ../src/option.c:429 ../src/option.c:526 ../src/option.c:559
+#: ../src/option.c:621 ../src/option.c:630 ../src/option.c:639
+#: ../src/option.c:705 ../src/option.c:738
+msgid "TEXT"
+msgstr "TEKST"
+
+#: ../src/option.c:190
 msgid "Set the calendar day"
 msgstr "Akreśl dzień kalendara"
 
-#: src/option.c:241
+#: ../src/option.c:191
 msgid "DAY"
 msgstr "DZIEŃ"
 
-#: src/option.c:247
+#: ../src/option.c:199
 msgid "Set the calendar month"
 msgstr "Akreśl miesiac kalendara"
 
-#: src/option.c:248
+#: ../src/option.c:200
 msgid "MONTH"
 msgstr "MIESIAC"
 
-#: src/option.c:254
+#: ../src/option.c:208
 msgid "Set the calendar year"
 msgstr "Akreśl hod kalendara"
 
-#: src/option.c:255
+#: ../src/option.c:209
 msgid "YEAR"
 msgstr "HOD"
 
-#: src/option.c:261 src/option.c:982
+#: ../src/option.c:217
 msgid "Set the format for the returned date"
 msgstr "Akreśl farmat daty dla viartańnia"
 
-#: src/option.c:262 src/option.c:983
+#: ../src/option.c:218
 msgid "PATTERN"
 msgstr "UZOR"
 
-#: src/option.c:271
+#: ../src/option.c:232
 msgid "Display text entry dialog"
 msgstr "Pakažy akno dla ŭvodu tekstu"
 
-#: src/option.c:285
+#: ../src/option.c:250
 msgid "Set the entry text"
 msgstr "Akreśl tekst dla pola ŭvodu"
 
-#: src/option.c:292
+#: ../src/option.c:259
 msgid "Hide the entry text"
 msgstr "Schavaj tekst pola ŭvodu"
 
-#: src/option.c:302
+#: ../src/option.c:275
 msgid "Display error dialog"
 msgstr "Pakažy akno pamyłki"
 
-#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
-#, fuzzy
-msgid "Set the dialog icon"
-msgstr "Akreśl zahałovak akna"
-
-#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
-msgid "ICON-NAME"
-msgstr ""
-
-#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
+#: ../src/option.c:293 ../src/option.c:326 ../src/option.c:647
+#: ../src/option.c:713
 msgid "Do not enable text wrapping"
 msgstr "Nie ŭklučaj pieranosu radkoŭ u tekście"
 
-#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
-#, fuzzy
-msgid "Do not enable Pango markup"
-msgstr "Nie ŭklučaj pieranosu radkoŭ u tekście"
-
-#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
-msgid ""
-"Enable ellipsizing in the dialog text. This fixes the high window size with "
-"long texts"
-msgstr ""
-
-#: src/option.c:349
+#: ../src/option.c:308
 msgid "Display info dialog"
 msgstr "Pakažy akno źviestak"
 
-#: src/option.c:396
+#: ../src/option.c:341
 msgid "Display file selection dialog"
 msgstr "Pakažy akno vybaru fajłu"
 
-#: src/option.c:403
+#: ../src/option.c:350
 msgid "Set the filename"
 msgstr "Akreśl nazvu fajłu"
 
-#: src/option.c:404 src/option.c:719
+#: ../src/option.c:351 ../src/option.c:672
 msgid "FILENAME"
 msgstr "NAZVA_FAJŁU"
 
-#: src/option.c:410
+#: ../src/option.c:359
 msgid "Allow multiple files to be selected"
 msgstr "Dazvol vybar niekalkich fajłaŭ"
 
-#: src/option.c:417
+#: ../src/option.c:368
 msgid "Activate directory-only selection"
 msgstr "Uklučy vybar tolki dla katalohaŭ"
 
-#: src/option.c:424
+#: ../src/option.c:377
 msgid "Activate save mode"
 msgstr "Uklučy biaśpiečny režym"
 
-#: src/option.c:431 src/option.c:493 src/option.c:975
+#: ../src/option.c:386 ../src/option.c:464
 msgid "Set output separator character"
 msgstr "Akreśl znak-separatar vyjścia"
 
-#: src/option.c:432 src/option.c:494 src/option.c:976
+#: ../src/option.c:387 ../src/option.c:465
 msgid "SEPARATOR"
 msgstr "SEPARATAR"
 
-#: src/option.c:438
-#, fuzzy
-msgid "Set a filename filter"
+#: ../src/option.c:395
+msgid "Confirm file selection if filename already exists"
+msgstr "Paćvierdź vybar fajłu, kali jon užo isnuje"
+
+#: ../src/option.c:404
+msgid "Sets a filename filter"
 msgstr "Akreślaje filter fajłaŭ"
 
-#. Help for file-filter argument (name and patterns for file
-#. selection)
-#: src/option.c:441
+#: ../src/option.c:405
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAZVA | ŠABLON1 ŠABLON2 ..."
 
-#: src/option.c:451
+#: ../src/option.c:419
 msgid "Display list dialog"
 msgstr "Pakažy akno śpisu"
 
-#: src/option.c:465
+#: ../src/option.c:437
 msgid "Set the column header"
 msgstr "Akreśl zahałovak kalony"
 
-#: src/option.c:466
+#: ../src/option.c:438
 msgid "COLUMN"
 msgstr "KALONA"
 
-#: src/option.c:472
-#, fuzzy
-msgid "Use check boxes for the first column"
+#: ../src/option.c:446
+msgid "Use check boxes for first column"
 msgstr "Užyj paznačalniki dla pieršaj kalony"
 
-#: src/option.c:479
-#, fuzzy
-msgid "Use radio buttons for the first column"
+#: ../src/option.c:455
+msgid "Use radio buttons for first column"
 msgstr "Užyj pieraklučalniki dla pieršaj kalony"
 
-#: src/option.c:486
-#, fuzzy
-msgid "Use an image for the first column"
-msgstr "Užyj paznačalniki dla pieršaj kalony"
-
-#: src/option.c:500
+#: ../src/option.c:473
 msgid "Allow multiple rows to be selected"
 msgstr "Dazvol vybar niekalkich radkoŭ"
 
-#: src/option.c:507 src/option.c:725
+#: ../src/option.c:482 ../src/option.c:680
 msgid "Allow changes to text"
 msgstr "Dazvol źmianiać tekst"
 
-#: src/option.c:514
+#: ../src/option.c:491
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "Drukuj peŭnuju kalonu (zmoŭčana 1, \"ALL\" dla druku ŭsich kalonaŭ)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:517 src/option.c:524
+#: ../src/option.c:493 ../src/option.c:502
 msgid "NUMBER"
 msgstr "NUMAR"
 
-#: src/option.c:523
+#: ../src/option.c:501
 msgid "Hide a specific column"
 msgstr "Schavaj peŭnuju kalonu"
 
-#: src/option.c:530
-#, fuzzy
-msgid "Hide the column headers"
-msgstr "Akreśl zahałovak kalony"
-
-#: src/option.c:537
-msgid ""
-"Change list default search function searching for text in the middle, not on "
-"the beginning"
-msgstr ""
-
-#: src/option.c:549
+#: ../src/option.c:516
 msgid "Display notification"
 msgstr "Pakažy nahadvańnie"
 
-#: src/option.c:556
+#: ../src/option.c:525
 msgid "Set the notification text"
 msgstr "Akreśl tekst nahadvańnia"
 
-#: src/option.c:563
-#, fuzzy
-msgid "Set the notification icon"
-msgstr "Akreśl tekst nahadvańnia"
-
-#: src/option.c:564
-msgid "ICONPATH"
-msgstr "ŚCIEŽKA_IKONY"
-
-#: src/option.c:570
+#: ../src/option.c:534
 msgid "Listen for commands on stdin"
 msgstr "Słuchaj zahady na standartnym uvachodzie"
 
-#: src/option.c:577
-#, fuzzy
-msgid "Set the notification hints"
-msgstr "Akreśl tekst nahadvańnia"
-
-#: src/option.c:589
+#: ../src/option.c:549
 msgid "Display progress indication dialog"
 msgstr "Pakažy akno indykacyi prahresu"
 
-#: src/option.c:603
+#: ../src/option.c:567
 msgid "Set initial percentage"
 msgstr "Akreśl pačatkovuju pracentavuju vartaść"
 
-#: src/option.c:604
+#: ../src/option.c:568
 msgid "PERCENTAGE"
 msgstr "PRACENT"
 
-#: src/option.c:610
+#: ../src/option.c:576
 msgid "Pulsate progress bar"
 msgstr "Mirhaj pałasoju prahresu"
 
-#: src/option.c:618
+#: ../src/option.c:586
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Začyni akno, kali budzie dasiahnuta vartaść u 100%"
 
-#: src/option.c:625
-#, fuzzy
-msgid "Kill parent process if Cancel button is pressed"
+#: ../src/option.c:596
+#, no-c-format
+msgid "Kill parent process if cancel button is pressed"
 msgstr "Zabivaj baćkoŭski praces, kali naciskajecca Anuluj"
 
-#: src/option.c:632
-msgid "Hide Cancel button"
-msgstr ""
-
-#: src/option.c:640
-#, no-c-format
-msgid "Estimate when progress will reach 100%"
-msgstr ""
-
-#: src/option.c:650
+#: ../src/option.c:611
 msgid "Display question dialog"
 msgstr "Pakažy akno z pytańniem"
 
-#: src/option.c:685
-msgid "Give Cancel button focus by default"
-msgstr ""
+#: ../src/option.c:629
+msgid "Sets the label of the Ok button"
+msgstr "Akreślaje podpis dla knopki „OK”"
 
-#: src/option.c:701
-#, fuzzy
-msgid "Suppress OK and Cancel buttons"
+#: ../src/option.c:638
+msgid "Sets the label of the Cancel button"
 msgstr "Akreślaje podpis dla knopki „Anuluj”"
 
-#: src/option.c:711
+#: ../src/option.c:662
 msgid "Display text information dialog"
 msgstr "Pakažy akno z tekstavymi źviestkami"
 
-#: src/option.c:718
+#: ../src/option.c:671
 msgid "Open file"
 msgstr "Adčyni fajł"
 
-#: src/option.c:732
-#, fuzzy
-msgid "Set the text font"
-msgstr "Akreśl tekst dla pola ŭvodu"
-
-#: src/option.c:739
-msgid "Enable an I read and agree checkbox"
-msgstr ""
-
-#: src/option.c:747
-msgid "Enable HTML support"
-msgstr ""
-
-#: src/option.c:754
-msgid ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
-msgstr ""
-
-#: src/option.c:762
-msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr ""
-
-#: src/option.c:764
-msgid "URL"
-msgstr ""
-
-#: src/option.c:771
-msgid "Auto scroll the text to the end. Only when text is captured from stdin"
-msgstr ""
-
-#: src/option.c:782
+#: ../src/option.c:695
 msgid "Display warning dialog"
 msgstr "Pakažy akno z papiaredžańniem"
 
-#: src/option.c:829
+#: ../src/option.c:728
 msgid "Display scale dialog"
 msgstr "Pakažy akno maštabavańnia"
 
-#: src/option.c:843
+#: ../src/option.c:746
 msgid "Set initial value"
 msgstr "Akreśl pačatkovuju vartaść"
 
-#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
-#: src/option.c:1017
+#: ../src/option.c:747 ../src/option.c:756 ../src/option.c:765
+#: ../src/option.c:774
 msgid "VALUE"
 msgstr "VARTAŚĆ"
 
-#: src/option.c:850
+#: ../src/option.c:755
 msgid "Set minimum value"
 msgstr "Akreśl minimalnuju vartaść"
 
-#: src/option.c:857
+#: ../src/option.c:764
 msgid "Set maximum value"
 msgstr "Akreśl maksymalnuju vartaść"
 
-#: src/option.c:864
+#: ../src/option.c:773
 msgid "Set step size"
 msgstr "Akreśl pamier kroku"
 
-#: src/option.c:871
+#: ../src/option.c:782
 msgid "Print partial values"
 msgstr "Drukuj častkovyja vartaści"
 
-#: src/option.c:878
+#: ../src/option.c:791
 msgid "Hide value"
 msgstr "Schavaj vartaść"
 
-#: src/option.c:888
-#, fuzzy
-msgid "Display forms dialog"
-msgstr "Pakažy akno źviestak"
-
-#: src/option.c:895
-#, fuzzy
-msgid "Add a new Entry in forms dialog"
-msgstr "Dadaj novy element"
-
-#: src/option.c:896 src/option.c:903
-msgid "Field name"
-msgstr ""
-
-#: src/option.c:902
-msgid "Add a new Password Entry in forms dialog"
-msgstr ""
-
-#: src/option.c:909
-msgid "Add a new Calendar in forms dialog"
-msgstr ""
-
-#: src/option.c:910
-#, fuzzy
-msgid "Calendar field name"
-msgstr "Vybar kalendara"
-
-#: src/option.c:916
-msgid "Add a new List in forms dialog"
-msgstr ""
-
-#: src/option.c:917
-msgid "List field and header name"
-msgstr ""
-
-#: src/option.c:923
-msgid "List of values for List"
-msgstr ""
-
-#: src/option.c:924 src/option.c:931 src/option.c:945
-msgid "List of values separated by |"
-msgstr ""
-
-#: src/option.c:930
-msgid "List of values for columns"
-msgstr ""
-
-#: src/option.c:937
-msgid "Add a new combo box in forms dialog"
-msgstr ""
-
-#: src/option.c:938
-msgid "Combo box field name"
-msgstr ""
-
-#: src/option.c:944
-msgid "List of values for combo box"
-msgstr ""
-
-#: src/option.c:961
-#, fuzzy
-msgid "Show the columns header"
-msgstr "Akreśl zahałovak kalony"
-
-#: src/option.c:992
-#, fuzzy
-msgid "Display password dialog"
-msgstr "Pakažy akno pamyłki"
-
-#: src/option.c:999
-#, fuzzy
-msgid "Display the username option"
-msgstr "Pakažy akno dla ŭvodu tekstu"
-
-#: src/option.c:1009
-#, fuzzy
-msgid "Display color selection dialog"
-msgstr "Pakažy akno vybaru fajłu"
-
-#: src/option.c:1016
-#, fuzzy
-msgid "Set the color"
-msgstr "Akreśl zahałovak kalony"
-
-#: src/option.c:1023
-#, fuzzy
-msgid "Show the palette"
-msgstr "Akreśl zahałovak akna"
-
-#: src/option.c:1033
+#: ../src/option.c:806
 msgid "About zenity"
 msgstr "Pra Zenity"
 
-#: src/option.c:1040
+#: ../src/option.c:815
 msgid "Print version"
 msgstr "Vyviedzi versiju"
 
-#: src/option.c:2007
+#: ../src/option.c:1470
 msgid "General options"
 msgstr "Ahulnyja opcyi"
 
-#: src/option.c:2008
+#: ../src/option.c:1471
 msgid "Show general options"
 msgstr "Pakažy ahulnyja opcyi"
 
-#: src/option.c:2020
+#: ../src/option.c:1481
 msgid "Calendar options"
 msgstr "Opcyi kalendara"
 
-#: src/option.c:2021
+#: ../src/option.c:1482
 msgid "Show calendar options"
 msgstr "Pakažy opcyi kalendara"
 
-#: src/option.c:2033
+#: ../src/option.c:1492
 msgid "Text entry options"
 msgstr "Opcyi pola ŭvodu"
 
-#: src/option.c:2034
+#: ../src/option.c:1493
 msgid "Show text entry options"
 msgstr "Pakažy opcyi pola ŭvodu tekstu"
 
-#: src/option.c:2046
+#: ../src/option.c:1503
 msgid "Error options"
 msgstr "Opcyi pamyłki"
 
-#: src/option.c:2046
+#: ../src/option.c:1504
 msgid "Show error options"
 msgstr "Pakažy opcyi akna pamyłki"
 
-#: src/option.c:2056
+#: ../src/option.c:1514
 msgid "Info options"
 msgstr "Opcyi źviestak"
 
-#: src/option.c:2056
+#: ../src/option.c:1515
 msgid "Show info options"
 msgstr "Pakažy opcyi akna źviestak"
 
-#: src/option.c:2066
+#: ../src/option.c:1525
 msgid "File selection options"
 msgstr "Opcyi vybaru fajłu"
 
-#: src/option.c:2067
+#: ../src/option.c:1526
 msgid "Show file selection options"
 msgstr "Pakažy opcyi akna vybaru fajłu"
 
-#: src/option.c:2079
+#: ../src/option.c:1536
 msgid "List options"
 msgstr "Opcyi śpisu"
 
-#: src/option.c:2079
+#: ../src/option.c:1537
 msgid "Show list options"
 msgstr "Pakažy opcyi śpisu elementaŭ"
 
-#: src/option.c:2090
+#: ../src/option.c:1547
 msgid "Notification icon options"
 msgstr "Opcyi ikony nahadvańnia"
 
-#: src/option.c:2091
+#: ../src/option.c:1548
 msgid "Show notification icon options"
 msgstr "Pakažy opcyi ikony nahadvańnia"
 
-#: src/option.c:2105
+#: ../src/option.c:1558
 msgid "Progress options"
 msgstr "Opcyi prahresu"
 
-#: src/option.c:2106
+#: ../src/option.c:1559
 msgid "Show progress options"
 msgstr "Pakažy opcyi pałasy prahresu"
 
-#: src/option.c:2118
+#: ../src/option.c:1569
 msgid "Question options"
 msgstr "Opcyi pytańnia"
 
-#: src/option.c:2119
+#: ../src/option.c:1570
 msgid "Show question options"
 msgstr "Pakažy opcyi akna pytańnia"
 
-#: src/option.c:2131
+#: ../src/option.c:1580
 msgid "Warning options"
 msgstr "Opcyi papiaredžańnia"
 
-#: src/option.c:2132
+#: ../src/option.c:1581
 msgid "Show warning options"
 msgstr "Pakažy opcyi akna papiaredžańnia"
 
-#: src/option.c:2144
+#: ../src/option.c:1591
 msgid "Scale options"
 msgstr "Opcyi maštabavańnia"
 
-#: src/option.c:2144
+#: ../src/option.c:1592
 msgid "Show scale options"
 msgstr "Pakažy opcyi maštabavańnia"
 
-#: src/option.c:2154
+#: ../src/option.c:1602
 msgid "Text information options"
 msgstr "Opcyi tekstavych źviestak"
 
-#: src/option.c:2155
+#: ../src/option.c:1603
 msgid "Show text information options"
 msgstr "Pakažy opcyi tekstavych źviestak"
 
-#: src/option.c:2167
-#, fuzzy
-msgid "Color selection options"
-msgstr "Opcyi vybaru fajłu"
-
-#: src/option.c:2168
-#, fuzzy
-msgid "Show color selection options"
-msgstr "Pakažy opcyi akna vybaru fajłu"
-
-#: src/option.c:2180
-#, fuzzy
-msgid "Password dialog options"
-msgstr "Opcyi papiaredžańnia"
-
-#: src/option.c:2181
-#, fuzzy
-msgid "Show password dialog options"
-msgstr "Pakažy opcyi akna papiaredžańnia"
-
-#: src/option.c:2193
-#, fuzzy
-msgid "Forms dialog options"
-msgstr "Pakažy opcyi akna źviestak"
-
-#: src/option.c:2194
-#, fuzzy
-msgid "Show forms dialog options"
-msgstr "Pakažy opcyi maštabavańnia"
-
-#: src/option.c:2206
+#: ../src/option.c:1613
 msgid "Miscellaneous options"
 msgstr "Raznastajnyja opcyi"
 
-#: src/option.c:2207
+#: ../src/option.c:1614
 msgid "Show miscellaneous options"
 msgstr "Pakažy raznastajnyja opcyi"
 
-#: src/option.c:2230
-#, c-format
+#: ../src/option.c:1639
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Hetaja opcyja niedastupnaja. Hladzi --help dla mahčymych varyjantaŭ "
 "vykarystańnia.\n"
 
-#: src/option.c:2236
+#: ../src/option.c:1643
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s nie padtrymlivajecca dla hetaha akna\n"
 
-#: src/option.c:2241
-#, c-format
+#: ../src/option.c:1647
 msgid "Two or more dialog options specified\n"
 msgstr "Akreślena niekalki opcyjaŭ akna\n"
-
-#: src/password.c:96
-msgid "Type your username and password"
-msgstr ""
-
-#. Add the username label and entry and increment the row for the
-#. * password entry so it will be added below the username.
-#.
-#: src/password.c:101
-msgid "Username:"
-msgstr ""
-
-#: src/password.c:116
-msgid "Password:"
-msgstr ""
-
-#: src/progress.c:116
-#, c-format
-msgid "Time remaining: %lu:%02lu:%02lu"
-msgstr ""
-
-#: src/scale.c:66
-#, c-format
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Maksymalnaja vartaść pavinna być bolšaj za minimalnuju.\n"
-
-#: src/scale.c:74
-#, c-format
-msgid "Value out of range.\n"
-msgstr "Vartaść vyjšła za dazvolenyja miežy.\n"
-
-#: src/tree.c:405
-#, c-format
-msgid "No column titles specified for List dialog.\n"
-msgstr "Nie akreślena nazvaŭ słupkoŭ dla akna śpisu.\n"
-
-#: src/tree.c:412
-#, c-format
-msgid "You should use only one List dialog type.\n"
-msgstr "Ty pavinny vykarystoŭvać tolki adzin typ akna śpisu.\n"
-
-#: src/zenity.ui:16 src/zenity.ui:31
-msgid "Adjust the scale value"
-msgstr "Uzhadniaj maštabavańnie"
-
-#: src/zenity.ui:74
-msgid "Text View"
-msgstr "Pakaz tekstu"
-
-#: src/zenity.ui:137
-msgid "Calendar selection"
-msgstr "Vybar kalendara"
-
-#: src/zenity.ui:156
-msgid "Select a date from below."
-msgstr "Abiary nižej datu."
-
-#: src/zenity.ui:167
-msgid "C_alendar:"
-msgstr "K_alandar:"
-
-#: src/zenity.ui:172
-#, fuzzy
-msgid "Calendar"
-msgstr "K_alandar:"
-
-#: src/zenity.ui:211
-msgid "Add a new entry"
-msgstr "Dadaj novy element"
-
-#: src/zenity.ui:234
-msgid "_Enter new text:"
-msgstr "U_viadzi novy tekst:"
-
-#: src/zenity.ui:273
-msgid "Error"
-msgstr "Pamyłka"
-
-#: src/zenity.ui:301
-msgid "An error has occurred."
-msgstr "Uźnikła pamyłka."
-
-#: src/zenity.ui:378
-msgid "Forms dialog"
-msgstr ""
-
-#: src/zenity.ui:413
-msgid "Information"
-msgstr "Źviestki"
-
-#: src/zenity.ui:438
-msgid "All updates are complete."
-msgstr "Usie aktualizacyi skončanyja."
-
-#: src/zenity.ui:466
-msgid "Progress"
-msgstr "Prahres"
-
-#: src/zenity.ui:481
-msgid "Running..."
-msgstr "Vykonvajecca..."
-
-#: src/zenity.ui:530
-msgid "Question"
-msgstr "Pytańnie"
-
-#: src/zenity.ui:553 src/zenity.ui:660
-msgid "Are you sure you want to proceed?"
-msgstr "Ty nasamreč chočaš praciahvać?"
-
-#: src/zenity.ui:573
-msgid "Select items from the list"
-msgstr "Abiary elementy sa śpisu"
-
-#: src/zenity.ui:588
-msgid "Select items from the list below."
-msgstr "Abiary elementy sa śpisu, prapanavanaha nižej."
-
-#: src/zenity.ui:633 src/zenity.ui:693
-msgid "Warning"
-msgstr "Papiaredžańnie"
-
-#: src/zenity.ui:716
-msgid "Type your password"
-msgstr ""
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Alaksandar Niachajčyk\n"
-#~ "Ihar Hračyška <booxter@lacinka.org>"
-
-#~ msgid "Select a file"
-#~ msgstr "Abiary fajł"
-
-#~ msgid "Set the window icon"
-#~ msgstr "Akreśl ikonu akna"
-
-#~ msgid "Confirm file selection if filename already exists"
-#~ msgstr "Paćvierdź vybar fajłu, kali jon užo isnuje"

@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 15:49-0500\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
+"POT-Creation-Date: 2020-02-25 16:44+0000\n"
 "PO-Revision-Date: 2020-03-10 18:45+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 20.03.70\n"
 
-#: src/about.c:54
+#: src/about.c:60
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -37,7 +37,7 @@ msgstr ""
 "Foundation; версії 2 цієї ліцензії, або (на вашу думку) будь-якою пізнішої "
 "версії.\n"
 
-#: src/about.c:59
+#: src/about.c:65
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -49,7 +49,7 @@ msgstr ""
 "ЦІННОСТІ чи ПРИДАТНОСТІ ДЛЯ БУДЬ-ЯКИХ ЦІЛЕЙ. Докладніше про це можете "
 "прочитати в GNU Lesser General Public License.\n"
 
-#: src/about.c:63
+#: src/about.c:69
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -59,44 +59,45 @@ msgstr ""
 "програмою; якщо це не так, напишіть у Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
-#: src/about.c:88
+#: src/about.c:260
+msgid "translator-credits"
+msgstr ""
+"Юрій Сирота <yuriy@beer.com>\n"
+"Максим Дзюманенко <dziumanenko@gmail.com>\n"
+"Daniel Korostil <ted.korostiled@gmail.com>"
+
+#: src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "Показ діалогових вікон зі скриптів оболонки"
 
-#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
-#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
-#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
 msgid "_OK"
 msgstr "_Гаразд"
 
-#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
-#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
-#: src/zenity.ui:746
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: src/main.c:121
-#, c-format
+#: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Потрібно вказати тип діалогового вікна. Скористуйтесь «zenity --help» для "
 "докладнішої інформації\n"
 
-#: src/msg.c:42
+#: src/msg.c:38
 msgid "_No"
 msgstr "_Ні"
 
-#: src/msg.c:44
+#: src/msg.c:40
 msgid "_Yes"
 msgstr "_Так"
 
-#: src/notification.c:55
-#, c-format
+#: src/notification.c:50
+#| msgid "Could not parse message from stdin\n"
 msgid "Could not parse message\n"
 msgstr "Не вдалося проаналізувати повідомлення\n"
 
-#: src/notification.c:142
-#, c-format
+#: src/notification.c:132
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
@@ -105,244 +106,271 @@ msgstr ""
 "Підтримувані значення — «true» або «false».\n"
 
 #. (iibiiay)
-#: src/notification.c:163
-#, c-format
+#: src/notification.c:149
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Непідтримувана підказка. Пропускаємо.\n"
 
 #. unknown hints
-#: src/notification.c:186
-#, c-format
+#: src/notification.c:166
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Невідома назва підказки. Пропускаємо.\n"
 
-#: src/notification.c:247
-#, c-format
+#: src/notification.c:218
+#| msgid "could not parse command from stdin\n"
 msgid "Could not parse command from stdin\n"
 msgstr "Не вдалося проаналізувати команду зі stdin\n"
 
-#: src/notification.c:374
+#: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Сповіщення Zenity"
 
-#: src/option.c:166
+#: src/option.c:164
 msgid "Set the dialog title"
 msgstr "Вказати заголовок діалогу"
 
-#: src/option.c:167
+#: src/option.c:165
 msgid "TITLE"
 msgstr "ЗАГОЛОВОК"
 
-#: src/option.c:173
+#: src/option.c:171
+msgid "Set the window icon"
+msgstr "Вказати піктограму вікна"
+
+#: src/option.c:172
+msgid "ICONPATH"
+msgstr "ШЛЯХ"
+
+#: src/option.c:178
 msgid "Set the width"
 msgstr "Вказати ширину"
 
-#: src/option.c:174
+#: src/option.c:179
 msgid "WIDTH"
 msgstr "ШИРИНА"
 
-#: src/option.c:180
+#: src/option.c:185
 msgid "Set the height"
 msgstr "Вказати висоту"
 
-#: src/option.c:181
+#: src/option.c:186
 msgid "HEIGHT"
 msgstr "ВИСОТА"
 
-#: src/option.c:187
+#: src/option.c:192
 msgid "Set dialog timeout in seconds"
 msgstr "Вказати час очікування діалогу в секундах"
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: src/option.c:194
 msgid "TIMEOUT"
 msgstr "ТАЙМАУТ"
 
-#: src/option.c:195
+#: src/option.c:200
+#| msgid "Sets the label of the Ok button"
 msgid "Set the label of the OK button"
 msgstr "Вказати мітку для кнопки «Гаразд»"
 
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
-#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
-#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
-#: src/option.c:837 src/option.c:969
+#: src/option.c:201 src/option.c:208 src/option.c:215 src/option.c:245
+#: src/option.c:289 src/option.c:296 src/option.c:319 src/option.c:362
+#: src/option.c:468 src/option.c:565 src/option.c:579 src/option.c:598
+#: src/option.c:658 src/option.c:730 src/option.c:737 src/option.c:786
+#: src/option.c:829 src/option.c:960
 msgid "TEXT"
 msgstr "ТЕКСТ"
 
-#: src/option.c:202
+#: src/option.c:207
+#| msgid "Sets the label of the Cancel button"
 msgid "Set the label of the Cancel button"
 msgstr "Вказати мітку для кнопки «Скасувати»"
 
-#: src/option.c:209
+#: src/option.c:214
+#| msgid "Hide Cancel button"
 msgid "Add an extra button"
 msgstr "Додати додаткову кнопку"
 
-#: src/option.c:216
+#: src/option.c:221
 msgid "Set the modal hint"
 msgstr "Вказати модальну підказку"
 
-#: src/option.c:226
+#: src/option.c:228
+#| msgid "Set the window icon"
+msgid "Set the parent window to attach to"
+msgstr "Вказати батьківське вікно, до якого слід долучити віджет"
+
+#: src/option.c:229
+msgid "WINDOW"
+msgstr "ВІКНО"
+
+#: src/option.c:237
 msgid "Display calendar dialog"
 msgstr "Показати діалог календаря"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
-#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
-#: src/option.c:836 src/option.c:968
+#: src/option.c:244 src/option.c:288 src/option.c:318 src/option.c:361
+#: src/option.c:467 src/option.c:597 src/option.c:657 src/option.c:785
+#: src/option.c:828 src/option.c:959
 msgid "Set the dialog text"
 msgstr "Вказати текст діалогу"
 
-#: src/option.c:240
+#: src/option.c:251
 msgid "Set the calendar day"
 msgstr "Вказати день у календарі"
 
-#: src/option.c:241
+#: src/option.c:252
 msgid "DAY"
 msgstr "ДЕНЬ"
 
-#: src/option.c:247
+#: src/option.c:258
 msgid "Set the calendar month"
 msgstr "Вказати місяць у календарі"
 
-#: src/option.c:248
+#: src/option.c:259
 msgid "MONTH"
 msgstr "МІСЯЦЬ"
 
-#: src/option.c:254
+#: src/option.c:265
 msgid "Set the calendar year"
 msgstr "Вказати рік у календарі"
 
-#: src/option.c:255
+#: src/option.c:266
 msgid "YEAR"
 msgstr "РІК"
 
-#: src/option.c:261 src/option.c:982
+#: src/option.c:272 src/option.c:973
 msgid "Set the format for the returned date"
 msgstr "Вказати формат дати, що повертатиметься"
 
-#: src/option.c:262 src/option.c:983
+#: src/option.c:273 src/option.c:974
 msgid "PATTERN"
 msgstr "ШАБЛОН"
 
-#: src/option.c:271
+#: src/option.c:281
 msgid "Display text entry dialog"
 msgstr "Показати вікно з полем вводу"
 
-#: src/option.c:285
+#: src/option.c:295
 msgid "Set the entry text"
 msgstr "Вказати текст поля"
 
-#: src/option.c:292
+#: src/option.c:302
 msgid "Hide the entry text"
 msgstr "Сховати текст поля"
 
-#: src/option.c:302
+#: src/option.c:311
 msgid "Display error dialog"
 msgstr "Показати помилку діалогу"
 
-#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
+#: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
 msgid "Set the dialog icon"
 msgstr "Вказати піктограму вікна"
 
-#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
+#: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
 msgid "ICON-NAME"
 msgstr "ICON-NAME"
 
-#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
+#: src/option.c:332 src/option.c:375 src/option.c:671 src/option.c:799
 msgid "Do not enable text wrapping"
 msgstr "Не вмикати перенесення тексту"
 
-#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
+#: src/option.c:339 src/option.c:382 src/option.c:678 src/option.c:806
+#| msgid "Do not enable pango markup"
 msgid "Do not enable Pango markup"
 msgstr "Не вмикати розмітку Pango"
 
-#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
+#: src/option.c:345 src/option.c:388 src/option.c:691 src/option.c:812
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
 msgstr ""
-"Увімкнути можливість обрізання тексту у діалоговому вікні трьома крапками. "
-"Так можна виправити розмір вікна за висотою для довгих фрагментів тексту."
+"Увімкнути можливість обрізання тексту у діалоговому вікні трьома крапками."
+" Так можна виправити розмір вікна за висотою для довгих фрагментів тексту."
 
-#: src/option.c:349
+#: src/option.c:354
 msgid "Display info dialog"
 msgstr "Показати діалог інформації"
 
-#: src/option.c:396
+#: src/option.c:398
 msgid "Display file selection dialog"
 msgstr "Показати діалог вибору файла"
 
-#: src/option.c:403
+#: src/option.c:405
 msgid "Set the filename"
 msgstr "Вказати назву файла"
 
-#: src/option.c:404 src/option.c:719
+#: src/option.c:406 src/option.c:716
 msgid "FILENAME"
 msgstr "НАЗВА"
 
-#: src/option.c:410
+#: src/option.c:412
 msgid "Allow multiple files to be selected"
 msgstr "Дозволити вибирати кілька файлів"
 
-#: src/option.c:417
+#: src/option.c:419
 msgid "Activate directory-only selection"
 msgstr "Активувати виділення лише каталогів"
 
-#: src/option.c:424
+#: src/option.c:426
 msgid "Activate save mode"
 msgstr "Активувати режим збереження"
 
-#: src/option.c:431 src/option.c:493 src/option.c:975
+#: src/option.c:433 src/option.c:502 src/option.c:966
 msgid "Set output separator character"
 msgstr "Вказати символ розділення для виводу"
 
-#: src/option.c:432 src/option.c:494 src/option.c:976
+#: src/option.c:434 src/option.c:503 src/option.c:967
 msgid "SEPARATOR"
 msgstr "ВІДОКРЕМЛЮВАЧ"
 
-#: src/option.c:438
+#: src/option.c:440
+msgid "Confirm file selection if filename already exists"
+msgstr "Підтвердити вибір файла, якщо назва файла вже існує"
+
+#: src/option.c:448
+#| msgid "Sets a filename filter"
 msgid "Set a filename filter"
 msgstr "Вказати фільтр назв файлів"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
-#: src/option.c:441
+#: src/option.c:451
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "НАЗВА | ШАБЛОН1 ШАБЛОН2 …"
 
-#: src/option.c:451
+#: src/option.c:460
 msgid "Display list dialog"
 msgstr "Показати діалог списку"
 
-#: src/option.c:465
+#: src/option.c:474
 msgid "Set the column header"
 msgstr "Вказати заголовок стовпчика"
 
-#: src/option.c:466
+#: src/option.c:475
 msgid "COLUMN"
 msgstr "СТОВПЧИК"
 
-#: src/option.c:472
+#: src/option.c:481
+#| msgid "Use check boxes for first column"
 msgid "Use check boxes for the first column"
 msgstr "Використовувати прапорці для першого стовпчика"
 
-#: src/option.c:479
+#: src/option.c:488
+#| msgid "Use radio buttons for first column"
 msgid "Use radio buttons for the first column"
 msgstr "Використовувати перемикачі для першого стовпчика"
 
-#: src/option.c:486
+#: src/option.c:495
+#| msgid "Use an image for first column"
 msgid "Use an image for the first column"
 msgstr "Використовувати зображення для першого стовпця"
 
-#: src/option.c:500
+#: src/option.c:509
 msgid "Allow multiple rows to be selected"
 msgstr "Дозволити виділяти декілька рядків"
 
-#: src/option.c:507 src/option.c:725
+#: src/option.c:516 src/option.c:722
 msgid "Allow changes to text"
 msgstr "Дозволити змінювати текст"
 
-#: src/option.c:514
+#: src/option.c:523
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -351,81 +379,74 @@ msgstr ""
 "для виводу всіх стовпчиків)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:517 src/option.c:524
+#: src/option.c:526 src/option.c:533
 msgid "NUMBER"
 msgstr "ЧИСЛО"
 
-#: src/option.c:523
+#: src/option.c:532
 msgid "Hide a specific column"
 msgstr "Сховати вказаний стовпчик"
 
-#: src/option.c:530
+#: src/option.c:539
+#| msgid "Hides the column headers"
 msgid "Hide the column headers"
 msgstr "Приховати заголовки стовпчиків"
 
-#: src/option.c:537
+#: src/option.c:546
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
 msgstr ""
-"Змінити типову функціональну можливість пошуку у списку так, щоб пошук "
-"виконувався від середини списку, а не його початку."
+"Змінити типову функціональну можливість пошуку у списку так, щоб пошук"
+" виконувався від середини списку, а не його початку."
 
-#: src/option.c:549
+#: src/option.c:557
 msgid "Display notification"
 msgstr "Показати сповіщення"
 
-#: src/option.c:556
+#: src/option.c:564
 msgid "Set the notification text"
 msgstr "Вказати текст сповіщення"
 
-#: src/option.c:563
-#, fuzzy
-msgid "Set the notification icon"
-msgstr "Вказати підказки сповіщення"
-
-#: src/option.c:564
-msgid "ICONPATH"
-msgstr "ШЛЯХ"
-
-#: src/option.c:570
+#: src/option.c:571
 msgid "Listen for commands on stdin"
 msgstr "Приймати команди з stdin"
 
-#: src/option.c:577
+#: src/option.c:578
+#| msgid "Set the notification text"
 msgid "Set the notification hints"
 msgstr "Вказати підказки сповіщення"
 
-#: src/option.c:589
+#: src/option.c:590
 msgid "Display progress indication dialog"
 msgstr "Показати діалог з індикатором поступу"
 
-#: src/option.c:603
+#: src/option.c:604
 msgid "Set initial percentage"
 msgstr "Вказати початкові відсотки"
 
-#: src/option.c:604
+#: src/option.c:605
 msgid "PERCENTAGE"
 msgstr "ВІДСОТОК"
 
-#: src/option.c:610
+#: src/option.c:611
 msgid "Pulsate progress bar"
 msgstr "Пульсівна панель поступу"
 
-#: src/option.c:618
+#: src/option.c:619
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Прибрати діалог, коли буде досягнуто 100%"
 
-#: src/option.c:625
+#: src/option.c:626
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Вбити батьківський процес, якщо натиснуто кнопку «Скасувати»"
 
-#: src/option.c:632
+#: src/option.c:633
 msgid "Hide Cancel button"
 msgstr "Сховати кнопку «Скасувати»"
 
-#: src/option.c:640
+#: src/option.c:641
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Оцінка часу, який потрібен для досягнення рівня поступу 100%"
@@ -434,482 +455,464 @@ msgstr "Оцінка часу, який потрібен для досягнен
 msgid "Display question dialog"
 msgstr "Показати вікно запитання"
 
-#: src/option.c:685
+#: src/option.c:684
+#| msgid "Hide Cancel button"
 msgid "Give Cancel button focus by default"
 msgstr "Передати типово фокус на кнопку «Скасувати»"
 
-#: src/option.c:701
+#: src/option.c:698
+#| msgid "Hide Cancel button"
 msgid "Suppress OK and Cancel buttons"
 msgstr "Придушити показ кнопок «Гаразд» і «Скасувати»"
 
-#: src/option.c:711
+#: src/option.c:708
 msgid "Display text information dialog"
 msgstr "Показати діалог текстової інформації"
 
-#: src/option.c:718
+#: src/option.c:715
 msgid "Open file"
 msgstr "Відкрити файл"
 
-#: src/option.c:732
+#: src/option.c:729
 msgid "Set the text font"
 msgstr "Вказати шрифт тексту"
 
-#: src/option.c:739
+#: src/option.c:736
 msgid "Enable an I read and agree checkbox"
 msgstr "Увімкнути позначку «Я прочитав і погоджуюсь»"
 
-#: src/option.c:747
+#: src/option.c:744
+#| msgid "Enable html support"
 msgid "Enable HTML support"
 msgstr "Увімкнути підтримку HTML"
 
-#: src/option.c:754
+#: src/option.c:751
+#| msgid "Sets an url instead of a file. Only works if you use --html option"
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr ""
-"Не вмикати взаємодію користувача із вікном WebView. Працює лише за "
-"використання параметра --html"
+"Не вмикати взаємодію користувача із вікном WebView. Працює лише за"
+" використання параметра --html"
 
-#: src/option.c:762
+#: src/option.c:759
+#| msgid "Sets an url instead of a file. Only works if you use --html option"
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "Вказати адресу замість файла. Працює лише за використання параметра --html"
 
-#: src/option.c:764
+#: src/option.c:761
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:771
+#: src/option.c:768
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
-"Автоматично гортати текст до кінця. Лише якщо текст захоплено зі "
-"стандартного джерела вхідних даних (stdin)"
+"Автоматично гортати текст до кінця. Лише якщо текст захоплено зі стандартного"
+" джерела вхідних даних (stdin)"
 
-#: src/option.c:782
+#: src/option.c:778
 msgid "Display warning dialog"
 msgstr "Показати діалог попередження"
 
-#: src/option.c:829
+#: src/option.c:821
 msgid "Display scale dialog"
 msgstr "Показати діалог масштабу"
 
-#: src/option.c:843
+#: src/option.c:835
 msgid "Set initial value"
 msgstr "Вказати початкове значення"
 
-#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
-#: src/option.c:1017
+#: src/option.c:836 src/option.c:843 src/option.c:850 src/option.c:857
+#: src/option.c:1008
 msgid "VALUE"
 msgstr "ЗНАЧЕННЯ"
 
-#: src/option.c:850
+#: src/option.c:842
 msgid "Set minimum value"
 msgstr "Вказати мінімальне значення"
 
-#: src/option.c:857
+#: src/option.c:849
 msgid "Set maximum value"
 msgstr "Вказати максимальне значення"
 
-#: src/option.c:864
+#: src/option.c:856
 msgid "Set step size"
 msgstr "Вказати розмір кроку"
 
-#: src/option.c:871
+#: src/option.c:863
 msgid "Print partial values"
 msgstr "Виводити часткові значення"
 
-#: src/option.c:878
+#: src/option.c:870
 msgid "Hide value"
 msgstr "Сховати величину"
 
-#: src/option.c:888
+#: src/option.c:879
 msgid "Display forms dialog"
 msgstr "Показати діалог форм"
 
-#: src/option.c:895
+#: src/option.c:886
 msgid "Add a new Entry in forms dialog"
 msgstr "Додати нове поле в діалог форм"
 
-#: src/option.c:896 src/option.c:903
+#: src/option.c:887 src/option.c:894
 msgid "Field name"
 msgstr "Назва поля"
 
-#: src/option.c:902
+#: src/option.c:893
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Додати нове поле вводу пароля в діалог форм"
 
-#: src/option.c:909
+#: src/option.c:900
 msgid "Add a new Calendar in forms dialog"
 msgstr "Додати новий календар у діалог форм"
 
-#: src/option.c:910
+#: src/option.c:901
 msgid "Calendar field name"
 msgstr "Поле назви календаря"
 
-#: src/option.c:916
+#: src/option.c:907
 msgid "Add a new List in forms dialog"
 msgstr "Додати новий список в діалог форм"
 
-#: src/option.c:917
+#: src/option.c:908
 msgid "List field and header name"
 msgstr "Поле списку та назва заголовку"
 
-#: src/option.c:923
+#: src/option.c:914
 msgid "List of values for List"
 msgstr "Значення списку для списку"
 
-#: src/option.c:924 src/option.c:931 src/option.c:945
+#: src/option.c:915 src/option.c:922 src/option.c:936
 msgid "List of values separated by |"
 msgstr "Значення списку, розділені |"
 
-#: src/option.c:930
+#: src/option.c:921
 msgid "List of values for columns"
 msgstr "Значення списку для стовпців"
 
-#: src/option.c:937
+#: src/option.c:928
+#| msgid "Add a new List in forms dialog"
 msgid "Add a new combo box in forms dialog"
 msgstr "Додати новий спадний список до вікна форм"
 
-#: src/option.c:938
+#: src/option.c:929
+#| msgid "Calendar field name"
 msgid "Combo box field name"
 msgstr "Назва поля спадного списку"
 
-#: src/option.c:944
+#: src/option.c:935
+#| msgid "List of values for columns"
 msgid "List of values for combo box"
 msgstr "Список значень для спадного списку"
 
-#: src/option.c:961
+#: src/option.c:952
 msgid "Show the columns header"
 msgstr "Показувати заголовки стовпців"
 
-#: src/option.c:992
+#: src/option.c:983
 msgid "Display password dialog"
 msgstr "Показати діалог вводу пароля"
 
-#: src/option.c:999
+#: src/option.c:990
 msgid "Display the username option"
 msgstr "Показати параметри користувача"
 
-#: src/option.c:1009
+#: src/option.c:1000
 msgid "Display color selection dialog"
 msgstr "Показати діалог вибору кольору"
 
-#: src/option.c:1016
+#: src/option.c:1007
 msgid "Set the color"
 msgstr "Вказати колір"
 
-#: src/option.c:1023
+#: src/option.c:1014
 msgid "Show the palette"
 msgstr "Показати палітру"
 
-#: src/option.c:1033
+#: src/option.c:1023
 msgid "About zenity"
 msgstr "Про Zenity"
 
-#: src/option.c:1040
+#: src/option.c:1030
 msgid "Print version"
 msgstr "Показати версію"
 
-#: src/option.c:2007
+#: src/option.c:1913
 msgid "General options"
 msgstr "Загальні параметри"
 
-#: src/option.c:2008
+#: src/option.c:1914
 msgid "Show general options"
 msgstr "Показувати загальні параметри"
 
-#: src/option.c:2020
+#: src/option.c:1926
 msgid "Calendar options"
 msgstr "Параметри календаря"
 
-#: src/option.c:2021
+#: src/option.c:1927
 msgid "Show calendar options"
 msgstr "Показувати параметри календаря"
 
-#: src/option.c:2033
+#: src/option.c:1939
 msgid "Text entry options"
 msgstr "Параметри поля вводу"
 
-#: src/option.c:2034
+#: src/option.c:1940
 msgid "Show text entry options"
 msgstr "Показувати параметри поля вводу"
 
-#: src/option.c:2046
+#: src/option.c:1952
 msgid "Error options"
 msgstr "Параметри помилки"
 
-#: src/option.c:2046
+#: src/option.c:1952
 msgid "Show error options"
 msgstr "Показувати параметри виводу помилки"
 
-#: src/option.c:2056
+#: src/option.c:1962
 msgid "Info options"
 msgstr "Параметри інформації"
 
-#: src/option.c:2056
+#: src/option.c:1962
 msgid "Show info options"
 msgstr "Показувати параметри виводу інформації"
 
-#: src/option.c:2066
+#: src/option.c:1972
 msgid "File selection options"
 msgstr "Параметри вибору файла"
 
-#: src/option.c:2067
+#: src/option.c:1973
 msgid "Show file selection options"
 msgstr "Показувати параметри вибору файла"
 
-#: src/option.c:2079
+#: src/option.c:1985
 msgid "List options"
 msgstr "Параметри списку"
 
-#: src/option.c:2079
+#: src/option.c:1985
 msgid "Show list options"
 msgstr "Показувати параметри списку"
 
-#: src/option.c:2090
+#: src/option.c:1996
 msgid "Notification icon options"
 msgstr "Параметри піктограми сповіщення"
 
-#: src/option.c:2091
+#: src/option.c:1997
 msgid "Show notification icon options"
 msgstr "Параметри піктограми сповіщення"
 
-#: src/option.c:2105
+#: src/option.c:2011
 msgid "Progress options"
 msgstr "Параметри поступу"
 
-#: src/option.c:2106
+#: src/option.c:2012
 msgid "Show progress options"
 msgstr "Показувати параметри поступу"
 
-#: src/option.c:2118
+#: src/option.c:2024
 msgid "Question options"
 msgstr "Параметри запитання"
 
-#: src/option.c:2119
+#: src/option.c:2025
 msgid "Show question options"
 msgstr "Показувати параметри запитання"
 
-#: src/option.c:2131
+#: src/option.c:2037
 msgid "Warning options"
 msgstr "Параметри попередження"
 
-#: src/option.c:2132
+#: src/option.c:2038
 msgid "Show warning options"
 msgstr "Показувати параметри виводу попередження"
 
-#: src/option.c:2144
+#: src/option.c:2050
 msgid "Scale options"
 msgstr "Параметри масштабу"
 
-#: src/option.c:2144
+#: src/option.c:2050
 msgid "Show scale options"
 msgstr "Показувати параметри масштабу"
 
-#: src/option.c:2154
+#: src/option.c:2060
 msgid "Text information options"
 msgstr "Параметри текстової інформації"
 
-#: src/option.c:2155
+#: src/option.c:2061
 msgid "Show text information options"
 msgstr "Показувати параметри текстової інформації"
 
-#: src/option.c:2167
+#: src/option.c:2073
 msgid "Color selection options"
 msgstr "Параметри вибору кольору"
 
-#: src/option.c:2168
+#: src/option.c:2074
 msgid "Show color selection options"
 msgstr "Показувати параметри вибору кольору"
 
-#: src/option.c:2180
+#: src/option.c:2086
 msgid "Password dialog options"
 msgstr "Параметри діалогу пароля"
 
-#: src/option.c:2181
+#: src/option.c:2087
 msgid "Show password dialog options"
 msgstr "Показувати параметри діалогу запиту пароля"
 
-#: src/option.c:2193
+#: src/option.c:2099
 msgid "Forms dialog options"
 msgstr "Параметри діалогу форм"
 
-#: src/option.c:2194
+#: src/option.c:2100
 msgid "Show forms dialog options"
 msgstr "Показувати параметри діалогу форм"
 
-#: src/option.c:2206
+#: src/option.c:2112
 msgid "Miscellaneous options"
 msgstr "Інші параметри"
 
-#: src/option.c:2207
+#: src/option.c:2113
 msgid "Show miscellaneous options"
 msgstr "Показувати інші параметри"
 
-#: src/option.c:2230
-#, c-format
+#: src/option.c:2139
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Цей параметр недоступний. Для перегляду доступних параметрів використовуйте "
 "ключ --help.\n"
 
-#: src/option.c:2236
+#: src/option.c:2144
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s не підтримується цим діалогом\n"
 
-#: src/option.c:2241
-#, c-format
+#: src/option.c:2148
 msgid "Two or more dialog options specified\n"
 msgstr "Вказано два або більше параметрів діалогу\n"
 
-#: src/password.c:96
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Введіть ваш пароль"
+
+#: src/password.c:73
+#| msgid "Type your password"
 msgid "Type your username and password"
 msgstr "Введіть ваше ім'я користувач і пароль"
 
-#. Add the username label and entry and increment the row for the
-#. * password entry so it will be added below the username.
-#.
-#: src/password.c:101
+#: src/password.c:100
 msgid "Username:"
 msgstr "Користувач:"
 
-#: src/password.c:116
+#: src/password.c:110
 msgid "Password:"
 msgstr "Пароль:"
 
-#: src/progress.c:116
+#: src/progress.c:102
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Лишилося часу: %lu:%02lu:%02lu"
 
-#: src/scale.c:66
-#, c-format
+#: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Максимальне значення має бути більше за мінімальне.\n"
 
-#: src/scale.c:74
-#, c-format
+#: src/scale.c:69
 msgid "Value out of range.\n"
 msgstr "Значення за межами діапазону.\n"
 
-#: src/tree.c:405
-#, c-format
+#: src/tree.c:393
 msgid "No column titles specified for List dialog.\n"
 msgstr "Не вказано заголовків стовпчиків для вікна списків».\n"
 
-#: src/tree.c:412
-#, c-format
+#: src/tree.c:399
 msgid "You should use only one List dialog type.\n"
 msgstr "Слід використовувати лише єдиний тип діалогу списків.\n"
 
-#: src/zenity.ui:16 src/zenity.ui:31
+#: src/zenity.ui:14 src/zenity.ui:76
 msgid "Adjust the scale value"
 msgstr "Коригувати значення масштабу"
 
-#: src/zenity.ui:74
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "Гаразд"
+
+#: src/zenity.ui:117
 msgid "Text View"
 msgstr "Перегляд тексту"
 
-#: src/zenity.ui:137
+#: src/zenity.ui:231
 msgid "Calendar selection"
 msgstr "Вибір дати"
 
-#: src/zenity.ui:156
+#: src/zenity.ui:298
 msgid "Select a date from below."
 msgstr "Виберіть дату нижче."
 
-#: src/zenity.ui:167
+#: src/zenity.ui:319
 msgid "C_alendar:"
 msgstr "_Календар:"
 
-#: src/zenity.ui:172
-#, fuzzy
-msgid "Calendar"
-msgstr "_Календар:"
-
-#: src/zenity.ui:211
+#: src/zenity.ui:361
 msgid "Add a new entry"
 msgstr "Додати нове поле"
 
-#: src/zenity.ui:234
+#: src/zenity.ui:428
 msgid "_Enter new text:"
 msgstr "_Введіть новий текст:"
 
-#: src/zenity.ui:273
+#: src/zenity.ui:465
 msgid "Error"
 msgstr "Помилка"
 
-#: src/zenity.ui:301
+#: src/zenity.ui:530
 msgid "An error has occurred."
 msgstr "Виникла помилка."
 
-#: src/zenity.ui:378
+#: src/zenity.ui:658
 msgid "Forms dialog"
 msgstr "Діалог форм"
 
-#: src/zenity.ui:413
+#: src/zenity.ui:681
 msgid "Information"
 msgstr "Інформація"
 
-#: src/zenity.ui:438
+#: src/zenity.ui:741
 msgid "All updates are complete."
 msgstr "Всі оновлення завершено."
 
-#: src/zenity.ui:466
+#: src/zenity.ui:768
 msgid "Progress"
 msgstr "Поступ"
 
-#: src/zenity.ui:481
+#: src/zenity.ui:831
 msgid "Running..."
 msgstr "Виконання…"
 
-#: src/zenity.ui:530
+#: src/zenity.ui:882
 msgid "Question"
 msgstr "Запитання"
 
-#: src/zenity.ui:553 src/zenity.ui:660
+#: src/zenity.ui:929 src/zenity.ui:1126
 msgid "Are you sure you want to proceed?"
 msgstr "Продовжити?"
 
-#: src/zenity.ui:573
+#: src/zenity.ui:953
 msgid "Select items from the list"
 msgstr "Виберіть пункти зі списку"
 
-#: src/zenity.ui:588
+#: src/zenity.ui:1015
 msgid "Select items from the list below."
 msgstr "Виберіть пункти зі списку нижче."
 
-#: src/zenity.ui:633 src/zenity.ui:693
+#: src/zenity.ui:1064
 msgid "Warning"
 msgstr "Попередження"
-
-#: src/zenity.ui:716
-msgid "Type your password"
-msgstr "Введіть ваш пароль"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Юрій Сирота <yuriy@beer.com>\n"
-#~ "Максим Дзюманенко <dziumanenko@gmail.com>\n"
-#~ "Daniel Korostil <ted.korostiled@gmail.com>"
-
-#~ msgid "Set the window icon"
-#~ msgstr "Вказати піктограму вікна"
-
-#~| msgid "Set the window icon"
-#~ msgid "Set the parent window to attach to"
-#~ msgstr "Вказати батьківське вікно, до якого слід долучити віджет"
-
-#~ msgid "WINDOW"
-#~ msgstr "ВІКНО"
-
-#~ msgid "Confirm file selection if filename already exists"
-#~ msgstr "Підтвердити вибір файла, якщо назва файла вже існує"
-
-#~ msgid "Cancel"
-#~ msgstr "Скасувати"
-
-#~ msgid "OK"
-#~ msgstr "Гаразд"

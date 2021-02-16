@@ -10,19 +10,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 15:49-0500\n"
+"POT-Creation-Date: 2011-02-05 19:10+0200\n"
 "PO-Revision-Date: 2011-02-05 19:10+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
-"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Virtaal 0.6.1\n"
 
-#: src/about.c:54
+#: ../src/about.c:64
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -33,7 +33,7 @@ msgstr ""
 "العمومية الصغرى لجنو والتي نشرتها منظمة البرمجيات الحرة؛ سواء الإصدارة 2 من "
 "الرخصة أو أي إصدارة بعدها حسب رغبتك.\n"
 
-#: src/about.c:59
+#: ../src/about.c:68
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -44,7 +44,7 @@ msgstr ""
 "حتى أي ضمان يضمن صلاحية العرض في السوق أو توافقه مع أي استخدام محدد. يمكنك "
 "مراجعة الرخصة العمومية الصغرى لجنو لمزيد من التفاصيل.\n"
 
-#: src/about.c:63
+#: ../src/about.c:72
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -55,851 +55,662 @@ msgstr ""
 "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
 "02110-1301, USA."
 
-#: src/about.c:88
+#: ../src/about.c:265
+msgid "translator-credits"
+msgstr ""
+"فريق عربآيز للترجمة http://www.arabeyes.org :\n"
+"عرفات المديني\t<lumina@silverpen.de>\n"
+"جهاد عفيفي\t<djihed@gmail.com>\n"
+"خالد حسني\t<khaledhosny@eglug.org>"
+
+#: ../src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "اعرض صناديق حوار من مخطوطات الصدفة"
 
-#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
-#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
-#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
-msgid "_OK"
-msgstr ""
-
-#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
-#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
-#: src/zenity.ui:746
-msgid "_Cancel"
-msgstr ""
-
-#: src/main.c:121
+#: ../src/main.c:105
 #, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "يجب عليك تحديد نوع الحوار. انظر 'zenity --help' لأجل مزيد من التَّفاصيل\n"
 
-#: src/msg.c:42
-msgid "_No"
-msgstr ""
-
-#: src/msg.c:44
-msgid "_Yes"
-msgstr ""
-
-#: src/notification.c:55
-#, fuzzy, c-format
-msgid "Could not parse message\n"
-msgstr "تعذّر تحليل الرسالة من الدخل القياسي ‪(stdin)‬‬\n"
-
-#: src/notification.c:142
+#: ../src/notification.c:95
 #, c-format
-msgid ""
-"Invalid value for a boolean typed hint.\n"
-"Supported values are 'true' or 'false'.\n"
-msgstr ""
-
-#. (iibiiay)
-#: src/notification.c:163
-#, c-format
-msgid "Unsupported hint. Skipping.\n"
-msgstr ""
-
-#. unknown hints
-#: src/notification.c:186
-#, c-format
-msgid "Unknown hint name. Skipping.\n"
-msgstr ""
-
-#: src/notification.c:247
-#, fuzzy, c-format
-msgid "Could not parse command from stdin\n"
+msgid "could not parse command from stdin\n"
 msgstr "تعذّر تحليل الأمر من الدخل القياسي ‪(stdin)‬‬\n"
 
-#: src/notification.c:374
+#: ../src/notification.c:122
+#, c-format
+msgid "Could not parse message from stdin\n"
+msgstr "تعذّر تحليل الرسالة من الدخل القياسي ‪(stdin)‬‬\n"
+
+#: ../src/notification.c:198
 msgid "Zenity notification"
 msgstr "تذكير زَنِتي"
 
-#: src/option.c:166
+#: ../src/password.c:64
+msgid "Type your password"
+msgstr "اكتب كلمة السر"
+
+#: ../src/password.c:99
+msgid "Username:"
+msgstr "اسم المستخدم:"
+
+#: ../src/password.c:115
+msgid "Password:"
+msgstr "كلمة السر:"
+
+#: ../src/scale.c:56
+#, c-format
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "يجب أن تكون القيمة العظمى أعلى من القيمة الصغرى.\n"
+
+#: ../src/scale.c:63
+#, c-format
+msgid "Value out of range.\n"
+msgstr "قيمة خارج المدى.\n"
+
+#: ../src/tree.c:321
+#, c-format
+msgid "No column titles specified for List dialog.\n"
+msgstr "لم يتم تحديد عناوين الأعمدة من أجل حوار القائمة.\n"
+
+#: ../src/tree.c:327
+#, c-format
+msgid "You should use only one List dialog type.\n"
+msgstr "يجب أن تستعمل نوع واحد لحوار القائمة.\n"
+
+#: ../src/zenity.ui.h:1
+msgid "Forms dialog"
+msgstr "حوار استمارات"
+
+#: ../src/zenity.ui.h:2
+msgid "Add a new entry"
+msgstr "أضف مُدْخَلا جديد"
+
+#: ../src/zenity.ui.h:3
+msgid "Adjust the scale value"
+msgstr "اضبط قيمة المقياس"
+
+#: ../src/zenity.ui.h:4
+msgid "All updates are complete."
+msgstr "تمت كافة التَّحديثات."
+
+#: ../src/zenity.ui.h:5
+msgid "An error has occurred."
+msgstr "طرأ خطأ."
+
+#: ../src/zenity.ui.h:6
+msgid "Are you sure you want to proceed?"
+msgstr "أمتأكد أنَّك تريد المُضي قدمًا؟"
+
+#: ../src/zenity.ui.h:7
+msgid "C_alendar:"
+msgstr "ت_قويم:"
+
+#: ../src/zenity.ui.h:8
+msgid "Calendar selection"
+msgstr "اختيار التقويم"
+
+#: ../src/zenity.ui.h:9
+msgid "Error"
+msgstr "خطأ"
+
+#: ../src/zenity.ui.h:10
+msgid "Information"
+msgstr "معلومات"
+
+#: ../src/zenity.ui.h:11
+msgid "Progress"
+msgstr "تقدُّم"
+
+#: ../src/zenity.ui.h:12
+msgid "Question"
+msgstr "سؤال"
+
+#: ../src/zenity.ui.h:13
+msgid "Running..."
+msgstr "يعمل..."
+
+#: ../src/zenity.ui.h:14
+msgid "Select a date from below."
+msgstr "اختر تاريخًا من الأسفل."
+
+#: ../src/zenity.ui.h:15
+msgid "Select items from the list"
+msgstr "اختر عناصر من القائمة"
+
+#: ../src/zenity.ui.h:16
+msgid "Select items from the list below."
+msgstr "اختر عناصر من القائمة السُّفليَّة."
+
+#: ../src/zenity.ui.h:17
+msgid "Text View"
+msgstr "عرض النَّص"
+
+#: ../src/zenity.ui.h:18
+msgid "Warning"
+msgstr "تحذير"
+
+#: ../src/zenity.ui.h:19
+msgid "_Enter new text:"
+msgstr "أ_دخل نصا جديدا:"
+
+#: ../src/option.c:144
 msgid "Set the dialog title"
 msgstr "حدد عنوان صندوق الحوار"
 
-#: src/option.c:167
+#: ../src/option.c:145
 msgid "TITLE"
 msgstr "TITLE"
 
-#: src/option.c:173
+#: ../src/option.c:153
+msgid "Set the window icon"
+msgstr "حدد أيقونة النافذة"
+
+#: ../src/option.c:154
+msgid "ICONPATH"
+msgstr "ICONPATH"
+
+#: ../src/option.c:162
 msgid "Set the width"
 msgstr "حدد العرض"
 
-#: src/option.c:174
+#: ../src/option.c:163
 msgid "WIDTH"
 msgstr "WIDTH"
 
-#: src/option.c:180
+#: ../src/option.c:171
 msgid "Set the height"
 msgstr "حدد الارتفاع"
 
-#: src/option.c:181
+#: ../src/option.c:172
 msgid "HEIGHT"
 msgstr "HEIGHT"
 
-#: src/option.c:187
+#: ../src/option.c:180
 msgid "Set dialog timeout in seconds"
 msgstr "حدد فترة ظهور الحوار بالثواني"
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: ../src/option.c:182
 msgid "TIMEOUT"
 msgstr "TIMEOUT"
 
-#: src/option.c:195
-#, fuzzy
-msgid "Set the label of the OK button"
-msgstr "يحدد عنوان زر \"موافق\""
-
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
-#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
-#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
-#: src/option.c:837 src/option.c:969
-msgid "TEXT"
-msgstr "TEXT"
-
-#: src/option.c:202
-#, fuzzy
-msgid "Set the label of the Cancel button"
-msgstr "يحدد عنوان زر \"ألغِ\""
-
-#: src/option.c:209
-#, fuzzy
-msgid "Add an extra button"
-msgstr "أخف زر الإلغاء"
-
-#: src/option.c:216
-#, fuzzy
-msgid "Set the modal hint"
-msgstr "حدد عنوان صندوق الحوار"
-
-#: src/option.c:226
+#: ../src/option.c:196
 msgid "Display calendar dialog"
 msgstr "اعرض صندوق حوار التقويم"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
-#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
-#: src/option.c:836 src/option.c:968
+#: ../src/option.c:205 ../src/option.c:265 ../src/option.c:308
+#: ../src/option.c:341 ../src/option.c:453 ../src/option.c:595
+#: ../src/option.c:667 ../src/option.c:760 ../src/option.c:793
+#: ../src/option.c:898
 msgid "Set the dialog text"
 msgstr "حدد نص صندوق الحوار"
 
-#: src/option.c:240
+#: ../src/option.c:206 ../src/option.c:266 ../src/option.c:275
+#: ../src/option.c:309 ../src/option.c:342 ../src/option.c:454
+#: ../src/option.c:561 ../src/option.c:596 ../src/option.c:668
+#: ../src/option.c:677 ../src/option.c:686 ../src/option.c:737
+#: ../src/option.c:761 ../src/option.c:794 ../src/option.c:899
+msgid "TEXT"
+msgstr "TEXT"
+
+#: ../src/option.c:214
 msgid "Set the calendar day"
 msgstr "حدّد يوم التقويم"
 
-#: src/option.c:241
+#: ../src/option.c:215
 msgid "DAY"
 msgstr "DAY"
 
-#: src/option.c:247
+#: ../src/option.c:223
 msgid "Set the calendar month"
 msgstr "حدد شهر التقويم"
 
-#: src/option.c:248
+#: ../src/option.c:224
 msgid "MONTH"
 msgstr "MONTH"
 
-#: src/option.c:254
+#: ../src/option.c:232
 msgid "Set the calendar year"
 msgstr "حدد سنة التقويم"
 
-#: src/option.c:255
+#: ../src/option.c:233
 msgid "YEAR"
 msgstr "YEAR"
 
-#: src/option.c:261 src/option.c:982
+#: ../src/option.c:241 ../src/option.c:916
 msgid "Set the format for the returned date"
 msgstr "حدد الصيغة للتاريخ العائد"
 
-#: src/option.c:262 src/option.c:983
+#: ../src/option.c:242 ../src/option.c:917
 msgid "PATTERN"
 msgstr "PATTERN"
 
-#: src/option.c:271
+#: ../src/option.c:256
 msgid "Display text entry dialog"
 msgstr "اعرض صندوق إدخال نص"
 
-#: src/option.c:285
+#: ../src/option.c:274
 msgid "Set the entry text"
 msgstr "حدّد نص المُدْخَل"
 
-#: src/option.c:292
+#: ../src/option.c:283
 msgid "Hide the entry text"
 msgstr "اخفِ مُدْخَلة النص"
 
-#: src/option.c:302
+#: ../src/option.c:299
 msgid "Display error dialog"
 msgstr "اعرض صندوق حوار الخطأ"
 
-#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
-#, fuzzy
-msgid "Set the dialog icon"
-msgstr "حدد عنوان صندوق الحوار"
-
-#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
-msgid "ICON-NAME"
-msgstr ""
-
-#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
+#: ../src/option.c:317 ../src/option.c:350 ../src/option.c:694
+#: ../src/option.c:769
 msgid "Do not enable text wrapping"
 msgstr "لا تفعّل لف السّطور"
 
-#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
-#, fuzzy
-msgid "Do not enable Pango markup"
-msgstr "لا تفعّل لف السّطور"
-
-#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
-msgid ""
-"Enable ellipsizing in the dialog text. This fixes the high window size with "
-"long texts"
-msgstr ""
-
-#: src/option.c:349
+#: ../src/option.c:332
 msgid "Display info dialog"
 msgstr "اعرض صندوق حوار معلومات"
 
-#: src/option.c:396
+#: ../src/option.c:365
 msgid "Display file selection dialog"
 msgstr "اعرض صندوق حوار اختيار ملف"
 
-#: src/option.c:403
+#: ../src/option.c:374
 msgid "Set the filename"
 msgstr "حدد اسم الملف"
 
-#: src/option.c:404 src/option.c:719
+#: ../src/option.c:375 ../src/option.c:719
 msgid "FILENAME"
 msgstr "FILENAME"
 
-#: src/option.c:410
+#: ../src/option.c:383
 msgid "Allow multiple files to be selected"
 msgstr "اسمح باختيار عدة ملفات"
 
-#: src/option.c:417
+#: ../src/option.c:392
 msgid "Activate directory-only selection"
 msgstr "نشّط اختيار الأدلة فقط"
 
-#: src/option.c:424
+#: ../src/option.c:401
 msgid "Activate save mode"
 msgstr "نشّط نمط الحفظ"
 
-#: src/option.c:431 src/option.c:493 src/option.c:975
+#: ../src/option.c:410 ../src/option.c:489 ../src/option.c:907
 msgid "Set output separator character"
 msgstr "حدد الرمز الفاصل للمُخْرَج"
 
-#: src/option.c:432 src/option.c:494 src/option.c:976
+#: ../src/option.c:411 ../src/option.c:490 ../src/option.c:908
 msgid "SEPARATOR"
 msgstr "SEPARATOR"
 
-#: src/option.c:438
-#, fuzzy
-msgid "Set a filename filter"
+#: ../src/option.c:419
+msgid "Confirm file selection if filename already exists"
+msgstr "أكّد اختيار الملف إذا كان موجودا"
+
+#: ../src/option.c:428
+msgid "Sets a filename filter"
 msgstr "يضبط مرشح اسم الملف"
 
-#. Help for file-filter argument (name and patterns for file
-#. selection)
-#: src/option.c:441
+#. Help for file-filter argument (name and patterns for file selection)
+#: ../src/option.c:430
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAME | PATTERN1 PATTERN2 ..."
 
-#: src/option.c:451
+#: ../src/option.c:444
 msgid "Display list dialog"
 msgstr "اعرض صندوق حوار قائمة"
 
-#: src/option.c:465
+#: ../src/option.c:462
 msgid "Set the column header"
 msgstr "حدد ترويسة العمود"
 
-#: src/option.c:466
+#: ../src/option.c:463
 msgid "COLUMN"
 msgstr "COLUMN"
 
-#: src/option.c:472
-#, fuzzy
-msgid "Use check boxes for the first column"
+#: ../src/option.c:471
+msgid "Use check boxes for first column"
 msgstr "استخدم خانات اختيار لأجل العمود الأول"
 
-#: src/option.c:479
-#, fuzzy
-msgid "Use radio buttons for the first column"
+#: ../src/option.c:480
+msgid "Use radio buttons for first column"
 msgstr "استخدم أزرار راديو لأجل العمود الأول"
 
-#: src/option.c:486
-#, fuzzy
-msgid "Use an image for the first column"
-msgstr "استخدم خانات اختيار لأجل العمود الأول"
-
-#: src/option.c:500
+#: ../src/option.c:498
 msgid "Allow multiple rows to be selected"
 msgstr "اسمح باختيار عدة صفوف"
 
-#: src/option.c:507 src/option.c:725
+#: ../src/option.c:507 ../src/option.c:727
 msgid "Allow changes to text"
 msgstr "اسمح بالتَّغيير في النَّص"
 
-#: src/option.c:514
+#: ../src/option.c:516
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr "اطبع عمود معيّن (الافتراضي 1. يمكن استخدام 'ALL' لطباعة كل الأعمدة)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:517 src/option.c:524
+#: ../src/option.c:518 ../src/option.c:527
 msgid "NUMBER"
 msgstr "NUMBER"
 
-#: src/option.c:523
+#: ../src/option.c:526
 msgid "Hide a specific column"
 msgstr "أخف عمود معيّن"
 
-#: src/option.c:530
-#, fuzzy
-msgid "Hide the column headers"
+#: ../src/option.c:535
+msgid "Hides the column headers"
 msgstr "يخفي ترويسة العمود"
 
-#: src/option.c:537
-msgid ""
-"Change list default search function searching for text in the middle, not on "
-"the beginning"
-msgstr ""
-
-#: src/option.c:549
+#: ../src/option.c:551
 msgid "Display notification"
 msgstr "اعرض صندوق حوار تذكير"
 
-#: src/option.c:556
+#: ../src/option.c:560
 msgid "Set the notification text"
 msgstr "حدد نصّ حوار التذكير"
 
-#: src/option.c:563
-#, fuzzy
-msgid "Set the notification icon"
-msgstr "حدد نصّ حوار التذكير"
-
-#: src/option.c:564
-msgid "ICONPATH"
-msgstr "ICONPATH"
-
-#: src/option.c:570
+#: ../src/option.c:569
 msgid "Listen for commands on stdin"
 msgstr "استمع إلى الأوامر على stdin"
 
-#: src/option.c:577
-#, fuzzy
-msgid "Set the notification hints"
-msgstr "حدد نصّ حوار التذكير"
-
-#: src/option.c:589
+#: ../src/option.c:586
 msgid "Display progress indication dialog"
 msgstr "اعرض حوار مقدار التقدم"
 
-#: src/option.c:603
+#: ../src/option.c:604
 msgid "Set initial percentage"
 msgstr "حدد النِّسبة المئويَّة الأوليَّة"
 
-#: src/option.c:604
+#: ../src/option.c:605
 msgid "PERCENTAGE"
 msgstr "PERCENTAGE"
 
-#: src/option.c:610
+#: ../src/option.c:613
 msgid "Pulsate progress bar"
 msgstr "اجعل شريط التَّقدم نَّابضا"
 
-#: src/option.c:618
+#: ../src/option.c:623
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "اصرف صندوق الحوار عند بلوغ 100%"
 
-#: src/option.c:625
+#: ../src/option.c:633
+#, no-c-format
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "اقتل العملية الأم إذا ضُغِط زر الإلغاء"
 
-#: src/option.c:632
+#: ../src/option.c:643
+#, no-c-format
 msgid "Hide Cancel button"
 msgstr "أخف زر الإلغاء"
 
-#: src/option.c:640
-#, no-c-format
-msgid "Estimate when progress will reach 100%"
-msgstr ""
-
-#: src/option.c:650
+#: ../src/option.c:658
 msgid "Display question dialog"
 msgstr "اعرض صندوق حوار سؤال"
 
-#: src/option.c:685
-#, fuzzy
-msgid "Give Cancel button focus by default"
-msgstr "أخف زر الإلغاء"
+#: ../src/option.c:676
+msgid "Sets the label of the Ok button"
+msgstr "يحدد عنوان زر \"موافق\""
 
-#: src/option.c:701
-#, fuzzy
-msgid "Suppress OK and Cancel buttons"
-msgstr "أخف زر الإلغاء"
+#: ../src/option.c:685
+msgid "Sets the label of the Cancel button"
+msgstr "يحدد عنوان زر \"ألغِ\""
 
-#: src/option.c:711
+#: ../src/option.c:709
 msgid "Display text information dialog"
 msgstr "اعرض صندوق حوار معلومات"
 
-#: src/option.c:718
+#: ../src/option.c:718
 msgid "Open file"
 msgstr "افتح ملفا"
 
-#: src/option.c:732
+#: ../src/option.c:736
 msgid "Set the text font"
 msgstr "حدّد خط النص"
 
-#: src/option.c:739
-msgid "Enable an I read and agree checkbox"
-msgstr ""
-
-#: src/option.c:747
-msgid "Enable HTML support"
-msgstr ""
-
-#: src/option.c:754
-msgid ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
-msgstr ""
-
-#: src/option.c:762
-msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr ""
-
-#: src/option.c:764
-msgid "URL"
-msgstr ""
-
-#: src/option.c:771
-msgid "Auto scroll the text to the end. Only when text is captured from stdin"
-msgstr ""
-
-#: src/option.c:782
+#: ../src/option.c:751
 msgid "Display warning dialog"
 msgstr "اعرض صندوق حوار تحذير"
 
-#: src/option.c:829
+#: ../src/option.c:784
 msgid "Display scale dialog"
 msgstr "اعرض صندوق حوار مقياس"
 
-#: src/option.c:843
+#: ../src/option.c:802
 msgid "Set initial value"
 msgstr "حدد القيمة الأولية"
 
-#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
-#: src/option.c:1017
+#: ../src/option.c:803 ../src/option.c:812 ../src/option.c:821
+#: ../src/option.c:830 ../src/option.c:965
 msgid "VALUE"
 msgstr "VALUE"
 
-#: src/option.c:850
+#: ../src/option.c:811
 msgid "Set minimum value"
 msgstr "حدد القيمة الصغرى"
 
-#: src/option.c:857
+#: ../src/option.c:820
 msgid "Set maximum value"
 msgstr "حدد القيمة العظمى"
 
-#: src/option.c:864
+#: ../src/option.c:829
 msgid "Set step size"
 msgstr "حدد حجم الخطوة"
 
-#: src/option.c:871
+#: ../src/option.c:838
 msgid "Print partial values"
 msgstr "اطبع القيم الجزئيّة"
 
-#: src/option.c:878
+#: ../src/option.c:847
 msgid "Hide value"
 msgstr "اخف القيمة"
 
-#: src/option.c:888
+#: ../src/option.c:862
 msgid "Display forms dialog"
 msgstr "اعرض صندوق حوار استمارات"
 
-#: src/option.c:895
+#: ../src/option.c:871
 msgid "Add a new Entry in forms dialog"
 msgstr "أضف مُدْخَلا جديدا في صندوق حوار استمارات"
 
-#: src/option.c:896 src/option.c:903
+#: ../src/option.c:872 ../src/option.c:881
 msgid "Field name"
 msgstr "اسم الحقل"
 
-#: src/option.c:902
+#: ../src/option.c:880
 msgid "Add a new Password Entry in forms dialog"
 msgstr "أضف مُدْخَلة كلمة سر جديدة في صندوق حوار استمارات"
 
-#: src/option.c:909
+#: ../src/option.c:889
 msgid "Add a new Calendar in forms dialog"
 msgstr "أضف تقويما جديدا في صندوق حوار استمارات"
 
-#: src/option.c:910
+#: ../src/option.c:890
 msgid "Calendar field name"
 msgstr "اسم حقل التقويم"
 
-#: src/option.c:916
-#, fuzzy
-msgid "Add a new List in forms dialog"
-msgstr "أضف مُدْخَلا جديدا في صندوق حوار استمارات"
-
-#: src/option.c:917
-msgid "List field and header name"
-msgstr ""
-
-#: src/option.c:923
-msgid "List of values for List"
-msgstr ""
-
-#: src/option.c:924 src/option.c:931 src/option.c:945
-msgid "List of values separated by |"
-msgstr ""
-
-#: src/option.c:930
-msgid "List of values for columns"
-msgstr ""
-
-#: src/option.c:937
-#, fuzzy
-msgid "Add a new combo box in forms dialog"
-msgstr "أضف مُدْخَلا جديدا في صندوق حوار استمارات"
-
-#: src/option.c:938
-#, fuzzy
-msgid "Combo box field name"
-msgstr "اسم حقل التقويم"
-
-#: src/option.c:944
-msgid "List of values for combo box"
-msgstr ""
-
-#: src/option.c:961
-#, fuzzy
-msgid "Show the columns header"
-msgstr "حدد ترويسة العمود"
-
-#: src/option.c:992
+#: ../src/option.c:931
 msgid "Display password dialog"
 msgstr "اعرض صندوق حوار كلمة السر"
 
-#: src/option.c:999
+#: ../src/option.c:940
 msgid "Display the username option"
 msgstr "اعرض خيار اسم المستخدم"
 
-#: src/option.c:1009
+#: ../src/option.c:955
 msgid "Display color selection dialog"
 msgstr "اعرض صندوق حوار اختيار ألوان"
 
-#: src/option.c:1016
+#: ../src/option.c:964
 msgid "Set the color"
 msgstr "حدد اللون"
 
-#: src/option.c:1023
+#: ../src/option.c:973
 msgid "Show the palette"
 msgstr "اعرض لوحة الألوان"
 
-#: src/option.c:1033
+#: ../src/option.c:988
 msgid "About zenity"
 msgstr "عنْ زِنْتي"
 
-#: src/option.c:1040
+#: ../src/option.c:997
 msgid "Print version"
 msgstr "اطبع الإصدارة"
 
-#: src/option.c:2007
+#: ../src/option.c:1813
 msgid "General options"
 msgstr "خيارات عامة"
 
-#: src/option.c:2008
+#: ../src/option.c:1814
 msgid "Show general options"
 msgstr "اعرض الخيارات العامّة"
 
-#: src/option.c:2020
+#: ../src/option.c:1824
 msgid "Calendar options"
 msgstr "خيارات التقويم"
 
-#: src/option.c:2021
+#: ../src/option.c:1825
 msgid "Show calendar options"
 msgstr "اعرض خيارات التقويم"
 
-#: src/option.c:2033
+#: ../src/option.c:1835
 msgid "Text entry options"
 msgstr "خيارات مُدْخَل النَّص"
 
-#: src/option.c:2034
+#: ../src/option.c:1836
 msgid "Show text entry options"
 msgstr "اعرض خيارات مُدخَل النَّص"
 
-#: src/option.c:2046
+#: ../src/option.c:1846
 msgid "Error options"
 msgstr "خيارات الأخطاء"
 
-#: src/option.c:2046
+#: ../src/option.c:1847
 msgid "Show error options"
 msgstr "اعرض خيارات الأخطاء"
 
-#: src/option.c:2056
+#: ../src/option.c:1857
 msgid "Info options"
 msgstr "خيارات المعلومات"
 
-#: src/option.c:2056
+#: ../src/option.c:1858
 msgid "Show info options"
 msgstr "اعرض خيارات المعلومات"
 
-#: src/option.c:2066
+#: ../src/option.c:1868
 msgid "File selection options"
 msgstr "خيارات اختيار الملفات"
 
-#: src/option.c:2067
+#: ../src/option.c:1869
 msgid "Show file selection options"
 msgstr "اعرض خيارات اختيار الملفّات"
 
-#: src/option.c:2079
+#: ../src/option.c:1879
 msgid "List options"
 msgstr "خيارات القوائم"
 
-#: src/option.c:2079
+#: ../src/option.c:1880
 msgid "Show list options"
 msgstr "اعرض خيارات القوائم"
 
-#: src/option.c:2090
+#: ../src/option.c:1891
 msgid "Notification icon options"
 msgstr "خيارات أيقونة التذكير"
 
-#: src/option.c:2091
+#: ../src/option.c:1892
 msgid "Show notification icon options"
 msgstr "اعرض خيارات أيقونة التذكير"
 
-#: src/option.c:2105
+#: ../src/option.c:1903
 msgid "Progress options"
 msgstr "خيارات التَّقدم"
 
-#: src/option.c:2106
+#: ../src/option.c:1904
 msgid "Show progress options"
 msgstr "اعرض خيارات التَّقدم"
 
-#: src/option.c:2118
+#: ../src/option.c:1914
 msgid "Question options"
 msgstr "خيارات الأسئلة"
 
-#: src/option.c:2119
+#: ../src/option.c:1915
 msgid "Show question options"
 msgstr "اعرض خيارات الأسئلة"
 
-#: src/option.c:2131
+#: ../src/option.c:1925
 msgid "Warning options"
 msgstr "خيارات التَّحذير"
 
-#: src/option.c:2132
+#: ../src/option.c:1926
 msgid "Show warning options"
 msgstr "اعرض خيارات التَّحذير"
 
-#: src/option.c:2144
+#: ../src/option.c:1936
 msgid "Scale options"
 msgstr "خيارات المقياس"
 
-#: src/option.c:2144
+#: ../src/option.c:1937
 msgid "Show scale options"
 msgstr "اعرض خيارات المقياس"
 
-#: src/option.c:2154
+#: ../src/option.c:1947
 msgid "Text information options"
 msgstr "خيارات المعلومات"
 
-#: src/option.c:2155
+#: ../src/option.c:1948
 msgid "Show text information options"
 msgstr "اعرض خيارات المعلومات"
 
-#: src/option.c:2167
+#: ../src/option.c:1958
 msgid "Color selection options"
 msgstr "خيارات اختيار الألوان"
 
-#: src/option.c:2168
+#: ../src/option.c:1959
 msgid "Show color selection options"
 msgstr "اعرض خيارات اختيار الألوان"
 
-#: src/option.c:2180
+#: ../src/option.c:1969
 msgid "Password dialog options"
 msgstr "خيارات صندوق حوار كلمة السر"
 
-#: src/option.c:2181
+#: ../src/option.c:1970
 msgid "Show password dialog options"
 msgstr "اعرض خيارات صندوق حوار كلمة السر"
 
-#: src/option.c:2193
+#: ../src/option.c:1980
 msgid "Forms dialog options"
 msgstr "خيارات صندوق حوار الاستمارات"
 
-#: src/option.c:2194
+#: ../src/option.c:1981
 msgid "Show forms dialog options"
 msgstr "اعرض خيارات صندوق حوار الاستمارات"
 
-#: src/option.c:2206
+#: ../src/option.c:1991
 msgid "Miscellaneous options"
 msgstr "خيارات متنوعة"
 
-#: src/option.c:2207
+#: ../src/option.c:1992
 msgid "Show miscellaneous options"
 msgstr "اعرض الخيارات المتنوّعة"
 
-#: src/option.c:2230
+#: ../src/option.c:2017
 #, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr "هذا الخيار غير مدعوم. الرجاء الرجوع إلى ‪--help‬ لاستعراض كل الخيارات.\n"
 
-#: src/option.c:2236
+#: ../src/option.c:2021
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s ليس مدعوما لهذا الحوار\n"
 
-#: src/option.c:2241
+#: ../src/option.c:2025
 #, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "تم تحديد خيارَيْ حوار أو أكثر\n"
-
-#: src/password.c:96
-#, fuzzy
-msgid "Type your username and password"
-msgstr "اكتب كلمة السر"
-
-#. Add the username label and entry and increment the row for the
-#. * password entry so it will be added below the username.
-#.
-#: src/password.c:101
-msgid "Username:"
-msgstr "اسم المستخدم:"
-
-#: src/password.c:116
-msgid "Password:"
-msgstr "كلمة السر:"
-
-#: src/progress.c:116
-#, c-format
-msgid "Time remaining: %lu:%02lu:%02lu"
-msgstr ""
-
-#: src/scale.c:66
-#, c-format
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "يجب أن تكون القيمة العظمى أعلى من القيمة الصغرى.\n"
-
-#: src/scale.c:74
-#, c-format
-msgid "Value out of range.\n"
-msgstr "قيمة خارج المدى.\n"
-
-#: src/tree.c:405
-#, c-format
-msgid "No column titles specified for List dialog.\n"
-msgstr "لم يتم تحديد عناوين الأعمدة من أجل حوار القائمة.\n"
-
-#: src/tree.c:412
-#, c-format
-msgid "You should use only one List dialog type.\n"
-msgstr "يجب أن تستعمل نوع واحد لحوار القائمة.\n"
-
-#: src/zenity.ui:16 src/zenity.ui:31
-msgid "Adjust the scale value"
-msgstr "اضبط قيمة المقياس"
-
-#: src/zenity.ui:74
-msgid "Text View"
-msgstr "عرض النَّص"
-
-#: src/zenity.ui:137
-msgid "Calendar selection"
-msgstr "اختيار التقويم"
-
-#: src/zenity.ui:156
-msgid "Select a date from below."
-msgstr "اختر تاريخًا من الأسفل."
-
-#: src/zenity.ui:167
-msgid "C_alendar:"
-msgstr "ت_قويم:"
-
-#: src/zenity.ui:172
-#, fuzzy
-msgid "Calendar"
-msgstr "ت_قويم:"
-
-#: src/zenity.ui:211
-msgid "Add a new entry"
-msgstr "أضف مُدْخَلا جديد"
-
-#: src/zenity.ui:234
-msgid "_Enter new text:"
-msgstr "أ_دخل نصا جديدا:"
-
-#: src/zenity.ui:273
-msgid "Error"
-msgstr "خطأ"
-
-#: src/zenity.ui:301
-msgid "An error has occurred."
-msgstr "طرأ خطأ."
-
-#: src/zenity.ui:378
-msgid "Forms dialog"
-msgstr "حوار استمارات"
-
-#: src/zenity.ui:413
-msgid "Information"
-msgstr "معلومات"
-
-#: src/zenity.ui:438
-msgid "All updates are complete."
-msgstr "تمت كافة التَّحديثات."
-
-#: src/zenity.ui:466
-msgid "Progress"
-msgstr "تقدُّم"
-
-#: src/zenity.ui:481
-msgid "Running..."
-msgstr "يعمل..."
-
-#: src/zenity.ui:530
-msgid "Question"
-msgstr "سؤال"
-
-#: src/zenity.ui:553 src/zenity.ui:660
-msgid "Are you sure you want to proceed?"
-msgstr "أمتأكد أنَّك تريد المُضي قدمًا؟"
-
-#: src/zenity.ui:573
-msgid "Select items from the list"
-msgstr "اختر عناصر من القائمة"
-
-#: src/zenity.ui:588
-msgid "Select items from the list below."
-msgstr "اختر عناصر من القائمة السُّفليَّة."
-
-#: src/zenity.ui:633 src/zenity.ui:693
-msgid "Warning"
-msgstr "تحذير"
-
-#: src/zenity.ui:716
-msgid "Type your password"
-msgstr "اكتب كلمة السر"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "فريق عربآيز للترجمة http://www.arabeyes.org :\n"
-#~ "عرفات المديني\t<lumina@silverpen.de>\n"
-#~ "جهاد عفيفي\t<djihed@gmail.com>\n"
-#~ "خالد حسني\t<khaledhosny@eglug.org>"
-
-#~ msgid "Set the window icon"
-#~ msgstr "حدد أيقونة النافذة"
-
-#~ msgid "Confirm file selection if filename already exists"
-#~ msgstr "أكّد اختيار الملف إذا كان موجودا"
 
 #~ msgid "Select a file"
 #~ msgstr "اختر ملفًا"

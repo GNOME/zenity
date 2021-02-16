@@ -13,8 +13,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity-master-po-gl-76235\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 15:49-0500\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=zenity"
+"&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-11-26 20:40+0000\n"
 "PO-Revision-Date: 2018-02-17 01:21+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician\n"
@@ -26,7 +27,7 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: src/about.c:54
+#: src/about.c:60
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -38,7 +39,7 @@ msgstr ""
 "Foundation; tanto na versión 2 da Licenza como (segundo o seu criterio) en "
 "calquera versión posterior.\n"
 
-#: src/about.c:59
+#: src/about.c:65
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -50,7 +51,7 @@ msgstr ""
 "PARA UN PROPÓSITO PARTICULAR. Para obter máis información vexa a Licenza "
 "pública xeral GNU.\n"
 
-#: src/about.c:63
+#: src/about.c:69
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -60,44 +61,46 @@ msgstr ""
 "programa; en caso contrario, escriba á Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
-#: src/about.c:88
+#: src/about.c:260
+msgid "translator-credits"
+msgstr ""
+"Fran Diéguez <frandieguez@ubuntu.com>, 2009-2018.\n"
+"Mancomún - Centro de Referencia e Servizos de Software Libre "
+"<g11n@mancomun.org>, 2009.\n"
+"Antón Méixome <meixome@certima.net>, 2009, 2010.\n"
+"Ignacio Casal Quinteiro <icq@gnome.org>, 2005, 2006, 2007, 2008."
+
+#: src/about.c:277
 msgid "Display dialog boxes from shell scripts"
 msgstr "Mostrar as caixas de diálogo desde os scripts do intérprete de ordes"
 
-#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
-#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
-#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
+#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
 msgid "_OK"
 msgstr "_Aceptar"
 
-#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
-#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
-#: src/zenity.ui:746
+#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: src/main.c:121
-#, c-format
+#: src/main.c:105
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Debe especificar un tipo de diálogo. Para obter máis información consulte "
 "«zenity --help»\n"
 
-#: src/msg.c:42
+#: src/msg.c:38
 msgid "_No"
 msgstr "_Non"
 
-#: src/msg.c:44
+#: src/msg.c:40
 msgid "_Yes"
 msgstr "_Sí"
 
-#: src/notification.c:55
-#, c-format
+#: src/notification.c:50
 msgid "Could not parse message\n"
 msgstr "Non é posíbel analizar a mensaxe\n"
 
-#: src/notification.c:142
-#, c-format
+#: src/notification.c:132
 msgid ""
 "Invalid value for a boolean typed hint.\n"
 "Supported values are 'true' or 'false'.\n"
@@ -106,158 +109,171 @@ msgstr ""
 "Os valores admitidos son «true» ou «false».\n"
 
 #. (iibiiay)
-#: src/notification.c:163
-#, c-format
+#: src/notification.c:149
 msgid "Unsupported hint. Skipping.\n"
 msgstr "Tipado non admitido. Omitindo.\n"
 
 #. unknown hints
-#: src/notification.c:186
-#, c-format
+#: src/notification.c:166
 msgid "Unknown hint name. Skipping.\n"
 msgstr "Nome de tipado non coñecido. Omitindo.\n"
 
-#: src/notification.c:247
-#, c-format
+#: src/notification.c:218
 msgid "Could not parse command from stdin\n"
 msgstr "Non é posíbel analizar a orde desde stdin\n"
 
-#: src/notification.c:374
+#: src/notification.c:318
 msgid "Zenity notification"
 msgstr "Notificación de Zenity"
 
-#: src/option.c:166
+#: src/option.c:164
 msgid "Set the dialog title"
 msgstr "Configurar o diálogo de título"
 
-#: src/option.c:167
+#: src/option.c:165
 msgid "TITLE"
 msgstr "TÍTULO"
 
-#: src/option.c:173
+#: src/option.c:171
+msgid "Set the window icon"
+msgstr "Estabelecer a icona da xanela"
+
+#: src/option.c:172
+msgid "ICONPATH"
+msgstr "CAMIÑO DA ICONA"
+
+#: src/option.c:178
 msgid "Set the width"
 msgstr "Estabelecer a largura"
 
-#: src/option.c:174
+#: src/option.c:179
 msgid "WIDTH"
 msgstr "LARGURA"
 
-#: src/option.c:180
+#: src/option.c:185
 msgid "Set the height"
 msgstr "Configurar a altura"
 
-#: src/option.c:181
+#: src/option.c:186
 msgid "HEIGHT"
 msgstr "ALTURA"
 
-#: src/option.c:187
+#: src/option.c:192
 msgid "Set dialog timeout in seconds"
 msgstr "Estabelecer o tempo de expiración do diálogo en segundos"
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: src/option.c:194
 msgid "TIMEOUT"
 msgstr "TEMPO DE ESPERA"
 
-#: src/option.c:195
+#: src/option.c:200
 msgid "Set the label of the OK button"
 msgstr "Estabelece a etiqueta do botón Aceptar"
 
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
-#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
-#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
-#: src/option.c:837 src/option.c:969
+#: src/option.c:201 src/option.c:208 src/option.c:215 src/option.c:245
+#: src/option.c:289 src/option.c:296 src/option.c:319 src/option.c:362
+#: src/option.c:468 src/option.c:565 src/option.c:579 src/option.c:598
+#: src/option.c:658 src/option.c:730 src/option.c:737 src/option.c:786
+#: src/option.c:829 src/option.c:960
 msgid "TEXT"
 msgstr "TEXTO"
 
-#: src/option.c:202
+#: src/option.c:207
 msgid "Set the label of the Cancel button"
 msgstr "Estabelece a etiqueta do botón Cancelar"
 
-#: src/option.c:209
+#: src/option.c:214
 msgid "Add an extra button"
 msgstr "Engadir un botón adicional"
 
-#: src/option.c:216
+#: src/option.c:221
 msgid "Set the modal hint"
 msgstr "Estabelece a suxestión do diálogo modal"
 
-#: src/option.c:226
+#: src/option.c:228
+msgid "Set the parent window to attach to"
+msgstr "Estabelecer a xanela pai para anexar a"
+
+#: src/option.c:229
+msgid "WINDOW"
+msgstr "XANELA"
+
+#: src/option.c:237
 msgid "Display calendar dialog"
 msgstr "Mostrar o diálogo do calendario"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
-#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
-#: src/option.c:836 src/option.c:968
+#: src/option.c:244 src/option.c:288 src/option.c:318 src/option.c:361
+#: src/option.c:467 src/option.c:597 src/option.c:657 src/option.c:785
+#: src/option.c:828 src/option.c:959
 msgid "Set the dialog text"
 msgstr "Configurar o diálogo do texto"
 
-#: src/option.c:240
+#: src/option.c:251
 msgid "Set the calendar day"
 msgstr "Configurar o día do calendario"
 
-#: src/option.c:241
+#: src/option.c:252
 msgid "DAY"
 msgstr "DÍA"
 
-#: src/option.c:247
+#: src/option.c:258
 msgid "Set the calendar month"
 msgstr "Configurar o mes do calendario"
 
-#: src/option.c:248
+#: src/option.c:259
 msgid "MONTH"
 msgstr "MES"
 
-#: src/option.c:254
+#: src/option.c:265
 msgid "Set the calendar year"
 msgstr "Configurar o ano do calendario"
 
-#: src/option.c:255
+#: src/option.c:266
 msgid "YEAR"
 msgstr "ANO"
 
-#: src/option.c:261 src/option.c:982
+#: src/option.c:272 src/option.c:973
 msgid "Set the format for the returned date"
 msgstr "Configurar o formato da data devolta"
 
-#: src/option.c:262 src/option.c:983
+#: src/option.c:273 src/option.c:974
 msgid "PATTERN"
 msgstr "PATRÓN"
 
-#: src/option.c:271
+#: src/option.c:281
 msgid "Display text entry dialog"
 msgstr "Mostrar o diálogo de entrada de texto"
 
-#: src/option.c:285
+#: src/option.c:295
 msgid "Set the entry text"
 msgstr "Configurar a entrada de texto"
 
-#: src/option.c:292
+#: src/option.c:302
 msgid "Hide the entry text"
 msgstr "Ocultar a entrada de texto"
 
-#: src/option.c:302
+#: src/option.c:311
 msgid "Display error dialog"
 msgstr "Mostrar o diálogo de erro"
 
-#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
+#: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
 msgid "Set the dialog icon"
 msgstr "Estabelecer a icona do diálogo"
 
-#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
+#: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
 msgid "ICON-NAME"
 msgstr "NOME-ICONA"
 
-#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
+#: src/option.c:332 src/option.c:375 src/option.c:671 src/option.c:799
 msgid "Do not enable text wrapping"
 msgstr "Non activar o axuste de texto"
 
-#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
+#: src/option.c:339 src/option.c:382 src/option.c:678 src/option.c:806
 msgid "Do not enable Pango markup"
 msgstr "Non activar o marcado Pango"
 
-#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
+#: src/option.c:345 src/option.c:388 src/option.c:691 src/option.c:812
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -265,85 +281,89 @@ msgstr ""
 "Activar a elipse no diálogo de texto. Isto corrixe o tamaño alto da xanela "
 "con textos longos."
 
-#: src/option.c:349
+#: src/option.c:354
 msgid "Display info dialog"
 msgstr "Mostrar o diálogo de información"
 
-#: src/option.c:396
+#: src/option.c:398
 msgid "Display file selection dialog"
 msgstr "Mostrar o diálogo de selección de ficheiros"
 
-#: src/option.c:403
+#: src/option.c:405
 msgid "Set the filename"
 msgstr "Configurar o nome do ficheiro"
 
-#: src/option.c:404 src/option.c:719
+#: src/option.c:406 src/option.c:716
 msgid "FILENAME"
 msgstr "NOME DE FICHEIRO"
 
-#: src/option.c:410
+#: src/option.c:412
 msgid "Allow multiple files to be selected"
 msgstr "Permitir que sexan seleccionados múltiples ficheiros"
 
-#: src/option.c:417
+#: src/option.c:419
 msgid "Activate directory-only selection"
 msgstr "Activar soamente a selección de cartafoles"
 
-#: src/option.c:424
+#: src/option.c:426
 msgid "Activate save mode"
 msgstr "Activar o modo seguro"
 
-#: src/option.c:431 src/option.c:493 src/option.c:975
+#: src/option.c:433 src/option.c:502 src/option.c:966
 msgid "Set output separator character"
 msgstr "Configurar o carácter separador de saída"
 
-#: src/option.c:432 src/option.c:494 src/option.c:976
+#: src/option.c:434 src/option.c:503 src/option.c:967
 msgid "SEPARATOR"
 msgstr "SEPARADOR"
 
-#: src/option.c:438
+#: src/option.c:440
+msgid "Confirm file selection if filename already exists"
+msgstr "Confirmar a selección de ficheiro se o nome do ficheiro xa existe"
+
+#: src/option.c:448
 msgid "Set a filename filter"
 msgstr "Estabelece un filtro de nome de ficheiro"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
-#: src/option.c:441
+#: src/option.c:451
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NOME | PATRÓN1 PATRÓN2 …"
 
-#: src/option.c:451
+#: src/option.c:460
 msgid "Display list dialog"
 msgstr "Mostrar o diálogo de listas"
 
-#: src/option.c:465
+#: src/option.c:474
 msgid "Set the column header"
 msgstr "Configurar a cabeceira da columna"
 
-#: src/option.c:466
+#: src/option.c:475
 msgid "COLUMN"
 msgstr "COLUMNA"
 
-#: src/option.c:472
+#: src/option.c:481
 msgid "Use check boxes for the first column"
 msgstr "Usar as caixas de verificación para a primeira columna"
 
-#: src/option.c:479
+#: src/option.c:488
 msgid "Use radio buttons for the first column"
 msgstr "Usar os botóns de opción para a primeira columna"
 
-#: src/option.c:486
+#: src/option.c:495
 msgid "Use an image for the first column"
 msgstr "Usar unha imaxe para a primeira columna"
 
-#: src/option.c:500
+#: src/option.c:509
 msgid "Allow multiple rows to be selected"
 msgstr "Permitir que sexan seleccionadas múltiples filas"
 
-#: src/option.c:507 src/option.c:725
+#: src/option.c:516 src/option.c:722
 msgid "Allow changes to text"
 msgstr "Permitir cambios no texto"
 
-#: src/option.c:514
+#: src/option.c:523
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -352,19 +372,19 @@ msgstr ""
 "para imprimir todas as columnas)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:517 src/option.c:524
+#: src/option.c:526 src/option.c:533
 msgid "NUMBER"
 msgstr "NÚMERO"
 
-#: src/option.c:523
+#: src/option.c:532
 msgid "Hide a specific column"
 msgstr "Oculta unha columna específica"
 
-#: src/option.c:530
+#: src/option.c:539
 msgid "Hide the column headers"
 msgstr "Ocultar a columna de cabeceiras"
 
-#: src/option.c:537
+#: src/option.c:546
 msgid ""
 "Change list default search function searching for text in the middle, not on "
 "the beginning"
@@ -372,61 +392,52 @@ msgstr ""
 "Cambiar a función de busca predeterminada en listas para buscar texto no "
 "medio, non ao principio."
 
-#: src/option.c:549
+#: src/option.c:557
 msgid "Display notification"
 msgstr "Mostrar a notificación"
 
-#: src/option.c:556
+#: src/option.c:564
 msgid "Set the notification text"
 msgstr "Estabelecer o texto de notificación"
 
-#: src/option.c:563
-#, fuzzy
-msgid "Set the notification icon"
-msgstr "Estabelecer as notificacións de tipado"
-
-#: src/option.c:564
-msgid "ICONPATH"
-msgstr "CAMIÑO DA ICONA"
-
-#: src/option.c:570
+#: src/option.c:571
 msgid "Listen for commands on stdin"
 msgstr "Escoitar as ordes en stdin"
 
-#: src/option.c:577
+#: src/option.c:578
 msgid "Set the notification hints"
 msgstr "Estabelecer as notificacións de tipado"
 
-#: src/option.c:589
+#: src/option.c:590
 msgid "Display progress indication dialog"
 msgstr "Mostrar o diálogo de indicación de progreso"
 
-#: src/option.c:603
+#: src/option.c:604
 msgid "Set initial percentage"
 msgstr "Configurar a porcentaxe inicial"
 
-#: src/option.c:604
+#: src/option.c:605
 msgid "PERCENTAGE"
 msgstr "PORCENTAXE"
 
-#: src/option.c:610
+#: src/option.c:611
 msgid "Pulsate progress bar"
 msgstr " Barra de progreso oscilante"
 
-#: src/option.c:618
+#: src/option.c:619
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Rematar o diálogo cando chegue ao 100%"
 
-#: src/option.c:625
+#: src/option.c:626
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Matar o proceso pai ao premer o botón «Cancelar»"
 
-#: src/option.c:632
+#: src/option.c:633
 msgid "Hide Cancel button"
 msgstr "Ocultar o botón de «Cancelar»"
 
-#: src/option.c:640
+#: src/option.c:641
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Estimar cando o progreso acade o 100%"
@@ -435,35 +446,35 @@ msgstr "Estimar cando o progreso acade o 100%"
 msgid "Display question dialog"
 msgstr "Mostrar o diálogo de pregunta"
 
-#: src/option.c:685
+#: src/option.c:684
 msgid "Give Cancel button focus by default"
 msgstr "Enfocar o botón cancelar por omisión"
 
-#: src/option.c:701
+#: src/option.c:698
 msgid "Suppress OK and Cancel buttons"
 msgstr "Suprimir os botóns de Aceptar e Cancelar"
 
-#: src/option.c:711
+#: src/option.c:708
 msgid "Display text information dialog"
 msgstr "Mostrar o diálogo de texto de información"
 
-#: src/option.c:718
+#: src/option.c:715
 msgid "Open file"
 msgstr "Abrir o ficheiro"
 
-#: src/option.c:732
+#: src/option.c:729
 msgid "Set the text font"
 msgstr "Estabelecer o tipo de letra do texto"
 
-#: src/option.c:739
+#: src/option.c:736
 msgid "Enable an I read and agree checkbox"
 msgstr "Activa una caixa de verificación «Lino e acepto»"
 
-#: src/option.c:747
+#: src/option.c:744
 msgid "Enable HTML support"
 msgstr "Activar compatibilidade de HTML"
 
-#: src/option.c:754
+#: src/option.c:751
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -471,447 +482,419 @@ msgstr ""
 "Non activar a interacción do usuario coa WebView. Só funciona se usa a "
 "opción --html"
 
-#: src/option.c:762
+#: src/option.c:759
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "Configura unha URL no lugar dun ficheiro. Só funciona se usa a opción «--"
 "html»"
 
-#: src/option.c:764
+#: src/option.c:761
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:771
+#: src/option.c:768
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "Autodesprazar o texto ao final. Só cando o texto é capturado desde stdin"
 
-#: src/option.c:782
+#: src/option.c:778
 msgid "Display warning dialog"
 msgstr "Mostrar o diálogo de aviso"
 
-#: src/option.c:829
+#: src/option.c:821
 msgid "Display scale dialog"
 msgstr "Mostrar o diálogo de escala"
 
-#: src/option.c:843
+#: src/option.c:835
 msgid "Set initial value"
 msgstr "Estabelecer o valor inicial"
 
-#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
-#: src/option.c:1017
+#: src/option.c:836 src/option.c:843 src/option.c:850 src/option.c:857
+#: src/option.c:1008
 msgid "VALUE"
 msgstr "VALOR"
 
-#: src/option.c:850
+#: src/option.c:842
 msgid "Set minimum value"
 msgstr "Estabelecer o valor mínimo"
 
-#: src/option.c:857
+#: src/option.c:849
 msgid "Set maximum value"
 msgstr "Estabelecer o valor máximo"
 
-#: src/option.c:864
+#: src/option.c:856
 msgid "Set step size"
 msgstr "Estabelecer o tamaño de paso"
 
-#: src/option.c:871
+#: src/option.c:863
 msgid "Print partial values"
 msgstr "Imprimir os valores parciais"
 
-#: src/option.c:878
+#: src/option.c:870
 msgid "Hide value"
 msgstr "Ocultar o valor"
 
-#: src/option.c:888
+#: src/option.c:879
 msgid "Display forms dialog"
 msgstr "Mostrar o diálogo de formularios"
 
-#: src/option.c:895
+#: src/option.c:886
 msgid "Add a new Entry in forms dialog"
 msgstr "Engadir un novo campo ao diálogo de formularios"
 
-#: src/option.c:896 src/option.c:903
+#: src/option.c:887 src/option.c:894
 msgid "Field name"
 msgstr "Nome do campo"
 
-#: src/option.c:902
+#: src/option.c:893
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Engadir un novo campo de contrasinal no diálogo de formularios"
 
-#: src/option.c:909
+#: src/option.c:900
 msgid "Add a new Calendar in forms dialog"
 msgstr "Engadir un novo calendario no diálogo de formularios"
 
-#: src/option.c:910
+#: src/option.c:901
 msgid "Calendar field name"
 msgstr "Nome do campo de calendario"
 
-#: src/option.c:916
+#: src/option.c:907
 msgid "Add a new List in forms dialog"
 msgstr "Engadir unha lista nova no diálogo de formularios"
 
-#: src/option.c:917
+#: src/option.c:908
 msgid "List field and header name"
 msgstr "Listar o nome do campo e da cabeceira"
 
-#: src/option.c:923
+#: src/option.c:914
 msgid "List of values for List"
 msgstr "Lista de valores por lista"
 
-#: src/option.c:924 src/option.c:931 src/option.c:945
+#: src/option.c:915 src/option.c:922 src/option.c:936
 msgid "List of values separated by |"
 msgstr "Lista de valores separados por |"
 
-#: src/option.c:930
+#: src/option.c:921
 msgid "List of values for columns"
 msgstr "Lista de valores por columnas"
 
-#: src/option.c:937
+#: src/option.c:928
 msgid "Add a new combo box in forms dialog"
 msgstr "Engadir unha nova lista despregábel no diálogo de formularios"
 
-#: src/option.c:938
+#: src/option.c:929
 msgid "Combo box field name"
 msgstr "Nome do campo da lista despregábel"
 
-#: src/option.c:944
+#: src/option.c:935
 msgid "List of values for combo box"
 msgstr "Lista de valores para a lista despregábel"
 
-#: src/option.c:961
+#: src/option.c:952
 msgid "Show the columns header"
 msgstr "Mostrar a cabeceira das columnas"
 
-#: src/option.c:992
+#: src/option.c:983
 msgid "Display password dialog"
 msgstr "Mostrar o diálogo de contrasinal"
 
-#: src/option.c:999
+#: src/option.c:990
 msgid "Display the username option"
 msgstr "Mostrar a opción de usuario"
 
-#: src/option.c:1009
+#: src/option.c:1000
 msgid "Display color selection dialog"
 msgstr "Mostrar o diálogo de selección de cor"
 
-#: src/option.c:1016
+#: src/option.c:1007
 msgid "Set the color"
 msgstr "Estabelecer a cor"
 
-#: src/option.c:1023
+#: src/option.c:1014
 msgid "Show the palette"
 msgstr "Mostrar a paleta"
 
-#: src/option.c:1033
+#: src/option.c:1023
 msgid "About zenity"
 msgstr "Sobre o Zenity"
 
-#: src/option.c:1040
+#: src/option.c:1030
 msgid "Print version"
 msgstr "Imprimir a versión"
 
-#: src/option.c:2007
+#: src/option.c:1913
 msgid "General options"
 msgstr "Opcións xerais"
 
-#: src/option.c:2008
+#: src/option.c:1914
 msgid "Show general options"
 msgstr "Mostrar as opcións xerais"
 
-#: src/option.c:2020
+#: src/option.c:1926
 msgid "Calendar options"
 msgstr "Opcións do calendario"
 
-#: src/option.c:2021
+#: src/option.c:1927
 msgid "Show calendar options"
 msgstr "Mostrar as opcións do calendario"
 
-#: src/option.c:2033
+#: src/option.c:1939
 msgid "Text entry options"
 msgstr "Opcións de entrada de texto"
 
-#: src/option.c:2034
+#: src/option.c:1940
 msgid "Show text entry options"
 msgstr "Mostrar as opcións de entrada de texto"
 
-#: src/option.c:2046
+#: src/option.c:1952
 msgid "Error options"
 msgstr "Opcións de erro"
 
-#: src/option.c:2046
+#: src/option.c:1952
 msgid "Show error options"
 msgstr "Mostrar as opcións de erro"
 
-#: src/option.c:2056
+#: src/option.c:1962
 msgid "Info options"
 msgstr "Opcións de información"
 
-#: src/option.c:2056
+#: src/option.c:1962
 msgid "Show info options"
 msgstr "Mostrar as opcións de información"
 
-#: src/option.c:2066
+#: src/option.c:1972
 msgid "File selection options"
 msgstr "Opcións de selección de ficheiros"
 
-#: src/option.c:2067
+#: src/option.c:1973
 msgid "Show file selection options"
 msgstr "Mostrar as opcións da selección de ficheiros"
 
-#: src/option.c:2079
+#: src/option.c:1985
 msgid "List options"
 msgstr "Opcións da lista"
 
-#: src/option.c:2079
+#: src/option.c:1985
 msgid "Show list options"
 msgstr "Mostrar as opcións da lista"
 
-#: src/option.c:2090
+#: src/option.c:1996
 msgid "Notification icon options"
 msgstr "Opcións da icona de notificación"
 
-#: src/option.c:2091
+#: src/option.c:1997
 msgid "Show notification icon options"
 msgstr "Mostrar as opcións da icona de notificación"
 
-#: src/option.c:2105
+#: src/option.c:2011
 msgid "Progress options"
 msgstr "Opcións de progreso"
 
-#: src/option.c:2106
+#: src/option.c:2012
 msgid "Show progress options"
 msgstr "Mostrar as opcións de progreso"
 
-#: src/option.c:2118
+#: src/option.c:2024
 msgid "Question options"
 msgstr "Opcións de pregunta"
 
-#: src/option.c:2119
+#: src/option.c:2025
 msgid "Show question options"
 msgstr "Mostrar as opcións de pregunta"
 
-#: src/option.c:2131
+#: src/option.c:2037
 msgid "Warning options"
 msgstr "Opcións de aviso"
 
-#: src/option.c:2132
+#: src/option.c:2038
 msgid "Show warning options"
 msgstr "Mostrar as opcións de aviso"
 
-#: src/option.c:2144
+#: src/option.c:2050
 msgid "Scale options"
 msgstr "Opcións de escala"
 
-#: src/option.c:2144
+#: src/option.c:2050
 msgid "Show scale options"
 msgstr "Mostrar as opcións de escala"
 
-#: src/option.c:2154
+#: src/option.c:2060
 msgid "Text information options"
 msgstr "Opcións do texto de información"
 
-#: src/option.c:2155
+#: src/option.c:2061
 msgid "Show text information options"
 msgstr "Mostrar opcións do texto de información"
 
-#: src/option.c:2167
+#: src/option.c:2073
 msgid "Color selection options"
 msgstr "Opcións de selección de cor"
 
-#: src/option.c:2168
+#: src/option.c:2074
 msgid "Show color selection options"
 msgstr "Mostrar as opcións da selección de cor"
 
-#: src/option.c:2180
+#: src/option.c:2086
 msgid "Password dialog options"
 msgstr "Opcións do diálogo de contrasinal"
 
-#: src/option.c:2181
+#: src/option.c:2087
 msgid "Show password dialog options"
 msgstr "Mostrar as opcións do diálogo de contrasinal"
 
-#: src/option.c:2193
+#: src/option.c:2099
 msgid "Forms dialog options"
 msgstr "Opcións do diálogo de formularios"
 
-#: src/option.c:2194
+#: src/option.c:2100
 msgid "Show forms dialog options"
 msgstr "Mostrar as opcións do diálogo de formularios"
 
-#: src/option.c:2206
+#: src/option.c:2112
 msgid "Miscellaneous options"
 msgstr "Opcións varias"
 
-#: src/option.c:2207
+#: src/option.c:2113
 msgid "Show miscellaneous options"
 msgstr "Mostrar as opcións varias"
 
-#: src/option.c:2230
-#, c-format
+#: src/option.c:2139
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Esta opción non está dispoñíbel. Vexa --help para todos os usos posíbeis.\n"
 
-#: src/option.c:2236
+#: src/option.c:2144
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s non se permite neste diálogo\n"
 
-#: src/option.c:2241
-#, c-format
+#: src/option.c:2148
 msgid "Two or more dialog options specified\n"
 msgstr "Especificáronse dúas ou máis opcións de diálogo\n"
 
-#: src/password.c:96
+#. Checks if username has been passed as a parameter
+#: src/password.c:70
+msgid "Type your password"
+msgstr "Escriba o seu contrasinal"
+
+#: src/password.c:73
 msgid "Type your username and password"
 msgstr "Escriba o seu nome de usuario e contrasinal"
 
-#. Add the username label and entry and increment the row for the
-#. * password entry so it will be added below the username.
-#.
-#: src/password.c:101
+#: src/password.c:100
 msgid "Username:"
 msgstr "Nome de usuario:"
 
-#: src/password.c:116
+#: src/password.c:110
 msgid "Password:"
 msgstr "Contrasinal:"
 
-#: src/progress.c:116
+#: src/progress.c:102
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Tempo restante: %lu:%02lu:%02lu"
 
-#: src/scale.c:66
-#, c-format
+#: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "O valor máximo debe ser maior que o valor mínimo.\n"
 
-#: src/scale.c:74
-#, c-format
+#: src/scale.c:69
 msgid "Value out of range.\n"
 msgstr "Valor fóra dos límites.\n"
 
-#: src/tree.c:405
-#, c-format
+#: src/tree.c:393
 msgid "No column titles specified for List dialog.\n"
 msgstr ""
 "Non se especificaron os títulos das columnas para o diálogo de lista.\n"
 
-#: src/tree.c:412
-#, c-format
+#: src/tree.c:399
 msgid "You should use only one List dialog type.\n"
 msgstr "Debería usar só un tipo de diálogo de lista.\n"
 
-#: src/zenity.ui:16 src/zenity.ui:31
+#: src/zenity.ui:14 src/zenity.ui:76
 msgid "Adjust the scale value"
 msgstr "Axustar o valor da escala"
 
-#: src/zenity.ui:74
+#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
+#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
+#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
+#: src/zenity.ui:984 src/zenity.ui:1080
+msgid "OK"
+msgstr "Aceptar"
+
+#: src/zenity.ui:117
 msgid "Text View"
 msgstr "Visualización de texto"
 
-#: src/zenity.ui:137
+#: src/zenity.ui:231
 msgid "Calendar selection"
 msgstr "Selección do calendario"
 
-#: src/zenity.ui:156
+#: src/zenity.ui:298
 msgid "Select a date from below."
 msgstr "Seleccione unha data da lista de abaixo."
 
-#: src/zenity.ui:167
+#: src/zenity.ui:319
 msgid "C_alendar:"
 msgstr "C_alendario:"
 
-#: src/zenity.ui:172
-#, fuzzy
-msgid "Calendar"
-msgstr "C_alendario:"
-
-#: src/zenity.ui:211
+#: src/zenity.ui:361
 msgid "Add a new entry"
 msgstr "Engadir unha entrada nova"
 
-#: src/zenity.ui:234
+#: src/zenity.ui:428
 msgid "_Enter new text:"
 msgstr "_Introduza un texto novo:"
 
-#: src/zenity.ui:273
+#: src/zenity.ui:465
 msgid "Error"
 msgstr "Erro"
 
-#: src/zenity.ui:301
+#: src/zenity.ui:530
 msgid "An error has occurred."
 msgstr "Produciuse un erro."
 
-#: src/zenity.ui:378
+#: src/zenity.ui:658
 msgid "Forms dialog"
 msgstr "Diálogo de formularios"
 
-#: src/zenity.ui:413
+#: src/zenity.ui:681
 msgid "Information"
 msgstr "Información"
 
-#: src/zenity.ui:438
+#: src/zenity.ui:741
 msgid "All updates are complete."
 msgstr "Completáronse todas as actualizacións."
 
-#: src/zenity.ui:466
+#: src/zenity.ui:768
 msgid "Progress"
 msgstr "Progreso"
 
-#: src/zenity.ui:481
+#: src/zenity.ui:831
 msgid "Running..."
 msgstr "Executando…"
 
-#: src/zenity.ui:530
+#: src/zenity.ui:882
 msgid "Question"
 msgstr "Pregunta"
 
-#: src/zenity.ui:553 src/zenity.ui:660
+#: src/zenity.ui:929 src/zenity.ui:1126
 msgid "Are you sure you want to proceed?"
 msgstr "Desexa realmente continuar?"
 
-#: src/zenity.ui:573
+#: src/zenity.ui:953
 msgid "Select items from the list"
 msgstr "Seleccione elementos da lista"
 
-#: src/zenity.ui:588
+#: src/zenity.ui:1015
 msgid "Select items from the list below."
 msgstr "Seleccione elementos da lista de abaixo."
 
-#: src/zenity.ui:633 src/zenity.ui:693
+#: src/zenity.ui:1064
 msgid "Warning"
 msgstr "Aviso"
-
-#: src/zenity.ui:716
-msgid "Type your password"
-msgstr "Escriba o seu contrasinal"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Fran Diéguez <frandieguez@ubuntu.com>, 2009-2018.\n"
-#~ "Mancomún - Centro de Referencia e Servizos de Software Libre "
-#~ "<g11n@mancomun.org>, 2009.\n"
-#~ "Antón Méixome <meixome@certima.net>, 2009, 2010.\n"
-#~ "Ignacio Casal Quinteiro <icq@gnome.org>, 2005, 2006, 2007, 2008."
-
-#~ msgid "Set the window icon"
-#~ msgstr "Estabelecer a icona da xanela"
-
-#~ msgid "Set the parent window to attach to"
-#~ msgstr "Estabelecer a xanela pai para anexar a"
-
-#~ msgid "WINDOW"
-#~ msgstr "XANELA"
-
-#~ msgid "Confirm file selection if filename already exists"
-#~ msgstr "Confirmar a selección de ficheiro se o nome do ficheiro xa existe"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "OK"
-#~ msgstr "Aceptar"

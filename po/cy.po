@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 15:49-0500\n"
+"POT-Creation-Date: 2006-02-25 14:34+0000\n"
 "PO-Revision-Date: 2006-02-23 20:23-0000\n"
 "Last-Translator: Rhys Jones <rhys@sucs.org>\n"
 "Language-Team: Cymraeg <gnome-cy@pengwyn.linux.org.uk>\n"
@@ -19,318 +19,278 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/about.c:54
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
+#: ../src/about.c:248
+msgid "translator-credits"
 msgstr ""
+"Dafydd Harries <daf@muse.19inch.net>\n"
+"Dafydd Tomos <l10n@da.fydd.org>\n"
+"Rhys Jones <rhys@sucs.org>\n"
+"Telsa Gwynne <hobbit@aloss.ukuu.org.uk>\n"
+"Chris Jackson <chriscf@gmail.com>\n"
+"Bryn Salisbury <bryn@randomlyevil.org.uk>"
 
-#: src/about.c:59
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
-msgstr ""
-
-#: src/about.c:63
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-
-#: src/about.c:88
+#: ../src/about.c:257
 msgid "Display dialog boxes from shell scripts"
 msgstr "Dangos blychau deialog o sgriptiau cragen"
 
-#: src/fileselection.c:57 src/zenity.ui:65 src/zenity.ui:129 src/zenity.ui:203
-#: src/zenity.ui:265 src/zenity.ui:322 src/zenity.ui:405 src/zenity.ui:458
-#: src/zenity.ui:521 src/zenity.ui:625 src/zenity.ui:679 src/zenity.ui:740
-msgid "_OK"
-msgstr ""
+#: ../src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Gogwydd"
 
-#: src/fileselection.c:58 src/zenity.ui:59 src/zenity.ui:123 src/zenity.ui:197
-#: src/zenity.ui:259 src/zenity.ui:399 src/zenity.ui:515 src/zenity.ui:619
-#: src/zenity.ui:746
-msgid "_Cancel"
-msgstr ""
+#: ../src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "Gogwydd y cynhwysydd."
 
-#: src/main.c:121
-#, c-format
+#: ../src/main.c:93
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Rhaid i chi benodi math deialog. Gweler 'zenity --help' ar gyfer mwy o "
 "fanylion\n"
 
-#: src/msg.c:42
-msgid "_No"
-msgstr ""
-
-#: src/msg.c:44
-msgid "_Yes"
-msgstr ""
-
-#: src/notification.c:55
-#, fuzzy, c-format
-msgid "Could not parse message\n"
+#: ../src/notification.c:161
+msgid "could not parse command from stdin\n"
 msgstr "methu â gramadegu'r gorchymyn o'r prif fewnbwn (stdin)\n"
 
-#: src/notification.c:142
-#, c-format
-msgid ""
-"Invalid value for a boolean typed hint.\n"
-"Supported values are 'true' or 'false'.\n"
-msgstr ""
-
-#. (iibiiay)
-#: src/notification.c:163
-#, c-format
-msgid "Unsupported hint. Skipping.\n"
-msgstr ""
-
-#. unknown hints
-#: src/notification.c:186
-#, c-format
-msgid "Unknown hint name. Skipping.\n"
-msgstr ""
-
-#: src/notification.c:247
-#, fuzzy, c-format
-msgid "Could not parse command from stdin\n"
-msgstr "methu â gramadegu'r gorchymyn o'r prif fewnbwn (stdin)\n"
-
-#: src/notification.c:374
+#: ../src/notification.c:230 ../src/notification.c:259
 msgid "Zenity notification"
 msgstr "Hysbysiad Zenity"
 
-#: src/option.c:166
+#: ../src/scale.c:56
+msgid "Maximum value must be greater than minimum value.\n"
+msgstr "Rhaid i'r uchafrif fod yn fwy na'r isafrif.\n"
+
+#: ../src/scale.c:63
+msgid "Value out of range.\n"
+msgstr "Gwerth y tu allan i'r ystod.\n"
+
+#: ../src/tree.c:320
+msgid "No column titles specified for List dialog.\n"
+msgstr "Dim teitlau colofnau wedi eu penodi ar gyfer deialog Rhestr.\n"
+
+#: ../src/tree.c:326
+msgid "You should use only one List dialog type.\n"
+msgstr "Dylech ond defnyddio un fath o ddeialog Rhestr.\n"
+
+#: ../src/zenity.glade.h:1
+msgid "Add a new entry"
+msgstr "Ychwanegu maes newydd"
+
+#: ../src/zenity.glade.h:2
+msgid "Adjust the scale value"
+msgstr "Newid gwerth y raddfa"
+
+#: ../src/zenity.glade.h:3
+msgid "Adjust the scale value."
+msgstr "Newid gwerth y raddfa."
+
+#: ../src/zenity.glade.h:4
+msgid "All updates are complete."
+msgstr "Mae pob diweddariad yn gyflawn."
+
+#: ../src/zenity.glade.h:5
+msgid "An error has occurred."
+msgstr "Mae gwall wedi digwydd."
+
+#: ../src/zenity.glade.h:6
+msgid "Are you sure you want to proceed?"
+msgstr "Ydych chi'n sicr eich bod chi eisiau parhau?"
+
+#: ../src/zenity.glade.h:7
+msgid "C_alendar:"
+msgstr "_Calendr:"
+
+#: ../src/zenity.glade.h:8
+msgid "Calendar selection"
+msgstr "Dewis calendr"
+
+#: ../src/zenity.glade.h:9
+msgid "Error"
+msgstr "Gwall"
+
+#: ../src/zenity.glade.h:10
+msgid "Information"
+msgstr "Gwybodaeth"
+
+#: ../src/zenity.glade.h:11
+msgid "Progress"
+msgstr "Cynnydd"
+
+#: ../src/zenity.glade.h:12
+msgid "Question"
+msgstr "Cwestiwn"
+
+#: ../src/zenity.glade.h:13
+msgid "Running..."
+msgstr "Gweithredu..."
+
+#: ../src/zenity.glade.h:14
+msgid "Select a date from below."
+msgstr "Dewiswch ddyddiad islaw."
+
+#: ../src/zenity.glade.h:15
+msgid "Select a file"
+msgstr "Dewiswch ffeil"
+
+#: ../src/zenity.glade.h:16
+msgid "Select items from the list"
+msgstr "Dewiswch eitemau o'r rhestr"
+
+#: ../src/zenity.glade.h:17
+msgid "Select items from the list below."
+msgstr "Dewiswch eitemau o'r rhestr islaw."
+
+#: ../src/zenity.glade.h:18
+msgid "Text View"
+msgstr "Golwg Testun"
+
+#: ../src/zenity.glade.h:19
+msgid "Warning"
+msgstr "Rhybudd"
+
+#: ../src/zenity.glade.h:20
+msgid "_Enter new text:"
+msgstr "_Gosod testun newydd:"
+
+#: ../src/option.c:114
 msgid "Set the dialog title"
 msgstr "Gosod teitl y deialog"
 
-#: src/option.c:167
+#: ../src/option.c:115
 msgid "TITLE"
 msgstr "TEITL"
 
-#: src/option.c:173
+#: ../src/option.c:123
+msgid "Set the window icon"
+msgstr "Gosod eicon y ffenest"
+
+#: ../src/option.c:124
+msgid "ICONPATH"
+msgstr "LLWYBR_EICON"
+
+#: ../src/option.c:132
 msgid "Set the width"
 msgstr "Gosod y lled"
 
-#: src/option.c:174
+#: ../src/option.c:133
 msgid "WIDTH"
 msgstr "LLED"
 
-#: src/option.c:180
+#: ../src/option.c:141
 msgid "Set the height"
 msgstr "Gosod yr uchder"
 
-#: src/option.c:181
+#: ../src/option.c:142
 msgid "HEIGHT"
 msgstr "UCHDER"
 
-#: src/option.c:187
-#, fuzzy
-msgid "Set dialog timeout in seconds"
-msgstr "Gosod teitl y deialog"
-
-#. Timeout for closing the dialog
-#: src/option.c:189
-msgid "TIMEOUT"
-msgstr ""
-
-#: src/option.c:195
-#, fuzzy
-msgid "Set the label of the OK button"
-msgstr "Gosod testun y deialog"
-
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:357
-#: src/option.c:459 src/option.c:557 src/option.c:578 src/option.c:597
-#: src/option.c:658 src/option.c:733 src/option.c:740 src/option.c:790
-#: src/option.c:837 src/option.c:969
-msgid "TEXT"
-msgstr ""
-
-#: src/option.c:202
-msgid "Set the label of the Cancel button"
-msgstr ""
-
-#: src/option.c:209
-msgid "Add an extra button"
-msgstr ""
-
-#: src/option.c:216
-#, fuzzy
-msgid "Set the modal hint"
-msgstr "Gosod teitl y deialog"
-
-#: src/option.c:226
+#: ../src/option.c:156
 msgid "Display calendar dialog"
 msgstr "Dangos deialog dyddiad"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:356
-#: src/option.c:458 src/option.c:596 src/option.c:657 src/option.c:789
-#: src/option.c:836 src/option.c:968
+#: ../src/option.c:165 ../src/option.c:225 ../src/option.c:268
+#: ../src/option.c:301 ../src/option.c:394 ../src/option.c:523
+#: ../src/option.c:575 ../src/option.c:641 ../src/option.c:674
 msgid "Set the dialog text"
 msgstr "Gosod testun y deialog"
 
-#: src/option.c:240
+#: ../src/option.c:174
 msgid "Set the calendar day"
 msgstr "Gosod dydd y calendr"
 
-#: src/option.c:241
-msgid "DAY"
-msgstr ""
-
-#: src/option.c:247
+#: ../src/option.c:183
 msgid "Set the calendar month"
 msgstr "Gosod mis y calendr"
 
-#: src/option.c:248
-msgid "MONTH"
-msgstr ""
-
-#: src/option.c:254
+#: ../src/option.c:192
 msgid "Set the calendar year"
 msgstr "Gosod blwyddyn y calendr"
 
-#: src/option.c:255
-msgid "YEAR"
-msgstr ""
-
-#: src/option.c:261 src/option.c:982
+#: ../src/option.c:201
 msgid "Set the format for the returned date"
 msgstr "Gosod fformat y dyddiad a ddychwelir"
 
-#: src/option.c:262 src/option.c:983
-msgid "PATTERN"
-msgstr ""
-
-#: src/option.c:271
+#: ../src/option.c:216
 msgid "Display text entry dialog"
 msgstr "Dangos deialog maes testun"
 
-#: src/option.c:285
+#: ../src/option.c:234
 msgid "Set the entry text"
 msgstr "Gosod testun y maes"
 
-#: src/option.c:292
+#: ../src/option.c:243
 msgid "Hide the entry text"
 msgstr "Cuddio testun y maes"
 
-#: src/option.c:302
+#: ../src/option.c:259
 msgid "Display error dialog"
 msgstr "Dangos deialog gwall"
 
-#: src/option.c:316 src/option.c:363 src/option.c:664 src/option.c:796
-#, fuzzy
-msgid "Set the dialog icon"
-msgstr "Gosod teitl y deialog"
-
-#: src/option.c:317 src/option.c:364 src/option.c:665 src/option.c:797
-msgid "ICON-NAME"
-msgstr ""
-
-#: src/option.c:323 src/option.c:370 src/option.c:671 src/option.c:803
+#: ../src/option.c:277 ../src/option.c:310 ../src/option.c:584
+#: ../src/option.c:650
 msgid "Do not enable text wrapping"
 msgstr "Peidio galluogi lapio testun"
 
-#: src/option.c:330 src/option.c:377 src/option.c:678 src/option.c:810
-#, fuzzy
-msgid "Do not enable Pango markup"
-msgstr "Peidio galluogi lapio testun"
-
-#: src/option.c:337 src/option.c:384 src/option.c:692 src/option.c:817
-msgid ""
-"Enable ellipsizing in the dialog text. This fixes the high window size with "
-"long texts"
-msgstr ""
-
-#: src/option.c:349
+#: ../src/option.c:292
 msgid "Display info dialog"
 msgstr "Dangos deialog gwybodaeth"
 
-#: src/option.c:396
+#: ../src/option.c:325
 msgid "Display file selection dialog"
 msgstr "Dangos deialog dewis ffeil"
 
-#: src/option.c:403
+#: ../src/option.c:334
 msgid "Set the filename"
 msgstr "Gosod yr enw ffeil"
 
-#: src/option.c:404 src/option.c:719
+#: ../src/option.c:335 ../src/option.c:609
 msgid "FILENAME"
 msgstr "ENW_FFEIL"
 
-#: src/option.c:410
+#: ../src/option.c:343
 msgid "Allow multiple files to be selected"
 msgstr "Caniatáu dewis mwy nag un ffeil"
 
-#: src/option.c:417
+#: ../src/option.c:352
 msgid "Activate directory-only selection"
 msgstr "Gosod dewis cyfeiriadur-yn-unig ar waith"
 
-#: src/option.c:424
+#: ../src/option.c:361
 msgid "Activate save mode"
 msgstr "Gweithredoli modd cadw"
 
-#: src/option.c:431 src/option.c:493 src/option.c:975
+#: ../src/option.c:370 ../src/option.c:430
 msgid "Set output separator character"
 msgstr "Gosod y nod gwahanu allbwn"
 
-#: src/option.c:432 src/option.c:494 src/option.c:976
+#: ../src/option.c:371 ../src/option.c:431
 msgid "SEPARATOR"
 msgstr "GWAHANWR"
 
-#: src/option.c:438
-#, fuzzy
-msgid "Set a filename filter"
-msgstr "Gosod yr enw ffeil"
-
-#. Help for file-filter argument (name and patterns for file
-#. selection)
-#: src/option.c:441
-msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr ""
-
-#: src/option.c:451
+#: ../src/option.c:385
 msgid "Display list dialog"
 msgstr "Dangos deialog rhestr"
 
-#: src/option.c:465
+#: ../src/option.c:403
 msgid "Set the column header"
 msgstr "Gosod y pennawd colofn"
 
-#: src/option.c:466
-msgid "COLUMN"
-msgstr ""
-
-#: src/option.c:472
-#, fuzzy
-msgid "Use check boxes for the first column"
+#: ../src/option.c:412
+msgid "Use check boxes for first column"
 msgstr "Defnyddio blychau gwirio ar gyfer y golofn gyntaf"
 
-#: src/option.c:479
-#, fuzzy
-msgid "Use radio buttons for the first column"
+#: ../src/option.c:421
+msgid "Use radio buttons for first column"
 msgstr "Defnyddio botymau radio ar gyfer y golofn gyntaf"
 
-#: src/option.c:486
-#, fuzzy
-msgid "Use an image for the first column"
-msgstr "Defnyddio blychau gwirio ar gyfer y golofn gyntaf"
-
-#: src/option.c:500
+#: ../src/option.c:439
 msgid "Allow multiple rows to be selected"
 msgstr "Caniatáu dewis mwy nag un rhes"
 
-#: src/option.c:507 src/option.c:725
+#: ../src/option.c:448 ../src/option.c:617
 msgid "Allow changes to text"
 msgstr "Caniatáu newidiadau i'r testun"
 
-#: src/option.c:514
+#: ../src/option.c:457
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -338,577 +298,216 @@ msgstr ""
 "Argraffu colofn benodol (1 yw'r rhagosodiad. Gellir defnyddio 'ALL' er mwyn "
 "argraffu pob colofn)"
 
-#. Column index number to print out on a list dialog
-#: src/option.c:517 src/option.c:524
-msgid "NUMBER"
-msgstr ""
-
-#: src/option.c:523
+#: ../src/option.c:466
 msgid "Hide a specific column"
 msgstr "Cuddio colofn benodol"
 
-#: src/option.c:530
-#, fuzzy
-msgid "Hide the column headers"
-msgstr "Gosod y pennawd colofn"
-
-#: src/option.c:537
-msgid ""
-"Change list default search function searching for text in the middle, not on "
-"the beginning"
-msgstr ""
-
-#: src/option.c:549
+#: ../src/option.c:481
 msgid "Display notification"
 msgstr "Dangos hysbysiad"
 
-#: src/option.c:556
+#: ../src/option.c:490
 msgid "Set the notification text"
 msgstr "Gosod testun yr hysbysiad"
 
-#: src/option.c:563
-#, fuzzy
-msgid "Set the notification icon"
-msgstr "Gosod testun yr hysbysiad"
-
-#: src/option.c:564
-msgid "ICONPATH"
-msgstr "LLWYBR_EICON"
-
-#: src/option.c:570
+#: ../src/option.c:499
 msgid "Listen for commands on stdin"
 msgstr "Gwrando am orchmynion ar y prif fewnbwn (stdin)"
 
-#: src/option.c:577
-#, fuzzy
-msgid "Set the notification hints"
-msgstr "Gosod testun yr hysbysiad"
-
-#: src/option.c:589
+#: ../src/option.c:514
 msgid "Display progress indication dialog"
 msgstr "Dangos deialog cynnydd"
 
-#: src/option.c:603
+#: ../src/option.c:532
 msgid "Set initial percentage"
 msgstr "Gosod y canran cychwynnol"
 
-#: src/option.c:604
-msgid "PERCENTAGE"
-msgstr ""
-
-#: src/option.c:610
+#: ../src/option.c:541
 msgid "Pulsate progress bar"
 msgstr "Pylsadu'r bar cynnydd"
 
-#: src/option.c:618
+#: ../src/option.c:551
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Cau'r deialog pan gyrhaeddir 100%"
 
-#: src/option.c:625
-msgid "Kill parent process if Cancel button is pressed"
-msgstr ""
-
-#: src/option.c:632
-msgid "Hide Cancel button"
-msgstr ""
-
-#: src/option.c:640
-#, no-c-format
-msgid "Estimate when progress will reach 100%"
-msgstr ""
-
-#: src/option.c:650
+#: ../src/option.c:566
 msgid "Display question dialog"
 msgstr "Dangos deialog cwestiwn"
 
-#: src/option.c:685
-msgid "Give Cancel button focus by default"
-msgstr ""
-
-#: src/option.c:701
-msgid "Suppress OK and Cancel buttons"
-msgstr ""
-
-#: src/option.c:711
+#: ../src/option.c:599
 msgid "Display text information dialog"
 msgstr "Dangos deialog gwybodaeth testun"
 
-#: src/option.c:718
+#: ../src/option.c:608
 msgid "Open file"
 msgstr "Agor ffeil"
 
-#: src/option.c:732
-#, fuzzy
-msgid "Set the text font"
-msgstr "Gosod testun y maes"
-
-#: src/option.c:739
-msgid "Enable an I read and agree checkbox"
-msgstr ""
-
-#: src/option.c:747
-msgid "Enable HTML support"
-msgstr ""
-
-#: src/option.c:754
-msgid ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
-msgstr ""
-
-#: src/option.c:762
-msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr ""
-
-#: src/option.c:764
-msgid "URL"
-msgstr ""
-
-#: src/option.c:771
-msgid "Auto scroll the text to the end. Only when text is captured from stdin"
-msgstr ""
-
-#: src/option.c:782
+#: ../src/option.c:632
 msgid "Display warning dialog"
 msgstr "Dangos deialog rhybudd"
 
-#: src/option.c:829
+#: ../src/option.c:665
 msgid "Display scale dialog"
 msgstr "Dangos deialog graddfa"
 
-#: src/option.c:843
+#: ../src/option.c:683
 msgid "Set initial value"
 msgstr "Gosod y gwerth gwreiddiol"
 
-#: src/option.c:844 src/option.c:851 src/option.c:858 src/option.c:865
-#: src/option.c:1017
-msgid "VALUE"
-msgstr ""
-
-#: src/option.c:850
+#: ../src/option.c:692
 msgid "Set minimum value"
 msgstr "Gosod yr isafrif"
 
-#: src/option.c:857
+#: ../src/option.c:701
 msgid "Set maximum value"
 msgstr "Gosod yr uchafrif"
 
-#: src/option.c:864
+#: ../src/option.c:710
 msgid "Set step size"
 msgstr "Gosod maint y camau"
 
-#: src/option.c:871
+#: ../src/option.c:719
 msgid "Print partial values"
 msgstr "Dangos gwerthoedd rhannol"
 
-#: src/option.c:878
+#: ../src/option.c:728
 msgid "Hide value"
 msgstr "Cuddio gwerth"
 
-#: src/option.c:888
-#, fuzzy
-msgid "Display forms dialog"
-msgstr "Dangos deialog gwybodaeth"
-
-#: src/option.c:895
-#, fuzzy
-msgid "Add a new Entry in forms dialog"
-msgstr "Ychwanegu maes newydd"
-
-#: src/option.c:896 src/option.c:903
-msgid "Field name"
-msgstr ""
-
-#: src/option.c:902
-msgid "Add a new Password Entry in forms dialog"
-msgstr ""
-
-#: src/option.c:909
-msgid "Add a new Calendar in forms dialog"
-msgstr ""
-
-#: src/option.c:910
-#, fuzzy
-msgid "Calendar field name"
-msgstr "Dewis calendr"
-
-#: src/option.c:916
-msgid "Add a new List in forms dialog"
-msgstr ""
-
-#: src/option.c:917
-msgid "List field and header name"
-msgstr ""
-
-#: src/option.c:923
-msgid "List of values for List"
-msgstr ""
-
-#: src/option.c:924 src/option.c:931 src/option.c:945
-msgid "List of values separated by |"
-msgstr ""
-
-#: src/option.c:930
-msgid "List of values for columns"
-msgstr ""
-
-#: src/option.c:937
-msgid "Add a new combo box in forms dialog"
-msgstr ""
-
-#: src/option.c:938
-msgid "Combo box field name"
-msgstr ""
-
-#: src/option.c:944
-msgid "List of values for combo box"
-msgstr ""
-
-#: src/option.c:961
-#, fuzzy
-msgid "Show the columns header"
-msgstr "Gosod y pennawd colofn"
-
-#: src/option.c:992
-#, fuzzy
-msgid "Display password dialog"
-msgstr "Dangos deialog gwall"
-
-#: src/option.c:999
-#, fuzzy
-msgid "Display the username option"
-msgstr "Dangos deialog maes testun"
-
-#: src/option.c:1009
-#, fuzzy
-msgid "Display color selection dialog"
-msgstr "Dangos deialog dewis ffeil"
-
-#: src/option.c:1016
-#, fuzzy
-msgid "Set the color"
-msgstr "Gosod y pennawd colofn"
-
-#: src/option.c:1023
-#, fuzzy
-msgid "Show the palette"
-msgstr "Gosod teitl y deialog"
-
-#: src/option.c:1033
+#: ../src/option.c:743
 msgid "About zenity"
 msgstr "Ynghylch zenity"
 
-#: src/option.c:1040
+#: ../src/option.c:752
 msgid "Print version"
 msgstr "Argraffu'r fersiwn"
 
-#: src/option.c:2007
+#: ../src/option.c:1385
 msgid "General options"
 msgstr "Opsiynau cyffredinol"
 
-#: src/option.c:2008
+#: ../src/option.c:1386
 msgid "Show general options"
 msgstr "Dangos opsiynau cyffredinol"
 
-#: src/option.c:2020
+#: ../src/option.c:1396
 msgid "Calendar options"
 msgstr "Opsiynau calendr"
 
-#: src/option.c:2021
+#: ../src/option.c:1397
 msgid "Show calendar options"
 msgstr "Dangos opsiynau calendr"
 
-#: src/option.c:2033
+#: ../src/option.c:1407
 msgid "Text entry options"
 msgstr "Opsiynau maes testun"
 
-#: src/option.c:2034
+#: ../src/option.c:1408
 msgid "Show text entry options"
 msgstr "Dangos opsiynau maes testun"
 
-#: src/option.c:2046
+#: ../src/option.c:1418
 msgid "Error options"
 msgstr "Opsiynau gwall"
 
-#: src/option.c:2046
+#: ../src/option.c:1419
 msgid "Show error options"
 msgstr "Dangos opsiynau gwall"
 
-#: src/option.c:2056
+#: ../src/option.c:1429
 msgid "Info options"
 msgstr "Opsiynau gwybodaeth"
 
-#: src/option.c:2056
+#: ../src/option.c:1430
 msgid "Show info options"
 msgstr "Dangos opsiynau gwybodaeth"
 
-#: src/option.c:2066
+#: ../src/option.c:1440
 msgid "File selection options"
 msgstr "Opsiynau dewis ffeiliau"
 
-#: src/option.c:2067
+#: ../src/option.c:1441
 msgid "Show file selection options"
 msgstr "Dangos opsiynau dewis ffeiliau"
 
-#: src/option.c:2079
+#: ../src/option.c:1451
 msgid "List options"
 msgstr "Opsiynau rhestr"
 
-#: src/option.c:2079
+#: ../src/option.c:1452
 msgid "Show list options"
 msgstr "Dangos opsiynau rhestr"
 
-#: src/option.c:2090
+#: ../src/option.c:1462
 msgid "Notification icon options"
 msgstr "Opsiynau eicon hysbysiad"
 
-#: src/option.c:2091
+#: ../src/option.c:1463
 msgid "Show notification icon options"
 msgstr "Dangos opsiynau eicon hysbysiad"
 
-#: src/option.c:2105
+#: ../src/option.c:1473
 msgid "Progress options"
 msgstr "Opsiynau cynnydd"
 
-#: src/option.c:2106
+#: ../src/option.c:1474
 msgid "Show progress options"
 msgstr "Dangos opsiynau cynnydd"
 
-#: src/option.c:2118
+#: ../src/option.c:1484
 msgid "Question options"
 msgstr "Opsiynau cwestiwn"
 
-#: src/option.c:2119
+#: ../src/option.c:1485
 msgid "Show question options"
 msgstr "Dangos opsiynau cwestiwn"
 
-#: src/option.c:2131
+#: ../src/option.c:1495
 msgid "Warning options"
 msgstr "Opsiynau rhybudd"
 
-#: src/option.c:2132
+#: ../src/option.c:1496
 msgid "Show warning options"
 msgstr "Dangos opsiynau rhybudd"
 
-#: src/option.c:2144
+#: ../src/option.c:1506
 msgid "Scale options"
 msgstr "Opsiynau graddfa"
 
-#: src/option.c:2144
+#: ../src/option.c:1507
 msgid "Show scale options"
 msgstr "Dangos opsiynau graddfa"
 
-#: src/option.c:2154
+#: ../src/option.c:1517
 msgid "Text information options"
 msgstr "Opsiynau testun gwybodaeth"
 
-#: src/option.c:2155
+#: ../src/option.c:1518
 msgid "Show text information options"
 msgstr "Dangos opsiynau testun gwybodaeth"
 
-#: src/option.c:2167
-#, fuzzy
-msgid "Color selection options"
-msgstr "Opsiynau dewis ffeiliau"
-
-#: src/option.c:2168
-#, fuzzy
-msgid "Show color selection options"
-msgstr "Dangos opsiynau dewis ffeiliau"
-
-#: src/option.c:2180
-#, fuzzy
-msgid "Password dialog options"
-msgstr "Opsiynau rhybudd"
-
-#: src/option.c:2181
-#, fuzzy
-msgid "Show password dialog options"
-msgstr "Dangos opsiynau rhybudd"
-
-#: src/option.c:2193
-#, fuzzy
-msgid "Forms dialog options"
-msgstr "Dangos opsiynau gwybodaeth"
-
-#: src/option.c:2194
-#, fuzzy
-msgid "Show forms dialog options"
-msgstr "Dangos opsiynau graddfa"
-
-#: src/option.c:2206
+#: ../src/option.c:1528
 msgid "Miscellaneous options"
 msgstr "Opsiynau eraill"
 
-#: src/option.c:2207
+#: ../src/option.c:1529
 msgid "Show miscellaneous options"
 msgstr "Dangos opsiynau eraill"
 
-#: src/option.c:2230
-#, c-format
+#: ../src/option.c:1554
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr "Nid yw'r opsiwn yma ar gael. Gweler --help am restr opsiynau.\n"
 
-#: src/option.c:2236
+#: ../src/option.c:1558
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "Ni chefnogir --%s ar gyfer y deialog hwn\n"
 
-#: src/option.c:2241
-#, c-format
+#: ../src/option.c:1562
 msgid "Two or more dialog options specified\n"
 msgstr "Dau neu fwy o opsiynau deialog wedi eu darparu\n"
-
-#: src/password.c:96
-msgid "Type your username and password"
-msgstr ""
-
-#. Add the username label and entry and increment the row for the
-#. * password entry so it will be added below the username.
-#.
-#: src/password.c:101
-msgid "Username:"
-msgstr ""
-
-#: src/password.c:116
-msgid "Password:"
-msgstr ""
-
-#: src/progress.c:116
-#, c-format
-msgid "Time remaining: %lu:%02lu:%02lu"
-msgstr ""
-
-#: src/scale.c:66
-#, c-format
-msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Rhaid i'r uchafrif fod yn fwy na'r isafrif.\n"
-
-#: src/scale.c:74
-#, c-format
-msgid "Value out of range.\n"
-msgstr "Gwerth y tu allan i'r ystod.\n"
-
-#: src/tree.c:405
-#, c-format
-msgid "No column titles specified for List dialog.\n"
-msgstr "Dim teitlau colofnau wedi eu penodi ar gyfer deialog Rhestr.\n"
-
-#: src/tree.c:412
-#, c-format
-msgid "You should use only one List dialog type.\n"
-msgstr "Dylech ond defnyddio un fath o ddeialog Rhestr.\n"
-
-#: src/zenity.ui:16 src/zenity.ui:31
-msgid "Adjust the scale value"
-msgstr "Newid gwerth y raddfa"
-
-#: src/zenity.ui:74
-msgid "Text View"
-msgstr "Golwg Testun"
-
-#: src/zenity.ui:137
-msgid "Calendar selection"
-msgstr "Dewis calendr"
-
-#: src/zenity.ui:156
-msgid "Select a date from below."
-msgstr "Dewiswch ddyddiad islaw."
-
-#: src/zenity.ui:167
-msgid "C_alendar:"
-msgstr "_Calendr:"
-
-#: src/zenity.ui:172
-#, fuzzy
-msgid "Calendar"
-msgstr "_Calendr:"
-
-#: src/zenity.ui:211
-msgid "Add a new entry"
-msgstr "Ychwanegu maes newydd"
-
-#: src/zenity.ui:234
-msgid "_Enter new text:"
-msgstr "_Gosod testun newydd:"
-
-#: src/zenity.ui:273
-msgid "Error"
-msgstr "Gwall"
-
-#: src/zenity.ui:301
-msgid "An error has occurred."
-msgstr "Mae gwall wedi digwydd."
-
-#: src/zenity.ui:378
-msgid "Forms dialog"
-msgstr ""
-
-#: src/zenity.ui:413
-msgid "Information"
-msgstr "Gwybodaeth"
-
-#: src/zenity.ui:438
-msgid "All updates are complete."
-msgstr "Mae pob diweddariad yn gyflawn."
-
-#: src/zenity.ui:466
-msgid "Progress"
-msgstr "Cynnydd"
-
-#: src/zenity.ui:481
-msgid "Running..."
-msgstr "Gweithredu..."
-
-#: src/zenity.ui:530
-msgid "Question"
-msgstr "Cwestiwn"
-
-#: src/zenity.ui:553 src/zenity.ui:660
-msgid "Are you sure you want to proceed?"
-msgstr "Ydych chi'n sicr eich bod chi eisiau parhau?"
-
-#: src/zenity.ui:573
-msgid "Select items from the list"
-msgstr "Dewiswch eitemau o'r rhestr"
-
-#: src/zenity.ui:588
-msgid "Select items from the list below."
-msgstr "Dewiswch eitemau o'r rhestr islaw."
-
-#: src/zenity.ui:633 src/zenity.ui:693
-msgid "Warning"
-msgstr "Rhybudd"
-
-#: src/zenity.ui:716
-msgid "Type your password"
-msgstr ""
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Dafydd Harries <daf@muse.19inch.net>\n"
-#~ "Dafydd Tomos <l10n@da.fydd.org>\n"
-#~ "Rhys Jones <rhys@sucs.org>\n"
-#~ "Telsa Gwynne <hobbit@aloss.ukuu.org.uk>\n"
-#~ "Chris Jackson <chriscf@gmail.com>\n"
-#~ "Bryn Salisbury <bryn@randomlyevil.org.uk>"
-
-#~ msgid "Orientation"
-#~ msgstr "Gogwydd"
-
-#~ msgid "The orientation of the tray."
-#~ msgstr "Gogwydd y cynhwysydd."
-
-#~ msgid "Adjust the scale value."
-#~ msgstr "Newid gwerth y raddfa."
-
-#~ msgid "Select a file"
-#~ msgstr "Dewiswch ffeil"
-
-#~ msgid "Set the window icon"
-#~ msgstr "Gosod eicon y ffenest"
 
 #~ msgid "(C) 2003 Sun Microsystems"
 #~ msgstr "(C) 2003 Sun Microsystems"
