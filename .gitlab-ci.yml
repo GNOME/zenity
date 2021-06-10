@@ -7,5 +7,5 @@ build_fedora_33:
   before_script:
     - dnf install -y --nogpgcheck $DEPENDENCIES
   script:
-    - ./autogen.sh
-    - make -j
+    - meson --buildtype=debug build
+    - ninja -v -C build
