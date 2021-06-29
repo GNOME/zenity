@@ -11,12 +11,3 @@ install_data(
     'zenity-entry.png',
     'zenity-notification.png']
   )
-
-install_data(
-  ['monk.png',
-    'gnome-tshirt.png',
-    'sunglasses.png',
-    'surfboard.png',
-    'hawaii-shirt.png'],
-  install_dir: join_paths(zenity_datadir, 'clothes')
-  )
