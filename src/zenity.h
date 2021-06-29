@@ -1,40 +1,25 @@
+/* vim: colorcolumn=80 ts=4 sw=4
+ */
 #ifndef ZENITY_H
 #define ZENITY_H
 
 #include <gtk/gtk.h>
+#include <glib/gi18n.h>
+
+#include <config.h>
 
 G_BEGIN_DECLS
 
-#ifdef ENABLE_NLS
-#include <libintl.h>
-#define _(String) dgettext (GETTEXT_PACKAGE, String)
-#ifdef gettext_noop
-#define N_(String) gettext_noop (String)
-#else
-#define N_(String) (String)
-#endif
-#else /* NLS is disabled */
-#define _(String) (String)
-#define N_(String) (String)
-#define textdomain(String) (String)
-#define gettext(String) (String)
-#define dgettext(Domain, String) (String)
-#define dcgettext(Domain, String, Type) (String)
-#define bindtextdomain(Domain, Directory) (Domain)
-#endif
-
 typedef struct {
-	gchar *dialog_title;
-	gchar *window_icon;
-	gchar *ok_label;
-	gchar *cancel_label;
-	gchar **extra_label;
-	gint width;
-	gint height;
-	gint exit_code;
-	gint timeout_delay;
+	char *dialog_title;
+	char *ok_label;
+	char *cancel_label;
+	char **extra_label;
+	int width;
+	int height;
+	int exit_code;
+	int timeout_delay;
 	gboolean modal;
-	guintptr attach;
 } ZenityData;
 
 typedef enum {
@@ -47,11 +32,11 @@ typedef enum {
 } ZenityExitCode;
 
 typedef struct {
-	gchar *dialog_text;
-	gint day;
-	gint month;
-	gint year;
-	gchar *date_format;
+	char *dialog_text;
+	int day;
+	int month;
+	int year;
+	char *date_format;
 } ZenityCalendarData;
 
 typedef enum {
@@ -63,8 +48,8 @@ typedef enum {
 } MsgMode;
 
 typedef struct {
-	gchar *dialog_text;
-	gchar *dialog_icon;
+	char *dialog_text;
+	char *dialog_icon;
 	MsgMode mode;
 	gboolean no_wrap;
 	gboolean no_markup;
@@ -73,35 +58,34 @@ typedef struct {
 } ZenityMsgData;
 
 typedef struct {
-	gchar *dialog_text;
-	gint value;
-	gint min_value;
-	gint max_value;
-	gint step;
+	char *dialog_text;
+	int value;
+	int min_value;
+	int max_value;
+	int step;
 	gboolean print_partial;
 	gboolean hide_value;
 } ZenityScaleData;
 
 typedef struct {
-	gchar *uri;
+	char *uri;
 	gboolean multi;
 	gboolean directory;
 	gboolean save;
-	gboolean confirm_overwrite;
-	gchar *separator;
-	gchar **filter;
+	char *separator;
+	char **filter;
 } ZenityFileData;
 
 typedef struct {
-	gchar *dialog_text;
-	gchar *entry_text;
+	char *dialog_text;
+	char *entry_text;
 	gboolean hide_text;
-	const gchar **data;
+	const char **data;
 } ZenityEntryData;
 
 typedef struct {
-	gchar *dialog_text;
-	gchar *entry_text;
+	char *dialog_text;
+	char *entry_text;
 	gboolean pulsate;
 	gboolean autoclose;
 	gboolean autokill;
@@ -111,46 +95,47 @@ typedef struct {
 } ZenityProgressData;
 
 typedef struct {
-	gchar *uri;
+	char *uri;
 	gboolean editable;
 	gboolean no_wrap;
 	gboolean auto_scroll;
-	gchar *font;
+	char *font;
 	GtkTextBuffer *buffer;
-	gchar *checkbox;
+	char *checkbox;
 #ifdef HAVE_WEBKITGTK
 	gboolean html;
 	gboolean no_interaction;
-	gchar *url;
+	char *url;
 #endif
 } ZenityTextData;
 
 typedef struct {
-	gchar *dialog_text;
+	char *dialog_text;
 	GSList *columns;
 	gboolean checkbox;
 	gboolean radiobox;
 	gboolean hide_header;
 	gboolean imagebox;
-	gchar *separator;
+	char *separator;
 	gboolean multi;
 	gboolean editable;
 	gboolean mid_search;
-	gchar *print_column;
-	gchar *hide_column;
-	const gchar **data;
+	char *print_column;
+	char *hide_column;
+	const char **data;
 } ZenityTreeData;
 
 #ifdef HAVE_LIBNOTIFY
 typedef struct {
-	gchar *notification_text;
+	char *notification_text;
 	gboolean listen;
-	gchar **notification_hints;
+	char *icon;
+	char **notification_hints;
 } ZenityNotificationData;
 #endif
 
 typedef struct {
-	gchar *color;
+	char *color;
 	gboolean show_palette;
 } ZenityColorData;
 
@@ -160,10 +145,9 @@ typedef struct {
 	GSList *list_values;
 	GSList *column_values;
 	GSList *combo_values;
-	gchar *dialog_text;
-	gchar *separator;
-	gchar *date_format;
-	//  gchar *hide_column;
+	char *dialog_text;
+	char *separator;
+	char *date_format;
 	gboolean show_header;
 } ZenityFormsData;
 
@@ -176,14 +160,14 @@ typedef enum {
 } ZenityFormsType;
 
 typedef struct {
-	gchar *option_value;
+	char *option_value;
 	ZenityFormsType type;
 	GtkWidget *forms_widget;
 } ZenityFormsValue;
 
 typedef struct {
 	gboolean username;
-	gchar *password;
+	char *password;
 	GtkWidget *entry_username;
 	GtkWidget *entry_password;
 } ZenityPasswordData;
@@ -196,8 +180,8 @@ void zenity_progress (ZenityData *data, ZenityProgressData *progress_data);
 void zenity_text (ZenityData *data, ZenityTextData *text_data);
 void zenity_tree (ZenityData *data, ZenityTreeData *tree_data);
 #ifdef HAVE_LIBNOTIFY
-void zenity_notification (
-	ZenityData *data, ZenityNotificationData *notification_data);
+void zenity_notification (ZenityData *data,
+		ZenityNotificationData *notification_data);
 #endif
 
 void zenity_colorselection (

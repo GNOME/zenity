@@ -1,19 +1,22 @@
+/* vim: colorcolumn=80 ts=4 sw=4
+ */
 /*
  * calendar.c
  *
- * Copyright (C) 2002 Sun Microsystems, Inc.
+ * Copyright © 2002 Sun Microsystems, Inc.
+ * Copyright © 2021 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Library General Public
+ * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2 of the License, or (at your option) any later version.
  *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Library General Public License for more details.
+ * Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Library General Public
+ * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
@@ -21,21 +24,23 @@
  * Authors: Glynn Foster <glynn.foster@sun.com>
  */
 
-#include "config.h"
 
 #include "util.h"
 #include "zenity.h"
+
 #include <time.h>
+
+#include <config.h>
 
 static GtkWidget *calendar;
 static ZenityCalendarData *zen_cal_data;
 
-static void zenity_calendar_dialog_response (
-	GtkWidget *widget, int response, gpointer data);
-static void zenity_calendar_double_click (GtkCalendar *calendar, gpointer data);
+static void zenity_calendar_dialog_response (GtkWidget *widget,
+		int response, gpointer data);
 
 void
-zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data) {
+zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
+{
 	GtkBuilder *builder;
 	GtkWidget *dialog;
 	GtkWidget *button;
@@ -50,26 +55,21 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data) {
 		return;
 	}
 
-	gtk_builder_connect_signals (builder, NULL);
+	dialog = GTK_WIDGET (gtk_builder_get_object (builder,
+				"zenity_calendar_dialog"));
 
-	dialog =
-		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_calendar_dialog"));
-
-	g_signal_connect (G_OBJECT (dialog),
-		"response",
-		G_CALLBACK (zenity_calendar_dialog_response),
-		data);
+	g_signal_connect (dialog, "response",
+		G_CALLBACK(zenity_calendar_dialog_response), data);
 
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-	zenity_util_set_window_icon (dialog,
-		data->window_icon,
-		ZENITY_IMAGE_FULLPATH ("zenity-calendar.png"));
+	gtk_window_set_icon_name (GTK_WINDOW(dialog),
+			"x-office-calendar");
 
 	if (data->width > -1 || data->height > -1)
-		gtk_window_set_default_size (
-			GTK_WINDOW (dialog), data->width, data->height);
+		gtk_window_set_default_size (GTK_WINDOW(dialog),
+				data->width, data->height);
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
@@ -77,24 +77,28 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data) {
 	text = gtk_builder_get_object (builder, "zenity_calendar_text");
 
 	if (cal_data->dialog_text)
-		gtk_label_set_markup (
-			GTK_LABEL (text), g_strcompress (cal_data->dialog_text));
+		gtk_label_set_markup (GTK_LABEL(text),
+				g_strcompress (cal_data->dialog_text));
 
-	calendar = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_calendar"));
+	calendar = GTK_WIDGET(gtk_builder_get_object (builder, "zenity_calendar"));
 
 	if (cal_data->month > 0 || cal_data->year > 0)
-		gtk_calendar_select_month (
-			GTK_CALENDAR (calendar), cal_data->month - 1, cal_data->year);
-	if (cal_data->day > 0)
-		gtk_calendar_select_day (GTK_CALENDAR (calendar), cal_data->day);
+	{
+		g_object_set (calendar,
+				"month",	cal_data->month - 1,
+				"year",		cal_data->year,
+				NULL);
+	}
 
-	g_signal_connect (calendar,
-		"day-selected-double-click",
-		G_CALLBACK (zenity_calendar_double_click),
-		data);
+	if (cal_data->day > 0)
+	{
+		g_object_set (calendar,
+				"day", cal_data->day - 1,
+				NULL);
+	}
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
-	zenity_util_show_dialog (dialog, data->attach);
+	zenity_util_show_dialog (dialog);
 
 	if (data->timeout_delay > 0) {
 		g_timeout_add_seconds (data->timeout_delay,
@@ -102,54 +106,62 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data) {
 			dialog);
 	}
 
-	if (data->extra_label) {
-		gint i = 0;
-		while (data->extra_label[i] != NULL) {
-			gtk_dialog_add_button (
-				GTK_DIALOG (dialog), data->extra_label[i], i);
-			i++;
+	if (data->extra_label)
+	{
+		for (int i = 0; data->extra_label[i] != NULL; ++i) {
+			gtk_dialog_add_button (GTK_DIALOG(dialog),
+					data->extra_label[i], i);
 		}
 	}
 
 	if (data->ok_label) {
-		button = GTK_WIDGET (
-			gtk_builder_get_object (builder, "zenity_calendar_ok_button"));
+		button = GTK_WIDGET (gtk_builder_get_object (builder,
+					"zenity_calendar_ok_button"));
 		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
 	}
 
 	if (data->cancel_label) {
-		button = GTK_WIDGET (
-			gtk_builder_get_object (builder, "zenity_calendar_cancel_button"));
+		button = GTK_WIDGET (gtk_builder_get_object (builder,
+					"zenity_calendar_cancel_button"));
 		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
 	}
 
 	g_object_unref (builder);
 
-	gtk_main ();
+	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
-static void
-zenity_calendar_dialog_output (void) {
-	guint day, month, year;
-	gchar time_string[128];
-	GDate *date = NULL;
 
-	gtk_calendar_get_date (GTK_CALENDAR (calendar), &day, &month, &year);
-	date = g_date_new_dmy (year, month + 1, day);
-	g_date_strftime (time_string, 127, zen_cal_data->date_format, date);
+static void
+zenity_calendar_dialog_output (void)
+{
+	int day, month, year;
+	char *time_string;
+	GDateTime *date;
+
+	g_object_get (calendar,
+			"day", &day,
+			"month", &month,
+			"year", &year,
+			NULL);
+
+	date = g_date_time_new_local (year, month + 1, day + 1,
+			0, 0, 0);
+
+	time_string = g_date_time_format (date, zen_cal_data->date_format);
 	g_print ("%s\n", time_string);
 
-	if (date != NULL)
-		g_date_free (date);
+	g_date_time_unref (date);
+	g_free (time_string);
 }
 
 static void
-zenity_calendar_dialog_response (
-	GtkWidget *widget, int response, gpointer data) {
-	ZenityData *zen_data;
+zenity_calendar_dialog_response (GtkWidget *widget, int response,
+		gpointer data)
+{
+	ZenityData *zen_data = data;
 
-	zen_data = data;
-
-	switch (response) {
+	switch (response)
+	{
 		case GTK_RESPONSE_OK:
 			zenity_calendar_dialog_output ();
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
@@ -166,15 +178,10 @@ zenity_calendar_dialog_response (
 
 		default:
 			if (zen_data->extra_label &&
-				response < g_strv_length (zen_data->extra_label))
+				response < (int)g_strv_length (zen_data->extra_label))
 				printf ("%s\n", zen_data->extra_label[response]);
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	gtk_main_quit ();
-}
-
-static void
-zenity_calendar_double_click (GtkCalendar *cal, gpointer data) {
-	zenity_calendar_dialog_response (NULL, GTK_RESPONSE_OK, data);
+	zenity_util_gapp_quit (GTK_WINDOW(gtk_widget_get_native (widget)));
 }
