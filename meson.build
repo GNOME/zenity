@@ -49,7 +49,11 @@ foreach h : check_headers
   cc.has_header(h, required: true)
 endforeach
 
-gtk_dep = dependency('gtk+-3.0', version: '>= 3.0.0')
+gtk_dep = dependency('gtk+-3.0', version: '>= 3.16.0')
+
+# this is the minimum required glib according to the above-mentioned version of gtk
+# it's really just being documented here for ease of reference.
+glib_dep = dependency('glib-2.0', version: '>= 2.43.4')
 
 # Optional dependencies
 

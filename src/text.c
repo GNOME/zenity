@@ -289,11 +289,13 @@ zenity_text (ZenityData *data, ZenityTextData *text_data) {
 	if (text_data->no_wrap)
 		gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (text_view), GTK_WRAP_NONE);
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	if (text_data->font) {
 		PangoFontDescription *fontDesc =
 			pango_font_description_from_string (text_data->font);
 		gtk_widget_override_font (GTK_WIDGET (text_view), fontDesc);
 	}
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 	if (text_data->uri)
 		zenity_util_fill_file_buffer (text_buffer, text_data->uri);
