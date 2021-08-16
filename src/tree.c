@@ -635,6 +635,14 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data) {
 				tree_data->editable);
 	}
 
+	/* GTK will automatically pick the image column as the search column
+	 * despite it not containing any user readable text.
+	 * Set it to second column instead if it exists. */
+	if (tree_data->imagebox && n_columns > 1) {
+		gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree_view),
+			1);
+	}
+
 	zenity_util_show_dialog (dialog, data->attach);
 
 	if (tree_data->mid_search)
