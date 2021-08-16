@@ -63,32 +63,28 @@ zenity_tree_dialog_untoggle (
 }
 
 static void
-zenity_tree_toggled_callback (
-	GtkCellRendererToggle *cell, gchar *path_string, gpointer data) {
-	GtkTreeModel *model;
+check_or_radio_label_activated_cb (GtkTreeView *tree_view,
+		GtkTreePath *path,
+		GtkTreeViewColumn *column,
+		gpointer user_data)
+{
+	GtkTreeModel *model = gtk_tree_view_get_model (tree_view);
 	GtkTreeIter iter;
-	GtkTreePath *path;
 	gboolean value;
-
-	model = GTK_TREE_MODEL (data);
 
 	/* Because this is a radio list, we should untoggle the previous toggle so
 	 * that
 	 * we only have one selection at any given time
 	 */
-
 	if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (model), "radio")) == 1) {
 		gtk_tree_model_foreach (model, zenity_tree_dialog_untoggle, NULL);
 	}
 
-	path = gtk_tree_path_new_from_string (path_string);
 	gtk_tree_model_get_iter (model, &iter, path);
 	gtk_tree_model_get (model, &iter, 0, &value, -1);
 
 	value = !value;
 	gtk_list_store_set (GTK_LIST_STORE (model), &iter, 0, value, -1);
-
-	gtk_tree_path_free (path);
 }
 
 static void
@@ -453,11 +449,23 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data) {
 
 	tree_view = gtk_builder_get_object (builder, "zenity_tree_view");
 
-	if (!(tree_data->radiobox || tree_data->checkbox))
+	if (tree_data->radiobox || tree_data->checkbox)
+	{
+		gtk_tree_view_set_activate_on_single_click (GTK_TREE_VIEW(tree_view),
+				TRUE);
+
+		g_signal_connect (tree_view,
+			"row-activated",
+			G_CALLBACK (check_or_radio_label_activated_cb),
+			data);
+	}
+	else
+	{
 		g_signal_connect (tree_view,
 			"row-activated",
 			G_CALLBACK (zenity_tree_row_activated),
 			data);
+	}
 
 	/* Create an empty list store */
 	model = g_object_new (GTK_TYPE_LIST_STORE, NULL);
@@ -486,7 +494,14 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data) {
 
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (model));
 
-	if (!(tree_data->radiobox || tree_data->checkbox)) {
+	if (tree_data->radiobox || tree_data->checkbox)
+	{
+		gtk_tree_selection_set_mode (
+			gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
+			GTK_SELECTION_SINGLE);
+	}
+	else
+	{
 		if (tree_data->multi)
 			gtk_tree_selection_set_mode (
 				gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
@@ -495,10 +510,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data) {
 			gtk_tree_selection_set_mode (
 				gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
 				GTK_SELECTION_SINGLE);
-	} else
-		gtk_tree_selection_set_mode (
-			gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view)),
-			GTK_SELECTION_NONE);
+	}
 
 	column_index = 0;
 
@@ -515,11 +527,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data) {
 					g_object_set_data (
 						G_OBJECT (model), "radio", GINT_TO_POINTER (1));
 				}
-
-				g_signal_connect (cell_renderer,
-					"toggled",
-					G_CALLBACK (zenity_tree_toggled_callback),
-					model);
 
 				column = gtk_tree_view_column_new_with_attributes (
 					tmp->data, cell_renderer, "active", column_index, NULL);
