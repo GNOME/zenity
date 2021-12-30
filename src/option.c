@@ -1068,65 +1068,6 @@ zenity_option_init (void)
 	results->forms_data = g_new0 (ZenityFormsData, 1);
 }
 
-void
-zenity_option_free (void)
-{
-	if (zenity_general_dialog_title)
-		g_free (zenity_general_dialog_title);
-	if (zenity_general_dialog_text)
-		g_free (zenity_general_dialog_text);
-	if (zenity_general_uri)
-		g_free (zenity_general_uri);
-	g_free (zenity_general_separator);
-	if (zenity_general_ok_button)
-		g_free (zenity_general_ok_button);
-	if (zenity_general_cancel_button)
-		g_free (zenity_general_cancel_button);
-	if (zenity_general_extra_buttons)
-		g_strfreev (zenity_general_extra_buttons);
-
-	if (zenity_calendar_date_format)
-		g_free (zenity_calendar_date_format);
-
-	if (zenity_forms_date_format)
-		g_free (zenity_forms_date_format);
-	if (zenity_forms_list_values)
-		g_strfreev (zenity_forms_list_values);
-	if (zenity_forms_combo_values)
-		g_strfreev (zenity_forms_combo_values);
-	if (zenity_forms_column_values)
-		g_strfreev (zenity_forms_column_values);
-	if (zenity_entry_entry_text)
-		g_free (zenity_entry_entry_text);
-
-	if (zenity_file_filter)
-		g_strfreev (zenity_file_filter);
-
-	if (zenity_list_columns)
-		g_strfreev (zenity_list_columns);
-	if (zenity_list_print_column)
-		g_free (zenity_list_print_column);
-	if (zenity_list_hide_column)
-		g_free (zenity_list_hide_column);
-
-#ifdef HAVE_LIBNOTIFY
-	if (zenity_notification_hints)
-		g_strfreev (zenity_notification_hints);
-	if (zenity_notification_icon)
-		g_free (zenity_notification_icon);
-#endif
-
-	if (zenity_text_font)
-		g_free (zenity_text_font);
-	if (zenity_text_checkbox)
-		g_free (zenity_text_checkbox);
-
-	if (zenity_colorsel_color)
-		g_free (zenity_colorsel_color);
-
-	g_option_context_free (ctx);
-}
-
 static void
 zenity_option_set_dialog_mode (gboolean is_active, ZenityDialogMode mode)
 {
@@ -2229,17 +2170,14 @@ zenity_option_error (char *string, ZenityError error)
 		case ERROR_SYNTAX:
 			g_printerr (_ ("This option is not available. Please see --help "
 						   "for all possible usages.\n"));
-			zenity_option_free ();
 			exit (-1);
 
 		case ERROR_SUPPORT:
 			g_printerr (_ ("--%s is not supported for this dialog\n"), string);
-			zenity_option_free ();
 			exit (-1);
 
 		case ERROR_DIALOG:
 			g_printerr (_ ("Two or more dialog options specified\n"));
-			zenity_option_free ();
 			exit (-1);
 
 		default:

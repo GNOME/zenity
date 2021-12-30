@@ -39,7 +39,7 @@ static void zenity_scale_dialog_response (GtkWidget *widget, int response,
 void
 zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 {
-	GtkBuilder *builder;
+	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GtkWidget *button;
 	GObject *text;
@@ -139,8 +139,6 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 			(GSourceFunc) zenity_util_timeout_handle,
 			dialog);
 	}
-
-	g_object_unref (builder);
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }

@@ -170,8 +170,8 @@ zenity_text_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 	if ((condition & G_IO_IN) || (condition & (G_IO_IN | G_IO_HUP)))
 	{
-		GError *error = NULL;
-		gint status;
+		g_autoptr(GError) error = NULL;
+		int status;
 
 		while (channel->is_readable != TRUE)
 			;
@@ -190,7 +190,6 @@ zenity_text_handle_stdin (GIOChannel *channel, GIOCondition condition,
 			if (error) {
 				g_warning ("%s: %s",
 						__func__, error->message);
-				g_error_free (error);
 				error = NULL;
 			}
 			return FALSE;
@@ -199,7 +198,7 @@ zenity_text_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		if (len > 0)
 		{
 			GtkTextIter end;
-			char *utftext;
+			g_autofree char *utftext = NULL;
 			gsize localelen;
 			gsize utflen;
 
@@ -216,7 +215,6 @@ zenity_text_handle_stdin (GIOChannel *channel, GIOCondition condition,
 					&utflen,
 					NULL);
 				gtk_text_buffer_insert (buffer, &end, utftext, utflen);
-				g_free (utftext);
 			}
 			else
 			{
@@ -253,7 +251,7 @@ zenity_text_fill_entries_from_stdin (GtkTextView *text_view)
 void
 zenity_text (ZenityData *data, ZenityTextData *text_data)
 {
-	GtkBuilder *builder;
+	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GtkWidget *ok_button;
 	GtkWidget *checkbox;
@@ -266,7 +264,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	GtkWidget *web_kit;
 	GtkWidget *scrolled_window;
 	GtkTextIter start_iter, end_iter;
-	gchar *content;
+	g_autofree char *content = NULL;
 #endif
 
 	zen_text_data = text_data;
@@ -312,14 +310,13 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 		PangoFontDescription *desc;
 		GtkStyleContext *context;
 		GtkCssProvider *provider;
-		char *css_str;
+		g_autofree char *css_str = NULL;
 
 		desc = pango_font_description_from_string (text_data->font);
 		css_str = zenity_util_pango_font_description_to_css (desc);
 			
 		provider = gtk_css_provider_new ();
 		gtk_css_provider_load_from_data (provider, css_str, -1);
-		g_free (css_str);
 
 		context = gtk_widget_get_style_context (GTK_WIDGET(text_view));
 		gtk_style_context_add_provider (context,
@@ -390,23 +387,19 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 			webkit_web_view_load_uri (
 				WEBKIT_WEB_VIEW (web_kit), text_data->url);
 		} else {
-			gchar *cwd;
-			gchar *dirname;
-			gchar *dirname_uri;
+			g_autoptr char *cwd = NULL;
+			g_autoptr char *dirname = NULL;
+			g_autoptr char *dirname_uri = NULL;
 			dirname = text_data->uri ? g_path_get_dirname (text_data->uri)
 									 : g_strdup ("/");
 			cwd = g_get_current_dir ();
 			dirname_uri = g_strconcat ("file://", cwd, "/", dirname, "/", NULL);
-			g_free (cwd);
-			g_free (dirname);
 			gtk_text_buffer_get_start_iter (text_buffer, &start_iter);
 			gtk_text_buffer_get_end_iter (text_buffer, &end_iter);
 			content = gtk_text_buffer_get_text (
 				text_buffer, &start_iter, &end_iter, TRUE);
 			webkit_web_view_load_html (
 				WEBKIT_WEB_VIEW (web_kit), content, dirname_uri);
-			g_free (dirname_uri);
-			g_free (content);
 		}
 
 		// We don't want user to click on links and navigate to another page.
@@ -424,8 +417,6 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 #endif /* HAVE_WEBKITGTK */
 
 	zenity_util_show_dialog (dialog);
-
-	g_object_unref (builder);
 
 	if (data->timeout_delay > 0)
 	{
@@ -451,13 +442,12 @@ zenity_text_dialog_output (ZenityData *zen_data)
 	if (zen_text_data->editable)
 	{
 		GtkTextIter start, end;
-		char *text;
+		g_autofree char *text = NULL;
 
 		gtk_text_buffer_get_bounds (zen_text_data->buffer, &start, &end);
 		text = gtk_text_buffer_get_text (zen_text_data->buffer,
 				&start, &end, 0);
 		g_print ("%s", text);
-		g_free (text);
 	}
 }
 

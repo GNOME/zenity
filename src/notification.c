@@ -40,14 +40,11 @@
 
 #define MAX_HINTS 16
 
-static char *icon_file;
-static GHashTable *notification_hints;
-
 static NotifyNotification *
 zenity_notification_new (char *message, char *icon_file)
 {
 	NotifyNotification *notif;
-	char **text;
+	g_auto(GStrv) text = NULL;
 
 	text = g_strsplit (g_strcompress (message), "\n", 2);
 	if (*text == NULL)
@@ -59,8 +56,6 @@ zenity_notification_new (char *message, char *icon_file)
 	notif = notify_notification_new (text[0], /* title */
 		text[1], /* summary */
 		icon_file);
-
-	g_strfreev (text);
 
 	return notif;
 }
@@ -81,8 +76,8 @@ on_notification_default_action (NotifyNotification *n,
 static GHashTable *
 zenity_notification_parse_hints_array (char **hints)
 {
-	GHashTable *result;
-	char **pair;
+	g_autoptr(GHashTable) result = NULL;
+	g_auto(GStrv) pair = NULL;
 	int i;
 
 	result = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
@@ -91,11 +86,9 @@ zenity_notification_parse_hints_array (char **hints)
 	{
 		pair = g_strsplit (hints[i], ":", 2);
 		g_hash_table_replace (result, g_strdup (pair[0]), g_strdup (pair[1]));
-		g_strfreev (pair);
 	}
 
 	if (g_hash_table_size (result) == 0) {
-		g_hash_table_unref (result);
 		return NULL;
 	} else {
 		return result;
@@ -106,11 +99,10 @@ static GHashTable *
 zenity_notification_parse_hints (char *hints)
 {
 	GHashTable *result;
-	char **hint_array;
+	g_auto(GStrv) hint_array = NULL;
 
 	hint_array = g_strsplit (g_strcompress (hints), "\n", MAX_HINTS);
 	result = zenity_notification_parse_hints_array (hint_array);
-	g_strfreev (hint_array);
 
 	return result;
 }
@@ -204,10 +196,13 @@ static gboolean
 zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		gpointer user_data)
 {
+	g_autofree char *icon_file = NULL;
+	g_autoptr(GHashTable) notification_hints = NULL;
+
 	if ((condition & G_IO_IN) != 0)
 	{
-		GString *string;
-		GError *error = NULL;
+		g_autoptr(GString) string = NULL;
+		g_autoptr(GError) error = NULL;
 
 		while (channel->is_readable == FALSE)
 			;
@@ -216,7 +211,8 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 		do {
 			int status;
-			char *command, *value, *colon;
+			g_autofree char *command = NULL;
+			char *value, *colon;
 
 			do {
 				status = g_io_channel_read_line_string (channel, string,
@@ -234,7 +230,6 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 					g_warning ("%s: %s",
 							__func__,
 							error->message);
-					g_error_free (error);
 					error = NULL;
 				}
 				continue;
@@ -257,14 +252,10 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 			if (! g_ascii_strcasecmp (command, "icon"))
 			{
-				g_free (icon_file);
 				icon_file = g_strdup (value);
 			}
 			else if (!g_ascii_strcasecmp (command, "hints"))
 			{
-				if (notification_hints != NULL) {
-					g_hash_table_unref (notification_hints);
-				}
 				notification_hints = zenity_notification_parse_hints (value);
 			}
 			else if (!g_ascii_strcasecmp (command, "message"))
@@ -289,7 +280,6 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 					if (error) {
 						g_warning (
 							"Error showing notification: %s", error->message);
-						g_error_free (error);
 						error = NULL;
 					}
 
@@ -317,7 +307,6 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 					{
 						g_warning ("Error showing notification: %s",
 								error->message);
-						g_error_free (error);
 
 						error = NULL;
 					}
@@ -331,11 +320,8 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 			{
 				g_warning ("Unknown command '%s'", command);
 			}
-			g_free (command);
 
 		} while (g_io_channel_get_buffer_condition (channel) == G_IO_IN);
-
-		g_string_free (string, TRUE);
 	}
 
 	if ((condition & G_IO_HUP) != 0)
@@ -365,9 +351,9 @@ void
 zenity_notification (ZenityData *data,
 		ZenityNotificationData *notification_data)
 {
-	GError *error;
+	g_autoptr(GError) error = NULL;
 	NotifyNotification *notification;
-	GHashTable *notification_hints;
+	g_autoptr(GHashTable) notification_hints = NULL;
 
 	/* create the notification widget */
 	if (!notify_is_initted ()) {
@@ -407,8 +393,6 @@ zenity_notification (ZenityData *data,
 				notification_data->notification_hints);
 
 			zenity_notification_set_hints (notification, notification_hints);
-
-			g_hash_table_unref (notification_hints);
 		}
 
 		/* Show icon and wait */
@@ -417,7 +401,6 @@ zenity_notification (ZenityData *data,
 		{
 			if (error != NULL) {
 				g_warning ("Error showing notification: %s", error->message);
-				g_error_free (error);
 			}
 			exit (1);
 		}

@@ -104,7 +104,7 @@ zenity_progress_update_time_remaining (ZenityProgressData *progress_data)
 			(time_t) (100.0 * elapsed_time / progress_data->percentage);
 		time_t remaining_time = total_time - elapsed_time;
 		gulong hours, minutes, seconds;
-		char *remaining_message;
+		g_autofree char *remaining_message = NULL;
 
 		seconds = (gulong) (remaining_time % 60);
 		remaining_time /= 60;
@@ -116,8 +116,6 @@ zenity_progress_update_time_remaining (ZenityProgressData *progress_data)
 			g_strdup_printf (_("Time remaining: %lu:%02lu:%02lu"),
 					hours, minutes, seconds);
 		gtk_label_set_text (GTK_LABEL (progress_time), remaining_message);
-
-		g_free (remaining_message);
 	}
 }
 
@@ -167,8 +165,8 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 	if ((condition & G_IO_IN) != 0)
 	{
-		GString *string = g_string_new (NULL);
-		GError *error = NULL;
+		g_autoptr(GString) string = g_string_new (NULL);
+		g_autoptr(GError) error = NULL;
 
 		while (channel->is_readable != TRUE)
 			;
@@ -187,7 +185,6 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 				if (error) {
 					g_warning ("%s: %s",
 							__func__, error->message);
-					g_error_free (error);
 					error = NULL;
 				}
 				continue;
@@ -206,7 +203,8 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 			}
 			else if (g_str_has_prefix (string->str, "pulsate"))
 			{
-				char *colon, *command, *value;
+				char *colon, *value;
+				g_autofree char *command = NULL;
 
 				zenity_util_strip_newline (string->str);
 
@@ -233,8 +231,6 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 				else {
 					zenity_progress_pulsate_start (progress_bar);
 				}
-
-				g_free (command);
 			}
 			else
 			{
@@ -274,7 +270,6 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		} while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) ==
 				G_IO_IN &&
 			status != G_IO_STATUS_EOF);
-		g_string_free (string, TRUE);
 	}
 
 	if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF)

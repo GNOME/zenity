@@ -41,7 +41,7 @@ static void zenity_calendar_dialog_response (GtkWidget *widget,
 void
 zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 {
-	GtkBuilder *builder;
+	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GtkWidget *button;
 	GObject *text;
@@ -126,8 +126,6 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
 	}
 
-	g_object_unref (builder);
-
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
 
@@ -135,8 +133,8 @@ static void
 zenity_calendar_dialog_output (void)
 {
 	int day, month, year;
-	char *time_string;
-	GDateTime *date;
+	g_autofree char *time_string = NULL;
+	g_autoptr(GDateTime) date = NULL;
 
 	g_object_get (calendar,
 			"day", &day,
@@ -149,9 +147,6 @@ zenity_calendar_dialog_output (void)
 
 	time_string = g_date_time_format (date, zen_cal_data->date_format);
 	g_print ("%s\n", time_string);
-
-	g_date_time_unref (date);
-	g_free (time_string);
 }
 
 static void

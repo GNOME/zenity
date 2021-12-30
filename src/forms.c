@@ -60,7 +60,7 @@ static GtkWidget *
 zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
 		int combo_number)
 {
-	GtkListStore *list_store;
+	g_autoptr(GtkListStore) list_store = NULL;
 	GtkWidget *combo_box;
 	GtkCellRenderer *renderer;
 
@@ -68,7 +68,7 @@ zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
 
 	if (forms_data->combo_values)
 	{
-		char *combo_values =
+		g_autofree char *combo_values =
 			g_slist_nth_data (forms_data->combo_values, combo_number);
 
 		if (combo_values)
@@ -89,12 +89,10 @@ zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
 				}
 				g_strfreev (row_values);
 			}
-			g_free (combo_values);
 		}
 	}
 
 	combo_box = gtk_combo_box_new_with_model (GTK_TREE_MODEL(list_store));
-	g_object_unref (list_store);
 
 	renderer = gtk_cell_renderer_text_new ();
 	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT(combo_box),
@@ -111,7 +109,7 @@ static GtkWidget *
 zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 		int list_number, char *header)
 {
-	GtkListStore *list_store;
+	g_autoptr(GtkListStore) list_store = NULL;
 	GtkWidget *tree_view;
 	GtkWidget *scrolled_window;
 	GType *column_types = NULL;
@@ -180,7 +178,7 @@ zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 
 	if (forms_data->list_values)
 	{
-		char *list_values =
+		g_autofree char *list_values =
 			g_slist_nth_data (forms_data->list_values, list_number);
 
 		if (list_values)
@@ -207,7 +205,6 @@ zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 				}
 				g_strfreev (row_values);
 			}
-			g_free (list_values);
 		}
 	}
 
@@ -215,7 +212,6 @@ zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 			GTK_TREE_MODEL (list_store));
 	gtk_tree_view_set_headers_visible (
 		GTK_TREE_VIEW (tree_view), forms_data->show_header);
-	g_object_unref (list_store);
 
 	scrolled_window = gtk_scrolled_window_new ();
 	gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW(scrolled_window),
@@ -228,7 +224,7 @@ zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 void
 zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 {
-	GtkBuilder *builder = NULL;
+	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GtkWidget *grid;
 	GtkWidget *text;
@@ -349,8 +345,6 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 
 	zenity_util_show_dialog (dialog);
 
-	g_object_unref (builder);
-
 	if (data->timeout_delay > 0)
 	{
 		g_timeout_add_seconds (data->timeout_delay,
@@ -367,9 +361,9 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 	guint day, year, month;
 	GDate *date = NULL;
 	char time_string[128];
-	char *combo_value = NULL;
+	g_autofree char *combo_value = NULL;
 	GtkTreeSelection *selection;
-	GtkListStore *list_store;
+	g_autoptr(GtkListStore) list_store = NULL;
 	GtkTreeIter iter;
 
 	for (tmp = forms_data->list; tmp; tmp = tmp->next)
@@ -433,10 +427,7 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 						&combo_value,
 						-1);
 
-					g_object_unref (G_OBJECT (list_store));
-
 					g_print ("%s", combo_value);
-					g_free (combo_value);
 				}
 				else
 					g_print (" ");

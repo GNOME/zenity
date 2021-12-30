@@ -83,6 +83,4 @@ void zenity_option_error (char *string, ZenityError error);
 
 ZenityParsingOptions *zenity_option_parse (int argc, char **argv);
 
-void zenity_option_free (void);
-
 #endif /* OPTION_H */

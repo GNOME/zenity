@@ -84,7 +84,7 @@ zenity_label_widget_clipboard_selection (GtkWidget *widget)
 void
 zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 {
-	GtkBuilder *builder;
+	g_autoptr(GtkBuilder) builder;
 	GtkWidget *dialog;
 	GtkWidget *ok_button;
 	GObject *text;
@@ -247,8 +247,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			(GSourceFunc) zenity_util_timeout_handle,
 			NULL);
 	}
-
-	g_object_unref (builder);
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }

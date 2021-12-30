@@ -43,7 +43,7 @@ command_line_cb (GtkApplication *app,
                GApplicationCommandLine *command_line,
                gpointer user_data)
 {
-	ZenityArgs *args = user_data;
+	g_autofree ZenityArgs *args = user_data;
 	ZenityParsingOptions *results;
 
 	results = zenity_option_parse (args->argc, args->argv);
@@ -120,17 +120,12 @@ command_line_cb (GtkApplication *app,
 		case MODE_LAST:
 			g_printerr (_ ("You must specify a dialog type. See 'zenity "
 						   "--help' for details\n"));
-			zenity_option_free ();
 			exit (-1);
 
 		default:
 			g_assert_not_reached ();
-			zenity_option_free ();
 			exit (-1);
 	}
-
-	zenity_option_free ();
-	g_free (args);
 
 	g_application_command_line_set_exit_status (command_line,
 			results->data->exit_code);
@@ -139,11 +134,11 @@ command_line_cb (GtkApplication *app,
 int
 main (int argc, char *argv[])
 {
-	ZenityArgs *args;
-	GtkApplication *app;
+	g_autofree ZenityArgs *args = NULL;
+	g_autoptr(GtkApplication) app = NULL;
 	int status;
 
-	/* boilerplate i18n stuff */                                                
+	/* <i18n> */
 	setlocale (LC_ALL, "");
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
                                                                                 
@@ -162,7 +157,6 @@ main (int argc, char *argv[])
 			G_CALLBACK(command_line_cb), args);
 
 	status = g_application_run (G_APPLICATION(app), 0, NULL);
-	g_object_unref (app);
 
 	return status;
 }

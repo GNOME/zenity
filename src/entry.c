@@ -53,7 +53,7 @@ zenity_entry_combo_activate_default (GtkEntry *entry, gpointer window)
 void
 zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 {
-	GtkBuilder *builder = NULL;
+	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GtkWidget *button;
 	GObject *text;
@@ -169,8 +169,6 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 	gtk_box_append (GTK_BOX(vbox), entry);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
-
-	g_object_unref (builder);
 
 	zenity_util_show_dialog (dialog);
 

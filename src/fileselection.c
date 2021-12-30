@@ -70,37 +70,30 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 	{
 		if (g_path_is_absolute (file_data->uri) == TRUE)
 		{
-			char *dir = g_path_get_dirname (file_data->uri);
-			GFile *dir_gfile = g_file_new_for_path (dir);
+			g_autofree char *dir = g_path_get_dirname (file_data->uri);
+			g_autoptr(GFile) dir_gfile = g_file_new_for_path (dir);
 
 			gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER(dialog),
 					dir_gfile,
 					NULL);	/* GError */
-
-			g_free (dir);
-			g_object_unref (dir_gfile);
 		}
 
 		if (file_data->uri[strlen (file_data->uri) - 1] != '/')
 		{
 			if (file_data->save)
 			{
-				char *basename = g_path_get_basename (file_data->uri);
+				g_autofree char *basename = g_path_get_basename (file_data->uri);
 
 				gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog),
 						basename);
-
-				g_free (basename);
 			}
 			else
 			{
-				GFile *file = g_file_new_for_uri (file_data->uri);
+				g_autoptr(GFile) file = g_file_new_for_uri (file_data->uri);
 
 				gtk_file_chooser_set_file (GTK_FILE_CHOOSER(dialog),
 						file,
 						NULL);	/* GError */
-
-				g_object_unref (file);
 			}
 		}
 	}
@@ -115,8 +108,9 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 		{
 			GtkFileFilter *filter = gtk_file_filter_new ();
 			char *filter_str = file_data->filter[filter_i];
-			char **pattern, **patterns;
-			char *name = NULL;
+			GStrv pattern;
+			g_auto(GStrv) patterns = NULL;
+			g_autofree char *name = NULL;
 			int i;
 
 			/* Set name */
@@ -146,11 +140,6 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 			for (pattern = patterns; *pattern; pattern++)
 				gtk_file_filter_add_pattern (filter, *pattern);
 
-			if (name)
-				g_free (name);
-
-			g_strfreev (patterns);
-
 			gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(dialog), filter);
 		}
 	}
@@ -174,23 +163,19 @@ static void
 zenity_fileselection_dialog_output (GtkFileChooser *chooser,
 		ZenityFileData *file_data)
 {
-	GListModel *model = gtk_file_chooser_get_files (chooser);
+	g_autoptr(GListModel) model = gtk_file_chooser_get_files (chooser);
 	guint items = g_list_model_get_n_items (model);
 
 	for (guint i = 0; i < items; ++i)
 	{
-		GFile *file = g_list_model_get_item (model, i);
+		g_autoptr(GFile) file = g_list_model_get_item (model, i);
 
 		g_print ("%s", g_file_get_path (file));
 
 		if (i != items - 1)
 			g_print ("%s", file_data->separator);
-
-		g_object_unref (file);
 	}
 	g_print ("\n");
-
-	g_object_unref (model);
 }
 
 static void

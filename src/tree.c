@@ -37,7 +37,6 @@
 
 #define PRINT_HIDE_COLUMN_SEPARATOR ","
 
-static GtkBuilder *builder;
 static GtkTreeView *tree_view;
 static GSList *selected;
 static char *separator;
@@ -99,7 +98,7 @@ zenity_load_pixbuf (GtkTreeViewColumn *tree_column, GtkCellRenderer *cell,
 	static GHashTable *pixbuf_cache = NULL;
 	GError *error = NULL;
 	GdkPixbuf *pixbuf;
-	char *str;
+	g_autofree char *str = NULL;
 
 	gtk_tree_model_get (tree_model, iter, 0, &str, -1);
 
@@ -126,8 +125,6 @@ zenity_load_pixbuf (GtkTreeViewColumn *tree_column, GtkCellRenderer *cell,
 
 	if (pixbuf)
 		g_object_set (cell, "pixbuf", pixbuf, NULL);
-
-	g_free (str);
 }
 
 static gboolean
@@ -164,8 +161,8 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 	if ((condition & G_IO_IN) == G_IO_IN)
 	{
-		GString *string;
-		GError *error = NULL;
+		g_autoptr(GString) string = NULL;
+		g_autoptr(GError) error = NULL;
 
 		string = g_string_new (NULL);
 
@@ -194,7 +191,6 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 				if (error) {
 					g_warning ("%s: %s",
 						__func__, error->message);
-					g_error_free (error);
 					error = NULL;
 				}
 				continue;
@@ -241,8 +237,6 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		} while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) ==
 				G_IO_IN &&
 			status != G_IO_STATUS_EOF);	/* !do while */
-
-		g_string_free (string, TRUE);
 	}
 
 	if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF)
@@ -337,7 +331,7 @@ zenity_cell_edited_callback (GtkCellRendererText *cell,
 	const char *path_string, const char *new_text, gpointer data)
 {
 	GtkTreeModel *model;
-	GtkTreePath *path;
+	g_autoptr(GtkTreePath) path = NULL;
 	GtkTreeIter iter;
 	int column;
 
@@ -348,13 +342,12 @@ zenity_cell_edited_callback (GtkCellRendererText *cell,
 	gtk_tree_model_get_iter (model, &iter, path);
 
 	gtk_list_store_set (GTK_LIST_STORE (model), &iter, column, new_text, -1);
-
-	gtk_tree_path_free (path);
 }
 
 void
 zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 {
+	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GtkWidget *button;
 	GObject *text;
@@ -692,8 +685,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 			dialog);
 	}
 
-	g_object_unref (builder);
-
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
 
@@ -887,7 +878,7 @@ zenity_tree_column_is_hidden (int column_index)
 static int *
 zenity_tree_extract_column_indexes (char *indexes, int n_columns)
 {
-	char **tmp;
+	g_auto(GStrv) tmp;
 	int *result;
 	int i, j, index;
 
@@ -907,8 +898,6 @@ zenity_tree_extract_column_indexes (char *indexes, int n_columns)
 		}
 	}
 	result[j] = 0;
-
-	g_strfreev (tmp);
 
 	return result;
 }

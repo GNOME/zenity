@@ -55,7 +55,7 @@ zenity_util_load_ui_file (const char *root_widget, ...)
 	char *arg = NULL;
 	GPtrArray *ptrarray;
 	GtkBuilder *builder = gtk_builder_new ();
-	GError *error = NULL;
+	g_autoptr(GError) error = NULL;
 	char **objects;
 	gboolean result = FALSE;
 
@@ -98,7 +98,6 @@ zenity_util_load_ui_file (const char *root_widget, ...)
 	if (error) {
 		g_debug ("%s: Error generated: %s",
 				__func__, error->message);
-		g_error_free (error);
 	}
 
 	return builder;
@@ -180,13 +179,10 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const char *filename) {
 
 void
 zenity_util_show_help (GError **error) {
-	char *tmp;
-	tmp = g_find_program_in_path ("yelp");
+	g_autofree char *tmp = g_find_program_in_path ("yelp");
 
-	if (tmp) {
-		g_free (tmp);
+	if (tmp)
 		g_spawn_command_line_async ("yelp help:zenity", error);
-	}
 }
 
 int
@@ -304,6 +300,8 @@ zenity_util_pango_font_description_to_css (PangoFontDescription *desc)
 				break;
 			case PANGO_VARIANT_SMALL_CAPS:
 				g_string_append (s, "font-variant: small-caps; ");
+				break;
+			default:
 				break;
 		}
 	}
