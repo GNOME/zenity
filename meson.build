@@ -74,11 +74,6 @@ Please ensure you have any required development libraries installed.'''
 #  endif
 #endif
 
-perl = find_program('perl', required: false)
-if perl.found()
-  zenity_conf.set('PERL', perl.path())
-endif
-
 configure_file(
   output: 'config.h',
   configuration: zenity_conf
@@ -92,9 +87,6 @@ summary({'prefix': zenity_prefix,
 	 'localedir': zenity_localedir,
 	 'iconsdir': zenity_iconsdir,
         }, section: 'Directories')
-
-summary({'gdialog script': perl.found(),
-        }, section: 'Configuration')
 
 subdir('src')
 subdir('data')
