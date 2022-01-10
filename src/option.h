@@ -41,9 +41,7 @@ typedef enum {
 	MODE_WARNING,
 	MODE_SCALE,
 	MODE_INFO,
-#ifdef HAVE_LIBNOTIFY
 	MODE_NOTIFICATION,
-#endif
 	MODE_COLOR,
 	MODE_PASSWORD,
 	MODE_FORMS,
@@ -71,9 +69,7 @@ typedef struct {
 	ZenityProgressData *progress_data;
 	ZenityTextData *text_data;
 	ZenityTreeData *tree_data;
-#ifdef HAVE_LIBNOTIFY
 	ZenityNotificationData *notification_data;
-#endif
 	ZenityColorData *color_data;
 	ZenityPasswordData *password_data;
 	ZenityFormsData *forms_data;

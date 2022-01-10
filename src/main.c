@@ -43,7 +43,7 @@ command_line_cb (GtkApplication *app,
                GApplicationCommandLine *command_line,
                gpointer user_data)
 {
-	g_autofree ZenityArgs *args = user_data;
+	ZenityArgs *args = user_data;
 	ZenityParsingOptions *results;
 
 	results = zenity_option_parse (args->argc, args->argv);
@@ -83,11 +83,9 @@ command_line_cb (GtkApplication *app,
 			zenity_tree (results->data, results->tree_data);
 			break;
 			
-#ifdef HAVE_LIBNOTIFY
 		case MODE_NOTIFICATION:
 			zenity_notification (results->data, results->notification_data);
 			break;
-#endif
 
 		case MODE_PROGRESS:
 			zenity_progress (results->data, results->progress_data);
@@ -129,12 +127,14 @@ command_line_cb (GtkApplication *app,
 
 	g_application_command_line_set_exit_status (command_line,
 			results->data->exit_code);
+
+	g_free (args);
 }
 
 int
 main (int argc, char *argv[])
 {
-	g_autofree ZenityArgs *args = NULL;
+	ZenityArgs *args;
 	g_autoptr(GtkApplication) app = NULL;
 	int status;
 
@@ -146,15 +146,12 @@ main (int argc, char *argv[])
 	textdomain (GETTEXT_PACKAGE);
 	/* </i18n> */
 
-	args = g_new (ZenityArgs, 1);
+	args = g_new0 (ZenityArgs, 1);
 	args->argc = argc;
 	args->argv = argv;
 
-	app = gtk_application_new ("org.gnome.Zenity",
-			G_APPLICATION_HANDLES_COMMAND_LINE);
-
-	g_signal_connect (app, "command-line",
-			G_CALLBACK(command_line_cb), args);
+	app = gtk_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE);
+	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), args);
 
 	status = g_application_run (G_APPLICATION(app), 0, NULL);
 

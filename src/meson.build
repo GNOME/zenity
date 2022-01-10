@@ -18,11 +18,6 @@ zenity_sources = [
   'util.c'
 ]
 
-zenity_deps = [
-  gtk_dep,
-  libnotify
-]
-
 zenity_res = gnome.compile_resources(
   'zenity-resources',
   'zenity.gresource.xml',
@@ -37,8 +32,8 @@ zenity = executable(
   meson.project_name(),
   zenity_sources + zenity_res,
   include_directories: zenity_root_dir,
-  dependencies: zenity_deps,
   c_args: zenity_c_args,
+  dependencies: gtk_dep,
   install: true
 )
 

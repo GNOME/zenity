@@ -30,9 +30,6 @@
  *          Tom Tromey <tromey@redhat.com>
  */
 
-#include "config.h"
-
-#include "config.h"
 #include "util.h"
 #include "zenity.h"
 #include <errno.h>
@@ -42,11 +39,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "config.h"
+
 #define ZENITY_OK_DEFAULT 0
 #define ZENITY_CANCEL_DEFAULT 1
 #define ZENITY_ESC_DEFAULT 1
 #define ZENITY_ERROR_DEFAULT -1
 #define ZENITY_EXTRA_DEFAULT 127
+#define ZENITY_UI_RESOURCE_PATH RESOURCE_BASE_PATH "/zenity.ui"
 
 GtkBuilder *
 zenity_util_load_ui_file (const char *root_widget, ...)

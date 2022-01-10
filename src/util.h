@@ -41,8 +41,6 @@
 
 G_BEGIN_DECLS
 
-#define ZENITY_UI_RESOURCE_PATH "/org/gnome/Zenity/zenity.ui"
-
 #define ZENITY_IMAGE_FULLPATH(filename) (PACKAGE_DATADIR "/" filename)
 
 GtkBuilder *zenity_util_load_ui_file (const char *widget_root,

@@ -125,14 +125,12 @@ typedef struct {
 	const char **data;
 } ZenityTreeData;
 
-#ifdef HAVE_LIBNOTIFY
 typedef struct {
 	char *notification_text;
 	gboolean listen;
 	char *icon;
-	char **notification_hints;
+//	char **notification_hints;
 } ZenityNotificationData;
-#endif
 
 typedef struct {
 	char *color;
@@ -179,10 +177,8 @@ void zenity_entry (ZenityData *data, ZenityEntryData *entry_data);
 void zenity_progress (ZenityData *data, ZenityProgressData *progress_data);
 void zenity_text (ZenityData *data, ZenityTextData *text_data);
 void zenity_tree (ZenityData *data, ZenityTreeData *tree_data);
-#ifdef HAVE_LIBNOTIFY
 void zenity_notification (ZenityData *data,
 		ZenityNotificationData *notification_data);
-#endif
 
 void zenity_colorselection (
 	ZenityData *data, ZenityColorData *notification_data);
