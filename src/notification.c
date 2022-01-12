@@ -77,10 +77,16 @@ zenity_notification_new (char *message, char *icon_path)
 		if (g_file_query_exists (icon_file, NULL))
 		{
 			icon = g_file_icon_new (icon_file);
-			g_notification_set_icon (notif, icon);
 		}
 		else
-			g_printerr (_("Icon file not found: %s\n"), icon_path);
+		{
+			g_debug (_("Icon filename %s not found; trying theme icon."),
+					icon_path);
+			icon = g_themed_icon_new_with_default_fallbacks (icon_path);
+//			icon = g_themed_icon_new (icon_path);
+		}
+
+		g_notification_set_icon (notif, icon);
 	}
 
 	return g_steal_pointer (&notif);
@@ -102,7 +108,7 @@ static gboolean
 zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		gpointer user_data)
 {
-	g_autofree char *icon_file = NULL;
+	static char *icon_file;
 
 	if ((condition & G_IO_IN) != 0)
 	{
@@ -157,6 +163,7 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 			if (! g_ascii_strcasecmp (command, "icon"))
 			{
+				g_free (icon_file);
 				icon_file = g_strdup (value);
 			}
 			else if (!g_ascii_strcasecmp (command, "message"))
@@ -171,6 +178,7 @@ zenity_notification_handle_stdin (GIOChannel *channel, GIOCondition condition,
 					g_autoptr(GNotification) notif = NULL;
 
 					notif = zenity_notification_new (value, icon_file);
+
 					if (notif == NULL)
 						continue;
 

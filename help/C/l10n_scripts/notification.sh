@@ -1,5 +1,4 @@
 #!/bin/sh
                                                                                                                                                              
-/gnome/head/cvs/zenity/src/zenity --notification \
---window-icon="info" \
+zenity --notification \
 --text="There are system updates necessary!"

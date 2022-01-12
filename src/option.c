@@ -2006,8 +2006,8 @@ zenity_create_context (void)
 
 	/* Adds notification option entries */
 	a_group = g_option_group_new ("notification",
-		N_ ("Notification icon options"),
-		N_ ("Show notification icon options"),
+		N_ ("Notification options"),
+		N_ ("Show notification options"),
 		NULL,
 		NULL);
 	g_option_group_add_entries (a_group, notification_options);
