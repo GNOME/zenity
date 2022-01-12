@@ -38,7 +38,7 @@ static char *zenity_general_dialog_title;
 static int zenity_general_width;
 static int zenity_general_height;
 static char *zenity_general_dialog_text;
-static char *zenity_general_dialog_icon;
+static char *zenity_general_icon;
 static char *zenity_general_separator;
 static gboolean zenity_general_multiple;
 static gboolean zenity_general_editable;
@@ -90,7 +90,6 @@ static gboolean zenity_list_mid_search;
 /* Notification Dialog Options */
 static gboolean zenity_notification_active;
 static gboolean zenity_notification_listen;
-static char *zenity_notification_icon;
 
 /* Progress Dialog Options */
 static gboolean zenity_progress_active;
@@ -150,6 +149,10 @@ static char **zenity_forms_combo_values;
 /* Miscelaneus Options */
 static gboolean zenity_misc_about;
 static gboolean zenity_misc_version;
+
+/* DEPRECATED Options */
+
+static char *zenity_general_icon_DEPRECATED;
 
 static gboolean zenity_forms_callback (const char *option_name,
 	const char *value, gpointer data, GError **error);
@@ -305,12 +308,19 @@ static GOptionEntry error_options[] =
 			&zenity_general_dialog_text,
 			N_ ("Set the dialog text"),
 			N_ ("TEXT")},
-		{"icon-name",
+		{"icon",
 			'\0',
 			G_OPTION_FLAG_NOALIAS,
 			G_OPTION_ARG_STRING,
-			&zenity_general_dialog_icon,
-			N_ ("Set the dialog icon"),
+			&zenity_general_icon,
+			N_ ("Set the icon name"),
+			N_ ("ICON-NAME")},
+		{"window-icon",
+			'\0',
+			G_OPTION_FLAG_HIDDEN,
+			G_OPTION_ARG_STRING,
+			&zenity_general_icon_DEPRECATED,
+			N_ ("DEPRECATED; use `--icon`"),
 			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
@@ -352,12 +362,19 @@ static GOptionEntry info_options[] =
 			&zenity_general_dialog_text,
 			N_ ("Set the dialog text"),
 			N_ ("TEXT")},
-		{"icon-name",
+		{"icon",
 			'\0',
 			G_OPTION_FLAG_NOALIAS,
 			G_OPTION_ARG_STRING,
-			&zenity_general_dialog_icon,
-			N_ ("Set the dialog icon"),
+			&zenity_general_icon,
+			N_ ("Set the icon name"),
+			N_ ("ICON-NAME")},
+		{"window-icon",
+			'\0',
+			G_OPTION_FLAG_HIDDEN,
+			G_OPTION_ARG_STRING,
+			&zenity_general_icon_DEPRECATED,
+			N_ ("DEPRECATED; use `--icon`"),
 			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
@@ -553,11 +570,18 @@ static GOptionEntry notification_options[] =
 			N_ ("TEXT")},
 		{"icon",
 			'\0',
-			0,
-			G_OPTION_ARG_FILENAME,
-			&zenity_notification_icon,
-			N_ ("Set the notification icon"),
-			N_ ("ICONPATH")},
+			G_OPTION_FLAG_NOALIAS,
+			G_OPTION_ARG_STRING,
+			&zenity_general_icon,
+			N_ ("Set the icon name"),
+			N_ ("ICON-NAME")},
+		{"window-icon",
+			'\0',
+			G_OPTION_FLAG_HIDDEN,
+			G_OPTION_ARG_STRING,
+			&zenity_general_icon_DEPRECATED,
+			N_ ("DEPRECATED; use `--icon`"),
+			N_ ("ICON-NAME")},
 		{"listen",
 			'\0',
 			0,
@@ -643,12 +667,19 @@ static GOptionEntry question_options[] =
 			&zenity_general_dialog_text,
 			N_ ("Set the dialog text"),
 			N_ ("TEXT")},
-		{"icon-name",
+		{"icon",
 			'\0',
 			G_OPTION_FLAG_NOALIAS,
 			G_OPTION_ARG_STRING,
-			&zenity_general_dialog_icon,
-			N_ ("Set the dialog icon"),
+			&zenity_general_icon,
+			N_ ("Set the icon name"),
+			N_ ("ICON-NAME")},
+		{"window-icon",
+			'\0',
+			G_OPTION_FLAG_HIDDEN,
+			G_OPTION_ARG_STRING,
+			&zenity_general_icon_DEPRECATED,
+			N_ ("DEPRECATED; use `--icon`"),
 			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
@@ -775,12 +806,19 @@ static GOptionEntry warning_options[] =
 			&zenity_general_dialog_text,
 			N_ ("Set the dialog text"),
 			N_ ("TEXT")},
-		{"icon-name",
+		{"icon",
 			'\0',
 			G_OPTION_FLAG_NOALIAS,
 			G_OPTION_ARG_STRING,
-			&zenity_general_dialog_icon,
-			N_ ("Set the dialog icon"),
+			&zenity_general_icon,
+			N_ ("Set the icon name"),
+			N_ ("ICON-NAME")},
+		{"window-icon",
+			'\0',
+			G_OPTION_FLAG_HIDDEN,
+			G_OPTION_ARG_STRING,
+			&zenity_general_icon_DEPRECATED,
+			N_ ("DEPRECATED; use `--icon`"),
 			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
@@ -1212,7 +1250,6 @@ zenity_notification_pre_callback (GOptionContext *context, GOptionGroup *group,
 {
 	zenity_notification_active = FALSE;
 	zenity_notification_listen = FALSE;
-	zenity_notification_icon = NULL;
 
 	return TRUE;
 }
@@ -1436,6 +1473,13 @@ zenity_entry_post_callback (GOptionContext *context, GOptionGroup *group,
 	return TRUE;
 }
 
+static void
+show_window_icon_deprecation_warning (void)
+{
+	g_printerr ("Warning: --window-icon is deprecated and will be removed in a "
+			"future version of zenity. Please use --icon instead.\n");
+}
+
 static gboolean
 zenity_error_post_callback (GOptionContext *context, GOptionGroup *group,
 	gpointer data, GError **error)
@@ -1445,11 +1489,17 @@ zenity_error_post_callback (GOptionContext *context, GOptionGroup *group,
 	if (results->mode == MODE_ERROR)
 	{
 		results->msg_data->dialog_text = zenity_general_dialog_text;
-		results->msg_data->dialog_icon = zenity_general_dialog_icon;
+		results->msg_data->dialog_icon = zenity_general_icon;
 		results->msg_data->mode = ZENITY_MSG_ERROR;
 		results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
+
+		if (zenity_general_icon_DEPRECATED)
+		{
+			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
+			show_window_icon_deprecation_warning ();
+		}
 	}
 
 	return TRUE;
@@ -1464,11 +1514,17 @@ zenity_info_post_callback (GOptionContext *context, GOptionGroup *group,
 	if (results->mode == MODE_INFO)
 	{
 		results->msg_data->dialog_text = zenity_general_dialog_text;
-		results->msg_data->dialog_icon = zenity_general_dialog_icon;
+		results->msg_data->dialog_icon = zenity_general_icon;
 		results->msg_data->mode = ZENITY_MSG_INFO;
 		results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
+
+		if (zenity_general_icon_DEPRECATED)
+		{
+			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
+			show_window_icon_deprecation_warning ();
+		}
 	}
 
 	return TRUE;
@@ -1604,7 +1660,13 @@ zenity_notification_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->notification_data->notification_text =
 			zenity_general_dialog_text;
 		results->notification_data->listen = zenity_notification_listen;
-		results->notification_data->icon = zenity_notification_icon;
+		results->notification_data->icon = zenity_general_icon;
+
+		if (zenity_general_icon_DEPRECATED)
+		{
+			results->notification_data->icon = zenity_general_icon_DEPRECATED;
+			show_window_icon_deprecation_warning ();
+		}
 	}
 	else
 	{
@@ -1682,7 +1744,7 @@ zenity_question_post_callback (GOptionContext *context, GOptionGroup *group,
 	if (results->mode == MODE_QUESTION)
 	{
 		results->msg_data->dialog_text = zenity_general_dialog_text;
-		results->msg_data->dialog_icon = zenity_general_dialog_icon;
+		results->msg_data->dialog_icon = zenity_general_icon;
 		if (zenity_question_switch)
 			results->msg_data->mode = ZENITY_MSG_SWITCH;
 		else
@@ -1691,6 +1753,12 @@ zenity_question_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
 		results->msg_data->default_cancel = zenity_question_default_cancel;
+
+		if (zenity_general_icon_DEPRECATED)
+		{
+			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
+			show_window_icon_deprecation_warning ();
+		}
 	}
 
 	if (zenity_question_switch && zenity_general_extra_buttons == NULL)
@@ -1749,11 +1817,17 @@ zenity_warning_post_callback (GOptionContext *context, GOptionGroup *group,
 	if (results->mode == MODE_WARNING)
 	{
 		results->msg_data->dialog_text = zenity_general_dialog_text;
-		results->msg_data->dialog_icon = zenity_general_dialog_icon;
+		results->msg_data->dialog_icon = zenity_general_icon;
 		results->msg_data->mode = ZENITY_MSG_WARNING;
 		results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
+
+		if (zenity_general_icon_DEPRECATED)
+		{
+			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
+			show_window_icon_deprecation_warning ();
+		}
 	}
 
 	return TRUE;

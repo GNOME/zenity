@@ -51,8 +51,6 @@ zenity_notification_new (char *message, char *icon_path)
 {
 	g_autoptr (GNotification) notif;
 	g_auto(GStrv) text = NULL;
-	g_autoptr(GFile) icon_file = NULL;
-	g_autoptr(GIcon) icon = NULL;
 
 	/* Accept a title and optional body in the form of `my title\nmy body'.
 	 * The way this is displayed by the notification system is implementation
@@ -72,20 +70,9 @@ zenity_notification_new (char *message, char *icon_path)
 
 	if (icon_path)
 	{
-		icon_file = g_file_new_for_path (icon_path);
+		g_autoptr(GIcon) icon = NULL;
 
-		if (g_file_query_exists (icon_file, NULL))
-		{
-			icon = g_file_icon_new (icon_file);
-		}
-		else
-		{
-			g_debug (_("Icon filename %s not found; trying theme icon."),
-					icon_path);
-			icon = g_themed_icon_new_with_default_fallbacks (icon_path);
-//			icon = g_themed_icon_new (icon_path);
-		}
-
+		icon = zenity_util_gicon_from_string (icon_path);
 		g_notification_set_icon (notif, icon);
 	}
 

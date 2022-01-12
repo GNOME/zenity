@@ -43,6 +43,7 @@ G_BEGIN_DECLS
 
 #define ZENITY_IMAGE_FULLPATH(filename) (PACKAGE_DATADIR "/" filename)
 
+GIcon *zenity_util_gicon_from_string (const char *str);
 GtkBuilder *zenity_util_load_ui_file (const char *widget_root,
 		...) G_GNUC_NULL_TERMINATED;
 char *zenity_util_strip_newline (char *string);

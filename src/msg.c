@@ -234,8 +234,12 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 		gtk_label_set_ellipsize (GTK_LABEL (text), PANGO_ELLIPSIZE_END);
 
 	if (msg_data->dialog_icon)
-		gtk_image_set_from_icon_name (
-			GTK_IMAGE (image), msg_data->dialog_icon);
+	{
+		g_autoptr(GIcon) icon = NULL;
+
+		icon = zenity_util_gicon_from_string (msg_data->dialog_icon);
+		gtk_image_set_from_gicon (GTK_IMAGE (image), icon);
+	}
 
 	if (msg_data->no_wrap)
 		gtk_label_set_wrap (GTK_LABEL(text), FALSE);

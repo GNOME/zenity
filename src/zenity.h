@@ -129,7 +129,6 @@ typedef struct {
 	char *notification_text;
 	gboolean listen;
 	char *icon;
-//	char **notification_hints;
 } ZenityNotificationData;
 
 typedef struct {

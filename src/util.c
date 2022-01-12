@@ -48,6 +48,30 @@
 #define ZENITY_EXTRA_DEFAULT 127
 #define ZENITY_UI_RESOURCE_PATH RESOURCE_BASE_PATH "/zenity.ui"
 
+GIcon *
+zenity_util_gicon_from_string (const char *str)
+{
+	GIcon *icon = NULL;
+	g_autoptr(GFile) icon_file = NULL;
+
+	if (str)
+	{
+		icon_file = g_file_new_for_path (str);
+
+		if (g_file_query_exists (icon_file, NULL))
+		{
+			icon = g_file_icon_new (icon_file);
+		}
+		else
+		{
+			g_debug (_("Icon filename %s not found; trying theme icon."), str);
+			icon = g_themed_icon_new_with_default_fallbacks (str);
+		}
+	}
+
+	return icon;
+}
+
 GtkBuilder *
 zenity_util_load_ui_file (const char *root_widget, ...)
 {
