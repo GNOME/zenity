@@ -202,12 +202,10 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 	if (data->width > -1)
 		gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
 	else if (!msg_data->ellipsize && !msg_data->no_wrap) {
-		// the magic number 60 is picked from gtk+/gtk/ui/gtkmessagedialog.ui
-		// however, 60 would increase the distance between the icon and the
-		// text,
-		// decreasing to 10 fix it.
+		/* The magic number 60 is taken from gtk+/gtk/ui/gtkmessagedialog.ui
+		   with 10 as a minimum width. */
 		gtk_label_set_width_chars (GTK_LABEL (text), 10);
-		gtk_label_set_max_width_chars (GTK_LABEL (text), 10);
+		gtk_label_set_max_width_chars (GTK_LABEL (text), 60);
 	}
 
 	if (data->modal)
