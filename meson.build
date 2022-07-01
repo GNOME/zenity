@@ -70,7 +70,7 @@ if get_option('libnotify')
   endif
 endif
 
-webkitgtk = dependency('webkit2gtk-4.0', version: '>= 2.8.1', required: false)
+webkitgtk = dependency('webkit2gtk-4.1', required: false)
 if get_option('webkitgtk')
   if webkitgtk.found()
     zenity_conf.set('HAVE_WEBKITGTK', true)
