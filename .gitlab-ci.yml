@@ -21,6 +21,7 @@ build_fedora:
 build_ubuntu:
   image: ubuntu:rolling
   before_script:
+    - apt-get update
     - apt-get install -q -y --no-install-recommends $UBUNTU_DEPENDENCIES
   script:
     - meson --buildtype=debug -Dlibnotify=true -Dwebkitgtk=true build
