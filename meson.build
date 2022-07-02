@@ -1,5 +1,5 @@
 project('zenity', 'c',
-  version: '3.42.1',
+  version: '3.43.0',
   meson_version: '>=0.53.0',
   license: 'LGPL-2.1-or-later'
 )
