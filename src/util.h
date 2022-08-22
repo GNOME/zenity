@@ -6,6 +6,8 @@
 
 G_BEGIN_DECLS
 
+#define ZENITY_UI_FILE getenv("ZENITY_UI_FILE")
+
 #define ZENITY_UI_FILE_FULLPATH ZENITY_DATADIR "/zenity.ui"
 #define ZENITY_UI_FILE_RELATIVEPATH "./zenity.ui"
 

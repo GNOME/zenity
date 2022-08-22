@@ -86,6 +86,13 @@ zenity_util_load_ui_file (const gchar *root_widget, ...) {
 			builder, ZENITY_UI_FILE_RELATIVEPATH, objects, NULL);
 	}
 
+	if (ZENITY_UI_FILE) {
+		if (g_file_test (ZENITY_UI_FILE, G_FILE_TEST_EXISTS)) {
+			result = gtk_builder_add_objects_from_file (
+				builder, ZENITY_UI_FILE, objects, NULL);
+		}
+	}
+
 	if (result == 0)
 		result = gtk_builder_add_objects_from_file (
 			builder, ZENITY_UI_FILE_FULLPATH, objects, &error);
