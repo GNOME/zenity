@@ -1,6 +1,6 @@
 project('zenity', 'c',
   version: '4.alpha.1',
-  meson_version: '>=0.53.0',
+  meson_version: '>=0.57.0',
   license: 'LGPL-2.1-or-later'
 )
 
@@ -94,4 +94,6 @@ subdir('icons')
 subdir('po')
 subdir('help')
 
-meson.add_install_script('meson_post_install.py')
+gnome.post_install(
+  gtk_update_icon_cache: true,
+)
