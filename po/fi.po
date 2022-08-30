@@ -15,21 +15,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity HEAD\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=zenity&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-11 08:56+0000\n"
-"PO-Revision-Date: 2018-04-10 16:43+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
+"POT-Creation-Date: 2022-07-29 08:30+0000\n"
+"PO-Revision-Date: 2022-08-30 15:12+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-02-19 15:25:30+0000\n"
-"X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-02-19 15:25:30+0000\n"
+"X-Generator: Poedit 3.1.1\n"
 
-#: src/about.c:60
+#: src/about.c:56
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -42,7 +41,7 @@ msgstr ""
 "lisenssin versiota 2 taikka mitä tahansa tämän jälkeen ilmestynyttä "
 "versiota.\n"
 
-#: src/about.c:65
+#: src/about.c:61
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -54,7 +53,7 @@ msgstr ""
 "SOVELTUMISESTA TIETTYYN ERITYISEEN TARKOITUKSEEN. Yksityiskohtien osalta "
 "katso GNU:n LGPL-lisenssiä.\n"
 
-#: src/about.c:69
+#: src/about.c:65
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this program; if not, write to the Free Software Foundation, "
@@ -64,10 +63,10 @@ msgstr ""
 "mukana; jos et sitä saanut, niin lähetä kirje Free Software Foundation, "
 "Inc. :lle, 51 Franklin Street, Fifth Floor, Boston, MA 02111-1307, USA"
 
-#: src/about.c:260
+#: src/about.c:76
 msgid "translator-credits"
 msgstr ""
-"Jiri Grönroos, 2015, 2017, 2018\n"
+"Jiri Grönroos, 2015, 2017, 2018, 2022\n"
 "Tommi Vainikainen, 2005\n"
 "Ilkka Tuohela, 2005\n"
 "Sami Pesonen, 2004\n"
@@ -76,7 +75,7 @@ msgstr ""
 "\n"
 "https://l10n.gnome.org/teams/fi/"
 
-#: src/about.c:277
+#: src/about.c:93
 msgid "Display dialog boxes from shell scripts"
 msgstr "Näytä ikkunoita kuoren komentotiedostojen pohjalta"
 
@@ -102,10 +101,8 @@ msgid "_Yes"
 msgstr "_Kyllä"
 
 #: src/notification.c:50
-#, fuzzy
-#| msgid "Could not parse message from stdin\n"
 msgid "Could not parse message\n"
-msgstr "vakiosyötteestä tullutta viestiä ei voi jäsentää\n"
+msgstr "Viestiä ei voi jäsentää\n"
 
 #: src/notification.c:132
 msgid ""
@@ -124,10 +121,8 @@ msgid "Unknown hint name. Skipping.\n"
 msgstr ""
 
 #: src/notification.c:218
-#, fuzzy
-#| msgid "could not parse command from stdin\n"
 msgid "Could not parse command from stdin\n"
-msgstr "vakiosyötteestä tullutta komentoa ei voi jäsentää\n"
+msgstr "Stdin-vakiosyötteestä tullutta komentoa ei voi jäsentää\n"
 
 #: src/notification.c:318
 msgid "Zenity notification"
@@ -469,7 +464,7 @@ msgstr "Piilota perumispainike"
 #: src/option.c:641
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
-msgstr ""
+msgstr "Arvio milloin edistyminen saavuttaa 100 %"
 
 #: src/option.c:650
 msgid "Display question dialog"
@@ -528,6 +523,8 @@ msgstr "URL"
 #: src/option.c:768
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
+"Vieritä automaattisesti teksti loppuun. Vain kun teksti kaapataan stdin-"
+"vakiosyötteestä"
 
 #: src/option.c:778
 msgid "Display warning dialog"
@@ -843,97 +840,97 @@ msgstr "Maksimiarvon tulee olla suurempi kuin minimiarvon.\n"
 msgid "Value out of range.\n"
 msgstr "Arvo sallitun alueen ulkopuolella.\n"
 
-#: src/tree.c:393
+#: src/tree.c:389
 msgid "No column titles specified for List dialog.\n"
 msgstr "Luetteloikkunalle ei annettu sarakenimiä.\n"
 
-#: src/tree.c:399
+#: src/tree.c:395
 msgid "You should use only one List dialog type.\n"
 msgstr "Sinun tulisi käyttää vain yhtä listaikkunan tyyppiä.\n"
 
-#: src/zenity.ui:14 src/zenity.ui:76
+#: src/zenity.ui:14 src/zenity.ui:77
 msgid "Adjust the scale value"
 msgstr "Säädä asteikon arvoa"
 
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
+#: src/zenity.ui:30 src/zenity.ui:136 src/zenity.ui:248 src/zenity.ui:379
+#: src/zenity.ui:580 src/zenity.ui:787 src/zenity.ui:974
 msgid "Cancel"
 msgstr "Peru"
 
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
+#: src/zenity.ui:44 src/zenity.ui:149 src/zenity.ui:262 src/zenity.ui:393
+#: src/zenity.ui:483 src/zenity.ui:593 src/zenity.ui:700 src/zenity.ui:801
+#: src/zenity.ui:988 src/zenity.ui:1085
 msgid "OK"
 msgstr "OK"
 
-#: src/zenity.ui:117
+#: src/zenity.ui:118
 msgid "Text View"
 msgstr "Tekstinäkymä"
 
-#: src/zenity.ui:231
+#: src/zenity.ui:232
 msgid "Calendar selection"
 msgstr "Kalenterivalinnat"
 
-#: src/zenity.ui:298
+#: src/zenity.ui:299
 msgid "Select a date from below."
 msgstr "Valitse päiväys alta."
 
-#: src/zenity.ui:319
+#: src/zenity.ui:320
 msgid "C_alendar:"
 msgstr "K_alenteri:"
 
-#: src/zenity.ui:361
+#: src/zenity.ui:362
 msgid "Add a new entry"
 msgstr "Lisää kohta"
 
-#: src/zenity.ui:428
+#: src/zenity.ui:429
 msgid "_Enter new text:"
 msgstr "_Anna uusi teksti:"
 
-#: src/zenity.ui:465
+#: src/zenity.ui:466
 msgid "Error"
 msgstr "Virhe"
 
-#: src/zenity.ui:530
+#: src/zenity.ui:532
 msgid "An error has occurred."
 msgstr "Virhe."
 
-#: src/zenity.ui:658
+#: src/zenity.ui:660
 msgid "Forms dialog"
 msgstr "Lomakeikkuna"
 
-#: src/zenity.ui:681
+#: src/zenity.ui:683
 msgid "Information"
 msgstr "Tiedoksi"
 
-#: src/zenity.ui:741
+#: src/zenity.ui:744
 msgid "All updates are complete."
 msgstr "Kaikki päivitykset on nyt tehty."
 
-#: src/zenity.ui:768
+#: src/zenity.ui:771
 msgid "Progress"
 msgstr "Edistyminen"
 
-#: src/zenity.ui:831
+#: src/zenity.ui:834
 msgid "Running..."
 msgstr "Ajetaan…"
 
-#: src/zenity.ui:882
+#: src/zenity.ui:885
 msgid "Question"
 msgstr "Kysymys"
 
-#: src/zenity.ui:929 src/zenity.ui:1126
+#: src/zenity.ui:933 src/zenity.ui:1131
 msgid "Are you sure you want to proceed?"
 msgstr "Haluatko varmasti jatkaa?"
 
-#: src/zenity.ui:953
+#: src/zenity.ui:957
 msgid "Select items from the list"
 msgstr "Valitse luettelon kohtia"
 
-#: src/zenity.ui:1015
+#: src/zenity.ui:1019
 msgid "Select items from the list below."
 msgstr "Valitse kohtia alla olevasta luettelosta."
 
-#: src/zenity.ui:1064
+#: src/zenity.ui:1068
 msgid "Warning"
 msgstr "Varoitus"
