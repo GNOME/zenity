@@ -120,7 +120,8 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 	gtk_range_set_range (GTK_RANGE (scale),
 			scale_data->min_value, scale_data->max_value);
 	gtk_range_set_value (GTK_RANGE (scale), scale_data->value);
-	gtk_range_set_increments (GTK_RANGE (scale), scale_data->step, 0);
+	gtk_range_set_increments (
+		GTK_RANGE (scale), scale_data->step, scale_data->step);
 
 	if (scale_data->print_partial)
 	{
