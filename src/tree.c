@@ -4,7 +4,7 @@
  * tree.c
  *
  * Copyright © 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -47,8 +47,7 @@ static GIOChannel *channel;
 
 static int *zenity_tree_extract_column_indexes (char *indexes, int n_columns);
 static gboolean zenity_tree_column_is_hidden (int column_index);
-static void zenity_tree_dialog_response (GtkWidget *widget, int response,
-		gpointer data);
+static void zenity_tree_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 static void zenity_tree_row_activated (GtkTreeView *tree_view,
 	GtkTreePath *tree_path, GtkTreeViewColumn *tree_col, gpointer data);
 
@@ -349,7 +348,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 {
 	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GObject *text;
 	GtkTreeViewColumn *column;
 	GtkListStore *model;
@@ -358,7 +356,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	gboolean first_column = FALSE;
 	int i, column_index, n_columns;
 
-	builder = zenity_util_load_ui_file ("zenity_tree_dialog", NULL);
+	builder = zenity_util_load_ui_file ("zenity_tree_dialog", "zenity_tree_box", NULL);
 
 	if (builder == NULL) {
 		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -406,8 +404,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	dialog = GTK_WIDGET(gtk_builder_get_object (builder,
 				"zenity_tree_dialog"));
 
-	g_signal_connect (dialog, "response",
-		G_CALLBACK(zenity_tree_dialog_response), data);
+	g_signal_connect (dialog, "response", G_CALLBACK(zenity_tree_dialog_response), data);
 
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
@@ -417,23 +414,15 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG (dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
 	if (data->ok_label) {
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_tree_ok_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog)
 	}
 
 	if (data->cancel_label) {
-		button = GTK_WIDGET (gtk_builder_get_object (builder,
-					"zenity_tree_cancel_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog)
 	}
 
 	text = gtk_builder_get_object (builder, "zenity_tree_text");
@@ -804,18 +793,19 @@ zenity_tree_dialog_output (void)
 }
 
 static void
-zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
+zenity_tree_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityData *zen_data = data;
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_tree_dialog_output ();
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -839,7 +829,7 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data)
 		g_io_channel_shutdown (channel, TRUE, NULL);
 	}
 
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }
 
 static void
@@ -858,7 +848,7 @@ zenity_tree_row_activated (GtkTreeView *loc_tv, GtkTreePath *tree_path,
 
 	parent = GTK_WINDOW(gtk_widget_get_native (GTK_WIDGET(tree_view)));
 
-	zenity_util_gapp_quit (parent);
+	zenity_util_gapp_quit (parent, zen_data);
 }
 
 static gboolean

@@ -17,10 +17,11 @@ zenity_bindir = join_paths(zenity_prefix, get_option('bindir'))
 zenity_libdir = join_paths(zenity_prefix, get_option('libdir'))
 zenity_datadir = join_paths(zenity_prefix, get_option('datadir'))
 zenity_localedir = join_paths(zenity_prefix, get_option('localedir'))
+zenity_mandir = join_paths(zenity_prefix, get_option('mandir'))
 zenity_iconsdir = join_paths(zenity_datadir, 'icons')
 
 zenity_root_dir = include_directories('.')
-zenity_po_dir = join_paths(meson.source_root(), 'po')
+zenity_po_dir = join_paths(meson.project_source_root(), 'po')
 
 gnome = import('gnome')
 i18n = import('i18n')
@@ -56,7 +57,7 @@ foreach h : check_headers
   cc.has_header(h, required: true)
 endforeach
 
-gtk_dep = dependency('gtk4', version: '>= 4.0.0')
+adw_dep = dependency('libadwaita-1', version: '>= 1.2')
 
 # Optional dependencies
 
@@ -85,6 +86,7 @@ summary({'prefix': zenity_prefix,
          'libdir': zenity_libdir,
          'datadir': zenity_datadir,
 	 'localedir': zenity_localedir,
+	 'mandir': zenity_mandir,
 	 'iconsdir': zenity_iconsdir,
         }, section: 'Directories')
 

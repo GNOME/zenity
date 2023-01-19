@@ -4,7 +4,7 @@
  * scale.c
  *
  * Copyright © 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -33,19 +33,16 @@
 static GtkWidget *scale;
 
 static void zenity_scale_value_changed (GtkWidget *widget, gpointer data);
-static void zenity_scale_dialog_response (GtkWidget *widget, int response,
-		gpointer data);
+static void zenity_scale_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 void
 zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 {
 	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GObject *text;
 
-	builder =
-		zenity_util_load_ui_file ("zenity_scale_dialog", "adjustment1", NULL);
+	builder = zenity_util_load_ui_file ("zenity_scale_dialog", "zenity_scale_adjustment", "zenity_scale_box", NULL);
 
 	if (builder == NULL) {
 		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -58,8 +55,7 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 		GTK_WIDGET (gtk_builder_get_object (builder, "zenity_scale_hscale"));
 	text = gtk_builder_get_object (builder, "zenity_scale_text");
 
-	g_signal_connect (dialog, "response",
-		G_CALLBACK(zenity_scale_dialog_response), data);
+	g_signal_connect (dialog, "response", G_CALLBACK(zenity_scale_dialog_response), data);
 
 	if (scale_data->min_value >= scale_data->max_value)
 	{
@@ -92,24 +88,17 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG (dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
-	if (data->ok_label) {
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_scale_ok_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+	if (data->ok_label)
+	{
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog);
 	}
 
 	if (data->cancel_label)
 	{
-		button = GTK_WIDGET (gtk_builder_get_object (builder,
-					"zenity_scale_cancel_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog);
 	}
 
 	if (scale_data->dialog_text) {
@@ -151,18 +140,19 @@ zenity_scale_value_changed (GtkWidget *widget, gpointer data)
 }
 
 static void
-zenity_scale_dialog_response (GtkWidget *widget, int response, gpointer data)
+zenity_scale_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityData *zen_data = data;
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -181,5 +171,5 @@ zenity_scale_dialog_response (GtkWidget *widget, int response, gpointer data)
 			break;
 	}
 
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }

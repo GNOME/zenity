@@ -88,7 +88,7 @@ on_notification_default_action (GSimpleAction *self,
 
 	zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 
-	zenity_util_gapp_quit (NULL);
+	zenity_util_gapp_quit (NULL, zen_data);
 }
 
 static gboolean

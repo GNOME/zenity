@@ -4,7 +4,7 @@
  * fileselection.c
  *
  * Copyright © 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -31,10 +31,14 @@
 
 #include <config.h>
 
+/* GtkFileChooser deprecated in 4.10, but we want to maintain backwards
+ * compatibility with GTK 4.0.
+ */
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 static ZenityData *zen_data;
 
-static void zenity_fileselection_dialog_response (GtkDialog *dialog,
-		int response, gpointer data);
+static void zenity_fileselection_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 void
 zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
@@ -63,8 +67,7 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 	if (data->extra_label)
 		g_warning ("Cannot add extra labels to GtkFileChooserNative");
 
-	g_signal_connect (dialog, "response",
-		G_CALLBACK(zenity_fileselection_dialog_response), file_data);
+	g_signal_connect (dialog, "response", G_CALLBACK(zenity_fileselection_dialog_response), file_data);
 
 	if (file_data->uri)
 	{
@@ -179,11 +182,11 @@ zenity_fileselection_dialog_output (GtkFileChooser *chooser,
 }
 
 static void
-zenity_fileselection_dialog_response (GtkDialog *dialog,
-		int response, gpointer data)
+zenity_fileselection_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityFileData *file_data = data;
-	GtkFileChooser *chooser = GTK_FILE_CHOOSER (dialog);
+	GtkFileChooser *chooser = GTK_FILE_CHOOSER (widget);
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
@@ -192,7 +195,7 @@ zenity_fileselection_dialog_response (GtkDialog *dialog,
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case GTK_RESPONSE_REJECT:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -209,5 +212,7 @@ zenity_fileselection_dialog_response (GtkDialog *dialog,
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (NULL);
+	zenity_util_gapp_quit (NULL, zen_data);
 }
+
+G_GNUC_END_IGNORE_DEPRECATIONS

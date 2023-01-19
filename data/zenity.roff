@@ -1,10 +1,5 @@
-.TH ZENITY 1 "January 2022"
-.SH NAME
-zenity \- display GTK+ dialogs
-.SH SYNOPSIS
-.B zenity
-.RI [ options ]
-.SH DESCRIPTION
+[description]
+
 \fBzenity\fP is a program that will display GTK+ dialogs, and return
 (either in the return code, or on standard output) the users
 input. This allows you to present information, and ask for information
@@ -17,40 +12,7 @@ what the user typed into the text entry field.
 .PP
 Comprehensive documentation is also available in the GNOME Help Browser.
 
-.SH OPTIONS
-This program follows the usual GNU command line syntax, with long
-options starting with two dashes (`-').
-
-.SS
-Dialog Options
-
-.PP
-Options can be used in various combinations in order to craft many different
-types of dialogs.
-
-.PP
-For a summary of options, run \fBzenity \-\-help\fP.  This will display the
-first hierarchy of options available. A separate series of help sub-categories
-for each of these options will be displayed.
-
-.PP
-For a full and complete list of all options for your build and an explanation
-of these options, run \fBzenity \-\-help\-all\fP
-
-.SS
-Miscellaneous options
-
-.TP
-.B \-?, \-\-help
-Show summary of options.
-.TP
-.B \-\-about
-Display an about dialog.
-.TP
-.B \-\-version
-Show version of program.
-
-.SH EXAMPLES
+[examples]
 
 Display a file selector with the title \fISelect a file to
 remove\fP. The file selected is returned on standard output.
@@ -85,10 +47,14 @@ zenity \-\-list \-\-checklist \-\-column "Buy" \-\-column "Item" TRUE Apples TRU
 Display a progress dialog while searching for all the postscript files in your home directory
 .P
 find $HOME \-name '*.ps' | zenity \-\-progress \-\-pulsate
-.SH AUTHOR
-\fBZenity\fP was written by Glynn Foster <glynn.foster@sun.com>.
-.P
-This manual page was written by Ross Burton <ross@burtonini.com>.
 
-.SH SEE ALSO
+[author]
+
+.PP
+\fBZenity\fP was originally written by Glynn Foster <glynn.foster@sun.com>. It has since been maintained by a number of contributors since then.
+.PP
+This manual page was originally written by Ross Burton <ross@burtonini.com>. It currently contains portions which are automatically generated, and other portions written by its original author.
+
+[see also]
+
 \fBdialog\fP(1)
