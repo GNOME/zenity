@@ -46,6 +46,6 @@ zenity = executable(
   zenity_sources + zenity_enums + zenity_res,
   include_directories: zenity_root_dir,
   c_args: zenity_c_args,
-  dependencies: adw_dep,
+  dependencies: [adw_dep, webkitgtk_dep],
   install: true
 )

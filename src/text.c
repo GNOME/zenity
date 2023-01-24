@@ -41,7 +41,6 @@ static ZenityTextData *zen_text_data;
 static void zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 static void zenity_text_toggle_button (GtkCheckButton *button, AdwMessageDialog *dialog);
 
-// TODO - I don't think gtk4 support for webkit is fully "there" yet.
 #ifdef HAVE_WEBKITGTK
 static void
 zenity_configure_webkit (WebKitWebView *web_view) {
@@ -77,7 +76,6 @@ zenity_configure_webkit (WebKitWebView *web_view) {
 		NULL);
 	g_object_set (G_OBJECT (settings), "enable-page-cache", FALSE, NULL);
 	g_object_set (G_OBJECT (settings), "enable-plugins", FALSE, NULL);
-	g_object_set (G_OBJECT (settings), "enable-private-browsing", TRUE, NULL);
 	/*
 	  Stick to defaults
 	  "enforce-96-dpi"           gboolean              : Read / Write /
@@ -356,10 +354,13 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
-/* TODO once gtk4 support fully lands in webkitgtk. */
 #ifdef HAVE_WEBKITGTK
-	if (text_data->html) {
-		web_kit = webkit_web_view_new ();
+	if (text_data->html)
+	{
+		/* "ephemeral" == private browsing */
+		g_autoptr(WebKitWebContext) wk_context = webkit_web_context_new_ephemeral ();
+
+		web_kit = webkit_web_view_new_with_context (wk_context);
 		scrolled_window = GTK_WIDGET (
 			gtk_builder_get_object (builder, "zenity_text_scrolled_window"));
 
@@ -373,9 +374,9 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 			webkit_web_view_load_uri (
 				WEBKIT_WEB_VIEW (web_kit), text_data->url);
 		} else {
-			g_autoptr char *cwd = NULL;
-			g_autoptr char *dirname = NULL;
-			g_autoptr char *dirname_uri = NULL;
+			g_autofree char *cwd = NULL;
+			g_autofree char *dirname = NULL;
+			g_autofree char *dirname_uri = NULL;
 			dirname = text_data->uri ? g_path_get_dirname (text_data->uri)
 									 : g_strdup ("/");
 			cwd = g_get_current_dir ();
@@ -396,9 +397,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 			G_CALLBACK (zenity_text_webview_load_changed),
 			NULL);
 
-		gtk_widget_destroy (GTK_WIDGET (text_view));
-		gtk_container_add (GTK_CONTAINER (scrolled_window), web_kit);
-		gtk_widget_show (GTK_WIDGET (web_kit));
+		gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW(scrolled_window), web_kit);
 	}
 #endif /* HAVE_WEBKITGTK */
 
