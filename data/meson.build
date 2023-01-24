@@ -31,7 +31,7 @@ if help2man.found() and not meson.is_cross_build()
   help2man_opts = [
     '--no-info',
     '--section=1',
-    '--help-option=\'--help-all\'',
+    '--help-option=--help-all',
     '--include=@INPUT@',
   ]
 
