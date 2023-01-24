@@ -1,10 +1,10 @@
 variables:
-  DEPENDENCIES: gettext gettext-devel gcc git libadwaita-devel meson gtk4-devel yelp-tools
+  DEPENDENCIES: gettext gettext-devel gcc git libadwaita-devel meson gtk4-devel yelp-tools help2man
 
 build_fedora:
   image: fedora:latest
   before_script:
     - dnf install -y --nogpgcheck $DEPENDENCIES
   script:
-    - meson build/
+    - meson -Dwebkitgtk=true build/
     - ninja -C build/
