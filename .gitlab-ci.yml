@@ -1,11 +1,10 @@
 variables:
-  DEPENDENCIES: gettext gettext-devel gcc redhat-rpm-config automake libtool autoconf autoconf-archive git
-                gtk3-devel yelp-tools
+  DEPENDENCIES: gettext gettext-devel gcc git libadwaita-devel gtk4-devel yelp-tools
 
-build_fedora_33:
-  image: fedora:33
+build_fedora:
+  image: fedora:latest
   before_script:
     - dnf install -y --nogpgcheck $DEPENDENCIES
   script:
-    - ./autogen.sh
-    - make -j
+    - meson build/
+    - ninja -C build/
