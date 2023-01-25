@@ -441,7 +441,7 @@ zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 
 	switch (response)
 	{
-		case ZENITY_ESC:
+		case ZENITY_OK:
 			zenity_text_dialog_output (zen_data);
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			break;
@@ -451,6 +451,10 @@ zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
 			break;
 
+		case ZENITY_CANCEL:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
+			break;
+			
 		default:
 			if (zen_data->extra_label &&
 				response < (int)g_strv_length (zen_data->extra_label))
