@@ -128,6 +128,8 @@ command_line_cb (GApplication *app,
 	g_free (args);
 }
 
+static void dummy_log_func (void) { }
+
 int
 main (int argc, char *argv[])
 {
@@ -142,6 +144,11 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 	/* </i18n> */
+
+	/* Turn off g_message's from libadwaita - this is to suppress the 'this is
+	 * discouraged' message re: mapping dialogs without a transient parent.
+	 */
+	g_log_set_handler ("Adwaita", G_LOG_LEVEL_MESSAGE, (GLogFunc)dummy_log_func, NULL);
 
 	args = g_new0 (ZenityArgs, 1);
 	args->argc = argc;
