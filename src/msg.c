@@ -4,7 +4,7 @@
  * msg.c
  *
  * Copyright (C) 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -29,31 +29,7 @@
 #include "util.h"
 #include "zenity.h"
 
-static void zenity_msg_dialog_response (GtkWidget *widget,
-		int response, gpointer data);
-
-static void
-zenity_msg_construct_question_dialog (GtkWidget *dialog,
-		ZenityMsgData *msg_data, ZenityData *data)
-{
-	GtkWidget *cancel_button, *ok_button;
-
-	cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
-			_("_No"), GTK_RESPONSE_CANCEL);
-	ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
-			_("_Yes"), GTK_RESPONSE_OK);
-
-	gtk_widget_grab_focus
-		(msg_data->default_cancel ? cancel_button : ok_button);
-
-	if (data->cancel_label) {
-		gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);
-	}
-
-	if (data->ok_label) {
-		gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
-	}
-}
+static void zenity_msg_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 /* FIXME - Is this still necessary with gtk4? */
 static void
@@ -86,50 +62,42 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 {
 	g_autoptr(GtkBuilder) builder;
 	GtkWidget *dialog;
-	GtkWidget *ok_button;
 	GObject *text;
 	GObject *image;
 
 	switch (msg_data->mode)
 	{
 		case ZENITY_MSG_WARNING:
-			builder = zenity_util_load_ui_file ("zenity_warning_dialog", NULL);
+			builder = zenity_util_load_ui_file ("zenity_warning_dialog", "zenity_warning_box", NULL);
 			dialog = GTK_WIDGET (
 				gtk_builder_get_object (builder, "zenity_warning_dialog"));
 			text = gtk_builder_get_object (builder, "zenity_warning_text");
 			image = gtk_builder_get_object (builder, "zenity_warning_image");
-			ok_button = GTK_WIDGET (
-				gtk_builder_get_object (builder, "zenity_warning_ok_button"));
 			break;
 
 		case ZENITY_MSG_QUESTION:
 		case ZENITY_MSG_SWITCH:
-			builder = zenity_util_load_ui_file ("zenity_question_dialog", NULL);
+			builder = zenity_util_load_ui_file ("zenity_question_dialog", "zenity_question_box", NULL);
 			dialog = GTK_WIDGET (gtk_builder_get_object (builder,
 						"zenity_question_dialog"));
 			text = gtk_builder_get_object (builder, "zenity_question_text");
 			image = gtk_builder_get_object (builder, "zenity_question_image");
-			ok_button = NULL;
 			break;
 
 		case ZENITY_MSG_ERROR:
-			builder = zenity_util_load_ui_file ("zenity_error_dialog", NULL);
+			builder = zenity_util_load_ui_file ("zenity_error_dialog", "zenity_error_box", NULL);
 			dialog = GTK_WIDGET (gtk_builder_get_object (builder,
 						"zenity_error_dialog"));
 			text = gtk_builder_get_object (builder, "zenity_error_text");
 			image = gtk_builder_get_object (builder, "zenity_error_image");
-			ok_button = GTK_WIDGET (gtk_builder_get_object (builder,
-						"zenity_error_ok_button"));
 			break;
 
 		case ZENITY_MSG_INFO:
-			builder = zenity_util_load_ui_file ("zenity_info_dialog", NULL);
+			builder = zenity_util_load_ui_file ("zenity_info_dialog", "zenity_info_box", NULL);
 			dialog = GTK_WIDGET (gtk_builder_get_object (builder,
 						"zenity_info_dialog"));
 			text = gtk_builder_get_object (builder, "zenity_info_text");
 			image = gtk_builder_get_object (builder, "zenity_info_image");
-			ok_button = GTK_WIDGET (gtk_builder_get_object (builder,
-						"zenity_info_ok_button"));
 			break;
 
 		default:
@@ -137,18 +105,13 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			dialog = NULL;
 			text = NULL;
 			image = NULL;
-			ok_button = NULL;
 			g_assert_not_reached ();
 			break;
 	}
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG (dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog) 
 	}
 
 	if (builder == NULL) {
@@ -156,18 +119,14 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 		return;
 	}
 
-	g_signal_connect (G_OBJECT (dialog),
-		"response",
-		G_CALLBACK (zenity_msg_dialog_response),
-		data);
+	g_signal_connect (dialog, "response", G_CALLBACK(zenity_msg_dialog_response), data);
 
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
 
-	if (ok_button) {
-		if (data->ok_label) {
-			gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
-		}
+	if (data->ok_label)
+	{
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog)
 	}
 
 	switch (msg_data->mode)
@@ -180,7 +139,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 		case ZENITY_MSG_QUESTION:
 			gtk_window_set_icon_name (GTK_WINDOW(dialog),
 					"dialog-question");
-			zenity_msg_construct_question_dialog (dialog, msg_data, data);
 			break;
 
 		case ZENITY_MSG_SWITCH:
@@ -256,16 +214,18 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 }
 
 static void
-zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data) {
+zenity_msg_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
+{
 	ZenityData *zen_data = data;
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{	
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -276,5 +236,5 @@ zenity_msg_dialog_response (GtkWidget *widget, int response, gpointer data) {
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }

@@ -4,7 +4,7 @@
  * main.c
  *
  * Copyright © 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -27,7 +27,7 @@
 #include "option.h"
 #include "zenity.h"
 
-#include <gtk/gtk.h>
+#include <adwaita.h>
 #include <locale.h>
 #include <stdlib.h>
 
@@ -39,7 +39,7 @@ typedef struct {
 } ZenityArgs;
 
 static void
-command_line_cb (GtkApplication *app,
+command_line_cb (GApplication *app,
                GApplicationCommandLine *command_line,
                gpointer user_data)
 {
@@ -125,17 +125,16 @@ command_line_cb (GtkApplication *app,
 			exit (-1);
 	}
 
-	g_application_command_line_set_exit_status (command_line,
-			results->data->exit_code);
-
 	g_free (args);
 }
+
+static void dummy_log_func (void) { }
 
 int
 main (int argc, char *argv[])
 {
 	ZenityArgs *args;
-	g_autoptr(GtkApplication) app = NULL;
+	g_autoptr(AdwApplication) app = NULL;
 	int status;
 
 	/* <i18n> */
@@ -146,11 +145,16 @@ main (int argc, char *argv[])
 	textdomain (GETTEXT_PACKAGE);
 	/* </i18n> */
 
+	/* Turn off g_message's from libadwaita - this is to suppress the 'this is
+	 * discouraged' message re: mapping dialogs without a transient parent.
+	 */
+	g_log_set_handler ("Adwaita", G_LOG_LEVEL_MESSAGE, (GLogFunc)dummy_log_func, NULL);
+
 	args = g_new0 (ZenityArgs, 1);
 	args->argc = argc;
 	args->argv = argv;
 
-	app = gtk_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE);
+	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE);
 	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), args);
 
 	status = g_application_run (G_APPLICATION(app), 0, NULL);

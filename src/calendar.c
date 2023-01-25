@@ -4,7 +4,7 @@
  * calendar.c
  *
  * Copyright © 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -35,20 +35,18 @@
 static GtkWidget *calendar;
 static ZenityCalendarData *zen_cal_data;
 
-static void zenity_calendar_dialog_response (GtkWidget *widget,
-		int response, gpointer data);
+static void zenity_calendar_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 void
 zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 {
 	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GObject *text;
 
 	zen_cal_data = cal_data;
 
-	builder = zenity_util_load_ui_file ("zenity_calendar_dialog", NULL);
+	builder = zenity_util_load_ui_file ("zenity_calendar_dialog", "zenity_calendar_box", NULL);
 
 	if (builder == NULL) {
 		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -108,22 +106,17 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i) {
-			gtk_dialog_add_button (GTK_DIALOG(dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
-	if (data->ok_label) {
-		button = GTK_WIDGET (gtk_builder_get_object (builder,
-					"zenity_calendar_ok_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+	if (data->ok_label)
+	{
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog);
 	}
 
-	if (data->cancel_label) {
-		button = GTK_WIDGET (gtk_builder_get_object (builder,
-					"zenity_calendar_cancel_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+	if (data->cancel_label)
+	{
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog);
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
@@ -150,19 +143,19 @@ zenity_calendar_dialog_output (void)
 }
 
 static void
-zenity_calendar_dialog_response (GtkWidget *widget, int response,
-		gpointer data)
+zenity_calendar_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityData *zen_data = data;
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_calendar_dialog_output ();
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -178,5 +171,5 @@ zenity_calendar_dialog_response (GtkWidget *widget, int response,
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(gtk_widget_get_native (widget)));
+	zenity_util_gapp_quit (GTK_WINDOW(gtk_widget_get_native (widget)), zen_data);
 }

@@ -7,7 +7,7 @@
  *           © 1999, 2000 Red Hat Inc.
  *           © 1998 James Henstridge
  *           © 1995-2002 Free Software Foundation
- *           © 2021 Logan Rathbone
+ *           © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -32,6 +32,7 @@
 
 #include "util.h"
 #include "zenity.h"
+
 #include <errno.h>
 #include <locale.h>
 #include <stdarg.h>
@@ -210,8 +211,8 @@ zenity_util_show_help (GError **error) {
 }
 
 int
-zenity_util_return_exit_code (ZenityExitCode value) {
-
+zenity_util_return_exit_code (ZenityExitCode value)
+{
 	const char *env_var = NULL;
 	int retval;
 
@@ -416,15 +417,12 @@ zenity_util_show_dialog (GtkWidget *dialog)
 }
 
 gboolean
-zenity_util_timeout_handle (gpointer data)
+zenity_util_timeout_handle (AdwMessageDialog *dialog)
 {
-	GtkDialog *dialog = GTK_DIALOG (data);
-	
-	if (dialog != NULL) {
-		gtk_dialog_response (dialog, ZENITY_TIMEOUT);
+	if (dialog) {
+		adw_message_dialog_response (dialog, "timeout");
 	}
 	else {
-		zenity_util_gapp_quit (GTK_WINDOW(dialog));
 		exit (ZENITY_TIMEOUT);
 	}
 	return FALSE;
@@ -450,14 +448,61 @@ zenity_util_gapp_main (GtkWindow *window)
 }
 
 void
-zenity_util_gapp_quit (GtkWindow *window)
+zenity_util_gapp_quit (GtkWindow *window, ZenityData *data)
 {
+	/* This is a bit hack-ish, but GApplication doesn't really allow for
+	 * customized exit statuses within that API.
+	 */
+	if (data->exit_code != 0)
+		exit (data->exit_code);
+
 	if (window)
 	{
 		g_assert (GTK_IS_WINDOW (window));
-		gtk_window_set_application (window, NULL);
+		gtk_window_destroy (window);
 	}
 	else {
 		g_application_release (g_application_get_default ());
 	}
+}
+
+int
+zenity_util_parse_dialog_response (const char *response)
+{
+	if (g_strcmp0 (response, "ok") == 0 || g_strcmp0 (response, "yes") == 0)
+	{
+		return ZENITY_OK;
+	}
+	else if (g_strcmp0 (response, "cancel") == 0 || g_strcmp0 (response, "no") == 0)
+	{
+		return ZENITY_CANCEL;
+	}
+	else if (g_strcmp0 (response, "timeout") == 0)
+	{
+		return ZENITY_TIMEOUT;
+	}
+	else if (response[0] >= '0' && response[0] <= '9')
+	{
+		/* FIXME - atoi returns 0 on error, so this *could* mean the function
+		 * failed - but that would be a programmer error, so we'll leave this
+		 * in place.
+		 */
+		return atoi (response);
+	}
+	else
+	{
+		return ZENITY_ESC;
+	}
+}
+
+GtkWidget *
+zenity_util_add_button (AdwMessageDialog *dialog, const char *button_text,
+		ZenityExitCode response_id)
+{
+	GtkWidget *w = GTK_WIDGET(dialog);
+	g_autofree char *response_str = g_strdup_printf ("%d", response_id);
+
+	adw_message_dialog_add_response (dialog, response_str, button_text);
+
+	return w;
 }

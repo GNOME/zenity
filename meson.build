@@ -1,5 +1,5 @@
 project('zenity', 'c',
-  version: '4.alpha.1',
+  version: '3.90.0',
   meson_version: '>=0.57.0',
   license: 'LGPL-2.1-or-later'
 )
@@ -9,7 +9,7 @@ resource_base_path = '/org/gnome/Zenity'
 
 version_arr = meson.project_version().split('.')
 zenity_version_major = version_arr[0].to_int()
-zenity_version_minor = version_arr[1]
+zenity_version_minor = version_arr[1].to_int()
 zenity_version_micro = version_arr[2].to_int()
 
 zenity_prefix = get_option('prefix')
@@ -17,10 +17,11 @@ zenity_bindir = join_paths(zenity_prefix, get_option('bindir'))
 zenity_libdir = join_paths(zenity_prefix, get_option('libdir'))
 zenity_datadir = join_paths(zenity_prefix, get_option('datadir'))
 zenity_localedir = join_paths(zenity_prefix, get_option('localedir'))
+zenity_mandir = join_paths(zenity_prefix, get_option('mandir'))
 zenity_iconsdir = join_paths(zenity_datadir, 'icons')
 
 zenity_root_dir = include_directories('.')
-zenity_po_dir = join_paths(meson.source_root(), 'po')
+zenity_po_dir = join_paths(meson.project_source_root(), 'po')
 
 gnome = import('gnome')
 i18n = import('i18n')
@@ -56,7 +57,7 @@ foreach h : check_headers
   cc.has_header(h, required: true)
 endforeach
 
-gtk_dep = dependency('gtk4', version: '>= 4.0.0')
+adw_dep = dependency('libadwaita-1', version: '>= 1.2')
 
 # Optional dependencies
 
@@ -64,15 +65,14 @@ opt_missing_str = '''
 Requested optional @0@ support but library not found.
 Please ensure you have any required development libraries installed.'''
 
-# TODO
-#webkitgtk = dependency('webkit2gtk-4.0', version: '>= 2.8.1', required: false)
-#if get_option('webkitgtk')
-#  if webkitgtk.found()
-#    zenity_conf.set('HAVE_WEBKITGTK', true)
-#  else
-#    error(opt_missing_str.format('webkitgtk'))
-#  endif
-#endif
+webkitgtk_dep = dependency('webkit2gtk-5.0', required: false)
+if get_option('webkitgtk')
+  if webkitgtk_dep.found()
+    zenity_conf.set('HAVE_WEBKITGTK', true)
+  else
+    error(opt_missing_str.format('webkitgtk'))
+  endif
+endif
 
 configure_file(
   output: 'config.h',
@@ -85,6 +85,7 @@ summary({'prefix': zenity_prefix,
          'libdir': zenity_libdir,
          'datadir': zenity_datadir,
 	 'localedir': zenity_localedir,
+	 'mandir': zenity_mandir,
 	 'iconsdir': zenity_iconsdir,
         }, section: 'Directories')
 

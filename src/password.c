@@ -4,7 +4,7 @@
  * password.c
  *
  * Copyright © 2010 Arx Cruz
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -33,15 +33,13 @@
 
 static ZenityData *zen_data;
 
-static void zenity_password_dialog_response (GtkWidget *widget,
-		int response, gpointer data);
+static void zenity_password_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 void
 zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 {
 	GtkBuilder *builder;
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GtkWidget *grid;
 	GtkWidget *label;
 	int pass_row = 0;
@@ -49,7 +47,7 @@ zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 	/* Set global */
 	zen_data = data;
 
-	builder = zenity_util_load_ui_file ("zenity_password_dialog", NULL);
+	builder = zenity_util_load_ui_file ("zenity_password_dialog", "zenity_password_box", NULL);
 
 	if (builder == NULL)
 	{
@@ -62,25 +60,16 @@ zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG(dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
-	if (data->ok_label)
-	{
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_password_ok_button"));
-		gtk_button_set_label (GTK_BUTTON(button), data->ok_label);
+	if (data->ok_label) {
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog);
 	}
 
 	if (data->cancel_label)
 	{
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_password_cancel_button"));
-		gtk_button_set_label (GTK_BUTTON(button), data->cancel_label);
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog);
 	}
 
 	grid = GTK_WIDGET(gtk_builder_get_object (builder,
@@ -136,8 +125,7 @@ zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW(dialog), TRUE);
 
-	g_signal_connect (dialog, "response",
-		G_CALLBACK(zenity_password_dialog_response), password_data);
+	g_signal_connect (dialog, "response", G_CALLBACK(zenity_password_dialog_response), password_data);
 
 	zenity_util_show_dialog (dialog);
 
@@ -151,18 +139,18 @@ zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 }
 
 static void
-zenity_password_dialog_response (GtkWidget *widget, int response,
-		gpointer data)
+zenity_password_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityPasswordData *password_data = data;
 	GtkEntryBuffer *user_buff, *pass_buff;
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	user_buff = gtk_entry_get_buffer (GTK_ENTRY(password_data->entry_username));
 	pass_buff = gtk_entry_get_buffer (GTK_ENTRY(password_data->entry_password));
 
 	switch (response)
 	{
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			if (password_data->username) {
 				g_print ("%s|%s\n",
@@ -175,7 +163,7 @@ zenity_password_dialog_response (GtkWidget *widget, int response,
 			}
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -186,5 +174,5 @@ zenity_password_dialog_response (GtkWidget *widget, int response,
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }

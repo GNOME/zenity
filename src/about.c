@@ -6,7 +6,7 @@
  * Copyright © 2002 Sun Microsystems, Inc.
  * Copyright © 2001 CodeFactory AB
  * Copyright © 2001, 2002 Anders Carlsson
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -83,7 +83,7 @@ zenity_about (ZenityData *data)
 		VERSION,
 		"copyright",
 		"Copyright \xc2\xa9 2003 Sun Microsystems\n"
-		"Copyright \xc2\xa9 2021 Logan Rathbone\n",
+		"Copyright \xc2\xa9 2021-2023 Logan Rathbone\n",
 		"comments",
 		_("Display dialog boxes from shell scripts"),
 		"authors",
@@ -117,5 +117,5 @@ zenity_about_close_cb (GtkWindow *window, gpointer data)
 	ZenityData *zen_data = data;
 
 	zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-	zenity_util_gapp_quit (window);
+	zenity_util_gapp_quit (window, zen_data);
 }

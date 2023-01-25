@@ -4,7 +4,7 @@
  * entry.c
  *
  * Copyright © 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -29,8 +29,7 @@
 
 #include <config.h>
 
-static void zenity_entry_dialog_response (GtkWidget *widget,
-		int response, gpointer data);
+static void zenity_entry_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 static GtkWidget *entry;
 static int n_entries = 0;
@@ -55,13 +54,12 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 {
 	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GObject *text;
 	GSList *entries = NULL;
 	GSList *tmp;
 	GObject *vbox;
 
-	builder = zenity_util_load_ui_file ("zenity_entry_dialog", NULL);
+	builder = zenity_util_load_ui_file ("zenity_entry_dialog", "zenity_entry_box", NULL);
 
 	if (builder == NULL)
 	{
@@ -72,8 +70,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 	dialog = GTK_WIDGET(gtk_builder_get_object (builder,
 				"zenity_entry_dialog"));
 
-	g_signal_connect (dialog, "response",
-		G_CALLBACK(zenity_entry_dialog_response), data);
+	g_signal_connect (dialog, "response", G_CALLBACK(zenity_entry_dialog_response), data);
 
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW(dialog), data->dialog_title);
@@ -90,25 +87,17 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG (dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
 	if (data->ok_label)
 	{
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_entry_ok_button"));
-		gtk_button_set_label (GTK_BUTTON(button), data->ok_label);
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog);
 	}
 
 	if (data->cancel_label)
 	{
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_entry_cancel_button"));
-		gtk_button_set_label (GTK_BUTTON(button), data->cancel_label);
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog);
 	}
 
 	text = gtk_builder_get_object (builder, "zenity_entry_text");
@@ -202,18 +191,19 @@ zenity_entry_dialog_output (void)
 }
 
 static void
-zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
+zenity_entry_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityData *zen_data = data;
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_entry_dialog_output ();
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -229,5 +219,5 @@ zenity_entry_dialog_response (GtkWidget *widget, int response, gpointer data)
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }

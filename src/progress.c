@@ -4,7 +4,7 @@
  * progress.c
  *
  * Copyright © 2002 Sun Microsystems, Inc.
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -50,8 +50,7 @@ static gboolean auto_close;
 gint zenity_progress_timeout (gpointer data);
 gint zenity_progress_pulsate_timeout (gpointer data);
 
-static void zenity_progress_dialog_response (GtkWidget *widget,
-		int response, gpointer data);
+static void zenity_progress_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 static gboolean
 zenity_progress_pulsate_progress_bar (gpointer user_data)
@@ -250,19 +249,15 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 				if (percentage == 100)
 				{
-					GObject *button;
-
-					button = gtk_builder_get_object (builder,
-							"zenity_progress_ok_button");
-					gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
-					gtk_widget_grab_focus (GTK_WIDGET (button));
+					adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "ok", TRUE);
+					adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(parent), "ok");
 
 					if (progress_data->autoclose)
 					{
 						zen_data->exit_code =
 							zenity_util_return_exit_code (ZENITY_OK);
 
-						zenity_util_gapp_quit (parent);
+						zenity_util_gapp_quit (parent, zen_data);
 					}
 				}
 			}
@@ -276,17 +271,10 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 	{
 		/* We assume that we are done, so stop the pulsating and de-sensitize
 		 * the buttons */
-		GtkWidget *button;
+		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "ok", TRUE);
+		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "cancel", FALSE);
+		adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(parent), "ok");
 
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_progress_ok_button"));
-		gtk_widget_set_sensitive (button, TRUE);
-		gtk_widget_grab_focus (button);
-
-		button = GTK_WIDGET (gtk_builder_get_object (builder,
-					"zenity_progress_cancel_button"));
-
-		gtk_widget_set_sensitive (button, FALSE);
 		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
 
 		zenity_progress_pulsate_stop ();
@@ -296,7 +284,7 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		if (progress_data->autoclose)
 		{
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-			zenity_util_gapp_quit (parent);
+			zenity_util_gapp_quit (parent, zen_data);
 		}
 
 		g_io_channel_shutdown (channel, TRUE, NULL);
@@ -331,13 +319,11 @@ void
 zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 {
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GObject *text;
 	GObject *progress_bar;
-	GObject *cancel_button, *ok_button;
 
 	zen_data = data;
-	builder = zenity_util_load_ui_file ("zenity_progress_dialog", NULL);
+	builder = zenity_util_load_ui_file ("zenity_progress_dialog", "zenity_progress_box", NULL);
 
 	if (builder == NULL) {
 		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -351,8 +337,7 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
 	progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
 
-	g_signal_connect (dialog, "response",
-		G_CALLBACK(zenity_progress_dialog_response), data);
+	g_signal_connect (dialog, "response", G_CALLBACK(zenity_progress_dialog_response), data);
 
 	if (data->dialog_title)
 		gtk_window_set_title (GTK_WINDOW(dialog), data->dialog_title);
@@ -384,25 +369,16 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG(dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
-	if (data->ok_label)
-	{
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_progress_ok_button"));
-		gtk_button_set_label (GTK_BUTTON(button), data->ok_label);
+	if (data->ok_label) {
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog);
 	}
 
 	if (data->cancel_label)
 	{
-		button = GTK_WIDGET(gtk_builder_get_object (builder,
-					"zenity_progress_cancel_button"));
-		gtk_button_set_label (GTK_BUTTON(button), data->cancel_label);
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog);
 	}
 
 	if (progress_data->dialog_text) {
@@ -416,21 +392,22 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	}
 
 	autokill = progress_data->autokill;
-
 	auto_close = progress_data->autoclose;
-	ok_button = gtk_builder_get_object (builder, "zenity_progress_ok_button");
-
 	no_cancel = progress_data->no_cancel;
-	cancel_button =
-		gtk_builder_get_object (builder, "zenity_progress_cancel_button");
 
-	if (no_cancel) {
-		gtk_widget_hide (GTK_WIDGET(cancel_button));
+	/* Unlike some other dialogs, this one starts off blank and we need to add
+	 * the OK/Cancel buttons depending on the options.
+	 */
+	if (no_cancel)
 		gtk_window_set_deletable (GTK_WINDOW(dialog), FALSE);
-	}
+	else
+		adw_message_dialog_add_response (ADW_MESSAGE_DIALOG(dialog), "cancel", _("_Cancel"));
 
-	if (no_cancel && auto_close)
-		gtk_widget_hide (GTK_WIDGET(ok_button));
+	if (!auto_close)
+	{
+		adw_message_dialog_add_response (ADW_MESSAGE_DIALOG(dialog), "ok", _("_OK"));
+		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
+	}
 
 	zenity_util_show_dialog (dialog);
 	zenity_progress_read_info (progress_data);
@@ -445,16 +422,17 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 }
 
 static void
-zenity_progress_dialog_response (GtkWidget *widget, int response,
-		gpointer data)
+zenity_progress_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
+
 	switch (response)
 	{
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			/* We do not want to kill the parent process, in order to give the
 			 * user the ability to choose the action to be taken. But we want
 			 * to give people the option to choose this behavior.
@@ -478,5 +456,5 @@ zenity_progress_dialog_response (GtkWidget *widget, int response,
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }

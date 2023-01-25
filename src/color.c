@@ -4,7 +4,7 @@
  * color.c
  *
  * Copyright © 2010 Berislav Kovacki
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -30,10 +30,12 @@
 #include "zenity.h"
 #include <string.h>
 
+/* TODO: port to GtkColorDialog */
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 static ZenityData *zen_data;
 
-static void zenity_colorselection_dialog_response (GtkWidget *widget,
-		int response, gpointer data);
+static void zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 void
 zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
@@ -45,10 +47,7 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 
 	dialog = gtk_color_chooser_dialog_new (data->dialog_title, NULL);
 
-	g_signal_connect (G_OBJECT (dialog),
-		"response",
-		G_CALLBACK (zenity_colorselection_dialog_response),
-		color_data);
+	g_signal_connect (dialog, "response", G_CALLBACK (zenity_colorselection_dialog_response), color_data);
 
 	if (color_data->color &&
 			gdk_rgba_parse (&color, color_data->color))
@@ -58,11 +57,7 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 
 	if (data->extra_label)
 	{
-		for (int i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG (dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
 	if (data->modal)
@@ -81,8 +76,7 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 }
 
 static void
-zenity_colorselection_dialog_response (GtkWidget *widget,
-		int response, gpointer data)
+zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
 	GdkRGBA color;
 
@@ -105,5 +99,7 @@ zenity_colorselection_dialog_response (GtkWidget *widget,
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }
+
+G_GNUC_END_IGNORE_DEPRECATIONS

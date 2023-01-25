@@ -4,7 +4,7 @@
  * forms.c
  *
  * Copyright © 2010 Arx Cruz
- * Copyright © 2021 Logan Rathbone
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -33,8 +33,7 @@
 
 static ZenityData *zen_data;
 static GSList *selected;
-static void zenity_forms_dialog_response (GtkWidget *widget,
-		int response, gpointer data);
+static void zenity_forms_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 static void
 zenity_forms_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf,
@@ -228,7 +227,6 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 	GtkWidget *dialog;
 	GtkWidget *grid;
 	GtkWidget *text;
-	GtkWidget *button;
 
 	int list_count = 0;
 	int combo_count = 0;
@@ -236,7 +234,7 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 
 	zen_data = data;
 
-	builder = zenity_util_load_ui_file ("zenity_forms_dialog", NULL);
+	builder = zenity_util_load_ui_file ("zenity_forms_dialog", "zenity_forms_box", NULL);
 
 	if (builder == NULL) {
 		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -259,23 +257,17 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 
 	if (data->extra_label)
 	{
-		for (i = 0; data->extra_label[i] != NULL; ++i)
-		{
-			gtk_dialog_add_button (GTK_DIALOG(dialog),
-					data->extra_label[i], i);
-		}
+		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
 	}
 
-	if (data->ok_label) {
-		button = GTK_WIDGET (
-			gtk_builder_get_object (builder, "zenity_forms_ok_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
+	if (data->ok_label)
+	{
+		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog);
 	}
 
-	if (data->cancel_label) {
-		button = GTK_WIDGET (
-			gtk_builder_get_object (builder, "zenity_forms_cancel_button"));
-		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
+	if (data->cancel_label)
+	{
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog);
 	}
 
 	text = GTK_WIDGET (gtk_builder_get_object (builder, "zenity_forms_text"));
@@ -359,7 +351,7 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 {
 	GSList *tmp, *tmp2;
 	guint day, year, month;
-	GDate *date = NULL;
+	g_autoptr(GDate) date = NULL;
 	char time_string[128];
 	g_autofree char *combo_value = NULL;
 	GtkTreeSelection *selection;
@@ -407,9 +399,8 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 						"month", &month,
 						"year", &year,
 						NULL);
-				date = g_date_new_dmy (year, month + 1, day);
-				g_date_strftime (time_string,
-						127, forms_data->date_format, date);
+				date = g_date_new_dmy (day, month + 1, year);
+				g_date_strftime (time_string, sizeof time_string, forms_data->date_format, date);
 				g_print ("%s", time_string);
 				break;
 
@@ -441,18 +432,19 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 }
 
 static void
-zenity_forms_dialog_response (GtkWidget *widget, int response, gpointer data)
+zenity_forms_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityFormsData *forms_data = data;
+	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
-		case GTK_RESPONSE_OK:
+		case ZENITY_OK:
 			zenity_forms_dialog_output (forms_data);
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			break;
 
-		case GTK_RESPONSE_CANCEL:
+		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -468,5 +460,5 @@ zenity_forms_dialog_response (GtkWidget *widget, int response, gpointer data)
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
-	zenity_util_gapp_quit (GTK_WINDOW(widget));
+	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }
