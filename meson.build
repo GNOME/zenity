@@ -16,7 +16,7 @@ zenity_datadir = join_paths(zenity_prefix, get_option('datadir'), 'zenity')
 zenity_localedir = join_paths(zenity_prefix, get_option('localedir'))
 
 zenity_root_dir = include_directories('.')
-zenity_po_dir = join_paths(meson.source_root(), 'po')
+zenity_po_dir = join_paths(meson.project_source_root(), 'po')
 
 gnome = import('gnome')
 i18n = import('i18n')
@@ -84,7 +84,7 @@ x11 = dependency('x11', required: false)
 
 perl = find_program('perl', required: false)
 if perl.found()
-  zenity_conf.set('PERL', perl.path())
+  zenity_conf.set('PERL', perl.full_path())
 endif
 
 configure_file(
