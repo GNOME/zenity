@@ -351,7 +351,7 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 {
 	GSList *tmp, *tmp2;
 	guint day, year, month;
-	GDate *date = NULL;
+	g_autoptr(GDate) date = NULL;
 	char time_string[128];
 	g_autofree char *combo_value = NULL;
 	GtkTreeSelection *selection;
@@ -399,9 +399,8 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 						"month", &month,
 						"year", &year,
 						NULL);
-				date = g_date_new_dmy (year, month + 1, day);
-				g_date_strftime (time_string,
-						127, forms_data->date_format, date);
+				date = g_date_new_dmy (day, month + 1, year);
+				g_date_strftime (time_string, sizeof time_string, forms_data->date_format, date);
 				g_print ("%s", time_string);
 				break;
 
