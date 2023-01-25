@@ -1,5 +1,5 @@
 project('zenity', 'c',
-  version: '4.alpha.1',
+  version: '3.90.0',
   meson_version: '>=0.57.0',
   license: 'LGPL-2.1-or-later'
 )
@@ -9,7 +9,7 @@ resource_base_path = '/org/gnome/Zenity'
 
 version_arr = meson.project_version().split('.')
 zenity_version_major = version_arr[0].to_int()
-zenity_version_minor = version_arr[1]
+zenity_version_minor = version_arr[1].to_int()
 zenity_version_micro = version_arr[2].to_int()
 
 zenity_prefix = get_option('prefix')
