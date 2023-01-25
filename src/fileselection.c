@@ -31,14 +31,13 @@
 
 #include <config.h>
 
-/* GtkFileChooser deprecated in 4.10, but we want to maintain backwards
- * compatibility with GTK 4.0.
+/* TODO: port to GtkFileDialog.
  */
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 static ZenityData *zen_data;
 
-static void zenity_fileselection_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
+static void zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 void
 zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
@@ -182,11 +181,10 @@ zenity_fileselection_dialog_output (GtkFileChooser *chooser,
 }
 
 static void
-zenity_fileselection_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
+zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
 	ZenityFileData *file_data = data;
 	GtkFileChooser *chooser = GTK_FILE_CHOOSER (widget);
-	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{

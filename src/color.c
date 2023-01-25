@@ -30,9 +30,12 @@
 #include "zenity.h"
 #include <string.h>
 
+/* TODO: port to GtkColorDialog */
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 static ZenityData *zen_data;
 
-static void zenity_colorselection_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
+static void zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 
 void
 zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
@@ -44,10 +47,7 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 
 	dialog = gtk_color_chooser_dialog_new (data->dialog_title, NULL);
 
-	g_signal_connect (G_OBJECT (dialog),
-		"response",
-		G_CALLBACK (zenity_colorselection_dialog_response),
-		color_data);
+	g_signal_connect (dialog, "response", G_CALLBACK (zenity_colorselection_dialog_response), color_data);
 
 	if (color_data->color &&
 			gdk_rgba_parse (&color, color_data->color))
@@ -76,20 +76,19 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 }
 
 static void
-zenity_colorselection_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
+zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer data)
 {
 	GdkRGBA color;
-	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
-		case ZENITY_OK:
+		case GTK_RESPONSE_OK:
 			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
 			gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
 			g_print ("%s\n", gdk_rgba_to_string (&color));
 			break;
 
-		case ZENITY_CANCEL:
+		case GTK_RESPONSE_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
@@ -102,3 +101,5 @@ zenity_colorselection_dialog_response (GtkWidget *widget, char *rstr, gpointer d
 	}
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }
+
+G_GNUC_END_IGNORE_DEPRECATIONS
