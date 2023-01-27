@@ -78,12 +78,8 @@ check_or_radio_label_activated_cb (GtkTreeView *tree_view,
 	/* Because this is a radio list, we should untoggle the previous toggle so
 	 * that we only have one selection at any given time
 	 */
-<<<<<<< HEAD
-	if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (model), "radio")) == 1) {
-=======
 	if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (model), "radio")) == 1)
 	{
->>>>>>> gtk4-port
 		gtk_tree_model_foreach (model, zenity_tree_dialog_untoggle, NULL);
 	}
 
