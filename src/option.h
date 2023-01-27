@@ -1,7 +1,8 @@
 /*
  * option.h
  *
- * Copyright (C) 2002 Sun Microsystems, Inc.
+ * Copyright © 2002 Sun Microsystems, Inc.
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -24,11 +25,9 @@
 #define OPTION_H
 
 #include "zenity.h"
+
 #include <glib.h>
-#include <langinfo.h>
-#ifdef HAVE_LOCALE_H
-#include <locale.h>
-#endif
+#include <config.h>
 
 typedef enum {
 	MODE_CALENDAR,
@@ -42,9 +41,7 @@ typedef enum {
 	MODE_WARNING,
 	MODE_SCALE,
 	MODE_INFO,
-#ifdef HAVE_LIBNOTIFY
 	MODE_NOTIFICATION,
-#endif
 	MODE_COLOR,
 	MODE_PASSWORD,
 	MODE_FORMS,
@@ -72,18 +69,14 @@ typedef struct {
 	ZenityProgressData *progress_data;
 	ZenityTextData *text_data;
 	ZenityTreeData *tree_data;
-#ifdef HAVE_LIBNOTIFY
 	ZenityNotificationData *notification_data;
-#endif
 	ZenityColorData *color_data;
 	ZenityPasswordData *password_data;
 	ZenityFormsData *forms_data;
 } ZenityParsingOptions;
 
-void zenity_option_error (gchar *string, ZenityError error);
+void zenity_option_error (char *string, ZenityError error);
 
-ZenityParsingOptions *zenity_option_parse (gint argc, gchar **argv);
-
-void zenity_option_free (void);
+ZenityParsingOptions *zenity_option_parse (int argc, char **argv);
 
 #endif /* OPTION_H */

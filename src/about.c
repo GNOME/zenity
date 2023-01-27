@@ -1,12 +1,15 @@
+/* vim: colorcolumn=80 ts=4 sw=4
+ */
 /*
  * about.c
  *
- * Copyright (C) 2002 Sun Microsystems, Inc.
- * Copyright (C) 2001 CodeFactory AB
- * Copyright (C) 2001, 2002 Anders Carlsson
+ * Copyright © 2002 Sun Microsystems, Inc.
+ * Copyright © 2001 CodeFactory AB
+ * Copyright © 2001, 2002 Anders Carlsson
+ * Copyright © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Library General Public
+ * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2 of the License, or (at your option) any later version.
  *
@@ -15,7 +18,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * Library General Public License for more details.
  *
- * You should have received a copy of the GNU Library General Public
+ * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
@@ -24,22 +27,19 @@
  *          Anders Carlsson <andersca@gnu.org>
  */
 
-#include "config.h"
 #include "util.h"
 #include "zenity.h"
-#include <gdk/gdkkeysyms.h>
+
 #include <string.h>
 
-#define GTK_RESPONSE_CREDITS 0
-#define ZENITY_HELP_PATH ZENITY_DATADIR "/help/"
+#include <config.h>
 
 static GtkWidget *dialog;
 
-static void zenity_about_dialog_response (
-	GtkWidget *widget, int response, gpointer data);
+static void zenity_about_close_cb (GtkWindow *window, gpointer data);
 
 /* Sync with the people in the THANKS file */
-static const gchar *const authors[] = {"Glynn Foster <glynn foster sun com>",
+static const char *const authors[] = {"Glynn Foster <glynn foster sun com>",
 	"Lucas Rocha <lucasr gnome org>",
 	"Mike Newman <mikegtn gnome org>",
 	NULL};
@@ -49,8 +49,6 @@ static const char *documenters[] = {"Glynn Foster <glynn.foster@sun.com>",
 	"Java Desktop System Documentation Team",
 	"GNOME Documentation Project",
 	NULL};
-
-static gchar *translators;
 
 static const char *license[] = {
 	N_ ("This program is free software; you can redistribute it and/or modify "
@@ -69,72 +67,55 @@ static const char *license[] = {
 		"02110-1301, USA.")};
 
 void
-zenity_about (ZenityData *data) {
-	GdkPixbuf *logo;
+zenity_about (ZenityData *data)
+{
 	char *license_trans;
 
-	translators = _ ("translator-credits");
-	logo =
-		gdk_pixbuf_new_from_file (ZENITY_IMAGE_FULLPATH ("zenity.png"), NULL);
-
 	license_trans = g_strconcat (
-		_ (license[0]), "\n", _ (license[1]), "\n", _ (license[2]), "\n", NULL);
+		_(license[0]), "\n", _(license[1]), "\n", _(license[2]), "\n", NULL);
 
 	dialog = gtk_about_dialog_new ();
 
 	g_object_set (G_OBJECT (dialog),
-		"name",
+		"program-name",
 		"Zenity",
 		"version",
 		VERSION,
 		"copyright",
-		"Copyright \xc2\xa9 2003 Sun Microsystems",
+		"Copyright \xc2\xa9 2003 Sun Microsystems\n"
+		"Copyright \xc2\xa9 2021-2023 Logan Rathbone\n",
 		"comments",
-		_ ("Display dialog boxes from shell scripts"),
+		_("Display dialog boxes from shell scripts"),
 		"authors",
 		authors,
 		"documenters",
 		documenters,
-		"translator-credits",
-		translators,
 		"website",
-		"http://live.gnome.org/Zenity",
-		"logo",
-		logo,
+		"https://gitlab.gnome.org/GNOME/zenity",
 		"wrap-license",
 		TRUE,
 		"license",
 		license_trans,
+		"icon-name",
+		"zenity",
+		"logo-icon-name",
+		"zenity",
 		NULL);
 
 	g_free (license_trans);
 
-	zenity_util_set_window_icon (
-		dialog, NULL, ZENITY_IMAGE_FULLPATH ("zenity.png"));
+	g_signal_connect (dialog, "close-request",
+			G_CALLBACK(zenity_about_close_cb), data);
 
-	g_signal_connect (G_OBJECT (dialog),
-		"response",
-		G_CALLBACK (zenity_about_dialog_response),
-		data);
-
-	zenity_util_show_dialog (dialog, data->attach);
-	gtk_main ();
+	zenity_util_show_dialog (dialog);
+	zenity_util_gapp_main (GTK_WINDOW (dialog));
 }
 
 static void
-zenity_about_dialog_response (GtkWidget *widget, int response, gpointer data) {
+zenity_about_close_cb (GtkWindow *window, gpointer data)
+{
 	ZenityData *zen_data = data;
 
-	switch (response) {
-		case GTK_RESPONSE_CLOSE:
-			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
-			break;
-
-		default:
-			/* Esc dialog */
-			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
-			break;
-	}
-
-	gtk_main_quit ();
+	zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
+	zenity_util_gapp_quit (window, zen_data);
 }

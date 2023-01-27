@@ -1,28 +1,10 @@
 variables:
-  FEDORA_DEPENDENCIES: gettext gettext-devel gcc redhat-rpm-config meson libtool git
-                gtk3-devel yelp-tools
-
-  UBUNTU_DEPENDENCIES: meson git gcc gettext libtool libnotify-dev libgtk-3-dev
-                libwebkit2gtk-4.1-dev yelp-tools
-
-# Fedora does a plain vanilla build in its specfile with no meson options
-# https://src.fedoraproject.org/rpms/zenity/blob/rawhide/f/zenity.spec
+  DEPENDENCIES: gettext gettext-devel gcc git libadwaita-devel meson gtk4-devel yelp-tools webkit2gtk5.0-devel
 
 build_fedora:
   image: fedora:latest
   before_script:
     - dnf install -y --nogpgcheck $FEDORA_DEPENDENCIES
   script:
-    - meson --buildtype=debug build
-    - ninja -v -C build
-
-# Ubuntu image here is mostly to test whether the webkitgtk build works
-
-build_ubuntu:
-  image: ubuntu:rolling
-  before_script:
-    - apt-get update
-    - apt-get install -q -y --no-install-recommends $UBUNTU_DEPENDENCIES
-  script:
-    - meson --buildtype=debug -Dlibnotify=true -Dwebkitgtk=true build
-    - ninja -v -C build
+    - meson -Dwebkitgtk=true build/
+    - ninja -C build/

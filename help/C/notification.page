@@ -7,7 +7,7 @@
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude" />
   </info>
   <title>Notification Icon</title>
-    <p>Use the <cmd>--notification</cmd> option to create a notification icon.</p>
+    <p>Use the <cmd>--notification</cmd> option to create a passive desktop notification.</p>
 
   <terms>
     <item>
@@ -15,11 +15,20 @@
       <p>Specifies the text that is displayed in the notification area.</p>
     </item>
     <item>
-      <title><cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', tooltip: '<var>text</var>', visible: '<var>text</var>',</title>
+      <title><cmd>--icon</cmd>=<var>path</var></title>
+      <p>Set the notification icon using a string containing a path to a valid icon on the system.</p>
+    </item>
+    <item>
+      <title><cmd>--listen</cmd></title>
       <p>Listens for commands at standard input. At least one command must be specified. Commands are comma separated. A command must be followed by a colon and a value. </p>
       <note style="tip">
-        <p>The <cmd>icon</cmd> command also accepts four stock icon values such as <var>error</var>, <var>info</var>, <var>question</var> and <var>warning</var>.</p>
+        <p>The <cmd>icon</cmd> command also accepts icon theme name values in accordance with the FreeDesktop.org Icon Naming Specification such as <var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var> and <var>starred</var>.</p>
       </note>
+      <p>Examples include:</p>
+      <code>
+      message: Hello, my name is Joe
+      icon: /usr/share/pixmaps/monitor.xpm
+      </code>
     </item>
   </terms>
 
@@ -27,8 +36,8 @@
   <code>
   #!/bin/sh
 
-  zenity --notification\
-    --window-icon="info" \
+  zenity --notification \
+    --icon="/usr/share/pixmaps/monitor.xpm" \
     --text="There are system updates necessary!"
   </code>
 

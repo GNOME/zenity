@@ -1,0 +1,60 @@
+[description]
+
+\fBzenity\fP is a program that will display GTK+ dialogs, and return
+(either in the return code, or on standard output) the users
+input. This allows you to present information, and ask for information
+from the user, from all manner of shell scripts.
+.PP
+For example, \fBzenity \-\-question\fP will return either 0, 1 or 5,
+depending on whether the user pressed \fIOK\fP, \fICancel\fP or timeout
+has been reached. \fBzenity \-\-entry\fP will output on standard output
+what the user typed into the text entry field.
+.PP
+Comprehensive documentation is also available in the GNOME Help Browser.
+
+[examples]
+
+Display a file selector with the title \fISelect a file to
+remove\fP. The file selected is returned on standard output.
+.IP
+zenity  \-\-title="Select a file to remove" \-\-file-selection
+.PP
+Display a text entry dialog with the title \fISelect Host\fP and the
+text \fISelect the host you would like to flood-ping\fP. The entered
+text is returned on standard output.
+.IP
+zenity  \-\-title "Select Host" \-\-entry \-\-text "Select the host you would like to flood-ping"
+.PP
+Display a dialog, asking \fIMicrosoft Windows has been found! Would
+you like to remove it?\fP. The return code will be 0 (true in shell)
+if \fIOK\fP is selected, and 1 (false) if \fICancel\fP is selected.
+.IP
+zenity  \-\-question \-\-title "Alert"  \-\-text "Microsoft Windows has been found! Would you like to remove it?"
+.PP
+Show the search results in a list dialog with the title \fISearch Results\fP
+and the text \fIFinding all header files...\fP.
+.IP
+find . \-name '*.h' | zenity \-\-list \-\-title "Search Results" \-\-text "Finding all header files.." \-\-column "Files"
+.PP
+Show a passive notification
+.IP
+zenity \-\-notification \-\-icon=software-update-available \-\-text "System update necessary!"
+.PP
+Display a weekly shopping list in a check list dialog with \fIApples\fP and \fIOranges\fP pre selected
+.IP
+zenity \-\-list \-\-checklist \-\-column "Buy" \-\-column "Item" TRUE Apples TRUE Oranges FALSE Pears FALSE Toothpaste
+.PP
+Display a progress dialog while searching for all the postscript files in your home directory
+.P
+find $HOME \-name '*.ps' | zenity \-\-progress \-\-pulsate
+
+[author]
+
+.PP
+\fBZenity\fP was originally written by Glynn Foster <glynn.foster@sun.com>. It has since been maintained by a number of contributors since then.
+.PP
+This manual page was originally written by Ross Burton <ross@burtonini.com>. It currently contains portions which are automatically generated, and other portions written by its original author.
+
+[see also]
+
+\fBdialog\fP(1)

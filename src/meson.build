@@ -15,15 +15,27 @@ zenity_sources = [
   'scale.c',
   'text.c',
   'tree.c',
-  'util.c'
+  'util.c',
 ]
 
-zenity_deps = [
-  gtk_dep,
-  libnotify,
-  webkitgtk,
-  x11
-]
+zenity_enums = gnome.mkenums_simple('zenity-enums',
+         sources: 'zenity.h',
+)
+
+zenity_res_conf = configuration_data()
+zenity_res_conf.set('resource_base_path', resource_base_path)
+
+zenity_res_in = configure_file(
+  input: 'zenity.gresource.xml.in',
+  output: 'zenity.gresource.xml',
+  configuration: zenity_res_conf
+)
+
+zenity_res = gnome.compile_resources(
+  'zenity-resources',
+  zenity_res_in,
+  c_name: 'zenity'
+)
 
 zenity_c_args = [
   '-DG_LOG_DOMAIN="Zenity"'
@@ -31,21 +43,9 @@ zenity_c_args = [
 
 zenity = executable(
   meson.project_name(),
-  zenity_sources,
+  zenity_sources + zenity_enums + zenity_res,
   include_directories: zenity_root_dir,
-  dependencies: zenity_deps,
   c_args: zenity_c_args,
+  dependencies: [adw_dep, webkitgtk_dep],
   install: true
 )
-
-if perl.found()
-  configure_file(
-    input: 'gdialog.in',
-    output: 'gdialog',
-    configuration: zenity_conf,
-    install_dir: zenity_bindir,
-    install: true
-  )
-endif
-
-install_data('zenity.ui')

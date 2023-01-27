@@ -1,22 +1,25 @@
+/* vim: colorcolumn=80 ts=4 sw=4
+ */
 /*
  * util.c
  *
- * Copyright (C) 2002 Sun Microsystems, Inc.
- *           (C) 1999, 2000 Red Hat Inc.
- *           (C) 1998 James Henstridge
- *           (C) 1995-2002 Free Software Foundation
+ * Copyright © 2002 Sun Microsystems, Inc.
+ *           © 1999, 2000 Red Hat Inc.
+ *           © 1998 James Henstridge
+ *           © 1995-2002 Free Software Foundation
+ *           © 2021-2023 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Library General Public
+ * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2 of the License, or (at your option) any later version.
  *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Library General Public License for more details.
+ * Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Library General Public
+ * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
@@ -27,11 +30,9 @@
  *          Tom Tromey <tromey@redhat.com>
  */
 
-#include "config.h"
-
-#include "config.h"
 #include "util.h"
 #include "zenity.h"
+
 #include <errno.h>
 #include <locale.h>
 #include <stdarg.h>
@@ -39,25 +40,49 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#endif
+#include "config.h"
 
 #define ZENITY_OK_DEFAULT 0
 #define ZENITY_CANCEL_DEFAULT 1
 #define ZENITY_ESC_DEFAULT 1
 #define ZENITY_ERROR_DEFAULT -1
 #define ZENITY_EXTRA_DEFAULT 127
+#define ZENITY_UI_RESOURCE_PATH RESOURCE_BASE_PATH "/zenity.ui"
+
+GIcon *
+zenity_util_gicon_from_string (const char *str)
+{
+	GIcon *icon = NULL;
+	g_autoptr(GFile) icon_file = NULL;
+
+	if (str)
+	{
+		icon_file = g_file_new_for_path (str);
+
+		if (g_file_query_exists (icon_file, NULL))
+		{
+			icon = g_file_icon_new (icon_file);
+		}
+		else
+		{
+			g_debug (_("Icon filename %s not found; trying theme icon."), str);
+			icon = g_themed_icon_new_with_default_fallbacks (str);
+		}
+	}
+
+	return icon;
+}
 
 GtkBuilder *
-zenity_util_load_ui_file (const gchar *root_widget, ...) {
+zenity_util_load_ui_file (const char *root_widget, ...)
+{
 	va_list args;
-	gchar *arg = NULL;
+	char *arg = NULL;
 	GPtrArray *ptrarray;
 	GtkBuilder *builder = gtk_builder_new ();
-	GError *error = NULL;
-	gchar **objects;
-	guint result = 0;
+	g_autoptr(GError) error = NULL;
+	char **objects;
+	gboolean result = FALSE;
 
 	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
 
@@ -68,43 +93,43 @@ zenity_util_load_ui_file (const gchar *root_widget, ...) {
 
 	va_start (args, root_widget);
 
-	arg = va_arg (args, gchar *);
+	arg = va_arg (args, char *);
 
 	while (arg) {
 		g_ptr_array_add (ptrarray, g_strdup (arg));
-		arg = va_arg (args, gchar *);
+		arg = va_arg (args, char *);
 	}
 	va_end (args);
 
 	/* Enforce terminating NULL */
 	g_ptr_array_add (ptrarray, NULL);
-	objects = (gchar **) g_ptr_array_free (ptrarray, FALSE);
+	objects = (char **)g_ptr_array_free (ptrarray, FALSE);
 
-	if (g_file_test (ZENITY_UI_FILE_RELATIVEPATH, G_FILE_TEST_EXISTS)) {
-		/* Try current dir, for debugging */
-		result = gtk_builder_add_objects_from_file (
-			builder, ZENITY_UI_FILE_RELATIVEPATH, objects, NULL);
-	}
-
-	if (result == 0)
-		result = gtk_builder_add_objects_from_file (
-			builder, ZENITY_UI_FILE_FULLPATH, objects, &error);
+	result = gtk_builder_add_objects_from_resource (builder,
+			ZENITY_UI_RESOURCE_PATH,
+			(const char **)objects,
+			&error);
 
 	g_strfreev (objects);
 
-	if (result == 0) {
-		g_warning ("Could not load ui file %s: %s",
-			ZENITY_UI_FILE_FULLPATH,
-			error->message);
-		g_error_free (error);
-		g_object_unref (builder);
-		return NULL;
+	if (! result) {
+		g_error ("Could not load ui resource %s: %s",
+				ZENITY_UI_RESOURCE_PATH,
+				error->message);
+	}
+
+	/* This should never happen, but if an unexpected error is logged, print
+	 * it for debugging purposes. */
+	if (error) {
+		g_debug ("%s: Error generated: %s",
+				__func__, error->message);
 	}
 
 	return builder;
 }
-gchar *
-zenity_util_strip_newline (gchar *string) {
+
+char *
+zenity_util_strip_newline (char *string) {
 	gsize len;
 
 	g_return_val_if_fail (string != NULL, NULL);
@@ -121,11 +146,11 @@ zenity_util_strip_newline (gchar *string) {
 }
 
 gboolean
-zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
+zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const char *filename) {
 	GtkTextIter iter, end;
 	FILE *f;
-	gchar buf[2048];
-	gint remaining = 0;
+	char buf[2048];
+	int remaining = 0;
 
 	if (filename == NULL)
 		return FALSE;
@@ -140,7 +165,7 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
 	gtk_text_buffer_get_iter_at_offset (buffer, &iter, 0);
 
 	while (!feof (f)) {
-		gint count;
+		int count;
 		const char *leftover;
 		int to_read = 2047 - remaining;
 
@@ -153,7 +178,7 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
 		gtk_text_buffer_insert (buffer, &iter, buf, leftover - buf);
 
 		remaining = (buf + remaining + count) - leftover;
-		memmove (buf, leftover, remaining);
+		memmove(buf, leftover, remaining);
 
 		if (remaining > 6 || count < to_read)
 			break;
@@ -177,79 +202,19 @@ zenity_util_fill_file_buffer (GtkTextBuffer *buffer, const gchar *filename) {
 	return TRUE;
 }
 
-const gchar *
-zenity_util_icon_name_from_filename (const gchar *filename) {
-	if (!filename || !filename[0])
-		return "dialog-warning"; /* default */
-
-	if (!g_ascii_strcasecmp (filename, "warning"))
-		return "dialog-warning";
-	if (!g_ascii_strcasecmp (filename, "info"))
-		return "dialog-information";
-	if (!g_ascii_strcasecmp (filename, "question"))
-		return "dialog-question";
-	if (!g_ascii_strcasecmp (filename, "error"))
-		return "dialog-error";
-	return NULL;
-}
-
-void
-zenity_util_set_window_icon_from_file (
-	GtkWidget *widget, const gchar *filename) {
-	GdkPixbuf *pixbuf;
-	const gchar *icon_name;
-
-	icon_name = zenity_util_icon_name_from_filename (filename);
-	if (icon_name) {
-		gtk_window_set_icon_name (GTK_WINDOW (widget), icon_name);
-	} else {
-		pixbuf = gdk_pixbuf_new_from_file (filename, NULL);
-		gtk_window_set_icon (GTK_WINDOW (widget), pixbuf);
-		g_object_unref (pixbuf);
-	}
-}
-
-void
-zenity_util_set_window_icon (
-	GtkWidget *widget, const gchar *filename, const gchar *default_file) {
-	GdkPixbuf *pixbuf;
-
-	if (filename != NULL) {
-		zenity_util_set_window_icon_from_file (widget, filename);
-	} else {
-		pixbuf = gdk_pixbuf_new_from_file (default_file, NULL);
-		if (pixbuf != NULL) {
-			gtk_window_set_icon (GTK_WINDOW (widget), pixbuf);
-			g_object_unref (pixbuf);
-		}
-	}
-}
-
-void
-zenity_util_set_window_icon_from_icon_name (
-	GtkWidget *widget, const gchar *filename, const gchar *default_icon_name) {
-	if (filename != NULL)
-		zenity_util_set_window_icon_from_file (widget, filename);
-	else
-		gtk_window_set_icon_name (GTK_WINDOW (widget), default_icon_name);
-}
-
 void
 zenity_util_show_help (GError **error) {
-	gchar *tmp;
-	tmp = g_find_program_in_path ("yelp");
+	g_autofree char *tmp = g_find_program_in_path ("yelp");
 
-	if (tmp) {
-		g_free (tmp);
+	if (tmp)
 		g_spawn_command_line_async ("yelp help:zenity", error);
-	}
 }
 
-gint
-zenity_util_return_exit_code (ZenityExitCode value) {
-
-	const gchar *env_var = NULL;
-	gint retval;
+int
+zenity_util_return_exit_code (ZenityExitCode value)
+{
+	const char *env_var = NULL;
+	int retval;
 
 	switch (value) {
 
@@ -311,108 +276,233 @@ zenity_util_return_exit_code (ZenityExitCode value) {
 }
 
 void
-zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *zen_data) {
+zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *zen_data)
+{
 	zen_data->exit_code = zenity_util_return_exit_code (value);
 }
 
-#ifdef GDK_WINDOWING_X11
+/* This function was written by Matthias Clasen and is included somewhere in
+ * the GTK source tree.. I believe it is also included in libdazzle, but I
+ * didn't want to include a whole dependency just for one function. LGPL, but
+ * credit where credit is due!
+ */
+char *
+zenity_util_pango_font_description_to_css (PangoFontDescription *desc)
+{
+	GString *s;
+	PangoFontMask set;
 
-static Window
-transient_get_xterm (void) {
-	const char *wid_str = g_getenv ("WINDOWID");
-	if (wid_str) {
-		char *wid_str_end;
-		int ret;
-		Window wid = strtoul (wid_str, &wid_str_end, 10);
-		if (*wid_str != '\0' && *wid_str_end == '\0' && wid != 0) {
-			XWindowAttributes attrs;
-			GdkDisplay *display;
-			display = gdk_display_get_default ();
-			gdk_x11_display_error_trap_push (display);
-			ret = XGetWindowAttributes (
-				GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), wid, &attrs);
-			if (gdk_x11_display_error_trap_pop (display) != 0 || ret == 0) {
-				return None;
-			}
-			return wid;
+	s = g_string_new ("* { ");
+
+	set = pango_font_description_get_set_fields (desc);
+	if (set & PANGO_FONT_MASK_FAMILY)
+	{
+		g_string_append (s, "font-family: ");
+		g_string_append (s, pango_font_description_get_family (desc));
+		g_string_append (s, "; ");
+	}
+	if (set & PANGO_FONT_MASK_STYLE)
+	{
+		switch (pango_font_description_get_style (desc))
+		{
+			case PANGO_STYLE_NORMAL:
+				g_string_append (s, "font-style: normal; ");
+				break;
+			case PANGO_STYLE_OBLIQUE:
+				g_string_append (s, "font-style: oblique; ");
+				break;
+			case PANGO_STYLE_ITALIC:
+				g_string_append (s, "font-style: italic; ");
+				break;
 		}
 	}
-	return None;
-}
-
-static void
-transient_x_free (void *ptr) {
-	if (ptr)
-		XFree (ptr);
-}
-
-static gboolean
-transient_is_toplevel (Window wid) {
-	XTextProperty prop;
-	Display *dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
-	if (!XGetWMName (dpy, wid, &prop))
-		return FALSE;
-	transient_x_free (prop.value);
-	return !!prop.value;
-}
-
-/*
- * GNOME Terminal doesn't give us its toplevel window, but the WM needs a
- * toplevel XID for proper stacking.  Other terminals work fine without this
- * magic.  We can't use GDK here since "xterm" is a foreign window.
- */
-
-static Window
-transient_get_xterm_toplevel (void) {
-	Window xterm = transient_get_xterm ();
-	Display *dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
-	while (xterm != None && !transient_is_toplevel (xterm)) {
-		Window root, parent, *children;
-		unsigned nchildren;
-		XQueryTree (dpy, xterm, &root, &parent, &children, &nchildren);
-		transient_x_free (children);
-		if (parent == root)
-			xterm = None;
-		else
-			xterm = parent;
+	if (set & PANGO_FONT_MASK_VARIANT)
+	{
+		switch (pango_font_description_get_variant (desc))
+		{
+			case PANGO_VARIANT_NORMAL:
+				g_string_append (s, "font-variant: normal; ");
+				break;
+			case PANGO_VARIANT_SMALL_CAPS:
+				g_string_append (s, "font-variant: small-caps; ");
+				break;
+			default:
+				break;
+		}
 	}
-	return xterm;
-}
-
-static void
-zenity_util_make_transient (GdkWindow *window, Window parent) {
-	Window parent_window = parent;
-	if (parent_window == 0)
-		parent_window = transient_get_xterm_toplevel ();
-	if (parent_window != None) {
-		XSetTransientForHint (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-			GDK_WINDOW_XID (window),
-			parent_window);
+	if (set & PANGO_FONT_MASK_WEIGHT)
+	{
+		switch (pango_font_description_get_weight (desc))
+		{
+			case PANGO_WEIGHT_THIN:
+				g_string_append (s, "font-weight: 100; ");
+				break;
+			case PANGO_WEIGHT_ULTRALIGHT:
+				g_string_append (s, "font-weight: 200; ");
+				break;
+			case PANGO_WEIGHT_LIGHT:
+			case PANGO_WEIGHT_SEMILIGHT:
+				g_string_append (s, "font-weight: 300; ");
+				break;
+			case PANGO_WEIGHT_BOOK:
+			case PANGO_WEIGHT_NORMAL:
+				g_string_append (s, "font-weight: 400; ");
+				break;
+			case PANGO_WEIGHT_MEDIUM:
+				g_string_append (s, "font-weight: 500; ");
+				break;
+			case PANGO_WEIGHT_SEMIBOLD:
+				g_string_append (s, "font-weight: 600; ");
+				break;
+			case PANGO_WEIGHT_BOLD:
+				g_string_append (s, "font-weight: 700; ");
+				break;
+			case PANGO_WEIGHT_ULTRABOLD:
+				g_string_append (s, "font-weight: 800; ");
+				break;
+			case PANGO_WEIGHT_HEAVY:
+			case PANGO_WEIGHT_ULTRAHEAVY:
+				g_string_append (s, "font-weight: 900; ");
+				break;
+		}
 	}
-}
+	if (set & PANGO_FONT_MASK_STRETCH)
+	{
+		switch (pango_font_description_get_stretch (desc))
+		{
+			case PANGO_STRETCH_ULTRA_CONDENSED:
+				g_string_append (s, "font-stretch: ultra-condensed; ");
+				break;
+			case PANGO_STRETCH_EXTRA_CONDENSED:
+				g_string_append (s, "font-stretch: extra-condensed; ");
+				break;
+			case PANGO_STRETCH_CONDENSED:
+				g_string_append (s, "font-stretch: condensed; ");
+				break;
+			case PANGO_STRETCH_SEMI_CONDENSED:
+				g_string_append (s, "font-stretch: semi-condensed; ");
+				break;
+			case PANGO_STRETCH_NORMAL:
+				g_string_append (s, "font-stretch: normal; ");
+				break;
+			case PANGO_STRETCH_SEMI_EXPANDED:
+				g_string_append (s, "font-stretch: semi-expanded; ");
+				break;
+			case PANGO_STRETCH_EXPANDED:
+				g_string_append (s, "font-stretch: expanded; ");
+				break;
+			case PANGO_STRETCH_EXTRA_EXPANDED:
+				g_string_append (s, "font-stretch: extra-expanded; ");
+				break;
+			case PANGO_STRETCH_ULTRA_EXPANDED:
+				g_string_append (s, "font-stretch: ultra-expanded; ");
+				break;
+		}
+	}
+	if (set & PANGO_FONT_MASK_SIZE)
+	{
+		g_string_append_printf (s, "font-size: %dpt; ",
+				pango_font_description_get_size (desc) / PANGO_SCALE);
+	}
 
-#endif /* GDK_WINDOWING_X11 */
+	g_string_append (s, "}");
+
+	return g_string_free (s, FALSE);
+}
 
 void
-zenity_util_show_dialog (GtkWidget *dialog, guintptr parent) {
-	gtk_widget_realize (dialog);
-#ifdef GDK_WINDOWING_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
-		g_assert (gtk_widget_get_window (dialog));
-		zenity_util_make_transient (gtk_widget_get_window (dialog), parent);
-	}
-#endif
+zenity_util_show_dialog (GtkWidget *dialog)
+{
 	gtk_widget_show (dialog);
 }
 
 gboolean
-zenity_util_timeout_handle (gpointer data) {
-	GtkDialog *dialog = GTK_DIALOG (data);
-	if (dialog != NULL)
-		gtk_dialog_response (dialog, ZENITY_TIMEOUT);
+zenity_util_timeout_handle (AdwMessageDialog *dialog)
+{
+	if (dialog) {
+		adw_message_dialog_response (dialog, "timeout");
+	}
 	else {
-		gtk_main_quit ();
 		exit (ZENITY_TIMEOUT);
 	}
 	return FALSE;
+}
+
+void
+zenity_util_gapp_main (GtkWindow *window)
+{
+	GApplication *app = g_application_get_default ();
+
+	if (window)
+	{
+		/* As this behaves quite differently if a window is provided vs. not,
+		 * let's ensure any window passed is valid.
+		 */
+		g_assert (GTK_IS_WINDOW (window));
+
+		gtk_application_add_window (GTK_APPLICATION(app), window);
+	}
+	else {
+		g_application_hold (g_application_get_default ());
+	}
+}
+
+void
+zenity_util_gapp_quit (GtkWindow *window, ZenityData *data)
+{
+	/* This is a bit hack-ish, but GApplication doesn't really allow for
+	 * customized exit statuses within that API.
+	 */
+	if (data->exit_code != 0)
+		exit (data->exit_code);
+
+	if (window)
+	{
+		g_assert (GTK_IS_WINDOW (window));
+		gtk_window_destroy (window);
+	}
+	else {
+		g_application_release (g_application_get_default ());
+	}
+}
+
+int
+zenity_util_parse_dialog_response (const char *response)
+{
+	if (g_strcmp0 (response, "ok") == 0 || g_strcmp0 (response, "yes") == 0)
+	{
+		return ZENITY_OK;
+	}
+	else if (g_strcmp0 (response, "cancel") == 0 || g_strcmp0 (response, "no") == 0)
+	{
+		return ZENITY_CANCEL;
+	}
+	else if (g_strcmp0 (response, "timeout") == 0)
+	{
+		return ZENITY_TIMEOUT;
+	}
+	else if (response[0] >= '0' && response[0] <= '9')
+	{
+		/* FIXME - atoi returns 0 on error, so this *could* mean the function
+		 * failed - but that would be a programmer error, so we'll leave this
+		 * in place.
+		 */
+		return atoi (response);
+	}
+	else
+	{
+		return ZENITY_ESC;
+	}
+}
+
+GtkWidget *
+zenity_util_add_button (AdwMessageDialog *dialog, const char *button_text,
+		ZenityExitCode response_id)
+{
+	GtkWidget *w = GTK_WIDGET(dialog);
+	g_autofree char *response_str = g_strdup_printf ("%d", response_id);
+
+	adw_message_dialog_add_response (dialog, response_str, button_text);
+
+	return w;
 }
