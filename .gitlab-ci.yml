@@ -4,7 +4,7 @@ variables:
 build_fedora:
   image: fedora:latest
   before_script:
-    - dnf install -y --nogpgcheck $FEDORA_DEPENDENCIES
+    - dnf install -y --nogpgcheck $DEPENDENCIES
   script:
     - meson -Dwebkitgtk=true build/
     - ninja -C build/
