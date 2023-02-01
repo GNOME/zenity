@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- vim: ts=2 sw=2
+-->
+
+<interface>
+	<template class="ZenityTreeColumnView" parent="GtkWidget">
+		<child>
+			<object class="GtkScrolledWindow" id="scrolled_window">
+				<child>
+					<object class="GtkViewport">
+						<property name="scroll-to-focus">true</property>	<!-- good to explicitly set to true for backwards compatibility, acc. to TFM. -->
+						<child>
+							<object class="GtkColumnView" id="child_cv" />
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+	</template>
+</interface>

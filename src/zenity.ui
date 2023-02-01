@@ -373,8 +373,8 @@
 	</object>
 	<object class="AdwMessageDialog" id="zenity_tree_dialog">
 		<property name="title" translatable="yes">Select items from the list</property>
-		<property name="default_width">300</property>
-		<property name="default_height">196</property>
+		<property name="default_width">480</property>
+		<property name="default_height">320</property>
 		<property name="extra-child">zenity_tree_box</property>
 		<property name="resizable">true</property>
 		<responses>
@@ -395,17 +395,7 @@
 					</object>
 				</child>
 				<child>
-					<object class="GtkScrolledWindow" id="zenity_tree_window">
-						<property name="hexpand">1</property>
-						<property name="vexpand">1</property>
-						<property name="child">
-							<object class="GtkTreeView" id="zenity_tree_view">
-								<child internal-child="selection">
-									<object class="GtkTreeSelection" id="treeview-selection1"/>
-								</child>
-							</object>
-						</property>
-					</object>
+					<object class="ZenityTreeColumnView" id="zenity_tree_cv" />
 				</child>
 			</object>
 		</child>
