@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-25 22:40+0000\n"
-"PO-Revision-Date: 2023-01-27 17:16+0200\n"
+"POT-Creation-Date: 2023-02-02 02:08+0000\n"
+"PO-Revision-Date: 2023-02-02 11:10+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <linux@linux.org.ua>\n"
 "Language: uk\n"
@@ -750,7 +750,6 @@ msgstr "Додати нове поле у вікно форм."
 
 #. (itstool) path: item/title
 #: C/forms.page:26
-#| msgid "--add-password<cmd/>=<var>FieldName</var>"
 msgid "<cmd>--add-password</cmd>=<var>FieldName</var>"
 msgstr "<cmd>--add-password</cmd>=<var>НАЗВА_ПОЛЯ</var>"
 
@@ -1279,10 +1278,13 @@ msgstr "Значок області сповіщення"
 
 #. (itstool) path: page/p
 #: C/notification.page:10
+#| msgid ""
+#| "Use the <cmd>--notification</cmd> option to create a notification icon."
 msgid ""
-"Use the <cmd>--notification</cmd> option to create a notification icon."
+"Use the <cmd>--notification</cmd> option to create a passive desktop "
+"notification."
 msgstr ""
-"Для створення піктограми області сповіщення скористайтеся параметром <cmd>--"
+"Для створення пасивного сповіщення стільниці скористайтеся параметром <cmd>--"
 "notification</cmd>."
 
 #. (itstool) path: item/p
@@ -1292,15 +1294,27 @@ msgstr "Вказує текст, який буде показано у обла�
 
 #. (itstool) path: item/title
 #: C/notification.page:18
-msgid ""
-"<cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', "
-"tooltip: '<var>text</var>', visible: '<var>text</var>',"
-msgstr ""
-"<cmd>--listen</cmd>=icon: '<var>текст</var>', message: '<var>текст</var>', "
-"tooltip: '<var>текст</var>', visible: '<var>текст</var>',"
+#| msgid "<cmd>--month</cmd>=<var>month</var>"
+msgid "<cmd>--icon</cmd>=<var>path</var>"
+msgstr "<cmd>--icon</cmd>=<var>шлях</var>"
 
 #. (itstool) path: item/p
 #: C/notification.page:19
+msgid ""
+"Set the notification icon using a string containing a path to a valid icon "
+"on the system."
+msgstr ""
+"Встановити піктограму сповіщення на основі рядка, що містить шлях до"
+" коректної піктограми у системі."
+
+#. (itstool) path: item/title
+#: C/notification.page:22
+#| msgid "<cmd>--pulsate</cmd>"
+msgid "<cmd>--listen</cmd>"
+msgstr "<cmd>--listen</cmd>"
+
+#. (itstool) path: item/p
+#: C/notification.page:23
 msgid ""
 "Listens for commands at standard input. At least one command must be "
 "specified. Commands are comma separated. A command must be followed by a "
@@ -1311,49 +1325,82 @@ msgstr ""
 "двокрапку і значення."
 
 #. (itstool) path: note/p
-#: C/notification.page:21
+#: C/notification.page:25
+#| msgid ""
+#| "The <cmd>icon</cmd> command also accepts four stock icon values such as "
+#| "<var>error</var>, <var>info</var>, <var>question</var> and <var>warning</"
+#| "var>."
 msgid ""
-"The <cmd>icon</cmd> command also accepts four stock icon values such as "
-"<var>error</var>, <var>info</var>, <var>question</var> and <var>warning</"
-"var>."
+"The <cmd>icon</cmd> command also accepts icon theme name values in "
+"accordance with the FreeDesktop.org Icon Naming Specification such as "
+"<var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var> "
+"and <var>starred</var>."
 msgstr ""
-"Команда <cmd>icon</cmd> також приймає значення чотирьох типових піктограм, "
-"зокрема <var>error</var>, <var>info</var>, <var>question</var> and "
-"<var>warning</var>."
+"Команда <cmd>icon</cmd> також приймає значення назви піктограми теми у"
+" відповідності до специфікації іменування піктограм FreeDesktop.org, зокрема"
+" <var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var>"
+" та <var>starred</var>."
+
+#. (itstool) path: item/p
+#: C/notification.page:27
+msgid "Examples include:"
+msgstr "Приклади:"
+
+#. (itstool) path: item/code
+#: C/notification.page:28
+#, no-wrap
+msgid ""
+"\n"
+"      message: Hello, my name is Joe\n"
+"      icon: /usr/share/pixmaps/monitor.xpm\n"
+"      "
+msgstr ""
+"\n"
+"      message: Привіт, мене звати Михайло\n"
+"      icon: /usr/share/pixmaps/monitor.xpm\n"
+"      "
 
 #. (itstool) path: page/p
-#: C/notification.page:26
+#: C/notification.page:35
 msgid "The following example script shows how to create a notification icon:"
 msgstr ""
 "У наступному прикладі показано створення піктограми області сповіщення:"
 
 #. (itstool) path: page/code
-#: C/notification.page:27
+#: C/notification.page:36
 #, no-wrap
+#| msgid ""
+#| "\n"
+#| "  #!/bin/sh\n"
+#| "\n"
+#| "  zenity --notification\\\n"
+#| "    --window-icon=\"info\" \\\n"
+#| "    --text=\"There are system updates necessary!\"\n"
+#| "  "
 msgid ""
 "\n"
 "  #!/bin/sh\n"
 "\n"
-"  zenity --notification\\\n"
-"    --window-icon=\"info\" \\\n"
+"  zenity --notification \\\n"
+"    --icon=\"/usr/share/pixmaps/monitor.xpm\" \\\n"
 "    --text=\"There are system updates necessary!\"\n"
 "  "
 msgstr ""
 "\n"
-"#!/bin/sh\n"
+"  #!/bin/sh\n"
 "\n"
-"  zenity --notification\\\n"
-"    --window-icon=\"info\" \\\n"
-"    --text=\"Є необхідні оновлення для системи!\"\n"
+"  zenity --notification \\\n"
+"    --icon=\"/usr/share/pixmaps/monitor.xpm\" \\\n"
+"    --text=\"Слід виконати оновлення системи!\"\n"
 "  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:36
+#: C/notification.page:45
 msgid "Notification Icon Example"
 msgstr "Приклад значка області сповіщення"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:37
+#: C/notification.page:46
 msgid "<app>Zenity</app> notification icon example"
 msgstr "Приклад піктограми області сповіщення <app>Zenity</app>"
 
@@ -1362,7 +1409,7 @@ msgstr "Приклад піктограми області сповіщення 
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:38
+#: C/notification.page:47
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-screenshot.png' "
@@ -1372,7 +1419,7 @@ msgstr ""
 "md5='723bd2d1283f5a888967815991cbe858'"
 
 #. (itstool) path: page/p
-#: C/notification.page:41
+#: C/notification.page:50
 msgid ""
 "The following example script shows how to create a notification icon along "
 "with <cmd>--listen</cmd>:"
@@ -1381,7 +1428,7 @@ msgstr ""
 "допомогою параметра <cmd>--listen</cmd>:"
 
 #. (itstool) path: page/code
-#: C/notification.page:42
+#: C/notification.page:51
 #, no-wrap
 msgid ""
 "\n"
@@ -1399,13 +1446,13 @@ msgstr ""
 "  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:50
+#: C/notification.page:59
 msgid "Notification Icon with <cmd>--listen</cmd> Example"
 msgstr ""
 "Приклад створення значка області сповіщення за допомогою <cmd>--listen</cmd>"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:51
+#: C/notification.page:60
 msgid "<app>Zenity</app> notification with <cmd>--listen</cmd> example"
 msgstr "Сповіщення <app>Zenity</app> із прикладом <cmd>--listen</cmd>"
 
@@ -1414,7 +1461,7 @@ msgstr "Сповіщення <app>Zenity</app> із прикладом <cmd>--li
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:52
+#: C/notification.page:61
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
@@ -2271,238 +2318,222 @@ msgstr "Вказує заголовок діалогового вікна."
 
 #. (itstool) path: item/title
 #: C/usage.page:124
-msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
-msgstr "<cmd>--window-icon</cmd>=<var>шлях_до_піктограми</var>"
-
-#. (itstool) path: item/p
-#: C/usage.page:125
-msgid ""
-"Specifies the icon that is displayed in the window frame of the dialog. "
-"There are 4 stock icons also available by providing the following keywords - "
-"'info', 'warning', 'question' and 'error'."
-msgstr ""
-"Вказує значок, який буде показано у рамці діалогового вікна. Є 4 вбудовані "
-"значки, які вказуються ключовими словами «info», «warning», «question» та "
-"«error»."
-
-#. (itstool) path: item/title
-#: C/usage.page:132
 msgid "<cmd>--width</cmd>=<var>width</var>"
 msgstr "<cmd>--width</cmd>=<var>ширина</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:133
+#: C/usage.page:125
 msgid "Specifies the width of the dialog."
 msgstr "Вказує ширину вікна."
 
 #. (itstool) path: item/title
-#: C/usage.page:137
+#: C/usage.page:129
 msgid "<cmd>--height</cmd>=<var>height</var>"
 msgstr "<cmd>--height</cmd>=<var>висота</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:138
+#: C/usage.page:130
 msgid "Specifies the height of the dialog."
 msgstr "Вказує висоту вікна."
 
 #. (itstool) path: item/title
-#: C/usage.page:142
+#: C/usage.page:134
 msgid "<cmd>--timeout</cmd>=<var>timeout</var>"
 msgstr "<cmd>--timeout</cmd>=<var>час_очікування</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:143
+#: C/usage.page:135
 msgid "Specifies the timeout in seconds after which the dialog is closed."
 msgstr ""
 "Вказує час очікування у секундах, після якого діалогове вікно буде закрите."
 
 #. (itstool) path: section/title
-#: C/usage.page:153
+#: C/usage.page:145
 msgid "Help Options"
 msgstr "Параметри довідки"
 
 #. (itstool) path: section/p
-#: C/usage.page:155
+#: C/usage.page:147
 msgid "Zenity provides the following help options:"
 msgstr "У Zenity передбачено такі параметри довідки:"
 
 #. (itstool) path: item/title
-#: C/usage.page:162
+#: C/usage.page:154
 msgid "<cmd>--help</cmd>"
 msgstr "<cmd>--help</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:163
+#: C/usage.page:155
 msgid "Displays shortened help text."
 msgstr "Показує коротку довідку."
 
 #. (itstool) path: item/title
-#: C/usage.page:167
+#: C/usage.page:159
 msgid "<cmd>--help-all</cmd>"
 msgstr "<cmd>--help-all</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:168
+#: C/usage.page:160
 msgid "Displays full help text for all dialogs."
 msgstr "Показує повну довідку з усіх вікон."
 
 #. (itstool) path: item/title
-#: C/usage.page:172
+#: C/usage.page:164
 msgid "<cmd>--help-general</cmd>"
 msgstr "<cmd>--help-general</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:173
+#: C/usage.page:165
 msgid "Displays help text for general dialog options."
 msgstr "Показує довідку із загальних параметрів вікон."
 
 #. (itstool) path: item/title
-#: C/usage.page:177
+#: C/usage.page:169
 msgid "<cmd>--help-calendar</cmd>"
 msgstr "<cmd>--help-calendar</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:178
+#: C/usage.page:170
 msgid "Displays help text for calendar dialog options."
 msgstr "Показує довідку про параметри вікна календаря."
 
 #. (itstool) path: item/title
-#: C/usage.page:182
+#: C/usage.page:174
 msgid "<cmd>--help-entry</cmd>"
 msgstr "<cmd>--help-entry</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:183
+#: C/usage.page:175
 msgid "Displays help text for text entry dialog options."
 msgstr "Показує довідку про параметри вікна вводу тексту."
 
 #. (itstool) path: item/title
-#: C/usage.page:187
+#: C/usage.page:179
 msgid "<cmd>--help-error</cmd>"
 msgstr "<cmd>--help-error</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:188
+#: C/usage.page:180
 msgid "Displays help text for error dialog options."
 msgstr "Показує довідку про параметри вікна сповіщення про помилку."
 
 #. (itstool) path: item/title
-#: C/usage.page:192
+#: C/usage.page:184
 msgid "<cmd>--help-info</cmd>"
 msgstr "<cmd>--help-info</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:193
+#: C/usage.page:185
 msgid "Displays help text for information dialog options."
 msgstr "Показує довідку про параметри вікна з інформацією."
 
 #. (itstool) path: item/title
-#: C/usage.page:197
+#: C/usage.page:189
 msgid "<cmd>--help-file-selection</cmd>"
 msgstr "<cmd>--help-file-selection</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:198
+#: C/usage.page:190
 msgid "Displays help text for file selection dialog options."
 msgstr "Показує довідку про параметри вікна вибору файлів."
 
 #. (itstool) path: item/title
-#: C/usage.page:202
+#: C/usage.page:194
 msgid "<cmd>--help-list</cmd>"
 msgstr "<cmd>--help-list</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:203
+#: C/usage.page:195
 msgid "Displays help text for list dialog options."
 msgstr "Показує довідку про параметри вікна списку."
 
 #. (itstool) path: item/title
-#: C/usage.page:207
+#: C/usage.page:199
 msgid "<cmd>--help-notification</cmd>"
 msgstr "<cmd>--help-notification</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:208
+#: C/usage.page:200
 msgid "Displays help text for notification icon options."
 msgstr "Показує довідку про параметри значка в області сповіщення."
 
 #. (itstool) path: item/title
-#: C/usage.page:212
+#: C/usage.page:204
 msgid "<cmd>--help-progress</cmd>"
 msgstr "<cmd>--help-progress</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:213
+#: C/usage.page:205
 msgid "Displays help text for progress dialog options."
 msgstr "Показує довідку про параметри вікна поступу."
 
 #. (itstool) path: item/title
-#: C/usage.page:217
+#: C/usage.page:209
 msgid "<cmd>--help-question</cmd>"
 msgstr "<cmd>--help-question</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:218
+#: C/usage.page:210
 msgid "Displays help text for question dialog options."
 msgstr "Показує довідку про параметри вікна запитання."
 
 #. (itstool) path: item/title
-#: C/usage.page:222
+#: C/usage.page:214
 msgid "<cmd>--help-warning</cmd>"
 msgstr "<cmd>--help-warning</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:223
+#: C/usage.page:215
 msgid "Displays help text for warning dialog options."
 msgstr "Показує довідку про параметри вікна попередження."
 
 #. (itstool) path: item/title
-#: C/usage.page:227
+#: C/usage.page:219
 msgid "<cmd>--help-text-info</cmd>"
 msgstr "<cmd>--help-text-info</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:228
+#: C/usage.page:220
 msgid "Displays help for text information dialog options."
 msgstr "Показує довідку про параметри вікна інформаційного тексту."
 
 #. (itstool) path: item/title
-#: C/usage.page:232
+#: C/usage.page:224
 msgid "<cmd>--help-misc</cmd>"
 msgstr "<cmd>--help-misc</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:233
+#: C/usage.page:225
 msgid "Displays help for miscellaneous options."
 msgstr "Показує довідку про різні параметри."
 
 #. (itstool) path: item/title
-#: C/usage.page:237
+#: C/usage.page:229
 msgid "<cmd>--help-gtk</cmd>"
 msgstr "<cmd>--help-gtk</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:238
+#: C/usage.page:230
 msgid "Displays help for GTK+ options."
 msgstr "Показує довідку про параметри GTK+."
 
 #. (itstool) path: section/title
-#: C/usage.page:248
+#: C/usage.page:240
 msgid "Miscellaneous Options"
 msgstr "Інші параметри"
 
 #. (itstool) path: section/p
-#: C/usage.page:250
+#: C/usage.page:242
 msgid "Zenity also provides the following miscellaneous options:"
 msgstr "Крім того, Zenity має наступні інші параметри:"
 
 #. (itstool) path: item/title
-#: C/usage.page:257
+#: C/usage.page:249
 msgid "<cmd>--about</cmd>"
 msgstr "<cmd>--about</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:258
+#: C/usage.page:250
 msgid ""
 "Displays the <gui>About Zenity</gui> dialog, which contains Zenity version "
 "information, copyright information, and developer information."
@@ -2511,22 +2542,22 @@ msgstr ""
 "версію Zenity, авторські права та інформацію про розробників."
 
 #. (itstool) path: item/title
-#: C/usage.page:262
+#: C/usage.page:254
 msgid "<cmd>--version</cmd>"
 msgstr "<cmd>--version</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:263
+#: C/usage.page:255
 msgid "Displays the version number of Zenity."
 msgstr "Показує номер версії програми Zenity."
 
 #. (itstool) path: section/title
-#: C/usage.page:273
+#: C/usage.page:265
 msgid "GTK+ Options"
 msgstr "Параметри GTK+"
 
 #. (itstool) path: section/p
-#: C/usage.page:275
+#: C/usage.page:267
 msgid ""
 "Zenity supports the standard GTK+ options. For more information about the GTK"
 "+ options, execute the <cmd>zenity --help-gtk</cmd> command."
@@ -2535,12 +2566,12 @@ msgstr ""
 "параметри GTK+, можна дізнатись виконавши <cmd>zenity --help-gtk</cmd>."
 
 #. (itstool) path: section/title
-#: C/usage.page:284
+#: C/usage.page:276
 msgid "Environment Variables"
 msgstr "Змінні оточення"
 
 #. (itstool) path: section/p
-#: C/usage.page:286
+#: C/usage.page:278
 msgid ""
 "Normally, Zenity detects the terminal window from which it was launched and "
 "keeps itself above that window. This behavior can be disabled by unsetting "
@@ -2610,3 +2641,22 @@ msgid ""
 msgstr ""
 "external ref='figures/zenity-warning-screenshot.png' "
 "md5='a2d07437efca06b775ceae24816d96a6'"
+
+#~ msgid ""
+#~ "<cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', "
+#~ "tooltip: '<var>text</var>', visible: '<var>text</var>',"
+#~ msgstr ""
+#~ "<cmd>--listen</cmd>=icon: '<var>текст</var>', message: '<var>текст</"
+#~ "var>', tooltip: '<var>текст</var>', visible: '<var>текст</var>',"
+
+#~ msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
+#~ msgstr "<cmd>--window-icon</cmd>=<var>шлях_до_піктограми</var>"
+
+#~ msgid ""
+#~ "Specifies the icon that is displayed in the window frame of the dialog. "
+#~ "There are 4 stock icons also available by providing the following "
+#~ "keywords - 'info', 'warning', 'question' and 'error'."
+#~ msgstr ""
+#~ "Вказує значок, який буде показано у рамці діалогового вікна. Є 4 "
+#~ "вбудовані значки, які вказуються ключовими словами «info», «warning», "
+#~ "«question» та «error»."
