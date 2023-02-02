@@ -220,11 +220,19 @@ cv_activated_cb (ZenityTreeColumnView *cv, gpointer data)
 	zenity_util_gapp_quit (parent, zen_data);
 }
 
+static void
+search_changed_cb (GtkSearchEntry *entry, gpointer data)
+{
+	zenity_tree_column_view_set_search (col_view,
+			gtk_editable_get_text (GTK_EDITABLE(entry)));
+}
+
 void
 zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 {
 	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
+	GtkWidget *search_entry;
 	GObject *text;
 	GListStore *store;
 	ZenityTreeListType list_type;
@@ -280,7 +288,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	}
 
 	dialog = GTK_WIDGET(gtk_builder_get_object (builder, "zenity_tree_dialog"));
-
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_tree_dialog_response), data);
 
 	if (data->dialog_title)
@@ -327,6 +334,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	 */
 	g_signal_connect (col_view, "activated", G_CALLBACK(cv_activated_cb), data);
 
+	search_entry = GTK_WIDGET(gtk_builder_get_object (builder, "zenity_tree_search_entry"));
+	g_signal_connect (search_entry, "search-changed", G_CALLBACK(search_changed_cb), NULL);
+
 	if (tree_data->radiobox) {
 		list_type = ZENITY_TREE_LIST_RADIO;
 	}
@@ -360,8 +370,6 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	{
 		zenity_tree_fill_entries_from_stdin ();
 	}
-
-	// FIXME - make stuff searchable
 
 	zenity_util_show_dialog (dialog);
 

@@ -23,6 +23,7 @@ ZenityTreeItem * zenity_tree_item_new (const char *text, GtkWidget *child);
 GtkWidget * zenity_tree_item_get_child (ZenityTreeItem *item);
 const char * zenity_tree_item_get_text (ZenityTreeItem *item);
 void zenity_tree_item_set_text (ZenityTreeItem *item, const char *text);
+void zenity_tree_item_set_child (ZenityTreeItem *item, GtkWidget *child);
 
 /* ZenityTreeRow */
 
@@ -50,5 +51,6 @@ int zenity_tree_column_view_get_n_columns (ZenityTreeColumnView *self);
 gboolean zenity_tree_column_view_get_editable (ZenityTreeColumnView *self);
 gboolean zenity_tree_column_view_get_multi (ZenityTreeColumnView *self);
 gboolean zenity_tree_column_view_is_selected (ZenityTreeColumnView *self, guint pos);
+void zenity_tree_column_view_set_search (ZenityTreeColumnView *self, const char *search_str);
 
 G_END_DECLS

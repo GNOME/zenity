@@ -388,6 +388,17 @@
 				<property name="orientation">vertical</property>
 				<property name="spacing">6</property>
 				<child>
+					<object class="GtkSearchBar" id="zenity_tree_search_bar">
+						<property name="show-close-button">true</property>
+						<property name="key-capture-widget">zenity_tree_cv</property>
+						<child>
+							<object class="GtkSearchEntry" id="zenity_tree_search_entry">
+								<property name="hexpand">true</property>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
 					<object class="GtkLabel" id="zenity_tree_text">
 						<property name="valign">center</property>
 						<property name="label" translatable="yes">Select items from the list below.</property>

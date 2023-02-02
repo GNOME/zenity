@@ -3,6 +3,17 @@
 
 #define UI_FILE RESOURCE_BASE_PATH "/zenity-tree-column-view.ui"
 
+/* ZenityTreeItem */
+
+enum zenity_tree_item_prop_enum
+{
+	TEXT = 1,
+	CHILD,
+	N_PROPERTIES_ZENITY_TREE_ITEM
+};
+
+static GParamSpec *zenity_tree_item_properties[N_PROPERTIES_ZENITY_TREE_ITEM];
+
 struct _ZenityTreeItem
 {
 	GObject parent_instance;
@@ -13,13 +24,92 @@ struct _ZenityTreeItem
 G_DEFINE_TYPE (ZenityTreeItem, zenity_tree_item, G_TYPE_OBJECT)
 
 static void
+zenity_tree_item_set_property (GObject *object,
+		guint property_id,
+		const GValue *value,
+		GParamSpec *pspec)
+{
+	ZenityTreeItem *self = ZENITY_TREE_ITEM(object);
+
+	switch (property_id)
+	{
+		case TEXT:
+			zenity_tree_item_set_text (self, g_value_get_string (value));
+			break;
+
+		case CHILD:
+			zenity_tree_item_set_child (self, GTK_WIDGET(g_value_get_object (value)));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
+			break;
+	}
+}
+
+static void
+zenity_tree_item_get_property (GObject *object,
+		guint property_id,
+		GValue *value,
+		GParamSpec *pspec)
+{
+	ZenityTreeItem *self = ZENITY_TREE_ITEM(object);
+
+	switch (property_id)
+	{
+		case TEXT:
+			g_value_set_string (value, zenity_tree_item_get_text (self));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
+			break;
+	}
+}
+static void
 zenity_tree_item_init (ZenityTreeItem *item)
 {
 }
 
 static void
+zenity_tree_item_dispose (GObject *object)
+{
+	ZenityTreeItem *self = ZENITY_TREE_ITEM(object);
+
+	if (g_object_is_floating (self->child))
+		g_warning ("%s: trying to dispose ZenityTreeItem before the widget has been parented. "
+				"Likely a programmer error. A leak will likely result.", __func__);
+	else
+		g_clear_object (&self->child);
+
+	G_OBJECT_CLASS(zenity_tree_item_parent_class)->dispose (object);
+}
+
+static void
+zenity_tree_item_finalize (GObject *object)
+{
+	ZenityTreeItem *self = ZENITY_TREE_ITEM(object);
+
+	g_free (self->text);
+
+	G_OBJECT_CLASS(zenity_tree_item_parent_class)->finalize (object);
+}
+
+static void
 zenity_tree_item_class_init (ZenityTreeItemClass *klass)
 {
+	GObjectClass *object_class = G_OBJECT_CLASS(klass);
+	GParamFlags flags = G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT;
+
+	object_class->dispose = zenity_tree_item_dispose;
+	object_class->finalize = zenity_tree_item_finalize;
+	object_class->set_property = zenity_tree_item_set_property;
+	object_class->get_property = zenity_tree_item_get_property;
+
+	zenity_tree_item_properties[TEXT] = g_param_spec_string ("text", NULL, NULL, NULL, flags);
+	zenity_tree_item_properties[CHILD] = g_param_spec_object ("child", NULL, NULL, GTK_TYPE_WIDGET, flags);
+
+	g_object_class_install_properties (object_class, N_PROPERTIES_ZENITY_TREE_ITEM, zenity_tree_item_properties);
 }
 
 GtkWidget *
@@ -35,10 +125,23 @@ zenity_tree_item_get_text (ZenityTreeItem *item)
 }
 
 void
-zenity_tree_item_set_text (ZenityTreeItem *item, const char *text)
+zenity_tree_item_set_text (ZenityTreeItem *self, const char *text)
 {
-	g_clear_pointer (&item->text, g_free);
-	item->text = g_strdup (text);
+	g_clear_pointer (&self->text, g_free);
+	self->text = g_strdup (text);
+
+	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_item_properties[TEXT]);
+}
+
+void
+zenity_tree_item_set_child (ZenityTreeItem *self, GtkWidget *child)
+{
+	if (self->child)
+		g_object_unref (self->child);
+
+	self->child = g_object_ref (child);
+
+	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_item_properties[CHILD]);
 }
 
 ZenityTreeItem *
@@ -48,15 +151,15 @@ zenity_tree_item_new (const char *text, GtkWidget *child)
 
 	g_return_val_if_fail (GTK_IS_WIDGET (child), NULL);
 
-	item = g_object_new (ZENITY_TREE_TYPE_ITEM, NULL);
-
-	item->child = child;
-	zenity_tree_item_set_text (item, text);
+	item = g_object_new (ZENITY_TREE_TYPE_ITEM,
+			"text", text,
+			"child", child,
+			NULL);
 
 	return item;
 }
 
-/* --- */
+/* ZenityTreeRow */
 
 struct _ZenityTreeRow
 {
@@ -103,7 +206,7 @@ zenity_tree_row_get_item (ZenityTreeRow *row, guint index)
 	return row->items->pdata[index];
 }
 
-/* --- */
+/* ZenityTreeColumnView */
 
 enum zenity_tree_column_view_signal_enum {
 	ACTIVATED,
@@ -112,9 +215,7 @@ enum zenity_tree_column_view_signal_enum {
 
 static guint zenity_tree_column_view_signals[LAST_SIGNAL];
 
-/* --- */
-
-enum zenity_tree_column_view_props
+enum zenity_tree_column_view_prop_enum
 {
 	MULTI = 1,
 	LIST_TYPE,
@@ -132,25 +233,69 @@ struct _ZenityTreeColumnView
 	gboolean multi;
 	ZenityTreeListType list_type;
 	GListModel *model;
+	GtkStringFilter *filter;
 	GtkCheckButton *checkbutton_group;
 };
 
 G_DEFINE_TYPE (ZenityTreeColumnView, zenity_tree_column_view, GTK_TYPE_WIDGET)
 
+/* Callback for the GClosure defined below. Just cram the text from all row
+ * items into a single string; that way, if the string in the searchbar matches
+ * any text in a given row, there will be a match, and only those rows will be
+ * shown.
+ */
+static char *
+eval_str (ZenityTreeRow *row)
+{
+	GString *gstring;
+
+	g_return_val_if_fail (ZENITY_TREE_IS_ROW (row), NULL);
+
+	gstring = g_string_new (NULL);
+
+	for (guint i = 0; i < row->items->len; ++i)
+	{
+		ZenityTreeItem *item = row->items->pdata[i];
+		g_string_append_printf (gstring, "%s ", item->text);
+	}
+
+	return g_string_free (gstring, FALSE);
+}
+
 void
 zenity_tree_column_view_set_model (ZenityTreeColumnView *self, GListModel *model)
 {
+	GtkStringFilter *filter;
+	GtkFilterListModel *filter_model;
+
+	GtkExpression *expr;
+
+	/* This tells the column view to use a callback with 'this' (ZenityTreeRow)
+	 * as the instance and no other params or user_data, with a string retval.
+	 */
+	expr = gtk_cclosure_expression_new (G_TYPE_STRING,
+			NULL,					/* GClosureMarshal marshal, */
+			0, 						/* guint n_params, */
+			NULL,					/* GtkExpression** params, */
+			G_CALLBACK(eval_str),	/* GCallback callback_func, */
+			NULL,					/* gpointer user_data, */
+			NULL);					/* GClosureNotify user_destroy) */
+
+	filter = gtk_string_filter_new (expr);
+	filter_model = gtk_filter_list_model_new (model, GTK_FILTER(filter));
+
 	self->model = model;
+	self->filter = filter;
 
 	if (self->multi)
 	{
 		gtk_column_view_set_model (self->child_cv,
-				GTK_SELECTION_MODEL(gtk_multi_selection_new (self->model)));
+				GTK_SELECTION_MODEL(gtk_multi_selection_new (G_LIST_MODEL(filter_model))));
 	}
 	else
 	{
 		gtk_column_view_set_model (self->child_cv,
-				GTK_SELECTION_MODEL(gtk_single_selection_new (self->model)));
+				GTK_SELECTION_MODEL(gtk_single_selection_new (G_LIST_MODEL(filter_model))));
 	}
 
 	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_column_view_properties[MODEL]);
@@ -264,7 +409,7 @@ zenity_tree_column_view_dispose (GObject *object)
 
 	g_clear_pointer (&self->scrolled_window, gtk_widget_unparent);
 
-	G_OBJECT_CLASS(zenity_tree_column_view_parent_class)->dispose(object);
+	G_OBJECT_CLASS(zenity_tree_column_view_parent_class)->dispose (object);
 }
 
 static void
@@ -475,4 +620,10 @@ gboolean
 zenity_tree_column_view_is_selected (ZenityTreeColumnView *self, guint pos)
 {
 	return gtk_selection_model_is_selected (gtk_column_view_get_model (self->child_cv), pos);
+}
+
+void
+zenity_tree_column_view_set_search (ZenityTreeColumnView *self, const char *search_str)
+{
+	gtk_string_filter_set_search (self->filter, search_str);
 }
