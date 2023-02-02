@@ -54,8 +54,8 @@ static void zenity_tree_dialog_output (void);
 static void
 show_mid_search_deprecation_warning (void)
 {
-	g_printerr ("Warning: --mid-search is deprecated and will be removed in a "
-			"future version of zenity. Ignoring.\n");
+	g_printerr (_("Warning: --mid-search is deprecated and will be removed in a "
+			"future version of zenity. Ignoring.\n"));
 }
 static gboolean
 zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer data)

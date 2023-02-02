@@ -1475,8 +1475,8 @@ zenity_entry_post_callback (GOptionContext *context, GOptionGroup *group,
 static void
 show_window_icon_deprecation_warning (void)
 {
-	g_printerr ("Warning: --window-icon is deprecated and will be removed in a "
-			"future version of zenity. Please use --icon instead.\n");
+	g_printerr (_("Warning: --window-icon is deprecated and will be removed in a "
+			"future version of zenity. Ignoring.\n"));
 }
 
 static gboolean
