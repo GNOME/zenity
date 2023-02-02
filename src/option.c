@@ -85,7 +85,6 @@ static char *zenity_list_print_column;
 static char *zenity_list_hide_column;
 static gboolean zenity_list_hide_header;
 static gboolean zenity_list_imagelist;
-static gboolean zenity_list_mid_search;
 
 /* Notification Dialog Options */
 static gboolean zenity_notification_active;
@@ -153,6 +152,7 @@ static gboolean zenity_misc_version;
 /* DEPRECATED Options */
 
 static char *zenity_general_icon_DEPRECATED;
+static gboolean zenity_list_mid_search_DEPRECATED;
 
 static gboolean zenity_forms_callback (const char *option_name,
 	const char *value, gpointer data, GError **error);
@@ -547,9 +547,8 @@ static GOptionEntry list_options[] =
 			'\0',
 			G_OPTION_FLAG_NOALIAS,
 			G_OPTION_ARG_NONE,
-			&zenity_list_mid_search,
-			N_ ("Change list default search function searching for text in the "
-					"middle, not on the beginning"),
+			&zenity_list_mid_search_DEPRECATED,
+			N_ ("DEPRECATED; does nothing"),
 			NULL},
 		{NULL}};
 
@@ -1239,7 +1238,7 @@ zenity_list_pre_callback (GOptionContext *context, GOptionGroup *group,
 	zenity_list_hide_header = FALSE;
 	zenity_list_print_column = NULL;
 	zenity_list_hide_column = NULL;
-	zenity_list_mid_search = FALSE;
+	zenity_list_mid_search_DEPRECATED = FALSE;
 
 	return TRUE;
 }
@@ -1602,7 +1601,7 @@ zenity_list_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->tree_data->hide_column = zenity_list_hide_column;
 		results->tree_data->hide_header = zenity_list_hide_header;
 		results->tree_data->separator = zenity_general_separator;
-		results->tree_data->mid_search = zenity_list_mid_search;
+		results->tree_data->mid_search_DEPRECATED = zenity_list_mid_search_DEPRECATED;
 	}
 	else
 	{
@@ -1640,9 +1639,9 @@ zenity_list_post_callback (GOptionContext *context, GOptionGroup *group,
 			zenity_option_error (
 				zenity_option_get_name (list_options, &zenity_list_hide_header),
 				ERROR_SUPPORT);
-		if (zenity_list_mid_search)
+		if (zenity_list_mid_search_DEPRECATED)
 			zenity_option_error (
-				zenity_option_get_name (list_options, &zenity_list_mid_search),
+				zenity_option_get_name (list_options, &zenity_list_mid_search_DEPRECATED),
 				ERROR_SUPPORT);
 	}
 	return TRUE;

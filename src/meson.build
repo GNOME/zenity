@@ -16,10 +16,11 @@ zenity_sources = [
   'text.c',
   'tree.c',
   'util.c',
+  'zenity-tree-column-view.c',
 ]
 
-zenity_enums = gnome.mkenums_simple('zenity-enums',
-         sources: 'zenity.h',
+zenity_cv_enums = gnome.mkenums_simple('zenity-tree-column-view-enums',
+         sources: 'zenity-tree-column-view.h',
 )
 
 zenity_res_conf = configuration_data()
@@ -43,7 +44,7 @@ zenity_c_args = [
 
 zenity = executable(
   meson.project_name(),
-  zenity_sources + zenity_enums + zenity_res,
+  zenity_sources + zenity_cv_enums + zenity_res,
   include_directories: zenity_root_dir,
   c_args: zenity_c_args,
   dependencies: [adw_dep, webkitgtk_dep],

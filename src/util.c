@@ -105,6 +105,10 @@ zenity_util_load_ui_file (const char *root_widget, ...)
 	g_ptr_array_add (ptrarray, NULL);
 	objects = (char **)g_ptr_array_free (ptrarray, FALSE);
 
+	/* Make sure this custom widget type is registered before this initial
+	 * GtkBuilder method call. */
+	g_type_ensure (ZENITY_TREE_TYPE_COLUMN_VIEW);
+
 	result = gtk_builder_add_objects_from_resource (builder,
 			ZENITY_UI_RESOURCE_PATH,
 			(const char **)objects,

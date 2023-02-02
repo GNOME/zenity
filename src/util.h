@@ -36,6 +36,8 @@
 #pragma once
 
 #include "zenity.h"
+#include "zenity-tree-column-view.h"
+
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
