@@ -627,3 +627,12 @@ zenity_tree_column_view_set_search (ZenityTreeColumnView *self, const char *sear
 {
 	gtk_string_filter_set_search (self->filter, search_str);
 }
+
+void
+zenity_tree_column_view_show_column (ZenityTreeColumnView *self, guint pos, gboolean show)
+{
+	GListModel *cols = gtk_column_view_get_columns (self->child_cv);
+	GtkColumnViewColumn *col = g_list_model_get_item (cols, pos);
+
+	gtk_column_view_column_set_visible (col, show);
+}

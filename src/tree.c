@@ -362,6 +362,14 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 		zenity_tree_column_view_add_column (col_view, tmp->data);
 	}
 
+	if (hide_columns)
+	{
+		for (guint i = 0; hide_columns[i] != 0; i++)
+		{
+			zenity_tree_column_view_show_column (col_view, hide_columns[i]-1, FALSE);
+		}
+	}
+
 	if (tree_data->data && *tree_data->data)	/* we have argv after opts */
 	{
 		zenity_tree_fill_entries (tree_data->data);
