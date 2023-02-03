@@ -234,7 +234,7 @@ struct _ZenityTreeColumnView
 	ZenityTreeListType list_type;
 	GListModel *model;
 	GtkStringFilter *filter;
-	GtkCheckButton *checkbutton_group;
+	GtkCheckButton *initial_checkbutton_group;
 };
 
 G_DEFINE_TYPE (ZenityTreeColumnView, zenity_tree_column_view, GTK_TYPE_WIDGET)
@@ -515,22 +515,24 @@ factory_bind_cb (ZenityTreeColumnView *self,
 		if (g_object_get_data (G_OBJECT(item_child), "initialized"))
 			initialized = TRUE;
 
-		/* Radio-button-ize our check buttons if radio list requested
-		 */
-		if (self->list_type == ZENITY_TREE_LIST_RADIO)
-		{
-			if (!self->checkbutton_group)
-				self->checkbutton_group = GTK_CHECK_BUTTON(item_child);
-
-			/* Annoying - if you try to add checkbtn to its own group, gtk
-			 * spews errors instead of just returning silently.
-			 */
-			if (GTK_CHECK_BUTTON(item_child) != self->checkbutton_group)	
-				gtk_check_button_set_group (GTK_CHECK_BUTTON(item_child), self->checkbutton_group);
-		}
-
 		if (! initialized)
 		{
+			/* Radio-button-ize our check buttons if radio list requested
+			*/
+			if (self->list_type == ZENITY_TREE_LIST_RADIO)
+			{
+				if (!self->initial_checkbutton_group)
+				{
+					self->initial_checkbutton_group = GTK_CHECK_BUTTON(item_child);
+				}
+
+				/* Annoying - if you try to add checkbtn to its own group, gtk
+				 * spews errors instead of just returning silently.
+				 */
+				if (GTK_CHECK_BUTTON(item_child) != self->initial_checkbutton_group)	
+					gtk_check_button_set_group (GTK_CHECK_BUTTON(item_child), self->initial_checkbutton_group);
+			}
+
 			if (g_ascii_strcasecmp (item_text, "true") == 0)
 				checked = TRUE;
 
