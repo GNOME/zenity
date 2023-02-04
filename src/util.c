@@ -49,6 +49,14 @@
 #define ZENITY_ERROR_DEFAULT -1
 #define ZENITY_EXTRA_DEFAULT 127
 
+/* This exit code number is arbitrary, but since for the entire 3.x release
+ * cycle, zenity would essentially exit(ZENITY_TIMEOUT), which happened to be
+ * defined as 5 based on where it was placed in the enum sequence. So
+ * hardcoding it as 5 now in case any pre-existing scripts relied upon that
+ * being the exit status for timeouts.
+ */
+#define ZENITY_TIMEOUT_DEFAULT 5
+
 GtkBuilder *
 zenity_util_load_ui_file (const gchar *root_widget, ...) {
 	va_list args;
@@ -298,7 +306,7 @@ zenity_util_return_exit_code (ZenityExitCode value) {
 			if (!env_var)
 				env_var = g_getenv ("DIALOG_TIMEOUT");
 			if (!env_var)
-				retval = ZENITY_TIMEOUT;
+				retval = ZENITY_TIMEOUT_DEFAULT;
 			break;
 
 		default:
@@ -412,7 +420,7 @@ zenity_util_timeout_handle (gpointer data) {
 		gtk_dialog_response (dialog, ZENITY_TIMEOUT);
 	else {
 		gtk_main_quit ();
-		exit (ZENITY_TIMEOUT);
+		exit (ZENITY_TIMEOUT_DEFAULT);
 	}
 	return FALSE;
 }

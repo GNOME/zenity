@@ -33,7 +33,14 @@ typedef enum {
 	ZENITY_ESC,
 	ZENITY_ERROR,
 	ZENITY_EXTRA,
-	ZENITY_TIMEOUT
+	/* Previously, this was not specified to any value, which could cause it to
+	 * clash with the custom response ID that happened to match it. We could set
+	 * this to a negative value tha doesn't clash with one of GtkDialog's
+	 * predefined response ID's as it's doubtful GTK will ever extend the GtkDialog
+	 * API at this stage -- but technically negative values are reserved for the
+	 * library and positive values for applications, according to gtkdialog.c
+	 */
+	ZENITY_TIMEOUT = INT_MAX
 } ZenityExitCode;
 
 typedef struct {
