@@ -199,8 +199,24 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data) {
 		gtk_window_set_default_size (
 			GTK_WINDOW (dialog), data->width, data->height);
 
-	if (data->width > -1)
+	if (data->width > -1) {
 		gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
+
+		if (!msg_data->no_wrap) {
+			/* Minimum width */
+			gtk_label_set_width_chars (GTK_LABEL(text), 10);
+
+			/* If we don't set max-width-chars, gtk may set the natural width
+			 * of the label to be wider than what we want for the window. So we
+			 * want to set it to something relatively small, because,
+			 * according to TFM, even if max_width_chars is set to anything
+			 * other than -1, for wrapping labels the label will still be
+			 * rewrapped to use all of the available width. So we'll just set
+			 * it to the same value as width-chars for posterity.
+			 */
+			gtk_label_set_max_width_chars (GTK_LABEL(text), 10);
+		}
+	}
 	else if (!msg_data->ellipsize && !msg_data->no_wrap) {
 		/* The magic number 60 is taken from gtk+/gtk/ui/gtkmessagedialog.ui
 		   with 10 as a minimum width. */
