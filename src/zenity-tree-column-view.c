@@ -336,6 +336,36 @@ zenity_tree_column_view_emit_activated (ZenityTreeColumnView *self)
 	g_signal_emit (self, zenity_tree_column_view_signals[ACTIVATED], 0);
 }
 
+static void
+cv_check_or_radio_activated_cb (ZenityTreeColumnView *self, guint position, GtkColumnView *cv)
+{
+	GListModel *model = zenity_tree_column_view_get_model (self);
+	ZenityTreeRow *row = g_list_model_get_item (model, position);
+	ZenityTreeItem *item = zenity_tree_row_get_item (row, 0);
+	GtkWidget *item_child = zenity_tree_item_get_child (item);
+	GtkCheckButton *cb;
+
+	if (! GTK_IS_CHECK_BUTTON (item_child))
+		return;
+
+	cb = GTK_CHECK_BUTTON(item_child);
+
+	switch (self->list_type)
+	{
+		case ZENITY_TREE_LIST_CHECK:
+			gtk_check_button_set_active (cb, !gtk_check_button_get_active (cb));
+			break;
+
+		case ZENITY_TREE_LIST_RADIO:
+			gtk_check_button_set_active (cb, TRUE);
+			break;
+
+		default:
+			g_warning ("%s: Programmer error: invalid list type.", __func__);
+			break;
+	}
+}
+
 void
 zenity_tree_column_view_set_list_type (ZenityTreeColumnView *self, ZenityTreeListType type)
 {
@@ -347,10 +377,18 @@ zenity_tree_column_view_set_list_type (ZenityTreeColumnView *self, ZenityTreeLis
 	{
 		case ZENITY_TREE_LIST_NONE:
 		case ZENITY_TREE_LIST_IMAGE:
+			gtk_column_view_set_single_click_activate (self->child_cv, FALSE);
 			g_signal_connect_swapped (self->child_cv, "activate", G_CALLBACK(zenity_tree_column_view_emit_activated), self);
 			break;
 
+		case ZENITY_TREE_LIST_RADIO:
+		case ZENITY_TREE_LIST_CHECK:
+			gtk_column_view_set_single_click_activate (self->child_cv, TRUE);
+			g_signal_connect_swapped (self->child_cv, "activate", G_CALLBACK(cv_check_or_radio_activated_cb), self);
+			break;
+
 		default:
+			g_warning ("%s: Invalid ZenityTreeListType provided.", __func__);
 			break;
 	}
 
