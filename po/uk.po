@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-02-02 03:19+0000\n"
-"PO-Revision-Date: 2023-02-02 11:07+0200\n"
+"POT-Creation-Date: 2023-02-04 17:46+0000\n"
+"PO-Revision-Date: 2023-02-04 20:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -25,8 +25,11 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: data/org.gnome.Zenity.desktop.in:5
-#| msgid "Display dialog boxes from shell scripts"
+#: data/org.gnome.Zenity.desktop.in:3
+msgid "Zenity"
+msgstr "Zenity"
+
+#: data/org.gnome.Zenity.desktop.in:4
 msgid "Display dialog boxes from the command line"
 msgstr "Показ діалогових вікон з командного рядка"
 
@@ -70,13 +73,13 @@ msgstr "Показ діалогових вікон зі скриптів обо�
 
 #: src/fileselection.c:60 src/progress.c:408 src/zenity.ui:15 src/zenity.ui:52
 #: src/zenity.ui:86 src/zenity.ui:136 src/zenity.ui:173 src/zenity.ui:213
-#: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:408 src/zenity.ui:446
+#: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:419 src/zenity.ui:457
 msgid "_OK"
 msgstr "_Гаразд"
 
 #: src/fileselection.c:61 src/progress.c:404 src/zenity.ui:14 src/zenity.ui:51
 #: src/zenity.ui:85 src/zenity.ui:135 src/zenity.ui:212 src/zenity.ui:381
-#: src/zenity.ui:445
+#: src/zenity.ui:456
 msgid "_Cancel"
 msgstr "_Скасувати"
 
@@ -211,7 +214,6 @@ msgstr "Показати помилку діалогу"
 
 #: src/option.c:316 src/option.c:370 src/option.c:575 src/option.c:674
 #: src/option.c:813
-#| msgid "Set the filename"
 msgid "Set the icon name"
 msgstr "Встановити назву піктограми"
 
@@ -576,8 +578,8 @@ msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity. Ignoring.\n"
 msgstr ""
-"Попередження: параметр --window-icon вважається застарілим; його буде"
-" вилучено у наступних версіях zenity. Ігноруємо.\n"
+"Попередження: параметр --window-icon вважається застарілим; його буде "
+"вилучено у наступних версіях zenity. Ігноруємо.\n"
 
 #: src/option.c:2000
 msgid "General options"
@@ -636,12 +638,10 @@ msgid "Show list options"
 msgstr "Показувати параметри списку"
 
 #: src/option.c:2082
-#| msgid "Notification icon options"
 msgid "Notification options"
 msgstr "Параметри сповіщення"
 
 #: src/option.c:2083
-#| msgid "Show notification icon options"
 msgid "Show notification options"
 msgstr "Показати параметри сповіщення"
 
@@ -766,14 +766,14 @@ msgid ""
 "Warning: --mid-search is deprecated and will be removed in a future version "
 "of zenity. Ignoring.\n"
 msgstr ""
-"Попередження: параметр --mid-search вважається застарілим; його буде"
-" вилучено у наступних версіях zenity. Ігноруємо.\n"
+"Попередження: параметр --mid-search вважається застарілим; його буде "
+"вилучено у наступних версіях zenity. Ігноруємо.\n"
 
-#: src/tree.c:270
+#: src/tree.c:278
 msgid "No column titles specified for List dialog.\n"
 msgstr "Не вказано заголовків стовпчиків для вікна списків».\n"
 
-#: src/tree.c:277
+#: src/tree.c:285
 msgid "You should use only one List dialog type.\n"
 msgstr "Слід використовувати лише єдиний тип діалогу списків.\n"
 
@@ -804,7 +804,6 @@ msgid "C_alendar:"
 msgstr "_Календар:"
 
 #: src/zenity.ui:117
-#| msgid "C_alendar:"
 msgid "Calendar"
 msgstr "Календар"
 
@@ -856,7 +855,7 @@ msgstr "_Ні"
 msgid "_Yes"
 msgstr "_Так"
 
-#: src/zenity.ui:365 src/zenity.ui:431
+#: src/zenity.ui:365 src/zenity.ui:442
 msgid "Are you sure you want to proceed?"
 msgstr "Продовжити?"
 
@@ -864,15 +863,15 @@ msgstr "Продовжити?"
 msgid "Select items from the list"
 msgstr "Виберіть пункти зі списку"
 
-#: src/zenity.ui:393
+#: src/zenity.ui:404
 msgid "Select items from the list below."
 msgstr "Виберіть пункти зі списку нижче."
 
-#: src/zenity.ui:404 src/zenity.ui:441
+#: src/zenity.ui:415 src/zenity.ui:452
 msgid "Warning"
 msgstr "Попередження"
 
-#: src/zenity.ui:468
+#: src/zenity.ui:479
 msgid "Type your password"
 msgstr "Введіть ваш пароль"
 
