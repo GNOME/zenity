@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity help trunk\n"
-"POT-Creation-Date: 2022-07-29 08:30+0000\n"
-"PO-Revision-Date: 2023-01-02 15:50+1000\n"
+"POT-Creation-Date: 2023-02-02 02:08+0000\n"
+"PO-Revision-Date: 2023-02-17 22:57+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -136,7 +136,10 @@ msgstr ""
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Deshko Yury <deshko@tut.by>, 2007"
+msgstr ""
+"Deshko Yury <deshko@tut.by>, 2007\n"
+"Yuri Kozlov <yuray@komyakino.ru>, 2011\n"
+"Ser82-png <asvmail.as@gmail.com>, 2023"
 
 #. (itstool) path: info/desc
 #: C/calendar.page:6
@@ -282,9 +285,6 @@ msgstr "Пример диалогового окна календаря Zenity"
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/calendar.page:67
-#| msgid ""
-#| "@@image: 'figures/zenity-calendar-screenshot.png'; "
-#| "md5=b739d32aad963be4415d34ec103baf26"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-calendar-screenshot.png' "
@@ -393,9 +393,6 @@ msgstr "Пример диалогового окна выбора цвета <ap
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/color-selection.page:53
-#| msgid ""
-#| "@@image: 'figures/zenity-fileselection-screenshot.png'; "
-#| "md5=2c903cba26fb40462deea0bb6b931ea7"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-colorselection-screenshot.png' "
@@ -451,7 +448,6 @@ msgstr ""
 
 #. (itstool) path: item/title
 #: C/entry.page:30
-#| msgid "--hide-text"
 msgid "<cmd>--hide-text</cmd>"
 msgstr "<cmd>--hide-text</cmd>"
 
@@ -470,19 +466,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/entry.page:40
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        if zenity --entry \\\n"
-#| "        --title=\"Add an Entry\" \\\n"
-#| "        --text=\"Enter your _password:\" \\\n"
-#| "        --entry-text \"password\" \\\n"
-#| "        --hide-text\n"
-#| "          then echo $?\n"
-#| "          else echo \"No password entered\"\n"
-#| "        fi\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -522,9 +505,6 @@ msgstr "Пример диалогового окна ввода текста <ap
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/entry.page:56
-#| msgid ""
-#| "@@image: 'figures/zenity-entry-screenshot.png'; "
-#| "md5=0fb790cbb6d13ec13a314b34f844ee80"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-entry-screenshot.png' "
@@ -589,9 +569,6 @@ msgstr "Пример диалогового окна ошибки <app>Zenity</a
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/error.page:29
-#| msgid ""
-#| "@@image: 'figures/zenity-error-screenshot.png'; "
-#| "md5=c0fae27dcfc45eb335fd6bbc5e7f29b5"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-error-screenshot.png' "
@@ -643,7 +620,6 @@ msgstr ""
 
 #. (itstool) path: item/title
 #: C/file-selection.page:26
-#| msgid "--multiple"
 msgid "<cmd>--multiple</cmd>"
 msgstr "<cmd>--multiple</cmd>"
 
@@ -655,7 +631,6 @@ msgstr "Позволяет выбирать сразу несколько фай
 
 #. (itstool) path: item/title
 #: C/file-selection.page:31
-#| msgid "--directory"
 msgid "<cmd>--directory</cmd>"
 msgstr "<cmd>--directory</cmd>"
 
@@ -676,7 +651,6 @@ msgstr "Устанавливает диалоговое окно в режим �
 
 #. (itstool) path: item/title
 #: C/file-selection.page:41 C/list.page:53
-#| msgid "<option>--separator</option>=<replaceable>separator</replaceable>"
 msgid "<cmd>--separator</cmd>=<var>separator</var>"
 msgstr "<cmd>--separator</cmd>=<var>разделитель</var>"
 
@@ -699,21 +673,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/file-selection.page:51
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        FILE=`zenity --file-selection --title=\"Select a File\"`\n"
-#| "\n"
-#| "        case $? in\n"
-#| "                 0)\n"
-#| "                        echo \"\\\"$FILE\\\" selected.\";;\n"
-#| "                 1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "                -1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "        esac\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -759,9 +718,6 @@ msgstr "Пример диалогового окна выбора файла <ap
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/file-selection.page:69
-#| msgid ""
-#| "@@image: 'figures/zenity-fileselection-screenshot.png'; "
-#| "md5=2c903cba26fb40462deea0bb6b931ea7"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-fileselection-screenshot.png' "
@@ -950,7 +906,6 @@ msgstr "Glynn Foster"
 
 #. (itstool) path: credit/name
 #: C/index.page:12
-#| msgid "Nicholas"
 msgid "Nicholas Curran"
 msgstr "Nicholas Curran"
 
@@ -1025,9 +980,6 @@ msgstr "Пример диалогового окна информации <app>Z
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/info.page:29
-#| msgid ""
-#| "@@image: 'figures/zenity-information-screenshot.png'; "
-#| "md5=5a9af4275678c8bfb9b48010860a45e5"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-information-screenshot.png' "
@@ -1201,7 +1153,6 @@ msgstr ""
 
 #. (itstool) path: item/title
 #: C/list.page:35
-#| msgid "--checklist"
 msgid "<cmd>--checklist</cmd>"
 msgstr "<cmd>--checklist</cmd>"
 
@@ -1214,7 +1165,6 @@ msgstr ""
 
 #. (itstool) path: item/title
 #: C/list.page:41
-#| msgid "--radiolist"
 msgid "<cmd>--radiolist</cmd>"
 msgstr "<cmd>--radiolist</cmd>"
 
@@ -1226,7 +1176,6 @@ msgstr "Указывает, что первый столбец в диалого
 
 #. (itstool) path: item/title
 #: C/list.page:47 C/text.page:26
-#| msgid "--editable"
 msgid "<cmd>--editable</cmd>"
 msgstr "<cmd>--editable</cmd>"
 
@@ -1246,7 +1195,6 @@ msgstr ""
 
 #. (itstool) path: item/title
 #: C/list.page:59
-#| msgid "<option>--print-column</option>=<replaceable>column</replaceable>"
 msgid "<cmd>--print-column</cmd>=<var>column</var>"
 msgstr "<cmd>--print-column</cmd>=<var>столбец</var>"
 
@@ -1306,9 +1254,6 @@ msgstr "Пример диалогового окна списка <app>Zenity</a
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/list.page:85
-#| msgid ""
-#| "@@image: 'figures/zenity-list-screenshot.png'; "
-#| "md5=9c5a2704eb27e21a8e8739c49f77b3fc"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-list-screenshot.png' "
@@ -1343,7 +1288,6 @@ msgstr ""
 
 #. (itstool) path: info/desc
 #: C/notification.page:6
-#| msgid "Displays help text for notification icon options."
 msgid "Use the <cmd>--notification</cmd> option."
 msgstr "Использование параметра <cmd>--notification</cmd>."
 
@@ -1354,10 +1298,12 @@ msgstr "Значок уведомления"
 
 #. (itstool) path: page/p
 #: C/notification.page:10
-msgid "Use the <cmd>--notification</cmd> option to create a notification icon."
+msgid ""
+"Use the <cmd>--notification</cmd> option to create a passive desktop "
+"notification."
 msgstr ""
-"Используйте параметр <cmd>--notification</cmd>, чтобы создать значок "
-"уведомления."
+"Используйте параметр <cmd>--notification</cmd>, чтобы создать пассивное "
+"уведомление на рабочем столе."
 
 #. (itstool) path: item/p
 #: C/notification.page:15
@@ -1366,15 +1312,27 @@ msgstr "Указывает текст, который будет изображ�
 
 #. (itstool) path: item/title
 #: C/notification.page:18
-msgid ""
-"<cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', "
-"tooltip: '<var>text</var>', visible: '<var>text</var>',"
-msgstr ""
-"<cmd>--listen</cmd>=icon: '<var>текст</var>', message: '<var>текст</var>', "
-"tooltip: '<var>текст</var>', visible: '<var>текст</var>',"
+#| msgid "<cmd>--month</cmd>=<var>month</var>"
+msgid "<cmd>--icon</cmd>=<var>path</var>"
+msgstr "<cmd>--icon</cmd>=<var>путь</var>"
 
 #. (itstool) path: item/p
 #: C/notification.page:19
+msgid ""
+"Set the notification icon using a string containing a path to a valid icon "
+"on the system."
+msgstr ""
+"Устанавливает значок уведомления, указанный в строке, содержащей путь к "
+"имеющемуся в системе значку."
+
+#. (itstool) path: item/title
+#: C/notification.page:22
+#| msgid "<cmd>--pulsate</cmd>"
+msgid "<cmd>--listen</cmd>"
+msgstr "<cmd>--listen</cmd>"
+
+#. (itstool) path: item/p
+#: C/notification.page:23
 msgid ""
 "Listens for commands at standard input. At least one command must be "
 "specified. Commands are comma separated. A command must be followed by a "
@@ -1385,39 +1343,52 @@ msgstr ""
 "двоеточие и значение."
 
 #. (itstool) path: note/p
-#: C/notification.page:21
+#: C/notification.page:25
 msgid ""
-"The <cmd>icon</cmd> command also accepts four stock icon values such as "
-"<var>error</var>, <var>info</var>, <var>question</var> and <var>warning</"
-"var>."
+"The <cmd>icon</cmd> command also accepts icon theme name values in "
+"accordance with the FreeDesktop.org Icon Naming Specification such as "
+"<var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var> "
+"and <var>starred</var>."
 msgstr ""
-"Команда <cmd>icon</cmd> также принимает значение четырёх стандартных "
-"значков, таких как <var>error</var>, <var>info</var>, <var>question</var> и "
-"<var>warning</var>."
+"Команда <cmd>icon</cmd> также принимает значение названия темы значка в "
+"соответствии со спецификацией именования значков FreeDesktop.org, например "
+"<var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var> и "
+"<var>starred</var>."
+
+#. (itstool) path: item/p
+#: C/notification.page:27
+msgid "Examples include:"
+msgstr "Примеры:"
+
+#. (itstool) path: item/code
+#: C/notification.page:28
+#, no-wrap
+msgid ""
+"\n"
+"      message: Hello, my name is Joe\n"
+"      icon: /usr/share/pixmaps/monitor.xpm\n"
+"      "
+msgstr ""
+"\n"
+"      message: Привет, меня зовут Джо\n"
+"      icon: /usr/share/pixmaps/monitor.xpm\n"
+"      "
 
 #. (itstool) path: page/p
-#: C/notification.page:26
+#: C/notification.page:35
 msgid "The following example script shows how to create a notification icon:"
 msgstr ""
 "Следующий сценарий является примером того, как создавать значок уведомлений:"
 
 #. (itstool) path: page/code
-#: C/notification.page:27
+#: C/notification.page:36
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        zenity --notification\\\n"
-#| "          --window-icon=\"info\" \\\n"
-#| "          --text=\"There are system updates necessary!\"\n"
-#| "      "
 msgid ""
 "\n"
 "  #!/bin/sh\n"
 "\n"
-"  zenity --notification\\\n"
-"    --window-icon=\"info\" \\\n"
+"  zenity --notification \\\n"
+"    --icon=\"/usr/share/pixmaps/monitor.xpm\" \\\n"
 "    --text=\"There are system updates necessary!\"\n"
 "  "
 msgstr ""
@@ -1425,17 +1396,17 @@ msgstr ""
 "  #!/bin/sh\n"
 "\n"
 "  zenity --notification\\\n"
-"    --window-icon=\"info\" \\\n"
+"    --icon=\"/usr/share/pixmaps/monitor.xpm\" \\\n"
 "    --text=\"Необходимо обновить систему!\"\n"
 "  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:36
+#: C/notification.page:45
 msgid "Notification Icon Example"
 msgstr "Пример значка уведомления"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:37
+#: C/notification.page:46
 msgid "<app>Zenity</app> notification icon example"
 msgstr "Пример значка уведомления <app>Zenity</app>"
 
@@ -1444,10 +1415,7 @@ msgstr "Пример значка уведомления <app>Zenity</app>"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:38
-#| msgid ""
-#| "@@image: 'figures/zenity-notification-screenshot.png'; "
-#| "md5=d7a119ced7cdf49b307013551d94e11e"
+#: C/notification.page:47
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-screenshot.png' "
@@ -1457,7 +1425,7 @@ msgstr ""
 "md5='723bd2d1283f5a888967815991cbe858'"
 
 #. (itstool) path: page/p
-#: C/notification.page:41
+#: C/notification.page:50
 msgid ""
 "The following example script shows how to create a notification icon along "
 "with <cmd>--listen</cmd>:"
@@ -1466,7 +1434,7 @@ msgstr ""
 "<cmd>--listen</cmd>:"
 
 #. (itstool) path: page/code
-#: C/notification.page:42
+#: C/notification.page:51
 #, no-wrap
 msgid ""
 "\n"
@@ -1484,12 +1452,12 @@ msgstr ""
 "  "
 
 #. (itstool) path: figure/title
-#: C/notification.page:50
+#: C/notification.page:59
 msgid "Notification Icon with <cmd>--listen</cmd> Example"
 msgstr "Пример значка уведомления с <cmd>--listen</cmd>"
 
 #. (itstool) path: figure/desc
-#: C/notification.page:51
+#: C/notification.page:60
 msgid "<app>Zenity</app> notification with <cmd>--listen</cmd> example"
 msgstr "Пример значка уведомления <app>Zenity</app> с <cmd>--listen</cmd>"
 
@@ -1498,10 +1466,7 @@ msgstr "Пример значка уведомления <app>Zenity</app> с <c
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/notification.page:52
-#| msgid ""
-#| "@@image: 'figures/zenity-notification-screenshot.png'; "
-#| "md5=d7a119ced7cdf49b307013551d94e11e"
+#: C/notification.page:61
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-notification-listen-screenshot.png' "
@@ -1602,9 +1567,6 @@ msgstr "Пример диалогового окна ввода пароля <ap
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/password.page:48
-#| msgid ""
-#| "@@image: 'figures/zenity-progress-screenshot.png'; "
-#| "md5=706736240f396ada12044c23b708a6a6"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-password-screenshot.png' "
@@ -1655,7 +1617,6 @@ msgstr "Указывает текст, который будет изображ�
 
 #. (itstool) path: item/title
 #: C/progress.page:30
-#| msgid "<option>--percentage</option>=<replaceable>percentage</replaceable>"
 msgid "<cmd>--percentage</cmd>=<var>percentage</var>"
 msgstr "<cmd>--percentage</cmd>=<var>процент</var>"
 
@@ -1666,7 +1627,6 @@ msgstr "Указывает начальное состояние индикат�
 
 #. (itstool) path: item/title
 #: C/progress.page:35
-#| msgid "--auto-close"
 msgid "<cmd>--auto-close</cmd>"
 msgstr "<cmd>--auto-close</cmd>"
 
@@ -1677,7 +1637,6 @@ msgstr "Диалоговое окно закрывается, когда про�
 
 #. (itstool) path: item/title
 #: C/progress.page:40
-#| msgid "--pulsate"
 msgid "<cmd>--pulsate</cmd>"
 msgstr "<cmd>--pulsate</cmd>"
 
@@ -1763,9 +1722,6 @@ msgstr "Пример диалогового окна индикатора ход
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/progress.page:78
-#| msgid ""
-#| "@@image: 'figures/zenity-progress-screenshot.png'; "
-#| "md5=706736240f396ada12044c23b708a6a6"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-progress-screenshot.png' "
@@ -1801,13 +1757,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/question.page:18
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "          #!/bin/bash\n"
-#| "\n"
-#| "          zenity --question \\\n"
-#| "          --text=\"Are you sure you wish to proceed?\"\n"
-#| "        "
 msgid ""
 "\n"
 "#!/bin/bash\n"
@@ -1837,9 +1786,6 @@ msgstr "Пример диалогового окна вопроса <app>Zenity<
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/question.page:29
-#| msgid ""
-#| "@@image: 'figures/zenity-question-screenshot.png'; "
-#| "md5=df8414504f8c8ca946a3f1e63a460938"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-question-screenshot.png' "
@@ -1951,21 +1897,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/scale.page:60
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "        #!/bin/sh\n"
-#| "\n"
-#| "        FILE=`zenity --file-selection --title=\"Select a File\"`\n"
-#| "\n"
-#| "        case $? in\n"
-#| "                 0)\n"
-#| "                        echo \"\\\"$FILE\\\" selected.\";;\n"
-#| "                 1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "                -1)\n"
-#| "                        echo \"No file selected.\";;\n"
-#| "        esac\n"
-#| "      "
 msgid ""
 "\n"
 "#!/bin/sh\n"
@@ -2011,9 +1942,6 @@ msgstr "Пример диалогового окна шкалы <app>Zenity</app
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scale.page:78
-#| msgid ""
-#| "@@image: 'figures/zenity-calendar-screenshot.png'; "
-#| "md5=b739d32aad963be4415d34ec103baf26"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-scale-screenshot.png' "
@@ -2181,9 +2109,6 @@ msgstr "Пример диалогового окна текстовой инфо
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/text.page:84
-#| msgid ""
-#| "@@image: 'figures/zenity-text-screenshot.png'; "
-#| "md5=55d2e2a0254f43ef3c7e9b3d0c4cde04"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-text-screenshot.png' "
@@ -2412,261 +2337,229 @@ msgstr "Указывает заголовок диалогового окна."
 
 #. (itstool) path: item/title
 #: C/usage.page:124
-#| msgid "<option>--window-icon</option>=<replaceable>icon_path</replaceable>"
-msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
-msgstr "<cmd>--window-icon</cmd>=<var>путь_к_значку</var>"
-
-#. (itstool) path: item/p
-#: C/usage.page:125
-msgid ""
-"Specifies the icon that is displayed in the window frame of the dialog. "
-"There are 4 stock icons also available by providing the following keywords - "
-"'info', 'warning', 'question' and 'error'."
-msgstr ""
-"Указывает значок, который изображается в рамке диалогового окна. Существуют "
-"4 запасных значка, доступных по следующим ключевым словам: 'info', "
-"'warning', 'question' и 'error'."
-
-#. (itstool) path: item/title
-#: C/usage.page:132
 msgid "<cmd>--width</cmd>=<var>width</var>"
 msgstr "<cmd>--width</cmd>=<var>ширина</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:133
+#: C/usage.page:125
 msgid "Specifies the width of the dialog."
 msgstr "Указывает ширину диалогового окна."
 
 #. (itstool) path: item/title
-#: C/usage.page:137
+#: C/usage.page:129
 msgid "<cmd>--height</cmd>=<var>height</var>"
 msgstr "<cmd>--height</cmd>=<var>высота</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:138
+#: C/usage.page:130
 msgid "Specifies the height of the dialog."
 msgstr "Указывает высоту диалогового окна."
 
 #. (itstool) path: item/title
-#: C/usage.page:142
+#: C/usage.page:134
 msgid "<cmd>--timeout</cmd>=<var>timeout</var>"
 msgstr "<cmd>--timeout</cmd>=<var>время_ожидания</var>"
 
 #. (itstool) path: item/p
-#: C/usage.page:143
+#: C/usage.page:135
 msgid "Specifies the timeout in seconds after which the dialog is closed."
 msgstr ""
 "Указывает время ожидания в секундах, по истечении которого диалоговое окно "
 "закрывается."
 
 #. (itstool) path: section/title
-#: C/usage.page:153
+#: C/usage.page:145
 msgid "Help Options"
 msgstr "Параметры вызова справки"
 
 #. (itstool) path: section/p
-#: C/usage.page:155
+#: C/usage.page:147
 msgid "Zenity provides the following help options:"
 msgstr "Zenity предоставляет следующие параметры справки:"
 
 #. (itstool) path: item/title
-#: C/usage.page:162
+#: C/usage.page:154
 msgid "<cmd>--help</cmd>"
 msgstr "<cmd>--help</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:163
+#: C/usage.page:155
 msgid "Displays shortened help text."
 msgstr "Показывает сокращённый текст справки."
 
 #. (itstool) path: item/title
-#: C/usage.page:167
-#| msgid "--help-all"
+#: C/usage.page:159
 msgid "<cmd>--help-all</cmd>"
 msgstr "<cmd>--help-all</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:168
+#: C/usage.page:160
 msgid "Displays full help text for all dialogs."
 msgstr "Показывает полный текст справки для всех диалоговых окон."
 
 #. (itstool) path: item/title
-#: C/usage.page:172
-#| msgid "--help-general"
+#: C/usage.page:164
 msgid "<cmd>--help-general</cmd>"
 msgstr "<cmd>--help-general</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:173
+#: C/usage.page:165
 msgid "Displays help text for general dialog options."
 msgstr "Показывает текст справки по общим параметрам диалоговых окон."
 
 #. (itstool) path: item/title
-#: C/usage.page:177
-#| msgid "--help-calendar"
+#: C/usage.page:169
 msgid "<cmd>--help-calendar</cmd>"
 msgstr "<cmd>--help-calendar</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:178
+#: C/usage.page:170
 msgid "Displays help text for calendar dialog options."
 msgstr "Показывает текст справки по параметрам диалогового окна календаря."
 
 #. (itstool) path: item/title
-#: C/usage.page:182
-#| msgid "--help-entry"
+#: C/usage.page:174
 msgid "<cmd>--help-entry</cmd>"
 msgstr "<cmd>--help-entry</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:183
+#: C/usage.page:175
 msgid "Displays help text for text entry dialog options."
 msgstr "Показывает текст справки по параметрам диалогового окна ввода текста."
 
 #. (itstool) path: item/title
-#: C/usage.page:187
-#| msgid "--help-error"
+#: C/usage.page:179
 msgid "<cmd>--help-error</cmd>"
 msgstr "<cmd>--help-error</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:188
+#: C/usage.page:180
 msgid "Displays help text for error dialog options."
 msgstr ""
 "Показывает текст справки по параметрам диалогового окна сообщения об ошибке."
 
 #. (itstool) path: item/title
-#: C/usage.page:192
-#| msgid "--help-info"
+#: C/usage.page:184
 msgid "<cmd>--help-info</cmd>"
 msgstr "<cmd>--help-info</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:193
+#: C/usage.page:185
 msgid "Displays help text for information dialog options."
 msgstr ""
 "Показывает текст справки по параметрам информационного диалогового окна."
 
 #. (itstool) path: item/title
-#: C/usage.page:197
-#| msgid "--help-file-selection"
+#: C/usage.page:189
 msgid "<cmd>--help-file-selection</cmd>"
 msgstr "<cmd>--help-file-selection</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:198
+#: C/usage.page:190
 msgid "Displays help text for file selection dialog options."
 msgstr "Показывает текст справки по параметрам диалогового окна выбора файла."
 
 #. (itstool) path: item/title
-#: C/usage.page:202
-#| msgid "--help-list"
+#: C/usage.page:194
 msgid "<cmd>--help-list</cmd>"
 msgstr "<cmd>--help-list</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:203
+#: C/usage.page:195
 msgid "Displays help text for list dialog options."
 msgstr "Показывает текст справки по параметрам диалогового окна списка."
 
 #. (itstool) path: item/title
-#: C/usage.page:207
-#| msgid "--help-notification"
+#: C/usage.page:199
 msgid "<cmd>--help-notification</cmd>"
 msgstr "<cmd>--help-notification</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:208
+#: C/usage.page:200
 msgid "Displays help text for notification icon options."
 msgstr "Показывает текст справки по параметрам значка уведомлений."
 
 #. (itstool) path: item/title
-#: C/usage.page:212
-#| msgid "--help-progress"
+#: C/usage.page:204
 msgid "<cmd>--help-progress</cmd>"
 msgstr "<cmd>--help-progress</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:213
+#: C/usage.page:205
 msgid "Displays help text for progress dialog options."
 msgstr ""
 "Показывает текст справки по параметрам диалогового окна хода выполнения."
 
 #. (itstool) path: item/title
-#: C/usage.page:217
-#| msgid "--help-question"
+#: C/usage.page:209
 msgid "<cmd>--help-question</cmd>"
 msgstr "<cmd>--help-question</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:218
+#: C/usage.page:210
 msgid "Displays help text for question dialog options."
 msgstr "Показывает текст справки по параметрам диалогового окна вопроса."
 
 #. (itstool) path: item/title
-#: C/usage.page:222
-#| msgid "--help-warning"
+#: C/usage.page:214
 msgid "<cmd>--help-warning</cmd>"
 msgstr "<cmd>--help-warning</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:223
+#: C/usage.page:215
 msgid "Displays help text for warning dialog options."
 msgstr ""
 "Показывает текст справки по параметрам диалогового окна предупреждения."
 
 #. (itstool) path: item/title
-#: C/usage.page:227
-#| msgid "--help-text-info"
+#: C/usage.page:219
 msgid "<cmd>--help-text-info</cmd>"
 msgstr "<cmd>--help-text-info</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:228
+#: C/usage.page:220
 msgid "Displays help for text information dialog options."
 msgstr ""
 "Показывает текст справки по параметрам диалогового окна текстовой информации."
 
 #. (itstool) path: item/title
-#: C/usage.page:232
-#| msgid "--help-misc"
+#: C/usage.page:224
 msgid "<cmd>--help-misc</cmd>"
 msgstr "<cmd>--help-misc</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:233
+#: C/usage.page:225
 msgid "Displays help for miscellaneous options."
 msgstr "Показывает справки по разнообразным параметрам."
 
 #. (itstool) path: item/title
-#: C/usage.page:237
-#| msgid "--help-gtk"
+#: C/usage.page:229
 msgid "<cmd>--help-gtk</cmd>"
 msgstr "<cmd>--help-gtk</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:238
+#: C/usage.page:230
 msgid "Displays help for GTK+ options."
 msgstr "Показывает справку по параметрам GTK+."
 
 #. (itstool) path: section/title
-#: C/usage.page:248
+#: C/usage.page:240
 msgid "Miscellaneous Options"
 msgstr "Прочие параметры"
 
 #. (itstool) path: section/p
-#: C/usage.page:250
+#: C/usage.page:242
 msgid "Zenity also provides the following miscellaneous options:"
 msgstr ""
 "Zenity также может запускаться со следующими дополнительными параметрами:"
 
 #. (itstool) path: item/title
-#: C/usage.page:257
+#: C/usage.page:249
 msgid "<cmd>--about</cmd>"
 msgstr "<cmd>--about</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:258
+#: C/usage.page:250
 msgid ""
 "Displays the <gui>About Zenity</gui> dialog, which contains Zenity version "
 "information, copyright information, and developer information."
@@ -2676,23 +2569,22 @@ msgstr ""
 "разработчике."
 
 #. (itstool) path: item/title
-#: C/usage.page:262
-#| msgid "--version"
+#: C/usage.page:254
 msgid "<cmd>--version</cmd>"
 msgstr "<cmd>--version</cmd>"
 
 #. (itstool) path: item/p
-#: C/usage.page:263
+#: C/usage.page:255
 msgid "Displays the version number of Zenity."
 msgstr "Отображает номер версии Zenity."
 
 #. (itstool) path: section/title
-#: C/usage.page:273
+#: C/usage.page:265
 msgid "GTK+ Options"
 msgstr "Параметры GTK+"
 
 #. (itstool) path: section/p
-#: C/usage.page:275
+#: C/usage.page:267
 msgid ""
 "Zenity supports the standard GTK+ options. For more information about the "
 "GTK+ options, execute the <cmd>zenity --help-gtk</cmd> command."
@@ -2702,12 +2594,12 @@ msgstr ""
 "help-gtk</cmd>."
 
 #. (itstool) path: section/title
-#: C/usage.page:284
+#: C/usage.page:276
 msgid "Environment Variables"
 msgstr "Переменные окружения"
 
 #. (itstool) path: section/p
-#: C/usage.page:286
+#: C/usage.page:278
 msgid ""
 "Normally, Zenity detects the terminal window from which it was launched and "
 "keeps itself above that window. This behavior can be disabled by unsetting "
@@ -2744,13 +2636,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/warning.page:18
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "          #!/bin/bash\n"
-#| "        \n"
-#| "          zenity --warning \\\n"
-#| "          --text=\"Disconnect the power cable to avoid electrical shock.\"\n"
-#| "        "
 msgid ""
 "\n"
 "#!/bin/bash\n"
@@ -2780,9 +2665,6 @@ msgstr "Пример диалогового окна предупреждени�
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/warning.page:28
-#| msgid ""
-#| "@@image: 'figures/zenity-warning-screenshot.png'; "
-#| "md5=cde1378d51f800a025b8c37ecdb60a20"
 msgctxt "_"
 msgid ""
 "external ref='figures/zenity-warning-screenshot.png' "
@@ -2790,6 +2672,26 @@ msgid ""
 msgstr ""
 "external ref='figures/zenity-warning-screenshot.png' "
 "md5='a2d07437efca06b775ceae24816d96a6'"
+
+#~ msgid ""
+#~ "<cmd>--listen</cmd>=icon: '<var>text</var>', message: '<var>text</var>', "
+#~ "tooltip: '<var>text</var>', visible: '<var>text</var>',"
+#~ msgstr ""
+#~ "<cmd>--listen</cmd>=icon: '<var>текст</var>', message: '<var>текст</"
+#~ "var>', tooltip: '<var>текст</var>', visible: '<var>текст</var>',"
+
+#~| msgid "<option>--window-icon</option>=<replaceable>icon_path</replaceable>"
+#~ msgid "<cmd>--window-icon</cmd>=<var>icon_path</var>"
+#~ msgstr "<cmd>--window-icon</cmd>=<var>путь_к_значку</var>"
+
+#~ msgid ""
+#~ "Specifies the icon that is displayed in the window frame of the dialog. "
+#~ "There are 4 stock icons also available by providing the following "
+#~ "keywords - 'info', 'warning', 'question' and 'error'."
+#~ msgstr ""
+#~ "Указывает значок, который изображается в рамке диалогового окна. "
+#~ "Существуют 4 запасных значка, доступных по следующим ключевым словам: "
+#~ "'info', 'warning', 'question' и 'error'."
 
 #~ msgid "Zenity Desktop Application Manual V2.0"
 #~ msgstr "Руководство Zenity, версия 2.0"
