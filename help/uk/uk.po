@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-02 02:08+0000\n"
-"PO-Revision-Date: 2023-02-02 11:10+0200\n"
+"POT-Creation-Date: 2023-03-06 19:55+0000\n"
+"PO-Revision-Date: 2023-03-07 21:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <linux@linux.org.ua>\n"
 "Language: uk\n"
@@ -1278,8 +1278,6 @@ msgstr "Значок області сповіщення"
 
 #. (itstool) path: page/p
 #: C/notification.page:10
-#| msgid ""
-#| "Use the <cmd>--notification</cmd> option to create a notification icon."
 msgid ""
 "Use the <cmd>--notification</cmd> option to create a passive desktop "
 "notification."
@@ -1294,7 +1292,6 @@ msgstr "Вказує текст, який буде показано у обла�
 
 #. (itstool) path: item/title
 #: C/notification.page:18
-#| msgid "<cmd>--month</cmd>=<var>month</var>"
 msgid "<cmd>--icon</cmd>=<var>path</var>"
 msgstr "<cmd>--icon</cmd>=<var>шлях</var>"
 
@@ -1304,12 +1301,11 @@ msgid ""
 "Set the notification icon using a string containing a path to a valid icon "
 "on the system."
 msgstr ""
-"Встановити піктограму сповіщення на основі рядка, що містить шлях до"
-" коректної піктограми у системі."
+"Встановити піктограму сповіщення на основі рядка, що містить шлях до "
+"коректної піктограми у системі."
 
 #. (itstool) path: item/title
 #: C/notification.page:22
-#| msgid "<cmd>--pulsate</cmd>"
 msgid "<cmd>--listen</cmd>"
 msgstr "<cmd>--listen</cmd>"
 
@@ -1327,19 +1323,20 @@ msgstr ""
 #. (itstool) path: note/p
 #: C/notification.page:25
 #| msgid ""
-#| "The <cmd>icon</cmd> command also accepts four stock icon values such as "
-#| "<var>error</var>, <var>info</var>, <var>question</var> and <var>warning</"
-#| "var>."
+#| "The <cmd>icon</cmd> command also accepts icon theme name values in "
+#| "accordance with the FreeDesktop.org Icon Naming Specification such as "
+#| "<var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var> "
+#| "and <var>starred</var>."
 msgid ""
 "The <cmd>icon</cmd> command also accepts icon theme name values in "
 "accordance with the FreeDesktop.org Icon Naming Specification such as "
-"<var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var> "
-"and <var>starred</var>."
+"<var>dialog-error</var>, <var>dialog-information</var> and <var>security-"
+"high</var>."
 msgstr ""
-"Команда <cmd>icon</cmd> також приймає значення назви піктограми теми у"
-" відповідності до специфікації іменування піктограм FreeDesktop.org, зокрема"
-" <var>dialog-error</var>, <var>dialog-info</var>, <var>security-high</var>"
-" та <var>starred</var>."
+"Команда <cmd>icon</cmd> також приймає значення назви піктограми теми у "
+"відповідності до специфікації іменування піктограм FreeDesktop.org, зокрема "
+"<var>dialog-error</var>, <var>dialog-information</var> та <var>security-"
+"high</var>."
 
 #. (itstool) path: item/p
 #: C/notification.page:27
@@ -1369,14 +1366,6 @@ msgstr ""
 #. (itstool) path: page/code
 #: C/notification.page:36
 #, no-wrap
-#| msgid ""
-#| "\n"
-#| "  #!/bin/sh\n"
-#| "\n"
-#| "  zenity --notification\\\n"
-#| "    --window-icon=\"info\" \\\n"
-#| "    --text=\"There are system updates necessary!\"\n"
-#| "  "
 msgid ""
 "\n"
 "  #!/bin/sh\n"
@@ -2255,11 +2244,11 @@ msgstr "<var>0</var>"
 #. (itstool) path: td/p
 #: C/usage.page:74
 msgid ""
-"The user has pressed either <gui style=\"button\">OK</gui> or <gui style="
-"\"button\">Close</gui>."
+"The user has pressed either <gui style=\"button\">OK</gui> or <gui "
+"style=\"button\">Close</gui>."
 msgstr ""
-"Користувач натиснув <gui style=\"button\">Гаразд</gui> або <gui style="
-"\"button\">Закрити</gui>."
+"Користувач натиснув <gui style=\"button\">Гаразд</gui> або <gui "
+"style=\"button\">Закрити</gui>."
 
 #. (itstool) path: td/p
 #: C/usage.page:79
@@ -2559,8 +2548,8 @@ msgstr "Параметри GTK+"
 #. (itstool) path: section/p
 #: C/usage.page:267
 msgid ""
-"Zenity supports the standard GTK+ options. For more information about the GTK"
-"+ options, execute the <cmd>zenity --help-gtk</cmd> command."
+"Zenity supports the standard GTK+ options. For more information about the "
+"GTK+ options, execute the <cmd>zenity --help-gtk</cmd> command."
 msgstr ""
 "У Zenity передбачено підтримку стандартних параметрів GTK+. Докладніше про "
 "параметри GTK+, можна дізнатись виконавши <cmd>zenity --help-gtk</cmd>."
