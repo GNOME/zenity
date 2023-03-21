@@ -6,15 +6,15 @@
 # Mohammad DAMT <mdamt@bisnisweb.com>, 2005.
 # Dirgita <dirgitadevina@yahoo.co.id>, 2010, 2011, 2012.
 # Dirgita <dirgitadevina@gmail.com>, 2010.
-# Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2015.
+# Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2015, 2023.
 # Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-02-02 03:19+0000\n"
-"PO-Revision-Date: 2023-02-02 13:37+0700\n"
-"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
+"POT-Creation-Date: 2023-03-08 22:07+0000\n"
+"PO-Revision-Date: 2023-03-21 10:04+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: data/org.gnome.Zenity.desktop.in:5
+#: data/org.gnome.Zenity.desktop.in:3
+msgid "Zenity"
+msgstr "Zenity"
+
+#: data/org.gnome.Zenity.desktop.in:4
 msgid "Display dialog boxes from the command line"
 msgstr "Menampilkan kotak dialog dari baris perintah"
 
@@ -68,13 +72,13 @@ msgstr "Menampilkan kotak dialog dari skrip shell"
 
 #: src/fileselection.c:60 src/progress.c:408 src/zenity.ui:15 src/zenity.ui:52
 #: src/zenity.ui:86 src/zenity.ui:136 src/zenity.ui:173 src/zenity.ui:213
-#: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:408 src/zenity.ui:446
+#: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:419 src/zenity.ui:457
 msgid "_OK"
 msgstr "_OK"
 
 #: src/fileselection.c:61 src/progress.c:404 src/zenity.ui:14 src/zenity.ui:51
 #: src/zenity.ui:85 src/zenity.ui:135 src/zenity.ui:212 src/zenity.ui:381
-#: src/zenity.ui:445
+#: src/zenity.ui:456
 msgid "_Cancel"
 msgstr "_Batal"
 
@@ -762,11 +766,11 @@ msgstr ""
 "Peringatan: --mid-search tidak digunakan lagi dan akan dihapus di versi "
 "zenity mendatang. Mengabaikan.\n"
 
-#: src/tree.c:270
+#: src/tree.c:278
 msgid "No column titles specified for List dialog.\n"
 msgstr "Judul kolom belum ditentukan untuk dialog Senarai\n"
 
-#: src/tree.c:277
+#: src/tree.c:285
 msgid "You should use only one List dialog type.\n"
 msgstr "Anda hanya boleh menggunakan satu jenis dialog Senarai.\n"
 
@@ -847,7 +851,7 @@ msgstr "_Tidak"
 msgid "_Yes"
 msgstr "_Ya"
 
-#: src/zenity.ui:365 src/zenity.ui:431
+#: src/zenity.ui:365 src/zenity.ui:442
 msgid "Are you sure you want to proceed?"
 msgstr "Anda yakin ingin melanjutkan?"
 
@@ -855,70 +859,14 @@ msgstr "Anda yakin ingin melanjutkan?"
 msgid "Select items from the list"
 msgstr "Pilih butir dari daftar"
 
-#: src/zenity.ui:393
+#: src/zenity.ui:404
 msgid "Select items from the list below."
 msgstr "Pilih butir dari daftar di bawah."
 
-#: src/zenity.ui:404 src/zenity.ui:441
+#: src/zenity.ui:415 src/zenity.ui:452
 msgid "Warning"
 msgstr "Peringatan"
 
-#: src/zenity.ui:468
+#: src/zenity.ui:479
 msgid "Type your password"
 msgstr "Ketik sandi Anda"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Mohammad DAMT <mdamt@bisnisweb.com>, 2005.\n"
-#~ "Ahmad Riza H Nst <ari@160c.afraid.org>, 2004.\n"
-#~ "Dirgita <dirgitadevina@yahoo.co.id>, 2010, 2011, 2012.\n"
-#~ "Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013."
-
-#~ msgid ""
-#~ "Invalid value for a boolean typed hint.\n"
-#~ "Supported values are 'true' or 'false'.\n"
-#~ msgstr ""
-#~ "Nilai yang tak valid bagi arahan bertipe boolean.\n"
-#~ "Nilai yang didukung adalah 'true' atau 'false'.\n"
-
-#~ msgid "Unsupported hint. Skipping.\n"
-#~ msgstr "Arahan yang tak didukung. Dilewati.\n"
-
-#~ msgid "Unknown hint name. Skipping.\n"
-#~ msgstr "Nama arahan tak dikenal. Dilewati.\n"
-
-#~ msgid "Zenity notification"
-#~ msgstr "Notifikasi Zenity"
-
-#~ msgid "Set the window icon"
-#~ msgstr "Menentukan icon jendela"
-
-#~ msgid "ICONPATH"
-#~ msgstr "PATH_IKON"
-
-#~ msgid "Set the parent window to attach to"
-#~ msgstr "Menentukan jendela induk tempat mencantol"
-
-#~ msgid "WINDOW"
-#~ msgstr "JENDELA"
-
-#~ msgid "Set the dialog icon"
-#~ msgstr "Atur ikon dialog"
-
-#~ msgid "Confirm file selection if filename already exists"
-#~ msgstr "Konfirmasi seleksi berkas apabila nama berkas tersebut sudah ada"
-
-#~ msgid ""
-#~ "Change list default search function searching for text in the middle, not "
-#~ "on the beginning"
-#~ msgstr ""
-#~ "Ubah fungsi pencarian baku daftar mencari teks di tengah, bukan di awal"
-
-#~ msgid "Set the notification hints"
-#~ msgstr "Menentukan arahan notifikasi"
-
-#~ msgid "Cancel"
-#~ msgstr "Batal"
-
-#~ msgid "OK"
-#~ msgstr "OK"
