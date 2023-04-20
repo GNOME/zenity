@@ -249,8 +249,11 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 				if (percentage == 100)
 				{
-					adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "ok", TRUE);
-					adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(parent), "ok");
+					if (!auto_close)
+					{
+						adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "ok", TRUE);
+						adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(parent), "ok");
+					}
 
 					if (progress_data->autoclose)
 					{
@@ -271,9 +274,13 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 	{
 		/* We assume that we are done, so stop the pulsating and de-sensitize
 		 * the buttons */
-		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "ok", TRUE);
-		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "cancel", FALSE);
-		adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(parent), "ok");
+		if (!no_cancel)
+			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "cancel", FALSE);
+		if (!auto_close)
+		{
+			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(parent), "ok", TRUE);
+			adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(parent), "ok");
+		}
 
 		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 1.0);
 
