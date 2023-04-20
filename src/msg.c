@@ -122,7 +122,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_msg_dialog_response), data);
 
 	if (data->dialog_title)
-		gtk_window_set_title (GTK_WINDOW (dialog), data->dialog_title);
+		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
 
 	if (data->ok_label)
 	{
