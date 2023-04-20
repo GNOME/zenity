@@ -555,7 +555,8 @@ factory_bind_cb (ZenityTreeColumnView *self,
 	item = zenity_tree_row_get_item (row, col_index);
 	item_child = zenity_tree_item_get_child (item);
 	item_text = zenity_tree_item_get_text (item);
-	gtk_list_item_set_child (list_item, item_child);
+	if (!gtk_widget_get_parent (item_child))
+		gtk_list_item_set_child (list_item, item_child);
 
 	gtk_widget_set_halign (item_child, GTK_ALIGN_START);
 
