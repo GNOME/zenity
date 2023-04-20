@@ -120,6 +120,9 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer 
 				/* We're starting a new row */
 				column_count = 0;
 				row_count++;
+				if (row)
+					g_list_store_append (store, row);
+				row = zenity_tree_row_new ();
 			}
 
 			if (toggles && column_count == 0)
