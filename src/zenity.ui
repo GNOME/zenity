@@ -6,7 +6,7 @@
 <interface>
 	<requires lib="gtk" version="4.0"/>
 	<object class="AdwMessageDialog" id="zenity_scale_dialog">
-		<property name="title" translatable="yes">Adjust the scale value</property>
+		<property name="heading" translatable="yes">Adjust the scale value</property>
 		<property name="default_width">300</property>
 		<property name="default_height">100</property>
 		<property name="extra-child">zenity_scale_box</property>
@@ -42,7 +42,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_text_dialog">
-		<property name="title" translatable="yes">Text View</property>
+		<property name="heading" translatable="yes">Text View</property>
 		<property name="default_width">300</property>
 		<property name="default_height">200</property>
 		<property name="resizable">true</property>
@@ -79,7 +79,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_calendar_dialog">
-		<property name="title" translatable="yes">Calendar selection</property>
+		<property name="heading" translatable="yes">Calendar selection</property>
 		<property name="extra-child">zenity_calendar_box</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
@@ -129,7 +129,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_entry_dialog">
-		<property name="title" translatable="yes">Add a new entry</property>
+		<property name="heading" translatable="yes">Add a new entry</property>
 		<property name="extra-child">zenity_entry_box</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
@@ -167,7 +167,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_error_dialog">
-		<property name="title" translatable="yes">Error</property>
+		<property name="heading" translatable="yes">Error</property>
 		<property name="extra-child">zenity_error_box</property>
 		<responses>
 			<response id="ok" translatable="yes">_OK</response>
@@ -266,7 +266,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_info_dialog">
-		<property name="title" translatable="yes">Information</property>
+		<property name="heading" translatable="yes">Information</property>
 		<property name="extra-child">zenity_info_box</property>
 		<responses>
 			<response id="ok" translatable="yes">_OK</response>
@@ -302,7 +302,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_progress_dialog">
-		<property name="title" translatable="yes">Progress</property>
+		<property name="heading" translatable="yes">Progress</property>
 		<property name="extra-child">zenity_progress_box</property>
 	</object>
 	<object class="GtkBox" id="zenity_progress_box">
@@ -336,7 +336,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_question_dialog">
-		<property name="title" translatable="yes">Question</property>
+		<property name="heading" translatable="yes">Question</property>
 		<property name="extra-child">zenity_question_box</property>
 		<responses>
 			<response id="no" translatable="yes">_No</response>
@@ -372,7 +372,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_tree_dialog">
-		<property name="title" translatable="yes">Select items from the list</property>
+		<property name="heading" translatable="yes">Select items from the list</property>
 		<property name="default_width">480</property>
 		<property name="default_height">320</property>
 		<property name="extra-child">zenity_tree_box</property>
@@ -412,7 +412,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_warning_dialog">
-		<property name="title" translatable="yes">Warning</property>
+		<property name="heading" translatable="yes">Warning</property>
 		<property name="resizable">false</property>
 		<property name="extra-child">zenity_warning_box</property>
 		<responses>
@@ -449,7 +449,7 @@
 		</child>
 	</object>
 	<object class="AdwMessageDialog" id="zenity_password_dialog">
-		<property name="title" translatable="yes">Warning</property>
+		<property name="heading" translatable="yes">Warning</property>
 		<property name="resizable">false</property>
 		<property name="extra-child">zenity_password_box</property>
 		<responses>
