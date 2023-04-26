@@ -65,7 +65,7 @@ opt_missing_str = '''
 Requested optional @0@ support but library not found.
 Please ensure you have any required development libraries installed.'''
 
-webkitgtk_dep = dependency('webkit2gtk-5.0', required: false)
+webkitgtk_dep = dependency('webkitgtk-6.0', required: false)
 if get_option('webkitgtk')
   if webkitgtk_dep.found()
     zenity_conf.set('HAVE_WEBKITGTK', true)
