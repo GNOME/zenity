@@ -153,6 +153,7 @@ static gboolean zenity_misc_version;
 
 static char *zenity_general_icon_DEPRECATED;
 static gboolean zenity_list_mid_search_DEPRECATED;
+static gboolean zenity_file_confirm_overwrite_DEPRECATED;
 
 static gboolean zenity_forms_callback (const char *option_name,
 	const char *value, gpointer data, GError **error);
@@ -454,6 +455,13 @@ static GOptionEntry file_selection_options[] =
 			   selection) */
 			N_ ("NAME | PATTERN1 PATTERN2 ..."),
 		},
+		{"confirm-overwrite",
+			'\0',
+			0,
+			G_OPTION_ARG_NONE,
+			&zenity_file_confirm_overwrite_DEPRECATED,
+			N_ ("DEPRECATED; does nothing"),
+			NULL},
 		{NULL}};
 
 static GOptionEntry list_options[] =
@@ -1222,6 +1230,7 @@ zenity_file_pre_callback (GOptionContext *context, GOptionGroup *group,
 	zenity_file_directory = FALSE;
 	zenity_file_save = FALSE;
 	zenity_file_filter = NULL;
+	zenity_file_confirm_overwrite_DEPRECATED = FALSE;
 
 	return TRUE;
 }
@@ -1479,6 +1488,13 @@ show_window_icon_deprecation_warning (void)
 			"future version of zenity. Ignoring.\n"));
 }
 
+static void
+show_confirm_overwrite_deprecation_warning (void)
+{
+	g_printerr (_("Warning: --confirm-overwrite is deprecated and will be removed in a "
+			"future version of zenity. Ignoring.\n"));
+}
+
 static gboolean
 zenity_error_post_callback (GOptionContext *context, GOptionGroup *group,
 	gpointer data, GError **error)
@@ -1564,6 +1580,10 @@ zenity_file_post_callback (GOptionContext *context, GOptionGroup *group,
 				ERROR_SUPPORT);
 		}
 	}
+
+	if (zenity_file_confirm_overwrite_DEPRECATED)
+		show_confirm_overwrite_deprecation_warning ();
+
 	return TRUE;
 }
 
