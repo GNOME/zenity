@@ -361,10 +361,10 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 		g_autoptr(WebKitWebContext) wk_context = webkit_web_context_new ();
 		g_autoptr(WebKitNetworkSession) wk_session = webkit_network_session_new_ephemeral ();
 
-		web_kit = WEBKIT_WEB_VIEW (g_object_ref_sink (g_object_new (WEBKIT_TYPE_WEB_VIEW,
+		web_kit = WEBKIT_WEB_VIEW (g_object_new (WEBKIT_TYPE_WEB_VIEW,
 				"web-context", wk_context,
 				"network-session", wk_session,
-				NULL)));
+				NULL));
 		scrolled_window = GTK_WIDGET (
 			gtk_builder_get_object (builder, "zenity_text_scrolled_window"));
 
