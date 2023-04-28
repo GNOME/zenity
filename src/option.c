@@ -1485,7 +1485,7 @@ static void
 show_window_icon_deprecation_warning (void)
 {
 	g_printerr (_("Warning: --window-icon is deprecated and will be removed in a "
-			"future version of zenity. Ignoring.\n"));
+			"future version of zenity; Treating as --icon.\n"));
 }
 
 static void
