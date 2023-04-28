@@ -1,3 +1,25 @@
+Zenity 3.92.0
+  3rd alpha release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+    - progress: don't update responses that aren't there (see: !25 and
+      https://bugzilla.redhat.com/show_bug.cgi?id=2177287) (Adam Williamson)
+    - Set dialog 'heading', not 'title' for the --title option (see: !26) (Adam
+      Williamson)
+    - tree: fix handling of multi-row stdin input (#54) (Adam Williamson)
+    - tree-column-view: don't steal children (see: !28) (Adam Williamson)
+    - Port to webkitgtk 6.0 (Adam Williamson)
+    - webkit: Fix leak by removing unnecessary ref sink (Logan Rathbone)
+    - option: Add non-fatal deprecation warning for --confirm-overwrite (#55)
+      (Logan Rathbone)
+    - help: Fix typo in Basque help translation (Andre Klapper)
+    - Translation updates:
+        Andika Triwidada (id)
+        Asier Sarasua Garmendia (eu)
+        Balázs Úr (hu)
+        Ekaterine Papava (ka)
+        Piotr Drąg (pl)
+        Sergej A (ru)
+        Yuri Chornoivan (uk)
+
 Zenity 3.91.0
     - tree: Port to GtkColumnView (Logan Rathbone)
     - desktop file: Remove spurious translation comment (Logan Rathbone)
