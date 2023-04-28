@@ -154,6 +154,7 @@ static gboolean zenity_misc_version;
 static char *zenity_general_icon_DEPRECATED;
 static gboolean zenity_list_mid_search_DEPRECATED;
 static gboolean zenity_file_confirm_overwrite_DEPRECATED;
+static guintptr zenity_general_attach_DEPRECATED;
 
 static gboolean zenity_forms_callback (const char *option_name,
 	const char *value, gpointer data, GError **error);
@@ -216,6 +217,13 @@ static GOptionEntry general_options[] =
 			&zenity_general_modal,
 			N_ ("Set the modal hint"),
 			NULL},
+		{"attach",
+			'\0',
+			G_OPTION_FLAG_NOALIAS,
+			G_OPTION_ARG_INT,
+			&zenity_general_attach_DEPRECATED,
+			N_ ("DEPRECATED; does nothing"),
+			N_ ("WINDOW")},
 		{NULL}};
 
 static GOptionEntry calendar_options[] =
@@ -1076,6 +1084,29 @@ static GOptionEntry miscellaneous_options[] =
 static ZenityParsingOptions *results;
 static GOptionContext *ctx;
 
+/* Deprecation warnings */
+
+static void
+show_window_icon_deprecation_warning (void)
+{
+	g_printerr (_("Warning: --window-icon is deprecated and will be removed in a "
+			"future version of zenity; Treating as --icon.\n"));
+}
+
+static void
+show_confirm_overwrite_deprecation_warning (void)
+{
+	g_printerr (_("Warning: --confirm-overwrite is deprecated and will be removed in a "
+			"future version of zenity. Ignoring.\n"));
+}
+
+static void
+show_attach_deprecation_warning (void)
+{
+	g_printerr (_("Warning: --attach is deprecated and will be removed in a "
+			"future version of zenity. Ignoring.\n"));
+}
+
 static void
 zenity_option_init (void)
 {
@@ -1387,6 +1418,9 @@ zenity_general_post_callback (GOptionContext *context, GOptionGroup *group,
 	results->data->extra_label = zenity_general_extra_buttons;
 	results->data->modal = zenity_general_modal;
 
+	if (zenity_general_attach_DEPRECATED)
+		show_attach_deprecation_warning ();
+
 	return TRUE;
 }
 
@@ -1479,20 +1513,6 @@ zenity_entry_post_callback (GOptionContext *context, GOptionGroup *group,
 		}
 	}
 	return TRUE;
-}
-
-static void
-show_window_icon_deprecation_warning (void)
-{
-	g_printerr (_("Warning: --window-icon is deprecated and will be removed in a "
-			"future version of zenity; Treating as --icon.\n"));
-}
-
-static void
-show_confirm_overwrite_deprecation_warning (void)
-{
-	g_printerr (_("Warning: --confirm-overwrite is deprecated and will be removed in a "
-			"future version of zenity. Ignoring.\n"));
 }
 
 static gboolean
