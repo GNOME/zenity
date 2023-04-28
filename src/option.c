@@ -156,6 +156,7 @@ static char *zenity_general_icon_name_DEPRECATED;
 static gboolean zenity_list_mid_search_DEPRECATED;
 static gboolean zenity_file_confirm_overwrite_DEPRECATED;
 static guintptr zenity_general_attach_DEPRECATED;
+static gchar **zenity_notification_hints_DEPRECATED;
 
 static gboolean zenity_forms_callback (const char *option_name,
 	const char *value, gpointer data, GError **error);
@@ -598,6 +599,13 @@ static GOptionEntry notification_options[] =
 			&zenity_notification_listen,
 			N_ ("Listen for commands on stdin"),
 			NULL},
+		{"hint",
+			'\0',
+			G_OPTION_FLAG_NOALIAS,
+			G_OPTION_ARG_STRING_ARRAY,
+			&zenity_notification_hints_DEPRECATED,
+			N_ ("DEPRECATED; does nothing"),
+			N_ ("TEXT")},
 		{NULL}};
 
 static GOptionEntry progress_options[] =
@@ -1091,6 +1099,13 @@ static void
 show_attach_deprecation_warning (void)
 {
 	g_printerr (_("Warning: --attach is deprecated and will be removed in a "
+			"future version of zenity. Ignoring.\n"));
+}
+
+static void
+show_notification_hints_deprecation_warning (void)
+{
+	g_printerr (_("Warning: --hint is deprecated and will be removed in a "
 			"future version of zenity. Ignoring.\n"));
 }
 
@@ -1697,6 +1712,10 @@ zenity_notification_post_callback (GOptionContext *context, GOptionGroup *group,
 				ERROR_SUPPORT);
 		}
 	}
+
+	if (zenity_notification_hints_DEPRECATED)
+		show_notification_hints_deprecation_warning ();
+
 	return TRUE;
 }
 
