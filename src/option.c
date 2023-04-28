@@ -151,7 +151,8 @@ static gboolean zenity_misc_version;
 
 /* DEPRECATED Options */
 
-static char *zenity_general_icon_DEPRECATED;
+static char *zenity_general_window_icon_DEPRECATED;
+static char *zenity_general_icon_name_DEPRECATED;
 static gboolean zenity_list_mid_search_DEPRECATED;
 static gboolean zenity_file_confirm_overwrite_DEPRECATED;
 static guintptr zenity_general_attach_DEPRECATED;
@@ -224,6 +225,20 @@ static GOptionEntry general_options[] =
 			&zenity_general_attach_DEPRECATED,
 			N_ ("DEPRECATED; does nothing"),
 			N_ ("WINDOW")},
+		{"icon-name",
+			'\0',
+			G_OPTION_FLAG_HIDDEN,
+			G_OPTION_ARG_STRING,
+			&zenity_general_icon_name_DEPRECATED,
+			N_ ("DEPRECATED; use `--icon`"),
+			N_ ("ICON-NAME")},
+		{"window-icon",
+			'\0',
+			G_OPTION_FLAG_HIDDEN,
+			G_OPTION_ARG_STRING,
+			&zenity_general_window_icon_DEPRECATED,
+			N_ ("DEPRECATED; use `--icon`"),
+			N_ ("ICON-NAME")},
 		{NULL}};
 
 static GOptionEntry calendar_options[] =
@@ -324,13 +339,6 @@ static GOptionEntry error_options[] =
 			&zenity_general_icon,
 			N_ ("Set the icon name"),
 			N_ ("ICON-NAME")},
-		{"window-icon",
-			'\0',
-			G_OPTION_FLAG_HIDDEN,
-			G_OPTION_ARG_STRING,
-			&zenity_general_icon_DEPRECATED,
-			N_ ("DEPRECATED; use `--icon`"),
-			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
 			G_OPTION_FLAG_NOALIAS,
@@ -377,13 +385,6 @@ static GOptionEntry info_options[] =
 			G_OPTION_ARG_STRING,
 			&zenity_general_icon,
 			N_ ("Set the icon name"),
-			N_ ("ICON-NAME")},
-		{"window-icon",
-			'\0',
-			G_OPTION_FLAG_HIDDEN,
-			G_OPTION_ARG_STRING,
-			&zenity_general_icon_DEPRECATED,
-			N_ ("DEPRECATED; use `--icon`"),
 			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
@@ -590,13 +591,6 @@ static GOptionEntry notification_options[] =
 			&zenity_general_icon,
 			N_ ("Set the icon name"),
 			N_ ("ICON-NAME")},
-		{"window-icon",
-			'\0',
-			G_OPTION_FLAG_HIDDEN,
-			G_OPTION_ARG_STRING,
-			&zenity_general_icon_DEPRECATED,
-			N_ ("DEPRECATED; use `--icon`"),
-			N_ ("ICON-NAME")},
 		{"listen",
 			'\0',
 			0,
@@ -688,13 +682,6 @@ static GOptionEntry question_options[] =
 			G_OPTION_ARG_STRING,
 			&zenity_general_icon,
 			N_ ("Set the icon name"),
-			N_ ("ICON-NAME")},
-		{"window-icon",
-			'\0',
-			G_OPTION_FLAG_HIDDEN,
-			G_OPTION_ARG_STRING,
-			&zenity_general_icon_DEPRECATED,
-			N_ ("DEPRECATED; use `--icon`"),
 			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
@@ -827,13 +814,6 @@ static GOptionEntry warning_options[] =
 			G_OPTION_ARG_STRING,
 			&zenity_general_icon,
 			N_ ("Set the icon name"),
-			N_ ("ICON-NAME")},
-		{"window-icon",
-			'\0',
-			G_OPTION_FLAG_HIDDEN,
-			G_OPTION_ARG_STRING,
-			&zenity_general_icon_DEPRECATED,
-			N_ ("DEPRECATED; use `--icon`"),
 			N_ ("ICON-NAME")},
 		{"no-wrap",
 			'\0',
@@ -1085,6 +1065,13 @@ static ZenityParsingOptions *results;
 static GOptionContext *ctx;
 
 /* Deprecation warnings */
+
+static void
+show_icon_name_deprecation_warning (void)
+{
+	g_printerr (_("Warning: --icon-name is deprecated and will be removed in a "
+			"future version of zenity; Treating as --icon.\n"));
+}
 
 static void
 show_window_icon_deprecation_warning (void)
@@ -1418,6 +1405,19 @@ zenity_general_post_callback (GOptionContext *context, GOptionGroup *group,
 	results->data->extra_label = zenity_general_extra_buttons;
 	results->data->modal = zenity_general_modal;
 
+	/* Deprecated options */
+
+	if (zenity_general_window_icon_DEPRECATED)
+	{
+		zenity_general_icon = zenity_general_window_icon_DEPRECATED;
+		show_window_icon_deprecation_warning ();
+	}
+	if (zenity_general_icon_name_DEPRECATED)
+	{
+		zenity_general_icon = zenity_general_icon_name_DEPRECATED;
+		show_icon_name_deprecation_warning ();
+	}
+
 	if (zenity_general_attach_DEPRECATED)
 		show_attach_deprecation_warning ();
 
@@ -1529,12 +1529,6 @@ zenity_error_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
-
-		if (zenity_general_icon_DEPRECATED)
-		{
-			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
-			show_window_icon_deprecation_warning ();
-		}
 	}
 
 	return TRUE;
@@ -1554,12 +1548,6 @@ zenity_info_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
-
-		if (zenity_general_icon_DEPRECATED)
-		{
-			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
-			show_window_icon_deprecation_warning ();
-		}
 	}
 
 	return TRUE;
@@ -1700,12 +1688,6 @@ zenity_notification_post_callback (GOptionContext *context, GOptionGroup *group,
 			zenity_general_dialog_text;
 		results->notification_data->listen = zenity_notification_listen;
 		results->notification_data->icon = zenity_general_icon;
-
-		if (zenity_general_icon_DEPRECATED)
-		{
-			results->notification_data->icon = zenity_general_icon_DEPRECATED;
-			show_window_icon_deprecation_warning ();
-		}
 	}
 	else
 	{
@@ -1792,12 +1774,6 @@ zenity_question_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
 		results->msg_data->default_cancel = zenity_question_default_cancel;
-
-		if (zenity_general_icon_DEPRECATED)
-		{
-			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
-			show_window_icon_deprecation_warning ();
-		}
 	}
 
 	if (zenity_question_switch && zenity_general_extra_buttons == NULL)
@@ -1861,12 +1837,6 @@ zenity_warning_post_callback (GOptionContext *context, GOptionGroup *group,
 		results->msg_data->no_wrap = zenity_general_dialog_no_wrap;
 		results->msg_data->no_markup = zenity_general_dialog_no_markup;
 		results->msg_data->ellipsize = zenity_general_dialog_ellipsize;
-
-		if (zenity_general_icon_DEPRECATED)
-		{
-			results->msg_data->dialog_icon = zenity_general_icon_DEPRECATED;
-			show_window_icon_deprecation_warning ();
-		}
 	}
 
 	return TRUE;
