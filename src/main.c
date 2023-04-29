@@ -154,7 +154,7 @@ main (int argc, char *argv[])
 	args->argc = argc;
 	args->argv = argv;
 
-	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE);
+	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
 	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), args);
 
 	status = g_application_run (G_APPLICATION(app), 0, NULL);
