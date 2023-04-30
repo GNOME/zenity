@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity.gnome-2-14\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-04-26 20:52+0000\n"
-"PO-Revision-Date: 2023-04-27 05:41+0200\n"
+"POT-Creation-Date: 2023-04-28 19:28+0000\n"
+"PO-Revision-Date: 2023-04-30 04:02+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <gnome@inet.ge>\n"
 "Language: ka\n"
@@ -89,235 +89,237 @@ msgstr "შეტყობინების დამუშავების �
 msgid "Could not parse command from stdin\n"
 msgstr "ბრძანებების სტრიქონის stdin-იდან დამუშავება შეუძლებელია\n"
 
-#: src/option.c:167
+#: src/option.c:170
 msgid "Set the dialog title"
 msgstr "ფანჯრის სათაურის დაყენება"
 
-#: src/option.c:168
+#: src/option.c:171
 msgid "TITLE"
 msgstr "სათაური"
 
-#: src/option.c:174
+#: src/option.c:177
 msgid "Set the width"
 msgstr "სიგანე"
 
-#: src/option.c:175
+#: src/option.c:178
 msgid "WIDTH"
 msgstr "სიგანე"
 
-#: src/option.c:181
+#: src/option.c:184
 msgid "Set the height"
 msgstr "სიმაღლე"
 
-#: src/option.c:182
+#: src/option.c:185
 msgid "HEIGHT"
 msgstr "სიმაღლე"
 
-#: src/option.c:188
+#: src/option.c:191
 msgid "Set dialog timeout in seconds"
 msgstr "ფანჯრის ვადა, წამებში"
 
 #. Timeout for closing the dialog
-#: src/option.c:190
+#: src/option.c:193
 msgid "TIMEOUT"
 msgstr "ლოდინის ვადა"
 
-#: src/option.c:196
+#: src/option.c:199
 msgid "Set the label of the OK button"
 msgstr "OK ღილაკის ჭდის დაყენება"
 
-#: src/option.c:197 src/option.c:204 src/option.c:211 src/option.c:235
-#: src/option.c:280 src/option.c:287 src/option.c:311 src/option.c:365
-#: src/option.c:481 src/option.c:577 src/option.c:615 src/option.c:676
-#: src/option.c:758 src/option.c:765 src/option.c:815 src/option.c:869
-#: src/option.c:1001
+#: src/option.c:200 src/option.c:207 src/option.c:214 src/option.c:259
+#: src/option.c:304 src/option.c:311 src/option.c:335 src/option.c:382
+#: src/option.c:491 src/option.c:587 src/option.c:608 src/option.c:625
+#: src/option.c:686 src/option.c:761 src/option.c:768 src/option.c:818
+#: src/option.c:865 src/option.c:997
 msgid "TEXT"
 msgstr "ტექსტი"
 
-#: src/option.c:203
+#: src/option.c:206
 msgid "Set the label of the Cancel button"
 msgstr "გაუქმების ღილაკის ჭდის დაყენება"
 
-#: src/option.c:210
+#: src/option.c:213
 msgid "Add an extra button"
 msgstr "დამატებითი ღილაკის დამატება"
 
-#: src/option.c:217
+#: src/option.c:220
 msgid "Set the modal hint"
 msgstr "მოდალური მინიშნების დაყენება"
 
-#: src/option.c:227
-msgid "Display calendar dialog"
-msgstr "კალენდრის ფანჯრის ჩვენება"
+#: src/option.c:227 src/option.c:473 src/option.c:569 src/option.c:607
+msgid "DEPRECATED; does nothing"
+msgstr "მოძველებულია: არაფერს აკეთებს"
 
-#: src/option.c:234 src/option.c:279 src/option.c:310 src/option.c:364
-#: src/option.c:480 src/option.c:614 src/option.c:675 src/option.c:814
-#: src/option.c:868 src/option.c:1000
-msgid "Set the dialog text"
-msgstr "ფანჯრის ტექსტის დაყენება"
+#: src/option.c:228
+msgid "WINDOW"
+msgstr "ფანჯარა"
 
-#: src/option.c:241
-msgid "Set the calendar day"
-msgstr "კალენდრის დღის დაყენება"
-
-#: src/option.c:242
-msgid "DAY"
-msgstr "დღე"
-
-#: src/option.c:248
-msgid "Set the calendar month"
-msgstr "კალენდრის თვის დაყენება"
-
-#: src/option.c:249
-msgid "MONTH"
-msgstr "თვე"
-
-#: src/option.c:255
-msgid "Set the calendar year"
-msgstr "კალენდრის წლის დაყენება"
-
-#: src/option.c:256
-msgid "YEAR"
-msgstr "წელი"
-
-#: src/option.c:262 src/option.c:1014
-msgid "Set the format for the returned date"
-msgstr "დაბრუნებული თარიღის ფორმატის დაყენება"
-
-#: src/option.c:263 src/option.c:1015
-msgid "PATTERN"
-msgstr "შაბლონი"
-
-#: src/option.c:272
-msgid "Display text entry dialog"
-msgstr "ტექსტის შეყვანის ფანჯარა"
-
-#: src/option.c:286
-msgid "Set the entry text"
-msgstr "ჩანაწერის ტექსტის დაყენება"
-
-#: src/option.c:293
-msgid "Hide the entry text"
-msgstr "ჩანაწერის ტესტის დამალვა"
-
-#: src/option.c:303
-msgid "Display error dialog"
-msgstr "შეცდომის ფანჯრის ჩვენება"
-
-#: src/option.c:317 src/option.c:371 src/option.c:583 src/option.c:682
-#: src/option.c:821
-msgid "Set the icon name"
-msgstr "ხატულას სახელის დაყენება"
-
-#: src/option.c:318 src/option.c:325 src/option.c:372 src/option.c:379
-#: src/option.c:584 src/option.c:591 src/option.c:683 src/option.c:690
-#: src/option.c:822 src/option.c:829
-msgid "ICON-NAME"
-msgstr "ხატულის სახელი"
-
-#: src/option.c:324 src/option.c:378 src/option.c:590 src/option.c:689
-#: src/option.c:828
+#: src/option.c:234 src/option.c:241
 msgid "DEPRECATED; use `--icon`"
 msgstr "მოძველებულია; გამოიყენეთ '--icon'"
 
-#: src/option.c:331 src/option.c:385 src/option.c:696 src/option.c:835
+#: src/option.c:235 src/option.c:242 src/option.c:342 src/option.c:389
+#: src/option.c:594 src/option.c:693 src/option.c:825
+msgid "ICON-NAME"
+msgstr "ხატულის სახელი"
+
+#: src/option.c:251
+msgid "Display calendar dialog"
+msgstr "კალენდრის ფანჯრის ჩვენება"
+
+#: src/option.c:258 src/option.c:303 src/option.c:334 src/option.c:381
+#: src/option.c:490 src/option.c:624 src/option.c:685 src/option.c:817
+#: src/option.c:864 src/option.c:996
+msgid "Set the dialog text"
+msgstr "ფანჯრის ტექსტის დაყენება"
+
+#: src/option.c:265
+msgid "Set the calendar day"
+msgstr "კალენდრის დღის დაყენება"
+
+#: src/option.c:266
+msgid "DAY"
+msgstr "დღე"
+
+#: src/option.c:272
+msgid "Set the calendar month"
+msgstr "კალენდრის თვის დაყენება"
+
+#: src/option.c:273
+msgid "MONTH"
+msgstr "თვე"
+
+#: src/option.c:279
+msgid "Set the calendar year"
+msgstr "კალენდრის წლის დაყენება"
+
+#: src/option.c:280
+msgid "YEAR"
+msgstr "წელი"
+
+#: src/option.c:286 src/option.c:1010
+msgid "Set the format for the returned date"
+msgstr "დაბრუნებული თარიღის ფორმატის დაყენება"
+
+#: src/option.c:287 src/option.c:1011
+msgid "PATTERN"
+msgstr "შაბლონი"
+
+#: src/option.c:296
+msgid "Display text entry dialog"
+msgstr "ტექსტის შეყვანის ფანჯარა"
+
+#: src/option.c:310
+msgid "Set the entry text"
+msgstr "ჩანაწერის ტექსტის დაყენება"
+
+#: src/option.c:317
+msgid "Hide the entry text"
+msgstr "ჩანაწერის ტესტის დამალვა"
+
+#: src/option.c:327
+msgid "Display error dialog"
+msgstr "შეცდომის ფანჯრის ჩვენება"
+
+#: src/option.c:341 src/option.c:388 src/option.c:593 src/option.c:692
+#: src/option.c:824
+msgid "Set the icon name"
+msgstr "ხატულას სახელის დაყენება"
+
+#: src/option.c:348 src/option.c:395 src/option.c:699 src/option.c:831
 msgid "Do not enable text wrapping"
 msgstr "ტექსტის გადატანის აკრძალვა"
 
-#: src/option.c:338 src/option.c:392 src/option.c:703 src/option.c:842
+#: src/option.c:355 src/option.c:402 src/option.c:706 src/option.c:838
 msgid "Do not enable Pango markup"
 msgstr "Pango-ის ნიშნების გამორთვა"
 
-#: src/option.c:345 src/option.c:399 src/option.c:717 src/option.c:849
+#: src/option.c:362 src/option.c:409 src/option.c:720 src/option.c:845
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
 msgstr ""
 "ფანჯრის ტექსტის ოვალურობის ჩართვა. ამით გრძელტექსტიანი ფანჯრები გასწორდება"
 
-#: src/option.c:357
+#: src/option.c:374
 msgid "Display info dialog"
 msgstr "საინფორმაციო ფანჯრის ჩვენება"
 
-#: src/option.c:411
+#: src/option.c:421
 msgid "Display file selection dialog"
 msgstr "ფაილის არჩევის ფანჯრის ჩვენება"
 
-#: src/option.c:418
+#: src/option.c:428
 msgid "Set the filename"
 msgstr "ფაილის სახელის დაყენება"
 
-#: src/option.c:419 src/option.c:744
+#: src/option.c:429 src/option.c:747
 msgid "FILENAME"
 msgstr "ფაილის სახელი"
 
-#: src/option.c:425
+#: src/option.c:435
 msgid "Allow multiple files to be selected"
 msgstr "რამდენიმე ფაილის მონიშვნის დაშვება"
 
-#: src/option.c:432
+#: src/option.c:442
 msgid "Activate directory-only selection"
 msgstr "მხოლოდ საქაღალდის არჩევა"
 
-#: src/option.c:439
+#: src/option.c:449
 msgid "Activate save mode"
 msgstr "ნახვის რეჟიმის გააქტიურება"
 
-#: src/option.c:446 src/option.c:515 src/option.c:1007
+#: src/option.c:456 src/option.c:525 src/option.c:1003
 msgid "Set output separator character"
 msgstr "გამყოფი სიმბოლოს არჩევა"
 
-#: src/option.c:447 src/option.c:516 src/option.c:1008
+#: src/option.c:457 src/option.c:526 src/option.c:1004
 msgid "SEPARATOR"
 msgstr "გამყოფი"
 
-#: src/option.c:453
+#: src/option.c:463
 msgid "Set a filename filter"
 msgstr "ფაილის სახელის ფილტრის დაყენება"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
-#: src/option.c:456
+#: src/option.c:466
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "სახელი | ნიმუში1 ნიმუში2 .."
 
-#: src/option.c:463 src/option.c:559
-msgid "DEPRECATED; does nothing"
-msgstr "მოძველებულია: არაფერს აკეთებს"
-
-#: src/option.c:473
+#: src/option.c:483
 msgid "Display list dialog"
 msgstr "სიის ფანჯარა"
 
-#: src/option.c:487
+#: src/option.c:497
 msgid "Set the column header"
 msgstr "სვეტის თავსართი"
 
-#: src/option.c:488
+#: src/option.c:498
 msgid "COLUMN"
 msgstr "სვეტი"
 
-#: src/option.c:494
+#: src/option.c:504
 msgid "Use check boxes for the first column"
 msgstr "პირველ სვეტში ჩასართველების გამოყენება"
 
-#: src/option.c:501
+#: src/option.c:511
 msgid "Use radio buttons for the first column"
 msgstr "პირველ სვეტში გადასართველების გამოყენება"
 
-#: src/option.c:508
+#: src/option.c:518
 msgid "Use an image for the first column"
 msgstr "პირველ სვეტში გამოსახულების გამოყენება"
 
-#: src/option.c:522
+#: src/option.c:532
 msgid "Allow multiple rows to be selected"
 msgstr "რამდენიმე სტრიქონის მონიშვნის დაშვება"
 
-#: src/option.c:529 src/option.c:750
+#: src/option.c:539 src/option.c:753
 msgid "Allow changes to text"
 msgstr "ტექსტის შეცვლის დაშვება"
 
-#: src/option.c:536
+#: src/option.c:546
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -325,97 +327,97 @@ msgstr ""
 "მითითებული სვეტის ბეჭდვა (ნაგულისხმები: 1. 'ყველა' -დაბეჭდავს ყველა სვეტს)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:539 src/option.c:546
+#: src/option.c:549 src/option.c:556
 msgid "NUMBER"
 msgstr "რიცხვი"
 
-#: src/option.c:545
+#: src/option.c:555
 msgid "Hide a specific column"
 msgstr "მითითებული სვეტის დამალვა"
 
-#: src/option.c:552
+#: src/option.c:562
 msgid "Hide the column headers"
 msgstr "სვეტის თავსართების დამალვა"
 
-#: src/option.c:569
+#: src/option.c:579
 msgid "Display notification"
 msgstr "შეტყობინების ჩვენება"
 
-#: src/option.c:576
+#: src/option.c:586
 msgid "Set the notification text"
 msgstr "შეტყობინების ტექსტის დაყენება"
 
-#: src/option.c:597
+#: src/option.c:600
 msgid "Listen for commands on stdin"
 msgstr "ბრძანებების stdin-იდან მიღებისთვის მზაობა"
 
-#: src/option.c:607
+#: src/option.c:617
 msgid "Display progress indication dialog"
 msgstr "მიმდინარეობის ჩვენება"
 
-#: src/option.c:621
+#: src/option.c:631
 msgid "Set initial percentage"
 msgstr "საწყისი პროცენტული მაჩვენებლის დაყენება"
 
-#: src/option.c:622
+#: src/option.c:632
 msgid "PERCENTAGE"
 msgstr "პროცენტულობა"
 
-#: src/option.c:628
+#: src/option.c:638
 msgid "Pulsate progress bar"
 msgstr "პულსირებადი მიმდინარეობის მაჩვენებელი"
 
-#: src/option.c:636
+#: src/option.c:646
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "ფანჯრის დახურვა 100%-ის მიღწევისას"
 
-#: src/option.c:643
+#: src/option.c:653
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "გაუქმების ღილაკის დაჭერისას მშობელი პროცესის მოკვლა"
 
-#: src/option.c:650
+#: src/option.c:660
 msgid "Hide Cancel button"
 msgstr "გაუქმების ღილაკის დამალვა"
 
-#: src/option.c:658
+#: src/option.c:668
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "დაახლოებით განსაზღვრა, როდის დასრულდება ოპერაცია"
 
-#: src/option.c:668
+#: src/option.c:678
 msgid "Display question dialog"
 msgstr "კითხვის ფანჯრის ჩვენება"
 
-#: src/option.c:710
+#: src/option.c:713
 msgid "Give Cancel button focus by default"
 msgstr "ფოკუსის ნაგულისხმებად გაუქმების ღილაკზე დაყენება"
 
-#: src/option.c:726
+#: src/option.c:729
 msgid "Suppress OK and Cancel buttons"
 msgstr "'დიახ' და 'გაუქმების' ღილაკების ჩახშბა"
 
-#: src/option.c:736
+#: src/option.c:739
 msgid "Display text information dialog"
 msgstr "ტექსტური ინფორმაციის ფანჯრის ჩვენება"
 
-#: src/option.c:743
+#: src/option.c:746
 msgid "Open file"
 msgstr "ფაილის გახსნა"
 
-#: src/option.c:757
+#: src/option.c:760
 msgid "Set the text font"
 msgstr "ტექსტის ფონტის დაყენება"
 
-#: src/option.c:764
+#: src/option.c:767
 msgid "Enable an I read and agree checkbox"
 msgstr "\"მე წავიკითხე და ვეთანხმები\" გადასართველის ჩართვა"
 
-#: src/option.c:772
+#: src/option.c:775
 msgid "Enable HTML support"
 msgstr "HTML-ის მხარდაჭერის ჩართვა"
 
-#: src/option.c:779
+#: src/option.c:782
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -423,156 +425,164 @@ msgstr ""
 "WebView-თან ურთიერთობისას მომხმარებელთან ურთიერთობა არ სცადოთ. ის მხოლოდ --"
 "html პარამეტრის მითითებისას მუშაობს"
 
-#: src/option.c:787
+#: src/option.c:790
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "დააყენეთ URL ფაილის მაგიერ. მუშაობს მხოლოდ --html პარამეტრის მითითების "
 "შემთხვევაში"
 
-#: src/option.c:789
+#: src/option.c:792
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:796
+#: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "ტექსტის ავტომატური გადახვევა ბოლომდე. მუშაობს მხოლოდ მაშინ, როდესაც ტექსტის "
 "აღება stdin-დან ხდება"
 
-#: src/option.c:807
+#: src/option.c:810
 msgid "Display warning dialog"
 msgstr "გაფრთხილების ფანჯრის ჩვენება"
 
-#: src/option.c:861
+#: src/option.c:857
 msgid "Display scale dialog"
 msgstr "მასშტაბირების ფანჯრის ჩვენება"
 
-#: src/option.c:875
+#: src/option.c:871
 msgid "Set initial value"
 msgstr "საწყისი მნიშვნელობის დაყენება"
 
-#: src/option.c:876 src/option.c:883 src/option.c:890 src/option.c:897
-#: src/option.c:1049
+#: src/option.c:872 src/option.c:879 src/option.c:886 src/option.c:893
+#: src/option.c:1045
 msgid "VALUE"
 msgstr "მნიშვნელობა"
 
-#: src/option.c:882
+#: src/option.c:878
 msgid "Set minimum value"
 msgstr "მინიმალური მნიშვნელობა"
 
-#: src/option.c:889
+#: src/option.c:885
 msgid "Set maximum value"
 msgstr "მაქსიმალური მნიშვნელობა"
 
-#: src/option.c:896
+#: src/option.c:892
 msgid "Set step size"
 msgstr "ბიჯის ზომა"
 
-#: src/option.c:903
+#: src/option.c:899
 msgid "Print partial values"
 msgstr "ნაწილობრივი მნიშვნელობების ბეჭდვა"
 
-#: src/option.c:910
+#: src/option.c:906
 msgid "Hide value"
 msgstr "მნიშვნელობის დამალვა"
 
-#: src/option.c:920
+#: src/option.c:916
 msgid "Display forms dialog"
 msgstr "ფორმების ფანჯრის ჩვენება"
 
-#: src/option.c:927
+#: src/option.c:923
 msgid "Add a new Entry in forms dialog"
 msgstr "ფორმების ფანჯარაში ახალი ჩანაწერის დამატება"
 
-#: src/option.c:928 src/option.c:935
+#: src/option.c:924 src/option.c:931
 msgid "Field name"
 msgstr "ველის სახელი"
 
-#: src/option.c:934
+#: src/option.c:930
 msgid "Add a new Password Entry in forms dialog"
 msgstr "ფორმების ფანჯარაში პაროლის ახალი ველის დამატება"
 
-#: src/option.c:941
+#: src/option.c:937
 msgid "Add a new Calendar in forms dialog"
 msgstr "ფორმების ფანჯარაში ახალი კალენდრის დამატება"
 
-#: src/option.c:942
+#: src/option.c:938
 msgid "Calendar field name"
 msgstr "კალენდრის ველის სახელი"
 
-#: src/option.c:948
+#: src/option.c:944
 msgid "Add a new List in forms dialog"
 msgstr "ფორმების ფანჯარაში ახალი სიის დამატება"
 
-#: src/option.c:949
+#: src/option.c:945
 msgid "List field and header name"
 msgstr "თავსართებისა და ველების სახელების სია"
 
-#: src/option.c:955
+#: src/option.c:951
 msgid "List of values for List"
 msgstr "შეიყვანეთ სიის მნიშვნელობები"
 
-#: src/option.c:956 src/option.c:963 src/option.c:977
+#: src/option.c:952 src/option.c:959 src/option.c:973
 msgid "List of values separated by |"
 msgstr "შეიყვანეთ ერთმანეთისგან |-ით დაშორებული მნიშვნელობები"
 
-#: src/option.c:962
+#: src/option.c:958
 msgid "List of values for columns"
 msgstr "სვეტების მნიშვნელობების სია"
 
-#: src/option.c:969
+#: src/option.c:965
 msgid "Add a new combo box in forms dialog"
 msgstr "ფორმების ფანჯარაში ჩამოშლადი სიის დამატება"
 
-#: src/option.c:970
+#: src/option.c:966
 msgid "Combo box field name"
 msgstr "ჩამოშლადი სიის ველის სახელი"
 
-#: src/option.c:976
+#: src/option.c:972
 msgid "List of values for combo box"
 msgstr "ჩამოშლადი სიის მნიშვნელობები"
 
-#: src/option.c:993
+#: src/option.c:989
 msgid "Show the columns header"
 msgstr "სვეტის თავსართების ჩვენება"
 
-#: src/option.c:1024
+#: src/option.c:1020
 msgid "Display password dialog"
 msgstr "პაროლის ფანჯრის ჩვენება"
 
-#: src/option.c:1031
+#: src/option.c:1027
 msgid "Display the username option"
 msgstr "მომხმარებლის შეყვანის ფანჯარა"
 
-#: src/option.c:1041
+#: src/option.c:1037
 msgid "Display color selection dialog"
 msgstr "ფერის ასარჩევი ფანჯრის ჩვენება"
 
-#: src/option.c:1048
+#: src/option.c:1044
 msgid "Set the color"
 msgstr "ფერის დაყენება"
 
-#: src/option.c:1055
+#: src/option.c:1051
 msgid "Show the palette"
 msgstr "პალიტრის ჩვენება"
 
-#: src/option.c:1065
+#: src/option.c:1061
 msgid "About zenity"
 msgstr "Zenity-ის შესახებ"
 
-#: src/option.c:1072
+#: src/option.c:1068
 msgid "Print version"
 msgstr "ვერსიის ბეჭდვა"
 
-#: src/option.c:1487
+#: src/option.c:1080
+msgid ""
+"Warning: --icon-name is deprecated and will be removed in a future version "
+"of zenity; Treating as --icon.\n"
+msgstr ""
+"გაფრთხილება: --icon-name მოძველებულია და Zenity-ის მომავალი ვერსიებიდან "
+"ამოღებული იქნება. ის აღიქმება, როგორც --icon.\n"
+
+#: src/option.c:1087
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
-"of zenity. Ignoring.\n"
+"of zenity; Treating as --icon.\n"
 msgstr ""
 "გაფრთხილება: --window-icon მოძველებულია და Zenity-ის მომავალი ვერსიებიდან "
-"ამოღებული იქნება. გამოტოვება.\n"
+"ამოღებული იქნება. ის აღიქმება, როგორც --icon.\n"
 
-#: src/option.c:1494
+#: src/option.c:1094
 msgid ""
 "Warning: --confirm-overwrite is deprecated and will be removed in a future "
 "version of zenity. Ignoring.\n"
@@ -580,154 +590,170 @@ msgstr ""
 "გაფრთხილება: --confirm-overwrite მოძველებულია და Zenity-ის მომავალი "
 "ვერსიებიდან ამოღებული იქნება. გამოტოვება.\n"
 
-#: src/option.c:2020
+#: src/option.c:1101
+msgid ""
+"Warning: --attach is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr ""
+"გაფრთხილება: ---attach მოძველებულია და Zenity-ის მომავალი ვერსიებიდან "
+"ამოღებული იქნება. გამოტოვება.\n"
+
+#: src/option.c:1108
+msgid ""
+"Warning: --hint is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr ""
+"გაფრთხილება: --hint მოძველებულია და Zenity-ის მომავალი ვერსიებიდან ამოღებული "
+"იქნება. გამოტოვება.\n"
+
+#: src/option.c:2029
 msgid "General options"
 msgstr "საერთო პარამეტრები"
 
-#: src/option.c:2021
+#: src/option.c:2030
 msgid "Show general options"
 msgstr "საერთო პარამეტრების ჩვენება"
 
-#: src/option.c:2033
+#: src/option.c:2042
 msgid "Calendar options"
 msgstr "კალენდრის მორგება"
 
-#: src/option.c:2034
+#: src/option.c:2043
 msgid "Show calendar options"
 msgstr "კალენდრის პარამეტრების ჩვენება"
 
-#: src/option.c:2046
+#: src/option.c:2055
 msgid "Text entry options"
 msgstr "ტექსტური ელემენტის პარამეტრები"
 
-#: src/option.c:2047
+#: src/option.c:2056
 msgid "Show text entry options"
 msgstr "ტექსტური ელემენტის პარამეტრების ჩვენება"
 
-#: src/option.c:2059
+#: src/option.c:2068
 msgid "Error options"
 msgstr "შეცდომის პარამეტრები"
 
-#: src/option.c:2059
+#: src/option.c:2068
 msgid "Show error options"
 msgstr "შეცდომის პარამეტრების ჩვენება"
 
-#: src/option.c:2069
+#: src/option.c:2078
 msgid "Info options"
 msgstr "ინფორმაციის პარამეტრები"
 
-#: src/option.c:2069
+#: src/option.c:2078
 msgid "Show info options"
 msgstr "ინფორმაციის პარამეტრების ჩვენება"
 
-#: src/option.c:2079
+#: src/option.c:2088
 msgid "File selection options"
 msgstr "ფაილის არჩევის პარამეტრები"
 
-#: src/option.c:2080
+#: src/option.c:2089
 msgid "Show file selection options"
 msgstr "ფაილის არჩევის პარამეტრების ჩვენება"
 
-#: src/option.c:2092
+#: src/option.c:2101
 msgid "List options"
 msgstr "სიის პარამეტრები"
 
-#: src/option.c:2092
+#: src/option.c:2101
 msgid "Show list options"
 msgstr "სიის პარამეტრების ჩვენება"
 
-#: src/option.c:2102
+#: src/option.c:2111
 msgid "Notification options"
 msgstr "გაფრთხილებების მორგება"
 
-#: src/option.c:2103
+#: src/option.c:2112
 msgid "Show notification options"
 msgstr "გაფრთხილების პარამეტრების ჩვენება"
 
-#: src/option.c:2116
+#: src/option.c:2125
 msgid "Progress options"
 msgstr "მიმდინარეობის პარამეტრები"
 
-#: src/option.c:2117
+#: src/option.c:2126
 msgid "Show progress options"
 msgstr "მიმდინარეობის პარამეტრების ჩვენება"
 
-#: src/option.c:2129
+#: src/option.c:2138
 msgid "Question options"
 msgstr "კითხვის პარამეტრები"
 
-#: src/option.c:2130
+#: src/option.c:2139
 msgid "Show question options"
 msgstr "კითხვის პარამეტრების ჩვენება"
 
-#: src/option.c:2142
+#: src/option.c:2151
 msgid "Warning options"
 msgstr "გაფრთხილების მორგება"
 
-#: src/option.c:2143
+#: src/option.c:2152
 msgid "Show warning options"
 msgstr "გაფრთხილების პარამეტრების ჩვენება"
 
-#: src/option.c:2155
+#: src/option.c:2164
 msgid "Scale options"
 msgstr "მასშტაბირების პარამეტრები"
 
-#: src/option.c:2155
+#: src/option.c:2164
 msgid "Show scale options"
 msgstr "მასშტაბირების პარამეტრების ჩვენება"
 
-#: src/option.c:2165
+#: src/option.c:2174
 msgid "Text information options"
 msgstr "ტექსტური ინფორმაციის პარამეტრები"
 
-#: src/option.c:2166
+#: src/option.c:2175
 msgid "Show text information options"
 msgstr "ტექსტური ინფორმაციის პარამეტრების ჩვენება"
 
-#: src/option.c:2178
+#: src/option.c:2187
 msgid "Color selection options"
 msgstr "ფერის არჩევის პარამეტრები"
 
-#: src/option.c:2179
+#: src/option.c:2188
 msgid "Show color selection options"
 msgstr "ფერის არჩევის პარამეტრების ჩვენება"
 
-#: src/option.c:2191
+#: src/option.c:2200
 msgid "Password dialog options"
 msgstr "პაროლის ფანჯრის მორგება"
 
-#: src/option.c:2192
+#: src/option.c:2201
 msgid "Show password dialog options"
 msgstr "პაროლის ფანჯრის პარამეტრების ჩვენება"
 
-#: src/option.c:2204
+#: src/option.c:2213
 msgid "Forms dialog options"
 msgstr "ფორმის ფანჯრის მორგება"
 
-#: src/option.c:2205
+#: src/option.c:2214
 msgid "Show forms dialog options"
 msgstr "ფორმის ფანჯრის მასშტაბირების ჩვენება"
 
-#: src/option.c:2217
+#: src/option.c:2226
 msgid "Miscellaneous options"
 msgstr "სხვადასხვა პარამეტრები"
 
-#: src/option.c:2218
+#: src/option.c:2227
 msgid "Show miscellaneous options"
 msgstr "სხვადასხვა პარამეტრების ჩვენება"
 
-#: src/option.c:2241
+#: src/option.c:2250
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "პარამეტრი ხელმიუწვდომელია. დაშვებული მნიშვნელობებისათვის იხ '--help'.\n"
 
-#: src/option.c:2246
+#: src/option.c:2255
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s მხარდაუჭერელია ამ ფანჯრისთვის\n"
 
-#: src/option.c:2250
+#: src/option.c:2259
 msgid "Two or more dialog options specified\n"
 msgstr "მითითებულია ერთზე მეტი პარამეტრი\n"
 
@@ -899,9 +925,6 @@ msgstr "შეიყვანეთ პაროლი"
 
 #~ msgid "Set the parent window to attach to"
 #~ msgstr "მიუთითეთ მშობელი ფანჯარა, მისაბმელად"
-
-#~ msgid "WINDOW"
-#~ msgstr "ფანჯარა"
 
 #~ msgid "Set the dialog icon"
 #~ msgstr "ფანჯრის ხატულის დაყენება"
