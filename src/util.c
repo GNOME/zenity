@@ -460,14 +460,10 @@ zenity_util_gapp_quit (GtkWindow *window, ZenityData *data)
 	if (data->exit_code != 0)
 		exit (data->exit_code);
 
-	if (window)
-	{
-		g_assert (GTK_IS_WINDOW (window));
+	if (window && GTK_IS_WINDOW (window))
 		gtk_window_destroy (window);
-	}
-	else {
+	else
 		g_application_release (g_application_get_default ());
-	}
 }
 
 int
