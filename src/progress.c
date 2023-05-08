@@ -40,15 +40,11 @@
 
 static GtkBuilder *builder;
 static ZenityData *zen_data;
-static GIOChannel *channel;
 
 static int pulsate_timeout = -1;
 static gboolean autokill;
 static gboolean no_cancel;
 static gboolean auto_close;
-
-gint zenity_progress_timeout (gpointer data);
-gint zenity_progress_pulsate_timeout (gpointer data);
 
 static void zenity_progress_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
@@ -147,13 +143,13 @@ stof (const char *s)
 }
 
 static gboolean
-zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
+zenity_progress_handle_stdin (GIOChannel *source, GIOCondition condition,
 		gpointer data)
 {
-	static ZenityProgressData *progress_data;
-	static GObject *progress_bar;
-	static GObject *progress_label;
-	static GtkWindow *parent;
+	ZenityProgressData *progress_data;
+	GObject *progress_bar;
+	GObject *progress_label;
+	GtkWindow *parent;
 	float percentage = 0.0;
 	GIOStatus status = G_IO_STATUS_NORMAL;
 
@@ -167,12 +163,12 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 		g_autoptr(GString) string = g_string_new (NULL);
 		g_autoptr(GError) error = NULL;
 
-		while (channel->is_readable != TRUE)
+		while (source->is_readable != TRUE)
 			;
 		do {
 			do {
 				status = g_io_channel_read_line_string (
-					channel, string, NULL, &error);
+					source, string, NULL, &error);
 
 				while (g_main_context_pending (NULL)) {
 					g_main_context_iteration (NULL, FALSE);
@@ -265,7 +261,7 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 				}
 			}
 
-		} while ((g_io_channel_get_buffer_condition (channel) & G_IO_IN) ==
+		} while ((g_io_channel_get_buffer_condition (source) & G_IO_IN) ==
 				G_IO_IN &&
 			status != G_IO_STATUS_EOF);
 	}
@@ -286,15 +282,13 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 
 		zenity_progress_pulsate_stop ();
 
-		g_object_unref (builder);
-
 		if (progress_data->autoclose)
 		{
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			zenity_util_gapp_quit (parent, zen_data);
 		}
 
-		g_io_channel_shutdown (channel, TRUE, NULL);
+		g_io_channel_shutdown (source, TRUE, NULL);
 		return FALSE;
 	}
 	return TRUE;
@@ -303,7 +297,8 @@ zenity_progress_handle_stdin (GIOChannel *channel, GIOCondition condition,
 static void
 zenity_progress_read_info (ZenityProgressData *progress_data)
 {
-	channel = g_io_channel_unix_new (0);
+	GIOChannel *channel = g_io_channel_unix_new (0);
+
 	g_io_channel_set_encoding (channel, NULL, NULL);
 	g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
 	g_io_add_watch (channel,
