@@ -454,6 +454,14 @@ zenity_util_gapp_main (GtkWindow *window)
 void
 zenity_util_gapp_quit (GtkWindow *window, ZenityData *data)
 {
+	static gboolean quit_requested = FALSE;
+
+	if (quit_requested)
+	{
+		g_debug ("%s: Quit request already pending. Ignoring superfluous quit request.", __func__);
+		return;
+	}
+
 	/* This is a bit hack-ish, but GApplication doesn't really allow for
 	 * customized exit statuses within that API.
 	 */
@@ -464,6 +472,8 @@ zenity_util_gapp_quit (GtkWindow *window, ZenityData *data)
 		gtk_window_destroy (window);
 	else
 		g_application_release (g_application_get_default ());
+
+	quit_requested = TRUE;
 }
 
 int
