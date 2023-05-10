@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-03-08 22:07+0000\n"
-"PO-Revision-Date: 2023-03-21 10:04+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"POT-Creation-Date: 2023-04-28 19:28+0000\n"
+"PO-Revision-Date: 2023-05-10 14:21+0700\n"
+"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -70,13 +70,13 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Menampilkan kotak dialog dari skrip shell"
 
-#: src/fileselection.c:60 src/progress.c:408 src/zenity.ui:15 src/zenity.ui:52
+#: src/fileselection.c:60 src/progress.c:415 src/zenity.ui:15 src/zenity.ui:52
 #: src/zenity.ui:86 src/zenity.ui:136 src/zenity.ui:173 src/zenity.ui:213
 #: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:419 src/zenity.ui:457
 msgid "_OK"
 msgstr "_OK"
 
-#: src/fileselection.c:61 src/progress.c:404 src/zenity.ui:14 src/zenity.ui:51
+#: src/fileselection.c:61 src/progress.c:411 src/zenity.ui:14 src/zenity.ui:51
 #: src/zenity.ui:85 src/zenity.ui:135 src/zenity.ui:212 src/zenity.ui:381
 #: src/zenity.ui:456
 msgid "_Cancel"
@@ -95,146 +95,152 @@ msgstr "Tidak dapat mengurai pesan\n"
 msgid "Could not parse command from stdin\n"
 msgstr "Tidak dapat mengurai perintah dari stdin\n"
 
-#: src/option.c:166
+#: src/option.c:170
 msgid "Set the dialog title"
 msgstr "Menentukan judul dialog"
 
-#: src/option.c:167
+#: src/option.c:171
 msgid "TITLE"
 msgstr "JUDUL"
 
-#: src/option.c:173
+#: src/option.c:177
 msgid "Set the width"
 msgstr "Menentukan lebar"
 
-#: src/option.c:174
+#: src/option.c:178
 msgid "WIDTH"
 msgstr "LEBAR"
 
-#: src/option.c:180
+#: src/option.c:184
 msgid "Set the height"
 msgstr "Menentukan tinggi"
 
-#: src/option.c:181
+#: src/option.c:185
 msgid "HEIGHT"
 msgstr "TINGGI"
 
-#: src/option.c:187
+#: src/option.c:191
 msgid "Set dialog timeout in seconds"
 msgstr "Menentukan waktu tunggu dalam detik"
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: src/option.c:193
 msgid "TIMEOUT"
 msgstr "WAKTU_HABIS"
 
-#: src/option.c:195
+#: src/option.c:199
 msgid "Set the label of the OK button"
 msgstr "Menata label untuk tombol OK"
 
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:364
-#: src/option.c:473 src/option.c:569 src/option.c:607 src/option.c:668
-#: src/option.c:750 src/option.c:757 src/option.c:807 src/option.c:861
-#: src/option.c:993
+#: src/option.c:200 src/option.c:207 src/option.c:214 src/option.c:259
+#: src/option.c:304 src/option.c:311 src/option.c:335 src/option.c:382
+#: src/option.c:491 src/option.c:587 src/option.c:608 src/option.c:625
+#: src/option.c:686 src/option.c:761 src/option.c:768 src/option.c:818
+#: src/option.c:865 src/option.c:997
 msgid "TEXT"
 msgstr "TEKS"
 
-#: src/option.c:202
+#: src/option.c:206
 msgid "Set the label of the Cancel button"
 msgstr "Menata label untuk tombol Batal"
 
-#: src/option.c:209
+#: src/option.c:213
 msgid "Add an extra button"
 msgstr "Menambah sebuah tombol ekstra"
 
-#: src/option.c:216
+#: src/option.c:220
 msgid "Set the modal hint"
 msgstr "Atur petunjuk modal"
 
-#: src/option.c:226
-msgid "Display calendar dialog"
-msgstr "Menampilkan dialog kalender"
+#: src/option.c:227 src/option.c:473 src/option.c:569 src/option.c:607
+msgid "DEPRECATED; does nothing"
+msgstr "USANG; tidak melakukan apa-apa"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:363
-#: src/option.c:472 src/option.c:606 src/option.c:667 src/option.c:806
-#: src/option.c:860 src/option.c:992
-msgid "Set the dialog text"
-msgstr "Menentukan teks dialog"
+#: src/option.c:228
+msgid "WINDOW"
+msgstr "JENDELA"
 
-#: src/option.c:240
-msgid "Set the calendar day"
-msgstr "Menentukan hari kalender"
-
-#: src/option.c:241
-msgid "DAY"
-msgstr "HARI"
-
-#: src/option.c:247
-msgid "Set the calendar month"
-msgstr "Menentukan bulan kalender"
-
-#: src/option.c:248
-msgid "MONTH"
-msgstr "BULAN"
-
-#: src/option.c:254
-msgid "Set the calendar year"
-msgstr "Menentukan tahun kalender"
-
-#: src/option.c:255
-msgid "YEAR"
-msgstr "TAHUN"
-
-#: src/option.c:261 src/option.c:1006
-msgid "Set the format for the returned date"
-msgstr "Menentukan format untuk tanggal yang dihasilkan"
-
-#: src/option.c:262 src/option.c:1007
-msgid "PATTERN"
-msgstr "POLA"
-
-#: src/option.c:271
-msgid "Display text entry dialog"
-msgstr "Menampilkan dialog entri teks"
-
-#: src/option.c:285
-msgid "Set the entry text"
-msgstr "Menentukan teks entri"
-
-#: src/option.c:292
-msgid "Hide the entry text"
-msgstr "Menyembunyikan teks entri"
-
-#: src/option.c:302
-msgid "Display error dialog"
-msgstr "Menampilkan dialog galat"
-
-#: src/option.c:316 src/option.c:370 src/option.c:575 src/option.c:674
-#: src/option.c:813
-msgid "Set the icon name"
-msgstr "Atur nama ikon"
-
-#: src/option.c:317 src/option.c:324 src/option.c:371 src/option.c:378
-#: src/option.c:576 src/option.c:583 src/option.c:675 src/option.c:682
-#: src/option.c:814 src/option.c:821
-msgid "ICON-NAME"
-msgstr "NAMA-IKON"
-
-#: src/option.c:323 src/option.c:377 src/option.c:582 src/option.c:681
-#: src/option.c:820
+#: src/option.c:234 src/option.c:241
 msgid "DEPRECATED; use `--icon`"
 msgstr "USANG; gunakan '--icon'"
 
-#: src/option.c:330 src/option.c:384 src/option.c:688 src/option.c:827
+#: src/option.c:235 src/option.c:242 src/option.c:342 src/option.c:389
+#: src/option.c:594 src/option.c:693 src/option.c:825
+msgid "ICON-NAME"
+msgstr "NAMA-IKON"
+
+#: src/option.c:251
+msgid "Display calendar dialog"
+msgstr "Menampilkan dialog kalender"
+
+#: src/option.c:258 src/option.c:303 src/option.c:334 src/option.c:381
+#: src/option.c:490 src/option.c:624 src/option.c:685 src/option.c:817
+#: src/option.c:864 src/option.c:996
+msgid "Set the dialog text"
+msgstr "Menentukan teks dialog"
+
+#: src/option.c:265
+msgid "Set the calendar day"
+msgstr "Menentukan hari kalender"
+
+#: src/option.c:266
+msgid "DAY"
+msgstr "HARI"
+
+#: src/option.c:272
+msgid "Set the calendar month"
+msgstr "Menentukan bulan kalender"
+
+#: src/option.c:273
+msgid "MONTH"
+msgstr "BULAN"
+
+#: src/option.c:279
+msgid "Set the calendar year"
+msgstr "Menentukan tahun kalender"
+
+#: src/option.c:280
+msgid "YEAR"
+msgstr "TAHUN"
+
+#: src/option.c:286 src/option.c:1010
+msgid "Set the format for the returned date"
+msgstr "Menentukan format untuk tanggal yang dihasilkan"
+
+#: src/option.c:287 src/option.c:1011
+msgid "PATTERN"
+msgstr "POLA"
+
+#: src/option.c:296
+msgid "Display text entry dialog"
+msgstr "Menampilkan dialog entri teks"
+
+#: src/option.c:310
+msgid "Set the entry text"
+msgstr "Menentukan teks entri"
+
+#: src/option.c:317
+msgid "Hide the entry text"
+msgstr "Menyembunyikan teks entri"
+
+#: src/option.c:327
+msgid "Display error dialog"
+msgstr "Menampilkan dialog galat"
+
+#: src/option.c:341 src/option.c:388 src/option.c:593 src/option.c:692
+#: src/option.c:824
+msgid "Set the icon name"
+msgstr "Atur nama ikon"
+
+#: src/option.c:348 src/option.c:395 src/option.c:699 src/option.c:831
 msgid "Do not enable text wrapping"
 msgstr "Tanpa pembengkokan teks"
 
-#: src/option.c:337 src/option.c:391 src/option.c:695 src/option.c:834
+#: src/option.c:355 src/option.c:402 src/option.c:706 src/option.c:838
 msgid "Do not enable Pango markup"
 msgstr "Jangan fungsikan markup Pango"
 
-#: src/option.c:344 src/option.c:398 src/option.c:709 src/option.c:841
+#: src/option.c:362 src/option.c:409 src/option.c:720 src/option.c:845
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -242,85 +248,85 @@ msgstr ""
 "Fungsikan penyingkatan dalam teks dialog. Ini memperbaikai ukuran jendela "
 "yang tinggi dengan teks panjang"
 
-#: src/option.c:356
+#: src/option.c:374
 msgid "Display info dialog"
 msgstr "Menampilkan dialog informasi"
 
-#: src/option.c:410
+#: src/option.c:421
 msgid "Display file selection dialog"
 msgstr "Menampilkan dialog seleksi berkas"
 
-#: src/option.c:417
+#: src/option.c:428
 msgid "Set the filename"
 msgstr "Menentukan nama berkas"
 
-#: src/option.c:418 src/option.c:736
+#: src/option.c:429 src/option.c:747
 msgid "FILENAME"
 msgstr "NAMA_BERKAS"
 
-#: src/option.c:424
+#: src/option.c:435
 msgid "Allow multiple files to be selected"
 msgstr "Memperbolehkan seleksi multiberkas"
 
-#: src/option.c:431
+#: src/option.c:442
 msgid "Activate directory-only selection"
 msgstr "Mengaktifkan seleksi hanya direktori"
 
-#: src/option.c:438
+#: src/option.c:449
 msgid "Activate save mode"
 msgstr "Mengaktifkan mode menyimpan"
 
-#: src/option.c:445 src/option.c:507 src/option.c:999
+#: src/option.c:456 src/option.c:525 src/option.c:1003
 msgid "Set output separator character"
 msgstr "Menentukan karakter pemisah keluaran"
 
-#: src/option.c:446 src/option.c:508 src/option.c:1000
+#: src/option.c:457 src/option.c:526 src/option.c:1004
 msgid "SEPARATOR"
 msgstr "PEMISAH"
 
-#: src/option.c:452
+#: src/option.c:463
 msgid "Set a filename filter"
 msgstr "Menata penyaring nama berkas"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
-#: src/option.c:455
+#: src/option.c:466
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NAMA | POLA1 POLA2 ..."
 
-#: src/option.c:465
+#: src/option.c:483
 msgid "Display list dialog"
 msgstr "Menampilkan dialog senarai"
 
-#: src/option.c:479
+#: src/option.c:497
 msgid "Set the column header"
 msgstr "Menentukan tajuk kolom"
 
-#: src/option.c:480
+#: src/option.c:498
 msgid "COLUMN"
 msgstr "KOLOM"
 
-#: src/option.c:486
+#: src/option.c:504
 msgid "Use check boxes for the first column"
 msgstr "Menggunakan kotak cek untuk kolom pertama"
 
-#: src/option.c:493
+#: src/option.c:511
 msgid "Use radio buttons for the first column"
 msgstr "Menggunakan tombol radio untuk kolom pertama"
 
-#: src/option.c:500
+#: src/option.c:518
 msgid "Use an image for the first column"
 msgstr "Menggunakan gambar untuk kolom pertama"
 
-#: src/option.c:514
+#: src/option.c:532
 msgid "Allow multiple rows to be selected"
 msgstr "Memperbolehkan seleksi multibaris"
 
-#: src/option.c:521 src/option.c:742
+#: src/option.c:539 src/option.c:753
 msgid "Allow changes to text"
 msgstr "Memperbolehkan mengubah teks"
 
-#: src/option.c:528
+#: src/option.c:546
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -329,101 +335,97 @@ msgstr ""
 "kolom)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:531 src/option.c:538
+#: src/option.c:549 src/option.c:556
 msgid "NUMBER"
 msgstr "NOMOR"
 
-#: src/option.c:537
+#: src/option.c:555
 msgid "Hide a specific column"
 msgstr "Menyembunyikan kolom tertentu"
 
-#: src/option.c:544
+#: src/option.c:562
 msgid "Hide the column headers"
 msgstr "Menyembunyikan tajuk kolom"
 
-#: src/option.c:551
-msgid "DEPRECATED; does nothing"
-msgstr "USANG; tidak melakukan apa-apa"
-
-#: src/option.c:561
+#: src/option.c:579
 msgid "Display notification"
 msgstr "Menampilkan notifikasi"
 
-#: src/option.c:568
+#: src/option.c:586
 msgid "Set the notification text"
 msgstr "Menentukan teks notifikasi"
 
-#: src/option.c:589
+#: src/option.c:600
 msgid "Listen for commands on stdin"
 msgstr "Membaca perintah dari stdin"
 
-#: src/option.c:599
+#: src/option.c:617
 msgid "Display progress indication dialog"
 msgstr "Menampilkan dialog indikator proses"
 
-#: src/option.c:613
+#: src/option.c:631
 msgid "Set initial percentage"
 msgstr "Menentukan persentase awal"
 
-#: src/option.c:614
+#: src/option.c:632
 msgid "PERCENTAGE"
 msgstr "PERSENTASE"
 
-#: src/option.c:620
+#: src/option.c:638
 msgid "Pulsate progress bar"
 msgstr "Indikator proses berpulsa"
 
-#: src/option.c:628
+#: src/option.c:646
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Menutup dialog setelah mencapai 100%"
 
-#: src/option.c:635
+#: src/option.c:653
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Mematikan proses induk bila tombol Batal ditekan"
 
-#: src/option.c:642
+#: src/option.c:660
 msgid "Hide Cancel button"
 msgstr "Menyembunyikan tombol Batal"
 
-#: src/option.c:650
+#: src/option.c:668
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Estimasikan kapan kemajuan akan mencapai 100%"
 
-#: src/option.c:660
+#: src/option.c:678
 msgid "Display question dialog"
 msgstr "Menampilkan dialog pertanyaan"
 
-#: src/option.c:702
+#: src/option.c:713
 msgid "Give Cancel button focus by default"
 msgstr "Berikan fokus ke tombol Batal secara baku"
 
-#: src/option.c:718
+#: src/option.c:729
 msgid "Suppress OK and Cancel buttons"
 msgstr "Menyembunyikan tombol OK dan Batal"
 
-#: src/option.c:728
+#: src/option.c:739
 msgid "Display text information dialog"
 msgstr "Menampilkan dialog informasi teks"
 
-#: src/option.c:735
+#: src/option.c:746
 msgid "Open file"
 msgstr "Membuka berkas"
 
-#: src/option.c:749
+#: src/option.c:760
 msgid "Set the text font"
 msgstr "Menentukan fonta teks"
 
-#: src/option.c:756
+#: src/option.c:767
 msgid "Enable an I read and agree checkbox"
 msgstr "Aktifkan ckeckbox 'Saya telah baca dan setuju'"
 
-#: src/option.c:764
+#: src/option.c:775
 msgid "Enable HTML support"
 msgstr "Fungsikan dukungan HTML"
 
-#: src/option.c:771
+#: src/option.c:782
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -431,302 +433,334 @@ msgstr ""
 "Jangan fungsikan interaksi pengguna dengan WebView. Hanya bekerja bila Anda "
 "memakai opsi --html"
 
-#: src/option.c:779
+#: src/option.c:790
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "Tata suatu URL sebagai pengganti berkas. Hanya bekerja bila Anda memakai "
 "opsi --html"
 
-#: src/option.c:781
+#: src/option.c:792
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:788
+#: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr "Gulir otomatis teks ke akhir. Hanya ketika teks ditangkap dari stdin"
 
-#: src/option.c:799
+#: src/option.c:810
 msgid "Display warning dialog"
 msgstr "Menampilkan dialog peringatan"
 
-#: src/option.c:853
+#: src/option.c:857
 msgid "Display scale dialog"
 msgstr "Menampilkan dialog skala"
 
-#: src/option.c:867
+#: src/option.c:871
 msgid "Set initial value"
 msgstr "Menentukan nilai awal"
 
-#: src/option.c:868 src/option.c:875 src/option.c:882 src/option.c:889
-#: src/option.c:1041
+#: src/option.c:872 src/option.c:879 src/option.c:886 src/option.c:893
+#: src/option.c:1045
 msgid "VALUE"
 msgstr "NILAI"
 
-#: src/option.c:874
+#: src/option.c:878
 msgid "Set minimum value"
 msgstr "Menentukan nilai terendah"
 
-#: src/option.c:881
+#: src/option.c:885
 msgid "Set maximum value"
 msgstr "Menentukan nilai tertinggi"
 
-#: src/option.c:888
+#: src/option.c:892
 msgid "Set step size"
 msgstr "Menentukan ukuran langkah"
 
-#: src/option.c:895
+#: src/option.c:899
 msgid "Print partial values"
 msgstr "Mencetak nilai parsial"
 
-#: src/option.c:902
+#: src/option.c:906
 msgid "Hide value"
 msgstr "Menyembunyikan nilai"
 
-#: src/option.c:912
+#: src/option.c:916
 msgid "Display forms dialog"
 msgstr "Menampilkan dialog formulir"
 
-#: src/option.c:919
+#: src/option.c:923
 msgid "Add a new Entry in forms dialog"
 msgstr "Menambahkan Entri baru pada dialog formulir"
 
-#: src/option.c:920 src/option.c:927
+#: src/option.c:924 src/option.c:931
 msgid "Field name"
 msgstr "Nama kolom isian"
 
-#: src/option.c:926
+#: src/option.c:930
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Menambahkan Entri Sandi baru pada dialog formulir"
 
-#: src/option.c:933
+#: src/option.c:937
 msgid "Add a new Calendar in forms dialog"
 msgstr "Menambahkan Kalender baru pada dialog formulir"
 
-#: src/option.c:934
+#: src/option.c:938
 msgid "Calendar field name"
 msgstr "Kolom isian nama kalender"
 
-#: src/option.c:940
+#: src/option.c:944
 msgid "Add a new List in forms dialog"
 msgstr "Menambahkan Daftar baru pada dialog formulir"
 
-#: src/option.c:941
+#: src/option.c:945
 msgid "List field and header name"
 msgstr "Daftar nama ruas dan tajuk"
 
-#: src/option.c:947
+#: src/option.c:951
 msgid "List of values for List"
 msgstr "Daftar nilai bagi Daftar"
 
-#: src/option.c:948 src/option.c:955 src/option.c:969
+#: src/option.c:952 src/option.c:959 src/option.c:973
 msgid "List of values separated by |"
 msgstr "Daftar nilai dipisahkan oleh |"
 
-#: src/option.c:954
+#: src/option.c:958
 msgid "List of values for columns"
 msgstr "Daftar nilai bagi kolom"
 
-#: src/option.c:961
+#: src/option.c:965
 msgid "Add a new combo box in forms dialog"
 msgstr "Menambahkan kotak kombo baru pada dialog formulir"
 
-#: src/option.c:962
+#: src/option.c:966
 msgid "Combo box field name"
 msgstr "Nama ruas kotak kombo"
 
-#: src/option.c:968
+#: src/option.c:972
 msgid "List of values for combo box"
 msgstr "Daftar nilai bagi kotak kombo"
 
-#: src/option.c:985
+#: src/option.c:989
 msgid "Show the columns header"
 msgstr "Tampilkan tajuk kolom"
 
-#: src/option.c:1016
+#: src/option.c:1020
 msgid "Display password dialog"
 msgstr "Menampilkan dialog sandi"
 
-#: src/option.c:1023
+#: src/option.c:1027
 msgid "Display the username option"
 msgstr "Menampilkan opsi nama pengguna"
 
-#: src/option.c:1033
+#: src/option.c:1037
 msgid "Display color selection dialog"
 msgstr "Menampilkan dialog seleksi warna"
 
-#: src/option.c:1040
+#: src/option.c:1044
 msgid "Set the color"
 msgstr "Menyetel warna"
 
-#: src/option.c:1047
+#: src/option.c:1051
 msgid "Show the palette"
 msgstr "Menampilkan palet"
 
-#: src/option.c:1057
+#: src/option.c:1061
 msgid "About zenity"
 msgstr "Tentang zenity"
 
-#: src/option.c:1064
+#: src/option.c:1068
 msgid "Print version"
 msgstr "Menampilkan versi"
 
-#: src/option.c:1478
+#: src/option.c:1080
+msgid ""
+"Warning: --icon-name is deprecated and will be removed in a future version "
+"of zenity; Treating as --icon.\n"
+msgstr ""
+"Peringatan: --icon-name tidak digunakan lagi dan akan dihapus di zenity "
+"versi mendatang; Memperlakukan sebagai --icon.\n"
+
+#: src/option.c:1087
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
-"of zenity. Ignoring.\n"
+"of zenity; Treating as --icon.\n"
 msgstr ""
-"Peringatan: --window-icon tidak digunakan lagi dan akan dihapus di versi "
+"Peringatan: --window-icon tidak digunakan lagi dan akan dihapus di zenity "
+"versi mendatang; Memperlakukan sebagai --icon.\n"
+
+#: src/option.c:1094
+msgid ""
+"Warning: --confirm-overwrite is deprecated and will be removed in a future "
+"version of zenity. Ignoring.\n"
+msgstr ""
+"Peringatan: --confirm-overwrite tidak digunakan lagi dan akan dihapus dalam "
+"versi zenity mendatang. Mengabaikan.\n"
+
+#: src/option.c:1101
+msgid ""
+"Warning: --attach is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr ""
+"Peringatan: --attach tidak digunakan lagi dan akan dihapus dalam versi "
 "zenity yang akan datang. Mengabaikan.\n"
 
-#: src/option.c:2000
+#: src/option.c:1108
+msgid ""
+"Warning: --hint is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr ""
+"Peringatan: --hint tidak digunakan lagi dan akan dihapus dalam versi zenity "
+"mendatang. Mengabaikan.\n"
+
+#: src/option.c:2029
 msgid "General options"
 msgstr "Opsi umum"
 
-#: src/option.c:2001
+#: src/option.c:2030
 msgid "Show general options"
 msgstr "Menampilkan opsi umum"
 
-#: src/option.c:2013
+#: src/option.c:2042
 msgid "Calendar options"
 msgstr "Opsi kalender"
 
-#: src/option.c:2014
+#: src/option.c:2043
 msgid "Show calendar options"
 msgstr "Menampilkan opsi kalender"
 
-#: src/option.c:2026
+#: src/option.c:2055
 msgid "Text entry options"
 msgstr "Opsi entri teks"
 
-#: src/option.c:2027
+#: src/option.c:2056
 msgid "Show text entry options"
 msgstr "Menampilkan opsi entri teks"
 
-#: src/option.c:2039
+#: src/option.c:2068
 msgid "Error options"
 msgstr "Opsi galat"
 
-#: src/option.c:2039
+#: src/option.c:2068
 msgid "Show error options"
 msgstr "Menampilkan opsi galat"
 
-#: src/option.c:2049
+#: src/option.c:2078
 msgid "Info options"
 msgstr "Opsi info"
 
-#: src/option.c:2049
+#: src/option.c:2078
 msgid "Show info options"
 msgstr "Menampilkan opsi info"
 
-#: src/option.c:2059
+#: src/option.c:2088
 msgid "File selection options"
 msgstr "Opsi seleksi berkas"
 
-#: src/option.c:2060
+#: src/option.c:2089
 msgid "Show file selection options"
 msgstr "Menampilkan opsi seleksi berkas"
 
-#: src/option.c:2072
+#: src/option.c:2101
 msgid "List options"
 msgstr "Opsi senarai"
 
-#: src/option.c:2072
+#: src/option.c:2101
 msgid "Show list options"
 msgstr "Menampilkan opsi senarai"
 
-#: src/option.c:2082
+#: src/option.c:2111
 msgid "Notification options"
 msgstr "Opsi notifikasi"
 
-#: src/option.c:2083
+#: src/option.c:2112
 msgid "Show notification options"
 msgstr "Tampilkan opsi pemberitahuan"
 
-#: src/option.c:2096
+#: src/option.c:2125
 msgid "Progress options"
 msgstr "Opsi indikator proses"
 
-#: src/option.c:2097
+#: src/option.c:2126
 msgid "Show progress options"
 msgstr "Menampilkan opsi indikator proses"
 
-#: src/option.c:2109
+#: src/option.c:2138
 msgid "Question options"
 msgstr "Opsi pertanyaan"
 
-#: src/option.c:2110
+#: src/option.c:2139
 msgid "Show question options"
 msgstr "Menampilkan opsi pertanyaan"
 
-#: src/option.c:2122
+#: src/option.c:2151
 msgid "Warning options"
 msgstr "Opsi peringatan"
 
-#: src/option.c:2123
+#: src/option.c:2152
 msgid "Show warning options"
 msgstr "Menampilkan opsi peringatan"
 
-#: src/option.c:2135
+#: src/option.c:2164
 msgid "Scale options"
 msgstr "Opsi skala"
 
-#: src/option.c:2135
+#: src/option.c:2164
 msgid "Show scale options"
 msgstr "Menampilkan opsi skala"
 
-#: src/option.c:2145
+#: src/option.c:2174
 msgid "Text information options"
 msgstr "Opsi informasi teks"
 
-#: src/option.c:2146
+#: src/option.c:2175
 msgid "Show text information options"
 msgstr "Menampilkan opsi informasi teks"
 
-#: src/option.c:2158
+#: src/option.c:2187
 msgid "Color selection options"
 msgstr "Opsi seleksi warna"
 
-#: src/option.c:2159
+#: src/option.c:2188
 msgid "Show color selection options"
 msgstr "Menampilkan opsi seleksi warna"
 
-#: src/option.c:2171
+#: src/option.c:2200
 msgid "Password dialog options"
 msgstr "Opsi dialog sandi"
 
-#: src/option.c:2172
+#: src/option.c:2201
 msgid "Show password dialog options"
 msgstr "Menampilkan opsi dialog sandi"
 
-#: src/option.c:2184
+#: src/option.c:2213
 msgid "Forms dialog options"
 msgstr "Opsi dialog formulir"
 
-#: src/option.c:2185
+#: src/option.c:2214
 msgid "Show forms dialog options"
 msgstr "Menampilkan opsi dialog formulir"
 
-#: src/option.c:2197
+#: src/option.c:2226
 msgid "Miscellaneous options"
 msgstr "Opsi lain-lain"
 
-#: src/option.c:2198
+#: src/option.c:2227
 msgid "Show miscellaneous options"
 msgstr "Menampilkan opsi yang lainnya"
 
-#: src/option.c:2221
+#: src/option.c:2250
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Opsi ini tidak tersedia. Silahkan lihat --help untuk penggunaan yang "
 "mungkin.\n"
 
-#: src/option.c:2226
+#: src/option.c:2255
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s tidak didukung untuk dialog ini\n"
 
-#: src/option.c:2230
+#: src/option.c:2259
 msgid "Two or more dialog options specified\n"
 msgstr "Dua atau lebih opsi dialog telah ditentukan\n"
 
@@ -766,11 +800,11 @@ msgstr ""
 "Peringatan: --mid-search tidak digunakan lagi dan akan dihapus di versi "
 "zenity mendatang. Mengabaikan.\n"
 
-#: src/tree.c:278
+#: src/tree.c:281
 msgid "No column titles specified for List dialog.\n"
 msgstr "Judul kolom belum ditentukan untuk dialog Senarai\n"
 
-#: src/tree.c:285
+#: src/tree.c:288
 msgid "You should use only one List dialog type.\n"
 msgstr "Anda hanya boleh menggunakan satu jenis dialog Senarai.\n"
 
