@@ -332,6 +332,12 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 			1,
 			1);
 
+		gtk_accessible_update_relation (GTK_ACCESSIBLE (zenity_value->forms_widget),
+			GTK_ACCESSIBLE_RELATION_LABELLED_BY,
+			label,
+			NULL,
+			-1);
+
 		++i;
 	}
 
