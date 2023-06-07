@@ -1,3 +1,35 @@
+Zenity 3.99.0
+  1st beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+
+  I would consider this release feature-complete for 4.0, but there are still
+  some bug reports flowing in, particularly for STDIN-related operations, that
+  need some further tweaking before a stable 4.0 release.
+
+    - option: Add various non-fatal deprecation warnings that were previously
+      missing, and fix a misleading deprecation message for `--window-icon`
+      (Logan Rathbone)
+    - main: Add G_APPLICATION_FLAGS_NON_UNIQUE to GApplication flags (fixes
+      #58) (Logan Rathbone)
+    - util: remove fatal assert on exit if window invalid GtkWindow (Logan
+      Rathbone)
+    - progress: Cleanup unnecessary static objects and remove spurious builder
+      unref (Logan Rathbone)
+    - util: Ignore superfluous quit requests (Logan Rathbone)
+    - util: Remove superfluous GtkWindow cast check (Logan Rathbone)
+    - data: Manpage generation changes; don't automatically generate the
+      manpage from help2man for now (this will preferably be reinstated
+      post-4.0 once the issues are worked out) (Logan Rathbone)
+    - a11y: Label the widgets in a forms UI properly (Lukáš Tyrychtr)
+    - Translation updates:
+        Anders Jonsson (sv)
+        Ekaterine Papava (ka)
+        Jordi Mas i Hernandez (ca)
+        Kukuh Syafaat (id)
+        Piotr Drąg (pl)
+        Sabri Ünal (tr)
+        Sergej A (ru)
+        Yuri Chornoivan (uk)
+
 Zenity 3.92.0
   3rd alpha release of the upcoming zenity 4.x, based on libadwaita/gtk4.
     - progress: don't update responses that aren't there (see: !25 and
