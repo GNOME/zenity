@@ -109,6 +109,14 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			break;
 	}
 
+	if (msg_data->mode == ZENITY_MSG_QUESTION)
+	{
+		adw_message_dialog_add_responses (ADW_MESSAGE_DIALOG(dialog),
+				"no", _("_No"),
+				"yes", _("_Yes"),
+				NULL);
+	}
+
 	if (data->extra_label)
 	{
 		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog) 
