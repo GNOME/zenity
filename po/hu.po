@@ -1,5 +1,5 @@
 # Hungarian translation of zenity.
-# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2011, 2012, 2023 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 #
 # Andras Timar <timar at gnome dot hu>, 2003, 2004.
@@ -12,23 +12,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-02-04 17:46+0000\n"
-"PO-Revision-Date: 2023-03-11 01:23+0100\n"
+"POT-Creation-Date: 2023-04-28 19:28+0000\n"
+"PO-Revision-Date: 2023-07-29 02:08+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
 msgid "Zenity"
 msgstr "Zenity"
 
 #: data/org.gnome.Zenity.desktop.in:4
-#| msgid "Display dialog boxes from shell scripts"
 msgid "Display dialog boxes from the command line"
 msgstr "Párbeszédablakok megjelenítése a parancssorból"
 
@@ -69,13 +68,13 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Párbeszédablakok megjelenítése héjprogramokból"
 
-#: src/fileselection.c:60 src/progress.c:408 src/zenity.ui:15 src/zenity.ui:52
+#: src/fileselection.c:60 src/progress.c:415 src/zenity.ui:15 src/zenity.ui:52
 #: src/zenity.ui:86 src/zenity.ui:136 src/zenity.ui:173 src/zenity.ui:213
 #: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:419 src/zenity.ui:457
 msgid "_OK"
 msgstr "_OK"
 
-#: src/fileselection.c:61 src/progress.c:404 src/zenity.ui:14 src/zenity.ui:51
+#: src/fileselection.c:61 src/progress.c:411 src/zenity.ui:14 src/zenity.ui:51
 #: src/zenity.ui:85 src/zenity.ui:135 src/zenity.ui:212 src/zenity.ui:381
 #: src/zenity.ui:456
 msgid "_Cancel"
@@ -95,147 +94,152 @@ msgstr "Nem sikerült feldolgozni az üzenetet\n"
 msgid "Could not parse command from stdin\n"
 msgstr "Nem sikerült feldolgozni a parancsot a szabványos bemenetről\n"
 
-#: src/option.c:166
+#: src/option.c:170
 msgid "Set the dialog title"
 msgstr "Párbeszédablak címsorának beállítása"
 
-#: src/option.c:167
+#: src/option.c:171
 msgid "TITLE"
 msgstr "CÍM"
 
-#: src/option.c:173
+#: src/option.c:177
 msgid "Set the width"
 msgstr "Szélesség beállítása"
 
-#: src/option.c:174
+#: src/option.c:178
 msgid "WIDTH"
 msgstr "SZÉLESSÉG"
 
-#: src/option.c:180
+#: src/option.c:184
 msgid "Set the height"
 msgstr "Magasság beállítása"
 
-#: src/option.c:181
+#: src/option.c:185
 msgid "HEIGHT"
 msgstr "MAGASSÁG"
 
-#: src/option.c:187
+#: src/option.c:191
 msgid "Set dialog timeout in seconds"
 msgstr "Párbeszédablak időtúllépésének beállítása"
 
 #. Timeout for closing the dialog
-#: src/option.c:189
+#: src/option.c:193
 msgid "TIMEOUT"
 msgstr "IDŐKORLÁT"
 
-#: src/option.c:195
+#: src/option.c:199
 msgid "Set the label of the OK button"
 msgstr "Az OK gomb feliratának beállítása"
 
-#: src/option.c:196 src/option.c:203 src/option.c:210 src/option.c:234
-#: src/option.c:279 src/option.c:286 src/option.c:310 src/option.c:364
-#: src/option.c:473 src/option.c:569 src/option.c:607 src/option.c:668
-#: src/option.c:750 src/option.c:757 src/option.c:807 src/option.c:861
-#: src/option.c:993
+#: src/option.c:200 src/option.c:207 src/option.c:214 src/option.c:259
+#: src/option.c:304 src/option.c:311 src/option.c:335 src/option.c:382
+#: src/option.c:491 src/option.c:587 src/option.c:608 src/option.c:625
+#: src/option.c:686 src/option.c:761 src/option.c:768 src/option.c:818
+#: src/option.c:865 src/option.c:997
 msgid "TEXT"
 msgstr "SZÖVEG"
 
-#: src/option.c:202
+#: src/option.c:206
 msgid "Set the label of the Cancel button"
 msgstr "A Mégse gomb feliratának beállítása"
 
-#: src/option.c:209
+#: src/option.c:213
 msgid "Add an extra button"
 msgstr "További gomb hozzáadása"
 
-#: src/option.c:216
+#: src/option.c:220
 msgid "Set the modal hint"
 msgstr "A kizárólagos tipp beállítása"
 
-#: src/option.c:226
-msgid "Display calendar dialog"
-msgstr "Naptár párbeszédablak megjelenítése"
+#: src/option.c:227 src/option.c:473 src/option.c:569 src/option.c:607
+msgid "DEPRECATED; does nothing"
+msgstr "ELAVULT, semmit sem csinál"
 
-#: src/option.c:233 src/option.c:278 src/option.c:309 src/option.c:363
-#: src/option.c:472 src/option.c:606 src/option.c:667 src/option.c:806
-#: src/option.c:860 src/option.c:992
-msgid "Set the dialog text"
-msgstr "Párbeszédablak szövegének beállítása"
+#: src/option.c:228
+msgid "WINDOW"
+msgstr "ABLAK"
 
-#: src/option.c:240
-msgid "Set the calendar day"
-msgstr "Naptár napjának beállítása"
-
-#: src/option.c:241
-msgid "DAY"
-msgstr "NAP"
-
-#: src/option.c:247
-msgid "Set the calendar month"
-msgstr "Naptár hónapjának beállítása"
-
-#: src/option.c:248
-msgid "MONTH"
-msgstr "HÓNAP"
-
-#: src/option.c:254
-msgid "Set the calendar year"
-msgstr "Naptár évének beállítása"
-
-#: src/option.c:255
-msgid "YEAR"
-msgstr "ÉV"
-
-#: src/option.c:261 src/option.c:1006
-msgid "Set the format for the returned date"
-msgstr "A visszaadott dátum formátumának beállítása"
-
-#: src/option.c:262 src/option.c:1007
-msgid "PATTERN"
-msgstr "MINTA"
-
-#: src/option.c:271
-msgid "Display text entry dialog"
-msgstr "Szövegbeviteli párbeszédablak megjelenítése"
-
-#: src/option.c:285
-msgid "Set the entry text"
-msgstr "A szövegbeviteli mező tartalmának beállítása"
-
-#: src/option.c:292
-msgid "Hide the entry text"
-msgstr "A szövegbeviteli mező tartalmának elrejtése"
-
-#: src/option.c:302
-msgid "Display error dialog"
-msgstr "Hibára figyelmeztető párbeszédablak megjelenítése"
-
-#: src/option.c:316 src/option.c:370 src/option.c:575 src/option.c:674
-#: src/option.c:813
-#| msgid "Set the filename"
-msgid "Set the icon name"
-msgstr "Az ikon nevének beállítása"
-
-#: src/option.c:317 src/option.c:324 src/option.c:371 src/option.c:378
-#: src/option.c:576 src/option.c:583 src/option.c:675 src/option.c:682
-#: src/option.c:814 src/option.c:821
-msgid "ICON-NAME"
-msgstr "IKONNÉV"
-
-#: src/option.c:323 src/option.c:377 src/option.c:582 src/option.c:681
-#: src/option.c:820
+#: src/option.c:234 src/option.c:241
 msgid "DEPRECATED; use `--icon`"
 msgstr "ELAVULT, használja az „--icon” kapcsolót"
 
-#: src/option.c:330 src/option.c:384 src/option.c:688 src/option.c:827
+#: src/option.c:235 src/option.c:242 src/option.c:342 src/option.c:389
+#: src/option.c:594 src/option.c:693 src/option.c:825
+msgid "ICON-NAME"
+msgstr "IKONNÉV"
+
+#: src/option.c:251
+msgid "Display calendar dialog"
+msgstr "Naptár párbeszédablak megjelenítése"
+
+#: src/option.c:258 src/option.c:303 src/option.c:334 src/option.c:381
+#: src/option.c:490 src/option.c:624 src/option.c:685 src/option.c:817
+#: src/option.c:864 src/option.c:996
+msgid "Set the dialog text"
+msgstr "Párbeszédablak szövegének beállítása"
+
+#: src/option.c:265
+msgid "Set the calendar day"
+msgstr "Naptár napjának beállítása"
+
+#: src/option.c:266
+msgid "DAY"
+msgstr "NAP"
+
+#: src/option.c:272
+msgid "Set the calendar month"
+msgstr "Naptár hónapjának beállítása"
+
+#: src/option.c:273
+msgid "MONTH"
+msgstr "HÓNAP"
+
+#: src/option.c:279
+msgid "Set the calendar year"
+msgstr "Naptár évének beállítása"
+
+#: src/option.c:280
+msgid "YEAR"
+msgstr "ÉV"
+
+#: src/option.c:286 src/option.c:1010
+msgid "Set the format for the returned date"
+msgstr "A visszaadott dátum formátumának beállítása"
+
+#: src/option.c:287 src/option.c:1011
+msgid "PATTERN"
+msgstr "MINTA"
+
+#: src/option.c:296
+msgid "Display text entry dialog"
+msgstr "Szövegbeviteli párbeszédablak megjelenítése"
+
+#: src/option.c:310
+msgid "Set the entry text"
+msgstr "A szövegbeviteli mező tartalmának beállítása"
+
+#: src/option.c:317
+msgid "Hide the entry text"
+msgstr "A szövegbeviteli mező tartalmának elrejtése"
+
+#: src/option.c:327
+msgid "Display error dialog"
+msgstr "Hibára figyelmeztető párbeszédablak megjelenítése"
+
+#: src/option.c:341 src/option.c:388 src/option.c:593 src/option.c:692
+#: src/option.c:824
+msgid "Set the icon name"
+msgstr "Az ikon nevének beállítása"
+
+#: src/option.c:348 src/option.c:395 src/option.c:699 src/option.c:831
 msgid "Do not enable text wrapping"
 msgstr "Ne engedélyezze a szöveg tördelését"
 
-#: src/option.c:337 src/option.c:391 src/option.c:695 src/option.c:834
+#: src/option.c:355 src/option.c:402 src/option.c:706 src/option.c:838
 msgid "Do not enable Pango markup"
 msgstr "Ne engedélyezze a Pango jelölést"
 
-#: src/option.c:344 src/option.c:398 src/option.c:709 src/option.c:841
+#: src/option.c:362 src/option.c:409 src/option.c:720 src/option.c:845
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
@@ -243,85 +247,85 @@ msgstr ""
 "Elliptikus méretezés engedélyezése a párbeszédablak szövegében. Ez javítja a "
 "hosszú szöveggel rendelkező nagy ablakméretet."
 
-#: src/option.c:356
+#: src/option.c:374
 msgid "Display info dialog"
 msgstr "Információs párbeszédablak megjelenítése"
 
-#: src/option.c:410
+#: src/option.c:421
 msgid "Display file selection dialog"
 msgstr "Fájlválasztó párbeszédablak megjelenítése"
 
-#: src/option.c:417
+#: src/option.c:428
 msgid "Set the filename"
 msgstr "Fájlnév beállítása"
 
-#: src/option.c:418 src/option.c:736
+#: src/option.c:429 src/option.c:747
 msgid "FILENAME"
 msgstr "FÁJLNÉV"
 
-#: src/option.c:424
+#: src/option.c:435
 msgid "Allow multiple files to be selected"
 msgstr "Többszörös fájlkijelölés engedélyezése"
 
-#: src/option.c:431
+#: src/option.c:442
 msgid "Activate directory-only selection"
 msgstr "„Csak könyvtár” kiválasztás aktiválása"
 
-#: src/option.c:438
+#: src/option.c:449
 msgid "Activate save mode"
 msgstr "Mentés mód aktiválása"
 
-#: src/option.c:445 src/option.c:507 src/option.c:999
+#: src/option.c:456 src/option.c:525 src/option.c:1003
 msgid "Set output separator character"
 msgstr "A kimenet elválasztókarakterének beállítása"
 
-#: src/option.c:446 src/option.c:508 src/option.c:1000
+#: src/option.c:457 src/option.c:526 src/option.c:1004
 msgid "SEPARATOR"
 msgstr "ELVÁLASZTÓ"
 
-#: src/option.c:452
+#: src/option.c:463
 msgid "Set a filename filter"
 msgstr "Fájlnévszűrő beállítása"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
-#: src/option.c:455
+#: src/option.c:466
 msgid "NAME | PATTERN1 PATTERN2 ..."
 msgstr "NÉV | MINTA1 MINTA2 …"
 
-#: src/option.c:465
+#: src/option.c:483
 msgid "Display list dialog"
 msgstr "Lista párbeszédablak megjelenítése"
 
-#: src/option.c:479
+#: src/option.c:497
 msgid "Set the column header"
 msgstr "Oszlopfejléc beállítása"
 
-#: src/option.c:480
+#: src/option.c:498
 msgid "COLUMN"
 msgstr "OSZLOP"
 
-#: src/option.c:486
+#: src/option.c:504
 msgid "Use check boxes for the first column"
 msgstr "Jelölőnégyzetek az első oszlopban"
 
-#: src/option.c:493
+#: src/option.c:511
 msgid "Use radio buttons for the first column"
 msgstr "Választógombok az első oszlopban"
 
-#: src/option.c:500
+#: src/option.c:518
 msgid "Use an image for the first column"
 msgstr "Kép használata az első oszlophoz"
 
-#: src/option.c:514
+#: src/option.c:532
 msgid "Allow multiple rows to be selected"
 msgstr "Több sor kijelölésének engedélyezése"
 
-#: src/option.c:521 src/option.c:742
+#: src/option.c:539 src/option.c:753
 msgid "Allow changes to text"
 msgstr "Szöveg változtatható"
 
-#: src/option.c:528
+#: src/option.c:546
 msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
@@ -330,101 +334,97 @@ msgstr ""
 "nyomtatásához az „ALL” használható)"
 
 #. Column index number to print out on a list dialog
-#: src/option.c:531 src/option.c:538
+#: src/option.c:549 src/option.c:556
 msgid "NUMBER"
 msgstr "SZÁM"
 
-#: src/option.c:537
+#: src/option.c:555
 msgid "Hide a specific column"
 msgstr "Egy bizonyos oszlop elrejtése"
 
-#: src/option.c:544
+#: src/option.c:562
 msgid "Hide the column headers"
 msgstr "Oszlopfejléc elrejtése"
 
-#: src/option.c:551
-msgid "DEPRECATED; does nothing"
-msgstr "ELAVULT, semmit sem csinál"
-
-#: src/option.c:561
+#: src/option.c:579
 msgid "Display notification"
 msgstr "Értesítés megjelenítése"
 
-#: src/option.c:568
+#: src/option.c:586
 msgid "Set the notification text"
 msgstr "Az értesítési szöveg beállítása"
 
-#: src/option.c:589
+#: src/option.c:600
 msgid "Listen for commands on stdin"
 msgstr "Parancsok figyelése a szabványos bemeneten"
 
-#: src/option.c:599
+#: src/option.c:617
 msgid "Display progress indication dialog"
 msgstr "Folyamatkijelző párbeszédablak megjelenítése"
 
-#: src/option.c:613
+#: src/option.c:631
 msgid "Set initial percentage"
 msgstr "Kezdeti százalék beállítása"
 
-#: src/option.c:614
+#: src/option.c:632
 msgid "PERCENTAGE"
 msgstr "SZÁZALÉK"
 
-#: src/option.c:620
+#: src/option.c:638
 msgid "Pulsate progress bar"
 msgstr "Folyamatjelző pulzálása"
 
-#: src/option.c:628
+#: src/option.c:646
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
 msgstr "Párbeszédablak eltüntetése, ha a 100%-ot elérte"
 
-#: src/option.c:635
+#: src/option.c:653
 msgid "Kill parent process if Cancel button is pressed"
 msgstr "Szülőfolyamat kilövése a Mégse gomb megnyomásakor"
 
-#: src/option.c:642
+#: src/option.c:660
 msgid "Hide Cancel button"
 msgstr "Mégse gomb elrejtése"
 
-#: src/option.c:650
+#: src/option.c:668
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
 msgstr "Annak becslése, hogy a folyamat mikor éri el a 100%-ot"
 
-#: src/option.c:660
+#: src/option.c:678
 msgid "Display question dialog"
 msgstr "Kérdező párbeszédablak megjelenítése"
 
-#: src/option.c:702
+#: src/option.c:713
 msgid "Give Cancel button focus by default"
 msgstr "Alapértelmezetten adjon fókuszt a Mégse gombnak"
 
-#: src/option.c:718
+#: src/option.c:729
 msgid "Suppress OK and Cancel buttons"
 msgstr "Az OK és Mégse gombok elnyomása"
 
-#: src/option.c:728
+#: src/option.c:739
 msgid "Display text information dialog"
 msgstr "Szöveges információs párbeszédablak megjelenítése"
 
-#: src/option.c:735
+#: src/option.c:746
 msgid "Open file"
 msgstr "Fájl megnyitása"
 
-#: src/option.c:749
+#: src/option.c:760
 msgid "Set the text font"
 msgstr "A szöveg betűkészletének beállítása"
 
-#: src/option.c:756
+#: src/option.c:767
 msgid "Enable an I read and agree checkbox"
 msgstr "„Elolvastam és egyetértek” jelölőnégyzet engedélyezése"
 
-#: src/option.c:764
+#: src/option.c:775
 msgid "Enable HTML support"
 msgstr "HTML-támogatás engedélyezése"
 
-#: src/option.c:771
+#: src/option.c:782
 msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
@@ -432,305 +432,350 @@ msgstr ""
 "Ne engedélyezze a felhasználói interakciót a webnézettel. Csak akkor "
 "működik, ha a --html kapcsolót használja"
 
-#: src/option.c:779
+#: src/option.c:790
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
 "URL-cím beállítása fájl helyett. Csak a --html kapcsolóval együtt működik"
 
-#: src/option.c:781
+#: src/option.c:792
 msgid "URL"
 msgstr "URL"
 
-#: src/option.c:788
+#: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "A szöveg automatikus görgetése a végére. Csak akkor, ha a szöveg a "
 "szabványos bemenetről lett rögzítve"
 
-#: src/option.c:799
+#: src/option.c:810
 msgid "Display warning dialog"
 msgstr "Figyelmeztető párbeszédablak megjelenítése"
 
-#: src/option.c:853
+#: src/option.c:857
 msgid "Display scale dialog"
 msgstr "Nagyítás párbeszédablak megjelenítése"
 
-#: src/option.c:867
+#: src/option.c:871
 msgid "Set initial value"
 msgstr "Kezdeti érték beállítása"
 
-#: src/option.c:868 src/option.c:875 src/option.c:882 src/option.c:889
-#: src/option.c:1041
+#: src/option.c:872 src/option.c:879 src/option.c:886 src/option.c:893
+#: src/option.c:1045
 msgid "VALUE"
 msgstr "ÉRTÉK"
 
-#: src/option.c:874
+#: src/option.c:878
 msgid "Set minimum value"
 msgstr "Minimális érték beállítása"
 
-#: src/option.c:881
+#: src/option.c:885
 msgid "Set maximum value"
 msgstr "Maximális érték beállítása"
 
-#: src/option.c:888
+#: src/option.c:892
 msgid "Set step size"
 msgstr "Lépés értékének beállítása"
 
-#: src/option.c:895
+#: src/option.c:899
 msgid "Print partial values"
 msgstr "Részleges értékek kiírása"
 
-#: src/option.c:902
+#: src/option.c:906
 msgid "Hide value"
 msgstr "Érték elrejtése"
 
-#: src/option.c:912
+#: src/option.c:916
 msgid "Display forms dialog"
 msgstr "Űrlapok párbeszédablak megjelenítése"
 
-#: src/option.c:919
+#: src/option.c:923
 msgid "Add a new Entry in forms dialog"
 msgstr "Új bejegyzés hozzáadása az Űrlapok ablakhoz"
 
-#: src/option.c:920 src/option.c:927
+#: src/option.c:924 src/option.c:931
 msgid "Field name"
 msgstr "Mezőnév"
 
-#: src/option.c:926
+#: src/option.c:930
 msgid "Add a new Password Entry in forms dialog"
 msgstr "Új jelszóbeviteli mező hozzáadása az Űrlapok ablakhoz"
 
-#: src/option.c:933
+#: src/option.c:937
 msgid "Add a new Calendar in forms dialog"
 msgstr "Új naptár hozzáadása az Űrlapok ablakhoz"
 
-#: src/option.c:934
+#: src/option.c:938
 msgid "Calendar field name"
 msgstr "Naptármező neve"
 
-#: src/option.c:940
+#: src/option.c:944
 msgid "Add a new List in forms dialog"
 msgstr "Új lista hozzáadása az Űrlapok ablakhoz"
 
-#: src/option.c:941
+#: src/option.c:945
 msgid "List field and header name"
 msgstr "Listamező és fejléc neve"
 
-#: src/option.c:947
+#: src/option.c:951
 msgid "List of values for List"
 msgstr "Értékek listája a listához"
 
-#: src/option.c:948 src/option.c:955 src/option.c:969
+#: src/option.c:952 src/option.c:959 src/option.c:973
 msgid "List of values separated by |"
 msgstr "Értékek | jellel elválasztott listája"
 
-#: src/option.c:954
+#: src/option.c:958
 msgid "List of values for columns"
 msgstr "Az oszlopok értékeinek listája"
 
-#: src/option.c:961
+#: src/option.c:965
 msgid "Add a new combo box in forms dialog"
 msgstr "Új legördülő menü hozzáadása az űrlapok ablakhoz"
 
-#: src/option.c:962
+#: src/option.c:966
 msgid "Combo box field name"
 msgstr "Legördülő menü mező neve"
 
-#: src/option.c:968
+#: src/option.c:972
 msgid "List of values for combo box"
 msgstr "A legördülő menü értékeinek listája"
 
-#: src/option.c:985
+#: src/option.c:989
 msgid "Show the columns header"
 msgstr "Oszlopfejlécek megjelenítése"
 
-#: src/option.c:1016
+#: src/option.c:1020
 msgid "Display password dialog"
 msgstr "Jelszó párbeszédablak megjelenítése"
 
-#: src/option.c:1023
+#: src/option.c:1027
 msgid "Display the username option"
 msgstr "A felhasználónév kapcsoló megjelenítése"
 
-#: src/option.c:1033
+#: src/option.c:1037
 msgid "Display color selection dialog"
 msgstr "Színválasztó párbeszédablak megjelenítése"
 
-#: src/option.c:1040
+#: src/option.c:1044
 msgid "Set the color"
 msgstr "Szín beállítása"
 
-#: src/option.c:1047
+#: src/option.c:1051
 msgid "Show the palette"
 msgstr "A paletta megjelenítése"
 
-#: src/option.c:1057
+#: src/option.c:1061
 msgid "About zenity"
 msgstr "A Zenity névjegye"
 
-#: src/option.c:1064
+#: src/option.c:1068
 msgid "Print version"
 msgstr "Verziószám nyomtatása"
 
-#: src/option.c:1478
+#: src/option.c:1080
+#| msgid ""
+#| "Warning: --window-icon is deprecated and will be removed in a future "
+#| "version of zenity. Ignoring.\n"
+msgid ""
+"Warning: --icon-name is deprecated and will be removed in a future version "
+"of zenity; Treating as --icon.\n"
+msgstr ""
+"Figyelmeztetés: az --icon-name kapcsoló elavult, és eltávolításra kerül a "
+"Zenity későbbi verziójából. --icon kapcsolóként lesz kezelve.\n"
+
+#: src/option.c:1087
+#| msgid ""
+#| "Warning: --window-icon is deprecated and will be removed in a future "
+#| "version of zenity. Ignoring.\n"
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
-"of zenity. Ignoring.\n"
+"of zenity; Treating as --icon.\n"
 msgstr ""
-"Figyelmeztetés: a --window-icon kapcsoló elavult, és eltávolításra kerül a"
-" Zenity későbbi verziójából. Mellőzés.\n"
+"Figyelmeztetés: a --window-icon kapcsoló elavult, és eltávolításra kerül a "
+"Zenity későbbi verziójából. --icon kapcsolóként lesz kezelve.\n"
 
-#: src/option.c:2000
+#: src/option.c:1094
+#| msgid ""
+#| "Warning: --mid-search is deprecated and will be removed in a future "
+#| "version of zenity. Ignoring.\n"
+msgid ""
+"Warning: --confirm-overwrite is deprecated and will be removed in a future "
+"version of zenity. Ignoring.\n"
+msgstr ""
+"Figyelmeztetés: a --confirm-overwrite kapcsoló elavult, és eltávolításra "
+"kerül a Zenity későbbi verziójából. Mellőzés.\n"
+
+#: src/option.c:1101
+#| msgid ""
+#| "Warning: --mid-search is deprecated and will be removed in a future "
+#| "version of zenity. Ignoring.\n"
+msgid ""
+"Warning: --attach is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr ""
+"Figyelmeztetés: az --attach kapcsoló elavult, és eltávolításra kerül a "
+"Zenity későbbi verziójából. Mellőzés.\n"
+
+#: src/option.c:1108
+#| msgid ""
+#| "Warning: --window-icon is deprecated and will be removed in a future "
+#| "version of zenity. Ignoring.\n"
+msgid ""
+"Warning: --hint is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr ""
+"Figyelmeztetés: a --hint kapcsoló elavult, és eltávolításra kerül a Zenity "
+"későbbi verziójából. Mellőzés.\n"
+
+#: src/option.c:2029
 msgid "General options"
 msgstr "Általános kapcsolók"
 
-#: src/option.c:2001
+#: src/option.c:2030
 msgid "Show general options"
 msgstr "Általános kapcsolók megjelenítése"
 
-#: src/option.c:2013
+#: src/option.c:2042
 msgid "Calendar options"
 msgstr "Naptár kapcsolók"
 
-#: src/option.c:2014
+#: src/option.c:2043
 msgid "Show calendar options"
 msgstr "Naptár kapcsolók megjelenítése"
 
-#: src/option.c:2026
+#: src/option.c:2055
 msgid "Text entry options"
 msgstr "Szövegbeviteli mező kapcsolók"
 
-#: src/option.c:2027
+#: src/option.c:2056
 msgid "Show text entry options"
 msgstr "Szövegbeviteli mező kapcsolók megjelenítése"
 
-#: src/option.c:2039
+#: src/option.c:2068
 msgid "Error options"
 msgstr "Hibajelzés kapcsolók"
 
-#: src/option.c:2039
+#: src/option.c:2068
 msgid "Show error options"
 msgstr "Hibajelzés kapcsolók megjelenítése"
 
-#: src/option.c:2049
+#: src/option.c:2078
 msgid "Info options"
 msgstr "Tájékoztató üzenet kapcsolók"
 
-#: src/option.c:2049
+#: src/option.c:2078
 msgid "Show info options"
 msgstr "Tájékoztató üzenet kapcsolók megjelenítése"
 
-#: src/option.c:2059
+#: src/option.c:2088
 msgid "File selection options"
 msgstr "Fájlválasztó kapcsolók"
 
-#: src/option.c:2060
+#: src/option.c:2089
 msgid "Show file selection options"
 msgstr "Fájlválasztó kapcsolók megjelenítése"
 
-#: src/option.c:2072
+#: src/option.c:2101
 msgid "List options"
 msgstr "Lista kapcsolók"
 
-#: src/option.c:2072
+#: src/option.c:2101
 msgid "Show list options"
 msgstr "Lista kapcsolók megjelenítése"
 
-#: src/option.c:2082
-#| msgid "Notification icon options"
+#: src/option.c:2111
 msgid "Notification options"
 msgstr "Értesítés kapcsolók"
 
-#: src/option.c:2083
-#| msgid "Show notification icon options"
+#: src/option.c:2112
 msgid "Show notification options"
 msgstr "Értesítés kapcsolók megjelenítése"
 
-#: src/option.c:2096
+#: src/option.c:2125
 msgid "Progress options"
 msgstr "Folyamatjelző kapcsolók"
 
-#: src/option.c:2097
+#: src/option.c:2126
 msgid "Show progress options"
 msgstr "Folyamatjelző kapcsolók megjelenítése"
 
-#: src/option.c:2109
+#: src/option.c:2138
 msgid "Question options"
 msgstr "Kérdés kapcsolók"
 
-#: src/option.c:2110
+#: src/option.c:2139
 msgid "Show question options"
 msgstr "Kérdés kapcsolók megjelenítése"
 
-#: src/option.c:2122
+#: src/option.c:2151
 msgid "Warning options"
 msgstr "Figyelmeztetés kapcsolók"
 
-#: src/option.c:2123
+#: src/option.c:2152
 msgid "Show warning options"
 msgstr "Figyelmeztetés kapcsolók megjelenítése"
 
-#: src/option.c:2135
+#: src/option.c:2164
 msgid "Scale options"
 msgstr "Nagyítás kapcsolók"
 
-#: src/option.c:2135
+#: src/option.c:2164
 msgid "Show scale options"
 msgstr "Nagyítás kapcsolók megjelenítése"
 
-#: src/option.c:2145
+#: src/option.c:2174
 msgid "Text information options"
 msgstr "Szöveges információ kapcsolók"
 
-#: src/option.c:2146
+#: src/option.c:2175
 msgid "Show text information options"
 msgstr "Szöveges információ kapcsolók megjelenítése"
 
-#: src/option.c:2158
+#: src/option.c:2187
 msgid "Color selection options"
 msgstr "Színválasztó kapcsolók"
 
-#: src/option.c:2159
+#: src/option.c:2188
 msgid "Show color selection options"
 msgstr "Színválasztó kapcsolók megjelenítése"
 
-#: src/option.c:2171
+#: src/option.c:2200
 msgid "Password dialog options"
 msgstr "Jelszó párbeszédablak kapcsolók"
 
-#: src/option.c:2172
+#: src/option.c:2201
 msgid "Show password dialog options"
 msgstr "Jelszó párbeszédablak kapcsolók megjelenítése"
 
-#: src/option.c:2184
+#: src/option.c:2213
 msgid "Forms dialog options"
 msgstr "Űrlapok párbeszédablak kapcsolók"
 
-#: src/option.c:2185
+#: src/option.c:2214
 msgid "Show forms dialog options"
 msgstr "Űrlapok párbeszédablak kapcsolók megjelenítése"
 
-#: src/option.c:2197
+#: src/option.c:2226
 msgid "Miscellaneous options"
 msgstr "Egyéb kapcsolók"
 
-#: src/option.c:2198
+#: src/option.c:2227
 msgid "Show miscellaneous options"
 msgstr "Egyéb kapcsolók megjelenítése"
 
-#: src/option.c:2221
+#: src/option.c:2250
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Ez a kapcsoló nem érhető el. Nézze meg a --help kapcsoló kimenetét a "
 "lehetséges használati módokért.\n"
 
-#: src/option.c:2226
+#: src/option.c:2255
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s nincs támogatva ezen a párbeszédablakon.\n"
 
-#: src/option.c:2230
+#: src/option.c:2259
 msgid "Two or more dialog options specified\n"
 msgstr "Kettő vagy több párbeszédablak-kapcsoló lett megadva.\n"
 
@@ -767,14 +812,14 @@ msgid ""
 "Warning: --mid-search is deprecated and will be removed in a future version "
 "of zenity. Ignoring.\n"
 msgstr ""
-"Figyelmeztetés: a --mid-search kapcsoló elavult, és eltávolításra kerül a"
-" Zenity későbbi verziójából. Mellőzés.\n"
+"Figyelmeztetés: a --mid-search kapcsoló elavult, és eltávolításra kerül a "
+"Zenity későbbi verziójából. Mellőzés.\n"
 
-#: src/tree.c:278
+#: src/tree.c:281
 msgid "No column titles specified for List dialog.\n"
 msgstr "A lista párbeszédablakhoz nincsenek megadva oszlopcímek.\n"
 
-#: src/tree.c:285
+#: src/tree.c:288
 msgid "You should use only one List dialog type.\n"
 msgstr "Csak egy Lista párbeszédablak-típust használjon.\n"
 
@@ -804,7 +849,6 @@ msgid "C_alendar:"
 msgstr "_Naptár:"
 
 #: src/zenity.ui:117
-#| msgid "C_alendar:"
 msgid "Calendar"
 msgstr "Naptár"
 
