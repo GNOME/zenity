@@ -8,12 +8,7 @@
 		<child>
 			<object class="GtkScrolledWindow" id="scrolled_window">
 				<child>
-					<object class="GtkViewport">
-						<property name="scroll-to-focus">true</property>	<!-- good to explicitly set to true for backwards compatibility, acc. to TFM. -->
-						<child>
-							<object class="GtkColumnView" id="child_cv" />
-						</child>
-					</object>
+					<object class="GtkColumnView" id="child_cv" />
 				</child>
 			</object>
 		</child>
