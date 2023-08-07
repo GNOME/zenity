@@ -115,6 +115,8 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 				"no", _("_No"),
 				"yes", _("_Yes"),
 				NULL);
+		adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(dialog),
+				"yes");
 	}
 
 	if (data->extra_label)

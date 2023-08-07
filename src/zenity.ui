@@ -10,6 +10,7 @@
 		<property name="default_width">300</property>
 		<property name="default_height">100</property>
 		<property name="extra-child">zenity_scale_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
 			<response id="ok" translatable="yes">_OK</response>
@@ -47,6 +48,7 @@
 		<property name="default_height">200</property>
 		<property name="resizable">true</property>
 		<property name="extra-child">zenity_text_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
 			<response id="ok" translatable="yes">_OK</response>
@@ -81,6 +83,7 @@
 	<object class="AdwMessageDialog" id="zenity_calendar_dialog">
 		<property name="heading" translatable="yes">Calendar selection</property>
 		<property name="extra-child">zenity_calendar_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
 			<response id="ok" translatable="yes">_OK</response>
@@ -131,6 +134,7 @@
 	<object class="AdwMessageDialog" id="zenity_entry_dialog">
 		<property name="heading" translatable="yes">Add a new entry</property>
 		<property name="extra-child">zenity_entry_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
 			<response id="ok" translatable="yes">_OK</response>
@@ -169,6 +173,7 @@
 	<object class="AdwMessageDialog" id="zenity_error_dialog">
 		<property name="heading" translatable="yes">Error</property>
 		<property name="extra-child">zenity_error_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="ok" translatable="yes">_OK</response>
 		</responses>
@@ -208,6 +213,7 @@
 	</object>
 	<object class="AdwMessageDialog" id="zenity_forms_dialog">
 		<property name="extra-child">zenity_forms_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
 			<response id="ok" translatable="yes">_OK</response>
@@ -268,6 +274,7 @@
 	<object class="AdwMessageDialog" id="zenity_info_dialog">
 		<property name="heading" translatable="yes">Information</property>
 		<property name="extra-child">zenity_info_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="ok" translatable="yes">_OK</response>
 		</responses>
@@ -338,8 +345,6 @@
 	<object class="AdwMessageDialog" id="zenity_question_dialog">
 		<property name="heading" translatable="yes">Question</property>
 		<property name="extra-child">zenity_question_box</property>
-		<responses>
-		</responses>
 	</object>
 	<object class="GtkBox" id="zenity_question_box">
 		<property name="spacing">14</property>
@@ -375,6 +380,7 @@
 		<property name="default_height">320</property>
 		<property name="extra-child">zenity_tree_box</property>
 		<property name="resizable">true</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
 			<response id="ok" translatable="yes">_OK</response>
@@ -413,6 +419,7 @@
 		<property name="heading" translatable="yes">Warning</property>
 		<property name="resizable">false</property>
 		<property name="extra-child">zenity_warning_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="ok" translatable="yes">_OK</response>
 		</responses>
@@ -450,6 +457,7 @@
 		<property name="heading" translatable="yes">Warning</property>
 		<property name="resizable">false</property>
 		<property name="extra-child">zenity_password_box</property>
+		<property name="default-response">ok</property>
 		<responses>
 			<response id="cancel" translatable="yes">_Cancel</response>
 			<response id="ok" translatable="yes">_OK</response>
