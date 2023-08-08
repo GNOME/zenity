@@ -50,10 +50,17 @@ G_BEGIN_DECLS
 	}
 
 #define ZENITY_UTIL_SETUP_OK_BUTTON_LABEL(DIALOG) \
-	adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "ok", data->ok_label);
+	if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "ok")) \
+		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "ok", data->ok_label); \
+	else if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "yes")) \
+		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "yes", data->ok_label);
+
 
 #define ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL(DIALOG) \
-	adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "cancel", data->cancel_label);
+	if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "cancel")) \
+		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "cancel", data->cancel_label); \
+	else if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "no")) \
+		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "no", data->cancel_label);
 
 GIcon *zenity_util_gicon_from_string (const char *str);
 GtkBuilder *zenity_util_load_ui_file (const char *widget_root,

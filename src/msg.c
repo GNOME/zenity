@@ -139,6 +139,11 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog)
 	}
 
+	if (data->cancel_label)
+	{
+		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog)
+	}
+
 	switch (msg_data->mode)
 	{
 		case ZENITY_MSG_WARNING:
