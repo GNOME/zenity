@@ -39,6 +39,14 @@ static ZenityData *zen_data;
 
 static void zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 
+static void
+show_extra_button_deprecation_warning (void)
+{
+	g_printerr (_("Warning: the --extra-button option for --file-selection "
+			"is deprecated and will be removed in a future version of zenity. "
+			"Ignoring.\n"));
+}
+
 void
 zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 {
@@ -64,7 +72,7 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 		gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG(dialog), TRUE);
 
 	if (data->extra_label)
-		g_warning ("Cannot add extra labels to GtkFileChooserNative");
+		show_extra_button_deprecation_warning ();
 
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_fileselection_dialog_response), file_data);
 
@@ -203,10 +211,6 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
 			break;
 
 		default:
-			if (zen_data->extra_label &&
-					response < (int)g_strv_length (zen_data->extra_label)) {
-				printf ("%s\n", zen_data->extra_label[response]);
-			}
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}

@@ -92,6 +92,10 @@ zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
+		case GTK_RESPONSE_DELETE_EVENT:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
+
 		default:
 			if (zen_data->extra_label &&
 				response < (int)g_strv_length (zen_data->extra_label))

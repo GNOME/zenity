@@ -44,9 +44,16 @@ G_BEGIN_DECLS
 
 #define ZENITY_IMAGE_FULLPATH(filename) (PACKAGE_DATADIR "/" filename)
 
+/* FIXME: GTK_IS_DIALOG test below is for backwards compatibility with older
+ * dialogs (eg, color selection dialog) only. Once we have a libadwaita or
+ * custom equivalent, remove that test here.
+ */
 #define ZENITY_UTIL_ADD_EXTRA_LABELS(DIALOG) \
 	for (int i = 0; data->extra_label[i] != NULL; ++i) { \
-		zenity_util_add_button (ADW_MESSAGE_DIALOG (DIALOG), data->extra_label[i], i); \
+		if (ADW_IS_MESSAGE_DIALOG (DIALOG)) \
+			zenity_util_add_button (ADW_MESSAGE_DIALOG (DIALOG), data->extra_label[i], i); \
+		else if (GTK_IS_DIALOG (DIALOG)) \
+			gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i); \
 	}
 
 #define ZENITY_UTIL_SETUP_OK_BUTTON_LABEL(DIALOG) \
