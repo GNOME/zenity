@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-04-28 19:28+0000\n"
-"PO-Revision-Date: 2023-04-29 19:29+0300\n"
+"POT-Creation-Date: 2023-08-08 04:43+0000\n"
+"PO-Revision-Date: 2023-08-08 09:25+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -71,15 +71,27 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Показ діалогових вікон зі скриптів оболонки"
 
-#: src/fileselection.c:60 src/progress.c:415 src/zenity.ui:15 src/zenity.ui:52
-#: src/zenity.ui:86 src/zenity.ui:136 src/zenity.ui:173 src/zenity.ui:213
-#: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:419 src/zenity.ui:457
+#: src/fileselection.c:45
+#| msgid ""
+#| "Warning: --attach is deprecated and will be removed in a future version "
+#| "of zenity. Ignoring.\n"
+msgid ""
+"Warning: the --extra-button option for --file-selection is deprecated and "
+"will be removed in a future version of zenity. Ignoring.\n"
+msgstr ""
+"Попередження: варіант --extra-button для --file-selection вважається"
+" застарілим; його буде вилучено у "
+"наступних версіях zenity. Ігноруємо.\n"
+
+#: src/fileselection.c:68 src/progress.c:410 src/zenity.ui:16 src/zenity.ui:54
+#: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
 msgid "_OK"
 msgstr "_Гаразд"
 
-#: src/fileselection.c:61 src/progress.c:411 src/zenity.ui:14 src/zenity.ui:51
-#: src/zenity.ui:85 src/zenity.ui:135 src/zenity.ui:212 src/zenity.ui:381
-#: src/zenity.ui:456
+#: src/fileselection.c:69 src/progress.c:406 src/zenity.ui:15 src/zenity.ui:53
+#: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "_Скасувати"
 
@@ -88,6 +100,14 @@ msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Потрібно вказати тип діалогового вікна. Скористуйтесь «zenity --help» для "
 "докладнішої інформації\n"
+
+#: src/msg.c:115
+msgid "_No"
+msgstr "_Ні"
+
+#: src/msg.c:116
+msgid "_Yes"
+msgstr "_Так"
 
 #: src/notification.c:62
 msgid "Could not parse message\n"
@@ -576,20 +596,14 @@ msgid "Print version"
 msgstr "Показати версію"
 
 #: src/option.c:1080
-#| msgid ""
-#| "Warning: --window-icon is deprecated and will be removed in a future "
-#| "version of zenity. Ignoring.\n"
 msgid ""
 "Warning: --icon-name is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
 msgstr ""
-"Попередження: параметр --icon-name вважається застарілим; його буде "
-"вилучено у наступних версіях zenity. Обробляємо як --icon.\n"
+"Попередження: параметр --icon-name вважається застарілим; його буде вилучено "
+"у наступних версіях zenity. Обробляємо як --icon.\n"
 
 #: src/option.c:1087
-#| msgid ""
-#| "Warning: --window-icon is deprecated and will be removed in a future "
-#| "version of zenity. Ignoring.\n"
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
@@ -598,9 +612,6 @@ msgstr ""
 "вилучено у наступних версіях zenity. Обробляємо як --icon.\n"
 
 #: src/option.c:1094
-#| msgid ""
-#| "Warning: --mid-search is deprecated and will be removed in a future "
-#| "version of zenity. Ignoring.\n"
 msgid ""
 "Warning: --confirm-overwrite is deprecated and will be removed in a future "
 "version of zenity. Ignoring.\n"
@@ -609,26 +620,20 @@ msgstr ""
 "вилучено у наступних версіях zenity. Ігноруємо.\n"
 
 #: src/option.c:1101
-#| msgid ""
-#| "Warning: --mid-search is deprecated and will be removed in a future "
-#| "version of zenity. Ignoring.\n"
 msgid ""
 "Warning: --attach is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
 msgstr ""
-"Попередження: параметр --attach вважається застарілим; його буде "
-"вилучено у наступних версіях zenity. Ігноруємо.\n"
+"Попередження: параметр --attach вважається застарілим; його буде вилучено у "
+"наступних версіях zenity. Ігноруємо.\n"
 
 #: src/option.c:1108
-#| msgid ""
-#| "Warning: --window-icon is deprecated and will be removed in a future "
-#| "version of zenity. Ignoring.\n"
 msgid ""
 "Warning: --hint is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
 msgstr ""
-"Попередження: параметр --hint вважається застарілим; його буде "
-"вилучено у наступних версіях zenity. Ігноруємо.\n"
+"Попередження: параметр --hint вважається застарілим; його буде вилучено у "
+"наступних версіях zenity. Ігноруємо.\n"
 
 #: src/option.c:2029
 msgid "General options"
@@ -797,7 +802,7 @@ msgstr "Користувач:"
 msgid "Password:"
 msgstr "Пароль:"
 
-#: src/progress.c:115
+#: src/progress.c:111
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Лишилося часу: %lu:%02lu:%02lu"
@@ -832,95 +837,87 @@ msgid "Icon filename %s not found; trying theme icon."
 msgstr ""
 "Не знайдено файла піктограми %s; спробуємо скористатися піктограмою з теми."
 
-#: src/zenity.ui:9 src/zenity.ui:30
+#: src/zenity.ui:9 src/zenity.ui:31
 msgid "Adjust the scale value"
 msgstr "Коригувати значення масштабу"
 
-#: src/zenity.ui:45
+#: src/zenity.ui:46
 msgid "Text View"
 msgstr "Перегляд тексту"
 
-#: src/zenity.ui:82
+#: src/zenity.ui:84
 msgid "Calendar selection"
 msgstr "Вибір дати"
 
-#: src/zenity.ui:102
+#: src/zenity.ui:105
 msgid "Select a date from below."
 msgstr "Виберіть дату нижче."
 
-#: src/zenity.ui:112
+#: src/zenity.ui:115
 msgid "C_alendar:"
 msgstr "_Календар:"
 
-#: src/zenity.ui:117
+#: src/zenity.ui:120
 msgid "Calendar"
 msgstr "Календар"
 
-#: src/zenity.ui:132
+#: src/zenity.ui:135
 msgid "Add a new entry"
 msgstr "Додати нове поле"
 
-#: src/zenity.ui:156
+#: src/zenity.ui:160
 msgid "_Enter new text:"
 msgstr "_Введіть новий текст:"
 
-#: src/zenity.ui:170
+#: src/zenity.ui:174
 msgid "Error"
 msgstr "Помилка"
 
-#: src/zenity.ui:198
+#: src/zenity.ui:203
 msgid "An error has occurred."
 msgstr "Виникла помилка."
 
-#: src/zenity.ui:259
+#: src/zenity.ui:265
 msgid "Forms dialog"
 msgstr "Діалог форм"
 
-#: src/zenity.ui:269
+#: src/zenity.ui:275
 msgid "Information"
 msgstr "Інформація"
 
-#: src/zenity.ui:295
+#: src/zenity.ui:302
 msgid "All updates are complete."
 msgstr "Всі оновлення завершено."
 
-#: src/zenity.ui:305
+#: src/zenity.ui:312
 msgid "Progress"
 msgstr "Поступ"
 
-#: src/zenity.ui:317
+#: src/zenity.ui:324
 msgid "Running..."
 msgstr "Виконання…"
 
-#: src/zenity.ui:339
+#: src/zenity.ui:346
 msgid "Question"
 msgstr "Запитання"
 
-#: src/zenity.ui:342
-msgid "_No"
-msgstr "_Ні"
-
-#: src/zenity.ui:343
-msgid "_Yes"
-msgstr "_Так"
-
-#: src/zenity.ui:365 src/zenity.ui:442
+#: src/zenity.ui:368 src/zenity.ui:447
 msgid "Are you sure you want to proceed?"
 msgstr "Продовжити?"
 
-#: src/zenity.ui:375
+#: src/zenity.ui:378
 msgid "Select items from the list"
 msgstr "Виберіть пункти зі списку"
 
-#: src/zenity.ui:404
+#: src/zenity.ui:408
 msgid "Select items from the list below."
 msgstr "Виберіть пункти зі списку нижче."
 
-#: src/zenity.ui:415 src/zenity.ui:452
+#: src/zenity.ui:419 src/zenity.ui:457
 msgid "Warning"
 msgstr "Попередження"
 
-#: src/zenity.ui:479
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "Введіть ваш пароль"
 
