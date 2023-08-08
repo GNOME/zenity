@@ -78,34 +78,13 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 
 	if (file_data->uri)
 	{
-		if (g_path_is_absolute (file_data->uri) == TRUE)
-		{
-			g_autofree char *dir = g_path_get_dirname (file_data->uri);
-			g_autoptr(GFile) dir_gfile = g_file_new_for_path (dir);
+		g_autoptr(GFile) file = g_file_new_for_commandline_arg (file_data->uri);
+		g_autoptr(GError) local_error = NULL;
 
-			gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER(dialog),
-					dir_gfile,
-					NULL);	/* GError */
-		}
+		gtk_file_chooser_set_file (GTK_FILE_CHOOSER(dialog), file, &local_error);
 
-		if (file_data->uri[strlen (file_data->uri) - 1] != '/')
-		{
-			if (file_data->save)
-			{
-				g_autofree char *basename = g_path_get_basename (file_data->uri);
-
-				gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog),
-						basename);
-			}
-			else
-			{
-				g_autoptr(GFile) file = g_file_new_for_uri (file_data->uri);
-
-				gtk_file_chooser_set_file (GTK_FILE_CHOOSER(dialog),
-						file,
-						NULL);	/* GError */
-			}
-		}
+		if (local_error)
+			g_warning ("%s", local_error->message);
 	}
 
 	if (file_data->multi)
