@@ -537,6 +537,10 @@ zenity_tree_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
+		case ZENITY_ESC:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
+
 		case ZENITY_TIMEOUT:
 			zenity_tree_dialog_output ();
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);

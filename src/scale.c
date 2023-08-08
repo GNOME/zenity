@@ -161,6 +161,10 @@ zenity_scale_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
 			break;
 
+		case ZENITY_ESC:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
+
 		default:
 			if (zen_data->extra_label &&
 				response < (int)g_strv_length (zen_data->extra_label))

@@ -458,6 +458,10 @@ zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 		case ZENITY_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
+
+		case ZENITY_ESC:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
 			
 		default:
 			if (zen_data->extra_label &&

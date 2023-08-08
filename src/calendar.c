@@ -164,6 +164,10 @@ zenity_calendar_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
 			break;
 
+		case ZENITY_ESC:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
+
 		default:
 			if (zen_data->extra_label &&
 				response < (int)g_strv_length (zen_data->extra_label))

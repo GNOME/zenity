@@ -244,10 +244,18 @@ zenity_msg_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
 			break;
 
+		case ZENITY_ESC:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			break;
+
 		default:
 			if (zen_data->extra_label &&
 				response < (int)g_strv_length (zen_data->extra_label))
 				printf ("%s\n", zen_data->extra_label[response]);
+
+			/* This is an odd exit code for extra labels, but it is maintained
+			 * for backwards compatibility with zenity <= 3.x.
+			 */
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 	}
