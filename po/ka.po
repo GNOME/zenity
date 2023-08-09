@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity.gnome-2-14\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-04-28 19:28+0000\n"
-"PO-Revision-Date: 2023-04-30 04:02+0200\n"
+"POT-Creation-Date: 2023-08-08 04:43+0000\n"
+"PO-Revision-Date: 2023-08-09 06:52+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <gnome@inet.ge>\n"
 "Language: ka\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
 msgid "Zenity"
@@ -65,21 +65,37 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "ფანჯრების სკრიპტებიდან ჩვენება"
 
-#: src/fileselection.c:60 src/progress.c:415 src/zenity.ui:15 src/zenity.ui:52
-#: src/zenity.ui:86 src/zenity.ui:136 src/zenity.ui:173 src/zenity.ui:213
-#: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:419 src/zenity.ui:457
+#: src/fileselection.c:45
+msgid ""
+"Warning: the --extra-button option for --file-selection is deprecated and "
+"will be removed in a future version of zenity. Ignoring.\n"
+msgstr ""
+"გაფრთხილება: --file-selection-ის --extra-button პარამეტრი მოძველებულია და "
+"Zenity-ის მომავალი ვერსიებიდან ამოღებული იქნება. გამოტოვება.\n"
+
+#: src/fileselection.c:68 src/progress.c:410 src/zenity.ui:16 src/zenity.ui:54
+#: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
 msgid "_OK"
 msgstr "_დიახ"
 
-#: src/fileselection.c:61 src/progress.c:411 src/zenity.ui:14 src/zenity.ui:51
-#: src/zenity.ui:85 src/zenity.ui:135 src/zenity.ui:212 src/zenity.ui:381
-#: src/zenity.ui:456
+#: src/fileselection.c:69 src/progress.c:406 src/zenity.ui:15 src/zenity.ui:53
+#: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "_გაუქმება"
 
 #: src/main.c:119
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "მიუთითეთ დიალოგის ტიპი. დაწვრილებით იხ. \"zenity --help\"\n"
+
+#: src/msg.c:115
+msgid "_No"
+msgstr "_არა"
+
+#: src/msg.c:116
+msgid "_Yes"
+msgstr "დიახ"
 
 #: src/notification.c:62
 msgid "Could not parse message\n"
@@ -772,7 +788,7 @@ msgstr "მომხმარებელი:"
 msgid "Password:"
 msgstr "პაროლი:"
 
-#: src/progress.c:115
+#: src/progress.c:111
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "დარჩენილი დრო: %lu:%02lu:%02lu"
@@ -806,95 +822,87 @@ msgstr "გამოიყენეთ სიის ფანჯრის მხ
 msgid "Icon filename %s not found; trying theme icon."
 msgstr "ხატულის სახელი %s ვერ ვიპოვე; ვცდი თემის ხატულას."
 
-#: src/zenity.ui:9 src/zenity.ui:30
+#: src/zenity.ui:9 src/zenity.ui:31
 msgid "Adjust the scale value"
 msgstr "მასშტაბის კოეფიციენტის შერჩევა"
 
-#: src/zenity.ui:45
+#: src/zenity.ui:46
 msgid "Text View"
 msgstr "ტექსტის ხედი"
 
-#: src/zenity.ui:82
+#: src/zenity.ui:84
 msgid "Calendar selection"
 msgstr "კალენდრის არჩევა"
 
-#: src/zenity.ui:102
+#: src/zenity.ui:105
 msgid "Select a date from below."
 msgstr "თარიღის არჩევა."
 
-#: src/zenity.ui:112
+#: src/zenity.ui:115
 msgid "C_alendar:"
 msgstr "_კალენდარი:"
 
-#: src/zenity.ui:117
+#: src/zenity.ui:120
 msgid "Calendar"
 msgstr "კალენდერი"
 
-#: src/zenity.ui:132
+#: src/zenity.ui:135
 msgid "Add a new entry"
 msgstr "ახალი ჩანაწერის დამატება"
 
-#: src/zenity.ui:156
+#: src/zenity.ui:160
 msgid "_Enter new text:"
 msgstr "_შეიყვანეთ ახალი ტექსტი:"
 
-#: src/zenity.ui:170
+#: src/zenity.ui:174
 msgid "Error"
 msgstr "შეცდომა"
 
-#: src/zenity.ui:198
+#: src/zenity.ui:203
 msgid "An error has occurred."
 msgstr "შეცდომა ოპერაციის შესრულებისას."
 
-#: src/zenity.ui:259
+#: src/zenity.ui:265
 msgid "Forms dialog"
 msgstr "ფორმების ფანჯარა"
 
-#: src/zenity.ui:269
+#: src/zenity.ui:275
 msgid "Information"
 msgstr "ინფორმაცია"
 
-#: src/zenity.ui:295
+#: src/zenity.ui:302
 msgid "All updates are complete."
 msgstr "განახლება დამთავრებულია."
 
-#: src/zenity.ui:305
+#: src/zenity.ui:312
 msgid "Progress"
 msgstr "მიმდინარეობა"
 
-#: src/zenity.ui:317
+#: src/zenity.ui:324
 msgid "Running..."
 msgstr "გაშვებულია..."
 
-#: src/zenity.ui:339
+#: src/zenity.ui:346
 msgid "Question"
 msgstr "კითხვა"
 
-#: src/zenity.ui:342
-msgid "_No"
-msgstr "_არა"
-
-#: src/zenity.ui:343
-msgid "_Yes"
-msgstr "დიახ"
-
-#: src/zenity.ui:365 src/zenity.ui:442
+#: src/zenity.ui:368 src/zenity.ui:447
 msgid "Are you sure you want to proceed?"
 msgstr "დარწმუნებული ბრძანდებით?"
 
-#: src/zenity.ui:375
+#: src/zenity.ui:378
 msgid "Select items from the list"
 msgstr "ელემენტის არჩევა სიიდან"
 
-#: src/zenity.ui:404
+#: src/zenity.ui:408
 msgid "Select items from the list below."
 msgstr "ელემენტის არჩევა სიიდან."
 
-#: src/zenity.ui:415 src/zenity.ui:452
+#: src/zenity.ui:419 src/zenity.ui:457
 msgid "Warning"
 msgstr "გაფრთხილება"
 
-#: src/zenity.ui:479
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "შეიყვანეთ პაროლი"
 
