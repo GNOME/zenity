@@ -89,6 +89,9 @@ summary({'prefix': zenity_prefix,
 	 'iconsdir': zenity_iconsdir,
         }, section: 'Directories')
 
+summary({'webkitgtk': get_option('webkitgtk'),
+        }, section: 'Configuration')
+
 subdir('src')
 subdir('data')
 subdir('icons')
