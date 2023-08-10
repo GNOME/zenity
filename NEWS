@@ -1,3 +1,23 @@
+Zenity 3.99.1
+  2nd beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+    - question: do not hardcode "Yes" and "No" buttons (kelvinvoon)
+    - Set the default response explicitly for all AdwMessageDialog's (Lukáš
+      Tyrychtr)
+    - column-view: Widget should go directly in GtkScrolledWindow (Logan
+      Rathbone)
+    - msg: Make --ok-label and --cancel-label work for --question dialogs
+      (Logan Rathbone)
+    - Add separate case for ZENITY_ESC; don't print junk or crash with extra
+      buttons (Logan Rathbone)
+    - Fix --extra-button and delete events for legacy (non-libadwaita) dialogs
+      (Logan Rathbone)
+    - filesel: Fix --filename for zenity 4.x (Logan Rathbone)
+    - Translation updates:
+        Balázs Úr (hu)
+        Ekaterine Papava (ka)
+        Piotr Drąg (pl)
+        Yuri Chornoivan (uk)
+
 Zenity 3.99.0
   1st beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
 
