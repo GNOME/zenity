@@ -522,18 +522,6 @@ zenity_tree_column_view_class_init (ZenityTreeColumnViewClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, ZenityTreeColumnView, child_cv);
 }
 
-#if 0
-static GtkWidget *
-zenity_tree_column_view_new (GListModel *model)
-{
-	g_return_val_if_fail (G_IS_LIST_MODEL (model), NULL);
-
-	return g_object_new (ZENITY_TREE_TYPE_COLUMN_VIEW,
-			"model", model,
-			NULL);
-}
-#endif
-
 static void
 editable_notify_text_cb (GtkEditable *editable, GParamSpec *pspec, ZenityTreeItem *item)
 {

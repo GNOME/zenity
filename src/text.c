@@ -393,9 +393,9 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 				WEBKIT_WEB_VIEW (web_kit), content, dirname_uri);
 		}
 
-		// We don't want user to click on links and navigate to another page.
-		// So, when the page finishes loading, we take handle of the requests.
-
+		/* We don't want user to click on links and navigate to another page.
+		 * So, when the page finishes loading, we take handle of the requests.
+		 */
 		g_signal_connect (G_OBJECT (web_kit),
 			"load-changed",
 			G_CALLBACK (zenity_text_webview_load_changed),

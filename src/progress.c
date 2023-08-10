@@ -355,16 +355,6 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	{
 		gtk_widget_set_size_request (GTK_WIDGET(text), data->width, -1);
 	}
-#if 0
-	else
-	{
-		g_signal_connect_after (text, "size-allocate",
-			G_CALLBACK(zenity_text_size_allocate), data);
-
-		g_signal_connect_after (progress_bar, "size-allocate",
-			G_CALLBACK(zenity_text_size_allocate), data);
-	}
-#endif
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
