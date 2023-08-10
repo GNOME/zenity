@@ -642,10 +642,10 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data) {
 				tree_data->editable);
 	}
 
-	/* GTK will automatically pick the image column as the search column
-	 * despite it not containing any user readable text.
-	 * Set it to second column instead if it exists. */
-	if (tree_data->imagebox && n_columns > 1) {
+	/* GTK will automatically pick the image/checkbox/radiobox column as the
+	 * search column despite it not containing any user readable text.
+	 * Set it to second column instead if any of the above exists. */
+	if ((tree_data->imagebox || tree_data->radiobox || tree_data->checkbox) && n_columns > 1) {
 		gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree_view),
 			1);
 	}
