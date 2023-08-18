@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-04-28 19:28+0000\n"
-"PO-Revision-Date: 2023-05-10 14:21+0700\n"
+"POT-Creation-Date: 2023-08-12 19:58+0000\n"
+"PO-Revision-Date: 2023-08-18 21:44+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
 msgid "Zenity"
@@ -70,15 +70,23 @@ msgstr ""
 msgid "Display dialog boxes from shell scripts"
 msgstr "Menampilkan kotak dialog dari skrip shell"
 
-#: src/fileselection.c:60 src/progress.c:415 src/zenity.ui:15 src/zenity.ui:52
-#: src/zenity.ui:86 src/zenity.ui:136 src/zenity.ui:173 src/zenity.ui:213
-#: src/zenity.ui:272 src/zenity.ui:382 src/zenity.ui:419 src/zenity.ui:457
+#: src/fileselection.c:45
+msgid ""
+"Warning: the --extra-button option for --file-selection is deprecated and "
+"will be removed in a future version of zenity. Ignoring.\n"
+msgstr ""
+"Peringatan: opsi --extra-button untuk --file-selection sudah tidak digunakan "
+"lagi dan akan dihapus di versi zenity yang akan datang. Mengabaikan.\n"
+
+#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
 msgid "_OK"
 msgstr "_OK"
 
-#: src/fileselection.c:61 src/progress.c:411 src/zenity.ui:14 src/zenity.ui:51
-#: src/zenity.ui:85 src/zenity.ui:135 src/zenity.ui:212 src/zenity.ui:381
-#: src/zenity.ui:456
+#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "_Batal"
 
@@ -86,6 +94,14 @@ msgstr "_Batal"
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Anda harus menentukan jenis dialog. Lihat 'zenity --help' untuk lebih jelas\n"
+
+#: src/msg.c:115
+msgid "_No"
+msgstr "_Tidak"
+
+#: src/msg.c:116
+msgid "_Yes"
+msgstr "_Ya"
 
 #: src/notification.c:62
 msgid "Could not parse message\n"
@@ -779,7 +795,7 @@ msgstr "Nama Pengguna:"
 msgid "Password:"
 msgstr "Sandi:"
 
-#: src/progress.c:115
+#: src/progress.c:111
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Sisa waktu: %lu:%02lu:%02lu"
@@ -813,94 +829,86 @@ msgstr "Anda hanya boleh menggunakan satu jenis dialog Senarai.\n"
 msgid "Icon filename %s not found; trying theme icon."
 msgstr "Nama berkas ikon tidak %s ditemukan; mencoba ikon tema."
 
-#: src/zenity.ui:9 src/zenity.ui:30
+#: src/zenity.ui:9 src/zenity.ui:31
 msgid "Adjust the scale value"
 msgstr "Setel nilai skala"
 
-#: src/zenity.ui:45
+#: src/zenity.ui:46
 msgid "Text View"
 msgstr "Tilikan Teks"
 
-#: src/zenity.ui:82
+#: src/zenity.ui:84
 msgid "Calendar selection"
 msgstr "Pemilihan kalender"
 
-#: src/zenity.ui:102
+#: src/zenity.ui:105
 msgid "Select a date from below."
 msgstr "Pilih tanggal dari yang di bawah."
 
-#: src/zenity.ui:112
+#: src/zenity.ui:115
 msgid "C_alendar:"
 msgstr "K_alender:"
 
-#: src/zenity.ui:117
+#: src/zenity.ui:120
 msgid "Calendar"
 msgstr "Kalender"
 
-#: src/zenity.ui:132
+#: src/zenity.ui:135
 msgid "Add a new entry"
 msgstr "Tambahkan entri baru"
 
-#: src/zenity.ui:156
+#: src/zenity.ui:160
 msgid "_Enter new text:"
 msgstr "Masukkan t_eks baru:"
 
-#: src/zenity.ui:170
+#: src/zenity.ui:174
 msgid "Error"
 msgstr "Galat"
 
-#: src/zenity.ui:198
+#: src/zenity.ui:203
 msgid "An error has occurred."
 msgstr "Telah terjadi galat."
 
-#: src/zenity.ui:259
+#: src/zenity.ui:265
 msgid "Forms dialog"
 msgstr "Dialog formulir"
 
-#: src/zenity.ui:269
+#: src/zenity.ui:275
 msgid "Information"
 msgstr "Informasi"
 
-#: src/zenity.ui:295
+#: src/zenity.ui:302
 msgid "All updates are complete."
 msgstr "Semua pemutakhiran lengkap."
 
-#: src/zenity.ui:305
+#: src/zenity.ui:312
 msgid "Progress"
 msgstr "Kemajuan"
 
-#: src/zenity.ui:317
+#: src/zenity.ui:324
 msgid "Running..."
 msgstr "Berjalan..."
 
-#: src/zenity.ui:339
+#: src/zenity.ui:346
 msgid "Question"
 msgstr "Pertanyaan"
 
-#: src/zenity.ui:342
-msgid "_No"
-msgstr "_Tidak"
-
-#: src/zenity.ui:343
-msgid "_Yes"
-msgstr "_Ya"
-
-#: src/zenity.ui:365 src/zenity.ui:442
+#: src/zenity.ui:368 src/zenity.ui:447
 msgid "Are you sure you want to proceed?"
 msgstr "Anda yakin ingin melanjutkan?"
 
-#: src/zenity.ui:375
+#: src/zenity.ui:378
 msgid "Select items from the list"
 msgstr "Pilih butir dari daftar"
 
-#: src/zenity.ui:404
+#: src/zenity.ui:408
 msgid "Select items from the list below."
 msgstr "Pilih butir dari daftar di bawah."
 
-#: src/zenity.ui:415 src/zenity.ui:452
+#: src/zenity.ui:419 src/zenity.ui:457
 msgid "Warning"
 msgstr "Peringatan"
 
-#: src/zenity.ui:479
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "Ketik sandi Anda"
