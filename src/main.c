@@ -33,20 +33,15 @@
 
 #include <config.h>
 
-typedef struct {
-	int argc;
-	char **argv;
-} ZenityArgs;
-
 static void
 command_line_cb (GApplication *app,
                GApplicationCommandLine *command_line,
                gpointer user_data)
 {
-	ZenityArgs *args = user_data;
+	g_auto(GStrv) argv = user_data;
 	ZenityParsingOptions *results;
 
-	results = zenity_option_parse (args->argc, args->argv);
+	results = zenity_option_parse (argv);
 
 	switch (results->mode)
 	{
@@ -59,7 +54,7 @@ command_line_cb (GApplication *app,
 			 * passed as arguments so as to auto-populate the entry with
 			 * a list of options as a combo-box.
 			 */
-			results->entry_data->data = (const char **) args->argv + 1;
+			results->entry_data->data = g_strdupv (argv + 1);
 			zenity_entry (results->data, results->entry_data);
 			break;
 
@@ -79,7 +74,7 @@ command_line_cb (GApplication *app,
 			break;
 
 		case MODE_LIST:
-			results->tree_data->data = (const char **) args->argv + 1;
+			results->tree_data->data = g_strdupv (argv + 1);
 			zenity_tree (results->data, results->tree_data);
 			break;
 			
@@ -124,8 +119,6 @@ command_line_cb (GApplication *app,
 			g_assert_not_reached ();
 			exit (-1);
 	}
-
-	g_free (args);
 }
 
 static void dummy_log_func (void) { }
@@ -133,7 +126,7 @@ static void dummy_log_func (void) { }
 int
 main (int argc, char *argv[])
 {
-	ZenityArgs *args;
+	char **dup_argv = g_strdupv (argv);
 	g_autoptr(AdwApplication) app = NULL;
 	int status;
 
@@ -150,12 +143,8 @@ main (int argc, char *argv[])
 	 */
 	g_log_set_handler ("Adwaita", G_LOG_LEVEL_MESSAGE, (GLogFunc)dummy_log_func, NULL);
 
-	args = g_new0 (ZenityArgs, 1);
-	args->argc = argc;
-	args->argv = argv;
-
 	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
-	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), args);
+	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), dup_argv);
 
 	status = g_application_run (G_APPLICATION(app), 0, NULL);
 

@@ -77,6 +77,6 @@ typedef struct {
 
 void zenity_option_error (char *string, ZenityError error);
 
-ZenityParsingOptions *zenity_option_parse (int argc, char **argv);
+ZenityParsingOptions *zenity_option_parse (char **argv);
 
 #endif /* OPTION_H */

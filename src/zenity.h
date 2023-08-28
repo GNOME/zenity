@@ -80,7 +80,7 @@ typedef struct {
 	char *dialog_text;
 	char *entry_text;
 	gboolean hide_text;
-	const char **data;
+	char **data;
 } ZenityEntryData;
 
 typedef struct {
@@ -122,7 +122,7 @@ typedef struct {
 	gboolean mid_search_DEPRECATED;
 	char *print_column;
 	char *hide_column;
-	const char **data;
+	char **data;
 } ZenityTreeData;
 
 typedef struct {

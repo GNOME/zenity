@@ -32,16 +32,7 @@
 static void zenity_entry_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
 static GtkWidget *entry;
-static int n_entries = 0;
-
-static void
-zenity_entry_fill_entries (GSList **entries, const char **args)
-{
-	for (int i = 0; args[i] != NULL; ++i)
-	{
-		*entries = g_slist_append (*entries, (char *)args[i]);
-	}
-}
+static guint n_entries = 0;
 
 static void
 zenity_entry_combo_activate_default (GtkEntry *entry, gpointer window)
@@ -55,8 +46,6 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GObject *text;
-	GSList *entries = NULL;
-	GSList *tmp;
 	GObject *vbox;
 
 	builder = zenity_util_load_ui_file ("zenity_entry_dialog", "zenity_entry_box", NULL);
@@ -109,9 +98,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	vbox = gtk_builder_get_object (builder, "vbox4");
 
-	zenity_entry_fill_entries (&entries, entry_data->data);
-
-	n_entries = g_slist_length (entries);
+	n_entries = g_strv_length (entry_data->data);
 
 	if (n_entries > 1)
 	{
@@ -120,10 +107,10 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 		entry = gtk_combo_box_text_new_with_entry ();
 		child = gtk_combo_box_get_child (GTK_COMBO_BOX(entry));
 
-		for (tmp = entries; tmp; tmp = tmp->next)
+		for (int i = 0; entry_data->data[i]; ++i)
 		{
 			gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT(entry),
-					tmp->data);
+					entry_data->data[i]);
 		}
 
 		if (entry_data->entry_text)

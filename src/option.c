@@ -1070,7 +1070,6 @@ static GOptionEntry miscellaneous_options[] =
 		{NULL}};
 
 static ZenityParsingOptions *results;
-static GOptionContext *ctx;
 
 /* Deprecation warnings */
 
@@ -2265,15 +2264,21 @@ zenity_option_error (char *string, ZenityError error)
 }
 
 ZenityParsingOptions *
-zenity_option_parse (int argc, char **argv)
+zenity_option_parse (char **argv)
 {
+	g_autoptr(GOptionContext) context = NULL;
 	GError *error = NULL;
 
 	zenity_option_init ();
 
-	ctx = zenity_create_context ();
+	context = zenity_create_context ();
 
-	g_option_context_parse (ctx, &argc, &argv, &error);
+	g_option_context_parse_strv (context, &argv, &error);
+	if (G_UNLIKELY (error))
+	{
+		g_printerr ("%s\n", error->message);
+		exit (-1);
+	}
 
 	/* Some option pointer a shared among more than one group and don't
 	   have their post condition tested. This test is done here. */

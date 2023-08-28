@@ -169,7 +169,7 @@ zenity_tree_fill_entries_from_stdin (void)
 }
 
 static void
-zenity_tree_fill_entries (const char **args)
+zenity_tree_fill_entries (char **args)
 {
 	int n_columns = zenity_tree_column_view_get_n_columns (col_view);
 	ZenityTreeListType list_type = zenity_tree_column_view_get_list_type (col_view);
