@@ -38,7 +38,7 @@ command_line_cb (GApplication *app,
                GApplicationCommandLine *command_line,
                gpointer user_data)
 {
-	g_auto(GStrv) argv = user_data;
+	g_auto(GStrv) argv = g_application_command_line_get_arguments (command_line, NULL);
 	ZenityParsingOptions *results;
 
 	results = zenity_option_parse (argv);
@@ -126,7 +126,6 @@ static void dummy_log_func (void) { }
 int
 main (int argc, char *argv[])
 {
-	char **dup_argv = g_strdupv (argv);
 	g_autoptr(AdwApplication) app = NULL;
 	int status;
 
@@ -144,9 +143,9 @@ main (int argc, char *argv[])
 	g_log_set_handler ("Adwaita", G_LOG_LEVEL_MESSAGE, (GLogFunc)dummy_log_func, NULL);
 
 	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
-	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), dup_argv);
+	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), NULL);
 
-	status = g_application_run (G_APPLICATION(app), 0, NULL);
+	status = g_application_run (G_APPLICATION(app), argc, argv);
 
 	return status;
 }
