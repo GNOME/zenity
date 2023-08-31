@@ -2264,7 +2264,7 @@ zenity_option_error (char *string, ZenityError error)
 }
 
 ZenityParsingOptions *
-zenity_option_parse (char **argv)
+zenity_option_parse (int argc, char **argv)
 {
 	g_autoptr(GOptionContext) context = NULL;
 	GError *error = NULL;
@@ -2273,7 +2273,8 @@ zenity_option_parse (char **argv)
 
 	context = zenity_create_context ();
 
-	g_option_context_parse_strv (context, &argv, &error);
+	g_option_context_parse (context, &argc, &argv, &error);
+
 	if (G_UNLIKELY (error))
 	{
 		g_printerr ("%s\n", error->message);

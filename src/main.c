@@ -39,9 +39,7 @@ command_line_cb (GApplication *app,
                gpointer user_data)
 {
 	g_auto(GStrv) argv = g_application_command_line_get_arguments (command_line, NULL);
-	ZenityParsingOptions *results;
-
-	results = zenity_option_parse (argv);
+	ZenityParsingOptions *results = user_data;
 
 	switch (results->mode)
 	{
@@ -128,6 +126,7 @@ main (int argc, char *argv[])
 {
 	g_autoptr(AdwApplication) app = NULL;
 	int status;
+	ZenityParsingOptions *results;
 
 	/* <i18n> */
 	setlocale (LC_ALL, "");
@@ -142,8 +141,10 @@ main (int argc, char *argv[])
 	 */
 	g_log_set_handler ("Adwaita", G_LOG_LEVEL_MESSAGE, (GLogFunc)dummy_log_func, NULL);
 
+	results = zenity_option_parse (argc, argv);
+
 	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
-	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), NULL);
+	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), results);
 
 	status = g_application_run (G_APPLICATION(app), argc, argv);
 
