@@ -90,6 +90,7 @@ summary({'prefix': zenity_prefix,
         }, section: 'Directories')
 
 summary({'webkitgtk': get_option('webkitgtk'),
+         'manpage': get_option('manpage'),
         }, section: 'Configuration')
 
 subdir('src')
