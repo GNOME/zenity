@@ -33,6 +33,22 @@
 
 #include <config.h>
 
+static int
+local_options_cb (GApplication *application,
+		GVariantDict *options,
+		gpointer user_data)
+{
+	ZenityParsingOptions *results = user_data;
+
+	if (results->mode == MODE_VERSION)
+	{
+		g_print ("%s\n", VERSION);
+		return 0;
+	}
+
+	return -1;
+}
+
 static void
 command_line_cb (GApplication *app,
                GApplicationCommandLine *command_line,
@@ -104,10 +120,6 @@ command_line_cb (GApplication *app,
 			zenity_forms_dialog (results->data, results->forms_data);
 			break;
 
-		case MODE_VERSION:
-			g_print ("%s\n", VERSION);
-			break;
-
 		case MODE_LAST:
 			g_printerr (_ ("You must specify a dialog type. See 'zenity "
 						   "--help' for details\n"));
@@ -144,6 +156,7 @@ main (int argc, char *argv[])
 	results = zenity_option_parse (argc, argv);
 
 	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
+	g_signal_connect (app, "handle-local-options", G_CALLBACK(local_options_cb), results);
 	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), results);
 
 	status = g_application_run (G_APPLICATION(app), argc, argv);
