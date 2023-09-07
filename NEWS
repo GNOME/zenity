@@ -1,3 +1,24 @@
+Zenity 3.99.2
+  3rd beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+  - Minor code cleanups (Logan Rathbone)
+  - option: Don't try to access stack-based argv within a glib2 mainloop
+    (likely fixes RH bugs 2216049 and 2214000) (Logan Rathbone)
+  - option: Allow --version and --help to work without a display server running
+    (Logan Rathbone)
+  - data: Reinstate help2man manpage autogeneration (Logan Rathbone)
+  - build: Make manpage/help2man requirement more explicit (Logan Rathbone)
+  - ci: Add help2man as 'build_fedora' target build dep (Logan Rathbone)
+  - Translation updates:
+      Anders Jonsson (sv)
+      Asier Sarasua Garmendia (eu)
+      Balázs Úr (hu)
+      Boyuan Yang (zh_CN)
+      Jordi Mas i Hernandez (ca)
+      Kukuh Syafaat (id)
+      Martin (sl)
+      Sabri Ünal (tr)
+      Sergej A (ru)
+
 Zenity 3.99.1
   2nd beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
     - question: do not hardcode "Yes" and "No" buttons (kelvinvoon)
