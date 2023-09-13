@@ -27,7 +27,7 @@ endif
 help2man = find_program('help2man', required: get_option('manpage'))
 # help2man has to run zenity to generate the man page, which it can't do if
 # we're cross building. We also can't tell help2man what exe wrapper to use.
-if help2man.found() and not meson.is_cross_build()
+if help2man.found() and not meson.is_cross_build() and get_option('manpage')
   help2man_opts = [
     '--no-info',
     '--section=1',
