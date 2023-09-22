@@ -2153,6 +2153,46 @@ zenity_option_error (gchar *string, ZenityError error) {
 	}
 }
 
+/* Problem: according to the GOption TFM, the shell 'double-dash' ('--') to
+ * escape further parameters is only removed from argv if either there are no
+ * other options to parse, OR if further options DO NOT contain a dash. We want
+ * it stripped regardless whether the latter is true.
+ *
+ * Solution: this somewhat hack-ish function. Don't ever run it from outside of
+ * main().
+ */
+static void
+get_rid_of_double_dash (int *argcp, char ***argvp)
+{
+	char **argv = *argvp;
+	int double_dash_pos = -1;
+
+	for (int i = 0; i < *argcp; ++i)
+	{
+		if (g_strcmp0 (argv[i], "--") == 0) {
+			argv[i] = NULL;
+			double_dash_pos = i;
+			break;
+		}
+	}
+
+	if (double_dash_pos < 0)
+		return;
+
+	for (int i = double_dash_pos; i < *argcp; ++i)
+	{
+		if (i == *argcp - 1) {
+			argv[i] = NULL;
+			break;
+		}
+		else {
+			argv[i] = argv[i+1];
+		}
+	}
+
+	--*argcp;
+}
+
 ZenityParsingOptions *
 zenity_option_parse (gint argc, gchar **argv) {
 	GError *error = NULL;
@@ -2162,6 +2202,7 @@ zenity_option_parse (gint argc, gchar **argv) {
 	ctx = zenity_create_context ();
 
 	g_option_context_parse (ctx, &argc, &argv, &error);
+	get_rid_of_double_dash (&argc, &argv);
 
 	/* Some option pointer a shared among more than one group and don't
 	   have their post condition tested. This test is done here. */
