@@ -158,7 +158,7 @@ zenity_text_handle_stdin (GIOChannel *channel, GIOCondition condition,
 #define BUF_SIZE 1024
 	static GtkTextBuffer *buffer;
 	static GtkTextView *text_view;
-	char buf[BUF_SIZE];
+	char buf[BUF_SIZE + 1];
 
 	gsize len;
 
@@ -215,6 +215,7 @@ zenity_text_handle_stdin (GIOChannel *channel, GIOCondition condition,
 			}
 			else
 			{
+				buf[len] = '\0';
 				gtk_text_buffer_insert (buffer, &end, buf, len);
 			}
 
