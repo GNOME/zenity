@@ -122,7 +122,7 @@ static void
 zenity_tree_item_class_init (ZenityTreeItemClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
-	GParamFlags flags = G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT;
+	GParamFlags flags = G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT | G_PARAM_EXPLICIT_NOTIFY;
 
 	object_class->dispose = zenity_tree_item_dispose;
 	object_class->finalize = zenity_tree_item_finalize;
@@ -325,10 +325,23 @@ zenity_tree_column_view_set_model (ZenityTreeColumnView *self, GListModel *model
 	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_column_view_properties[MODEL]);
 }
 
+/* Returns the raw GListModel of *all* items within the column view. This will
+ * *not* account for filtered items by search or what-have-you.
+ */
 GListModel *
 zenity_tree_column_view_get_model (ZenityTreeColumnView *self)
 {
 	return self->model;
+}
+
+/* Returns the actual selection model of the column view, which, as opposed to
+ * the raw list model, may be filtered to show what is actually visible within
+ * the widget.
+ */
+GtkSelectionModel *
+zenity_tree_column_view_get_selection_model (ZenityTreeColumnView *self)
+{
+	return gtk_column_view_get_model (self->child_cv);
 }
 
 static void
@@ -340,8 +353,7 @@ zenity_tree_column_view_emit_activated (ZenityTreeColumnView *self)
 static void
 cv_check_or_radio_activated_cb (ZenityTreeColumnView *self, guint position, GtkColumnView *cv)
 {
-	GListModel *model = zenity_tree_column_view_get_model (self);
-	ZenityTreeRow *row = g_list_model_get_item (model, position);
+	ZenityTreeRow *row = g_list_model_get_item (self->model, position);
 	ZenityTreeItem *item = zenity_tree_row_get_item (row, 0);
 	GtkWidget *item_child = zenity_tree_item_get_child (item);
 	GtkCheckButton *cb;
@@ -365,6 +377,13 @@ cv_check_or_radio_activated_cb (ZenityTreeColumnView *self, guint position, GtkC
 			g_warning ("%s: Programmer error: invalid list type.", __func__);
 			break;
 	}
+}
+
+void
+zenity_tree_column_view_set_multi (ZenityTreeColumnView *self, gboolean multi)
+{
+	self->multi = multi;
+	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_column_view_properties[MULTI]);
 }
 
 void
@@ -419,7 +438,7 @@ zenity_tree_column_view_set_property (GObject *object,
 	switch (property_id)
 	{
 		case MULTI:
-			self->multi = g_value_get_boolean (value);
+			zenity_tree_column_view_set_multi (self, g_value_get_boolean (value));
 			break;
 
 		case LIST_TYPE:
@@ -447,7 +466,7 @@ zenity_tree_column_view_get_property (GObject *object,
 	switch (property_id)
 	{
 		case MULTI:
-			g_value_set_boolean (value, self->multi);
+			g_value_set_boolean (value, zenity_tree_column_view_get_multi (self));
 			break;
 
 		case LIST_TYPE:
@@ -491,7 +510,7 @@ zenity_tree_column_view_class_init (ZenityTreeColumnViewClass *klass)
 {
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS(klass);
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
-	GParamFlags flags = G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT;
+	GParamFlags flags = G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT | G_PARAM_EXPLICIT_NOTIFY;
 
 	object_class->dispose = zenity_tree_column_view_dispose;
 	object_class->set_property = zenity_tree_column_view_set_property;
@@ -637,11 +656,9 @@ zenity_tree_column_view_add_column (ZenityTreeColumnView *self, const char *col_
 void
 zenity_tree_column_view_foreach_item (ZenityTreeColumnView *self, GFunc func, gpointer user_data)
 {
-	GListModel *model = zenity_tree_column_view_get_model (self);
-
-	for (guint i = 0; i < g_list_model_get_n_items (model); ++i)
+	for (guint i = 0; i < g_list_model_get_n_items (self->model); ++i)
 	{
-		ZenityTreeRow *row = g_list_model_get_item (model, i);
+		ZenityTreeRow *row = g_list_model_get_item (self->model, i);
 
 		for (guint j = 0; j < zenity_tree_row_get_n_items (row); ++j)
 		{
@@ -655,11 +672,9 @@ zenity_tree_column_view_foreach_item (ZenityTreeColumnView *self, GFunc func, gp
 void
 zenity_tree_column_view_foreach_row (ZenityTreeColumnView *self, GFunc func, gpointer user_data)
 {
-	GListModel *model = zenity_tree_column_view_get_model (self);
-
-	for (guint i = 0; i < g_list_model_get_n_items (model); ++i)
+	for (guint i = 0; i < g_list_model_get_n_items (self->model); ++i)
 	{
-		ZenityTreeRow *row = g_list_model_get_item (model, i);
+		ZenityTreeRow *row = g_list_model_get_item (self->model, i);
 		func (row, user_data);
 	}
 }

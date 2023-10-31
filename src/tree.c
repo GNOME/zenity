@@ -171,41 +171,46 @@ zenity_tree_fill_entries_from_stdin (void)
 static void
 zenity_tree_fill_entries (char **args)
 {
+	guint num_args = g_strv_length (args);
 	int n_columns = zenity_tree_column_view_get_n_columns (col_view);
 	ZenityTreeListType list_type = zenity_tree_column_view_get_list_type (col_view);
 	GListStore *store = G_LIST_STORE(zenity_tree_column_view_get_model (col_view));
 	gboolean toggles = FALSE;
+	ZenityTreeRow *row = NULL;
 
 	if (list_type == ZENITY_TREE_LIST_RADIO || list_type == ZENITY_TREE_LIST_CHECK)
 		toggles = TRUE;
 
-	for (int i = 0; args[i]; i+= n_columns)
+	for (guint i = 0; i < num_args; ++i)
 	{
-		ZenityTreeRow *row = zenity_tree_row_new ();
+		ZenityTreeItem *item = NULL;
+		gboolean beginning_of_column = i % n_columns == 0;
+		gboolean end_of_column = (i + 1) % n_columns == 0;
+		const char *str = args[i];
 
-		for (int j = 0; j < n_columns; j++)
+		if (beginning_of_column)
+			row = zenity_tree_row_new ();
+
+		if (beginning_of_column && toggles)
 		{
-			ZenityTreeItem *item;
-			const char *str = args[i + j];
-			
-			if (toggles && j == 0)
-			{
-				item = zenity_tree_item_new (str, gtk_check_button_new ());
-			}
-			else if (list_type == ZENITY_TREE_LIST_IMAGE && j == 0)
-			{
-				item = zenity_tree_item_new (str, gtk_image_new ());
-			}
-			else
-			{
-				if (editable)
-					item = zenity_tree_item_new (str, gtk_editable_label_new (""));
-				else
-					item = zenity_tree_item_new (str, gtk_label_new (NULL));
-			}
-			zenity_tree_row_add (row, item);
+			item = zenity_tree_item_new (str, gtk_check_button_new ());
 		}
-		g_list_store_append (store, row);
+		else if (beginning_of_column && list_type == ZENITY_TREE_LIST_IMAGE)
+		{
+			item = zenity_tree_item_new (str, gtk_image_new ());
+		}
+		else
+		{
+			if (editable)
+				item = zenity_tree_item_new (str, gtk_editable_label_new (""));
+			else
+				item = zenity_tree_item_new (str, gtk_label_new (NULL));
+		}
+
+		zenity_tree_row_add (row, item);
+
+		if (end_of_column)
+			g_list_store_append (store, row);
 	}
 }
 
@@ -294,7 +299,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_tree_dialog_response), data);
 
 	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
@@ -411,7 +416,7 @@ static void
 zenity_tree_dialog_get_selected (void)
 {
 	int n_columns = zenity_tree_column_view_get_n_columns (col_view);
-	GListModel *model = zenity_tree_column_view_get_model (col_view);
+	GListModel *model = G_LIST_MODEL(zenity_tree_column_view_get_selection_model (col_view));
 	ZenityTreeItem *item;
 
 	for (guint i = 0; i < g_list_model_get_n_items (model); ++i)
