@@ -253,6 +253,7 @@ struct _ZenityTreeColumnView
 	GtkWidget parent_instance;
 	GtkWidget *scrolled_window;
 	GtkColumnView *child_cv;
+	gulong child_cv_activate_handler_id;
 	gboolean multi;
 	ZenityTreeListType list_type;
 	GListModel *model;
@@ -371,20 +372,20 @@ zenity_tree_column_view_set_list_type (ZenityTreeColumnView *self, ZenityTreeLis
 {
 	self->list_type = type;
 
-	g_signal_handlers_disconnect_by_func (self->child_cv, zenity_tree_column_view_emit_activated, self);
+	g_clear_signal_handler (&self->child_cv_activate_handler_id, self->child_cv);
 
 	switch (self->list_type)
 	{
 		case ZENITY_TREE_LIST_NONE:
 		case ZENITY_TREE_LIST_IMAGE:
 			gtk_column_view_set_single_click_activate (self->child_cv, FALSE);
-			g_signal_connect_swapped (self->child_cv, "activate", G_CALLBACK(zenity_tree_column_view_emit_activated), self);
+			self->child_cv_activate_handler_id = g_signal_connect_object (self->child_cv, "activate", G_CALLBACK(zenity_tree_column_view_emit_activated), self, G_CONNECT_SWAPPED);
 			break;
 
 		case ZENITY_TREE_LIST_RADIO:
 		case ZENITY_TREE_LIST_CHECK:
 			gtk_column_view_set_single_click_activate (self->child_cv, TRUE);
-			g_signal_connect_swapped (self->child_cv, "activate", G_CALLBACK(cv_check_or_radio_activated_cb), self);
+			self->child_cv_activate_handler_id = g_signal_connect_object (self->child_cv, "activate", G_CALLBACK(cv_check_or_radio_activated_cb), self, G_CONNECT_SWAPPED);
 			break;
 
 		default:
@@ -468,6 +469,7 @@ zenity_tree_column_view_dispose (GObject *object)
 {
 	ZenityTreeColumnView *self = ZENITY_TREE_COLUMN_VIEW(object);
 
+	g_clear_signal_handler (&self->child_cv_activate_handler_id, self->child_cv);
 	g_clear_pointer (&self->scrolled_window, gtk_widget_unparent);
 
 	G_OBJECT_CLASS(zenity_tree_column_view_parent_class)->dispose (object);
