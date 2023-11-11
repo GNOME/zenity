@@ -26,7 +26,14 @@ zenity_po_dir = join_paths(meson.project_source_root(), 'po')
 gnome = import('gnome')
 i18n = import('i18n')
 
+# warning cflags
+warning_cflags = [
+  '-Werror=implicit',
+  '-Wformat=2',
+]
 cc = meson.get_compiler('c')
+supported_warning_cflags = cc.get_supported_arguments(warning_cflags)
+add_global_arguments(supported_warning_cflags, language : 'c')
 
 zenity_conf = configuration_data()
 zenity_conf.set_quoted('PACKAGE_NAME', meson.project_name())
