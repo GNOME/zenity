@@ -77,7 +77,7 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer 
 
 	if ((condition & G_IO_IN) == G_IO_IN)
 	{
-		ZenityTreeRow *row = NULL;
+		static ZenityTreeRow *row = NULL;
 		g_autoptr(GString) gstring = g_string_new (NULL);
 		g_autoptr(GError) error = NULL;
 
@@ -85,7 +85,8 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer 
 			G_IO_FLAG_IS_READABLE)
 			;
 
-		row = zenity_tree_row_new ();
+		if (!row)
+			row = zenity_tree_row_new ();
 		do {
 			ZenityTreeItem *item;
 
