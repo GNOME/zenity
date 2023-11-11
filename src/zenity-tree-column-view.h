@@ -65,6 +65,7 @@ G_DECLARE_FINAL_TYPE (ZenityTreeColumnView, zenity_tree_column_view, ZENITY_TREE
 
 void zenity_tree_column_view_set_model (ZenityTreeColumnView *self, GListModel *model);
 GListModel * zenity_tree_column_view_get_model (ZenityTreeColumnView *self);
+GtkSelectionModel * zenity_tree_column_view_get_selection_model (ZenityTreeColumnView *self);
 void zenity_tree_column_view_set_list_type (ZenityTreeColumnView *self, ZenityTreeListType type);
 ZenityTreeListType zenity_tree_column_view_get_list_type (ZenityTreeColumnView *self);
 void zenity_tree_column_view_add_column (ZenityTreeColumnView *self, const char *col_name);
