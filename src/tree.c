@@ -62,15 +62,11 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer 
 {
 	static int column_count = 0;
 	static int row_count = 0;
-	static gboolean first_time = TRUE;
 	GIOStatus status = G_IO_STATUS_NORMAL;
 	int n_columns = zenity_tree_column_view_get_n_columns (col_view);
 	gboolean toggles = FALSE;
 	ZenityTreeListType list_type = zenity_tree_column_view_get_list_type (col_view);
 	GListStore *store = G_LIST_STORE(zenity_tree_column_view_get_model (col_view));
-
-	if (first_time)
-		first_time = FALSE;
 
 	if (list_type == ZENITY_TREE_LIST_RADIO || list_type == ZENITY_TREE_LIST_CHECK)
 		toggles = TRUE;
