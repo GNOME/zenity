@@ -31,6 +31,12 @@
 
 #include <config.h>
 
+/* TODO: Many items in this source file need to be ported away from deprecated
+ * API in GTK 4.10+. Suppress the whirlwind of warnings for now since we're
+ * well-aware of this.
+ */
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 static ZenityData *zen_data;
 static GSList *selected;
 static void zenity_forms_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
@@ -472,3 +478,5 @@ zenity_forms_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 	}
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }
+
+G_GNUC_END_IGNORE_DEPRECATIONS

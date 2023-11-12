@@ -305,12 +305,15 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 		css_str = zenity_util_pango_font_description_to_css (desc);
 			
 		provider = gtk_css_provider_new ();
+
+		G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 		gtk_css_provider_load_from_data (provider, css_str, -1);
 
 		context = gtk_widget_get_style_context (GTK_WIDGET(text_view));
 		gtk_style_context_add_provider (context,
 				GTK_STYLE_PROVIDER(provider),
 				GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+		G_GNUC_END_IGNORE_DEPRECATIONS
 	}
 
 	if (text_data->uri)

@@ -417,7 +417,7 @@ zenity_util_pango_font_description_to_css (PangoFontDescription *desc)
 void
 zenity_util_show_dialog (GtkWidget *dialog)
 {
-	gtk_widget_show (dialog);
+	gtk_window_present (GTK_WINDOW(dialog));
 }
 
 gboolean

@@ -102,6 +102,8 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	if (n_entries > 1)
 	{
+		G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 		GtkWidget *child;
 
 		entry = gtk_combo_box_text_new_with_entry ();
@@ -123,6 +125,8 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 		g_signal_connect (child, "activate",
 			G_CALLBACK (zenity_entry_combo_activate_default),
 			GTK_WINDOW (dialog));
+
+		G_GNUC_END_IGNORE_DEPRECATIONS
 	}
 	else
 	{
@@ -163,7 +167,9 @@ zenity_entry_dialog_output (void)
 
 	if (n_entries > 1)
 	{
+		G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 		text = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT(entry));
+		G_GNUC_END_IGNORE_DEPRECATIONS
 	}
 	else
 	{
