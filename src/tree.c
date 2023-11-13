@@ -255,29 +255,9 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 	}
 
 	separator = g_strcompress (tree_data->separator);
-
 	n_columns = g_slist_length (tree_data->columns);
 
-	if (tree_data->print_column)
-	{
-		if (strcmp (g_ascii_strdown (tree_data->print_column, -1), "all") == 0)
-			print_all_columns = TRUE;
-		else
-			print_columns = zenity_tree_extract_column_indexes (
-				tree_data->print_column, n_columns);
-	}
-	else
-	{
-		print_columns = g_new (gint, 2);
-		print_columns[0] = (tree_data->radiobox || tree_data->checkbox ? 2 : 1);
-		print_columns[1] = 0;
-	}
-
-	if (tree_data->hide_column) {
-		hide_columns =
-			zenity_tree_extract_column_indexes (tree_data->hide_column,
-					n_columns);
-	}
+	/* Sanity checks */
 
 	if (n_columns == 0) {
 		g_printerr (_("No column titles specified for List dialog.\n"));
@@ -300,6 +280,27 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 		g_printerr (_ ("You should use only one List dialog type.\n"));
 		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
 		return;
+	}
+
+	if (tree_data->print_column)
+	{
+		if (strcmp (g_ascii_strdown (tree_data->print_column, -1), "all") == 0)
+			print_all_columns = TRUE;
+		else
+			print_columns = zenity_tree_extract_column_indexes (
+				tree_data->print_column, n_columns);
+	}
+	else
+	{
+		print_columns = g_new (gint, 2);
+		print_columns[0] = (tree_data->radiobox || tree_data->checkbox ? 2 : 1);
+		print_columns[1] = 0;
+	}
+
+	if (tree_data->hide_column) {
+		hide_columns =
+			zenity_tree_extract_column_indexes (tree_data->hide_column,
+					n_columns);
 	}
 
 	dialog = GTK_WIDGET(gtk_builder_get_object (builder, "zenity_tree_dialog"));
