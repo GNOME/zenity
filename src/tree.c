@@ -285,6 +285,16 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 		return;
 	}
 
+	if ((tree_data->radiobox || tree_data->checkbox) && n_columns < 2)
+	{
+		/* Translators: --checklist and --radiolist should not be translated
+		 * (command-line options). */
+		g_printerr (_("Insufficient columns specified for List dialog (at least "
+			"2 are required for --checklist or --radiolist).\n"));
+		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+		return;
+	}
+
 	if (tree_data->checkbox + tree_data->radiobox + tree_data->imagebox > 1)
 	{
 		g_printerr (_ ("You should use only one List dialog type.\n"));
