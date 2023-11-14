@@ -501,7 +501,6 @@ zenity_tree_dialog_toggle_get_selected (ZenityTreeRow *row, gpointer unused)
 static void
 zenity_tree_dialog_output (void)
 {
-	gboolean multi = zenity_tree_column_view_get_multi (col_view);
 	ZenityTreeListType list_type = zenity_tree_column_view_get_list_type (col_view);
 
 	if (list_type == ZENITY_TREE_LIST_RADIO || list_type == ZENITY_TREE_LIST_CHECK)
@@ -509,14 +508,10 @@ zenity_tree_dialog_output (void)
 		zenity_tree_column_view_foreach_row (col_view,
 				(GFunc)zenity_tree_dialog_toggle_get_selected, NULL);
 	}
-	else if (multi)
-	{
-	}
 	else
 	{
 		zenity_tree_dialog_get_selected ();
 	}
-
 
 	for (GSList *tmp = selected; tmp != NULL; tmp = tmp->next)
 	{
