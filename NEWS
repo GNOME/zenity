@@ -1,3 +1,27 @@
+Zenity 3.99.90
+  1st release candidate of the upcoming zenity 4.x, based on libadwaita/gtk4.
+  - build: Make building manpage dependent upon manpage option (Guillermo
+    Joandet)
+  - text: Handle long inputs properly (#65) (Lukáš Tyrychtr)
+  - colview: Use g_signal_connect_object (Logan Rathbone)
+  - tree: Fix reading input from a named pipe (#71) (Lukáš Tyrychtr)
+  - tree/colview: Return correct value when filtered using search; code
+    cleanups (Logan Rathbone)
+  - colview: Add missing declaration to header (Logan Rathbone)
+  - build: Make implicit declarations an error (Logan Rathbone)
+  - build: Make zenity4 compile against gtk 4.12 without deprecation warnings
+    (Logan Rathbone)
+  - tree: --checklist or --radiolist with < 2 cols should be an error (Logan
+    Rathbone)
+  - tree: Fix output for non-check/radio multiple selections (Logan Rathbone)
+  - util: Replace gtk_window_destroy() with gtk_application_remove_window()
+    (#72)
+  - Translation updates:
+      Daniel Rusek (cs)
+      Luming Zh (zh_CN)
+      Sabri Ünal (tr)
+      Yuri Chornoivan (uk)
+
 Zenity 3.99.2
   3rd beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
   - Minor code cleanups (Logan Rathbone)
