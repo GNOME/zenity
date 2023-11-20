@@ -469,7 +469,7 @@ zenity_util_gapp_quit (GtkWindow *window, ZenityData *data)
 		exit (data->exit_code);
 
 	if (window)
-		gtk_window_destroy (window);
+		gtk_application_remove_window (GTK_APPLICATION(g_application_get_default ()), window);
 	else
 		g_application_release (g_application_get_default ());
 
