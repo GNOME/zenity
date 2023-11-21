@@ -31,32 +31,6 @@
 
 static void zenity_msg_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
 
-/* FIXME - Is this still necessary with gtk4? */
-static void
-zenity_label_widget_clipboard_selection (GtkWidget *widget)
-{
-	/* Workaround hotfix for suspected toolkit issue:
-	   since focus change of the dialog's focussed widget (text)
-	   somehow currently chooses to destroy
-	   a pre-existing (read: foreign, user-initiated) X11 primary selection
-	   (via gtk_label_select_region() -> ...
-	   -> gtk_clipboard_set_contents()/gtk_clipboard_clear()),
-	   we need to ensure
-	   that the widget does have its gtk-label-select-on-focus property off,
-	   in order to avoid having the label become selected automatically
-	   and thereby having pre-existing clipboard content nullified.
-	   Side note: this selection issue only applies to widgets
-	   which have both
-					<property name="can_focus">True</property>
-					<property name="selectable">True</property>
-	   .
-	 */
-	g_object_set (gtk_widget_get_settings (widget),
-		"gtk-label-select-on-focus",
-		FALSE,
-		NULL);
-}
-
 void
 zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 {
@@ -200,7 +174,6 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			gtk_label_set_markup (GTK_LABEL (text),
 					g_strcompress (msg_data->dialog_text));
 		}
-		zenity_label_widget_clipboard_selection (GTK_WIDGET (text));
 	}
 
 	if (msg_data->ellipsize)
@@ -224,6 +197,13 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			(GSourceFunc) zenity_util_timeout_handle,
 			NULL);
 	}
+
+	/* Disable select-on-focus for labels to avoid primary selection getting
+	 * overwritten inadvertently, which can annoy some users.
+	 */
+	g_object_set (gtk_settings_get_default (),
+		"gtk-label-select-on-focus", FALSE,
+		NULL);
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
