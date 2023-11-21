@@ -493,11 +493,20 @@ zenity_util_parse_dialog_response (const char *response)
 	}
 	else if (response[0] >= '0' && response[0] <= '9')
 	{
-		/* FIXME - atoi returns 0 on error, so this *could* mean the function
-		 * failed - but that would be a programmer error, so we'll leave this
-		 * in place.
+		/* Since atoi can return 0 upon an error or a valid "0", deal with it
+		 * as a special case here.
 		 */
-		return atoi (response);
+		if (g_strcmp0 (response, "0") == 0)
+			return 0;
+		else
+		{
+			int retval = atoi (response);
+
+			if (G_UNLIKELY (! retval))
+				g_error ("%s: Programmer error: invalid integer string", __func__);
+
+			return retval;
+		}
 	}
 	else
 	{
