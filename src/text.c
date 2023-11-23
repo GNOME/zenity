@@ -71,8 +71,6 @@ zenity_configure_webkit (WebKitWebView *web_view) {
 		FALSE,
 		NULL);
 	g_object_set (G_OBJECT (settings), "enable-page-cache", FALSE, NULL);
-	g_object_set (G_OBJECT (settings), "enable-plugins", FALSE, NULL);
-	g_object_set (G_OBJECT (settings), "enable-private-browsing", TRUE, NULL);
 	/*
 	  Stick to defaults
 	  "enforce-96-dpi"           gboolean              : Read / Write /
@@ -344,7 +342,9 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 #ifdef HAVE_WEBKITGTK
 	if (text_data->html) {
-		web_kit = webkit_web_view_new ();
+		web_kit = g_object_new (WEBKIT_TYPE_WEB_VIEW,
+				"is-ephemeral", TRUE,
+				NULL);
 		scrolled_window = GTK_WIDGET (
 			gtk_builder_get_object (builder, "zenity_text_scrolled_window"));
 
