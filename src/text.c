@@ -411,10 +411,9 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
 	if (data->timeout_delay > 0)
 	{
-		g_timeout_add_seconds (data->timeout_delay,
-			(GSourceFunc) zenity_util_timeout_handle,
-			dialog);
+		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
 	}
+
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
 

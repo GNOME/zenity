@@ -430,7 +430,7 @@ zenity_util_show_dialog (GtkWidget *dialog)
 gboolean
 zenity_util_timeout_handle (AdwMessageDialog *dialog)
 {
-	if (dialog) {
+	if (dialog && ADW_IS_MESSAGE_DIALOG (dialog)) {
 		adw_message_dialog_response (dialog, "timeout");
 	}
 	else {

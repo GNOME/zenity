@@ -98,10 +98,9 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
 	zenity_util_show_dialog (dialog);
 
-	if (data->timeout_delay > 0) {
-		g_timeout_add_seconds (data->timeout_delay,
-			(GSourceFunc) zenity_util_timeout_handle,
-			dialog);
+	if (data->timeout_delay > 0)
+	{
+		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
 	}
 
 	if (data->extra_label)

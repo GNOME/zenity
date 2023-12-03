@@ -134,10 +134,9 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 	}
 	gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog));
 
-	if (data->timeout_delay > 0) {
-		g_timeout_add_seconds (data->timeout_delay,
-			(GSourceFunc) zenity_util_timeout_handle,
-			dialog);
+	if (data->timeout_delay > 0)
+	{
+		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
 	}
 
 	/* Since a native dialog is not a GtkWindow, we can't use our handy

@@ -81,6 +81,11 @@ G_BEGIN_DECLS
 	else \
 		g_assert_not_reached ();
 
+#define ZENITY_UTIL_SETUP_TIMEOUT(DIALOG) \
+	g_timeout_add_seconds (data->timeout_delay, \
+		(GSourceFunc) zenity_util_timeout_handle, \
+		DIALOG);
+
 GIcon *zenity_util_gicon_from_string (const char *str);
 GtkBuilder *zenity_util_load_ui_file (const char *widget_root,
 		...) G_GNUC_NULL_TERMINATED;
