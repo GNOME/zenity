@@ -227,6 +227,10 @@ zenity_msg_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
 			break;
 
+		case ZENITY_TIMEOUT:
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
+			break;
+
 		default:
 			ZENITY_UTIL_RESPONSE_HANDLE_EXTRA_BUTTONS
 			break;
