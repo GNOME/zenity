@@ -30,6 +30,7 @@ i18n = import('i18n')
 warning_cflags = [
   '-Werror=implicit',
   '-Wformat=2',
+  '-Wimplicit-fallthrough=3',
 ]
 cc = meson.get_compiler('c')
 supported_warning_cflags = cc.get_supported_arguments(warning_cflags)
