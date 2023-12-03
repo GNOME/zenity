@@ -179,13 +179,8 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			break;
 
-		case GTK_RESPONSE_REJECT:
+		case GTK_RESPONSE_CANCEL:
 			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_CANCEL);
-			break;
-
-		case ZENITY_TIMEOUT:
-			zenity_fileselection_dialog_output (chooser, file_data);
-			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_TIMEOUT);
 			break;
 
 		default:
