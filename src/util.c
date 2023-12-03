@@ -52,6 +52,14 @@
  */
 #define ZENITY_EXTRA_DEFAULT 1
 
+/* This exit code number is arbitrary, but since for the entire 3.x release
+ * cycle, zenity would essentially exit(ZENITY_TIMEOUT), which happened to be
+ * defined as 5 based on where it was placed in the enum sequence. So
+ * hardcoding it as 5 now in case any pre-existing scripts relied upon that
+ * being the exit status for timeouts.
+ */
+#define ZENITY_TIMEOUT_DEFAULT 5
+
 #define ZENITY_UI_RESOURCE_PATH RESOURCE_BASE_PATH "/zenity.ui"
 
 GIcon *
@@ -272,7 +280,7 @@ zenity_util_return_exit_code (ZenityExitCode value)
 			if (!env_var)
 				env_var = g_getenv ("DIALOG_TIMEOUT");
 			if (!env_var)
-				retval = ZENITY_TIMEOUT;
+				retval = ZENITY_TIMEOUT_DEFAULT;
 			break;
 
 		default:
@@ -426,7 +434,7 @@ zenity_util_timeout_handle (AdwMessageDialog *dialog)
 		adw_message_dialog_response (dialog, "timeout");
 	}
 	else {
-		exit (ZENITY_TIMEOUT);
+		exit (zenity_util_return_exit_code (ZENITY_TIMEOUT));
 	}
 	return FALSE;
 }
