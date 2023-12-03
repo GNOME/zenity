@@ -143,7 +143,7 @@ zenity_password_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityPasswordData *password_data = data;
 	GtkEntryBuffer *user_buff, *pass_buff;
-	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
+	int response = zenity_util_parse_dialog_response (rstr);
 
 	user_buff = gtk_entry_get_buffer (GTK_ENTRY(password_data->entry_username));
 	pass_buff = gtk_entry_get_buffer (GTK_ENTRY(password_data->entry_password));
@@ -172,10 +172,7 @@ zenity_password_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			break;
 
 		default:
-			if (zen_data->extra_label &&
-				response < (int)g_strv_length (zen_data->extra_label))
-				printf ("%s\n", zen_data->extra_label[response]);
-			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			ZENITY_UTIL_RESPONSE_HANDLE_EXTRA_BUTTONS
 			break;
 	}
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);

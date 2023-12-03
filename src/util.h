@@ -71,6 +71,16 @@ G_BEGIN_DECLS
 	else if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "no")) \
 		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "no", data->cancel_label);
 
+#define ZENITY_UTIL_RESPONSE_HANDLE_EXTRA_BUTTONS \
+	if (zen_data->extra_label && \
+		response < (int)g_strv_length (zen_data->extra_label)) \
+	{ \
+		printf ("%s\n", zen_data->extra_label[response]); \
+		zen_data->exit_code = zenity_util_return_exit_code (ZENITY_EXTRA); \
+	} \
+	else \
+		g_assert_not_reached ();
+
 GIcon *zenity_util_gicon_from_string (const char *str);
 GtkBuilder *zenity_util_load_ui_file (const char *widget_root,
 		...) G_GNUC_NULL_TERMINATED;
@@ -85,7 +95,7 @@ gboolean zenity_util_timeout_handle (AdwMessageDialog *dialog);
 char *zenity_util_pango_font_description_to_css (PangoFontDescription *desc);
 void zenity_util_gapp_main (GtkWindow *window);
 void zenity_util_gapp_quit (GtkWindow *window, ZenityData *data);
-ZenityExitCode zenity_util_parse_dialog_response (const char *response);
+int zenity_util_parse_dialog_response (const char *response);
 GtkWidget *zenity_util_add_button (AdwMessageDialog *dialog, const char
 		*button_text, ZenityExitCode response_id);
 

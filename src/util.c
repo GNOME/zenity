@@ -46,7 +46,12 @@
 #define ZENITY_CANCEL_DEFAULT 1
 #define ZENITY_ESC_DEFAULT 1
 #define ZENITY_ERROR_DEFAULT -1
-#define ZENITY_EXTRA_DEFAULT 127
+
+/* This is an odd exit code for extra labels, but it is maintained
+ * for backwards compatibility with zenity <= 3.x.
+ */
+#define ZENITY_EXTRA_DEFAULT 1
+
 #define ZENITY_UI_RESOURCE_PATH RESOURCE_BASE_PATH "/zenity.ui"
 
 GIcon *

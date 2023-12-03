@@ -532,7 +532,7 @@ static void
 zenity_tree_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityData *zen_data = data;
-	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
+	int response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
@@ -555,12 +555,7 @@ zenity_tree_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			break;
 
 		default:
-			if (zen_data->extra_label &&
-				response < (int)g_strv_length (zen_data->extra_label))
-			{
-				printf ("%s\n", zen_data->extra_label[response]);
-			}
-			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			ZENITY_UTIL_RESPONSE_HANDLE_EXTRA_BUTTONS
 			break;
 	}
 	if (channel != NULL &&

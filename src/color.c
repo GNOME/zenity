@@ -97,10 +97,7 @@ zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer
 			break;
 
 		default:
-			if (zen_data->extra_label &&
-				response < (int)g_strv_length (zen_data->extra_label))
-				printf ("%s\n", zen_data->extra_label[response]);
-			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ESC);
+			ZENITY_UTIL_RESPONSE_HANDLE_EXTRA_BUTTONS
 			break;
 	}
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);

@@ -443,7 +443,7 @@ static void
 zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityData *zen_data = data;
-	ZenityExitCode response = zenity_util_parse_dialog_response (rstr);
+	int response = zenity_util_parse_dialog_response (rstr);
 
 	switch (response)
 	{
@@ -466,12 +466,7 @@ zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 			break;
 			
 		default:
-			if (zen_data->extra_label &&
-				response < (int)g_strv_length (zen_data->extra_label))
-			{
-				printf ("%s\n", zen_data->extra_label[response]);
-			}
-			zenity_util_exit_code_with_data (ZENITY_ESC, zen_data);
+			ZENITY_UTIL_RESPONSE_HANDLE_EXTRA_BUTTONS
 			break;
 	}
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
