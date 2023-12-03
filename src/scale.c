@@ -148,7 +148,7 @@ zenity_scale_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 	switch (response)
 	{
 		case ZENITY_OK:
-			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			g_print ("%.0f\n", gtk_range_get_value (GTK_RANGE (scale)));
 			break;
 

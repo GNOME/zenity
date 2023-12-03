@@ -177,7 +177,7 @@ zenity_fileselection_dialog_response (GtkWidget *widget, int response, gpointer 
 	{
 		case GTK_RESPONSE_ACCEPT:
 			zenity_fileselection_dialog_output (chooser, file_data);
-			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			break;
 
 		case GTK_RESPONSE_REJECT:

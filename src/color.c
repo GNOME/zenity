@@ -83,7 +83,7 @@ zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer
 	switch (response)
 	{
 		case GTK_RESPONSE_OK:
-			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
 			g_print ("%s\n", gdk_rgba_to_string (&color));
 			break;

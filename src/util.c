@@ -284,12 +284,6 @@ zenity_util_return_exit_code (ZenityExitCode value)
 	return retval;
 }
 
-void
-zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *zen_data)
-{
-	zen_data->exit_code = zenity_util_return_exit_code (value);
-}
-
 /* This function was written by Matthias Clasen and is included somewhere in
  * the GTK source tree.. I believe it is also included in libdazzle, but I
  * didn't want to include a whole dependency just for one function. LGPL, but

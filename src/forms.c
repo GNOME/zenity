@@ -453,7 +453,7 @@ zenity_forms_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 	{
 		case ZENITY_OK:
 			zenity_forms_dialog_output (forms_data);
-			zenity_util_exit_code_with_data (ZENITY_OK, zen_data);
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_OK);
 			break;
 
 		case ZENITY_CANCEL:

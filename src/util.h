@@ -89,7 +89,6 @@ gboolean zenity_util_fill_file_buffer (GtkTextBuffer *buffer,
 		const char *filename);
 void zenity_util_show_help (GError **error);
 int zenity_util_return_exit_code (ZenityExitCode value);
-void zenity_util_exit_code_with_data (ZenityExitCode value, ZenityData *data);
 void zenity_util_show_dialog (GtkWidget *widget);
 gboolean zenity_util_timeout_handle (AdwMessageDialog *dialog);
 char *zenity_util_pango_font_description_to_css (PangoFontDescription *desc);
