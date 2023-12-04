@@ -141,10 +141,12 @@ static void
 zenity_password_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 {
 	ZenityPasswordData *password_data = data;
-	GtkEntryBuffer *user_buff, *pass_buff;
+	GtkEntryBuffer *user_buff = NULL, *pass_buff = NULL;
 	int response = zenity_util_parse_dialog_response (rstr);
 
-	user_buff = gtk_entry_get_buffer (GTK_ENTRY(password_data->entry_username));
+	if (password_data->username)
+		user_buff = gtk_entry_get_buffer (GTK_ENTRY(password_data->entry_username));
+
 	pass_buff = gtk_entry_get_buffer (GTK_ENTRY(password_data->entry_password));
 
 	switch (response)
