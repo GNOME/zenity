@@ -1,3 +1,21 @@
+Zenity 3.99.91
+  2nd release candidate of the upcoming zenity 4.0, based on libadwaita/gtk4.
+
+  Changes and bugfixes since 3.99.91 (Logan Rathbone):
+  - password: Remove spurious "Warning" heading
+  - password: Only fetch username buffer if username option specified
+  - build: Add implicit fallthrough warnings
+  - password/msg: Handle ZENITY_TIMEOUT to be in line with other
+    libadwaita-based dialogs
+  - filesel: Fix exit statuses for cancel and timeout
+  - Cleanup 'timeout' and make it work properly for all dialogs
+  - util: Maintain default timeout exit status as 5 for backwards compat;
+    various cleanups
+  - text: webkit2gtk-6.0 fixes
+  - msg: Code cleanups
+  - Translation updates:
+      Artur S0 (ru)
+
 Zenity 3.99.90
   1st release candidate of the upcoming zenity 4.x, based on libadwaita/gtk4.
   - build: Make building manpage dependent upon manpage option (Guillermo
