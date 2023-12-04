@@ -398,7 +398,12 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	if (!auto_close)
 	{
 		adw_message_dialog_add_response (ADW_MESSAGE_DIALOG(dialog), "ok", _("_OK"));
-		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
+		if (progress_data->percentage == 100) {
+			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", TRUE);
+			adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(dialog), "ok");
+		} else {
+			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
+		}
 	}
 
 	zenity_util_show_dialog (dialog);
