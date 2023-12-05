@@ -8,879 +8,954 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2020-07-10 08:25+0000\n"
-"PO-Revision-Date: 2021-05-28 23:04+0300\n"
+"POT-Creation-Date: 2023-11-13 19:07+0000\n"
+"PO-Revision-Date: 2023-12-05 08:31+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.1\n"
 
-#: src/about.c:60
+#: data/org.gnome.Zenity.desktop.in:3
+#| msgid "About Zenity"
+msgid "Zenity"
+msgstr "Zenity"
+
+#: data/org.gnome.Zenity.desktop.in:4
+msgid "Display dialog boxes from the command line"
+msgstr "הצגת חלוניות משורת הפקודה"
+
+#: src/about.c:54
 msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
+"This program is free software; you can redistribute it and/or modify it under "
+"the terms of the GNU Lesser General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) any "
+"later version.\n"
 msgstr ""
-"‏תכנית זו מוגשת במסגרת תכנה חופשית; ניתן להפיצה מחדש ו/או לשנות אותה לפי תנאי "
-"הרישיון הציבורי הכללי של GNU כפי שפורסם על ידי קרן התכנה החופשית; בין אם "
-"גרסה 2 של הרישיון ובין אם (לבחירתך) כל גרסה מאוחרת יותר.‬\n"
+"תוכנית זו מוגשת במסגרת תוכנה חופשית; ניתן להפיצה מחדש ו/או לשנות אותה לפי "
+"תנאי הרישיון הציבורי הכללי המוקטן של גנו כפי שפורסם על ידי קרן התוכנה "
+"החופשית; בין אם גרסה 2 של הרישיון ובין אם (לבחירתך) כל גרסה מאוחרת יותר.‬\n"
 
-#: src/about.c:65
+#: src/about.c:59
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more "
+"details.\n"
 msgstr ""
 "תכנית זו מופצת בתקווה שתביא תועלת אך ללא אחריות כלשהי; אפילו לא מרומזת בדבר "
 "מסחריותה או התאמתה למטרה מסוימת. לפרטים נוספים ניתן לעיין ברישיון הציבורי "
-"הכללי של GNU.\n"
+"הכללי המוקטן של גנו.\n"
 
-#: src/about.c:69
+#: src/about.c:63
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"along with this program; if not, write to the Free Software Foundation, Inc., "
+"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"לתוכנית הזאת אמור היה להיות מצורף הרישיון הציבורי המוקטן של גנו, אם הוא לא "
+"צורף, ניתן לכתוב ל־Free Software Foundation, Inc., 51 Franklin Street, Fifth "
+"Floor, Boston, MA 02110-1301, USA."
 
-#: src/about.c:260
-msgid "translator-credits"
-msgstr ""
-"יאיר הרשקוביץ <yairhr@gmail.com>\n"
-"ירון שהרבני <sh.yaron@gmail.com>\n"
-"יוסף אור בוצ׳קו <yoseforb@gnome.org>"
-
-#: src/about.c:277
+#: src/about.c:88
 msgid "Display dialog boxes from shell scripts"
 msgstr "הצגת תיבות דו־שיח בתסריטים"
 
-#: src/fileselection.c:62 src/fileselection.c:76 src/password.c:60
+#: src/fileselection.c:45
+msgid ""
+"Warning: the --extra-button option for --file-selection is deprecated and "
+"will be removed in a future version of zenity. Ignoring.\n"
+msgstr ""
+"אזהרה: השימוש באפשרות ‎--extra-button עבור ‎--file-selection הופסק ויוסר "
+"בגרסאות עתידיות של zenity. מתעלם.\n"
+
+#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
 msgid "_OK"
 msgstr "_אישור"
 
-#: src/fileselection.c:63 src/fileselection.c:74 src/password.c:57
+#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "_ביטול"
 
-#: src/main.c:105
+#: src/main.c:124
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr "You must specify a dialog type. See 'zenity --help' for details\n"
+msgstr "חובה לציין סוג חלונית. ר׳ ‚zenity --help’ לפרטים נוספים\n"
 
-#: src/msg.c:38
+#: src/msg.c:115
 msgid "_No"
 msgstr "_לא"
 
-#: src/msg.c:40
+#: src/msg.c:116
 msgid "_Yes"
 msgstr "_כן"
 
-#: src/notification.c:50
+#: src/notification.c:62
 msgid "Could not parse message\n"
-msgstr "Could not parse message\n"
+msgstr "לא ניתן לפענח הודעה\n"
 
-#: src/notification.c:132
-msgid ""
-"Invalid value for a boolean typed hint.\n"
-"Supported values are 'true' or 'false'.\n"
-msgstr ""
-"Invalid value for a boolean typed hint.\n"
-"Supported values are 'true' or 'false'.\n"
-
-#. (iibiiay)
-#: src/notification.c:149
-msgid "Unsupported hint. Skipping.\n"
-msgstr "Unsupported hint. Skipping.\n"
-
-#. unknown hints
-#: src/notification.c:166
-msgid "Unknown hint name. Skipping.\n"
-msgstr "Unknown hint name. Skipping.\n"
-
-#: src/notification.c:218
+#: src/notification.c:140
 msgid "Could not parse command from stdin\n"
-msgstr "Could not parse command from stdin\n"
+msgstr "לא ניתן לפענח פקודות מ־stdin\n"
 
-#: src/notification.c:318
-msgid "Zenity notification"
-msgstr "Zenity notification"
-
-#: src/option.c:164
+#: src/option.c:170
 msgid "Set the dialog title"
-msgstr "Set the dialog title"
-
-#: src/option.c:165
-msgid "TITLE"
-msgstr "TITLE"
+msgstr "הגדרת כותרת החלונית"
 
 #: src/option.c:171
-msgid "Set the window icon"
-msgstr "Set the window icon"
+msgid "TITLE"
+msgstr "כותרת"
 
-#: src/option.c:172
-msgid "ICONPATH"
-msgstr "ICONPATH"
+#: src/option.c:177
+msgid "Set the width"
+msgstr "הגדרת הרוחב"
 
 #: src/option.c:178
-msgid "Set the width"
-msgstr "Set the width"
-
-#: src/option.c:179
 msgid "WIDTH"
-msgstr "WIDTH"
+msgstr "רוחב"
+
+#: src/option.c:184
+msgid "Set the height"
+msgstr "הגדרת הגובה"
 
 #: src/option.c:185
-msgid "Set the height"
-msgstr "Set the height"
-
-#: src/option.c:186
 msgid "HEIGHT"
-msgstr "HEIGHT"
+msgstr "גובה"
 
-#: src/option.c:192
+#: src/option.c:191
 msgid "Set dialog timeout in seconds"
-msgstr "Set dialog timeout in seconds"
+msgstr "הגדרת זמן קצוב לחלון בשניות"
 
 #. Timeout for closing the dialog
-#: src/option.c:194
+#: src/option.c:193
 msgid "TIMEOUT"
-msgstr "TIMEOUT"
+msgstr "זמן_קצוב"
 
-#: src/option.c:200
+#: src/option.c:199
 msgid "Set the label of the OK button"
-msgstr "Set the label of the OK button"
+msgstr "הגדרת תווית כפתור האישור"
 
-#: src/option.c:201 src/option.c:208 src/option.c:215 src/option.c:245
-#: src/option.c:289 src/option.c:296 src/option.c:319 src/option.c:362
-#: src/option.c:468 src/option.c:565 src/option.c:579 src/option.c:598
-#: src/option.c:658 src/option.c:730 src/option.c:737 src/option.c:786
-#: src/option.c:829 src/option.c:960
+#: src/option.c:200 src/option.c:207 src/option.c:214 src/option.c:259
+#: src/option.c:304 src/option.c:311 src/option.c:335 src/option.c:382
+#: src/option.c:491 src/option.c:587 src/option.c:608 src/option.c:625
+#: src/option.c:686 src/option.c:761 src/option.c:768 src/option.c:818
+#: src/option.c:865 src/option.c:997
 msgid "TEXT"
-msgstr "TEXT"
+msgstr "טקסט"
 
-#: src/option.c:207
+#: src/option.c:206
 msgid "Set the label of the Cancel button"
-msgstr "Set the label of the Cancel button"
+msgstr "הגדרת תווית כפתור הביטול"
 
-#: src/option.c:214
+#: src/option.c:213
 msgid "Add an extra button"
-msgstr "Add an extra button"
+msgstr "הוספת כפתור נוסך"
 
-#: src/option.c:221
+#: src/option.c:220
 msgid "Set the modal hint"
-msgstr "Set the modal hint"
+msgstr "הגדרת הרמז המודלי"
+
+#: src/option.c:227 src/option.c:473 src/option.c:569 src/option.c:607
+msgid "DEPRECATED; does nothing"
+msgstr "לא בשימוש עוד, לא עושה כלום"
 
 #: src/option.c:228
-msgid "Set the parent window to attach to"
-msgstr "Set the parent window to attach to"
-
-#: src/option.c:229
 msgid "WINDOW"
-msgstr "WINDOW"
+msgstr "חלון"
 
-#: src/option.c:237
-msgid "Display calendar dialog"
-msgstr "Display calendar dialog"
+#: src/option.c:234 src/option.c:241
+msgid "DEPRECATED; use `--icon`"
+msgstr "לא בשימוש עוד, יש להשתמש ב־‚‎--icon’"
 
-#: src/option.c:244 src/option.c:288 src/option.c:318 src/option.c:361
-#: src/option.c:467 src/option.c:597 src/option.c:657 src/option.c:785
-#: src/option.c:828 src/option.c:959
-msgid "Set the dialog text"
-msgstr "Set the dialog text"
+#: src/option.c:235 src/option.c:242 src/option.c:342 src/option.c:389
+#: src/option.c:594 src/option.c:693 src/option.c:825
+msgid "ICON-NAME"
+msgstr "שם-סמל"
 
 #: src/option.c:251
-msgid "Set the calendar day"
-msgstr "Set the calendar day"
+msgid "Display calendar dialog"
+msgstr "הצגת חלונית לוח שנה"
 
-#: src/option.c:252
-msgid "DAY"
-msgstr "DAY"
-
-#: src/option.c:258
-msgid "Set the calendar month"
-msgstr "Set the calendar month"
-
-#: src/option.c:259
-msgid "MONTH"
-msgstr "MONTH"
+#: src/option.c:258 src/option.c:303 src/option.c:334 src/option.c:381
+#: src/option.c:490 src/option.c:624 src/option.c:685 src/option.c:817
+#: src/option.c:864 src/option.c:996
+msgid "Set the dialog text"
+msgstr "הגדרת טקסט החלונית"
 
 #: src/option.c:265
-msgid "Set the calendar year"
-msgstr "Set the calendar year"
+msgid "Set the calendar day"
+msgstr "הגדרת היום בלוח השנה"
 
 #: src/option.c:266
+msgid "DAY"
+msgstr "יום"
+
+#: src/option.c:272
+msgid "Set the calendar month"
+msgstr "הגדרת החודש בלוח השנה"
+
+#: src/option.c:273
+msgid "MONTH"
+msgstr "חודש"
+
+#: src/option.c:279
+msgid "Set the calendar year"
+msgstr "הגדרת השנה בלוח השנה"
+
+#: src/option.c:280
 msgid "YEAR"
-msgstr "YEAR"
+msgstr "שנה"
 
-#: src/option.c:272 src/option.c:973
+#: src/option.c:286 src/option.c:1010
 msgid "Set the format for the returned date"
-msgstr "Set the format for the returned date"
+msgstr "הגדרת תבנית התאריך שמוחזר"
 
-#: src/option.c:273 src/option.c:974
+#: src/option.c:287 src/option.c:1011
 msgid "PATTERN"
-msgstr "PATTERN"
+msgstr "תבנית"
 
-#: src/option.c:281
+#: src/option.c:296
 msgid "Display text entry dialog"
-msgstr "Display text entry dialog"
+msgstr "הצגת חלונית מילוי טקסט"
 
-#: src/option.c:295
+#: src/option.c:310
 msgid "Set the entry text"
-msgstr "Set the entry text"
+msgstr "הגדרת טקסט המילוי"
 
-#: src/option.c:302
+#: src/option.c:317
 msgid "Hide the entry text"
-msgstr "Hide the entry text"
+msgstr "הסתרת טקסט המילוי"
 
-#: src/option.c:311
+#: src/option.c:327
 msgid "Display error dialog"
-msgstr "Display error dialog"
+msgstr "הצגת חלונית שגיאה"
 
-#: src/option.c:325 src/option.c:368 src/option.c:664 src/option.c:792
-msgid "Set the dialog icon"
-msgstr "Set the dialog icon"
+#: src/option.c:341 src/option.c:388 src/option.c:593 src/option.c:692
+#: src/option.c:824
+msgid "Set the icon name"
+msgstr "הגדרת שם הסמל"
 
-#: src/option.c:326 src/option.c:369 src/option.c:665 src/option.c:793
-msgid "ICON-NAME"
-msgstr "ICON-NAME"
-
-#: src/option.c:332 src/option.c:375 src/option.c:671 src/option.c:799
+#: src/option.c:348 src/option.c:395 src/option.c:699 src/option.c:831
 msgid "Do not enable text wrapping"
-msgstr "Do not enable text wrapping"
+msgstr "לא להפעיל גלישת טקסט"
 
-#: src/option.c:339 src/option.c:382 src/option.c:678 src/option.c:806
+#: src/option.c:355 src/option.c:402 src/option.c:706 src/option.c:838
 msgid "Do not enable Pango markup"
-msgstr "Do not enable Pango markup"
+msgstr "לא להפעיל סימון Pango"
 
-#: src/option.c:345 src/option.c:388 src/option.c:691 src/option.c:812
+#: src/option.c:362 src/option.c:409 src/option.c:720 src/option.c:845
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
-msgstr ""
-"Enable ellipsizing in the dialog text. This fixes the high window size with "
-"long texts"
+msgstr "הפעלת קיצור על טקסט החלונית. מתקן גודל חלון מופרז עם טקסטים ארוכים"
 
-#: src/option.c:354
+#: src/option.c:374
 msgid "Display info dialog"
-msgstr "Display info dialog"
+msgstr "הצגת חלונית מידע"
 
-#: src/option.c:398
+#: src/option.c:421
 msgid "Display file selection dialog"
-msgstr "Display file selection dialog"
+msgstr "הצגת חלונית ברירת קבצים"
 
-#: src/option.c:405
+#: src/option.c:428
 msgid "Set the filename"
-msgstr "Set the filename"
+msgstr "הגדרת שם הקובץ"
 
-#: src/option.c:406 src/option.c:716
+#: src/option.c:429 src/option.c:747
 msgid "FILENAME"
-msgstr "FILENAME"
+msgstr "שם_קובץ"
 
-#: src/option.c:412
+#: src/option.c:435
 msgid "Allow multiple files to be selected"
-msgstr "Allow multiple files to be selected"
+msgstr "לאפשר בחירה של מגוון קבצים"
 
-#: src/option.c:419
+#: src/option.c:442
 msgid "Activate directory-only selection"
-msgstr "Activate directory-only selection"
+msgstr "הפעלת בחירה של תיקיות בלבד"
 
-#: src/option.c:426
+#: src/option.c:449
 msgid "Activate save mode"
-msgstr "Activate save mode"
+msgstr "הפעלת מצב חיסכון"
 
-#: src/option.c:433 src/option.c:502 src/option.c:966
+#: src/option.c:456 src/option.c:525 src/option.c:1003
 msgid "Set output separator character"
-msgstr "Set output separator character"
+msgstr "הגדרת תו מפריד"
 
-#: src/option.c:434 src/option.c:503 src/option.c:967
+#: src/option.c:457 src/option.c:526 src/option.c:1004
 msgid "SEPARATOR"
-msgstr "SEPARATOR"
+msgstr "מפריד"
 
-#: src/option.c:440
-msgid "Confirm file selection if filename already exists"
-msgstr "Confirm file selection if filename already exists"
-
-#: src/option.c:448
+#: src/option.c:463
 msgid "Set a filename filter"
-msgstr "Set a filename filter"
+msgstr "הגדרת מסנן שם קובץ"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
-#: src/option.c:451
+#: src/option.c:466
 msgid "NAME | PATTERN1 PATTERN2 ..."
-msgstr "NAME | PATTERN1 PATTERN2 ..."
+msgstr "שם | תבנית1 תבנית2 …"
 
-#: src/option.c:460
+#: src/option.c:483
 msgid "Display list dialog"
-msgstr "Display list dialog"
+msgstr "הצגת חלונית רשימה"
 
-#: src/option.c:474
+#: src/option.c:497
 msgid "Set the column header"
-msgstr "Set the column header"
+msgstr "הגדרת כותרת העמודות"
 
-#: src/option.c:475
+#: src/option.c:498
 msgid "COLUMN"
-msgstr "COLUMN"
+msgstr "עמודה"
 
-#: src/option.c:481
+#: src/option.c:504
 msgid "Use check boxes for the first column"
-msgstr "Use check boxes for the first column"
+msgstr "להשתמש בתיבות סימון לעמודה הראשונה"
 
-#: src/option.c:488
+#: src/option.c:511
 msgid "Use radio buttons for the first column"
-msgstr "Use radio buttons for the first column"
+msgstr "להשתמש בכפתורי ברירה בעמודה הראשונה"
 
-#: src/option.c:495
+#: src/option.c:518
 msgid "Use an image for the first column"
-msgstr "Use an image for the first column"
-
-#: src/option.c:509
-msgid "Allow multiple rows to be selected"
-msgstr "Allow multiple rows to be selected"
-
-#: src/option.c:516 src/option.c:722
-msgid "Allow changes to text"
-msgstr "Allow changes to text"
-
-#: src/option.c:523
-msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
-msgstr ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
-
-#. Column index number to print out on a list dialog
-#: src/option.c:526 src/option.c:533
-msgid "NUMBER"
-msgstr "NUMBER"
+msgstr "להשתמש בתמונה לעמודה הראשונה"
 
 #: src/option.c:532
-msgid "Hide a specific column"
-msgstr "Hide a specific column"
+msgid "Allow multiple rows to be selected"
+msgstr "לאפשר בחירה של מגוון שורות"
 
-#: src/option.c:539
-msgid "Hide the column headers"
-msgstr "Hide the column headers"
+#: src/option.c:539 src/option.c:753
+msgid "Allow changes to text"
+msgstr "לאפשר שינויים בטקסט"
 
 #: src/option.c:546
 msgid ""
-"Change list default search function searching for text in the middle, not on "
-"the beginning"
+"Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
 msgstr ""
-"Change list default search function searching for text in the middle, not on "
-"the beginning"
+"הצגת עמודה מסוימת (ברירת המחדל היא 1. אפשר להשתמש ב־‚ALL’ - הכול - כדי להציג "
+"את כל העמודות)"
 
-#: src/option.c:557
+#. Column index number to print out on a list dialog
+#: src/option.c:549 src/option.c:556
+msgid "NUMBER"
+msgstr "מספר"
+
+#: src/option.c:555
+msgid "Hide a specific column"
+msgstr "הסתרת עמודה מסוימת"
+
+#: src/option.c:562
+msgid "Hide the column headers"
+msgstr "הסתרת כותרות העמודות"
+
+#: src/option.c:579
 msgid "Display notification"
-msgstr "Display notification"
+msgstr "הצגת התראה"
 
-#: src/option.c:564
+#: src/option.c:586
 msgid "Set the notification text"
-msgstr "Set the notification text"
+msgstr "הגדרת טקסט התראה"
 
-#: src/option.c:571
+#: src/option.c:600
 msgid "Listen for commands on stdin"
-msgstr "Listen for commands on stdin"
+msgstr "להאזין לפקודות בקלט משורת הפקודה (stdin)"
 
-#: src/option.c:578
-msgid "Set the notification hints"
-msgstr "Set the notification hints"
-
-#: src/option.c:590
+#: src/option.c:617
 msgid "Display progress indication dialog"
-msgstr "Display progress indication dialog"
+msgstr "הצגת חלונית חיווי התקדמות"
 
-#: src/option.c:604
+#: src/option.c:631
 msgid "Set initial percentage"
-msgstr "Set initial percentage"
+msgstr "הגדרת אחוזי התחלה"
 
-#: src/option.c:605
+#: src/option.c:632
 msgid "PERCENTAGE"
-msgstr "PERCENTAGE"
+msgstr "אחוז"
 
-#: src/option.c:611
+#: src/option.c:638
 msgid "Pulsate progress bar"
-msgstr "Pulsate progress bar"
+msgstr "דופק למד ההתקדמות"
 
-#: src/option.c:619
+#: src/option.c:646
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr "Dismiss the dialog when 100% has been reached"
+msgstr "להתעלם מהחלון בעת הגעה ל־100%"
 
-#: src/option.c:626
+#: src/option.c:653
 msgid "Kill parent process if Cancel button is pressed"
-msgstr "Kill parent process if Cancel button is pressed"
+msgstr "לחסל את תהליך ההורה בלחיצה על ביטול"
 
-#: src/option.c:633
+#: src/option.c:660
 msgid "Hide Cancel button"
-msgstr "Hide Cancel button"
+msgstr "הסתרת כפתור ביטול"
 
-#: src/option.c:641
+#: src/option.c:668
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
-msgstr "Estimate when progress will reach 100%"
+msgstr "להעריך מתי התהליך יגיע ל־100%"
 
-#: src/option.c:650
+#: src/option.c:678
 msgid "Display question dialog"
-msgstr "Display question dialog"
+msgstr "הצגת חלונית שאלה"
 
-#: src/option.c:684
+#: src/option.c:713
 msgid "Give Cancel button focus by default"
-msgstr "Give Cancel button focus by default"
+msgstr "להתמקד על כפתור הביטול כברירת מחדל"
 
-#: src/option.c:698
+#: src/option.c:729
 msgid "Suppress OK and Cancel buttons"
-msgstr "Suppress OK and Cancel buttons"
+msgstr "הדחקת כפתורי אישור וביטול"
 
-#: src/option.c:708
+#: src/option.c:739
 msgid "Display text information dialog"
-msgstr "Display text information dialog"
+msgstr "הצגת חלונית פרטי טקסט"
 
-#: src/option.c:715
+#: src/option.c:746
 msgid "Open file"
 msgstr "פתיחת קובץ"
 
-#: src/option.c:729
+#: src/option.c:760
 msgid "Set the text font"
 msgstr "הגדרת גופן הטקסט"
 
-#: src/option.c:736
+#: src/option.c:767
 msgid "Enable an I read and agree checkbox"
 msgstr "הפעלת תיבת סימון קראתי ומוסכם עלי"
 
-#: src/option.c:744
+#: src/option.c:775
 msgid "Enable HTML support"
 msgstr "הפעלת תמיכה ב־HTML"
 
-#: src/option.c:751
+#: src/option.c:782
 msgid ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
-msgstr ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
+"Do not enable user interaction with the WebView. Only works if you use --html "
+"option"
+msgstr "לא לאפשר תפעול של המשתמש עם WebView. עובד רק עם האפשרות ‎--html"
 
-#: src/option.c:759
+#: src/option.c:790
 msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr "Set an URL instead of a file. Only works if you use --html option"
+msgstr "הגדרת כתובת במקום קובץ. עובד רק עם האפשרות ‎--html"
 
-#: src/option.c:761
+#: src/option.c:792
 msgid "URL"
-msgstr "URL"
+msgstr "כתובת"
 
-#: src/option.c:768
+#: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
 "יש לגלול את הטקסט אוטומטית לסוף. רק כאשר הטקסט מגיע משורת הפקודה (stdin)"
 
-#: src/option.c:778
+#: src/option.c:810
 msgid "Display warning dialog"
-msgstr "Display warning dialog"
+msgstr "הצגת חלונית אזהרה"
 
-#: src/option.c:821
+#: src/option.c:857
 msgid "Display scale dialog"
-msgstr "Display scale dialog"
+msgstr "הצגת חלונית שינוי גודל"
 
-#: src/option.c:835
+#: src/option.c:871
 msgid "Set initial value"
-msgstr "Set initial value"
+msgstr "הגדרת ערך התחלתי"
 
-#: src/option.c:836 src/option.c:843 src/option.c:850 src/option.c:857
-#: src/option.c:1008
+#: src/option.c:872 src/option.c:879 src/option.c:886 src/option.c:893
+#: src/option.c:1045
 msgid "VALUE"
-msgstr "VALUE"
+msgstr "ערך"
 
-#: src/option.c:842
+#: src/option.c:878
 msgid "Set minimum value"
-msgstr "Set minimum value"
+msgstr "הגדרת ערך מזערי"
 
-#: src/option.c:849
+#: src/option.c:885
 msgid "Set maximum value"
-msgstr "Set maximum value"
+msgstr "הגדרת ערך מרבי"
 
-#: src/option.c:856
+#: src/option.c:892
 msgid "Set step size"
-msgstr "Set step size"
+msgstr "הגדרת גודל צעד"
 
-#: src/option.c:863
+#: src/option.c:899
 msgid "Print partial values"
-msgstr "Print partial values"
+msgstr "הצגת ערכים חלקיים"
 
-#: src/option.c:870
+#: src/option.c:906
 msgid "Hide value"
-msgstr "Hide value"
+msgstr "הסתרת ערך"
 
-#: src/option.c:879
+#: src/option.c:916
 msgid "Display forms dialog"
-msgstr "Display forms dialog"
+msgstr "הצגת חלונית טפסים"
 
-#: src/option.c:886
+#: src/option.c:923
 msgid "Add a new Entry in forms dialog"
-msgstr "Add a new Entry in forms dialog"
+msgstr "הוספת אפשרות מילוי חדשה בחלונית טפסים"
 
-#: src/option.c:887 src/option.c:894
+#: src/option.c:924 src/option.c:931
 msgid "Field name"
 msgstr "שם שדה"
 
-#: src/option.c:893
+#: src/option.c:930
 msgid "Add a new Password Entry in forms dialog"
-msgstr "Add a new Password Entry in forms dialog"
+msgstr "הוספת מילוי ססמה חדש בחלונית טפסים"
 
-#: src/option.c:900
+#: src/option.c:937
 msgid "Add a new Calendar in forms dialog"
-msgstr "Add a new Calendar in forms dialog"
+msgstr "הוספת לוח שנה חדשה בחלונית טפסים"
 
-#: src/option.c:901
+#: src/option.c:938
 msgid "Calendar field name"
 msgstr "שם שדה לוח שנה"
 
-#: src/option.c:907
+#: src/option.c:944
 msgid "Add a new List in forms dialog"
 msgstr "הוספת רשימה חדשה בדו־שיח של טפסים"
 
-#: src/option.c:908
+#: src/option.c:945
 msgid "List field and header name"
 msgstr "שדה רשימה ושם הכותרת"
 
-#: src/option.c:914
+#: src/option.c:951
 msgid "List of values for List"
 msgstr "רשימת הערכים עבור רשימה"
 
-#: src/option.c:915 src/option.c:922 src/option.c:936
+#: src/option.c:952 src/option.c:959 src/option.c:973
 msgid "List of values separated by |"
 msgstr "ערכי הרשימה מופרדים ב־|"
 
-#: src/option.c:921
+#: src/option.c:958
 msgid "List of values for columns"
 msgstr "הצגת ערכים עבור העמודות"
 
-#: src/option.c:928
+#: src/option.c:965
 msgid "Add a new combo box in forms dialog"
 msgstr "הוספת רשימה נפתחת חדשה בדו־שיח טפסים"
 
-#: src/option.c:929
+#: src/option.c:966
 msgid "Combo box field name"
 msgstr "שם שדה הרשימה הנפתחת"
 
-#: src/option.c:935
+#: src/option.c:972
 msgid "List of values for combo box"
 msgstr "הצגת ערכים עבור הרשימה הנפתחת שלך"
 
-#: src/option.c:952
+#: src/option.c:989
 msgid "Show the columns header"
 msgstr "הצגת כותרת העמודות"
 
-#: src/option.c:983
+#: src/option.c:1020
 msgid "Display password dialog"
-msgstr "הצגת דו־שיח למילוי ססמה"
+msgstr "הצגת חלונית למילוי ססמה"
 
-#: src/option.c:990
+#: src/option.c:1027
 msgid "Display the username option"
 msgstr "הצגת אפשרות שם המשתמש"
 
-#: src/option.c:1000
+#: src/option.c:1037
 msgid "Display color selection dialog"
-msgstr "Display color selection dialog"
+msgstr "הצגת חלונית ברירת צבע"
 
-#: src/option.c:1007
+#: src/option.c:1044
 msgid "Set the color"
 msgstr "הגדרת הצבע"
 
-#: src/option.c:1014
+#: src/option.c:1051
 msgid "Show the palette"
-msgstr "Show the palette"
+msgstr "הצגת ערכת הצבעים"
 
-#: src/option.c:1023
+#: src/option.c:1061
 msgid "About zenity"
 msgstr "על zenity"
 
-#: src/option.c:1030
+#: src/option.c:1068
 msgid "Print version"
-msgstr "Print version"
+msgstr "הצגת גרסה"
 
-#: src/option.c:1913
+#: src/option.c:1079
+msgid ""
+"Warning: --icon-name is deprecated and will be removed in a future version of "
+"zenity; Treating as --icon.\n"
+msgstr ""
+"אזהרה: השימוש ב־‎--icon-name הופסק ויוסר בגרסאות עתידיות של zenity, ייחשב ל־‎--"
+"icon.\n"
+
+#: src/option.c:1086
+msgid ""
+"Warning: --window-icon is deprecated and will be removed in a future version "
+"of zenity; Treating as --icon.\n"
+msgstr ""
+"אזהרה: השימוש ב־‎--window-icon הופסק ויוסר בגרסאות עתידיות של zenity, ייחשב "
+"ל־‎--icon.\n"
+
+#: src/option.c:1093
+msgid ""
+"Warning: --confirm-overwrite is deprecated and will be removed in a future "
+"version of zenity. Ignoring.\n"
+msgstr ""
+"אזהרה: השימוש ב־‎--confirm-overwrite הופסק ויוסר בגרסאות עתידיות של zenity, "
+"מתעלם.\n"
+
+#: src/option.c:1100
+msgid ""
+"Warning: --attach is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr ""
+"אזהרה: השימוש ב־‎--attach הופסק ויוסר בגרסאות עתידיות של zenity, מתעלם.\n"
+
+#: src/option.c:1107
+msgid ""
+"Warning: --hint is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
+msgstr "אזהרה: השימוש ב־‎--hint הופסק ויוסר בגרסאות עתידיות של zenity, מתעלם.\n"
+
+#: src/option.c:2028
 msgid "General options"
-msgstr "General options"
+msgstr "אפשרויות כלליות"
 
-#: src/option.c:1914
+#: src/option.c:2029
 msgid "Show general options"
-msgstr "Show general options"
+msgstr "הצגת אפשרויות כלליות"
 
-#: src/option.c:1926
+#: src/option.c:2041
 msgid "Calendar options"
-msgstr "Calendar options"
+msgstr "אפשרויות לוח שנה"
 
-#: src/option.c:1927
+#: src/option.c:2042
 msgid "Show calendar options"
-msgstr "Show calendar options"
+msgstr "הצגת אפשרויות לוח שנה"
 
-#: src/option.c:1939
+#: src/option.c:2054
 msgid "Text entry options"
-msgstr "Text entry options"
+msgstr "אפשרויות מילוי טקסט"
 
-#: src/option.c:1940
+#: src/option.c:2055
 msgid "Show text entry options"
-msgstr "Show text entry options"
+msgstr "הצגת אפשרויות מילוי טקסט"
 
-#: src/option.c:1952
+#: src/option.c:2067
 msgid "Error options"
-msgstr "Error options"
+msgstr "אפשרויות שגיאה"
 
-#: src/option.c:1952
+#: src/option.c:2067
 msgid "Show error options"
-msgstr "Show error options"
+msgstr "הצגת אפשרויות שגיאה"
 
-#: src/option.c:1962
+#: src/option.c:2077
 msgid "Info options"
-msgstr "Info options"
+msgstr "אפשרויות מידע"
 
-#: src/option.c:1962
+#: src/option.c:2077
 msgid "Show info options"
-msgstr "Show info options"
-
-#: src/option.c:1972
-msgid "File selection options"
-msgstr "File selection options"
-
-#: src/option.c:1973
-msgid "Show file selection options"
-msgstr "Show file selection options"
-
-#: src/option.c:1985
-msgid "List options"
-msgstr "List options"
-
-#: src/option.c:1985
-msgid "Show list options"
-msgstr "Show list options"
-
-#: src/option.c:1996
-msgid "Notification icon options"
-msgstr "Notification icon options"
-
-#: src/option.c:1997
-msgid "Show notification icon options"
-msgstr "Show notification icon options"
-
-#: src/option.c:2011
-msgid "Progress options"
-msgstr "Progress options"
-
-#: src/option.c:2012
-msgid "Show progress options"
-msgstr "Show progress options"
-
-#: src/option.c:2024
-msgid "Question options"
-msgstr "Question options"
-
-#: src/option.c:2025
-msgid "Show question options"
-msgstr "Show question options"
-
-#: src/option.c:2037
-msgid "Warning options"
-msgstr "Warning options"
-
-#: src/option.c:2038
-msgid "Show warning options"
-msgstr "Show warning options"
-
-#: src/option.c:2050
-msgid "Scale options"
-msgstr "Scale options"
-
-#: src/option.c:2050
-msgid "Show scale options"
-msgstr "Show scale options"
-
-#: src/option.c:2060
-msgid "Text information options"
-msgstr "Text information options"
-
-#: src/option.c:2061
-msgid "Show text information options"
-msgstr "Show text information options"
-
-#: src/option.c:2073
-msgid "Color selection options"
-msgstr "Color selection options"
-
-#: src/option.c:2074
-msgid "Show color selection options"
-msgstr "Show color selection options"
-
-#: src/option.c:2086
-msgid "Password dialog options"
-msgstr "Password dialog options"
+msgstr "הצגת אפשרויות מידע"
 
 #: src/option.c:2087
-msgid "Show password dialog options"
-msgstr "Show password dialog options"
+msgid "File selection options"
+msgstr "אפשרויות בורר קבצים"
 
-#: src/option.c:2099
-msgid "Forms dialog options"
-msgstr "Forms dialog options"
+#: src/option.c:2088
+msgid "Show file selection options"
+msgstr "הצגת אפשרויות בורר קבצים"
 
 #: src/option.c:2100
+msgid "List options"
+msgstr "אפשרויות רשימה"
+
+#: src/option.c:2100
+msgid "Show list options"
+msgstr "הצגת אפשרויות רשימה"
+
+#: src/option.c:2110
+msgid "Notification options"
+msgstr "אפשרויות התראה"
+
+#: src/option.c:2111
+msgid "Show notification options"
+msgstr "הצגת אפשרויות התראה"
+
+#: src/option.c:2124
+msgid "Progress options"
+msgstr "אפשרויות התקדמות"
+
+#: src/option.c:2125
+msgid "Show progress options"
+msgstr "הצגת אפשרויות התקדמות"
+
+#: src/option.c:2137
+msgid "Question options"
+msgstr "אפשרויות שאלה"
+
+#: src/option.c:2138
+msgid "Show question options"
+msgstr "הצגת אפשרויות שאלה"
+
+#: src/option.c:2150
+msgid "Warning options"
+msgstr "אפשרויות אזהרה"
+
+#: src/option.c:2151
+msgid "Show warning options"
+msgstr "הצגת אפשרויות אזהרה"
+
+#: src/option.c:2163
+msgid "Scale options"
+msgstr "אפשרויות שינוי גודל"
+
+#: src/option.c:2163
+msgid "Show scale options"
+msgstr "הצגת אפשרויות שינוי גודל"
+
+#: src/option.c:2173
+msgid "Text information options"
+msgstr "אפשרויות מידע בטקסט"
+
+#: src/option.c:2174
+msgid "Show text information options"
+msgstr "הצגת אפשרויות מידע בטקסט"
+
+#: src/option.c:2186
+msgid "Color selection options"
+msgstr "אפשרויות בחירת צבע"
+
+#: src/option.c:2187
+msgid "Show color selection options"
+msgstr "הצגת אפשרויות בחירת צבע"
+
+#: src/option.c:2199
+msgid "Password dialog options"
+msgstr "אפשרויות חלונית ססמה"
+
+#: src/option.c:2200
+msgid "Show password dialog options"
+msgstr "הצגת אפשרויות חלונית ססמה"
+
+#: src/option.c:2212
+msgid "Forms dialog options"
+msgstr "אפשרויות חלונית טפסים"
+
+#: src/option.c:2213
 msgid "Show forms dialog options"
-msgstr "Show forms dialog options"
+msgstr "הצגת אפשרויות חלונית טפסים"
 
-#: src/option.c:2112
+#: src/option.c:2225
 msgid "Miscellaneous options"
-msgstr "Miscellaneous options"
+msgstr "אפשרויות שונות"
 
-#: src/option.c:2113
+#: src/option.c:2226
 msgid "Show miscellaneous options"
-msgstr "Show miscellaneous options"
+msgstr "הצגת אפשרויות שונות"
 
-#: src/option.c:2139
+#: src/option.c:2249
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
-msgstr ""
-"This option is not available. Please see --help for all possible usages.\n"
+msgstr "אפשרות זו אינה זמינה. נא לפנות ל־‎--help לכל אפשרויות השימוש הזמינות.\n"
 
-#: src/option.c:2144
+#: src/option.c:2254
 #, c-format
 msgid "--%s is not supported for this dialog\n"
-msgstr "--%s is not supported for this dialog\n"
+msgstr "אין תמיכה ב־‎--%s בחלונית הזאת\n"
 
-#: src/option.c:2148
+#: src/option.c:2258
 msgid "Two or more dialog options specified\n"
-msgstr "Two or more dialog options specified\n"
+msgstr "צוינה אפשרויות חלונית אחת או יותר\n"
 
-#. Checks if username has been passed as a parameter
-#: src/password.c:70
-msgid "Type your password"
-msgstr "נא להזין את ססמתך"
-
-#: src/password.c:73
+#: src/password.c:85
 msgid "Type your username and password"
-msgstr "נא להזין את שם המשתמש והססמה שלך"
+msgstr "נא למלא את שם המשתמש והססמה שלך"
 
-#: src/password.c:100
+#. Add the username label and entry and increment the row for the
+#. * password entry so it will be added below the username.
+#.
+#: src/password.c:90
 msgid "Username:"
-msgstr "שם המשתמש:"
+msgstr "שם משתמש:"
 
-#: src/password.c:110
+#: src/password.c:105
 msgid "Password:"
 msgstr "ססמה:"
 
-#: src/progress.c:102
+#: src/progress.c:111
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "הזמן שנותר: %lu:%02lu:%02lu"
 
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
-msgstr "Maximum value must be greater than minimum value.\n"
+msgstr "הערך המרבי חייב להיות גדול מהערך המזערי.\n"
 
-#: src/scale.c:69
+#: src/scale.c:70
 msgid "Value out of range.\n"
-msgstr "Value out of range.\n"
+msgstr "הערך מחוץ לטווח.\n"
 
-#: src/tree.c:393
+#: src/tree.c:57
+msgid ""
+"Warning: --mid-search is deprecated and will be removed in a future version "
+"of zenity. Ignoring.\n"
+msgstr ""
+"אזהרה: השימוש ב־‎--mid-search הופסק ויוסר בגרסאות עתידיות של zenity, מתעלם.\n"
+
+#: src/tree.c:263
 msgid "No column titles specified for List dialog.\n"
-msgstr "No column titles specified for List dialog.\n"
+msgstr "לא צוינו כותרות עמודות לחלונית הרשימה.\n"
 
-#: src/tree.c:399
+#. Translators: --checklist and --radiolist should not be translated
+#. * (command-line options).
+#: src/tree.c:272
+msgid ""
+"Insufficient columns specified for List dialog (at least 2 are required for --"
+"checklist or --radiolist).\n"
+msgstr ""
+"כמות העמודות שצוינה לחלונית הרשימה (צריך לפחות 2 ל־‎--checklist או ל־‎--"
+"radiolist).\n"
+
+#: src/tree.c:280
 msgid "You should use only one List dialog type.\n"
-msgstr "You should use only one List dialog type.\n"
+msgstr "צריך להשתמש רק בסוג אחד של חלונית רשימה.\n"
 
-#: src/zenity.ui:14 src/zenity.ui:76
+#: src/util.c:68
+#, c-format
+msgid "Icon filename %s not found; trying theme icon."
+msgstr "שם קובץ הסמל %s לא נמצא, מתבצע ניסיון עם סמל מערכת העיצוב."
+
+#: src/zenity.ui:9 src/zenity.ui:31
 msgid "Adjust the scale value"
 msgstr "התאמת ערך הסרגל"
 
-#: src/zenity.ui:30 src/zenity.ui:135 src/zenity.ui:247 src/zenity.ui:378
-#: src/zenity.ui:578 src/zenity.ui:784 src/zenity.ui:970
-msgid "Cancel"
-msgstr "ביטול"
-
-#: src/zenity.ui:44 src/zenity.ui:148 src/zenity.ui:261 src/zenity.ui:392
-#: src/zenity.ui:481 src/zenity.ui:591 src/zenity.ui:697 src/zenity.ui:798
-#: src/zenity.ui:984 src/zenity.ui:1080
-msgid "OK"
-msgstr "אישור"
-
-#: src/zenity.ui:117
+#: src/zenity.ui:46
 msgid "Text View"
 msgstr "תצוגת טקסט"
 
-#: src/zenity.ui:231
+#: src/zenity.ui:84
 msgid "Calendar selection"
 msgstr "בחירת תאריך"
 
-#: src/zenity.ui:298
+#: src/zenity.ui:105
 msgid "Select a date from below."
 msgstr "נא לבחור מהתאריכים שלמטה."
 
-#: src/zenity.ui:319
+#: src/zenity.ui:115
 msgid "C_alendar:"
 msgstr "_לוח שנה:"
 
-#: src/zenity.ui:361
+#: src/zenity.ui:120
+msgid "Calendar"
+msgstr "לוח שנה"
+
+#: src/zenity.ui:135
 msgid "Add a new entry"
 msgstr "הוספת טקסט חדש"
 
-#: src/zenity.ui:428
+#: src/zenity.ui:160
 msgid "_Enter new text:"
 msgstr "ה_זנת טקסט חדש:"
 
-#: src/zenity.ui:465
+#: src/zenity.ui:174
 msgid "Error"
 msgstr "שגיאה"
 
-#: src/zenity.ui:530
+#: src/zenity.ui:203
 msgid "An error has occurred."
-msgstr "ארעה שגיאה."
+msgstr "אירעה שגיאה."
 
-#: src/zenity.ui:658
+#: src/zenity.ui:265
 msgid "Forms dialog"
-msgstr "תיבת דו־שיח של טפסים"
+msgstr "חלונית טפסים"
 
-#: src/zenity.ui:681
+#: src/zenity.ui:275
 msgid "Information"
 msgstr "מידע"
 
-#: src/zenity.ui:741
+#: src/zenity.ui:302
 msgid "All updates are complete."
 msgstr "כל העדכונים הסתיימו."
 
-#: src/zenity.ui:768
+#: src/zenity.ui:312
 msgid "Progress"
 msgstr "התקדמות"
 
-#: src/zenity.ui:831
+#: src/zenity.ui:324
 msgid "Running..."
-msgstr "בפעילות..."
+msgstr "בפעילות…"
 
-#: src/zenity.ui:882
+#: src/zenity.ui:346
 msgid "Question"
 msgstr "שאלה"
 
-#: src/zenity.ui:929 src/zenity.ui:1126
+#: src/zenity.ui:368 src/zenity.ui:447
 msgid "Are you sure you want to proceed?"
-msgstr "האם ברצונך להמשיך?"
+msgstr "להמשיך?"
 
-#: src/zenity.ui:953
+#: src/zenity.ui:378
 msgid "Select items from the list"
 msgstr "נא לבחור פריטים מהרשימה"
 
-#: src/zenity.ui:1015
+#: src/zenity.ui:408
 msgid "Select items from the list below."
 msgstr "נא לבחור פריטים מהרשימה למטה."
 
-#: src/zenity.ui:1064
+#: src/zenity.ui:419 src/zenity.ui:457
 msgid "Warning"
 msgstr "אזהרה"
+
+#: src/zenity.ui:485
+msgid "Type your password"
+msgstr "נא למלא את ססמתך"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "יאיר הרשקוביץ <yairhr@gmail.com>\n"
+#~ "ירון שהרבני <sh.yaron@gmail.com>\n"
+#~ "יוסף אור בוצ׳קו <yoseforb@gnome.org>"
+
+#~ msgid ""
+#~ "Invalid value for a boolean typed hint.\n"
+#~ "Supported values are 'true' or 'false'.\n"
+#~ msgstr ""
+#~ "Invalid value for a boolean typed hint.\n"
+#~ "Supported values are 'true' or 'false'.\n"
+
+#~ msgid "Unsupported hint. Skipping.\n"
+#~ msgstr "Unsupported hint. Skipping.\n"
+
+#~ msgid "Unknown hint name. Skipping.\n"
+#~ msgstr "Unknown hint name. Skipping.\n"
+
+#~ msgid "Zenity notification"
+#~ msgstr "Zenity notification"
+
+#~ msgid "Set the window icon"
+#~ msgstr "Set the window icon"
+
+#~ msgid "ICONPATH"
+#~ msgstr "ICONPATH"
+
+#~ msgid "Set the parent window to attach to"
+#~ msgstr "Set the parent window to attach to"
+
+#~ msgid "Set the dialog icon"
+#~ msgstr "Set the dialog icon"
+
+#~ msgid "Confirm file selection if filename already exists"
+#~ msgstr "Confirm file selection if filename already exists"
+
+#~ msgid ""
+#~ "Change list default search function searching for text in the middle, not "
+#~ "on the beginning"
+#~ msgstr ""
+#~ "Change list default search function searching for text in the middle, not "
+#~ "on the beginning"
+
+#~ msgid "Set the notification hints"
+#~ msgstr "Set the notification hints"
+
+#~ msgid "Cancel"
+#~ msgstr "ביטול"
+
+#~ msgid "OK"
+#~ msgstr "אישור"
 
 #~ msgid "Select a file"
 #~ msgstr "בחר קובץ"
@@ -908,9 +983,6 @@ msgstr "אזהרה"
 
 #~ msgid "*"
 #~ msgstr "*"
-
-#~ msgid "About Zenity"
-#~ msgstr "אודות Zenity"
 
 #~ msgid "_Credits"
 #~ msgstr "_תודות"
