@@ -65,11 +65,7 @@ static GtkWidget *
 zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
 		int combo_number)
 {
-	g_autoptr(GtkListStore) list_store = NULL;
-	GtkWidget *combo_box;
-	GtkCellRenderer *renderer;
-
-	list_store = gtk_list_store_new (1, G_TYPE_STRING);
+	GtkWidget *dropdown = NULL;
 
 	if (forms_data->combo_values)
 	{
@@ -78,36 +74,14 @@ zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
 
 		if (combo_values)
 		{
-			char **row_values = g_strsplit_set (combo_values, "|", -1);
+			g_auto(GStrv) row_values = g_strsplit_set (combo_values, "|", -1);
 
 			if (row_values)
-			{
-				int i = 0;
-				GtkTreeIter iter;
-				char *row = row_values[i];
-
-				while (row != NULL)
-				{
-					gtk_list_store_append (list_store, &iter);
-					gtk_list_store_set (list_store, &iter, 0, row, -1);
-					row = row_values[++i];
-				}
-				g_strfreev (row_values);
-			}
+				dropdown = gtk_drop_down_new_from_strings ((const char* const*)row_values);
 		}
 	}
 
-	combo_box = gtk_combo_box_new_with_model (GTK_TREE_MODEL(list_store));
-
-	renderer = gtk_cell_renderer_text_new ();
-	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT(combo_box),
-			renderer,
-			TRUE);	/* gboolean expand */
-	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT(combo_box), renderer,
-			"text", 0,
-			NULL);
-
-	return combo_box;
+	return dropdown;
 }
 
 static GtkWidget *
@@ -366,8 +340,6 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 	char time_string[128];
 	g_autofree char *combo_value = NULL;
 	GtkTreeSelection *selection;
-	g_autoptr(GtkListStore) list_store = NULL;
-	GtkTreeIter iter;
 
 	for (tmp = forms_data->list; tmp; tmp = tmp->next)
 	{
@@ -416,23 +388,14 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 				break;
 
 			case ZENITY_FORMS_COMBO:
-				if (gtk_combo_box_get_active_iter
-						(GTK_COMBO_BOX(zenity_value->forms_widget), &iter))
-				{
-					list_store =
-						GTK_LIST_STORE(gtk_combo_box_get_model
-								(GTK_COMBO_BOX(zenity_value->forms_widget)));
+			{
+				GtkStringObject *strobj = gtk_drop_down_get_selected_item (GTK_DROP_DOWN(zenity_value->forms_widget));
 
-					gtk_tree_model_get (GTK_TREE_MODEL(list_store),
-						&iter,
-						0,
-						&combo_value,
-						-1);
-
-					g_print ("%s", combo_value);
-				}
+				if (strobj)
+					g_print ("%s", gtk_string_object_get_string (strobj));
 				else
 					g_print (" ");
+			}
 				break;
 
 		}
