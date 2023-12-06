@@ -234,6 +234,16 @@ create_test ("checklist_search",
 	}
 );
 
+create_test ("radiolist_search",
+	"Type 'fruit', select the first (and only) radio button that appears, and click OK",
+	sub {
+		my $cmd = "$ZENITY --width=640 --height=480 --list --radiolist --column=Radio --column=Produce FALSE 'Onion veg' FALSE 'Apple fruit' FALSE 'Carrot veg' FALSE 'Celery veg'";
+		my $expected_stdout = 'Apple fruit';
+
+		test_cmd_for_stdout ($cmd, $expected_stdout);
+	}
+);
+
 create_test ("list_search_multi",
 	"Type 'fruit', select all list items that appear, and click OK",
 	sub {
@@ -346,6 +356,38 @@ create_test ("multiple_zenity_instances",
 		{
 			test_failed ();
 		}
+	}
+);
+
+create_test ("issue_72_list_infloop",
+	"Double-click the item in the list within 5 seconds (this test only applicable to GTK 4.12+)",
+	sub {
+		my $expected_exit_status = 0;
+		my $cmd = <<"EOF";
+
+# Running the following script:
+$ZENITY --list --column=foo foo &
+pid=\$!
+
+sleep 5
+
+if ps -p \$pid >/dev/null; then
+  kill -TERM \$pid
+  exit 1
+else
+  exit 0
+fi
+EOF
+		test_cmd_for_exit_status ($cmd, 0);
+	}
+);
+
+# --list has a LOT of options. Let's make sure they actually work.
+create_test ("list_o_mania",
+	"Change the 3 items in this list to foo, bar and baz respectively, and check all the boxes.",
+	sub {
+		my $cmd = qq[zenity --list --width=640 --height=480 --checklist --editable --column=Check --column=Crap --column=Item --print-column=2,3 --hide-header --hide-column=2 --text="Follow the instructions on the terminal.\nThis dialog should have checkboxes but should NOT have headers.\nIt should contain only the checkbox and the words Alpha, Beta and Gamma.\nIf any of this isn't the case, click Cancel or close the window." --separator=',' FALSE Bleh Alpha FALSE Meh Beta FALSE Blah Gamma];
+		test_cmd_for_stdout ($cmd, 'Bleh,foo,Meh,bar,Blah,baz');
 	}
 );
 
