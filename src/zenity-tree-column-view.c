@@ -243,6 +243,7 @@ enum zenity_tree_column_view_prop_enum
 	MULTI = 1,
 	LIST_TYPE,
 	MODEL,
+	HIDE_HEADER,
 	N_PROPERTIES_ZENITY_TREE_COLUMN_VIEW
 };
 
@@ -255,6 +256,7 @@ struct _ZenityTreeColumnView
 	GtkColumnView *child_cv;
 	gulong child_cv_activate_handler_id;
 	gboolean multi;
+	gboolean hide_header;
 	ZenityTreeListType list_type;
 	GListModel *model;
 	GtkStringFilter *filter;
@@ -387,6 +389,13 @@ zenity_tree_column_view_set_multi (ZenityTreeColumnView *self, gboolean multi)
 }
 
 void
+zenity_tree_column_view_set_hide_header (ZenityTreeColumnView *self, gboolean hide)
+{
+	self->hide_header = hide;
+	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_column_view_properties[HIDE_HEADER]);
+}
+
+void
 zenity_tree_column_view_set_list_type (ZenityTreeColumnView *self, ZenityTreeListType type)
 {
 	self->list_type = type;
@@ -427,6 +436,12 @@ zenity_tree_column_view_get_multi (ZenityTreeColumnView *self)
 	return self->multi;
 }
 
+gboolean
+zenity_tree_column_view_get_hide_header (ZenityTreeColumnView *self)
+{
+	return self->hide_header;
+}
+
 static void
 zenity_tree_column_view_set_property (GObject *object,
 		guint property_id,
@@ -447,6 +462,10 @@ zenity_tree_column_view_set_property (GObject *object,
 
 		case MODEL:
 			zenity_tree_column_view_set_model (self, G_LIST_MODEL(g_value_get_object (value)));
+			break;
+
+		case HIDE_HEADER:
+			zenity_tree_column_view_set_hide_header (self, g_value_get_boolean (value));
 			break;
 
 		default:
@@ -475,6 +494,10 @@ zenity_tree_column_view_get_property (GObject *object,
 
 		case MODEL:
 			g_value_set_object (value, G_OBJECT(zenity_tree_column_view_get_model (self)));
+			break;
+
+		case HIDE_HEADER:
+			g_value_set_boolean (value, zenity_tree_column_view_get_hide_header (self));
 			break;
 
 		default:
@@ -522,6 +545,8 @@ zenity_tree_column_view_class_init (ZenityTreeColumnViewClass *klass)
 			ZENITY_TYPE_TREE_LIST_TYPE, ZENITY_TREE_LIST_NONE, flags);
 	zenity_tree_column_view_properties[MODEL] = g_param_spec_object ("model", NULL, NULL,
 			G_TYPE_LIST_MODEL, flags);
+	zenity_tree_column_view_properties[HIDE_HEADER] = g_param_spec_boolean ("hide-header", NULL, NULL,
+			TRUE, flags);
 
 	g_object_class_install_properties (object_class, N_PROPERTIES_ZENITY_TREE_COLUMN_VIEW, zenity_tree_column_view_properties);
 
@@ -637,7 +662,7 @@ zenity_tree_column_view_add_column (ZenityTreeColumnView *self, const char *col_
 
 	/* nb: seems the signals for the factory need to be setup first *before* creating the column. */
 
-	column = gtk_column_view_column_new (col_name, factory);
+	column = gtk_column_view_column_new (self->hide_header ? NULL : col_name, factory);
 	
 	if (new_col_index == 0 &&
 			(self->list_type == ZENITY_TREE_LIST_CHECK || self->list_type == ZENITY_TREE_LIST_RADIO))

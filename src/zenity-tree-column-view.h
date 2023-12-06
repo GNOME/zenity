@@ -77,5 +77,7 @@ gboolean zenity_tree_column_view_get_multi (ZenityTreeColumnView *self);
 gboolean zenity_tree_column_view_is_selected (ZenityTreeColumnView *self, guint pos);
 void zenity_tree_column_view_set_search (ZenityTreeColumnView *self, const char *search_str);
 void zenity_tree_column_view_show_column (ZenityTreeColumnView *self, guint pos, gboolean show);
+void zenity_tree_column_view_set_hide_header (ZenityTreeColumnView *self, gboolean hide);
+gboolean zenity_tree_column_view_get_hide_header (ZenityTreeColumnView *self);
 
 G_END_DECLS

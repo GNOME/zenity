@@ -371,6 +371,7 @@ zenity_tree (ZenityData *data, ZenityTreeData *tree_data)
 			"list-type", list_type,
 			"multi", tree_data->multi,
 			"model", G_LIST_MODEL(store),
+			"hide-header", tree_data->hide_header,
 			NULL);
 
 	for (tmp = tree_data->columns; tmp; tmp = tmp->next)
