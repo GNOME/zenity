@@ -144,7 +144,7 @@ sub test_cmd_for_exit_status
 	my $output;
 	my $exit_status;
 
-	say "$cmd";
+	say "Running command: $cmd";
 	$output = `$cmd >/dev/null 2>&1`;
 	$exit_status = get_exit_status ();
 	say "\ttarget exit status: $target_exit_status";
@@ -160,6 +160,8 @@ sub test_cmd_for_exit_status
 sub test_cmd_for_stdout
 {
 	my ($cmd, $expected_stdout) = @_;
+
+	say "Running command: $cmd";
 	my $stdout = `$cmd`;
 
 	chomp $stdout;
@@ -388,6 +390,19 @@ create_test ("list_o_mania",
 	sub {
 		my $cmd = qq[zenity --list --width=640 --height=480 --checklist --editable --column=Check --column=Crap --column=Item --print-column=2,3 --hide-header --hide-column=2 --text="Follow the instructions on the terminal.\nThis dialog should have checkboxes but should NOT have headers.\nIt should contain only the checkbox and the words Alpha, Beta and Gamma.\nIf any of this isn't the case, click Cancel or close the window." --separator=',' FALSE Bleh Alpha FALSE Meh Beta FALSE Blah Gamma];
 		test_cmd_for_stdout ($cmd, 'Bleh,foo,Meh,bar,Blah,baz');
+	}
+);
+
+# ... same with --forms
+create_test ("forms_options",
+	"For 'My entry', enter 'foo'; for 'My password' enter 'bar';\n\tKeep today's date selected for the calendar; select the first item in the list;\n\tselect the second item in both dropdowns.",
+	sub {
+		my $cmd = qq[$ZENITY --forms --add-entry='My entry' --add-password='My password' --add-calendar='My calendar' --add-list='My list' --list-values='foo bar|baz boo|bleh blah|boo urns' --column-values='foo|bar' --add-combo='My combo box' --combo-values='combo1|combo2|combo3' --add-combo='My other combo box' --combo-values='combo4|combo5|combo6' --show-header --text="My Form" --separator='^' --forms-date-format='%F'];
+		my $iso_date = `date --iso-8601`;
+		chomp $iso_date;
+		my $expected_stdout = "foo^bar^$iso_date^foo bar,baz boo,^combo2^combo5";
+
+		test_cmd_for_stdout ($cmd, $expected_stdout);
 	}
 );
 
