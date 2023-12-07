@@ -338,7 +338,6 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 	guint day, year, month;
 	g_autoptr(GDate) date = NULL;
 	char time_string[128];
-	g_autofree char *combo_value = NULL;
 	GtkTreeSelection *selection;
 
 	for (tmp = forms_data->list; tmp; tmp = tmp->next)
