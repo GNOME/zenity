@@ -19,7 +19,7 @@ GNOME application.
 
 ## Optional Dependencies
 
-* webkit2gtk-5.0 (for HTML support)
+* webkit2gtk-6.0 (for HTML support)
 
 Please see the meson.build file for minimal versions required
 for optional dependencies, and meson_options.txt for the build
