@@ -23,7 +23,7 @@
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  *
- * Authors: Glynn Foster <glynn.foster@sun.com>
+ * Original authors: Glynn Foster <glynn.foster@sun.com>
  *          Anders Carlsson <andersca@gnu.org>
  */
 
@@ -34,81 +34,47 @@
 
 #include <config.h>
 
-static GtkWidget *dialog;
+static GtkWidget *about_window;
 
 static void zenity_about_close_cb (GtkWindow *window, gpointer data);
 
-/* Sync with the people in the THANKS file */
-static const char *const authors[] = {"Glynn Foster <glynn foster sun com>",
-	"Lucas Rocha <lucasr gnome org>",
-	"Mike Newman <mikegtn gnome org>",
+static const char *const developers[] = {"Glynn Foster",
+	"Lucas Rocha",
+	"Mike Newman",
+	"Logan Rathbone <poprocks@gmail com>",
 	NULL};
 
-static const char *documenters[] = {"Glynn Foster <glynn.foster@sun.com>",
-	"Lucas Rocha <lucasr@gnome.org>",
+static const char *documenters[] = {"Glynn Foster",
+	"Lucas Rocha",
 	"Java Desktop System Documentation Team",
 	"GNOME Documentation Project",
+	"Logan Rathbone <poprocks@gmail.com>",
 	NULL};
-
-static const char *license[] = {
-	N_ ("This program is free software; you can redistribute it and/or modify "
-		"it under the terms of the GNU Lesser General Public License as "
-		"published by "
-		"the Free Software Foundation; either version 2 of the License, or "
-		"(at your option) any later version.\n"),
-	N_ ("This program is distributed in the hope that it will be useful, "
-		"but WITHOUT ANY WARRANTY; without even the implied warranty of "
-		"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the "
-		"GNU Lesser General Public License for more details.\n"),
-	N_ ("You should have received a copy of the GNU Lesser General Public "
-		"License "
-		"along with this program; if not, write to the Free Software "
-		"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
-		"02110-1301, USA.")};
 
 void
 zenity_about (ZenityData *data)
 {
-	char *license_trans;
+	about_window = adw_about_window_new ();
 
-	license_trans = g_strconcat (
-		_(license[0]), "\n", _(license[1]), "\n", _(license[2]), "\n", NULL);
-
-	dialog = gtk_about_dialog_new ();
-
-	g_object_set (G_OBJECT (dialog),
-		"program-name",
-		"Zenity",
-		"version",
-		VERSION,
+	g_object_set (G_OBJECT (about_window),
+		"application-name", "Zenity",
+		"version", VERSION,
 		"copyright",
-		"Copyright \xc2\xa9 2003 Sun Microsystems\n"
-		"Copyright \xc2\xa9 2021-2023 Logan Rathbone\n",
-		"comments",
-		_("Display dialog boxes from shell scripts"),
-		"authors",
-		authors,
-		"documenters",
-		documenters,
-		"website",
-		"https://gitlab.gnome.org/GNOME/zenity",
-		"wrap-license",
-		TRUE,
-		"license",
-		license_trans,
-		"icon-name",
-		"zenity",
-		"logo-icon-name",
-		"zenity",
+			"Copyright \xc2\xa9 2003 Sun Microsystems\n"
+			"Copyright \xc2\xa9 2021-2023 Logan Rathbone\n",
+		"comments", _("Display dialog boxes from shell scripts"),
+		"developers", developers,
+		"documenters", documenters,
+		"website", "https://gitlab.gnome.org/GNOME/zenity",
+		"license-type", GTK_LICENSE_GPL_2_0,
+		"application-icon", "zenity",
 		NULL);
 
-	g_free (license_trans);
-
-	g_signal_connect (dialog, "close-request",
+	g_signal_connect (about_window, "close-request",
 			G_CALLBACK(zenity_about_close_cb), data);
 
-	zenity_util_show_dialog (dialog);
-	zenity_util_gapp_main (GTK_WINDOW (dialog));
+	zenity_util_show_dialog (about_window);
+	zenity_util_gapp_main (GTK_WINDOW (about_window));
 }
 
 static void
