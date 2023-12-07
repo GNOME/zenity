@@ -199,7 +199,6 @@ zenity_progress_handle_stdin (GIOChannel *source, GIOCondition condition,
 			else if (g_str_has_prefix (string->str, "pulsate"))
 			{
 				char *colon, *value;
-				g_autofree char *command = NULL;
 
 				zenity_util_strip_newline (string->str);
 
@@ -207,10 +206,6 @@ zenity_progress_handle_stdin (GIOChannel *source, GIOCondition condition,
 				if (colon == NULL) {
 					continue;
 				}
-
-				/* split off the command and value */
-				command =
-					g_strstrip (g_strndup (string->str, colon - string->str));
 
 				value = colon + 1;
 				while (*value && g_ascii_isspace (*value))
@@ -403,6 +398,20 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 			adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(dialog), "ok");
 		} else {
 			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
+		}
+	}
+	else
+	{
+		/* If the user specifies percentage should be 100 and the dialog should
+		 * auto-close, this is completely pointless and we print an error.
+		 */
+		if (progress_data->percentage == 100) {
+			/* Translators: do not translate tokens starting with '--'; these
+			 * are command-line options which are not translatable.
+			 */
+			g_printerr (_("Combining the options --auto-close and --percentage=100 is not supported.\n"));
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+			zenity_util_gapp_quit (NULL, zen_data);
 		}
 	}
 
