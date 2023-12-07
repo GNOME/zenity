@@ -385,7 +385,7 @@ create_test ("issue_72_list_infloop",
 $ZENITY --list --column=foo foo &
 pid=\$!
 
-sleep 5
+sleep 20
 
 if ps -p \$pid >/dev/null; then
   kill -TERM \$pid
