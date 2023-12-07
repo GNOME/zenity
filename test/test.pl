@@ -73,7 +73,7 @@ sub usage
 sub print_tests_and_exit
 {
 	say "Available tests:";
-	say join(', ', keys %tests);
+	say join(', ', sort keys %tests);
 	exit 1;
 }
 
@@ -376,7 +376,7 @@ create_test ("multiple_zenity_instances",
 );
 
 create_test ("issue_72_list_infloop",
-	"Double-click the item in the list within 5 seconds (this test only applicable to GTK 4.12+)",
+	"Double-click the item in the list within 20 seconds (this test only applicable to GTK 4.12+)",
 	sub {
 		my $expected_exit_status = 0;
 		my $cmd = <<"EOF";
@@ -402,7 +402,7 @@ EOF
 create_test ("list_o_mania",
 	"Change the 3 items in this list to foo, bar and baz respectively, and check all the boxes.",
 	sub {
-		my $cmd = qq[$ZENITY--list --width=640 --height=480 --checklist --editable --column=Check --column=Crap --column=Item --print-column=2,3 --hide-header --hide-column=2 --text="Follow the instructions on the terminal.\nThis dialog should have checkboxes but should NOT have headers.\nIt should contain only the checkbox and the words Alpha, Beta and Gamma.\nIf any of this isn't the case, click Cancel or close the window." --separator=',' FALSE Bleh Alpha FALSE Meh Beta FALSE Blah Gamma];
+		my $cmd = qq[$ZENITY --list --width=640 --height=480 --checklist --editable --column=Check --column=Crap --column=Item --print-column=2,3 --hide-header --hide-column=2 --text="Follow the instructions on the terminal.\nThis dialog should have checkboxes but should NOT have headers.\nIt should contain only the checkbox and the words Alpha, Beta and Gamma.\nIf any of this isn't the case, click Cancel or close the window." --separator=',' FALSE Bleh Alpha FALSE Meh Beta FALSE Blah Gamma];
 		test_cmd_for_stdout ($cmd, 'Bleh,foo,Meh,bar,Blah,baz');
 	}
 );
@@ -531,7 +531,7 @@ if ($ARGV[0])
 }
 else
 {
-	foreach my $key (keys %tests)
+	foreach my $key (sort keys %tests)
 	{
 		$tests{$key}();
 	}
