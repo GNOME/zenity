@@ -320,12 +320,16 @@ create_test ("cancel_button",
 );
 
 create_test ("test_entry",
-	"Press enter or OK",
+	"Follow the instructions on the dialogs",
 	sub {
 		my $expected_stdout = 'foo bar baz';
-		my $cmd = "$ZENITY --entry --entry-text='$expected_stdout'";
+		my $cmd1 = "$ZENITY --entry --text='Click OK' --entry-text='$expected_stdout'";
 
-		test_cmd_for_stdout ($cmd, $expected_stdout);
+		test_cmd_for_stdout ($cmd1, $expected_stdout);
+
+		my $cmd2 = "$ZENITY --entry --hide-text --text='Click OK if you see dots; click Cancel if you see plaintext' --entry-text='$expected_stdout'";
+
+		test_cmd_for_stdout ($cmd2, $expected_stdout);
 	}
 );
 
@@ -334,6 +338,16 @@ create_test ("test_text_info",
 	sub {
 		my $expected_stdout = 'foobar';
 		my $cmd = "$ZENITY --text-info --editable";
+
+		test_cmd_for_stdout ($cmd, $expected_stdout);
+	}
+);
+
+create_test ("test_text_info_font",
+	"Type 'foobar' in the textview.\n\tClick OK the text is monospace. Otherwise, click Cancel or close window.",
+	sub {
+		my $expected_stdout = 'foobar';
+		my $cmd = "$ZENITY --text-info --editable --font=monospace";
 
 		test_cmd_for_stdout ($cmd, $expected_stdout);
 	}
@@ -388,7 +402,7 @@ EOF
 create_test ("list_o_mania",
 	"Change the 3 items in this list to foo, bar and baz respectively, and check all the boxes.",
 	sub {
-		my $cmd = qq[zenity --list --width=640 --height=480 --checklist --editable --column=Check --column=Crap --column=Item --print-column=2,3 --hide-header --hide-column=2 --text="Follow the instructions on the terminal.\nThis dialog should have checkboxes but should NOT have headers.\nIt should contain only the checkbox and the words Alpha, Beta and Gamma.\nIf any of this isn't the case, click Cancel or close the window." --separator=',' FALSE Bleh Alpha FALSE Meh Beta FALSE Blah Gamma];
+		my $cmd = qq[$ZENITY--list --width=640 --height=480 --checklist --editable --column=Check --column=Crap --column=Item --print-column=2,3 --hide-header --hide-column=2 --text="Follow the instructions on the terminal.\nThis dialog should have checkboxes but should NOT have headers.\nIt should contain only the checkbox and the words Alpha, Beta and Gamma.\nIf any of this isn't the case, click Cancel or close the window." --separator=',' FALSE Bleh Alpha FALSE Meh Beta FALSE Blah Gamma];
 		test_cmd_for_stdout ($cmd, 'Bleh,foo,Meh,bar,Blah,baz');
 	}
 );
@@ -403,6 +417,98 @@ create_test ("forms_options",
 		my $expected_stdout = "foo^bar^$iso_date^foo bar,baz boo,^combo2^combo5";
 
 		test_cmd_for_stdout ($cmd, $expected_stdout);
+	}
+);
+
+create_test ("test_progress",
+	"Allow these progress dialogs to close themselves unless the dialog says otherwise",
+	sub {
+		my $ok_exit_status = 0;
+		my $cancel_exit_status = 1;
+		my $error_exit_status = 255;
+		my $pulsate_opt_cmd = "sleep 3 | $ZENITY --progress --pulsate --auto-close";
+
+		test_cmd_for_exit_status ($pulsate_opt_cmd, $ok_exit_status);
+
+		# --auto-close and --percentage=100 not supported.
+		my $percentage_100_cmd = "$ZENITY --progress --auto-close --percentage=100";
+
+		test_cmd_for_exit_status ($percentage_100_cmd, $error_exit_status);
+
+		my $cancel_progress_cmd = "ping 127.0.0.1 | $ZENITY --progress --text='Click Cancel please' --pulsate";
+
+		test_cmd_for_exit_status ($cancel_progress_cmd, $cancel_exit_status);
+
+		my $auto_close_cmd = <<"EOF";
+(
+sleep 5;
+echo "10" ; sleep 2
+echo "# Blah1" ; sleep 2
+echo "20" ; sleep 2
+echo "# Blah2" ; sleep 2
+echo "50" ; sleep 2
+echo "If you see this line, click Cancel" ; sleep 4
+echo "75" ; sleep 2
+echo "# Blah3" ; sleep 2
+echo "100" ; sleep 2
+) |
+$ZENITY --progress \\
+  --auto-close \\
+  --percentage=0 \\
+  --text='Let this dialog auto-close.\\n\\nTime remaining should be shown in a few seconds after the progress bar starts.\\n\\nIf time remaining is not shown by \`Blah3\`, click Cancel.' \\
+  --time-remaining
+EOF
+
+		test_cmd_for_exit_status ($auto_close_cmd, $ok_exit_status);
+
+		my $pulsate_from_stdin_cmd = <<"EOF";
+(
+echo pulsate: true
+sleep 5
+echo pulsate: false
+echo 99
+sleep 1
+echo 100
+) |
+$ZENITY --progress --auto-close --text='Progress should pulsate for about 5 seconds.\\n\\nIf not, click Cancel.'
+EOF
+		test_cmd_for_exit_status ($pulsate_from_stdin_cmd, $ok_exit_status);
+	}
+);
+
+create_test ("test_icon",
+	"Click OK (or Yes/affirmative answer) if you see a star icon on these dialogs",
+	sub {
+		my $expected_exit_status = 0;
+		foreach my $opt ('--error', '--info', '--question', '--warning')
+		{
+			my $cmd = "$ZENITY $opt --icon=starred";
+			test_cmd_for_exit_status ($cmd, $expected_exit_status);
+		}
+	}
+);
+
+create_test ("test_ellipsize",
+	"If you see a '...' at the end of the dialog text, click OK (or Yes/affirmative answer).\n\n\tOtherwise, click Cancel or close the dialog.",
+	sub {
+		my $expected_exit_status = 0;
+		foreach my $opt ('--error', '--info', '--question', '--warning')
+		{
+			my $cmd = "$ZENITY $opt --text='asfdsafdsfadsfdsafasdfadsfdsafadsfdsafadsfsadfasdfasdfsadfadsfadsfadsfadsfadsfadsfadsfadsfadsf' --ellipsize";
+			test_cmd_for_exit_status ($cmd, $expected_exit_status);
+		}
+	}
+);
+
+create_test ("test_no_markup",
+	"If you see a visible '\\n', click OK (or affirmative answer).\n\n\tIf you see a linebreak, click Cancel/negative answer/close the dialog.",
+	sub {
+		my $expected_exit_status = 0;
+		foreach my $opt ('--error', '--info', '--question', '--warning')
+		{
+			my $cmd = "$ZENITY $opt --no-markup --text='foo\\nbar'";
+			test_cmd_for_exit_status ($cmd, $expected_exit_status);
+		}
 	}
 );
 
