@@ -1,3 +1,29 @@
+Zenity 4.0.0
+  1st stable release of Zenity based on libadwaita/gtk4.
+
+  Several command-line options have been deprecated since 3.x.  These
+  deprecations will either activate an alternate action, or do nothing.  In
+  either case, a deprecation warning will be printed to STDERR. This is to
+  ensure as smooth a transition from scripts targeting Zenity 3.x as possible.
+
+  TAKE NOTICE that in Zenity 4.4.0, estimated to be released in about twelve
+  (12) months from 4.0.0, these options will be fully removed and scripts using
+  these options may fail to run. So if you are receiving deprecation warnings,
+  kindly take the time to update your scripts accordingly.
+
+  Changes and bugfixes since 3.99.91 (Logan Rathbone):
+  - Add rudimentary test suite
+  - progress: --auto-close and --percentage=100 don't co-mingle
+  - about: Port to libadwaita; update copyright info
+  - forms: Remove unused variable
+  - forms: Port GtkComboBox to GtkDropDown
+  - tree/colview: Implement missing --hide-header option
+  - progress: OK should be clickable if --percentage=100 at the outset
+  - NEWS: fix typo
+
+  Translation updates:
+  - Yaron Shahrabani (he)
+
 Zenity 3.99.91
   2nd release candidate of the upcoming zenity 4.0, based on libadwaita/gtk4.
 
