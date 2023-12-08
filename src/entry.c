@@ -98,7 +98,12 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	vbox = gtk_builder_get_object (builder, "vbox4");
 
+	/* The argv strings we have left will NOT include the first entry_text,
+	 * which is defined at entry_data->entry_text. So we need to increment
+	 * n_entries to take that into account.
+	 */
 	n_entries = g_strv_length (entry_data->data);
+	if (entry_data->entry_text) ++n_entries;
 
 	if (n_entries > 1)
 	{
