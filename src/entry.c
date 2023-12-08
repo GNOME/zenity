@@ -118,7 +118,12 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data) {
 
 	zenity_entry_fill_entries (&entries, entry_data->data);
 
+	/* The argv strings we have left will NOT include the first entry_text,
+	 * which is defined at entry_data->entry_text. So we need to increment
+	 * n_entries to take that into account.
+	 */
 	n_entries = g_slist_length (entries);
+	if (entry_data->entry_text) ++n_entries;
 
 	if (n_entries > 1) {
 		entry = gtk_combo_box_text_new_with_entry ();
