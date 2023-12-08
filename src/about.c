@@ -66,7 +66,7 @@ zenity_about (ZenityData *data)
 		"developers", developers,
 		"documenters", documenters,
 		"website", "https://gitlab.gnome.org/GNOME/zenity",
-		"license-type", GTK_LICENSE_GPL_2_0,
+		"license-type", GTK_LICENSE_LGPL_2_1,
 		"application-icon", "zenity",
 		NULL);
 
