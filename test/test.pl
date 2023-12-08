@@ -512,6 +512,20 @@ create_test ("test_no_markup",
 	}
 );
 
+create_test ("issue_75_ensure_num_entries",
+	"3 entry dialogs will appear. For #1, just click OK.\n\tFor #2, select the 2nd item and click OK.\n\tFor #3, select the 3rd item and click OK.\n\tIf there is no 2nd (or 3rd) item for #2 or #3, click Cancel.",
+	sub {
+		my $expected_stdout = 'foo bar';
+		my $cmd1 = "$ZENITY --entry --entry-text 'foo bar'";
+		my $cmd2 = "$ZENITY --entry --entry-text 'baz boo' 'foo bar'";
+		my $cmd3 = "$ZENITY --entry --entry-text 'bleh bah' 'baz boo' 'foo bar'";
+
+		foreach ($cmd1, $cmd2, $cmd3) {
+			test_cmd_for_stdout ($_, $expected_stdout);
+		}
+	}
+);
+
 # MAIN
 
 if ($ARGV[0])
