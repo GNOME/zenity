@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-11-13 19:07+0000\n"
-"PO-Revision-Date: 2023-11-14 09:42+0200\n"
+"POT-Creation-Date: 2023-12-07 21:07+0000\n"
+"PO-Revision-Date: 2023-12-08 20:12+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -33,41 +33,7 @@ msgstr "Zenity"
 msgid "Display dialog boxes from the command line"
 msgstr "Показ діалогових вікон з командного рядка"
 
-#: src/about.c:54
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
-msgstr ""
-"Це вільна програма; ви можете розповсюджувати її й/або змінювати за умовах "
-"ліцензії GNU Lesser General Public, яку опублікували Free Software "
-"Foundation; версії 2 цієї ліцензії, або (на вашу думку) будь-якою пізнішої "
-"версії.\n"
-
-#: src/about.c:59
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
-msgstr ""
-"Ця програма розповсюджується в сподіванні на те, що вона буде корисною, але "
-"БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, в тому числі без неявної гарантії КОМЕРЦІЙНОЇ "
-"ЦІННОСТІ чи ПРИДАТНОСТІ ДЛЯ БУДЬ-ЯКИХ ЦІЛЕЙ. Докладніше про це можете "
-"прочитати в GNU Lesser General Public License.\n"
-
-#: src/about.c:63
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-"Ви мали отримати копію GNU Lesser General Public License разом з цією "
-"програмою; якщо це не так, напишіть у Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-
-#: src/about.c:88
+#: src/about.c:65
 msgid "Display dialog boxes from shell scripts"
 msgstr "Показ діалогових вікон зі скриптів оболонки"
 
@@ -79,15 +45,15 @@ msgstr ""
 "Попередження: варіант --extra-button для --file-selection вважається "
 "застарілим; його буде вилучено у наступних версіях zenity. Ігноруємо.\n"
 
-#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
 msgid "_OK"
 msgstr "_Гаразд"
 
-#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:462
+#: src/zenity.ui:461
 msgid "_Cancel"
 msgstr "_Скасувати"
 
@@ -97,11 +63,11 @@ msgstr ""
 "Потрібно вказати тип діалогового вікна. Скористуйтесь «zenity --help» для "
 "докладнішої інформації\n"
 
-#: src/msg.c:115
+#: src/msg.c:89
 msgid "_No"
 msgstr "_Ні"
 
-#: src/msg.c:116
+#: src/msg.c:90
 msgid "_Yes"
 msgstr "_Так"
 
@@ -803,6 +769,16 @@ msgstr "Пароль:"
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Лишилося часу: %lu:%02lu:%02lu"
 
+#. Translators: do not translate tokens starting with '--'; these
+#. * are command-line options which are not translatable.
+#.
+#: src/progress.c:412
+msgid ""
+"Combining the options --auto-close and --percentage=100 is not supported.\n"
+msgstr ""
+"Підтримки поєднання параметрів --auto-close і --percentage=100 не"
+" передбачено.\n"
+
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Максимальне значення має бути більше за мінімальне.\n"
@@ -830,14 +806,14 @@ msgid ""
 "Insufficient columns specified for List dialog (at least 2 are required for "
 "--checklist or --radiolist).\n"
 msgstr ""
-"Для вікна списку вказано недостатньо стовпців (потрібно вказати принаймні 2"
-" для --checklist або --radiolist).\n"
+"Для вікна списку вказано недостатньо стовпців (потрібно вказати принаймні 2 "
+"для --checklist або --radiolist).\n"
 
 #: src/tree.c:280
 msgid "You should use only one List dialog type.\n"
 msgstr "Слід використовувати лише єдиний тип діалогу списків.\n"
 
-#: src/util.c:68
+#: src/util.c:81
 #, c-format
 msgid "Icon filename %s not found; trying theme icon."
 msgstr ""
@@ -919,13 +895,44 @@ msgstr "Виберіть пункти зі списку"
 msgid "Select items from the list below."
 msgstr "Виберіть пункти зі списку нижче."
 
-#: src/zenity.ui:419 src/zenity.ui:457
+#: src/zenity.ui:419
 msgid "Warning"
 msgstr "Попередження"
 
-#: src/zenity.ui:485
+#: src/zenity.ui:484
 msgid "Type your password"
 msgstr "Введіть ваш пароль"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU Lesser General Public License as published by "
+#~ "the Free Software Foundation; either version 2 of the License, or (at "
+#~ "your option) any later version.\n"
+#~ msgstr ""
+#~ "Це вільна програма; ви можете розповсюджувати її й/або змінювати за "
+#~ "умовах ліцензії GNU Lesser General Public, яку опублікували Free Software "
+#~ "Foundation; версії 2 цієї ліцензії, або (на вашу думку) будь-якою "
+#~ "пізнішої версії.\n"
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser "
+#~ "General Public License for more details.\n"
+#~ msgstr ""
+#~ "Ця програма розповсюджується в сподіванні на те, що вона буде корисною, "
+#~ "але БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, в тому числі без неявної гарантії КОМЕРЦІЙНОЇ "
+#~ "ЦІННОСТІ чи ПРИДАТНОСТІ ДЛЯ БУДЬ-ЯКИХ ЦІЛЕЙ. Докладніше про це можете "
+#~ "прочитати в GNU Lesser General Public License.\n"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU Lesser General Public License "
+#~ "along with this program; if not, write to the Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+#~ msgstr ""
+#~ "Ви мали отримати копію GNU Lesser General Public License разом з цією "
+#~ "програмою; якщо це не так, напишіть у Free Software Foundation, Inc., 51 "
+#~ "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
