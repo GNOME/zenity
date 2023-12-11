@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-11-13 19:07+0000\n"
-"PO-Revision-Date: 2023-11-17 13:30+0300\n"
+"POT-Creation-Date: 2023-12-07 21:07+0000\n"
+"PO-Revision-Date: 2023-12-08 12:40+0300\n"
 "Last-Translator: Artur So <arturios2005@mail.ru>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -34,43 +34,7 @@ msgstr "Zenity"
 msgid "Display dialog boxes from the command line"
 msgstr "Отображение диалоговых окон из командной строки"
 
-#: src/about.c:54
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
-msgstr ""
-"Это свободное ПО; вы можете распространять и/или изменять его на условиях "
-"универсальной общественной лицензии GNU, опубликованной фондом Free Software "
-"Foundation; либо версии 2 этой лицензии, либо (на ваш выбор) любой более "
-"поздней версии.\n"
-
-#: src/about.c:59
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
-msgstr ""
-"Данное приложение распространяется в надежде, что он может быть полезен, но "
-"БЕЗ КАКОГО-ЛИБО ВИДА ГАРАНТИЙ, ВЫРАЖЕННЫХ ЯВНО ИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ, "
-"НО НЕ ОГРАНИЧИВАЯСЬ ПОДРАЗУМЕВАЕМЫМИ ГАРАНТИЯМИ КОММЕРЧЕСКОЙ ЦЕННОСТИ И "
-"ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Для получения дополнительных сведений "
-"обратитесь к универсальной общественной лицензии GNU.\n"
-
-#: src/about.c:63
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-"Вы должны получить копию лицензии GNU вместе c приложением. Если лицензия не "
-"была получена, известите об этом Фонд свободного программного обеспечения по "
-"адресу Free Software Foundation, Inc.: Franklin Street, Fifth Floor, Boston, "
-"MA 02110-1301, США."
-
-#: src/about.c:88
+#: src/about.c:65
 msgid "Display dialog boxes from shell scripts"
 msgstr "Отображение диалоговых окон из сценариев оболочки"
 
@@ -82,15 +46,15 @@ msgstr ""
 "Предупреждение: параметр --extra-button для --file-selection устарел и будет "
 "удален в будущей версии zenity. Игнорирование.\n"
 
-#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
 msgid "_OK"
 msgstr "_ОК"
 
-#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:462
+#: src/zenity.ui:461
 msgid "_Cancel"
 msgstr "_Отменить"
 
@@ -99,11 +63,11 @@ msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Укажите тип диалога. См. «zenity --help» для получения подробной информации\n"
 
-#: src/msg.c:115
+#: src/msg.c:89
 msgid "_No"
 msgstr "_Нет"
 
-#: src/msg.c:116
+#: src/msg.c:90
 msgid "_Yes"
 msgstr "_Да"
 
@@ -803,6 +767,15 @@ msgstr "Пароль:"
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Оставшееся время: %lu:%02lu:%02lu"
 
+#. Translators: do not translate tokens starting with '--'; these
+#. * are command-line options which are not translatable.
+#.
+#: src/progress.c:412
+msgid ""
+"Combining the options --auto-close and --percentage=100 is not supported.\n"
+msgstr ""
+"Сочетание параметров --auto-close и --percentage=100 не поддерживается.\n"
+
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Максимальное значение должно быть больше, чем минимальное.\n"
@@ -837,7 +810,7 @@ msgstr ""
 msgid "You should use only one List dialog type.\n"
 msgstr "Необходимо использовать только один тип диалога «Список».\n"
 
-#: src/util.c:68
+#: src/util.c:81
 #, c-format
 msgid "Icon filename %s not found; trying theme icon."
 msgstr "Имя файла значка %s не найдено; пробуем значок темы."
@@ -918,13 +891,46 @@ msgstr "Выберите элементы из списка"
 msgid "Select items from the list below."
 msgstr "Выберите элементы из списка."
 
-#: src/zenity.ui:419 src/zenity.ui:457
+#: src/zenity.ui:419
 msgid "Warning"
 msgstr "Предупреждение"
 
-#: src/zenity.ui:485
+#: src/zenity.ui:484
 msgid "Type your password"
 msgstr "Введите пароль"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU Lesser General Public License as published by "
+#~ "the Free Software Foundation; either version 2 of the License, or (at "
+#~ "your option) any later version.\n"
+#~ msgstr ""
+#~ "Это свободное ПО; вы можете распространять и/или изменять его на условиях "
+#~ "универсальной общественной лицензии GNU, опубликованной фондом Free "
+#~ "Software Foundation; либо версии 2 этой лицензии, либо (на ваш выбор) "
+#~ "любой более поздней версии.\n"
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser "
+#~ "General Public License for more details.\n"
+#~ msgstr ""
+#~ "Данное приложение распространяется в надежде, что он может быть полезен, "
+#~ "но БЕЗ КАКОГО-ЛИБО ВИДА ГАРАНТИЙ, ВЫРАЖЕННЫХ ЯВНО ИЛИ ПОДРАЗУМЕВАЕМЫХ, "
+#~ "ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ ПОДРАЗУМЕВАЕМЫМИ ГАРАНТИЯМИ КОММЕРЧЕСКОЙ "
+#~ "ЦЕННОСТИ И ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Для получения дополнительных "
+#~ "сведений обратитесь к универсальной общественной лицензии GNU.\n"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU Lesser General Public License "
+#~ "along with this program; if not, write to the Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+#~ msgstr ""
+#~ "Вы должны получить копию лицензии GNU вместе c приложением. Если лицензия "
+#~ "не была получена, известите об этом Фонд свободного программного "
+#~ "обеспечения по адресу Free Software Foundation, Inc.: Franklin Street, "
+#~ "Fifth Floor, Boston, MA 02110-1301, США."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
