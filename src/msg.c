@@ -90,7 +90,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 				"yes", _("_Yes"),
 				NULL);
 		adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(dialog),
-				"yes");
+				msg_data->default_cancel ? "no" : "yes");
 	}
 
 	if (data->extra_label)
