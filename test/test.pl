@@ -526,6 +526,19 @@ create_test ("issue_75_ensure_num_entries",
 	}
 );
 
+create_test ("test_calendar",
+	"Some calendars will appear. Follow the instructions on each dialog.",
+	sub {
+		my $iso_date = `date --iso-8601`;
+		chomp $iso_date;
+		my $base_cmd = "$ZENITY --calendar --date-format='%F'";
+
+		test_cmd_for_stdout (qq[$base_cmd --text="Ensure today's date is selected and click OK. If the date is wrong, click Cancel."], $iso_date);
+		test_cmd_for_stdout (qq[$base_cmd --text="Select November 11, 1985 and click OK."], '1985-11-11');
+		test_cmd_for_stdout (qq[$base_cmd --text="Click OK." --day=29 --month=2 --year=2024], '2024-02-29');
+	}
+);
+
 # MAIN
 
 if ($ARGV[0])
