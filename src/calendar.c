@@ -80,19 +80,15 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 
 	calendar = GTK_WIDGET(gtk_builder_get_object (builder, "zenity_calendar"));
 
-	if (cal_data->month > 0 || cal_data->year > 0)
+	if (cal_data->month > 0 || cal_data->year > 0 || cal_data->day > 0)
 	{
-		g_object_set (calendar,
-				"month",	cal_data->month - 1,
-				"year",		cal_data->year,
-				NULL);
-	}
+		g_autoptr(GDateTime) date = g_date_time_new_local (cal_data->year,
+				cal_data->month, cal_data->day, 0, 0, 0);
 
-	if (cal_data->day > 0)
-	{
-		g_object_set (calendar,
-				"day", cal_data->day - 1,
-				NULL);
+		if (date)
+			gtk_calendar_select_day (GTK_CALENDAR(calendar), date);
+		else
+			g_printerr (_("Invalid date provided. Falling back to today's date.\n"));
 	}
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
@@ -124,18 +120,10 @@ zenity_calendar (ZenityData *data, ZenityCalendarData *cal_data)
 static void
 zenity_calendar_dialog_output (void)
 {
-	int day, month, year;
 	g_autofree char *time_string = NULL;
 	g_autoptr(GDateTime) date = NULL;
 
-	g_object_get (calendar,
-			"day", &day,
-			"month", &month,
-			"year", &year,
-			NULL);
-
-	date = g_date_time_new_local (year, month + 1, day + 1,
-			0, 0, 0);
+	date = gtk_calendar_get_date (GTK_CALENDAR(calendar));
 
 	time_string = g_date_time_format (date, zen_cal_data->date_format);
 	g_print ("%s\n", time_string);
