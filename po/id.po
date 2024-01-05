@@ -7,13 +7,13 @@
 # Dirgita <dirgitadevina@yahoo.co.id>, 2010, 2011, 2012.
 # Dirgita <dirgitadevina@gmail.com>, 2010.
 # Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2015, 2023.
-# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2023.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-08-12 19:58+0000\n"
-"PO-Revision-Date: 2023-08-18 21:44+0700\n"
+"POT-Creation-Date: 2023-12-12 21:25+0000\n"
+"PO-Revision-Date: 2024-01-05 12:56+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.4\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
 msgid "Zenity"
@@ -31,42 +31,7 @@ msgstr "Zenity"
 msgid "Display dialog boxes from the command line"
 msgstr "Menampilkan kotak dialog dari baris perintah"
 
-#: src/about.c:54
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
-msgstr ""
-"Program ini adalah perangkat lunak bebas; Anda dapat menyebarluaskannya dan/"
-"atau mengubahnya di bawah syarat GNU Lesser General Public License "
-"sebagaimana dipublikasikan oleh Free Software Foundation; baik versi 2 dari "
-"Lisensi, atau (terserah pilihan Anda) versi setelahnya.\n"
-
-#: src/about.c:59
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
-msgstr ""
-"Program ini didistribusikan dengan harapan dapat berguna, tetapi TANPA "
-"ADANYA JAMINAN; termasuk tanpa jaminan DAYA JUAL atau KELAIKAN UNTUK TUJUAN "
-"TERTENTU. Lihat GNU Lesser General Public License untuk rincian lebih "
-"lanjut.\n"
-
-#: src/about.c:63
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-"Anda seharusnya menerima salinan dari GNU Lesser General Public License "
-"bersama dengan program ini; jika tidak, kirimkan surat Anda ke Free Software "
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
-"USA."
-
-#: src/about.c:88
+#: src/about.c:65
 msgid "Display dialog boxes from shell scripts"
 msgstr "Menampilkan kotak dialog dari skrip shell"
 
@@ -78,28 +43,28 @@ msgstr ""
 "Peringatan: opsi --extra-button untuk --file-selection sudah tidak digunakan "
 "lagi dan akan dihapus di versi zenity yang akan datang. Mengabaikan.\n"
 
-#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
 msgid "_OK"
 msgstr "_OK"
 
-#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:462
+#: src/zenity.ui:461
 msgid "_Cancel"
 msgstr "_Batal"
 
-#: src/main.c:119
+#: src/main.c:124
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Anda harus menentukan jenis dialog. Lihat 'zenity --help' untuk lebih jelas\n"
 
-#: src/msg.c:115
+#: src/msg.c:89
 msgid "_No"
 msgstr "_Tidak"
 
-#: src/msg.c:116
+#: src/msg.c:90
 msgid "_Yes"
 msgstr "_Ya"
 
@@ -588,7 +553,7 @@ msgstr "Tentang zenity"
 msgid "Print version"
 msgstr "Menampilkan versi"
 
-#: src/option.c:1080
+#: src/option.c:1079
 msgid ""
 "Warning: --icon-name is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
@@ -596,7 +561,7 @@ msgstr ""
 "Peringatan: --icon-name tidak digunakan lagi dan akan dihapus di zenity "
 "versi mendatang; Memperlakukan sebagai --icon.\n"
 
-#: src/option.c:1087
+#: src/option.c:1086
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
@@ -604,7 +569,7 @@ msgstr ""
 "Peringatan: --window-icon tidak digunakan lagi dan akan dihapus di zenity "
 "versi mendatang; Memperlakukan sebagai --icon.\n"
 
-#: src/option.c:1094
+#: src/option.c:1093
 msgid ""
 "Warning: --confirm-overwrite is deprecated and will be removed in a future "
 "version of zenity. Ignoring.\n"
@@ -612,7 +577,7 @@ msgstr ""
 "Peringatan: --confirm-overwrite tidak digunakan lagi dan akan dihapus dalam "
 "versi zenity mendatang. Mengabaikan.\n"
 
-#: src/option.c:1101
+#: src/option.c:1100
 msgid ""
 "Warning: --attach is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
@@ -620,7 +585,7 @@ msgstr ""
 "Peringatan: --attach tidak digunakan lagi dan akan dihapus dalam versi "
 "zenity yang akan datang. Mengabaikan.\n"
 
-#: src/option.c:1108
+#: src/option.c:1107
 msgid ""
 "Warning: --hint is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
@@ -628,155 +593,155 @@ msgstr ""
 "Peringatan: --hint tidak digunakan lagi dan akan dihapus dalam versi zenity "
 "mendatang. Mengabaikan.\n"
 
-#: src/option.c:2029
+#: src/option.c:2028
 msgid "General options"
 msgstr "Opsi umum"
 
-#: src/option.c:2030
+#: src/option.c:2029
 msgid "Show general options"
 msgstr "Menampilkan opsi umum"
 
-#: src/option.c:2042
+#: src/option.c:2041
 msgid "Calendar options"
 msgstr "Opsi kalender"
 
-#: src/option.c:2043
+#: src/option.c:2042
 msgid "Show calendar options"
 msgstr "Menampilkan opsi kalender"
 
-#: src/option.c:2055
+#: src/option.c:2054
 msgid "Text entry options"
 msgstr "Opsi entri teks"
 
-#: src/option.c:2056
+#: src/option.c:2055
 msgid "Show text entry options"
 msgstr "Menampilkan opsi entri teks"
 
-#: src/option.c:2068
+#: src/option.c:2067
 msgid "Error options"
 msgstr "Opsi galat"
 
-#: src/option.c:2068
+#: src/option.c:2067
 msgid "Show error options"
 msgstr "Menampilkan opsi galat"
 
-#: src/option.c:2078
+#: src/option.c:2077
 msgid "Info options"
 msgstr "Opsi info"
 
-#: src/option.c:2078
+#: src/option.c:2077
 msgid "Show info options"
 msgstr "Menampilkan opsi info"
 
-#: src/option.c:2088
+#: src/option.c:2087
 msgid "File selection options"
 msgstr "Opsi seleksi berkas"
 
-#: src/option.c:2089
+#: src/option.c:2088
 msgid "Show file selection options"
 msgstr "Menampilkan opsi seleksi berkas"
 
-#: src/option.c:2101
+#: src/option.c:2100
 msgid "List options"
 msgstr "Opsi senarai"
 
-#: src/option.c:2101
+#: src/option.c:2100
 msgid "Show list options"
 msgstr "Menampilkan opsi senarai"
 
-#: src/option.c:2111
+#: src/option.c:2110
 msgid "Notification options"
 msgstr "Opsi notifikasi"
 
-#: src/option.c:2112
+#: src/option.c:2111
 msgid "Show notification options"
 msgstr "Tampilkan opsi pemberitahuan"
 
-#: src/option.c:2125
+#: src/option.c:2124
 msgid "Progress options"
 msgstr "Opsi indikator proses"
 
-#: src/option.c:2126
+#: src/option.c:2125
 msgid "Show progress options"
 msgstr "Menampilkan opsi indikator proses"
 
-#: src/option.c:2138
+#: src/option.c:2137
 msgid "Question options"
 msgstr "Opsi pertanyaan"
 
-#: src/option.c:2139
+#: src/option.c:2138
 msgid "Show question options"
 msgstr "Menampilkan opsi pertanyaan"
 
-#: src/option.c:2151
+#: src/option.c:2150
 msgid "Warning options"
 msgstr "Opsi peringatan"
 
-#: src/option.c:2152
+#: src/option.c:2151
 msgid "Show warning options"
 msgstr "Menampilkan opsi peringatan"
 
-#: src/option.c:2164
+#: src/option.c:2163
 msgid "Scale options"
 msgstr "Opsi skala"
 
-#: src/option.c:2164
+#: src/option.c:2163
 msgid "Show scale options"
 msgstr "Menampilkan opsi skala"
 
-#: src/option.c:2174
+#: src/option.c:2173
 msgid "Text information options"
 msgstr "Opsi informasi teks"
 
-#: src/option.c:2175
+#: src/option.c:2174
 msgid "Show text information options"
 msgstr "Menampilkan opsi informasi teks"
 
-#: src/option.c:2187
+#: src/option.c:2186
 msgid "Color selection options"
 msgstr "Opsi seleksi warna"
 
-#: src/option.c:2188
+#: src/option.c:2187
 msgid "Show color selection options"
 msgstr "Menampilkan opsi seleksi warna"
 
-#: src/option.c:2200
+#: src/option.c:2199
 msgid "Password dialog options"
 msgstr "Opsi dialog sandi"
 
-#: src/option.c:2201
+#: src/option.c:2200
 msgid "Show password dialog options"
 msgstr "Menampilkan opsi dialog sandi"
 
-#: src/option.c:2213
+#: src/option.c:2212
 msgid "Forms dialog options"
 msgstr "Opsi dialog formulir"
 
-#: src/option.c:2214
+#: src/option.c:2213
 msgid "Show forms dialog options"
 msgstr "Menampilkan opsi dialog formulir"
 
-#: src/option.c:2226
+#: src/option.c:2225
 msgid "Miscellaneous options"
 msgstr "Opsi lain-lain"
 
-#: src/option.c:2227
+#: src/option.c:2226
 msgid "Show miscellaneous options"
 msgstr "Menampilkan opsi yang lainnya"
 
-#: src/option.c:2250
+#: src/option.c:2249
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Opsi ini tidak tersedia. Silahkan lihat --help untuk penggunaan yang "
 "mungkin.\n"
 
-#: src/option.c:2255
+#: src/option.c:2254
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s tidak didukung untuk dialog ini\n"
 
-#: src/option.c:2259
+#: src/option.c:2258
 msgid "Two or more dialog options specified\n"
 msgstr "Dua atau lebih opsi dialog telah ditentukan\n"
 
@@ -800,6 +765,14 @@ msgstr "Sandi:"
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Sisa waktu: %lu:%02lu:%02lu"
 
+#. Translators: do not translate tokens starting with '--'; these
+#. * are command-line options which are not translatable.
+#.
+#: src/progress.c:412
+msgid ""
+"Combining the options --auto-close and --percentage=100 is not supported.\n"
+msgstr "Menggabungkan opsi --auto-close dan --percentage=100 tidak didukung.\n"
+
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Nilai maksimal harus lebih besar dari nilai minimal.\n"
@@ -816,15 +789,25 @@ msgstr ""
 "Peringatan: --mid-search tidak digunakan lagi dan akan dihapus di versi "
 "zenity mendatang. Mengabaikan.\n"
 
-#: src/tree.c:281
+#: src/tree.c:263
 msgid "No column titles specified for List dialog.\n"
 msgstr "Judul kolom belum ditentukan untuk dialog Senarai\n"
 
-#: src/tree.c:288
+#. Translators: --checklist and --radiolist should not be translated
+#. * (command-line options).
+#: src/tree.c:272
+msgid ""
+"Insufficient columns specified for List dialog (at least 2 are required for "
+"--checklist or --radiolist).\n"
+msgstr ""
+"Kolom yang ditentukan untuk dialog Daftar tidak mencukupi (setidaknya 2 "
+"diperlukan untuk --checklist atau --radiolist).\n"
+
+#: src/tree.c:280
 msgid "You should use only one List dialog type.\n"
 msgstr "Anda hanya boleh menggunakan satu jenis dialog Senarai.\n"
 
-#: src/util.c:68
+#: src/util.c:81
 #, c-format
 msgid "Icon filename %s not found; trying theme icon."
 msgstr "Nama berkas ikon tidak %s ditemukan; mencoba ikon tema."
@@ -905,10 +888,42 @@ msgstr "Pilih butir dari daftar"
 msgid "Select items from the list below."
 msgstr "Pilih butir dari daftar di bawah."
 
-#: src/zenity.ui:419 src/zenity.ui:457
+#: src/zenity.ui:419
 msgid "Warning"
 msgstr "Peringatan"
 
-#: src/zenity.ui:485
+#: src/zenity.ui:484
 msgid "Type your password"
 msgstr "Ketik sandi Anda"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU Lesser General Public License as published by "
+#~ "the Free Software Foundation; either version 2 of the License, or (at "
+#~ "your option) any later version.\n"
+#~ msgstr ""
+#~ "Program ini adalah perangkat lunak bebas; Anda dapat menyebarluaskannya "
+#~ "dan/atau mengubahnya di bawah syarat GNU Lesser General Public License "
+#~ "sebagaimana dipublikasikan oleh Free Software Foundation; baik versi 2 "
+#~ "dari Lisensi, atau (terserah pilihan Anda) versi setelahnya.\n"
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser "
+#~ "General Public License for more details.\n"
+#~ msgstr ""
+#~ "Program ini didistribusikan dengan harapan dapat berguna, tetapi TANPA "
+#~ "ADANYA JAMINAN; termasuk tanpa jaminan DAYA JUAL atau KELAIKAN UNTUK "
+#~ "TUJUAN TERTENTU. Lihat GNU Lesser General Public License untuk rincian "
+#~ "lebih lanjut.\n"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU Lesser General Public License "
+#~ "along with this program; if not, write to the Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+#~ msgstr ""
+#~ "Anda seharusnya menerima salinan dari GNU Lesser General Public License "
+#~ "bersama dengan program ini; jika tidak, kirimkan surat Anda ke Free "
+#~ "Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA "
+#~ "02110-1301, USA."
