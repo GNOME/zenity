@@ -132,7 +132,6 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 			gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(dialog), filter);
 		}
 	}
-	gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog));
 
 	if (data->timeout_delay > 0)
 	{
