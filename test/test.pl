@@ -157,14 +157,34 @@ sub test_cmd_for_exit_status
 	}
 }
 
+sub sort_multi_stdout_list {
+	my ($input_string, $separator) = @_;
+
+	if (length($separator) != 1) {
+		warn "Invalid separator: $separator (must be one character)\n";
+		return;
+	}
+
+	my @matches = split /\Q$separator\E/, $input_string;
+	my @sorted_matches = sort @matches;
+	my $output_string = join $separator, @sorted_matches;
+
+	return $output_string;
+}
+
 sub test_cmd_for_stdout
 {
-	my ($cmd, $expected_stdout) = @_;
+	my ($cmd, $expected_stdout, $multi_separator) = @_;
 
 	say "Running command: $cmd";
 	my $stdout = `$cmd`;
 
 	chomp $stdout;
+
+	if ($multi_separator) {
+		$stdout = sort_multi_stdout_list ($stdout, $multi_separator);
+		$expected_stdout = sort_multi_stdout_list ($expected_stdout, $multi_separator);
+	}
 
 	say "\t\tExpected stdout: $expected_stdout";
 	say "\t\tGot stdout: $stdout";
@@ -536,6 +556,41 @@ create_test ("test_calendar",
 		test_cmd_for_stdout (qq[$base_cmd --text="Ensure today's date is selected and click OK. If the date is wrong, click Cancel."], $iso_date);
 		test_cmd_for_stdout (qq[$base_cmd --text="Select November 11, 1985 and click OK."], '1985-11-11');
 		test_cmd_for_stdout (qq[$base_cmd --text="Click OK." --day=29 --month=2 --year=2024], '2024-02-29');
+	}
+);
+
+create_test ("file_selection",
+	"Some file selection dialogs will appear.\n\tFollow the instructions that appear in the console for each dialog.\n\tYou will need write permission to /tmp for this test to work.",
+	sub {
+		my $tmpfile;
+		my $expected_stdout;
+		my $base_cmd = "$ZENITY --file-selection";
+
+		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
+		say "\nClick OK. If OK is greyed out, click Cancel.";
+		test_cmd_for_stdout (qq[$base_cmd --filename="$tmpfile"], "$tmpfile");
+		unlink $tmpfile;
+
+		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
+		unlink $tmpfile;
+		say "\nClick OK. If OK is greyed out, click Cancel.";
+		test_cmd_for_stdout (qq[$base_cmd --save --filename="$tmpfile"], "$tmpfile");
+
+		my $tmpfile2;
+
+		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
+		chomp($tmpfile2 = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
+		say "\nSelect BOTH temporary files (one has been pre-selected) and click OK.";
+		test_cmd_for_stdout (qq[$base_cmd --multiple --file-filter="zenity_test.*" --filename="$tmpfile"], "${tmpfile}|${tmpfile2}", '|');
+		unlink $tmpfile;
+		unlink $tmpfile2;
+
+		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
+		chomp($tmpfile2 = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
+		say "\nSelect BOTH temporary files (one has been pre-selected) and click OK.";
+		test_cmd_for_stdout (qq[$base_cmd --multiple --file-filter="zenity_test.*" --separator="~" --filename="$tmpfile"], "${tmpfile}~${tmpfile2}", '~');
+		unlink $tmpfile;
+		unlink $tmpfile2;
 	}
 );
 
