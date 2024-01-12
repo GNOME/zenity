@@ -81,10 +81,22 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 		g_autoptr(GFile) file = g_file_new_for_commandline_arg (file_data->uri);
 		g_autoptr(GError) local_error = NULL;
 
+		/* If the specified URI contains a file which does not exist,
+		 * GtkFileChooserNative simply chooses the nearest directory which does
+		 * exist, which is fine for 'open' mode. However, in 'save' mode, a
+		 * user providing a non-existing filename typically means they want
+		 * that filename to be the suggested 'save-as' filename.
+		 */
 		gtk_file_chooser_set_file (GTK_FILE_CHOOSER(dialog), file, &local_error);
 
 		if (local_error)
 			g_warning ("%s", local_error->message);
+
+		if (file_data->save && !g_file_query_exists (file, NULL))
+		{
+			g_autofree char *basename = NULL;
+			gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER(dialog), basename = g_file_get_basename (file));
+		}
 	}
 
 	if (file_data->multi)
@@ -132,7 +144,6 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 			gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(dialog), filter);
 		}
 	}
-	gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog));
 
 	if (data->timeout_delay > 0)
 	{
