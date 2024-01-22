@@ -586,6 +586,11 @@ factory_bind_cb (ZenityTreeColumnView *self,
 	GtkWidget *item_child;
 	const char *item_text;
 
+	if (col_index >= zenity_tree_row_get_n_items (row)) {
+		g_debug ("%s: col_index exceeds number of items in row; ignoring", __func__);
+		return;
+	}
+
 	item = zenity_tree_row_get_item (row, col_index);
 	item_child = zenity_tree_item_get_child (item);
 	item_text = zenity_tree_item_get_text (item);
