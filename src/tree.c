@@ -442,6 +442,8 @@ zenity_tree_dialog_get_selected (void)
 			{
 				item = zenity_tree_row_get_item (row, j);
 
+				if (!item) continue;
+
 				selected = g_slist_append (selected,
 						g_strdup (zenity_tree_item_get_text (item)));
 			}
@@ -453,6 +455,8 @@ zenity_tree_dialog_get_selected (void)
 				/* columns in CLI count from 1 and are allocated as 0-terminated
 				 * arrays, so account for that here with -1. */
 				item = zenity_tree_row_get_item (row, print_columns[j] - 1);
+
+				if (!item) continue;
 
 				selected = g_slist_append (selected,
 						g_strdup (zenity_tree_item_get_text (item)));
@@ -480,6 +484,8 @@ zenity_tree_dialog_toggle_get_selected (ZenityTreeRow *row, gpointer unused)
 		{
 			item = zenity_tree_row_get_item (row, i);
 
+			if (!item) continue;
+
 			selected = g_slist_append (selected,
 					g_strdup (zenity_tree_item_get_text (item)));
 		}
@@ -491,6 +497,8 @@ zenity_tree_dialog_toggle_get_selected (ZenityTreeRow *row, gpointer unused)
 			/* columns in CLI count from 1 and are allocated as 0-terminated
 			 * arrays, so account for that here with -1. */
 			item = zenity_tree_row_get_item (row, print_columns[i] - 1);
+
+			if (!item) continue;
 			
 			selected = g_slist_append (selected,
 					g_strdup (zenity_tree_item_get_text (item)));
