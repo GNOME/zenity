@@ -40,7 +40,7 @@ typedef enum
 /* ZenityTreeItem */
 
 #define ZENITY_TREE_TYPE_ITEM (zenity_tree_item_get_type ())
-G_DECLARE_FINAL_TYPE (ZenityTreeItem, zenity_tree_item, ZENITY_TREE, ITEM, GObject)
+G_DECLARE_FINAL_TYPE (ZenityTreeItem, zenity_tree_item, ZENITY, TREE_ITEM, GObject)
 
 ZenityTreeItem * zenity_tree_item_new (const char *text, GtkWidget *child);
 GtkWidget * zenity_tree_item_get_child (ZenityTreeItem *item);
@@ -51,7 +51,7 @@ void zenity_tree_item_set_child (ZenityTreeItem *item, GtkWidget *child);
 /* ZenityTreeRow */
 
 #define ZENITY_TREE_TYPE_ROW (zenity_tree_row_get_type ())
-G_DECLARE_FINAL_TYPE (ZenityTreeRow, zenity_tree_row, ZENITY_TREE, ROW, GObject)
+G_DECLARE_FINAL_TYPE (ZenityTreeRow, zenity_tree_row, ZENITY, TREE_ROW, GObject)
 
 ZenityTreeRow * zenity_tree_row_new (void);
 void zenity_tree_row_add (ZenityTreeRow *row, ZenityTreeItem *item);
@@ -61,7 +61,7 @@ ZenityTreeItem * zenity_tree_row_get_item (ZenityTreeRow *row, guint index);
 /* ZenityTreeColumnView */
 
 #define ZENITY_TREE_TYPE_COLUMN_VIEW (zenity_tree_column_view_get_type ())
-G_DECLARE_FINAL_TYPE (ZenityTreeColumnView, zenity_tree_column_view, ZENITY_TREE, COLUMN_VIEW, GtkWidget)
+G_DECLARE_FINAL_TYPE (ZenityTreeColumnView, zenity_tree_column_view, ZENITY, TREE_COLUMN_VIEW, GtkWidget)
 
 void zenity_tree_column_view_set_model (ZenityTreeColumnView *self, GListModel *model);
 GListModel * zenity_tree_column_view_get_model (ZenityTreeColumnView *self);
