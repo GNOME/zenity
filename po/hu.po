@@ -1,5 +1,5 @@
 # Hungarian translation of zenity.
-# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2023 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2023, 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the zenity package.
 #
 # Andras Timar <timar at gnome dot hu>, 2003, 2004.
@@ -7,13 +7,13 @@
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2010, 2011, 2012.
 # Kéménczy Kálmán <kkemenczy at novell dot com>, 2006. .
 # Nyitrai István <sianis at gmail dot com>, 2009.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2012, 2013, 2014, 2015, 2023.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2012, 2013, 2014, 2015, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-08-12 19:58+0000\n"
-"PO-Revision-Date: 2023-09-05 20:17+0200\n"
+"POT-Creation-Date: 2024-01-05 01:05+0000\n"
+"PO-Revision-Date: 2024-02-22 00:40+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
 msgid "Zenity"
@@ -31,77 +31,45 @@ msgstr "Zenity"
 msgid "Display dialog boxes from the command line"
 msgstr "Párbeszédablakok megjelenítése a parancssorból"
 
-#: src/about.c:54
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
-msgstr ""
-"Ez a program szabad szoftver, terjesztheti és/vagy módosíthatja a Free "
-"Software Foundation által kiadott GNU Lesser General Public License második "
-"(vagy bármely későbbi) változatában foglaltak alapján.\n"
-
-#: src/about.c:59
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
-msgstr ""
-"Ezt a programot abban a reményben terjesztjük, hogy hasznos lesz, de nem "
-"vállalunk SEMMIFÉLE GARANCIÁT, még olyan értelemben sem, hogy a program "
-"alkalmas-e a KÖZREADÁSRA vagy EGY BIZONYOS FELADAT ELVÉGZÉSÉRE. További "
-"részletekért tanulmányozza a GNU LGPL licencet.\n"
-
-#: src/about.c:63
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-"A programhoz a GNU Lesser General Public License egy példánya is jár, ha nem "
-"kapta meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 "
-"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-
-#: src/about.c:88
+#: src/about.c:65
 msgid "Display dialog boxes from shell scripts"
 msgstr "Párbeszédablakok megjelenítése héjprogramokból"
 
+#: src/calendar.c:91
+msgid "Invalid date provided. Falling back to today's date.\n"
+msgstr "Érvénytelen dátum lett megadva. Visszatérés a mai dátumhoz.\n"
+
 #: src/fileselection.c:45
-#| msgid ""
-#| "Warning: --attach is deprecated and will be removed in a future version "
-#| "of zenity. Ignoring.\n"
 msgid ""
 "Warning: the --extra-button option for --file-selection is deprecated and "
 "will be removed in a future version of zenity. Ignoring.\n"
 msgstr ""
-"Figyelmeztetés: az --extra-button kapcsoló a --file-selection kapcsolónál"
-" elavult, és eltávolításra kerül a Zenity későbbi verziójából. Mellőzés.\n"
+"Figyelmeztetés: az --extra-button kapcsoló a --file-selection kapcsolónál "
+"elavult, és eltávolításra kerül a Zenity későbbi verziójából. Mellőzés.\n"
 
-#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
 msgid "_OK"
 msgstr "_OK"
 
-#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:462
+#: src/zenity.ui:461
 msgid "_Cancel"
 msgstr "_Mégse"
 
-#: src/main.c:119
+#: src/main.c:124
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr ""
 "Meg kell adni a párbeszédablak típusát. A részletekért lásd a „zenity --"
 "help” parancsot\n"
 
-#: src/msg.c:115
+#: src/msg.c:89
 msgid "_No"
 msgstr "_Nem"
 
-#: src/msg.c:116
+#: src/msg.c:90
 msgid "_Yes"
 msgstr "_Igen"
 
@@ -591,7 +559,7 @@ msgstr "A Zenity névjegye"
 msgid "Print version"
 msgstr "Verziószám nyomtatása"
 
-#: src/option.c:1080
+#: src/option.c:1079
 msgid ""
 "Warning: --icon-name is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
@@ -599,7 +567,7 @@ msgstr ""
 "Figyelmeztetés: az --icon-name kapcsoló elavult, és eltávolításra kerül a "
 "Zenity későbbi verziójából. --icon kapcsolóként lesz kezelve.\n"
 
-#: src/option.c:1087
+#: src/option.c:1086
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
@@ -607,7 +575,7 @@ msgstr ""
 "Figyelmeztetés: a --window-icon kapcsoló elavult, és eltávolításra kerül a "
 "Zenity későbbi verziójából. --icon kapcsolóként lesz kezelve.\n"
 
-#: src/option.c:1094
+#: src/option.c:1093
 msgid ""
 "Warning: --confirm-overwrite is deprecated and will be removed in a future "
 "version of zenity. Ignoring.\n"
@@ -615,7 +583,7 @@ msgstr ""
 "Figyelmeztetés: a --confirm-overwrite kapcsoló elavult, és eltávolításra "
 "kerül a Zenity későbbi verziójából. Mellőzés.\n"
 
-#: src/option.c:1101
+#: src/option.c:1100
 msgid ""
 "Warning: --attach is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
@@ -623,7 +591,7 @@ msgstr ""
 "Figyelmeztetés: az --attach kapcsoló elavult, és eltávolításra kerül a "
 "Zenity későbbi verziójából. Mellőzés.\n"
 
-#: src/option.c:1108
+#: src/option.c:1107
 msgid ""
 "Warning: --hint is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
@@ -631,155 +599,155 @@ msgstr ""
 "Figyelmeztetés: a --hint kapcsoló elavult, és eltávolításra kerül a Zenity "
 "későbbi verziójából. Mellőzés.\n"
 
-#: src/option.c:2029
+#: src/option.c:2028
 msgid "General options"
 msgstr "Általános kapcsolók"
 
-#: src/option.c:2030
+#: src/option.c:2029
 msgid "Show general options"
 msgstr "Általános kapcsolók megjelenítése"
 
-#: src/option.c:2042
+#: src/option.c:2041
 msgid "Calendar options"
 msgstr "Naptár kapcsolók"
 
-#: src/option.c:2043
+#: src/option.c:2042
 msgid "Show calendar options"
 msgstr "Naptár kapcsolók megjelenítése"
 
-#: src/option.c:2055
+#: src/option.c:2054
 msgid "Text entry options"
 msgstr "Szövegbeviteli mező kapcsolók"
 
-#: src/option.c:2056
+#: src/option.c:2055
 msgid "Show text entry options"
 msgstr "Szövegbeviteli mező kapcsolók megjelenítése"
 
-#: src/option.c:2068
+#: src/option.c:2067
 msgid "Error options"
 msgstr "Hibajelzés kapcsolók"
 
-#: src/option.c:2068
+#: src/option.c:2067
 msgid "Show error options"
 msgstr "Hibajelzés kapcsolók megjelenítése"
 
-#: src/option.c:2078
+#: src/option.c:2077
 msgid "Info options"
 msgstr "Tájékoztató üzenet kapcsolók"
 
-#: src/option.c:2078
+#: src/option.c:2077
 msgid "Show info options"
 msgstr "Tájékoztató üzenet kapcsolók megjelenítése"
 
-#: src/option.c:2088
+#: src/option.c:2087
 msgid "File selection options"
 msgstr "Fájlválasztó kapcsolók"
 
-#: src/option.c:2089
+#: src/option.c:2088
 msgid "Show file selection options"
 msgstr "Fájlválasztó kapcsolók megjelenítése"
 
-#: src/option.c:2101
+#: src/option.c:2100
 msgid "List options"
 msgstr "Lista kapcsolók"
 
-#: src/option.c:2101
+#: src/option.c:2100
 msgid "Show list options"
 msgstr "Lista kapcsolók megjelenítése"
 
-#: src/option.c:2111
+#: src/option.c:2110
 msgid "Notification options"
 msgstr "Értesítés kapcsolók"
 
-#: src/option.c:2112
+#: src/option.c:2111
 msgid "Show notification options"
 msgstr "Értesítés kapcsolók megjelenítése"
 
-#: src/option.c:2125
+#: src/option.c:2124
 msgid "Progress options"
 msgstr "Folyamatjelző kapcsolók"
 
-#: src/option.c:2126
+#: src/option.c:2125
 msgid "Show progress options"
 msgstr "Folyamatjelző kapcsolók megjelenítése"
 
-#: src/option.c:2138
+#: src/option.c:2137
 msgid "Question options"
 msgstr "Kérdés kapcsolók"
 
-#: src/option.c:2139
+#: src/option.c:2138
 msgid "Show question options"
 msgstr "Kérdés kapcsolók megjelenítése"
 
-#: src/option.c:2151
+#: src/option.c:2150
 msgid "Warning options"
 msgstr "Figyelmeztetés kapcsolók"
 
-#: src/option.c:2152
+#: src/option.c:2151
 msgid "Show warning options"
 msgstr "Figyelmeztetés kapcsolók megjelenítése"
 
-#: src/option.c:2164
+#: src/option.c:2163
 msgid "Scale options"
 msgstr "Nagyítás kapcsolók"
 
-#: src/option.c:2164
+#: src/option.c:2163
 msgid "Show scale options"
 msgstr "Nagyítás kapcsolók megjelenítése"
 
-#: src/option.c:2174
+#: src/option.c:2173
 msgid "Text information options"
 msgstr "Szöveges információ kapcsolók"
 
-#: src/option.c:2175
+#: src/option.c:2174
 msgid "Show text information options"
 msgstr "Szöveges információ kapcsolók megjelenítése"
 
-#: src/option.c:2187
+#: src/option.c:2186
 msgid "Color selection options"
 msgstr "Színválasztó kapcsolók"
 
-#: src/option.c:2188
+#: src/option.c:2187
 msgid "Show color selection options"
 msgstr "Színválasztó kapcsolók megjelenítése"
 
-#: src/option.c:2200
+#: src/option.c:2199
 msgid "Password dialog options"
 msgstr "Jelszó párbeszédablak kapcsolók"
 
-#: src/option.c:2201
+#: src/option.c:2200
 msgid "Show password dialog options"
 msgstr "Jelszó párbeszédablak kapcsolók megjelenítése"
 
-#: src/option.c:2213
+#: src/option.c:2212
 msgid "Forms dialog options"
 msgstr "Űrlapok párbeszédablak kapcsolók"
 
-#: src/option.c:2214
+#: src/option.c:2213
 msgid "Show forms dialog options"
 msgstr "Űrlapok párbeszédablak kapcsolók megjelenítése"
 
-#: src/option.c:2226
+#: src/option.c:2225
 msgid "Miscellaneous options"
 msgstr "Egyéb kapcsolók"
 
-#: src/option.c:2227
+#: src/option.c:2226
 msgid "Show miscellaneous options"
 msgstr "Egyéb kapcsolók megjelenítése"
 
-#: src/option.c:2250
+#: src/option.c:2249
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
 "Ez a kapcsoló nem érhető el. Nézze meg a --help kapcsoló kimenetét a "
 "lehetséges használati módokért.\n"
 
-#: src/option.c:2255
+#: src/option.c:2254
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s nincs támogatva ezen a párbeszédablakon.\n"
 
-#: src/option.c:2259
+#: src/option.c:2258
 msgid "Two or more dialog options specified\n"
 msgstr "Kettő vagy több párbeszédablak-kapcsoló lett megadva.\n"
 
@@ -803,6 +771,15 @@ msgstr "Jelszó:"
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Hátralévő idő: %lu:%02lu:%02lu"
 
+#. Translators: do not translate tokens starting with '--'; these
+#. * are command-line options which are not translatable.
+#.
+#: src/progress.c:412
+msgid ""
+"Combining the options --auto-close and --percentage=100 is not supported.\n"
+msgstr ""
+"Az --auto-close és a --percentage=100 kapcsolók kombinálása nem támogatott.\n"
+
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "A maximális érték nagyobb kell legyen, mint a minimális.\n"
@@ -819,15 +796,25 @@ msgstr ""
 "Figyelmeztetés: a --mid-search kapcsoló elavult, és eltávolításra kerül a "
 "Zenity későbbi verziójából. Mellőzés.\n"
 
-#: src/tree.c:281
+#: src/tree.c:263
 msgid "No column titles specified for List dialog.\n"
 msgstr "A lista párbeszédablakhoz nincsenek megadva oszlopcímek.\n"
 
-#: src/tree.c:288
+#. Translators: --checklist and --radiolist should not be translated
+#. * (command-line options).
+#: src/tree.c:272
+msgid ""
+"Insufficient columns specified for List dialog (at least 2 are required for "
+"--checklist or --radiolist).\n"
+msgstr ""
+"Nincs elegendő oszlop megadva a lista párbeszédablakhoz (legalább 2 szükséges"
+" a --checklist vagy a --radiolist kapcsolóknál).\n"
+
+#: src/tree.c:280
 msgid "You should use only one List dialog type.\n"
 msgstr "Csak egy Lista párbeszédablak-típust használjon.\n"
 
-#: src/util.c:68
+#: src/util.c:81
 #, c-format
 msgid "Icon filename %s not found; trying theme icon."
 msgstr "A(z) %s ikonfájlnév nem található. Próbálkozás a témaikonnal."
@@ -908,10 +895,10 @@ msgstr "Válasszon ki elemeket a listából"
 msgid "Select items from the list below."
 msgstr "Válasszon ki elemeket az alábbi listából."
 
-#: src/zenity.ui:419 src/zenity.ui:457
+#: src/zenity.ui:419
 msgid "Warning"
 msgstr "Figyelmeztetés"
 
-#: src/zenity.ui:485
+#: src/zenity.ui:484
 msgid "Type your password"
 msgstr "Adja meg jelszavát"
