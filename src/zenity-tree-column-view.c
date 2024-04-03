@@ -304,11 +304,15 @@ eval_str (ZenityTreeRow *row)
 void
 zenity_tree_column_view_set_model (ZenityTreeColumnView *self, GListModel *model)
 {
+	GtkSortListModel *sort_model;
 	GtkStringFilter *filter;
 	GtkFilterListModel *filter_model;
 	GtkExpression *expr;
 
 	g_return_if_fail (ZENITY_IS_TREE_COLUMN_VIEW (self));
+
+	sort_model = gtk_sort_list_model_new (model,
+			g_object_ref (gtk_column_view_get_sorter (self->child_cv)));
 
 	/* This tells the column view to use a callback with 'this' (ZenityTreeRow)
 	 * as the instance and no other params or user_data, with a string retval.
@@ -322,7 +326,7 @@ zenity_tree_column_view_set_model (ZenityTreeColumnView *self, GListModel *model
 			NULL);					/* GClosureNotify user_destroy) */
 
 	filter = gtk_string_filter_new (expr);
-	filter_model = gtk_filter_list_model_new (model, GTK_FILTER(filter));
+	filter_model = gtk_filter_list_model_new (G_LIST_MODEL(sort_model), GTK_FILTER(filter));
 
 	self->model = model;
 	self->filter = filter;
@@ -678,6 +682,20 @@ factory_bind_cb (ZenityTreeColumnView *self,
 	}
 }
 
+static char *
+tree_item_str_cb (ZenityTreeRow *row, gpointer user_data)
+{
+	int col_index;
+	ZenityTreeItem *item;
+
+	g_return_val_if_fail (ZENITY_IS_TREE_ROW (row), NULL);
+
+	col_index = GPOINTER_TO_INT(user_data);
+	item = row->items->pdata[col_index];
+
+	return g_strdup (item->text);
+}
+
 void
 zenity_tree_column_view_add_column (ZenityTreeColumnView *self, const char *col_name)
 {
@@ -704,8 +722,22 @@ zenity_tree_column_view_add_column (ZenityTreeColumnView *self, const char *col_
 	}
 	else
 	{
+		GtkExpression *expr;
+		GtkStringSorter *sorter;
+
+		expr = gtk_cclosure_expression_new (G_TYPE_STRING,
+				NULL,					/* GClosureMarshal marshal, */
+				0, 						/* guint n_params, */
+				NULL,					/* GtkExpression** params, */
+				G_CALLBACK(tree_item_str_cb),	/* GCallback callback_func, */
+				GINT_TO_POINTER(new_col_index), /* gpointer user_data, */
+				NULL);					/* GClosureNotify user_destroy) */
+
+		sorter = gtk_string_sorter_new (expr);
+
 		gtk_column_view_column_set_resizable (column, TRUE);
 		gtk_column_view_column_set_expand (column, TRUE);
+		gtk_column_view_column_set_sorter (column, GTK_SORTER(sorter));
 	}
 
 	gtk_column_view_append_column (self->child_cv, column);
