@@ -75,7 +75,6 @@ zenity_forms_create_and_fill_combo (
 				}
 				g_strfreev (row_values);
 			}
-			g_free (combo_values);
 		}
 	}
 
