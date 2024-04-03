@@ -169,7 +169,6 @@ zenity_forms_create_and_fill_list (
 				}
 				g_strfreev (row_values);
 			}
-			g_free (list_values);
 		}
 	}
 
