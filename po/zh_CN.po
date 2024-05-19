@@ -13,16 +13,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-11-13 19:07+0000\n"
-"PO-Revision-Date: 2023-11-15 20:38+0800\n"
+"POT-Creation-Date: 2024-01-05 01:05+0000\n"
+"PO-Revision-Date: 2024-04-03 10:07+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: Gtranslator 45.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
 msgid "Zenity"
@@ -32,39 +32,13 @@ msgstr "Zenity"
 msgid "Display dialog boxes from the command line"
 msgstr "从命令行显示对话框窗口"
 
-#: src/about.c:54
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version.\n"
-msgstr ""
-"本程序是自由软件；您可以按照自由软件基金会所发表的 GNU GPL 协议自由发放和/或"
-"修改它；GPL 协议应该采用第二版或以后的任何版本。\n"
-
-#: src/about.c:59
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details.\n"
-msgstr ""
-"本程序发表的目的是希望它能够对您有用，但我们没有任何保证；对于以任何用途使用"
-"它所造成的任何直接或间接后果都不承担任何责任。请参看 GNU GPL 协议中的细节。\n"
-
-#: src/about.c:63
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-"您应该在收到本程序的同时收到了 GNU GPL 协议的副本；如果您没有收到的话，请给自"
-"由软件基金会写信，地址是 51 Franklin Street, Fifth Floor, Boston, MA "
-"02110-1301, USA"
-
-#: src/about.c:88
+#: src/about.c:65
 msgid "Display dialog boxes from shell scripts"
 msgstr "在 Shell 脚本中显示对话框"
+
+#: src/calendar.c:91
+msgid "Invalid date provided. Falling back to today's date.\n"
+msgstr "提供的日期无效。回退到今天的日期。\n"
 
 #: src/fileselection.c:45
 msgid ""
@@ -74,15 +48,15 @@ msgstr ""
 "警告：用于 --file-selection 的 --extra-button 选项已废弃并将在未来的版本中移"
 "除。正在忽略。\n"
 
-#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
 msgid "_OK"
 msgstr "确定(_O)"
 
-#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:462
+#: src/zenity.ui:461
 msgid "_Cancel"
 msgstr "取消(_C)"
 
@@ -90,11 +64,11 @@ msgstr "取消(_C)"
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "您必须指定对话框类型。请参看“zenity --help”获得更多细节\n"
 
-#: src/msg.c:115
+#: src/msg.c:89
 msgid "_No"
 msgstr "否(_N)"
 
-#: src/msg.c:116
+#: src/msg.c:90
 msgid "_Yes"
 msgstr "是(_Y)"
 
@@ -775,6 +749,14 @@ msgstr "密码："
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "剩余时间：%lu:%02lu:%02lu"
 
+#. Translators: do not translate tokens starting with '--'; these
+#. * are command-line options which are not translatable.
+#.
+#: src/progress.c:412
+msgid ""
+"Combining the options --auto-close and --percentage=100 is not supported.\n"
+msgstr "不支持组合选项 --auto-close 和 --percentage=100。\n"
+
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "最大值必须大于最小值。\n"
@@ -807,7 +789,7 @@ msgstr ""
 msgid "You should use only one List dialog type.\n"
 msgstr "您应该只使用一种列表对话框类型。\n"
 
-#: src/util.c:68
+#: src/util.c:81
 #, c-format
 msgid "Icon filename %s not found; trying theme icon."
 msgstr "图标文件名 %s 未找到；正在尝试主题图标。"
@@ -888,13 +870,41 @@ msgstr "从列表中选择项目"
 msgid "Select items from the list below."
 msgstr "从下面的列表中选择项目。"
 
-#: src/zenity.ui:419 src/zenity.ui:457
+#: src/zenity.ui:419
 msgid "Warning"
 msgstr "警告"
 
-#: src/zenity.ui:485
+#: src/zenity.ui:484
 msgid "Type your password"
 msgstr "输入您的密码"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU Lesser General Public License as published by "
+#~ "the Free Software Foundation; either version 2 of the License, or (at "
+#~ "your option) any later version.\n"
+#~ msgstr ""
+#~ "本程序是自由软件；您可以按照自由软件基金会所发表的 GNU GPL 协议自由发放和/"
+#~ "或修改它；GPL 协议应该采用第二版或以后的任何版本。\n"
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser "
+#~ "General Public License for more details.\n"
+#~ msgstr ""
+#~ "本程序发表的目的是希望它能够对您有用，但我们没有任何保证；对于以任何用途使"
+#~ "用它所造成的任何直接或间接后果都不承担任何责任。请参看 GNU GPL 协议中的细"
+#~ "节。\n"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU Lesser General Public License "
+#~ "along with this program; if not, write to the Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+#~ msgstr ""
+#~ "您应该在收到本程序的同时收到了 GNU GPL 协议的副本；如果您没有收到的话，请"
+#~ "给自由软件基金会写信，地址是 51 Franklin Street, Fifth Floor, Boston, MA "
+#~ "02110-1301, USA"
 
 #~ msgid "translator-credits"
 #~ msgstr "GNOME 简体中文翻译组"
