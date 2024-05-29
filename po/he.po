@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-11-13 19:07+0000\n"
-"PO-Revision-Date: 2023-12-05 08:31+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues/\n"
+"POT-Creation-Date: 2024-05-07 16:48+0000\n"
+"PO-Revision-Date: 2024-05-29 12:35+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -17,10 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
-#| msgid "About Zenity"
 msgid "Zenity"
 msgstr "Zenity"
 
@@ -28,59 +27,33 @@ msgstr "Zenity"
 msgid "Display dialog boxes from the command line"
 msgstr "הצגת חלוניות משורת הפקודה"
 
-#: src/about.c:54
-msgid ""
-"This program is free software; you can redistribute it and/or modify it under "
-"the terms of the GNU Lesser General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) any "
-"later version.\n"
-msgstr ""
-"תוכנית זו מוגשת במסגרת תוכנה חופשית; ניתן להפיצה מחדש ו/או לשנות אותה לפי "
-"תנאי הרישיון הציבורי הכללי המוקטן של גנו כפי שפורסם על ידי קרן התוכנה "
-"החופשית; בין אם גרסה 2 של הרישיון ובין אם (לבחירתך) כל גרסה מאוחרת יותר.‬\n"
-
-#: src/about.c:59
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more "
-"details.\n"
-msgstr ""
-"תכנית זו מופצת בתקווה שתביא תועלת אך ללא אחריות כלשהי; אפילו לא מרומזת בדבר "
-"מסחריותה או התאמתה למטרה מסוימת. לפרטים נוספים ניתן לעיין ברישיון הציבורי "
-"הכללי המוקטן של גנו.\n"
-
-#: src/about.c:63
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this program; if not, write to the Free Software Foundation, Inc., "
-"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-msgstr ""
-"לתוכנית הזאת אמור היה להיות מצורף הרישיון הציבורי המוקטן של גנו, אם הוא לא "
-"צורף, ניתן לכתוב ל־Free Software Foundation, Inc., 51 Franklin Street, Fifth "
-"Floor, Boston, MA 02110-1301, USA."
-
-#: src/about.c:88
+#: src/about.c:65
 msgid "Display dialog boxes from shell scripts"
 msgstr "הצגת תיבות דו־שיח בתסריטים"
 
+#: src/calendar.c:91
+msgid "Invalid date provided. Falling back to today's date.\n"
+msgstr ""
+"התאריך שסופק שגוי. חוזרים לתאריך של היום.\n"
+"‬\n"
+
 #: src/fileselection.c:45
 msgid ""
-"Warning: the --extra-button option for --file-selection is deprecated and "
-"will be removed in a future version of zenity. Ignoring.\n"
+"Warning: the --extra-button option for --file-selection is deprecated and will "
+"be removed in a future version of zenity. Ignoring.\n"
 msgstr ""
-"אזהרה: השימוש באפשרות ‎--extra-button עבור ‎--file-selection הופסק ויוסר "
-"בגרסאות עתידיות של zenity. מתעלם.\n"
+"אזהרה: השימוש באפשרות ‎--extra-button עבור ‎--file-selection הופסק ויוסר בגרסאות "
+"עתידיות של zenity. מתעלם.\n"
 
-#: src/fileselection.c:68 src/progress.c:400 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:463
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
 msgid "_OK"
 msgstr "_אישור"
 
-#: src/fileselection.c:69 src/progress.c:396 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:462
+#: src/zenity.ui:461
 msgid "_Cancel"
 msgstr "_ביטול"
 
@@ -88,11 +61,11 @@ msgstr "_ביטול"
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "חובה לציין סוג חלונית. ר׳ ‚zenity --help’ לפרטים נוספים\n"
 
-#: src/msg.c:115
+#: src/msg.c:89
 msgid "_No"
 msgstr "_לא"
 
-#: src/msg.c:116
+#: src/msg.c:90
 msgid "_Yes"
 msgstr "_כן"
 
@@ -447,8 +420,7 @@ msgstr "כתובת"
 
 #: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
-msgstr ""
-"יש לגלול את הטקסט אוטומטית לסוף. רק כאשר הטקסט מגיע משורת הפקודה (stdin)"
+msgstr "יש לגלול את הטקסט אוטומטית לסוף. רק כאשר הטקסט מגיע משורת הפקודה (stdin)"
 
 #: src/option.c:810
 msgid "Display warning dialog"
@@ -588,8 +560,8 @@ msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
 msgstr ""
-"אזהרה: השימוש ב־‎--window-icon הופסק ויוסר בגרסאות עתידיות של zenity, ייחשב "
-"ל־‎--icon.\n"
+"אזהרה: השימוש ב־‎--window-icon הופסק ויוסר בגרסאות עתידיות של zenity, ייחשב ל־‎--"
+"icon.\n"
 
 #: src/option.c:1093
 msgid ""
@@ -603,8 +575,7 @@ msgstr ""
 msgid ""
 "Warning: --attach is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
-msgstr ""
-"אזהרה: השימוש ב־‎--attach הופסק ויוסר בגרסאות עתידיות של zenity, מתעלם.\n"
+msgstr "אזהרה: השימוש ב־‎--attach הופסק ויוסר בגרסאות עתידיות של zenity, מתעלם.\n"
 
 #: src/option.c:1107
 msgid ""
@@ -782,6 +753,14 @@ msgstr "ססמה:"
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "הזמן שנותר: %lu:%02lu:%02lu"
 
+#. Translators: do not translate tokens starting with '--'; these
+#. * are command-line options which are not translatable.
+#.
+#: src/progress.c:412
+msgid ""
+"Combining the options --auto-close and --percentage=100 is not supported.\n"
+msgstr "אין תמיכה בשילוב בין האפשרויות ‎--auto-close ו־‎.--percentage=100‬\n"
+
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "הערך המרבי חייב להיות גדול מהערך המזערי.\n"
@@ -792,8 +771,8 @@ msgstr "הערך מחוץ לטווח.\n"
 
 #: src/tree.c:57
 msgid ""
-"Warning: --mid-search is deprecated and will be removed in a future version "
-"of zenity. Ignoring.\n"
+"Warning: --mid-search is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
 msgstr ""
 "אזהרה: השימוש ב־‎--mid-search הופסק ויוסר בגרסאות עתידיות של zenity, מתעלם.\n"
 
@@ -815,7 +794,7 @@ msgstr ""
 msgid "You should use only one List dialog type.\n"
 msgstr "צריך להשתמש רק בסוג אחד של חלונית רשימה.\n"
 
-#: src/util.c:68
+#: src/util.c:81
 #, c-format
 msgid "Icon filename %s not found; trying theme icon."
 msgstr "שם קובץ הסמל %s לא נמצא, מתבצע ניסיון עם סמל מערכת העיצוב."
@@ -896,13 +875,42 @@ msgstr "נא לבחור פריטים מהרשימה"
 msgid "Select items from the list below."
 msgstr "נא לבחור פריטים מהרשימה למטה."
 
-#: src/zenity.ui:419 src/zenity.ui:457
+#: src/zenity.ui:419
 msgid "Warning"
 msgstr "אזהרה"
 
-#: src/zenity.ui:485
+#: src/zenity.ui:484
 msgid "Type your password"
 msgstr "נא למלא את ססמתך"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU Lesser General Public License as published by "
+#~ "the Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version.\n"
+#~ msgstr ""
+#~ "תוכנית זו מוגשת במסגרת תוכנה חופשית; ניתן להפיצה מחדש ו/או לשנות אותה לפי "
+#~ "תנאי הרישיון הציבורי הכללי המוקטן של גנו כפי שפורסם על ידי קרן התוכנה "
+#~ "החופשית; בין אם גרסה 2 של הרישיון ובין אם (לבחירתך) כל גרסה מאוחרת יותר.‬\n"
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but WITHOUT "
+#~ "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+#~ "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public "
+#~ "License for more details.\n"
+#~ msgstr ""
+#~ "תכנית זו מופצת בתקווה שתביא תועלת אך ללא אחריות כלשהי; אפילו לא מרומזת בדבר "
+#~ "מסחריותה או התאמתה למטרה מסוימת. לפרטים נוספים ניתן לעיין ברישיון הציבורי "
+#~ "הכללי המוקטן של גנו.\n"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU Lesser General Public License "
+#~ "along with this program; if not, write to the Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+#~ msgstr ""
+#~ "לתוכנית הזאת אמור היה להיות מצורף הרישיון הציבורי המוקטן של גנו, אם הוא לא "
+#~ "צורף, ניתן לכתוב ל־Free Software Foundation, Inc., 51 Franklin Street, "
+#~ "Fifth Floor, Boston, MA 02110-1301, USA."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
