@@ -49,7 +49,7 @@ local_options_cb (GApplication *application,
 	return -1;
 }
 
-static void
+static int
 command_line_cb (GApplication *app,
                GApplicationCommandLine *command_line,
                gpointer user_data)
@@ -129,6 +129,8 @@ command_line_cb (GApplication *app,
 			g_assert_not_reached ();
 			exit (-1);
 	}
+
+	return 0;
 }
 
 static void dummy_log_func (void) { }
