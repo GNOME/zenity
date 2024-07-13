@@ -192,7 +192,7 @@ zenity_progress_handle_stdin (GIOChannel *source, GIOCondition condition,
 				/* We have a comment, so let's try to change the label */
 				match = g_strstr_len (string->str, strlen (string->str), "#");
 				match++;
-				gtk_label_set_text (GTK_LABEL (progress_label),
+				gtk_label_set_markup (GTK_LABEL (progress_label),
 					g_strcompress (g_strchomp (g_strchug (match))));
 
 			}
