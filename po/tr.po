@@ -8,14 +8,16 @@
 # Volkan, 2011.
 # Necdet Yücel <necdetyucel@gmail.com>, 2014, 2015.
 # Muhammet Kara <muhammetk@gmail.com>, 2011, 2012, 2014, 2015, 2017.
+# Sabri Ünal <yakushabb@gmail.com>, 2024.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2024-01-05 01:05+0000\n"
-"PO-Revision-Date: 2024-03-25 17:34+0300\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues/\n"
+"POT-Creation-Date: 2024-07-14 08:01+0000\n"
+"PO-Revision-Date: 2024-09-20 08:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +41,7 @@ msgstr "Kabuk betiklerinden pencere kutularını görüntüle"
 
 #: src/calendar.c:91
 msgid "Invalid date provided. Falling back to today's date.\n"
-msgstr ""
+msgstr "Geçersiz tarih verildi. Bugüne dönülüyor.\n"
 
 #: src/fileselection.c:45
 msgid ""
@@ -52,13 +54,13 @@ msgstr ""
 
 #: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:425 src/zenity.ui:463
 msgid "_OK"
 msgstr "_Tamam"
 
 #: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:461
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "İ_ptal"
 
@@ -253,11 +255,11 @@ msgstr "DOSYAADI"
 
 #: src/option.c:435
 msgid "Allow multiple files to be selected"
-msgstr "Birden fazla dosya seçimine izin ver"
+msgstr "Birden çok dosya seçimine izin ver"
 
 #: src/option.c:442
 msgid "Activate directory-only selection"
-msgstr "Sadece-dizin seçeneğini etkinleştir"
+msgstr "Yalnızca dizin seçeneğini etkinleştir"
 
 #: src/option.c:449
 msgid "Activate save mode"
@@ -307,7 +309,7 @@ msgstr "İlk sütun için bir resim kullan"
 
 #: src/option.c:532
 msgid "Allow multiple rows to be selected"
-msgstr "Birden fazla satır seçimine izin ver"
+msgstr "Birden çok satır seçimine izin ver"
 
 #: src/option.c:539 src/option.c:753
 msgid "Allow changes to text"
@@ -417,13 +419,13 @@ msgid ""
 "Do not enable user interaction with the WebView. Only works if you use --"
 "html option"
 msgstr ""
-"Kullanıcının WebView ile etkileşimini kapat. Sadece --html seçeneğini "
+"Kullanıcının WebView ile etkileşimini kapat. Yalnızca --html seçeneğini "
 "kullandığınızda işe yarar"
 
 #: src/option.c:790
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
-"Bir dosya yerine bir adres ayarla. Sadece --html seçeneğini kullanırsanız "
+"Bir dosya yerine bir adres ayarla. Yalnızca --html seçeneğini kullanırsanız "
 "çalışır."
 
 #: src/option.c:792
@@ -433,7 +435,7 @@ msgstr "URL"
 #: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
-"Metnin sonuna otomatik kaydır. Sadece metin standart girdiden alındığında"
+"Metnin sonuna otomatik kaydır. Yalnızca metin standart girdiden alındığında"
 
 #: src/option.c:810
 msgid "Display warning dialog"
@@ -749,7 +751,7 @@ msgstr "--%s bu pencere için desteklenmiyor\n"
 
 #: src/option.c:2258
 msgid "Two or more dialog options specified\n"
-msgstr "İki veya daha fazla pencere seçeneği belirtildi\n"
+msgstr "İki ya da daha çok pencere seçeneği belirtildi\n"
 
 #: src/password.c:85
 msgid "Type your username and password"
@@ -778,6 +780,7 @@ msgstr "Kalan zaman: %lu:%02lu:%02lu"
 msgid ""
 "Combining the options --auto-close and --percentage=100 is not supported.\n"
 msgstr ""
+"--auto-close ve --percentage=100 seçeneklerinin birlikte kullanımı desteklenmiyor.\n"
 
 #: src/scale.c:62
 msgid "Maximum value must be greater than minimum value.\n"
@@ -806,10 +809,12 @@ msgid ""
 "Insufficient columns specified for List dialog (at least 2 are required for "
 "--checklist or --radiolist).\n"
 msgstr ""
+"Liste iletişim penceresi için yetersiz sütun belirtildi (--checklist ya da "
+"--radiolist için en az 2 gereklidir).\n"
 
 #: src/tree.c:280
 msgid "You should use only one List dialog type.\n"
-msgstr "Sadece tek bit Liste diyalog çeşidi kullanabilirsiniz.\n"
+msgstr "Yalnızca tek bit Liste diyalog çeşidi kullanabilirsiniz.\n"
 
 #: src/util.c:81
 #, c-format
@@ -866,7 +871,7 @@ msgstr "Bilgi"
 
 #: src/zenity.ui:302
 msgid "All updates are complete."
-msgstr "Bütün güncellemeler tamam."
+msgstr "Tüm güncellemeler tamamlandı."
 
 #: src/zenity.ui:312
 msgid "Progress"
@@ -880,54 +885,22 @@ msgstr "Çalışıyor..."
 msgid "Question"
 msgstr "Soru"
 
-#: src/zenity.ui:368 src/zenity.ui:447
+#: src/zenity.ui:368 src/zenity.ui:448
 msgid "Are you sure you want to proceed?"
-msgstr "Devam etmek istediğinize emin misiniz?"
+msgstr "Sürdürmek istediğinize emin misiniz?"
 
 #: src/zenity.ui:378
 msgid "Select items from the list"
-msgstr "Öğeleri listeden seçiniz"
+msgstr "Ögeleri listeden seçiniz"
 
-#: src/zenity.ui:408
+#: src/zenity.ui:409
 msgid "Select items from the list below."
-msgstr "Aşağıdaki listeden öğeleri seçiniz."
+msgstr "Aşağıdaki listeden ögeleri seçiniz."
 
-#: src/zenity.ui:419
+#: src/zenity.ui:420
 msgid "Warning"
 msgstr "Uyarı"
 
-#: src/zenity.ui:484
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "Parolanızı giriniz"
-
-#~ msgid ""
-#~ "This program is free software; you can redistribute it and/or modify it "
-#~ "under the terms of the GNU Lesser General Public License as published by "
-#~ "the Free Software Foundation; either version 2 of the License, or (at "
-#~ "your option) any later version.\n"
-#~ msgstr ""
-#~ "Bu program bir özgür yazılımdır; Özgür Yazılım Vakfı tarafından "
-#~ "yayınlanan GNU Kısıtlı Genel Kamu Lisansı'nın 2. sürümü ya da "
-#~ "(tercihinize bağlı) sonraki sürümleri koşulları altında yeniden "
-#~ "dağıtabilir ve/veya değiştirebilirsiniz.\n"
-
-#~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser "
-#~ "General Public License for more details.\n"
-#~ msgstr ""
-#~ "Bu program, faydalı olacağı umut edilerek dağıtılmaktadır, fakat HİÇBİR "
-#~ "GARANTİSİ YOKTUR; hatta ÜRÜN DEĞERİ ya da BİR AMACA UYGUNLUK gibi "
-#~ "garantiler de vermez.  Ayrıntılar için lütfen GNU Kısıtlı Genel Kamu "
-#~ "Lisansı'nı inceleyiniz.\n"
-
-#~ msgid ""
-#~ "You should have received a copy of the GNU Lesser General Public License "
-#~ "along with this program; if not, write to the Free Software Foundation, "
-#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
-#~ msgstr ""
-#~ "Bu program ile birlikte GNU Kısıtlı Genel Kamu Lisansı'nın bir kopyasını "
-#~ "almış olmalısınız; eğer almadıysanız, lütfen Free Software Foundation, "
-#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA "
-#~ "adresine yazın."
