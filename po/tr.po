@@ -37,7 +37,7 @@ msgstr "Komut satırından iletişim kutularını görüntüle"
 
 #: src/about.c:65
 msgid "Display dialog boxes from shell scripts"
-msgstr "Kabuk betiklerinden pencere kutularını görüntüle"
+msgstr "Kabuk betiklerinden iletişim kutularını görüntüle"
 
 #: src/calendar.c:91
 msgid "Invalid date provided. Falling back to today's date.\n"
@@ -48,8 +48,8 @@ msgid ""
 "Warning: the --extra-button option for --file-selection is deprecated and "
 "will be removed in a future version of zenity. Ignoring.\n"
 msgstr ""
-"Uyarı: --file-selection için --extra-button seçeneği kullanımdan "
-"kaldırılmıştır ve gelecekteki bir zenity sürümünde kaldırılacak. Görmezden "
+"Uyarı: --file-selection için --extra-button seçeneği terk edilmiştir "
+"ve gelecek bir zenity sürümünde kaldırılacak. Görmezden "
 "geliniyor.\n"
 
 #: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
@@ -66,7 +66,7 @@ msgstr "İ_ptal"
 
 #: src/main.c:124
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr "Pencere çeşidi girmelisiniz. Detaylar için 'zenity --help'e bakınız.\n"
+msgstr "Pencere türü girmelisiniz. Ayrıntılar için 'zenity --help'e bakınız.\n"
 
 #: src/msg.c:89
 msgid "_No"
@@ -82,7 +82,7 @@ msgstr "İleti ayrıştırılamadı\n"
 
 #: src/notification.c:140
 msgid "Could not parse command from stdin\n"
-msgstr "stdin'den gelen komut ayrıştırılamadı\n"
+msgstr "stdin’den gelen komut ayrıştırılamadı\n"
 
 #: src/option.c:170
 msgid "Set the dialog title"
@@ -135,15 +135,15 @@ msgstr "İptal düğmesinin etiketini ayarla"
 
 #: src/option.c:213
 msgid "Add an extra button"
-msgstr "Fazladan bir düğme ekle"
+msgstr "Ek düğme ekle"
 
 #: src/option.c:220
 msgid "Set the modal hint"
-msgstr "Kalıcı ipucu ayarlayın"
+msgstr "Kalıcı ipucu ayarla"
 
 #: src/option.c:227 src/option.c:473 src/option.c:569 src/option.c:607
 msgid "DEPRECATED; does nothing"
-msgstr "KULLANILMIYOR; hiçbir şey yapmaz"
+msgstr "TERK EDİLDİ; bir şey yapmaz"
 
 #: src/option.c:228
 msgid "WINDOW"
@@ -151,7 +151,7 @@ msgstr "PENCERE"
 
 #: src/option.c:234 src/option.c:241
 msgid "DEPRECATED; use `--icon`"
-msgstr "KULLANILMIYOR; `--icon` kullan"
+msgstr "TERK EDİLDİ; `--icon` kullan"
 
 #: src/option.c:235 src/option.c:242 src/option.c:342 src/option.c:389
 #: src/option.c:594 src/option.c:693 src/option.c:825
@@ -275,7 +275,7 @@ msgstr "AYRAÇ"
 
 #: src/option.c:463
 msgid "Set a filename filter"
-msgstr "Bir dosya adı süzgeci ayarla"
+msgstr "Dosya adı süzgeci ayarla"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
@@ -301,15 +301,15 @@ msgstr "İlk sütun için onay kutularını kullan"
 
 #: src/option.c:511
 msgid "Use radio buttons for the first column"
-msgstr "İlk sütun için radyo düğmelerini kullan"
+msgstr "İlk sütun için seçenek düğmelerini kullan"
 
 #: src/option.c:518
 msgid "Use an image for the first column"
-msgstr "İlk sütun için bir resim kullan"
+msgstr "İlk sütun için resim kullan"
 
 #: src/option.c:532
 msgid "Allow multiple rows to be selected"
-msgstr "Birden çok satır seçimine izin ver"
+msgstr "Çoklu satır seçimine izin ver"
 
 #: src/option.c:539 src/option.c:753
 msgid "Allow changes to text"
@@ -320,7 +320,7 @@ msgid ""
 "Print a specific column (Default is 1. 'ALL' can be used to print all "
 "columns)"
 msgstr ""
-"Belirtilen sütunu yazdır (Öntanımlı 1'dir. 'ALL' tüm sütunları yazdırmak "
+"Belirtilen sütunu yazdır (Öntanımlı 1’dir. 'ALL' tüm sütunları yazdırmak "
 "için kullanılabilir)"
 
 #. Column index number to print out on a list dialog
@@ -346,7 +346,7 @@ msgstr "Uyarı metnini ayarla"
 
 #: src/option.c:600
 msgid "Listen for commands on stdin"
-msgstr "stdin'deki komutları dinle"
+msgstr "stdin’deki komutları dinle"
 
 #: src/option.c:617
 msgid "Display progress indication dialog"
@@ -367,7 +367,7 @@ msgstr "İlerleme çubuğunu sallandır"
 #: src/option.c:646
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr "%100'e ulaşıldığında pencereyi kapat"
+msgstr "%100’e ulaşıldığında pencereyi kapat"
 
 #: src/option.c:653
 msgid "Kill parent process if Cancel button is pressed"
@@ -380,7 +380,7 @@ msgstr "İptal düğmesini gizle"
 #: src/option.c:668
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
-msgstr "İlerlemenin ne zaman %100 olacağını tahmin et"
+msgstr "İlerlemenin ne zaman %100 olacağını öngör"
 
 #: src/option.c:678
 msgid "Display question dialog"
@@ -425,7 +425,7 @@ msgstr ""
 #: src/option.c:790
 msgid "Set an URL instead of a file. Only works if you use --html option"
 msgstr ""
-"Bir dosya yerine bir adres ayarla. Yalnızca --html seçeneğini kullanırsanız "
+"Dosya yerine adres ayarla. Yalnızca --html seçeneğini kullanırsanız "
 "çalışır."
 
 #: src/option.c:792
@@ -435,7 +435,7 @@ msgstr "URL"
 #: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
-"Metnin sonuna otomatik kaydır. Yalnızca metin standart girdiden alındığında"
+"Kendiliğinden metnin sonuna kaydır. Yalnızca metin stdin’den alındığında"
 
 #: src/option.c:810
 msgid "Display warning dialog"
@@ -447,7 +447,7 @@ msgstr "Ölçek penceresini görüntüle"
 
 #: src/option.c:871
 msgid "Set initial value"
-msgstr "Başlangıç değerini ayarla"
+msgstr "Başlangıç değeri ayarla"
 
 #: src/option.c:872 src/option.c:879 src/option.c:886 src/option.c:893
 #: src/option.c:1045
@@ -480,7 +480,7 @@ msgstr "Form iletişim penceresini görüntüle"
 
 #: src/option.c:923
 msgid "Add a new Entry in forms dialog"
-msgstr "Form iletişim penceresine yeni bir giriş ekle"
+msgstr "Form iletişim penceresine yeni Girdi ekle"
 
 #: src/option.c:924 src/option.c:931
 msgid "Field name"
@@ -488,11 +488,11 @@ msgstr "Alan adı"
 
 #: src/option.c:930
 msgid "Add a new Password Entry in forms dialog"
-msgstr "Form iletişim penceresine yeni bir Parola Girdisi ekle"
+msgstr "Form iletişim penceresine yeni Parola Girdisi ekle"
 
 #: src/option.c:937
 msgid "Add a new Calendar in forms dialog"
-msgstr "Form iletişim penceresine yeni bir Takvim ekle"
+msgstr "Form iletişim penceresine yeni Takvim ekle"
 
 #: src/option.c:938
 msgid "Calendar field name"
@@ -500,7 +500,7 @@ msgstr "Takvim alanının adı"
 
 #: src/option.c:944
 msgid "Add a new List in forms dialog"
-msgstr "Form iletişim penceresine yeni bir Liste ekle"
+msgstr "Form iletişim penceresine yeni Liste ekle"
 
 #: src/option.c:945
 msgid "List field and header name"
@@ -520,7 +520,7 @@ msgstr "Sütunlar için değerler listesi"
 
 #: src/option.c:965
 msgid "Add a new combo box in forms dialog"
-msgstr "Form iletişim penceresine yeni bir açılan kutu ekle"
+msgstr "Form iletişim penceresine yeni açılan kutu ekle"
 
 #: src/option.c:966
 msgid "Combo box field name"
@@ -532,7 +532,7 @@ msgstr "Açılan kutu için değerler listesi"
 
 #: src/option.c:989
 msgid "Show the columns header"
-msgstr "Sütun başlığını göster"
+msgstr "Sütun başlığını görüntüle"
 
 #: src/option.c:1020
 msgid "Display password dialog"
@@ -540,7 +540,7 @@ msgstr "Parola penceresini görüntüle"
 
 #: src/option.c:1027
 msgid "Display the username option"
-msgstr "Kullanıcı adı seçeneğini göster"
+msgstr "Kullanıcı adı seçeneğini görüntüle"
 
 #: src/option.c:1037
 msgid "Display color selection dialog"
@@ -548,7 +548,7 @@ msgstr "Renk seçme penceresini görüntüle"
 
 #: src/option.c:1044
 msgid "Set the color"
-msgstr "Rengi düzenle"
+msgstr "Rengi belirle"
 
 #: src/option.c:1051
 msgid "Show the palette"
@@ -567,7 +567,7 @@ msgid ""
 "Warning: --icon-name is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
 msgstr ""
-"Uyarı: --icon-name kullanımdan kaldırılmıştır ve gelecekteki bir zenity "
+"Uyarı: --icon-name terk edilmiştir ve gelecek bir zenity "
 "sürümünde kaldırılacak. -- icon olarak işleniyor.\n"
 
 #: src/option.c:1086
@@ -575,7 +575,7 @@ msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
 msgstr ""
-"Uyarı: --window-icon kullanımdan kaldırılmıştır ve gelecekteki bir zenity "
+"Uyarı: --window-icon terk edilmiştir ve gelecek bir zenity "
 "sürümünde kaldırılacak. --icon olarak işleniyor.\n"
 
 #: src/option.c:1093
@@ -583,7 +583,7 @@ msgid ""
 "Warning: --confirm-overwrite is deprecated and will be removed in a future "
 "version of zenity. Ignoring.\n"
 msgstr ""
-"Uyarı: --confirm-overwrite kullanımdan kaldırılmıştır ve gelecekteki bir "
+"Uyarı: --confirm-overwrite terk edilmiştir ve gelecek bir "
 "zenity sürümünde kaldırılacak. Görmezden geliniyor.\n"
 
 #: src/option.c:1100
@@ -591,7 +591,7 @@ msgid ""
 "Warning: --attach is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
 msgstr ""
-"Uyarı: --attach kullanımdan kaldırılmıştır ve gelecekteki bir zenity "
+"Uyarı: --attach terk edilmiştir ve gelecek bir zenity "
 "sürümünde kaldırılacak. Görmezden geliniyor.\n"
 
 #: src/option.c:1107
@@ -599,7 +599,7 @@ msgid ""
 "Warning: --hint is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
 msgstr ""
-"Uyarı: --hint kullanımdan kaldırılmıştır ve gelecekteki bir zenity sürümünde "
+"Uyarı: --hint terk edilmiştir ve gelecek bir zenity sürümünde "
 "kaldırılacak. Görmezden geliniyor.\n"
 
 #: src/option.c:2028
@@ -708,19 +708,19 @@ msgstr "Metin bilgi seçeneklerini göster"
 
 #: src/option.c:2186
 msgid "Color selection options"
-msgstr "Renk seçme özellikleri"
+msgstr "Renk seçim özellikleri"
 
 #: src/option.c:2187
 msgid "Show color selection options"
-msgstr "Renk seçme seçeneklerini göster"
+msgstr "Renk seçim seçeneklerini göster"
 
 #: src/option.c:2199
 msgid "Password dialog options"
-msgstr "Parola seçenekleri penceresi"
+msgstr "Parola iletişim penceresi seçenekleri"
 
 #: src/option.c:2200
 msgid "Show password dialog options"
-msgstr "Parola seçenekleri penceresini göster"
+msgstr "Parola iletişim penceresi seçeneklerini göster"
 
 #: src/option.c:2212
 msgid "Forms dialog options"
@@ -732,17 +732,17 @@ msgstr "Form iletişim penceresi seçeneklerini göster"
 
 #: src/option.c:2225
 msgid "Miscellaneous options"
-msgstr "Çeşitli seçenekler"
+msgstr "Türlü seçenekler"
 
 #: src/option.c:2226
 msgid "Show miscellaneous options"
-msgstr "Çeşitli seçenekleri göster"
+msgstr "Türlü seçenekleri göster"
 
 #: src/option.c:2249
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
-"Bu seçenek mevcut değil. Mevcut kullanımlar için lütfen --help'e bakınız.\n"
+"Bu seçenek yok. Olası kullanımlar için lütfen --help’e bakınız.\n"
 
 #: src/option.c:2254
 #, c-format
@@ -755,7 +755,7 @@ msgstr "İki ya da daha çok pencere seçeneği belirtildi\n"
 
 #: src/password.c:85
 msgid "Type your username and password"
-msgstr "Kullanıcı adınızı ve parolanızı yazın"
+msgstr "Kullanıcı adı ve parolanızı yazın"
 
 #. Add the username label and entry and increment the row for the
 #. * password entry so it will be added below the username.
@@ -795,7 +795,7 @@ msgid ""
 "Warning: --mid-search is deprecated and will be removed in a future version "
 "of zenity. Ignoring.\n"
 msgstr ""
-"Uyarı: --mid-search kullanımdan kaldırılmıştır ve gelecekteki bir zenity "
+"Uyarı: --mid-search terk edilmiştir ve gelecek zenity "
 "sürümünde kaldırılacak. Görmezden geliniyor.\n"
 
 #: src/tree.c:263
@@ -814,7 +814,7 @@ msgstr ""
 
 #: src/tree.c:280
 msgid "You should use only one List dialog type.\n"
-msgstr "Yalnızca tek bit Liste diyalog çeşidi kullanabilirsiniz.\n"
+msgstr "Yalnızca tek bir Liste iletişim kutusu türü kullanabilirsiniz.\n"
 
 #: src/util.c:81
 #, c-format
@@ -835,7 +835,7 @@ msgstr "Takvim seçimi"
 
 #: src/zenity.ui:105
 msgid "Select a date from below."
-msgstr "Aşağıdan bir tarih seçin."
+msgstr "Aşağıdan tarih seç."
 
 #: src/zenity.ui:115
 msgid "C_alendar:"
@@ -847,11 +847,11 @@ msgstr "Takvim"
 
 #: src/zenity.ui:135
 msgid "Add a new entry"
-msgstr "Yeni bir giriş ekle"
+msgstr "Yeni girdi ekle"
 
 #: src/zenity.ui:160
 msgid "_Enter new text:"
-msgstr "_Yeni metin girişi:"
+msgstr "Yeni metin _gir:"
 
 #: src/zenity.ui:174
 msgid "Error"
