@@ -319,7 +319,12 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	GObject *text;
 	GObject *progress_bar;
 
+	/* Setup globals */
+
 	zen_data = data;
+	autokill = progress_data->autokill;
+	auto_close = progress_data->autoclose;
+	no_cancel = progress_data->no_cancel;
 	builder = zenity_util_load_ui_file ("zenity_progress_dialog", "zenity_progress_box", NULL);
 
 	if (builder == NULL) {
@@ -333,6 +338,41 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 				"zenity_progress_dialog"));
 
 	progress_bar = gtk_builder_get_object (builder, "zenity_progress_bar");
+
+	/* Setup responses */
+
+	/* Unlike some other dialogs, this one starts off blank and we need to add
+	 * the OK/Cancel buttons depending on the options.
+	 */
+	if (no_cancel)
+		gtk_window_set_deletable (GTK_WINDOW(dialog), FALSE);
+	else
+		adw_message_dialog_add_response (ADW_MESSAGE_DIALOG(dialog), "cancel", _("_Cancel"));
+
+	if (!auto_close)
+	{
+		adw_message_dialog_add_response (ADW_MESSAGE_DIALOG(dialog), "ok", _("_OK"));
+		if (progress_data->percentage == 100) {
+			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", TRUE);
+			adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(dialog), "ok");
+		} else {
+			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
+		}
+	}
+	else
+	{
+		/* If the user specifies percentage should be 100 and the dialog should
+		 * auto-close, this is completely pointless and we print an error.
+		 */
+		if (progress_data->percentage == 100) {
+			/* Translators: do not translate tokens starting with '--'; these
+			 * are command-line options which are not translatable.
+			 */
+			g_printerr (_("Combining the options --auto-close and --percentage=100 is not supported.\n"));
+			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
+			zenity_util_gapp_quit (NULL, zen_data);
+		}
+	}
 
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_progress_dialog_response), data);
 
@@ -376,43 +416,6 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 	if (progress_data->percentage > -1) {
 		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR(progress_bar),
 				progress_data->percentage / 100.0);
-	}
-
-	autokill = progress_data->autokill;
-	auto_close = progress_data->autoclose;
-	no_cancel = progress_data->no_cancel;
-
-	/* Unlike some other dialogs, this one starts off blank and we need to add
-	 * the OK/Cancel buttons depending on the options.
-	 */
-	if (no_cancel)
-		gtk_window_set_deletable (GTK_WINDOW(dialog), FALSE);
-	else
-		adw_message_dialog_add_response (ADW_MESSAGE_DIALOG(dialog), "cancel", _("_Cancel"));
-
-	if (!auto_close)
-	{
-		adw_message_dialog_add_response (ADW_MESSAGE_DIALOG(dialog), "ok", _("_OK"));
-		if (progress_data->percentage == 100) {
-			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", TRUE);
-			adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(dialog), "ok");
-		} else {
-			adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
-		}
-	}
-	else
-	{
-		/* If the user specifies percentage should be 100 and the dialog should
-		 * auto-close, this is completely pointless and we print an error.
-		 */
-		if (progress_data->percentage == 100) {
-			/* Translators: do not translate tokens starting with '--'; these
-			 * are command-line options which are not translatable.
-			 */
-			g_printerr (_("Combining the options --auto-close and --percentage=100 is not supported.\n"));
-			zen_data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
-			zenity_util_gapp_quit (NULL, zen_data);
-		}
 	}
 
 	zenity_util_show_dialog (dialog);
