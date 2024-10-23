@@ -37,6 +37,14 @@ static ZenityData *zen_data;
 
 static void zenity_colorselection_dialog_response (GtkWidget *widget, int response, gpointer data);
 
+static void
+setup_custom_button (GtkDialog *dialog, int response, const char *label)
+{
+	GtkButton *button = GTK_BUTTON (gtk_dialog_get_widget_for_response (dialog, response));
+
+	gtk_button_set_label (button, label);
+}
+
 void
 zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 {
@@ -54,6 +62,16 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 	{
 		gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER(dialog), &color);
 	}
+
+	/* FIXME: This code and its helper function will need to be adapted/deleted
+	 * when we move to GtkColorDialog, but since we'll be sticking with it for
+	 * the time being, this hotfix should work as a stopgap.
+	 */
+	if (data->ok_label)
+		setup_custom_button (GTK_DIALOG(dialog), GTK_RESPONSE_OK, data->ok_label);
+
+	if (data->cancel_label)
+		setup_custom_button (GTK_DIALOG(dialog), GTK_RESPONSE_CANCEL, data->cancel_label);
 
 	if (data->extra_label)
 	{
