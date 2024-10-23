@@ -32,10 +32,17 @@ static ZenityData *zen_data;
 static void zenity_colorselection_dialog_response (
 	GtkWidget *widget, int response, gpointer data);
 
+static void
+setup_custom_button (GtkDialog *dialog, int response, const char *label)
+{
+	GtkButton *button = GTK_BUTTON (gtk_dialog_get_widget_for_response (dialog, response));
+
+	gtk_button_set_label (button, label);
+}
+
 void
 zenity_colorselection (ZenityData *data, ZenityColorData *color_data) {
 	GtkWidget *dialog;
-	GtkWidget *button;
 	GdkRGBA color;
 
 	zen_data = data;
@@ -62,17 +69,15 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data) {
 		}
 	}
 
-	if (data->ok_label) {
-		g_object_get (G_OBJECT (dialog), "ok-button", &button, NULL);
-		gtk_button_set_label (GTK_BUTTON (button), data->ok_label);
-		g_object_unref (G_OBJECT (button));
-	}
+	/* FIXME: This code and its helper function will need to be adapted/deleted
+	 * when we move to GtkColorDialog, but since we'll be sticking with it for
+	 * the time being, this hotfix should work as a stopgap.
+	 */
+	if (data->ok_label)
+		setup_custom_button (GTK_DIALOG(dialog), GTK_RESPONSE_OK, data->ok_label);
 
-	if (data->cancel_label) {
-		g_object_get (G_OBJECT (dialog), "cancel-button", &button, NULL);
-		gtk_button_set_label (GTK_BUTTON (button), data->cancel_label);
-		g_object_unref (G_OBJECT (button));
-	}
+	if (data->cancel_label)
+		setup_custom_button (GTK_DIALOG(dialog), GTK_RESPONSE_CANCEL, data->cancel_label);
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
