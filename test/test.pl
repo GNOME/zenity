@@ -339,6 +339,21 @@ create_test ("cancel_button",
 	}
 );
 
+create_test ("custom_ok_cancel_buttons",
+	"Ensure that both the OK and Cancel buttons contain a frowny- or smiley-faced cat emoji respetively, and click the smiley face. If either okay or cancel do not contain the kitty emoji, click cancel or close the window.",
+	sub {
+		# mostly the same as the Cancel dialogs - but custom ok/cancel labels is NOT supported for --file-selection
+		my @dialogs = qw[--calendar --entry --list --progress --scale --color-selection --password --forms];
+		foreach my $d (get_dialogs_with_plain_vanilla_options (\@dialogs))
+		{
+			my $test = qq[$ZENITY $d --ok-label="😺" --cancel-label="😾"];
+			my $expected_exit_status = 0;
+
+			test_cmd_for_exit_status ($test, $expected_exit_status);
+		}
+	}
+);
+
 create_test ("test_entry",
 	"Follow the instructions on the dialogs",
 	sub {
