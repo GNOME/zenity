@@ -207,6 +207,7 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 	GtkWidget *dialog;
 	GtkWidget *grid;
 	GtkWidget *text;
+	GtkWidget *frame;
 
 	int list_count = 0;
 	int combo_count = 0;
@@ -223,6 +224,10 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 
 	dialog = GTK_WIDGET(gtk_builder_get_object (builder,
 				"zenity_forms_dialog"));
+
+	frame = GTK_WIDGET(gtk_builder_get_object (builder, "frame1"));
+
+	gtk_widget_set_hexpand(frame, TRUE);
 
 	g_signal_connect (dialog, "response",
 		G_CALLBACK (zenity_forms_dialog_response), forms_data);
@@ -304,6 +309,8 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 				zenity_value->forms_widget = gtk_entry_new ();
 				break;
 		}
+
+		gtk_widget_set_hexpand(zenity_value->forms_widget, TRUE);
 
 		gtk_grid_attach_next_to (GTK_GRID (grid),
 			GTK_WIDGET (zenity_value->forms_widget),
