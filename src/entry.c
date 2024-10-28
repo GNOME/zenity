@@ -61,8 +61,7 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_entry_dialog_response), data);
 
-	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+	zenity_util_setup_dialog_title (dialog, data);
 
 	gtk_window_set_icon_name (GTK_WINDOW(dialog),
 			"insert-text");

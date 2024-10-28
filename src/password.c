@@ -119,8 +119,7 @@ zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 			pass_row,
 			1, 1);
 
-	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+	zenity_util_setup_dialog_title (dialog, data);
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW(dialog), TRUE);

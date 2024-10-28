@@ -54,7 +54,9 @@ static const char *documenters[] = {"Glynn Foster",
 void
 zenity_about (ZenityData *data)
 {
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	about_window = adw_about_window_new ();
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 	g_object_set (G_OBJECT (about_window),
 		"application-name", "Zenity",

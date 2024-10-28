@@ -232,8 +232,7 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 	g_signal_connect (dialog, "response",
 		G_CALLBACK (zenity_forms_dialog_response), forms_data);
 
-	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+	zenity_util_setup_dialog_title (dialog, data);
 
 	if (data->width > -1 || data->height > -1) {
 		gtk_window_set_default_size (GTK_WINDOW(dialog),

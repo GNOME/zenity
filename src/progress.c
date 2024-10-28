@@ -38,6 +38,8 @@
 
 #include <config.h>
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+
 static GtkBuilder *builder;
 static ZenityData *zen_data;
 
@@ -376,8 +378,7 @@ zenity_progress (ZenityData *data, ZenityProgressData *progress_data)
 
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_progress_dialog_response), data);
 
-	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+	zenity_util_setup_dialog_title (dialog, data);
 
 	gtk_window_set_icon_name (GTK_WINDOW(dialog),
 			"appointment-soon");
@@ -465,3 +466,5 @@ zenity_progress_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 	}
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }
+
+G_GNUC_END_IGNORE_DEPRECATIONS

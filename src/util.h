@@ -7,7 +7,7 @@
  *           © 1999, 2000 Red Hat Inc.
  *           © 1998 James Henstridge
  *           © 1995-2002 Free Software Foundation
- *           © 2021-2023 Logan Rathbone
+ *           © 2021-2024 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -59,17 +59,21 @@ G_BEGIN_DECLS
 	G_GNUC_END_IGNORE_DEPRECATIONS
 
 #define ZENITY_UTIL_SETUP_OK_BUTTON_LABEL(DIALOG) \
+	G_GNUC_BEGIN_IGNORE_DEPRECATIONS \
 	if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "ok")) \
 		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "ok", data->ok_label); \
 	else if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "yes")) \
-		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "yes", data->ok_label);
+		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "yes", data->ok_label); \
+	G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 #define ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL(DIALOG) \
+	G_GNUC_BEGIN_IGNORE_DEPRECATIONS \
 	if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "cancel")) \
 		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "cancel", data->cancel_label); \
 	else if (adw_message_dialog_has_response (ADW_MESSAGE_DIALOG(DIALOG), "no")) \
-		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "no", data->cancel_label);
+		adw_message_dialog_set_response_label (ADW_MESSAGE_DIALOG(DIALOG), "no", data->cancel_label); \
+	G_GNUC_END_IGNORE_DEPRECATIONS
 
 #define ZENITY_UTIL_RESPONSE_HANDLE_EXTRA_BUTTONS \
 	if (zen_data->extra_label && \
@@ -102,5 +106,6 @@ void zenity_util_gapp_quit (GtkWindow *window, ZenityData *data);
 int zenity_util_parse_dialog_response (const char *response);
 GtkWidget *zenity_util_add_button (AdwMessageDialog *dialog, const char
 		*button_text, ZenityExitCode response_id);
+void zenity_util_setup_dialog_title (gpointer dialog, ZenityData *data);
 
 G_END_DECLS

@@ -83,6 +83,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 			break;
 	}
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	if (msg_data->mode == ZENITY_MSG_QUESTION)
 	{
 		adw_message_dialog_add_responses (ADW_MESSAGE_DIALOG(dialog),
@@ -92,6 +93,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 		adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG(dialog),
 				msg_data->default_cancel ? "no" : "yes");
 	}
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 	if (data->extra_label)
 	{
@@ -105,8 +107,7 @@ zenity_msg (ZenityData *data, ZenityMsgData *msg_data)
 
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_msg_dialog_response), data);
 
-	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+	zenity_util_setup_dialog_title (dialog, data);
 
 	if (data->ok_label)
 	{

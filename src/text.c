@@ -278,8 +278,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	g_signal_connect (dialog, "response",
 		G_CALLBACK(zenity_text_dialog_response), data);
 
-	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+	zenity_util_setup_dialog_title (dialog, data);
 
 	gtk_window_set_icon_name (GTK_WINDOW(dialog),
 			"accessories-text-editor");
@@ -339,7 +338,9 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	if (text_data->checkbox) {
 		gtk_widget_set_visible (GTK_WIDGET(checkbox), TRUE);
 		gtk_check_button_set_label (GTK_CHECK_BUTTON(checkbox), text_data->checkbox);
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 		g_signal_connect (checkbox, "toggled", G_CALLBACK(zenity_text_toggle_button), dialog);
 	}
@@ -420,7 +421,9 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 static void
 zenity_text_toggle_button (GtkCheckButton *button, AdwMessageDialog *dialog)
 {
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	adw_message_dialog_set_response_enabled (dialog, "ok", gtk_check_button_get_active (button));
+G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 static void

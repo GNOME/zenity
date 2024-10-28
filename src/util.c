@@ -7,7 +7,7 @@
  *           © 1999, 2000 Red Hat Inc.
  *           © 1998 James Henstridge
  *           © 1995-2002 Free Software Foundation
- *           © 2021-2023 Logan Rathbone
+ *           © 2021-2024 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -431,7 +431,9 @@ gboolean
 zenity_util_timeout_handle (AdwMessageDialog *dialog)
 {
 	if (dialog && ADW_IS_MESSAGE_DIALOG (dialog)) {
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 		adw_message_dialog_response (dialog, "timeout");
+G_GNUC_END_IGNORE_DEPRECATIONS
 	}
 	else {
 		exit (zenity_util_return_exit_code (ZENITY_TIMEOUT));
@@ -528,7 +530,28 @@ zenity_util_add_button (AdwMessageDialog *dialog, const char *button_text,
 	GtkWidget *w = GTK_WIDGET(dialog);
 	g_autofree char *response_str = g_strdup_printf ("%d", response_id);
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	adw_message_dialog_add_response (dialog, response_str, button_text);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 	return w;
+}
+
+void
+zenity_util_setup_dialog_title (gpointer dialog, ZenityData *data)
+{
+	if (! data->dialog_title)
+		return;
+
+	if (ADW_IS_MESSAGE_DIALOG (dialog))
+	{
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+		/* This function sets the window title as well */
+		adw_message_dialog_set_heading (dialog, data->dialog_title);;
+G_GNUC_END_IGNORE_DEPRECATIONS
+	}
+	else if (GTK_IS_WINDOW (dialog))
+	{
+		gtk_window_set_title (dialog, data->dialog_title);
+	}
 }

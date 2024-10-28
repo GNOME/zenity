@@ -72,8 +72,7 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 		return;
 	}
 
-	if (data->dialog_title)
-		adw_message_dialog_set_heading (ADW_MESSAGE_DIALOG(dialog), data->dialog_title);;
+	zenity_util_setup_dialog_title (dialog, data);
 
 	gtk_window_set_icon_name (GTK_WINDOW(dialog),
 			"dialog-question");
