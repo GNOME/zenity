@@ -30,7 +30,6 @@
 #include "zenity.h"
 #include <string.h>
 
-/* TODO: port to GtkColorDialog */
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 static ZenityData *zen_data;
@@ -63,10 +62,6 @@ zenity_colorselection (ZenityData *data, ZenityColorData *color_data)
 		gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER(dialog), &color);
 	}
 
-	/* FIXME: This code and its helper function will need to be adapted/deleted
-	 * when we move to GtkColorDialog, but since we'll be sticking with it for
-	 * the time being, this hotfix should work as a stopgap.
-	 */
 	if (data->ok_label)
 		setup_custom_button (GTK_DIALOG(dialog), GTK_RESPONSE_OK, data->ok_label);
 
