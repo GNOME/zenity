@@ -303,6 +303,19 @@ create_test ("ok_button",
 	}
 );
 
+create_test ("custom_title",
+	"Check the dialogs to ensure there is a custom title visible called 'FOOBAR'.\nIf so, click the affirmative (OK, Yes, etc) on all dialogs that appear.",
+	sub {
+		foreach my $d (get_dialogs_with_plain_vanilla_options (\@all_dialogs_except_notification))
+		{
+			my $test = "$ZENITY $d --title='FOOBAR'";
+			my $ok_exit_status = 0;
+
+			test_cmd_for_exit_status ($test, $ok_exit_status);
+		}
+	}
+);
+
 create_test ("esc_or_close",
 	"Close the dialogs (or hit the ESC key) on all dialogs that appear",
 	sub {
