@@ -69,7 +69,7 @@ zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
 
 	if (forms_data->combo_values)
 	{
-		g_autofree char *combo_values =
+		char *combo_values =
 			g_slist_nth_data (forms_data->combo_values, combo_number);
 
 		if (combo_values)
@@ -157,7 +157,7 @@ zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 
 	if (forms_data->list_values)
 	{
-		g_autofree char *list_values =
+		char *list_values =
 			g_slist_nth_data (forms_data->list_values, list_number);
 
 		if (list_values)
