@@ -929,6 +929,13 @@ static GOptionEntry forms_dialog_options[] =
 			zenity_forms_callback,
 			N_ ("Add a new Password Entry in forms dialog"),
 			N_ ("Field name")},
+		{"add-multiline-entry",
+			'\0',
+			0,
+			G_OPTION_ARG_CALLBACK,
+			zenity_forms_callback,
+			N_ ("Add a new multi-line entry in forms dialog (Since: 4.2)"),
+			N_ ("Field name")},
 		{"add-calendar",
 			'\0',
 			0,
@@ -1172,6 +1179,8 @@ zenity_forms_callback (const char *option_name, const char *value,
 		forms_value->type = ZENITY_FORMS_LIST;
 	else if (g_strcmp0 (option_name, "--add-combo") == 0)
 		forms_value->type = ZENITY_FORMS_COMBO;
+	else if (g_strcmp0 (option_name, "--add-multiline-entry") == 0)
+		forms_value->type = ZENITY_FORMS_MULTLINE_ENTRY;
 
 	results->forms_data->list =
 		g_slist_append (results->forms_data->list, forms_value);
