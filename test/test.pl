@@ -457,12 +457,12 @@ create_test ("list_o_mania",
 
 # ... same with --forms
 create_test ("forms_options",
-	"For 'My entry', enter 'foo'; for 'My password' enter 'bar';\n\tKeep today's date selected for the calendar; select the first item in the list;\n\tselect the second item in both dropdowns.",
+	"For 'My entry', enter 'foo'; for 'My password' enter 'bar'; for 'My text info' enter 'baz<return>boo'\n\tKeep today's date selected for the calendar; select the first item in the list;\n\tselect the second item in both dropdowns.",
 	sub {
-		my $cmd = qq[$ZENITY --forms --add-entry='My entry' --add-password='My password' --add-calendar='My calendar' --add-list='My list' --list-values='foo bar|baz boo|bleh blah|boo urns' --column-values='foo|bar' --add-combo='My combo box' --combo-values='combo1|combo2|combo3' --add-combo='My other combo box' --combo-values='combo4|combo5|combo6' --show-header --text="My Form" --separator='^' --forms-date-format='%F'];
+		my $cmd = qq[$ZENITY --forms --add-entry='My entry' --add-password='My password' --add-calendar='My calendar' --add-list='My list' --list-values='foo bar|baz boo|bleh blah|boo urns' --column-values='foo|bar' --add-combo='My combo box' --combo-values='combo1|combo2|combo3' --add-combo='My other combo box' --combo-values='combo4|combo5|combo6' --show-header --text="My Form" --separator='^' --forms-date-format='%F' --add-multiline-entry='My text info'];
 		my $iso_date = `date --iso-8601`;
 		chomp $iso_date;
-		my $expected_stdout = "foo^bar^$iso_date^foo bar,baz boo,^combo2^combo5";
+		my $expected_stdout = "foo^bar^$iso_date^foo bar,baz boo,^combo2^combo5^baz\nboo";
 
 		test_cmd_for_stdout ($cmd, $expected_stdout);
 	}
