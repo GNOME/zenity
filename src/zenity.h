@@ -142,6 +142,7 @@ typedef struct {
 	GSList *list_values;
 	GSList *column_values;
 	GSList *combo_values;
+	GSList *text_info_values;
 	char *dialog_text;
 	char *separator;
 	char *date_format;
@@ -153,7 +154,8 @@ typedef enum {
 	ZENITY_FORMS_PASSWORD,
 	ZENITY_FORMS_CALENDAR,
 	ZENITY_FORMS_LIST,
-	ZENITY_FORMS_COMBO
+	ZENITY_FORMS_COMBO,
+	ZENITY_FORMS_MULTLINE_ENTRY,
 } ZenityFormsType;
 
 typedef struct {

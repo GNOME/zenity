@@ -304,6 +304,27 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 				combo_count++;
 				break;
 
+			case ZENITY_FORMS_MULTLINE_ENTRY:
+			{
+				GtkWidget *tv = gtk_text_view_new ();
+
+				zenity_value->forms_widget = gtk_scrolled_window_new ();
+				gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW(zenity_value->forms_widget), tv);
+
+				/* Try to keep consistent with the properties set for
+				 * zenity_text_view in the .ui file (used with --text-info)
+				 */
+				gtk_widget_set_vexpand (zenity_value->forms_widget, TRUE);
+				gtk_text_view_set_editable (GTK_TEXT_VIEW(tv), TRUE);
+				gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW(tv), GTK_WRAP_WORD);
+
+				/* Being able to insert tabs in a textview is nice, but NOT
+				 * being able to tab between widgets in forms is just annoying.
+				 */
+				gtk_text_view_set_accepts_tab (GTK_TEXT_VIEW(tv), FALSE);
+			}
+				break;
+
 			default:
 				zenity_value->forms_widget = gtk_entry_new ();
 				break;
@@ -400,6 +421,19 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 					g_print ("%s", gtk_string_object_get_string (strobj));
 				else
 					g_print (" ");
+			}
+				break;
+
+			case ZENITY_FORMS_MULTLINE_ENTRY:
+			{
+				g_autofree char *text = NULL;
+				GtkWidget *tv = gtk_scrolled_window_get_child (GTK_SCROLLED_WINDOW(zenity_value->forms_widget));
+				GtkTextBuffer *buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW(tv));
+				GtkTextIter start, end;
+
+				gtk_text_buffer_get_bounds (buffer, &start, &end);
+				text = gtk_text_buffer_get_text (buffer, &start, &end, FALSE);
+				g_print ("%s", text);
 			}
 				break;
 
