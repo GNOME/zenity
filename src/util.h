@@ -54,7 +54,7 @@ G_BEGIN_DECLS
 		if (ADW_IS_MESSAGE_DIALOG (DIALOG)) \
 			zenity_util_add_button (ADW_MESSAGE_DIALOG (DIALOG), data->extra_label[i], i); \
 		else if (GTK_IS_DIALOG (DIALOG)) \
-			gtk_dialog_add_button (GTK_DIALOG (dialog), data->extra_label[i], i); \
+			gtk_dialog_add_button (GTK_DIALOG (DIALOG), data->extra_label[i], i); \
 	} \
 	G_GNUC_END_IGNORE_DEPRECATIONS
 
