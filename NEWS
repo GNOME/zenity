@@ -1,13 +1,34 @@
-Zenity 4.x.x
-  Changes and fixes since 4.x.x:
+Zenity 4.1.90
+  First alpha release of Zenity for the 4.2 release cycle.
+
+  Changes and fixes since 4.0.2 (4.0.x branch diverged from there):
+  - forms: Add --add-multiline-entry option for multi-line text entry (Logan
+    Rathbone) (!52)
+  - css: Give textviews a border (see discussion on !52) (Logan Rathbone)
+  - forms: Don't free unowned strings (Logan Rathbone)
+  - forms: set hexpand to make more consistent with behaviour of Zenity 3.x
+    (Caleb Connolly) (!51)
+  - colview: Decrease padding to make more consistent with Zenity 3.x (Logan
+    Rathbone)
   - progress: support markup on label update STDIN (Nikolaus Rosenmayr) (#93)
   - progress: Properly setup custom ok/cancel labels (Logan Rathbone) (#100)
   - color: Properly support custom ok/cancel labels (Logan Rathbone)
-  - test: Add test for custom ok/cancel buttons (Logan Rathbone) (prompted by
-    #100)
+  - util: Fix typo in macro (Logan Rathbone)
+  - Disable AdwMessageDialog deprecation warnings for libadwaita >= 1.6 (Logan
+    Rathbone)
+  - test updates (Logan Rathbone)
 
   Translation updates:
-  - [...]
+  - Danial Behzadi (fa)
+  - Emin Tufan Çetin (tr)
+  - Jhonata Fernandes (pt_BR)
+  - Rafael Fontenelle (pt_BR)
+  - Scrambled 777 (hi)
+  - Yuri Chornoivan (uk)
+  - Мирослав Николић (sr)
+  - Anders Jonsson (sv)
+  - Piotr Drąg (pl)
+  - Sergej A. (ru)
 
 Zenity 4.0.2
   Changes and fixes since 4.0.1:
