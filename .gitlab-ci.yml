@@ -1,5 +1,29 @@
 variables:
   DEPENDENCIES: gettext gettext-devel gcc git help2man libadwaita-devel meson gtk4-devel yelp-tools webkitgtk6.0-devel
+  MESON_BUILD_DIR: "_build"
+  TARBALL_ARTIFACT_PATH: "${MESON_BUILD_DIR}/meson-dist/${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
+
+include:
+  - component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
+    inputs:
+      job-stage: "release"
+      dist-job-name: "build-release-tarball"              # <1.>
+      tarball-artifact-path: "${TARBALL_ARTIFACT_PATH}"   # <2.>
+
+stages:
+  - "build"
+  - "release"
+
+build-release-tarball:                                    # <3.>
+  stage: "build"
+  script:
+    - meson setup "${MESON_BUILD_DIR}"
+    - meson dist -C "${MESON_BUILD_DIR}" --include-subprojects
+  artifacts:
+    name: "${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}"
+    when: "always"
+    paths:
+      - "${TARBALL_ARTIFACT_PATH}"
 
 build_fedora:
   image: fedora:latest
