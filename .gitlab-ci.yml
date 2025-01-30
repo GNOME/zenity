@@ -26,6 +26,7 @@ build-release-tarball:                                    # <3.>
       - "${TARBALL_ARTIFACT_PATH}"
 
 build_fedora:
+  stage: "build"
   image: fedora:latest
   before_script:
     - dnf install -y --nogpgcheck $DEPENDENCIES
