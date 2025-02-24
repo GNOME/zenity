@@ -4,22 +4,22 @@
 # Mike Newman <mikegtn@gnome.org>, 2003.
 # Chris Leonard <cjl@laptop.org>, 2012.
 # Bruce Cowan <bruce@bcowan.me.uk>, 2010-2019.
-# Andi Chandler <andi@gowling.com>, 2024.
+# Andi Chandler <andi@gowling.com>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues/\n"
-"POT-Creation-Date: 2024-03-07 16:05+0000\n"
-"PO-Revision-Date: 2024-03-08 19:59+0000\n"
-"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
+"POT-Creation-Date: 2025-02-13 06:17+0000\n"
+"PO-Revision-Date: 2025-02-17 18:24+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: British English <en@li.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
@@ -34,23 +34,27 @@ msgstr "Display dialogue boxes from the command line"
 msgid "Display dialog boxes from shell scripts"
 msgstr "Display dialogue boxes from shell scripts"
 
+#: src/calendar.c:91
+msgid "Invalid date provided. Falling back to today's date.\n"
+msgstr "Invalid date provided. Falling back to today's date.\n"
+
 #: src/fileselection.c:45
 msgid ""
 "Warning: the --extra-button option for --file-selection is deprecated and "
 "will be removed in a future version of zenity. Ignoring.\n"
 msgstr ""
 "Warning: the --extra-button option for --file-selection is deprecated and "
-"will be removed in a future version of zenity. Ignoring.\n"
+"will be removed in a future version of Zenity. Ignoring.\n"
 
-#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:354 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:425 src/zenity.ui:463
 msgid "_OK"
 msgstr "_OK"
 
-#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:350 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:461
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "_Cancel"
 
@@ -763,7 +767,7 @@ msgstr "Time remaining: %lu:%02lu:%02lu"
 #. Translators: do not translate tokens starting with '--'; these
 #. * are command-line options which are not translatable.
 #.
-#: src/progress.c:412
+#: src/progress.c:371
 msgid ""
 "Combining the options --auto-close and --percentage=100 is not supported.\n"
 msgstr ""
@@ -872,7 +876,7 @@ msgstr "Running…"
 msgid "Question"
 msgstr "Question"
 
-#: src/zenity.ui:368 src/zenity.ui:447
+#: src/zenity.ui:368 src/zenity.ui:448
 msgid "Are you sure you want to proceed?"
 msgstr "Are you sure you want to proceed?"
 
@@ -880,15 +884,15 @@ msgstr "Are you sure you want to proceed?"
 msgid "Select items from the list"
 msgstr "Select items from the list"
 
-#: src/zenity.ui:408
+#: src/zenity.ui:409
 msgid "Select items from the list below."
 msgstr "Select items from the list below."
 
-#: src/zenity.ui:419
+#: src/zenity.ui:420
 msgid "Warning"
 msgstr "Warning"
 
-#: src/zenity.ui:484
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "Type your password"
 
