@@ -1,16 +1,17 @@
 # zenity's Portuguese translation.
-# Copyright © 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2011, 2012, 2013, 2014 zenity
+# Copyright © 2003-2025 zenity
 # This file is distributed under the same license as the zenity package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2011, 2012, 2013.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014.
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020, 2021, 2022, 2023, 2024, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2023-12-12 21:25+0000\n"
-"PO-Revision-Date: 2024-05-14 20:48+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues/\n"
+"POT-Creation-Date: 2025-03-11 03:54+0000\n"
+"PO-Revision-Date: 2025-03-29 15:23+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Português <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -18,10 +19,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\\n;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Zenity.desktop.in:3
-#| msgid "About Zenity"
 msgid "Zenity"
 msgstr "Zenity"
 
@@ -33,6 +33,10 @@ msgstr "Exibir caixas de diálogo a partir da linha de comandos"
 msgid "Display dialog boxes from shell scripts"
 msgstr "Exibir caixas de diálogo a partir de scripts de terminal"
 
+#: src/calendar.c:91
+msgid "Invalid date provided. Falling back to today's date.\n"
+msgstr "Data inválida fornecida. Recuando para a data de hoje.\n"
+
 #: src/fileselection.c:45
 msgid ""
 "Warning: the --extra-button option for --file-selection is deprecated and "
@@ -41,15 +45,15 @@ msgstr ""
 "Aviso: a opção --extra-button para --file-selection está obsoleta e será "
 "removida numa versão futura do zenity. Ignorando.\n"
 
-#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:354 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:425 src/zenity.ui:463
 msgid "_OK"
 msgstr "_Aceitar"
 
-#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:350 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:461
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "_Cancelar"
 
@@ -768,7 +772,7 @@ msgstr "Tempo restante: %lu:%02lu:%02lu"
 #. Translators: do not translate tokens starting with '--'; these
 #. * are command-line options which are not translatable.
 #.
-#: src/progress.c:412
+#: src/progress.c:371
 msgid ""
 "Combining the options --auto-close and --percentage=100 is not supported.\n"
 msgstr ""
@@ -878,7 +882,7 @@ msgstr "Em execução..."
 msgid "Question"
 msgstr "Questão"
 
-#: src/zenity.ui:368 src/zenity.ui:447
+#: src/zenity.ui:368 src/zenity.ui:448
 msgid "Are you sure you want to proceed?"
 msgstr "Tem a certeza de que deseja continuar?"
 
@@ -886,15 +890,15 @@ msgstr "Tem a certeza de que deseja continuar?"
 msgid "Select items from the list"
 msgstr "Selecione itens da lista"
 
-#: src/zenity.ui:408
+#: src/zenity.ui:409
 msgid "Select items from the list below."
 msgstr "Selecione itens da lista abaixo."
 
-#: src/zenity.ui:419
+#: src/zenity.ui:420
 msgid "Warning"
 msgstr "Aviso"
 
-#: src/zenity.ui:484
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "Introduza a sua palavra-passe"
 
