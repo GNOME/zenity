@@ -604,6 +604,21 @@ create_test ("file_selection",
 		say "\nClick OK. If OK is greyed out, click Cancel.";
 		test_cmd_for_stdout (qq[$base_cmd --save --filename="$tmpfile"], "$tmpfile");
 
+		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
+		unlink $tmpfile;
+		say "\nClick OK. If OK is greyed out, click Cancel.";
+		test_cmd_for_stdout (qq[$base_cmd --save --filename="file://$tmpfile"], "$tmpfile");
+
+		chomp($tmpfile = `mktemp -d /tmp/zenity_test.XXXXXXXXXX`);
+		say "\nEnter abcd then Click OK. If OK is greyed out, click Cancel.";
+		test_cmd_for_stdout (qq[$base_cmd --save --filename="$tmpfile/"], "${tmpfile}/abcd");
+		rmdir $tmpfile;
+
+		chomp($tmpfile = `mktemp -d /tmp/zenity_test.XXXXXXXXXX`);
+		say "\nEnter abcd then Click OK. If OK is greyed out, click Cancel.";
+		test_cmd_for_stdout (qq[$base_cmd --save --filename="file://$tmpfile/"], "${tmpfile}/abcd");
+		rmdir $tmpfile;
+
 		my $tmpfile2;
 
 		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
