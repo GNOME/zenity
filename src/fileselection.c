@@ -80,38 +80,29 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 	{
 		g_autoptr(GFile) file = g_file_new_for_commandline_arg (file_data->uri);
 		g_autoptr(GError) local_error = NULL;
-		g_autofree char *dir = g_path_get_dirname (file_data->uri);
-		g_autoptr(GFile) dir_gfile = g_file_new_for_path (dir);
+		g_autofree char *basename = g_file_get_basename (file);
 
-		if (file_data->uri[strlen (file_data->uri) - 1] == '/' && g_path_is_absolute (file_data->uri))
+		/* If provided filename is not just a base name, then switch to its provided directory */
+		if (g_strcmp0(basename, file_data->uri) != 0)
 		{
+			g_autoptr(GFile) dir_gfile =
+				file_data->uri[strlen (file_data->uri) - 1] == G_DIR_SEPARATOR
+				? g_object_ref (file)
+				: g_file_get_parent (file);
+
 			gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER(dialog), dir_gfile, &local_error);
 
 			if (local_error)
 				g_warning ("%s", local_error->message);
-
-			goto done_uri_processing;
 		}
 
-		gtk_file_chooser_set_file (GTK_FILE_CHOOSER(dialog), file, &local_error);
-
-		if (local_error)
-			g_warning ("%s", local_error->message);
-
-		/* If the specified URI contains a file which does not exist,
-		 * GtkFileChooserNative simply chooses the nearest directory which does
-		 * exist, which is fine for 'open' mode. However, in 'save' mode, a
-		 * user providing a non-existing filename typically means they want
+		/* In 'save' mode, a user providing a filename typically means they want
 		 * that filename to be the suggested 'save-as' filename.
 		 */
-		if (file_data->save && !g_file_query_exists (file, NULL))
-		{
-			g_autofree char *basename = NULL;
-			gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER(dialog), basename = g_file_get_basename (file));
-		}
-	}
+		if (file_data->save && file_data->uri[strlen (file_data->uri) - 1] != G_DIR_SEPARATOR)
+			gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER(dialog), basename);
 
-done_uri_processing:
+	}
 
 	if (file_data->multi)
 		gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER(dialog), TRUE);
