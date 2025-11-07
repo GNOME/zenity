@@ -377,7 +377,8 @@ zenity_tree_column_view_emit_activated (ZenityTreeColumnView *self)
 static void
 cv_check_or_radio_activated_cb (ZenityTreeColumnView *self, guint position, GtkColumnView *cv)
 {
-	ZenityTreeRow *row = g_list_model_get_item (self->model, position);
+	GListModel *sel_model = G_LIST_MODEL(zenity_tree_column_view_get_selection_model (self));
+	ZenityTreeRow *row = g_list_model_get_item (sel_model, position);
 	ZenityTreeItem *item = zenity_tree_row_get_item (row, 0);
 	GtkWidget *item_child = zenity_tree_item_get_child (item);
 	GtkCheckButton *cb;
