@@ -29,6 +29,7 @@ typedef struct {
 	int exit_code;
 	int timeout_delay;
 	gboolean modal;
+	char *app_id;
 } ZenityData;
 
 typedef struct {

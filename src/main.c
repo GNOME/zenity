@@ -141,6 +141,7 @@ main (int argc, char *argv[])
 	g_autoptr(AdwApplication) app = NULL;
 	int status;
 	ZenityParsingOptions *results;
+	const char *custom_app_id = NULL;
 
 	/* <i18n> */
 	setlocale (LC_ALL, "");
@@ -156,8 +157,10 @@ main (int argc, char *argv[])
 	g_log_set_handler ("Adwaita", G_LOG_LEVEL_MESSAGE, (GLogFunc)dummy_log_func, NULL);
 
 	results = zenity_option_parse (argc, argv);
+	custom_app_id = results->data->app_id;
 
-	app = adw_application_new (APP_ID, G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
+	app = adw_application_new (custom_app_id ? custom_app_id : APP_ID,
+			G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
 	g_signal_connect (app, "handle-local-options", G_CALLBACK(local_options_cb), results);
 	g_signal_connect (app, "command-line", G_CALLBACK(command_line_cb), results);
 

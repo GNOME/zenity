@@ -51,6 +51,7 @@ static char *zenity_general_cancel_button;
 static char **zenity_general_extra_buttons;
 static gboolean zenity_general_modal;
 static gboolean zenity_general_dialog_ellipsize;
+static char *zenity_general_app_id;
 
 /* Calendar Dialog Options */
 static gboolean zenity_calendar_active;
@@ -218,6 +219,13 @@ static GOptionEntry general_options[] =
 			G_OPTION_ARG_NONE,
 			&zenity_general_modal,
 			N_ ("Set the modal hint"),
+			NULL},
+		{"app-id",
+			'\0',
+			0,
+			G_OPTION_ARG_STRING,
+			&zenity_general_app_id,
+			N_ ("Set the application identifier (Since: 4.4)"),
 			NULL},
 		{"attach",
 			'\0',
@@ -1217,6 +1225,7 @@ zenity_general_pre_callback (GOptionContext *context, GOptionGroup *group,
 	zenity_general_dialog_no_markup = FALSE;
 	zenity_general_timeout_delay = -1;
 	zenity_general_modal = FALSE;
+	zenity_general_app_id = NULL;
 
 	return TRUE;
 }
@@ -1427,6 +1436,14 @@ zenity_general_post_callback (GOptionContext *context, GOptionGroup *group,
 	results->data->cancel_label = zenity_general_cancel_button;
 	results->data->extra_label = zenity_general_extra_buttons;
 	results->data->modal = zenity_general_modal;
+
+	if (zenity_general_app_id)
+	{
+		if (g_application_id_is_valid (zenity_general_app_id))
+			results->data->app_id = zenity_general_app_id;
+		else
+			g_printerr (_("Warning: the application ID passed to --app-id is not valid. Falling back to the default generic ID.\n"));
+	}
 
 	/* Deprecated options */
 
