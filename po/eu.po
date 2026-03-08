@@ -5,14 +5,14 @@
 # Alberto Fernández Benito <afernn@euskalnet.net>, 2003.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2003, 2004, 2005, 2006, 2007, 2008, 2010.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2018.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2023, 2024.
+# Asier Saratsua Garmendia <asiersarasua@ni.eus>, 2023, 2024, 2026.
 #
 msgid ""
 msgstr "Project-Id-Version: zenity master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2024-01-05 05:57+0000\n"
-"PO-Revision-Date: 2024-02-25 17:58+0100\n"
-"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues/\n"
+"POT-Creation-Date: 2024-10-26 18:55+0000\n"
+"PO-Revision-Date: 2026-03-08 17:58+0100\n"
+"Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,11 @@ msgstr "Project-Id-Version: zenity master\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/org.gnome.Zenity.desktop.in:3
+#: data/org.gnome.Zenity.desktop.in:2
 msgid "Zenity"
 msgstr "Zenity"
 
-#: data/org.gnome.Zenity.desktop.in:4
+#: data/org.gnome.Zenity.desktop.in:3
 msgid "Display dialog boxes from the command line"
 msgstr "Bistaratu elkarrizketa-koadroak komando-lerrotik"
 
@@ -32,25 +32,32 @@ msgstr "Bistaratu elkarrizketa-koadroak komando-lerrotik"
 msgid "Display dialog boxes from shell scripts"
 msgstr "Bistaratu elkarrizketa-koadroak shell-eko script-etatik"
 
+#: src/calendar.c:91
+#, c-format
+msgid "Invalid date provided. Falling back to today's date.\n"
+msgstr "Datu baliogabeak eman dira. Gaurko data erabiliko da.\n"
+
 #: src/fileselection.c:45
+#, c-format
 msgid ""
 "Warning: the --extra-button option for --file-selection is deprecated and "
 "will be removed in a future version of zenity. Ignoring.\n"
 msgstr "Abisua: --extra-button aukera zaharkitua dago --file-selection ekintzarako eta kendu egingo da zenity aplikazioaren bertsio berrietan. Ez ikusiarena egiten.\n"
 
-#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:354 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:425 src/zenity.ui:463
 msgid "_OK"
 msgstr "_Ados"
 
-#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:350 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:461
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "_Utzi"
 
 #: src/main.c:124
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
 msgstr "Elkarrizketa-koadro mota bat zehaztu behar duzu. Ikusi 'zenity --help' xehetasun gehiagorako\n"
 
@@ -63,10 +70,12 @@ msgid "_Yes"
 msgstr "_Bai"
 
 #: src/notification.c:62
+#, c-format
 msgid "Could not parse message\n"
 msgstr "Ezin izan da mezua aztertu\n"
 
 #: src/notification.c:140
+#, c-format
 msgid "Could not parse command from stdin\n"
 msgstr "Ezin izan da stdin-eko komandoa analizatu\n"
 
@@ -540,30 +549,35 @@ msgid "Print version"
 msgstr "Inprimatu bertsioa"
 
 #: src/option.c:1079
+#, c-format
 msgid ""
 "Warning: --icon-name is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
 msgstr "Abisua: --icon-name zaharkitua dago eta kendu egingo da zenity aplikazioaren bertsio berrietan; erabili --icon.\n"
 
 #: src/option.c:1086
+#, c-format
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
 msgstr "Abisua: --window-icon zaharkitua dago eta kendu egingo da zenity aplikazioaren bertsio berrietan; erabili --icon.\n"
 
 #: src/option.c:1093
+#, c-format
 msgid ""
 "Warning: --confirm-overwrite is deprecated and will be removed in a future "
 "version of zenity. Ignoring.\n"
 msgstr "Abisua: --confirm-overwrite zaharkitua dago eta kendu egingo da zenity aplikazioaren bertsio berrietan. Ez ikusiarena egiten.\n"
 
 #: src/option.c:1100
+#, c-format
 msgid ""
 "Warning: --attach is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
 msgstr "Abisua: --attach zaharkitua dago eta kendu egingo da zenity aplikazioaren bertsio berrietan. Ez ikusiarena egiten.\n"
 
 #: src/option.c:1107
+#, c-format
 msgid ""
 "Warning: --hint is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
@@ -706,6 +720,7 @@ msgid "Show miscellaneous options"
 msgstr "Erakutsi hainbat aukera"
 
 #: src/option.c:2249
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr "Aukera hau ez dago erabilgarri. Ikusi --help erabilera guztiak ezagutzeko.\n"
@@ -716,6 +731,7 @@ msgid "--%s is not supported for this dialog\n"
 msgstr "--%s ez da onartzen elkarrizketa-koadro honetan\n"
 
 #: src/option.c:2258
+#, c-format
 msgid "Two or more dialog options specified\n"
 msgstr "Elkarrizketa-koadroaren bi aukera edo gehiago zehaztu dira\n"
 
@@ -742,38 +758,45 @@ msgstr "Geratzen den denbora: %lu:%02lu:%02lu"
 #. Translators: do not translate tokens starting with '--'; these
 #. * are command-line options which are not translatable.
 #.
-#: src/progress.c:412
+#: src/progress.c:371
+#, c-format
 msgid ""
 "Combining the options --auto-close and --percentage=100 is not supported.\n"
 msgstr "--auto-close eta --percentage=100 aukerak ezin dira konbinatu.\n"
 
 #: src/scale.c:62
+#, c-format
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Gehienezko balioak gutxieneko balioa baino handiagoa izan behar du.\n"
 
 #: src/scale.c:70
+#, c-format
 msgid "Value out of range.\n"
 msgstr "Balioa barrutitik kanpo.\n"
 
 #: src/tree.c:57
+#, c-format
 msgid ""
 "Warning: --mid-search is deprecated and will be removed in a future version "
 "of zenity. Ignoring.\n"
 msgstr "Abisua: --mid-search zaharkitua dago eta kendu egingo da zenity aplikazioaren bertsio berrietan. Ez ikusiarena egiten.\n"
 
 #: src/tree.c:263
+#, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Ez da zutabe izenbururik zehaztu zerrendaren elkarrizketa-koadroan\n"
 
 #. Translators: --checklist and --radiolist should not be translated
 #. * (command-line options).
 #: src/tree.c:272
+#, c-format
 msgid ""
 "Insufficient columns specified for List dialog (at least 2 are required for "
 "--checklist or --radiolist).\n"
 msgstr "Zutabe gutxiegi zehaztu dira zerrenda mota elkarrizketa-koadrorako (gutxienez 2 behar dira --checklist edo --radiolist erabiltzeko).\n"
 
 #: src/tree.c:280
+#, c-format
 msgid "You should use only one List dialog type.\n"
 msgstr "'Zerrenda' motako elkarrizketa-koadroan bakarrik erabili beharko zenuke.\n"
 
@@ -846,7 +869,7 @@ msgstr "Exekutatzen..."
 msgid "Question"
 msgstr "Galdera"
 
-#: src/zenity.ui:368 src/zenity.ui:447
+#: src/zenity.ui:368 src/zenity.ui:448
 msgid "Are you sure you want to proceed?"
 msgstr "Ziur zaude jarraitu nahi duzula?"
 
@@ -854,15 +877,15 @@ msgstr "Ziur zaude jarraitu nahi duzula?"
 msgid "Select items from the list"
 msgstr "Hautatu elementuak zerrendatik"
 
-#: src/zenity.ui:408
+#: src/zenity.ui:409
 msgid "Select items from the list below."
 msgstr "Hautatu elementuak beheko zerrendatik."
 
-#: src/zenity.ui:419
+#: src/zenity.ui:420
 msgid "Warning"
 msgstr "Abisua"
 
-#: src/zenity.ui:484
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "Idatzi zure pasahitza"
 
