@@ -6,71 +6,77 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zenity master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues\n"
-"POT-Creation-Date: 2024-01-05 01:05+0000\n"
-"PO-Revision-Date: 2024-03-08 10:51+0500\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/zenity/issues/\n"
+"POT-Creation-Date: 2025-07-06 05:33+0000\n"
+"PO-Revision-Date: 2026-03-14 17:50+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/org.gnome.Zenity.desktop.in:3
+#: data/org.gnome.Zenity.desktop.in:2
 msgid "Zenity"
 msgstr "Zenity"
 
-#: data/org.gnome.Zenity.desktop.in:4
+#: data/org.gnome.Zenity.desktop.in:3
 msgid "Display dialog boxes from the command line"
 msgstr "Командалық жолдан сұхбат терезелерін көрсету"
 
-#: src/about.c:65
+#: src/about.c:67
 msgid "Display dialog boxes from shell scripts"
 msgstr "Қоршам скриптерінен сұхбат терезелерін көрсету"
 
-#: src/calendar.c:91
+#: src/calendar.c:90
+#, c-format
 msgid "Invalid date provided. Falling back to today's date.\n"
-msgstr ""
+msgstr "Көрсетілген күн жарамсыз. Бүгінгі күнге қайту.\n"
 
 #: src/fileselection.c:45
+#, c-format
 msgid ""
-"Warning: the --extra-button option for --file-selection is deprecated and "
-"will be removed in a future version of zenity. Ignoring.\n"
+"Warning: the --extra-button option for --file-selection is deprecated and will "
+"be removed in a future version of zenity. Ignoring.\n"
 msgstr ""
+"Ескерту: --file-selection үшін --extra-button опциясы ескірген және zenity-дің "
+"болашақ нұсқаларында өшіріледі. Елемеу.\n"
 
-#: src/fileselection.c:68 src/progress.c:395 src/zenity.ui:16 src/zenity.ui:54
+#: src/fileselection.c:68 src/progress.c:356 src/zenity.ui:16 src/zenity.ui:54
 #: src/zenity.ui:89 src/zenity.ui:140 src/zenity.ui:178 src/zenity.ui:219
-#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:424 src/zenity.ui:462
+#: src/zenity.ui:279 src/zenity.ui:386 src/zenity.ui:425 src/zenity.ui:463
 msgid "_OK"
 msgstr "О_К"
 
-#: src/fileselection.c:69 src/progress.c:391 src/zenity.ui:15 src/zenity.ui:53
+#: src/fileselection.c:69 src/progress.c:352 src/zenity.ui:15 src/zenity.ui:53
 #: src/zenity.ui:88 src/zenity.ui:139 src/zenity.ui:218 src/zenity.ui:385
-#: src/zenity.ui:461
+#: src/zenity.ui:462
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
 #: src/main.c:124
+#, c-format
 msgid "You must specify a dialog type. See 'zenity --help' for details\n"
-msgstr ""
-"Сұхбат түрін көрсету керек. Көбірек білу үшін 'zenity --help' қараңыз\n"
+msgstr "Сұхбат түрін көрсету керек. Көбірек білу үшін 'zenity --help' қараңыз\n"
 
-#: src/msg.c:89
+#: src/msg.c:90
 msgid "_No"
 msgstr "_Жоқ"
 
-#: src/msg.c:90
+#: src/msg.c:91
 msgid "_Yes"
 msgstr "_Иә"
 
 #: src/notification.c:62
+#, c-format
 msgid "Could not parse message\n"
 msgstr "Хабарламаны талдау мүмкін емес\n"
 
 #: src/notification.c:140
+#, c-format
 msgid "Could not parse command from stdin\n"
-msgstr ""
+msgstr "stdin-нен команданы өңдеу мүмкін емес\n"
 
 #: src/option.c:170
 msgid "Set the dialog title"
@@ -113,7 +119,7 @@ msgstr "ОК батырмасынын жазуын орнату"
 #: src/option.c:304 src/option.c:311 src/option.c:335 src/option.c:382
 #: src/option.c:491 src/option.c:587 src/option.c:608 src/option.c:625
 #: src/option.c:686 src/option.c:761 src/option.c:768 src/option.c:818
-#: src/option.c:865 src/option.c:997
+#: src/option.c:865 src/option.c:1004
 msgid "TEXT"
 msgstr "МӘТІН"
 
@@ -127,11 +133,11 @@ msgstr "Қосымша батырманы қосу"
 
 #: src/option.c:220
 msgid "Set the modal hint"
-msgstr ""
+msgstr "Модальді нұсқауды орнату"
 
 #: src/option.c:227 src/option.c:473 src/option.c:569 src/option.c:607
 msgid "DEPRECATED; does nothing"
-msgstr ""
+msgstr "ЕСКІРГЕН; ештеңе істемейді"
 
 #: src/option.c:228
 msgid "WINDOW"
@@ -139,7 +145,7 @@ msgstr "ТЕРЕЗЕ"
 
 #: src/option.c:234 src/option.c:241
 msgid "DEPRECATED; use `--icon`"
-msgstr ""
+msgstr "ЕСКІРГЕН; `--icon` таңбашасын қолданыңыз"
 
 #: src/option.c:235 src/option.c:242 src/option.c:342 src/option.c:389
 #: src/option.c:594 src/option.c:693 src/option.c:825
@@ -152,7 +158,7 @@ msgstr "Күнтізбе сұхбатын көрсету"
 
 #: src/option.c:258 src/option.c:303 src/option.c:334 src/option.c:381
 #: src/option.c:490 src/option.c:624 src/option.c:685 src/option.c:817
-#: src/option.c:864 src/option.c:996
+#: src/option.c:864 src/option.c:1003
 msgid "Set the dialog text"
 msgstr "Сұхбат мәтінін орнату"
 
@@ -180,11 +186,11 @@ msgstr "Күнтізбе жылын орнату"
 msgid "YEAR"
 msgstr "ЖЫЛ"
 
-#: src/option.c:286 src/option.c:1010
+#: src/option.c:286 src/option.c:1017
 msgid "Set the format for the returned date"
 msgstr "Қайтарылған күн пішімін орнату"
 
-#: src/option.c:287 src/option.c:1011
+#: src/option.c:287 src/option.c:1018
 msgid "PATTERN"
 msgstr "ҮЛГІ"
 
@@ -194,11 +200,11 @@ msgstr "Мәтінді енгізу сұхбат терезесін көрсет
 
 #: src/option.c:310
 msgid "Set the entry text"
-msgstr ""
+msgstr "Енгізу мәтінін орнату"
 
 #: src/option.c:317
 msgid "Hide the entry text"
-msgstr ""
+msgstr "Енгізу мәтінін жасыру"
 
 #: src/option.c:327
 msgid "Display error dialog"
@@ -211,17 +217,19 @@ msgstr "Таңбаша атауын орнату"
 
 #: src/option.c:348 src/option.c:395 src/option.c:699 src/option.c:831
 msgid "Do not enable text wrapping"
-msgstr ""
+msgstr "Мәтінді тасымалдауды іске қоспау"
 
 #: src/option.c:355 src/option.c:402 src/option.c:706 src/option.c:838
 msgid "Do not enable Pango markup"
-msgstr ""
+msgstr "Pango белгілеуін іске қоспау"
 
 #: src/option.c:362 src/option.c:409 src/option.c:720 src/option.c:845
 msgid ""
 "Enable ellipsizing in the dialog text. This fixes the high window size with "
 "long texts"
 msgstr ""
+"Сұхбат терезесі мәтінінде көпнүкте қоюды іске қосу. Бұл ұзын мәтіндер кезінде "
+"терезенің биік болуын түзетеді"
 
 #: src/option.c:374
 msgid "Display info dialog"
@@ -251,17 +259,17 @@ msgstr "Тек буманы таңдау режимін іске қосу"
 msgid "Activate save mode"
 msgstr "Сақтау режимін белсендіру"
 
-#: src/option.c:456 src/option.c:525 src/option.c:1003
+#: src/option.c:456 src/option.c:525 src/option.c:1010
 msgid "Set output separator character"
 msgstr "Шығыс ажыратқыш таңбасын орнату"
 
-#: src/option.c:457 src/option.c:526 src/option.c:1004
+#: src/option.c:457 src/option.c:526 src/option.c:1011
 msgid "SEPARATOR"
 msgstr "АЖЫРАТҚЫШ"
 
 #: src/option.c:463
 msgid "Set a filename filter"
-msgstr ""
+msgstr "Файл атының сүзгісін орнату"
 
 #. Help for file-filter argument (name and patterns for file
 #. selection)
@@ -275,7 +283,7 @@ msgstr "Тізім сұхбат терезесін көрсету"
 
 #: src/option.c:497
 msgid "Set the column header"
-msgstr ""
+msgstr "Баған тақырыптамасын орнату"
 
 #: src/option.c:498
 msgid "COLUMN"
@@ -283,29 +291,30 @@ msgstr "БАҒАН"
 
 #: src/option.c:504
 msgid "Use check boxes for the first column"
-msgstr ""
+msgstr "Бірінші баған үшін құсбелгілерді қолдану"
 
 #: src/option.c:511
 msgid "Use radio buttons for the first column"
-msgstr ""
+msgstr "Бірінші баған үшін ауыстырғыш батырмаларды қолдану"
 
 #: src/option.c:518
 msgid "Use an image for the first column"
-msgstr ""
+msgstr "Бірінші баған үшін суретті қолдану"
 
 #: src/option.c:532
 msgid "Allow multiple rows to be selected"
-msgstr ""
+msgstr "Бірнеше жолды таңдауға рұқсат ету"
 
 #: src/option.c:539 src/option.c:753
 msgid "Allow changes to text"
-msgstr ""
+msgstr "Мәтінді өзгертуге рұқсат ету"
 
 #: src/option.c:546
 msgid ""
-"Print a specific column (Default is 1. 'ALL' can be used to print all "
-"columns)"
+"Print a specific column (Default is 1. 'ALL' can be used to print all columns)"
 msgstr ""
+"Нақты бір бағанды басып шығару (Бастапқы мәні — 1. Барлық бағандарды басып "
+"шығару үшін 'ALL' қолдануға болады)"
 
 #. Column index number to print out on a list dialog
 #: src/option.c:549 src/option.c:556
@@ -314,11 +323,11 @@ msgstr "САН"
 
 #: src/option.c:555
 msgid "Hide a specific column"
-msgstr ""
+msgstr "Нақты бір бағанды жасыру"
 
 #: src/option.c:562
 msgid "Hide the column headers"
-msgstr ""
+msgstr "Баған тақырыптамаларын жасыру"
 
 #: src/option.c:579
 msgid "Display notification"
@@ -330,7 +339,7 @@ msgstr "Хабарлама мәтінін орнату"
 
 #: src/option.c:600
 msgid "Listen for commands on stdin"
-msgstr ""
+msgstr "stdin арқылы командаларды тыңдау"
 
 #: src/option.c:617
 msgid "Display progress indication dialog"
@@ -338,7 +347,7 @@ msgstr "Прогресс үрдісі сұхбат терезесін көрсе
 
 #: src/option.c:631
 msgid "Set initial percentage"
-msgstr ""
+msgstr "Бастапқы пайызды орнату"
 
 #: src/option.c:632
 msgid "PERCENTAGE"
@@ -346,16 +355,16 @@ msgstr "ПАЙЫЗДЫҚ"
 
 #: src/option.c:638
 msgid "Pulsate progress bar"
-msgstr ""
+msgstr "Прогресс жолағының пульсациясы"
 
 #: src/option.c:646
 #, no-c-format
 msgid "Dismiss the dialog when 100% has been reached"
-msgstr ""
+msgstr "100%-ға жеткенде сұхбат терезесін жабу"
 
 #: src/option.c:653
 msgid "Kill parent process if Cancel button is pressed"
-msgstr ""
+msgstr "Бас тарту батырмасы басылғанда аталық процесті жою"
 
 #: src/option.c:660
 msgid "Hide Cancel button"
@@ -364,7 +373,7 @@ msgstr "Бас тарту батырмасын жасыру"
 #: src/option.c:668
 #, no-c-format
 msgid "Estimate when progress will reach 100%"
-msgstr ""
+msgstr "Прогрестің 100%-ға қашан жететінін бағалау"
 
 #: src/option.c:678
 msgid "Display question dialog"
@@ -372,11 +381,11 @@ msgstr "Сұрақ сұхбат терезесін көрсету"
 
 #: src/option.c:713
 msgid "Give Cancel button focus by default"
-msgstr ""
+msgstr "Үнсіз келісім бойынша Бас тарту батырмасына фокусты беру"
 
 #: src/option.c:729
 msgid "Suppress OK and Cancel buttons"
-msgstr ""
+msgstr "OK және Бас тарту батырмаларын жасыру"
 
 #: src/option.c:739
 msgid "Display text information dialog"
@@ -392,7 +401,7 @@ msgstr "Мәтін қарібін орнату"
 
 #: src/option.c:767
 msgid "Enable an I read and agree checkbox"
-msgstr ""
+msgstr "«Мен оқыдым және келісемін» құсбелгісін іске қосу"
 
 #: src/option.c:775
 msgid "Enable HTML support"
@@ -400,13 +409,15 @@ msgstr "HTML қолдауын іске қосу"
 
 #: src/option.c:782
 msgid ""
-"Do not enable user interaction with the WebView. Only works if you use --"
-"html option"
+"Do not enable user interaction with the WebView. Only works if you use --html "
+"option"
 msgstr ""
+"WebView-мен пайдаланушы әрекеттесуін іске қоспау. Тек --html опциясы "
+"қолданылғанда жұмыс істейді"
 
 #: src/option.c:790
 msgid "Set an URL instead of a file. Only works if you use --html option"
-msgstr ""
+msgstr "Файл орнына URL орнату. Тек --html опциясы қолданылғанда жұмыс істейді"
 
 #: src/option.c:792
 msgid "URL"
@@ -415,6 +426,8 @@ msgstr "URL"
 #: src/option.c:799
 msgid "Auto scroll the text to the end. Only when text is captured from stdin"
 msgstr ""
+"Мәтінді соңына дейін автоматты айналдыру. Тек мәтін stdin-нен алынғанда жұмыс "
+"істейді"
 
 #: src/option.c:810
 msgid "Display warning dialog"
@@ -429,7 +442,7 @@ msgid "Set initial value"
 msgstr "Бастапқы мәнін орнату"
 
 #: src/option.c:872 src/option.c:879 src/option.c:886 src/option.c:893
-#: src/option.c:1045
+#: src/option.c:1052
 msgid "VALUE"
 msgstr "МӘНІ"
 
@@ -447,7 +460,7 @@ msgstr "Қадам өлшемін орнату"
 
 #: src/option.c:899
 msgid "Print partial values"
-msgstr ""
+msgstr "Жартылай мәндерді басып шығару"
 
 #: src/option.c:906
 msgid "Hide value"
@@ -459,267 +472,291 @@ msgstr "Формалар сұхбат терезесін көрсету"
 
 #: src/option.c:923
 msgid "Add a new Entry in forms dialog"
-msgstr ""
+msgstr "Формалар сұхбат терезесіне жаңа енгізу өрісін қосу"
 
-#: src/option.c:924 src/option.c:931
+#: src/option.c:924 src/option.c:931 src/option.c:938
 msgid "Field name"
 msgstr "Өріс аты"
 
 #: src/option.c:930
 msgid "Add a new Password Entry in forms dialog"
-msgstr ""
+msgstr "Формалар сұхбат терезесіне жаңа пароль енгізу өрісін қосу"
 
 #: src/option.c:937
-msgid "Add a new Calendar in forms dialog"
+msgid "Add a new multi-line entry in forms dialog (Since: 4.2)"
 msgstr ""
-
-#: src/option.c:938
-msgid "Calendar field name"
-msgstr ""
+"Формалар сұхбат терезесіне жаңа көпжолды енгізу өрісін қосу (Бастап: 4.2)"
 
 #: src/option.c:944
-msgid "Add a new List in forms dialog"
-msgstr ""
+msgid "Add a new Calendar in forms dialog"
+msgstr "Формалар сұхбат терезесіне жаңа күнтізбе қосу"
 
 #: src/option.c:945
-msgid "List field and header name"
-msgstr ""
+msgid "Calendar field name"
+msgstr "Күнтізбе өрісінің аты"
 
 #: src/option.c:951
-msgid "List of values for List"
-msgstr ""
+msgid "Add a new List in forms dialog"
+msgstr "Формалар сұхбат терезесіне жаңа тізім қосу"
 
-#: src/option.c:952 src/option.c:959 src/option.c:973
-msgid "List of values separated by |"
-msgstr ""
+#: src/option.c:952
+msgid "List field and header name"
+msgstr "Тізім өрісі мен тақырыптама аты"
 
 #: src/option.c:958
-msgid "List of values for columns"
-msgstr ""
+msgid "List of values for List"
+msgstr "Тізім үшін мәндер тізімі"
+
+#: src/option.c:959 src/option.c:966 src/option.c:980
+msgid "List of values separated by |"
+msgstr "| таңбасымен ажыратылған мәндер тізімі"
 
 #: src/option.c:965
-msgid "Add a new combo box in forms dialog"
-msgstr ""
-
-#: src/option.c:966
-msgid "Combo box field name"
-msgstr ""
+msgid "List of values for columns"
+msgstr "Бағандар үшін мәндер тізімі"
 
 #: src/option.c:972
-msgid "List of values for combo box"
-msgstr ""
+msgid "Add a new combo box in forms dialog"
+msgstr "Формалар сұхбат терезесіне жаңа тізімді таңдау өрісін қосу"
 
-#: src/option.c:989
+#: src/option.c:973
+msgid "Combo box field name"
+msgstr "Тізімді таңдау өрісінің аты"
+
+#: src/option.c:979
+msgid "List of values for combo box"
+msgstr "Тізімді таңдау өрісіне арналған мәндер тізімі"
+
+#: src/option.c:996
 msgid "Show the columns header"
 msgstr "Бағандар тақырыптамасын көрсету"
 
-#: src/option.c:1020
+#: src/option.c:1027
 msgid "Display password dialog"
 msgstr "Пароль сұхбат терезесін көрсету"
 
-#: src/option.c:1027
+#: src/option.c:1034
 msgid "Display the username option"
 msgstr "Пайдаланушының аты параметрін көрсету"
 
-#: src/option.c:1037
+#: src/option.c:1044
 msgid "Display color selection dialog"
 msgstr "Түсті таңдау сұхбат терезесін көрсету"
 
-#: src/option.c:1044
+#: src/option.c:1051
 msgid "Set the color"
 msgstr "Түсті орнату"
 
-#: src/option.c:1051
+#: src/option.c:1058
 msgid "Show the palette"
 msgstr "Палитраны көрсету"
 
-#: src/option.c:1061
+#: src/option.c:1068
 msgid "About zenity"
 msgstr "Zenity туралы"
 
-#: src/option.c:1068
+#: src/option.c:1075
 msgid "Print version"
 msgstr "Нұсқа ақпаратын шығару"
 
-#: src/option.c:1079
-msgid ""
-"Warning: --icon-name is deprecated and will be removed in a future version "
-"of zenity; Treating as --icon.\n"
-msgstr ""
-
 #: src/option.c:1086
+#, c-format
+msgid ""
+"Warning: --icon-name is deprecated and will be removed in a future version of "
+"zenity; Treating as --icon.\n"
+msgstr ""
+"Ескерту: --icon-name ескірген және zenity-дің болашақ нұсқаларында өшіріледі; "
+"--icon ретінде қарастырылады.\n"
+
+#: src/option.c:1093
+#, c-format
 msgid ""
 "Warning: --window-icon is deprecated and will be removed in a future version "
 "of zenity; Treating as --icon.\n"
 msgstr ""
+"Ескерту: --window-icon ескірген және zenity-дің болашақ нұсқаларында "
+"өшіріледі; --icon ретінде қарастырылады.\n"
 
-#: src/option.c:1093
+#: src/option.c:1100
+#, c-format
 msgid ""
 "Warning: --confirm-overwrite is deprecated and will be removed in a future "
 "version of zenity. Ignoring.\n"
 msgstr ""
+"Ескерту: --confirm-overwrite ескірген және zenity-дің болашақ нұсқаларында "
+"өшіріледі. Елемеу.\n"
 
-#: src/option.c:1100
+#: src/option.c:1107
+#, c-format
 msgid ""
 "Warning: --attach is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
 msgstr ""
+"Ескерту: --attach ескірген және zenity-дің болашақ нұсқаларында өшіріледі. "
+"Елемеу.\n"
 
-#: src/option.c:1107
+#: src/option.c:1114
+#, c-format
 msgid ""
 "Warning: --hint is deprecated and will be removed in a future version of "
 "zenity. Ignoring.\n"
 msgstr ""
+"Ескерту: --hint ескірген және zenity-дің болашақ нұсқаларында өшіріледі. "
+"Елемеу.\n"
 
-#: src/option.c:2028
+#: src/option.c:2037
 msgid "General options"
 msgstr "Жалпы опциялар"
 
-#: src/option.c:2029
+#: src/option.c:2038
 msgid "Show general options"
 msgstr "Жалпы опцияларды көрсету"
 
-#: src/option.c:2041
+#: src/option.c:2050
 msgid "Calendar options"
 msgstr "Күнтізбе опциялары"
 
-#: src/option.c:2042
+#: src/option.c:2051
 msgid "Show calendar options"
 msgstr "Күнтізбе опцияларын көрсету"
 
-#: src/option.c:2054
+#: src/option.c:2063
 msgid "Text entry options"
 msgstr "Мәтін енгізу параметрлері"
 
-#: src/option.c:2055
+#: src/option.c:2064
 msgid "Show text entry options"
 msgstr "Мәтін енгізу параметрлерін көрсету"
 
-#: src/option.c:2067
+#: src/option.c:2076
 msgid "Error options"
 msgstr "Қате параметрлері"
 
-#: src/option.c:2067
+#: src/option.c:2076
 msgid "Show error options"
 msgstr "Қате параметрлерін көрсету"
 
-#: src/option.c:2077
+#: src/option.c:2086
 msgid "Info options"
 msgstr "Ақпарат параметрлері"
 
-#: src/option.c:2077
+#: src/option.c:2086
 msgid "Show info options"
 msgstr "Ақпарат параметрлерін көрсету"
 
-#: src/option.c:2087
+#: src/option.c:2096
 msgid "File selection options"
 msgstr "Файлды таңдау параметрлері"
 
-#: src/option.c:2088
+#: src/option.c:2097
 msgid "Show file selection options"
 msgstr "Файлды таңдау параметрлерін көрсету"
 
-#: src/option.c:2100
+#: src/option.c:2109
 msgid "List options"
 msgstr "Тізім параметрлері"
 
-#: src/option.c:2100
+#: src/option.c:2109
 msgid "Show list options"
 msgstr "Тізім параметрлерін көрсету"
 
-#: src/option.c:2110
+#: src/option.c:2119
 msgid "Notification options"
 msgstr "Хабарландыру баптаулары"
 
-#: src/option.c:2111
+#: src/option.c:2120
 msgid "Show notification options"
 msgstr "Хабарландыру параметрлерін көрсету"
 
-#: src/option.c:2124
+#: src/option.c:2133
 msgid "Progress options"
 msgstr "Прогресс параметрлері"
 
-#: src/option.c:2125
+#: src/option.c:2134
 msgid "Show progress options"
 msgstr "Прогресс параметрлерін көрсету"
 
-#: src/option.c:2137
+#: src/option.c:2146
 msgid "Question options"
 msgstr "Сұрақ параметрлері"
 
-#: src/option.c:2138
+#: src/option.c:2147
 msgid "Show question options"
 msgstr "Сұрақ параметрлерін көрсету"
 
-#: src/option.c:2150
+#: src/option.c:2159
 msgid "Warning options"
 msgstr "Ескерту параметрлері"
 
-#: src/option.c:2151
+#: src/option.c:2160
 msgid "Show warning options"
 msgstr "Ескерту параметрлерін көрсету"
 
-#: src/option.c:2163
+#: src/option.c:2172
 msgid "Scale options"
 msgstr "Масштабтау параметрлері"
 
-#: src/option.c:2163
+#: src/option.c:2172
 msgid "Show scale options"
 msgstr "Масштабтау параметрлерін көрсету"
 
-#: src/option.c:2173
+#: src/option.c:2182
 msgid "Text information options"
 msgstr "Мәтін ақпаратының параметрлері"
 
-#: src/option.c:2174
+#: src/option.c:2183
 msgid "Show text information options"
 msgstr "Мәтін ақпаратының параметрлерін көрсету"
 
-#: src/option.c:2186
+#: src/option.c:2195
 msgid "Color selection options"
 msgstr "Түсті таңдау параметрлері"
 
-#: src/option.c:2187
+#: src/option.c:2196
 msgid "Show color selection options"
 msgstr "Түсті таңдау параметрлерін көрсету"
 
-#: src/option.c:2199
+#: src/option.c:2208
 msgid "Password dialog options"
 msgstr "Пароль сұхбат терезесінің параметрлері"
 
-#: src/option.c:2200
+#: src/option.c:2209
 msgid "Show password dialog options"
 msgstr "Пароль сұхбат терезесінің параметрлерін көрсету"
 
-#: src/option.c:2212
+#: src/option.c:2221
 msgid "Forms dialog options"
 msgstr "Формалар сұхбат терезесінің параметрлері"
 
-#: src/option.c:2213
+#: src/option.c:2222
 msgid "Show forms dialog options"
 msgstr "Формалар сұхбат терезесінің параметрлерін көрсету"
 
-#: src/option.c:2225
+#: src/option.c:2234
 msgid "Miscellaneous options"
 msgstr "Әр түрлі параметрлер"
 
-#: src/option.c:2226
+#: src/option.c:2235
 msgid "Show miscellaneous options"
 msgstr "Әр түрлі параметрлерді көрсету"
 
-#: src/option.c:2249
+#: src/option.c:2258
+#, c-format
 msgid ""
 "This option is not available. Please see --help for all possible usages.\n"
 msgstr ""
+"Бұл опция қолжетімді емес. Барлық мүмкін қолдану тәсілдерін --help арқылы "
+"қараңыз.\n"
 
-#: src/option.c:2254
+#: src/option.c:2263
 #, c-format
 msgid "--%s is not supported for this dialog\n"
 msgstr "--%s бұл сұхбат үшін қолдауы жоқ\n"
 
-#: src/option.c:2258
+#: src/option.c:2267
+#, c-format
 msgid "Two or more dialog options specified\n"
-msgstr ""
+msgstr "Екі немесе одан да көп сұхбат терезесінің опциялары көрсетілген\n"
 
 #: src/password.c:85
 msgid "Type your username and password"
@@ -727,7 +764,6 @@ msgstr "Пайдаланушы атын және пароліңізді енгі
 
 #. Add the username label and entry and increment the row for the
 #. * password entry so it will be added below the username.
-#.
 #: src/password.c:90
 msgid "Username:"
 msgstr "Пайдаланушы:"
@@ -736,53 +772,65 @@ msgstr "Пайдаланушы:"
 msgid "Password:"
 msgstr "Пароль:"
 
-#: src/progress.c:111
+#: src/progress.c:113
 #, c-format
 msgid "Time remaining: %lu:%02lu:%02lu"
 msgstr "Қалған уақыт: %lu:%02lu:%02lu"
 
 #. Translators: do not translate tokens starting with '--'; these
 #. * are command-line options which are not translatable.
-#.
-#: src/progress.c:412
+#: src/progress.c:373
+#, c-format
 msgid ""
 "Combining the options --auto-close and --percentage=100 is not supported.\n"
 msgstr ""
+"--auto-close және --percentage=100 опцияларын біріктіруге қолдау "
+"көрсетілмейді.\n"
 
 #: src/scale.c:62
+#, c-format
 msgid "Maximum value must be greater than minimum value.\n"
 msgstr "Максималды мәні минималды мәнінен үлкен болуы тиіс.\n"
 
 #: src/scale.c:70
+#, c-format
 msgid "Value out of range.\n"
 msgstr "Мәні ауқымнан тыс.\n"
 
 #: src/tree.c:57
+#, c-format
 msgid ""
-"Warning: --mid-search is deprecated and will be removed in a future version "
-"of zenity. Ignoring.\n"
+"Warning: --mid-search is deprecated and will be removed in a future version of "
+"zenity. Ignoring.\n"
 msgstr ""
+"Ескерту: --mid-search ескірген және zenity-дің болашақ нұсқаларында өшіріледі. "
+"Елемеу.\n"
 
 #: src/tree.c:263
+#, c-format
 msgid "No column titles specified for List dialog.\n"
-msgstr ""
+msgstr "Тізім сұхбат терезесі үшін баған атаулары көрсетілмеген.\n"
 
 #. Translators: --checklist and --radiolist should not be translated
 #. * (command-line options).
 #: src/tree.c:272
+#, c-format
 msgid ""
-"Insufficient columns specified for List dialog (at least 2 are required for "
-"--checklist or --radiolist).\n"
+"Insufficient columns specified for List dialog (at least 2 are required for --"
+"checklist or --radiolist).\n"
 msgstr ""
+"Тізім сұхбат терезесі үшін бағандар саны жеткіліксіз (--checklist немесе --"
+"radiolist үшін кемінде 2 баған қажет).\n"
 
 #: src/tree.c:280
+#, c-format
 msgid "You should use only one List dialog type.\n"
-msgstr ""
+msgstr "Тек бір тізім сұхбат терезесінің түрін қолдану керек.\n"
 
 #: src/util.c:81
 #, c-format
 msgid "Icon filename %s not found; trying theme icon."
-msgstr ""
+msgstr "%s таңбаша файлы табылмады; тема таңбашасы қолданылып көріледі."
 
 #: src/zenity.ui:9 src/zenity.ui:31
 msgid "Adjust the scale value"
@@ -848,7 +896,7 @@ msgstr "Орындалуда..."
 msgid "Question"
 msgstr "Сұрақ"
 
-#: src/zenity.ui:368 src/zenity.ui:447
+#: src/zenity.ui:368 src/zenity.ui:448
 msgid "Are you sure you want to proceed?"
 msgstr "Жалғастыруды қалайсыз ба?"
 
@@ -856,39 +904,39 @@ msgstr "Жалғастыруды қалайсыз ба?"
 msgid "Select items from the list"
 msgstr "Тізімнен элементтерді таңдаңыз"
 
-#: src/zenity.ui:408
+#: src/zenity.ui:409
 msgid "Select items from the list below."
 msgstr "Төмендегі тізімнен элементтерді таңдаңыз."
 
-#: src/zenity.ui:419
+#: src/zenity.ui:420
 msgid "Warning"
 msgstr "Ескерту"
 
-#: src/zenity.ui:484
+#: src/zenity.ui:485
 msgid "Type your password"
 msgstr "Пароліңізді енгізіңіз"
 
 #~ msgid ""
 #~ "This program is free software; you can redistribute it and/or modify it "
 #~ "under the terms of the GNU Lesser General Public License as published by "
-#~ "the Free Software Foundation; either version 2 of the License, or (at "
-#~ "your option) any later version.\n"
+#~ "the Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version.\n"
 #~ msgstr ""
-#~ "Бұл бағдарлама - еркін бағдарлама қамтама; сіз оны Free Software "
-#~ "Foundation шығарған GNU Lesser General Public License аясында еркін "
-#~ "тарата не/және өзгерте аласыз; лицензия нұсқасы 2 не (тандауыңызша) кез-"
-#~ "келген кейін шыққан.\n"
+#~ "Бұл бағдарлама - еркін бағдарлама қамтама; сіз оны Free Software Foundation "
+#~ "шығарған GNU Lesser General Public License аясында еркін тарата не/және "
+#~ "өзгерте аласыз; лицензия нұсқасы 2 не (тандауыңызша) кез-келген кейін "
+#~ "шыққан.\n"
 
 #~ msgid ""
-#~ "This program is distributed in the hope that it will be useful, but "
-#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
-#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser "
-#~ "General Public License for more details.\n"
+#~ "This program is distributed in the hope that it will be useful, but WITHOUT "
+#~ "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+#~ "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public "
+#~ "License for more details.\n"
 #~ msgstr ""
 #~ "Бұл бағларлама пайдалы болады деген сеніммен таратылады, бірақ ЕШҚАНДАЙ "
-#~ "КЕПІЛДЕМЕ берілмейді; КОММЕРЦИЯЛЫҚ ҚҰНДЫЛЫҚ немесе белгілі бір "
-#~ "МАҚСАТТАРҒА СӘЙКЕС КЕЛЕТІНІ үшін де.  Көбірек білу үшін GNU Lesser "
-#~ "General Public License қараңыз.\n"
+#~ "КЕПІЛДЕМЕ берілмейді; КОММЕРЦИЯЛЫҚ ҚҰНДЫЛЫҚ немесе белгілі бір МАҚСАТТАРҒА "
+#~ "СӘЙКЕС КЕЛЕТІНІ үшін де.  Көбірек білу үшін GNU Lesser General Public "
+#~ "License қараңыз.\n"
 
 #~ msgid ""
 #~ "You should have received a copy of the GNU Lesser General Public License "
