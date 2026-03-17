@@ -411,10 +411,35 @@ zenity_tree_column_view_set_multi (ZenityTreeColumnView *self, gboolean multi)
 	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_column_view_properties[MULTI]);
 }
 
+static GtkWidget *
+_zenity_tree_column_view_get_header (ZenityTreeColumnView *self)
+{
+	for (GtkWidget *child = gtk_widget_get_first_child (GTK_WIDGET(self->child_cv));
+			child != NULL;
+			child = gtk_widget_get_next_sibling (child))
+	{
+		if (g_strcmp0 (gtk_widget_get_css_name (child), "header") == 0)
+			return child;
+	}
+
+	return NULL;
+}
+
 void
 zenity_tree_column_view_set_hide_header (ZenityTreeColumnView *self, gboolean hide)
 {
+	GtkWidget *header = NULL;
+
+	if (hide == self->hide_header)
+		return;
+
+	header = _zenity_tree_column_view_get_header (self);
+
+	if (header)
+		gtk_widget_set_visible (header, !hide);
+
 	self->hide_header = hide;
+
 	g_object_notify_by_pspec (G_OBJECT(self), zenity_tree_column_view_properties[HIDE_HEADER]);
 }
 
