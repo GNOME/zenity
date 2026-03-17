@@ -637,6 +637,15 @@ create_test ("file_selection",
 	}
 );
 
+create_test ("password_custom_text",
+	"Ensure that this password dialog says 'Enter a super secure password' instead of the generic 'Type your password' message. If so, click OK. Otherwise,click Cancel or close the window.",
+	sub {
+		my $test = "$ZENITY --password --text='Enter a super secure password'";
+
+		test_cmd_for_exit_status ($test, 0);
+	}
+);
+
 # MAIN
 
 if ($ARGV[0])
