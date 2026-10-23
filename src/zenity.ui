@@ -42,39 +42,82 @@
 			</object>
 		</child>
 	</object>
-	<object class="AdwMessageDialog" id="zenity_text_dialog">
-		<property name="heading" translatable="yes">Text View</property>
+	<object class="GtkWindow" id="zenity_text_dialog">
+		<property name="title" translatable="yes">Text View</property>
 		<property name="default_width">300</property>
 		<property name="default_height">200</property>
 		<property name="resizable">true</property>
-		<property name="extra-child">zenity_text_box</property>
-		<property name="default-response">ok</property>
-		<responses>
-			<response id="cancel" translatable="yes">_Cancel</response>
-			<response id="ok" translatable="yes">_OK</response>
-		</responses>
+		<property name="modal">true</property>
+		<property name="destroy_with_parent">true</property>
+		<property name="child">zenity_text_root</property>
 	</object>
-	<object class="GtkBox" id="zenity_text_box">
-		<property name="spacing">2</property>
+	<object class="GtkBox" id="zenity_text_root">
+		<property name="orientation">vertical</property>
+		<property name="spacing">12</property>
+		<property name="margin-start">12</property>
+		<property name="margin-end">12</property>
+		<property name="margin-top">12</property>
+		<property name="margin-bottom">12</property>
 		<child>
-			<object class="GtkBox" id="vbox5">
-				<property name="hexpand">1</property>
-				<property name="orientation">vertical</property>
+			<object class="GtkLabel" id="zenity_text_heading">
+				<property name="label" translatable="yes">Text View</property>
+				<property name="wrap">true</property>
+				<property name="wrap_mode">word-char</property>
+				<property name="justify">center</property>
+				<property name="xalign">0.5</property>
+				<style>
+					<class name="title-2"/>
+				</style>
+			</object>
+		</child>
+		<child>
+			<object class="GtkBox" id="zenity_text_box">
+				<property name="spacing">2</property>
+				<property name="vexpand">true</property>
 				<child>
-					<object class="GtkScrolledWindow" id="zenity_text_scrolled_window">
+					<object class="GtkBox" id="vbox5">
+						<property name="hexpand">1</property>
 						<property name="vexpand">1</property>
-						<property name="child">
-							<object class="GtkTextView" id="zenity_text_view">
-								<property name="editable">false</property>
-								<property name="wrap_mode">word</property>
+						<property name="orientation">vertical</property>
+						<child>
+							<object class="GtkScrolledWindow" id="zenity_text_scrolled_window">
+								<property name="vexpand">1</property>
+								<property name="child">
+									<object class="GtkTextView" id="zenity_text_view">
+										<property name="editable">false</property>
+										<property name="wrap_mode">word</property>
+									</object>
+								</property>
 							</object>
-						</property>
+						</child>
+						<child>
+							<object class="GtkCheckButton" id="zenity_text_checkbox">
+								<property name="valign">center</property>
+								<property name="visible">0</property>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child>
+			<object class="GtkBox" id="zenity_text_button_box">
+				<property name="halign">end</property>
+				<property name="spacing">12</property>
+				<child>
+					<object class="GtkButton" id="zenity_text_cancel_button">
+						<property name="label" translatable="yes">_Cancel</property>
+						<property name="use_underline">true</property>
 					</object>
 				</child>
 				<child>
-					<object class="GtkCheckButton" id="zenity_text_checkbox">
-						<property name="valign">center</property>
-						<property name="visible">0</property>
+					<object class="GtkButton" id="zenity_text_ok_button">
+						<property name="label" translatable="yes">_OK</property>
+						<property name="use_underline">true</property>
+						<property name="receives_default">true</property>
+						<style>
+							<class name="suggested-action"/>
+						</style>
 					</object>
 				</child>
 			</object>
