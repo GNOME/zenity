@@ -37,9 +37,16 @@
 #include <config.h>
 
 static ZenityTextData *zen_text_data;
+static GtkWidget *zen_text_window;	/* toplevel for the timeout handler */
+static ZenityData *zen_text_main_data;	/* ZenityData for the timeout handler */
 
-static void zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
-static void zenity_text_toggle_button (GtkCheckButton *button, AdwMessageDialog *dialog);
+static void zenity_text_dialog_response (GtkWidget *widget, const char *rstr, gpointer data);
+static void zenity_text_toggle_button (GtkCheckButton *button, gpointer user_data);
+static void zenity_text_button_clicked_cb (GtkButton *button, gpointer user_data);
+static gboolean zenity_text_close_request_cb (GtkWindow *window, gpointer user_data);
+static gboolean zenity_text_key_pressed_cb (GtkEventControllerKey *controller,
+		guint keyval, guint keycode, GdkModifierType state, gpointer user_data);
+static gboolean zenity_text_timeout_cb (gpointer user_data);
 
 #ifdef HAVE_WEBKITGTK
 static void
@@ -250,6 +257,11 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	g_autoptr(GtkBuilder) builder = NULL;
 	GtkWidget *dialog;
 	GtkWidget *checkbox;
+	GtkWidget *heading;
+	GtkWidget *ok_button;
+	GtkWidget *cancel_button;
+	GtkWidget *button_box;
+	GtkEventController *key_controller;
 
 	GObject *text_view;
 	GtkTextBuffer *text_buffer;
@@ -262,7 +274,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 #endif
 
 	zen_text_data = text_data;
-	builder = zenity_util_load_ui_file ("zenity_text_dialog", "zenity_text_box", NULL);
+	builder = zenity_util_load_ui_file ("zenity_text_dialog", "zenity_text_root", "zenity_text_box", NULL);
 
 	if (builder == NULL) {
 		data->exit_code = zenity_util_return_exit_code (ZENITY_ERROR);
@@ -275,10 +287,46 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	checkbox = GTK_WIDGET(gtk_builder_get_object (builder,
 				"zenity_text_checkbox"));
 
-	g_signal_connect (dialog, "response",
-		G_CALLBACK(zenity_text_dialog_response), data);
+	heading = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_heading"));
+
+	ok_button = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_ok_button"));
+
+	cancel_button = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_cancel_button"));
+
+	button_box = GTK_WIDGET(gtk_builder_get_object (builder,
+				"zenity_text_button_box"));
+
+	zen_text_window = dialog;
+	zen_text_main_data = data;
+
+	g_object_set_data_full (G_OBJECT (ok_button), "zenity-response",
+			g_strdup ("ok"), g_free);
+	g_object_set_data_full (G_OBJECT (cancel_button), "zenity-response",
+			g_strdup ("cancel"), g_free);
+
+	g_signal_connect (ok_button, "clicked",
+		G_CALLBACK(zenity_text_button_clicked_cb), data);
+	g_signal_connect (cancel_button, "clicked",
+		G_CALLBACK(zenity_text_button_clicked_cb), data);
+
+	/* Escape will close the window like a standard dialog */
+	g_signal_connect (dialog, "close-request",
+		G_CALLBACK(zenity_text_close_request_cb), data);
+
+	key_controller = gtk_event_controller_key_new ();
+	g_signal_connect (key_controller, "key-pressed",
+		G_CALLBACK(zenity_text_key_pressed_cb), data);
+	gtk_widget_add_controller (dialog, key_controller);
+
+	gtk_window_set_default_widget (GTK_WINDOW (dialog), ok_button);
 
 	zenity_util_setup_dialog_title (dialog, data);
+
+	if (data->dialog_title)
+		gtk_label_set_text (GTK_LABEL (heading), data->dialog_title);
 
 	gtk_window_set_icon_name (GTK_WINDOW(dialog),
 			"accessories-text-editor");
@@ -323,26 +371,34 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 
 	if (data->extra_label)
 	{
-		ZENITY_UTIL_ADD_EXTRA_LABELS (dialog)
+		for (int i = 0; data->extra_label[i] != NULL; ++i)
+		{
+			GtkWidget *button = gtk_button_new_with_mnemonic (
+					data->extra_label[i]);
+
+			g_object_set_data_full (G_OBJECT (button),
+					"zenity-response", g_strdup_printf ("%d", i), g_free);
+			g_signal_connect (button, "clicked",
+					G_CALLBACK(zenity_text_button_clicked_cb), data);
+			gtk_box_append (GTK_BOX (button_box), button);
+		}
 	}
 
 	if (data->ok_label) {
-		ZENITY_UTIL_SETUP_OK_BUTTON_LABEL (dialog);
+		gtk_button_set_label (GTK_BUTTON (ok_button), data->ok_label);
 	}
 
 	if (data->cancel_label)
 	{
-		ZENITY_UTIL_SETUP_CANCEL_BUTTON_LABEL (dialog);
+		gtk_button_set_label (GTK_BUTTON (cancel_button), data->cancel_label);
 	}
 
 	if (text_data->checkbox) {
 		gtk_widget_set_visible (GTK_WIDGET(checkbox), TRUE);
 		gtk_check_button_set_label (GTK_CHECK_BUTTON(checkbox), text_data->checkbox);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-		adw_message_dialog_set_response_enabled (ADW_MESSAGE_DIALOG(dialog), "ok", FALSE);
-G_GNUC_END_IGNORE_DEPRECATIONS
+		gtk_widget_set_sensitive (ok_button, FALSE);
 
-		g_signal_connect (checkbox, "toggled", G_CALLBACK(zenity_text_toggle_button), dialog);
+		g_signal_connect (checkbox, "toggled", G_CALLBACK(zenity_text_toggle_button), ok_button);
 	}
 
 	if (data->width > -1 || data->height > -1)
@@ -412,18 +468,62 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 	if (data->timeout_delay > 0)
 	{
-		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
+		g_timeout_add_seconds (data->timeout_delay,
+				zenity_text_timeout_cb, NULL);
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
 }
 
 static void
-zenity_text_toggle_button (GtkCheckButton *button, AdwMessageDialog *dialog)
+zenity_text_button_clicked_cb (GtkButton *button, gpointer user_data)
 {
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	adw_message_dialog_set_response_enabled (dialog, "ok", gtk_check_button_get_active (button));
-G_GNUC_END_IGNORE_DEPRECATIONS
+	ZenityData *data = user_data;
+	const char *rstr = g_object_get_data (G_OBJECT (button), "zenity-response");
+	GtkWidget *dialog = gtk_widget_get_ancestor (GTK_WIDGET (button),
+			GTK_TYPE_WINDOW);
+
+	zenity_text_dialog_response (dialog, rstr, data);
+}
+
+static gboolean
+zenity_text_close_request_cb (GtkWindow *window, gpointer user_data)
+{
+	zenity_text_dialog_response (GTK_WIDGET (window), "cancel", user_data);
+
+	/* The response handler exits or quits the application; prevent the
+	 * default destroy so the response is not delivered twice. */
+	return TRUE;
+}
+
+static gboolean
+zenity_text_key_pressed_cb (GtkEventControllerKey *controller, guint keyval,
+		guint keycode, GdkModifierType state, gpointer user_data)
+{
+	GtkWidget *dialog;
+
+	if (keyval != GDK_KEY_Escape)
+		return FALSE;
+
+	dialog = GTK_WIDGET (gtk_event_controller_get_widget (
+				GTK_EVENT_CONTROLLER (controller)));
+	zenity_text_dialog_response (dialog, "cancel", user_data);
+
+	return TRUE;
+}
+
+static gboolean
+zenity_text_timeout_cb (gpointer user_data)
+{
+	zenity_text_dialog_response (zen_text_window, "timeout", zen_text_main_data);
+	return FALSE;
+}
+
+static void
+zenity_text_toggle_button (GtkCheckButton *button, gpointer user_data)
+{
+	gtk_widget_set_sensitive (GTK_WIDGET (user_data),
+			gtk_check_button_get_active (button));
 }
 
 static void
@@ -442,7 +542,7 @@ zenity_text_dialog_output (ZenityData *zen_data)
 }
 
 static void
-zenity_text_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
+zenity_text_dialog_response (GtkWidget *widget, const char *rstr, gpointer data)
 {
 	ZenityData *zen_data = data;
 	int response = zenity_util_parse_dialog_response (rstr);
