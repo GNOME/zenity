@@ -542,8 +542,10 @@ create_test ("test_ellipsize",
 		my $expected_exit_status = 0;
 		foreach my $opt ('--error', '--info', '--question', '--warning')
 		{
-			my $cmd = "$ZENITY $opt --text='asfdsafdsfadsfdsafasdfadsfdsafadsfdsafadsfsadfasdfasdfsadfadsfadsfadsfadsfadsfadsfadsfadsfadsf' --ellipsize";
+			my $cmd = "$ZENITY $opt --text='asfds afdsfads fdsafasdfad sfdsafadsfd safadsfsad fasdfasdfs adfadsfad sfadsfadsf adsfadsfad sfad sfadsf' --ellipsize";
+			my $cmd2 = "$ZENITY $opt --text='asfdsafdsfadsfdsafasdfadsfdsafadsfdsafadsfsadfasdfasdfsadfadsfadsfadsfadsfadsfadsfadsfadsfadsf' --ellipsize --no-wrap";
 			test_cmd_for_exit_status ($cmd, $expected_exit_status);
+			test_cmd_for_exit_status ($cmd2, $expected_exit_status);
 		}
 	}
 );
