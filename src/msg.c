@@ -154,14 +154,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 				data->width, data->height);
 	}
 
-	if (data->width > -1) {
+	if (data->width > -1)
 		gtk_widget_set_size_request (GTK_WIDGET (text), data->width, -1);
-	}
-	else if (!msg_data->ellipsize && !msg_data->no_wrap) {
-		/* the magic number 60 is picked from gtk+/gtk/ui/gtkmessagedialog.ui
-		 */
-		gtk_label_set_max_width_chars (GTK_LABEL(text), 60);
-	}
 
 	if (data->modal)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
