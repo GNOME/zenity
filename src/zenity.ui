@@ -7,8 +7,8 @@
 	<requires lib="gtk" version="4.0"/>
 	<object class="AdwMessageDialog" id="zenity_scale_dialog">
 		<property name="heading" translatable="yes">Adjust the scale value</property>
-		<property name="default_width">300</property>
-		<property name="default_height">100</property>
+		<property name="default-width">300</property>
+		<property name="default-height">100</property>
 		<property name="extra-child">zenity_scale_box</property>
 		<property name="default-response">ok</property>
 		<responses>
@@ -18,8 +18,8 @@
 	</object>
 	<object class="GtkAdjustment" id="zenity_scale_adjustment">
 		<property name="upper">100</property>
-		<property name="step_increment">1</property>
-		<property name="page_increment">1</property>
+		<property name="step-increment">1</property>
+		<property name="page-increment">1</property>
 	</object>
 	<object class="GtkBox" id="zenity_scale_box">
 		<property name="orientation">vertical</property>
@@ -38,14 +38,14 @@
 				<property name="draw-value">1</property>
 				<property name="adjustment">zenity_scale_adjustment</property>
 				<property name="digits">0</property>
-				<property name="value_pos">right</property>
+				<property name="value-pos">right</property>
 			</object>
 		</child>
 	</object>
 	<object class="GtkWindow" id="zenity_text_dialog">
 		<property name="title" translatable="yes">Text View</property>
-		<property name="default_width">300</property>
-		<property name="default_height">200</property>
+		<property name="default-width">300</property>
+		<property name="default-height">200</property>
 		<property name="resizable">true</property>
 		<property name="modal">true</property>
 		<property name="destroy-with-parent">true</property>
@@ -57,7 +57,7 @@
 							<lookup name="title">zenity_text_dialog</lookup>
 						</binding>
 						<property name="wrap">true</property>
-						<property name="wrap_mode">word-char</property>
+						<property name="wrap-mode">word-char</property>
 						<property name="justify">center</property>
 						<property name="xalign">0.5</property>
 						<style>
@@ -91,7 +91,7 @@
 								<property name="child">
 									<object class="GtkTextView" id="zenity_text_view">
 										<property name="editable">false</property>
-										<property name="wrap_mode">word</property>
+										<property name="wrap-mode">word</property>
 									</object>
 								</property>
 							</object>
@@ -113,14 +113,14 @@
 				<child>
 					<object class="GtkButton" id="zenity_text_cancel_button">
 						<property name="label" translatable="yes">_Cancel</property>
-						<property name="use_underline">true</property>
+						<property name="use-underline">true</property>
 					</object>
 				</child>
 				<child>
 					<object class="GtkButton" id="zenity_text_ok_button">
 						<property name="label" translatable="yes">_OK</property>
-						<property name="use_underline">true</property>
-						<property name="receives_default">true</property>
+						<property name="use-underline">true</property>
+						<property name="receives-default">true</property>
 						<style>
 							<class name="suggested-action"/>
 						</style>
@@ -162,8 +162,8 @@
 					<object class="GtkLabel" id="zenity_calendar_label">
 						<property name="valign">center</property>
 						<property name="label" translatable="yes">C_alendar:</property>
-						<property name="use_underline">1</property>
-						<property name="mnemonic_widget">zenity_calendar</property>
+						<property name="use-underline">1</property>
+						<property name="mnemonic-widget">zenity_calendar</property>
 						<property name="xalign">0</property>
 						<accessibility>
 							<property name="label" translatable="yes">Calendar</property>
@@ -207,7 +207,7 @@
 							<object class="GtkLabel" id="zenity_entry_text">
 								<property name="valign">center</property>
 								<property name="label" translatable="yes">_Enter new text:</property>
-								<property name="use_underline">1</property>
+								<property name="use-underline">1</property>
 								<property name="xalign">0</property>
 							</object>
 						</child>
@@ -242,8 +242,8 @@
 						<child>
 							<object class="GtkImage" id="zenity_error_image">
 								<property name="halign">center</property>
-								<property name="icon_name">dialog-error</property>
-								<property name="icon_size">large</property>
+								<property name="icon-name">dialog-error</property>
+								<property name="icon-size">large</property>
 							</object>
 						</child>
 						<child>
@@ -276,10 +276,10 @@
 					<object class="GtkGrid" id="zenity_forms_grid">
 						<property name="margin-start">12</property>
 						<property name="margin-end">6</property>
-						<property name="margin_top">12</property>
-						<property name="margin_bottom">6</property>
-						<property name="row_spacing">6</property>
-						<property name="column_spacing">10</property>
+						<property name="margin-top">12</property>
+						<property name="margin-bottom">6</property>
+						<property name="row-spacing">6</property>
+						<property name="column-spacing">10</property>
 						<child>
 							<placeholder/>
 						</child>
@@ -340,8 +340,8 @@
 				<child>
 					<object class="GtkImage" id="zenity_info_image">
 						<property name="halign">center</property>
-						<property name="icon_name">dialog-information</property>
-						<property name="icon_size">large</property>
+						<property name="icon-name">dialog-information</property>
+						<property name="icon-size">large</property>
 					</object>
 				</child>
 				<child>
@@ -379,7 +379,7 @@
 					<object class="GtkProgressBar" id="zenity_progress_bar">
 						<property name="valign">center</property>
 						<property name="hexpand">true</property>
-						<property name="pulse_step">0.10000000149</property>
+						<property name="pulse-step">0.10000000149</property>
 					</object>
 				</child>
 				<child>
@@ -406,8 +406,8 @@
 				<property name="spacing">12</property>
 				<child>
 					<object class="GtkImage" id="zenity_question_image">
-						<property name="icon_name">dialog-question</property>
-						<property name="icon_size">large</property>
+						<property name="icon-name">dialog-question</property>
+						<property name="icon-size">large</property>
 					</object>
 				</child>
 				<child>
@@ -425,8 +425,8 @@
 	</object>
 	<object class="AdwMessageDialog" id="zenity_tree_dialog">
 		<property name="heading" translatable="yes">Select items from the list</property>
-		<property name="default_width">480</property>
-		<property name="default_height">320</property>
+		<property name="default-width">480</property>
+		<property name="default-height">320</property>
 		<property name="extra-child">zenity_tree_box</property>
 		<property name="resizable">true</property>
 		<property name="default-response">ok</property>
@@ -485,8 +485,8 @@
 				<property name="spacing">12</property>
 				<child>
 					<object class="GtkImage" id="zenity_warning_image">
-						<property name="icon_name">dialog-warning</property>
-						<property name="icon_size">large</property>
+						<property name="icon-name">dialog-warning</property>
+						<property name="icon-size">large</property>
 					</object>
 				</child>
 				<child>
@@ -525,8 +525,8 @@
 				<property name="spacing">12</property>
 				<child>
 					<object class="GtkImage" id="zenity_password_image">
-						<property name="icon_name">dialog-password</property>
-						<property name="icon_size">large</property>
+						<property name="icon-name">dialog-password</property>
+						<property name="icon-size">large</property>
 					</object>
 				</child>
 				<child>
