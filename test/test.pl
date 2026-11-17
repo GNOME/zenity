@@ -597,8 +597,8 @@ create_test ("file_selection",
 		my $base_cmd = "$ZENITY --file-selection";
 
 		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
-		say "\nClick OK. If OK is greyed out, click Cancel.";
-		test_cmd_for_stdout (qq[$base_cmd --filename="$tmpfile"], "$tmpfile");
+		say "\nSelect $tmpfile and click OK.";
+		test_cmd_for_stdout (qq[$base_cmd --filename="/tmp/"], "$tmpfile");
 		unlink $tmpfile;
 
 		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
@@ -625,15 +625,15 @@ create_test ("file_selection",
 
 		chomp($tmpfile = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
 		chomp($tmpfile2 = `mktemp /tmp/zenity_test.XXXXXXXXXX`);
-		say "\nSelect BOTH temporary files (one has been pre-selected) and click OK.";
-		test_cmd_for_stdout (qq[$base_cmd --multiple --file-filter="zenity_test.*" --filename="$tmpfile"], "${tmpfile}|${tmpfile2}", '|');
+		say "\nSelect BOTH temporary files: $tmpfile and $tmpfile2 and click OK.";
+		test_cmd_for_stdout (qq[$base_cmd --multiple --file-filter="zenity_test.*" --filename="/tmp/"], "${tmpfile}|${tmpfile2}", '|');
 		unlink $tmpfile;
 		unlink $tmpfile2;
 
 		chomp($tmpfile = `mktemp -d /tmp/zenity_test.XXXXXXXXXX`);
 		chomp($tmpfile2 = `mktemp -d /tmp/zenity_test.XXXXXXXXXX`);
-		say "\nSelect BOTH temporary directories (one has been pre-selected) and click OK.";
-		test_cmd_for_stdout (qq[$base_cmd --multiple --directory --file-filter="zenity_test.*" --separator="~" --filename="$tmpfile"], "${tmpfile}~${tmpfile2}", '~');
+		say "\nSelect BOTH temporary directories: $tmpfile and $tmpfile2 and click OK.";
+		test_cmd_for_stdout (qq[$base_cmd --multiple --directory --file-filter="zenity_test.*" --separator="~" --filename="/tmp/"], "${tmpfile}~${tmpfile2}", '~');
 		rmdir $tmpfile;
 		rmdir $tmpfile2;
 	}
