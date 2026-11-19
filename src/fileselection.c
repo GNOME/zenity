@@ -65,7 +65,6 @@ zenity_fileselection (ZenityData *data, ZenityFileData *file_data)
 	if (file_data->uri)
 	{
 		g_autoptr(GFile) file = g_file_new_for_commandline_arg (file_data->uri);
-		g_autoptr(GError) local_error = NULL;
 		g_autofree char *basename = g_file_get_basename (file);
 
 		/* If provided filename is not just a base name, then switch to its provided directory */

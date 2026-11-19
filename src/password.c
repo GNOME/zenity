@@ -131,14 +131,13 @@ zenity_password_dialog (ZenityData *data, ZenityPasswordData *password_data)
 
 	g_signal_connect (dialog, "response", G_CALLBACK(zenity_password_dialog_response), password_data);
 
-	zenity_util_show_dialog (dialog);
-
 	if (data->timeout_delay > 0)
 	{
 		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
+	zenity_util_show_dialog (dialog);
 }
 
 static void
