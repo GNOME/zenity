@@ -648,6 +648,15 @@ create_test ("password_custom_text",
 	}
 );
 
+create_test ("custom_app_id",
+	"Ensure this dialog shows up in your desktop's taskbar or panel as 'CoolApp' - if so, click OK. If not and it appears as 'zenity' something similar, click Cancel.",
+	sub {
+		my $test = "$ZENITY --question --app-id='com.example.CoolApp'";
+
+		test_cmd_for_exit_status ($test, 0);
+	}
+);
+
 # MAIN
 
 if ($ARGV[0])
