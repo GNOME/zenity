@@ -464,8 +464,6 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	}
 #endif /* HAVE_WEBKITGTK */
 
-	zenity_util_show_dialog (dialog);
-
 	if (data->timeout_delay > 0)
 	{
 		g_timeout_add_seconds (data->timeout_delay,
@@ -473,6 +471,7 @@ zenity_text (ZenityData *data, ZenityTextData *text_data)
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
+	zenity_util_show_dialog (dialog);
 }
 
 static void

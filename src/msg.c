@@ -185,8 +185,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	if (msg_data->no_wrap)
 		gtk_label_set_wrap (GTK_LABEL(text), FALSE);
 
-	zenity_util_show_dialog (dialog);
-
 	if (data->timeout_delay > 0)
 	{
 		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
@@ -200,6 +198,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 		NULL);
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
+	zenity_util_show_dialog (dialog);
 }
 
 static void

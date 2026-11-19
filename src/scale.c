@@ -120,14 +120,13 @@ zenity_scale (ZenityData *data, ZenityScaleData *scale_data)
 	if (scale_data->hide_value)
 		gtk_scale_set_draw_value (GTK_SCALE (scale), FALSE);
 
-	zenity_util_show_dialog (dialog);
-
 	if (data->timeout_delay > 0)
 	{
 		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
+	zenity_util_show_dialog (dialog);
 }
 
 static void

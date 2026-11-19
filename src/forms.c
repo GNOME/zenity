@@ -348,14 +348,13 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 		++i;
 	}
 
-	zenity_util_show_dialog (dialog);
-
 	if (data->timeout_delay > 0)
 	{
 		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
+	zenity_util_show_dialog (dialog);
 }
 
 static void

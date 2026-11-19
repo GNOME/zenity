@@ -154,14 +154,13 @@ zenity_entry (ZenityData *data, ZenityEntryData *entry_data)
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), entry);
 
-	zenity_util_show_dialog (dialog);
-
 	if (data->timeout_delay > 0)
 	{
 		ZENITY_UTIL_SETUP_TIMEOUT (dialog)
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
+	zenity_util_show_dialog (dialog);
 }
 
 static void

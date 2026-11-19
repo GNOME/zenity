@@ -93,7 +93,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	}
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (text), calendar);
-	zenity_util_show_dialog (dialog);
 
 	if (data->timeout_delay > 0)
 	{
@@ -116,6 +115,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	}
 
 	zenity_util_gapp_main (GTK_WINDOW(dialog));
+	zenity_util_show_dialog (dialog);
 }
 
 static void
