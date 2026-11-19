@@ -14,7 +14,7 @@ GNOME application.
 
 ## Dependencies
 
-* gtk >= 4.6
+* gtk >= 4.10
 * libadwaita >= 1.2
 
 ## Optional Dependencies
