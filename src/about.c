@@ -75,8 +75,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	g_signal_connect (about_window, "close-request",
 			G_CALLBACK(zenity_about_close_cb), data);
 
-	zenity_util_show_dialog (about_window);
 	zenity_util_gapp_main (GTK_WINDOW (about_window));
+	zenity_util_show_dialog (about_window);
 }
 
 static void

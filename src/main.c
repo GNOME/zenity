@@ -159,6 +159,8 @@ main (int argc, char *argv[])
 	results = zenity_option_parse (argc, argv);
 	custom_app_id = results->data->app_id;
 
+	if (custom_app_id)
+		g_set_prgname (custom_app_id);
 	app = adw_application_new (custom_app_id ? custom_app_id : APP_ID,
 			G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_NON_UNIQUE);
 	g_signal_connect (app, "handle-local-options", G_CALLBACK(local_options_cb), results);
