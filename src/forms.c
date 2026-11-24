@@ -344,8 +344,8 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data) {
 						GTK_BIN (zenity_value->forms_widget))));
 
 				for (tmp2 = selected; tmp2; tmp2 = tmp2->next) {
-					if (tmp->next != NULL) {
-						g_print ("%s,", (gchar *) tmp2->data);
+					if (tmp2->next != NULL) {
+						g_print ("%s,", (char *)tmp2->data);
 					} else
 						g_print ("%s", (gchar *) tmp2->data);
 				}
