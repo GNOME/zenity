@@ -58,7 +58,7 @@ show_mid_search_deprecation_warning (void)
 			"future version of zenity. Ignoring.\n"));
 }
 static gboolean
-zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer data)
+zenity_tree_handle_stdin (GIOChannel *channel_, GIOCondition condition, gpointer data)
 {
 	static int column_count = 0;
 	static int row_count = 0;
@@ -67,6 +67,9 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer 
 	gboolean toggles = FALSE;
 	ZenityTreeListType list_type = zenity_tree_column_view_get_list_type (col_view);
 	GListStore *store = G_LIST_STORE(zenity_tree_column_view_get_model (col_view));
+
+	if (!channel || channel_ != channel)
+		return FALSE;
 
 	if (list_type == ZENITY_TREE_LIST_RADIO || list_type == ZENITY_TREE_LIST_CHECK)
 		toggles = TRUE;
@@ -151,6 +154,7 @@ zenity_tree_handle_stdin (GIOChannel *channel, GIOCondition condition, gpointer 
 	if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF)
 	{
 		g_io_channel_shutdown (channel, TRUE, NULL);
+		channel = NULL;
 		return FALSE;
 	}
 	return TRUE;
@@ -162,7 +166,9 @@ zenity_tree_fill_entries_from_stdin (void)
 	channel = g_io_channel_unix_new (0);
 	g_io_channel_set_encoding (channel, NULL, NULL);
 	g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
+	/* Takes a ref */
 	g_io_add_watch (channel, G_IO_IN | G_IO_HUP, zenity_tree_handle_stdin, NULL);
+	g_io_channel_unref (channel);
 }
 
 static void
@@ -569,6 +575,7 @@ zenity_tree_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 		g_io_channel_get_flags (channel) & G_IO_FLAG_IS_READABLE)
 	{
 		g_io_channel_shutdown (channel, TRUE, NULL);
+		channel = NULL;
 	}
 
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
