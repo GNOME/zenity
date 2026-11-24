@@ -392,7 +392,7 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 
 				for (tmp2 = selected; tmp2; tmp2 = tmp2->next)
 				{
-					if (tmp->next != NULL) {
+					if (tmp2->next != NULL) {
 						g_print ("%s,", (char *)tmp2->data);
 					} else
 						g_print ("%s", (char *)tmp2->data);
