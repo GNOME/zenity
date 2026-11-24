@@ -1,7 +1,8 @@
 project('zenity', 'c',
   version: '4.4.beta',
-  meson_version: '>=0.57.0',
-  license: 'LGPL-2.1-or-later'
+  meson_version: '>=1.1',
+  license: 'LGPL-2.1-or-later',
+  default_options: [ 'warning_level=2', 'werror=false', 'c_std=gnu11', ],
 )
 
 app_id = 'org.gnome.Zenity'
@@ -21,13 +22,52 @@ zenity_po_dir = join_paths(meson.project_source_root(), 'po')
 gnome = import('gnome')
 i18n = import('i18n')
 
-# warning cflags
 warning_cflags = [
-  '-Werror=implicit',
+  '-Werror=address',
+  '-Werror=array-bounds',
+  '-Wcast-align',
+  '-Werror=empty-body',
   '-Wformat=2',
-  '-Wimplicit-fallthrough=3',
+  '-Wformat-security',
+  '-Wignored-qualifiers',
+  '-Werror=implicit-fallthrough=3',
+  '-Werror=implicit-int',
+  '-Werror=implicit-function-declaration',
+  '-Werror=incompatible-pointer-types',
+  '-Werror=init-self',
+  '-Werror=int-conversion',
+  '-Werror=int-to-pointer-cast',
+  '-Wlogical-op',
+  '-Werror=main',
+  '-Werror=misleading-indentation',
+  '-Werror=missing-braces',
+  '-Wmissing-declarations',
+  '-Wmissing-format-attribute',
+  '-Wmissing-include-dirs',
+  '-Wmissing-noreturn',
+  '-Wnested-externs',
+  '-Werror=nonnull',
+  '-Wold-style-definition',
+  '-Werror=overflow',
+  '-Wparentheses',
+  '-Werror=pointer-arith',
+  '-Werror=pointer-to-int-cast',
+  '-Werror=redundant-decls',
+  '-Werror=return-type',
+  '-Werror=sequence-point',
   '-Wshadow',
+  '-Werror=strict-prototypes',
+  '-Werror=trigraphs',
+  '-Werror=undef',
+  '-Werror=write-strings',
+  '-Wno-cast-function-type',
+  '-Wno-dangling-pointer',
+  '-Wno-missing-field-initializers',
+  '-Wno-sign-compare',
+  '-Wno-unused-parameter',
+  '-Wno-unused-variable',
 ]
+
 cc = meson.get_compiler('c')
 supported_warning_cflags = cc.get_supported_arguments(warning_cflags)
 add_global_arguments(supported_warning_cflags, language : 'c')
