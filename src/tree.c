@@ -123,7 +123,7 @@ zenity_load_pixbuf (GtkTreeViewColumn *tree_column, GtkCellRenderer *cell,
 
 static gboolean
 zenity_tree_handle_stdin (
-	GIOChannel *channel, GIOCondition condition, gpointer data) {
+	GIOChannel *channel_, GIOCondition condition, gpointer data) {
 	static GtkTreeView *tree_view;
 	GtkTreeModel *model;
 	static GtkTreeIter iter;
@@ -134,6 +134,9 @@ zenity_tree_handle_stdin (
 	static gboolean toggles;
 	static gboolean first_time = TRUE;
 	GIOStatus status = G_IO_STATUS_NORMAL;
+
+	if (!channel || channel_ != channel)
+		return FALSE;
 
 	tree_view = GTK_TREE_VIEW (data);
 	n_columns =
@@ -240,6 +243,7 @@ zenity_tree_handle_stdin (
 
 	if ((condition & G_IO_IN) != G_IO_IN || status == G_IO_STATUS_EOF) {
 		g_io_channel_shutdown (channel, TRUE, NULL);
+		channel = NULL;
 		return FALSE;
 	}
 	return TRUE;
@@ -258,8 +262,10 @@ zenity_tree_fill_entries_from_stdin (GtkTreeView *tree_view, gint n_columns,
 	channel = g_io_channel_unix_new (0);
 	g_io_channel_set_encoding (channel, NULL, NULL);
 	g_io_channel_set_flags (channel, G_IO_FLAG_NONBLOCK, NULL);
+	/* Takes a ref */
 	g_io_add_watch (
 		channel, G_IO_IN | G_IO_HUP, zenity_tree_handle_stdin, tree_view);
+	g_io_channel_unref (channel);
 }
 
 static void
@@ -806,7 +812,10 @@ zenity_tree_dialog_response (GtkWidget *widget, int response, gpointer data) {
 	}
 	if (channel != NULL &&
 		g_io_channel_get_flags (channel) & G_IO_FLAG_IS_READABLE)
+	{
 		g_io_channel_shutdown (channel, TRUE, NULL);
+		channel = NULL;
+	}
 
 	gtk_main_quit ();
 }
