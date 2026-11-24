@@ -1976,7 +1976,7 @@ zenity_forms_post_callback (GOptionContext *context, GOptionGroup *group,
 			}
 		} else
 			results->forms_data->column_values =
-				g_slist_append (NULL, "column");
+				g_slist_append (NULL, g_strdup ("column"));
 
 		if (zenity_forms_combo_values) {
 			i = 0;
