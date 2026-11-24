@@ -35,7 +35,7 @@ static GtkWidget *entry;
 static guint n_entries = 0;
 
 static void
-zenity_entry_combo_activate_default (GtkEntry *entry, gpointer window)
+zenity_entry_combo_activate_default (GtkEntry *entry_ G_GNUC_UNUSED, gpointer window)
 {
 	g_signal_emit_by_name (window, "activate-default");
 }

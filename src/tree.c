@@ -61,7 +61,6 @@ static gboolean
 zenity_tree_handle_stdin (GIOChannel *channel_, GIOCondition condition, gpointer data)
 {
 	static int column_count = 0;
-	static int row_count = 0;
 	GIOStatus status = G_IO_STATUS_NORMAL;
 	int n_columns = zenity_tree_column_view_get_n_columns (col_view);
 	gboolean toggles = FALSE;
@@ -119,7 +118,6 @@ zenity_tree_handle_stdin (GIOChannel *channel_, GIOCondition condition, gpointer
 			{
 				/* We're starting a new row */
 				column_count = 0;
-				row_count++;
 				if (row)
 					g_list_store_append (store, row);
 				row = zenity_tree_row_new ();

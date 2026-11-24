@@ -50,11 +50,11 @@ G_BEGIN_DECLS
  */
 #define ZENITY_UTIL_ADD_EXTRA_LABELS(DIALOG) \
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS \
-	for (int i = 0; data->extra_label[i] != NULL; ++i) { \
+	for (int i_ = 0; data->extra_label[i_] != NULL; ++i_) { \
 		if (ADW_IS_MESSAGE_DIALOG (DIALOG)) \
-			zenity_util_add_button (ADW_MESSAGE_DIALOG (DIALOG), data->extra_label[i], i); \
+			zenity_util_add_button (ADW_MESSAGE_DIALOG (DIALOG), data->extra_label[i_], i_); \
 		else if (GTK_IS_DIALOG (DIALOG)) \
-			gtk_dialog_add_button (GTK_DIALOG (DIALOG), data->extra_label[i], i); \
+			gtk_dialog_add_button (GTK_DIALOG (DIALOG), data->extra_label[i_], i_); \
 	} \
 	G_GNUC_END_IGNORE_DEPRECATIONS
 
