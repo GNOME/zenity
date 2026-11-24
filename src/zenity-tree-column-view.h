@@ -73,6 +73,7 @@ void zenity_tree_column_view_foreach_item (ZenityTreeColumnView *self, GFunc fun
 void zenity_tree_column_view_foreach_row (ZenityTreeColumnView *self, GFunc func, gpointer user_data);
 int zenity_tree_column_view_get_n_columns (ZenityTreeColumnView *self);
 gboolean zenity_tree_column_view_get_editable (ZenityTreeColumnView *self);
+void zenity_tree_column_view_set_multi (ZenityTreeColumnView *self, gboolean multi);
 gboolean zenity_tree_column_view_get_multi (ZenityTreeColumnView *self);
 gboolean zenity_tree_column_view_is_selected (ZenityTreeColumnView *self, guint pos);
 void zenity_tree_column_view_set_search (ZenityTreeColumnView *self, const char *search_str);
