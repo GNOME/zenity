@@ -462,7 +462,7 @@ create_test ("forms_options",
 		my $cmd = qq[$ZENITY --forms --add-entry='My entry' --add-password='My password' --add-calendar='My calendar' --add-list='My list' --list-values='foo bar|baz boo|bleh blah|boo urns' --column-values='foo|bar' --add-combo='My combo box' --combo-values='combo1|combo2|combo3' --add-combo='My other combo box' --combo-values='combo4|combo5|combo6' --show-header --text="My Form" --separator='^' --forms-date-format='%F' --add-multiline-entry='My text info'];
 		my $iso_date = `date --iso-8601`;
 		chomp $iso_date;
-		my $expected_stdout = "foo^bar^$iso_date^foo bar,baz boo,^combo2^combo5^baz\nboo";
+		my $expected_stdout = "foo^bar^$iso_date^foo bar,baz boo^combo2^combo5^baz\nboo";
 
 		test_cmd_for_stdout ($cmd, $expected_stdout);
 	}

@@ -4,7 +4,7 @@
  * forms.c
  *
  * Copyright © 2010 Arx Cruz
- * Copyright © 2021-2023 Logan Rathbone
+ * Copyright © 2021-2026 Logan Rathbone
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -31,35 +31,8 @@
 
 #include <config.h>
 
-/* TODO: Many items in this source file need to be ported away from deprecated
- * API in GTK 4.10+. Suppress the whirlwind of warnings for now since we're
- * well-aware of this.
- */
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-
 static ZenityData *zen_data;
-static GSList *selected;
 static void zenity_forms_dialog_response (GtkWidget *widget, char *rstr, gpointer data);
-
-static void
-zenity_forms_dialog_get_selected (GtkTreeModel *model, GtkTreePath *path_buf,
-	GtkTreeIter *iter, gpointer data)
-{
-	int n_columns = 0;
-	GValue value = G_VALUE_INIT;
-	GtkTreeView *tree_view = GTK_TREE_VIEW(data);
-
-	g_return_if_fail (GTK_IS_TREE_VIEW (tree_view));
-
-	n_columns = gtk_tree_model_get_n_columns (model);
-
-	for (int i = 0; i < n_columns; ++i)
-	{
-		gtk_tree_model_get_value (model, iter, i, &value);
-		selected = g_slist_append (selected, g_value_dup_string (&value));
-		g_value_unset (&value);
-	}
-}
 
 static GtkWidget *
 zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
@@ -74,7 +47,7 @@ zenity_forms_create_and_fill_combo (ZenityFormsData *forms_data,
 
 		if (combo_values)
 		{
-			g_auto(GStrv) row_values = g_strsplit_set (combo_values, "|", -1);
+			g_auto(GStrv) row_values = g_strsplit (combo_values, "|", -1);
 
 			if (row_values)
 				dropdown = gtk_drop_down_new_from_strings ((const char* const*)row_values);
@@ -88,21 +61,15 @@ static GtkWidget *
 zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 		int list_number, char *header)
 {
-	g_autoptr(GtkListStore) list_store = NULL;
-	GtkWidget *tree_view;
-	GtkWidget *scrolled_window;
-	GType *column_types = NULL;
-
-	int i = 0;
-	/* If no column names available, default is one */
-	int n_columns = 1;
-	int column_index = 0;
-
-	tree_view = gtk_tree_view_new ();
+	GListStore *store = g_list_store_new (ZENITY_TREE_TYPE_ROW);
+	ZenityTreeColumnView *col_view = g_object_new (ZENITY_TREE_TYPE_COLUMN_VIEW,
+			"model", store,
+			"hide-header", !forms_data->show_header,
+			NULL);
 
 	if (forms_data->column_values)
 	{
-		char *column_values;
+		char *column_values = NULL;
 		int columns_values_count = g_slist_length (forms_data->column_values);
 		int column_number = 0;
 
@@ -115,45 +82,21 @@ zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 
 		if (column_values)
 		{
-			char **values = g_strsplit_set (column_values, "|", -1);
+			g_auto(GStrv) values = g_strsplit (column_values, "|", -1);
 
 			if (values)
 			{
-				n_columns = g_strv_length (values);
-				column_types = g_new (GType, n_columns);
+				const int n_columns = g_strv_length (values);
 
-				for (i = 0; i < n_columns; i++)
-					column_types[i] = G_TYPE_STRING;
-
-				for (i = 0; i < n_columns; i++)
+				for (int i = 0; i < n_columns; ++i)
 				{
-					GtkCellRenderer *renderer;
-					GtkTreeViewColumn *column;
-					char *column_name = values[i];
+					const char *column_name = values[i];
 
-					renderer = gtk_cell_renderer_text_new ();
-					column =
-						gtk_tree_view_column_new_with_attributes (column_name,
-								renderer,
-								"text", column_index,
-								NULL);
-					gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view),
-							column);
-					column_index++;
+					zenity_tree_column_view_add_column (col_view, column_name);
 				}
 			}
 		}
-		else
-		{
-			/* If no values available, add one with string type*/
-			column_types = g_new (GType, n_columns);
-			column_types[0] = G_TYPE_STRING;
-		}
 	}
-
-	list_store = g_object_new (GTK_TYPE_LIST_STORE, NULL);
-
-	gtk_list_store_set_column_types (list_store, n_columns, column_types);
 
 	if (forms_data->list_values)
 	{
@@ -162,42 +105,35 @@ zenity_forms_create_and_fill_list (ZenityFormsData *forms_data,
 
 		if (list_values)
 		{
-			char **row_values = g_strsplit_set (list_values, "|", -1);
+			g_auto(GStrv) row_values = g_strsplit (list_values, "|", -1);
 
 			if (row_values)
 			{
-				GtkTreeIter iter;
-				char *row = row_values[0];
-				int position = -1;
-				i = 0;
+				const int n_columns = zenity_tree_column_view_get_n_columns (col_view);
+				const guint n_row_values = g_strv_length (row_values);
+				ZenityTreeRow *row = NULL;
 
-				while (row != NULL)
+				for (int i = 0; i < n_row_values; ++i)
 				{
-					if (position >= n_columns || position == -1)
+					ZenityTreeItem *item;
+					gboolean at_new_row = i % n_columns == 0;
+
+					if (at_new_row)
 					{
-						position = 0;
-						gtk_list_store_append (list_store, &iter);
+						row = zenity_tree_row_new ();
+						g_list_store_append (store, row);
 					}
-					gtk_list_store_set (list_store, &iter, position, row, -1);
-					position++;
-					row = row_values[++i];
+
+					g_assert (row != NULL);
+
+					item = zenity_tree_item_new (row_values[i], gtk_label_new (NULL));
+					zenity_tree_row_add (row, item);
 				}
-				g_strfreev (row_values);
 			}
 		}
 	}
 
-	gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view),
-			GTK_TREE_MODEL (list_store));
-	gtk_tree_view_set_headers_visible (
-		GTK_TREE_VIEW (tree_view), forms_data->show_header);
-
-	scrolled_window = gtk_scrolled_window_new ();
-	gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW(scrolled_window),
-			tree_view);
-	gtk_widget_set_size_request (scrolled_window, -1, 100);
-
-	return scrolled_window;
+	return GTK_WIDGET(col_view);
 }
 
 void
@@ -360,11 +296,10 @@ zenity_forms_dialog (ZenityData *data, ZenityFormsData *forms_data)
 static void
 zenity_forms_dialog_output (ZenityFormsData *forms_data)
 {
-	GSList *tmp, *tmp2;
+	GSList *tmp;
 	guint day, year, month;
 	g_autoptr(GDate) date = NULL;
 	char time_string[128];
-	GtkTreeSelection *selection;
 
 	for (tmp = forms_data->list; tmp; tmp = tmp->next)
 	{
@@ -380,25 +315,36 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 				break;
 
 			case ZENITY_FORMS_LIST:
-				selection =
-					gtk_tree_view_get_selection
-						(GTK_TREE_VIEW(gtk_scrolled_window_get_child
-						   (GTK_SCROLLED_WINDOW(zenity_value->forms_widget))));
+			{
+				g_autoptr(GPtrArray) arr = g_ptr_array_new_with_free_func (g_free);
+				GtkSelectionModel *selection = zenity_tree_column_view_get_selection_model (ZENITY_TREE_COLUMN_VIEW(zenity_value->forms_widget));
 
-				gtk_tree_selection_selected_foreach (selection,
-					zenity_forms_dialog_get_selected,
-					GTK_TREE_VIEW(gtk_scrolled_window_get_child
-						(GTK_SCROLLED_WINDOW(zenity_value->forms_widget))));
-
-				for (tmp2 = selected; tmp2; tmp2 = tmp2->next)
+				for (guint i = 0; i < g_list_model_get_n_items (G_LIST_MODEL(selection)); ++i)
 				{
-					if (tmp2->next != NULL) {
-						g_print ("%s,", (char *)tmp2->data);
-					} else
-						g_print ("%s", (char *)tmp2->data);
+					g_autoptr(ZenityTreeRow) row = g_list_model_get_item (G_LIST_MODEL(selection), i);
+
+					if (! gtk_selection_model_is_selected (selection, i))
+						continue;
+
+					for (guint j = 0; j < zenity_tree_row_get_n_items (row); ++j)
+					{
+						ZenityTreeItem *item = zenity_tree_row_get_item (row, j);
+						const char *text = zenity_tree_item_get_text (item);
+
+						g_ptr_array_add (arr, g_strdup (text));
+					}
 				}
 
-				g_slist_free_full (g_steal_pointer (&selected), g_free);
+				for (guint i = 0; i < arr->len; ++i)
+				{
+					const char *text = g_ptr_array_index (arr, i);
+
+					if (i == arr->len - 1)
+						g_print ("%s", text);
+					else
+						g_print ("%s,", text);
+				}
+			}
 				break;
 
 			case ZENITY_FORMS_CALENDAR:
@@ -475,5 +421,3 @@ zenity_forms_dialog_response (GtkWidget *widget, char *rstr, gpointer data)
 	}
 	zenity_util_gapp_quit (GTK_WINDOW(widget), zen_data);
 }
-
-G_GNUC_END_IGNORE_DEPRECATIONS
