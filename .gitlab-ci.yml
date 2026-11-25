@@ -1,22 +1,50 @@
 variables:
-  FEDORA_DEPENDENCIES: gettext gettext-devel gcc redhat-rpm-config meson libtool git
-                gtk3-devel yelp-tools
+  DEPENDENCIES: gettext gettext-devel gcc git meson gtk3-devel yelp-tools
+  GIT_SUBMODULE_STRATEGY: normal
+  MESON_BUILD_DIR: _build
+  TARBALL_ARTIFACT_PATH: "${MESON_BUILD_DIR}/meson-dist/${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
+  UBUNTU_DEPENDENCIES: meson git gcc gettext libtool libnotify-dev libgtk-3-dev libwebkit2gtk-4.1-dev yelp-tools
 
-  UBUNTU_DEPENDENCIES: meson git gcc gettext libtool libnotify-dev libgtk-3-dev
-                libwebkit2gtk-4.1-dev yelp-tools
+image: fedora:latest
+include:
+  - component: gitlab.gnome.org/GNOME/citemplates/release-service@master
+    inputs:
+      job-stage: release
+      dist-job-name: "build-release-tarball"
+      tarball-artifact-path: "${TARBALL_ARTIFACT_PATH}"
 
-# Fedora does a plain vanilla build in its specfile with no meson options
-# https://src.fedoraproject.org/rpms/zenity/blob/rawhide/f/zenity.spec
+stages:
+  - test
+  - release
 
-build_fedora:
-  image: fedora:latest
+test:
+  stage: test
   before_script:
-    - dnf install -y --nogpgcheck $FEDORA_DEPENDENCIES
+    - dnf update -y --nogpgcheck
+    - dnf install -y --nogpgcheck $DEPENDENCIES
   script:
-    - meson --buildtype=debug build
-    - ninja -v -C build
+    - meson setup "${MESON_BUILD_DIR}"
+    - meson test -C "${MESON_BUILD_DIR}"
+    - DESTDIR=_destdir ninja -C "${MESON_BUILD_DIR}" install
 
-# Ubuntu image here is mostly to test whether the webkitgtk build works
+build-release-tarball:
+  stage: release
+  needs: ["test"]
+  before_script:
+    - dnf update -y --nogpgcheck
+    - dnf install -y --nogpgcheck $DEPENDENCIES
+  script:
+    - meson setup "${MESON_BUILD_DIR}"
+    - meson dist -C "${MESON_BUILD_DIR}"
+  artifacts:
+    name: "${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}"
+    when: always
+    paths:
+      - "${TARBALL_ARTIFACT_PATH}"
+  rules:
+    - if: '$CI_COMMIT_TAG'
+
+# Ubuntu image here is mostly to test whether the libnotify/webkitgtk build works
 
 build_ubuntu:
   image: ubuntu:rolling
@@ -24,5 +52,5 @@ build_ubuntu:
     - apt-get update
     - apt-get install -q -y --no-install-recommends $UBUNTU_DEPENDENCIES
   script:
-    - meson --buildtype=debug -Dlibnotify=true -Dwebkitgtk=true build
+    - meson setup --buildtype=debug -Dlibnotify=true -Dwebkitgtk=true build
     - ninja -v -C build
