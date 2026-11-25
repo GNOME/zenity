@@ -65,7 +65,6 @@ warning_cflags = [
   '-Wno-missing-field-initializers',
   '-Wno-sign-compare',
   '-Wno-unused-parameter',
-  '-Wno-unused-variable',
 ]
 
 cc = meson.get_compiler('c')
