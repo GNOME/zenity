@@ -297,9 +297,6 @@ static void
 zenity_forms_dialog_output (ZenityFormsData *forms_data)
 {
 	GSList *tmp;
-	guint day, year, month;
-	g_autoptr(GDate) date = NULL;
-	char time_string[128];
 
 	for (tmp = forms_data->list; tmp; tmp = tmp->next)
 	{
@@ -348,14 +345,14 @@ zenity_forms_dialog_output (ZenityFormsData *forms_data)
 				break;
 
 			case ZENITY_FORMS_CALENDAR:
-				g_object_get (zenity_value->forms_widget,
-						"day", &day,
-						"month", &month,
-						"year", &year,
-						NULL);
-				date = g_date_new_dmy (day, month + 1, year);
-				g_date_strftime (time_string, sizeof time_string, forms_data->date_format, date);
-				g_print ("%s", time_string);
+			{
+				g_autoptr(GDateTime) date = gtk_calendar_get_date (GTK_CALENDAR(zenity_value->forms_widget));
+				g_autofree char *date_string = NULL;
+
+				date_string = g_date_time_format (date, forms_data->date_format);
+
+				g_print ("%s", date_string);
+			}
 				break;
 
 			case ZENITY_FORMS_COMBO:
